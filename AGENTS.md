@@ -195,7 +195,7 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
 
 | 方式 | package.json 写法 | 适用场景 |
 |------|-------------------|----------|
-| GitHub Release | `"https://github.com/.../dula-engine-0.1.2.tgz"` | **当前使用**，锁定版本号，与源码解耦 |
+| GitHub Release | `"https://github.com/.../dula-engine-0.1.6.tgz"` | **当前使用**，锁定版本号，与源码解耦 |
 | `file:` 链接 | `"file:../dula-engine"` / `"file:../dula-assets"` | **本地开发**，源码修改实时生效 |
 
 ### 本地开发链路
@@ -218,11 +218,11 @@ npm run build   # 一键 audio + render
 
 ### 版本升级（Release 方式）
 
-当 Engine 发布新版本（如 v0.1.3）并上传 Release Assets 后：
+当 Engine 发布新版本（如 v0.1.6）并上传 Release Assets 后：
 
 ```bash
 cd dula-story
-# 更新 package.json 中的 dula-engine URL 为 v0.1.3
+# 更新 package.json 中的 dula-engine URL 为 v0.1.6
 npm install
 npm run build
 ```

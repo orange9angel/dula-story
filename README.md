@@ -69,7 +69,7 @@ npm run build
 ```json
 {
   "dependencies": {
-    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.2/dula-engine-0.1.2.tgz",
+    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.6/dula-engine-0.1.6.tgz",
     "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.0/dula-assets-0.1.0.tgz"
   }
 }
