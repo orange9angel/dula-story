@@ -16,7 +16,9 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**当前 Episode**：`episodes/bichong_qiupai/`（「必中球拍」——哆啦A梦借给大雄百发百中网球拍，最后失控飞走）
+**当前 Episode**：`episodes/takecopter_hikou/`（「竹蜻蜓飞行」——哆啦A梦借给大雄竹蜻蜓，最后失控飞走）
+
+> 历史 Episode：`episodes/bichong_qiupai/`（「必中球拍」）
 
 ---
 
@@ -25,17 +27,20 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 dula-story/
 ├── episodes/
-│   └── bichong_qiupai/          # Episode 目录
+│   └── takecopter_hikou/        # Episode 目录
 │       ├── script.story         # 剧本（唯一时序数据源）
 │       ├── bootstrap.js         # 资产注册入口（import dula-assets + 自定义插件）
 │       ├── config/
 │       │   ├── transitions.json # 场景过渡出口/入口
 │       │   ├── voice_config.json# TTS 声线配置
 │       │   └── choreography.json# 静态编舞配置（可被 .story DSL 覆盖）
+│       ├── materials/           # 手动音频素材（可选）
+│       │   ├── bgm/             # 手动 BGM (*.mp3/*.wav/*.ogg)
+│       │   └── sfx/             # 手动 SFX (*.wav)
 │       ├── assets/
 │       │   ├── audio/
-│       │   │   ├── music/       # BGM 素材 (*.wav)
-│       │   │   ├── sfx/         # 音效素材 (*.wav)
+│       │   │   ├── music/       # BGM 输出 (*.wav，自动生成)
+│       │   │   ├── sfx/         # SFX 输出 (*.wav，自动生成)
 │       │   │   ├── manifest.json# TTS 音频清单（自动生成）
 │       │   │   ├── mixed.wav    # 最终混音（自动生成）
 │       │   │   └── *.mp3        # 逐句 TTS 输出（自动生成）
@@ -156,21 +161,34 @@ dula-story/
 ## 5. 素材规范
 
 ### BGM (`assets/audio/music/`)
-| 文件名 | 场景 | 建议风格 | 推荐来源 |
-|--------|------|----------|----------|
-| `room_theme.wav` | 室内 | 轻松、日常 | Pixabay Music |
-| `park_theme.wav` | 公园 | 轻快、运动 | Pixabay Music |
-| `chaos_theme.wav` | 失控 | 滑稽、紧张 | Pixabay Music |
+引擎 `generate_bgm.py` 会自动生成以下 5 首 BGM（procedural 合成）：
+
+| 文件名 | 场景 | 风格 |
+|--------|------|------|
+| `room_theme.wav` | 室内 | C major, 60 BPM，轻松日常 |
+| `park_theme.wav` | 公园 | G major, 100 BPM，轻快运动 |
+| `chaos_theme.wav` | 失控 | Diminished, 130 BPM，滑稽紧张 |
+| `tension_theme.wav` | 紧张 | A minor, 120 BPM，悬疑 |
+| `wonder_theme.wav` | 惊奇 | F major, 90 BPM，空灵 + bell lead |
+
+**手动素材优先**：将 `.mp3`/`.wav`/`.ogg` 放入 `materials/bgm/`，引擎会自动转换使用。
 
 **推荐来源**：
 - **Pixabay Music**（首选）：https://pixabay.com/music/ — 免费商用，无需署名。
 - **Fesliyan Studios Cartoon**：https://www.fesliyanstudios.com/royalty-free-music/downloads-c/cartoon-music/86
+- **Freesound**（SFX）：https://freesound.org/ — 需遵守各文件 CC 许可。
 
 ### SFX (`assets/audio/sfx/`)
-引擎会自动生成 `tennis_hit.wav`。其他音效可手动放入。
+引擎 `generate_audio.py` 自动从 story events 调度 SFX，procedural 生成回退。也可将手动素材放入 `materials/sfx/` 优先使用。
+
+### Audio Registry（元数据参考）
+`dula-assets/audio-registry/` 提供音频资产的元数据（来源 URL、许可证、触发提示），可用于指导手动下载。使用 `download.py` 按场景过滤生成下载计划。
 
 ### TTS 输出
 由 `generate_audio.py` 自动生成，**不要手动修改** `manifest.json` 和 `mixed.wav`。
+
+### Git 忽略规则
+所有生成的音频资产（`assets/audio/` 下的 `.wav`、`.mp3`、`manifest.json`、`mixed.wav`）和临时文件（`_temp_*.wav`）已在 `.gitignore` 中排除，不进入版本控制。
 
 ---
 
@@ -183,9 +201,9 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
 ```json
 {
   "scripts": {
-    "audio": "dula-audio ./episodes/bichong_qiupai",
-    "verify": "dula-verify ./episodes/bichong_qiupai",
-    "render": "dula-render ./episodes/bichong_qiupai",
+    "audio": "dula-audio ./episodes/takecopter_hikou",
+    "verify": "dula-verify ./episodes/takecopter_hikou",
+    "render": "dula-render ./episodes/takecopter_hikou",
     "build": "npm run audio && npm run render"
   }
 }
@@ -195,7 +213,7 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
 
 | 方式 | package.json 写法 | 适用场景 |
 |------|-------------------|----------|
-| GitHub Release | `"https://github.com/.../dula-engine-0.1.6.tgz"` | **当前使用**，锁定版本号，与源码解耦 |
+| GitHub Release | `"https://github.com/.../dula-engine-0.1.7.tgz"` | **当前使用**，锁定版本号，与源码解耦 |
 | `file:` 链接 | `"file:../dula-engine"` / `"file:../dula-assets"` | **本地开发**，源码修改实时生效 |
 
 ### 本地开发链路
@@ -218,14 +236,16 @@ npm run build   # 一键 audio + render
 
 ### 版本升级（Release 方式）
 
-当 Engine 发布新版本（如 v0.1.6）并上传 Release Assets 后：
+当 Engine 发布新版本（如 v0.1.7）并上传 Release Assets 后：
 
 ```bash
 cd dula-story
-# 更新 package.json 中的 dula-engine URL 为 v0.1.6
+# 更新 package.json 中的 dula-engine 和 dula-assets URL
 npm install
 npm run build
 ```
+
+Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2），升级方式相同。
 
 引擎通过 npm `file:` 协议、`npm link` 或 Release tarball 安装到 `node_modules/dula-engine/`，CLI 命令自动注册到 `node_modules/.bin/`。
 
@@ -243,7 +263,7 @@ npm run build
 
 ### 新增 Episode
 1. 在 `episodes/` 下创建新目录。
-2. 复制 `bichong_qiupai/config/` 作为模板。
+2. 复制 `takecopter_hikou/config/` 作为模板。
 3. 编写 `script.story`。
 4. 放入需要的 BGM/SFX 素材到 `assets/audio/`。
 5. 按上述流程生成音频 → 验证 → 出片。
