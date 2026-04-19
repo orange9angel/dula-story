@@ -48,7 +48,7 @@
 
 13
 00:01:26,000 --> 00:01:30,500
-[Nobita]{Nod}{Camera:Static|position=-4,2.5,4|lookAt=0,1.2,0} 好，戴在头顶……这样对吗？
+[Nobita]{Nod}{Prop:TakeCopter|character=Nobita}{Camera:Static|position=-4,2.5,4|lookAt=0,1.2,0} 好，戴在头顶……这样对吗？
 
 14
 00:01:32,500 --> 00:01:39,000
@@ -56,11 +56,11 @@
 
 15
 00:01:41,000 --> 00:01:48,500
-[Nobita]{Camera:ZoomOut|targetPos=0,1.5,0|distance=15}{Event:Move|character=Nobita|y=3|duration=2.0|relative=true} 我要往上飞——！哇啊啊啊——！
+[Nobita]{FlyPose}{Camera:ZoomOut|targetPos=0,1.5,0|distance=15}{Event:Move|character=Nobita|y=3|duration=2.0|relative=true} 我要往上飞——！哇啊啊啊——！
 
 16
 00:01:50,500 --> 00:01:57,000
-[Nobita]{Camera:Shake|intensity=0.4} 好痛！天花板好低啊——！
+[Nobita]{FlailArms}{Camera:Shake|intensity=0.4} 好痛！天花板好低啊——！
 
 17
 00:01:59,000 --> 00:02:05,500
@@ -68,11 +68,11 @@
 
 18
 00:02:07,500 --> 00:02:15,000
-[Nobita]{Camera:Shake|intensity=0.3}{Event:Move|character=Nobita|x=2|y=-1|z=2|duration=1.5|relative=true} 哇——！往左！不对，往右！啊——！停不下来了——！
+[Nobita]{FlailArms}{Camera:Shake|intensity=0.3}{Event:Move|character=Nobita|x=2|y=-1|z=2|duration=1.5|relative=true} 哇——！往左！不对，往右！啊——！停不下来了——！
 
 19
 00:02:17,000 --> 00:02:24,000
-[Nobita]{Camera:Shake|intensity=0.5} 哇啊！我的书架！啊！台灯！
+[Nobita]{FlailArms}{Camera:Shake|intensity=0.5} 哇啊！我的书架！啊！台灯！
 
 20
 00:02:26,000 --> 00:02:32,500
@@ -104,7 +104,7 @@
 
 27
 00:03:23,500 --> 00:03:31,000
-[Nobita]{Camera:Static|position=-18,10,0|lookAt=0,1.5,0}{Event:Move|character=Nobita|y=3|duration=2.0|relative=true} 静香——！你看——！我在飞——！
+[Nobita]{FlyPose}{Camera:Static|position=-18,10,0|lookAt=0,1.5,0}{Event:Move|character=Nobita|y=3|duration=2.0|relative=true} 静香——！你看——！我在飞——！
 
 28
 00:03:33,000 --> 00:03:39,500
@@ -120,11 +120,11 @@
 
 31
 00:03:58,500 --> 00:04:06,000
-[Nobita]{Camera:Orbit|center=0,1.5,0|distance=15}{Event:Move|character=Nobita|y=5|duration=1.5|relative=true} 看我的特技！急速上升——！
+[Nobita]{FlyPose}{Camera:Orbit|center=0,1.5,0|distance=15}{Event:Move|character=Nobita|y=5|duration=1.5|relative=true} 看我的特技！急速上升——！
 
 32
 00:04:08,000 --> 00:04:15,500
-[Nobita]{Camera:Shake|intensity=0.3}{Event:Move|character=Nobita|y=-2|z=3|duration=1.0|relative=true} 再来一个！俯冲——！然后后空翻——！
+[Nobita]{FlyPose}{Camera:Shake|intensity=0.3}{Event:Move|character=Nobita|y=-2|z=3|duration=1.0|relative=true} 再来一个！俯冲——！然后后空翻——！
 
 33
 00:04:17,500 --> 00:04:23,000
@@ -136,11 +136,11 @@
 
 35
 00:04:34,500 --> 00:04:42,000
-[Nobita]{Camera:ZoomOut|targetPos=0,1.5,0|distance=25} 没关系！我还想飞得更高！感受风吹过脸颊的感觉——！
+[Nobita]{FlyPose}{Camera:ZoomOut|targetPos=0,1.5,0|distance=25} 没关系！我还想飞得更高！感受风吹过脸颊的感觉——！
 
 36
 00:04:44,000 --> 00:04:51,500
-[Nobita]{Camera:ZoomOut|targetPos=0,1.5,0|distance=40}{Event:Move|character=Nobita|y=8|duration=2.0|relative=true} 哇——！上面的风景好漂亮——！我能看到整个城市——！
+[Nobita]{FlyPose}{Camera:ZoomOut|targetPos=0,1.5,0|distance=40}{Event:Move|character=Nobita|y=8|duration=2.0|relative=true} 哇——！上面的风景好漂亮——！我能看到整个城市——！
 
 37
 00:04:53,500 --> 00:05:01,000
@@ -148,7 +148,7 @@
 
 38
 00:05:03,000 --> 00:05:11,500
-[Nobita]{Camera:TrackingCloseUp|characterName=Nobita}{Music:Play|name=chaos_theme|fadeIn=0.5|baseVolume=0.75|endTime=45.0}{Event:Move|character=Nobita|y=-3|duration=1.0|relative=true} 啊——！怎么回事——！竹蜻蜓转得好慢——！啊——！开始往下掉了——！
+[Nobita]{FallPanic}{Camera:TrackingCloseUp|characterName=Nobita}{Music:Play|name=chaos_theme|fadeIn=0.5|baseVolume=0.75|endTime=45.0}{Event:Move|character=Nobita|y=-3|duration=1.0|relative=true} 啊——！怎么回事——！竹蜻蜓转得好慢——！啊——！开始往下掉了——！
 
 39
 00:05:13,500 --> 00:05:19,000
@@ -156,15 +156,15 @@
 
 40
 00:05:21,000 --> 00:05:29,500
-[Nobita]{Camera:Shake|intensity=0.5}{Event:Move|character=Nobita|y=-8|duration=3.0|relative=true} 救命啊——！哆啦A梦——！救我——！
+[Nobita]{FallPanic}{Camera:Shake|intensity=0.5}{Event:Move|character=Nobita|y=-8|duration=3.0|relative=true} 救命啊——！哆啦A梦——！救我——！
 
 41
 00:05:31,500 --> 00:05:40,000
-[Doraemon]{Camera:WhipPan|fromTarget=0,10,0|toTarget=0,5,0|duration=0.5} 真是的！每次都这么乱来！备用竹蜻蜓！
+[Doraemon]{ReachHand}{Prop:TakeCopter|character=Doraemon}{Camera:WhipPan|fromTarget=0,10,0|toTarget=0,5,0|duration=0.5} 真是的！每次都这么乱来！备用竹蜻蜓！
 
 42
 00:05:42,000 --> 00:05:51,000
-[Doraemon]{Camera:Static|position=0,10,8|lookAt=0,1.5,0}{Event:Move|character=Doraemon|y=10|duration=2.5|relative=true} 大雄！把手给我！
+[Doraemon]{ReachHand}{Camera:Static|position=0,10,8|lookAt=0,1.5,0}{Event:Move|character=Doraemon|y=10|duration=2.5|relative=true} 大雄！把手给我！
 
 43
 00:05:53,000 --> 00:06:01,000
@@ -172,7 +172,7 @@
 
 44
 00:06:03,000 --> 00:06:12,000
-[Doraemon]{Camera:ZoomIn|targetPos=0,5,0|distance=4}{Event:Move|character=Nobita|y=-2|duration=2.0|relative=true} 抓紧了！我带你慢慢降落！
+[Doraemon]{ReachHand}{Camera:ZoomIn|targetPos=0,5,0|distance=4}{Event:Move|character=Nobita|y=-2|duration=2.0|relative=true} 抓紧了！我带你慢慢降落！
 
 45
 00:06:14,000 --> 00:06:22,500
@@ -180,7 +180,7 @@
 
 46
 00:06:24,500 --> 00:06:32,000
-[Nobita]{Camera:Static|position=-4,2.5,4|lookAt=0,1.2,0}{Event:Move|character=Nobita|y=-3|duration=2.0|relative=true} 哇——！终于着地了……
+[Nobita]{CrashLand}{Camera:Static|position=-4,2.5,4|lookAt=0,1.2,0}{Event:Move|character=Nobita|y=-3|duration=2.0|relative=true} 哇——！终于着地了……
 
 47
 00:06:34,000 --> 00:06:41,500

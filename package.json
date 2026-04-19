@@ -4,13 +4,15 @@
   "private": true,
   "description": "Dula story content",
   "scripts": {
+    "bgm": "python ./node_modules/dula-engine/tools/generate_bgm.py ./episodes/takecopter_hikou",
     "audio": "dula-audio ./episodes/takecopter_hikou",
     "verify": "dula-verify ./episodes/takecopter_hikou",
     "render": "dula-render ./episodes/takecopter_hikou",
-    "build": "npm run audio && npm run render"
+    "build": "npm run audio && npm run render",
+    "audio-plan": "python ./node_modules/dula-assets/audio-registry/download.py ./episodes/takecopter_hikou --scene RoomScene,ParkScene,SkyScene"
   },
   "dependencies": {
-    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.6/dula-engine-0.1.6.tgz",
-    "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.1/dula-assets-0.1.1.tgz"
+    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.7/dula-engine-0.1.7.tgz",
+    "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.2/dula-assets-0.1.2.tgz"
   }
 }
