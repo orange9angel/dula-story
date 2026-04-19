@@ -1,6 +1,11 @@
 # Dula Story — 动画剧集内容仓库
 
-本仓库存放 Dula 动画的**剧本、配置、素材与输出**。渲染执行由 [`dula-engine`](https://github.com/orange9angel/dula-engine) 完成，本仓库不包含渲染代码。
+本仓库存放 Dula 动画的**剧本、配置、素材与输出**。
+
+三层架构：
+- [`dula-engine`](https://github.com/orange9angel/dula-engine) — 纯净框架（渲染/音频执行）
+- [`dula-assets`](https://github.com/orange9angel/dula-assets) — 官方资产库（角色/动画/场景/运镜/配音）
+- **本仓库** — 内容声明（剧本/配置/素材/输出）
 
 ## 目录结构
 
@@ -9,6 +14,7 @@ dula-story/
 ├── episodes/
 │   └── bichong_qiupai/          # 单个剧集目录
 │       ├── script.story         # 剧本（时序 + 对白 + 指令标签）
+│       ├── bootstrap.js         # 资产注册入口（import dula-assets + 自定义插件）
 │       ├── config/
 │       │   ├── transitions.json    # 场景过渡配置
 │       │   ├── voice_config.json   # TTS 声线配置
@@ -46,39 +52,30 @@ npm run build
 
 ## 引擎依赖
 
-本仓库通过 `package.json` 引入 `dula-engine`：
+本仓库通过 `package.json` 引入 `dula-engine` 和 `dula-assets`：
 
 ### 方式 A：本地开发（file: 链接）
 ```json
 {
   "dependencies": {
-    "dula-engine": "file:../dula-engine"
+    "dula-engine": "file:../dula-engine",
+    "dula-assets": "file:../dula-assets"
   }
 }
 ```
-- Engine 源码修改**实时生效**，无需重新 install
+- 源码修改**实时生效**，无需重新 install
 
 ### 方式 B：GitHub Release（当前使用方式）
 ```json
 {
   "dependencies": {
-    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.2/dula-engine-0.1.2.tgz"
+    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.2/dula-engine-0.1.2.tgz",
+    "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.0/dula-assets-0.1.0.tgz"
   }
 }
 ```
-- 锁定版本号，与 Engine 源码完全解耦
-- Engine 升级后修改 URL 重新 `npm install` 即可
-
-### 方式 C：本地开发（file: 链接）
-```json
-{
-  "dependencies": {
-    "dula-engine": "file:../dula-engine"
-  }
-}
-```
-- Engine 源码修改实时生效，无需重新 install
-- 仅用于本地开发调试
+- 锁定版本号，与源码完全解耦
+- 升级后修改 URL 重新 `npm install` 即可
 
 日常开发无需进入引擎目录，所有 CLI 命令均从本仓库根目录执行。
 

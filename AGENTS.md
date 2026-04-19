@@ -1,12 +1,20 @@
 # Dula Story — 内容仓库开发规范
 
-> 本文档供 AI 开发代理阅读。本仓库只包含**剧本、配置、素材、输出**，不包含渲染代码。渲染执行由 `dula-engine` 完成。
+> 本文档供 AI 开发代理阅读。本仓库是三层架构的**内容层**：只包含剧本、配置、素材、输出。渲染执行由 `dula-engine` 完成，官方资产（角色/动画/场景/运镜/配音）由 `dula-assets` 提供。
 
 ---
 
 ## 1. 项目概述
 
-内容与引擎分离的内容仓库。每个 **Episode**（短片剧集）是一个自包含目录，包含剧本、配置、音频素材和最终输出。
+三层架构中的内容仓库。每个 **Episode**（短片剧集）是一个自包含目录，包含剧本、配置、音频素材和最终输出。
+
+```
+dula-engine  ← 框架（渲染/音频执行/Registry）
+   ↑ 注册
+dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirector）
+   ↑ 消费
+dula-story   ← 本仓库（剧本/配置/素材/输出）
+```
 
 **当前 Episode**：`episodes/bichong_qiupai/`（「必中球拍」——哆啦A梦借给大雄百发百中网球拍，最后失控飞走）
 
@@ -19,6 +27,7 @@ dula-story/
 ├── episodes/
 │   └── bichong_qiupai/          # Episode 目录
 │       ├── script.story         # 剧本（唯一时序数据源）
+│       ├── bootstrap.js         # 资产注册入口（import dula-assets + 自定义插件）
 │       ├── config/
 │       │   ├── transitions.json # 场景过渡出口/入口
 │       │   ├── voice_config.json# TTS 声线配置
@@ -187,7 +196,7 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
 | 方式 | package.json 写法 | 适用场景 |
 |------|-------------------|----------|
 | GitHub Release | `"https://github.com/.../dula-engine-0.1.2.tgz"` | **当前使用**，锁定版本号，与源码解耦 |
-| `file:` 链接 | `"file:../dula-engine"` | **本地开发**，引擎修改实时生效 |
+| `file:` 链接 | `"file:../dula-engine"` / `"file:../dula-assets"` | **本地开发**，源码修改实时生效 |
 
 ### 本地开发链路
 
@@ -247,7 +256,8 @@ npm run build
 |------|----------|------|
 | **剧本层** | `script.story` | 时序声明（何时发生什么） |
 | **世界层** | `config/*.json` | 静态配置（场景过渡、声线、编舞备选） |
-| **引擎层** | `dula-engine` | 执行算法（渲染、音频、物理计算） |
+| **框架层** | `dula-engine` | 执行算法与基类（渲染、音频、Registry） |
+| **资产层** | `dula-assets` | 可复用资产（角色、动画、场景、运镜、配音） |
 
 **核心规则**：
 - 剧情决策不进代码（引擎不硬编码任何剧情）。
