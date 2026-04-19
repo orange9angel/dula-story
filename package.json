@@ -4,9 +4,9 @@
   "private": true,
   "description": "Dula story content",
   "scripts": {
-    "audio": "dula-audio ./episodes/bichong_qiupai",
-    "verify": "dula-verify ./episodes/bichong_qiupai",
-    "render": "dula-render ./episodes/bichong_qiupai",
+    "audio": "dula-audio ./episodes/takecopter_hikou",
+    "verify": "dula-verify ./episodes/takecopter_hikou",
+    "render": "dula-render ./episodes/takecopter_hikou",
     "build": "npm run audio && npm run render"
   },
   "dependencies": {
