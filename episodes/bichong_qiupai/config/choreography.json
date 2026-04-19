@@ -1,0 +1,21 @@
+{
+  "parkScene": {
+    "placements": [
+      { "character": "Doraemon", "spot": "northBaseline", "face": "Nobita" },
+      { "character": "Nobita", "spot": "southBaseline", "face": "Doraemon" },
+      { "character": "Shizuka", "x": 5.5, "y": 0.01, "z": 2.5, "face": "center" }
+    ],
+    "props": [
+      { "character": "Doraemon", "type": "racket", "color": "0xe60012" },
+      { "character": "Nobita", "type": "racket", "color": "0x1a3c8a" }
+    ],
+    "ballEvents": [
+      { "type": "player", "startTime": 30.0, "from": "Doraemon", "to": "Nobita", "arcHeight": 1.5 },
+      { "type": "player", "startTime": 32.5, "from": "Nobita", "to": "Doraemon", "arcHeight": 1.2 }
+    ],
+    "storyEvents": [
+      { "type": "move", "character": "Nobita", "startTime": 44.5, "duration": 3.0, "relative": true, "x": 0, "y": 15, "z": 0 },
+      { "type": "animate", "character": "Nobita", "startTime": 44.5, "duration": 8.0, "action": "WaveHand" }
+    ]
+  }
+}

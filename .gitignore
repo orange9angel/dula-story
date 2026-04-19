@@ -1,0 +1,17 @@
+﻿# Generated outputs
+output/
+*.mp4
+
+# Generated audio assets
+assets/audio/*.mp3
+assets/audio/mixed.wav
+assets/audio/manifest.json
+
+# Temp frames
+storyboard/frames/
+storyboard/*.jpg
+storyboard/*.png
+
+# OS
+.DS_Store
+Thumbs.db
