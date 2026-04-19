@@ -1,31 +1,112 @@
-﻿# Doula Content
+# Dula Story — 动画剧集内容仓库
 
-This is the content repository for Doula animation episodes.
+本仓库存放 Dula 动画的**剧本、配置、素材与输出**。渲染执行由 [`dula-engine`](https://github.com/orange9angel/dula-engine) 完成，本仓库不包含渲染代码。
 
-## Structure
+## 目录结构
 
 ```
-episodes/
-  └── bichong_qiupai/          # One directory per episode
-        ├── script.story        # Animation script (dialogue + cues)
-        ├── config/
-        │   ├── transitions.json    # Scene transition config
-        │   ├── voice_config.json   # TTS voice mapping
-        │   └── choreography.json   # Ball events, placements, props
-        └── assets/
-            └── audio/
-                ├── music/      # BGM tracks
-                └── sfx/        # Sound effects
+dula-story/
+├── episodes/
+│   └── bichong_qiupai/          # 单个剧集目录
+│       ├── script.story         # 剧本（时序 + 对白 + 指令标签）
+│       ├── config/
+│       │   ├── transitions.json    # 场景过渡配置
+│       │   ├── voice_config.json   # TTS 声线配置
+│       │   └── choreography.json   # 静态编舞配置（可被 .story DSL 覆盖）
+│       ├── assets/
+│       │   └── audio/
+│       │       ├── music/          # BGM 素材 (*.wav)
+│       │       ├── sfx/            # 音效素材 (*.wav)
+│       │       ├── manifest.json   # TTS 音频清单（自动生成）
+│       │       ├── mixed.wav       # 最终混音（自动生成）
+│       │       └── *.mp3           # 逐句 TTS（自动生成）
+│       ├── storyboard/            # 验证截图（自动生成）
+│       └── output.mp4             # 最终视频（自动生成）
+└── package.json
 ```
 
-## Workflow
+## 快速开始
 
-1. Write or edit `episodes/<name>/script.story`
-2. Run audio generation from the engine directory:
+```bash
+# 安装引擎依赖
+npm install
+
+# 生成音频（TTS + BGM + SFX 混音）
+npm run audio
+
+# 逐镜头验证画面
+npm run verify
+
+# 生成完整视频
+npm run render
+
+# 一键出片：音频 + 视频
+npm run build
+```
+
+## 引擎依赖
+
+本仓库通过 `package.json` 引入 `dula-engine`：
+
+### 方式 A：本地开发（file: 链接）
+```json
+{
+  "dependencies": {
+    "dula-engine": "file:../dula-engine"
+  }
+}
+```
+- Engine 源码修改**实时生效**，无需重新 install
+
+### 方式 B：GitHub Release（当前使用方式）
+```json
+{
+  "dependencies": {
+    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.2/dula-engine-0.1.2.tgz"
+  }
+}
+```
+- 锁定版本号，与 Engine 源码完全解耦
+- Engine 升级后修改 URL 重新 `npm install` 即可
+
+### 方式 C：本地开发（file: 链接）
+```json
+{
+  "dependencies": {
+    "dula-engine": "file:../dula-engine"
+  }
+}
+```
+- Engine 源码修改实时生效，无需重新 install
+- 仅用于本地开发调试
+
+日常开发无需进入引擎目录，所有 CLI 命令均从本仓库根目录执行。
+
+## 新增剧集
+
+1. 在 `episodes/` 下创建新目录
+2. 复制 `bichong_qiupai/config/` 作为模板
+3. 编写 `script.story`
+4. 放入 BGM/SFX 素材到 `assets/audio/`
+5. 修改 `package.json` scripts 指向新目录，或直接使用：
    ```bash
-   python tools/generate_audio.py ../doula-content/episodes/bichong_qiupai
+   npx dula-render ./episodes/<name>
    ```
-3. Run video rendering from the engine directory:
-   ```bash
-   node generate_video.js ../doula-content/episodes/bichong_qiupai
-   ```
+
+## 剧本格式
+
+`.story` 是 SRT 时间轴的扩展格式，支持命名空间标签：
+
+```
+1
+00:00:00,000 --> 00:00:01,500
+@RoomScene{Music:Play|name=room_theme|fadeIn=2.0}
+
+2
+00:00:03,000 --> 00:00:06,852
+[Doraemon]{WaveHand} 大雄！明天要和静香打球对吧？
+```
+
+支持的标签：`@SceneName`、`[Character]`、`{Action}`、`{Camera:...}`、`{Music:...}`、`{Ball:...}`、`{Prop:...}`、`{Position:...}`、`{Event:...}`
+
+详见 `AGENTS.md`。

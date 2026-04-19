@@ -20,7 +20,7 @@
 
 6
 00:00:19,720 --> 00:00:21,220
-@ParkScene{Camera:ZoomOut|targetPos=0,1.5,0|distance=35}{Music:Play|name=park_theme|fadeIn=1.5|baseVolume=0.72|endTime=39.8}
+@ParkScene{Camera:ZoomOut|targetPos=0,1.5,0|distance=35}{Music:Play|name=park_theme|fadeIn=1.5|baseVolume=0.72|endTime=39.8}{Position:Doraemon|spot=northBaseline|face=Nobita}{Position:Nobita|spot=southBaseline|face=Doraemon}{Position:Shizuka|x=5.5|y=0.01|z=2.5|face=center}{Prop:Racket|character=Doraemon|color=0xe60012}{Prop:Racket|character=Nobita|color=0x1a3c8a}
 
 7
 00:00:22,720 --> 00:00:25,732
@@ -32,11 +32,11 @@
 
 9
 00:00:30,096 --> 00:00:32,096
-[Doraemon]{Camera:Static|position=18,6,0|lookAt=0,1.5,0} 那我发球了！
+[Doraemon]{Camera:Static|position=18,6,0|lookAt=0,1.5,0}{Ball:Serve|from=Doraemon|to=Nobita|arcHeight=1.5} 那我发球了！
 
 10
 00:00:32,496 --> 00:00:35,868
-[Nobita]{Camera:Static|position=-18,6,0|lookAt=0,1.5,0} 喝——！扣杀！
+[Nobita]{Camera:Static|position=-18,6,0|lookAt=0,1.5,0}{Ball:Return|from=Nobita|to=Doraemon|arcHeight=1.2} 喝——！扣杀！
 
 11
 00:00:36,268 --> 00:00:39,424
@@ -44,7 +44,7 @@
 
 12
 00:00:39,824 --> 00:00:44,036
-[Nobita]{Camera:Shake|intensity=0.3}{Music:Play|name=chaos_theme|fadeIn=0.5|baseVolume=0.75|endTime=68.0} 等等……手、手停不下来了——！
+[Nobita]{Camera:Shake|intensity=0.3}{Music:Play|name=chaos_theme|fadeIn=0.5|baseVolume=0.75|endTime=68.0}{Event:Move|character=Nobita|y=15|duration=3.0|relative=true}{Event:Animate|character=Nobita|action=WaveHand|duration=8.0} 等等……手、手停不下来了——！
 
 13
 00:00:44,436 --> 00:00:48,216

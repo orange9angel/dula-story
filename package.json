@@ -1,0 +1,16 @@
+{
+  "name": "dula-story-bichong",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dula story content",
+  "scripts": {
+    "audio": "dula-audio ./episodes/bichong_qiupai",
+    "verify": "dula-verify ./episodes/bichong_qiupai",
+    "render": "dula-render ./episodes/bichong_qiupai",
+    "build": "npm run audio && npm run render"
+  },
+  "dependencies": {
+    "dula-engine": "file:../dula-engine",
+    "dula-assets": "file:../dula-assets"
+  }
+}

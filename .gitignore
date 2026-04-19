@@ -1,4 +1,7 @@
-﻿# Generated outputs
+# Dependencies
+node_modules/
+
+# Generated outputs
 output/
 *.mp4
 
@@ -6,11 +9,18 @@ output/
 assets/audio/*.mp3
 assets/audio/mixed.wav
 assets/audio/manifest.json
+episodes/*/assets/audio/*.mp3
+episodes/*/assets/audio/mixed.wav
+episodes/*/assets/audio/manifest.json
 
-# Temp frames
+# Temp frames & verification shots
 storyboard/frames/
 storyboard/*.jpg
 storyboard/*.png
+episodes/*/storyboard/
+
+# Logs
+*.log
 
 # OS
 .DS_Store
