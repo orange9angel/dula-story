@@ -9,10 +9,14 @@
     "verify": "dula-verify ./episodes/takecopter_hikou",
     "render": "dula-render ./episodes/takecopter_hikou",
     "build": "npm run audio && npm run render",
-    "audio-plan": "python ./node_modules/dula-assets/audio-registry/download.py ./episodes/takecopter_hikou --scene RoomScene,ParkScene,SkyScene"
+    "audio-plan": "python ./node_modules/dula-assets/audio-registry/download.py ./episodes/takecopter_hikou --scene RoomScene,ParkScene,SkyScene",
+    "audio:dunk": "dula-audio ./episodes/dunk_master_doraemon",
+    "verify:dunk": "dula-verify ./episodes/dunk_master_doraemon",
+    "render:dunk": "dula-render ./episodes/dunk_master_doraemon",
+    "build:dunk": "npm run audio:dunk && npm run render:dunk"
   },
   "dependencies": {
-    "dula-engine": "https://github.com/orange9angel/dula-engine/releases/download/v0.1.7/dula-engine-0.1.7.tgz",
+    "dula-engine": "file:../dula-engine",
     "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.2/dula-assets-0.1.2.tgz"
   }
 }
