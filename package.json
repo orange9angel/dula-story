@@ -16,7 +16,7 @@
     "build:dunk": "npm run audio:dunk && npm run render:dunk"
   },
   "dependencies": {
-    "dula-engine": "file:../dula-engine",
-    "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.2/dula-assets-0.1.2.tgz"
+    "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.2/dula-assets-0.1.2.tgz",
+    "dula-engine": "file:../dula-engine"
   }
 }
