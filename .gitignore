@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+__pycache__/
 
 # Generated outputs
 output/
@@ -24,6 +25,13 @@ storyboard/frames/
 storyboard/*.jpg
 storyboard/*.png
 episodes/*/storyboard/
+episodes/starlight_courier_comic_book/frames/
+
+# Checked-in prototype artifact for the comic-book demo
+!episodes/starlight_courier_comic_book/output/
+!episodes/starlight_courier_comic_book/output/starlight_courier_baked_kaiti.mp4
+!episodes/starlight_courier_comic_book/assets/audio/
+!episodes/starlight_courier_comic_book/assets/audio/*
 
 # Logs
 *.log
