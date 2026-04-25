@@ -7,6 +7,14 @@
 - [`dula-assets`](https://github.com/orange9angel/dula-assets) — 官方资产库（角色/动画/场景/运镜/配音）
 - **本仓库** — 内容声明（剧本/配置/素材/输出）
 
+## 独立方向
+
+电子漫画书/有声翻页漫画已经拆为独立工程：
+
+- [`comic-book-studio`](https://github.com/orange9angel/comic-book-studio) — AI 分镜图、漫画气泡、TTS、BGM/SFX、Three.js 翻页视频生成
+
+该方向可以和 Dula 动画工程互相借鉴技术方案，但代码、依赖和发布节奏保持独立。
+
 ## 目录结构
 
 ```
