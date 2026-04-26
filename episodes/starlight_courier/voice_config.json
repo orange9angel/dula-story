@@ -1,0 +1,13 @@
+{
+  "_comment": "角色声音配置：星夜快递 — Xingzai + Xiaoyue",
+  "voices": {
+    "Xingzai": {
+      "provider": "dashscope",
+      "model": "sambert-zhimao-v1"
+    },
+    "Xiaoyue": {
+      "provider": "dashscope",
+      "model": "sambert-zhishuo-v1"
+    }
+  }
+}
