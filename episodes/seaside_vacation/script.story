@@ -39,4 +39,4 @@
 
 10
 00:00:43,000 --> 00:00:50,000
-[Doraemon]{PanicSpin}{Camera:ZoomOut|targetPos=0,1.5,0|distance=15} 大雄！你的游泳圈——！它漏气了——！
+[Doraemon]{PanicSpin}{Camera:Static|position=0,3,8|lookAt=0,1.5,0} 大雄！你的游泳圈——！它漏气了——！
