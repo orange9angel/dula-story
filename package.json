@@ -37,7 +37,7 @@
     "build:inspect": "npm run audio:inspect && npm run render:inspect"
   },
   "dependencies": {
-    "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.2/dula-assets-0.1.2.tgz",
+    "dula-assets": "file:../dula-assets/dula-assets-0.1.2.tgz",
     "dula-engine": "file:../dula-engine"
   }
 }
