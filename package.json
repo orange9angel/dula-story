@@ -25,7 +25,12 @@
     "audio:zhulong": "dula-audio ./episodes/zhulong_eye",
     "verify:zhulong": "dula-verify ./episodes/zhulong_eye",
     "render:zhulong": "dula-render ./episodes/zhulong_eye",
-    "build:zhulong": "npm run audio:zhulong && npm run render:zhulong"
+    "build:zhulong": "npm run audio:zhulong && npm run render:zhulong",
+    "audio:inspect": "dula-audio ./episodes/inspector_testbed",
+    "verify:inspect": "dula-verify ./episodes/inspector_testbed",
+    "render:inspect": "dula-render ./episodes/inspector_testbed",
+    "inspect:inspect": "dula-inspect ./episodes/inspector_testbed",
+    "build:inspect": "npm run audio:inspect && npm run render:inspect"
   },
   "dependencies": {
     "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.2/dula-assets-0.1.2.tgz",
