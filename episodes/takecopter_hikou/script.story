@@ -95,6 +95,10 @@
 [Nobita]{Camera:ZoomOut|targetPos=0,2,0|distance=20}{Event:Move|character=Nobita|y=5|z=-10|duration=2.0|relative=true} 我要去外面看看世界！拜拜——！
 
 25
+00:03:08,500 --> 00:03:09,500
+{Transition:ZoomBlur|duration=0.5|intensity=1.5}
+
+26
 00:03:09,500 --> 00:03:12,000
 @ParkScene{Camera:ZoomOut|targetPos=0,1.5,0|distance=35}{Music:Play|name=park_theme|fadeIn=1.5|baseVolume=0.72|endTime=55.0}{Position:Doraemon|x=-5|y=0.01|z=3|face=center}{Position:Nobita|x=0|y=8|z=0|face=center}{Position:Shizuka|x=5|y=0.01|z=3|face=center}
 

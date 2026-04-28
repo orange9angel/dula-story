@@ -6,14 +6,26 @@
   "scripts": {
     "bgm": "python ./node_modules/dula-engine/tools/generate_bgm.py ./episodes/takecopter_hikou",
     "audio": "dula-audio ./episodes/takecopter_hikou",
+    "audio:11": "dula-audio ./episodes/takecopter_hikou --provider=elevenlabs",
     "verify": "dula-verify ./episodes/takecopter_hikou",
     "render": "dula-render ./episodes/takecopter_hikou",
     "build": "npm run audio && npm run render",
+    "build:11": "npm run audio:11 && npm run render",
     "audio-plan": "python ./node_modules/dula-assets/audio-registry/download.py ./episodes/takecopter_hikou --scene RoomScene,ParkScene,SkyScene",
     "audio:dunk": "dula-audio ./episodes/dunk_master_doraemon",
+    "audio:dunk:11": "dula-audio ./episodes/dunk_master_doraemon --provider=elevenlabs",
+    "audio:dunk:ds": "dula-audio ./episodes/dunk_master_doraemon --provider=dashscope",
     "verify:dunk": "dula-verify ./episodes/dunk_master_doraemon",
     "render:dunk": "dula-render ./episodes/dunk_master_doraemon",
-    "build:dunk": "npm run audio:dunk && npm run render:dunk"
+    "inspect": "dula-inspect ./episodes/takecopter_hikou",
+    "inspect:dunk": "dula-inspect ./episodes/dunk_master_doraemon",
+    "build:dunk": "npm run audio:dunk && npm run render:dunk",
+    "build:dunk:11": "npm run audio:dunk:11 && npm run render:dunk",
+    "build:dunk:ds": "npm run audio:dunk:ds && npm run render:dunk",
+    "audio:zhulong": "dula-audio ./episodes/zhulong_eye",
+    "verify:zhulong": "dula-verify ./episodes/zhulong_eye",
+    "render:zhulong": "dula-render ./episodes/zhulong_eye",
+    "build:zhulong": "npm run audio:zhulong && npm run render:zhulong"
   },
   "dependencies": {
     "dula-assets": "https://github.com/orange9angel/dula-assets/releases/download/v0.1.2/dula-assets-0.1.2.tgz",

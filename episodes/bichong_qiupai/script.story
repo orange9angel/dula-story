@@ -19,6 +19,10 @@
 [Nobita]{Nod}{Camera:ZoomIn|targetPos=1.5,1.5,0|distance=2.5} 太棒了！走吧走吧！
 
 6
+00:00:19,220 --> 00:00:20,220
+{Transition:Iris|duration=0.5}
+
+7
 00:00:19,720 --> 00:00:21,220
 @ParkScene{Camera:ZoomOut|targetPos=0,1.5,0|distance=35}{Music:Play|name=park_theme|fadeIn=1.5|baseVolume=0.72|endTime=39.8}{Position:Doraemon|spot=northBaseline|face=Nobita}{Position:Nobita|spot=southBaseline|face=Doraemon}{Position:Shizuka|x=5.5|y=0.01|z=2.5|face=center}{Prop:Racket|character=Doraemon|color=0xe60012}{Prop:Racket|character=Nobita|color=0x1a3c8a}
 
