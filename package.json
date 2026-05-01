@@ -36,6 +36,7 @@
     "inspect:inspect": "dula-inspect ./episodes/inspector_testbed",
     "build:inspect": "npm run audio:inspect && npm run render:inspect",
     "audio:starlight": "dula-audio ./episodes/starlight_courier",
+    "audio:starlight:ds": "dula-audio ./episodes/starlight_courier --provider=dashscope",
     "verify:starlight": "dula-verify ./episodes/starlight_courier",
     "render:starlight": "dula-render ./episodes/starlight_courier",
     "build:starlight": "npm run audio:starlight && npm run render:starlight"

@@ -141,6 +141,73 @@ export class FutureCityScene extends SceneBase {
       }
     }
 
+    // ---- HIGH-TECH TOWERS (prominent sci-fi skyscrapers) ----
+    for (let i = 0; i < 6; i++) {
+      const towerGroup = new THREE.Group();
+      const h = 40 + Math.random() * 30;
+      const towerColor = neonColors[i % neonColors.length];
+
+      // Main spire
+      const spire = new THREE.Mesh(
+        new THREE.ConeGeometry(1.5, h, 6),
+        new THREE.MeshStandardMaterial({
+          color: 0x2a2a3a,
+          roughness: 0.2,
+          metalness: 0.9,
+          emissive: towerColor,
+          emissiveIntensity: 0.15,
+        })
+      );
+      spire.position.y = h / 2;
+      towerGroup.add(spire);
+
+      // Glowing rings
+      for (let r = 0; r < 4; r++) {
+        const ringGeo = new THREE.TorusGeometry(2 + r * 0.5, 0.08, 8, 24);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: towerColor,
+          transparent: true,
+          opacity: 0.6,
+        });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = Math.PI / 2;
+        ring.position.y = 10 + r * (h - 15) / 3;
+        towerGroup.add(ring);
+      }
+
+      // Antenna
+      const antenna = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.05, 0.1, 8, 4),
+        new THREE.MeshBasicMaterial({ color: towerColor })
+      );
+      antenna.position.y = h + 4;
+      towerGroup.add(antenna);
+
+      // Antenna beacon
+      const beacon = new THREE.Mesh(
+        new THREE.SphereGeometry(0.3, 8, 8),
+        new THREE.MeshBasicMaterial({ color: 0xffffff })
+      );
+      beacon.position.y = h + 8;
+      towerGroup.add(beacon);
+
+      // Beacon light
+      const beaconLight = new THREE.PointLight(towerColor, 5, 20);
+      beaconLight.position.y = h + 8;
+      towerGroup.add(beaconLight);
+
+      // Position
+      const angle = (i / 6) * Math.PI * 2;
+      const radius = 50 + Math.random() * 20;
+      towerGroup.position.set(
+        Math.cos(angle) * radius,
+        0,
+        Math.sin(angle) * radius
+      );
+      this.scene.add(towerGroup);
+      this.buildings.push(towerGroup);
+    }
+
     // ---- ANDROMEDA COURIER STATION (centerpiece, behind characters) ----
     const stationGroup = new THREE.Group();
     stationGroup.position.set(0, 0, -30);
@@ -204,6 +271,64 @@ export class FutureCityScene extends SceneBase {
 
     this.scene.add(stationGroup);
     this.station = stationGroup;
+
+    // ---- SPACE SHIPS (large, detailed) ----
+    for (let i = 0; i < 5; i++) {
+      const shipGroup = new THREE.Group();
+      const shipColor = neonColors[i % neonColors.length];
+
+      // Main hull
+      const hull = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.3, 0.5, 2, 6),
+        new THREE.MeshStandardMaterial({
+          color: 0x4a4a5a,
+          roughness: 0.3,
+          metalness: 0.8,
+          emissive: shipColor,
+          emissiveIntensity: 0.3,
+        })
+      );
+      hull.rotation.x = Math.PI / 2;
+      shipGroup.add(hull);
+
+      // Wings
+      const wingGeo = new THREE.BoxGeometry(2.5, 0.05, 0.8);
+      const wingMat = new THREE.MeshStandardMaterial({
+        color: 0x3a3a4a,
+        roughness: 0.3,
+        metalness: 0.9,
+        emissive: shipColor,
+        emissiveIntensity: 0.2,
+      });
+      const wings = new THREE.Mesh(wingGeo, wingMat);
+      shipGroup.add(wings);
+
+      // Engine glow
+      const engineGeo = new THREE.SphereGeometry(0.2, 8, 8);
+      const engineMat = new THREE.MeshBasicMaterial({ color: shipColor });
+      const engine = new THREE.Mesh(engineGeo, engineMat);
+      engine.position.z = 1.2;
+      shipGroup.add(engine);
+
+      // Engine light
+      const engineLight = new THREE.PointLight(shipColor, 3, 8);
+      engineLight.position.z = 1.5;
+      shipGroup.add(engineLight);
+
+      // Position in sky
+      const radius = 30 + Math.random() * 40;
+      const y = 25 + Math.random() * 25;
+      shipGroup.position.set(radius, y, 0);
+      this.scene.add(shipGroup);
+
+      this.flyers.push({
+        group: shipGroup,
+        radius,
+        y,
+        speed: 0.15 + Math.random() * 0.25,
+        angle: Math.random() * Math.PI * 2,
+      });
+    }
 
     // ---- FLYING VEHICLES (light trails) ----
     for (let i = 0; i < 8; i++) {
