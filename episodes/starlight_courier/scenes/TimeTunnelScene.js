@@ -140,11 +140,11 @@ export class TimeTunnelScene extends SceneBase {
       metalness: 0.9,
       roughness: 0.1,
     });
-    const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.3, 0.08, 32), discMat);
+    const disc = new THREE.Mesh(new THREE.CylinderGeometry(2.0, 2.1, 0.08, 32), discMat);
     platformGroup.add(disc);
 
     // Glowing ring around platform
-    const ringGeo = new THREE.TorusGeometry(1.25, 0.03, 8, 64);
+    const ringGeo = new THREE.TorusGeometry(2.05, 0.03, 8, 64);
     const ringMat = new THREE.MeshBasicMaterial({ color: 0x00ffff });
     this.platformRing = new THREE.Mesh(ringGeo, ringMat);
     this.platformRing.rotation.x = Math.PI / 2;
@@ -152,7 +152,7 @@ export class TimeTunnelScene extends SceneBase {
     platformGroup.add(this.platformRing);
 
     // Inner ring
-    const innerRingGeo = new THREE.TorusGeometry(0.8, 0.02, 8, 64);
+    const innerRingGeo = new THREE.TorusGeometry(1.2, 0.02, 8, 64);
     const innerRingMat = new THREE.MeshBasicMaterial({ color: 0xff00ff });
     this.innerRing = new THREE.Mesh(innerRingGeo, innerRingMat);
     this.innerRing.rotation.x = Math.PI / 2;
@@ -202,6 +202,21 @@ export class TimeTunnelScene extends SceneBase {
     }
 
     return this.scene;
+  }
+
+  addCharacter(character) {
+    super.addCharacter(character);
+    // Scale down tall characters so they look proportional on the small platform
+    const scales = {
+      Nobita: 0.75,
+      Xingzai: 0.8,
+      Xiaoyue: 0.85,
+      Doraemon: 0.9,
+    };
+    const name = character.constructor.name;
+    if (scales[name]) {
+      character.mesh.scale.setScalar(scales[name]);
+    }
   }
 
   update(time, delta) {
