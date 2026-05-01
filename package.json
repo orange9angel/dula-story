@@ -34,7 +34,11 @@
     "verify:inspect": "dula-verify ./episodes/inspector_testbed",
     "render:inspect": "dula-render ./episodes/inspector_testbed",
     "inspect:inspect": "dula-inspect ./episodes/inspector_testbed",
-    "build:inspect": "npm run audio:inspect && npm run render:inspect"
+    "build:inspect": "npm run audio:inspect && npm run render:inspect",
+    "audio:starlight": "dula-audio ./episodes/starlight_courier",
+    "verify:starlight": "dula-verify ./episodes/starlight_courier",
+    "render:starlight": "dula-render ./episodes/starlight_courier",
+    "build:starlight": "npm run audio:starlight && npm run render:starlight"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets/dula-assets-0.1.2.tgz",

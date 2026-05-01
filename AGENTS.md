@@ -302,4 +302,27 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 
 ---
 
-**最后更新**：2026-04-20
+---
+
+## 10. 质检团队 Inspector 维度（dula-inspect-team）
+
+运行 `npx dula-inspect-team ./episodes/<name>` 执行闭环质检。
+
+| 维度 | Inspector | 检测内容 |
+|------|-----------|----------|
+| D1 | SceneInspector | 场景注册、过渡配置、场景-主题匹配 |
+| D2 | CharacterInspector | 角色注册、声线配置、场景连续性 |
+| D2 | VisualInspector | 截图分析、角色可见性、位置重叠 |
+| D3 | AnimationInspector | 动画注册、移动速度、角色专属匹配 |
+| D4 | CameraInspector | 运镜参数、后脑勺检测、距离安全 |
+| D5 | EffectInspector | Shake 滥用、特效-情绪匹配、强度范围 |
+| D5/D6 | NarrativeInspector | 道具一致性、环境匹配、动作合理性 |
+| D7 | AudioInspector | 音频存在性、抢拍检测、时长匹配 |
+| **D8** | **AudioBalanceInspector** | **TTS vs BGM 音量平衡、同角色音量一致性** |
+| D9 | StoryQualityInspector | 故事节奏、高潮定位、情绪多样性 |
+| **D9** | **LipSyncInspector** | **台词长度-时间窗口匹配、语速检测、嘴型压缩** |
+| **D10** | **CameraSubjectInspector** | **说话角色与相机目标匹配、ReactionShot 误用** |
+| **D11** | **TransitionInspector** | **场景切换退场/入场动画、禁止瞬移、飞行能力利用** |
+| **D12** | **MusicFitInspector** | **BGM 风格-场景匹配、BGM 音量、覆盖完整性** |
+
+**最后更新**：2026-05-01

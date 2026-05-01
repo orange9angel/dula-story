@@ -1,14 +1,86 @@
 {
   "Xiaoyue": {
-    "voice": "zh-CN-XiaoxiaoNeural",
-    "rate": "+5%",
-    "pitch": "+5Hz",
-    "volume": "+0%"
+    "default": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "+5%",
+      "pitch": "+5Hz",
+      "volume": "+20%"
+    },
+    "happy": {
+      "rate": "+10%",
+      "pitch": "+10Hz"
+    },
+    "excited": {
+      "rate": "+15%",
+      "pitch": "+15Hz"
+    },
+    "panic": {
+      "rate": "+20%",
+      "pitch": "+20Hz"
+    },
+    "defiant": {
+      "rate": "+10%",
+      "pitch": "+10Hz"
+    }
   },
   "Xingzai": {
-    "voice": "zh-CN-YunxiNeural",
-    "rate": "-5%",
-    "pitch": "-5Hz",
-    "volume": "+0%"
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "+0%",
+      "pitch": "+0Hz",
+      "volume": "+20%"
+    },
+    "calm": {
+      "rate": "+0%",
+      "pitch": "+0Hz"
+    },
+    "worried": {
+      "rate": "+0%",
+      "pitch": "+0Hz"
+    },
+    "exasperated": {
+      "rate": "+10%",
+      "pitch": "+5Hz"
+    },
+    "proud": {
+      "rate": "+5%",
+      "pitch": "+5Hz"
+    },
+    "whiny": {
+      "rate": "+5%",
+      "pitch": "-5Hz"
+    },
+    "excited": {
+      "rate": "+10%",
+      "pitch": "+5Hz"
+    },
+    "panic": {
+      "rate": "+20%",
+      "pitch": "+10Hz"
+    }
+  },
+  "Doraemon": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "+0%",
+      "pitch": "+0Hz",
+      "volume": "+20%"
+    },
+    "excited": {
+      "rate": "+15%",
+      "pitch": "+10Hz"
+    },
+    "exasperated": {
+      "rate": "+10%",
+      "pitch": "+5Hz"
+    },
+    "proud": {
+      "rate": "+5%",
+      "pitch": "+5Hz"
+    },
+    "happy": {
+      "rate": "+10%",
+      "pitch": "+10Hz"
+    }
   }
 }

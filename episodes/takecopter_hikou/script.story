@@ -24,7 +24,7 @@
 
 7
 00:00:37,500 --> 00:00:44,000
-[Nobita]{Camera:Shake|intensity=0.2} 那未来人肯定有办法让人类飞上天的吧！我想要飞！像鸟一样自由飞翔！
+[Nobita]{Camera:Shake|intensity=0.2}{Voice:excited} 那未来人肯定有办法让人类飞上天的吧！我想要飞！像鸟一样自由飞翔！
 
 8
 00:00:46,000 --> 00:00:51,500
@@ -32,7 +32,7 @@
 
 9
 00:00:53,500 --> 00:00:59,500
-[Doraemon]{TakeOutFromPocket}{Camera:Static|position=0,2.5,6|lookAt=0,1.2,0} 找到了！这个给你——竹蜻蜓！
+[Doraemon]{TakeOutFromPocket}{Camera:Static|position=0,2.5,6|lookAt=0,1.2,0}{Voice:excited} 找到了！这个给你——竹蜻蜓！
 
 10
 00:01:01,500 --> 00:01:07,000
@@ -44,7 +44,7 @@
 
 12
 00:01:18,500 --> 00:01:24,000
-[Nobita]{TriumphPose}{Camera:ZoomIn|targetPos=1.5,1.5,0|distance=2.5} 真的吗？！太棒了！快给我试试！
+[Nobita]{TriumphPose}{Camera:ZoomIn|targetPos=1.5,1.5,0|distance=2.5}{Voice:excited} 真的吗？！太棒了！快给我试试！
 
 13
 00:01:26,000 --> 00:01:30,500
@@ -56,27 +56,27 @@
 
 15
 00:01:41,000 --> 00:01:48,500
-[Nobita]{FlyPose}{Camera:ZoomOut|targetPos=0,1.5,0|distance=15}{Event:Move|character=Nobita|y=3|duration=2.0|relative=true} 我要往上飞——！哇啊啊啊——！
+[Nobita]{FlyPose}{Camera:ZoomOut|targetPos=0,1.5,0|distance=15}{Event:Move|character=Nobita|y=3|duration=2.0|relative=true}{Voice:excited} 我要往上飞——！哇啊啊啊——！
 
 16
 00:01:50,500 --> 00:01:57,000
-[Nobita]{FlailArms}{Camera:Shake|intensity=0.4} 好痛！天花板好低啊——！
+[Nobita]{FlailArms}{Camera:Shake|intensity=0.4}{Voice:panic} 好痛！天花板好低啊——！
 
 17
 00:01:59,000 --> 00:02:05,500
-[Doraemon]{Camera:Pan|offset=0,2,0|lookAt=0,3,0} 大雄！冷静一点！慢慢控制高度！
+[Doraemon]{Camera:Pan|offset=0,2,0|lookAt=0,3,0}{Voice:panic} 大雄！冷静一点！慢慢控制高度！
 
 18
 00:02:07,500 --> 00:02:15,000
-[Nobita]{FlailArms}{Camera:Shake|intensity=0.3}{Event:Move|character=Nobita|x=2|y=-1|z=2|duration=1.5|relative=true} 哇——！往左！不对，往右！啊——！停不下来了——！
+[Nobita]{FlailArms}{Camera:Shake|intensity=0.3}{Event:Move|character=Nobita|x=2|y=-1|z=2|duration=1.5|relative=true}{Voice:panic} 哇——！往左！不对，往右！啊——！停不下来了——！
 
 19
 00:02:17,000 --> 00:02:24,000
-[Nobita]{FlailArms}{Camera:Shake|intensity=0.5} 哇啊！我的书架！啊！台灯！
+[Nobita]{FlailArms}{Camera:Shake|intensity=0.5}{Voice:panic} 哇啊！我的书架！啊！台灯！
 
 20
 00:02:26,000 --> 00:02:32,500
-[Doraemon]{Camera:ZoomOut|targetPos=0,1.5,0|distance=12} 小心我的铜锣烧！啊——！我的抽屉也倒了！
+[Doraemon]{Camera:ZoomOut|targetPos=0,1.5,0|distance=12}{Voice:panic} 小心我的铜锣烧！啊——！我的抽屉也倒了！
 
 21
 00:02:34,500 --> 00:02:41,000
@@ -132,7 +132,7 @@
 
 33
 00:04:17,500 --> 00:04:23,000
-[Shizuka]{ClapHands}{Camera:Static|position=8,3,4|lookAt=0,1.5,0} 哇！好厉害！
+[Shizuka]{ClapHands}{Camera:Static|position=8,3,4|lookAt=0,1.5,0}{Voice:happy} 哇！好厉害！
 
 34
 00:04:25,000 --> 00:04:32,500
@@ -148,35 +148,35 @@
 
 37
 00:04:53,500 --> 00:05:01,000
-[Doraemon]{PanicSpin}{Camera:ZoomIn|targetPos=0,1.5,0|distance=5} 笨蛋！快下来！电池快没电了！到时候你会掉下来的！
+[Doraemon]{PanicSpin}{Camera:ZoomIn|targetPos=0,1.5,0|distance=5}{Voice:panic} 笨蛋！快下来！电池快没电了！到时候你会掉下来的！
 
 38
 00:05:03,000 --> 00:05:11,500
-[Nobita]{FallPanic}{Camera:TrackingCloseUp|characterName=Nobita}{Music:Play|name=chaos_theme|fadeIn=0.5|baseVolume=0.75|endTime=45.0}{Event:Move|character=Nobita|y=-3|duration=1.0|relative=true} 啊——！怎么回事——！竹蜻蜓转得好慢——！啊——！开始往下掉了——！
+[Nobita]{FallPanic}{Camera:TrackingCloseUp|characterName=Nobita}{Music:Play|name=chaos_theme|fadeIn=0.5|baseVolume=0.75|endTime=45.0}{Event:Move|character=Nobita|y=-3|duration=1.0|relative=true}{Voice:scared} 啊——！怎么回事——！竹蜻蜓转得好慢——！啊——！开始往下掉了——！
 
 39
 00:05:13,500 --> 00:05:19,000
-[Shizuka]{Camera:Shake|intensity=0.4} 大雄——！不好了大雄——！
+[Shizuka]{Camera:Shake|intensity=0.4}{Voice:worried} 大雄——！不好了大雄——！
 
 40
 00:05:21,000 --> 00:05:29,500
-[Nobita]{FallPanic}{Camera:Shake|intensity=0.5}{Event:Move|character=Nobita|y=-8|duration=3.0|relative=true} 救命啊——！哆啦A梦——！救我——！
+[Nobita]{FallPanic}{Camera:Shake|intensity=0.5}{Event:Move|character=Nobita|y=-8|duration=3.0|relative=true}{Voice:scared} 救命啊——！哆啦A梦——！救我——！
 
 41
 00:05:31,500 --> 00:05:40,000
-[Doraemon]{ReachHand}{Prop:TakeCopter|character=Doraemon}{Camera:WhipPan|fromTarget=0,10,0|toTarget=0,5,0|duration=0.5} 真是的！每次都这么乱来！备用竹蜻蜓！
+[Doraemon]{ReachHand}{Prop:TakeCopter|character=Doraemon}{Camera:WhipPan|fromTarget=0,10,0|toTarget=0,5,0|duration=0.5}{Voice:panic} 真是的！每次都这么乱来！备用竹蜻蜓！
 
 42
 00:05:42,000 --> 00:05:51,000
-[Doraemon]{ReachHand}{Camera:Static|position=0,10,8|lookAt=0,1.5,0}{Event:Move|character=Doraemon|y=10|duration=2.5|relative=true} 大雄！把手给我！
+[Doraemon]{ReachHand}{Camera:Static|position=0,10,8|lookAt=0,1.5,0}{Event:Move|character=Doraemon|y=10|duration=2.5|relative=true}{Voice:panic} 大雄！把手给我！
 
 43
 00:05:53,000 --> 00:06:01,000
-[Nobita]{Camera:Shake|intensity=0.4} 哆啦A梦——！我的手——！快够不到了——！
+[Nobita]{Camera:Shake|intensity=0.4}{Voice:scared} 哆啦A梦——！我的手——！快够不到了——！
 
 44
 00:06:03,000 --> 00:06:12,000
-[Doraemon]{ReachHand}{Camera:ZoomIn|targetPos=0,5,0|distance=4}{Event:Move|character=Nobita|y=-2|duration=2.0|relative=true} 抓紧了！我带你慢慢降落！
+[Doraemon]{ReachHand}{Camera:ZoomIn|targetPos=0,5,0|distance=4}{Event:Move|character=Nobita|y=-2|duration=2.0|relative=true}{Voice:calm} 抓紧了！我带你慢慢降落！
 
 45
 00:06:14,000 --> 00:06:22,500
@@ -188,7 +188,7 @@
 
 47
 00:06:34,000 --> 00:06:41,500
-[Nobita]{Tremble}{Camera:Shake|intensity=0.2} 头好晕……腿也软了……天旋地转的……
+[Nobita]{Tremble}{Camera:Shake|intensity=0.2}{Voice:scared} 头好晕……腿也软了……天旋地转的……
 
 48
 00:06:43,500 --> 00:06:50,000

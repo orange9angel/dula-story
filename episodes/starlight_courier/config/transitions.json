@@ -1,10 +1,15 @@
 {
   "exits": {
     "NightStreetScene": { "x": 0, "z": 5 },
-    "NightRoomScene": { "x": 0, "z": -5 }
+    "NightRoomScene": { "x": 0, "z": -5 },
+    "DrawerScene": { "x": 0, "z": 2 },
+    "TimeTunnelScene": { "x": 0, "z": 0 },
+    "FutureCityScene": { "x": 0, "z": 5 }
   },
   "entrances": {
     "NightRoomScene": { "x": 0, "z": 5 },
-    "StarSkyScene": { "x": 0, "z": 0, "y": 3 }
+    "DrawerScene": { "x": 0, "z": 2 },
+    "TimeTunnelScene": { "x": 0, "z": 0, "y": 0.1 },
+    "FutureCityScene": { "x": 0, "z": 5 }
   }
 }
