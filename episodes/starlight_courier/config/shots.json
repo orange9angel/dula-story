@@ -1,0 +1,71 @@
+{
+  "description": "星光快递员 分镜定义 - 按关键镜头分组输出，避免全片重复渲染",
+  "outputMode": "by_shot",
+  "shots": [
+    {
+      "id": "shot_01",
+      "name": "夜街相遇",
+      "timeRange": ["00:00:00", "00:00:52"],
+      "entries": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "scenes": ["NightStreetScene"],
+      "focus": "星仔小月对话，探测器发现信号",
+      "checklist": [
+        "角色不走出画面",
+        "TwoShot 能看到两个角色",
+        "CloseUp 角色面部清晰"
+      ]
+    },
+    {
+      "id": "shot_02",
+      "name": "拜访大雄家",
+      "timeRange": ["00:00:52", "00:01:40"],
+      "entries": [10, 11, 12, 13, 14, 15, 16, 17],
+      "scenes": ["NightRoomScene"],
+      "focus": "星仔小月向哆啦A梦求助，哆啦A梦同意帮忙",
+      "checklist": [
+        "三个角色站位不重叠",
+        "Orbit 运镜不穿过角色",
+        "Entry 17 角色走向抽屉方向"
+      ]
+    },
+    {
+      "id": "shot_03",
+      "name": "抽屉时光机",
+      "timeRange": ["00:01:40", "00:02:01"],
+      "entries": [18, 19, 20, 21, 22, 23, 24],
+      "scenes": ["DrawerScene"],
+      "focus": "打开抽屉，三人依次跳入时光机",
+      "checklist": [
+        "角色不堆叠在同一坐标",
+        "JumpIntoDrawer 动画连贯",
+        "抽屉打开时光效正常"
+      ]
+    },
+    {
+      "id": "shot_04",
+      "name": "时光隧道",
+      "timeRange": ["00:02:01", "00:02:53"],
+      "entries": [25, 26, 27, 28, 29, 30, 31, 32, 33],
+      "scenes": ["TimeTunnelScene"],
+      "focus": "时光隧道飞行，大雄意外跟来，四人对话",
+      "checklist": [
+        "角色不站成一条直线",
+        "大雄从天上掉下来自然",
+        "Xingzai 晕机上升不突兀"
+      ]
+    },
+    {
+      "id": "shot_05",
+      "name": "未来城告别",
+      "timeRange": ["00:02:53", "00:03:46"],
+      "entries": [34, 35, 36, 37, 38, 39, 40, 41],
+      "scenes": ["FutureCityScene"],
+      "focus": "到达3026年，告别，飞船起飞",
+      "checklist": [
+        "四个角色站位有层次",
+        "飞船出现和起飞连贯",
+        "告别动作自然"
+      ]
+    }
+  ]
+}

@@ -232,10 +232,10 @@ export class DrawerScene extends SceneBase {
    * Trigger the drawer opening animation.
    * Called from Storyboard when {Event:OpenDrawer} is encountered.
    */
-  openDrawer() {
+  openDrawer(startTime = null) {
     if (this.isDrawerOpening) return;
     this.isDrawerOpening = true;
-    this.drawerOpenStartTime = performance.now() / 1000;
+    this.drawerOpenStartTime = startTime !== null ? startTime : (performance.now() / 1000);
     this.drawerOpenProgress = 0;
   }
 

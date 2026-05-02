@@ -1,6 +1,10 @@
 import * as THREE from 'three';
 import { SceneBase } from 'dula-engine';
 
+/**
+ * NightStreetScene — 雨夜街道
+ * 预计算安全运镜区域：相机禁止进入建筑物、路灯等区域
+ */
 export class NightStreetScene extends SceneBase {
   constructor() {
     super('NightStreetScene');
@@ -71,29 +75,6 @@ export class NightStreetScene extends SceneBase {
       building.position.set(side * (11 + w / 2), h / 2, z);
       building.castShadow = true;
       this.scene.add(building);
-
-      // Windows with warm glow (some lit, some dark)
-      const windowMatLit = new THREE.MeshBasicMaterial({ color: 0xffdd88 });
-      const windowMatDark = new THREE.MeshStandardMaterial({ color: 0x0a0a15, roughness: 0.9 });
-      const cols = Math.floor(w / 1.5);
-      const rows = Math.floor(h / 2.5);
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          if (Math.random() > 0.6) {
-            const win = new THREE.Mesh(
-              new THREE.PlaneGeometry(0.6, 0.9),
-              Math.random() > 0.3 ? windowMatLit : windowMatDark
-            );
-            win.position.set(
-              building.position.x + (side === -1 ? d / 2 + 0.05 : -d / 2 - 0.05),
-              2 + r * 2.2,
-              z + (c - (cols - 1) / 2) * 1.4
-            );
-            win.rotation.y = side === -1 ? Math.PI / 2 : -Math.PI / 2;
-            this.scene.add(win);
-          }
-        }
-      }
     }
 
     // ---- Street lamps (warm glow) ----

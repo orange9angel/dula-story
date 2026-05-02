@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**当前 Episode**：`episodes/dunk_master_doraemon/`（「扣篮大师哆啦A梦」——哆啦A梦在NBA球场表演扣篮）
+**当前 Episode**：`episodes/starlight_courier/`（「星光快递员」——小月、星仔的跨时空快递冒险）
 
 > 历史 Episode：
+> - `episodes/dunk_master_doraemon/`（「扣篮大师哆啦A梦」）
 > - `episodes/takecopter_hikou/`（「竹蜻蜓飞行」）
 > - `episodes/bichong_qiupai/`（「必中球拍」）
 
@@ -292,13 +293,16 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 
 ---
 
-## 9. 当前 Episode 已知问题（dunk_master_doraemon）
+## 9. 当前 Episode 已知问题（starlight_courier）
 
 | 问题 | 状态 | 备注 |
 |------|------|------|
-| 360° 环绕时角色提前落地 | 🔄 待修复 | DunkReach 动画 3.0s 结束但飞行窗口 9.17s，需保持空中姿态直到扣篮完成 |
-| 扣篮音效不够真实 | 🔄 待修复 | 当前为 Mixkit hard-hit + net 合成，需寻找真实 slam-dunk 录音 |
-| 欢呼声不像篮球场 | 🔄 待修复 | 当前 Mixkit crowd 偏通用体育场，需找 NBA 球场专属欢呼/呐喊素材 |
+| DrawerScene 抽屉动画时间基准 | ✅ 已修复 | `openDrawer()` 改为接受 story time 参数，避免 `performance.now()` 与 story time 不一致 |
+| DrawerScene 角色 desk height 位置覆盖 | ✅ 已修复 | `switchScene()` 增加 `startTime` 过滤，防止未来 placement 覆盖当前位置 |
+| 011_Doraemon.mp3 "卡痰"音频 artifact | ✅ 已修复 | `generate_audio.py` 增加 `atrim=start=0.2` 去除 edge-tts MP3 编码器前导 padding |
+| 视频 concat 后时间戳偏移 | 🔄 已知 | concat 输出有 `start: -0.021333` 偏移，视频流 `start_time=6.45s`，需用外部工具裁剪时注意 |
+| BGM 风格匹配 | 🔄 待优化 | 当前使用 procedural BGM，后续可替换为 Pixabay 手动素材 |
+| 场景过渡动画 | 🔄 待优化 | 部分场景切换缺少退场/入场动画，可补充 fadeslide 过渡 |
 
 ---
 

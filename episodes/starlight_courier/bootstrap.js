@@ -8,6 +8,7 @@ import { NightRoomScene } from './scenes/NightRoomScene.js';
 import { DrawerScene } from './scenes/DrawerScene.js';
 import { TimeTunnelScene } from './scenes/TimeTunnelScene.js';
 import { FutureCityScene } from './scenes/FutureCityScene.js';
+import { SpaceshipCabinScene } from './scenes/SpaceshipCabinScene.js';
 import { registerScene } from 'dula-engine';
 
 // Register all official assets (characters, animations, scenes, camera moves, voices)
@@ -19,3 +20,4 @@ registerScene('NightRoomScene', NightRoomScene);
 registerScene('DrawerScene', DrawerScene);
 registerScene('TimeTunnelScene', TimeTunnelScene);
 registerScene('FutureCityScene', FutureCityScene);
+registerScene('SpaceshipCabinScene', SpaceshipCabinScene);

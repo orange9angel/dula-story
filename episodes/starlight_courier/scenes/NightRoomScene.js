@@ -27,7 +27,7 @@ export class NightRoomScene extends SceneBase {
     });
 
     // ---- Floor (dark wood) ----
-    const floorGeo = new THREE.PlaneGeometry(20, 20);
+    const floorGeo = new THREE.PlaneGeometry(12, 12);
     const floorMat = new THREE.MeshStandardMaterial({ color: 0x1a1510, roughness: 0.7, metalness: 0.05 });
     const floor = new THREE.Mesh(floorGeo, floorMat);
     floor.rotation.x = -Math.PI / 2;
@@ -36,43 +36,121 @@ export class NightRoomScene extends SceneBase {
 
     // ---- Walls (dark, cozy) ----
     const wallMat = new THREE.MeshStandardMaterial({ color: 0x1e1e2a, roughness: 0.95 });
-    const wallGeo = new THREE.PlaneGeometry(20, 10);
+    const wallGeo = new THREE.PlaneGeometry(12, 8);
 
     // Back wall
     const backWall = new THREE.Mesh(wallGeo, wallMat);
-    backWall.position.set(0, 5, -5);
+    backWall.position.set(0, 4, -6);
     backWall.receiveShadow = true;
     this.scene.add(backWall);
 
     // Left wall
     const leftWall = new THREE.Mesh(wallGeo, wallMat);
     leftWall.rotation.y = Math.PI / 2;
-    leftWall.position.set(-10, 5, 0);
+    leftWall.position.set(-6, 4, 0);
     leftWall.receiveShadow = true;
     this.scene.add(leftWall);
 
-    // Right wall
-    const rightWall = new THREE.Mesh(wallGeo, wallMat);
-    rightWall.rotation.y = -Math.PI / 2;
-    rightWall.position.set(10, 5, 0);
-    rightWall.receiveShadow = true;
-    this.scene.add(rightWall);
+    // Right wall (with door opening)
+    const rightWallGroup = new THREE.Group();
+    // Wall segment above door
+    const rightWallTop = new THREE.Mesh(
+      new THREE.PlaneGeometry(12, 3),
+      wallMat
+    );
+    rightWallTop.rotation.y = -Math.PI / 2;
+    rightWallTop.position.set(6, 6.5, 0);
+    rightWallGroup.add(rightWallTop);
+    // Wall segment left of door
+    const rightWallLeft = new THREE.Mesh(
+      new THREE.PlaneGeometry(3.5, 5),
+      wallMat
+    );
+    rightWallLeft.rotation.y = -Math.PI / 2;
+    rightWallLeft.position.set(6, 2.5, -4.25);
+    rightWallGroup.add(rightWallLeft);
+    // Wall segment right of door
+    const rightWallRight = new THREE.Mesh(
+      new THREE.PlaneGeometry(3.5, 5),
+      wallMat
+    );
+    rightWallRight.rotation.y = -Math.PI / 2;
+    rightWallRight.position.set(6, 2.5, 4.25);
+    rightWallGroup.add(rightWallRight);
+    this.scene.add(rightWallGroup);
+
+    // ---- Door (to drawer/time machine room) ----
+    // Use emissive materials so door is visible even in dark room
+    const doorFrameMat = new THREE.MeshStandardMaterial({ 
+      color: 0x5a3d28, 
+      emissive: 0x2a1a10,
+      emissiveIntensity: 0.3,
+      roughness: 0.6 
+    });
+    // Door frame
+    const doorFrameTop = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 2.4), doorFrameMat);
+    doorFrameTop.position.set(6, 5, 0);
+    this.scene.add(doorFrameTop);
+    const doorFrameLeft = new THREE.Mesh(new THREE.BoxGeometry(0.2, 5, 0.2), doorFrameMat);
+    doorFrameLeft.position.set(6, 2.5, -1.2);
+    this.scene.add(doorFrameLeft);
+    const doorFrameRight = new THREE.Mesh(new THREE.BoxGeometry(0.2, 5, 0.2), doorFrameMat);
+    doorFrameRight.position.set(6, 2.5, 1.2);
+    this.scene.add(doorFrameRight);
+    // Door panel (slightly ajar, with emissive glow)
+    const doorPanel = new THREE.Mesh(
+      new THREE.BoxGeometry(0.1, 4.8, 2.2),
+      new THREE.MeshStandardMaterial({ 
+        color: 0x4a3525, 
+        emissive: 0x1a1008,
+        emissiveIntensity: 0.25,
+        roughness: 0.7 
+      })
+    );
+    doorPanel.position.set(5.88, 2.4, 0.3);
+    doorPanel.rotation.y = 0.35; // slightly more open
+    this.scene.add(doorPanel);
+    // Door handle (brass glow)
+    const doorHandle = new THREE.Mesh(
+      new THREE.SphereGeometry(0.1, 8, 8),
+      new THREE.MeshStandardMaterial({ 
+        color: 0xc4a35a, 
+        emissive: 0x886633,
+        emissiveIntensity: 0.4,
+        metalness: 0.7, 
+        roughness: 0.3 
+      })
+    );
+    doorHandle.position.set(5.82, 2.4, 1.0);
+    this.scene.add(doorHandle);
+    // Subtle warm light leaking from beyond door (suggests another room)
+    const doorLeakLight = new THREE.PointLight(0xffaa44, 2.0, 5);
+    doorLeakLight.position.set(6.5, 2, 0);
+    this.scene.add(doorLeakLight);
+    // Dark void beyond door (suggests another room)
+    const voidPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(2.2, 5),
+      new THREE.MeshBasicMaterial({ color: 0x0a0a10 })
+    );
+    voidPlane.rotation.y = -Math.PI / 2;
+    voidPlane.position.set(6.02, 2.5, 0);
+    this.scene.add(voidPlane);
 
     // Ceiling
-    const ceiling = new THREE.Mesh(new THREE.PlaneGeometry(20, 20), new THREE.MeshStandardMaterial({ color: 0x151520, roughness: 0.95 }));
+    const ceiling = new THREE.Mesh(new THREE.PlaneGeometry(12, 12), new THREE.MeshStandardMaterial({ color: 0x151520, roughness: 0.95 }));
     ceiling.rotation.x = Math.PI / 2;
-    ceiling.position.y = 10;
+    ceiling.position.y = 8;
     this.scene.add(ceiling);
 
-    // ---- Skylight / Attic window (source of starlight) ----
-    const windowFrameGeo = new THREE.BoxGeometry(5, 4, 0.15);
+    // ---- Window on back wall (source of starlight) ----
+    const windowFrameGeo = new THREE.BoxGeometry(4, 3, 0.15);
     const frameMat = new THREE.MeshStandardMaterial({ color: 0x333344, roughness: 0.5, metalness: 0.3 });
     const windowFrame = new THREE.Mesh(windowFrameGeo, frameMat);
-    windowFrame.position.set(0, 7, -4.9);
+    windowFrame.position.set(0, 5, -5.9);
     this.scene.add(windowFrame);
 
     // Glass pane (slightly blue, transparent)
-    const glassGeo = new THREE.PlaneGeometry(4.5, 3.5);
+    const glassGeo = new THREE.PlaneGeometry(3.5, 2.5);
     const glassMat = new THREE.MeshStandardMaterial({
       color: 0x1a2a4a,
       transparent: true,
@@ -81,12 +159,12 @@ export class NightRoomScene extends SceneBase {
       metalness: 0.3,
     });
     const glass = new THREE.Mesh(glassGeo, glassMat);
-    glass.position.set(0, 7, -4.82);
+    glass.position.set(0, 5, -5.82);
     this.scene.add(glass);
 
     // Moonlight streaming through window
     const moonLight = new THREE.DirectionalLight(0x8899ff, 0.6);
-    moonLight.position.set(0, 8, -8);
+    moonLight.position.set(0, 6, -10);
     moonLight.target.position.set(0, 0, 0);
     moonLight.castShadow = true;
     this.scene.add(moonLight);
@@ -94,7 +172,7 @@ export class NightRoomScene extends SceneBase {
 
     // Window glow (subtle)
     const windowGlow = new THREE.PointLight(0x6688cc, 2, 8);
-    windowGlow.position.set(0, 7, -4);
+    windowGlow.position.set(0, 5, -5);
     this.scene.add(windowGlow);
 
     // ---- Star map projection on wall (glowing constellation) ----
@@ -144,22 +222,22 @@ export class NightRoomScene extends SceneBase {
       emissiveIntensity: 0.4,
       roughness: 0.9,
     });
-    const starMapPlane = new THREE.Mesh(new THREE.PlaneGeometry(6, 6), starMapMat);
-    starMapPlane.position.set(0, 4.5, -4.85);
+    const starMapPlane = new THREE.Mesh(new THREE.PlaneGeometry(5, 4), starMapMat);
+    starMapPlane.position.set(0, 4, -5.85);
     this.scene.add(starMapPlane);
 
     // ---- Desk (under the star map) ----
     const deskMat = new THREE.MeshStandardMaterial({ color: 0x3d2817, roughness: 0.6 });
-    const deskTop = new THREE.Mesh(new THREE.BoxGeometry(4, 0.12, 2), deskMat);
-    deskTop.position.set(0, 1.8, -3.5);
+    const deskTop = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.12, 1.8), deskMat);
+    deskTop.position.set(0, 1.8, -4);
     deskTop.castShadow = true;
     this.scene.add(deskTop);
 
     // Desk legs
     const legGeo = new THREE.CylinderGeometry(0.06, 0.06, 1.8, 8);
-    for (const [lx, lz] of [[-1.7, -0.8], [1.7, -0.8], [-1.7, 0.8], [1.7, 0.8]]) {
+    for (const [lx, lz] of [[-1.5, -0.7], [1.5, -0.7], [-1.5, 0.7], [1.5, 0.7]]) {
       const leg = new THREE.Mesh(legGeo, deskMat);
-      leg.position.set(lx, 0.9, -3.5 + lz);
+      leg.position.set(lx, 0.9, -4 + lz);
       leg.castShadow = true;
       this.scene.add(leg);
     }
@@ -169,26 +247,26 @@ export class NightRoomScene extends SceneBase {
       new THREE.CylinderGeometry(0.12, 0.15, 0.05, 12),
       new THREE.MeshStandardMaterial({ color: 0x222222, metalness: 0.5, roughness: 0.4 })
     );
-    lampBase.position.set(-1.2, 1.9, -3.5);
+    lampBase.position.set(-1, 1.9, -4);
     this.scene.add(lampBase);
 
     const lampPole = new THREE.Mesh(
       new THREE.CylinderGeometry(0.015, 0.015, 0.5, 6),
       new THREE.MeshStandardMaterial({ color: 0x222222, metalness: 0.5 })
     );
-    lampPole.position.set(-1.2, 2.15, -3.5);
+    lampPole.position.set(-1, 2.15, -4);
     this.scene.add(lampPole);
 
     const lampShade = new THREE.Mesh(
       new THREE.ConeGeometry(0.15, 0.2, 12, 1, true),
       new THREE.MeshStandardMaterial({ color: 0xcc7744, roughness: 0.6, side: THREE.DoubleSide })
     );
-    lampShade.position.set(-1.2, 2.35, -3.5);
+    lampShade.position.set(-1, 2.35, -4);
     this.scene.add(lampShade);
 
     // Warm desk lamp light
     const deskLampLight = new THREE.PointLight(0xffaa66, 4, 5);
-    deskLampLight.position.set(-1.2, 2.3, -3.5);
+    deskLampLight.position.set(-1, 2.3, -4);
     deskLampLight.castShadow = true;
     this.scene.add(deskLampLight);
 
@@ -197,19 +275,19 @@ export class NightRoomScene extends SceneBase {
       new THREE.SphereGeometry(0.04, 8, 8),
       new THREE.MeshBasicMaterial({ color: 0xffddaa })
     );
-    bulb.position.set(-1.2, 2.28, -3.5);
+    bulb.position.set(-1, 2.28, -4);
     this.scene.add(bulb);
 
     // ---- Bookshelf (left wall, dark silhouette) ----
     const shelfMat = new THREE.MeshStandardMaterial({ color: 0x2a1f15, roughness: 0.8 });
     const shelfBack = new THREE.Mesh(new THREE.BoxGeometry(0.2, 4, 3), shelfMat);
-    shelfBack.position.set(-9.9, 2, 1);
+    shelfBack.position.set(-5.9, 2, 1);
     shelfBack.castShadow = true;
     this.scene.add(shelfBack);
 
     for (let i = 0; i < 4; i++) {
       const board = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.06, 2.8), shelfMat);
-      board.position.set(-9.75, 0.5 + i * 1.0, 1);
+      board.position.set(-5.75, 0.5 + i * 1.0, 1);
       this.scene.add(board);
     }
 
@@ -222,7 +300,7 @@ export class NightRoomScene extends SceneBase {
           new THREE.BoxGeometry(0.05, h, 0.15),
           new THREE.MeshStandardMaterial({ color: bookColors[(row * 6 + b) % bookColors.length], roughness: 0.85 })
         );
-        book.position.set(-9.55, 0.5 + row * 1.0 + h / 2, -0.2 + b * 0.22);
+        book.position.set(-5.55, 0.5 + row * 1.0 + h / 2, -0.2 + b * 0.22);
         this.scene.add(book);
       }
     }
@@ -233,7 +311,7 @@ export class NightRoomScene extends SceneBase {
       new THREE.MeshStandardMaterial({ color: 0x2a2028, roughness: 0.95 })
     );
     rug.rotation.x = -Math.PI / 2;
-    rug.position.set(0, 0.01, 1);
+    rug.position.set(0, 0.01, 0);
     rug.receiveShadow = true;
     this.scene.add(rug);
 
@@ -242,14 +320,14 @@ export class NightRoomScene extends SceneBase {
       new THREE.CylinderGeometry(0.4, 0.4, 0.06, 12),
       new THREE.MeshStandardMaterial({ color: 0x3d2817, roughness: 0.7 })
     );
-    stoolSeat.position.set(0, 1.0, -2.5);
+    stoolSeat.position.set(0, 1.0, -3);
     stoolSeat.castShadow = true;
     this.scene.add(stoolSeat);
 
     const stoolLegGeo = new THREE.CylinderGeometry(0.03, 0.03, 1.0, 6);
     for (const angle of [0, Math.PI * 2 / 3, Math.PI * 4 / 3]) {
       const sl = new THREE.Mesh(stoolLegGeo, deskMat);
-      sl.position.set(Math.cos(angle) * 0.25, 0.5, -2.5 + Math.sin(angle) * 0.25);
+      sl.position.set(Math.cos(angle) * 0.25, 0.5, -3 + Math.sin(angle) * 0.25);
       sl.castShadow = true;
       this.scene.add(sl);
     }
@@ -259,9 +337,9 @@ export class NightRoomScene extends SceneBase {
     const starCount = 50;
     const skyStarPositions = new Float32Array(starCount * 3);
     for (let i = 0; i < starCount; i++) {
-      skyStarPositions[i * 3] = (Math.random() - 0.5) * 4;
-      skyStarPositions[i * 3 + 1] = 9 + Math.random() * 2;
-      skyStarPositions[i * 3 + 2] = (Math.random() - 0.5) * 3 - 4;
+      skyStarPositions[i * 3] = (Math.random() - 0.5) * 3;
+      skyStarPositions[i * 3 + 1] = 7 + Math.random() * 1.5;
+      skyStarPositions[i * 3 + 2] = (Math.random() - 0.5) * 2 - 5;
     }
     starGeo.setAttribute('position', new THREE.BufferAttribute(skyStarPositions, 3));
     const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.06, transparent: true, opacity: 0.8 });
