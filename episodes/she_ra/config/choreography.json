@@ -1,0 +1,29 @@
+{
+  "brightMoonScene": {
+    "placements": [
+      { "character": "SheRa", "x": 0, "y": 0.01, "z": 0, "face": "center" },
+      { "character": "Adora", "x": -2, "y": 0.01, "z": 1, "face": "SheRa" }
+    ],
+    "props": [],
+    "ballEvents": [],
+    "storyEvents": []
+  },
+  "frightZoneScene": {
+    "placements": [
+      { "character": "Hordak", "x": 0, "y": 0.01, "z": -2, "face": "center" },
+      { "character": "Catra", "x": 3, "y": 0.01, "z": 0, "face": "Hordak" }
+    ],
+    "props": [],
+    "ballEvents": [],
+    "storyEvents": []
+  },
+  "whisperingWoodsScene": {
+    "placements": [
+      { "character": "SheRa", "x": 0, "y": 0.01, "z": 0, "face": "center" },
+      { "character": "Catra", "x": 2, "y": 0.01, "z": 1, "face": "SheRa" }
+    ],
+    "props": [],
+    "ballEvents": [],
+    "storyEvents": []
+  }
+}

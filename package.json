@@ -39,10 +39,16 @@
     "audio:starlight:ds": "dula-audio ./episodes/starlight_courier --provider=dashscope",
     "verify:starlight": "dula-verify ./episodes/starlight_courier",
     "render:starlight": "dula-render ./episodes/starlight_courier",
-    "build:starlight": "npm run audio:starlight && npm run render:starlight"
+    "build:starlight": "npm run audio:starlight && npm run render:starlight",
+    "audio:she_ra": "dula-audio ./episodes/she_ra",
+    "audio:she_ra:ds": "dula-audio ./episodes/she_ra --provider=dashscope",
+    "verify:she_ra": "dula-verify ./episodes/she_ra",
+    "render:she_ra": "dula-render ./episodes/she_ra",
+    "build:she_ra": "npm run audio:she_ra && npm run render:she_ra",
+    "inspect:she_ra": "dula-inspect ./episodes/she_ra"
   },
   "dependencies": {
-    "dula-assets": "file:../dula-assets/dula-assets-0.1.2.tgz",
+    "dula-assets": "file:../dula-assets",
     "dula-engine": "file:../dula-engine"
   }
 }
