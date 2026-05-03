@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:03,000
-@BrightMoonScene{Music:Play|name=brightmoon_theme|fadeIn=2.0|baseVolume=0.05|endTime=170}
+@BrightMoonScene{Music:Play|name=brightmoon_theme|fadeIn=2.0|baseVolume=0.18|endTime=170}
 {Position:Adora|x=-1|y=0.01|z=1|face=forward}
 {Position:SheRa|x=-5|y=-10|z=1|face=forward}
 
@@ -13,26 +13,34 @@
 [Adora]{HandsOnHips}{Camera:Static|position=-1,2.5,5|lookAt=-1,1.2,1} 我必须保护大家。为了格雷骷髅的荣誉！
 
 4
-00:00:18,000 --> 00:00:23,000
-[Adora]{Transform}{Camera:ZoomIn|distance=3.5} 为了格雷骷髅！赐予我力量吧！
+00:00:18,000 --> 00:00:22,000
+[Adora]{Transform}{Prop:weapon|character=Adora}{Camera:Static|position=-1,3,4|lookAt=-1,2,0} 为了格雷骷髅！赐予我力量吧！
 
 5
-00:00:23,500 --> 00:00:24,000
-{Event:Move|character=Adora|x=-1|y=0.01|z=-3|duration=0.5}
+00:00:22,500 --> 00:00:26,500
+[Adora]{Camera:OrbitCharacter|characterName=Adora|radius=3|height=2|duration=4|endAngle=6.28}
 
 6
-00:00:24,500 --> 00:00:31,000
-{Event:Move|character=SheRa|x=-1|y=0.01|z=1|duration=0.5}
-[SheRa]{DrawSword}{Prop:weapon|character=SheRa}{Camera:LowAngle|distance=4|height=1} 我...是...希瑞！力量之剑，赐予我勇气！
+00:00:27,000 --> 00:00:27,500
+{Transition:Flash|duration=1.0|flashColor=0xffd700}
+{Event:Move|character=Adora|x=-1|y=0.01|z=-3|duration=0.5}
 
 7
-00:00:33,000 --> 00:00:40,000
-[SheRa]{BattleStance} 霍达克，你的邪恶到此为止！
+00:00:28,000 --> 00:00:32,000
+{Event:Move|character=SheRa|x=-1|y=0.01|z=1|duration=0.5}
+[SheRa]{DrawSword}{Prop:weapon|character=SheRa}{Camera:LowAngle|distance=4|height=1.5} 我...是...希瑞！
 
 8
+00:00:33,000 --> 00:00:40,000
+[SheRa]{BattleStance}{Camera:ZoomIn|distance=3.5} 力量之剑，赐予我勇气！霍达克，你的邪恶到此为止！
+
+9
+00:00:40,000 --> 00:00:41,000
+{Transition:Flash|duration=1.0|flashColor=0xff3333}
+
+10
 00:00:41,000 --> 00:00:45,000
-{Transition:Flash|duration=0.8|flashColor=0xff3333}
-@FrightZoneScene{Music:Play|name=frightzone_theme|fadeIn=1.5|baseVolume=0.05|endTime=170}
+@FrightZoneScene{Music:Play|name=frightzone_theme|fadeIn=1.5|baseVolume=0.15|endTime=170}
 {Position:Hordak|x=0|y=0.01|z=-2|face=center}
 {Position:Catra|x=2|y=0.01|z=1|face=Hordak}
 
@@ -57,9 +65,12 @@
 [Catra]{Event:Move|x=2|y=0.01|z=-5|duration=0.5}
 
 14
-00:01:21,000 --> 00:01:25,000
+00:01:20,000 --> 00:01:21,000
 {Transition:Iris|duration=1.0}
-@WhisperingWoodsScene{Music:Play|name=whispering_theme|fadeIn=2.0|baseVolume=0.05|endTime=170}
+
+15
+00:01:21,000 --> 00:01:25,000
+@WhisperingWoodsScene{Music:Play|name=whispering_theme|fadeIn=2.0|baseVolume=0.15|endTime=170}
 {Position:SheRa|x=-1|y=0.01|z=0|face=center}
 {Position:Catra|x=3|y=0.01|z=1|face=SheRa}
 

@@ -451,29 +451,357 @@ if (SceneRegistry.WhisperingWoodsScene) {
   enhanceSceneLighting(SceneRegistry.WhisperingWoodsScene, 1.2, 0xddffdd, 0.3);
 }
 
-// ── She-Ra Sword Hand Attachment ──
-// The sword is positioned statically on the mesh. When DrawSword animation rotates
-// the arm, the sword stays in place. We patch to attach sword to the rightArm group.
-if (CharacterRegistry.SheRa) {
-  const OriginalSheRa = CharacterRegistry.SheRa;
-  const originalSheRaBuild = OriginalSheRa.prototype.build;
-  OriginalSheRa.prototype.build = function () {
-    originalSheRaBuild.call(this);
-    // Reparent sword from mesh to rightArm so it follows hand movement
+// ── BrightMoonScene Enhancement ──
+// Add more visual richness to the castle hall
+function enhanceBrightMoonScene(SceneClass) {
+  const originalBuild = SceneClass.prototype.build;
+  SceneClass.prototype.build = function () {
+    const scene = originalBuild.call(this);
+
+    // Add red carpet runner
+    const carpetGeo = new THREE.PlaneGeometry(3, 15);
+    const carpetMat = new THREE.MeshStandardMaterial({
+      color: 0x8B0000, roughness: 0.9
+    });
+    const carpet = new THREE.Mesh(carpetGeo, carpetMat);
+    carpet.rotation.x = -Math.PI / 2;
+    carpet.position.set(0, 0.015, 2);
+    scene.add(carpet);
+
+    // Gold carpet border
+    for (const side of [-1, 1]) {
+      const borderGeo = new THREE.PlaneGeometry(0.15, 15);
+      const borderMat = new THREE.MeshStandardMaterial({ color: 0xFFD700, metalness: 0.6 });
+      const border = new THREE.Mesh(borderGeo, borderMat);
+      border.rotation.x = -Math.PI / 2;
+      border.position.set(side * 1.5, 0.02, 2);
+      scene.add(border);
+    }
+
+    // Wall sconces (torch holders)
+    const sconceGeo = new THREE.CylinderGeometry(0.08, 0.1, 0.3, 8);
+    const sconceMat = new THREE.MeshStandardMaterial({ color: 0x444444, metalness: 0.7 });
+    for (const side of [-1, 1]) {
+      for (let z = -3; z <= 6; z += 3) {
+        const sconce = new THREE.Mesh(sconceGeo, sconceMat);
+        sconce.position.set(side * 4.5, 2.5, z);
+        sconce.rotation.z = side * Math.PI / 2;
+        scene.add(sconce);
+
+        // Torch flame light
+        const flameLight = new THREE.PointLight(0xff6600, 0.5, 8);
+        flameLight.position.set(side * 4.3, 2.7, z);
+        scene.add(flameLight);
+      }
+    }
+
+    // Floating magic sparkles (more dense)
+    const sparkleCount = 80;
+    const sparkleGeo = new THREE.BufferGeometry();
+    const sparklePositions = new Float32Array(sparkleCount * 3);
+    for (let i = 0; i < sparkleCount; i++) {
+      sparklePositions[i * 3] = (Math.random() - 0.5) * 12;
+      sparklePositions[i * 3 + 1] = Math.random() * 6 + 1;
+      sparklePositions[i * 3 + 2] = (Math.random() - 0.5) * 12;
+    }
+    sparkleGeo.setAttribute('position', new THREE.BufferAttribute(sparklePositions, 3));
+    const sparkleMat = new THREE.PointsMaterial({
+      color: 0xFFD700, size: 0.08, transparent: true, opacity: 0.8,
+      blending: THREE.AdditiveBlending, depthWrite: false
+    });
+    this.sparkles = new THREE.Points(sparkleGeo, sparkleMat);
+    scene.add(this.sparkles);
+
+    // Throne platform steps
+    for (let i = 0; i < 3; i++) {
+      const stepGeo = new THREE.BoxGeometry(4, 0.15, 0.8);
+      const stepMat = new THREE.MeshStandardMaterial({ color: 0x888888, roughness: 0.5 });
+      const step = new THREE.Mesh(stepGeo, stepMat);
+      step.position.set(0, i * 0.15, -3.5 + i * 0.4);
+      scene.add(step);
+    }
+
+    // Store for animation
+    scene.userData.brightMoonEffects = this;
+    this.sparkleTime = 0;
+
+    return scene;
+  };
+
+  // Animate sparkles
+  const originalUpdate = SceneClass.prototype.update || function () {};
+  SceneClass.prototype.update = function (time, delta) {
+    originalUpdate.call(this, time, delta);
+    const effects = this.sparkles ? this : null;
+    if (!effects) return;
+    effects.sparkleTime += delta;
+    const positions = effects.sparkles.geometry.attributes.position.array;
+    for (let i = 0; i < positions.length / 3; i++) {
+      positions[i * 3 + 1] += Math.sin(effects.sparkleTime * 2 + i) * 0.002;
+      // Wrap around
+      if (positions[i * 3 + 1] > 7) positions[i * 3 + 1] = 1;
+    }
+    effects.sparkles.geometry.attributes.position.needsUpdate = true;
+  };
+}
+
+if (SceneRegistry.BrightMoonScene) {
+  enhanceBrightMoonScene(SceneRegistry.BrightMoonScene);
+}
+
+// ── She-Ra & Adora Sword Hand Attachment ──
+// The sword is positioned on the mesh. When DrawSword/Transform animation rotates
+// the arm, the sword needs to follow hand movement with correct orientation.
+// Fix: reparent sword to rightArm and rotate 180° so blade points UP.
+
+function attachSwordToHand(CharacterClass) {
+  if (!CharacterClass) return;
+  const originalBuild = CharacterClass.prototype.build;
+  CharacterClass.prototype.build = function () {
+    originalBuild.call(this);
+    // Reparent sword from mesh to rightArm
     if (this.swordGroup && this.rightArm) {
-      // Remove from mesh
       this.mesh.remove(this.swordGroup);
-      // Add to rightArm group (hand is at local y = -rightArmLength)
-      this.swordGroup.position.set(0, -this.rightArmLength, 0);
-      this.swordGroup.rotation.set(0, 0, 0);
+      // Position: grip center in palm, so hilt is held by hand
+      // Offset upward so guard is at hand level, handle extends into palm
+      this.swordGroup.position.set(0.02, -this.rightArmLength + 0.08, 0.04);
+      // Rotation: 180° around X so blade (+y in swordGroup) points UP
+      // (opposite to arm's +y which points down toward hand)
+      this.swordGroup.rotation.set(Math.PI, 0, 0);
       this.rightArm.add(this.swordGroup);
     }
     // Reparent shield to leftArm
     if (this.shieldGroup && this.leftArm) {
       this.mesh.remove(this.shieldGroup);
-      this.shieldGroup.position.set(0, -this.leftArmLength, 0);
-      this.shieldGroup.rotation.set(0, 0, 0);
+      this.shieldGroup.position.set(-0.02, -this.leftArmLength + 0.03, 0.04);
+      this.shieldGroup.rotation.set(Math.PI, 0, 0);
       this.leftArm.add(this.shieldGroup);
+    }
+  };
+}
+
+attachSwordToHand(CharacterRegistry.SheRa);
+attachSwordToHand(CharacterRegistry.Adora);
+
+// ── Transform & DrawSword Animation Patch ──
+// Keep sword held HIGH at the end of animation (classic pose)
+function patchSwordHoldAnimation(AnimationClass) {
+  if (!AnimationClass) return;
+  const originalUpdate = AnimationClass.prototype.update;
+  AnimationClass.prototype.update = function (t, character) {
+    originalUpdate.call(this, t, character);
+    // Keep arm raised high after animation completes
+    if (t >= 0.99 && character.rightArm) {
+      const rBaseZ = character.rightArmBaseZ || character.rightArm.rotation.z;
+      character.rightArm.rotation.x = -2.3;
+      character.rightArm.rotation.z = rBaseZ - 1.5;
+      if (character.headGroup) character.headGroup.rotation.x = -0.5;
+    }
+  };
+}
+
+patchSwordHoldAnimation(AnimationRegistry.Transform);
+patchSwordHoldAnimation(AnimationRegistry.DrawSword);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ── BrightMoonScene Enhancement ──
+// Add carpets, chandeliers, wall sconces, and richer magic particles
+// ═══════════════════════════════════════════════════════════════════════════════
+if (SceneRegistry.BrightMoonScene) {
+  const OriginalBrightMoon = SceneRegistry.BrightMoonScene;
+  const originalBuild = OriginalBrightMoon.prototype.build;
+  OriginalBrightMoon.prototype.build = function () {
+    originalBuild.call(this);
+    const scene = this.scene;
+
+    // ---- Royal Carpet (red with gold border) ----
+    const carpetGeo = new THREE.PlaneGeometry(4, 12);
+    const carpetTex = (() => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256; canvas.height = 512;
+      const ctx = canvas.getContext('2d');
+      // Red base
+      ctx.fillStyle = '#8B0000';
+      ctx.fillRect(0, 0, 256, 512);
+      // Gold border
+      ctx.strokeStyle = '#FFD700';
+      ctx.lineWidth = 12;
+      ctx.strokeRect(6, 6, 244, 500);
+      // Inner border
+      ctx.lineWidth = 4;
+      ctx.strokeRect(20, 20, 216, 472);
+      // Center pattern (simple diamond)
+      ctx.fillStyle = '#FFD700';
+      ctx.beginPath();
+      ctx.moveTo(128, 100); ctx.lineTo(180, 256); ctx.lineTo(128, 412); ctx.lineTo(76, 256);
+      ctx.closePath();
+      ctx.fill();
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.wrapS = THREE.RepeatWrapping;
+      tex.wrapT = THREE.RepeatWrapping;
+      return tex;
+    })();
+    const carpetMat = new THREE.MeshStandardMaterial({
+      map: carpetTex,
+      roughness: 0.9,
+      metalness: 0.0,
+    });
+    const carpet = new THREE.Mesh(carpetGeo, carpetMat);
+    carpet.rotation.x = -Math.PI / 2;
+    carpet.position.set(0, 0.02, -2);
+    carpet.receiveShadow = true;
+    scene.add(carpet);
+
+    // ---- Chandelier (hanging from above) ----
+    const goldMat = new THREE.MeshStandardMaterial({ color: 0xFFD700, roughness: 0.3, metalness: 0.7 });
+    // Central chain
+    const chain = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 4, 8), goldMat);
+    chain.position.set(0, 10, -5);
+    scene.add(chain);
+    // Main ring
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(1.2, 0.04, 8, 32), goldMat);
+    ring.position.set(0, 8, -5);
+    ring.rotation.x = Math.PI / 2;
+    scene.add(ring);
+    // Inner ring
+    const innerRing = new THREE.Mesh(new THREE.TorusGeometry(0.6, 0.03, 8, 24), goldMat);
+    innerRing.position.set(0, 8.2, -5);
+    innerRing.rotation.x = Math.PI / 2;
+    scene.add(innerRing);
+    // Candle holders and candles
+    for (let i = 0; i < 8; i++) {
+      const angle = (i / 8) * Math.PI * 2;
+      const x = Math.cos(angle) * 1.2;
+      const z = Math.sin(angle) * 1.2 - 5;
+      // Holder arm
+      const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.4, 8), goldMat);
+      arm.position.set(x, 8.2, z);
+      scene.add(arm);
+      // Candle
+      const candle = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.04, 0.04, 0.25, 8),
+        new THREE.MeshStandardMaterial({ color: 0xFFF8DC, roughness: 0.8 })
+      );
+      candle.position.set(x, 8.5, z);
+      scene.add(candle);
+      // Flame (point light + small mesh)
+      const flameMat = new THREE.MeshBasicMaterial({ color: 0xFFAA00 });
+      const flame = new THREE.Mesh(new THREE.SphereGeometry(0.03, 6, 6), flameMat);
+      flame.position.set(x, 8.7, z);
+      scene.add(flame);
+    }
+    // Center crystal
+    const centerCrystal = new THREE.Mesh(
+      new THREE.OctahedronGeometry(0.2, 0),
+      new THREE.MeshStandardMaterial({
+        color: 0x88CCFF,
+        transparent: true,
+        opacity: 0.8,
+        emissive: 0x4488FF,
+        emissiveIntensity: 0.5,
+      })
+    );
+    centerCrystal.position.set(0, 8.5, -5);
+    scene.add(centerCrystal);
+    if (!this.chandelierCrystals) this.chandelierCrystals = [];
+    this.chandelierCrystals.push(centerCrystal);
+
+    // ---- Wall Sconces (flanking the gate) ----
+    for (const side of [-1, 1]) {
+      const sx = side * 3.5;
+      // Bracket
+      const bracket = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.05, 0.2), goldMat);
+      bracket.position.set(sx, 5, -11.2);
+      scene.add(bracket);
+      // Torch
+      const torch = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.04, 0.05, 0.4, 8),
+        new THREE.MeshStandardMaterial({ color: 0x4a3728, roughness: 0.9 })
+      );
+      torch.position.set(sx, 5.2, -11.2);
+      scene.add(torch);
+      // Flame
+      const sconceFlame = new THREE.Mesh(
+        new THREE.SphereGeometry(0.05, 8, 8),
+        new THREE.MeshBasicMaterial({ color: 0xFF6600 })
+      );
+      sconceFlame.position.set(sx, 5.5, -11.2);
+      scene.add(sconceFlame);
+      // Point light
+      const sconceLight = new THREE.PointLight(0xFFAA44, 0.8, 8);
+      sconceLight.position.set(sx, 5.5, -10.5);
+      scene.add(sconceLight);
+    }
+
+    // ---- Enhanced Magic Particles (more, larger, colored) ----
+    const particleColors = [0x88CCFF, 0xFFD700, 0xFF69B4, 0xAAFFAA];
+    if (!this.magicParticles) this.magicParticles = [];
+    for (let i = 0; i < 50; i++) {
+      const color = particleColors[Math.floor(Math.random() * particleColors.length)];
+      const size = 0.02 + Math.random() * 0.04;
+      const particle = new THREE.Mesh(
+        new THREE.SphereGeometry(size, 6, 6),
+        new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.4 + Math.random() * 0.4 })
+      );
+      const px = (Math.random() - 0.5) * 16;
+      const py = 0.5 + Math.random() * 6;
+      const pz = (Math.random() - 0.5) * 16 - 5;
+      particle.position.set(px, py, pz);
+      scene.add(particle);
+      this.magicParticles.push({
+        mesh: particle,
+        basePos: { x: px, y: py, z: pz },
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.3 + Math.random() * 1.5,
+        drift: { x: (Math.random() - 0.5) * 0.3, z: (Math.random() - 0.5) * 0.3 },
+      });
+    }
+
+    // ---- Potted plants along the walkway ----
+    for (const side of [-1, 1]) {
+      for (let z = -8; z <= 2; z += 3) {
+        // Pot
+        const pot = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.25, 0.2, 0.4, 8),
+          new THREE.MeshStandardMaterial({ color: 0x8B4513, roughness: 0.9 })
+        );
+        pot.position.set(side * 2.5, 0.2, z);
+        scene.add(pot);
+        // Plant (simple cone)
+        const plant = new THREE.Mesh(
+          new THREE.ConeGeometry(0.2, 0.6, 8),
+          new THREE.MeshStandardMaterial({ color: 0x228B22, roughness: 0.8 })
+        );
+        plant.position.set(side * 2.5, 0.7, z);
+        scene.add(plant);
+      }
+    }
+
+    return scene;
+  };
+
+  // Patch update to animate chandelier crystal and magic particles
+  const originalUpdate = OriginalBrightMoon.prototype.update;
+  OriginalBrightMoon.prototype.update = function (time, delta) {
+    originalUpdate.call(this, time, delta);
+
+    // Chandelier crystal spin and pulse
+    if (this.chandelierCrystals) {
+      for (const crystal of this.chandelierCrystals) {
+        crystal.rotation.y = time * 0.5;
+        crystal.material.emissiveIntensity = 0.3 + Math.sin(time * 3) * 0.2;
+      }
+    }
+
+    // Magic particles drift
+    if (this.magicParticles) {
+      for (const p of this.magicParticles) {
+        p.mesh.position.y = p.basePos.y + Math.sin(time * p.speed + p.phase) * 0.5;
+        p.mesh.position.x = p.basePos.x + Math.cos(time * p.speed * 0.5 + p.phase) * p.drift.x;
+        p.mesh.position.z = p.basePos.z + Math.sin(time * p.speed * 0.3 + p.phase) * p.drift.z;
+        // Twinkle
+        p.mesh.material.opacity = 0.3 + Math.sin(time * 4 + p.phase) * 0.3;
+      }
     }
   };
 }
