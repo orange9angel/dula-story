@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**当前 Episode**：`episodes/starlight_courier/`（「星光快递员」——小月、星仔的跨时空快递冒险）
+**当前 Episode**：`episodes/she_ra/`（「She-Ra 公主力量」——Adora 变身、与 Hordak 对抗的奇幻冒险）
 
 > 历史 Episode：
+> - `episodes/starlight_courier/`（「星光快递员」）
 > - `episodes/dunk_master_doraemon/`（「扣篮大师哆啦A梦」）
 > - `episodes/takecopter_hikou/`（「竹蜻蜓飞行」）
 > - `episodes/bichong_qiupai/`（「必中球拍」）
@@ -82,6 +83,7 @@ dula-story/
 | `{Prop:Action\|key=val}` | `{Prop:Racket\|character=Doraemon\|color=0xe60012}` | 道具操作 |
 | `{Position:Char\|key=val}` | `{Position:Doraemon\|spot=northBaseline\|face=Nobita}` | 角色站位 |
 | `{Event:Action\|key=val}` | `{Event:Move\|character=Nobita\|y=15\|duration=3.0\|relative=true}` | 剧情事件 |
+| `{Transition:Name\|key=val}` | `{Transition:Flash\|duration=0.8\|flashColor=0xff3333}` | 场景转场效果 |
 
 ### 参数语法
 `{Namespace:Action|key=value|key2=1,2,3}`，数组值用逗号分隔。
@@ -90,6 +92,7 @@ dula-story/
 - 同一条目中，所有标签互不冲突，可共存。
 - `@SceneName`、`{Music:...}`、`{Position:...}`、`{Prop:...}` 等配置型标签通常放在场景切换条目中（无对白的短条目）。
 - `{Ball:...}` 放在对应动作发生的对白条目中，`startTime` 自动取自该条目时间戳。
+- `{Transition:...}` 放在场景切换条目中，控制场景过渡动画效果。支持自定义转场（需在 `bootstrap.js` 中通过 `registerTransition()` 注册）。
 
 ---
 
@@ -161,6 +164,56 @@ dula-story/
 
 ---
 
+### 自定义转场系统
+
+引擎内置 `Fade` 转场。如需自定义转场，在 `bootstrap.js` 中继承 `TransitionBase` 并注册：
+
+```javascript
+import { TransitionBase, registerTransition } from 'dula-engine';
+
+class FlashTransition extends TransitionBase {
+  constructor(options) {
+    super(options);
+    this.duration = options.duration ?? 0.3;
+    this.flashColor = new THREE.Color(options.flashColor ?? 0xffffff);
+  }
+  createOverlayMaterial() {
+    // 返回 ShaderMaterial，用于全屏 quad
+    return new THREE.ShaderMaterial({
+      uniforms: {
+        tDiffuse: { value: null },
+        progress: { value: 0 },
+        flashColor: { value: this.flashColor }
+      },
+      vertexShader: /* glsl */ `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+      fragmentShader: /* glsl */ `uniform sampler2D tDiffuse; uniform float progress; uniform vec3 flashColor; varying vec2 vUv; void main() { vec4 texel = texture2D(tDiffuse, vUv); float flash = sin(progress * 3.14159); gl_FragColor = vec4(mix(texel.rgb, flashColor, flash), 1.0); }`
+    });
+  }
+  update(t) {
+    // t: 0..1，转场进度
+    this.material.uniforms.progress.value = t;
+  }
+}
+
+registerTransition('Flash', FlashTransition);
+```
+
+然后在剧本中使用：
+```
+{Transition:Flash|duration=0.8|flashColor=0xff3333}
+```
+
+**已实现的自定义转场（she_ra）**：
+| 转场名 | 效果 | 参数 |
+|--------|------|------|
+| `Flash` | 强光闪烁 | `duration`, `flashColor` |
+| `Iris` | 圆形光圈开合 | `duration` |
+| `Wipe` | 方向性擦拭 | `duration`, `direction` (left/right/up/down) |
+| `Dissolve` | 噪点溶解 | `duration` |
+| `Pixelate` | 像素化过渡 | `duration` |
+
+---
+
 ## 5. 素材规范
 
 ### BGM (`assets/audio/music/`)
@@ -211,7 +264,13 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
     "audio:dunk": "dula-audio ./episodes/dunk_master_doraemon",
     "verify:dunk": "dula-verify ./episodes/dunk_master_doraemon",
     "render:dunk": "dula-render ./episodes/dunk_master_doraemon",
-    "build:dunk": "npm run audio:dunk && npm run render:dunk"
+    "build:dunk": "npm run audio:dunk && npm run render:dunk",
+    "audio:she_ra": "dula-audio ./episodes/she_ra",
+    "verify:she_ra": "dula-verify ./episodes/she_ra",
+    "render:she_ra": "dula-render ./episodes/she_ra",
+    "build:she_ra": "npm run audio:she_ra && npm run render:she_ra",
+    "visual-review:she_ra": "python ./tools/visual-review/cli.py ./episodes/she_ra",
+    "visual-review:collect:she_ra": "python ./tools/visual-review/cli.py ./episodes/she_ra --collect-only"
   }
 }
 ```
@@ -293,16 +352,20 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 
 ---
 
-## 9. 当前 Episode 已知问题（starlight_courier）
+## 9. 当前 Episode 已知问题（she_ra）
 
 | 问题 | 状态 | 备注 |
 |------|------|------|
-| DrawerScene 抽屉动画时间基准 | ✅ 已修复 | `openDrawer()` 改为接受 story time 参数，避免 `performance.now()` 与 story time 不一致 |
-| DrawerScene 角色 desk height 位置覆盖 | ✅ 已修复 | `switchScene()` 增加 `startTime` 过滤，防止未来 placement 覆盖当前位置 |
-| 011_Doraemon.mp3 "卡痰"音频 artifact | ✅ 已修复 | `generate_audio.py` 增加 `atrim=start=0.2` 去除 edge-tts MP3 编码器前导 padding |
+| She-Ra 剑绑定 | ✅ 已修复 | `swordGroup` 从 mesh 移到 `rightArm` group，剑跟随手部动画 |
+| FrightZoneScene 风暴特效 | ✅ 已修复 | 闪电 PointLight + rimLight + 3000 粒子下雨 + 云层，时间驱动（非 setTimeout） |
+| Hordak 外观增强 | ✅ 已修复 | 鼻子、胸甲、腰带、护膝、脸颊阴影、眼内发光 |
+| Catra 退场修复 | ✅ 已修复 | 添加 `[Catra]{Event:Move}` 退场动画，角色不再凭空消失 |
+| 音频优化 | ✅ 已修复 | Adora rate -10%，BGM baseVolume 0.05，TTS volume +20~40% |
+| 转场效果扩展 | ✅ 已修复 | 新增 Flash、Iris、Wipe、Dissolve、Pixelate 5 种自定义转场，剧本已应用 |
 | 视频 concat 后时间戳偏移 | 🔄 已知 | concat 输出有 `start: -0.021333` 偏移，视频流 `start_time=6.45s`，需用外部工具裁剪时注意 |
 | BGM 风格匹配 | 🔄 待优化 | 当前使用 procedural BGM，后续可替换为 Pixabay 手动素材 |
-| 场景过渡动画 | 🔄 待优化 | 部分场景切换缺少退场/入场动画，可补充 fadeslide 过渡 |
+| BGM 音量 Inspector 误报 | 🔄 已知 | AudioBalanceInspector 分析原始 BGM 文件而非混合后音量（引擎侧问题） |
+| 闪电效果截图可见性 | 🔄 已知 | PointLight 闪光在静态截图中难以捕捉，但视频中动态可见 |
 
 ---
 
@@ -329,4 +392,81 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 | **D11** | **TransitionInspector** | **场景切换退场/入场动画、禁止瞬移、飞行能力利用** |
 | **D12** | **MusicFitInspector** | **BGM 风格-场景匹配、BGM 音量、覆盖完整性** |
 
-**最后更新**：2026-05-01
+---
+
+## 11. Visual Review — 非脚本级视觉/美学审核
+
+`dula-inspect-team` 负责**脚本级**检查（角色注册、音频时长、相机角度等），但无法检测**视觉/美学级**问题（角色外观细节、场景丰富度、动作自然度、运镜质量、光效氛围、台词文学性）。
+
+每个 Episode 目录下应包含 `VISUAL_REVIEW.md`，记录该 Episode 的视觉审核规范和问题追踪。
+
+### 审核维度
+
+| 维度 | 检查内容 | 审核方式 |
+|------|---------|---------|
+| **D-V1** 角色外观细节 | 面部特征、发型、服装、材质对比、比例 | 人工检查 storyboard 截图 |
+| **D-V2** 场景丰富度 | 地面纹理、背景层次、道具点缀、光影、氛围 | 人工检查 storyboard 截图 |
+| **D-V3** 动作自然度 | 动作幅度、流畅度、身体协调、表情配合 | 人工检查 storyboard 截图 |
+| **D-V4** 运镜质量 | 景别变化、角度变化、运动运镜、角色可见、画面稳定 | 人工检查 storyboard 截图 |
+| **D-V5** 光效氛围 | 主光源、角色照明、氛围光、阴影层次 | 人工检查 storyboard 截图 |
+| **D-V6** 台词文学性 | 口语自然、情绪递进、角色个性、信息密度 | 人工阅读剧本 |
+
+### 审核流程
+
+每次修改后执行：
+
+1. `npm run verify` 生成 storyboard 截图
+2. 逐张检查截图，对照 6 个维度记录问题
+3. 按 P0(必须修)/P1(建议修)/P2(可优化) 排序
+4. 修复 P0/P1 后重新验证
+
+### 角色消失规则（重要）
+
+**角色不能凭空消失**，除非有明确的魔法/超自然解释。退场方式优先级：
+
+1. **走出画面**（推荐）：`{Event:Move|character=X|x=...|z=...|duration=...}`
+2. **随场景切换退场**：在场景切换的 Fade 过渡中自然消失
+3. **魔法变身**：需配合强光/闪光效果，且台词明确说明
+4. **禁止**：直接使用 `{Event:Hide|character=X}` 让角色凭空消失
+
+### 工程化工具（已实现）
+
+`tools/visual-review/` 提供自动化视觉审核框架：
+
+```bash
+# 收集关键帧（不调用 AI）
+npm run visual-review:collect:she_ra
+
+# 运行完整 AI 视觉审核（需配置 OPENAI_API_KEY 或 ANTHROPIC_API_KEY）
+npm run visual-review:she_ra
+
+# 指定维度和 provider
+python tools/visual-review/cli.py ./episodes/she_ra \
+  --dimensions character_detail lighting \
+  --provider openai
+```
+
+**组件架构：**
+- `ScreenshotCollector` — 从 storyboard 提取关键帧（场景开始/结束、对白中间、运镜变化）
+- `AIVisionClient` — 封装 GPT-4V / Claude 3 / 本地模型 API
+- `VisualReviewEngine` — 整合收集器与 AI 客户端，生成评分报告
+
+**审核维度映射：**
+
+| 工具维度 | AGENTS 维度 | 说明 |
+|----------|------------|------|
+| `character_detail` | D-V1 | 角色外观细节 |
+| `scene_detail` | D-V2 | 场景丰富度 |
+| `cinematography` | D-V4 | 运镜质量 |
+| `lighting` | D-V5 | 光效氛围 |
+
+### 未来演进
+
+- [x] 关键帧自动提取
+- [x] AI Vision API 集成框架
+- [ ] 规则引擎回退（降低 API 成本）
+- [ ] 与 dula-inspect-team 统一报告格式
+- [ ] 历史对比与趋势追踪
+- [ ] 自动修复建议生成
+
+**最后更新**：2026-05-03
