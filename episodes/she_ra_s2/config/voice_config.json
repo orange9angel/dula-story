@@ -1,0 +1,84 @@
+{
+  "SheRa": {
+    "default": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "+5%",
+      "pitch": "+5Hz",
+      "volume": "+30%"
+    },
+    "heroic": {
+      "rate": "+10%",
+      "pitch": "+10Hz",
+      "volume": "+35%"
+    },
+    "determined": {
+      "rate": "+5%",
+      "pitch": "+0Hz",
+      "volume": "+35%"
+    },
+    "gentle": {
+      "rate": "-5%",
+      "pitch": "+0Hz",
+      "volume": "+30%"
+    }
+  },
+  "Catra": {
+    "default": {
+      "voice": "zh-CN-XiaoyiNeural",
+      "rate": "+5%",
+      "pitch": "-5Hz",
+      "volume": "+30%"
+    },
+    "sneering": {
+      "rate": "+10%",
+      "pitch": "-10Hz",
+      "volume": "+25%"
+    },
+    "vulnerable": {
+      "rate": "-10%",
+      "pitch": "+0Hz",
+      "volume": "+25%"
+    },
+    "defensive": {
+      "rate": "+5%",
+      "pitch": "-5Hz",
+      "volume": "+30%"
+    }
+  },
+  "Hordak": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-10%",
+      "pitch": "-15Hz",
+      "volume": "+30%"
+    },
+    "commanding": {
+      "rate": "-5%",
+      "pitch": "-10Hz",
+      "volume": "+35%"
+    },
+    "enraged": {
+      "rate": "+10%",
+      "pitch": "-20Hz",
+      "volume": "+35%"
+    }
+  },
+  "ShadowWeaver": {
+    "default": {
+      "voice": "zh-CN-XiaoyiNeural",
+      "rate": "-5%",
+      "pitch": "-10Hz",
+      "volume": "+25%"
+    },
+    "ominous": {
+      "rate": "-10%",
+      "pitch": "-15Hz",
+      "volume": "+20%"
+    },
+    "fearful": {
+      "rate": "+5%",
+      "pitch": "+0Hz",
+      "volume": "+20%"
+    }
+  }
+}
