@@ -1,0 +1,20 @@
+{
+  "scenes": {
+    "CityScene": {
+      "placements": [
+        { "character": "Gabura", "x": 0, "z": -15, "face": "camera" }
+      ]
+    },
+    "DestroyedCityScene": {
+      "placements": [
+        { "character": "Gabura", "x": 5, "z": -2, "face": "Ultraman" },
+        { "character": "Ultraman", "x": -5, "z": 2, "face": "Gabura" }
+      ]
+    },
+    "SkyScene": {
+      "placements": [
+        { "character": "Ultraman", "x": 0, "z": 0, "face": "sky" }
+      ]
+    }
+  }
+}

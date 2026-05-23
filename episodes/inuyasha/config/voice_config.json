@@ -1,0 +1,46 @@
+{
+  "Inuyasha": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-5%",
+      "pitch": "-10Hz",
+      "volume": "+35%"
+    },
+    "angry": {
+      "rate": "+8%",
+      "pitch": "-12Hz",
+      "volume": "+40%"
+    },
+    "determined": {
+      "rate": "+3%",
+      "pitch": "-8Hz",
+      "volume": "+38%"
+    }
+  },
+  "Kagome": {
+    "default": {
+      "voice": "zh-CN-XiaoyiNeural",
+      "rate": "+0%",
+      "pitch": "+4Hz",
+      "volume": "+32%"
+    },
+    "worried": {
+      "rate": "+4%",
+      "pitch": "+6Hz",
+      "volume": "+34%"
+    },
+    "focused": {
+      "rate": "-3%",
+      "pitch": "+2Hz",
+      "volume": "+35%"
+    }
+  },
+  "Yokai": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-25%",
+      "pitch": "-25Hz",
+      "volume": "+28%"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "Narrator": {
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "+10%",
+    "pitch": "+0Hz"
+  },
+  "Shuwatch": {
+    "type": "sfx",
+    "file": "materials/sfx/ultraman_roar.mp3",
+    "volume": 1.0
+  },
+  "KaijuRoar": {
+    "type": "sfx",
+    "file": "materials/sfx/kaiju_roar.mp3",
+    "volume": 0.9
+  },
+  "ThemeMusic": {
+    "type": "bgm",
+    "file": "materials/bgm/ultraman_theme.mp3",
+    "volume": 0.7,
+    "loop": true
+  },
+  "HeroicMusic": {
+    "type": "bgm",
+    "file": "materials/bgm/ultraman_theme.mp3",
+    "volume": 0.6,
+    "loop": true
+  }
+}
