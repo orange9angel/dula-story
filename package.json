@@ -58,7 +58,16 @@
     "verify:seiya": "dula-verify ./episodes/saint_seiya_intro",
     "preview:seiya": "dula-preview ./episodes/saint_seiya_intro",
     "render:seiya": "dula-render ./episodes/saint_seiya_intro --duration 15",
-    "build:seiya": "npm run audio:seiya && npm run render:seiya"
+    "build:seiya": "npm run audio:seiya && npm run render:seiya",
+    "audio:yuyuhakusho": "dula-audio ./episodes/yuyuhakusho",
+    "audio:yuyuhakusho:ds": "dula-audio ./episodes/yuyuhakusho --provider=dashscope",
+    "verify:yuyuhakusho": "dula-verify ./episodes/yuyuhakusho",
+    "preview:yuyuhakusho": "dula-preview ./episodes/yuyuhakusho",
+    "render:yuyuhakusho": "dula-render ./episodes/yuyuhakusho",
+    "build:yuyuhakusho": "npm run audio:yuyuhakusho && npm run render:yuyuhakusho",
+    "inspect:yuyuhakusho": "dula-inspect ./episodes/yuyuhakusho",
+    "visual-review:yuyuhakusho": "python ./tools/visual-review/cli.py ./episodes/yuyuhakusho",
+    "visual-review:collect:yuyuhakusho": "python ./tools/visual-review/cli.py ./episodes/yuyuhakusho --collect-only"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

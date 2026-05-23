@@ -1,0 +1,38 @@
+{
+  "Yusuke": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "+5%",
+      "pitch": "-5Hz",
+      "volume": "+30%"
+    },
+    "confident": {
+      "rate": "+8%",
+      "pitch": "-3Hz",
+      "volume": "+35%"
+    },
+    "determined": {
+      "rate": "+5%",
+      "pitch": "-8Hz",
+      "volume": "+38%"
+    }
+  },
+  "Kuwabara": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "+10%",
+      "pitch": "+5Hz",
+      "volume": "+35%"
+    },
+    "excited": {
+      "rate": "+15%",
+      "pitch": "+10Hz",
+      "volume": "+40%"
+    },
+    "proud": {
+      "rate": "+8%",
+      "pitch": "+0Hz",
+      "volume": "+35%"
+    }
+  }
+}
