@@ -20,7 +20,7 @@
 ```
 dula-story/
 ├── episodes/
-│   └── bichong_qiupai/          # 单个剧集目录
+│   └── she_ra/                  # 当前剧集目录
 │       ├── script.story         # 剧本（时序 + 对白 + 指令标签）
 │       ├── bootstrap.js         # 资产注册入口（import dula-assets + 自定义插件）
 │       ├── config/
@@ -45,13 +45,13 @@ dula-story/
 # 安装引擎依赖
 npm install
 
-# 生成音频（TTS + BGM + SFX 混音）
+# 生成当前剧集音频（TTS + BGM + SFX 混音）
 npm run audio
 
-# 逐镜头验证画面
+# 逐镜头验证当前剧集画面
 npm run verify
 
-# 生成完整视频
+# 生成当前剧集完整视频
 npm run render
 
 # 一键出片：音频 + 视频
@@ -73,7 +73,7 @@ npm run build
 ```
 - 源码修改**实时生效**，无需重新 install
 
-### 方式 B：GitHub Release（当前使用方式）
+### 方式 B：GitHub Release
 ```json
 {
   "dependencies": {
@@ -90,7 +90,7 @@ npm run build
 ## 新增剧集
 
 1. 在 `episodes/` 下创建新目录
-2. 复制 `bichong_qiupai/config/` 作为模板
+2. 复制 `episodes/she_ra/config/` 作为模板
 3. 编写 `script.story`
 4. 放入 BGM/SFX 素材到 `assets/audio/`
 5. 修改 `package.json` scripts 指向新目录，或直接使用：

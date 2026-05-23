@@ -20,9 +20,8 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 
 > 历史 Episode：
 > - `episodes/starlight_courier/`（「星光快递员」）
-> - `episodes/dunk_master_doraemon/`（「扣篮大师哆啦A梦」）
-> - `episodes/takecopter_hikou/`（「竹蜻蜓飞行」）
-> - `episodes/bichong_qiupai/`（「必中球拍」）
+> - `episodes/seaside_vacation/`（「海边假日」）
+> - `episodes/street_dunk/`（「街头扣篮」）
 
 ---
 
@@ -31,7 +30,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 dula-story/
 ├── episodes/
-│   └── takecopter_hikou/        # Episode 目录
+│   └── she_ra/                  # Episode 目录
 │       ├── script.story         # 剧本（唯一时序数据源）
 │       ├── bootstrap.js         # 资产注册入口（import dula-assets + 自定义插件）
 │       ├── config/
@@ -257,18 +256,18 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
 ```json
 {
   "scripts": {
-    "audio": "dula-audio ./episodes/takecopter_hikou",
-    "verify": "dula-verify ./episodes/takecopter_hikou",
-    "render": "dula-render ./episodes/takecopter_hikou",
-    "build": "npm run audio && npm run render",
-    "audio:dunk": "dula-audio ./episodes/dunk_master_doraemon",
-    "verify:dunk": "dula-verify ./episodes/dunk_master_doraemon",
-    "render:dunk": "dula-render ./episodes/dunk_master_doraemon",
-    "build:dunk": "npm run audio:dunk && npm run render:dunk",
+    "audio": "npm run audio:she_ra",
+    "verify": "npm run verify:she_ra",
+    "preview": "npm run preview:she_ra",
+    "render": "npm run render:she_ra",
+    "build": "npm run build:she_ra",
+    "inspect": "npm run inspect:she_ra",
     "audio:she_ra": "dula-audio ./episodes/she_ra",
     "verify:she_ra": "dula-verify ./episodes/she_ra",
+    "preview:she_ra": "dula-preview ./episodes/she_ra",
     "render:she_ra": "dula-render ./episodes/she_ra",
     "build:she_ra": "npm run audio:she_ra && npm run render:she_ra",
+    "inspect:she_ra": "dula-inspect ./episodes/she_ra",
     "visual-review:she_ra": "python ./tools/visual-review/cli.py ./episodes/she_ra",
     "visual-review:collect:she_ra": "python ./tools/visual-review/cli.py ./episodes/she_ra --collect-only"
   }
@@ -279,8 +278,8 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
 
 | 方式 | package.json 写法 | 适用场景 |
 |------|-------------------|----------|
-| GitHub Release | `"https://github.com/.../dula-engine-0.1.7.tgz"` | **当前使用**，锁定版本号，与源码解耦 |
-| `file:` 链接 | `"file:../dula-engine"` / `"file:../dula-assets"` | **本地开发**，源码修改实时生效 |
+| `file:` 链接 | `"file:../dula-engine"` / `"file:../dula-assets"` | **当前使用**，本地开发，源码修改实时生效 |
+| GitHub Release | `"https://github.com/.../dula-engine-0.1.7.tgz"` | 锁定版本号，与源码解耦 |
 
 ### 本地开发链路
 
@@ -329,7 +328,7 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 
 ### 新增 Episode
 1. 在 `episodes/` 下创建新目录。
-2. 复制 `takecopter_hikou/config/` 作为模板。
+2. 复制 `episodes/she_ra/config/` 作为模板。
 3. 编写 `script.story`。
 4. 放入需要的 BGM/SFX 素材到 `assets/audio/`。
 5. 按上述流程生成音频 → 验证 → 出片。

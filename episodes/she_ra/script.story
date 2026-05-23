@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:03,000
-@BrightMoonScene{Music:Play|name=brightmoon_theme|fadeIn=2.0|baseVolume=0.18|endTime=170}
+@BrightMoonScene{Music:Play|name=brightmoon_theme|fadeIn=2.0|baseVolume=0.18|endTime=35}
 {Position:Adora|x=-1|y=0.01|z=1|face=forward}
 {Position:SheRa|x=-5|y=-10|z=1|face=forward}
 
@@ -32,7 +32,7 @@
 
 8
 00:00:28,000 --> 00:00:34,000
-[SheRa]{BattleStance}{Prop:weapon|character=SheRa}{Camera:ZoomIn|distance=3.5} 力量之剑，赐予我勇气！霍达克，你的邪恶到此为止！
+[SheRa]{BattleStance}{Prop:weapon|character=SheRa}{Camera:ZoomIn|characterName=SheRa|distance=3.5} 力量之剑，赐予我勇气！霍达克，你的邪恶到此为止！
 
 9
 00:00:34,000 --> 00:00:35,000
@@ -41,7 +41,7 @@
 
 10
 00:00:35,000 --> 00:00:39,000
-@FrightZoneScene{Music:Play|name=frightzone_theme|fadeIn=1.5|baseVolume=0.15|endTime=170}
+@FrightZoneScene{Music:Play|name=frightzone_theme|fadeIn=1.5|baseVolume=0.15|endTime=70}
 {Position:Hordak|x=0|y=0.01|z=-2|face=center}
 {Position:Catra|x=2|y=0.01|z=1|face=Hordak}
 
@@ -72,7 +72,7 @@
 
 17
 00:01:10,000 --> 00:01:14,000
-@WhisperingWoodsScene{Music:Play|name=whispering_theme|fadeIn=2.0|baseVolume=0.15|endTime=170}
+@WhisperingWoodsScene{Music:Play|name=whispering_theme|fadeIn=2.0|baseVolume=0.15|endTime=133}
 {Position:SheRa|x=-1|y=0.01|z=0|face=Catra}
 {Position:Catra|x=3|y=0.01|z=0|face=SheRa}
 
@@ -86,7 +86,7 @@
 
 20
 00:01:28,000 --> 00:01:35,000
-[SheRa]{PowerGlow}{Camera:ZoomIn|distance=3.5} 我从来没有抛弃你...因为我一直把你当作朋友。我们可以一起离开这里。
+[SheRa]{WaveHand}{Camera:Static|position=3,2,2|lookAt=-1,1.2,0} 我从来没有抛弃你...因为我一直把你当作朋友。我们可以一起离开这里。
 
 21
 00:01:36,000 --> 00:01:41,000
@@ -94,7 +94,7 @@
 
 22
 00:01:42,000 --> 00:01:48,000
-[SheRa]{ReachOut} 那就让我知道。告诉我，卡特拉...你真正想要的是什么？
+[SheRa]{Nod}{Camera:Static|position=3,2,2|lookAt=-1,1.2,0} 那就让我知道。告诉我，卡特拉...你真正想要的是什么？
 
 23
 00:01:49,000 --> 00:01:53,000
