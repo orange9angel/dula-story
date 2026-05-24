@@ -27,6 +27,10 @@
 [Kuwabara]{DashForward}{FaceAngry}{FXDustKick}{FXSpeedLines}{Camera:Static|position=2,2,4|lookAt=0,1.2,0} 接招！
 {SFX:Play|name=dash_whoosh}
 
+6b
+00:00:24,000 --> 00:00:24,500
+[Kuwabara]{FightingStance}{Camera:Static|position=2,2,4|lookAt=0,1.2,0}
+
 7
 00:00:24,000 --> 00:00:28,000
 [Yusuke]{FaceReset}{Dodge}{FaceDetermined}{FXAfterImage}{Camera:Static|position=-2,2,4|lookAt=0,1.2,0} 太慢了！
@@ -37,6 +41,10 @@
 {Event:Move|character=Yusuke|x=-1.0|y=0.01|z=0|duration=0.3|action=DashForward}
 [Yusuke]{FaceReset}{Punch}{FaceAngry}{FXSpeedLines}{Camera:Static|position=-1,2,4|lookAt=0,1.2,0} 吃我一拳！
 {SFX:Play|name=punch_hit}
+
+8b
+00:00:31,000 --> 00:00:31,500
+[Yusuke]{FightingStance}{Camera:Static|position=-1,2,4|lookAt=0,1.2,0}
 
 9
 00:00:31,000 --> 00:00:34,500
@@ -54,6 +62,10 @@
 [Kuwabara]{FaceReset}{SpiritSwordSwing}{FaceAngry}{FXTrailSwipe}{FXDustKick}{Camera:Static|position=3,2,4|lookAt=0,1.2,0} 灵剑斩！
 {SFX:Play|name=sword_slash}
 
+11b
+00:00:41,500 --> 00:00:42,000
+[Kuwabara]{FightingStance}{Camera:Static|position=3,2,4|lookAt=0,1.2,0}
+
 12
 00:00:41,500 --> 00:00:45,500
 [Yusuke]{FaceReset}{Dodge}{FaceSmirk}{FXAfterImage}{Camera:Static|position=-2,2,4|lookAt=0,1.2,0} 就这种程度？让你见识一下真正的力量。
@@ -68,6 +80,10 @@
 {Transition:Flash|duration=0.2|flashColor=0x88ccff}
 [Yusuke]{FaceReset}{SpiritGunFire}{FaceAngry}{FXTrailSwipe}{Camera:Static|position=-4,2,4|lookAt=0,1.2,0} 发射！
 {SFX:Play|name=energy_blast}
+
+14b
+00:00:52,500 --> 00:00:53,000
+[Yusuke]{FightingStance}{Camera:Static|position=-4,2,4|lookAt=0,1.2,0}
 
 15
 00:00:52,500 --> 00:00:56,500
@@ -125,6 +141,10 @@
 {SFX:Play|name=sword_slash}
 {SFX:Play|name=dash_whoosh|offset=0.2}
 
+25b
+00:01:34,000 --> 00:01:34,500
+[Kuwabara]{FightingStance}{Camera:Static|position=3,2,4|lookAt=0,1.2,0}
+
 26
 00:01:34,000 --> 00:01:38,000
 [Yokai]{FaceReset}{HitStagger}{FacePain}{FXHitSpark}{FXBloodSpurt}{Camera:Shake|intensity=0.4|duration=0.6} 嘎啊！
@@ -136,6 +156,10 @@
 {Event:Move|character=Yusuke|x=-0.5|y=0.01|z=0|duration=0.3|action=DashForward}
 [Yusuke]{FaceReset}{ComboPunch}{FaceAngry}{FXTrailSwipe}{FXSpeedLines}{Camera:Static|position=-4,2,5|lookAt=0,1.2,0} 吃我这套！
 {SFX:Play|name=punch_hit}
+
+27b
+00:01:41,500 --> 00:01:42,000
+[Yusuke]{FightingStance}{Camera:Static|position=-4,2,5|lookAt=0,1.2,0}
 
 28
 00:01:41,500 --> 00:01:45,500
