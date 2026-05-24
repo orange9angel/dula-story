@@ -3,11 +3,15 @@
  * Registers official assets from dula-assets (includes Yusuke, Kuwabara, SarayashikiRoofScene)
  */
 import { registerAll } from 'dula-assets';
-import { TransitionBase, registerTransition } from 'dula-engine';
+import { TransitionBase, registerTransition, registerCameraMove } from 'dula-engine';
+import { CameraSmoothMove } from '/node_modules/dula-engine/camera/CameraSmoothMove.js';
 import * as THREE from 'three';
 
 // Register all official assets
 registerAll();
+
+// Register smooth camera move
+registerCameraMove('Smooth', CameraSmoothMove);
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ── Custom Transitions ──
