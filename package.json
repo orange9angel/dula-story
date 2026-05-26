@@ -62,6 +62,7 @@
     "audio:yuyuhakusho": "dula-audio ./episodes/yuyuhakusho",
     "audio:yuyuhakusho:ds": "dula-audio ./episodes/yuyuhakusho --provider=dashscope",
     "verify:yuyuhakusho": "dula-verify ./episodes/yuyuhakusho",
+    "trace:yuyuhakusho": "node ../dula-engine/tools/combat_trace.js ./episodes/yuyuhakusho",
     "preview:yuyuhakusho": "dula-preview ./episodes/yuyuhakusho",
     "render:yuyuhakusho": "dula-render ./episodes/yuyuhakusho",
     "build:yuyuhakusho": "npm run audio:yuyuhakusho && npm run render:yuyuhakusho",
