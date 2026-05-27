@@ -15,7 +15,7 @@
 
 4
 00:00:11,500 --> 00:00:15,000
-[Kuwabara]{PointForward}{FaceAngry}{Camera:TwoShot|characterA=Yusuke|characterB=Kuwabara|distance=10} 少废话！看招！灵剑！
+[Kuwabara]{PointForward}{FaceDetermined}{Camera:TwoShot|characterA=Yusuke|characterB=Kuwabara|distance=10} 少废话！看招！灵剑！
 
 5
 00:00:15,000 --> 00:00:19,000
@@ -37,7 +37,7 @@
 8
 00:00:26,000 --> 00:00:29,500
 {Combat:Combo|attacker=Yusuke|defender=Kuwabara|sequence=heavy_combo}
-[Yusuke]{FaceReset}{Punch}{FaceAngry}{FXSpeedLines}{Camera:FightImpact} 吃我一拳！
+[Yusuke]{FaceReset}{Punch}{FaceAngry}{FXHitSpark}{FXSpeedLines}{Camera:FightImpact} 吃我一拳！
 {SFX:Play|name=punch_hit}
 
 9
@@ -89,12 +89,12 @@
 
 17
 00:01:01,000 --> 00:01:05,000
-[Kuwabara]{FaceReset}{Block}{FaceAngry}{Camera:Static|position=4,2.5,5|lookAt=2,1.2,0} 还没完！我桑原和真是不会放弃的！
+[Kuwabara]{FaceReset}{Block}{FaceAngry}{FXHitSpark}{Camera:Static|position=4,2.5,5|lookAt=2,1.2,0} 还没完！我桑原和真是不会放弃的！
 
 18
 00:01:05,000 --> 00:01:09,500
 {Event:SetWeather|type=fog}
-{Event:Move|character=Yokai|x=0|y=0.01|z=-4|duration=2.0|action=Walk}
+{Event:Move|character=Yokai|x=0|y=0.01|z=-2.5|duration=2.0|action=Walk}
 [Yokai]{Tremble}{Camera:LowAngle|distance=8|height=0.5} 嘎...嘎...
 {SFX:Play|name=monster_growl}
 
@@ -131,13 +131,13 @@
 25
 00:01:32,500 --> 00:01:36,500
 {Combat:Combo|attacker=Yokai|defender=Kuwabara|sequence=classic_4hit}
-[Yokai]{FaceReset}{Punch}{FaceAngry}{FXHitSpark}{Camera:FightSide} 嘎！
+[Yokai]{FaceReset}{Punch}{HitStagger}{FaceAngry}{FXHitSpark}{Camera:FightSide} 嘎！
 {SFX:Play|name=punch_hit}
 
 26
 00:01:36,500 --> 00:01:39,000
 {Combat:Emotion|type=closeUp|character=Kuwabara|hold=1.0}
-[Kuwabara]{FaceReset}{HitStagger}{FacePain}{FXBloodSpurt}{Camera:FightDramatic} 呜...可恶...
+[Kuwabara]{FaceReset}{HitStagger}{FacePain}{FXBloodSpurt}{FXShockwave}{Camera:FightDramatic} 呜...可恶...
 {SFX:Play|name=kick_impact}
 {Hitstop|duration=0.12|shake=0.35}
 
@@ -149,7 +149,7 @@
 00:01:44,000 --> 00:01:48,500
 {Combat:Override|camera=FightOverhead|duration=2.5}
 {Combat:Combo|attacker=Yusuke|defender=Yokai|sequence=triple_kick}
-[Yusuke]{FaceReset}{Kick}{FaceAngry}{FXTrailSwipe}{FXSpeedLines}{Camera:FightImpact} 吃我这套！
+[Yusuke]{FaceReset}{Kick}{FaceAngry}{FXHitSpark}{Camera:FightImpact} 吃我这套！
 {SFX:Play|name=kick_impact}
 
 29
@@ -164,9 +164,10 @@
 30
 00:01:53,000 --> 00:01:57,500
 {Combat:Override|camera=FightDramaticReveal|duration=2.0}
-{Event:Move|character=Yokai|x=0|y=0.01|z=-8|duration=1.0|action=RunAway}
+{Event:Move|character=Yokai|x=0|y=0.01|z=-6|duration=1.0|action=RunAway}
 {Transition:Flash|duration=0.5|flashColor=0x6600ff}
 [Yusuke]{FaceReset}{HeroLanding}{FaceDetermined}{FXDustKick} ...结束了。
+{Event:Animate|character=Yokai|action=GetUp}
 {SFX:Play|name=impact_thud}
 
 31
