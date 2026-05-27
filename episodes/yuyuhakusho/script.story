@@ -2,6 +2,8 @@
 00:00:00,000 --> 00:00:03,500
 @SarayashikiRoofScene{Music:Play|name=roof_tension|fadeIn=2.0|baseVolume=0.15|endTime=150}
 {Combat:Setup|charA=Yusuke|charB=Kuwabara|centerX=0|centerZ=0|distance=5}
+{Position:Yusuke|x=-2.5|y=0.01|z=0|face=Kuwabara}
+{Position:Kuwabara|x=2.5|y=0.01|z=0|face=Yusuke}
 {Position:Yokai|x=0|y=0.01|z=-10|face=Yusuke}
 {Transition:Iris|duration=1.0}
 
@@ -172,6 +174,8 @@
 
 31
 00:01:57,500 --> 00:02:01,500
+{Event:Face|character=Yusuke|target=Kuwabara}
+{Event:Face|character=Kuwabara|target=Yusuke}
 [Kuwabara]{FaceReset}{GetUp}{FaceHappy}{Camera:Static|position=0,2.5,8|lookAt=0,1.2,0} 成功了！我们配合得不错嘛，幽助！
 
 32
