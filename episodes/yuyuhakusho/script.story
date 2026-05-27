@@ -20,7 +20,7 @@
 
 5
 00:00:15,000 --> 00:00:19,000
-[Kuwabara]{SpiritSwordDraw}{FaceDetermined}{FXChargeGlow}{Camera:LowAngle|distance=5|height=1.2} 哈！
+[Kuwabara]{SpiritSwordDraw}{FaceDetermined}{FXChargeGlow}{Camera:LowAngle|distance=5|height=1.2} 灵剑...出鞘！
 {SFX:Play|name=energy_charge}
 
 6
@@ -49,7 +49,7 @@
 
 10
 00:00:33,000 --> 00:00:37,000
-[Kuwabara]{FaceDetermined}{Camera:Static|position=0,2.5,6|lookAt=0,1.2,0} 让你见识一下我的灵剑斩击！
+[Kuwabara]{FightingStance}{FaceDetermined}{Camera:Static|position=0,2.5,6|lookAt=0,1.2,0} 让你见识一下我的灵剑斩击！
 
 11
 00:00:37,000 --> 00:00:41,500
@@ -98,18 +98,10 @@
 
 18
 00:01:05,000 --> 00:01:09,500
-[Yusuke]{FaceReset}{FaceSmirk}{Camera:Static|position=-4,2.5,5|lookAt=-1,1.2,0} 怎么样，认输了吧？
-
-17
-00:01:01,000 --> 00:01:05,000
-[Kuwabara]{FaceReset}{Block}{FaceAngry}{FXHitSpark}{Camera:Static|position=4,2.5,5|lookAt=2,1.2,0} 还没完！我桑原和真是不会放弃的！
-
-18
-00:01:05,000 --> 00:01:09,500
 {Event:SetWeather|type=fog}
 {Event:Face|character=Yusuke|target=Kuwabara}
 {Event:Face|character=Kuwabara|target=Yusuke}
-[Yusuke]{FaceReset}{FaceSmirk}{Camera:Static|position=-4,2.5,5|lookAt=-1,1.2,0} 真是的，每次都这样...
+[Yusuke]{Shrug}{FaceSmirk}{Camera:Static|position=-4,2.5,5|lookAt=-1,1.2,0} 真是的，每次都这样...
 
 19
 00:01:09,500 --> 00:01:13,500
@@ -128,4 +120,3 @@
 {Event:Face|character=Yusuke|target=Kuwabara}
 {Event:Face|character=Kuwabara|target=Yusuke}
 [Kuwabara]{FaceReset}{WaveHand}{FaceHappy}{Camera:Static|position=4,2.5,6|lookAt=3,1.2,0} 哈哈哈！你就是嘴硬！下次我们再比试比试！
-
