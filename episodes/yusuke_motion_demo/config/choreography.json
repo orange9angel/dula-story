@@ -1,0 +1,23 @@
+{
+  "characters": {
+    "Yusuke": {
+      "initialPosition": { "x": 0, "y": 0.01, "z": 0 },
+      "initialFacing": "camera",
+      "markers": {
+        "enabled": true,
+        "size": 0.03,
+        "opacity": 0.85
+      }
+    }
+  },
+  "scene": {
+    "name": "SarayashikiRoofScene",
+    "lighting": "sunset"
+  },
+  "camera": {
+    "default": {
+      "position": [0, 1.5, 4],
+      "lookAt": [0, 1.0, 0]
+    }
+  }
+}
