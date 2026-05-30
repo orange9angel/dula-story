@@ -137,5 +137,5 @@
 
 **未来演进方向**：
 - 将 Visual Review 检查项固化为代码（如 `CharacterDetailInspector.js`）
-- 使用 AI Vision API 自动分析截图（GPT-4V / Claude Vision）
+- 使用 Kimi 视觉 API 自动分析截图（自动使用 kimi-cli 登录凭证）
 - 建立角色/场景/运镜的评分卡（Scorecard）

@@ -68,7 +68,11 @@
     "build:yuyuhakusho": "npm run audio:yuyuhakusho && npm run render:yuyuhakusho",
     "inspect:yuyuhakusho": "dula-inspect ./episodes/yuyuhakusho",
     "visual-review:yuyuhakusho": "python ./tools/visual-review/cli.py ./episodes/yuyuhakusho",
-    "visual-review:collect:yuyuhakusho": "python ./tools/visual-review/cli.py ./episodes/yuyuhakusho --collect-only"
+    "visual-review:collect:yuyuhakusho": "python ./tools/visual-review/cli.py ./episodes/yuyuhakusho --collect-only",
+    "render:yusuke_ryu": "dula-render ./episodes/yusuke_ryu_specials",
+    "preview:yusuke_ryu": "dula-preview ./episodes/yusuke_ryu_specials",
+    "render:yusuke_demo": "dula-render ./episodes/yusuke_motion_demo",
+    "preview:yusuke_demo": "dula-preview ./episodes/yusuke_motion_demo"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

@@ -61,7 +61,7 @@ class VisualReviewEngine:
         self.episode_name = self.episode_path.name
         
         self.collector = ScreenshotCollector(episode_path)
-        self.vision_client = AIVisionClient(provider=provider) if provider else None
+        self.vision_client = AIVisionClient() if provider != "none" else None
         
     def collect_frames(self, dimensions: List[str] = None) -> Dict[str, List[Dict]]:
         """
@@ -321,7 +321,7 @@ def main():
     parser.add_argument('--dimensions', nargs='+', 
                        choices=['character_detail', 'scene_detail', 'cinematography', 'lighting'],
                        help='Dimensions to review')
-    parser.add_argument('--provider', choices=['openai', 'anthropic', 'local'],
+    parser.add_argument('--provider', choices=['kimi', 'none'],
                        help='AI vision provider')
     parser.add_argument('--output', help='Output directory for reports')
     

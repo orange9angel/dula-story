@@ -436,18 +436,17 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 # 收集关键帧（不调用 AI）
 npm run visual-review:collect:she_ra
 
-# 运行完整 AI 视觉审核（需配置 OPENAI_API_KEY 或 ANTHROPIC_API_KEY）
+# 运行完整 AI 视觉审核（自动使用 kimi-cli 登录凭证）
 npm run visual-review:she_ra
 
-# 指定维度和 provider
+# 指定维度
 python tools/visual-review/cli.py ./episodes/she_ra \
-  --dimensions character_detail lighting \
-  --provider openai
+  --dimensions character_detail lighting
 ```
 
 **组件架构：**
 - `ScreenshotCollector` — 从 storyboard 提取关键帧（场景开始/结束、对白中间、运镜变化）
-- `AIVisionClient` — 封装 GPT-4V / Claude 3 / 本地模型 API
+- `AIVisionClient` — 封装 Kimi 视觉 API（自动使用 kimi-cli 登录凭证）
 - `VisualReviewEngine` — 整合收集器与 AI 客户端，生成评分报告
 
 **审核维度映射：**

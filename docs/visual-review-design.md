@@ -19,7 +19,7 @@
 ```
 VisualReviewEngine
 ├── ScreenshotCollector    # 从渲染帧提取关键帧
-├── AIVisionClient         # GPT-4V / Claude 3 调用封装
+├── AIVisionClient         # Kimi 视觉 API 调用封装
 ├── PromptTemplate         # 各维度审核 Prompt 模板
 ├── ResultAggregator       # 结果聚合与评分
 └── ReportGenerator        # 生成可视化报告
@@ -42,7 +42,7 @@ npx dula-inspect-team ./episodes/she_ra --visual
 ### Phase 1: 基础框架（MVP）
 - [x] ScreenshotCollector：从 storyboard/frames 提取关键帧
 - [x] PromptTemplate：定义基础审核 Prompt
-- [x] AIVisionClient：封装 OpenAI/Anthropic API 调用
+- [x] AIVisionClient：封装 Kimi 视觉 API 调用
 - [x] ResultAggregator：简单评分（1-10分制）
 
 ### Phase 2: 规则引擎回退
@@ -53,7 +53,7 @@ npx dula-inspect-team ./episodes/she_ra --visual
 ### Phase 1.5: 集成到 Story 仓库（已完成）
 - [x] `tools/visual-review/` 目录结构
 - [x] `screenshot_collector.py` — 关键帧提取（场景切换/对白中间/运镜变化）
-- [x] `ai_vision_client.py` — OpenAI/Anthropic API 封装
+- [x] `ai_vision_client.py` — Kimi 视觉 API 封装
 - [x] `visual_review_engine.py` — 审核引擎与报告生成
 - [x] `cli.py` — 命令行入口
 - [x] `package.json` scripts 集成
@@ -83,6 +83,6 @@ npx dula-inspect-team ./episodes/she_ra --visual
 
 | 方案 | 每Episode成本 | 延迟 |
 |------|--------------|------|
-| GPT-4V 全量 | ~$0.5-1.0 | 30-60s |
+| Kimi 视觉审核 | 免费（使用 kimi-cli 凭证）| 30-60s |
 | 规则引擎 | $0 | 5-10s |
-| 混合模式（推荐）| ~$0.2-0.5 | 15-30s |
+| 混合模式（推荐）| 免费 | 15-30s |

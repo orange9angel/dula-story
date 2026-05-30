@@ -9,8 +9,8 @@ Examples:
     # 审核单个 episode
     python -m visual_review.cli ./episodes/she_ra
     
-    # 指定维度和 provider
-    python -m visual_review.cli ./episodes/she_ra --dimensions character_detail lighting --provider openai
+    # 指定维度
+    python -m visual_review.cli ./episodes/she_ra --dimensions character_detail lighting
     
     # 只收集关键帧（不调用 AI）
     python -m visual_review.cli ./episodes/she_ra --collect-only
@@ -34,10 +34,10 @@ def create_parser() -> argparse.ArgumentParser:
         description='Visual Review for Dula Story episodes',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Environment Variables:
-    OPENAI_API_KEY      OpenAI API key (for GPT-4V)
-    ANTHROPIC_API_KEY   Anthropic API key (for Claude 3)
-    
+Authentication:
+    自动从 kimi-cli 登录凭证读取 access_token，无需手动配置 API key。
+    如未登录，请先运行: kimi login
+
 Dimensions:
     character_detail    角色外观细节
     scene_detail        场景丰富度
@@ -57,8 +57,8 @@ Dimensions:
     
     parser.add_argument(
         '--provider', '-p',
-        choices=['openai', 'anthropic', 'local'],
-        help='AI vision provider (default: auto-detect)'
+        choices=['kimi'],
+        help='AI vision provider (default: kimi)'
     )
     
     parser.add_argument(
