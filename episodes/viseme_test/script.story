@@ -5,7 +5,7 @@
 
 2
 00:00:00,000 --> 00:00:01,000
-{Camera:Static|position=3,1.2,3|lookAt=0,0.8,0}
+{Camera:Static|position=3,2,6|lookAt=0,1.2,0}
 
 3
 00:00:01,500 --> 00:00:03,500
@@ -23,6 +23,11 @@
 {FaceAngry}
 
 6
-00:00:11,000 --> 00:00:13,000
+00:00:10,500 --> 00:00:13,500
+[Zorak] 准备起跳！
+{FaceDetermined}{Animation:CrouchJump|depth=0.3|height=0.8|duration=2.0|arms=balance}
+
+7
+00:00:14,000 --> 00:00:16,000
 [Zorak] 好的，走吧。
 {FaceHappy}

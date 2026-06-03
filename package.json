@@ -72,7 +72,16 @@
     "render:yusuke_ryu": "dula-render ./episodes/yusuke_ryu_specials",
     "preview:yusuke_ryu": "dula-preview ./episodes/yusuke_ryu_specials",
     "render:yusuke_demo": "dula-render ./episodes/yusuke_motion_demo",
-    "preview:yusuke_demo": "dula-preview ./episodes/yusuke_motion_demo"
+    "preview:yusuke_demo": "dula-preview ./episodes/yusuke_motion_demo",
+    "audio:star_travel_s1e1": "dula-audio ./episodes/star_travel_s1e1",
+    "audio:star_travel_s1e1:ds": "dula-audio ./episodes/star_travel_s1e1 --provider=dashscope",
+    "verify:star_travel_s1e1": "dula-verify ./episodes/star_travel_s1e1",
+    "preview:star_travel_s1e1": "dula-preview ./episodes/star_travel_s1e1",
+    "render:star_travel_s1e1": "dula-render ./episodes/star_travel_s1e1",
+    "build:star_travel_s1e1": "npm run audio:star_travel_s1e1 && npm run render:star_travel_s1e1",
+    "inspect:star_travel_s1e1": "dula-inspect ./episodes/star_travel_s1e1",
+    "visual-review:star_travel_s1e1": "python ./tools/visual-review/cli.py ./episodes/star_travel_s1e1",
+    "visual-review:collect:star_travel_s1e1": "python ./tools/visual-review/cli.py ./episodes/star_travel_s1e1 --collect-only"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

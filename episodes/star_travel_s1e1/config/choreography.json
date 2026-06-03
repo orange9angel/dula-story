@@ -1,0 +1,20 @@
+{
+  "comment": "Choreography config for Star Travelers S1E1",
+  "scenes": {
+    "SpaceStationScene": {
+      "placements": [
+        { "character": "Zorak", "spot": "left", "face": "center" },
+        { "character": "Klaw", "spot": "right", "face": "center" },
+        { "character": "Vex", "spot": "center_back", "face": "center" }
+      ]
+    },
+    "AlienPlanetScene": {
+      "placements": [
+        { "character": "Zorak", "spot": "left", "face": "center" },
+        { "character": "Klaw", "spot": "right", "face": "center" },
+        { "character": "Vex", "spot": "center_back", "face": "center" },
+        { "character": "Yusuke", "spot": "center_front", "face": "center" }
+      ]
+    }
+  }
+}
