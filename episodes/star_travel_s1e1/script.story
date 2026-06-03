@@ -7,6 +7,7 @@
 {Position:Vex|x=0.3|y=0.01|z=1.5|face=back}
 {Zorak}{FaceDetermined}
 {Zorak}{FaceBlink}
+{Zorak}{Nod}
 [Zorak] 信号确认。坐标X-7749，未知星系边缘。
 {Camera:Static|position=0,1.8,5|lookAt=0,1.0,0}
 
@@ -15,6 +16,7 @@
 [Klaw] 扫描显示...有生命反应。
 {Klaw}{FaceSurprised}
 {Klaw}{FaceBlink}
+{Klaw}{LookAround}
 {Camera:TwoShot|position=0,1.6,4|lookAt=0,1.0,0}
 
 3
@@ -22,6 +24,7 @@
 [Vex] 能量读数很奇怪。不像任何已知文明。
 {Vex}{FaceConfused}
 {Vex}{FaceBlink}
+{Vex}{Shrug}
 {Camera:Static|position=2,1.5,3|lookAt=0,1.0,0}
 
 4
@@ -35,6 +38,7 @@
 00:00:13,700 --> 00:00:16,200
 [Klaw] 如果那些家伙不友好呢？
 {Klaw}{CrossArms}
+{Klaw}{FaceConfused}
 {Klaw}{FaceBlink}
 {Camera:ReactionShot|target=Klaw|distance=3|height=1.5}
 
@@ -80,6 +84,7 @@
 00:00:29,900 --> 00:00:32,900
 [Vex] 生物荧光。和泽拉克深海生物类似。
 {Vex}{HandsOnHips}
+{Vex}{FaceHappy}
 {Vex}{FaceBlink}
 {Camera:Static|position=-3,1.5,4|lookAt=0,1.0,0}
 
@@ -89,6 +94,8 @@
 {Zorak}{FightingStance}
 {Zorak}{FaceDetermined}
 {Zorak}{FaceBlink}
+{Position:Rex|x=0.5|y=0.01|z=-4|face=forward}
+{Rex}{Crouch|depth=0.55|lean=0.2|arms=none|duration=9.5}
 {Camera:FightDramatic|target=Zorak|distance=4|height=1.2}
 
 12
@@ -113,7 +120,6 @@
 14
 00:00:43,100 --> 00:00:46,600
 [Rex] ...你们是谁？
-{Position:Rex|x=0|y=0.01|z=-4|face=forward}
 {Rex}{CrossArms}
 {Rex}{FaceSmirk}
 {Rex}{FaceBlink}
@@ -131,6 +137,7 @@
 00:00:50,200 --> 00:00:53,700
 [Rex] 我叫Rex。你们这些外星人，来我的星球干嘛？
 {Rex}{HandsOnHips}
+{Rex}{FaceDetermined}
 {Rex}{FaceBlink}
 {Camera:Static|position=3,1.6,4|lookAt=0,1.0,0}
 
@@ -138,6 +145,7 @@
 00:00:54,000 --> 00:00:57,000
 [Zorak] 我们是星际探险队。我叫泽拉克，这是克劳和维克斯。
 {Zorak}{Bow}
+{Zorak}{FaceHappy}
 {Zorak}{FaceBlink}
 {Camera:TwoShot|position=0,1.6,4|lookAt=0,1.0,0}
 
@@ -154,8 +162,8 @@
 [Rex] 探索？哼。你们最好小心点。这颗星球可不止有植物。
 {Rex}{FaceSmirk}
 {Rex}{FaceBlink}
+{Rex}{CrossArms}
 {Camera:CloseUp|target=Rex|distance=2.5|height=1.5}
-{Rex}{FaceReset}
 
 20
 00:01:04,100 --> 00:01:06,600
@@ -199,9 +207,9 @@
 [Vex] 他的能量读数...在飙升！
 {Vex}{FaceSurprised}
 {Vex}{FaceBlink}
+{Vex}{Shrug}
 {FXBioluminescentPulse|character=Vex}
 {Camera:ReactionShot|target=Vex|distance=2.5|height=1.4}
-{Vex}{FaceReset}
 
 25
 00:01:20,600 --> 00:01:23,600
@@ -215,6 +223,7 @@
 00:01:23,900 --> 00:01:26,900
 [Rex] ...那就证明给我看。
 {Rex}{DashForward}
+{Rex}{FaceDetermined}
 {Rex}{FaceBlink}
 {SFX:Play|name=dash_whoosh}
 {Camera:FightFollow|target=Rex|distance=4|height=1.2}
@@ -321,6 +330,7 @@
 {Event:Move|character=Zorak|x=0|z=0|duration=1.5}
 [Zorak] 看，我放下手。我们是和平的。
 {Zorak}{CrossArms}
+{Zorak}{FaceHappy}
 {Zorak}{FaceBlink}
 {Camera:Static|position=0,1.6,5|lookAt=0,1.0,0}
 
@@ -337,6 +347,7 @@
 00:02:06,100 --> 00:02:09,100
 [Rex] 你们三个...挺有意思的。好吧，我暂时相信你们。
 {Rex}{Nod}
+{Rex}{FaceSmirk}
 {Rex}{FaceBlink}
 {Camera:TwoShot|position=0,1.6,5|lookAt=0,1.0,0}
 
@@ -368,6 +379,7 @@
 00:02:19,300 --> 00:02:22,300
 [Zorak] 也许...我们可以互相帮助。你熟悉这里，我们有飞船和技术。
 {Zorak}{ReachOut}
+{Zorak}{FaceHappy}
 {Zorak}{FaceBlink}
 {Camera:TwoShot|position=0,1.6,5|lookAt=0,1.0,0}
 
@@ -391,6 +403,7 @@
 00:02:29,200 --> 00:02:32,200
 [Zorak] 什么条件？
 {Zorak}{Nod}
+{Zorak}{FaceConfused}
 {Zorak}{FaceBlink}
 {Camera:Static|position=0,1.6,5|lookAt=0,1.0,0}
 
@@ -399,6 +412,7 @@
 [Rex] 教我开你们的飞船。
 {Rex}{FaceSmirk}
 {Rex}{FaceBlink}
+{Rex}{LookAround}
 {SFX:Play|name=wind_gentle}
 {Camera:FightDramatic|target=Rex|distance=3|height=1.0}
 
@@ -409,15 +423,14 @@
 {Klaw}{SurprisedJump}
 {Klaw}{FaceBlink}
 {Camera:ReactionShot|target=Klaw|distance=3|height=1.4}
-{Klaw}{FaceReset}
 
 50
 00:02:39,100 --> 00:02:42,100
 [Vex] 我觉得...挺有趣的。
 {Vex}{FaceHappy}
 {Vex}{FaceBlink}
+{Vex}{Shrug}
 {Camera:Static|position=-2,1.5,4|lookAt=0,1.0,0}
-{Vex}{FaceReset}
 
 51
 00:02:42,400 --> 00:02:45,400
@@ -434,7 +447,6 @@
 {Rex}{FaceHappy}
 {Rex}{FaceBlink}
 {Camera:Static|position=0,1.6,6|lookAt=0,1.0,0}
-{Rex}{FaceReset}
 
 53
 00:02:49,000 --> 00:02:52,000
@@ -453,6 +465,7 @@
 00:02:52,300 --> 00:02:55,300
 [Zorak] 那么，Rex。带我们去看看你的星球吧。
 {Zorak}{PointForward}
+{Zorak}{FaceHappy}
 {Zorak}{FaceBlink}
 {Camera:Static|position=0,2,8|lookAt=0,1.0,0}
 
