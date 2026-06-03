@@ -94,20 +94,20 @@
 {Zorak}{FightingStance}
 {Zorak}{FaceDetermined}
 {Zorak}{FaceBlink}
-{Position:Rex|x=0.5|y=0.01|z=-4|face=forward}
+{Position:Rex|x=0|y=0.01|z=-4|face=forward}
 {Rex}{Crouch|depth=0.55|lean=0.2|arms=none|duration=9.5}
 {Camera:FightDramatic|target=Zorak|distance=4|height=1.2}
 
 12
 00:00:36,500 --> 00:00:39,500
-{Event:Move|character=Zorak|x=-1|z=0|duration=0.8}
-{Zorak}{Run}
-{Event:Move|character=Klaw|x=1|z=0|duration=0.8}
-{Klaw}{Run}
-{Event:Move|character=Vex|x=0|z=-1|duration=0.8}
-{Vex}{Run}
-{SFX:Play|name=dash_whoosh}
-{Camera:FightWide|distance=6|height=2}
+{Zorak}{FightingStance}
+{Zorak}{FaceDetermined}
+{Klaw}{LookAround}
+{Klaw}{FaceSurprised}
+{Vex}{HandsOnHips}
+{Vex}{FaceConfused}
+{SFX:Play|name=wind_gentle}
+{Camera:FightDramatic|target=Zorak|distance=5|height=1.0}
 
 13
 00:00:39,800 --> 00:00:42,800
@@ -115,7 +115,7 @@
 {Zorak}{PointForward}
 {Zorak}{FaceAngry}
 {Zorak}{FaceBlink}
-{Camera:Static|position=0,1.6,5|lookAt=0,1.0,0}
+{Camera:FightDramatic|target=Zorak|distance=4|height=1.2}
 
 14
 00:00:43,100 --> 00:00:46,600
