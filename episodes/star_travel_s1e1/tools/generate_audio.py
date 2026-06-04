@@ -1015,6 +1015,17 @@ async def generate(force_tts=False):
     manifest = {
         "entries": [],
     }
+    previous_entries = {}
+    if os.path.exists(MANIFEST_PATH):
+        try:
+            with open(MANIFEST_PATH, "r", encoding="utf-8") as f:
+                old_manifest = json.load(f)
+            previous_entries = {
+                (entry.get("index"), entry.get("character")): entry
+                for entry in old_manifest.get("entries", [])
+            }
+        except Exception as exc:
+            print(f"Warning: could not read previous manifest for stale checks: {exc}")
 
     # Collect SFX and BGM events from voice_config and story tags
     sfx_events = []
@@ -1096,7 +1107,15 @@ async def generate(force_tts=False):
         filename = f"{entry['index']:03d}_{char}.mp3"
         filepath = os.path.join(OUTPUT_DIR, filename)
 
-        if os.path.exists(filepath) and not force_tts:
+        # Apply dialogue preprocessing before stale checks so manifest text matches
+        # the exact text sent to TTS, including small tone-particle changes.
+        original_dialogue = dialogue
+        dialogue = DIALOGUE_PREPROCESSOR.get(dialogue, dialogue)
+        preprocessed = dialogue != original_dialogue
+        previous_entry = previous_entries.get((entry["index"], char))
+        dialogue_changed = bool(previous_entry and previous_entry.get("dialogue") != dialogue)
+
+        if os.path.exists(filepath) and not force_tts and not dialogue_changed:
             audio_duration = get_mp3_duration(filepath)
             print(f"Skipped (exists): {filename} ({audio_duration:.2f}s)")
         else:
@@ -1105,11 +1124,10 @@ async def generate(force_tts=False):
                 source = "tag" if entry.get("emotion") else "auto"
                 emotion_label = f" [{emotion}:{source}]"
             
-            # Apply dialogue preprocessing for natural tone
-            original_dialogue = dialogue
-            dialogue = DIALOGUE_PREPROCESSOR.get(dialogue, dialogue)
-            if dialogue != original_dialogue:
+            if preprocessed:
                 print(f"  Preprocessed: '{original_dialogue}' -> '{dialogue}'")
+            if dialogue_changed:
+                print(f"  Dialogue changed: regenerating {filename}")
             
             communicate = edge_tts.Communicate(
                 text=dialogue,
@@ -1229,5 +1247,4 @@ async def generate(force_tts=False):
 if __name__ == "__main__":
     force_tts = "--force" in sys.argv
     asyncio.run(generate(force_tts=force_tts))
-
 
