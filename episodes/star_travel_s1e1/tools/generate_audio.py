@@ -835,14 +835,25 @@ def mix_bgm_track(cues, entries, duration, sample_rate=48000):
         fade_out = cue.get("fadeOut", 1.0)
         base_vol = cue.get("baseVolume", 0.5)
 
-        for i, s in enumerate(samples):
+        num_samples = len(samples)
+        if num_samples == 0:
+            print(f"Warning: BGM file has no samples: {file_path}")
+            continue
+
+        for i in range(n):
             idx = start_sample + i
             if idx >= n:
                 break
 
             t = idx / sample_rate
-            if t < cue["startTime"] or t > end_time:
+            if t < cue["startTime"]:
                 continue
+            if t > end_time:
+                break
+
+            # Loop samples if music file is shorter than play duration
+            sample_idx = i % num_samples
+            s = samples[sample_idx]
 
             vol = base_vol
             # Fade In (sine ease)
@@ -1214,10 +1225,16 @@ async def generate(force_tts=False):
             else:
                 # From story Music tags
                 opts = cue["options"]
+                raw_end = opts.get("endTime", max_time)
+                # endTime in script is relative to startTime if it's shorter than startTime
+                if raw_end <= cue["startTime"]:
+                    end_time = cue["startTime"] + raw_end
+                else:
+                    end_time = raw_end
                 cues.append({
                     "name": opts.get("name", "theme"),
                     "startTime": cue["startTime"],
-                    "endTime": opts.get("endTime", max_time),
+                    "endTime": end_time,
                     "fadeIn": opts.get("fadeIn", 1.0),
                     "fadeOut": opts.get("fadeOut", 1.0),
                     "baseVolume": opts.get("baseVolume", 0.5),
@@ -1247,4 +1264,3 @@ async def generate(force_tts=False):
 if __name__ == "__main__":
     force_tts = "--force" in sys.argv
     asyncio.run(generate(force_tts=force_tts))
-

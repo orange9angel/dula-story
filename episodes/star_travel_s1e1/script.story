@@ -1,7 +1,7 @@
 1
 00:00:00,000 --> 00:00:05,807
 @SpaceStationScene
-{Music:Play|name=space_ambient|fadeIn=2.0|baseVolume=0.3|endTime=30.0}
+{Music:Play|name=space_explore|fadeIn=2.0|baseVolume=0.35|endTime=30.0}
 {SceneDirector:Formation|type=triangle|center=0,0,0|radius=1.5|focus=Zorak}
 {SceneDirector:Gaze|mode=auto}
 {Zorak}{FaceDetermined}
@@ -63,7 +63,7 @@
 8
 00:00:29,835 --> 00:00:32,835
 @AlienPlanetScene
-{Music:Play|name=alien_world|fadeIn=1.5|baseVolume=0.25|endTime=90.0}
+{Music:Play|name=alien_mystery|fadeIn=1.5|baseVolume=0.3|endTime=15.0}
 {SceneDirector:Formation|type=semicircle|center=0,0,0|radius=2|focus=Zorak}
 {SceneDirector:Gaze|mode=auto}
 {Event:Hide|character=Rex}
@@ -97,6 +97,7 @@
 
 12
 00:00:43,264 --> 00:00:46,264
+{Music:Play|name=alien_calm_loop|fadeIn=2.0|baseVolume=0.25|endTime=50.0}
 {Event:Move|character=Zorak|x=-1|z=0|duration=0.8}
 {Zorak}{Run}
 {Event:Move|character=Klaw|x=1|z=0|duration=0.8}
@@ -194,6 +195,7 @@
 
 22
 00:01:29,811 --> 00:01:31,756
+{Music:Play|name=battle_intense|fadeIn=1.0|baseVolume=0.35|endTime=50.0}
 {Zorak}{FightingStance}
 {Klaw}{FightingStance}
 {Vex}{FightingStance}
@@ -320,6 +322,7 @@
 
 37
 00:02:15,079 --> 00:02:18,223
+{Music:Play|name=resolution|fadeIn=2.0|baseVolume=0.3|endTime=90.0}
 {Zorak}{FightingStance}
 {Klaw}{FightingStance}
 {Vex}{FightingStance}
@@ -493,7 +496,6 @@
 {Klaw}{FaceBlink}
 {Vex}{FaceBlink}
 {SFX:Play|name=dash_whoosh}
-{Music:Play|name=space_ambient|fadeIn=1.0|baseVolume=0.2|endTime=45.0}
 {Camera:Pan|from=0,3,10|to=0,5,15|duration=3.0}
 
 57
