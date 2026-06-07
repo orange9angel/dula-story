@@ -87,7 +87,13 @@
     "preview:broadcast_exercise_s1e1": "dula-preview ./episodes/broadcast_exercise_s1e1",
     "render:broadcast_exercise_s1e1": "dula-render ./episodes/broadcast_exercise_s1e1",
     "build:broadcast_exercise_s1e1": "npm run audio:broadcast_exercise_s1e1 && npm run render:broadcast_exercise_s1e1",
-    "inspect:broadcast_exercise_s1e1": "dula-inspect ./episodes/broadcast_exercise_s1e1"
+    "inspect:broadcast_exercise_s1e1": "dula-inspect ./episodes/broadcast_exercise_s1e1",
+    "audio:broadcast_exercise_s1e2": "dula-audio ./episodes/broadcast_exercise_s1e2",
+    "verify:broadcast_exercise_s1e2": "dula-verify ./episodes/broadcast_exercise_s1e2",
+    "preview:broadcast_exercise_s1e2": "dula-preview ./episodes/broadcast_exercise_s1e2",
+    "render:broadcast_exercise_s1e2": "dula-render ./episodes/broadcast_exercise_s1e2",
+    "build:broadcast_exercise_s1e2": "npm run audio:broadcast_exercise_s1e2 && npm run render:broadcast_exercise_s1e2",
+    "inspect:broadcast_exercise_s1e2": "dula-inspect ./episodes/broadcast_exercise_s1e2"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
