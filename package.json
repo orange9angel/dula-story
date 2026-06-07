@@ -81,7 +81,13 @@
     "build:star_travel_s1e1": "npm run audio:star_travel_s1e1 && npm run render:star_travel_s1e1",
     "inspect:star_travel_s1e1": "dula-inspect ./episodes/star_travel_s1e1",
     "visual-review:star_travel_s1e1": "python ./tools/visual-review/cli.py ./episodes/star_travel_s1e1",
-    "visual-review:collect:star_travel_s1e1": "python ./tools/visual-review/cli.py ./episodes/star_travel_s1e1 --collect-only"
+    "visual-review:collect:star_travel_s1e1": "python ./tools/visual-review/cli.py ./episodes/star_travel_s1e1 --collect-only",
+    "audio:broadcast_exercise_s1e1": "dula-audio ./episodes/broadcast_exercise_s1e1",
+    "verify:broadcast_exercise_s1e1": "dula-verify ./episodes/broadcast_exercise_s1e1",
+    "preview:broadcast_exercise_s1e1": "dula-preview ./episodes/broadcast_exercise_s1e1",
+    "render:broadcast_exercise_s1e1": "dula-render ./episodes/broadcast_exercise_s1e1",
+    "build:broadcast_exercise_s1e1": "npm run audio:broadcast_exercise_s1e1 && npm run render:broadcast_exercise_s1e1",
+    "inspect:broadcast_exercise_s1e1": "dula-inspect ./episodes/broadcast_exercise_s1e1"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
