@@ -1,10 +1,19 @@
 import * as THREE from 'three';
 import { registerAll } from 'dula-assets';
-import { registerScene, SceneRegistry } from 'dula-engine';
+import {
+  AnimationBase,
+  CharacterRegistry,
+  registerAnimation,
+  registerCharacter,
+  registerScene,
+  SceneRegistry,
+} from 'dula-engine';
 
 registerAll();
 
 const BaseSpaceStationScene = SceneRegistry.SpaceStationScene;
+const BaseDiscoWorm = CharacterRegistry.DiscoWorm;
+const TAU = Math.PI * 2;
 
 const COUNTING_START = 2.5;
 const COUNTING_BEAT_SECONDS = 0.95;
@@ -33,6 +42,327 @@ const EXERCISE_EXPRESSIONS = [
   { start: 18.6, end: 25.3, mood: 'determined' },
   { start: 25.3, end: 32.9, mood: 'happy' },
 ];
+
+function positiveNumber(value, fallback) {
+  const n = Number(value);
+  return Number.isFinite(n) && n > 0 ? n : fallback;
+}
+
+function easeInOut(t) {
+  const p = Math.max(0, Math.min(1, t));
+  return p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+}
+
+function baseState(obj) {
+  if (!obj) return null;
+  if (!obj.userData.broadcastExerciseBase) {
+    obj.userData.broadcastExerciseBase = {
+      px: obj.position.x,
+      py: obj.position.y,
+      pz: obj.position.z,
+      rx: obj.rotation.x,
+      ry: obj.rotation.y,
+      rz: obj.rotation.z,
+      sx: obj.scale.x,
+      sy: obj.scale.y,
+      sz: obj.scale.z,
+    };
+  }
+  return obj.userData.broadcastExerciseBase;
+}
+
+function setRot(obj, rx = 0, ry = 0, rz = 0) {
+  const b = baseState(obj);
+  if (!b) return;
+  obj.rotation.set(b.rx + rx, b.ry + ry, b.rz + rz);
+}
+
+function setPos(obj, px = 0, py = 0, pz = 0) {
+  const b = baseState(obj);
+  if (!b) return;
+  obj.position.set(b.px + px, b.py + py, b.pz + pz);
+}
+
+function setScale(obj, sx = 1, sy = 1, sz = 1) {
+  const b = baseState(obj);
+  if (!b) return;
+  obj.scale.set(b.sx * sx, b.sy * sy, b.sz * sz);
+}
+
+function makeExerciseGlow(color, intensity = 1.2) {
+  return new THREE.MeshStandardMaterial({
+    color,
+    emissive: color,
+    emissiveIntensity: intensity,
+    roughness: 0.24,
+    metalness: 0.08,
+  });
+}
+
+class ExerciseDiscoWorm extends BaseDiscoWorm {
+  constructor() {
+    super();
+    this.trustedBodyAnimations = [
+      ...new Set([
+        ...(this.trustedBodyAnimations || []),
+        'WormBroadcastChestExpansion',
+        'BroadcastChestExpansion',
+      ]),
+    ];
+    this.allowedBodyAnimations = new Set(this.trustedBodyAnimations);
+  }
+
+  build() {
+    super.build();
+    this.mesh.scale.set(1.32, 1.32, 1.32);
+    this.baseY = 0.36;
+
+    const colors = [0x7ff5ff, 0xffd166, 0xff5da2, 0x9bff7a];
+    const wristBandGeo = new THREE.TorusGeometry(0.052, 0.008, 8, 24);
+    this.exerciseBands = [];
+
+    const targets = [
+      this.rightWrist,
+      this.leftWrist,
+      this.rightAnkle,
+      this.leftAnkle,
+      this.rightAnkle2,
+      this.leftAnkle2,
+    ].filter(Boolean);
+
+    for (let i = 0; i < targets.length; i++) {
+      const band = new THREE.Mesh(wristBandGeo, makeExerciseGlow(colors[i % colors.length], 1.4));
+      band.rotation.x = Math.PI / 2;
+      band.position.y = -0.012;
+      targets[i].add(band);
+      this.exerciseBands.push(band);
+    }
+
+    if (this.headGroup) {
+      const headband = new THREE.Mesh(
+        new THREE.TorusGeometry(0.275, 0.014, 8, 48),
+        makeExerciseGlow(0x7ff5ff, 1.55)
+      );
+      headband.rotation.x = Math.PI / 2;
+      headband.position.set(0, 0.055, 0.01);
+      this.headGroup.add(headband);
+      this.exerciseHeadband = headband;
+    }
+
+    const badge = new THREE.Mesh(
+      new THREE.CircleGeometry(0.075, 24),
+      makeExerciseGlow(0xffd166, 1.25)
+    );
+    badge.position.set(0, 0.16, 0.30);
+    badge.rotation.x = -0.1;
+    this.headGroup?.add(badge);
+    this.exerciseBadge = badge;
+  }
+
+  update(time, delta) {
+    super.update(time, delta);
+
+    for (let i = 0; i < (this.exerciseBands || []).length; i++) {
+      const band = this.exerciseBands[i];
+      band.rotation.z += delta * (1.6 + i * 0.18);
+      band.material.emissiveIntensity = 0.9 + Math.max(0, Math.sin(time * TAU * 1.6 + i)) * 0.9;
+    }
+    if (this.exerciseHeadband) {
+      this.exerciseHeadband.material.emissiveIntensity = 1.0 + Math.max(0, Math.sin(time * TAU * 1.15)) * 0.7;
+    }
+    if (this.exerciseBadge) {
+      this.exerciseBadge.material.emissiveIntensity = 0.9 + Math.max(0, Math.sin(time * TAU * 1.3)) * 0.6;
+    }
+  }
+}
+
+class WormBroadcastChestExpansion extends AnimationBase {
+  constructor(options = {}) {
+    super('WormBroadcastChestExpansion', positiveNumber(options.duration, 30.4));
+    this.beatSeconds = positiveNumber(options.beatSeconds ?? options.beatDuration, COUNTING_BEAT_SECONDS);
+  }
+
+  update(t, character) {
+    const elapsed = t * this.duration;
+    const beat = elapsed / this.beatSeconds;
+    const groupBeat = beat % 8;
+    const halfBeat = groupBeat < 4 ? groupBeat : groupBeat - 4;
+    const stepSide = groupBeat < 4 ? -1 : 1;
+    const beatPhase = beat % 1;
+    const pulse = Math.pow(Math.max(0, Math.sin(beatPhase * Math.PI)), 0.7);
+    const phase = this._exercisePhase(halfBeat);
+
+    if (character.mesh) {
+      const bounce = 0.018 * pulse + phase.wide * 0.018;
+      setPos(character.mesh, stepSide * phase.step * 0.055, bounce, 0.02 * phase.step);
+      setRot(character.mesh, -0.035 * phase.wide, stepSide * 0.035 * phase.step, -stepSide * 0.035 * phase.step);
+    }
+
+    this._body(character, beat, halfBeat, stepSide, pulse, phase);
+    this._arms(character, stepSide, phase, pulse);
+    this._legs(character, beat, stepSide, phase, pulse);
+    this._face(character, phase, pulse);
+  }
+
+  _exercisePhase(halfBeat) {
+    const whole = Math.floor(halfBeat);
+    const p = halfBeat - whole;
+    const e = easeInOut(p);
+
+    if (halfBeat < 0.5) {
+      return { front: easeInOut(halfBeat * 2), cross: 0, open: 0, wide: 0, step: 0.15 };
+    }
+    if (halfBeat < 1) {
+      return { front: 1 - e * 0.25, cross: e, open: 0, wide: 0, step: 0.45 };
+    }
+    if (halfBeat < 1.5) {
+      const q = easeInOut((halfBeat - 1) * 2);
+      return { front: 0.5, cross: 1 - q, open: q, wide: 0.1 * q, step: 0.72 };
+    }
+    if (halfBeat < 2) {
+      const q = easeInOut((halfBeat - 1.5) * 2);
+      return { front: 0.5, cross: q, open: 1 - q, wide: 0.1, step: 0.72 };
+    }
+    if (halfBeat < 2.65) {
+      const q = easeInOut((halfBeat - 2) / 0.65);
+      return { front: 0.2, cross: 1 - q, open: 0.35 + q * 0.45, wide: q, step: 1.0 };
+    }
+    if (halfBeat < 3.25) {
+      const q = easeInOut((halfBeat - 2.65) / 0.6);
+      return { front: 0.2, cross: 0, open: 0.8 + q * 0.2, wide: 1 - q * 0.35, step: 0.95 };
+    }
+    const q = easeInOut((halfBeat - 3.25) / 0.75);
+    return { front: 0.2 * (1 - q), cross: 0, open: 1 - q, wide: 0.65 * (1 - q), step: 0.35 * (1 - q) };
+  }
+
+  _body(character, beat, halfBeat, stepSide, pulse, phase) {
+    const segments = character.segments || [];
+    const wave = Math.sin(beat * Math.PI);
+    for (let i = 0; i < segments.length; i++) {
+      const tail = 1 - i / Math.max(1, segments.length - 1);
+      const head = i / Math.max(1, segments.length - 1);
+      const roll = Math.sin(beat * TAU * 0.5 - i * 0.45) * 0.035;
+      const buttMark = Math.sin(beat * TAU + i * 0.35) * tail * 0.05;
+
+      setRot(
+        segments[i],
+        -phase.open * 0.045 + roll + pulse * head * 0.018,
+        stepSide * phase.step * (0.045 + tail * 0.035),
+        stepSide * phase.step * (0.055 + tail * 0.08) + buttMark
+      );
+      setPos(
+        segments[i],
+        stepSide * phase.step * tail * 0.035,
+        pulse * (0.006 + tail * 0.01),
+        Math.cos(beat * TAU * 0.5 + i * 0.4) * 0.014 * phase.step
+      );
+      setScale(segments[i], 1 + phase.open * 0.025 * head, 1 - pulse * 0.018, 1 + Math.abs(wave) * 0.025 * tail);
+    }
+  }
+
+  _arms(character, stepSide, phase, pulse) {
+    const arms = character.arms || [];
+    for (let i = 0; i < arms.length; i++) {
+      const arm = arms[i];
+      const side = arm.side || (i === 0 ? 1 : -1);
+      const outward = phase.open + phase.wide * 0.65;
+      const cross = phase.cross;
+      const front = phase.front;
+
+      setRot(
+        arm.shoulder,
+        -0.28 - front * 0.88 - cross * 0.75 - outward * 0.62,
+        side * (0.12 + outward * 0.42 - cross * 0.44),
+        side * (0.18 + outward * 1.02 - cross * 0.76) + stepSide * 0.04
+      );
+      setRot(
+        arm.elbow,
+        0.10 + cross * 0.86 + pulse * 0.08,
+        side * (outward * 0.16 - cross * 0.18),
+        side * (outward * 0.18 - cross * 0.12)
+      );
+      setRot(
+        arm.wrist,
+        pulse * 0.12,
+        side * (outward * 0.28 - cross * 0.2),
+        side * (outward * 0.22 + pulse * 0.08)
+      );
+      setScale(arm.hand, 1 + pulse * 0.07, 1, 1 + outward * 0.06);
+    }
+  }
+
+  _legs(character, beat, stepSide, phase, pulse) {
+    const legs = character.legs || [];
+    for (let i = 0; i < legs.length; i++) {
+      const leg = legs[i];
+      const side = leg.side || (i % 2 === 0 ? -1 : 1);
+      const rear = i >= 2 ? 1 : 0;
+      const active = side === stepSide ? 1 : 0;
+      const follow = rear ? 0.7 : 1;
+      const lift = phase.step * (active ? 1 : 0.22) * follow;
+      const counter = phase.step * (active ? 0.28 : 0.7) * follow;
+
+      setPos(
+        leg.hip,
+        side * (0.035 * lift - 0.018 * counter),
+        0.018 * lift + pulse * 0.006,
+        (rear ? -0.025 : 0.025) * phase.step
+      );
+      setPos(
+        leg.knee,
+        side * 0.045 * lift,
+        0.028 * lift,
+        (rear ? -0.035 : 0.035) * Math.sin(beat * Math.PI) * phase.step
+      );
+      setPos(
+        leg.ankle,
+        side * (-0.055 * lift + 0.02 * counter),
+        0.018 * lift - 0.01 * counter,
+        (rear ? -0.045 : 0.045) * Math.cos(beat * Math.PI) * phase.step
+      );
+
+      setRot(
+        leg.hip,
+        -0.18 * lift + 0.08 * counter,
+        side * (0.16 * lift + 0.04 * phase.open),
+        side * (0.28 * lift + 0.08 * phase.wide)
+      );
+      setRot(
+        leg.knee,
+        0.18 + 0.55 * lift + 0.08 * pulse,
+        side * 0.08 * lift,
+        side * 0.10 * phase.step
+      );
+      setRot(
+        leg.ankle,
+        -0.22 * lift + 0.10 * counter,
+        side * 0.08 * phase.step,
+        side * 0.16 * (active ? phase.step : -phase.step)
+      );
+      setRot(
+        leg.foot,
+        0.16 * counter - 0.18 * lift,
+        side * 0.08 * phase.step,
+        side * 0.22 * (active ? phase.step : -phase.step)
+      );
+      setScale(leg.foot, 1 + counter * 0.08, 1 - counter * 0.04, 1 + lift * 0.08);
+    }
+  }
+
+  _face(character, phase, pulse) {
+    if (character.headGroup) {
+      setRot(character.headGroup, -phase.open * 0.05 + pulse * 0.015, 0, phase.step * 0.025);
+    }
+    if (character.leftPupil && character.rightPupil) {
+      const eyePop = 1 + pulse * 0.06 + phase.wide * 0.04;
+      character.leftPupil.scale.setScalar(eyePop);
+      character.rightPupil.scale.setScalar(eyePop);
+    }
+  }
+}
+
+registerCharacter('DiscoWorm', ExerciseDiscoWorm);
+registerAnimation('WormBroadcastChestExpansion', WormBroadcastChestExpansion);
 
 function getCountingMouthEnergy(progress) {
   const attack = Math.min(1, progress / 0.16);

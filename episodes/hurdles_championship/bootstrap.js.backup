@@ -1,0 +1,8 @@
+/**
+ * Hurdles Championship — 星际跨栏大赛
+ * Bootstrap: registers all assets from dula-assets
+ */
+import { registerAll } from 'dula-assets';
+
+// Register all official assets (characters, scenes, animations, camera moves, etc.)
+registerAll();

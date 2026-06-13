@@ -1,0 +1,544 @@
+1
+00:00:00,000 --> 00:00:05,914
+@StadiumScene
+{Music:Play|name=stadium_crowd|fadeIn=1.0|baseVolume=0.26|endTime=277.0}
+{Position:Reporter|x=5.8|z=-50.8|face=Zorak}
+{Position:Cameraman|x=7.0|z=-48.7|face=Reporter}
+{Position:Cameraman2|x=6.7|z=-53.0|face=Reporter}
+{Position:Cameraman3|x=4.6|z=-47.2|face=Zorak}
+{Position:Zorak|x=-1.83|z=-50.7|face=forward}
+{Position:Klaw|x=-0.61|z=-50.7|face=forward}
+{Position:Vex|x=0.61|z=-50.7|face=forward}
+{Position:Rex|x=1.83|z=-50.7|face=forward}
+{Position:DiscoWorm|x=3.05|z=-50.7|face=forward}
+{Zorak}{FaceHappy}
+{Klaw}{FaceHappy}
+{Vex}{FaceHappy}
+{Rex}{FaceSmirk}
+{DiscoWorm}{FaceHappy}
+[Reporter] 欢迎收看第一届星际跨栏大赛！五位选手，十个栏架，零个规则讲解员！
+{Camera:Static|position=7.8,3.0,-44.0|lookAt=0,1.0,-50.5}
+
+2
+00:00:06,214 --> 00:00:09,694
+{Music:Play|name=interview_calm|fadeIn=1.0|baseVolume=0.16|endTime=129.6}
+[Reporter] 首先，来自星际探险队的泽拉克队长！
+{Zorak}{WaveHand}
+{Zorak}{FaceDetermined}
+{Zorak}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+3
+00:00:09,994 --> 00:00:21,730
+[Zorak] 我的策略很简单——把每个栏架当成未知星系的边界，跨越它，然后...假装没绊倒。不过说实话，我主要是来监督队员们的。
+{Zorak}{PointForward}
+{Zorak}{FaceDetermined}
+{Zorak}{FaceBlink}
+{Camera:Static|position=1.7,1.75,-48.4|lookAt=-1.83,1.05,-50.7}
+
+4
+00:00:22,030 --> 00:00:27,214
+[Reporter] 很有气势！但听说你的队友克劳也参赛了，你们会互相让吗？
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+5
+00:00:27,514 --> 00:00:39,514
+[Zorak] 让？在竞技场上，没有队长和队员，只有...五个同时卡在同一个栏架上的倒霉蛋。不过放心，我会第一个卡住的，给大家做个示范。
+{Zorak}{FaceSmirk}
+{Zorak}{FaceBlink}
+{Zorak}{CrossArms}
+{Camera:Static|position=1.7,1.75,-48.4|lookAt=-1.83,1.05,-50.7}
+
+6
+00:00:39,814 --> 00:00:43,582
+[Reporter] 好现实的队长！接下来是鳞甲战士克劳！
+{Klaw}{SurprisedJump}
+{Klaw}{FaceExcited}
+{Klaw}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+7
+00:00:43,882 --> 00:00:54,850
+[Klaw] 哈哈！队长说要跨越边界？我倒是担心他那些"优雅"的跨栏动作会不会被栏架反弹打到脸！不过没关系，我已经准备好拍照了！
+{Klaw}{FaceHappy}
+{Klaw}{FaceBlink}
+{Klaw}{HandsOnHips}
+{Camera:Static|position=2.7,1.75,-48.2|lookAt=-0.61,1.05,-50.7}
+
+8
+00:00:55,150 --> 00:00:59,230
+[Reporter] 看来队内氛围很欢乐啊！克劳，你的优势是什么？
+{Klaw}{FightingStance}
+{Klaw}{FaceDetermined}
+{Klaw}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+9
+00:00:59,530 --> 00:01:08,818
+[Klaw] 我的鳞甲可不是摆设！撞翻栏架？不，我会用肩膀把它们...顶成现代艺术品！然后卖给博物馆换零花钱！
+{Klaw}{FaceHappy}
+{Klaw}{FaceBlink}
+{SFX:Play|name=whoosh_fast}
+{Camera:Static|position=2.7,1.75,-48.2|lookAt=-0.61,1.05,-50.7}
+
+10
+00:01:09,118 --> 00:01:13,198
+[Reporter] 太有创意了...接下来是维克斯，队伍里唯一的飞行成员！
+{Vex}{WaveHand}
+{Vex}{FaceHappy}
+{Vex}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+11
+00:01:13,498 --> 00:01:19,690
+[Vex] 其实我本来不想来的...但他们说如果参加了，可以免洗三个月的飞船餐盘。
+{Vex}{Shrug}
+{Vex}{FaceSmirk}
+{Vex}{FaceBlink}
+{Camera:Static|position=3.7,1.8,-48.1|lookAt=0.61,1.08,-50.7}
+
+12
+00:01:19,990 --> 00:01:24,526
+[Reporter] 就为了这个？！维克斯，你会用翅膀...保持平衡吗？
+{Vex}{FaceSurprised}
+{Vex}{FaceBlink}
+{Vex}{HandsUp}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+13
+00:01:24,826 --> 00:01:32,578
+[Vex] 当然！我的翅膀只是...只是用来保持平衡的！绝对不是为了...飞得比别人高一点点！
+{Vex}{FaceHappy}
+{Vex}{FaceBlink}
+{Vex}{Shrug}
+{SFX:Play|name=wind_gentle}
+{Camera:Static|position=3.7,1.8,-48.1|lookAt=0.61,1.08,-50.7}
+
+14
+00:01:32,878 --> 00:01:37,582
+[Reporter] 好的好的，我们相信你...大概。接下来是晶体守护者雷克斯！
+{Rex}{CrossArms}
+{Rex}{FaceSmirk}
+{Rex}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+15
+00:01:37,882 --> 00:01:45,082
+[Rex] 这些外星人非要拉我来。我说过我更喜欢站着不动...但站着跨栏好像也行。
+{Rex}{FaceDetermined}
+{Rex}{FaceBlink}
+{Rex}{HandsOnHips}
+{Camera:Static|position=4.8,1.8,-48.2|lookAt=1.83,1.08,-50.7}
+
+16
+00:01:45,382 --> 00:01:47,302
+[Reporter] 那你为什么要参赛？
+{Rex}{Think}
+{Rex}{FaceConfused}
+{Rex}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+17
+00:01:47,602 --> 00:01:56,386
+[Rex] ...他们答应如果我参加了，就把飞船驾驶舱的椅子换成水晶的。输赢不重要，椅子重要。
+{Rex}{FaceSmirk}
+{Rex}{FaceBlink}
+{Rex}{LookAround}
+{Camera:Static|position=4.8,1.8,-48.2|lookAt=1.83,1.08,-50.7}
+
+18
+00:01:56,686 --> 00:02:02,110
+[Reporter] 水晶椅子？！最后，让我们欢迎来自虫虫迪厅的迪斯科虫虫！
+{DiscoWorm}{FaceHappy}
+{DiscoWorm}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+19
+00:02:02,410 --> 00:02:08,194
+[DiscoWorm] 今晚不跨栏，跑道不准完！低音开满，虫王上场！栏架们准备好了吗？
+{DiscoWorm}{FaceSurprised}
+{DiscoWorm}{FaceBlink}
+{SFX:Play|name=energy_blast|volume=0.4}
+{Camera:Static|position=5.4,2.0,-48.0|lookAt=3.05,0.85,-50.7}
+
+20
+00:02:08,494 --> 00:02:11,662
+[Reporter] 虫虫，你没有腿，怎么跨栏？
+{DiscoWorm}{FaceHappy}
+{DiscoWorm}{FaceBlink}
+{Camera:Static|position=3.7,1.85,-48.1|lookAt=5.75,1.08,-50.8}
+
+21
+00:02:11,962 --> 00:02:19,666
+[DiscoWorm] 蠕动就是我的跨栏！栏架？我直接从下面钻过去！规则没说不能钻吧？钻洞也是技术活！
+{DiscoWorm}{FaceSurprised}
+{DiscoWorm}{FaceBlink}
+{SFX:Play|name=whoosh_fast|volume=0.5}
+{Camera:Static|position=5.4,2.0,-48.0|lookAt=3.05,0.85,-50.7}
+
+22
+00:02:19,766 --> 00:02:19,866
+{Camera:RaceSideTrack|sideX=-16.0|height=2.15|lookAtY=0.95|trackWidth=8.5|frameDepth=38|leaderBias=0.52|fov=74|duration=59.2|racers=Zorak,Klaw,Vex,Rex,DiscoWorm}
+
+23
+00:02:19,966 --> 00:02:20,766
+{Camera:Static|position=-7.4,1.55,-36.28|lookAt=-0.35,1.05,-36.28|duration=1.1}
+
+24
+00:02:20,866 --> 00:02:28,282
+[Reporter] 钻...钻过去？！裁判！这算犯规吗？！算了不管了！各就各位——
+{Position:Reporter|x=7.2|z=-51.8|face=forward}
+{Position:Zorak|x=-1.83|z=-50.5|face=forward}
+{Position:Klaw|x=-0.61|z=-50.5|face=forward}
+{Position:Vex|x=0.61|z=-50.5|face=forward}
+{Position:Rex|x=1.83|z=-50.5|face=forward}
+{Position:DiscoWorm|x=3.05|z=-50.5|face=forward}
+{Zorak}{Crouch|level=deep}
+{Klaw}{Crouch|level=deep}
+{Vex}{Crouch|level=deep}
+{Rex}{Crouch|level=deep}
+{DiscoWorm}{WormWiggle|duration=2.0}
+{DiscoWorm}{FaceHappy}
+{Camera:Static|position=8.8,2.4,-55.8|lookAt=1.5,0.85,-50.2}
+
+25
+00:02:28,382 --> 00:02:30,158
+{Music:Play|name=race_intense|fadeIn=0.5|baseVolume=0.42|endTime=191.5}
+{SFX:Play|name=dash_whoosh}
+[Reporter] 预备——跑！
+{Zorak}{Run|frequency=4.2|legLift=high|duration=2.5}
+{Klaw}{Run|frequency=3.9|legLift=high|duration=2.5}
+{Vex}{Run|frequency=4.0|legLift=high|duration=2.5}
+{Rex}{Run|frequency=3.1|legLift=mid|duration=2.5}
+{DiscoWorm}{WormTunnel|duration=2.5}
+{Event:Move|character=Zorak|x=-1.83|z=-39.0|duration=2.0|action=Run|frequency=4.2|legLift=high}
+{Event:Move|character=Klaw|x=-0.61|z=-39.0|duration=2.0|action=Run|frequency=3.9|legLift=high}
+{Event:Move|character=Vex|x=0.61|z=-39.0|duration=2.0|action=Run|frequency=4.0|legLift=high}
+{Event:Move|character=Rex|x=1.83|z=-39.0|duration=2.0|action=Run|frequency=3.0|legLift=mid}
+{Event:Move|character=DiscoWorm|x=3.05|z=-47.5|duration=2.5|action=WormTunnel}
+{Camera:Static|position=5.4,3.0,-62|lookAt=0,0.8,-39}
+
+26
+00:02:30,258 --> 00:02:34,842
+{Zorak}{CrouchJump|height=1.85|duration=0.9|arms=balance}
+{Klaw}{CrouchJump|height=1.45|duration=0.8|arms=guard}
+{Vex}{CrouchJump|height=2.05|duration=1.0|arms=balance}
+{Zorak}{FaceDetermined}
+{SFX:Play|name=dash_whoosh}
+[Zorak] 第一个栏！看我的！队长先给你们打个样！
+{Event:HurdleRun|character=Zorak|x=-1.83|fromZ=-39.0|z=-25.5|duration=3.0|jumpHeight=1.85|action=Run|frequency=4.1|legLift=high|arms=balance}
+{Event:HurdleRun|character=Klaw|x=-0.61|fromZ=-39.0|z=-25.5|duration=3.0|jumpHeight=1.45|action=Run|frequency=3.8|legLift=high|arms=guard}
+{Event:HurdleRun|character=Vex|x=0.61|fromZ=-39.0|z=-25.5|duration=3.0|jumpHeight=2.05|action=Run|frequency=4.0|legLift=high|arms=balance}
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=-39.0|z=-25.5|duration=3.0|jumpHeight=1.55|action=Run|frequency=2.8|legLift=mid|arms=reach}
+{Event:Move|character=DiscoWorm|x=3.05|z=-43.0|duration=3.0|action=WormTunnel}
+
+27
+00:02:34,942 --> 00:02:40,030
+{Klaw}{DashForward|duration=0.7}
+{Klaw}{CrouchJump|height=1.45|duration=0.8|arms=guard}
+{Klaw}{FaceDetermined}
+{SFX:Play|name=impact_thud}
+[Klaw] 队长跳过去了？那我也得跟上！看我的鳞甲冲锋！
+{Event:HurdleRun|character=Zorak|x=-1.83|fromZ=-25.5|z=-8.8|duration=3.0|jumpHeight=1.85|action=Run|frequency=4.1|legLift=high|arms=balance}
+{Event:HurdleRun|character=Klaw|x=-0.61|fromZ=-25.5|z=-8.0|duration=3.2|jumpHeight=1.45|action=Run|frequency=4.2|legLift=high|arms=guard}
+{Event:HurdleRun|character=Vex|x=0.61|fromZ=-25.5|z=-9.5|duration=3.0|jumpHeight=2.15|action=Run|frequency=4.0|legLift=high|arms=balance}
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=-25.5|z=-8.8|duration=3.0|jumpHeight=1.55|action=Run|frequency=2.8|legLift=mid|arms=reach}
+{Event:Move|character=DiscoWorm|x=3.05|z=-36.0|duration=3.0|action=WormTunnel}
+
+28
+00:02:40,130 --> 00:02:44,522
+{Zorak}{CrouchJump|height=1.85|duration=0.9|arms=balance}
+{Vex}{CrouchJump|height=2.2|duration=1.0|arms=balance}
+{Zorak}{FaceHappy}
+{SFX:Play|name=whoosh_fast}
+[Zorak] 完美跨越！看来队长的示范很成功嘛！
+{Event:HurdleRun|character=Zorak|x=-1.83|fromZ=-8.8|z=9.5|duration=3.0|jumpHeight=1.85|action=Run|frequency=4.2|legLift=high|arms=balance}
+{Event:HurdleRun|character=Klaw|x=-0.61|fromZ=-8.0|z=7.5|duration=3.0|jumpHeight=1.45|action=Run|frequency=3.8|legLift=high|arms=guard}
+{Event:HurdleRun|character=Vex|x=0.61|fromZ=-9.5|z=10.0|duration=3.0|jumpHeight=2.2|action=Run|frequency=4.0|legLift=high|arms=balance}
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=-8.8|z=9.5|duration=3.0|jumpHeight=1.55|action=Run|frequency=2.7|legLift=mid|arms=reach}
+{Event:Move|character=DiscoWorm|x=3.05|z=-30.0|duration=3.0|action=WormTunnel}
+
+29
+00:02:44,622 --> 00:02:52,062
+{Vex}{CrouchJump|height=2.7|duration=1.2|arms=balance}
+{Vex}{FlyPose}
+{Vex}{FaceHappy}
+{SFX:Play|name=wind_gentle}
+[Vex] 哇！飞起来了——不是！是跳起来了！真的只是跳！风太大而已！
+{Event:HurdleRun|character=Zorak|x=-1.83|fromZ=9.5|z=28.0|duration=3.0|jumpHeight=1.85|action=Run|frequency=4.2|legLift=high|arms=balance}
+{Event:HurdleRun|character=Klaw|x=-0.61|fromZ=7.5|z=21.0|duration=3.0|jumpHeight=1.45|action=Run|frequency=3.4|legLift=mid|arms=guard}
+{Event:HurdleRun|character=Vex|x=0.61|fromZ=10.0|z=28.0|duration=3.0|jumpHeight=2.7|action=Run|frequency=4.0|legLift=high|arms=balance}
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=9.5|z=28.0|duration=3.0|jumpHeight=1.55|action=Run|frequency=2.7|legLift=mid|arms=reach}
+{Event:Move|character=DiscoWorm|x=3.05|z=-22.0|duration=3.0|action=WormTunnel}
+
+30
+00:02:52,162 --> 00:03:00,178
+{Rex}{CrouchJump|height=1.55|duration=1.0|arms=reach}
+{Rex}{FaceSmirk}
+{SFX:Play|name=energy_blast|volume=0.3}
+[Rex] 而且，我可以把栏架变成水晶滑梯。虽然滑下去可能不太符合规则。
+{Event:HurdleRun|character=Zorak|x=-1.83|fromZ=28.0|z=40.0|duration=3.0|jumpHeight=1.85|action=Run|frequency=4.0|legLift=high|arms=balance}
+{Event:HurdleRun|character=Klaw|x=-0.61|fromZ=21.0|z=31.0|duration=3.0|jumpHeight=1.45|action=Run|frequency=3.2|legLift=mid|arms=guard}
+{Event:HurdleRun|character=Vex|x=0.61|fromZ=28.0|z=39.0|duration=3.0|jumpHeight=2.2|action=Run|frequency=3.8|legLift=high|arms=balance}
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=28.0|z=40.0|duration=3.0|jumpHeight=1.55|action=Run|frequency=2.7|legLift=mid|arms=reach}
+{Event:Move|character=DiscoWorm|x=3.05|z=-12.0|duration=3.0|action=WormTunnel}
+
+31
+00:03:00,278 --> 00:03:05,942
+{Zorak}{CrouchJump|height=1.85|duration=0.9|arms=balance}
+{Zorak}{FaceAngry}
+{SFX:Play|name=dash_whoosh}
+[Zorak] 最后冲刺！冠军是我的！队员们加油啊，别掉队太远！
+{Event:HurdleRun|character=Zorak|x=-1.83|fromZ=40.0|z=60.0|duration=6.0|jumpHeight=1.9|action=Run|frequency=4.3|legLift=high|arms=balance}
+{Event:HurdleRun|character=Klaw|x=-0.61|fromZ=31.0|z=43.0|duration=3.0|jumpHeight=1.45|action=Run|frequency=3.2|legLift=mid|arms=guard}
+{Event:HurdleRun|character=Vex|x=0.61|fromZ=39.0|z=48.0|duration=3.0|jumpHeight=2.4|action=Run|frequency=3.6|legLift=high|arms=balance}
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=40.0|z=60.0|duration=3.0|jumpHeight=1.55|action=Run|frequency=2.7|legLift=mid|arms=reach}
+{Event:Move|character=DiscoWorm|x=3.05|z=0.0|duration=4.0|action=WormTunnel}
+
+32
+00:03:06,042 --> 00:03:12,978
+{Klaw}{CrouchJump|height=0.72|duration=0.8|arms=guard}
+{Klaw}{FacePain}
+{Klaw}{FXHitSpark}
+{Klaw}{HitStagger|duration=0.7}
+{SFX:Play|name=impact_thud}
+[Klaw] 哎呀！最后一个栏架反弹打中我的脸了！队长你看，我帮你测试了栏架的弹性！
+{Event:KnockHurdle|character=Klaw|x=-0.61|z=45.98|offset=2.85|duration=0.55|direction=forward}
+{Event:HurdleRun|character=Klaw|x=-0.61|fromZ=43.0|z=60.0|duration=18.0|jumpHeight=0.72|collision=knockdown|action=Run|frequency=2.2|legLift=low|arms=guard}
+{Event:Move|character=Vex|x=0.61|y=3.5|z=62.0|duration=5.0|action=Run|frequency=3.2|legLift=high}
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=44.0|z=60.0|duration=4.0|jumpHeight=1.55|action=Run|frequency=2.5|legLift=mid|arms=reach}
+
+33
+00:03:13,078 --> 00:03:20,014
+{Camera:Static|position=-7.2,1.45,45.98|lookAt=-0.45,0.82,46.15|duration=1.1}
+
+34
+00:03:20,114 --> 00:03:23,244
+{Music:Play|name=victory_dance|fadeIn=1.0|baseVolume=0.42|endTime=277.0}
+{Position:Reporter|x=0|z=55|face=camera}
+{Position:Zorak|x=-3|z=45|face=camera}
+{Position:Klaw|x=-1.5|z=43|face=camera}
+{Position:Vex|x=1.5|z=44|face=camera}
+{Position:Rex|x=3|z=42|face=camera}
+{Position:DiscoWorm|x=0|z=42.5|face=camera}
+{Event:Move|character=Reporter|x=0|y=0|z=55|duration=0.1|action=FaceHappy}
+{Event:Face|character=Reporter|target=forward}
+{Event:Move|character=Zorak|x=-3|y=0|z=45|duration=0.1}
+{Event:Move|character=Klaw|x=-1.5|y=0|z=43|duration=0.1}
+{Event:Move|character=Vex|x=1.5|y=0|z=44|duration=0.1}
+{Event:Move|character=Rex|x=3|y=0|z=42|duration=0.1}
+{Event:Move|character=DiscoWorm|x=0|y=0|z=42.5|duration=0.1|action=WormWiggle}
+[Reporter] 比赛结束！让我们看看成绩...
+{Camera:Static|position=0,6.0,62|lookAt=0,1.15,45}
+
+35
+00:03:23,344 --> 00:03:30,544
+{Vex}{FaceSurprised}
+{Vex}{FlyPose}
+{SFX:Play|name=wind_gentle}
+[Vex] 等等我！翅膀真的只是保持平衡的——啊啊啊飞太高了！这风绝对是故意的！
+
+36
+00:03:30,644 --> 00:03:36,332
+{Rex}{CrouchJump|height=1.55|duration=1.0|arms=reach}
+{Rex}{FaceHappy}
+{SFX:Play|name=energy_blast|volume=0.3}
+[Rex] 最后一个栏。搞定。水晶椅子，我来了。
+{Event:HurdleRun|character=Rex|x=1.83|fromZ=44.0|z=60.0|duration=3.6|jumpHeight=1.55|action=Run|frequency=2.4|legLift=mid|arms=reach}
+
+37
+00:03:36,432 --> 00:03:41,208
+{DiscoWorm}{WormTunnel|duration=3.0}
+{DiscoWorm}{FaceHappy}
+{DiscoWorm}{FaceBlink}
+[DiscoWorm] 蠕动蠕动蠕动！栏架下面好凉快！还有免费的阴影遮阳！
+{Event:Move|character=DiscoWorm|x=3.05|z=18.5|duration=3.0|action=WormTunnel}
+
+38
+00:03:41,308 --> 00:03:46,612
+{DiscoWorm}{WormTunnel|duration=3.0}
+{DiscoWorm}{FaceSurprised}
+{DiscoWorm}{FaceBlink}
+{SFX:Play|name=whoosh_fast|volume=0.5}
+[DiscoWorm] 哎呀！卡住了！屁股太圆了！早知道昨天不吃那么多土了！
+{Event:Move|character=DiscoWorm|x=3.05|z=42.0|duration=5.0|action=WormTunnel}
+
+39
+00:03:46,712 --> 00:03:51,824
+{Zorak}{Celebrate}
+{Zorak}{FaceDetermined}
+[Zorak] 冲线！我是第一！队长就是队长，没办法！
+{SFX:Play|name=dash_whoosh}
+
+40
+00:03:51,924 --> 00:03:57,252
+{Vex}{FacePain}
+{Vex}{FaceBlink}
+{SFX:Play|name=fall_whistle}
+[Vex] 救命啊！我飞过终点线了！我就说...风太大了嘛！
+
+41
+00:03:57,352 --> 00:04:03,568
+{DiscoWorm}{WormTunnel|duration=3.0}
+{DiscoWorm}{FaceHappy}
+{DiscoWorm}{FaceBlink}
+[DiscoWorm] 蠕动到终点！虽然是从最后一个栏架下面钻出来的！但规则没说不能钻啊！
+{Event:Move|character=DiscoWorm|x=3.05|z=60.0|duration=2.8|action=WormTunnel}
+
+42
+00:04:03,668 --> 00:04:07,676
+[Reporter] 冠军是——泽拉克！用时13秒58！
+{Zorak}{HandsOnHips}
+{Zorak}{FaceHappy}
+{Zorak}{FaceBlink}
+{Zorak}{WaveHand}
+{Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}
+
+43
+00:04:07,776 --> 00:04:13,258
+{Position:Zorak|x=-3|z=45|face=camera}
+{Position:Klaw|x=-1.5|z=43|face=camera}
+{Position:Vex|x=1.5|z=44|face=camera}
+{Position:Rex|x=3|z=42|face=camera}
+{Position:DiscoWorm|x=0|z=38|face=camera}
+{Event:Move|character=DiscoWorm|x=0|y=0|z=38|duration=0.1|action=WormWiggle}
+{Zorak}{FaceHappy}
+{Klaw}{FaceHappy}
+{Vex}{FaceHappy}
+{Rex}{FaceSmirk}
+{DiscoWorm}{FaceHappy}
+[Reporter] 这就是第一届星际跨栏大赛！感谢所有选手！我们下次再见！
+{Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}
+
+44
+00:04:13,358 --> 00:04:22,694
+[Zorak] 我说过，未知星系的边界，我都会跨越——包括那个差点把我绊倒的。队长嘛，总得有点狼狈的时候。
+{Zorak}{HandsOnHips}
+{Zorak}{FaceHappy}
+{Zorak}{FaceBlink}
+{Zorak}{WaveHand}
+{Camera:Static|position=-3,1.85,48.4|lookAt=-3,1.08,45}
+
+45
+00:04:22,794 --> 00:04:28,530
+[Reporter] 亚军是...维克斯！虽然她是飞过去的，但裁判说翅膀不算犯规！
+{Vex}{FaceSurprised}
+{Vex}{FaceBlink}
+{Vex}{Shrug}
+{Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}
+
+46
+00:04:28,630 --> 00:04:33,382
+[Vex] 我就说翅膀只是保持平衡的...风太大是意外，意外！
+{Vex}{FaceSurprised}
+{Vex}{FaceBlink}
+{Vex}{Shrug}
+{Camera:Static|position=1.5,1.9,47.4|lookAt=1.5,1.12,44}
+
+47
+00:04:33,482 --> 00:04:37,826
+[Reporter] 季军是雷克斯！虽然最慢，但也是最优雅的！
+{Rex}{CrossArms}
+{Rex}{FaceSmirk}
+{Rex}{FaceBlink}
+{Rex}{Nod}
+{Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}
+
+48
+00:04:37,926 --> 00:04:45,054
+[Rex] 水晶从不匆忙。但水晶椅子可以快点到吗？我已经想好放哪了。
+{Rex}{CrossArms}
+{Rex}{FaceSmirk}
+{Rex}{FaceBlink}
+{Rex}{Nod}
+{Camera:Static|position=3,1.9,45.4|lookAt=3,1.12,42}
+
+49
+00:04:45,154 --> 00:04:48,754
+[Reporter] 克劳第四名...因为被反弹的栏架打中了脸。
+{Klaw}{FacePain}
+{Klaw}{FaceBlink}
+{Klaw}{ScratchHead}
+{Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}
+
+50
+00:04:48,854 --> 00:04:55,358
+[Klaw] 那个栏架不讲武德...但我原谅它了，毕竟它现在是个现代艺术品。有人要合影吗？
+{Klaw}{FacePain}
+{Klaw}{FaceBlink}
+{Klaw}{ScratchHead}
+{Camera:Static|position=-1.5,1.85,46.3|lookAt=-1.5,1.08,43}
+
+51
+00:04:55,458 --> 00:05:01,050
+[Reporter] 最后一名是迪斯科虫虫...因为卡在倒数第二个栏架下面，被工作人员拔出来的。
+{DiscoWorm}{FaceSurprised}
+{DiscoWorm}{FaceBlink}
+{Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}
+
+52
+00:05:01,150 --> 00:05:08,974
+[DiscoWorm] 下次我要在栏架上装迪斯科球！这样它们就会自己转开！或者被我晃晕！反正总有一个办法能过去！
+{DiscoWorm}{FaceSurprised}
+{DiscoWorm}{FaceBlink}
+{Camera:Static|position=0,2.0,46.2|lookAt=0,0.85,42.5}
+
+53
+00:05:09,074 --> 00:05:12,574
+{Zorak}{Walk}
+{Klaw}{Walk}
+{Vex}{Walk}
+{Rex}{Walk}
+{DiscoWorm}{FaceHappy}
+{Event:Move|character=Zorak|x=-3|z=48|duration=2.5}
+{Event:Move|character=Klaw|x=3|z=46|duration=2.5}
+{Event:Move|character=Vex|x=0|z=47|duration=2.5}
+{Event:Move|character=Rex|x=0|z=45|duration=2.5}
+{Transition:Fade|duration=2.0}
+{Camera:Static|position=0,4.8,60|lookAt=0,1,45}
+
+54
+00:05:12,674 --> 00:05:21,602
+{Zorak}{ReachOut}
+{Zorak}{FaceHappy}
+{Zorak}{FaceBlink}
+[Zorak] 走吧，队员们。回去洗餐盘了——维克斯，你的三个月免洗取消了。不过别担心，我陪你一起洗！
+{Camera:Static|position=-3,1.85,48.4|lookAt=-3,1.08,45}
+
+55
+00:05:21,702 --> 00:05:25,998
+{Vex}{FacePain}
+{Vex}{FaceBlink}
+{Vex}{Shrug}
+[Vex] 我就知道...但至少队长陪我一起洗，不算太惨！
+{Camera:Static|position=1.5,1.9,47.4|lookAt=1.5,1.12,44}
+
+56
+00:05:26,098 --> 00:05:32,338
+{Klaw}{FaceHappy}
+{Klaw}{FaceBlink}
+{Klaw}{WaveHand}
+[Klaw] 至少我不用洗！因为我根本没赢到任何东西！等等，这算好事吗？
+{Camera:Static|position=-1.5,1.85,46.3|lookAt=-1.5,1.08,43}
+
+57
+00:05:32,438 --> 00:05:37,334
+{Rex}{FaceSmirk}
+{Rex}{FaceBlink}
+{Rex}{CrossArms}
+[Rex] 我的水晶椅子...应该已经在路上了吧？对吧？
+{Camera:Static|position=3,1.9,45.4|lookAt=3,1.12,42}
+
+58
+00:05:37,434 --> 00:05:44,514
+{DiscoWorm}{FaceHappy}
+{DiscoWorm}{FaceBlink}
+[DiscoWorm] 没关系！下次我办一个"栏架下钻洞大赛"！保证我第一！规则我来定，第一条：必须没腿！
+{SFX:Play|name=energy_blast|volume=0.3}
+{Camera:Static|position=0,2.0,46.2|lookAt=0,0.85,42.5}
+
+59
+00:05:44,614 --> 00:05:47,374
+{Position:Reporter|x=0|z=55|face=camera}
+[Reporter] 星际跨栏大赛，圆满结束！
+{Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}

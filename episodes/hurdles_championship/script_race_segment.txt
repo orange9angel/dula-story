@@ -1,0 +1,174 @@
+22
+00:01:34,000 --> 00:01:38,000
+[Reporter] 钻...钻过去？！裁判！这算犯规吗？！算了不管了！各就各位——
+{Position:Reporter|x=8|z=-50|face=forward}
+{Position:Zorak|x=-1.8|z=-50|face=forward}
+{Position:Klaw|x=-0.6|z=-50|face=forward}
+{Position:Vex|x=0.6|z=-50|face=forward}
+{Position:Rex|x=1.8|z=-50|face=forward}
+{Position:DiscoWorm|x=3.0|z=-50|face=forward}
+{Zorak}{Crouch|level=deep}
+{Klaw}{Crouch|level=deep}
+{Vex}{Crouch|level=deep}
+{Rex}{Crouch|level=deep}
+{DiscoWorm}{FaceHappy}
+{Camera:Static|position=12,4,-50|lookAt=0,1,-50}
+
+23
+00:01:38,500 --> 00:01:41,000
+{Music:Play|name=race_intense|fadeIn=0.5|baseVolume=0.4|endTime=40.0}
+{SFX:Play|name=dash_whoosh}
+[Reporter] 预备——跑！
+{Zorak}{Run}
+{Klaw}{Run}
+{Vex}{Run}
+{Rex}{Run}
+{DiscoWorm}{FaceHappy}
+{Event:Move|character=Zorak|z=-37|duration=1.8|action=Run}
+{Event:Move|character=Klaw|z=-37|duration=2.0|action=Run}
+{Event:Move|character=Vex|z=-37|duration=1.9|action=Run}
+{Event:Move|character=Rex|z=-37|duration=2.3|action=Run}
+{Event:Move|character=DiscoWorm|z=-45|duration=2.0|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+24
+00:01:41,500 --> 00:01:44,500
+{Zorak}{Jump}
+{Zorak}{FaceDetermined}
+{SFX:Play|name=dash_whoosh}
+[Zorak] 第一个栏！看我的！
+{Event:Move|character=Zorak|z=-10|duration=3.0|action=Run}
+{Event:Move|character=Klaw|z=-15|duration=3.0|action=Run}
+{Event:Move|character=Vex|z=-12|duration=3.0|action=Run}
+{Event:Move|character=Rex|z=-18|duration=3.0|action=Walk}
+{Event:Move|character=DiscoWorm|z=-35|duration=3.0|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+25
+00:01:45,000 --> 00:01:48,000
+{Klaw}{Jump}
+{Klaw}{FaceDetermined}
+{SFX:Play|name=impact_thud}
+[Klaw] 我才不需要跳！看我的鳞甲冲锋！
+{Event:Move|character=Klaw|z=5|duration=3.5|action=Run}
+{Event:Move|character=Vex|z=8|duration=3.2|action=Run}
+{Event:Move|character=Rex|z=-5|duration=3.5|action=Walk}
+{Event:Move|character=DiscoWorm|z=-20|duration=3.5|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+26
+00:01:48,500 --> 00:01:51,500
+{Zorak}{Jump}
+{Zorak}{FaceHappy}
+{SFX:Play|name=whoosh_fast}
+[Zorak] 完美跨越！
+{Event:Move|character=Zorak|z=15|duration=2.8|action=Run}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+27
+00:01:52,000 --> 00:01:55,000
+{Vex}{Jump}
+{Vex}{FaceHappy}
+{SFX:Play|name=wind_gentle}
+[Vex] 哇！飞起来了——不是！是跳起来了！
+{Event:Move|character=Vex|z=30|duration=2.8|action=Run}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+28
+00:01:55,500 --> 00:01:58,500
+{Rex}{Jump}
+{Rex}{FaceSmirk}
+{SFX:Play|name=energy_blast|volume=0.3}
+[Rex] 而且，我可以把栏架变成水晶滑梯。
+{Event:Move|character=Rex|z=20|duration=3.5|action=Walk}
+{Event:Move|character=DiscoWorm|z=0|duration=4.0|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+29
+00:01:59,000 --> 00:02:02,000
+{Zorak}{Jump}
+{Zorak}{FaceAngry}
+{SFX:Play|name=dash_whoosh}
+[Zorak] 最后冲刺！冠军是我的！
+{Event:Move|character=Zorak|z=55|duration=2.5|action=Run}
+{Event:Move|character=Klaw|z=35|duration=3.0|action=Run}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+30
+00:02:02,500 --> 00:02:05,500
+{Klaw}{Jump}
+{Klaw}{FacePain}
+{SFX:Play|name=impact_thud}
+[Klaw] 哎呀！最后一个栏架反弹打中我的脸了！
+{Event:Move|character=Klaw|z=55|duration=3.0|action=Run}
+{Event:Move|character=Vex|z=55|duration=2.5|action=Run}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+31
+00:02:06,000 --> 00:02:09,000
+{Vex}{FaceSurprised}
+{SFX:Play|name=wind_gentle}
+[Vex] 等等我！翅膀真的只是保持平衡的——啊啊啊飞太高了！
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+32
+00:02:09,500 --> 00:02:12,500
+{Rex}{Jump}
+{Rex}{FaceHappy}
+{SFX:Play|name=energy_blast|volume=0.3}
+[Rex] 最后一个栏。搞定。
+{Event:Move|character=Rex|z=55|duration=4.0|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+33
+00:02:13,000 --> 00:02:16,000
+{DiscoWorm}{FaceHappy}
+{DiscoWorm}{FaceBlink}
+[DiscoWorm] 蠕动蠕动蠕动！栏架下面好凉快！
+{Event:Move|character=DiscoWorm|z=20|duration=4.0|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+34
+00:02:16,500 --> 00:02:19,500
+{DiscoWorm}{FaceSurprised}
+{DiscoWorm}{FaceBlink}
+{SFX:Play|name=whoosh_fast|volume=0.5}
+[DiscoWorm] 哎呀！卡住了！屁股太圆了！
+{Event:Move|character=DiscoWorm|z=40|duration=4.0|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+35
+00:02:20,000 --> 00:02:23,000
+{Zorak}{Run}
+{Zorak}{FaceDetermined}
+[Zorak] 冲线！我是第一！
+{SFX:Play|name=dash_whoosh}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+36
+00:02:23,500 --> 00:02:26,500
+{Vex}{FacePain}
+{Vex}{FaceBlink}
+{SFX:Play|name=fall_whistle}
+[Vex] 救命啊！我飞过终点线了！
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+37
+00:02:27,000 --> 00:02:30,000
+{DiscoWorm}{FaceHappy}
+{DiscoWorm}{FaceBlink}
+[DiscoWorm] 蠕动到终点！虽然是从最后一个栏架下面钻出来的！
+{Event:Move|character=DiscoWorm|z=55|duration=4.0|action=Walk}
+{Camera:RaceSideTrack|sideX=14|height=4|lookAtY=1.2|trackWidth=10}
+
+38
+00:02:30,500 --> 00:02:47,500
+{Music:Play|name=victory_dance|fadeIn=1.0|baseVolume=0.5|endTime=30.0}
+{Position:Reporter|x=0|z=55|face=camera}
+{Position:Zorak|x=-2|z=45|face=camera}
+{Position:Klaw|x=-1|z=43|face=camera}
+{Position:Vex|x=1|z=44|face=camera}
+{Position:Rex|x=2|z=42|face=camera}
+{Position:DiscoWorm|x=0|z=40|face=camera}
+[Reporter] 比赛结束！让我们看看成绩...
+{Camera:Wide|distance=10|height=3}
