@@ -1,42 +1,16 @@
-# Dependencies
-node_modules/
-__pycache__/
+# Generated audio/video assets
+episodes/**/assets/audio/*.mp3
+episodes/**/assets/audio/*.wav
+episodes/**/assets/audio/_*.txt
+episodes/**/assets/audio/_temp_*.wav
+episodes/**/assets/audio/sfx/
+episodes/**/assets/audio/manifest.json
 
-# Generated outputs
-output/
-*.mp4
+# Rendered frames and videos
+episodes/**/storyboard/frames/
+episodes/**/storyboard/*.mp4
+episodes/**/output/
 
-# Generated audio assets
-assets/audio/*.mp3
-assets/audio/*.wav
-assets/audio/mixed.wav
-assets/audio/manifest.json
-assets/audio/_temp_*.wav
-episodes/*/assets/audio/*.mp3
-episodes/*/assets/audio/*.wav
-episodes/*/assets/audio/mixed.wav
-episodes/*/assets/audio/manifest.json
-episodes/*/assets/audio/_temp_*.wav
-episodes/*/assets/audio/music/
-episodes/*/assets/audio/sfx/
-episodes/*/audio_download_plan.json
-episodes/*/audio_download_plan.md
-
-# Temp frames & verification shots
-storyboard/frames/
-storyboard/*.jpg
-storyboard/*.png
-episodes/*/storyboard/
-
-# Logs
-*.log
-
-# OS
-.DS_Store
-Thumbs.db
-*.tgz
-
-# Large manual audio materials (MP3 downloads) -- keep custom WAV only
-episodes/*/materials/sfx/*.mp3
-episodes/*/materials/bgm/*.mp3
-episodes/*/materials/*/preview_test.mp3
+# Scheduling reports
+episodes/**/scheduling_report.json
+episodes/**/script.story.scheduled

@@ -420,6 +420,43 @@ def check_camera_movement_continuity(cameras: List[CameraEvent]) -> List[str]:
     return issues
 
 
+def estimate_audio_duration(text: str) -> float:
+    """粗略估算中文音频时长（秒）"""
+    if not text:
+        return 0
+    chars = len(re.findall(r'[\u4e00-\u9fff]', text))
+    puncts = len(re.findall(r'[，。！？、；：]', text))
+    others = len(re.findall(r'[a-zA-Z0-9]', text)) * 0.5
+    return chars * 0.3 + puncts * 0.2 + others * 0.15 + 0.5
+
+
+def check_dialogue_timing(dialogues: List[Dialogue]) -> List[str]:
+    """检查对话时间线是否合理（音频时长、重叠、动作依赖）"""
+    issues = []
+    prev_audio_end = 0
+    
+    for d in dialogues:
+        estimated = estimate_audio_duration(d.text)
+        window = d.end - d.start
+        
+        # 检查窗口是否足够
+        if estimated > window + 0.5:
+            issues.append(f"⚠️  Entry {d.start:.1f}s: [{d.character}] 对话窗口 {window:.1f}s 可能不够音频 {estimated:.1f}s")
+            issues.append(f"   💡 建议延长到至少 {estimated + 1:.1f}s")
+        
+        # 检查是否与前对话重叠
+        if prev_audio_end > d.start:
+            issues.append(f"🔁 Entry {d.start:.1f}s: [{d.character}] 可能与前音频重叠 (前音频结束于 {prev_audio_end:.1f}s)")
+            issues.append(f"   💡 建议推迟到 {prev_audio_end + 0.5:.1f}s 之后")
+        
+        prev_audio_end = max(prev_audio_end, d.start + estimated)
+    
+    if not any('Entry' in i for i in issues):
+        issues.append("✓ 所有对话时间窗口充足，无重叠风险")
+    
+    return issues
+
+
 def main():
     global RACE_START_TIME, RACE_END_TIME
     script_path = r'D:\opensource\movie\dula-story\episodes\hurdles_championship\script.story'
@@ -458,6 +495,11 @@ def main():
     print("\n## 6. 相机运动连续性检查")
     print("-" * 50)
     for issue in check_camera_movement_continuity(cameras):
+        print(issue)
+
+    print("\n## 7. 对话音频时间线检查")
+    print("-" * 50)
+    for issue in check_dialogue_timing(dialogues):
         print(issue)
 
     print("\n" + "=" * 70)
