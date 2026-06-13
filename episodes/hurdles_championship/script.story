@@ -1,7 +1,7 @@
 1
 00:00:00,000 --> 00:00:05,500
 @StadiumScene
-{Music:Play|name=stadium_crowd|fadeIn=1.0|baseVolume=0.26|endTime=93.0}
+{Music:Play|name=stadium_fanfare|fadeIn=1.0|baseVolume=0.22|endTime=36.5}
 {Position:Reporter|x=5.8|z=-50.8|face=Zorak}
 {Position:Zorak|x=-1.83|z=-50.7|face=forward}
 {Position:Klaw|x=-0.61|z=-50.7|face=forward}
@@ -90,7 +90,7 @@
 
 102
 00:00:36,500 --> 00:00:48,500
-{Music:Play|name=dance_electrified|endTime=48|fadeIn=0.1|fadeOut=0.5|baseVolume=0.68|bpm=128}
+{Music:Play|name=disco_party|endTime=48|fadeIn=0.1|fadeOut=0.5|baseVolume=0.65|bpm=128}
 
 103
 00:00:36,500 --> 00:00:48,500
@@ -141,7 +141,7 @@
 
 17
 00:00:53,600 --> 00:00:57,500
-{Music:Play|name=race_intense|fadeIn=0.3|baseVolume=0.42|endTime=93.0}
+{Music:Play|name=race_chase|fadeIn=0.3|baseVolume=0.40|endTime=93.0}
 {SFX:Play|name=dash_whoosh}
 [Reporter] 跑！
 {Zorak}{Run|frequency=4.2|legLift=high|duration=2.5}
@@ -205,6 +205,7 @@
 {Vex}{FaceHappy}
 {Rex}{FaceSmirk}
 {DiscoWorm}{FaceHappy}
+{Music:Play|name=victory_celebration|fadeIn=1.0|baseVolume=0.18|endTime=141.0}
 [Reporter] 比赛结束！这就是星际跨栏大赛！
 {Camera:Static|position=0,1.8,58.4|lookAt=0,1.08,55}
 
