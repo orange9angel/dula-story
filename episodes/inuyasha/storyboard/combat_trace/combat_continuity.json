@@ -1,0 +1,159 @@
+{
+  "thresholds": {
+    "suddenJumpDistancePerFrame": 1.25,
+    "fastNonCombatSpeed": 10,
+    "lateContactWindow": 0.1,
+    "facingErrorRadians": 0.75,
+    "faceErrorRadians": 0.85,
+    "dialogueFaceErrorRadians": 0.5,
+    "dialogueMinDistance": 1.5,
+    "dialogueMaxDistance": 4,
+    "sceneTransitionJumpDistance": 1.25,
+    "idleFaceBodyMismatchRadians": 1
+  },
+  "counts": {
+    "suddenJump": 0,
+    "fastNonCombatMove": 0,
+    "lateContactClosure": 0,
+    "facingErrorAtHit": 0,
+    "faceErrorAtHit": 0,
+    "dialogueFaceError": 10,
+    "dialogueTooClose": 0,
+    "dialogueTooFar": 2,
+    "characterEntranceIsolated": 0,
+    "characterExitTeleport": 0,
+    "sceneTransitionJump": 0,
+    "idleFaceBodyMismatch": 0
+  },
+  "metrics": {
+    "Kagome": {
+      "samples": 4081,
+      "maxStep": 0,
+      "maxSpeed": 0,
+      "maxAcceleration": 0
+    },
+    "Inuyasha": {
+      "samples": 4081,
+      "maxStep": 0.08522222222230523,
+      "maxSpeed": 5.103127079179905,
+      "maxAcceleration": 12.210059969085147
+    },
+    "Yokai": {
+      "samples": 4081,
+      "maxStep": 0.07057823129264751,
+      "maxSpeed": 4.226241394769271,
+      "maxAcceleration": 7.631503059808559
+    }
+  },
+  "hitContinuity": [],
+  "issues": [
+    {
+      "type": "dialogue_face_error",
+      "severity": "high",
+      "time": 5.1333,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 0.574 rad while speaking to Inuyasha (entry #2)",
+      "value": 0.5736296296296719,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "medium",
+      "time": 16.3,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 1.076 rad while listening to Yokai (entry #4)",
+      "value": 1.0763646270389344,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_too_far",
+      "severity": "medium",
+      "time": 15,
+      "character": "Yokai",
+      "detail": "Max distance 7.531m to Kagome during entry #4 (too far, max 4.0m)",
+      "value": 7.531268153505093,
+      "threshold": 4
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "high",
+      "time": 36.1,
+      "character": "Inuyasha",
+      "detail": "Inuyasha face error up to 0.888 rad while speaking to Kagome (entry #8)",
+      "value": 0.8883365598576745,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "medium",
+      "time": 35.3667,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 0.826 rad while listening to Inuyasha (entry #8)",
+      "value": 0.825549847898027,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "high",
+      "time": 41.2167,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 0.927 rad while speaking to Inuyasha (entry #9)",
+      "value": 0.9273178524163268,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "medium",
+      "time": 46.4833,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 1.128 rad while listening to Yokai (entry #10)",
+      "value": 1.1282684638346616,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_too_far",
+      "severity": "medium",
+      "time": 45,
+      "character": "Yokai",
+      "detail": "Max distance 10.494m to Kagome during entry #10 (too far, max 4.0m)",
+      "value": 10.493807697875924,
+      "threshold": 4
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "high",
+      "time": 51.45,
+      "character": "Inuyasha",
+      "detail": "Inuyasha face error up to 0.588 rad while speaking to Kagome (entry #11)",
+      "value": 0.5883365598582514,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "medium",
+      "time": 54.7333,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 0.827 rad while listening to Inuyasha (entry #11)",
+      "value": 0.8270059846308726,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "high",
+      "time": 57,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 0.828 rad while speaking to Inuyasha (entry #12)",
+      "value": 0.8281219610125772,
+      "threshold": 0.5
+    },
+    {
+      "type": "dialogue_face_error",
+      "severity": "medium",
+      "time": 64.1667,
+      "character": "Kagome",
+      "detail": "Kagome face error up to 0.827 rad while listening to Inuyasha (entry #13)",
+      "value": 0.8271419077357107,
+      "threshold": 0.5
+    }
+  ]
+}

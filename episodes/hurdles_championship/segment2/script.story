@@ -14,6 +14,7 @@
 {DiscoWorm}{WormWiggle|duration=2.0}
 {DiscoWorm}{FaceHappy}
 {Music:Play|name=race_chase|fadeIn=0.3|baseVolume=0.40|endTime=50.0}
+{SFX:Play|name=stadium_crowd|startTime=0|endTime=52|baseVolume=0.25}
 {SFX:Play|name=dash_whoosh}
 [Reporter] 跑！
 {Zorak}{Run|frequency=4.2|legLift=high|duration=2.5}

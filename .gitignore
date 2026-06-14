@@ -14,3 +14,21 @@ episodes/**/output/
 # Scheduling reports
 episodes/**/scheduling_report.json
 episodes/**/script.story.scheduled
+
+# Dependencies
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts / archives
+*.tgz
