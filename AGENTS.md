@@ -16,12 +16,21 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**当前 Episode**：`episodes/she_ra/`（「She-Ra 公主力量」——Adora 变身、与 Hordak 对抗的奇幻冒险）
+**最新 Episode**：`episodes/kimi_showcase_s1e1/`（「Kimi 能力展示」第一集——原创角色、场景、配音、BGM/SFX 的完整自研示例）
 
-> 历史 Episode：
-> - `episodes/starlight_courier/`（「星光快递员」）
-> - `episodes/seaside_vacation/`（「海边假日」）
-> - `episodes/street_dunk/`（「街头扣篮」）
+**活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/kimi_showcase_s1e1/` — Kimi 能力展示第一集
+- `episodes/hurdles_championship/` — 跨栏锦标赛（3 segment 拼接长片）
+- `episodes/broadcast_exercise_s1e1~s1e3/` — 广播体操系列
+- `episodes/she_ra/` / `episodes/she_ra_s2/` — She-Ra 公主力量
+- `episodes/star_travel_s1e1/` / `episodes/star_travel_s1e2/` — 星际旅行
+- `episodes/yuyuhakusho/` — 幽游白书战斗 demo
+- `episodes/inuyasha/` — 犬夜叉场景
+- `episodes/saint_seiya_intro/` / `saint_seiya_five/` / `saint_seiya_duel/` — 圣斗士星矢系列
+- `episodes/seaside_vacation/` — 海边假日
+- `episodes/starlight_courier/` — 星光快递员
+- `episodes/street_dunk/` — 街头扣篮
+- `episodes/worm_dance/` — 虫子迪斯科
 
 ---
 
@@ -29,28 +38,32 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 
 ```
 dula-story/
-├── episodes/
-│   └── she_ra/                  # Episode 目录
+├── episodes/                    # 所有 Episode 目录
+│   └── kimi_showcase_s1e1/      # 示例 Episode
 │       ├── script.story         # 剧本（唯一时序数据源）
 │       ├── bootstrap.js         # 资产注册入口（import dula-assets + 自定义插件）
 │       ├── config/
-│       │   ├── transitions.json # 场景过渡出口/入口
+│       │   ├── transitions.json # 场景过渡出口/入口（可选）
 │       │   ├── voice_config.json# TTS 声线配置
-│       │   └── choreography.json# 静态编舞配置（可被 .story DSL 覆盖）
+│       │   └── audio_mix.json   # 音频混音配置（可选）
 │       ├── materials/           # 手动音频素材（可选）
 │       │   ├── bgm/             # 手动 BGM (*.mp3/*.wav/*.ogg)
 │       │   └── sfx/             # 手动 SFX (*.wav)
 │       ├── assets/
-│       │   ├── audio/
-│       │   │   ├── music/       # BGM 输出 (*.wav，自动生成)
-│       │   │   ├── sfx/         # SFX 输出 (*.wav，自动生成)
-│       │   │   ├── manifest.json# TTS 音频清单（自动生成）
-│       │   │   ├── mixed.wav    # 最终混音（自动生成）
-│       │   │   └── *.mp3        # 逐句 TTS 输出（自动生成）
-│       │   └── images/          # 贴图/背景（预留）
+│       │   └── audio/
+│       │       ├── music/       # BGM 输出 (*.wav/*.mp3)
+│       │       ├── sfx/         # SFX 输出 (*.wav，自动生成或手动)
+│       │       ├── manifest.json# TTS 音频清单（自动生成）
+│       │       ├── mixed.wav    # 最终混音（自动生成）
+│       │       └── *.mp3        # 逐句 TTS 输出（自动生成）
 │       ├── storyboard/          # 验证截图输出（自动生成）
-│       └── output.mp4           # 最终视频（自动生成）
-└── README.md
+│       └── output/
+│           └── output.mp4       # 最终视频（自动生成）
+├── docs/                        # 工程化/工具设计文档
+├── tools/                       # 辅助工具
+├── package.json
+├── README.md
+└── AGENTS.md
 ```
 
 ---
@@ -243,7 +256,18 @@ registerTransition('Flash', FlashTransition);
 由 `generate_audio.py` 自动生成，**不要手动修改** `manifest.json` 和 `mixed.wav`。
 
 ### Git 忽略规则
-所有生成的音频资产（`assets/audio/` 下的 `.wav`、`.mp3`、`manifest.json`、`mixed.wav`）和临时文件（`_temp_*.wav`）已在 `.gitignore` 中排除，不进入版本控制。
+以下文件/目录已在 `.gitignore` 中排除，不进入版本控制：
+
+- 生成的音频资产：`assets/audio/` 下的 `.wav`、`.mp3`、`manifest.json`、`mixed.wav`、`_temp_*.wav`、`_*.txt`
+- 生成的视频/截图：`storyboard/frames/`、`storyboard/*.mp4`、`output/`
+- 调度报告：`scheduling_report.json`、`script.story.scheduled`
+- 依赖：`node_modules/`
+- Python 缓存：`__pycache__/`、`*.pyc`、`*.pyo`
+- 日志：`*.log`
+- 构建产物：`*.tgz`
+- OS 文件：`.DS_Store`、`Thumbs.db`
+
+需要提交的通常是：`script.story`、`bootstrap.js`、`config/*.json`、`materials/` 中的手动素材、`storyboard/check_shot_*.jpg` 等校验截图。
 
 ---
 
@@ -253,25 +277,33 @@ Story 仓库通过 `npm install` 引入引擎，以 npm scripts 方式调用 CLI
 
 ### package.json scripts
 
+仓库为每个主要 Episode 预置一组 scripts，命名格式为 `<action>:<episode_alias>`。示例：
+
 ```json
 {
   "scripts": {
-    "audio": "npm run audio:she_ra",
-    "verify": "npm run verify:she_ra",
-    "preview": "npm run preview:she_ra",
-    "render": "npm run render:she_ra",
-    "build": "npm run build:she_ra",
-    "inspect": "npm run inspect:she_ra",
+    "render:kimi_showcase_s1e1": "dula-render ./episodes/kimi_showcase_s1e1",
+    "audio:kimi_showcase_s1e1": "dula-audio ./episodes/kimi_showcase_s1e1",
+    "verify:kimi_showcase_s1e1": "dula-verify ./episodes/kimi_showcase_s1e1",
+    "build:kimi_showcase_s1e1": "npm run audio:kimi_showcase_s1e1 && npm run render:kimi_showcase_s1e1",
+
+    "render:she_ra": "dula-render ./episodes/she_ra",
     "audio:she_ra": "dula-audio ./episodes/she_ra",
     "verify:she_ra": "dula-verify ./episodes/she_ra",
-    "preview:she_ra": "dula-preview ./episodes/she_ra",
-    "render:she_ra": "dula-render ./episodes/she_ra",
     "build:she_ra": "npm run audio:she_ra && npm run render:she_ra",
-    "inspect:she_ra": "dula-inspect ./episodes/she_ra",
-    "visual-review:she_ra": "python ./tools/visual-review/cli.py ./episodes/she_ra",
-    "visual-review:collect:she_ra": "python ./tools/visual-review/cli.py ./episodes/she_ra --collect-only"
+
+    "render:hurdles": "dula-render ./episodes/hurdles_championship",
+    "audio:hurdles": "dula-audio ./episodes/hurdles_championship"
   }
 }
+```
+
+也可以直接调用 CLI：
+
+```bash
+npx dula-render ./episodes/<name>
+npx dula-audio ./episodes/<name>
+npx dula-verify ./episodes/<name>
 ```
 
 ### 依赖方式选择
@@ -292,11 +324,11 @@ npm link
 cd dula-story
 npm link dula-engine
 
-# 3. 日常开发（全部在 Story 仓库执行）
-npm run audio   # 生成音频
-npm run verify  # 验证画面
-npm run render  # 生成视频
-npm run build   # 一键 audio + render
+# 3. 日常开发（全部在 Story 仓库执行，以指定 Episode 为例）
+npm run audio:kimi_showcase_s1e1   # 生成音频
+npm run verify:kimi_showcase_s1e1  # 验证画面
+npm run render:kimi_showcase_s1e1  # 生成视频
+npm run build:kimi_showcase_s1e1   # 一键 audio + render
 ```
 
 ### 版本升级（Release 方式）
@@ -322,16 +354,17 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 
 ### 修改剧本
 1. 编辑 `episodes/<name>/script.story`。
-2. 若修改了对白或时间轴，重新生成音频：`npm run audio`
-3. 验证画面：`npm run verify`
-4. 生成视频：`npm run render`
+2. 若修改了对白或时间轴，重新生成音频：`npm run audio:<alias>` 或 `npx dula-audio ./episodes/<name>`
+3. 验证画面：`npm run verify:<alias>` 或 `npx dula-verify ./episodes/<name>`
+4. 生成视频：`npm run render:<alias>` 或 `npx dula-render ./episodes/<name>`
 
 ### 新增 Episode
 1. 在 `episodes/` 下创建新目录。
-2. 复制 `episodes/she_ra/config/` 作为模板。
+2. 复制一个已有 Episode（如 `kimi_showcase_s1e1`）的 `config/`、`bootstrap.js`、`script.story` 作为模板。
 3. 编写 `script.story`。
-4. 放入需要的 BGM/SFX 素材到 `assets/audio/`。
-5. 按上述流程生成音频 → 验证 → 出片。
+4. 放入需要的 BGM/SFX 素材到 `assets/audio/music/` 或 `materials/`。
+5. 可选：在 `package.json` 中添加该 Episode 的 npm scripts。
+6. 按上述流程生成音频 → 验证 → 出片。
 
 ---
 
@@ -351,7 +384,9 @@ Story `package.json` 同时依赖 `dula-assets` Release tarball（如 v0.1.2）�
 
 ---
 
-## 9. 当前 Episode 已知问题（she_ra）
+## 9. 历史 Episode 已知问题（she_ra）
+
+> 本节记录 `she_ra` 开发周期的历史问题与修复方案，供后续 Episode 参考。当前各 Episode 的独立问题建议在该 Episode 目录内维护 `VISUAL_REVIEW.md` 或在项目 issue 中跟踪。
 
 | 问题 | 状态 | 备注 |
 |------|------|------|
@@ -467,4 +502,4 @@ python tools/visual-review/cli.py ./episodes/she_ra \
 - [ ] 历史对比与趋势追踪
 - [ ] 自动修复建议生成
 
-**最后更新**：2026-05-03
+**最后更新**：2026-06-14
