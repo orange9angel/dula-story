@@ -1,6 +1,6 @@
 # Generated audio/video assets
-episodes/**/assets/audio/*.mp3
-episodes/**/assets/audio/*.wav
+episodes/**/assets/audio/**/*.mp3
+episodes/**/assets/audio/**/*.wav
 episodes/**/assets/audio/_*.txt
 episodes/**/assets/audio/_temp_*.wav
 episodes/**/assets/audio/sfx/
@@ -9,6 +9,8 @@ episodes/**/assets/audio/manifest.json
 # Rendered frames and videos
 episodes/**/storyboard/frames/
 episodes/**/storyboard/*.mp4
+episodes/**/storyboard/check_shot_*.jpg
+episodes/**/storyboard/render_frame_*.jpg
 episodes/**/output/
 
 # Scheduling reports

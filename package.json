@@ -120,7 +120,14 @@
     "preview:hurdles": "dula-preview ./episodes/hurdles_championship",
     "render:hurdles": "dula-render ./episodes/hurdles_championship",
     "build:hurdles": "npm run audio:hurdles && npm run render:hurdles",
-    "inspect:hurdles": "dula-inspect ./episodes/hurdles_championship"
+    "inspect:hurdles": "dula-inspect ./episodes/hurdles_championship",
+    "audio:anywhere_door": "dula-audio ./episodes/doraemon_anywhere_door",
+    "audio:anywhere_door:ds": "dula-audio ./episodes/doraemon_anywhere_door --provider=dashscope",
+    "verify:anywhere_door": "dula-verify ./episodes/doraemon_anywhere_door",
+    "preview:anywhere_door": "dula-preview ./episodes/doraemon_anywhere_door",
+    "render:anywhere_door": "dula-render ./episodes/doraemon_anywhere_door",
+    "build:anywhere_door": "npm run audio:anywhere_door && npm run render:anywhere_door",
+    "inspect:anywhere_door": "dula-inspect ./episodes/doraemon_anywhere_door"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
