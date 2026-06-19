@@ -68,10 +68,56 @@ class NobitaRoomScene extends BaseRoomScene {
   build() {
     const scene = super.build();
 
+    // Match the open background to wall color so the missing fourth wall
+    // does not show as a black void from off-axis camera angles.
+    this.scene.background = new THREE.Color(0xf5f5dc);
+
+    // Add subtle emissive to wall materials so shadowed surfaces never read as black.
+    scene.traverse((obj) => {
+      if (obj.isMesh && obj.material) {
+        const color = obj.material.color?.getHex();
+        if (color === 0xf5f5dc || color === 0xfaf8f0) {
+          obj.material.emissive = new THREE.Color(0x333333);
+          obj.material.emissiveIntensity = 0.25;
+        }
+      }
+    });
+
+    // Build a front wall (fourth wall) with a large camera opening so the
+    // room feels enclosed while still allowing the audience-view shots.
+    const wallMat = new THREE.MeshStandardMaterial({
+      color: 0xf5f5dc,
+      roughness: 0.9,
+      emissive: 0x333333,
+      emissiveIntensity: 0.25,
+    });
+    const frontZ = 5;
+    const opening = { xMin: -4, xMax: 4, yMin: 0.2, yMax: 5.5 };
+    // Top
+    const topWall = new THREE.Mesh(new THREE.BoxGeometry(20, 10 - opening.yMax, 0.2), wallMat);
+    topWall.position.set(0, (opening.yMax + 10) / 2, frontZ);
+    topWall.receiveShadow = true;
+    scene.add(topWall);
+    // Bottom
+    const botWall = new THREE.Mesh(new THREE.BoxGeometry(20, opening.yMin, 0.2), wallMat);
+    botWall.position.set(0, opening.yMin / 2, frontZ);
+    botWall.receiveShadow = true;
+    scene.add(botWall);
+    // Left
+    const leftWall = new THREE.Mesh(new THREE.BoxGeometry(10 + opening.xMin, opening.yMax - opening.yMin, 0.2), wallMat);
+    leftWall.position.set((opening.xMin - 10) / 2, (opening.yMin + opening.yMax) / 2, frontZ);
+    leftWall.receiveShadow = true;
+    scene.add(leftWall);
+    // Right
+    const rightWall = new THREE.Mesh(new THREE.BoxGeometry(10 - opening.xMax, opening.yMax - opening.yMin, 0.2), wallMat);
+    rightWall.position.set((opening.xMax + 10) / 2, (opening.yMin + opening.yMax) / 2, frontZ);
+    rightWall.receiveShadow = true;
+    scene.add(rightWall);
+
     this.door = new AnywhereDoor();
-    // Place the door to the side of the room so characters don't have to walk through the desk.
-    this.door.group.position.set(2.5, 0, -3.5);
-    this.door.group.rotation.y = Math.PI; // face into the room
+    // Place the door on the left side of the room, facing the camera/characters.
+    this.door.group.position.set(-3.0, 0, -1.5);
+    this.door.group.rotation.y = 0; // face +Z (toward audience / characters)
     scene.add(this.door.group);
 
     // Expose for DoorOpen/DoorClose animation to control
@@ -376,18 +422,6 @@ class PrehistoricScene extends SceneBase {
       this._addBackgroundDino(dx, dy, dz, color, scale);
     }
 
-    // Foreground small dinosaurs grazing near the ferns
-    const foregroundHerd = [
-      [5.5, 0, -6.5, 0x9acd32, 0.55], [-6, 0, -7, 0x6b8e23, 0.5],
-      [7, 0, -5, 0x556b2f, 0.48], [-4.5, 0, -5.5, 0x8fbc8f, 0.52],
-      [3.5, 0, -8.0, 0x8b4513, 0.45], [-2.0, 0, -9.0, 0xa0522d, 0.5],
-      [8.5, 0, -7.5, 0xcd853f, 0.42], [-7.5, 0, -5.0, 0xd2691e, 0.47],
-      [1.5, 0, -6.0, 0x556b2f, 0.44], [-8.5, 0, -8.5, 0x6b8e23, 0.49],
-    ];
-    for (const [dx, dy, dz, color, scale] of foregroundHerd) {
-      this._addBackgroundDino(dx, dy, dz, color, scale);
-    }
-
     // Anywhere door for returning home
     this.door = new AnywhereDoor();
     this.door.group.position.set(0, 0, -6);
@@ -661,89 +695,132 @@ class BabyDino extends CharacterBase {
   }
 
   build() {
-    const skinMat = new THREE.MeshToonMaterial({ color: 0xe67e22 });
-    const bellyMat = new THREE.MeshToonMaterial({ color: 0xf5cba7 });
+    const skinMat = new THREE.MeshToonMaterial({ color: 0xe67e22, roughness: 0.85 });
+    const backMat = new THREE.MeshToonMaterial({ color: 0xc45c15, roughness: 0.85 });
+    const bellyMat = new THREE.MeshToonMaterial({ color: 0xf5cba7, roughness: 0.9 });
     const eyeWhiteMat = new THREE.MeshToonMaterial({ color: 0xffffff });
     const pupilMat = new THREE.MeshToonMaterial({ color: 0x111111 });
+    const cheekMat = new THREE.MeshToonMaterial({ color: 0xffa07a });
+    const clawMat = new THREE.MeshToonMaterial({ color: 0x5c3a21 });
 
     // Body
-    const body = new THREE.Mesh(new THREE.SphereGeometry(0.55, 24, 24), skinMat);
-    body.scale.set(1, 0.85, 1.3);
-    body.position.y = 0.7;
+    const body = new THREE.Mesh(new THREE.SphereGeometry(0.58, 24, 24), skinMat);
+    body.scale.set(1.05, 0.88, 1.35);
+    body.position.y = 0.72;
     body.castShadow = true;
     this.mesh.add(body);
 
     // Belly
-    const belly = new THREE.Mesh(new THREE.SphereGeometry(0.42, 20, 20), bellyMat);
-    belly.scale.set(0.8, 0.7, 1.0);
-    belly.position.set(0, 0.6, 0.18);
+    const belly = new THREE.Mesh(new THREE.SphereGeometry(0.45, 20, 20), bellyMat);
+    belly.scale.set(0.85, 0.72, 1.05);
+    belly.position.set(0, 0.62, 0.2);
     this.mesh.add(belly);
+
+    // Back stripe
+    const stripe = new THREE.Mesh(new THREE.CapsuleGeometry(0.08, 1.0, 6, 8), backMat);
+    stripe.position.set(0, 1.15, -0.1);
+    stripe.rotation.x = -Math.PI / 2.2;
+    this.mesh.add(stripe);
 
     // Head
     this.headGroup = new THREE.Group();
-    this.headGroup.position.set(0, 1.15, 0.7);
+    this.headGroup.position.set(0, 1.2, 0.72);
 
-    const head = new THREE.Mesh(new THREE.SphereGeometry(0.38, 20, 20), skinMat);
-    head.scale.set(1, 0.9, 1.1);
+    const head = new THREE.Mesh(new THREE.SphereGeometry(0.42, 22, 22), skinMat);
+    head.scale.set(1.05, 0.95, 1.15);
     head.castShadow = true;
     this.headGroup.add(head);
 
     // Snout
-    const snout = new THREE.Mesh(new THREE.SphereGeometry(0.22, 16, 16), skinMat);
-    snout.position.set(0, -0.05, 0.32);
-    snout.scale.set(1, 0.8, 1.2);
+    const snout = new THREE.Mesh(new THREE.SphereGeometry(0.24, 16, 16), skinMat);
+    snout.position.set(0, -0.06, 0.35);
+    snout.scale.set(1, 0.82, 1.25);
     this.headGroup.add(snout);
 
-    // Eyes
-    const leftEye = new THREE.Mesh(new THREE.SphereGeometry(0.08, 12, 12), eyeWhiteMat);
-    leftEye.position.set(-0.14, 0.1, 0.28);
-    this.headGroup.add(leftEye);
-    const rightEye = leftEye.clone();
-    rightEye.position.set(0.14, 0.1, 0.28);
-    this.headGroup.add(rightEye);
+    // Nostrils
+    for (const sx of [-0.08, 0.08]) {
+      const nostril = new THREE.Mesh(new THREE.SphereGeometry(0.018, 6, 6), clawMat);
+      nostril.position.set(sx, 0.02, 0.52);
+      this.headGroup.add(nostril);
+    }
 
-    const leftPupil = new THREE.Mesh(new THREE.SphereGeometry(0.04, 8, 8), pupilMat);
-    leftPupil.position.set(-0.14, 0.1, 0.34);
-    this.headGroup.add(leftPupil);
-    const rightPupil = leftPupil.clone();
-    rightPupil.position.set(0.14, 0.1, 0.34);
-    this.headGroup.add(rightPupil);
+    // Big cute eyes
+    for (const sx of [-1, 1]) {
+      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.095, 12, 12), eyeWhiteMat);
+      eye.position.set(sx * 0.15, 0.12, 0.3);
+      this.headGroup.add(eye);
+
+      const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.05, 10, 10), pupilMat);
+      pupil.position.set(sx * 0.15, 0.12, 0.37);
+      this.headGroup.add(pupil);
+
+      const highlight = new THREE.Mesh(new THREE.SphereGeometry(0.018, 6, 6), eyeWhiteMat);
+      highlight.position.set(sx * 0.13, 0.16, 0.39);
+      this.headGroup.add(highlight);
+
+      const cheek = new THREE.Mesh(new THREE.SphereGeometry(0.055, 8, 8), cheekMat);
+      cheek.position.set(sx * 0.22, -0.02, 0.3);
+      cheek.scale.set(1, 0.6, 0.4);
+      this.headGroup.add(cheek);
+
+      const ear = new THREE.Mesh(new THREE.ConeGeometry(0.035, 0.12, 5), skinMat);
+      ear.position.set(sx * 0.28, 0.32, -0.05);
+      ear.rotation.z = sx * 0.35;
+      this.headGroup.add(ear);
+    }
 
     // Mouth
-    this.mouth = new THREE.Mesh(new THREE.SphereGeometry(0.06, 12, 12), pupilMat);
-    this.mouth.position.set(0, -0.12, 0.42);
-    this.mouth.scale.set(1.4, 0.4, 0.6);
+    this.mouth = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 12), pupilMat);
+    this.mouth.position.set(0, -0.1, 0.45);
+    this.mouth.scale.set(1.5, 0.45, 0.65);
     this.headGroup.add(this.mouth);
     this.mouthBaseScaleX = this.mouth.scale.x;
     this.mouthBaseScaleY = this.mouth.scale.y;
     this.mouthBaseScaleZ = this.mouth.scale.z;
 
-    // Small crest
-    for (let i = 0; i < 4; i++) {
-      const spike = new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.18, 6), skinMat);
-      spike.position.set(0, 0.35 + i * 0.06, -0.18 - i * 0.05);
-      spike.rotation.x = -0.3;
+    // Tiny teeth
+    for (const side of [-1, 1]) {
+      for (let i = 0; i < 3; i++) {
+        const tooth = new THREE.Mesh(new THREE.ConeGeometry(0.018, 0.06, 5), new THREE.MeshToonMaterial({ color: 0xffffee }));
+        tooth.position.set(side * (0.08 + i * 0.05), -0.06, 0.48 + i * 0.03);
+        this.headGroup.add(tooth);
+      }
+    }
+
+    // Head crest
+    for (let i = 0; i < 5; i++) {
+      const spike = new THREE.Mesh(new THREE.ConeGeometry(0.035, 0.16, 5), backMat);
+      spike.position.set(0, 0.4 + i * 0.05, -0.2 - i * 0.04);
+      spike.rotation.x = -0.35;
       this.headGroup.add(spike);
     }
 
     this.mesh.add(this.headGroup);
 
-    // Tail
+    // Tail with dorsal bumps
     this.tail = new THREE.Group();
-    this.tail.position.set(0, 0.75, -0.55);
-    for (let i = 0; i < 4; i++) {
-      const seg = new THREE.Mesh(new THREE.SphereGeometry(0.18 - i * 0.03, 12, 12), skinMat);
-      seg.position.set(0, 0, -i * 0.28);
-      seg.scale.set(1, 0.8, 1.2);
+    this.tail.position.set(0, 0.78, -0.6);
+    for (let i = 0; i < 5; i++) {
+      const r = 0.19 - i * 0.025;
+      const seg = new THREE.Mesh(new THREE.SphereGeometry(r, 12, 12), skinMat);
+      seg.position.set(0, 0, -i * 0.3);
+      seg.scale.set(1, 0.82, 1.2);
+      seg.castShadow = true;
       this.tail.add(seg);
+      if (i < 4) {
+        const bump = new THREE.Mesh(new THREE.ConeGeometry(0.035, 0.12, 5), backMat);
+        bump.position.set(0, r * 0.9, -i * 0.3 - 0.12);
+        bump.rotation.x = -0.3;
+        this.tail.add(bump);
+      }
     }
     this.mesh.add(this.tail);
 
-    // Legs
-    const legGeo = new THREE.CylinderGeometry(0.12, 0.1, 0.55, 12);
+    // Legs with tiny claws
+    const legGeo = new THREE.CylinderGeometry(0.13, 0.11, 0.58, 12);
     const positions = [
-      [-0.28, 0.28, 0.35], [0.28, 0.28, 0.35],
-      [-0.28, 0.28, -0.35], [0.28, 0.28, -0.35],
+      [-0.3, 0.29, 0.38], [0.3, 0.29, 0.38],
+      [-0.3, 0.29, -0.38], [0.3, 0.29, -0.38],
     ];
     this.legs = [];
     for (const [x, y, z] of positions) {
@@ -752,25 +829,33 @@ class BabyDino extends CharacterBase {
       leg.castShadow = true;
       this.mesh.add(leg);
       this.legs.push(leg);
+
+      for (let c = -1; c <= 1; c++) {
+        const claw = new THREE.Mesh(new THREE.ConeGeometry(0.015, 0.06, 5), clawMat);
+        claw.position.set(x + c * 0.04, 0.02, z + 0.08);
+        claw.rotation.x = -0.4;
+        this.mesh.add(claw);
+      }
     }
 
-    // Tiny arms
-    const armGeo = new THREE.CylinderGeometry(0.05, 0.04, 0.3, 8);
-    this.leftArm = new THREE.Group();
-    this.leftArm.position.set(-0.35, 0.85, 0.45);
-    const leftArmMesh = new THREE.Mesh(armGeo, skinMat);
-    leftArmMesh.rotation.z = Math.PI / 3;
-    leftArmMesh.position.y = -0.12;
-    this.leftArm.add(leftArmMesh);
-    this.mesh.add(this.leftArm);
+    // Tiny arms with claws
+    for (const sx of [-1, 1]) {
+      const armGroup = new THREE.Group();
+      armGroup.position.set(sx * 0.38, 0.9, 0.48);
+      const armMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.04, 0.28, 8), skinMat);
+      armMesh.rotation.z = sx * Math.PI / 2.8;
+      armMesh.position.y = -0.1;
+      armGroup.add(armMesh);
 
-    this.rightArm = new THREE.Group();
-    this.rightArm.position.set(0.35, 0.85, 0.45);
-    const rightArmMesh = new THREE.Mesh(armGeo, skinMat);
-    rightArmMesh.rotation.z = -Math.PI / 3;
-    rightArmMesh.position.y = -0.12;
-    this.rightArm.add(rightArmMesh);
-    this.mesh.add(this.rightArm);
+      const claw = new THREE.Mesh(new THREE.ConeGeometry(0.015, 0.06, 5), clawMat);
+      claw.position.set(sx * 0.1, -0.2, 0.02);
+      claw.rotation.z = sx * 0.3;
+      armGroup.add(claw);
+
+      this.mesh.add(armGroup);
+      if (sx < 0) this.leftArm = armGroup;
+      else this.rightArm = armGroup;
+    }
   }
 }
 
@@ -790,100 +875,149 @@ class BigDino extends CharacterBase {
   build() {
     this.mesh.scale.set(0.6, 0.6, 0.6);
 
-    const skinMat = new THREE.MeshToonMaterial({ color: 0x8b4513 });
-    const bellyMat = new THREE.MeshToonMaterial({ color: 0xd2b48c });
+    const skinMat = new THREE.MeshToonMaterial({ color: 0x8b4513, roughness: 0.85 });
+    const backMat = new THREE.MeshToonMaterial({ color: 0x6b3410, roughness: 0.85 });
+    const bellyMat = new THREE.MeshToonMaterial({ color: 0xd2b48c, roughness: 0.9 });
     const eyeWhiteMat = new THREE.MeshToonMaterial({ color: 0xfff8dc });
-    const pupilMat = new THREE.MeshToonMaterial({ color: 0x220000 });
+    const pupilMat = new THREE.MeshToonMaterial({ color: 0x110000 });
+    const clawMat = new THREE.MeshToonMaterial({ color: 0x2a1a10 });
+    const toothMat = new THREE.MeshToonMaterial({ color: 0xffffee });
 
-    // Body
-    const body = new THREE.Mesh(new THREE.SphereGeometry(1.4, 28, 28), skinMat);
-    body.scale.set(1.1, 1, 1.8);
-    body.position.y = 1.6;
+    // Body with a slightly tapered, muscular torso
+    const body = new THREE.Mesh(new THREE.SphereGeometry(1.45, 28, 28), skinMat);
+    body.scale.set(1.15, 1.05, 1.85);
+    body.position.y = 1.65;
     body.castShadow = true;
     this.mesh.add(body);
 
+    // Darker back ridge
+    const backRidge = new THREE.Mesh(new THREE.CapsuleGeometry(0.25, 2.2, 8, 12), backMat);
+    backRidge.position.set(0, 2.45, -0.15);
+    backRidge.rotation.x = -Math.PI / 2.2;
+    this.mesh.add(backRidge);
+
     // Belly
-    const belly = new THREE.Mesh(new THREE.SphereGeometry(1.1, 24, 24), bellyMat);
-    belly.scale.set(1, 0.8, 1.2);
-    belly.position.set(0, 1.35, 0.25);
+    const belly = new THREE.Mesh(new THREE.SphereGeometry(1.15, 24, 24), bellyMat);
+    belly.scale.set(1, 0.85, 1.25);
+    belly.position.set(0, 1.4, 0.3);
     this.mesh.add(belly);
+
+    // Back plates / spikes along spine
+    for (let i = 0; i < 7; i++) {
+      const t = i / 6;
+      const plate = new THREE.Mesh(
+        new THREE.ConeGeometry(0.12 + (1 - t) * 0.08, 0.45 + (1 - t) * 0.25, 6),
+        backMat
+      );
+      plate.position.set(0, 2.55 + Math.sin(t * Math.PI) * 0.15, -1.4 + t * 2.6);
+      plate.rotation.x = -0.25;
+      this.mesh.add(plate);
+    }
 
     // Head
     this.headGroup = new THREE.Group();
-    this.headGroup.position.set(0, 2.6, 1.6);
+    this.headGroup.position.set(0, 2.65, 1.6);
 
-    const head = new THREE.Mesh(new THREE.SphereGeometry(0.85, 24, 24), skinMat);
-    head.scale.set(1, 0.9, 1.2);
+    const head = new THREE.Mesh(new THREE.SphereGeometry(0.88, 26, 26), skinMat);
+    head.scale.set(1.05, 0.95, 1.25);
     head.castShadow = true;
     this.headGroup.add(head);
 
     // Snout
-    const snout = new THREE.Mesh(new THREE.SphereGeometry(0.55, 20, 20), skinMat);
-    snout.position.set(0, -0.15, 0.75);
-    snout.scale.set(1, 0.85, 1.3);
+    const snout = new THREE.Mesh(new THREE.SphereGeometry(0.58, 22, 22), skinMat);
+    snout.position.set(0, -0.12, 0.78);
+    snout.scale.set(1, 0.88, 1.35);
     this.headGroup.add(snout);
 
-    // Eyes
-    const leftEye = new THREE.Mesh(new THREE.SphereGeometry(0.18, 14, 14), eyeWhiteMat);
-    leftEye.position.set(-0.32, 0.25, 0.55);
-    this.headGroup.add(leftEye);
-    const rightEye = leftEye.clone();
-    rightEye.position.set(0.32, 0.25, 0.55);
-    this.headGroup.add(rightEye);
+    // Nostrils
+    for (const sx of [-0.18, 0.18]) {
+      const nostril = new THREE.Mesh(new THREE.SphereGeometry(0.045, 8, 8), clawMat);
+      nostril.position.set(sx, 0.02, 1.32);
+      this.headGroup.add(nostril);
+    }
 
-    const leftPupil = new THREE.Mesh(new THREE.SphereGeometry(0.09, 10, 10), pupilMat);
-    leftPupil.position.set(-0.32, 0.25, 0.65);
-    this.headGroup.add(leftPupil);
-    const rightPupil = leftPupil.clone();
-    rightPupil.position.set(0.32, 0.25, 0.65);
-    this.headGroup.add(rightPupil);
+    // Eyes with angry brow ridge
+    const browMat = new THREE.MeshToonMaterial({ color: 0x5a2e0e });
+    for (const sx of [-1, 1]) {
+      const brow = new THREE.Mesh(new THREE.CapsuleGeometry(0.045, 0.42, 6, 8), browMat);
+      brow.position.set(sx * 0.34, 0.42, 0.62);
+      brow.rotation.z = sx * 0.25;
+      brow.rotation.x = 0.2;
+      this.headGroup.add(brow);
+
+      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.17, 14, 14), eyeWhiteMat);
+      eye.position.set(sx * 0.34, 0.26, 0.58);
+      this.headGroup.add(eye);
+
+      const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.085, 10, 10), pupilMat);
+      pupil.position.set(sx * 0.34, 0.26, 0.68);
+      this.headGroup.add(pupil);
+
+      const ear = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.22, 6), skinMat);
+      ear.position.set(sx * 0.55, 0.55, -0.15);
+      ear.rotation.z = sx * 0.4;
+      this.headGroup.add(ear);
+    }
 
     // Mouth
-    this.mouth = new THREE.Mesh(new THREE.SphereGeometry(0.18, 14, 14), pupilMat);
-    this.mouth.position.set(0, -0.35, 1.0);
-    this.mouth.scale.set(1.6, 0.5, 0.8);
+    this.mouth = new THREE.Mesh(new THREE.SphereGeometry(0.2, 14, 14), pupilMat);
+    this.mouth.position.set(0, -0.35, 1.05);
+    this.mouth.scale.set(1.7, 0.55, 0.85);
     this.headGroup.add(this.mouth);
     this.mouthBaseScaleX = this.mouth.scale.x;
     this.mouthBaseScaleY = this.mouth.scale.y;
     this.mouthBaseScaleZ = this.mouth.scale.z;
 
-    // Teeth
-    const toothMat = new THREE.MeshToonMaterial({ color: 0xffffee });
+    // Teeth (upper + lower)
     for (const side of [-1, 1]) {
-      for (let i = 0; i < 4; i++) {
-        const tooth = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.15, 6), toothMat);
-        tooth.position.set(side * 0.25, -0.28, 0.95 + i * 0.12);
-        tooth.rotation.x = side * 0.2;
+      for (let i = 0; i < 5; i++) {
+        const tooth = new THREE.Mesh(new THREE.ConeGeometry(0.045, 0.18, 6), toothMat);
+        tooth.position.set(side * (0.22 + i * 0.08), -0.18, 1.0 + i * 0.08);
+        tooth.rotation.x = side * 0.15;
+        this.headGroup.add(tooth);
+      }
+      for (let i = 0; i < 3; i++) {
+        const tooth = new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.12, 6), toothMat);
+        tooth.position.set(side * (0.18 + i * 0.09), -0.48, 0.92 + i * 0.08);
+        tooth.rotation.x = Math.PI + side * 0.15;
         this.headGroup.add(tooth);
       }
     }
 
-    // Crest
-    for (let i = 0; i < 6; i++) {
-      const spike = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.35, 6), skinMat);
-      spike.position.set(0, 0.75 + i * 0.1, -0.4 - i * 0.08);
-      spike.rotation.x = -0.35;
+    // Head crest
+    for (let i = 0; i < 7; i++) {
+      const spike = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.4, 6), backMat);
+      spike.position.set(0, 0.85 + i * 0.09, -0.45 - i * 0.08);
+      spike.rotation.x = -0.4;
       this.headGroup.add(spike);
     }
 
     this.mesh.add(this.headGroup);
 
-    // Tail
+    // Tail with dorsal spines
     this.tail = new THREE.Group();
-    this.tail.position.set(0, 1.8, -1.2);
-    for (let i = 0; i < 5; i++) {
-      const seg = new THREE.Mesh(new THREE.SphereGeometry(0.45 - i * 0.06, 14, 14), skinMat);
+    this.tail.position.set(0, 1.85, -1.25);
+    for (let i = 0; i < 6; i++) {
+      const r = 0.48 - i * 0.05;
+      const seg = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 16), skinMat);
       seg.position.set(0, 0, -i * 0.55);
       seg.scale.set(1, 0.85, 1.3);
+      seg.castShadow = true;
       this.tail.add(seg);
+      if (i < 5) {
+        const spine = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.28, 6), backMat);
+        spine.position.set(0, r * 0.9, -i * 0.55 - 0.2);
+        spine.rotation.x = -0.3;
+        this.tail.add(spine);
+      }
     }
     this.mesh.add(this.tail);
 
-    // Legs
-    const legGeo = new THREE.CylinderGeometry(0.35, 0.28, 1.3, 14);
+    // Legs with claws
+    const legGeo = new THREE.CylinderGeometry(0.38, 0.3, 1.35, 14);
     const positions = [
-      [-0.75, 0.65, 0.8], [0.75, 0.65, 0.8],
-      [-0.75, 0.65, -0.9], [0.75, 0.65, -0.9],
+      [-0.78, 0.68, 0.85], [0.78, 0.68, 0.85],
+      [-0.78, 0.68, -0.95], [0.78, 0.68, -0.95],
     ];
     this.legs = [];
     for (const [x, y, z] of positions) {
@@ -892,25 +1026,35 @@ class BigDino extends CharacterBase {
       leg.castShadow = true;
       this.mesh.add(leg);
       this.legs.push(leg);
+
+      // Three claws per foot
+      for (let c = -1; c <= 1; c++) {
+        const claw = new THREE.Mesh(new THREE.ConeGeometry(0.045, 0.18, 6), clawMat);
+        claw.position.set(x + c * 0.12, 0.05, z + 0.22);
+        claw.rotation.x = -0.4;
+        this.mesh.add(claw);
+      }
     }
 
-    // Tiny arms
-    const armGeo = new THREE.CylinderGeometry(0.12, 0.09, 0.6, 10);
-    this.leftArm = new THREE.Group();
-    this.leftArm.position.set(-0.9, 1.9, 1.1);
-    const leftArmMesh = new THREE.Mesh(armGeo, skinMat);
-    leftArmMesh.rotation.z = Math.PI / 3;
-    leftArmMesh.position.y = -0.25;
-    this.leftArm.add(leftArmMesh);
-    this.mesh.add(this.leftArm);
+    // Tiny arms with claws
+    const armGeo = new THREE.CylinderGeometry(0.13, 0.1, 0.55, 10);
+    for (const sx of [-1, 1]) {
+      const armGroup = new THREE.Group();
+      armGroup.position.set(sx * 0.95, 2.0, 1.15);
+      const armMesh = new THREE.Mesh(armGeo, skinMat);
+      armMesh.rotation.z = sx * Math.PI / 2.8;
+      armMesh.position.y = -0.22;
+      armGroup.add(armMesh);
 
-    this.rightArm = new THREE.Group();
-    this.rightArm.position.set(0.9, 1.9, 1.1);
-    const rightArmMesh = new THREE.Mesh(armGeo, skinMat);
-    rightArmMesh.rotation.z = -Math.PI / 3;
-    rightArmMesh.position.y = -0.25;
-    this.rightArm.add(rightArmMesh);
-    this.mesh.add(this.rightArm);
+      const claw = new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.14, 6), clawMat);
+      claw.position.set(sx * 0.22, -0.45, 0.05);
+      claw.rotation.z = sx * 0.3;
+      armGroup.add(claw);
+
+      this.mesh.add(armGroup);
+      if (sx < 0) this.leftArm = armGroup;
+      else this.rightArm = armGroup;
+    }
   }
 }
 
@@ -1026,6 +1170,29 @@ class DoorClose extends AnimationBase {
   }
 }
 
+class TakeCopter extends AnimationBase {
+  constructor(options = {}) { super('TakeCopter', positiveNumber(options.duration, 2.0)); }
+  update(t, character) {
+    // Attach on first visible update (engine does not call start()).
+    if (character.attachTakeCopter) character.attachTakeCopter();
+    if (character.takeCopter && character.takeCopter.visible) {
+      // Spin all blade meshes (BoxGeometry children at the top of the propeller).
+      for (const child of character.takeCopter.children) {
+        if (child.geometry && child.geometry.type === 'BoxGeometry') {
+          child.rotation.y += 0.6;
+        }
+      }
+    }
+  }
+}
+
+class TakeCopterOff extends AnimationBase {
+  constructor(options = {}) { super('TakeCopterOff', positiveNumber(options.duration, 0.5)); }
+  update(t, character) {
+    if (character.detachTakeCopter) character.detachTakeCopter();
+  }
+}
+
 registerAnimation('DinoWagTail', DinoWagTail);
 registerAnimation('DinoRoar', DinoRoar);
 registerAnimation('DinoWalk', DinoWalk);
@@ -1033,6 +1200,8 @@ registerAnimation('BigDinoRun', BigDinoRun);
 registerAnimation('BigDinoRoar', BigDinoRoar);
 registerAnimation('DoorOpen', DoorOpen);
 registerAnimation('DoorClose', DoorClose);
+registerAnimation('TakeCopter', TakeCopter);
+registerAnimation('TakeCopterOff', TakeCopterOff);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // PoseMatrix-based facial expressions (compatible with the engine lip-sync)
@@ -1609,7 +1778,7 @@ registerAnimation('FaceTired', FaceTired);
 registerAnimation('FaceRelaxed', FaceRelaxed);
 
 const universalFaceAnims = ['FaceHappy', 'FaceSurprised', 'FaceScared', 'FaceProud', 'FaceSad', 'FaceCry', 'FaceWorried', 'FaceExcited', 'FaceAngry', 'FaceRelieved', 'FaceAmazed', 'FaceSmile', 'FaceGrin', 'FaceLaugh', 'FaceTired', 'FaceRelaxed'];
-const customBodyAnims = ['TakeOutFromPocket', 'DoorOpen', 'DoorClose', 'ShowTears', 'HideTears', 'Cry', 'HandsOnHips', 'ThumbsUp', 'Facepalm', 'ExcitedJump', 'JumpForJoy', 'ShakeHead', 'Bow', 'SlumpShoulders', 'Sigh', 'WipeForehead', 'DinoWagTail', 'DinoRoar', 'DinoWalk', 'BigDinoRun', 'BigDinoRoar'];
+const customBodyAnims = ['TakeOutFromPocket', 'DoorOpen', 'DoorClose', 'TakeCopter', 'TakeCopterOff', 'ShowTears', 'HideTears', 'Cry', 'HandsOnHips', 'ThumbsUp', 'Facepalm', 'ExcitedJump', 'JumpForJoy', 'ShakeHead', 'Bow', 'SlumpShoulders', 'Sigh', 'WipeForehead', 'DinoWagTail', 'DinoRoar', 'DinoWalk', 'BigDinoRun', 'BigDinoRoar'];
 
 function addTearMeshes(character) {
   if (!character.headGroup || character.leftTear) return;
@@ -1666,6 +1835,58 @@ function addEyelidMeshes(character) {
   character.rightEyelid = rightLid;
 }
 
+function createTakeCopterForCharacter(character) {
+  const group = new THREE.Group();
+  const isDoraemon = character.name === 'Doraemon';
+  const headTopY = isDoraemon ? 0.72 : (character.name === 'Nobita' ? 0.38 : 0.36);
+  group.position.y = headTopY;
+
+  const yellowMat = new THREE.MeshToonMaterial({ color: 0xffd700 });
+  const propMat = new THREE.MeshToonMaterial({ color: 0xdddddd });
+  const bladeMat = new THREE.MeshToonMaterial({ color: 0xffcc33 });
+
+  const baseRadius = isDoraemon ? 0.18 : 0.11;
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(baseRadius, baseRadius, 0.025, 16), yellowMat);
+  group.add(base);
+
+  const shaftLen = isDoraemon ? 0.35 : 0.25;
+  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, shaftLen, 8), propMat);
+  shaft.position.y = shaftLen / 2 + 0.01;
+  group.add(shaft);
+
+  const bladeLen = isDoraemon ? 1.0 : 0.7;
+  const bladeW = isDoraemon ? 0.22 : 0.16;
+  for (let i = 0; i < 3; i++) {
+    const blade = new THREE.Mesh(new THREE.BoxGeometry(bladeLen, 0.012, bladeW), bladeMat);
+    blade.position.y = shaftLen + 0.02;
+    blade.rotation.y = (i / 3) * Math.PI * 2;
+    group.add(blade);
+  }
+
+  const cap = new THREE.Mesh(new THREE.SphereGeometry(isDoraemon ? 0.035 : 0.025, 8, 8), yellowMat);
+  cap.position.y = shaftLen + 0.04;
+  group.add(cap);
+
+  group.visible = false;
+  return group;
+}
+
+function addTakeCopterIfMissing(character) {
+  if (!character.headGroup || character.takeCopter) return;
+  character.takeCopter = createTakeCopterForCharacter(character);
+  character.headGroup.add(character.takeCopter);
+  if (!character.attachTakeCopter) {
+    character.attachTakeCopter = function () {
+      if (this.takeCopter) this.takeCopter.visible = true;
+    };
+  }
+  if (!character.detachTakeCopter) {
+    character.detachTakeCopter = function () {
+      if (this.takeCopter) this.takeCopter.visible = false;
+    };
+  }
+}
+
 import { CharacterRegistry } from 'dula-engine';
 ['Doraemon', 'Nobita', 'Shizuka'].forEach(name => {
   const CharClass = CharacterRegistry[name];
@@ -1714,6 +1935,8 @@ import { CharacterRegistry } from 'dula-engine';
       // All three main characters get reusable tear meshes for crying scenes.
       addTearMeshes(this);
       addEyelidMeshes(this);
+      // Ensure everyone has a take-copter (Shizuka is missing one in dula-assets).
+      addTakeCopterIfMissing(this);
     };
   }
 });
