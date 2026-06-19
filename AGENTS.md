@@ -108,7 +108,14 @@ dula-story/
 
 ### 避碰与运镜安全约束（P0）
 
-以下约束必须在写 `.story` 时主动遵守，不能依赖渲染后肉眼发现。摄像机、角色均不得穿模。
+以下约束必须在写 `.story` 时主动遵守。引擎已启用自动相机防穿模（`CameraCollisionGuard`）和角色间碰撞约束，但** authoring 阶段仍要遵循安全距离**，避免把镜头或角色埋进场景几何体。
+
+> 自动防护范围：
+> - `CloseUp` / `OverShoulder` / `TrackingCloseUp` / `Static` 相机会自动被推离角色 bounding sphere。
+> - `RoomScene`、`ParkScene` 等常见场景已注册家具/树木/喷泉等碰撞代理，相机会自动被推离。
+> - 角色间启用 `BodyCollisionGuard` 与 `JointConstraintSystem`，会互相推开并限制关节穿模。
+>
+> 自动防护**不保证构图美观**，只保证不穿模；所以 `.story` 仍需主动遵守下述规则。
 
 #### 1. 角色 vs 家具/场景避碰
 - **RoomScene 默认家具**：椅子约在 `z=-1.5`、书桌约在 `z=-3.0`、床在 `x=7`、衣柜在 `x=-7`。

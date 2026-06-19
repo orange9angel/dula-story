@@ -422,6 +422,32 @@ class PrehistoricScene extends SceneBase {
       this._addBackgroundDino(dx, dy, dz, color, scale);
     }
 
+    // Camera collision proxies for trees and rocks
+    for (const [px, py, pz] of palmPositions) {
+      const height = 5 + Math.random() * 2;
+      this.registerCameraObstacle({
+        type: 'capsule',
+        start: new THREE.Vector3(px, py, pz),
+        end: new THREE.Vector3(px, py + height, pz),
+        radius: 1.0,
+      });
+    }
+    for (const [px, py, pz] of broadleafPositions) {
+      const height = 4 + Math.random() * 3;
+      const radius = 1.4 + Math.random() * 0.8;
+      this.registerCameraObstacle({
+        type: 'capsule',
+        start: new THREE.Vector3(px, py, pz),
+        end: new THREE.Vector3(px, py + height, pz),
+        radius: radius * 0.8,
+      });
+    }
+    for (const [rx, ry, rz] of rockPositions) {
+      const r = 0.8 + Math.random() * 0.6;
+      this.registerCameraObstacle({ type: 'sphere', center: new THREE.Vector3(rx, ry + 0.3, rz), radius: r });
+    }
+    this.registerCameraObstacle({ type: 'sphere', center: new THREE.Vector3(-20, 9, -45), radius: 15 });
+
     // Anywhere door for returning home
     this.door = new AnywhereDoor();
     this.door.group.position.set(0, 0, -6);
