@@ -134,12 +134,45 @@ dula-story/
 - **相机 vs 墙壁/家具**：机位不得位于墙壁、家具内部或被其遮挡；室内 CloseUp 应优先让相机朝向房间开阔区域，避免背靠墙壁导致黑边/穿模。
 - **禁止行为**：相机不得从角色头、躯干内部穿出/穿入；CloseUp 不得把相机埋进角色身体里；相机不得穿透墙壁、门、桌椅等场景几何体。
 
+### 表情与眼神
+
+角色面部系统已统一升级：主角（Doraemon / Nobita / Shizuka）拥有瞳孔高光、眼皮、眉毛和更大幅度的表情动画。同时引擎会根据 TTS 推断的 emotion **自动播放对应表情**，因此普通对白条目不需要手动写 `{Face...}` 标签。
+
+#### 自动表情映射
+
+`generate_audio.py` 会从台词推断情绪并写入 `manifest.json`，运行时映射如下：
+
+| 推断情绪 | 自动播放的表情动画 |
+|---|---|
+| `happy` / `excited` / `triumphant` | `FaceHappy` |
+| `sad` | `FaceSad` |
+| `scared` / `panic` / `worried` / `concerned` | `FaceScared` / `FaceWorried` |
+| `angry` / `exasperated` / `defiant` | `FaceAngry` |
+| `proud` / `teasing` | `FaceProud` / `FaceGrin` |
+| `surprised` / `amazed` / `confused` / `curious` | `FaceSurprised` / `FaceConfused` |
+| `calm` / `gentle` / `relaxed` | `FaceRelaxed` / `FaceSmile` |
+
+#### 手动表情标签
+
+如需精确控制某句台词的表情，仍可在 `.story` 中使用 `{FaceXXX}` 标签，显式标签会覆盖自动表情：
+
+```
+[Nobita]{FaceSad} {Shrug}好无聊啊……
+```
+
+常用标签：`FaceHappy`、`FaceSad`、`FaceAngry`、`FaceSurprised`、`FaceWorried`、`FaceScared`、`FaceProud`、`FaceRelaxed`、`FaceGrin`、`FaceCry`。
+
+#### 眼神接触
+
+`CloseUp` / `OverShoulder` / `TrackingCloseUp` 等镜头对准正在说话的角色时，角色会自动看向镜头（观众方向）。这会让特写镜头更有交流感，不需要手动写 `{LookAt}` 之类的标签。
+
 #### 3. 验证动作
 每次修改后必须执行：
 1. `npx dula-verify ./episodes/<name>` 生成 `storyboard/check_shot_*.jpg`。
 2. 逐张检查是否有穿模、相机切入角色、角色从家具内部出现、墙壁/家具遮挡镜头。
-3. 发现 P0 问题立即在 `.story` 中调整站位或机位，再重新验证。
-4. 关键镜头（门出现、角色坐下、新场景首次亮相）必须单独截图确认视觉效果。
+3. 检查表情是否明显：眉毛/眼皮是否有动作、机器猫嘴巴是否为月牙形、眼神是否呆滞。
+4. 发现 P0 问题立即在 `.story` 中调整站位或机位，再重新验证。
+5. 关键镜头（门出现、角色坐下、新场景首次亮相、情绪特写）必须单独截图确认视觉效果。
 
 ---
 
