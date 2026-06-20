@@ -378,7 +378,7 @@ class PrehistoricScene extends SceneBase {
     // Rocks covered in moss
     const rockMat = new THREE.MeshStandardMaterial({ color: 0x6a7a5a, roughness: 1.0 });
     const rockPositions = [
-      [-4, 0, 6], [7, 0, -4], [-9, 0, -6], [14, 0, 10],
+      [-4, 0, 6], [15, 0, -12], [-9, 0, -6], [14, 0, 10],
       [5, 0, 12], [-18, 0, 12], [20, 0, -15], [-2, 0, -14],
     ];
     for (const [rx, ry, rz] of rockPositions) {
@@ -1243,11 +1243,12 @@ class FaceScared extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
-    // Inner eyebrows down, outer up; pupils shrink; mouth falls open.
+    // Raised arched brows (/\), wide eyes, small pupils, dropped jaw.
     pose.eyebrows = {
-      left: { py: e * 0.005, rz: e * 0.25 },
-      right: { py: e * 0.005, rz: -e * 0.25 },
+      left: { py: e * 0.020, rz: -e * 0.28 },
+      right: { py: e * 0.020, rz: e * 0.28 },
     };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
     pose.pupils = {
       left: { sx: -e * 0.15, sy: -e * 0.15, sz: -e * 0.15 },
       right: { sx: -e * 0.15, sy: -e * 0.15, sz: -e * 0.15 },
@@ -1266,11 +1267,12 @@ class FaceProud extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
-    // Raised brows, slight smile, chin up.
+    // Raised brows arched outward (/\), bright eyes, slight smile, chin up.
     pose.eyebrows = {
-      left: { py: e * 0.015, rz: -e * 0.1 },
-      right: { py: e * 0.015, rz: e * 0.1 },
+      left: { py: e * 0.020, rz: -e * 0.18 },
+      right: { py: e * 0.020, rz: e * 0.18 },
     };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
     pose.pupils = {
       left: { sx: e * 0.05, sy: e * 0.05, sz: e * 0.05 },
       right: { sx: e * 0.05, sy: e * 0.05, sz: e * 0.05 },
@@ -1289,11 +1291,12 @@ class FaceSad extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
-    // Eyebrows slant up at the inner ends, mouth droops, head hangs.
+    // Brows slant down at outer ends (\/), droopy lids, downturned mouth.
     pose.eyebrows = {
-      left: { py: e * 0.008, rz: -e * 0.25 },
-      right: { py: e * 0.008, rz: e * 0.25 },
+      left: { py: -e * 0.005, rz: e * 0.25 },
+      right: { py: -e * 0.005, rz: -e * 0.25 },
     };
+    pose.eyelids = { left: { visible: true, sy: -e * 0.35 }, right: { visible: true, sy: -e * 0.35 } };
     pose.pupils = {
       left: { py: -e * 0.01 },
       right: { py: -e * 0.01 },
@@ -1312,14 +1315,14 @@ class FaceCry extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
-    // Sad eyebrows, squeezed-shut eyes, downturned open mouth.
+    // Sad inverted-V brows, squeezed-shut eyes, downturned open mouth.
     pose.eyebrows = {
-      left: { py: e * 0.012, rz: -e * 0.35 },
-      right: { py: e * 0.012, rz: e * 0.35 },
+      left: { py: e * 0.010, rz: e * 0.35 },
+      right: { py: e * 0.010, rz: -e * 0.35 },
     };
     pose.eyelids = {
-      left: { visible: true, sy: -e * 0.45 },
-      right: { visible: true, sy: -e * 0.45 },
+      left: { visible: true, sy: -e * 0.55 },
+      right: { visible: true, sy: -e * 0.55 },
     };
     pose.pupils = {
       left: { sx: -e * 0.1, sy: -e * 0.1, sz: -e * 0.1 },
@@ -1339,10 +1342,12 @@ class FaceWorried extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Inner ends raised (/\), slight squint, small frown.
     pose.eyebrows = {
-      left: { py: e * 0.015, rz: e * 0.2 },
-      right: { py: e * 0.015, rz: -e * 0.2 },
+      left: { py: e * 0.015, rz: -e * 0.20 },
+      right: { py: e * 0.015, rz: e * 0.20 },
     };
+    pose.eyelids = { left: { visible: true, sy: -e * 0.15 }, right: { visible: true, sy: -e * 0.15 } };
     pose.pupils = {
       left: { sx: -e * 0.12, sy: -e * 0.12, sz: -e * 0.12 },
       right: { sx: -e * 0.12, sy: -e * 0.12, sz: -e * 0.12 },
@@ -1361,10 +1366,12 @@ class FaceExcited extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Brows arched high and outward (/\), wide eyes, big smile.
     pose.eyebrows = {
-      left: { py: e * 0.015, rz: -e * 0.1 },
-      right: { py: e * 0.015, rz: e * 0.1 },
+      left: { py: e * 0.022, rz: -e * 0.18 },
+      right: { py: e * 0.022, rz: e * 0.18 },
     };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
     pose.pupils = {
       left: { sx: e * 0.08, sy: e * 0.08, sz: e * 0.08 },
       right: { sx: e * 0.08, sy: e * 0.08, sz: e * 0.08 },
@@ -1383,10 +1390,12 @@ class FaceAngry extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Lowered brows with inner ends down: angry V (\/).
     pose.eyebrows = {
-      left: { py: -e * 0.005, rz: e * 0.2 },
-      right: { py: -e * 0.005, rz: -e * 0.2 },
+      left: { py: -e * 0.005, rz: e * 0.25 },
+      right: { py: -e * 0.005, rz: -e * 0.25 },
     };
+    pose.eyelids = { left: { visible: true, sy: -e * 0.30 }, right: { visible: true, sy: -e * 0.30 } };
     pose.pupils = {
       left: { sx: -e * 0.1, sy: -e * 0.1, sz: -e * 0.1 },
       right: { sx: -e * 0.1, sy: -e * 0.1, sz: -e * 0.1 },
@@ -1405,14 +1414,12 @@ class FaceRelieved extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Soft outward arch (/\) + gentle smile for "whew".
     pose.eyebrows = {
-      left: { py: e * 0.005, rz: -e * 0.05 },
-      right: { py: e * 0.005, rz: e * 0.05 },
+      left: { py: e * 0.005, rz: -e * 0.06 },
+      right: { py: e * 0.005, rz: e * 0.06 },
     };
-    pose.eyelids = {
-      left: { visible: true, sy: -e * 0.25 },
-      right: { visible: true, sy: -e * 0.25 },
-    };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
     pose.mouth = { tension: e * 0.15 };
     pose.headGroup = { rx: e * 0.03 };
     return amplifyFace(pose);
@@ -1427,10 +1434,12 @@ class FaceAmazed extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // High arched brows (/\), tiny pupils, dropped jaw.
     pose.eyebrows = {
-      left: { py: e * 0.018, rz: -e * 0.15 },
-      right: { py: e * 0.018, rz: e * 0.15 },
+      left: { py: e * 0.025, rz: -e * 0.18 },
+      right: { py: e * 0.025, rz: e * 0.18 },
     };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
     pose.pupils = {
       left: { sx: -e * 0.2, sy: -e * 0.2, sz: -e * 0.2 },
       right: { sx: -e * 0.2, sy: -e * 0.2, sz: -e * 0.2 },
@@ -1449,10 +1458,12 @@ class FaceSmile extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Gentle outward arch (/\) and relaxed open eyes.
     pose.eyebrows = {
-      left: { py: e * 0.005, rz: -e * 0.08 },
-      right: { py: e * 0.005, rz: e * 0.08 },
+      left: { py: e * 0.008, rz: -e * 0.10 },
+      right: { py: e * 0.008, rz: e * 0.10 },
     };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
     pose.mouth = { tension: e * 0.3 };
     return amplifyFace(pose);
   }
@@ -1466,10 +1477,12 @@ class FaceGrin extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Asymmetric cocky grin: left brow raised high (/\ on that side).
     pose.eyebrows = {
-      left: { py: e * 0.008, rz: -e * 0.12 },
-      right: { py: e * 0.008, rz: e * 0.12 },
+      left: { py: e * 0.012, rz: -e * 0.15 },
+      right: { py: e * 0.003, rz: e * 0.05 },
     };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
     pose.pupils = {
       left: { sx: -e * 0.05, sy: -e * 0.05, sz: -e * 0.05 },
       right: { sx: -e * 0.05, sy: -e * 0.05, sz: -e * 0.05 },
@@ -1488,13 +1501,14 @@ class FaceLaugh extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Squinting happy laugh: brows arched outward (/\) with cheerful squint.
     pose.eyebrows = {
-      left: { py: e * 0.012, rz: -e * 0.1 },
-      right: { py: e * 0.012, rz: e * 0.1 },
+      left: { py: e * 0.012, rz: -e * 0.12 },
+      right: { py: e * 0.012, rz: e * 0.12 },
     };
     pose.eyelids = {
-      left: { visible: true, sy: -e * 0.35 },
-      right: { visible: true, sy: -e * 0.35 },
+      left: { visible: true, sy: -e * 0.25 },
+      right: { visible: true, sy: -e * 0.25 },
     };
     pose.mouth = { tension: e * 0.4 };
     pose.headGroup = { rx: -e * 0.05 };
@@ -1510,13 +1524,14 @@ class FaceTired extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Flat brows drooping at outer ends (\/), heavy lids.
     pose.eyebrows = {
-      left: { py: e * 0.003, rz: e * 0.15 },
-      right: { py: e * 0.003, rz: -e * 0.15 },
+      left: { py: -e * 0.003, rz: e * 0.12 },
+      right: { py: -e * 0.003, rz: -e * 0.12 },
     };
     pose.eyelids = {
-      left: { visible: true, sy: -e * 0.45 },
-      right: { visible: true, sy: -e * 0.45 },
+      left: { visible: true, sy: -e * 0.50 },
+      right: { visible: true, sy: -e * 0.50 },
     };
     pose.pupils = {
       left: { py: -e * 0.01 },
@@ -1536,13 +1551,14 @@ class FaceRelaxed extends AnimationBase {
   getPoseMatrix(t) {
     const pose = new PoseMatrix();
     const e = t < 0.3 ? t / 0.3 : 1;
+    // Calm, slightly arched brows (/\) with relaxed lids.
     pose.eyebrows = {
-      left: { py: e * 0.003, rz: -e * 0.03 },
-      right: { py: e * 0.003, rz: e * 0.03 },
+      left: { py: e * 0.003, rz: -e * 0.05 },
+      right: { py: e * 0.003, rz: e * 0.05 },
     };
     pose.eyelids = {
-      left: { visible: true, sy: -e * 0.15 },
-      right: { visible: true, sy: -e * 0.15 },
+      left: { visible: true, sy: -e * 0.10 },
+      right: { visible: true, sy: -e * 0.10 },
     };
     pose.mouth = { tension: e * 0.1 };
     pose.headGroup = { rx: e * 0.02 };
@@ -1551,6 +1567,56 @@ class FaceRelaxed extends AnimationBase {
 }
 
 // ── Tear visibility helpers (non-matrix so they can run alongside face anims) ──
+
+// Override global dula-assets face anims so they match the episode's
+// vertical-eyebrow characters (Doraemon / Nobita / Shizuka).
+class FaceHappy extends AnimationBase {
+  constructor(options = {}) {
+    super('FaceHappy', positiveNumber(options.duration, 0.4));
+    this.usePoseMatrix = true;
+  }
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const e = t < 0.3 ? t / 0.3 : 1;
+    // Bright arched brows (/\), wide eyes, relaxed smile.
+    pose.eyebrows = {
+      left: { py: e * 0.025, rz: -e * 0.28 },
+      right: { py: e * 0.025, rz: e * 0.28 },
+    };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
+    pose.pupils = {
+      left: { sx: e * 0.05, sy: e * 0.05, sz: e * 0.05 },
+      right: { sx: e * 0.05, sy: e * 0.05, sz: e * 0.05 },
+    };
+    pose.mouth = { tension: e * 0.2, sx: e * 0.25, sy: e * 0.15 };
+    pose.headGroup = { rx: -e * 0.05 };
+    return amplifyFace(pose);
+  }
+}
+
+class FaceSurprised extends AnimationBase {
+  constructor(options = {}) {
+    super('FaceSurprised', positiveNumber(options.duration, 0.35));
+    this.usePoseMatrix = true;
+  }
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const e = t < 0.25 ? t / 0.25 : 1;
+    // Very high arched brows (/\), wide eyes, tiny pupils, open mouth.
+    pose.eyebrows = {
+      left: { py: e * 0.040, rz: -e * 0.18 },
+      right: { py: e * 0.040, rz: e * 0.18 },
+    };
+    pose.eyelids = { left: { visible: false, sy: 0 }, right: { visible: false, sy: 0 } };
+    pose.pupils = {
+      left: { sx: -e * 0.30, sy: -e * 0.30, sz: -e * 0.30 },
+      right: { sx: -e * 0.30, sy: -e * 0.30, sz: -e * 0.30 },
+    };
+    pose.mouth = { tension: -e * 0.25, sx: e * 0.35, sy: e * 0.65 };
+    pose.headGroup = { rx: -e * 0.1 };
+    return amplifyFace(pose);
+  }
+}
 
 class ShowTears extends AnimationBase {
   constructor(options = {}) {
@@ -1782,6 +1848,8 @@ registerAnimation('FaceWorried', FaceWorried);
 registerAnimation('FaceExcited', FaceExcited);
 registerAnimation('FaceAngry', FaceAngry);
 registerAnimation('FaceRelieved', FaceRelieved);
+registerAnimation('FaceHappy', FaceHappy);
+registerAnimation('FaceSurprised', FaceSurprised);
 
 registerAnimation('ShowTears', ShowTears);
 registerAnimation('HideTears', HideTears);
