@@ -1,0 +1,52 @@
+{
+  "Bai": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "rate": "+20%",
+    "pitch": "-5Hz",
+    "effect": {
+      "rubberband": "pitch=0.917:formant=0.917:tempo=1.0",
+      "volume": "1.1"
+    }
+  },
+  "Wen": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+25%",
+    "pitch": "+8Hz",
+    "effect": {
+      "rubberband": "pitch=1.149:formant=1.189:tempo=1.05",
+      "volume": "1.05"
+    }
+  },
+  "Cheng": {
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "+5%",
+    "pitch": "-8Hz",
+    "effect": {
+      "rubberband": "pitch=0.944:formant=0.944:tempo=0.92",
+      "volume": "1.1"
+    }
+  },
+  "Lan": {
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "effect": {
+      "rubberband": "pitch=0.816:formant=0.841:tempo=1.0",
+      "volume": "1.15"
+    }
+  },
+  "XiaoMi": {
+    "voice": "zh-CN-YunxiaNeural",
+    "rate": "+15%",
+    "pitch": "+0Hz",
+    "effect": {
+      "rubberband": "pitch=1.089:formant=1.089:tempo=1.08",
+      "volume": "1.0"
+    }
+  },
+  "Narrator": {
+    "voice": "zh-CN-YunyangNeural",
+    "rate": "+10%",
+    "pitch": "-5Hz"
+  }
+}
