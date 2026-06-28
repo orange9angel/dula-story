@@ -140,7 +140,14 @@
     "preview:zoo": "dula-preview ./episodes/monkey_zoo_human_show",
     "render:zoo": "dula-render ./episodes/monkey_zoo_human_show",
     "build:zoo": "npm run audio:zoo && npm run render:zoo",
-    "inspect:zoo": "dula-inspect ./episodes/monkey_zoo_human_show"
+    "inspect:zoo": "dula-inspect ./episodes/monkey_zoo_human_show",
+    "audio:transformers": "dula-audio ./episodes/transformers_beast_wars_s1e1",
+    "audio:transformers:ds": "dula-audio ./episodes/transformers_beast_wars_s1e1 --provider=dashscope",
+    "verify:transformers": "dula-verify ./episodes/transformers_beast_wars_s1e1",
+    "preview:transformers": "dula-preview ./episodes/transformers_beast_wars_s1e1",
+    "render:transformers": "dula-render ./episodes/transformers_beast_wars_s1e1",
+    "build:transformers": "npm run audio:transformers && npm run render:transformers",
+    "inspect:transformers": "dula-inspect ./episodes/transformers_beast_wars_s1e1"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
