@@ -1,0 +1,105 @@
+{
+  "_comment": "Edge-tts 仅原生支持东北(zh-CN-liaoning-XiaobeiNeural)和陕西(zh-CN-shaanxi-XiaoniNeural)两种方言。猴子角色统一做极高声调+快语速+ rubberband 大幅升调处理，让人声明显接近猴叫；人类角色保持地域特色但不做夸张变形。",
+  "Bai": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+28%",
+    "pitch": "+38Hz",
+    "volume": "+10%",
+    "effect": {
+      "rubberband": "pitch=1.38:formant=1.22:tempo=1.10",
+      "volume": 1.15
+    },
+    "note": "京腔猴：尖细短促、带儿化音，像白面僧面猴端着主持节目"
+  },
+  "Wen": {
+    "voice": "zh-CN-YunxiaNeural",
+    "rate": "+28%",
+    "pitch": "+38Hz",
+    "volume": "+10%",
+    "effect": {
+      "rubberband": "pitch=1.35:formant=1.20:tempo=1.10",
+      "volume": 1.15
+    },
+    "note": "川渝猴：长鼻猴嗅觉担当，声调挑高，尾音带猴味儿"
+  },
+  "Cheng": {
+    "voice": "zh-CN-liaoning-XiaobeiNeural",
+    "rate": "+22%",
+    "pitch": "+32Hz",
+    "volume": "+10%",
+    "effect": {
+      "rubberband": "pitch=1.28:formant=1.18:tempo=1.08",
+      "volume": 1.15
+    },
+    "note": "东北猴：红猩猩大力，东北腔被拎成高八度猴儿嗓"
+  },
+  "Lan": {
+    "voice": "zh-CN-shaanxi-XiaoniNeural",
+    "rate": "+25%",
+    "pitch": "+35Hz",
+    "volume": "+8%",
+    "effect": {
+      "rubberband": "pitch=1.30:formant=1.20:tempo=1.08",
+      "volume": 1.15
+    },
+    "note": "陕西猴：山魈凶凶，冷峻女声变尖后反差喜感"
+  },
+  "XiaoMi": {
+    "voice": "zh-CN-XiaoyiNeural",
+    "rate": "+30%",
+    "pitch": "+42Hz",
+    "volume": "+12%",
+    "effect": {
+      "rubberband": "pitch=1.40:formant=1.22:tempo=1.12",
+      "volume": 1.2
+    },
+    "note": "粤桂猴：猕猴导演小猕，语速最快、调门最高，叽叽喳喳改规则"
+  },
+  "阿翔": {
+    "voice": "zh-CN-liaoning-XiaobeiNeural",
+    "rate": "+10%",
+    "pitch": "+4Hz",
+    "volume": "+8%",
+    "effect": {
+      "rubberband": "pitch=0.95:formant=0.92:tempo=1.05",
+      "volume": 1.05
+    },
+    "note": "东北热血少年，游客嘉宾"
+  },
+  "小红": {
+    "voice": "zh-CN-XiaoyiNeural",
+    "rate": "+6%",
+    "pitch": "+10Hz",
+    "volume": "+4%",
+    "note": "江浙沪活泼女生，高亮快语"
+  },
+  "小黑": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "-10%",
+    "pitch": "-14Hz",
+    "volume": "+2%",
+    "effect": {
+      "rubberband": "pitch=0.84:formant=0.88:tempo=0.98",
+      "volume": 1.0
+    },
+    "note": "两广沉稳低音"
+  },
+  "阿金": {
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "+8%",
+    "pitch": "+2Hz",
+    "volume": "+12%",
+    "effect": {
+      "rubberband": "pitch=0.94:formant=0.92:tempo=1.08",
+      "volume": 1.1
+    },
+    "note": "华北肌肉男"
+  },
+  "小美": {
+    "voice": "zh-CN-shaanxi-XiaoniNeural",
+    "rate": "+6%",
+    "pitch": "+2Hz",
+    "volume": "+6%",
+    "note": "陕西甜美"
+  }
+}

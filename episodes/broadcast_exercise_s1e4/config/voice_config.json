@@ -1,0 +1,41 @@
+{
+  "_comment": "Bai 用厚重男声；Cheng 目前不说话，也配一个沉稳男声备用。",
+  "Inuyasha": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+5%",
+    "pitch": "+0Hz",
+    "volume": "+20%"
+  },
+  "Shizuka": {
+    "voice": "zh-CN-XiaoyiNeural",
+    "rate": "+8%",
+    "pitch": "+10Hz",
+    "volume": "+20%"
+  },
+  "Vex": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+6%",
+    "pitch": "+0Hz",
+    "volume": "+22%"
+  },
+  "Bai": {
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "+5%",
+    "pitch": "-10Hz",
+    "volume": "+10%",
+    "effect": {
+      "rubberband": "pitch=0.92:formant=0.94:tempo=1.0",
+      "volume": 1.05
+    }
+  },
+  "Cheng": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+0%",
+    "pitch": "-6Hz",
+    "volume": "+8%",
+    "effect": {
+      "rubberband": "pitch=0.95:formant=0.96:tempo=1.0",
+      "volume": 1.0
+    }
+  }
+}

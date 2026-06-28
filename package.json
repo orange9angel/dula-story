@@ -109,6 +109,12 @@
     "render:broadcast_exercise_s1e3": "dula-render ./episodes/broadcast_exercise_s1e3",
     "build:broadcast_exercise_s1e3": "npm run audio:broadcast_exercise_s1e3 && npm run render:broadcast_exercise_s1e3",
     "inspect:broadcast_exercise_s1e3": "dula-inspect ./episodes/broadcast_exercise_s1e3",
+    "audio:broadcast_exercise_s1e4": "dula-audio ./episodes/broadcast_exercise_s1e4",
+    "verify:broadcast_exercise_s1e4": "dula-verify ./episodes/broadcast_exercise_s1e4",
+    "preview:broadcast_exercise_s1e4": "dula-preview ./episodes/broadcast_exercise_s1e4",
+    "render:broadcast_exercise_s1e4": "dula-render ./episodes/broadcast_exercise_s1e4",
+    "build:broadcast_exercise_s1e4": "npm run audio:broadcast_exercise_s1e4 && npm run render:broadcast_exercise_s1e4",
+    "inspect:broadcast_exercise_s1e4": "dula-inspect ./episodes/broadcast_exercise_s1e4",
     "audio:worm_dance": "dula-audio ./episodes/worm_dance",
     "verify:worm_dance": "dula-verify ./episodes/worm_dance",
     "preview:worm_dance": "dula-preview ./episodes/worm_dance",
@@ -127,7 +133,14 @@
     "preview:anywhere_door": "dula-preview ./episodes/doraemon_anywhere_door",
     "render:anywhere_door": "dula-render ./episodes/doraemon_anywhere_door",
     "build:anywhere_door": "npm run audio:anywhere_door && npm run render:anywhere_door",
-    "inspect:anywhere_door": "dula-inspect ./episodes/doraemon_anywhere_door"
+    "inspect:anywhere_door": "dula-inspect ./episodes/doraemon_anywhere_door",
+    "audio:zoo": "dula-audio ./episodes/monkey_zoo_human_show",
+    "audio:zoo:ds": "dula-audio ./episodes/monkey_zoo_human_show --provider=dashscope",
+    "verify:zoo": "dula-verify ./episodes/monkey_zoo_human_show",
+    "preview:zoo": "dula-preview ./episodes/monkey_zoo_human_show",
+    "render:zoo": "dula-render ./episodes/monkey_zoo_human_show",
+    "build:zoo": "npm run audio:zoo && npm run render:zoo",
+    "inspect:zoo": "dula-inspect ./episodes/monkey_zoo_human_show"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
