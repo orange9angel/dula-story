@@ -1,21 +1,18 @@
 {
-  "comment": "Choreography config for Star Travelers S1E2",
-  "scenes": {
-    "AlienPlanetScene": {
-      "placements": [
-        { "character": "Zorak", "spot": "left", "face": "center" },
-        { "character": "Klaw", "spot": "right", "face": "center" },
-        { "character": "Vex", "spot": "center_back", "face": "center" },
-        { "character": "Rex", "spot": "center_front", "face": "center" }
-      ]
-    },
-    "CrystalCaveScene": {
-      "placements": [
-        { "character": "Zorak", "spot": "left", "face": "back" },
-        { "character": "Klaw", "spot": "right", "face": "back" },
-        { "character": "Vex", "spot": "center_back", "face": "back" },
-        { "character": "Rex", "spot": "center_front", "face": "back" }
-      ]
-    }
+  "deepSpaceScene": {
+    "placements": [
+      { "character": "PurpleShip", "x": -8, "y": 0, "z": 0, "face": "right" },
+      { "character": "MonkeyShip", "x": 8, "y": 0, "z": 0, "face": "left" }
+    ]
+  },
+  "spaceStationScene": {
+    "placements": [
+      { "character": "Zorak", "spot": "left" },
+      { "character": "Klaw", "spot": "right" },
+      { "character": "Vex", "spot": "center" },
+      { "character": "Rex", "spot": "back" },
+      { "character": "Bai", "spot": "farLeft" },
+      { "character": "Cheng", "spot": "farRight" }
+    ]
   }
 }

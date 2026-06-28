@@ -1,451 +1,306 @@
 1
-00:00:00,000 --> 00:00:06,048
-@AlienPlanetScene
-{Music:Play|name=alien_calm_loop|fadeIn=2.0|baseVolume=0.25|endTime=35.0}
-{SceneDirector:Formation|type=diamond|center=0,0,0|radius=2|focus=Zorak}
-{SceneDirector:Gaze|mode=auto}
-{Zorak}{FaceHappy}
-{Zorak}{FaceBlink}
-{Zorak}{Walk}
-[Zorak] 这里的空气比昨天更清新了。Rex，你确定这条路对吗？
-{Camera:Static|position=0,1.8,6|lookAt=0,1.0,0}
-
+00:00:00,000 --> 00:00:07,000
+@DeepSpaceScene
+{Music:Play|name=space_explore|fadeIn=2.0|baseVolume=0.3|endTime=45.0}
+{Position:PurpleShip|x=-16|y=0|z=0|face=MonkeyShip}
+{Position:MonkeyShip|x=16|y=0|z=0|face=PurpleShip}
+{Position:Command|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Zorak|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Klaw|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Vex|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Rex|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Bai|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Cheng|x=-1000|y=-1000|z=-1000|face=center}
+{Event:Hide|character=Command}
+{Event:Hide|character=Zorak}
+{Event:Hide|character=Klaw}
+{Event:Hide|character=Vex}
+{Event:Hide|character=Rex}
+{Event:Hide|character=Bai}
+{Event:Hide|character=Cheng}
+[Command]{Voice:radio} 紫晶号，这里是七环总部。汇报当前位置与状态。
+{Camera:Static|position=-9,4,22.4|lookAt=0,0,0}
 
 2
-00:00:06,548 --> 00:00:11,228
-[Rex] 当然。我在这颗星球上生活了三百年。
-{Rex}{FaceSmirk}
-{Rex}{FaceBlink}
-{Rex}{HandsOnHips}
-{Camera:CloseUp|target=Rex|distance=2.5|height=1.5}
-
+00:00:07,500 --> 00:00:12,000
+[Vex]{Voice:radio} 总部，我们在开普勒暗区边缘。引擎与护盾读数正常。
+{Camera:Static|position=9,4,22.4|lookAt=0,0,0}
 
 3
-00:00:11,728 --> 00:00:15,016
-[Klaw] 三百年？！你看起来像个孩子！
-{Klaw}{FaceSurprised}
-{Klaw}{SurprisedJump}
-{Klaw}{FaceBlink}
-{Camera:ReactionShot|target=Klaw|distance=3|height=1.4}
-
+00:00:13,272 --> 00:00:17,772
+[Command]{Voice:radio} 收到。保持频道开放，一小时后再次通联。总部完毕。
+{Camera:Static|position=0,5,25.6|lookAt=0,0,0}
 
 4
-00:00:15,516 --> 00:00:22,740
-[Rex] 晶体生物的老化速度和你们不一样。三百年，对我们来说只是少年。
-{Rex}{FaceHappy}
-{Rex}{FaceBlink}
-{Rex}{Shrug}
-{Camera:TwoShot|position=0,1.6,4|lookAt=0,1.0,0}
-
+00:00:20,196 --> 00:00:24,696
+@BrightSpaceStationScene
+{Position:Command|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Zorak|x=-1.8|y=0|z=-1.0|face=forward}
+{Position:Vex|x=-0.6|y=0|z=-1.0|face=forward}
+{Position:Klaw|x=0.6|y=0|z=-1.0|face=forward}
+{Position:Rex|x=1.8|y=0|z=-1.0|face=forward}
+{Position:Bai|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Cheng|x=-1000|y=-1000|z=-1000|face=center}
+{Event:Hide|character=Command}
+{Event:Hide|character=Bai}
+{Event:Hide|character=Cheng}
+{Event:Show|character=Zorak}
+{Event:Show|character=Vex}
+{Event:Show|character=Klaw}
+{Event:Show|character=Rex}
+{Zorak}{FaceSmirk}
+[Zorak] 每次进入这片暗区，我都觉得有东西在盯着我们。
+{Camera:Static|position=-1.8,1.6,2.5|lookAt=-1.8,1.0,-1.0}
 
 5
-00:00:23,240 --> 00:00:27,104
-[Vex] 前面有能量反应。很强的能量反应。
-{Vex}{FaceConfused}
-{Vex}{FaceBlink}
-{Vex}{LookAround}
-{Camera:Static|position=-2,1.5,4|lookAt=0,1.0,0}
-
+00:00:25,196 --> 00:00:29,196
+[Vex] 雷达干净得像被擦过。船长，也许只是你的直觉。
+{Vex}{FaceHappy}
+{Camera:Static|position=-0.6,1.6,2.5|lookAt=-0.6,1.0,-1.0}
 
 6
-00:00:27,604 --> 00:00:31,060
-[Zorak] 多强？比Rex还强吗？
-{Zorak}{FaceDetermined}
-{Zorak}{FaceBlink}
-{Zorak}{CrossArms}
-{Camera:Static|position=2,1.5,4|lookAt=0,1.0,0}
-
-
-7
-00:00:31,560 --> 00:00:42,960
-[Vex] 不一样。Rex的能量是温暖的，像阳光。但这个...是冰冷的，像深渊。
-{Vex}{FaceSad}
-{Vex}{FaceBlink}
-{Vex}{Shrug}
-{FXBioluminescentPulse|character=Vex}
-{Camera:CloseUp|target=Vex|distance=2.5|height=1.4}
-
-
-8
-00:00:43,460 --> 00:00:48,332
-[Rex] 那是禁地。我们晶体生物从不靠近那里。
-{Rex}{FaceDetermined}
-{Rex}{FaceBlink}
-{Rex}{FightingStance}
-{Camera:FightDramatic|target=Rex|distance=4|height=1.2}
-
-
-9
-00:00:48,832 --> 00:00:53,152
-[Klaw] 禁地？听起来很刺激！我们去看看吧！
-{Klaw}{FaceHappy}
-{Klaw}{FaceBlink}
-{Klaw}{Run}
-{Camera:Static|position=2,1.5,4|lookAt=0,1.0,0}
-
-
-10
-00:00:53,652 --> 00:00:56,844
-[Rex] 等等！那里真的很危险！
-{Rex}{FaceAngry}
-{Rex}{FaceBlink}
-{Rex}{PointForward}
-{SFX:Play|name=wind_strong}
-{Camera:FightWide|distance=6|height=2}
-
-
-11
-00:00:57,344 --> 00:01:01,344
-{Zorak}{Walk}
-{Klaw}{Walk}
-{Vex}{Walk}
-{Rex}{Walk}
-{Event:Move|character=Zorak|x=-2|z=-3|duration=2.5}
-{Event:Move|character=Klaw|x=2|z=-3|duration=2.5}
-{Event:Move|character=Vex|x=0|z=-4|duration=2.5}
-{Event:Move|character=Rex|x=0|z=-2|duration=2.5}
-{Transition:Fade|duration=1.5}
-{Camera:Pan|from=0,2,8|to=0,2,2|duration=3.0}
-
-
-12
-00:00:57,344 --> 00:01:00,152
-@CrystalCaveScene
-{Music:Play|name=alien_mystery|fadeIn=1.5|baseVolume=0.3|endTime=20.0}
-{SceneDirector:Formation|type=line|center=0,0,-1|radius=1.5|spacing=1.5|face=back}
-{SceneDirector:Gaze|mode=auto}
-{Zorak}{FaceSurprised}
-{Zorak}{FaceBlink}
-{Zorak}{LookAround}
-[Zorak] 这是...水晶洞穴？
-{Camera:Static|position=0,1.8,6|lookAt=0,1.0,0}
-
-
-13
-00:01:00,652 --> 00:01:06,844
-[Klaw] 哇！这些水晶比Rex还漂亮！
-{Klaw}{FaceHappy}
-{Klaw}{FaceBlink}
-{Klaw}{ClapHands}
-{FXCrystalShards|character=Klaw}
-{Camera:LowAngle|target=Klaw|distance=4|height=0.5}
-
-
-14
-00:01:07,344 --> 00:01:14,904
-[Vex] 小心！这些水晶在吸收我们的能量！
-{Vex}{FaceSurprised}
-{Vex}{FaceBlink}
-{Vex}{Shrug}
-{FXEnergyAura|character=Vex}
-{Camera:ReactionShot|target=Vex|distance=2.5|height=1.4}
-
-
-15
-00:01:15,404 --> 00:01:18,692
-[Zorak] 快退后！这些水晶不对劲！
-{Zorak}{FaceAngry}
-{Zorak}{FaceBlink}
-{Zorak}{PointForward}
-{Rex}{FaceDetermined}
-{Rex}{FightingStance}
-{SFX:Play|name=energy_charge}
-{Camera:FightDramatic|target=Zorak|distance=4|height=1.2}
-
-
-16
-00:01:19,192 --> 00:01:23,192
-{Event:Move|character=Zorak|x=0|z=2|duration=1.0}
-{Zorak}{Run}
-{Event:Move|character=Klaw|x=0|z=2|duration=1.0}
-{Klaw}{Run}
-{Event:Move|character=Vex|x=0|z=2|duration=1.0}
-{Vex}{Run}
-{Event:Move|character=Rex|x=0|z=2|duration=1.0}
-{Rex}{Run}
-{SFX:Play|name=dash_whoosh}
-{Camera:FightWide|distance=8|height=2.5}
-
-
-17
-00:01:19,192 --> 00:01:24,448
-[Klaw] 怎么回事？！我动不了了！
-{Klaw}{FacePain}
-{Klaw}{FaceBlink}
-{Klaw}{FlailArms}
-{FXEnergyAura|character=Klaw}
-{Camera:ReactionShot|target=Klaw|distance=3|height=1.5}
-
-
-18
-00:01:24,948 --> 00:01:33,084
-[Vex] 水晶在束缚我们！它们在...在读取我们的记忆！
-{Vex}{FaceSurprised}
-{Vex}{FaceBlink}
-{Vex}{FacePain}
-{FXBioluminescentPulse|character=Vex}
-{Camera:CloseUp|target=Vex|distance=2.5|height=1.4}
-
-
-19
-00:01:33,584 --> 00:01:37,472
-[Zorak] Rex！你知道怎么对付这些水晶吗？
-{Zorak}{FaceDetermined}
-{Zorak}{FaceBlink}
-{Zorak}{FightingStance}
-{Camera:Static|position=0,1.6,5|lookAt=0,1.0,0}
-
-
-20
-00:01:37,972 --> 00:01:46,804
-[Rex] 只有一种方法...用纯净的能量冲击它们的核心。
-{Rex}{FaceDetermined}
-{Rex}{FaceBlink}
-{Rex}{CrossArms}
-{SFX:Play|name=energy_charge}
-{FXPlasmaBolt|character=Rex}
-{Camera:FightDramaticReveal|character=Rex|side=right|startDistance=6|endDistance=2.5|startHeight=0.4|endHeight=1.2}
-
-
-21
-00:01:47,304 --> 00:01:49,968
-[Zorak] 怎么做？告诉我们！
-{Zorak}{FaceDetermined}
-{Zorak}{FaceBlink}
-{Zorak}{HandsUp}
-{Camera:TwoShot|position=0,1.6,4|lookAt=0,1.0,0}
-
-
-22
-00:01:50,468 --> 00:01:58,988
-{Rex}{FaceHappy}
-{Rex}{FaceBlink}
-{Rex}{PointForward}
-{Music:Play|name=battle_intense|fadeIn=1.0|baseVolume=0.35|endTime=40.0}
-[Rex] 把你们的手放在我身上。我会引导你们的能量。
-{FXChargeGlow|character=Rex}
-{Camera:CloseUp|target=Rex|distance=2.5|height=1.5}
-
-
-23
-00:01:59,488 --> 00:02:02,988
-{Zorak}{Walk}
-{Klaw}{Walk}
-{Vex}{Walk}
-{Event:Move|character=Zorak|x=-0.5|z=-0.5|duration=1.0}
-{Event:Move|character=Klaw|x=0.5|z=-0.5|duration=1.0}
-{Event:Move|character=Vex|x=0|z=-0.8|duration=1.0}
-{SceneDirector:Formation|type=triangle|center=0,0,-0.5|radius=1|focus=Rex}
-{SFX:Play|name=wind_gentle}
-{Camera:FightWide|distance=5|height=2}
-
-
-24
-00:01:59,488 --> 00:02:01,360
-[Zorak] 准备好了吗？
-{Zorak}{FaceDetermined}
-{Zorak}{FaceBlink}
-{Zorak}{Nod}
-{Camera:Static|position=0,1.6,4|lookAt=0,1.0,0}
-
-
-25
-00:02:01,860 --> 00:02:05,676
-[Klaw] 来吧！让我看看这些水晶有多厉害！
-{Klaw}{FaceDetermined}
-{Klaw}{FaceBlink}
-{Klaw}{FightingStance}
-{Camera:ReactionShot|target=Klaw|distance=3|height=1.4}
-
-
-26
-00:02:06,176 --> 00:02:13,760
-[Vex] 能量同步中...百分之七十...九十...百分之百！
-{Vex}{FaceDetermined}
-{Vex}{FaceBlink}
-{Vex}{HandsOnHips}
-{FXEnergyAura|character=Vex}
-{Camera:CloseUp|target=Vex|distance=2.5|height=1.4}
-
-
-27
-00:02:14,260 --> 00:02:17,760
-{Rex}{FaceDetermined}
-{Rex}{FaceBlink}
-{Rex}{FightingStance}
-{SFX:Play|name=energy_blast}
-{FXShockwave|character=Rex}
-{FXCrystalShards|character=Rex}
-{Camera:FightDramatic|target=Rex|distance=3|height=1.0}
-
-
-28
-00:02:18,260 --> 00:02:21,760
-{Event:Move|character=Zorak|x=0|z=3|duration=0.5}
-{Zorak}{Run}
-{Event:Move|character=Klaw|x=0|z=3|duration=0.5}
-{Klaw}{Run}
-{Event:Move|character=Vex|x=0|z=3|duration=0.5}
-{Vex}{Run}
-{Event:Move|character=Rex|x=0|z=3|duration=0.5}
-{Rex}{Run}
-{SFX:Play|name=impact_thud}
-{FXScreenShake|intensity=0.8|duration=1.0}
-{Camera:FightWide|distance=10|height=3}
-
-
-29
-00:02:14,260 --> 00:02:17,548
-[Klaw] 成功了！水晶停止发光了！
-{Klaw}{FaceHappy}
-{Klaw}{Celebrate}
-{Klaw}{FaceBlink}
-{Camera:ReactionShot|target=Klaw|distance=3|height=1.4}
-
-
-30
-00:02:18,048 --> 00:02:25,776
-[Vex] 不对...它们不是在停止...它们是在...转变？
-{Vex}{FaceConfused}
-{Vex}{FaceBlink}
-{Vex}{LookAround}
-{FXBioluminescentPulse|character=Vex}
-{Camera:Static|position=-2,1.5,4|lookAt=0,1.0,0}
-
-
-31
-00:02:26,276 --> 00:02:28,988
-[Zorak] 它们在变成...蓝色？
-{Zorak}{FaceSurprised}
-{Zorak}{FaceBlink}
-{Zorak}{LookAround}
-{Rex}{FaceSurprised}
-{Rex}{LookAround}
-{SFX:Play|name=wind_gentle}
-{Camera:TwoShot|position=0,1.6,4|lookAt=0,1.0,0}
-
-
-32
-00:02:29,488 --> 00:02:40,048
-[Rex] 纯净的能量...净化了它们。这些水晶曾经被黑暗力量腐蚀了。
-{Rex}{FaceHappy}
-{Rex}{FaceBlink}
-{Rex}{HandsOnHips}
-{FXCrystalShards|character=Rex}
-{Camera:CloseUp|target=Rex|distance=2.5|height=1.5}
-
-
-33
-00:02:40,548 --> 00:02:45,396
-[Zorak] 黑暗力量？这颗星球上还有别的威胁吗？
-{Zorak}{FaceDetermined}
-{Zorak}{FaceBlink}
-{Zorak}{CrossArms}
-{Camera:Static|position=0,1.6,5|lookAt=0,1.0,0}
-
-
-34
-00:02:45,896 --> 00:02:52,784
-[Rex] ...有。而且它比你们想象的更强大。但那是另一个故事了。
-{Rex}{FaceSmirk}
-{Rex}{FaceBlink}
-{Rex}{CrossArms}
-{Camera:CloseUp|target=Rex|distance=2.5|height=1.5}
-
-
-35
-00:02:53,284 --> 00:02:55,804
-[Klaw] 嘿！别吊胃口啊！
+00:00:30,584 --> 00:00:34,584
+[Klaw] 我的直觉也响了。你们听，引擎声有点不对劲。
 {Klaw}{FaceConfused}
 {Klaw}{ScratchHead}
-{Klaw}{FaceBlink}
-{Camera:ReactionShot|target=Klaw|distance=3|height=1.4}
+{Camera:Static|position=0.6,1.6,2.5|lookAt=0.6,1.0,-1.0}
 
+7
+00:00:35,324 --> 00:00:39,324
+[Rex] 引擎没问题，克劳。是你的胃在响，该吃早饭了。
+{Rex}{CrossArms}
+{Rex}{FaceSmirk}
+{Camera:Static|position=1.8,1.6,2.5|lookAt=1.8,1.0,-1.0}
 
-36
-00:02:56,304 --> 00:03:00,576
-[Vex] 至少我们现在知道，团队合作可以创造奇迹。
-{Vex}{FaceHappy}
-{Vex}{FaceBlink}
-{Vex}{WaveHand}
-{Camera:Static|position=-2,1.5,4|lookAt=0,1.0,0}
+8
+00:00:41,264 --> 00:00:44,764
+@DeepSpaceScene
+{Position:PurpleShip|x=-16|y=0|z=0|face=MonkeyShip}
+{Position:MonkeyShip|x=16|y=0|z=0|face=PurpleShip}
+{Position:Command|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Zorak|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Klaw|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Vex|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Rex|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Bai|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Cheng|x=-1000|y=-1000|z=-1000|face=center}
+{Event:Hide|character=Command}
+{Event:Hide|character=Zorak}
+{Event:Hide|character=Klaw}
+{Event:Hide|character=Vex}
+{Event:Hide|character=Rex}
+{Event:Hide|character=Bai}
+{Event:Hide|character=Cheng}
+[Vex]{Voice:radio} 等等，雷达上有个信号正在高速靠近。
+{Camera:Static|position=-9,4,22.4|lookAt=0,0,0}
 
+9
+00:00:45,452 --> 00:00:48,952
+[Zorak]{Voice:radio} 标记它。如果它不回应，我们进入二级警戒。
+{Camera:Static|position=9,4,22.4|lookAt=0,0,0}
 
-37
-00:03:01,076 --> 00:03:05,372
-[Zorak] 说得对。Rex，谢谢你信任我们。
+10
+00:00:50,744 --> 00:00:54,244
+[Klaw]{Voice:radio} 是一艘飞船！造型好奇怪，像根大香蕉。
+{Camera:Static|position=0,5,25.6|lookAt=0,0,0}
+
+11
+00:00:55,580 --> 00:00:59,080
+[Rex]{Voice:radio} 它的能量特征不稳定，也许是武器充能。
+{Camera:CloseUp|target=PurpleShip|distance=6|height=1.5}
+
+12
+00:01:00,224 --> 00:01:03,724
+[Zorak]{Voice:radio} 各就各位。如果对方先开火，我们就还击。
+{Camera:Static|position=-18,5,14|lookAt=0,0,0}
+
+13
+00:01:05,252 --> 00:01:08,252
+[Vex]{Voice:radio} 警告无效！它要锁定我们了！
+{SFX:Play|name=alarm_beep}
+{Event:Move|character=PurpleShip|x=-14.4|y=0|z=4.5|duration=0.6}
+{Event:Move|character=MonkeyShip|x=14.4|y=0|z=-4.5|duration=0.6}
+{Camera:FollowCharacter|characterName=PurpleShip|offset=0,3,14}
+
+14
+00:01:08,752 --> 00:01:11,752
+{SFX:Play|name=laser_fire}
+{Event:DoorEvent|action=fire:PurpleShip:MonkeyShip:plasma:25|duration=1.0}
+[Zorak]{Voice:radio} 先下手为强！等离子炮，发射！
+{Event:Move|character=PurpleShip|x=-11.2|y=0|z=6|duration=0.8}
+{Camera:FollowCharacter|characterName=PurpleShip|offset=0,4,11.2}
+
+15
+00:01:13,276 --> 00:01:16,776
+{SFX:Play|name=shield_impact}
+{Event:DoorEvent|action=explode:MonkeyShip:1.0}
+{Event:Move|character=MonkeyShip|x=12.8|y=0|z=-7.5|duration=0.6}
+[Klaw]{Voice:radio} 打中了！它还在机动！
+{Camera:FollowCharacter|characterName=MonkeyShip|offset=0,3,12.6}
+
+16
+00:01:17,276 --> 00:01:20,776
+{Music:Play|name=battle_intense|fadeIn=1.0|baseVolume=0.35|endTime=130.0|fadeOut=2.0}
+{SFX:Play|name=laser_fire}
+{Event:DoorEvent|action=fire:MonkeyShip:PurpleShip:plasma:25|duration=1.0}
+[Vex]{Voice:radio} 它在反击！护盾读数在下降！
+{Camera:Static|position=0,6,22.4|lookAt=0,0,0}
+
+17
+00:01:21,276 --> 00:01:24,776
+{SFX:Play|name=missile_launch}
+{Event:DoorEvent|action=fire:PurpleShip:MonkeyShip:missile:18|duration=2.0}
+[Klaw]{Voice:radio} 尝尝追踪导弹！
+{Event:Move|character=PurpleShip|x=-9.6|y=0|z=3|duration=0.7}
+{Camera:Static|position=-20,5,16|lookAt=0,0,0}
+
+18
+00:01:25,276 --> 00:01:28,776
+{SFX:Play|name=explosion_boom}
+{Event:DoorEvent|action=explode:MonkeyShip:1.2}
+{Event:Move|character=MonkeyShip|x=16|y=0|z=-6|duration=0.7}
+[Rex]{Voice:radio} 好险，它躲开了。
+{Camera:Static|position=0,7,25.6|lookAt=0,0,0}
+
+19
+00:01:29,276 --> 00:01:32,776
+{SFX:Play|name=missile_launch}
+{Event:DoorEvent|action=fire:MonkeyShip:PurpleShip:banana:16|duration=2.5}
+[Vex]{Voice:radio} 那是什么？香蕉形状的导弹？
+{Event:Move|character=PurpleShip|x=-12.8|y=0|z=-3|duration=0.8}
+{Camera:FollowCharacter|characterName=PurpleShip|offset=0,3,11.2}
+
+20
+00:01:33,276 --> 00:01:36,776
+{SFX:Play|name=shield_impact}
+{Event:DoorEvent|action=explode:PurpleShip:1.0}
+{Event:Move|character=PurpleShip|x=-16|y=0|z=0|duration=0.6}
+{FXScreenShake|intensity=0.6|duration=0.5}
+[Zorak]{Voice:radio} 护盾撑不住了！必须想办法沟通！
+{Camera:Static|position=0,6,22.4|lookAt=0,0,0}
+
+21
+00:01:37,440 --> 00:01:40,940
+{SFX:Play|name=alarm_beep}
+[Vex]{Voice:radio} 等等，我截获到一段通讯！
+{Event:Move|character=MonkeyShip|x=11.2|y=0|z=0|duration=0.8}
+{Camera:CloseUp|target=MonkeyShip|distance=6|height=1.5}
+
+22
+00:01:41,440 --> 00:01:45,440
+[Zorak]{Voice:radio} 对方说：它们是银河广播体操代表团，不是敌人！
+{SFX:Play|name=wind_gentle}
+{Event:Move|character=PurpleShip|x=-11.2|y=0|z=0|duration=1.0}
+{Event:Face|character=PurpleShip|target=MonkeyShip}
+{Camera:Static|position=0,4,22.4|lookAt=0,0,0}
+
+23
+00:01:46,828 --> 00:01:50,328
+[Klaw]{Voice:radio} 广播体操？那是什么秘密武器？
+{Camera:ReactionShot|target=MonkeyShip|distance=6|height=2}
+
+24
+00:01:50,828 --> 00:01:54,328
+[Vex]{Voice:radio} 误会了。它们的飞船涂装太像侦察舰。
+{Camera:Static|position=0,5,19.2|lookAt=0,0,0}
+
+25
+00:01:55,400 --> 00:01:59,400
+[Zorak]{Voice:radio} 双方停火。我们请求对接，当面解释。
+{Event:Move|character=PurpleShip|x=-8|y=0|z=0|duration=1.5}
+{Event:Move|character=MonkeyShip|x=8|y=0|z=0|duration=1.5}
+{Camera:Static|position=0,5,22.4|lookAt=0,0,0}
+
+26
+00:02:00,380 --> 00:02:04,380
+{Transition:Warp|duration=1.0}
+{Camera:Static|position=0,4,24|lookAt=0,0,0}
+[Zorak] 对接完成。大家保持友好，但别放松警惕。
+
+27
+00:02:05,816 --> 00:02:10,316
+@BrightSpaceStationScene
+{Music:Play|name=space_ambient|fadeIn=1.5|baseVolume=0.25|endTime=120.0}
+{Position:Command|x=-1000|y=-1000|z=-1000|face=center}
+{Position:Zorak|x=-2.0|y=0|z=0.3|face=forward}
+{Position:Klaw|x=-1.0|y=0|z=0.1|face=forward}
+{Position:Vex|x=0|y=0|z=-0.1|face=forward}
+{Position:Rex|x=1.0|y=0|z=0.1|face=forward}
+{Position:Bai|x=2.2|y=0|z=0.3|face=forward}
+{Position:Cheng|x=3.2|y=0|z=0.3|face=forward}
+{Event:Hide|character=Command}
+{Event:Show|character=Zorak}
+{Event:Show|character=Klaw}
+{Event:Show|character=Vex}
+{Event:Show|character=Rex}
+{Event:Show|character=Bai}
+{Event:Show|character=Cheng}
 {Zorak}{FaceHappy}
-{Zorak}{FaceBlink}
+[Zorak] 欢迎来到紫晶号。我是泽拉克，这些是克劳、维克斯和雷克斯。
+{Camera:Static|position=0.5,1.8,5.5|lookAt=0.5,1.0,0}
+
+28
+00:02:12,980 --> 00:02:16,980
+{Bai}{FaceSmirk}
+[Bai] 我是白冷森，这位是橙大力。刚才真的很抱歉。
+{Bai}{Bow}
+{Cheng}{WaveHand}
+{Camera:Static|position=2.2,1.6,3.5|lookAt=2.2,1.0,0}
+
+29
+00:02:18,680 --> 00:02:22,680
+{Cheng}{FaceHappy}
+[Cheng] 你们的飞船看起来像星际海盗船，我们以为要挨抢了！
+{Cheng}{Shrug}
+{Camera:Static|position=3.2,1.6,3.5|lookAt=3.2,1.0,0}
+
+30
+00:02:24,116 --> 00:02:28,616
+{Klaw}{FaceConfused}
+[Klaw] 你们的香蕉导弹才吓人！差点把紫晶号熏成黄色！
+{Klaw}{ScratchHead}
+{Camera:Static|position=-1.0,1.6,3.5|lookAt=-1.0,1.0,0}
+
+31
+00:02:29,264 --> 00:02:33,264
+{Rex}{CrossArms}
+{Rex}{FaceSmirk}
+[Rex] 不打不相识。宇宙中能相遇就是缘分。
+{Camera:Static|position=1.0,1.6,3.5|lookAt=1.0,1.0,0}
+
+32
+00:02:34,460 --> 00:02:38,960
+{Vex}{WaveHand}
+{Vex}{FaceHappy}
+[Vex] 如果不介意，我们可以一起航行一段，互相有个照应。
+{Camera:Static|position=0,1.6,3.5|lookAt=0,1.0,0}
+
+33
+00:02:39,460 --> 00:02:43,460
+{Bai}{CrossArms}
+{Bai}{FaceSmirk}
+[Bai] 好。不过下次请先看清是不是香蕉再开火。
+{Camera:Static|position=2.2,1.6,3.5|lookAt=2.2,1.0,0}
+
+34
+00:02:44,800 --> 00:02:48,800
 {Zorak}{ReachOut}
-{Camera:TwoShot|position=0,1.6,4|lookAt=0,1.0,0}
-
-
-38
-00:03:05,872 --> 00:03:11,056
-[Rex] 别客气。你们...比我想象的外星人要好得多。
-{Rex}{FaceHappy}
-{Rex}{FaceBlink}
-{Rex}{WaveHand}
+{Zorak}{FaceHappy}
+[Zorak] 成交。那么，全体注意——前方，新的朋友。
 {Camera:Static|position=0,1.6,6|lookAt=0,1.0,0}
 
+35
+00:02:49,300 --> 00:02:53,800
+{Cheng}{WaveHand}
+{Klaw}{WaveHand}
+{Vex}{WaveHand}
+{Rex}{WaveHand}
+{Bai}{Nod}
+{SFX:Play|name=wind_gentle}
+{Camera:Static|position=0,1.8,8|lookAt=0,1.0,0}
 
-39
-00:03:11,556 --> 00:03:15,556
-{Music:Play|name=resolution|fadeIn=2.0|baseVolume=0.3|endTime=60.0}
-{Zorak}{Walk}
-{Klaw}{Walk}
-{Vex}{Walk}
-{Rex}{Walk}
-{Event:Move|character=Zorak|x=-3|z=2|duration=2.5}
-{Event:Move|character=Klaw|x=3|z=2|duration=2.5}
-{Event:Move|character=Vex|x=0|z=3|duration=2.5}
-{Event:Move|character=Rex|x=0|z=1|duration=2.5}
+36
+00:02:54,300 --> 00:02:58,800
+{Music:Play|name=resolution|fadeIn=2.0|baseVolume=0.3|endTime=180.0|fadeOut=2.0}
 {Transition:Fade|duration=2.0}
-{Camera:Pan|from=-5,2,8|to=5,2,8|duration=3.0}
-
-
-40
-00:03:11,556 --> 00:03:14,364
-[Zorak] 那么，接下来去哪里？
-{Zorak}{FaceHappy}
-{Zorak}{FaceBlink}
-{Zorak}{PointForward}
-{Camera:Static|position=0,2,8|lookAt=0,1.0,0}
-
-
-41
-00:03:14,864 --> 00:03:19,712
-[Rex] 跟我来。我带你们去看这颗星球最美的日落。
-{Rex}{Run}
-{Rex}{FaceHappy}
-{Rex}{FaceBlink}
-{SFX:Play|name=dash_whoosh}
-{Camera:FightFollow|target=Rex|distance=5|height=1.5}
-
-
-42
-00:03:20,212 --> 00:03:24,212
-{Zorak}{Run}
-{Klaw}{Run}
-{Vex}{Run}
-{Zorak}{FaceBlink}
-{Klaw}{FaceBlink}
-{Vex}{FaceBlink}
-{SFX:Play|name=dash_whoosh}
-{Camera:Pan|from=0,3,10|to=0,5,15|duration=3.0}
-
-
-43
-00:03:24,712 --> 00:03:27,712
-{Transition:Fade|duration=2.0}
-{Camera:Static|position=0,5,20|lookAt=0,0,0}
-
-
-44
-00:03:28,212 --> 00:03:31,212
-{FXCrystalShards|character=Rex}
-{FXBioluminescentPulse|character=Vex}
-{FXEnergyAura|character=Zorak}
-{Camera:Static|position=0,5,20|lookAt=0,0,0}
-
-
+{Camera:Static|position=0,2,10|lookAt=0,1.0,0}
