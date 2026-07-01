@@ -2,12 +2,12 @@ import * as THREE from 'three';
 import { ToonCharacterBase } from './ToonCharacterBase.js';
 
 /**
- * Cheetor — 猎豹（野兽形态）
+ * BaoBao — 豹豹（野兽形态）
  * 黄色机体、黑色斑点、热血少年。
  */
-export class Cheetor extends ToonCharacterBase {
+export class BaoBao extends ToonCharacterBase {
   constructor(name) {
-    super(name || 'Cheetor');
+    super(name || 'BaoBao');
     this.boundingRadius = 0.45;
     this.archetypes = ['quadruped', 'agile', 'fighter'];
     this.trustedBodyAnimations = ['Walk', 'Run', 'Idle', 'LookAround', 'Jump', 'HitStagger', 'LeftPunch', 'RightPunch', 'PointForward'];
@@ -80,6 +80,9 @@ export class Cheetor extends ToonCharacterBase {
     tail.rotation.z = -0.4;
     tail.position.set(-0.55, 0.85, 0);
     this.mesh.add(tail);
+
+    // 卡通描边，让低多边形模型更有动画玩具感
+    this.addOutlines();
   }
 
   _addLeg(x, y, z, label) {

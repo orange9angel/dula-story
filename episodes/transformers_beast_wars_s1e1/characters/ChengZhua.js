@@ -2,12 +2,12 @@ import * as THREE from 'three';
 import { ToonCharacterBase } from './ToonCharacterBase.js';
 
 /**
- * Dinobot — 迅猛龙（野兽形态）
+ * ChengZhua — 橙爪（野兽形态）
  * 棕橙配色、手持能量剑、武士气质。
  */
-export class Dinobot extends ToonCharacterBase {
+export class ChengZhua extends ToonCharacterBase {
   constructor(name) {
-    super(name || 'Dinobot');
+    super(name || 'ChengZhua');
     this.boundingRadius = 0.5;
     this.archetypes = ['humanoid', 'fighter', 'agile'];
     this.trustedBodyAnimations = [
@@ -71,6 +71,9 @@ export class Dinobot extends ToonCharacterBase {
     tail.rotation.z = Math.PI / 2 + 0.25;
     tail.position.set(-0.55, 0.85, -0.1);
     this.mesh.add(tail);
+
+    // 卡通描边，武士感 sharper
+    this.addOutlines();
   }
 
   _addArm(x, y, z, sign) {

@@ -24,7 +24,7 @@ export class ToonCharacterBase extends CharacterBase {
   }
 
   /**
-   * 为角色添加卡通描边，立刻让积木风模型变得更有“玩具/动画”质感。
+   * 为角色添加卡通描边
    */
   addOutlines(root = this.mesh, color = 0x111111, lineWidth = 1) {
     root.traverse((child) => {
@@ -38,7 +38,6 @@ export class ToonCharacterBase extends CharacterBase {
       }
       const line = new THREE.LineSegments(edges, outlineMat);
       line.renderOrder = 1;
-      // 让描边稍微向外膨胀一点点，减少 z-fighting
       line.scale.setScalar(1.005);
       child.add(line);
     });

@@ -2,12 +2,12 @@ import * as THREE from 'three';
 import { ToonCharacterBase } from './ToonCharacterBase.js';
 
 /**
- * Waspinator — 黄蜂（野兽形态）
+ * XiaoWeng — 小嗡（野兽形态）
  * 黑黄条纹、透明翅膀、受气包反派。
  */
-export class Waspinator extends ToonCharacterBase {
+export class XiaoWeng extends ToonCharacterBase {
   constructor(name) {
-    super(name || 'Waspinator');
+    super(name || 'XiaoWeng');
     this.boundingRadius = 0.3;
     this.archetypes = ['flying', 'agile', 'tiny'];
     this.trustedBodyAnimations = ['Idle', 'LookAround', 'Dodge', 'HitStagger'];
@@ -88,6 +88,9 @@ export class Waspinator extends ToonCharacterBase {
     this._addLimb(0.12, 1.15, 0.12, 1, 'arm');
     this._addLimb(-0.1, 1.05, -0.12, -1, 'leg');
     this._addLimb(0.1, 1.05, -0.12, 1, 'leg');
+
+    // 卡通描边，昆虫机械感
+    this.addOutlines();
   }
 
   _addLimb(x, y, z, sign, type) {

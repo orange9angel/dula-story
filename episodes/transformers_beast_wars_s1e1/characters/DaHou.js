@@ -2,12 +2,12 @@ import * as THREE from 'three';
 import { ToonCharacterBase } from './ToonCharacterBase.js';
 
 /**
- * OptimusPrimal — 大猩猩队长（野兽形态）
+ * DaHou — 大猴（野兽形态）
  * 黑色机体、银色胸甲、蓝色光学镜，憨厚领袖。
  */
-export class OptimusPrimal extends ToonCharacterBase {
+export class DaHou extends ToonCharacterBase {
   constructor(name) {
-    super(name || 'OptimusPrimal');
+    super(name || 'DaHou');
     this.boundingRadius = 0.55;
     this.archetypes = ['humanoid', 'fighter', 'strong'];
     this.trustedBodyAnimations = [
@@ -73,6 +73,9 @@ export class OptimusPrimal extends ToonCharacterBase {
     // 腿
     this._addLeg(-0.22, 0.75, 0, -1);
     this._addLeg(0.22, 0.75, 0, 1);
+
+    // 卡通描边，提升模型“玩具动画”质感
+    this.addOutlines();
   }
 
   _addArm(x, y, z, sign) {

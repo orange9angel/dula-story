@@ -31,64 +31,64 @@
 {Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0}
 
 6
-00:00:31,501 --> 00:00:37,433
+00:00:31,381 --> 00:00:37,313
 [DaHou]{Animation:FaceDetermined|character=DaHou}{Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0} 报告损害：船头凹了、咖啡机坏了、我的发型还健在。
 {Transition:Fade|duration=0.5}
 
 7
-00:00:37,633 --> 00:00:43,138
+00:00:37,513 --> 00:00:43,018
 [BaoBao]{Animation:FaceHappy|character=BaoBao}{Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0} 队长，这行星氧气充足，特别适合我这种高颜值猎手。
 
 8
-00:00:43,338 --> 00:00:51,862
+00:00:43,218 --> 00:00:51,742
 [DaHou]{Animation:PointForward|character=DaHou}{Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0} 等等，探测器显示火花糖浓度超标。再不变形，我们会变成会说话的焰火。
 
 102
-00:00:51,962 --> 00:00:52,062
+00:00:51,842 --> 00:00:51,942
 @VolcanoBaseScene {Transition:Fade|duration=0.5}
 {Position:LongZong|x=-0.8|y=0|z=0|face=forward}
 {Position:XiaoWeng|x=1.0|y=0|z=0.2|face=LongZong}
 {Camera:Static|position=0,2.2,6|lookAt=0,1.2,0}
 
 9
-00:00:52,278 --> 00:00:59,428
+00:00:52,086 --> 00:00:59,236
 [LongZong]{Animation:CrossArms|character=LongZong}{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 飞船砸进火山口，正好省了我的烧烤炉。小嗡，扫描当地生物。
 {Transition:Fade|duration=0.5}
 
 10
-00:00:59,628 --> 00:01:06,052
+00:00:59,436 --> 00:01:05,860
 [XiaoWeng]{Animation:LookAround|character=XiaoWeng}{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 老大，我扫描到一只苍蝇、两只苍蝇、三只苍蝇……请问我们要变苍蝇吗？
 
 11
-00:01:06,252 --> 00:01:12,994
+00:01:06,060 --> 00:01:12,802
 [LongZong]{Animation:PointForward|character=LongZong}{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 变苍蝇？不，给我找最凶残的！比如……隔壁那只大黄蜂。
 
 103
-00:01:13,094 --> 00:01:13,194
+00:01:12,902 --> 00:01:13,002
 @PrehistoricJungleScene {Transition:Fade|duration=0.5}
 {Position:DaHou|x=-1.5|y=0|z=0|face=forward}
 {Position:BaoBao|x=1.2|y=0|z=0|face=DaHou}
 {Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0}
 
 12
-00:01:13,194 --> 00:01:17,494
+00:01:13,002 --> 00:01:17,302
 [DaHou]{Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0} 扫描程序启动，豹豹，你第一个上。
 {Transition:Fade|duration=0.5}
 
 13
-00:01:17,694 --> 00:01:23,559
+00:01:17,502 --> 00:01:23,367
 [BaoBao]{Animation:LookAround|character=BaoBao}{Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0} 我要变长牙虎！不，变霸王龙！再不行变怪兽！
 
 14
-00:01:23,855 --> 00:01:30,699
+00:01:23,663 --> 00:01:30,507
 [DaHou]{Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0} 系统显示你最适合猎豹，因为……你跑得快，脑子也跑得快点。
 
 15
-00:01:30,899 --> 00:01:34,340
+00:01:30,707 --> 00:01:34,148
 [BaoBao]{Animation:HitStagger|character=BaoBao}{Camera:Static|position=-0.5,2.2,6|lookAt=0,1.2,0} 猎豹？那我只负责可爱吗？
 
 104
-00:01:34,440 --> 00:01:34,540
+00:01:34,248 --> 00:01:34,348
 @PrehistoricJungleScene {Transition:Fade|duration=0.5}
 {Position:DaHou|x=-1.8|y=0|z=1|face=LongZong}
 {Position:BaoBao|x=-0.8|y=0|z=1.2|face=LongZong}
@@ -97,81 +97,79 @@
 {Camera:Static|position=0,2.4,8|lookAt=0,1.2,0}
 
 16
-00:01:34,540 --> 00:01:41,114
+00:01:34,348 --> 00:01:40,922
 [LongZong]{Animation:PointForward|character=LongZong}{Camera:Static|position=0,2.4,8|lookAt=0,1.2,0} 大猴！把火花糖交出来，我可以考虑让你当我的宠物大猩猩。
 {Transition:Fade|duration=0.5}
 
 17
-00:01:41,314 --> 00:01:46,190
+00:01:41,122 --> 00:01:45,998
 [DaHou]{Animation:CrossArms|character=DaHou}{Camera:Static|position=0,2.4,8|lookAt=0,1.2,0} 宠物？我的保险可不包含被恐龙遛。
 
 18
-00:01:46,390 --> 00:01:50,966
+00:01:46,198 --> 00:01:50,774
 [XiaoWeng]{Camera:Static|position=0,2.4,8|lookAt=0,1.2,0} 老大，我可以先蜇他一下吗？我保证只蜇一点点。
 
 19
-00:01:51,166 --> 00:01:55,063
+00:01:50,974 --> 00:01:54,871
 [BaoBao]{Animation:LeftPunch|character=BaoBao}{Camera:Static|position=0,2.4,8|lookAt=0,1.2,0} 你敢蜇队长，我就把你做成蜂蜜芥末味薯片！
 
 105
-00:01:55,163 --> 00:01:55,263
+00:01:54,971 --> 00:01:55,071
 @VolcanoBaseScene {Transition:Fade|duration=0.5}
 {Position:LongZong|x=-0.5|y=0|z=0|face=ChengZhua}
 {Position:ChengZhua|x=1.2|y=0|z=0|face=LongZong}
 {Camera:Static|position=0.3,2.2,6|lookAt=0.3,1.3,0}
 
 20
-00:01:55,263 --> 00:02:01,487
+00:01:55,071 --> 00:02:01,295
 [ChengZhua]{Animation:PointForward|character=ChengZhua}{Camera:Static|position=0.3,2.2,6|lookAt=0.3,1.3,0} 龙总，你这波烧烤操作比你的尾巴还糊——全熟到碳化了。
 {Transition:Fade|duration=0.5}
 
 21
-00:02:02,455 --> 00:02:10,709
+00:02:02,119 --> 00:02:10,373
 [LongZong]{Animation:CrossArms|character=LongZong}{Camera:Static|position=0.3,2.2,6|lookAt=0.3,1.3,0} 橙爪，烧烤集团规矩：你可以菜，但不能砸锅。砸了锅，今晚的烤肉你全包。
 
 22
-00:02:10,909 --> 00:02:17,229
+00:02:10,573 --> 00:02:16,893
 [ChengZhua]{Animation:HitStagger|character=ChengZhua}{Camera:Static|position=0.3,2.2,6|lookAt=0.3,1.3,0} 锅？我可是恐龙，我只负责盘——盘子都给你舔干净！
 
 23
-00:02:17,501 --> 00:02:24,387
+00:02:17,093 --> 00:02:23,979
 [LongZong]{Camera:Static|position=0.3,2.2,6|lookAt=0.3,1.3,0} 那就留着你的舌头。现在，全员撤退——去火山里泡个温泉，我请客。
 
 106
-00:02:24,487 --> 00:02:24,587
+00:02:24,079 --> 00:02:24,179
 @PrehistoricJungleScene {Transition:Fade|duration=0.5}
 {Position:DaHou|x=-1.2|y=0|z=0|face=ChengZhua}
 {Position:BaoBao|x=0|y=0|z=0|face=ChengZhua}
 {Position:ChengZhua|x=1.5|y=0|z=0|face=DaHou}
-{Position:LongZong|x=-2.3|y=0|z=-0.5|face=DaHou}
-{Position:XiaoWeng|x=2.3|y=0.8|z=-0.3|face=DaHou}
 {Camera:Static|position=0,2.2,6|lookAt=0,1.2,0}
 
 24
-00:02:24,587 --> 00:02:34,147
+00:02:24,179 --> 00:02:33,739
 [ChengZhua]{Animation:CrossArms|character=ChengZhua}{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 大猴，我申请加入毛茸茸联盟。作为交换，我可以当保安、厨师、或者门神。
 {Transition:Fade|duration=0.5}
 
 25
-00:02:34,347 --> 00:02:40,567
+00:02:33,939 --> 00:02:40,159
 [DaHou]{Animation:Nod|character=DaHou}{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 欢迎加入，正好我们缺个会烤肉的。不过别咬电缆。
 
 26
-00:02:40,767 --> 00:02:47,592
+00:02:40,359 --> 00:02:47,184
 [BaoBao]{Animation:FaceHappy|character=BaoBao}{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 太好了！现在我们是猩猩、猎豹、迅猛龙组合，简称“动物园战队”！
 
 27
-00:02:47,792 --> 00:02:54,372
+00:02:47,384 --> 00:02:53,964
 [DaHou]{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 全员注意，火花糖又波动了，我可能会突然变成……一棵盆栽。
 
 28
-00:02:54,572 --> 00:02:59,364
+00:02:54,164 --> 00:02:58,956
 [XiaoWeng]{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 为什么每次倒霉的都是小嗡——啊，我翅膀卡树上了！
 
 29
-00:02:59,564 --> 00:03:05,970
+00:02:59,156 --> 00:03:05,562
 [LongZong]{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 撤退！等我能控制好自己的尾巴再回来——它刚刚抽了我一巴掌。
 
 30
-00:03:06,170 --> 00:03:13,014
+00:03:05,762 --> 00:03:12,606
 [DaHou]{Animation:FaceHappy|character=DaHou}{Camera:Static|position=0,2.2,6|lookAt=0,1.2,0} 胜利属于毛茸茸联盟！以及……我们临时动物园。下集见。

@@ -2,12 +2,12 @@ import * as THREE from 'three';
 import { ToonCharacterBase } from './ToonCharacterBase.js';
 
 /**
- * Megatron — 霸王龙（野兽形态）
+ * LongZong — 龙总（野兽形态）
  * 紫黑机体、红色光学镜、庞大反派。
  */
-export class Megatron extends ToonCharacterBase {
+export class LongZong extends ToonCharacterBase {
   constructor(name) {
-    super(name || 'Megatron');
+    super(name || 'LongZong');
     this.boundingRadius = 0.7;
     this.archetypes = ['humanoid', 'fighter', 'strong', 'monster'];
     this.trustedBodyAnimations = [
@@ -83,6 +83,9 @@ export class Megatron extends ToonCharacterBase {
     tail.rotation.z = Math.PI / 2 + 0.2;
     tail.position.set(-0.65, 1.0, -0.2);
     this.mesh.add(tail);
+
+    // 卡通描边 + 反派气场
+    this.addOutlines();
   }
 
   _addArm(x, y, z, sign) {
