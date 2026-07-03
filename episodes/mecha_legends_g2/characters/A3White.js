@@ -12,7 +12,7 @@ export class A3White extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'agile'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'Jump', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'SpiritGunFire',
       'RobotTransform', 'RobotRevert'
     ]);
   }
@@ -38,20 +38,6 @@ export class A3White extends RobotCharacterBase {
 
     const torso = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.62, 0.26), whiteMat);
     torsoGroup.add(torso);
-
-    // 三角翼胸甲
-    const chestWingShape = new THREE.Shape();
-    chestWingShape.moveTo(0, 0);
-    chestWingShape.lineTo(0.32, -0.25);
-    chestWingShape.lineTo(0.22, 0.18);
-    chestWingShape.lineTo(0, 0);
-    const chestWingGeo = new THREE.ExtrudeGeometry(chestWingShape, { depth: 0.04, bevelEnabled: false });
-    for (const side of [-1, 1]) {
-      const wing = new THREE.Mesh(chestWingGeo, redMat);
-      wing.position.set(side * 0.08, 0.05, 0.14);
-      if (side === -1) wing.rotation.z = Math.PI;
-      torsoGroup.add(wing);
-    }
 
     // 喷气进气口
     for (const side of [-1, 1]) {
@@ -180,16 +166,19 @@ export class A3White extends RobotCharacterBase {
     const upperArm = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.34, 0.12), whiteMat);
     upperArm.position.y = -0.28;
     shoulder.add(upperArm);
+    this.addBoltRow(shoulder, { x: side * 0.04, y: -0.1, z: 0.08 }, { x: side * 0.04, y: -0.42, z: 0.08 }, 3);
 
     const elbow = new THREE.Group();
     elbow.position.y = -0.48;
     shoulder.add(elbow);
 
+    this.addBallJoint(elbow, { x: 0, y: 0, z: 0 }, 0.05, 0x34495e);
     this.addElbowGuard(elbow, 0xc0392b, 0.11);
 
     const lowerArm = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.34, 0.1), whiteMat);
     lowerArm.position.y = -0.2;
     elbow.add(lowerArm);
+    this.addBoltRow(elbow, { x: side * 0.03, y: -0.05, z: 0.07 }, { x: side * 0.03, y: -0.35, z: 0.07 }, 3);
 
     this.addHandFingers(elbow, 0xe8e8e8, 0x34495e, 0.85);
 
@@ -210,6 +199,7 @@ export class A3White extends RobotCharacterBase {
     knee.position.y = -0.42;
     hip.add(knee);
 
+    this.addBallJoint(knee, { x: 0, y: 0, z: 0 }, 0.05, 0x34495e);
     this.addKneeGuard(knee, 0xe8e8e8, 0xc0392b, 0.14);
 
     const shin = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.38, 0.12), whiteMat);
@@ -220,6 +210,7 @@ export class A3White extends RobotCharacterBase {
     const landingStrut = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.3, 6), darkMat);
     landingStrut.position.set(side * 0.05, -0.2, -0.06);
     knee.add(landingStrut);
+    this.addBoltRow(knee, { x: side * 0.04, y: -0.05, z: 0.08 }, { x: side * 0.04, y: -0.35, z: 0.08 }, 3);
 
     const foot = new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.08, 0.2), darkMat);
     foot.position.set(0, -0.42, 0.04);

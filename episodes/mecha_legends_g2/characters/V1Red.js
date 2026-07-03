@@ -12,7 +12,7 @@ export class V1Red extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'agile'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'Jump', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
       'RobotTransform', 'RobotRevert'
     ]);
   }
@@ -40,13 +40,6 @@ export class V1Red extends RobotCharacterBase {
 
     const torso = new THREE.Mesh(new THREE.BoxGeometry(0.48, 0.62, 0.34), redMat);
     torsoGroup.add(torso);
-
-    // 车头锥形进气口
-    const nose = new THREE.Mesh(new THREE.ConeGeometry(0.2, 0.45, 4), redMat);
-    nose.rotation.x = Math.PI / 2;
-    nose.rotation.z = Math.PI / 4;
-    nose.position.set(0, 0.05, 0.28);
-    torsoGroup.add(nose);
 
     // 进气格栅
     this.addVents(torsoGroup, { x: 0, y: 0.12, z: 0.18 }, { x: 0.3, y: 0.16, z: 0.05 }, { x: 0, y: 0, z: 0 }, 0x111111, 4);
@@ -191,11 +184,13 @@ export class V1Red extends RobotCharacterBase {
     shoulder.add(upperArm);
 
     this.addPanelLine(shoulder, { x: 0, y: -0.28, z: 0.07 }, { x: 0.08, y: 0.24, z: 0.01 });
+    this.addBoltRow(shoulder, { x: side * 0.05, y: -0.12, z: 0.07 }, { x: side * 0.05, y: -0.44, z: 0.07 }, 4);
 
     const elbow = new THREE.Group();
     elbow.position.y = -0.48;
     shoulder.add(elbow);
 
+    this.addBallJoint(elbow, { x: 0, y: 0, z: 0 }, 0.055, 0x2c3e50);
     this.addElbowGuard(elbow, 0xffcc00, 0.12);
 
     const lowerArm = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.34, 0.11), yellowMat);
@@ -203,6 +198,7 @@ export class V1Red extends RobotCharacterBase {
     elbow.add(lowerArm);
 
     this.addVents(elbow, { x: side * 0.06, y: -0.2, z: 0.06 }, { x: 0.04, y: 0.18, z: 0.02 }, { x: 0, y: side * 0.15, z: 0 }, 0x111111, 3);
+    this.addBoltRow(elbow, { x: side * 0.04, y: -0.05, z: 0.07 }, { x: side * 0.04, y: -0.35, z: 0.07 }, 3);
 
     this.addHandFingers(elbow, 0xd82626, 0x2c3e50, 0.95);
 
@@ -228,6 +224,7 @@ export class V1Red extends RobotCharacterBase {
     knee.position.y = -0.46;
     hip.add(knee);
 
+    this.addBallJoint(knee, { x: 0, y: 0, z: 0 }, 0.06, 0x2c3e50);
     this.addKneeGuard(knee, 0xd82626, 0xffcc00, 0.17);
 
     const shin = new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.44, 0.15), yellowMat);
@@ -235,6 +232,7 @@ export class V1Red extends RobotCharacterBase {
     knee.add(shin);
 
     this.addVents(knee, { x: side * 0.06, y: -0.22, z: 0.08 }, { x: 0.03, y: 0.2, z: 0.02 }, { x: 0, y: side * 0.1, z: 0 }, 0x111111, 3);
+    this.addBoltRow(knee, { x: side * 0.05, y: -0.05, z: 0.09 }, { x: side * 0.05, y: -0.4, z: 0.09 }, 3);
 
     const foot = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.1, 0.28), darkMat);
     foot.position.set(0, -0.5, 0.06);

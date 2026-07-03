@@ -1,56 +1,56 @@
 {
   "default": {
     "voice": "zh-CN-YunxiNeural",
-    "rate": "+0%",
-    "pitch": "+0Hz",
-    "volume": "+0%",
+    "rate": "-5%",
+    "pitch": "-12Hz",
+    "volume": "+8%",
     "effect": {
       "af": "highpass=f=80,lowpass=f=5000,dynaudnorm"
     }
   },
   "V1_RED": {
     "voice": "zh-CN-YunxiNeural",
-    "rate": "+6%",
-    "pitch": "+12Hz",
-    "volume": "+10%",
+    "rate": "-8%",
+    "pitch": "-18Hz",
+    "volume": "+18%",
     "effect": {
-      "af": "highpass=f=100,lowpass=f=5000,chorus=0.6:0.9:30|45|60:0.4|0.5|0.6:0.2|0.25|0.3:2|2.5|3,aecho=0.5:0.3:80|120:0.2|0.15,treble=g=4,dynaudnorm"
+      "af": "highpass=f=100,lowpass=f=5000,bass=g=5:f=100,aecho=0.5:0.3:80|120:0.15|0.1,dynaudnorm"
     }
   },
   "T2_BLUE": {
     "voice": "zh-CN-YunjianNeural",
-    "rate": "-12%",
-    "pitch": "-28Hz",
-    "volume": "+18%",
+    "rate": "-16%",
+    "pitch": "-40Hz",
+    "volume": "+25%",
     "effect": {
-      "af": "highpass=f=60,lowpass=f=3600,bass=g=12:f=120,aecho=0.6:0.4:50|90:0.35|0.3,dynaudnorm"
+      "af": "highpass=f=60,lowpass=f=3200,bass=g=18:f=100,aecho=0.6:0.4:50|90:0.35|0.3,dynaudnorm"
     }
   },
   "A3_WHITE": {
-    "voice": "zh-CN-XiaoyiNeural",
-    "rate": "+14%",
-    "pitch": "+22Hz",
-    "volume": "+5%",
+    "voice": "zh-CN-YunyangNeural",
+    "rate": "-8%",
+    "pitch": "-16Hz",
+    "volume": "+12%",
     "effect": {
-      "af": "highpass=f=120,lowpass=f=7000,treble=g=5,flanger=delay=6:depth=4:regen=0.3:width=40:speed=1.2,aecho=0.4:0.25:60|100:0.15|0.1,dynaudnorm"
+      "af": "highpass=f=80,lowpass=f=6000,bass=g=3:f=120,treble=g=3,aecho=0.4:0.25:60|100:0.12|0.08,dynaudnorm"
     }
   },
   "X0_BLACK": {
     "voice": "zh-CN-YunyangNeural",
-    "rate": "-14%",
-    "pitch": "-32Hz",
-    "volume": "+22%",
+    "rate": "-16%",
+    "pitch": "-36Hz",
+    "volume": "+26%",
     "effect": {
-      "af": "highpass=f=80,lowpass=f=2600,bass=g=10:f=80,acrusher=bits=4:mode=log:aa=1,aecho=0.6:0.4:40|80:0.4|0.35,dynaudnorm"
+      "af": "highpass=f=60,lowpass=f=2400,bass=g=16:f=70,acrusher=bits=5:mode=log:aa=1,aecho=0.6:0.4:40|80:0.35|0.3,dynaudnorm"
     }
   },
   "R4_ORANGE": {
-    "voice": "zh-CN-XiaoxiaoNeural",
-    "rate": "+10%",
-    "pitch": "+18Hz",
-    "volume": "+12%",
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "-5%",
+    "pitch": "-20Hz",
+    "volume": "+18%",
     "effect": {
-      "af": "highpass=f=150,lowpass=f=5500,vibrato=f=7:d=0.5,treble=g=6,aecho=0.45:0.35:70|110:0.25|0.2,dynaudnorm"
+      "af": "highpass=f=100,lowpass=f=5000,bass=g=6:f=120,vibrato=f=5:d=0.4,aecho=0.45:0.35:70|110:0.2|0.15,dynaudnorm"
     }
   }
 }

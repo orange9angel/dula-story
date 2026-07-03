@@ -12,7 +12,7 @@ export class T2Blue extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'slow', 'strong'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
       'RobotTransform', 'RobotRevert'
     ]);
   }
@@ -183,11 +183,13 @@ export class T2Blue extends RobotCharacterBase {
     shoulder.add(upperArm);
 
     this.addPanelLine(shoulder, { x: 0, y: -0.36, z: 0.11 }, { x: 0.14, y: 0.32, z: 0.01 });
+    this.addBoltRow(shoulder, { x: side * 0.08, y: -0.15, z: 0.12 }, { x: side * 0.08, y: -0.55, z: 0.12 }, 4);
 
     const elbow = new THREE.Group();
     elbow.position.y = -0.64;
     shoulder.add(elbow);
 
+    this.addBallJoint(elbow, { x: 0, y: 0, z: 0 }, 0.075, 0x2c3e50);
     this.addElbowGuard(elbow, 0xbdc3c7, 0.15);
 
     const lowerArm = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.46, 0.18), silverMat);
@@ -195,6 +197,7 @@ export class T2Blue extends RobotCharacterBase {
     elbow.add(lowerArm);
 
     this.addHydraulic(elbow, { x: side * 0.08, y: -0.05, z: 0 }, { x: side * 0.08, y: -0.35, z: 0 }, 0.032, 0x444444);
+    this.addBoltRow(elbow, { x: side * 0.07, y: -0.08, z: 0.11 }, { x: side * 0.07, y: -0.45, z: 0.11 }, 3);
 
     this.addHandFingers(elbow, 0x2e5aac, 0x2c3e50, 1.15);
 
@@ -215,6 +218,7 @@ export class T2Blue extends RobotCharacterBase {
     knee.position.y = -0.58;
     hip.add(knee);
 
+    this.addBallJoint(knee, { x: 0, y: 0, z: 0 }, 0.08, 0x2c3e50);
     this.addKneeGuard(knee, 0x2e5aac, 0xbdc3c7, 0.24);
 
     const shin = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.56, 0.24), silverMat);
@@ -222,6 +226,7 @@ export class T2Blue extends RobotCharacterBase {
     knee.add(shin);
 
     this.addVents(knee, { x: side * 0.1, y: -0.28, z: 0.13 }, { x: 0.04, y: 0.28, z: 0.02 }, { x: 0, y: side * 0.1, z: 0 }, 0x111111, 4);
+    this.addBoltRow(knee, { x: side * 0.09, y: -0.08, z: 0.14 }, { x: side * 0.09, y: -0.5, z: 0.14 }, 3);
 
     const foot = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.13, 0.38), darkMat);
     foot.position.set(0, -0.62, 0.07);

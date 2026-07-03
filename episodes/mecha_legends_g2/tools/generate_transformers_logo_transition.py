@@ -3,9 +3,10 @@
 Generate a 5-second Transformers-style logo transition for mecha_legends_g2.
 
 Effect:
-  - Stars/black screen
-  - Mechanical logo flies in from the distance
-  - Bright flash / impact
+  - Dark cybertronian steel / circuit background
+  - Space-station blast doors slide open with hydraulic warning lights
+  - Chrome metallic text "MECHA LEGENDS G2" emerges from cyan energon core
+  - Doors slam shut / lock with heavy impact, sparks and energon flash
   - Robotic voice announces "MECHA LEGENDS G TWO"
   - Fades out
 
@@ -36,6 +37,15 @@ TOTAL_SAMPLES = int(DURATION * SAMPLE_RATE)
 
 random.seed(42)
 np.random.seed(42)
+
+# Theme colors
+CYBER_PURPLE = (18, 8, 32)
+STEEL_DARK = (35, 38, 48)
+CYAN_ENERGON = (0, 230, 255)
+MAGENTA_NEON = (255, 0, 170)
+HOT_ORANGE = (200, 160, 40)  # muted industrial warning yellow, not spider-orange
+CHROME_LIGHT = (220, 235, 255)
+CHROME_SHADOW = (80, 90, 110)
 
 
 def sample_count(duration):
@@ -110,39 +120,344 @@ def write_clip(track, start, clip):
 
 # ───────────────────────────── Visual helpers ─────────────────────────────
 
-def make_star_field(seed=42):
-    """Pre-render a dark star field background."""
+def make_circuit_background(seed=42):
+    """Pre-render a dark cybertronian circuit/steel background."""
     rng = random.Random(seed)
-    img = Image.new("RGB", (WIDTH, HEIGHT), (0, 0, 2))
+    # Base dark steel gradient
+    img = Image.new("RGB", (WIDTH, HEIGHT), CYBER_PURPLE)
     draw = ImageDraw.Draw(img)
-    for _ in range(900):
+
+    # Subtle circuit traces
+    for _ in range(40):
+        x = rng.randint(0, WIDTH)
+        y = rng.randint(0, HEIGHT)
+        length = rng.randint(80, 400)
+        angle = rng.choice([0, math.pi / 2])
+        x2 = int(x + length * math.cos(angle))
+        y2 = int(y + length * math.sin(angle))
+        alpha = rng.randint(15, 45)
+        draw.line([(x, y), (x2, y2)], fill=(alpha, alpha + 10, alpha + 20), width=rng.choice([1, 2]))
+        # Circuit nodes
+        if rng.random() > 0.5:
+            draw.ellipse([x2 - 3, y2 - 3, x2 + 3, y2 + 3], fill=(alpha + 20, alpha + 30, alpha + 50))
+
+    # Distant stars / sparks
+    for _ in range(600):
         x = rng.randint(0, WIDTH - 1)
         y = rng.randint(0, HEIGHT - 1)
-        brightness = rng.randint(30, 220)
-        size = rng.choice([1, 1, 1, 2, 2, 3])
-        draw.ellipse([x, y, x + size, y + size], fill=(brightness, brightness, int(brightness * 0.95)))
+        brightness = rng.randint(40, 180)
+        size = rng.choice([1, 1, 1, 2])
+        draw.ellipse([x, y, x + size, y + size], fill=(brightness, brightness, int(brightness * 1.1)))
+
     return img
 
 
-def add_vignette(img, intensity=0.6):
+def add_vignette(img, intensity=0.55):
     """Darken the corners."""
     overlay = Image.new("L", (WIDTH, HEIGHT), 0)
     draw = ImageDraw.Draw(overlay)
     cx, cy = WIDTH // 2, HEIGHT // 2
     max_r = math.sqrt(cx ** 2 + cy ** 2)
     for r in range(int(max_r), -1, -20):
-        alpha = int(255 * intensity * (r / max_r) ** 1.5)
+        alpha = int(255 * intensity * (r / max_r) ** 1.6)
         draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=alpha)
     return Image.composite(Image.new("RGB", (WIDTH, HEIGHT), (0, 0, 0)), img, overlay)
 
 
-def draw_glow(draw, xy, radius, color, alpha=128):
-    """Draw a soft radial glow."""
-    for i in range(10, 0, -1):
-        r = radius * i / 10
-        a = int(alpha * (i / 10) ** 2)
-        glow_color = (*color, a)
-        draw.ellipse([xy[0] - r, xy[1] - r, xy[0] + r, xy[1] + r], fill=glow_color)
+def door_open_amount(t):
+    """Return gap between blast doors (0 = closed, 1 = fully open)."""
+    final_gap = 0.12  # Keep a small locked gap so title stays framed/visible
+    if t < 0.35:
+        return 0.0
+    if t < 1.35:
+        # Ease out cubic
+        p = (t - 0.35) / 1.0
+        return 1.0 - (1.0 - p) ** 3
+    if t < 2.25:
+        return 1.0
+    if t < 2.48:
+        # Slam shut to locked gap
+        p = (t - 2.25) / 0.23
+        return 1.0 - (1.0 - final_gap) * p ** 0.5
+    return final_gap
+
+
+def make_hazard_stripes(w, h, stripe_w=14, color=HOT_ORANGE):
+    """Create an RGBA layer with diagonal hazard stripes clipped to size."""
+    layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    for i in range(int((w + h) / stripe_w) + 2):
+        x0 = i * stripe_w
+        x1 = x0 - h
+        draw.polygon([
+            (x0, 0),
+            (x0 + stripe_w, 0),
+            (x1 + stripe_w, h),
+            (x1, h),
+        ], fill=(*color, 200))
+    return layer
+
+
+def _polygon_row_xspan(pts, row):
+    """Return (min_x, max_x) where horizontal line y=row crosses polygon."""
+    xs = []
+    n = len(pts)
+    for i in range(n):
+        x1, y1 = pts[i]
+        x2, y2 = pts[(i + 1) % n]
+        if (y1 <= row < y2) or (y2 <= row < y1):
+            dy = y2 - y1
+            if dy != 0:
+                xi = x1 + (row - y1) * (x2 - x1) / dy
+                xs.append(xi)
+    if len(xs) < 2:
+        return None
+    return min(xs), max(xs)
+
+
+def draw_blast_door(layer, x, y, w, h, is_left, open_amt, t):
+    """Draw one metallic blast door panel with a jagged/irregular mating edge."""
+    w, h = int(w), int(h)
+    x, y = int(x), int(y)
+    margin = 18
+    tooth_h = max(30, h // 7)
+    tooth_depth = min(55, max(25, w // 5))
+    gap_h = max(12, tooth_h // 2)
+
+    # Build jagged panel polygon in local coords.
+    # Left door: body from x=0..w, teeth protrude right to x=w+tooth_depth.
+    # Right door: body from x=tooth_depth..w+tooth_depth, teeth protrude left to x=0.
+    if is_left:
+        pts = [(0, 0), (w, 0)]
+        cy = margin
+        while cy + tooth_h < h - margin:
+            pts.append((w, cy))
+            pts.append((w + tooth_depth, cy))
+            pts.append((w + tooth_depth, cy + tooth_h))
+            pts.append((w, cy + tooth_h))
+            cy += tooth_h + gap_h
+        pts.append((w, h))
+        pts.append((0, h))
+        bbox_w = w + tooth_depth
+        paste_x = x
+    else:
+        # Right door: outer edge is straight, teeth protrude left from inner edge.
+        pts = [(tooth_depth, 0), (w + tooth_depth, 0)]
+        pts.append((w + tooth_depth, h))
+        pts.append((tooth_depth, h))
+        cy = h - margin
+        while cy - tooth_h > margin:
+            pts.append((tooth_depth, cy))
+            pts.append((0, cy))
+            pts.append((0, cy - tooth_h))
+            pts.append((tooth_depth, cy - tooth_h))
+            cy -= tooth_h + gap_h
+        pts.append((tooth_depth, 0))
+        bbox_w = w + tooth_depth
+        paste_x = x - tooth_depth
+
+    panel = Image.new("RGBA", (bbox_w + 1, h + 1), (0, 0, 0, 0))
+    pdraw = ImageDraw.Draw(panel)
+
+    # Space-station metallic panel fill.
+    for row in range(h):
+        span = _polygon_row_xspan(pts, row)
+        if span is None:
+            continue
+        x_min, x_max = span
+        t_row = row / h
+        # Top-lit cool steel gradient
+        base = 38 + 22 * (1 - t_row) ** 0.5
+        # Very faint brushed texture
+        brush = 1.0 + 0.04 * math.sin(row * 0.35)
+        r = int((base + 8) * brush)
+        g = int((base + 10) * brush)
+        b = int((base + 14) * brush)
+        pdraw.line([(x_min, row), (x_max, row)], fill=(r, g, b, 250))
+
+    # Strong diagonal specular highlight for metallic luster
+    for row in range(h):
+        span = _polygon_row_xspan(pts, row)
+        if span is None:
+            continue
+        t_row = row / h
+        # Highlight runs diagonally from upper-left to lower-right
+        hl_center = 0.28 + 0.50 * t_row
+        hl_w = 0.10
+        dist = abs(0.5 - hl_center)
+        if dist > hl_w:
+            continue
+        fade = 1.0 - dist / hl_w
+        alpha = int(160 * fade)
+        x_c = (span[0] + span[1]) / 2
+        x_r = (span[1] - span[0]) / 2
+        pdraw.line([(x_c - x_r * 0.65, row), (x_c + x_r * 0.65, row)],
+                   fill=(235, 245, 255, alpha))
+
+    # Panel outline + bevel
+    pdraw.polygon(pts, outline=(130, 145, 165, 255), width=3)
+    # Inset shadow just inside the outline for depth
+    inset_pts = [(px + (1 if is_left else -1), py + 1) for px, py in pts]
+    pdraw.polygon(inset_pts, outline=(30, 35, 45, 120), width=2)
+
+    # Horizontal reinforcement ribs (subtle raised strips)
+    rib_count = 4
+    for i in range(1, rib_count):
+        ry = int(h * i / rib_count)
+        span = _polygon_row_xspan(pts, ry)
+        if span is None:
+            continue
+        # Top edge of rib
+        pdraw.line([(span[0] + margin, ry - 2), (span[1] - margin, ry - 2)],
+                   fill=(100, 112, 130, 180), width=2)
+        # Bottom edge of rib
+        pdraw.line([(span[0] + margin, ry + 2), (span[1] - margin, ry + 2)],
+                   fill=(35, 40, 50, 180), width=2)
+
+    # Hazard stripes on inner mating edge (subtle)
+    stripe_w = 14
+    stripe_h = h - margin * 2 - 20
+    stripe_y = margin + 10
+    if is_left:
+        stripe_x = w - stripe_w - 6
+    else:
+        stripe_x = tooth_depth + 6
+    stripes = make_hazard_stripes(stripe_w, stripe_h, stripe_w=9, color=HOT_ORANGE)
+    r, g, b, a = stripes.split()
+    a = a.point(lambda v: int(v * 0.45))
+    stripes = Image.merge("RGBA", (r, g, b, a))
+    panel.paste(stripes, (int(stripe_x), int(stripe_y)), stripes)
+
+    # Rivets / bolts grid
+    rows = 4
+    cols = max(2, int(w / 140))
+    for r in range(rows):
+        for c in range(cols):
+            bx = margin + 20 + c * ((bbox_w - margin * 2 - 40) / max(cols - 1, 1))
+            by = margin + 20 + r * ((h - margin * 2 - 40) / (rows - 1))
+            # Skip rivets too close to jagged edge
+            span = _polygon_row_xspan(pts, int(by))
+            if span and (bx < span[0] + 30 or bx > span[1] - 30):
+                continue
+            pdraw.ellipse([bx - 5, by - 5, bx + 5, by + 5], fill=(90, 100, 120, 255),
+                          outline=(150, 165, 190, 255))
+
+    # Thin vertical status LED strip on inner edge (no round handle)
+    led_x = w - 5 if is_left else tooth_depth + 5
+    led_w = 4
+    blink = 0.5 + 0.5 * math.sin(t * 18)
+    if open_amt > 0.01 and open_amt < 0.99:
+        pdraw.rectangle([led_x - led_w // 2, margin + 20,
+                         led_x + led_w // 2, h - margin - 20],
+                        fill=(int(HOT_ORANGE[0] * blink), int(HOT_ORANGE[1] * blink),
+                              int(HOT_ORANGE[2] * blink), 200),
+                        outline=(255, 200, 100, 220))
+
+    layer.paste(panel, (paste_x, y), panel)
+
+
+def make_blast_door_layer(t):
+    """Return RGBA space-station blast door layer, centered and smaller."""
+    layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    cx, cy = WIDTH // 2, HEIGHT // 2
+
+    open_amt = door_open_amount(t)
+    door_h = int(HEIGHT * 0.58)
+    door_y = (HEIGHT - door_h) // 2
+    frame_w = int(WIDTH * 0.68)
+    frame_x = (WIDTH - frame_w) // 2
+    max_gap = int(frame_w * 0.42)
+    current_gap = int(max_gap * open_amt)
+    door_w = (frame_w - current_gap) // 2
+
+    left_x = frame_x
+    right_x = frame_x + frame_w - door_w
+
+    # Outer frame / bulkhead
+    frame_margin = 18
+    draw.rectangle([frame_x - frame_margin, door_y - frame_margin,
+                    frame_x + frame_w + frame_margin, door_y + door_h + frame_margin],
+                   fill=(20, 22, 30, 235), outline=(75, 88, 108, 255), width=4)
+
+    # Track grooves above and below doors
+    draw.rectangle([frame_x - frame_margin, door_y - 10,
+                    frame_x + frame_w + frame_margin, door_y + 4],
+                   fill=(35, 40, 50, 255), outline=(80, 92, 110, 255), width=2)
+    draw.rectangle([frame_x - frame_margin, door_y + door_h - 4,
+                    frame_x + frame_w + frame_margin, door_y + door_h + 10],
+                   fill=(35, 40, 50, 255), outline=(80, 92, 110, 255), width=2)
+
+    # Draw doors
+    draw_blast_door(layer, left_x, door_y, door_w, door_h, True, open_amt, t)
+    draw_blast_door(layer, right_x, door_y, door_w, door_h, False, open_amt, t)
+
+    # Lock indicators at seam when doors close (small glowing hexagons, not handles)
+    if open_amt < 0.18:
+        bolt_alpha = int(255 * (1 - open_amt / 0.18))
+        tooth_h = max(30, door_h // 7)
+        gap_h = max(12, tooth_h // 2)
+        margin = 18
+        cy_local = margin
+        lock_ys = []
+        while cy_local + tooth_h < door_h - margin:
+            lock_ys.append(door_y + cy_local + tooth_h // 2)
+            cy_local += tooth_h + gap_h
+        for ly in lock_ys:
+            size = 7
+            pts = []
+            for i in range(6):
+                ang = math.pi / 3 * i - math.pi / 2
+                pts.append((cx + size * math.cos(ang), ly + size * math.sin(ang)))
+            draw.polygon(pts, fill=(CYAN_ENERGON[0], CYAN_ENERGON[1], CYAN_ENERGON[2], bolt_alpha),
+                         outline=(255, 255, 255, bolt_alpha))
+
+    # Corner brackets on the outer frame (sci-fi framing, attached to door)
+    bracket = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    bdraw = ImageDraw.Draw(bracket)
+    br_len = 28
+    br_w = 4
+    corners = [
+        (frame_x - frame_margin, door_y - frame_margin, 1, 1),
+        (frame_x + frame_w + frame_margin, door_y - frame_margin, -1, 1),
+        (frame_x - frame_margin, door_y + door_h + frame_margin, 1, -1),
+        (frame_x + frame_w + frame_margin, door_y + door_h + frame_margin, -1, -1),
+    ]
+    for fx, fy, sx, sy in corners:
+        bdraw.line([(fx, fy), (fx + br_len * sx, fy)], fill=CYAN_ENERGON + (180,), width=br_w)
+        bdraw.line([(fx, fy), (fx, fy + br_len * sy)], fill=CYAN_ENERGON + (180,), width=br_w)
+    layer = Image.alpha_composite(layer, bracket)
+
+    return layer
+
+
+def make_mechanical_plate(t):
+    """Draw corner mechanical plates with bolts."""
+    layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+
+    plate_w, plate_h = 320, 180
+    corners = [
+        (0, 0),
+        (WIDTH - plate_w, 0),
+        (0, HEIGHT - plate_h),
+        (WIDTH - plate_w, HEIGHT - plate_h),
+    ]
+
+    for x, y in corners:
+        # Plate background
+        draw.rectangle([x, y, x + plate_w, y + plate_h], fill=(20, 22, 30, 160),
+                       outline=(60, 70, 90, 180), width=2)
+        # Decorative lines
+        draw.line([(x + 20, y + 20), (x + plate_w - 20, y + 20)], fill=CYAN_ENERGON + (120,), width=2)
+        draw.line([(x + 20, y + plate_h - 20), (x + plate_w - 20, y + plate_h - 20)], fill=CYAN_ENERGON + (120,), width=2)
+        # Bolts
+        for bx, by in [(x + 12, y + 12), (x + plate_w - 12, y + 12),
+                       (x + 12, y + plate_h - 12), (x + plate_w - 12, y + plate_h - 12)]:
+            draw.ellipse([bx - 6, by - 6, bx + 6, by + 6], fill=(100, 110, 130, 220),
+                         outline=(160, 175, 200, 255))
+
+    return layer
 
 
 def get_font(size):
@@ -159,22 +474,16 @@ def get_font(size):
     return ImageFont.load_default()
 
 
-def make_metallic_text(text, size, region_top, region_height, sheen=0.0, glow_color=(255, 180, 60)):
-    """Render bright metallic text with outer glow and bevel.
-
-    Returns a full-screen (WIDTH, HEIGHT) RGBA image with the text centered
-    inside the vertical region [region_top, region_top + region_height].
-    """
-    # 1. Render crisp text mask at a slightly larger size for quality
+def make_mechanical_text(text, size, region_top, region_height, sheen=0.0,
+                         glow_color=CYAN_ENERGON, chrome=True):
+    """Render chrome metallic text with angular mechanical style and outer glow."""
     mask_size = int(size * 1.2)
     font = get_font(mask_size)
-    # Measure text
     tmp = Image.new("L", (1, 1), 0)
     tdraw = ImageDraw.Draw(tmp)
     bbox = tdraw.textbbox((0, 0), text, font=font)
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
 
-    # Create a padded canvas for the text
     pad = int(mask_size * 0.5)
     txt_w, txt_h = tw + pad * 2, th + pad * 2
     text_mask = Image.new("L", (txt_w, txt_h), 0)
@@ -183,60 +492,59 @@ def make_metallic_text(text, size, region_top, region_height, sheen=0.0, glow_co
     ty = (txt_h - th) // 2 - bbox[1]
     mdraw.text((tx, ty), text, font=font, fill=255)
 
-    # 2. Outer glow (blurred mask tinted with glow_color) - strong and bright
-    glow = text_mask.filter(ImageFilter.GaussianBlur(radius=int(mask_size * 0.32)))
+    # Outer glow - cyan/magenta energon
+    glow = text_mask.filter(ImageFilter.GaussianBlur(radius=int(mask_size * 0.35)))
     glow_rgba = Image.merge("RGBA", [
         Image.new("L", glow.size, glow_color[0]),
         Image.new("L", glow.size, glow_color[1]),
         Image.new("L", glow.size, glow_color[2]),
-        glow.point(lambda v: min(255, int(v * 1.7)))
+        glow.point(lambda v: min(255, int(v * 1.8)))
     ])
 
-    # 3. Inner metallic fill - bright gold/silver with high contrast
+    # Chrome metallic fill
     fill = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     fdraw = ImageDraw.Draw(fill)
     for row in range(txt_h):
         t = row / txt_h
-        # Sweep between rich gold and near-white
         sweep = math.sin(t * math.pi + sheen) * 0.5 + 0.5
-        r = 255
-        g = int(225 + 30 * sweep)
-        b = int(155 + 100 * sweep)
+        r = int(180 + 75 * sweep)
+        g = int(190 + 65 * sweep)
+        b = int(210 + 45 * sweep)
         fdraw.line([(0, row), (txt_w, row)], fill=(r, g, b, 255))
     fill.putalpha(text_mask)
 
-    # 3b. Bright inner core so the center never goes dark
+    # Inner core highlight
     core = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     cdraw = ImageDraw.Draw(core)
     cx_c, cy_c = txt_w // 2, txt_h // 2
     max_rc = max(cx_c, cy_c)
     for i in range(10, 0, -1):
-        r_c = max_rc * (i / 10) ** 1.3
-        a_c = int(90 * (1 - i / 10))
+        r_c = max_rc * (i / 10) ** 1.4
+        a_c = int(80 * (1 - i / 10))
         cdraw.ellipse([cx_c - r_c, cy_c - r_c, cx_c + r_c, cy_c + r_c],
-                      fill=(255, 250, 220, a_c))
+                      fill=(230, 245, 255, a_c))
     core_masked = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     core_masked.paste(core, (0, 0), text_mask)
 
-    # 4. Very subtle inner shadow for 3D depth
+    # Hard mechanical outline / bevel
     outline = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     odraw = ImageDraw.Draw(outline)
-    for dx in range(-3, 4, 2):
-        for dy in range(-3, 4, 2):
+    for dx in range(-4, 5, 2):
+        for dy in range(-4, 5, 2):
             if dx == 0 and dy == 0:
                 continue
-            odraw.text((tx + dx, ty + dy), text, font=font, fill=(40, 45, 60, 80))
-    outline_mask = text_mask.filter(ImageFilter.GaussianBlur(radius=2)).point(lambda v: int(v * 0.10))
+            odraw.text((tx + dx, ty + dy), text, font=font, fill=(25, 30, 40, 90))
+    outline_mask = text_mask.filter(ImageFilter.GaussianBlur(radius=2)).point(lambda v: int(v * 0.15))
     outline_masked = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     outline_masked.paste(outline, (0, 0), outline_mask)
 
-    # 5. Highlight strips
+    # Horizontal chrome highlights
     highlight = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     hdraw = ImageDraw.Draw(highlight)
-    hl_y = int(txt_h * (0.26 + 0.05 * math.sin(sheen * 2)))
-    hdraw.line([(0, hl_y), (txt_w, hl_y + max(6, mask_size // 6))], fill=(255, 255, 255, 240))
-    hl_y2 = int(txt_h * (0.52 + 0.03 * math.sin(sheen * 2)))
-    hdraw.line([(0, hl_y2), (txt_w, hl_y2 + max(3, mask_size // 12))], fill=(255, 250, 220, 160))
+    hl_y = int(txt_h * (0.25 + 0.04 * math.sin(sheen * 2)))
+    hdraw.line([(0, hl_y), (txt_w, hl_y + max(5, mask_size // 7))], fill=(255, 255, 255, 230))
+    hl_y2 = int(txt_h * (0.55 + 0.03 * math.sin(sheen * 2)))
+    hdraw.line([(0, hl_y2), (txt_w, hl_y2 + max(3, mask_size // 14))], fill=(220, 235, 255, 150))
     highlight_masked = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     highlight_masked.paste(highlight, (0, 0), text_mask)
 
@@ -246,19 +554,19 @@ def make_metallic_text(text, size, region_top, region_height, sheen=0.0, glow_co
     comp = Image.alpha_composite(comp, core_masked)
     comp = Image.alpha_composite(comp, highlight_masked)
 
-    # 6. Add a bright radial bloom behind the text for extra pop
+    # Radial bloom behind text
     bloom = Image.new("RGBA", (txt_w, txt_h), (0, 0, 0, 0))
     bdraw = ImageDraw.Draw(bloom)
     cx_b, cy_b = txt_w // 2, txt_h // 2
     max_r = max(cx_b, cy_b)
     for i in range(10, 0, -1):
         r_b = max_r * i / 10
-        alpha_b = int(55 * (1 - i / 10))
+        alpha_b = int(50 * (1 - i / 10))
         bdraw.ellipse([cx_b - r_b, cy_b - r_b, cx_b + r_b, cy_b + r_b],
                       fill=(glow_color[0], glow_color[1], glow_color[2], alpha_b))
     comp = Image.alpha_composite(bloom, comp)
 
-    # 6. Scale to fit the requested region and center on a full-screen canvas
+    # Scale to requested region
     scale = min(WIDTH / txt_w, region_height / txt_h)
     new_w, new_h = int(txt_w * scale), int(txt_h * scale)
     comp_resized = comp.resize((new_w, new_h), Image.Resampling.LANCZOS)
@@ -270,12 +578,12 @@ def make_metallic_text(text, size, region_top, region_height, sheen=0.0, glow_co
     return canvas
 
 
-def add_flash(img, intensity):
-    """Add a warm gold flash overlay."""
+def add_cyan_flash(img, intensity):
+    """Add a cool cyan energon flash overlay."""
     if intensity <= 0:
         return img
-    overlay = Image.new("RGB", (WIDTH, HEIGHT), (255, 240, 210))
-    return Image.blend(img, overlay, min(1.0, intensity * 0.22))
+    overlay = Image.new("RGB", (WIDTH, HEIGHT), (210, 245, 255))
+    return Image.blend(img, overlay, min(1.0, intensity * 0.25))
 
 
 def set_alpha(img, factor):
@@ -288,14 +596,14 @@ def set_alpha(img, factor):
 
 
 def add_lens_flare(img, cx, cy, size, intensity):
-    """Add a simple lens flare burst."""
+    """Add a cool mechanical lens flare burst."""
     overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
     colors = [
-        ((255, 250, 220), 0.9),
-        ((255, 230, 180), 0.7),
-        ((200, 220, 255), 0.5),
-        ((100, 150, 255), 0.3),
+        ((200, 245, 255), 0.9),
+        ((120, 220, 255), 0.7),
+        ((80, 160, 255), 0.5),
+        ((180, 0, 255), 0.3),
     ]
     for color, ratio in colors:
         r = size * ratio
@@ -304,8 +612,8 @@ def add_lens_flare(img, cx, cy, size, intensity):
     # Cross rays
     ray = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     rdraw = ImageDraw.Draw(ray)
-    rdraw.line([(cx - size * 1.5, cy), (cx + size * 1.5, cy)], fill=(255, 255, 240, int(180 * intensity)), width=int(size * 0.08))
-    rdraw.line([(cx, cy - size * 1.2), (cx, cy + size * 1.2)], fill=(255, 255, 240, int(180 * intensity)), width=int(size * 0.08))
+    rdraw.line([(cx - size * 1.5, cy), (cx + size * 1.5, cy)], fill=(220, 245, 255, int(200 * intensity)), width=int(size * 0.08))
+    rdraw.line([(cx, cy - size * 1.2), (cx, cy + size * 1.2)], fill=(220, 245, 255, int(200 * intensity)), width=int(size * 0.08))
     overlay = Image.alpha_composite(overlay, ray)
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
@@ -350,90 +658,97 @@ def load_voice_clip(path):
     return data
 
 
-def robotize_voice(data, carrier=175, mod_depth=0.55, echo_ms=45, echo_decay=0.35):
-    """Turn a natural voice into a metallic Transformers-style announcer.
-
-    Uses ring modulation + harmonic overtones + short metallic echo,
-    then band-limits to keep speech intelligible.
-    """
+def robotize_voice(data, carrier=160, mod_depth=0.6, echo_ms=50, echo_decay=0.4):
+    """Turn a natural voice into a metallic Transformers-style announcer."""
     n = len(data)
     t = np.arange(n) / SAMPLE_RATE
 
-    # Carrier with slow vibrato for a warbling machine feel
     carrier_wave = np.sin(
-        2 * np.pi * carrier * t + 0.4 * np.sin(2 * np.pi * 5.5 * t)
+        2 * np.pi * carrier * t + 0.5 * np.sin(2 * np.pi * 4.5 * t)
     )
     carrier_wave2 = np.sin(
-        2 * np.pi * (carrier * 2.0) * t + 0.3 * np.sin(2 * np.pi * 7.0 * t)
+        2 * np.pi * (carrier * 2.0) * t + 0.35 * np.sin(2 * np.pi * 6.5 * t)
     )
 
-    # Ring-mod blend: original + modulated + 2nd harmonic
     modulated = (
         data * (1.0 - mod_depth)
         + data * carrier_wave * mod_depth
-        + data * carrier_wave2 * (mod_depth * 0.35)
+        + data * carrier_wave2 * (mod_depth * 0.4)
     )
 
-    # Short metallic delay / echo ( Comb-filter-ish )
     delay_samples = int(SAMPLE_RATE * echo_ms / 1000)
     echoed = np.zeros(n + delay_samples)
     echoed[:n] = modulated
     echoed[delay_samples:delay_samples + n] += modulated * echo_decay
     modulated = echoed[:n]
 
-    # Bandpass to keep it crisp and radio-like
-    modulated = bandpass(modulated, 220, 6500)
+    modulated = bandpass(modulated, 200, 6500)
     return normalize(modulated)
 
 
 def generate_audio():
-    """Synthesize a Transformers-style audio sting."""
+    """Synthesize a Transformers-style audio sting with mechanical elements."""
     out = np.zeros(TOTAL_SAMPLES)
     t = np.arange(TOTAL_SAMPLES) / SAMPLE_RATE
 
-    # 1. Low mechanical rumble / build-up
-    rumble = noise(5.0, 0.35)
-    rumble = lowpass(rumble, 120)
+    # 1. Low mechanical rumble
+    rumble = noise(5.0, 0.4)
+    rumble = lowpass(rumble, 140)
     rumble *= np.linspace(0, 1, TOTAL_SAMPLES) ** 0.5
-    rumble *= np.linspace(1, 0, TOTAL_SAMPLES) ** 0.3
-    out += rumble * 0.5
+    rumble *= np.linspace(1, 0, TOTAL_SAMPLES) ** 0.25
+    out += rumble * 0.55
 
-    # 2. Servo / gear sweeps
-    def servo_sweep(start, end, f0, f1, amp=0.3):
-        n = sample_count(end - start)
-        freq = np.linspace(f0, f1, n)
-        sig = np.sign(np.sin(phase_from_freq(freq, n))) * amp
-        sig = lowpass(sig, 1800)
-        sig *= np.linspace(0, 1, n) * np.linspace(1, 0, n)
+    # 2. Warning alarm beeps before door opens
+    def warning_beep(start, dur=0.08, freq=880, amp=0.12):
+        n = sample_count(dur)
+        sig = sine_wave(freq, dur, amp)
+        sig *= np.exp(-np.linspace(0, 6, n))
+        sig = bandpass(sig, 700, 2000)
         write_clip(out, start, sig)
 
-    servo_sweep(0.2, 0.7, 60, 300, 0.25)
-    servo_sweep(0.9, 1.3, 200, 80, 0.2)
-    servo_sweep(2.3, 2.8, 100, 400, 0.35)
+    for st in [0.05, 0.15, 0.25]:
+        warning_beep(st, 0.06, 920, 0.10)
 
-    # 3. Metallic scrape hits
-    def metal_hit(start, dur=0.25, amp=0.6):
+    # 3. Blast door opening: hydraulic + air hiss + metal scrape
+    def door_open_sound(start, end, amp=0.5):
+        n = sample_count(end - start)
+        # Low hydraulic motor
+        t_local = np.linspace(0, end - start, n, endpoint=False)
+        freq = 60 + 40 * np.sin(np.pi * t_local / (end - start))
+        motor = np.sign(np.sin(phase_from_freq(freq, n))) * amp * 0.6
+        motor = lowpass(motor, 350)
+        # Air hiss
+        hiss = noise(end - start, amp * 0.35)
+        hiss = bandpass(hiss, 800, 6000)
+        hiss *= np.linspace(0.2, 1.0, n) * np.linspace(1.0, 0.2, n)
+        # Metal scrape
+        scrape = noise(end - start, amp * 0.25)
+        scrape = bandpass(scrape, 1200, 9000)
+        scrape *= np.linspace(0, 1, n) ** 0.5
+        sig = motor + hiss + scrape
+        sig *= np.linspace(0, 1, n) ** 0.3 * np.linspace(1, 0, n) ** 0.3
+        write_clip(out, start, sig)
+
+    door_open_sound(0.32, 1.38, 0.55)
+
+    # 4. Door open lock clank
+    def lock_clank(start, dur=0.18, amp=0.6):
         n = sample_count(dur)
         sig = noise(dur, amp)
-        sig = bandpass(sig, 800, 9000)
-        sig *= np.exp(-np.linspace(0, 20, n))
+        sig = bandpass(sig, 800, 8500)
+        sig *= np.exp(-np.linspace(0, 18, n))
         write_clip(out, start, sig)
 
-    metal_hit(0.5, 0.15, 0.5)
-    metal_hit(1.15, 0.2, 0.4)
-    metal_hit(2.0, 0.2, 0.45)
-    metal_hit(2.5, 0.35, 0.8)
+    lock_clank(1.32, 0.18, 0.5)
 
-    # 4. Cool English announcer voice (edge-tts) with robotized fallback
+    # 5. Robot announcer voice
     voice_path = os.path.join(TMP_DIR, "voice.wav")
     if synthesize_voice("Mecha Legends G Two", voice_path, voice="en-US-GuyNeural", rate="+0%"):
         voice = load_voice_clip(voice_path)
         voice = normalize(voice)
-        # Heavy robotic/metallic treatment
-        voice_mod = robotize_voice(voice, carrier=175, mod_depth=0.55, echo_ms=45, echo_decay=0.35)
-        write_clip(out, 0.90, voice_mod * 0.78)
+        voice_mod = robotize_voice(voice, carrier=160, mod_depth=0.6, echo_ms=50, echo_decay=0.4)
+        write_clip(out, 0.85, voice_mod * 0.72)
     else:
-        # Fallback procedural robotic syllables
         def robot_syllable(start, duration, freq, amp=0.5, vibrato=6.0):
             n = sample_count(duration)
             t_local = np.linspace(0, duration, n, endpoint=False)
@@ -444,40 +759,53 @@ def generate_audio():
             sig = shaped_envelope(sig, attack=0.015, decay=0.05, sustain=0.8, release=0.08)
             write_clip(out, start, sig)
 
-        robot_syllable(1.20, 0.18, 135, 0.55, 5.0)
-        robot_syllable(1.38, 0.16, 110, 0.50, 5.5)
-        robot_syllable(1.70, 0.22, 125, 0.55, 4.5)
-        robot_syllable(1.92, 0.24, 100, 0.50, 4.0)
-        robot_syllable(2.60, 0.14, 180, 0.55, 7.0)
-        robot_syllable(2.74, 0.18, 140, 0.55, 6.0)
+        robot_syllable(1.10, 0.18, 135, 0.55, 5.0)
+        robot_syllable(1.28, 0.16, 110, 0.50, 5.5)
+        robot_syllable(1.60, 0.22, 125, 0.55, 4.5)
+        robot_syllable(1.82, 0.24, 100, 0.50, 4.0)
+        robot_syllable(2.50, 0.14, 180, 0.55, 7.0)
+        robot_syllable(2.64, 0.18, 140, 0.55, 6.0)
 
-    # 5. Impact boom
-    n_impact = sample_count(0.6)
-    boom = sine_wave(55, 0.6, 0.9) * np.exp(-np.linspace(0, 10, n_impact))
-    boom = lowpass(boom, 160)
-    write_clip(out, 2.48, boom)
+    # 6. Door slam / lock impact
+    def door_slam(start, amp=1.0):
+        n = sample_count(0.5)
+        # Heavy low boom
+        boom = sine_wave(45, 0.5, amp) * np.exp(-np.linspace(0, 12, n))
+        boom = lowpass(boom, 140)
+        # Metal crash
+        crash = noise(0.5, amp * 0.6)
+        crash = bandpass(crash, 600, 9000)
+        crash *= np.exp(-np.linspace(0, 25, n))
+        # Hydraulic compressor release
+        release = noise(0.3, amp * 0.25)
+        release = bandpass(release, 1000, 5000)
+        release *= np.linspace(1, 0, sample_count(0.3)) ** 0.8
+        write_clip(out, start, boom + crash)
+        write_clip(out, start + 0.05, release)
 
-    # 6. Bright shimmer / rising sweep for the flash
-    n_sweep = sample_count(0.8)
-    freq = np.linspace(400, 3000, n_sweep)
-    sweep = np.sin(phase_from_freq(freq, n_sweep)) * 0.35
+    door_slam(2.32, 1.0)
+
+    # 7. Bright energon shimmer / rising sweep on lock
+    n_sweep = sample_count(0.7)
+    freq = np.linspace(250, 3200, n_sweep)
+    sweep = np.sin(phase_from_freq(freq, n_sweep)) * 0.45
     sweep *= np.linspace(0, 1, n_sweep) ** 0.5 * np.linspace(1, 0, n_sweep) ** 0.2
-    sweep = highpass(sweep, 400)
-    write_clip(out, 2.45, sweep)
+    sweep = highpass(sweep, 250)
+    write_clip(out, 2.30, sweep)
 
-    # 7. Ambient drone after impact
-    drone = sine_wave(80, 5.0, 0.15) + sine_wave(120, 5.0, 0.1)
-    drone += sine_wave(160, 5.0, 0.08)
-    drone = lowpass(drone, 300)
+    # 8. Ambient drone after impact
+    drone = sine_wave(65, 5.0, 0.18) + sine_wave(105, 5.0, 0.12)
+    drone += sine_wave(145, 5.0, 0.09)
+    drone = lowpass(drone, 320)
     drone *= np.linspace(0, 1, TOTAL_SAMPLES) ** 0.3
-    drone *= np.linspace(1, 0, TOTAL_SAMPLES) ** 0.15
+    drone *= np.linspace(1, 0, TOTAL_SAMPLES) ** 0.12
     out += drone
 
-    # 8. End fade-out
+    # 9. End fade-out
     fade_end = int(0.4 * SAMPLE_RATE)
     out[-fade_end:] *= np.linspace(1, 0, fade_end)
 
-    out = soft_clip(out, 0.75)
+    out = soft_clip(out, 0.72)
     return out
 
 
@@ -488,127 +816,139 @@ def soft_clip(data, threshold=0.7):
 # ───────────────────────────── Frame generation ─────────────────────────────
 
 def render_frames():
-    star_bg = make_star_field()
+    bg = make_circuit_background()
     cx, cy = WIDTH // 2, HEIGHT // 2
 
     for frame in range(TOTAL_FRAMES):
         t = frame / FPS
-        base = star_bg.copy()
+        base = bg.copy()
 
-        # Progress markers
         flash = 0.0
         flare_intensity = 0.0
         flare_size = 0.0
 
-        # All text is accumulated on a full-screen layer so sizes match.
         text_layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
 
-        # Mechanical grid / gear lines appear behind text
-        if t > 0.4:
-            overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-            draw = ImageDraw.Draw(overlay)
-            grid_alpha = int(60 * min(1.0, (t - 0.4) / 0.6) * (1.0 if t < 4.5 else max(0, (5.0 - t) / 0.5)))
-            # Concentric hexagons
-            for r in range(50, 600, 60):
-                pts = []
-                for i in range(6):
-                    angle = i * math.pi / 3 + t * 0.3
-                    pts.append((cx + r * math.cos(angle), cy + r * math.sin(angle)))
-                draw.polygon(pts, outline=(80, 120, 200, grid_alpha))
-            # Radial spokes
-            for i in range(12):
-                angle = i * math.pi / 6 + t * 0.15
-                x2 = cx + 800 * math.cos(angle)
-                y2 = cy + 800 * math.sin(angle)
-                draw.line([(cx, cy), (x2, y2)], fill=(60, 100, 180, grid_alpha // 2), width=2)
-            base = Image.alpha_composite(base.convert("RGBA"), overlay).convert("RGB")
+        # Space-station blast doors (centered, metallic, irregular seam)
+        door_layer = make_blast_door_layer(t)
+        base = Image.alpha_composite(base.convert("RGBA"), door_layer).convert("RGB")
 
-        # Text "MECHA" flies in (top)
-        if 0.8 <= t <= 2.6:
-            phase = min(1.0, (t - 0.8) / 1.0)
-            # Approach: starts lower/smaller and snaps into place
-            approach = max(0, 1.0 - phase * 1.8)  # 1..0 quickly
+        # Text "MECHA" flies in from energon core
+        if 0.7 <= t <= 2.5:
+            phase = min(1.0, (t - 0.7) / 0.9)
+            approach = max(0, 1.0 - phase * 1.8)
             scale = 1.0 + approach * 0.6
-            region_top = int(140 + approach * 180)
+            region_top = int(120 + approach * 160)
             alpha = 1.0 if phase > 0.15 else phase / 0.15
             size = int(260 * scale)
             sheen = t * 3.0
-            txt = make_metallic_text("MECHA", size, region_top, 360, sheen, glow_color=(255, 200, 80))
-            # Motion streak during fast approach
-            if approach > 0.2:
-                streak_alpha = int(180 * (approach - 0.2) / 0.8)
-                streak = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-                sdraw = ImageDraw.Draw(streak)
-                y_base = region_top + 180
-                sdraw.line([(cx - 600, y_base), (cx + 600, y_base)], fill=(255, 220, 160, streak_alpha), width=int(18 * scale))
-                base = Image.alpha_composite(base.convert("RGBA"), streak).convert("RGB")
+            txt = make_mechanical_text("MECHA", size, region_top, 380, sheen,
+                                       glow_color=CYAN_ENERGON)
             txt = set_alpha(txt, alpha)
             text_layer = Image.alpha_composite(text_layer, txt)
 
-        # Text "LEGENDS" flies in (middle)
-        if 1.4 <= t <= 2.9:
-            phase = min(1.0, (t - 1.4) / 0.9)
+        # Text "LEGENDS" flies in
+        if 1.3 <= t <= 2.8:
+            phase = min(1.0, (t - 1.3) / 0.85)
             approach = max(0, 1.0 - phase * 1.8)
-            scale = 1.0 + approach * 0.6
-            region_top = int(460 + approach * 200)
+            scale = 1.0 + approach * 0.55
+            region_top = int(430 + approach * 180)
             alpha = 1.0 if phase > 0.15 else phase / 0.15
             size = int(210 * scale)
-            txt = make_metallic_text("LEGENDS", size, region_top, 320, sheen=-t * 2.5, glow_color=(255, 190, 70))
+            txt = make_mechanical_text("LEGENDS", size, region_top, 330, sheen=-t * 2.5,
+                                       glow_color=CYAN_ENERGON)
             txt = set_alpha(txt, alpha)
             text_layer = Image.alpha_composite(text_layer, txt)
 
-        # G2 badge / impact (bottom)
-        if t >= 2.1:
-            phase = min(1.0, (t - 2.1) / 0.5)
+        # G2 badge / impact
+        if t >= 2.0:
+            phase = min(1.0, (t - 2.0) / 0.45)
             approach = max(0, 1.0 - phase * 1.8)
-            scale = 1.0 + approach * 0.8
-            region_top = int(620 + approach * 160)
+            scale = 1.0 + approach * 0.7
+            region_top = int(610 + approach * 140)
             alpha = 1.0 if phase > 0.12 else phase / 0.12
-            badge_size = int(360 * scale)
-            badge = make_metallic_text("G2", badge_size, region_top, 340, sheen=t * 4.5, glow_color=(180, 245, 255))
+            badge_size = int(340 * scale)
+            badge = make_mechanical_text("G2", badge_size, region_top, 330, sheen=t * 4.5,
+                                         glow_color=MAGENTA_NEON)
             badge = set_alpha(badge, alpha)
             text_layer = Image.alpha_composite(text_layer, badge)
 
-            # Bright radial glow behind G2
+            # Hexagonal energon core behind G2 (mechanical, not circular target)
             g2_glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
             gdraw = ImageDraw.Draw(g2_glow)
             r_glow = int(260 * scale)
-            pulse = 0.5 + 0.5 * math.sin(t * 12)
+            pulse = 0.5 + 0.5 * math.sin(t * 14)
+
+            def hexagon(cx_h, cy_h, radius):
+                return [
+                    (cx_h + radius * math.cos(math.pi / 3 * i - math.pi / 2),
+                     cy_h + radius * math.sin(math.pi / 3 * i - math.pi / 2))
+                    for i in range(6)
+                ]
+
             for i in range(10, 0, -1):
-                alpha_glow = int(55 * (1 - i / 10) * pulse + 20)
-                gdraw.ellipse([cx - r_glow * i / 10, 790 - r_glow * i / 10,
-                               cx + r_glow * i / 10, 790 + r_glow * i / 10],
-                              fill=(100, 190, 255, alpha_glow))
+                alpha_glow = int(55 * (1 - i / 10) * pulse + 15)
+                pts = hexagon(cx, cy, r_glow * i / 10)
+                gdraw.polygon(pts, fill=(MAGENTA_NEON[0], MAGENTA_NEON[1], MAGENTA_NEON[2], alpha_glow))
+            # Hex core ring lines
+            for ri in [0.85, 0.55, 0.3]:
+                pts = hexagon(cx, cy, r_glow * ri)
+                gdraw.polygon(pts, outline=(CYAN_ENERGON[0], CYAN_ENERGON[1], CYAN_ENERGON[2], int(100 * pulse)), width=2)
             base = Image.alpha_composite(base.convert("RGBA"), g2_glow).convert("RGB")
 
-            # Glowing ring behind G2
-            ring = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-            rdraw = ImageDraw.Draw(ring)
-            r = int(180 * scale)
-            for i in range(6, 0, -1):
-                alpha_ring = int(110 * i * pulse)
-                rdraw.ellipse([cx - r * i / 2, 790 - r * i / 2, cx + r * i / 2, 790 + r * i / 2],
-                              outline=(150, 220, 255, alpha_ring), width=6)
-            base = Image.alpha_composite(base.convert("RGBA"), ring).convert("RGB")
+            # Corner lock brackets around G2 (mechanical, not circular)
+            bracket = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+            bdraw = ImageDraw.Draw(bracket)
+            br = int(90 * scale)
+            bw = 8
+            corners = [
+                (cx - br, cy - br), (cx + br, cy - br),
+                (cx - br, cy + br), (cx + br, cy + br),
+            ]
+            for bx, by in corners:
+                # L-shaped brackets
+                if bx < cx:
+                    bdraw.line([(bx - 25, by), (bx, by), (bx, by + (25 if by < cy else -25))],
+                               fill=CYAN_ENERGON + (200,), width=bw)
+                else:
+                    bdraw.line([(bx + 25, by), (bx, by), (bx, by + (25 if by < cy else -25))],
+                               fill=CYAN_ENERGON + (200,), width=bw)
+            base = Image.alpha_composite(base.convert("RGBA"), bracket).convert("RGB")
 
-        # Composite the full text layer onto the base
+        # Composite text
         base = Image.alpha_composite(base.convert("RGBA"), text_layer).convert("RGB")
 
-        # Flash at impact (short and localized)
-        if 2.50 <= t <= 2.60:
-            flash = 1.0 - abs(t - 2.55) / 0.05
+        # Energon flash at door lock impact
+        if 2.35 <= t <= 2.50:
+            flash = 1.0 - abs(t - 2.42) / 0.075
             flash = max(0, flash)
-            flare_intensity = flash * 0.12
-            flare_size = 120 + flash * 80
+            flare_intensity = flash * 0.16
+            flare_size = 160 + flash * 100
 
-        # Add lens flare and flash
         if flare_size > 0:
-            base = add_lens_flare(base, cx, 790, flare_size, flare_intensity)
+            base = add_lens_flare(base, cx, cy, flare_size, flare_intensity)
         if flash > 0:
-            base = add_flash(base, flash * 0.08)
+            base = add_cyan_flash(base, flash * 0.12)
 
-        # Vignette and subtle color grade
-        base = add_vignette(base, intensity=0.15)
+        # Sparks overlay during door lock
+        if 2.30 <= t <= 2.60:
+            spark_intensity = 1.0 - abs(t - 2.45) / 0.15
+            spark_intensity = max(0, spark_intensity)
+            spark_layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+            sdraw = ImageDraw.Draw(spark_layer)
+            rng = random.Random(frame)
+            for _ in range(int(100 * spark_intensity)):
+                # Sparks fly from center seam outward
+                angle = rng.random() * 2 * math.pi
+                dist = rng.randint(50, 350)
+                sx = cx + int(dist * math.cos(angle))
+                sy = cy + int(dist * math.sin(angle) * 0.6)
+                size = rng.randint(2, 6)
+                color = rng.choice([CYAN_ENERGON, MAGENTA_NEON, HOT_ORANGE])
+                sdraw.ellipse([sx, sy, sx + size, sy + size], fill=(*color, 220))
+            base = Image.alpha_composite(base.convert("RGBA"), spark_layer).convert("RGB")
+
+        base = add_vignette(base, intensity=0.18)
 
         # Fade in / out
         if t < 0.2:
@@ -646,7 +986,7 @@ def generate_previews():
     video_path = os.path.join(OUTPUT_DIR, "transition_logo.mp4")
     if not os.path.exists(video_path):
         return
-    timestamps = [1.5, 2.0, 2.55, 3.5]
+    timestamps = [0.7, 1.5, 2.4, 3.5]
     for idx, ts in enumerate(timestamps, start=1):
         out = os.path.join(OUTPUT_DIR, f"transition_preview_{idx:02d}.jpg")
         cmd = (

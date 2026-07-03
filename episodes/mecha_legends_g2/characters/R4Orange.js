@@ -12,7 +12,7 @@ export class R4Orange extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'agile'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'Jump', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
       'RobotTransform', 'RobotRevert'
     ]);
   }
@@ -38,24 +38,6 @@ export class R4Orange extends RobotCharacterBase {
 
     const torso = new THREE.Mesh(new THREE.BoxGeometry(0.48, 0.64, 0.3), orangeMat);
     torsoGroup.add(torso);
-
-    // 防滚架式胸甲
-    const cageTop = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.05, 0.26), blackMat);
-    cageTop.position.set(0, 0.28, 0);
-    torsoGroup.add(cageTop);
-    const cageBottom = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.05, 0.26), blackMat);
-    cageBottom.position.set(0, -0.22, 0);
-    torsoGroup.add(cageBottom);
-    for (const side of [-1, 1]) {
-      const post = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.5, 0.04), blackMat);
-      post.position.set(side * 0.18, 0.03, 0.12);
-      torsoGroup.add(post);
-    }
-
-    // 火焰涂装条纹
-    const flame = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.12, 0.31), yellowMat);
-    flame.position.set(0, 0.05, 0);
-    torsoGroup.add(flame);
 
     this.addChestCore(torsoGroup, { x: 0, y: 0.18, z: 0.16 }, 0xff5500, { x: 0.13, y: 0.1, z: 0.03 });
 
@@ -179,16 +161,19 @@ export class R4Orange extends RobotCharacterBase {
     const upperArm = new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.36, 0.13), orangeMat);
     upperArm.position.y = -0.3;
     shoulder.add(upperArm);
+    this.addBoltRow(shoulder, { x: side * 0.05, y: -0.1, z: 0.09 }, { x: side * 0.05, y: -0.45, z: 0.09 }, 3);
 
     const elbow = new THREE.Group();
     elbow.position.y = -0.52;
     shoulder.add(elbow);
 
+    this.addBallJoint(elbow, { x: 0, y: 0, z: 0 }, 0.055, 0x1a1a1a);
     this.addElbowGuard(elbow, 0xf1c40f, 0.12);
 
     const lowerArm = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.36, 0.12), yellowMat);
     lowerArm.position.y = -0.22;
     elbow.add(lowerArm);
+    this.addBoltRow(elbow, { x: side * 0.04, y: -0.05, z: 0.08 }, { x: side * 0.04, y: -0.38, z: 0.08 }, 3);
 
     this.addHandFingers(elbow, 0xe67e22, 0x1a1a1a, 1.0);
 
@@ -209,6 +194,7 @@ export class R4Orange extends RobotCharacterBase {
     knee.position.y = -0.44;
     hip.add(knee);
 
+    this.addBallJoint(knee, { x: 0, y: 0, z: 0 }, 0.06, 0x1a1a1a);
     this.addKneeGuard(knee, 0xe67e22, 0xf1c40f, 0.16);
 
     const shin = new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.4, 0.14), yellowMat);
@@ -223,6 +209,7 @@ export class R4Orange extends RobotCharacterBase {
     const shockCoil = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.055, 0.18, 8, 1, true), blackMat);
     shockCoil.position.set(side * 0.05, -0.22, -0.05);
     knee.add(shockCoil);
+    this.addBoltRow(knee, { x: side * 0.05, y: -0.05, z: 0.09 }, { x: side * 0.05, y: -0.38, z: 0.09 }, 3);
 
     const foot = new THREE.Mesh(new THREE.BoxGeometry(0.17, 0.09, 0.24), blackMat);
     foot.position.set(0, -0.48, 0.05);

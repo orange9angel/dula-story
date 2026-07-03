@@ -251,8 +251,22 @@ export class ScrapyardSectorScene extends SceneBase {
     this.scene.add(this.sparks);
   }
 
+  _createSoftParticleTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grad.addColorStop(0, 'rgba(255,255,255,1)');
+    grad.addColorStop(0.5, 'rgba(255,255,255,0.3)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(canvas);
+  }
+
   _createSmoke() {
-    const count = 30;
+    const count = 24;
     const geo = new THREE.BufferGeometry();
     const positions = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -261,28 +275,53 @@ export class ScrapyardSectorScene extends SceneBase {
       positions[i * 3 + 2] = (Math.random() - 0.5) * 25 - 5;
     }
     geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const mat = new THREE.PointsMaterial({ color: 0x555555, size: 0.9, transparent: true, opacity: 0.2, depthWrite: false });
+    const mat = new THREE.PointsMaterial({
+      color: 0x777777,
+      size: 1.6,
+      transparent: true,
+      opacity: 0.15,
+      depthWrite: false,
+      map: this._createSoftParticleTexture(),
+      alphaTest: 0.01,
+    });
     this.smoke = new THREE.Points(geo, mat);
     this.scene.add(this.smoke);
   }
 
   _createLightBeams() {
-    // 几束斜射下来的光柱
+    // 柔和的光线：使用半透明竖直平面，避免圆锥体在某些角度呈方块状
+    const beamCanvas = document.createElement('canvas');
+    beamCanvas.width = 64;
+    beamCanvas.height = 256;
+    const bctx = beamCanvas.getContext('2d');
+    const grad = bctx.createLinearGradient(0, 0, 0, 256);
+    grad.addColorStop(0, 'rgba(255,170,102,0)');
+    grad.addColorStop(0.25, 'rgba(255,170,102,0.18)');
+    grad.addColorStop(0.7, 'rgba(255,170,102,0.08)');
+    grad.addColorStop(1, 'rgba(255,170,102,0)');
+    bctx.fillStyle = grad;
+    bctx.fillRect(0, 0, 64, 256);
+    const beamTex = new THREE.CanvasTexture(beamCanvas);
+    beamTex.wrapS = THREE.RepeatWrapping;
+    beamTex.wrapT = THREE.RepeatWrapping;
+
     const beamMat = new THREE.MeshBasicMaterial({
-      color: 0xffaa66,
+      map: beamTex,
       transparent: true,
-      opacity: 0.08,
+      opacity: 0.35,
       side: THREE.DoubleSide,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
     });
     this.beams = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       const h = 10 + Math.random() * 6;
-      const geo = new THREE.ConeGeometry(1.5 + Math.random(), h, 16, 1, true);
+      const w = 1.2 + Math.random() * 0.8;
+      const geo = new THREE.PlaneGeometry(w, h);
       const beam = new THREE.Mesh(geo, beamMat);
-      beam.position.set((Math.random() - 0.5) * 30, 0, -10 - Math.random() * 25);
+      beam.position.set((Math.random() - 0.5) * 30, h / 2 - 1, -10 - Math.random() * 25);
       beam.rotation.x = Math.PI;
+      beam.rotation.y = (Math.random() - 0.5) * 0.4;
       this.scene.add(beam);
       this.beams.push(beam);
     }

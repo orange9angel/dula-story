@@ -37,13 +37,6 @@ export class NeonHighwayScene extends SceneBase {
     sun.position.set(0, 12, -90);
     this.scene.add(sun);
 
-    const sunStripeMat = new THREE.MeshBasicMaterial({ color: 0xff99cc, transparent: true, opacity: 0.35 });
-    for (let i = 0; i < 5; i++) {
-      const stripe = new THREE.Mesh(new THREE.BoxGeometry(26, 0.25 + i * 0.12, 0.1), sunStripeMat);
-      stripe.position.set(0, 12 - i * 1.1, -89.5);
-      this.scene.add(stripe);
-    }
-
     // 天空穹顶
     const skyCanvas = document.createElement('canvas');
     skyCanvas.width = 512; skyCanvas.height = 512;

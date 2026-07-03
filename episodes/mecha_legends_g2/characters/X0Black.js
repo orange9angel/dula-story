@@ -12,7 +12,7 @@ export class X0Black extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'slow', 'strong'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'PointForward', 'StompFoot',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
       'RobotTransform', 'RobotRevert'
     ]);
   }
@@ -44,16 +44,6 @@ export class X0Black extends RobotCharacterBase {
     chestPlate.position.set(0, 0.18, 0.32);
     chestPlate.rotation.x = -0.15;
     torsoGroup.add(chestPlate);
-
-    // 多层装甲板
-    for (let i = 0; i < 3; i++) {
-      const plate = new THREE.Mesh(
-        new THREE.BoxGeometry(0.7 - i * 0.08, 0.12, 0.06),
-        darkMat
-      );
-      plate.position.set(0, -0.1 - i * 0.14, 0.32);
-      torsoGroup.add(plate);
-    }
 
     this.addChestCore(torsoGroup, { x: 0, y: 0.22, z: 0.34 }, 0xff0033, { x: 0.14, y: 0.1, z: 0.04 });
 
@@ -183,11 +173,13 @@ export class X0Black extends RobotCharacterBase {
     shoulder.add(upperArm);
 
     this.addPanelLine(shoulder, { x: 0, y: -0.42, z: 0.12 }, { x: 0.18, y: 0.36, z: 0.01 });
+    this.addBoltRow(shoulder, { x: side * 0.1, y: -0.18, z: 0.13 }, { x: side * 0.1, y: -0.6, z: 0.13 }, 4);
 
     const elbow = new THREE.Group();
     elbow.position.y = -0.72;
     shoulder.add(elbow);
 
+    this.addBallJoint(elbow, { x: 0, y: 0, z: 0 }, 0.085, 0x0a0a0a);
     this.addElbowGuard(elbow, 0x6c1c9c, 0.16);
 
     const lowerArm = new THREE.Mesh(new THREE.BoxGeometry(0.21, 0.5, 0.21), purpleMat);
@@ -195,6 +187,7 @@ export class X0Black extends RobotCharacterBase {
     elbow.add(lowerArm);
 
     this.addHydraulic(elbow, { x: side * 0.1, y: -0.05, z: 0 }, { x: side * 0.1, y: -0.4, z: 0 }, 0.038, 0x333333);
+    this.addBoltRow(elbow, { x: side * 0.09, y: -0.08, z: 0.12 }, { x: side * 0.09, y: -0.5, z: 0.12 }, 3);
 
     this.addHandFingers(elbow, 0x151515, 0x0a0a0a, 1.25);
 
@@ -215,6 +208,7 @@ export class X0Black extends RobotCharacterBase {
     knee.position.y = -0.68;
     hip.add(knee);
 
+    this.addBallJoint(knee, { x: 0, y: 0, z: 0 }, 0.09, 0x0a0a0a);
     this.addKneeGuard(knee, 0x151515, 0x6c1c9c, 0.26);
 
     // 履带小腿
@@ -233,6 +227,7 @@ export class X0Black extends RobotCharacterBase {
     const trackLink = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.12, 0.38), purpleMat);
     trackLink.position.set(0, -0.62, 0.02);
     knee.add(trackLink);
+    this.addBoltRow(knee, { x: side * 0.12, y: -0.1, z: 0.2 }, { x: side * 0.12, y: -0.55, z: 0.2 }, 3);
 
     const foot = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.15, 0.46), darkMat);
     foot.position.set(0, -0.74, 0.08);

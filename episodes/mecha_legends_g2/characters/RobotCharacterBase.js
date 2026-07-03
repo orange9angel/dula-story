@@ -27,7 +27,8 @@ export class RobotCharacterBase extends CharacterBase {
   }
 
   addOutlines(root = this.mesh, color = 0x111111, threshold = 25) {
-    const lineMat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.55 });
+    // Much subtler outlines so models look like robots, not toy blocks
+    const lineMat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.15 });
     root.traverse((child) => {
       if (!child.isMesh || !child.geometry) return;
       const geomType = child.geometry.type;
@@ -45,11 +46,15 @@ export class RobotCharacterBase extends CharacterBase {
   }
 
   createMetalMaterial(colorHex) {
-    const gradient = this.createToonGradient();
-    return new THREE.MeshToonMaterial({ color: colorHex, gradientMap: gradient });
+    // Realistic brushed metal instead of cartoon toon shading
+    return new THREE.MeshStandardMaterial({
+      color: colorHex,
+      metalness: 0.75,
+      roughness: 0.35,
+    });
   }
 
-  createGlowMaterial(colorHex, opacity = 0.9) {
+  createGlowMaterial(colorHex, opacity = 0.65) {
     return new THREE.MeshBasicMaterial({ color: colorHex, transparent: true, opacity });
   }
 
@@ -162,6 +167,47 @@ export class RobotCharacterBase extends CharacterBase {
     bolt.position.set(position.x, position.y, position.z);
     parent.add(bolt);
     return bolt;
+  }
+
+  /**
+   * 添加机械球关节，用于肘部/膝盖，避免纯方块积木感。
+   */
+  addBallJoint(parent, position, radius = 0.06, color = 0x444444) {
+    const joint = new THREE.Mesh(
+      new THREE.SphereGeometry(radius, 14, 12),
+      new THREE.MeshStandardMaterial({ color, roughness: 0.45, metalness: 0.85 })
+    );
+    joint.position.set(position.x, position.y, position.z);
+    parent.add(joint);
+
+    // joint seam ring
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(radius * 0.75, radius * 0.12, 8, 18),
+      new THREE.MeshStandardMaterial({ color: 0x888888, roughness: 0.4, metalness: 0.9 })
+    );
+    ring.position.set(position.x, position.y, position.z);
+    ring.rotation.x = Math.PI / 2;
+    parent.add(ring);
+    return joint;
+  }
+
+  /**
+   * 在一排位置添加铆钉线。
+   */
+  addBoltRow(parent, startPos, endPos, count = 4, radius = 0.012, color = 0x888888) {
+    const group = new THREE.Group();
+    const dx = (endPos.x - startPos.x) / (count - 1 || 1);
+    const dy = (endPos.y - startPos.y) / (count - 1 || 1);
+    const dz = (endPos.z - startPos.z) / (count - 1 || 1);
+    for (let i = 0; i < count; i++) {
+      this.addBolt(group, {
+        x: startPos.x + dx * i,
+        y: startPos.y + dy * i,
+        z: startPos.z + dz * i,
+      }, radius, color);
+    }
+    parent.add(group);
+    return group;
   }
 
   /**
