@@ -82,11 +82,14 @@ export class ScrapyardSectorScene extends SceneBase {
     // 烟雾
     this._createSmoke();
 
+    // 爆炸烟尘（战斗触发）
+    this._createExplosionSmoke();
+
     // 光束
     this._createLightBeams();
 
-    // 战斗氛围光
-    const fireLight = new THREE.PointLight(0xff5500, 1.5, 25, 1.3);
+    // 战斗氛围光（压低暖色，避免像火球）
+    const fireLight = new THREE.PointLight(0xff5500, 0.9, 22, 1.4);
     fireLight.position.set(-5, 3, -8);
     this.scene.add(fireLight);
     this.fireLight = fireLight;
@@ -94,6 +97,9 @@ export class ScrapyardSectorScene extends SceneBase {
     const blueLight = new THREE.PointLight(0x3388ff, 0.8, 20, 1.4);
     blueLight.position.set(6, 2, -5);
     this.scene.add(blueLight);
+
+    // 战斗爆炸/火炮闪光（与 46–88 s 的音效同步）
+    this._createFightFlashes();
 
     return this.scene;
   }
@@ -288,6 +294,88 @@ export class ScrapyardSectorScene extends SceneBase {
     this.scene.add(this.smoke);
   }
 
+  _createExplosionSmoke() {
+    const count = 80;
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(count * 3);
+    const velocities = [];
+    for (let i = 0; i < count; i++) {
+      positions[i * 3] = 0;
+      positions[i * 3 + 1] = -10;
+      positions[i * 3 + 2] = 0;
+      velocities.push({ x: 0, y: 0, z: 0, life: 0 });
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({
+      color: 0x555555,
+      size: 1.8,
+      transparent: true,
+      opacity: 0.22,
+      depthWrite: false,
+      map: this._createSoftParticleTexture(),
+      alphaTest: 0.01,
+    });
+    this.explosionSmoke = new THREE.Points(geo, mat);
+    this.explosionSmoke.userData.velocities = velocities;
+    this.scene.add(this.explosionSmoke);
+  }
+
+  _spawnExplosionSmoke(x, y, z) {
+    const positions = this.explosionSmoke.geometry.attributes.position.array;
+    const vels = this.explosionSmoke.userData.velocities;
+    for (let i = 0; i < vels.length; i++) {
+      if (vels[i].life <= 0) {
+        positions[i * 3] = x + (Math.random() - 0.5) * 1.5;
+        positions[i * 3 + 1] = y + Math.random() * 0.5;
+        positions[i * 3 + 2] = z + (Math.random() - 0.5) * 1.5;
+        vels[i] = {
+          x: (Math.random() - 0.5) * 2,
+          y: 0.8 + Math.random() * 1.2,
+          z: (Math.random() - 0.5) * 2,
+          life: 1.2 + Math.random() * 0.8,
+        };
+        break;
+      }
+    }
+  }
+
+  _createFightFlashes() {
+    // 与 script.story 中 46–88 s 的 cannon/explosion 事件对齐
+    const flashTimes = [
+      46.0, 46.4, 48.5, 49.0, 51.0, 53.0, 55.0, 57.0,
+      59.0, 61.0, 63.0, 65.0, 67.0, 69.0, 71.0, 73.0,
+      75.0, 77.0, 79.0, 81.0, 83.0, 85.0,
+    ];
+    this.fightFlashes = [];
+    flashTimes.forEach((t) => {
+      const group = new THREE.Group();
+      group.position.set(
+        (Math.random() - 0.5) * 24,
+        0.5 + Math.random() * 2,
+        -6 - Math.random() * 24
+      );
+
+      const color = Math.random() > 0.5 ? 0xff5500 : 0xffaa33;
+      const light = new THREE.PointLight(color, 0, 18, 2.2);
+      group.add(light);
+
+      const core = new THREE.Mesh(
+        new THREE.SphereGeometry(0.2, 12, 12),
+        new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0 })
+      );
+      group.add(core);
+
+      const shockwave = new THREE.Mesh(
+        new THREE.SphereGeometry(0.4, 16, 16),
+        new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false })
+      );
+      group.add(shockwave);
+
+      this.scene.add(group);
+      this.fightFlashes.push({ group, light, core, shockwave, time: t, triggered: false });
+    });
+  }
+
   _createLightBeams() {
     // 柔和的光线：使用半透明竖直平面，避免圆锥体在某些角度呈方块状
     const beamCanvas = document.createElement('canvas');
@@ -331,7 +419,7 @@ export class ScrapyardSectorScene extends SceneBase {
     super.update(time, delta);
 
     if (this.fireLight) {
-      this.fireLight.intensity = 1.2 + Math.sin(time * 8) * 0.4 + Math.random() * 0.2;
+      this.fireLight.intensity = 0.8 + Math.sin(time * 8) * 0.25 + Math.random() * 0.1;
     }
 
     if (this.sparks) {
@@ -361,6 +449,46 @@ export class ScrapyardSectorScene extends SceneBase {
         }
       }
       this.smoke.geometry.attributes.position.needsUpdate = true;
+    }
+
+    // 爆炸烟尘粒子更新
+    if (this.explosionSmoke) {
+      const positions = this.explosionSmoke.geometry.attributes.position.array;
+      const vels = this.explosionSmoke.userData.velocities;
+      for (let i = 0; i < vels.length; i++) {
+        if (vels[i].life > 0) {
+          positions[i * 3] += vels[i].x * delta;
+          positions[i * 3 + 1] += vels[i].y * delta;
+          positions[i * 3 + 2] += vels[i].z * delta;
+          vels[i].life -= delta;
+          if (vels[i].life <= 0) {
+            positions[i * 3 + 1] = -10;
+          }
+        }
+      }
+      this.explosionSmoke.geometry.attributes.position.needsUpdate = true;
+    }
+
+    // 战斗爆炸闪光
+    if (this.fightFlashes) {
+      this.fightFlashes.forEach((flash) => {
+        if (!flash.triggered && time >= flash.time) {
+          flash.triggered = true;
+          flash.light.intensity = 8 + Math.random() * 5;
+          flash.core.material.opacity = 1;
+          flash.core.scale.setScalar(1);
+          flash.shockwave.material.opacity = 0.6;
+          flash.shockwave.scale.setScalar(1);
+          this._spawnExplosionSmoke(flash.group.position.x, flash.group.position.y, flash.group.position.z);
+        }
+        if (flash.triggered) {
+          flash.light.intensity *= Math.max(0, 1 - delta * 10);
+          flash.core.scale.multiplyScalar(Math.max(0.5, 1 - delta * 7));
+          flash.core.material.opacity *= Math.max(0, 1 - delta * 9);
+          flash.shockwave.scale.multiplyScalar(1 + delta * 5);
+          flash.shockwave.material.opacity *= Math.max(0, 1 - delta * 6);
+        }
+      });
     }
   }
 }

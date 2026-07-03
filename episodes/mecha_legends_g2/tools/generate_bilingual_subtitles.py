@@ -23,19 +23,19 @@ DEFAULT_VIDEO = ROOT / "output" / "output.mp4"
 DEFAULT_BURNED = ROOT / "output" / "output_burned.mp4"
 
 EN_TRANSLATIONS = {
-    "A3，你确定没导错？这条路的风景全是生锈的护栏。": "A3, are you sure we're not lost? The scenery here is all rusty guardrails.",
-    "知足吧，上次它把我导进一条河里，我到现在还在排水。": "Be grateful. Last time it led me into a river, and I'm still draining water.",
-    "你们两个安静点。前面...有东西。不像废铁。": "You two, quiet. Up ahead... something. Doesn't feel like scrap.",
-    "终于？我的炮管都快长蜘蛛网了。": "Finally? My cannon's growing cobwebs.",
-    "敌机接近！十一点方向！散开！": "Enemy incoming! Eleven o'clock! Scatter!",
+    "A3，你这导航是喝机油喝醉了吧？这路除了一堆破护栏还有啥？": "A3, is your nav drunk on motor oil? What's on this road but busted guardrails?",
+    "知足吧。上次它把我导河里了，我现在排气管还冒泡呢。": "Be grateful. Last time it led me into a river; my exhaust still bubbles.",
+    "你们俩能不能闭嘴？前面...不对劲。不像废铁。": "Can you two shut it? Up ahead... something's off. Doesn't feel like scrap.",
+    "终于来了？我的炮管都快长蜘蛛网了。": "Finally? My cannon's growing cobwebs.",
+    "敌机！十一点方向！R4，轰它们！": "Enemy! Eleven o'clock! R4, blow 'em up!",
     "别缠斗，冲过去！": "Don't get tangled, punch through!",
-    "钢铁先锋...欢迎来到我的垃圾场。你们不该停下来的。": "Stellar Vanguard... welcome to my junkyard. You shouldn't have stopped.",
-    "T2，左翼。A3，压制。别让它把我们分开。": "T2, left flank. A3, suppress. Don't let it split us.",
-    "早就等不及了！": "Been waiting for this!",
-    "来啊，看看谁能把谁拆成零件！": "Come on, let's see who tears who into spare parts!",
-    "有点意思...但这是我的地盘。规矩由我来定。": "Interesting... but this is my turf. My rules.",
+    "欢迎来到废铁坟场，钢铁先锋。你们不该踩进来的。": "Welcome to the scrap graveyard, Stellar Vanguard. You shouldn't have stepped in.",
+    "少废话。T2左翼，A3压制，R4开路。": "Less talk. T2, left. A3, pin it. R4, clear a path.",
+    "早等不及了！来啊！": "Been waiting! Bring it!",
+    "哈，我最喜欢拆垃圾了！": "Ha, I love taking out trash!",
+    "有点意思...但这是我的垃圾场。规矩，我说了算。": "Interesting... but this is my junkyard. My rules.",
     "那就按我们的规矩。碾过去。": "Then we play by our rules. Roll over them.",
-    "V1，信号在地下。快去，这里我们顶着。": "V1, signal's underground. Go, we'll hold them here.",
+    "V1，信号在地下！快走，这里我们顶着！": "V1, signal's underground! Go, we'll hold them here!",
     "太慢了，V1。它在我手里了。": "Too slow, V1. It's in my hands now.",
     "X0...你曾是钢铁先锋。就为了一块发烫的金属？": "X0... you were Stellar Vanguard. For a piece of hot metal?",
     "金属？哈...你什么都不知道。我失去的，你永远不会懂。": "Metal? Hah... you know nothing. What I lost, you'll never understand.",
@@ -89,7 +89,7 @@ def build_ass_style() -> str:
     """Return ASS style override string for 1080p."""
     return (
         "FontName=Arial,"
-        "FontSize=24,"
+        "FontSize=18,"
         "PrimaryColour=&H00FFFFFF,"
         "OutlineColour=&H00000000,"
         "Outline=2,"
@@ -97,7 +97,7 @@ def build_ass_style() -> str:
         "BackColour=&H00000000,"
         "BorderStyle=1,"
         "Alignment=2,"
-        "MarginV=80"
+        "MarginV=55"
     )
 
 

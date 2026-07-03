@@ -159,11 +159,14 @@ export class NeonHighwayScene extends SceneBase {
       }
     }
 
-    // 战斗区域道路破坏（弹坑、碎片、余火）— 加入滚动对象，随车速后退
-    this.roadDamage = this._createRoadDamage();
-    this.roadDamage.position.set(0, 0, -35);
-    this.scene.add(this.roadDamage);
-    this.buildings.push({ mesh: this.roadDamage, speed: 9 });
+    // 战斗区域道路破坏 — 多段循环滚动，随车速后退
+    this.roadDamageSegments = [];
+    for (let i = 0; i < 4; i++) {
+      const segment = this._createRoadDamage();
+      segment.position.set(0, 0, -35 - i * 42);
+      this.scene.add(segment);
+      this.roadDamageSegments.push({ mesh: segment, speed: 9 });
+    }
 
     // 敌方无人机小队（ highway 枪战视觉对象）
     this.enemyDrones = [];
@@ -184,28 +187,52 @@ export class NeonHighwayScene extends SceneBase {
     // 枪战枪口闪光/爆炸光效（在 36-40s 左右触发）
     this.muzzleFlashes = [];
     for (let i = 0; i < 6; i++) {
-      const flash = new THREE.PointLight(0xffaa00, 0, 12, 2);
-      flash.position.set(0, 0, 0);
-      this.scene.add(flash);
-      this.muzzleFlashes.push({ light: flash, nextFlash: 36 + i * 0.6 + Math.random() * 0.3 });
+      const group = new THREE.Group();
+      const flash = new THREE.PointLight(0xffaa00, 0, 14, 2.2);
+      group.add(flash);
+
+      const flashCore = new THREE.Mesh(
+        new THREE.SphereGeometry(0.06, 8, 8),
+        new THREE.MeshBasicMaterial({ color: 0xffcc66, transparent: true, opacity: 0.9 })
+      );
+      group.add(flashCore);
+
+      const flashCone = new THREE.Mesh(
+        new THREE.ConeGeometry(0.04, 0.25, 8, 1, true),
+        new THREE.MeshBasicMaterial({ color: 0xffaa00, transparent: true, opacity: 0.7, side: THREE.DoubleSide })
+      );
+      flashCone.rotation.x = -Math.PI / 2;
+      flashCone.position.z = 0.12;
+      group.add(flashCone);
+
+      this.scene.add(group);
+      this.muzzleFlashes.push({ group, light: flash, core: flashCore, cone: flashCone, nextFlash: 36 + i * 0.6 + Math.random() * 0.3 });
     }
 
-    // 命中爆炸火花（与 impact_metal 音效同步）
+    // 命中爆炸火花（与 impact 音效同步）
     this.hitSparks = [];
     const hitTimes = [36.35, 37.35, 38.35, 39.35];
     hitTimes.forEach((t) => {
-      const sparkLight = new THREE.PointLight(0xff5500, 0, 10, 1.8);
-      sparkLight.position.set((Math.random() - 0.5) * 8, 0.5 + Math.random(), -10 - Math.random() * 15);
-      this.scene.add(sparkLight);
+      const group = new THREE.Group();
+      group.position.set((Math.random() - 0.5) * 8, 0.5 + Math.random(), -10 - Math.random() * 15);
+
+      const sparkLight = new THREE.PointLight(0xff5500, 0, 14, 2.2);
+      group.add(sparkLight);
 
       const sparkCore = new THREE.Mesh(
-        new THREE.SphereGeometry(0.12, 10, 10),
+        new THREE.SphereGeometry(0.14, 10, 10),
         new THREE.MeshBasicMaterial({ color: 0xffaa00 })
       );
-      sparkCore.position.copy(sparkLight.position);
-      this.scene.add(sparkCore);
+      group.add(sparkCore);
 
-      this.hitSparks.push({ light: sparkLight, core: sparkCore, time: t, triggered: false });
+      const shockwave = new THREE.Mesh(
+        new THREE.SphereGeometry(0.3, 16, 16),
+        new THREE.MeshBasicMaterial({ color: 0xffaa00, transparent: true, opacity: 0.0, blending: THREE.AdditiveBlending, depthWrite: false })
+      );
+      group.add(shockwave);
+
+      this.scene.add(group);
+      this.hitSparks.push({ group, light: sparkLight, core: sparkCore, shockwave, time: t, triggered: false });
     });
 
     // 环境填充光
@@ -217,6 +244,19 @@ export class NeonHighwayScene extends SceneBase {
     this.scene.add(fillLight2);
 
     return this.scene;
+  }
+
+  _createSoftParticleTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64; canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grad.addColorStop(0, 'rgba(255,255,255,0.8)');
+    grad.addColorStop(0.5, 'rgba(255,255,255,0.2)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(canvas);
   }
 
   _createRoadDamage() {
@@ -280,20 +320,31 @@ export class NeonHighwayScene extends SceneBase {
       group.add(debris);
     }
 
-    // 余火与爆炸光点
-    const fireColors = [0xff4400, 0xff8800, 0xff2200];
-    for (let i = 0; i < 6; i++) {
-      const fireLight = new THREE.PointLight(fireColors[i % 3], 1.2 + Math.random() * 1.5, 8 + Math.random() * 6, 2);
-      fireLight.position.set((Math.random() - 0.5) * 8, 0.3 + Math.random() * 0.6, (Math.random() - 0.5) * 20);
-      group.add(fireLight);
-
-      const ember = new THREE.Mesh(
-        new THREE.SphereGeometry(0.08 + Math.random() * 0.1, 8, 8),
-        new THREE.MeshBasicMaterial({ color: fireColors[i % 3] })
-      );
-      ember.position.copy(fireLight.position);
-      group.add(ember);
+    // 灰暗烟尘（替代假火球）
+    const smokeCount = 24;
+    const smokeGeo = new THREE.BufferGeometry();
+    const smokePos = new Float32Array(smokeCount * 3);
+    const smokeVel = [];
+    for (let i = 0; i < smokeCount; i++) {
+      smokePos[i * 3] = (Math.random() - 0.5) * 9;
+      smokePos[i * 3 + 1] = 0.1 + Math.random() * 0.6;
+      smokePos[i * 3 + 2] = (Math.random() - 0.5) * 22;
+      smokeVel.push({ x: (Math.random() - 0.5) * 0.3, y: 0.2 + Math.random() * 0.4, z: (Math.random() - 0.5) * 0.2 });
     }
+    smokeGeo.setAttribute('position', new THREE.BufferAttribute(smokePos, 3));
+    const smokeMat = new THREE.PointsMaterial({
+      color: 0x555566,
+      size: 0.9,
+      transparent: true,
+      opacity: 0.18,
+      depthWrite: false,
+      map: this._createSoftParticleTexture(),
+      alphaTest: 0.01,
+    });
+    const smoke = new THREE.Points(smokeGeo, smokeMat);
+    group.add(smoke);
+    group.userData.smoke = smoke;
+    group.userData.smokeVel = smokeVel;
 
     // 一截炸毁的护栏
     const brokenRailMat = new THREE.MeshStandardMaterial({ color: 0x333333, roughness: 0.5, metalness: 0.7 });
@@ -316,14 +367,22 @@ export class NeonHighwayScene extends SceneBase {
     const bodyMat = new THREE.MeshStandardMaterial({ color: 0x5a2a2a, roughness: 0.5, metalness: 0.6 });
     const accentMat = new THREE.MeshStandardMaterial({ color: 0x882222, roughness: 0.4, metalness: 0.5 });
     const darkMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1a, roughness: 0.7, metalness: 0.4 });
+    const gunMat = new THREE.MeshStandardMaterial({ color: 0x333333, roughness: 0.4, metalness: 0.8 });
 
-    const body = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.22, 0.35), bodyMat);
+    const body = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.22, 0.42), bodyMat);
     group.add(body);
+
+    // 顶部散热脊
+    for (let i = 0; i < 3; i++) {
+      const fin = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.06, 0.05), darkMat);
+      fin.position.set(0, 0.16, -0.1 + i * 0.12);
+      group.add(fin);
+    }
 
     // 红色监视器/独眼
     const eyeMat = new THREE.MeshBasicMaterial({ color: 0xff2200 });
     const eye = new THREE.Mesh(new THREE.SphereGeometry(0.08, 12, 12), eyeMat);
-    eye.position.set(0, 0.02, 0.2);
+    eye.position.set(0, 0.02, 0.24);
     group.add(eye);
 
     const eyeLight = new THREE.PointLight(0xff2200, 1.0, 3.5, 1.5);
@@ -332,32 +391,41 @@ export class NeonHighwayScene extends SceneBase {
 
     // 机翼
     for (const side of [-1, 1]) {
-      const wing = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.04, 0.18), accentMat);
-      wing.position.set(side * 0.5, 0, -0.05);
+      const wing = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.04, 0.22), accentMat);
+      wing.position.set(side * 0.55, 0, -0.05);
       wing.rotation.z = side * 0.15;
       group.add(wing);
 
-      const wingTip = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.06, 0.22), darkMat);
-      wingTip.position.set(side * 0.9, 0, -0.05);
+      const wingTip = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.07, 0.26), darkMat);
+      wingTip.position.set(side * 0.95, 0, -0.05);
       group.add(wingTip);
+
+      // 侧挂武器舱
+      const pod = new THREE.Mesh(new THREE.BoxGeometry(0.14, 0.14, 0.35), gunMat);
+      pod.position.set(side * 0.4, -0.12, 0.05);
+      group.add(pod);
 
       // 推进器光
       const thruster = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.03, 0.12, 8), new THREE.MeshBasicMaterial({ color: 0xff6600 }));
       thruster.rotation.x = Math.PI / 2;
-      thruster.position.set(side * 0.35, 0, -0.25);
+      thruster.position.set(side * 0.35, 0, -0.28);
       group.add(thruster);
 
       const thrusterLight = new THREE.PointLight(0xff6600, 0.8, 2.0, 1.2);
-      thrusterLight.position.set(side * 0.35, 0, -0.32);
+      thrusterLight.position.set(side * 0.35, 0, -0.35);
       group.add(thrusterLight);
     }
 
-    // 下方机炮管
-    const gunMat = new THREE.MeshStandardMaterial({ color: 0x333333, roughness: 0.4, metalness: 0.8 });
-    const gun = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.35, 8), gunMat);
+    // 下方主炮管
+    const gun = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.45, 8), gunMat);
     gun.rotation.x = Math.PI / 2;
-    gun.position.set(0, -0.06, 0.18);
+    gun.position.set(0, -0.08, 0.22);
     group.add(gun);
+
+    // 天线
+    const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.25, 6), darkMat);
+    antenna.position.set(0.18, 0.2, -0.12);
+    group.add(antenna);
 
     return group;
   }
@@ -472,6 +540,33 @@ export class NeonHighwayScene extends SceneBase {
       }
     });
 
+    // 多段路面破坏随车滚动
+    if (this.roadDamageSegments) {
+      this.roadDamageSegments.forEach((seg) => {
+        seg.mesh.position.z += seg.speed * delta;
+        if (seg.mesh.position.z > 20) {
+          seg.mesh.position.z = -150 - Math.random() * 30;
+        }
+        // 烟尘缓慢上升并循环
+        const smoke = seg.mesh.userData.smoke;
+        const vels = seg.mesh.userData.smokeVel;
+        if (smoke && vels) {
+          const positions = smoke.geometry.attributes.position.array;
+          for (let i = 0; i < vels.length; i++) {
+            positions[i * 3] += vels[i].x * delta;
+            positions[i * 3 + 1] += vels[i].y * delta;
+            positions[i * 3 + 2] += vels[i].z * delta;
+            if (positions[i * 3 + 1] > 3) {
+              positions[i * 3] = (Math.random() - 0.5) * 9;
+              positions[i * 3 + 1] = 0.1 + Math.random() * 0.4;
+              positions[i * 3 + 2] = (Math.random() - 0.5) * 22;
+            }
+          }
+          smoke.geometry.attributes.position.needsUpdate = true;
+        }
+      });
+    }
+
     // 敌方无人机悬停上下摆动
     if (this.enemyDrones) {
       this.enemyDrones.forEach((drone, idx) => {
@@ -484,23 +579,35 @@ export class NeonHighwayScene extends SceneBase {
     if (this.muzzleFlashes && time >= 35.5 && time <= 41) {
       this.muzzleFlashes.forEach((flash) => {
         if (time >= flash.nextFlash) {
-          flash.light.intensity = 2.5 + Math.random() * 2.5;
-          flash.nextFlash = time + 0.08 + Math.random() * 0.18;
+          flash.light.intensity = 4 + Math.random() * 3;
+          flash.nextFlash = time + 0.08 + Math.random() * 0.16;
           // 绑定到随机无人机/道路位置
           const source = this.enemyDrones?.[Math.floor(Math.random() * this.enemyDrones.length)]?.mesh;
           if (source && source.position.z > -30 && source.position.z < 30) {
-            flash.light.position.copy(source.position);
-            flash.light.position.y -= 0.8;
-            flash.light.position.z += 0.5;
+            flash.group.position.copy(source.position);
+            flash.group.position.y -= 0.8;
+            flash.group.position.z += 0.6;
           } else {
-            flash.light.position.set((Math.random() - 0.5) * 10, 1.2, -10 - Math.random() * 20);
+            flash.group.position.set((Math.random() - 0.5) * 10, 1.2, -10 - Math.random() * 20);
           }
+          flash.core.scale.setScalar(1);
+          flash.core.material.opacity = 1;
+          flash.cone.scale.setScalar(1);
+          flash.cone.material.opacity = 0.9;
         } else {
-          flash.light.intensity *= Math.max(0, 1 - delta * 15);
+          flash.light.intensity *= Math.max(0, 1 - delta * 18);
+          flash.core.scale.multiplyScalar(Math.max(0.5, 1 - delta * 10));
+          flash.core.material.opacity *= Math.max(0, 1 - delta * 12);
+          flash.cone.scale.multiplyScalar(Math.max(0.5, 1 - delta * 10));
+          flash.cone.material.opacity *= Math.max(0, 1 - delta * 12);
         }
       });
     } else if (this.muzzleFlashes) {
-      this.muzzleFlashes.forEach((flash) => { flash.light.intensity = 0; });
+      this.muzzleFlashes.forEach((flash) => {
+        flash.light.intensity = 0;
+        flash.core.material.opacity = 0;
+        flash.cone.material.opacity = 0;
+      });
     }
 
     // 命中火花：在指定时间点爆闪并渐隐
@@ -508,15 +615,20 @@ export class NeonHighwayScene extends SceneBase {
       this.hitSparks.forEach((spark) => {
         if (!spark.triggered && time >= spark.time) {
           spark.triggered = true;
-          spark.light.intensity = 4 + Math.random() * 3;
-          spark.core.scale.setScalar(1.5 + Math.random());
+          spark.light.intensity = 8 + Math.random() * 4;
+          spark.core.scale.setScalar(1.8 + Math.random());
           spark.core.material.color.setHex(0xffaa00);
+          spark.shockwave.scale.setScalar(1);
+          spark.shockwave.material.opacity = 0.55;
         }
         if (spark.triggered) {
-          spark.light.intensity *= Math.max(0, 1 - delta * 8);
-          spark.core.scale.multiplyScalar(Math.max(0.5, 1 - delta * 6));
-          const gray = Math.max(0.2, spark.light.intensity / 7);
+          spark.light.intensity *= Math.max(0, 1 - delta * 10);
+          spark.core.scale.multiplyScalar(Math.max(0.5, 1 - delta * 7));
+          const gray = Math.max(0.2, spark.light.intensity / 12);
           spark.core.material.color.setRGB(1, gray * 0.6, 0);
+          // 冲击波扩散
+          spark.shockwave.scale.multiplyScalar(1 + delta * 5);
+          spark.shockwave.material.opacity *= Math.max(0, 1 - delta * 6);
         }
       });
     }
