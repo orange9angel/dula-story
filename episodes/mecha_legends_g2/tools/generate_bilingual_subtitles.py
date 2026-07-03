@@ -13,6 +13,7 @@ SRT into a video using the `subtitles` filter with white text and a black
 outline sized for 1080p.
 """
 import json
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -84,37 +85,88 @@ def generate_srt(manifest_path: Path, output_path: Path) -> None:
     print(f"Wrote {len(blocks)} subtitle entries to {output_path}")
 
 
+def build_ass_style() -> str:
+    """Return ASS style override string for 1080p."""
+    return (
+        "FontName=Arial,"
+        "FontSize=24,"
+        "PrimaryColour=&H00FFFFFF,"
+        "OutlineColour=&H00000000,"
+        "Outline=2,"
+        "Shadow=1,"
+        "BackColour=&H00000000,"
+        "BorderStyle=1,"
+        "Alignment=2,"
+        "MarginV=80"
+    )
+
+
+def srt_to_ass(srt_path: Path, ass_path: Path) -> None:
+    """Convert SRT to ASS using ffmpeg so the ass filter can consume it reliably."""
+    cmd = [
+        "ffmpeg", "-y", "-i", str(srt_path),
+        str(ass_path),
+    ]
+    subprocess.run(cmd, check=True, capture_output=True)
+
+
 def burn_in_command(
     video_path: Path = DEFAULT_VIDEO,
     output_path: Path = DEFAULT_BURNED,
     subtitle_path: Path = SRT_PATH,
 ) -> str:
     """Return an ffmpeg command that burns the SRT into the video."""
-    style = (
-        "FontName=Arial,"
-        "FontSize=36,"
-        "PrimaryColour=&H00FFFFFF,"
-        "OutlineColour=&H00000000,"
-        "Outline=2,"
-        "Shadow=0,"
-        "BackColour=&H00000000,"
-        "Alignment=2,"
-        "MarginV=60"
-    )
+    ass_path = subtitle_path.with_suffix(".ass")
+    style = build_ass_style()
     vf = f"subtitles='{subtitle_path.as_posix()}':force_style='{style}'"
     return (
         f'ffmpeg -y -i "{video_path.as_posix()}" '
         f'-vf "{vf}" '
-        f'-c:a copy "{output_path.as_posix()}"'
+        f'-c:a copy "{output_path.as_posix()}"\n'
+        f'# If the above fails on Windows due to path parsing, run instead:\n'
+        f'# ffmpeg -y -i "{video_path.as_posix()}" -vf "ass={ass_path.as_posix()}" -c:a copy "{output_path.as_posix()}"'
     )
+
+
+def burn_subtitles(
+    video_path: Path = DEFAULT_VIDEO,
+    output_path: Path = DEFAULT_BURNED,
+    subtitle_path: Path = SRT_PATH,
+) -> Path:
+    """Burn subtitles into the video using ffmpeg and return the output path.
+
+    ffmpeg's ass/subtitles filter on Windows has trouble with absolute paths
+    containing drive letters/colons. We copy the ASS file to a local temp name
+    and reference it with a relative path.
+    """
+    local_ass = Path("subtitles_tmp.ass")
+    srt_to_ass(subtitle_path, local_ass)
+    try:
+        cmd = [
+            "ffmpeg", "-y", "-i", str(video_path),
+            "-vf", "ass=subtitles_tmp.ass",
+            "-c:a", "copy",
+            str(output_path),
+        ]
+        print(f"Burning subtitles into: {output_path}")
+        subprocess.run(cmd, check=True)
+        print(f"Subtitles burned: {output_path}")
+    finally:
+        if local_ass.exists():
+            local_ass.unlink()
+    return output_path
 
 
 def main() -> None:
     generate_srt(MANIFEST_PATH, SRT_PATH)
 
-    print("\nBurn-in helper command:")
-    print(burn_in_command())
-    print("\nRun the command manually to hardcode the subtitles into the video.")
+    # Also auto-burn subtitles into the main episode if it exists.
+    if DEFAULT_VIDEO.exists():
+        burn_subtitles(DEFAULT_VIDEO, DEFAULT_BURNED, SRT_PATH)
+    else:
+        print("\nBurn-in helper command:")
+        print(burn_in_command())
+        print("\nRun the command manually to hardcode the subtitles into the video.")
 
 
 if __name__ == "__main__":

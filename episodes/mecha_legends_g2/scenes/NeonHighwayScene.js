@@ -14,38 +14,50 @@ export class NeonHighwayScene extends SceneBase {
   build() {
     super.build();
 
-    // 天空渐变背景
-    this.scene.background = new THREE.Color(0x120622);
-    this.scene.fog = new THREE.FogExp2(0x120622, 0.018);
+    // 深夜城市场景：移除巨大落日，改为冷色月光与远处城市辉光
+    this.scene.background = new THREE.Color(0x050510);
+    this.scene.fog = new THREE.FogExp2(0x050510, 0.02);
 
     this.lights.forEach((l) => {
       if (l.isAmbientLight) {
-        l.intensity = 0.5;
-        l.color.setHex(0x553366);
+        l.intensity = 0.35;
+        l.color.setHex(0x2a2a40);
       }
       if (l.isDirectionalLight) {
-        l.intensity = 1.0;
-        l.color.setHex(0xff99cc);
-        l.position.set(-20, 30, 20);
+        // 侧后方冷白月光，模拟城市深夜高架照明
+        l.intensity = 0.6;
+        l.color.setHex(0xaaccff);
+        l.position.set(-35, 25, -40);
       }
     });
 
-    // 巨大落日/电子太阳
-    const sunGeo = new THREE.CircleGeometry(14, 64);
-    const sunMat = new THREE.MeshBasicMaterial({ color: 0xff3388 });
-    const sun = new THREE.Mesh(sunGeo, sunMat);
-    sun.position.set(0, 12, -90);
-    this.scene.add(sun);
+    // 远处城市天际线辉光（极弱，避免像太阳）
+    const horizonGlowCanvas = document.createElement('canvas');
+    horizonGlowCanvas.width = 256; horizonGlowCanvas.height = 64;
+    const hgCtx = horizonGlowCanvas.getContext('2d');
+    const hgGrad = hgCtx.createLinearGradient(0, 32, 0, 64);
+    hgGrad.addColorStop(0, 'rgba(0,0,0,0)');
+    hgGrad.addColorStop(0.5, 'rgba(80,60,120,0.25)');
+    hgGrad.addColorStop(1, 'rgba(160,80,160,0.45)');
+    hgCtx.fillStyle = hgGrad;
+    hgCtx.fillRect(0, 0, 256, 64);
+    const horizonTex = new THREE.CanvasTexture(horizonGlowCanvas);
+    const horizonMat = new THREE.MeshBasicMaterial({
+      map: horizonTex, transparent: true, opacity: 0.6, depthWrite: false, side: THREE.DoubleSide
+    });
+    const horizonGlow = new THREE.Mesh(new THREE.PlaneGeometry(120, 20), horizonMat);
+    horizonGlow.position.set(0, 4, -110);
+    this.scene.add(horizonGlow);
 
-    // 天空穹顶
+    // 天空穹顶 — 深夜城市色调，去除暖粉日落
     const skyCanvas = document.createElement('canvas');
     skyCanvas.width = 512; skyCanvas.height = 512;
     const sctx = skyCanvas.getContext('2d');
     const skyGrad = sctx.createLinearGradient(0, 0, 0, 512);
-    skyGrad.addColorStop(0, '#0a0314');
-    skyGrad.addColorStop(0.4, '#240f42');
-    skyGrad.addColorStop(0.7, '#5a1a5a');
-    skyGrad.addColorStop(1, '#ff6b9d');
+    skyGrad.addColorStop(0, '#020208');
+    skyGrad.addColorStop(0.35, '#0a0a1e');
+    skyGrad.addColorStop(0.65, '#14102c');
+    skyGrad.addColorStop(1, '#1a1238');
     sctx.fillStyle = skyGrad;
     sctx.fillRect(0, 0, 512, 512);
     const skyTex = new THREE.CanvasTexture(skyCanvas);
@@ -147,15 +159,110 @@ export class NeonHighwayScene extends SceneBase {
       }
     }
 
+    // 战斗区域道路破坏（弹坑、碎片、余火）
+    this.roadDamage = this._createRoadDamage();
+    this.roadDamage.position.set(0, 0, -25);
+    this.scene.add(this.roadDamage);
+
     // 环境填充光
-    const fillLight = new THREE.PointLight(0xff00ff, 1.0, 45, 1.5);
+    const fillLight = new THREE.PointLight(0xff00ff, 0.8, 40, 1.6);
     fillLight.position.set(-10, 8, 10);
     this.scene.add(fillLight);
-    const fillLight2 = new THREE.PointLight(0x00ffff, 0.9, 45, 1.5);
+    const fillLight2 = new THREE.PointLight(0x00ffff, 0.7, 40, 1.6);
     fillLight2.position.set(10, 8, 10);
     this.scene.add(fillLight2);
 
     return this.scene;
+  }
+
+  _createRoadDamage() {
+    const group = new THREE.Group();
+
+    // 弹坑：深色凹陷圆盘 + 边缘碎裂
+    const craterMat = new THREE.MeshStandardMaterial({
+      color: 0x1a0a0a, roughness: 0.9, metalness: 0.1
+    });
+    const craterRimMat = new THREE.MeshStandardMaterial({
+      color: 0x332222, roughness: 0.8, metalness: 0.2
+    });
+
+    for (let i = 0; i < 5; i++) {
+      const radius = 0.6 + Math.random() * 1.2;
+      const crater = new THREE.Mesh(new THREE.CircleGeometry(radius, 24), craterMat);
+      crater.rotation.x = -Math.PI / 2;
+      crater.position.set((Math.random() - 0.5) * 10, 0.02, (Math.random() - 0.5) * 25);
+      group.add(crater);
+
+      // 破碎边缘
+      for (let j = 0; j < 8; j++) {
+        const angle = (j / 8) * Math.PI * 2 + Math.random() * 0.4;
+        const rim = new THREE.Mesh(
+          new THREE.BoxGeometry(0.15 + Math.random() * 0.25, 0.05 + Math.random() * 0.1, 0.15 + Math.random() * 0.25),
+          craterRimMat
+        );
+        rim.position.set(
+          crater.position.x + Math.cos(angle) * (radius + 0.1),
+          0.04,
+          crater.position.z + Math.sin(angle) * (radius + 0.1)
+        );
+        rim.rotation.y = Math.random() * Math.PI;
+        group.add(rim);
+      }
+    }
+
+    // 路面裂缝
+    const crackMat = new THREE.MeshBasicMaterial({ color: 0x050505, transparent: true, opacity: 0.85 });
+    for (let i = 0; i < 12; i++) {
+      const crack = new THREE.Mesh(new THREE.PlaneGeometry(0.06, 2 + Math.random() * 4), crackMat);
+      crack.rotation.x = -Math.PI / 2;
+      crack.rotation.z = Math.random() * Math.PI;
+      crack.position.set((Math.random() - 0.5) * 11, 0.025, (Math.random() - 0.5) * 28);
+      group.add(crack);
+    }
+
+    // 金属/混凝土碎片
+    const debrisMat = new THREE.MeshStandardMaterial({
+      color: 0x555566, roughness: 0.6, metalness: 0.5
+    });
+    for (let i = 0; i < 40; i++) {
+      const size = 0.08 + Math.random() * 0.25;
+      const debris = new THREE.Mesh(new THREE.BoxGeometry(size, size * 0.6, size), debrisMat);
+      debris.position.set(
+        (Math.random() - 0.5) * 11,
+        size * 0.3,
+        (Math.random() - 0.5) * 28
+      );
+      debris.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+      group.add(debris);
+    }
+
+    // 余火与爆炸光点
+    const fireColors = [0xff4400, 0xff8800, 0xff2200];
+    for (let i = 0; i < 6; i++) {
+      const fireLight = new THREE.PointLight(fireColors[i % 3], 1.2 + Math.random() * 1.5, 8 + Math.random() * 6, 2);
+      fireLight.position.set((Math.random() - 0.5) * 8, 0.3 + Math.random() * 0.6, (Math.random() - 0.5) * 20);
+      group.add(fireLight);
+
+      const ember = new THREE.Mesh(
+        new THREE.SphereGeometry(0.08 + Math.random() * 0.1, 8, 8),
+        new THREE.MeshBasicMaterial({ color: fireColors[i % 3] })
+      );
+      ember.position.copy(fireLight.position);
+      group.add(ember);
+    }
+
+    // 一截炸毁的护栏
+    const brokenRailMat = new THREE.MeshStandardMaterial({ color: 0x333333, roughness: 0.5, metalness: 0.7 });
+    for (const side of [-1, 1]) {
+      for (let i = 0; i < 4; i++) {
+        const rail = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.06, 1.5 + Math.random()), brokenRailMat);
+        rail.position.set(side * 6.2, 0.2 + Math.random() * 0.4, -10 + i * 4 + Math.random());
+        rail.rotation.set(Math.random() * 0.5, Math.random() * 0.5, Math.random() * 0.5);
+        group.add(rail);
+      }
+    }
+
+    return group;
   }
 
   _createTieredTower(color) {

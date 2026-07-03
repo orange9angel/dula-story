@@ -1,56 +1,272 @@
 {
   "default": {
     "voice": "zh-CN-YunxiNeural",
-    "rate": "-5%",
-    "pitch": "-12Hz",
-    "volume": "+8%",
-    "effect": {
-      "af": "highpass=f=80,lowpass=f=5000,dynaudnorm"
+    "emotions": {
+      "default": {
+        "rate": "-5%",
+        "pitch": "-5Hz",
+        "volume": "+8%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=5000,dynaudnorm"
+        }
+      },
+      "calm": {
+        "rate": "-8%",
+        "pitch": "-8Hz",
+        "volume": "+5%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=5000,dynaudnorm"
+        }
+      },
+      "angry": {
+        "rate": "+5%",
+        "pitch": "+5Hz",
+        "volume": "+15%",
+        "effect": {
+          "af": "highpass=f=100,lowpass=f=5000,bass=g=8:f=120,dynaudnorm"
+        }
+      },
+      "excited": {
+        "rate": "+8%",
+        "pitch": "+10Hz",
+        "volume": "+18%",
+        "effect": {
+          "af": "highpass=f=90,lowpass=f=5500,bass=g=6:f=100,treble=g=2,dynaudnorm"
+        }
+      },
+      "worried": {
+        "rate": "+3%",
+        "pitch": "+8Hz",
+        "volume": "+6%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=5200,dynaudnorm"
+        }
+      }
     }
   },
   "V1_RED": {
     "voice": "zh-CN-YunxiNeural",
-    "rate": "-8%",
-    "pitch": "-18Hz",
-    "volume": "+18%",
-    "effect": {
-      "af": "highpass=f=100,lowpass=f=5000,bass=g=5:f=100,aecho=0.5:0.3:80|120:0.15|0.1,dynaudnorm"
+    "emotions": {
+      "default": {
+        "rate": "-5%",
+        "pitch": "-10Hz",
+        "volume": "+15%",
+        "effect": {
+          "af": "highpass=f=90,lowpass=f=4800,bass=g=4:f=120,aecho=0.45:0.3:60:0.08,dynaudnorm"
+        }
+      },
+      "calm": {
+        "rate": "-8%",
+        "pitch": "-12Hz",
+        "volume": "+12%",
+        "effect": {
+          "af": "highpass=f=90,lowpass=f=4800,bass=g=3:f=120,aecho=0.4:0.25:70:0.06,dynaudnorm"
+        }
+      },
+      "angry": {
+        "rate": "+3%",
+        "pitch": "-5Hz",
+        "volume": "+22%",
+        "effect": {
+          "af": "highpass=f=100,lowpass=f=5000,bass=g=10:f=130,aecho=0.5:0.35:55:0.12,dynaudnorm"
+        }
+      },
+      "excited": {
+        "rate": "+6%",
+        "pitch": "-2Hz",
+        "volume": "+20%",
+        "effect": {
+          "af": "highpass=f=100,lowpass=f=5200,bass=g=7:f=120,aecho=0.45:0.3:65:0.1,dynaudnorm"
+        }
+      },
+      "worried": {
+        "rate": "+0%",
+        "pitch": "-3Hz",
+        "volume": "+12%",
+        "effect": {
+          "af": "highpass=f=90,lowpass=f=5000,bass=g=4:f=120,aecho=0.4:0.3:75:0.07,dynaudnorm"
+        }
+      }
     }
   },
   "T2_BLUE": {
     "voice": "zh-CN-YunjianNeural",
-    "rate": "-16%",
-    "pitch": "-40Hz",
-    "volume": "+25%",
-    "effect": {
-      "af": "highpass=f=60,lowpass=f=3200,bass=g=18:f=100,aecho=0.6:0.4:50|90:0.35|0.3,dynaudnorm"
+    "emotions": {
+      "default": {
+        "rate": "-8%",
+        "pitch": "-25Hz",
+        "volume": "+22%",
+        "effect": {
+          "af": "highpass=f=70,lowpass=f=3200,bass=g=14:f=110,aecho=0.55:0.4:45:0.18,dynaudnorm"
+        }
+      },
+      "calm": {
+        "rate": "-12%",
+        "pitch": "-30Hz",
+        "volume": "+18%",
+        "effect": {
+          "af": "highpass=f=70,lowpass=f=3200,bass=g=12:f=110,aecho=0.5:0.35:50:0.15,dynaudnorm"
+        }
+      },
+      "angry": {
+        "rate": "+2%",
+        "pitch": "-18Hz",
+        "volume": "+28%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=3400,bass=g=20:f=120,aecho=0.6:0.45:40:0.22,dynaudnorm"
+        }
+      },
+      "excited": {
+        "rate": "+5%",
+        "pitch": "-15Hz",
+        "volume": "+26%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=3600,bass=g=16:f=115,aecho=0.55:0.4:48:0.2,dynaudnorm"
+        }
+      },
+      "worried": {
+        "rate": "-3%",
+        "pitch": "-20Hz",
+        "volume": "+18%",
+        "effect": {
+          "af": "highpass=f=70,lowpass=f=3300,bass=g=12:f=110,aecho=0.5:0.38:52:0.16,dynaudnorm"
+        }
+      }
     }
   },
   "A3_WHITE": {
     "voice": "zh-CN-YunyangNeural",
-    "rate": "-8%",
-    "pitch": "-16Hz",
-    "volume": "+12%",
-    "effect": {
-      "af": "highpass=f=80,lowpass=f=6000,bass=g=3:f=120,treble=g=3,aecho=0.4:0.25:60|100:0.12|0.08,dynaudnorm"
+    "emotions": {
+      "default": {
+        "rate": "-5%",
+        "pitch": "-8Hz",
+        "volume": "+12%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=6000,bass=g=4:f=120,treble=g=2,aecho=0.4:0.25:75:0.07,dynaudnorm"
+        }
+      },
+      "calm": {
+        "rate": "-8%",
+        "pitch": "-10Hz",
+        "volume": "+10%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=6000,bass=g=3:f=120,treble=g=2,aecho=0.35:0.22:80:0.06,dynaudnorm"
+        }
+      },
+      "angry": {
+        "rate": "+4%",
+        "pitch": "+0Hz",
+        "volume": "+18%",
+        "effect": {
+          "af": "highpass=f=90,lowpass=f=6000,bass=g=8:f=130,treble=g=3,aecho=0.45:0.3:60:0.1,dynaudnorm"
+        }
+      },
+      "excited": {
+        "rate": "+7%",
+        "pitch": "+3Hz",
+        "volume": "+16%",
+        "effect": {
+          "af": "highpass=f=90,lowpass=f=6200,bass=g=5:f=125,treble=g=3,aecho=0.4:0.28:70:0.08,dynaudnorm"
+        }
+      },
+      "worried": {
+        "rate": "+2%",
+        "pitch": "+5Hz",
+        "volume": "+10%",
+        "effect": {
+          "af": "highpass=f=80,lowpass=f=6000,bass=g=3:f=120,treble=g=2,aecho=0.42:0.26:78:0.07,dynaudnorm"
+        }
+      }
     }
   },
   "X0_BLACK": {
     "voice": "zh-CN-YunyangNeural",
-    "rate": "-16%",
-    "pitch": "-36Hz",
-    "volume": "+26%",
-    "effect": {
-      "af": "highpass=f=60,lowpass=f=2400,bass=g=16:f=70,acrusher=bits=5:mode=log:aa=1,aecho=0.6:0.4:40|80:0.35|0.3,dynaudnorm"
+    "emotions": {
+      "default": {
+        "rate": "-10%",
+        "pitch": "-30Hz",
+        "volume": "+24%",
+        "effect": {
+          "af": "highpass=f=60,lowpass=f=2400,bass=g=18:f=80,acrusher=bits=6:mode=log:aa=1,aecho=0.55:0.4:40:0.25,dynaudnorm"
+        }
+      },
+      "calm": {
+        "rate": "-14%",
+        "pitch": "-36Hz",
+        "volume": "+22%",
+        "effect": {
+          "af": "highpass=f=60,lowpass=f=2400,bass=g=16:f=80,acrusher=bits=6:mode=log:aa=1,aecho=0.5:0.38:45:0.22,dynaudnorm"
+        }
+      },
+      "angry": {
+        "rate": "-2%",
+        "pitch": "-20Hz",
+        "volume": "+30%",
+        "effect": {
+          "af": "highpass=f=70,lowpass=f=2600,bass=g=24:f=90,acrusher=bits=5:mode=log:aa=1,aecho=0.65:0.45:35:0.3,dynaudnorm"
+        }
+      },
+      "excited": {
+        "rate": "+2%",
+        "pitch": "-16Hz",
+        "volume": "+28%",
+        "effect": {
+          "af": "highpass=f=70,lowpass=f=2600,bass=g=20:f=85,acrusher=bits=5:mode=log:aa=1,aecho=0.6:0.42:38:0.28,dynaudnorm"
+        }
+      },
+      "worried": {
+        "rate": "-5%",
+        "pitch": "-22Hz",
+        "volume": "+22%",
+        "effect": {
+          "af": "highpass=f=65,lowpass=f=2500,bass=g=16:f=82,acrusher=bits=6:mode=log:aa=1,aecho=0.55:0.4:42:0.24,dynaudnorm"
+        }
+      }
     }
   },
   "R4_ORANGE": {
     "voice": "zh-CN-YunjianNeural",
-    "rate": "-5%",
-    "pitch": "-20Hz",
-    "volume": "+18%",
-    "effect": {
-      "af": "highpass=f=100,lowpass=f=5000,bass=g=6:f=120,vibrato=f=5:d=0.4,aecho=0.45:0.35:70|110:0.2|0.15,dynaudnorm"
+    "emotions": {
+      "default": {
+        "rate": "-2%",
+        "pitch": "-12Hz",
+        "volume": "+20%",
+        "effect": {
+          "af": "highpass=f=100,lowpass=f=5000,bass=g=8:f=130,vibrato=f=4:d=0.3,aecho=0.45:0.35:75:0.14,dynaudnorm"
+        }
+      },
+      "calm": {
+        "rate": "-5%",
+        "pitch": "-16Hz",
+        "volume": "+16%",
+        "effect": {
+          "af": "highpass=f=100,lowpass=f=5000,bass=g=6:f=130,vibrato=f=3:d=0.25,aecho=0.4:0.3:80:0.12,dynaudnorm"
+        }
+      },
+      "angry": {
+        "rate": "+6%",
+        "pitch": "-5Hz",
+        "volume": "+28%",
+        "effect": {
+          "af": "highpass=f=110,lowpass=f=5200,bass=g=14:f=140,vibrato=f=5:d=0.4,aecho=0.55:0.4:60:0.2,dynaudnorm"
+        }
+      },
+      "excited": {
+        "rate": "+10%",
+        "pitch": "+0Hz",
+        "volume": "+30%",
+        "effect": {
+          "af": "highpass=f=110,lowpass=f=5400,bass=g=12:f=135,vibrato=f=6:d=0.45,aecho=0.5:0.38:68:0.18,dynaudnorm"
+        }
+      },
+      "worried": {
+        "rate": "+2%",
+        "pitch": "-8Hz",
+        "volume": "+16%",
+        "effect": {
+          "af": "highpass=f=100,lowpass=f=5000,bass=g=7:f=130,vibrato=f=4:d=0.3,aecho=0.42:0.32:78:0.13,dynaudnorm"
+        }
+      }
     }
   }
 }
