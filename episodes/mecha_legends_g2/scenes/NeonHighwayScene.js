@@ -159,10 +159,36 @@ export class NeonHighwayScene extends SceneBase {
       }
     }
 
-    // 战斗区域道路破坏（弹坑、碎片、余火）
+    // 战斗区域道路破坏（弹坑、碎片、余火）— 加入滚动对象，随车速后退
     this.roadDamage = this._createRoadDamage();
-    this.roadDamage.position.set(0, 0, -25);
+    this.roadDamage.position.set(0, 0, -35);
     this.scene.add(this.roadDamage);
+    this.buildings.push({ mesh: this.roadDamage, speed: 9 });
+
+    // 敌方无人机小队（ highway 枪战视觉对象）
+    this.enemyDrones = [];
+    const droneStartZ = -30;
+    for (let i = 0; i < 5; i++) {
+      const drone = this._createEnemyDrone();
+      const side = i % 2 === 0 ? -1 : 1;
+      drone.position.set(
+        side * (4 + Math.random() * 5),
+        2 + Math.random() * 2,
+        droneStartZ - i * 6 - Math.random() * 4
+      );
+      this.scene.add(drone);
+      this.enemyDrones.push({ mesh: drone, speed: 9, baseY: drone.position.y });
+      this.buildings.push({ mesh: drone, speed: 9 });
+    }
+
+    // 枪战枪口闪光/爆炸光效（在 36-40s 左右触发）
+    this.muzzleFlashes = [];
+    for (let i = 0; i < 6; i++) {
+      const flash = new THREE.PointLight(0xffaa00, 0, 12, 2);
+      flash.position.set(0, 0, 0);
+      this.scene.add(flash);
+      this.muzzleFlashes.push({ light: flash, nextFlash: 36 + i * 0.6 + Math.random() * 0.3 });
+    }
 
     // 环境填充光
     const fillLight = new THREE.PointLight(0xff00ff, 0.8, 40, 1.6);
@@ -261,6 +287,59 @@ export class NeonHighwayScene extends SceneBase {
         group.add(rail);
       }
     }
+
+    return group;
+  }
+
+  _createEnemyDrone() {
+    const group = new THREE.Group();
+
+    // 机身 — 锈铁军团暗红/铁灰涂装
+    const bodyMat = new THREE.MeshStandardMaterial({ color: 0x5a2a2a, roughness: 0.5, metalness: 0.6 });
+    const accentMat = new THREE.MeshStandardMaterial({ color: 0x882222, roughness: 0.4, metalness: 0.5 });
+    const darkMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1a, roughness: 0.7, metalness: 0.4 });
+
+    const body = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.22, 0.35), bodyMat);
+    group.add(body);
+
+    // 红色监视器/独眼
+    const eyeMat = new THREE.MeshBasicMaterial({ color: 0xff2200 });
+    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.08, 12, 12), eyeMat);
+    eye.position.set(0, 0.02, 0.2);
+    group.add(eye);
+
+    const eyeLight = new THREE.PointLight(0xff2200, 1.0, 3.5, 1.5);
+    eyeLight.position.copy(eye.position);
+    group.add(eyeLight);
+
+    // 机翼
+    for (const side of [-1, 1]) {
+      const wing = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.04, 0.18), accentMat);
+      wing.position.set(side * 0.5, 0, -0.05);
+      wing.rotation.z = side * 0.15;
+      group.add(wing);
+
+      const wingTip = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.06, 0.22), darkMat);
+      wingTip.position.set(side * 0.9, 0, -0.05);
+      group.add(wingTip);
+
+      // 推进器光
+      const thruster = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.03, 0.12, 8), new THREE.MeshBasicMaterial({ color: 0xff6600 }));
+      thruster.rotation.x = Math.PI / 2;
+      thruster.position.set(side * 0.35, 0, -0.25);
+      group.add(thruster);
+
+      const thrusterLight = new THREE.PointLight(0xff6600, 0.8, 2.0, 1.2);
+      thrusterLight.position.set(side * 0.35, 0, -0.32);
+      group.add(thrusterLight);
+    }
+
+    // 下方机炮管
+    const gunMat = new THREE.MeshStandardMaterial({ color: 0x333333, roughness: 0.4, metalness: 0.8 });
+    const gun = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.35, 8), gunMat);
+    gun.rotation.x = Math.PI / 2;
+    gun.position.set(0, -0.06, 0.18);
+    group.add(gun);
 
     return group;
   }
@@ -374,5 +453,36 @@ export class NeonHighwayScene extends SceneBase {
         obj.mesh.position.z = -190 - Math.random() * 30;
       }
     });
+
+    // 敌方无人机悬停上下摆动
+    if (this.enemyDrones) {
+      this.enemyDrones.forEach((drone, idx) => {
+        drone.mesh.position.y = drone.baseY + Math.sin(time * 3 + idx) * 0.15;
+        drone.mesh.rotation.z = Math.sin(time * 2 + idx * 0.7) * 0.05;
+      });
+    }
+
+    // 枪战时间段（约 36-40s）触发随机枪口闪光
+    if (this.muzzleFlashes && time >= 35.5 && time <= 41) {
+      this.muzzleFlashes.forEach((flash) => {
+        if (time >= flash.nextFlash) {
+          flash.light.intensity = 2.5 + Math.random() * 2.5;
+          flash.nextFlash = time + 0.08 + Math.random() * 0.18;
+          // 绑定到随机无人机/道路位置
+          const source = this.enemyDrones?.[Math.floor(Math.random() * this.enemyDrones.length)]?.mesh;
+          if (source && source.position.z > -30 && source.position.z < 30) {
+            flash.light.position.copy(source.position);
+            flash.light.position.y -= 0.8;
+            flash.light.position.z += 0.5;
+          } else {
+            flash.light.position.set((Math.random() - 0.5) * 10, 1.2, -10 - Math.random() * 20);
+          }
+        } else {
+          flash.light.intensity *= Math.max(0, 1 - delta * 15);
+        }
+      });
+    } else if (this.muzzleFlashes) {
+      this.muzzleFlashes.forEach((flash) => { flash.light.intensity = 0; });
+    }
   }
 }

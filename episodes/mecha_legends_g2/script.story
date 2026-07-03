@@ -36,11 +36,15 @@
 5
 00:00:35,000 --> 00:00:44,000
 [A3_WHITE]{Camera:FightSide|distance=6|height=2} 敌机接近！十一点方向，接敌！
-{SFX:Procedural|type=gunfight|start=36|end=40|density=0.6|volume=0.35}
+{SFX:Procedural|type=gunfight|start=36|end=40|density=0.6|volume=0.30}
 {Combat:Attack|attacker=R4_ORANGE|defender=V1_RED|anim=SpiritGunFire|start=36}
+{SFX:Play|name=impact_metal|offset=0.35|baseVolume=0.55}
 {Combat:Attack|attacker=T2_BLUE|defender=R4_ORANGE|anim=SpiritGunFire|start=37}
+{SFX:Play|name=impact_metal|offset=1.35|baseVolume=0.55}
 {Combat:Attack|attacker=A3_WHITE|defender=X0_BLACK|anim=SpiritGunFire|start=38}
+{SFX:Play|name=impact_metal|offset=2.35|baseVolume=0.55}
 {Combat:Attack|attacker=V1_RED|defender=R4_ORANGE|anim=SpiritGunFire|start=39}
+{SFX:Play|name=impact_metal|offset=3.35|baseVolume=0.55}
 [V1_RED]{Camera:FightDynamic|distance=7|height=2.5} 别恋战！突破先头部队，进废铁区！
 
 6

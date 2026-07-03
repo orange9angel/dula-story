@@ -19,8 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 MANIFEST_PATH = ROOT / "assets" / "audio" / "manifest.json"
 SRT_PATH = ROOT / "output" / "subtitles.srt"
-DEFAULT_VIDEO = ROOT / "output" / "final.mp4"
-DEFAULT_BURNED = ROOT / "output" / "final_burned.mp4"
+DEFAULT_VIDEO = ROOT / "output" / "output.mp4"
+DEFAULT_BURNED = ROOT / "output" / "output_burned.mp4"
 
 EN_TRANSLATIONS = {
     "锈铁军团，核心留下。钢铁先锋，进入战斗位置。": "Rust Legion, the core stays. Stellar Vanguard, move to combat positions.",
