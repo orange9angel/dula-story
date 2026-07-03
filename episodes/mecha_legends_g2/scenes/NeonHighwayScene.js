@@ -190,6 +190,24 @@ export class NeonHighwayScene extends SceneBase {
       this.muzzleFlashes.push({ light: flash, nextFlash: 36 + i * 0.6 + Math.random() * 0.3 });
     }
 
+    // 命中爆炸火花（与 impact_metal 音效同步）
+    this.hitSparks = [];
+    const hitTimes = [36.35, 37.35, 38.35, 39.35];
+    hitTimes.forEach((t) => {
+      const sparkLight = new THREE.PointLight(0xff5500, 0, 10, 1.8);
+      sparkLight.position.set((Math.random() - 0.5) * 8, 0.5 + Math.random(), -10 - Math.random() * 15);
+      this.scene.add(sparkLight);
+
+      const sparkCore = new THREE.Mesh(
+        new THREE.SphereGeometry(0.12, 10, 10),
+        new THREE.MeshBasicMaterial({ color: 0xffaa00 })
+      );
+      sparkCore.position.copy(sparkLight.position);
+      this.scene.add(sparkCore);
+
+      this.hitSparks.push({ light: sparkLight, core: sparkCore, time: t, triggered: false });
+    });
+
     // 环境填充光
     const fillLight = new THREE.PointLight(0xff00ff, 0.8, 40, 1.6);
     fillLight.position.set(-10, 8, 10);
@@ -483,6 +501,24 @@ export class NeonHighwayScene extends SceneBase {
       });
     } else if (this.muzzleFlashes) {
       this.muzzleFlashes.forEach((flash) => { flash.light.intensity = 0; });
+    }
+
+    // 命中火花：在指定时间点爆闪并渐隐
+    if (this.hitSparks) {
+      this.hitSparks.forEach((spark) => {
+        if (!spark.triggered && time >= spark.time) {
+          spark.triggered = true;
+          spark.light.intensity = 4 + Math.random() * 3;
+          spark.core.scale.setScalar(1.5 + Math.random());
+          spark.core.material.color.setHex(0xffaa00);
+        }
+        if (spark.triggered) {
+          spark.light.intensity *= Math.max(0, 1 - delta * 8);
+          spark.core.scale.multiplyScalar(Math.max(0.5, 1 - delta * 6));
+          const gray = Math.max(0.2, spark.light.intensity / 7);
+          spark.core.material.color.setRGB(1, gray * 0.6, 0);
+        }
+      });
     }
   }
 }
