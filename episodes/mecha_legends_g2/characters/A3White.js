@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { RobotCharacterBase } from './RobotCharacterBase.js';
 
 /**
- * A3_WHITE — Stellar Vanguard 空中侦察兵
+ * A3_WHITE — 灰狐安保 空中侦察兵
  * 白色三角翼喷气机机器人：喷气进气口胸甲、机翼肩甲、尖顶头盔、起落架小腿。
  */
 export class A3White extends RobotCharacterBase {
@@ -12,7 +12,7 @@ export class A3White extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'agile'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'Jump', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'SpiritGunFire',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'PlasmaRifle',
       'RobotTransform', 'RobotRevert'
     ]);
   }

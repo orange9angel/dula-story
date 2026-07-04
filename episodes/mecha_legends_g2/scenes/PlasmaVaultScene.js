@@ -18,15 +18,20 @@ export class PlasmaVaultScene extends SceneBase {
 
     this.lights.forEach((l) => {
       if (l.isAmbientLight) {
-        l.intensity = 0.22;
-        l.color.setHex(0x1a2a3a);
+        l.intensity = 1.2;
+        l.color.setHex(0x2a3a4a);
       }
       if (l.isDirectionalLight) {
-        l.intensity = 0.35;
+        l.intensity = 1.6;
         l.color.setHex(0x88ccff);
         l.position.set(0, 10, 10);
       }
     });
+
+    // 正面补光：照亮角色脸部与正面装甲
+    const faceFill = new THREE.DirectionalLight(0xddeeff, 2.0);
+    faceFill.position.set(0, 6, 14);
+    this.scene.add(faceFill);
 
     // 六边形蜂巢地板
     const floorCanvas = document.createElement('canvas');

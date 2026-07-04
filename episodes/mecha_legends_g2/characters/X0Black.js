@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { RobotCharacterBase } from './RobotCharacterBase.js';
 
 /**
- * X0_BLACK — Rust Legion 重型指挥官
+ * X0_BLACK — 克洛斯公司 重型指挥官
  * 黑色坦克机器人：倾斜装甲胸甲、履带小腿、肩载炮塔、指挥天线、厚重裙甲。
  */
 export class X0Black extends RobotCharacterBase {
@@ -12,7 +12,7 @@ export class X0Black extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'slow', 'strong'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'PointForward', 'StompFoot',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'PlasmaRifle',
       'RobotTransform', 'RobotRevert'
     ]);
   }

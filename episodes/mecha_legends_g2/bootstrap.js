@@ -1,12 +1,15 @@
 import { registerAll } from 'dula-assets';
 import { registerCharacter, registerScene, registerAnimation, CharacterRegistry } from 'dula-engine';
+import { SpiritGunFire } from '/node_modules/dula-assets/animations/yuyuhakusho/SpiritGunFire.js';
+import { SpiritGunCharge } from '/node_modules/dula-assets/animations/yuyuhakusho/SpiritGunCharge.js';
 import * as THREE from 'three';
 
-import { V1Red } from './characters/V1Red.js';
-import { T2Blue } from './characters/T2Blue.js';
-import { A3White } from './characters/A3White.js';
-import { X0Black } from './characters/X0Black.js';
-import { R4Orange } from './characters/R4Orange.js';
+import { TurboOne } from './characters/TurboOne.js';
+import { GearShift } from './characters/GearShift.js';
+import { SkyRazor } from './characters/SkyRazor.js';
+import { Overdrive } from './characters/Overdrive.js';
+import { CircuitBurn } from './characters/CircuitBurn.js';
+import { Drone } from './characters/Drone.js';
 
 import { NeonHighwayScene } from './scenes/NeonHighwayScene.js';
 import { ScrapyardSectorScene } from './scenes/ScrapyardSectorScene.js';
@@ -14,15 +17,21 @@ import { PlasmaVaultScene } from './scenes/PlasmaVaultScene.js';
 
 import { RobotTransform } from './animations/RobotTransform.js';
 import { RobotRevert } from './animations/RobotRevert.js';
+import { CrouchPlasmaRifle } from './animations/CrouchPlasmaRifle.js';
 
 registerAll();
 
-// 注册自定义角色
-registerCharacter('V1_RED', V1Red);
-registerCharacter('T2_BLUE', T2Blue);
-registerCharacter('A3_WHITE', A3White);
-registerCharacter('X0_BLACK', X0Black);
-registerCharacter('R4_ORANGE', R4Orange);
+// 注册自定义角色（使用中文名，不再使用英文代号）
+registerCharacter('雷恩', TurboOne);
+registerCharacter('布洛克', GearShift);
+registerCharacter('斯凯', SkyRazor);
+registerCharacter('维克', Overdrive);
+registerCharacter('达什', CircuitBurn);
+
+// 克洛斯公司 Viper 无人战机
+registerCharacter('Viper-1', Drone);
+registerCharacter('Viper-2', Drone);
+registerCharacter('Viper-3', Drone);
 
 // 注册自定义场景
 registerScene('NeonHighwayScene', NeonHighwayScene);
@@ -32,17 +41,18 @@ registerScene('PlasmaVaultScene', PlasmaVaultScene);
 // 注册自定义动画
 registerAnimation('RobotTransform', RobotTransform);
 registerAnimation('RobotRevert', RobotRevert);
+registerAnimation('CrouchPlasmaRifle', CrouchPlasmaRifle);
+// 把日式灵丸动画映射为机甲风格的等离子步枪别名
+registerAnimation('PlasmaRifle', SpiritGunFire);
+registerAnimation('PlasmaRifleCharge', SpiritGunCharge);
 
-// 全局增强：让机器人在说话时口型/面罩更有电子生命感
-['V1_RED', 'T2_BLUE', 'A3_WHITE', 'X0_BLACK', 'R4_ORANGE'].forEach((name) => {
+// 全局增强：避免机器人头部/身体在变身或战斗后出现持续抖动。
+// 不再覆盖 update 添加周期性 scale/position 脉冲；口型和发光由 CharacterBase 与材质本身处理。
+['雷恩', '布洛克', '斯凯', '维克', '达什'].forEach((name) => {
   const Class = CharacterRegistry[name];
   if (!Class) return;
-  const originalUpdate = Class.prototype.update;
-  Class.prototype.update = function (time, delta) {
-    originalUpdate.call(this, time, delta);
-    if (this.currentMode === 'robot' && this.headGroup) {
-      const pulse = 1 + Math.sin(time * 4 + name.length) * 0.02;
-      this.headGroup.scale.setScalar(pulse);
-    }
-  };
+  // 保留原始 update，不附加额外抖动源
+  if (!Class.prototype._shakeFixApplied) {
+    Class.prototype._shakeFixApplied = true;
+  }
 });

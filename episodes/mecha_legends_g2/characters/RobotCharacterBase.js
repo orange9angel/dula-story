@@ -58,6 +58,15 @@ export class RobotCharacterBase extends CharacterBase {
     return new THREE.MeshBasicMaterial({ color: colorHex, transparent: true, opacity });
   }
 
+  /**
+   * 在头部正面添加一盏跟随脸部的补光灯，让机器人五官在特写镜头里清晰可见。
+   */
+  addFaceLight(headGroup, color = 0xddeeff, intensity = 0.8, distance = 4.0, decay = 2.0) {
+    const faceLight = new THREE.PointLight(color, intensity, distance, decay);
+    faceLight.position.set(0, 0.12, 0.75);
+    headGroup.add(faceLight);
+  }
+
   createDarkMetalMaterial(colorHex = 0x333333) {
     return new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.5, metalness: 0.7 });
   }
@@ -285,6 +294,86 @@ export class RobotCharacterBase extends CharacterBase {
   }
 
   /**
+   * 给右手添加一把等离子步枪，枪口 Group 供弹道定位。
+   * 默认尺寸更大、发光更明显，确保战斗中一眼能看到武器。
+   */
+  addPlasmaRifle(handGroup, side, bodyColor = 0x556677, glowColor = 0x55ccff, scale = 1.0) {
+    const group = new THREE.Group();
+    group.scale.setScalar(scale);
+
+    // 枪身主体（加大，带斜切风格）
+    const body = new THREE.Mesh(
+      new THREE.BoxGeometry(0.10 * scale, 0.12 * scale, 0.34 * scale),
+      this.createMetalMaterial(bodyColor)
+    );
+    body.position.set(0, -0.02 * scale, 0.08 * scale);
+    group.add(body);
+
+    // 能量匣 / 发光核心（长条，高亮）
+    const cell = new THREE.Mesh(
+      new THREE.BoxGeometry(0.06 * scale, 0.07 * scale, 0.18 * scale),
+      this.createGlowMaterial(glowColor, 0.9)
+    );
+    cell.position.set(0, 0.025 * scale, 0.02 * scale);
+    group.add(cell);
+
+    // 能量条侧灯
+    for (const sideLight of [-1, 1]) {
+      const strip = new THREE.Mesh(
+        new THREE.BoxGeometry(0.01 * scale, 0.04 * scale, 0.22 * scale),
+        this.createGlowMaterial(glowColor, 0.75)
+      );
+      strip.position.set(sideLight * 0.055 * scale, 0.02 * scale, 0.02 * scale);
+      group.add(strip);
+    }
+
+    // 枪管（更粗更长）
+    const barrel = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.024 * scale, 0.030 * scale, 0.30 * scale, 10),
+      this.createDarkMetalMaterial(0x333333)
+    );
+    barrel.rotation.x = Math.PI / 2;
+    barrel.position.set(0, 0.005 * scale, 0.34 * scale);
+    group.add(barrel);
+
+    // 枪管外侧发光环
+    const barrelGlow = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.032 * scale, 0.032 * scale, 0.22 * scale, 12),
+      new THREE.MeshBasicMaterial({ color: glowColor, transparent: true, opacity: 0.25, blending: THREE.AdditiveBlending, depthWrite: false })
+    );
+    barrelGlow.rotation.x = Math.PI / 2;
+    barrelGlow.position.set(0, 0.005 * scale, 0.30 * scale);
+    group.add(barrelGlow);
+
+    // 枪托
+    const stock = new THREE.Mesh(
+      new THREE.BoxGeometry(0.06 * scale, 0.09 * scale, 0.16 * scale),
+      this.createDarkMetalMaterial(0x222222)
+    );
+    stock.position.set(0, -0.01 * scale, -0.14 * scale);
+    group.add(stock);
+
+    // 枪口定位点：所有弹道从此发出
+    const muzzle = new THREE.Group();
+    muzzle.position.set(0, 0.005 * scale, 0.50 * scale);
+    group.add(muzzle);
+    this.plasmaRifleMuzzle = muzzle;
+
+    // 枪口辉光 halo
+    const muzzleHalo = new THREE.Mesh(
+      new THREE.SphereGeometry(0.035 * scale, 12, 10),
+      new THREE.MeshBasicMaterial({ color: glowColor, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending, depthWrite: false })
+    );
+    muzzle.add(muzzleHalo);
+
+    // 持握位置贴合手掌
+    group.position.set(side * 0.015 * scale, -0.055 * scale, 0.02 * scale);
+    group.rotation.x = -0.12;
+    handGroup.add(group);
+    return group;
+  }
+
+  /**
    * 添加发光胸甲核心。
    */
   addChestCore(parent, position, color = 0x00ffff, size = { x: 0.16, y: 0.12, z: 0.04 }) {
@@ -463,8 +552,27 @@ export class RobotCharacterBase extends CharacterBase {
   update(time, delta) {
     super.update(time, delta);
     this.updateLightEffects(time, delta);
+    // 取消机器人形态呼吸摆动，确保战斗特写稳定不抖
     if (this.currentMode === 'robot' && this.robotGroup) {
-      this.robotGroup.position.y = Math.sin(time * 2.5) * 0.005;
+      this.robotGroup.position.y = 0;
     }
+  }
+
+  /**
+   * 返回右臂手掌/枪口的世界坐标，供格斗导演的等离子步枪弹道使用。
+   */
+  getPlasmaRifleMuzzleWorldPosition() {
+    if (this.plasmaRifleMuzzle) {
+      this.plasmaRifleMuzzle.updateWorldMatrix(true, false);
+      return new THREE.Vector3().setFromMatrixPosition(this.plasmaRifleMuzzle.matrixWorld);
+    }
+    const pos = new THREE.Vector3(0, -0.55, 0.1);
+    if (this.rightArm) {
+      this.rightArm.updateMatrixWorld();
+      pos.applyMatrix4(this.rightArm.matrixWorld);
+    } else {
+      pos.applyMatrix4(this.mesh.matrixWorld);
+    }
+    return pos;
   }
 }

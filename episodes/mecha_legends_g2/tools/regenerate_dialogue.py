@@ -44,27 +44,26 @@ def get_duration(path):
     return float(result.stdout.strip())
 
 
+def resolve_voice_params(character_cfg, emotion):
+    """Resolve the same flat/emotion-aware schema used by dula-audio."""
+    if "voice" in character_cfg:
+        return character_cfg
+    base = dict(character_cfg.get("default", {}))
+    variant = character_cfg.get(emotion, {}) if emotion else {}
+    base.update(variant)
+    return base
+
+
 async def generate_for_entry(entry, voice_cfg):
     character = entry["character"]
-    cfg = voice_cfg.get(character) or voice_cfg.get("default", {})
-
-    voice = cfg.get("voice", "zh-CN-YunxiNeural")
-
-    # Pick per-emotion parameters for more expressive dialogue.
+    character_cfg = voice_cfg.get(character) or voice_cfg.get("default", {})
     emotion = entry.get("emotion") or "default"
-    emotions = cfg.get("emotions", {})
-    if emotion not in emotions:
-        emotion = "default"
-    if emotion not in emotions:
-        emotion = next(iter(emotions), "default")
-    emo_cfg = emotions.get(emotion, {})
-
-    rate = emo_cfg.get("rate", cfg.get("rate", "+0%"))
-    pitch = emo_cfg.get("pitch", cfg.get("pitch", "+0Hz"))
-    volume_mul = volume_string_to_multiplier(
-        emo_cfg.get("volume", cfg.get("volume", "+0%"))
-    )
-    effect_af = emo_cfg.get("effect", cfg.get("effect", {})).get("af", "dynaudnorm")
+    params = resolve_voice_params(character_cfg, emotion)
+    voice = params.get("voice", "zh-CN-YunxiNeural")
+    rate = params.get("rate", "+0%")
+    pitch = params.get("pitch", "+0Hz")
+    volume_mul = volume_string_to_multiplier(params.get("volume", "+0%"))
+    effect_af = params.get("effect", {}).get("af", "alimiter=limit=0.96")
 
     out_mp3 = AUDIO_DIR / entry["file"]
 

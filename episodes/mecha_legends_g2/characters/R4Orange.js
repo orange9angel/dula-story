@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { RobotCharacterBase } from './RobotCharacterBase.js';
 
 /**
- * R4_ORANGE — Rust Legion 突击型破坏者
+ * R4_ORANGE — 克洛斯公司 突击型破坏者
  * 橙色沙漠越野车机器人：防滚架胸甲、外露引擎背包、大号轮胎肩甲、减震器小腿。
  */
 export class R4Orange extends RobotCharacterBase {
@@ -12,7 +12,7 @@ export class R4Orange extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'agile'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'Jump', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'PlasmaRifle',
       'RobotTransform', 'RobotRevert'
     ]);
   }

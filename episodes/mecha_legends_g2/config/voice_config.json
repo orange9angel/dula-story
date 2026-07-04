@@ -1,272 +1,302 @@
 {
   "default": {
     "voice": "zh-CN-YunxiNeural",
-    "emotions": {
-      "default": {
-        "rate": "-5%",
-        "pitch": "-5Hz",
-        "volume": "+18%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=5000,dynaudnorm"
-        }
+    "rate": "-2%",
+    "pitch": "+0Hz",
+    "volume": "+8%",
+    "effect": {
+      "af": "highpass=f=70,lowpass=f=8500,acompressor=threshold=0.14:ratio=2.2:attack=12:release=140:makeup=1.25,alimiter=limit=0.96"
+    }
+  },
+  "雷恩": {
+    "default": {
+      "voice": "zh-CN-YunjianNeural",
+      "rate": "-7%",
+      "pitch": "-6Hz",
+      "volume": "+14%",
+      "effect": {
+        "af": "highpass=f=65,lowpass=f=8200,equalizer=f=135:t=q:w=1.0:g=2.2,equalizer=f=3200:t=q:w=1.2:g=1.2,acompressor=threshold=0.13:ratio=2.5:attack=10:release=130:makeup=1.3,alimiter=limit=0.96"
       },
-      "calm": {
-        "rate": "-8%",
-        "pitch": "-8Hz",
-        "volume": "+15%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=5000,dynaudnorm"
-        }
-      },
-      "angry": {
-        "rate": "+5%",
-        "pitch": "+5Hz",
-        "volume": "+25%",
-        "effect": {
-          "af": "highpass=f=100,lowpass=f=5000,bass=g=8:f=120,dynaudnorm"
-        }
-      },
-      "excited": {
-        "rate": "+8%",
-        "pitch": "+10Hz",
-        "volume": "+28%",
-        "effect": {
-          "af": "highpass=f=90,lowpass=f=5500,bass=g=6:f=100,treble=g=2,dynaudnorm"
-        }
-      },
-      "worried": {
-        "rate": "+3%",
-        "pitch": "+8Hz",
-        "volume": "+16%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=5200,dynaudnorm"
-        }
+      "elevenlabs": {
+        "voice_id": "pNInz6obpgDQGcFmaJgB",
+        "stability": 0.34,
+        "similarity_boost": 0.78,
+        "style": 0.52,
+        "speed": 0.96,
+        "use_speaker_boost": true
+      }
+    },
+    "calm": {
+      "rate": "-11%",
+      "pitch": "-8Hz",
+      "volume": "+12%",
+      "elevenlabs": {
+        "voice_id": "pNInz6obpgDQGcFmaJgB",
+        "stability": 0.42,
+        "similarity_boost": 0.8,
+        "style": 0.42,
+        "speed": 0.92,
+        "use_speaker_boost": true
+      }
+    },
+    "angry": {
+      "rate": "+1%",
+      "pitch": "-5Hz",
+      "volume": "+20%",
+      "elevenlabs": {
+        "voice_id": "pNInz6obpgDQGcFmaJgB",
+        "stability": 0.24,
+        "similarity_boost": 0.74,
+        "style": 0.82,
+        "speed": 1.04,
+        "use_speaker_boost": true
+      }
+    },
+    "worried": {
+      "rate": "-8%",
+      "pitch": "-7Hz",
+      "volume": "+13%",
+      "elevenlabs": {
+        "voice_id": "pNInz6obpgDQGcFmaJgB",
+        "stability": 0.36,
+        "similarity_boost": 0.78,
+        "style": 0.58,
+        "speed": 0.94,
+        "use_speaker_boost": true
       }
     }
   },
-  "V1_RED": {
-    "voice": "zh-CN-YunxiNeural",
-    "emotions": {
-      "default": {
-        "rate": "-5%",
-        "pitch": "-10Hz",
-        "volume": "+25%",
-        "effect": {
-          "af": "highpass=f=90,lowpass=f=4800,bass=g=4:f=120,dynaudnorm"
-        }
+  "布洛克": {
+    "default": {
+      "voice": "zh-CN-YunyangNeural",
+      "rate": "-7%",
+      "pitch": "-17Hz",
+      "volume": "+16%",
+      "effect": {
+        "af": "highpass=f=55,lowpass=f=7600,equalizer=f=105:t=q:w=0.9:g=3.0,equalizer=f=260:t=q:w=1.2:g=-1.4,equalizer=f=2800:t=q:w=1.1:g=1.1,acompressor=threshold=0.13:ratio=2.8:attack=14:release=150:makeup=1.35,alimiter=limit=0.96"
       },
-      "calm": {
-        "rate": "-8%",
-        "pitch": "-12Hz",
-        "volume": "+22%",
-        "effect": {
-          "af": "highpass=f=90,lowpass=f=4800,bass=g=3:f=120,dynaudnorm"
-        }
+      "elevenlabs": {
+        "voice_id": "nPczCjzI2devNBz1zQrb",
+        "stability": 0.42,
+        "similarity_boost": 0.72,
+        "style": 0.48,
+        "speed": 0.94,
+        "use_speaker_boost": true
+      }
+    },
+    "calm": {
+      "rate": "-10%",
+      "pitch": "-20Hz",
+      "volume": "+14%",
+      "elevenlabs": {
+        "voice_id": "nPczCjzI2devNBz1zQrb",
+        "stability": 0.5,
+        "similarity_boost": 0.74,
+        "style": 0.34,
+        "speed": 0.9,
+        "use_speaker_boost": true
+      }
+    },
+    "angry": {
+      "rate": "-1%",
+      "pitch": "-14Hz",
+      "volume": "+22%",
+      "elevenlabs": {
+        "voice_id": "nPczCjzI2devNBz1zQrb",
+        "stability": 0.3,
+        "similarity_boost": 0.68,
+        "style": 0.75,
+        "speed": 1.0,
+        "use_speaker_boost": true
+      }
+    },
+    "excited": {
+      "rate": "-1%",
+      "pitch": "-12Hz",
+      "volume": "+20%",
+      "elevenlabs": {
+        "voice_id": "nPczCjzI2devNBz1zQrb",
+        "stability": 0.3,
+        "similarity_boost": 0.68,
+        "style": 0.72,
+        "speed": 1.0,
+        "use_speaker_boost": true
+      }
+    },
+    "worried": {
+      "rate": "-9%",
+      "pitch": "-18Hz",
+      "volume": "+15%"
+    }
+  },
+  "斯凯": {
+    "default": {
+      "voice": "zh-CN-XiaoyiNeural",
+      "rate": "+3%",
+      "pitch": "+10Hz",
+      "volume": "+9%",
+      "effect": {
+        "af": "highpass=f=105,lowpass=f=9000,equalizer=f=3600:t=q:w=1.1:g=1.6,acompressor=threshold=0.15:ratio=2.1:attack=8:release=110:makeup=1.22,alimiter=limit=0.96"
       },
-      "angry": {
-        "rate": "+3%",
-        "pitch": "-5Hz",
-        "volume": "+32%",
-        "effect": {
-          "af": "highpass=f=100,lowpass=f=5000,bass=g=10:f=130,dynaudnorm"
-        }
-      },
-      "excited": {
-        "rate": "+6%",
-        "pitch": "-2Hz",
-        "volume": "+30%",
-        "effect": {
-          "af": "highpass=f=100,lowpass=f=5200,bass=g=7:f=120,dynaudnorm"
-        }
-      },
-      "worried": {
-        "rate": "+0%",
-        "pitch": "-3Hz",
-        "volume": "+22%",
-        "effect": {
-          "af": "highpass=f=90,lowpass=f=5000,bass=g=4:f=120,dynaudnorm"
-        }
+      "elevenlabs": {
+        "voice_id": "cgSgspJ2msm6clMCkdW9",
+        "stability": 0.36,
+        "similarity_boost": 0.78,
+        "style": 0.48,
+        "speed": 1.04,
+        "use_speaker_boost": true
+      }
+    },
+    "calm": {
+      "rate": "+1%",
+      "pitch": "+8Hz",
+      "volume": "+8%"
+    },
+    "angry": {
+      "rate": "+7%",
+      "pitch": "+11Hz",
+      "volume": "+15%"
+    },
+    "excited": {
+      "rate": "+8%",
+      "pitch": "+13Hz",
+      "volume": "+14%"
+    },
+    "worried": {
+      "rate": "+5%",
+      "pitch": "+11Hz",
+      "volume": "+13%",
+      "elevenlabs": {
+        "voice_id": "cgSgspJ2msm6clMCkdW9",
+        "stability": 0.25,
+        "similarity_boost": 0.75,
+        "style": 0.7,
+        "speed": 1.08,
+        "use_speaker_boost": true
       }
     }
   },
-  "T2_BLUE": {
-    "voice": "zh-CN-YunjianNeural",
-    "emotions": {
-      "default": {
-        "rate": "-8%",
-        "pitch": "-25Hz",
-        "volume": "+32%",
-        "effect": {
-          "af": "highpass=f=70,lowpass=f=3200,bass=g=14:f=110,dynaudnorm"
-        }
+  "维克": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-10%",
+      "pitch": "-13Hz",
+      "volume": "+17%",
+      "effect": {
+        "af": "highpass=f=60,lowpass=f=7800,equalizer=f=115:t=q:w=0.9:g=2.6,equalizer=f=2200:t=q:w=1.1:g=-0.8,equalizer=f=3300:t=q:w=1.0:g=1.2,acompressor=threshold=0.12:ratio=2.7:attack=15:release=170:makeup=1.34,alimiter=limit=0.96"
       },
-      "calm": {
-        "rate": "-12%",
-        "pitch": "-30Hz",
-        "volume": "+28%",
-        "effect": {
-          "af": "highpass=f=70,lowpass=f=3200,bass=g=12:f=110,dynaudnorm"
-        }
-      },
-      "angry": {
-        "rate": "+2%",
-        "pitch": "-18Hz",
-        "volume": "+38%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=3400,bass=g=20:f=120,dynaudnorm"
-        }
-      },
-      "excited": {
-        "rate": "+5%",
-        "pitch": "-15Hz",
-        "volume": "+36%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=3600,bass=g=16:f=115,dynaudnorm"
-        }
-      },
-      "worried": {
-        "rate": "-3%",
-        "pitch": "-20Hz",
-        "volume": "+28%",
-        "effect": {
-          "af": "highpass=f=70,lowpass=f=3300,bass=g=12:f=110,dynaudnorm"
-        }
+      "elevenlabs": {
+        "voice_id": "N2lVS1w4EtoT3dr4eOWO",
+        "stability": 0.3,
+        "similarity_boost": 0.74,
+        "style": 0.68,
+        "speed": 0.92,
+        "use_speaker_boost": true
+      }
+    },
+    "calm": {
+      "rate": "-15%",
+      "pitch": "-15Hz",
+      "volume": "+15%",
+      "elevenlabs": {
+        "voice_id": "N2lVS1w4EtoT3dr4eOWO",
+        "stability": 0.32,
+        "similarity_boost": 0.76,
+        "style": 0.78,
+        "speed": 0.86,
+        "use_speaker_boost": true
+      }
+    },
+    "angry": {
+      "rate": "-2%",
+      "pitch": "-10Hz",
+      "volume": "+23%",
+      "elevenlabs": {
+        "voice_id": "N2lVS1w4EtoT3dr4eOWO",
+        "stability": 0.2,
+        "similarity_boost": 0.7,
+        "style": 0.92,
+        "speed": 1.0,
+        "use_speaker_boost": true
+      }
+    },
+    "excited": {
+      "rate": "-7%",
+      "pitch": "-11Hz",
+      "volume": "+20%",
+      "elevenlabs": {
+        "voice_id": "N2lVS1w4EtoT3dr4eOWO",
+        "stability": 0.22,
+        "similarity_boost": 0.72,
+        "style": 0.84,
+        "speed": 0.94,
+        "use_speaker_boost": true
+      }
+    },
+    "worried": {
+      "rate": "-11%",
+      "pitch": "-14Hz",
+      "volume": "+16%"
+    },
+    "sad": {
+      "rate": "-17%",
+      "pitch": "-16Hz",
+      "volume": "+14%",
+      "elevenlabs": {
+        "voice_id": "N2lVS1w4EtoT3dr4eOWO",
+        "stability": 0.34,
+        "similarity_boost": 0.76,
+        "style": 0.7,
+        "speed": 0.84,
+        "use_speaker_boost": true
       }
     }
   },
-  "A3_WHITE": {
-    "voice": "zh-CN-YunyangNeural",
-    "emotions": {
-      "default": {
-        "rate": "-5%",
-        "pitch": "-8Hz",
-        "volume": "+22%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=6000,bass=g=4:f=120,treble=g=2,dynaudnorm"
-        }
+  "达什": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "+4%",
+      "pitch": "+4Hz",
+      "volume": "+15%",
+      "effect": {
+        "af": "highpass=f=85,lowpass=f=8400,equalizer=f=180:t=q:w=1.0:g=1.6,equalizer=f=3500:t=q:w=1.1:g=1.4,acompressor=threshold=0.14:ratio=2.4:attack=7:release=100:makeup=1.28,alimiter=limit=0.96"
       },
-      "calm": {
-        "rate": "-8%",
-        "pitch": "-10Hz",
-        "volume": "+20%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=6000,bass=g=3:f=120,treble=g=2,dynaudnorm"
-        }
-      },
-      "angry": {
-        "rate": "+4%",
-        "pitch": "+0Hz",
-        "volume": "+28%",
-        "effect": {
-          "af": "highpass=f=90,lowpass=f=6000,bass=g=8:f=130,treble=g=3,dynaudnorm"
-        }
-      },
-      "excited": {
-        "rate": "+7%",
-        "pitch": "+3Hz",
-        "volume": "+26%",
-        "effect": {
-          "af": "highpass=f=90,lowpass=f=6200,bass=g=5:f=125,treble=g=3,dynaudnorm"
-        }
-      },
-      "worried": {
-        "rate": "+2%",
-        "pitch": "+5Hz",
-        "volume": "+20%",
-        "effect": {
-          "af": "highpass=f=80,lowpass=f=6000,bass=g=3:f=120,treble=g=2,dynaudnorm"
-        }
+      "elevenlabs": {
+        "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+        "stability": 0.24,
+        "similarity_boost": 0.7,
+        "style": 0.78,
+        "speed": 1.06,
+        "use_speaker_boost": true
       }
-    }
-  },
-  "X0_BLACK": {
-    "voice": "zh-CN-YunyangNeural",
-    "emotions": {
-      "default": {
-        "rate": "-10%",
-        "pitch": "-30Hz",
-        "volume": "+34%",
-        "effect": {
-          "af": "highpass=f=60,lowpass=f=2400,bass=g=18:f=80,acrusher=bits=6:mode=log:aa=1,dynaudnorm"
-        }
-      },
-      "calm": {
-        "rate": "-14%",
-        "pitch": "-36Hz",
-        "volume": "+32%",
-        "effect": {
-          "af": "highpass=f=60,lowpass=f=2400,bass=g=16:f=80,acrusher=bits=6:mode=log:aa=1,dynaudnorm"
-        }
-      },
-      "angry": {
-        "rate": "-2%",
-        "pitch": "-20Hz",
-        "volume": "+40%",
-        "effect": {
-          "af": "highpass=f=70,lowpass=f=2600,bass=g=24:f=90,acrusher=bits=5:mode=log:aa=1,dynaudnorm"
-        }
-      },
-      "excited": {
-        "rate": "+2%",
-        "pitch": "-16Hz",
-        "volume": "+38%",
-        "effect": {
-          "af": "highpass=f=70,lowpass=f=2600,bass=g=20:f=85,acrusher=bits=5:mode=log:aa=1,dynaudnorm"
-        }
-      },
-      "worried": {
-        "rate": "-5%",
-        "pitch": "-22Hz",
-        "volume": "+32%",
-        "effect": {
-          "af": "highpass=f=65,lowpass=f=2500,bass=g=16:f=82,acrusher=bits=6:mode=log:aa=1,dynaudnorm"
-        }
+    },
+    "calm": {
+      "rate": "+1%",
+      "pitch": "+1Hz",
+      "volume": "+13%"
+    },
+    "angry": {
+      "rate": "+7%",
+      "pitch": "+6Hz",
+      "volume": "+21%"
+    },
+    "excited": {
+      "rate": "+6%",
+      "pitch": "+5Hz",
+      "volume": "+21%",
+      "elevenlabs": {
+        "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+        "stability": 0.16,
+        "similarity_boost": 0.66,
+        "style": 0.94,
+        "speed": 1.08,
+        "use_speaker_boost": true
       }
-    }
-  },
-  "R4_ORANGE": {
-    "voice": "zh-CN-YunjianNeural",
-    "emotions": {
-      "default": {
-        "rate": "-2%",
-        "pitch": "-12Hz",
-        "volume": "+30%",
-        "effect": {
-          "af": "highpass=f=100,lowpass=f=5000,bass=g=8:f=130,vibrato=f=4:d=0.3,dynaudnorm"
-        }
-      },
-      "calm": {
-        "rate": "-5%",
-        "pitch": "-16Hz",
-        "volume": "+26%",
-        "effect": {
-          "af": "highpass=f=100,lowpass=f=5000,bass=g=6:f=130,vibrato=f=3:d=0.25,dynaudnorm"
-        }
-      },
-      "angry": {
-        "rate": "+6%",
-        "pitch": "-5Hz",
-        "volume": "+38%",
-        "effect": {
-          "af": "highpass=f=110,lowpass=f=5200,bass=g=14:f=140,vibrato=f=5:d=0.4,dynaudnorm"
-        }
-      },
-      "excited": {
-        "rate": "+10%",
-        "pitch": "+0Hz",
-        "volume": "+40%",
-        "effect": {
-          "af": "highpass=f=110,lowpass=f=5400,bass=g=12:f=135,vibrato=f=6:d=0.45,dynaudnorm"
-        }
-      },
-      "worried": {
-        "rate": "+2%",
-        "pitch": "-8Hz",
-        "volume": "+26%",
-        "effect": {
-          "af": "highpass=f=100,lowpass=f=5000,bass=g=7:f=130,vibrato=f=4:d=0.3,dynaudnorm"
-        }
-      }
+    },
+    "worried": {
+      "rate": "+1%",
+      "pitch": "+2Hz",
+      "volume": "+14%"
     }
   }
 }

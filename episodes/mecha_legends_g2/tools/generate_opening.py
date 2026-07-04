@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Generate an 18-second 2D animated opening title sequence for mecha_legends_g2.
+Generate a 15-second 2D animated opening title sequence for Last Deposit.
 
 Effect:
   - Energetic mecha/rock intro music
   - Deep space/circuit background with energon particles
-  - Show title "MECHA LEGENDS G2" slams in with metallic impact
-  - Character title cards slide through (V1 Red, T2 Blue, A3 White, R4 Orange, X0 Black)
+  - Show title "LAST DEPOSIT" slams in with metallic impact
+  - Character title cards slide through (雷恩, 布洛克, 斯凯, 达什, 维克)
   - Final group card + episode title placeholder
   - Cuts cleanly to the main episode
 
@@ -46,11 +46,11 @@ MAGENTA_NEON = (255, 0, 170)
 CHROME_LIGHT = (220, 235, 255)
 
 CHARACTERS = [
-    {"name": "V1 RED", "role": "LEADER", "color": (255, 45, 35), "accent": (0, 230, 255)},
-    {"name": "T2 BLUE", "role": "TACTICS", "color": (35, 120, 255), "accent": (0, 230, 255)},
-    {"name": "A3 WHITE", "role": "AERIAL", "color": (230, 240, 255), "accent": (0, 230, 255)},
-    {"name": "R4 ORANGE", "role": "HEAVY", "color": (255, 140, 25), "accent": (0, 230, 255)},
-    {"name": "X0 BLACK", "role": "RIVAL", "color": (160, 90, 210), "accent": (255, 0, 170)},
+    {"name": "雷恩", "role": "队长", "color": (255, 45, 35), "accent": (0, 230, 255)},
+    {"name": "布洛克", "role": "重盾", "color": (35, 120, 255), "accent": (0, 230, 255)},
+    {"name": "斯凯", "role": "空战", "color": (230, 240, 255), "accent": (0, 230, 255)},
+    {"name": "达什", "role": "火力", "color": (255, 140, 25), "accent": (0, 230, 255)},
+    {"name": "维克", "role": "宿敌", "color": (160, 90, 210), "accent": (255, 0, 170)},
 ]
 
 
@@ -173,6 +173,8 @@ def add_vignette(img, intensity=0.5):
 
 def get_font(size, bold=True):
     candidates = [
+        "C:/Windows/Fonts/msyhbd.ttc",
+        "C:/Windows/Fonts/simhei.ttf",
         "C:/Windows/Fonts/impact.ttf",
         "C:/Windows/Fonts/arialbd.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
@@ -428,11 +430,11 @@ def render_frames():
 
         # ── Phase 1: Title slam (1.5 - 4.5s) ──
         if t < 5.5:
-            # "MECHA LEGENDS" main title
+            # "LAST DEPOSIT" main title
             title_phase = max(0.0, min(1.0, (t - 1.5) / 1.0))
             title_scale = 1.0 + (1.0 - title_phase) * 0.4
             title_alpha = min(1.0, title_phase * 1.5)
-            title_img = make_metallic_text("MECHA LEGENDS", int(220 * title_scale), glow_color=CYAN_ENERGON)
+            title_img = make_metallic_text("LAST DEPOSIT", int(220 * title_scale), glow_color=CYAN_ENERGON)
             title_w, title_h = title_img.size
             paste_x = (WIDTH - title_w) // 2
             paste_y = cy - 120 - int(title_h // 2)
@@ -440,26 +442,26 @@ def render_frames():
             title_img = place_on_canvas(title_img, paste_x, paste_y)
             base = Image.alpha_composite(base.convert("RGBA"), title_img).convert("RGB")
 
-            # "G2" sub badge
-            g2_phase = max(0.0, min(1.0, (t - 2.5) / 0.7))
-            g2_scale = 1.0 + (1.0 - g2_phase) * 0.6
-            g2_alpha = min(1.0, g2_phase * 1.5)
-            g2_img = make_metallic_text("G2", int(180 * g2_scale), glow_color=MAGENTA_NEON)
-            g2_w, g2_h = g2_img.size
-            g2_x = (WIDTH - g2_w) // 2
-            g2_y = cy + 60
-            g2_img = set_alpha(g2_img, g2_alpha)
-            g2_img = place_on_canvas(g2_img, g2_x, g2_y)
-            base = Image.alpha_composite(base.convert("RGBA"), g2_img).convert("RGB")
+            # 副标题：EPISODE 01
+            sub_phase = max(0.0, min(1.0, (t - 2.5) / 0.7))
+            sub_scale = 1.0 + (1.0 - sub_phase) * 0.3
+            sub_alpha = min(1.0, sub_phase * 1.5)
+            sub_img = make_metallic_text("EPISODE 01", int(90 * sub_scale), glow_color=MAGENTA_NEON)
+            sub_w, sub_h = sub_img.size
+            sub_x = (WIDTH - sub_w) // 2
+            sub_y = cy + 70
+            sub_img = set_alpha(sub_img, sub_alpha)
+            sub_img = place_on_canvas(sub_img, sub_x, sub_y)
+            base = Image.alpha_composite(base.convert("RGBA"), sub_img).convert("RGB")
 
-            # Hex core behind G2
+            # Hex core behind subtitle
             if t > 2.3:
                 core_layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
                 cdraw = ImageDraw.Draw(core_layer)
                 pulse = 0.5 + 0.5 * math.sin(t * 10)
                 for i in range(8, 0, -1):
                     alpha_c = int(40 * (1 - i / 8) * pulse + 10)
-                    pts = hexagon_points(cx, cy + 120 + g2_h // 2, 180 * i / 8 * g2_phase)
+                    pts = hexagon_points(cx, cy + 120 + sub_h // 2, 180 * i / 8 * sub_phase)
                     cdraw.polygon(pts, fill=(MAGENTA_NEON[0], MAGENTA_NEON[1], MAGENTA_NEON[2], alpha_c))
                 base = Image.alpha_composite(base.convert("RGBA"), core_layer).convert("RGB")
 
@@ -531,11 +533,11 @@ def render_frames():
             final_layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
             fdraw = ImageDraw.Draw(final_layer)
 
-            # Large G2 emblem
-            g2_img = make_metallic_text("G2", 280, glow_color=MAGENTA_NEON)
-            g2_img = set_alpha(g2_img, final_alpha)
-            gw, gh = g2_img.size
-            final_layer.paste(g2_img, ((WIDTH - gw) // 2, cy - 220), g2_img)
+            # Main title emblem
+            title_img2 = make_metallic_text("LAST DEPOSIT", 140, glow_color=CYAN_ENERGON)
+            title_img2 = set_alpha(title_img2, final_alpha)
+            gw, gh = title_img2.size
+            final_layer.paste(title_img2, ((WIDTH - gw) // 2, cy - 220), title_img2)
 
             # Character roster strip
             strip_w = 1400
@@ -560,7 +562,7 @@ def render_frames():
                 final_layer.paste(name_img, (name_x, name_y), name_img)
 
             # Episode title placeholder
-            ep_img = make_metallic_text("EPISODE: CORE OF IRON", 48, glow_color=CYAN_ENERGON)
+            ep_img = make_metallic_text("EPISODE 01: THE DROP", 48, glow_color=CYAN_ENERGON)
             ep_img = set_alpha(ep_img, final_alpha)
             ew, eh = ep_img.size
             final_layer.paste(ep_img, ((WIDTH - ew) // 2, HEIGHT - 160), ep_img)

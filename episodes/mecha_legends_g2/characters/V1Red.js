@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { RobotCharacterBase } from './RobotCharacterBase.js';
 
 /**
- * V1_RED — Stellar Vanguard 速度型先锋
+ * V1_RED — 灰狐安保 速度型先锋
  * 红色跑车机器人：流线型车头胸甲、侧进气口、单目面罩、尾翼背包。
  */
 export class V1Red extends RobotCharacterBase {
@@ -12,7 +12,7 @@ export class V1Red extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'agile'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'Jump', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'PlasmaRifle',
       'RobotTransform', 'RobotRevert'
     ]);
   }

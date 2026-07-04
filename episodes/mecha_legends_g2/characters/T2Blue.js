@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { RobotCharacterBase } from './RobotCharacterBase.js';
 
 /**
- * T2_BLUE — Stellar Vanguard 重装型火力手
+ * T2_BLUE — 灰狐安保 重装型火力手
  * 蓝色重型卡车机器人：进气格栅胸甲、粗壮排气烟囱、履带护肩、重型膝甲。
  */
 export class T2Blue extends RobotCharacterBase {
@@ -12,7 +12,7 @@ export class T2Blue extends RobotCharacterBase {
     this.archetypes = ['humanoid', 'fighter', 'vehicle', 'slow', 'strong'];
     this.allowedBodyAnimations = new Set([
       'Walk', 'Run', 'Idle', 'LookAround', 'PointForward',
-      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'SpiritGunFire',
+      'CrossArms', 'HandsOnHips', 'Nod', 'ShakeHead', 'LeftPunch', 'RightPunch', 'PlasmaRifle',
       'RobotTransform', 'RobotRevert'
     ]);
   }
