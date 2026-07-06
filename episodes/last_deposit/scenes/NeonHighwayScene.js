@@ -243,9 +243,9 @@ export class NeonHighwayScene extends SceneBase {
     this.droneEncounterTime = 15.0;
     this.droneEntryEndTime = 25.0;
     const droneFormations = [
-      { x: -2.2, y: 2.4, z: -6.5, entryX: -14, entryY: 0.6, entryZ: -12 },
-      { x: 0.0, y: 2.4, z: -6.5, entryX: 14, entryY: 0.9, entryZ: -15 },
-      { x: 2.2, y: 2.4, z: -6.5, entryX: -14, entryY: 1.2, entryZ: -18 },
+      { x: -2.2, y: 3.5, z: -6.5, entryX: -14, entryY: 0.6, entryZ: -12 },
+      { x: 0.0, y: 2.8, z: -6.5, entryX: 14, entryY: 0.9, entryZ: -15 },
+      { x: 2.2, y: 4.2, z: -6.5, entryX: -14, entryY: 1.2, entryZ: -18 },
     ];
     for (let i = 0; i < droneFormations.length; i++) {
       const f = droneFormations[i];
@@ -271,7 +271,7 @@ export class NeonHighwayScene extends SceneBase {
 
     // 敌方无人机枪口红橙脉冲（与 script.story 的 SFX/combat tag 同步）
     this.muzzleFlashes = [];
-    const pulseTimes = [36.2, 37.0, 37.8, 38.8, 39.8, 40.8, 63.2, 64.6];
+    const pulseTimes = [36.2, 37.0, 37.8, 38.8, 39.8, 40.8, 45.2, 45.7, 46.2, 63.2, 64.6];
     for (let i = 0; i < pulseTimes.length; i++) {
       const group = new THREE.Group();
       // 敌军统一使用红橙脉冲，和灰狐安保的蓝白火力建立清晰阵营区分。
@@ -418,6 +418,24 @@ export class NeonHighwayScene extends SceneBase {
       { time: 39.3, attacker: '雷恩', defender: 'Viper-1', destroy: false },
       { time: 40.3, attacker: '布洛克', defender: 'Viper-2', destroy: false },
       { time: 41.3, attacker: '斯凯', defender: 'Viper-3', destroy: false },
+      { time: 47.3, attacker: '雷恩', defender: 'Viper-1', destroy: false },
+      { time: 47.9, attacker: '雷恩', defender: 'Viper-1', destroy: false },
+      { time: 47.9, attacker: '布洛克', defender: 'Viper-2', destroy: false },
+      { time: 48.5, attacker: '布洛克', defender: 'Viper-2', destroy: false },
+      { time: 48.5, attacker: '斯凯', defender: 'Viper-3', destroy: false },
+      { time: 49.1, attacker: '斯凯', defender: 'Viper-3', destroy: false },
+      { time: 49.3, attacker: '雷恩', defender: 'Viper-1', destroy: false },
+      { time: 49.9, attacker: '雷恩', defender: 'Viper-1', destroy: false },
+      { time: 49.9, attacker: '布洛克', defender: 'Viper-2', destroy: false },
+      { time: 50.5, attacker: '布洛克', defender: 'Viper-2', destroy: false },
+      { time: 50.5, attacker: '斯凯', defender: 'Viper-3', destroy: false },
+      { time: 51.1, attacker: '斯凯', defender: 'Viper-3', destroy: false },
+      { time: 52.1, attacker: '雷恩', defender: 'Viper-1', destroy: false },
+      { time: 52.8, attacker: '雷恩', defender: 'Viper-1', destroy: false },
+      { time: 52.7, attacker: '布洛克', defender: 'Viper-2', destroy: false },
+      { time: 53.4, attacker: '布洛克', defender: 'Viper-2', destroy: false },
+      { time: 53.3, attacker: '斯凯', defender: 'Viper-3', destroy: false },
+      { time: 54.0, attacker: '斯凯', defender: 'Viper-3', destroy: false },
       { time: 62.2, attacker: '雷恩', defender: 'Viper-1', destroy: false },
       { time: 62.6, attacker: '布洛克', defender: 'Viper-2', destroy: false },
       { time: 63.0, attacker: '斯凯', defender: 'Viper-3', destroy: false },
@@ -490,7 +508,7 @@ export class NeonHighwayScene extends SceneBase {
 
     // 命中爆炸火花（与 impact 音效同步）
     this.hitSparks = [];
-    const hitTimes = [41.70, 42.20, 42.80, 43.50, 45.00, 46.20, 47.00];
+    const hitTimes = [41.70, 42.20, 42.80, 43.50, 45.00, 45.38, 45.88, 46.20, 46.38, 47.00, 47.30, 47.90, 48.50, 49.10, 49.30, 49.90, 50.50, 51.10, 52.10, 52.80, 53.40, 54.00];
     hitTimes.forEach((t) => {
       const group = new THREE.Group();
       group.position.set((Math.random() - 0.5) * 10, 0.5 + Math.random(), -8 - Math.random() * 18);
@@ -746,9 +764,9 @@ export class NeonHighwayScene extends SceneBase {
 
   _getDroneCombatPosition(idx, time) {
     const shotTimes = [
-      [36.2, 38.8, 63.2],   // Viper-1
-      [37.0, 39.8, 64.6],   // Viper-2
-      [37.8, 40.8],         // Viper-3
+      [36.2, 38.8, 45.2, 63.2],   // Viper-1
+      [37.0, 39.8, 45.7, 64.6],   // Viper-2
+      [37.8, 40.8, 46.2],         // Viper-3
     ][idx] || [];
 
     const base = this.enemyDrones[idx].basePos.clone();
@@ -789,9 +807,9 @@ export class NeonHighwayScene extends SceneBase {
 
   _getDroneAttackRun(idx, time) {
     const shotTimes = [
-      [36.2, 38.8, 63.2],
-      [37.0, 39.8, 64.6],
-      [37.8, 40.8],
+      [36.2, 38.8, 45.2, 63.2],
+      [37.0, 39.8, 45.7, 64.6],
+      [37.8, 40.8, 46.2],
     ][idx] || [];
 
     for (const t of shotTimes) {
@@ -979,17 +997,55 @@ export class NeonHighwayScene extends SceneBase {
       }
     }
 
-    if (this.road) {
+    // 27.2s 台词“变！”后强制切回机器人形态，确保公路战斗以机器人演出
+    if (!this._combatRobotModeSet && time >= 27.2) {
+      this._combatRobotModeSet = true;
+      for (const name of ['雷恩', '布洛克', '斯凯']) {
+        const c = this._findCharacter(name);
+        if (c && typeof c.transform === 'function') {
+          c.transform(0);
+          c.setMode('robot');
+        }
+      }
+    }
+
+    // 36–67s 战斗阶段：强制英雄始终面朝各自分配的无人机，避免背对敌人
+    if (time >= 36.0 && time <= 67.0) {
+      const heroDronePairs = [
+        { hero: '雷恩', droneIdx: 0 },
+        { hero: '布洛克', droneIdx: 1 },
+        { hero: '斯凯', droneIdx: 2 },
+      ];
+      for (const { hero, droneIdx } of heroDronePairs) {
+        const heroChar = this._findCharacter(hero);
+        const drone = this.enemyDrones?.[droneIdx];
+        if (heroChar?.mesh && drone?.mesh) {
+          const dx = drone.mesh.position.x - heroChar.mesh.position.x;
+          const dz = drone.mesh.position.z - heroChar.mesh.position.z;
+          heroChar.mesh.rotation.y = Math.atan2(dx, dz);
+        }
+      }
+    }
+
+    // 只有英雄处于载具形态时才让公路/背景流动；机器人形态（战斗、战后讲话）时路面静止。
+    const anyHeroRobot = ['雷恩', '布洛克', '斯凯'].some((name) => {
+      const c = this._findCharacter(name);
+      return c && c.currentMode === 'robot';
+    });
+
+    if (this.road && !anyHeroRobot) {
       this.roadOffset += delta * 2.5;
       this.road.material.map.offset.y = -this.roadOffset;
     }
 
-    [...this.buildings, ...this.signalPosts, ...this.streetLights].forEach((obj) => {
-      obj.mesh.position.z += obj.speed * delta;
-      if (obj.mesh.position.z > 20) {
-        obj.mesh.position.z = -190 - Math.random() * 30;
-      }
-    });
+    if (!anyHeroRobot) {
+      [...this.buildings, ...this.signalPosts, ...this.streetLights].forEach((obj) => {
+        obj.mesh.position.z += obj.speed * delta;
+        if (obj.mesh.position.z > 20) {
+          obj.mesh.position.z = -190 - Math.random() * 30;
+        }
+      });
+    }
 
     // 敌方无人机悬停上下摆动（15s 前完全隐藏，15s 从侧面爬升进场；36s 后随 combat tag 开火）
     // 同步隐藏同名角色无人机，避免场景无人机和角色无人机同时出现造成“六架”错觉
@@ -1028,9 +1084,15 @@ export class NeonHighwayScene extends SceneBase {
         }
         // 保持机头朝向英雄（+z 方向），掠袭时加入俯冲/爬升姿态
         const attackRun = this._getDroneAttackRun(idx, time);
+        // 在战斗阶段(36-67s)始终面向英雄，非战斗阶段小幅摆动
+        if (time >= 36.0 && time <= 67.0) {
+          // 战斗时面向英雄位置(+z方向)
+          drone.mesh.rotation.y = 0;
+        } else {
+          drone.mesh.rotation.y = Math.sin(time * 1.2 + idx) * 0.04;
+        }
         drone.mesh.rotation.x = attackRun ? attackRun.pitch : 0.12;
         drone.mesh.rotation.z = (attackRun ? attackRun.roll : 0) + Math.sin(time * 1.8 + idx * 0.7) * 0.04;
-        drone.mesh.rotation.y = Math.sin(time * 1.2 + idx) * 0.04;
         updateViperDrone(drone.mesh, time, idx + 1);
         const beam = drone.mesh.userData.searchBeam;
         if (beam) {

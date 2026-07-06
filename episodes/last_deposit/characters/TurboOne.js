@@ -19,7 +19,7 @@ export class TurboOne extends RobotCharacterBase {
       'KneeStrike', 'AirTatsumaki', 'HeadStomp', 'KneeDrop', 'RollingThunder',
       'GalaxyWhirl', 'BlitzBall', 'Hadoken', 'UltraBeam', 'PlasmaRifle',
       'PlasmaRifleCharge', 'CrouchPlasmaRifle', 'SpiritGunFire', 'SpiritGunCharge', 'FightingStance', 'HitStagger', 'Knockdown', 'GetUp',
-      'RobotTransform', 'RobotRevert'
+      'RobotTransform', 'RobotRevert', 'HoldPlasmaRifle', 'VehicleDrive'
     ]);
   }
 

@@ -16,10 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/mecha_legends_g2/`（90 年代声波机器人风格原创机甲剧集——原创角色、场景、配音、旋律化 BGM）
+**最新 Episode**：`episodes/last_deposit/`**（90 年代声波机器人风格原创机甲剧集——原创角色、场景、配音、旋律化 BGM）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
-- `episodes/mecha_legends_g2/` — 90 年代声波机器人风格原创机甲剧集
+- `episodes/last_deposit/` — 90 年代声波机器人风格原创机甲剧集
 - `episodes/chibi_maruko_s1e1/` — 樱桃小丸子风格日常
 - `episodes/transformers_beast_wars_s1e1/` / `episodes/transformers_beast_wars_s1e2/` — 原创机甲宇宙（beast wars 风格续集）
 - `episodes/kimi_showcase_s1e1/` — Kimi 能力展示第一集

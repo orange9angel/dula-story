@@ -7,6 +7,13 @@ import { CharacterBase, AuraEffect } from 'dula-engine';
  * 以及一组机甲细节构建工具（散热栅、液压杆、装甲板、铆钉等）。
  */
 export class RobotCharacterBase extends CharacterBase {
+  constructor(name) {
+    super(name);
+    // 机器人/载具不需要呼吸 idle 微动；关闭后可避免 CrossArms 等动作结束后
+    // ActionMatrixController 的呼吸动画与 CharacterBase._updateIdle 冲突导致的抖动。
+    this.disableIdleMotion = true;
+  }
+
   createToonGradient() {
     const canvas = document.createElement('canvas');
     canvas.width = 8;

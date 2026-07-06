@@ -1,4 +1,4 @@
-# mecha_legends_g2 Design Principles
+# last_deposit Design Principles
 
 > 环境音和配乐都是为了剧情服务的。  
 > Every audio element and every visual detail must support the current story beat. If it doesn't have a clear narrative purpose, remove it.

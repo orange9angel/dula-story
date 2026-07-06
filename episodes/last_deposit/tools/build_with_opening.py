@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build the final mecha_legends_g2 video with opening + transition + episode.
+Build the final last_deposit video with opening + transition + episode.
 
 Concatenates:
   1. ../output/opening.mp4      (cartoon opening title sequence)

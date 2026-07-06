@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Regenerate all character dialogue MP3s for mecha_legends_g2.
+Regenerate all character dialogue MP3s for last_deposit.
 
 Reads:
   - ../config/voice_config.json

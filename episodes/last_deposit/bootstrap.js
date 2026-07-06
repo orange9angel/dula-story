@@ -18,8 +18,12 @@ import { PlasmaVaultScene } from './scenes/PlasmaVaultScene.js';
 import { RobotTransform } from './animations/RobotTransform.js';
 import { RobotRevert } from './animations/RobotRevert.js';
 import { CrouchPlasmaRifle } from './animations/CrouchPlasmaRifle.js';
+import { VehicleDrive } from './animations/VehicleDrive.js';
+
+import { registerLastDepositCombatActions } from './combatActions.js';
 
 registerAll();
+registerLastDepositCombatActions();
 
 // 注册自定义角色（使用中文名，不再使用英文代号）
 registerCharacter('雷恩', TurboOne);
@@ -42,6 +46,7 @@ registerScene('PlasmaVaultScene', PlasmaVaultScene);
 registerAnimation('RobotTransform', RobotTransform);
 registerAnimation('RobotRevert', RobotRevert);
 registerAnimation('CrouchPlasmaRifle', CrouchPlasmaRifle);
+registerAnimation('VehicleDrive', VehicleDrive);
 // 把日式灵丸动画映射为机甲风格的等离子步枪别名
 registerAnimation('PlasmaRifle', SpiritGunFire);
 registerAnimation('PlasmaRifleCharge', SpiritGunCharge);

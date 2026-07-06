@@ -72,7 +72,7 @@ episodes/<name>/
 | `worm_dance` | 虫子迪斯科 |
 | `transformers_beast_wars_s1e1` / `transformers_beast_wars_s1e2` | 原创机甲宇宙（beast wars 风格续集） |
 | `chibi_maruko_s1e1` | 樱桃小丸子风格日常 |
-| `mecha_legends_g2` | 90 年代声波机器人风格原创机甲剧集 |
+| `last_deposit` | 90 年代声波机器人风格原创机甲剧集（Last Deposit） |
 
 完整列表见 `episodes/`。
 

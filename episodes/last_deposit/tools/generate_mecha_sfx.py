@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Audio/visual choices must serve the story — see ../DESIGN.md.
 """
-Standalone procedural SFX bed generator for mecha_legends_g2.
+Standalone procedural SFX bed generator for last_deposit.
 
 This script is now a thin wrapper around the engine's procedural audio
 component (`dula-engine/tools/procedural_audio`). The same effect is also

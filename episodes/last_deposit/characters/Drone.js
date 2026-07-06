@@ -7,10 +7,11 @@ export class Drone extends CharacterBase {
   constructor(name) {
     super(name || 'Viper');
     this.boundingRadius = 1.1;
+    this.disableIdleMotion = true;
     this.archetypes = ['fighter', 'floating', 'vehicle'];
     this.allowedBodyAnimations = new Set([
       'Idle', 'PlasmaRifle', 'PlasmaRifleCharge', 'SpiritGunFire', 'SpiritGunCharge',
-      'FightingStance', 'HitStagger', 'Knockdown',
+      'FightingStance', 'HitStagger', 'Knockdown', 'HoldPlasmaRifle',
     ]);
   }
 
@@ -87,7 +88,12 @@ export class Drone extends CharacterBase {
     super.update(time, delta);
     if (!this.mesh) return;
     const seed = this.name.codePointAt(this.name.length - 1) || 0;
-    this.mesh.position.y = this.baseY + Math.sin(time * 2.2 + seed) * 0.10;
+    // Only apply hover oscillation if this drone is in flight mode (not grounded)
+    // Check if the character is explicitly marked as flying or has a baseY > 0.5
+    const isFlying = this.baseY > 0.5 || this.mesh.userData?.isFlying;
+    if (isFlying) {
+      this.mesh.position.y = this.baseY + Math.sin(time * 2.2 + seed) * 0.10;
+    }
     this.mesh.rotation.z = Math.sin(time * 1.35 + seed) * 0.055;
     this.mesh.rotation.x = 0.04 + Math.sin(time * 0.8 + seed) * 0.025;
     updateViperDrone(this.mesh, time, seed);

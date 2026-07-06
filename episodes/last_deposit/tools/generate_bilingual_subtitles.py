@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate bilingual SRT subtitles for mecha_legends_g2.
+Generate bilingual SRT subtitles for last_deposit.
 
 Reads:
   - ../assets/audio/manifest.json

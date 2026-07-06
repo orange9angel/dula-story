@@ -161,13 +161,13 @@
     "render:maruko": "dula-render ./episodes/chibi_maruko_s1e1",
     "build:maruko": "npm run audio:maruko && npm run render:maruko",
     "inspect:maruko": "dula-inspect ./episodes/chibi_maruko_s1e1",
-    "audio:mecha": "dula-audio ./episodes/mecha_legends_g2",
-    "audio:mecha:ds": "dula-audio ./episodes/mecha_legends_g2 --provider=dashscope",
-    "verify:mecha": "dula-verify ./episodes/mecha_legends_g2",
-    "preview:mecha": "dula-preview ./episodes/mecha_legends_g2",
-    "render:mecha": "dula-render ./episodes/mecha_legends_g2",
-    "build:mecha": "npm run audio:mecha && npm run render:mecha",
-    "inspect:mecha": "dula-inspect ./episodes/mecha_legends_g2"
+    "audio:deposit": "dula-audio ./episodes/last_deposit",
+    "audio:deposit:ds": "dula-audio ./episodes/last_deposit --provider=dashscope",
+    "verify:deposit": "dula-verify ./episodes/last_deposit",
+    "preview:deposit": "dula-preview ./episodes/last_deposit",
+    "render:deposit": "dula-render ./episodes/last_deposit",
+    "build:deposit": "npm run audio:deposit && npm run render:deposit",
+    "inspect:deposit": "dula-inspect ./episodes/last_deposit"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Audio/visual choices must serve the story — see ../DESIGN.md.
 """
-Redesign mecha_legends_g2 main episode audio mix.
+Redesign last_deposit main episode audio mix.
 
 Changes:
   - No opening narrator; episode starts directly with character dialogue.

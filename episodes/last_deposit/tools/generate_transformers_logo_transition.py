@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate a 5-second Transformers-style logo transition for mecha_legends_g2.
+Generate a 5-second Transformers-style logo transition for last_deposit.
 
 Effect:
   - Dark cybertronian steel / circuit background
