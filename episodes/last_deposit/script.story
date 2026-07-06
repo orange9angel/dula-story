@@ -31,7 +31,7 @@ Last Deposit
 
 4
 00:00:27,200 --> 00:00:30,000
-[雷恩]{Voice:angry}{Camera:FightWide|distance=10|height=3} 变！清场，然后继续赶路！
+[雷恩]{Voice:angry}{Camera:FightWide|distance=10|height=3}{Exaggeration:anger_aura|intensity=0.9} 变！清场，然后继续赶路！
 {SFX:Play|name=transform_mechanical|offset=0.000}
 {Event:Animate|character=雷恩|action=RobotRevert|duration=1.0}
 {Event:Animate|character=布洛克|action=RobotRevert|duration=1.0}
@@ -58,10 +58,11 @@ Last Deposit
 {Event:Animate|character=Viper-2|action=FightingStance|duration=5.0}
 {Event:Animate|character=Viper-3|action=FightingStance|duration=5.0}
 {Position:雷恩|face=camera}
-[雷恩]{Voice:angry}{Animation:FaceDetermined|character=雷恩}{Camera:TrackingCloseUp|characterName=雷恩|distance=3|heightOffset=0.1} 无人机不会废话。清场！
+[雷恩]{Voice:angry}{Animation:FaceDetermined|character=雷恩}{Camera:TrackingCloseUp|characterName=雷恩|distance=3|heightOffset=0.1}{Exaggeration:shonen_anger|intensity=0.8} 无人机不会废话。清场！
 
 6
 00:00:36,200 --> 00:00:55,000
+{Exaggeration:impact_lines|intensity=0.6}
 {Event:Animate|character=雷恩|action=HoldPlasmaRifle|duration=18.0}
 {Event:Animate|character=布洛克|action=HoldPlasmaRifle|duration=18.0}
 {Event:Animate|character=斯凯|action=HoldPlasmaRifle|duration=18.0}
@@ -103,6 +104,7 @@ Last Deposit
 
 8
 00:01:02,200 --> 00:01:08,000
+{Exaggeration:screen_shake|intensity=0.7}
 {Event:Animate|character=雷恩|action=HoldPlasmaRifle|duration=6.0}
 {Event:Animate|character=布洛克|action=HoldPlasmaRifle|duration=6.0}
 {Event:Animate|character=斯凯|action=HoldPlasmaRifle|duration=6.0}
@@ -120,7 +122,7 @@ Last Deposit
 
 9
 00:01:08,200 --> 00:01:15,000
-[斯凯]{Voice:excited}{Camera:Static|position=0,5,8|lookAt=0,1,0} 敌机全灭！队长，道路清空。
+[斯凯]{Voice:excited}{Camera:Static|position=0,5,8|lookAt=0,1,0}{Exaggeration:chibi_deform|intensity=0.8} 敌机全灭！队长，道路清空。
 
 10
 00:01:15,200 --> 00:01:22,000
@@ -146,11 +148,11 @@ Last Deposit
 
 12
 00:01:30,200 --> 00:01:37,000
-[维克]{Voice:angry}{Animation:FaceAngry|character=维克}{Camera:LowAngle|distance=4|height=1} 三架 Viper，全毁。灰狐这次派来的人不简单。
+[维克]{Voice:angry}{Animation:FaceAngry|character=维克}{Camera:LowAngle|distance=4|height=1}{Exaggeration:vein_forehead|intensity=0.8} 三架 Viper，全毁。灰狐这次派来的人不简单。
 
 13
 00:01:37,200 --> 00:01:44,000
-[达什]{Voice:excited}{FXChargeGlow}{Camera:FightDramatic|distance=5|height=1.5} 要我去追吗？那点废铁我还没拆够。
+[达什]{Voice:excited}{FXChargeGlow}{Camera:FightDramatic|distance=5|height=1.5}{Exaggeration:eyebrow_fly|intensity=0.7} 要我去追吗？那点废铁我还没拆够。
 
 14
 00:01:44,200 --> 00:01:52,000
