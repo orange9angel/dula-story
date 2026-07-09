@@ -251,6 +251,8 @@ export class UndergroundPipeScene extends SceneBase {
   }
 
   update(time, delta) {
+    super.update(time, delta);
+
     this.time = time;
 
     // 霓虹灯管轻微闪烁

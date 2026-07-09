@@ -276,6 +276,8 @@ export class SubwayHubScene extends SceneBase {
   }
 
   update(time, delta) {
+    super.update(time, delta);
+
     this.time = time;
 
     // 荧光灯闪烁
