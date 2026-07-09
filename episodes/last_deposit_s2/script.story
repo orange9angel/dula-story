@@ -70,7 +70,7 @@ Last Deposit: Episode 2
 7
 00:01:02,200 --> 00:01:08,000
 [斯凯]{Voice:worried} 站台尽头有门禁，标识写着「反应堆区」。维克想让我们往那走。
-{Event:Animate|character=斯凯|action=FaceWorried|duration=0.3}
+{Event:Animate|character=斯凯|action=FaceConfused|duration=0.3}
 {Camera:TrackingCloseUp|characterName=斯凯|distance=3.0|heightOffset=-0.1}
 
 8

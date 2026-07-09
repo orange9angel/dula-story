@@ -18,7 +18,7 @@ export class Overdrive extends RobotCharacterBase {
       'JumpFlyingKick', 'HurricaneKick', 'DragonPunch', 'BackFist', 'SweepKick',
       'KneeStrike', 'AirTatsumaki', 'HeadStomp', 'KneeDrop', 'RollingThunder',
       'GalaxyWhirl', 'BlitzBall', 'Hadoken', 'UltraBeam', 'PlasmaRifle',
-      'PlasmaRifleCharge', 'FightingStance', 'HitStagger', 'Knockdown', 'GetUp',
+      'PlasmaRifleCharge', 'SpiritGunFire', 'SpiritGunCharge', 'FightingStance', 'HitStagger', 'Knockdown', 'GetUp',
       'RobotTransform', 'RobotRevert'
     ]);
   }

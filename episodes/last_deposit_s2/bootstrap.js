@@ -10,7 +10,7 @@
  */
 
 import { registerAll } from 'dula-assets';
-import { registerCharacter, registerScene, registerAnimation, CharacterRegistry, Storyboard } from 'dula-engine';
+import { AnimationBase, registerCharacter, registerScene, registerAnimation, CharacterRegistry, Storyboard } from 'dula-engine';
 import { SpiritGunFire } from '/node_modules/dula-assets/animations/yuyuhakusho/SpiritGunFire.js';
 import { SpiritGunCharge } from '/node_modules/dula-assets/animations/yuyuhakusho/SpiritGunCharge.js';
 import * as THREE from 'three';
@@ -45,6 +45,12 @@ import { MoodDirector } from './lib/MoodDirector.js';
 import { bindVoiceToMood } from './lib/VoiceExpressionBinder.js';
 import { attachStateMachine } from './lib/RobotStateMachine.js';
 
+class Idle extends AnimationBase {
+  constructor() {
+    super('Idle', 1.0);
+  }
+}
+
 registerAll();
 registerS2CombatActions();
 
@@ -68,6 +74,7 @@ registerAnimation('RobotTransform', RobotTransform);
 registerAnimation('RobotRevert', RobotRevert);
 registerAnimation('CrouchPlasmaRifle', CrouchPlasmaRifle);
 registerAnimation('VehicleDrive', VehicleDrive);
+registerAnimation('Idle', Idle);
 // 把日式灵丸动画映射为机甲风格的等离子步枪别名
 registerAnimation('PlasmaRifle', SpiritGunFire);
 registerAnimation('PlasmaRifleCharge', SpiritGunCharge);

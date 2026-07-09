@@ -16,7 +16,7 @@
  */
 
 import * as THREE from 'three';
-import { MusicCue } from 'dula-engine';
+import { AnimationRegistry, MusicCue } from 'dula-engine';
 
 export const MOODS = {
   stealth: {
@@ -208,9 +208,13 @@ export class MoodDirector {
       }
     }
 
-    // 表情（如果角色有表情系统）
-    if (!skipExpression && character.playExpression && mood.expression) {
-      character.playExpression(mood.expression);
+    // 表情：通过引擎动画 Registry 排期，兼容 Face* 的 PoseMatrix 路径。
+    if (!skipExpression && mood.expression) {
+      const ExpressionClass = AnimationRegistry[mood.expression];
+      if (ExpressionClass) {
+        const now = this.storyboard?._currentTime ?? 0;
+        character.playAnimation(ExpressionClass, now, 0.45);
+      }
     }
   }
 
