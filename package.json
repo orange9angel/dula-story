@@ -167,7 +167,14 @@
     "preview:deposit": "dula-preview ./episodes/last_deposit",
     "render:deposit": "dula-render ./episodes/last_deposit",
     "build:deposit": "npm run audio:deposit && npm run render:deposit",
-    "inspect:deposit": "dula-inspect ./episodes/last_deposit"
+    "inspect:deposit": "dula-inspect ./episodes/last_deposit",
+    "audio:deposit_s2": "dula-audio ./episodes/last_deposit_s2",
+    "audio:deposit_s2:ds": "dula-audio ./episodes/last_deposit_s2 --provider=dashscope",
+    "verify:deposit_s2": "dula-verify ./episodes/last_deposit_s2",
+    "preview:deposit_s2": "dula-preview ./episodes/last_deposit_s2",
+    "render:deposit_s2": "dula-render ./episodes/last_deposit_s2",
+    "build:deposit_s2": "npm run audio:deposit_s2 && npm run render:deposit_s2",
+    "inspect:deposit_s2": "dula-inspect ./episodes/last_deposit_s2"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
