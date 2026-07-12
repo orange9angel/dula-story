@@ -242,10 +242,10 @@ export class SubwayHubScene extends SceneBase {
     sctx.fillStyle = '#ff3333';
     sctx.font = 'bold 40px sans-serif';
     sctx.textAlign = 'center';
-    sctx.fillText('CLOSED', 128, 55);
+    sctx.fillText('QUIET', 128, 55);
     sctx.fillStyle = '#88ccff';
     sctx.font = '24px sans-serif';
-    sctx.fillText('EXIT → REACTOR', 128, 95);
+    sctx.fillText('VOICE LOCK', 128, 95);
     const signTex = new THREE.CanvasTexture(signCanvas);
     const sign = new THREE.Mesh(
       new THREE.PlaneGeometry(2.8, 1.4),

@@ -16,6 +16,7 @@ export class Turret extends CharacterBase {
     this.archetypes = ['turret', 'floating'];
     this.allowedBodyAnimations = new Set([
       'Idle', 'FightingStance', 'PlasmaRifle', 'PlasmaRifleCharge',
+      'SpiritGunFire', 'SpiritGunCharge',
       'HitStagger', 'Knockdown', 'GetUp'
     ]);
     this.baseY = 4.2;

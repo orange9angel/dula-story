@@ -33,8 +33,11 @@ import { RobotTransform } from './animations/RobotTransform.js';
 import { RobotRevert } from './animations/RobotRevert.js';
 import { CrouchPlasmaRifle } from './animations/CrouchPlasmaRifle.js';
 import { VehicleDrive } from './animations/VehicleDrive.js';
+import { ReadableAimRifle } from './animations/ReadableAimRifle.js';
+import { ReadableFireRifle } from './animations/ReadableFireRifle.js';
 
 import { registerS2CombatActions } from './combatActions.js';
+import { ReadableCombatDirector } from './lib/ReadableCombatDirector.js';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // S2 新资产
@@ -48,6 +51,30 @@ import { attachStateMachine } from './lib/RobotStateMachine.js';
 class Idle extends AnimationBase {
   constructor() {
     super('Idle', 1.0);
+  }
+}
+
+class RobotSteadyWalk extends AnimationBase {
+  constructor() {
+    super('RobotSteadyWalk', 1.0);
+  }
+
+  update(t, character) {
+    const cycle = Math.sin(t * Math.PI * 8);
+    const counter = Math.sin(t * Math.PI * 8 + Math.PI);
+    const lift = Math.abs(cycle) * 0.018;
+
+    if (character.leftLeg) character.leftLeg.rotation.x = cycle * 0.18;
+    if (character.rightLeg) character.rightLeg.rotation.x = counter * 0.18;
+    if (character.leftKnee) character.leftKnee.rotation.x = Math.max(0, counter) * 0.22;
+    if (character.rightKnee) character.rightKnee.rotation.x = Math.max(0, cycle) * 0.22;
+    if (character.leftArm) character.leftArm.rotation.x = counter * 0.10;
+    if (character.rightArm) character.rightArm.rotation.x = cycle * 0.10;
+    if (character.headGroup) character.headGroup.rotation.x = Math.abs(cycle) * 0.015;
+
+    if (character.baseY !== undefined) {
+      character.mesh.position.y = character.baseY + lift;
+    }
   }
 }
 
@@ -74,7 +101,10 @@ registerAnimation('RobotTransform', RobotTransform);
 registerAnimation('RobotRevert', RobotRevert);
 registerAnimation('CrouchPlasmaRifle', CrouchPlasmaRifle);
 registerAnimation('VehicleDrive', VehicleDrive);
+registerAnimation('ReadableAimRifle', ReadableAimRifle);
+registerAnimation('ReadableFireRifle', ReadableFireRifle);
 registerAnimation('Idle', Idle);
+registerAnimation('RobotSteadyWalk', RobotSteadyWalk);
 // 把日式灵丸动画映射为机甲风格的等离子步枪别名
 registerAnimation('PlasmaRifle', SpiritGunFire);
 registerAnimation('PlasmaRifleCharge', SpiritGunCharge);
@@ -140,18 +170,23 @@ function installMoodSystem() {
     this._moodEvents = [];
     this._alertEvents = [];
     this._stateEvents = [];
+    this._readableCombatDirector = new ReadableCombatDirector(this);
     for (const ev of this.storyEvents || []) {
-      if (ev.name === 'MoodTransition') {
+      const evName = String(ev.name || ev.type || '').toLowerCase();
+      if (evName === 'moodtransition') {
         this._moodEvents.push({ startTime: ev.startTime, to: ev.options.to, duration: parseFloat(ev.options.duration) || 0.6 });
       }
-      if (ev.name === 'SetAlert') {
+      if (evName === 'setalert') {
         this._alertEvents.push({ startTime: ev.startTime, level: parseInt(ev.options.level, 10) || 0 });
       }
-      if (ev.name === 'Damage') {
+      if (evName === 'damage') {
         this._stateEvents.push({ startTime: ev.startTime, type: 'damage', character: ev.options.character, amount: parseFloat(ev.options.amount) || 20 });
       }
-      if (ev.name === 'Overdrive') {
+      if (evName === 'overdrive') {
         this._stateEvents.push({ startTime: ev.startTime, type: 'overdrive', character: ev.options.character });
+      }
+      if (evName === 'readableshot' || evName === 'readablemelee') {
+        this._readableCombatDirector.addEvent(ev);
       }
     }
 
@@ -227,6 +262,8 @@ function installMoodSystem() {
         }
       }
     }
+
+    this._readableCombatDirector?.update(time, delta);
 
     return originalUpdate.call(this, time, delta);
   };

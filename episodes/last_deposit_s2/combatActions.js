@@ -39,7 +39,7 @@ export function registerS2CombatActions() {
       {
         anim: 'CrouchPlasmaRifle',
         hitFrame: 0.25,
-        sfx: { name: 'plasma_rifle', trigger: 'hitFrame', volume: 0.9 },
+        sfx: { name: 'energy_blast', trigger: 'hitFrame', volume: 0.9 },
         fx: { type: 'FXHitSpark', trigger: 'hitFrame', attach: 'defender' },
         reaction: 'Knockdown',
         hitstop: 0.04,
@@ -54,14 +54,14 @@ export function registerS2CombatActions() {
       {
         anim: 'DashForward',
         hitFrame: null,
-        sfx: { name: 'stealth_step', trigger: 'start', volume: 0.4 },
+        sfx: { name: 'dash_whoosh', trigger: 'start', volume: 0.4 },
         fx: { type: 'FXAfterImage', trigger: 'start', attach: 'attacker' },
         camera: 'FightFollow',
       },
       {
         anim: 'LeftPunch',
         hitFrame: 0.15,
-        sfx: { name: 'mech_crunch', trigger: 'hitFrame', volume: 0.7 },
+        sfx: { name: 'impact_thud', trigger: 'hitFrame', volume: 0.7 },
         fx: { type: 'FXHitSpark', trigger: 'hitFrame', attach: 'defender' },
         reaction: 'Knockdown',
         hitstop: 0.05,
@@ -76,7 +76,7 @@ export function registerS2CombatActions() {
       {
         anim: 'PlasmaRifleCharge',
         hitFrame: null,
-        sfx: { name: 'overload_build', trigger: 'start', volume: 0.8 },
+        sfx: { name: 'energy_blast', trigger: 'start', volume: 0.8 },
         fx: [
           { type: 'FXChargeGlow', trigger: 'start', attach: 'attacker' },
           { type: 'FXEnergyAura', trigger: 'start', attach: 'attacker' },
@@ -93,7 +93,7 @@ export function registerS2CombatActions() {
       {
         anim: 'PlasmaRifle',
         hitFrame: 0.18,
-        sfx: { name: 'explosion', trigger: 'hitFrame', volume: 1.0 },
+        sfx: { name: 'impact_thud', trigger: 'hitFrame', volume: 1.0 },
         fx: [
           { type: 'FXHitSpark', trigger: 'hitFrame', attach: 'defender' },
           { type: 'FXShockwave', trigger: 'hitFrame', attach: 'defender' },
@@ -111,14 +111,14 @@ export function registerS2CombatActions() {
       {
         anim: 'PlasmaRifleCharge',
         hitFrame: null,
-        sfx: { name: 'drone_sync', trigger: 'start', volume: 0.6 },
+        sfx: { name: 'energy_blast', trigger: 'start', volume: 0.6 },
         fx: { type: 'FXChargeGlow', trigger: 'start', attach: 'attacker' },
         camera: 'FightWide',
       },
       {
         anim: 'PlasmaRifle',
         hitFrame: 0.15,
-        sfx: { name: 'laser_blast', trigger: 'hitFrame', volume: 0.85 },
+        sfx: { name: 'energy_blast', trigger: 'hitFrame', volume: 0.85 },
         fx: { type: 'FXHitSpark', trigger: 'hitFrame', attach: 'defender' },
         reaction: 'HitStagger',
         hitstop: 0.02,
@@ -128,7 +128,7 @@ export function registerS2CombatActions() {
       {
         anim: 'PlasmaRifle',
         hitFrame: 0.15,
-        sfx: { name: 'laser_blast', trigger: 'hitFrame', volume: 0.85 },
+        sfx: { name: 'energy_blast', trigger: 'hitFrame', volume: 0.85 },
         fx: { type: 'FXHitSpark', trigger: 'hitFrame', attach: 'defender' },
         reaction: 'HitStagger',
         hitstop: 0.02,

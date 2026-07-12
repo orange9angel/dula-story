@@ -124,6 +124,40 @@ export class RobotCharacterBase extends CharacterBase {
     this.currentMode = mode;
     if (this.robotGroup) this.robotGroup.visible = mode === 'robot';
     if (this.vehicleGroup) this.vehicleGroup.visible = mode === 'vehicle';
+    if (mode === 'robot') this._calibrateRobotGroundOffset();
+    this._syncPlasmaRifleVisibility(false);
+  }
+
+  _calibrateRobotGroundOffset() {
+    if (!this.robotGroup || this._robotGroundOffsetCalibrated) return;
+
+    this.mesh.updateWorldMatrix(true, false);
+    this.robotGroup.updateWorldMatrix(true, true);
+    const box = new THREE.Box3().setFromObject(this.robotGroup);
+    if (box.isEmpty()) return;
+
+    const rootWorld = new THREE.Vector3();
+    this.mesh.getWorldPosition(rootWorld);
+    const localMinY = box.min.y - rootWorld.y;
+    if (Number.isFinite(localMinY)) {
+      this.robotGroundOffset = Math.max(0.12, -localMinY + 0.02);
+      this._robotGroundOffsetCalibrated = true;
+    }
+  }
+
+  setPosition(x, y, z) {
+    if (this.currentMode === 'robot') this._calibrateRobotGroundOffset();
+    const groundOffset = this.currentMode === 'robot'
+      ? (this.robotGroundOffset ?? 0.12)
+      : 0.12;
+    this.mesh.position.set(x, y + groundOffset, z);
+    this.baseY = y + groundOffset;
+  }
+
+  canPlayAnimationName(name) {
+    if (name === 'RobotSteadyWalk') return true;
+    if (name === 'ReadableAimRifle' || name === 'ReadableFireRifle') return true;
+    return super.canPlayAnimationName(name);
   }
 
   /**
@@ -413,7 +447,10 @@ export class RobotCharacterBase extends CharacterBase {
     // 持握位置贴合手掌
     group.position.set(side * 0.015 * scale, -0.055 * scale, 0.02 * scale);
     group.rotation.x = -0.12;
+    group.visible = false;
     handGroup.add(group);
+
+    this.plasmaRifleGroup = group;
     return group;
   }
 
@@ -684,9 +721,42 @@ export class RobotCharacterBase extends CharacterBase {
   update(time, delta) {
     super.update(time, delta);
     this.updateLightEffects(time, delta);
+    this.weaponComponent?.update?.(delta);
+
+    const weaponAnims = new Set([
+      'PlasmaRifle',
+      'PlasmaRifleCharge',
+      'CrouchPlasmaRifle',
+      'SpiritGunFire',
+      'SpiritGunCharge',
+      'ReadableAimRifle',
+      'ReadableFireRifle',
+    ]);
+    const showRifle = this.currentMode === 'robot' && this.animations.some((anim) => {
+      const name = anim.instance?.name;
+      return weaponAnims.has(name) && time >= anim.startTime && time <= anim.endTime;
+    });
+    this._syncPlasmaRifleVisibility(showRifle);
+
     // 取消机器人形态呼吸摆动，确保战斗特写稳定不抖
     if (this.currentMode === 'robot' && this.robotGroup) {
       this.robotGroup.position.y = 0;
+    }
+  }
+
+  _syncPlasmaRifleVisibility(visible) {
+    const isVisible = !!visible;
+    if (this.plasmaRifleGroup) {
+      this.plasmaRifleGroup.visible = isVisible;
+    }
+    if (this.weaponComponent?.weaponMesh) {
+      this.weaponComponent.weaponMesh.visible = isVisible;
+      if (!isVisible && this.weaponComponent.forceHide) {
+        this.weaponComponent.forceHide();
+      }
+    }
+    if (this.weaponMesh && this.weaponMesh !== this.plasmaRifleGroup) {
+      this.weaponMesh.visible = isVisible;
     }
   }
 
