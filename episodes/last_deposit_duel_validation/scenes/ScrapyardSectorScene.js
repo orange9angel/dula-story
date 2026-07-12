@@ -1,0 +1,552 @@
+import * as THREE from 'three';
+import { SceneBase } from 'dula-engine';
+
+/**
+ * ScrapyardSectorScene — 90 年代废铁战场
+ * 干净但细节丰富：压扁的载具残骸、集装箱、断裂管道、倒塌龙门架、光束与火星。
+ */
+export class ScrapyardSectorScene extends SceneBase {
+  constructor() {
+    super('ScrapyardSectorScene');
+  }
+
+  build() {
+    super.build();
+
+    this.scene.background = new THREE.Color(0x0c1015);
+    this.scene.fog = new THREE.FogExp2(0x0c1015, 0.028);
+
+    this.lights.forEach((l) => {
+      if (l.isAmbientLight) {
+        l.intensity = 1.6;
+        l.color.setHex(0x4a5060);
+      }
+      if (l.isDirectionalLight) {
+        l.intensity = 2.6;
+        l.color.setHex(0xcce0ff);
+        l.position.set(30, 40, 20);
+      }
+    });
+
+    // 正面补光，让战斗中的角色更清晰（偏冷白，不泛黄）
+    const frontFill = new THREE.PointLight(0xffddcc, 2.5, 45, 1.3);
+    frontFill.position.set(0, 5, 12);
+    this.scene.add(frontFill);
+
+    // 侧面冷色补光，增加层次
+    const rimLight = new THREE.PointLight(0x66ccff, 1.6, 45, 1.3);
+    rimLight.position.set(-12, 6, -5);
+    this.scene.add(rimLight);
+
+    // 锈蚀地面，带油污纹理
+    const groundCanvas = document.createElement('canvas');
+    groundCanvas.width = 512; groundCanvas.height = 512;
+    const gctx = groundCanvas.getContext('2d');
+    gctx.fillStyle = '#3d2e22';
+    gctx.fillRect(0, 0, 512, 512);
+    // 油污
+    for (let i = 0; i < 60; i++) {
+      const x = Math.random() * 512;
+      const y = Math.random() * 512;
+      const r = 10 + Math.random() * 40;
+      const grad = gctx.createRadialGradient(x, y, 0, x, y, r);
+      grad.addColorStop(0, 'rgba(20, 15, 10, 0.6)');
+      grad.addColorStop(1, 'rgba(60, 45, 35, 0)');
+      gctx.fillStyle = grad;
+      gctx.beginPath();
+      gctx.arc(x, y, r, 0, Math.PI * 2);
+      gctx.fill();
+    }
+    // 锈斑
+    for (let i = 0; i < 3000; i++) {
+      gctx.fillStyle = Math.random() > 0.5 ? '#6b4a35' : '#241c15';
+      gctx.fillRect(Math.random() * 512, Math.random() * 512, 2, 2);
+    }
+    const groundTex = new THREE.CanvasTexture(groundCanvas);
+    groundTex.wrapS = THREE.RepeatWrapping;
+    groundTex.wrapT = THREE.RepeatWrapping;
+    groundTex.repeat.set(8, 8);
+    const groundMat = new THREE.MeshStandardMaterial({ map: groundTex, roughness: 0.95, metalness: 0.1 });
+    const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    this.scene.add(ground);
+
+    // 载具残骸堆
+    this._createVehicleHusks();
+
+    // 工业集装箱
+    this._createContainers();
+
+    // 断裂管道
+    this._createPipes();
+
+    // 倒塌的龙门架
+    this._createCollapsedCranes();
+
+    // 远处围墙/棚屋
+    this._createWalls();
+
+    // 火星粒子
+    this._createSparks();
+
+    // 烟雾
+    this._createSmoke();
+
+    // 爆炸烟尘（战斗触发）
+    this._createExplosionSmoke();
+
+    // 光束
+    this._createLightBeams();
+
+    // 战斗氛围光（蓝白等离子风格，避免火球暖黄）
+    const plasmaLight = new THREE.PointLight(0x3388ff, 3.2, 55, 1.2);
+    plasmaLight.position.set(-5, 3, -8);
+    this.scene.add(plasmaLight);
+    this.plasmaLight = plasmaLight;
+
+    const blueLight = new THREE.PointLight(0x55aaff, 2.2, 35, 1.2);
+    blueLight.position.set(6, 2, -5);
+    this.scene.add(blueLight);
+
+    // 地面 bounced fill，进一步提亮暗部（冷色）
+    const bounceLight = new THREE.PointLight(0x88aaff, 1.0, 40, 1.4);
+    bounceLight.position.set(0, 0.5, 0);
+    this.scene.add(bounceLight);
+
+    // 战斗爆炸/火炮闪光（与 46–88 s 的音效同步）
+    this._createFightFlashes();
+
+    return this.scene;
+  }
+
+  _createVehicleHusks() {
+    const rustMat = new THREE.MeshStandardMaterial({ color: 0x6b4423, roughness: 0.9, metalness: 0.4 });
+    const darkRustMat = new THREE.MeshStandardMaterial({ color: 0x3d2817, roughness: 0.95, metalness: 0.3 });
+
+    for (let i = 0; i < 12; i++) {
+      const group = new THREE.Group();
+      // 压扁的车身
+      const body = new THREE.Mesh(new THREE.BoxGeometry(1.2 + Math.random() * 0.8, 0.25 + Math.random() * 0.15, 0.6 + Math.random() * 0.5), rustMat);
+      body.rotation.z = (Math.random() - 0.5) * 0.4;
+      body.rotation.x = (Math.random() - 0.5) * 0.3;
+      group.add(body);
+
+      // 暴露的轮子
+      for (let j = 0; j < 2 + Math.floor(Math.random() * 3); j++) {
+        const wheel = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.1, 12), darkRustMat);
+        wheel.rotation.z = Math.PI / 2;
+        wheel.position.set((Math.random() - 0.5) * 1.0, 0.1, (Math.random() - 0.5) * 0.5);
+        wheel.rotation.x = Math.random() * Math.PI;
+        group.add(wheel);
+      }
+
+      // 断裂的保险杠/装甲板
+      const plate = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.08, 0.3), darkRustMat);
+      plate.position.set(0, 0.25, 0.3);
+      plate.rotation.x = 0.5 + Math.random() * 0.5;
+      group.add(plate);
+
+      group.position.set((Math.random() - 0.5) * 50, 0, -5 - Math.random() * 30);
+      group.rotation.y = Math.random() * Math.PI * 2;
+      this.scene.add(group);
+    }
+  }
+
+  _createContainers() {
+    const containerMat = new THREE.MeshStandardMaterial({ color: 0x4a5a6a, roughness: 0.7, metalness: 0.4 });
+    const rustMat = new THREE.MeshStandardMaterial({ color: 0x6b4423, roughness: 0.9, metalness: 0.4 });
+    const darkRustMat = new THREE.MeshStandardMaterial({ color: 0x3d2817, roughness: 0.95, metalness: 0.3 });
+
+    for (let i = 0; i < 10; i++) {
+      const group = new THREE.Group();
+      const w = 2.2; const h = 2.2; const d = 5.5;
+      const mat = Math.random() > 0.5 ? containerMat : rustMat;
+      const box = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+      box.position.y = h / 2;
+      group.add(box);
+
+      // 集装箱加强筋
+      for (let j = 0; j < 5; j++) {
+        const rib = new THREE.Mesh(new THREE.BoxGeometry(w * 1.02, h * 0.06, 0.08), darkRustMat);
+        rib.position.set(0, h / 2, -d / 2 + j * (d / 4));
+        group.add(rib);
+      }
+
+      group.position.set((Math.random() - 0.5) * 45, 0, -8 - Math.random() * 28);
+      group.rotation.y = (Math.random() - 0.5) * 0.5;
+      if (Math.random() > 0.7) {
+        group.rotation.z = Math.PI / 2;
+        group.position.y = h / 2;
+      }
+      this.scene.add(group);
+    }
+  }
+
+  _createPipes() {
+    const pipeMat = new THREE.MeshStandardMaterial({ color: 0x5a4a3a, roughness: 0.8, metalness: 0.5 });
+    for (let i = 0; i < 16; i++) {
+      const group = new THREE.Group();
+      const length = 2 + Math.random() * 4;
+      const radius = 0.12 + Math.random() * 0.15;
+      const pipe = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, length, 10), pipeMat);
+      pipe.rotation.z = Math.PI / 2;
+      pipe.rotation.y = Math.random() * Math.PI;
+      pipe.position.y = radius;
+      group.add(pipe);
+
+      // 法兰盘
+      for (const side of [-1, 1]) {
+        const flange = new THREE.Mesh(new THREE.CylinderGeometry(radius * 1.5, radius * 1.5, 0.08, 10), pipeMat);
+        flange.rotation.z = Math.PI / 2;
+        flange.rotation.y = pipe.rotation.y;
+        flange.position.set(Math.cos(pipe.rotation.y) * side * length / 2, radius, Math.sin(pipe.rotation.y) * side * length / 2);
+        group.add(flange);
+      }
+
+      group.position.set((Math.random() - 0.5) * 48, 0, -6 - Math.random() * 32);
+      this.scene.add(group);
+    }
+  }
+
+  _createCollapsedCranes() {
+    const craneMat = new THREE.MeshStandardMaterial({ color: 0x2a2a2a, roughness: 0.6, metalness: 0.5 });
+    for (let i = 0; i < 4; i++) {
+      const group = new THREE.Group();
+      const tower = new THREE.Mesh(new THREE.BoxGeometry(0.5, 6, 0.5), craneMat);
+      tower.position.y = 3;
+      group.add(tower);
+
+      const arm = new THREE.Mesh(new THREE.BoxGeometry(4, 0.25, 0.4), craneMat);
+      arm.position.set(1.5, 5.5, 0);
+      arm.rotation.z = -0.3 - Math.random() * 0.3;
+      group.add(arm);
+
+      // 倒塌姿态
+      group.rotation.z = Math.random() > 0.5 ? 0.4 : 0;
+      group.rotation.y = Math.random() * Math.PI;
+      group.position.set((Math.random() - 0.5) * 40, 0, -15 - Math.random() * 20);
+      this.scene.add(group);
+    }
+  }
+
+  _createWalls() {
+    const wallMat = new THREE.MeshStandardMaterial({ color: 0x3a3028, roughness: 0.9, metalness: 0.1 });
+    for (let i = 0; i < 6; i++) {
+      const group = new THREE.Group();
+      const wall = new THREE.Mesh(new THREE.BoxGeometry(6 + Math.random() * 4, 4 + Math.random() * 2, 0.5), wallMat);
+      wall.position.y = wall.geometry.parameters.height / 2;
+      group.add(wall);
+
+      // 破洞
+      if (Math.random() > 0.5) {
+        const hole = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.0, 0.6), new THREE.MeshBasicMaterial({ color: 0x15100c }));
+        hole.position.set((Math.random() - 0.5) * 2, 1.5 + Math.random(), 0);
+        group.add(hole);
+      }
+
+      group.position.set((Math.random() - 0.5) * 60, 0, -25 - Math.random() * 20);
+      group.rotation.y = Math.random() * 0.4;
+      this.scene.add(group);
+    }
+  }
+
+  _createSparks() {
+    const count = 60;
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(count * 3);
+    const velocities = [];
+    for (let i = 0; i < count; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 20;
+      positions[i * 3 + 1] = Math.random() * 3;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 20 - 5;
+      velocities.push({
+        x: (Math.random() - 0.5) * 2,
+        y: Math.random() * 3 + 1,
+        z: (Math.random() - 0.5) * 2,
+      });
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({ color: 0x99ccff, size: 0.1, transparent: true, opacity: 0.9 });
+    this.sparks = new THREE.Points(geo, mat);
+    this.sparks.userData.velocities = velocities;
+    this.scene.add(this.sparks);
+  }
+
+  _createSoftParticleTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grad.addColorStop(0, 'rgba(255,255,255,1)');
+    grad.addColorStop(0.5, 'rgba(255,255,255,0.3)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(canvas);
+  }
+
+  _createSmoke() {
+    const count = 24;
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 25;
+      positions[i * 3 + 1] = Math.random() * 4;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 25 - 5;
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({
+      color: 0x777777,
+      size: 1.6,
+      transparent: true,
+      opacity: 0.15,
+      depthWrite: false,
+      map: this._createSoftParticleTexture(),
+      alphaTest: 0.01,
+    });
+    this.smoke = new THREE.Points(geo, mat);
+    this.scene.add(this.smoke);
+  }
+
+  _createExplosionSmoke() {
+    const count = 80;
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(count * 3);
+    const velocities = [];
+    for (let i = 0; i < count; i++) {
+      positions[i * 3] = 0;
+      positions[i * 3 + 1] = -10;
+      positions[i * 3 + 2] = 0;
+      velocities.push({ x: 0, y: 0, z: 0, life: 0 });
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({
+      color: 0x555555,
+      size: 1.8,
+      transparent: true,
+      opacity: 0.22,
+      depthWrite: false,
+      map: this._createSoftParticleTexture(),
+      alphaTest: 0.01,
+    });
+    this.explosionSmoke = new THREE.Points(geo, mat);
+    this.explosionSmoke.userData.velocities = velocities;
+    this.scene.add(this.explosionSmoke);
+  }
+
+  _spawnExplosionSmoke(x, y, z) {
+    const positions = this.explosionSmoke.geometry.attributes.position.array;
+    const vels = this.explosionSmoke.userData.velocities;
+    for (let i = 0; i < vels.length; i++) {
+      if (vels[i].life <= 0) {
+        positions[i * 3] = x + (Math.random() - 0.5) * 1.5;
+        positions[i * 3 + 1] = y + Math.random() * 0.5;
+        positions[i * 3 + 2] = z + (Math.random() - 0.5) * 1.5;
+        vels[i] = {
+          x: (Math.random() - 0.5) * 2,
+          y: 0.8 + Math.random() * 1.2,
+          z: (Math.random() - 0.5) * 2,
+          life: 1.2 + Math.random() * 0.8,
+        };
+        break;
+      }
+    }
+  }
+
+  _createFightFlashes() {
+    // 只在明确的炮击/格斗命中点闪光，避免整段随机爆亮。
+    const flashCues = [
+      { time: 56.70, x: -7, y: 1.7, z: -14, kind: 'plasma' },
+      { time: 57.70, x: 6, y: 2.2, z: -18, kind: 'plasma' },
+      { time: 59.20, x: -3, y: 1.3, z: -9, kind: 'plasma' },
+      { time: 60.70, x: 8, y: 1.6, z: -12, kind: 'plasma' },
+      { time: 62.70, x: -8, y: 2.0, z: -20, kind: 'plasma' },
+      { time: 64.70, x: 5, y: 1.4, z: -10, kind: 'plasma' },
+      { time: 73.25, x: 0.2, y: 1.25, z: 1.5, kind: 'melee', big: true },
+      { time: 78.95, x: 1.7, y: 1.15, z: 0.0, kind: 'melee', big: true },
+      { time: 85.05, x: 0.0, y: 1.35, z: 1.5, kind: 'melee', big: true },
+      { time: 90.05, x: 0.0, y: 1.3, z: 1.2, kind: 'melee', big: true },
+      { time: 96.55, x: 1.0, y: 1.3, z: 0.0, kind: 'melee' },
+      { time: 97.55, x: 0.0, y: 1.45, z: 1.0, kind: 'melee', big: true },
+    ];
+    this.fightFlashes = [];
+    flashCues.forEach((cue) => {
+      const group = new THREE.Group();
+      group.position.set(cue.x, cue.y, cue.z);
+
+      const isBig = Boolean(cue.big);
+      const isMelee = cue.kind === 'melee';
+      const color = isMelee ? 0xff9a32 : 0x4aa8ff;
+      const coreColor = 0xffffff;
+      const light = new THREE.PointLight(color, 0, isBig ? 32 : 22, isBig ? 2.8 : 2.2);
+      group.add(light);
+
+      const core = new THREE.Mesh(
+        new THREE.SphereGeometry(isBig ? 0.48 : 0.30, 16, 12),
+        new THREE.MeshBasicMaterial({ color: coreColor, transparent: true, opacity: 0, blending: THREE.AdditiveBlending })
+      );
+      group.add(core);
+
+      const shockwave = new THREE.Mesh(
+        new THREE.RingGeometry(isBig ? 0.38 : 0.26, isBig ? 0.48 : 0.34, 28),
+        new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide })
+      );
+      shockwave.rotation.x = -Math.PI / 2;
+      group.add(shockwave);
+
+      // 爆炸 billboard 光晕（蓝白/橙白，避免过黄）
+      const glowCanvas = document.createElement('canvas');
+      glowCanvas.width = 64; glowCanvas.height = 64;
+      const gCtx = glowCanvas.getContext('2d');
+      const gGrad = gCtx.createRadialGradient(32, 32, 3, 32, 32, 30);
+      if (isMelee) {
+        gGrad.addColorStop(0, 'rgba(255,255,255,0.95)');
+        gGrad.addColorStop(0.3, 'rgba(255,185,85,0.62)');
+        gGrad.addColorStop(0.72, 'rgba(255,75,10,0.18)');
+        gGrad.addColorStop(1, 'rgba(140,20,0,0)');
+      } else {
+        gGrad.addColorStop(0, 'rgba(240,250,255,0.95)');
+        gGrad.addColorStop(0.3, 'rgba(100,190,255,0.58)');
+        gGrad.addColorStop(0.72, 'rgba(35,95,255,0.16)');
+        gGrad.addColorStop(1, 'rgba(0,30,130,0)');
+      }
+      gCtx.fillStyle = gGrad;
+      gCtx.fillRect(0, 0, 64, 64);
+      const glowTex = new THREE.CanvasTexture(glowCanvas);
+      const glowSpriteMat = new THREE.SpriteMaterial({
+        map: glowTex, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false
+      });
+      const glowSprite = new THREE.Sprite(glowSpriteMat);
+      glowSprite.scale.set(isBig ? 4.2 : 3.0, isBig ? 4.2 : 3.0, 1);
+      group.add(glowSprite);
+
+      this.scene.add(group);
+      this.fightFlashes.push({ group, light, core, shockwave, glowSprite, isBig, time: cue.time, triggered: false });
+    });
+  }
+
+  _createLightBeams() {
+    // 柔和的光线：使用半透明竖直平面，避免圆锥体在某些角度呈方块状
+    const beamCanvas = document.createElement('canvas');
+    beamCanvas.width = 64;
+    beamCanvas.height = 256;
+    const bctx = beamCanvas.getContext('2d');
+    const grad = bctx.createLinearGradient(0, 0, 0, 256);
+    grad.addColorStop(0, 'rgba(170,210,255,0)');
+    grad.addColorStop(0.25, 'rgba(170,210,255,0.18)');
+    grad.addColorStop(0.7, 'rgba(170,210,255,0.08)');
+    grad.addColorStop(1, 'rgba(170,210,255,0)');
+    bctx.fillStyle = grad;
+    bctx.fillRect(0, 0, 64, 256);
+    const beamTex = new THREE.CanvasTexture(beamCanvas);
+    beamTex.wrapS = THREE.RepeatWrapping;
+    beamTex.wrapT = THREE.RepeatWrapping;
+
+    const beamMat = new THREE.MeshBasicMaterial({
+      map: beamTex,
+      transparent: true,
+      opacity: 0.55,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    });
+    this.beams = [];
+    for (let i = 0; i < 3; i++) {
+      const h = 10 + Math.random() * 6;
+      const w = 1.2 + Math.random() * 0.8;
+      const geo = new THREE.PlaneGeometry(w, h);
+      const beam = new THREE.Mesh(geo, beamMat);
+      beam.position.set((Math.random() - 0.5) * 30, h / 2 - 1, -10 - Math.random() * 25);
+      beam.rotation.x = Math.PI;
+      beam.rotation.y = (Math.random() - 0.5) * 0.4;
+      this.scene.add(beam);
+      this.beams.push(beam);
+    }
+  }
+
+  update(time, delta) {
+    super.update(time, delta);
+
+    if (this.plasmaLight) {
+      this.plasmaLight.intensity = 1.0 + Math.sin(time * 8) * 0.3 + Math.random() * 0.15;
+    }
+
+    if (this.sparks) {
+      const positions = this.sparks.geometry.attributes.position.array;
+      const vels = this.sparks.userData.velocities;
+      for (let i = 0; i < vels.length; i++) {
+        positions[i * 3] += vels[i].x * delta;
+        positions[i * 3 + 1] += vels[i].y * delta;
+        positions[i * 3 + 2] += vels[i].z * delta;
+        vels[i].y -= 4.0 * delta;
+        if (positions[i * 3 + 1] < 0) {
+          positions[i * 3] = (Math.random() - 0.5) * 20;
+          positions[i * 3 + 1] = Math.random() * 0.5;
+          positions[i * 3 + 2] = (Math.random() - 0.5) * 20 - 5;
+          vels[i].y = Math.random() * 3 + 1;
+        }
+      }
+      this.sparks.geometry.attributes.position.needsUpdate = true;
+    }
+
+    if (this.smoke) {
+      const positions = this.smoke.geometry.attributes.position.array;
+      for (let i = 0; i < positions.length / 3; i++) {
+        positions[i * 3 + 1] += delta * 0.5;
+        if (positions[i * 3 + 1] > 8) {
+          positions[i * 3 + 1] = 0;
+        }
+      }
+      this.smoke.geometry.attributes.position.needsUpdate = true;
+    }
+
+    // 爆炸烟尘粒子更新
+    if (this.explosionSmoke) {
+      const positions = this.explosionSmoke.geometry.attributes.position.array;
+      const vels = this.explosionSmoke.userData.velocities;
+      for (let i = 0; i < vels.length; i++) {
+        if (vels[i].life > 0) {
+          positions[i * 3] += vels[i].x * delta;
+          positions[i * 3 + 1] += vels[i].y * delta;
+          positions[i * 3 + 2] += vels[i].z * delta;
+          vels[i].life -= delta;
+          if (vels[i].life <= 0) {
+            positions[i * 3 + 1] = -10;
+          }
+        }
+      }
+      this.explosionSmoke.geometry.attributes.position.needsUpdate = true;
+    }
+
+    // 战斗爆炸闪光
+    if (this.fightFlashes) {
+      this.fightFlashes.forEach((flash) => {
+        if (!flash.triggered && time >= flash.time) {
+          flash.triggered = true;
+          flash.light.intensity = flash.isBig ? 24 : 15;
+          flash.core.material.opacity = 1;
+          flash.core.scale.setScalar(1);
+          flash.shockwave.material.opacity = flash.isBig ? 0.72 : 0.58;
+          flash.shockwave.scale.setScalar(1);
+          if (flash.glowSprite) {
+            flash.glowSprite.material.opacity = flash.isBig ? 0.72 : 0.55;
+            flash.glowSprite.scale.setScalar(flash.isBig ? 4.2 : 3.0);
+          }
+          this._spawnExplosionSmoke(flash.group.position.x, flash.group.position.y, flash.group.position.z);
+        }
+        if (flash.triggered) {
+          flash.light.intensity *= Math.max(0, 1 - delta * 10);
+          flash.core.scale.multiplyScalar(Math.max(0.5, 1 - delta * 7));
+          flash.core.material.opacity *= Math.max(0, 1 - delta * 9);
+          flash.shockwave.scale.multiplyScalar(1 + delta * 5);
+          flash.shockwave.material.opacity *= Math.max(0, 1 - delta * 6);
+          if (flash.glowSprite) {
+            flash.glowSprite.material.opacity *= Math.max(0, 1 - delta * 7);
+            flash.glowSprite.scale.multiplyScalar(1 + delta * 3);
+          }
+        }
+      });
+    }
+  }
+}

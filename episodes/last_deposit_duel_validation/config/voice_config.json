@@ -1,0 +1,166 @@
+{
+  "default": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "-4%",
+    "pitch": "-4Hz",
+    "volume": "+8%",
+    "effect": {
+      "af": "highpass=f=110,lowpass=f=6200,asubboost=cutoff=120:boost=3.2,equalizer=f=180:t=q:w=0.9:g=2.8,equalizer=f=1700:t=q:w=0.8:g=-1.8,equalizer=f=3400:t=q:w=1.0:g=2.4,flanger=delay=0.7:depth=3.0:regen=0.12:width=80:speed=0.25:shape=1:phase=40:interp=0,acrusher=level_in=1:level_out=1:bits=9:mix=0.30:mode=1,aecho=0.45:0.34:18|36|72:0.18|0.11|0.06,acompressor=threshold=0.11:ratio=3.0:attack=8:release=120:makeup=1.34,alimiter=limit=0.96"
+    }
+  },
+  "雷恩": {
+    "default": {
+      "voice": "zh-CN-YunyangNeural",
+      "rate": "-7%",
+      "pitch": "-12Hz",
+      "volume": "+12%",
+      "effect": {
+        "af": "highpass=f=90,lowpass=f=6100,asubboost=cutoff=105:boost=3.8,equalizer=f=150:t=q:w=0.9:g=3.8,equalizer=f=1600:t=q:w=0.8:g=-2.0,equalizer=f=2900:t=q:w=1.0:g=2.2,flanger=delay=0.8:depth=3.2:regen=0.16:width=82:speed=0.22:shape=1:phase=45:interp=0,acrusher=level_in=1:level_out=1:bits=9:mix=0.32:mode=1,aecho=0.48:0.36:22|44|88:0.18|0.11|0.06,acompressor=threshold=0.10:ratio=3.2:attack=8:release=120:makeup=1.40,alimiter=limit=0.96"
+      }
+    },
+    "calm": {
+      "rate": "-11%",
+      "pitch": "-14Hz",
+      "volume": "+10%"
+    },
+    "angry": {
+      "rate": "-1%",
+      "pitch": "-9Hz",
+      "volume": "+20%"
+    },
+    "worried": {
+      "rate": "-8%",
+      "pitch": "-12Hz",
+      "volume": "+12%"
+    }
+  },
+  "布洛克": {
+    "default": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-5%",
+      "pitch": "-24Hz",
+      "volume": "+14%",
+      "effect": {
+        "af": "highpass=f=70,lowpass=f=5600,asubboost=cutoff=90:boost=4.0,equalizer=f=105:t=q:w=1.0:g=4.2,equalizer=f=1450:t=q:w=0.9:g=-2.4,equalizer=f=2350:t=q:w=1.1:g=1.8,flanger=delay=0.9:depth=3.4:regen=0.18:width=84:speed=0.20:shape=1:phase=50:interp=0,acrusher=level_in=1:level_out=1:bits=8:mix=0.35:mode=1,aecho=0.52:0.40:20|40|80:0.20|0.13|0.07,acompressor=threshold=0.09:ratio=3.4:attack=10:release=140:makeup=1.46,alimiter=limit=0.96"
+      }
+    },
+    "calm": {
+      "rate": "-8%",
+      "pitch": "-26Hz",
+      "volume": "+12%"
+    },
+    "angry": {
+      "rate": "-1%",
+      "pitch": "-19Hz",
+      "volume": "+22%"
+    },
+    "excited": {
+      "rate": "+0%",
+      "pitch": "-17Hz",
+      "volume": "+20%"
+    },
+    "worried": {
+      "rate": "-8%",
+      "pitch": "-24Hz",
+      "volume": "+14%"
+    }
+  },
+  "斯凯": {
+    "default": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "+0%",
+      "pitch": "+4Hz",
+      "volume": "+8%",
+      "effect": {
+        "af": "highpass=f=135,lowpass=f=7600,asubboost=cutoff=170:boost=2.6,equalizer=f=1200:t=q:w=0.8:g=-1.4,equalizer=f=3600:t=q:w=1.0:g=2.8,equalizer=f=5200:t=q:w=1.0:g=1.6,flanger=delay=0.6:depth=2.6:regen=0.10:width=76:speed=0.28:shape=1:phase=35:interp=0,acrusher=level_in=1:level_out=1:bits=10:mix=0.26:mode=1,aecho=0.40:0.30:16|32|64:0.14|0.09|0.05,acompressor=threshold=0.12:ratio=2.6:attack=6:release=95:makeup=1.24,alimiter=limit=0.96"
+      }
+    },
+    "calm": {
+      "rate": "-2%",
+      "pitch": "+2Hz",
+      "volume": "+7%"
+    },
+    "angry": {
+      "rate": "+5%",
+      "pitch": "+6Hz",
+      "volume": "+16%"
+    },
+    "excited": {
+      "rate": "+6%",
+      "pitch": "+8Hz",
+      "volume": "+14%"
+    },
+    "worried": {
+      "rate": "+2%",
+      "pitch": "+5Hz",
+      "volume": "+11%"
+    }
+  },
+  "维克": {
+    "default": {
+      "voice": "zh-CN-YunjianNeural",
+      "rate": "-10%",
+      "pitch": "-14Hz",
+      "volume": "+15%",
+      "effect": {
+        "af": "highpass=f=80,lowpass=f=5600,asubboost=cutoff=115:boost=3.8,equalizer=f=170:t=q:w=0.9:g=3.4,equalizer=f=1350:t=q:w=0.8:g=-2.6,equalizer=f=3100:t=q:w=1.0:g=2.8,flanger=delay=1.0:depth=3.6:regen=0.20:width=86:speed=0.18:shape=1:phase=55:interp=0,acrusher=level_in=1:level_out=1:bits=8:mix=0.36:mode=1,aecho=0.58:0.48:28|56|112:0.24|0.16|0.08,acompressor=threshold=0.08:ratio=3.5:attack=12:release=160:makeup=1.44,alimiter=limit=0.96"
+      }
+    },
+    "calm": {
+      "rate": "-14%",
+      "pitch": "-16Hz",
+      "volume": "+13%"
+    },
+    "angry": {
+      "rate": "-3%",
+      "pitch": "-10Hz",
+      "volume": "+23%"
+    },
+    "excited": {
+      "rate": "-6%",
+      "pitch": "-11Hz",
+      "volume": "+20%"
+    },
+    "worried": {
+      "rate": "-12%",
+      "pitch": "-15Hz",
+      "volume": "+14%"
+    },
+    "sad": {
+      "rate": "-16%",
+      "pitch": "-18Hz",
+      "volume": "+12%"
+    }
+  },
+  "达什": {
+    "default": {
+      "voice": "zh-CN-YunxiaNeural",
+      "rate": "+2%",
+      "pitch": "+1Hz",
+      "volume": "+13%",
+      "effect": {
+        "af": "highpass=f=100,lowpass=f=6500,asubboost=cutoff=130:boost=3.0,equalizer=f=220:t=q:w=1.0:g=2.8,equalizer=f=1500:t=q:w=0.8:g=-1.8,equalizer=f=3700:t=q:w=1.0:g=2.6,flanger=delay=0.7:depth=3.0:regen=0.14:width=78:speed=0.24:shape=1:phase=38:interp=0,acrusher=level_in=1:level_out=1:bits=9:mix=0.31:mode=1,aecho=0.46:0.36:20|40|80:0.18|0.11|0.06,acompressor=threshold=0.11:ratio=3.0:attack=7:release=100:makeup=1.34,alimiter=limit=0.96"
+      }
+    },
+    "calm": {
+      "rate": "+0%",
+      "pitch": "-1Hz",
+      "volume": "+11%"
+    },
+    "angry": {
+      "rate": "+6%",
+      "pitch": "+3Hz",
+      "volume": "+21%"
+    },
+    "excited": {
+      "rate": "+6%",
+      "pitch": "+2Hz",
+      "volume": "+21%"
+    },
+    "worried": {
+      "rate": "+1%",
+      "pitch": "+0Hz",
+      "volume": "+13%"
+    }
+  }
+}
