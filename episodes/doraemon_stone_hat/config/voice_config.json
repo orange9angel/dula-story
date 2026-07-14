@@ -1,0 +1,86 @@
+{
+  "Doraemon": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "rate": "+25%",
+    "pitch": "+10Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": ["child", "cute", "calm"],
+      "effect": {
+        "pitch": "+3st",
+        "formant": "-2",
+        "speed": 1.08,
+        "treble": 4,
+        "compression": 0.45,
+        "reverb": 0.1
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 1.0,
+      "seed": 42
+    }
+  },
+  "Nobita": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+25%",
+    "pitch": "+5Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": ["child", "shy", "worried"],
+      "effect": {
+        "pitch": "+1st",
+        "formant": "-1",
+        "speed": 1.05,
+        "treble": 2,
+        "compression": 0.4,
+        "reverb": 0.08
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 1.0,
+      "seed": 42
+    }
+  },
+  "Shizuka": {
+    "voice": "zh-CN-XiaoyiNeural",
+    "rate": "+20%",
+    "pitch": "+10Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": ["child", "cute", "gentle"],
+      "effect": {
+        "pitch": "+2st",
+        "formant": "-2",
+        "speed": 1.0,
+        "treble": 3,
+        "compression": 0.35,
+        "reverb": 0.1
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 1.0,
+      "seed": 42
+    }
+  },
+  "Narrator": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+10%",
+    "pitch": "-5Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": ["broadcast", "calm"],
+      "effect": {
+        "pitch": "-1st",
+        "formant": "+1",
+        "speed": 0.98,
+        "treble": 2,
+        "compression": 0.55,
+        "reverb": 0.15
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 1.0,
+      "seed": 42
+    }
+  }
+}
