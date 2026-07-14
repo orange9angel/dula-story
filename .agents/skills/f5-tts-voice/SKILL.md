@@ -148,6 +148,49 @@ Tags can be combined. Later tags override earlier ones.
 }
 ```
 
+## Semantic Audio Analyzer
+
+Before any sox/ffmpeg effect is applied, the skill runs a **per-line semantic analyzer** on the dialogue text. It produces dynamic effect deltas for:
+
+- **语气** (tone / emotion)
+- **语速** (speaking pace)
+- **语调** (intonation: question, exclamation, trailing, etc.)
+- **音色** (timbre brightness / warmth / age color)
+
+The analyzer is rule-based and has **no external dependencies**. It understands Chinese primarily, with English fallback.
+
+### How it fits the pipeline
+
+```text
+edge-tts base speech
+    ↓
+personality preset (base character voice)
+    ↓
++ semantic analyzer deltas (line-specific emotion/intonation)
+    ↓
++ manual `effect` override
+    ↓
+sox / ffmpeg
+    ↓
+F5-TTS reference extraction + cloning
+```
+
+### What triggers changes
+
+| Cue | Typical effect |
+|-----|----------------|
+| `?` / `吗` / `呢` | rising intonation, slight pitch lift |
+| `!` | emphasis, brighter, tighter compression |
+| `...` / `……` | slower, more reverb (uncertainty) |
+| `哈哈` / `开心` | higher pitch, faster, brighter |
+| `呜` / `难过` / `哭` | lower pitch, slower, darker |
+| `生气` / `讨厌` | tighter compression, slight bass lift |
+| `怎么办` / `担心` | anxious brightness, small room |
+| `终于` / `放心` | warmer, slightly slower |
+| long sentence (>20 chars) | slightly slower for clarity |
+
+Deltas are clamped to safe ranges so the character's base identity is preserved while the line still sounds emotionally appropriate.
+
 ## Reference Audio Slicing
 
 The skill uses `ffmpeg silencedetect` to find the longest clean speech segment in the selected line, then extracts a 3-10s clip from inside that segment. This avoids:

@@ -22,6 +22,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from semantic_audio_analyzer import SemanticAudioAnalyzer
+
 # Allow the skill to use a bundled/local sox without a system-wide install.
 _LOCAL_SOX_DIR = Path(__file__).resolve().parent.parent / "tools" / "sox" / "sox-14.4.2"
 if _LOCAL_SOX_DIR.exists():
@@ -169,6 +171,46 @@ def _st_str(value):
         return float(value)
     m = re.match(r"([+-]?\d+(?:\.\d+)?)st", str(value))
     return float(m.group(1)) if m else 0.0
+
+
+def _add_semitone_strings(a, b):
+    """Add two semitone values, e.g. '+1st' + '-0.5st' -> '+0.5st'."""
+    total = _st_str(a) + _st_str(b)
+    sign = "+" if total >= 0 else ""
+    return f"{sign}{total:.1f}st"
+
+
+def merge_effects(base, delta):
+    """Merge a delta effect dict into a base effect dict.
+
+    Numeric values are added; pitch/formant semitone strings are summed.
+    Other keys are overwritten by delta (delta wins).
+    """
+    merged = dict(base)
+    additive_keys = {
+        "speed",
+        "compression",
+        "reverb",
+        "treble",
+        "bass",
+        "presence",
+        "warmth",
+        "deess",
+        "vibrato",
+        "chorus",
+        "flanger",
+        "highpass",
+        "lowpass",
+        "volume",
+    }
+    for key, value in delta.items():
+        if key in ("pitch", "formant"):
+            merged[key] = _add_semitone_strings(merged.get(key, "+0st"), value)
+        elif key in additive_keys and key in merged:
+            merged[key] = merged[key] + value
+        else:
+            merged[key] = value
+    return merged
 
 
 def build_ffmpeg_filter(effect):
@@ -648,11 +690,12 @@ def extract_reference(processed_dir, entry, ref_duration=5.0, min_segment=1.5):
 
 
 async def generate_base_tts(entries, voice_cfg, output_dir, use_sox=False):
-    """Generate base WAV for each line using edge-tts + personality effects."""
+    """Generate base WAV for each line using edge-tts + personality + semantic effects."""
     import edge_tts
 
     os.makedirs(output_dir, exist_ok=True)
     processed_entries = []
+    semantic_analyzer = SemanticAudioAnalyzer()
 
     for entry in entries:
         char = entry["character"]
@@ -684,18 +727,24 @@ async def generate_base_tts(entries, voice_cfg, output_dir, use_sox=False):
         )
         await communicate.save(raw_path)
 
-        # Build effect: explicit effect dict < personality tags < manual override
+        # Build effect: personality < semantic analysis < manual override
         effect = {}
         personality_tags = f5_cfg.get("personality", f5_cfg.get("style", []))
         if isinstance(personality_tags, str):
             personality_tags = [personality_tags]
         if personality_tags:
             effect = resolve_personality(personality_tags)
+
+        # Layer in semantic tone/speed/intonation/timbre deltas from the dialogue text.
+        semantic_effect = semantic_analyzer.analyze(dialogue, cfg)
+        if semantic_effect:
+            effect = merge_effects(effect, semantic_effect)
+
         if f5_cfg.get("effect"):
             effect.update(f5_cfg["effect"])
 
         if effect:
-            print(f"[base] {char} entry {entry['index']} personality={personality_tags} -> {effect}")
+            print(f"[base] {char} entry {entry['index']} personality={personality_tags} semantic={semantic_effect} -> {effect}")
         apply_effect(raw_path, out_path, effect, use_sox=use_sox)
 
         try:
