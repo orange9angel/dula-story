@@ -183,12 +183,13 @@ def _add_semitone_strings(a, b):
 def merge_effects(base, delta):
     """Merge a delta effect dict into a base effect dict.
 
-    Numeric values are added; pitch/formant semitone strings are summed.
+    Most numeric values are added; pitch/formant semitone strings are summed.
+    ``speed`` is multiplicative (0.9 on top of 1.1 -> 0.99), because stacking
+    two "10% slower" effects should not become "20% slower".
     Other keys are overwritten by delta (delta wins).
     """
     merged = dict(base)
     additive_keys = {
-        "speed",
         "compression",
         "reverb",
         "treble",
@@ -206,6 +207,8 @@ def merge_effects(base, delta):
     for key, value in delta.items():
         if key in ("pitch", "formant"):
             merged[key] = _add_semitone_strings(merged.get(key, "+0st"), value)
+        elif key == "speed" and key in merged:
+            merged[key] = merged[key] * float(value)
         elif key in additive_keys and key in merged:
             merged[key] = merged[key] + value
         else:
