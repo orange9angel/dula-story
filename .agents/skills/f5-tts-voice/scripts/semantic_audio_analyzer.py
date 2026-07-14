@@ -100,17 +100,19 @@ class SemanticAudioAnalyzer:
         if not t:
             return
 
-        # Questions -> rising intonation (edge-tts pitch), slight slowdown
-        if t[-1] in "?？" or (lang == "zh" and re.search(r"[吗呢吧嘛]$", t)):
-            prosody["pitch"] = self._add_pct(prosody.get("pitch", "+0%"), "+9%")
-            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-3%")
+        # Questions / soft particles -> rising intonation, clear slowdown.
+        # Also catches particles immediately followed by trailing punctuation,
+        # e.g. "...吧！" or "...呢？"
+        if t[-1] in "?？" or (lang == "zh" and re.search(r"[吗呢吧嘛][！。]?$", t)):
+            prosody["pitch"] = self._add_pct(prosody.get("pitch", "+0%"), "+6%")
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-6%")
 
-        # Exclamations -> emphasis, louder, brighter post-processing
+        # Exclamations -> emphasis and volume, but do not speed up by default.
         if t[-1] in "!！":
             prosody["emphasis"] = "strong"
-            prosody["volume"] = self._add_pct(prosody.get("volume", "+0%"), "+8%")
-            post_effect["compression"] = post_effect.get("compression", 0) + 0.12
-            post_effect["treble"] = post_effect.get("treble", 0) + 2
+            prosody["volume"] = self._add_pct(prosody.get("volume", "+0%"), "+6%")
+            post_effect["compression"] = post_effect.get("compression", 0) + 0.10
+            post_effect["treble"] = post_effect.get("treble", 0) + 1
 
         # Trailing ellipses / em-dash -> uncertainty, slower, more space
         if re.search(r"\.{3,}|…{1,}|——$", t):
@@ -121,10 +123,16 @@ class SemanticAudioAnalyzer:
         if re.search(r"\.{2,}|…{1,}", t) and not re.search(r"\.{3,}|…{1,}$", t):
             prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-4%")
 
-        # Comma clusters or many short clauses -> slightly faster, more energetic
+        # Demonstrative / explanatory phrases -> slower, more deliberate
+        if lang == "zh" and re.search(r"试试|看看|这个|那个|这样|那样|听好", t):
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-4%")
+
+        # Many short clauses used to add +3% rate, which made explanatory
+        # sentences sound rushed. More clauses usually need more pauses,
+        # not faster delivery. We now leave rate unchanged here.
         clause_count = len(re.split(r"[，,。！!？?；;]", t))
-        if clause_count >= 4:
-            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "+3%")
+        if clause_count >= 5:
+            post_effect["compression"] = post_effect.get("compression", 0) + 0.04
 
     # ───────────────────────────────────────────────────────────────────────
     # Emotion keywords
