@@ -2,7 +2,15 @@
   "Kimi": {
     "voice": "zh-CN-XiaoxiaoNeural",
     "rate": "+5%",
-    "pitch": "+15Hz"
+    "pitch": "+15Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": ["robot", "calm", "female"],
+      "ref_strategy": "auto",
+      "ref_duration": 5.0,
+      "speed": 1.0,
+      "seed": 42
+    }
   },
   "Doraemon": {
     "voice": "zh-CN-XiaoxiaoNeural",

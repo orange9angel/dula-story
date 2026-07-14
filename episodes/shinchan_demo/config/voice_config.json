@@ -1,0 +1,26 @@
+{
+  "ShinChan": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "rate": "+10%",
+    "pitch": "+20Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": ["child", "energetic", "funny"],
+      "effect": {
+        "pitch": "+7st",
+        "formant": "+3",
+        "speed": 1.12,
+        "highpass": 180,
+        "treble": 6,
+        "presence": 4,
+        "compression": 0.65,
+        "flanger": 0.25,
+        "reverb": 0.12
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 1.0,
+      "seed": 42
+    }
+  }
+}
