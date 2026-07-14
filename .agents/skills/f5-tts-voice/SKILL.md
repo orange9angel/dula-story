@@ -150,44 +150,45 @@ Tags can be combined. Later tags override earlier ones.
 
 ## Semantic Audio Analyzer
 
-Before any sox/ffmpeg effect is applied, the skill runs a **per-line semantic analyzer** on the dialogue text. It produces dynamic effect deltas for:
+Before any sox/ffmpeg effect is applied, the skill runs a **per-line semantic analyzer** on the dialogue text. It produces two control layers:
 
-- **语气** (tone / emotion)
-- **语速** (speaking pace)
-- **语调** (intonation: question, exclamation, trailing, etc.)
-- **音色** (timbre brightness / warmth / age color)
+- **`prosody`** — fed directly into **edge-tts** (`rate`, `pitch`, `volume`).
+  Handles what edge-tts does well: 语速、语调、音量.
+
+- **`post_effect`** — fed into the **sox/ffmpeg** effect chain.
+  Handles what sox/ffmpeg does well: 音色、EQ、混响、压缩、空间感.
 
 The analyzer is rule-based and has **no external dependencies**. It understands Chinese primarily, with English fallback.
 
-### How it fits the pipeline
+### Why split the control?
+
+edge-tts can natively control **rate / pitch / volume** through its synthesis parameters, but it cannot change **timbre** or fine emotional color. sox/ffmpeg can reshape timbre and add space/dynamics, but pitch-shifting already-synthesized speech is lower quality than having the TTS engine generate the right pitch in the first place.
+
+So the analyzer sends prosody to edge-tts and timbre/spatial effects to sox.
+
+### Pipeline
 
 ```text
-edge-tts base speech
-    ↓
-personality preset (base character voice)
-    ↓
-+ semantic analyzer deltas (line-specific emotion/intonation)
-    ↓
-+ manual `effect` override
-    ↓
-sox / ffmpeg
-    ↓
-F5-TTS reference extraction + cloning
+dialogue text
+    ├─→ SemanticAudioAnalyzer
+    │       ├─→ prosody (rate/pitch/volume) ──→ edge-tts
+    │       └─→ post_effect (timbre/EQ/space) ──→ sox/ffmpeg
+    └─→ personality preset ───────────────────────→ sox/ffmpeg
 ```
 
 ### What triggers changes
 
-| Cue | Typical effect |
-|-----|----------------|
-| `?` / `吗` / `呢` | rising intonation, slight pitch lift |
-| `!` | emphasis, brighter, tighter compression |
-| `...` / `……` | slower, more reverb (uncertainty) |
-| `哈哈` / `开心` | higher pitch, faster, brighter |
-| `呜` / `难过` / `哭` | lower pitch, slower, darker |
-| `生气` / `讨厌` | tighter compression, slight bass lift |
-| `怎么办` / `担心` | anxious brightness, small room |
-| `终于` / `放心` | warmer, slightly slower |
-| long sentence (>20 chars) | slightly slower for clarity |
+| Cue | edge-tts prosody | sox post_effect |
+|-----|------------------|-----------------|
+| `?` / `吗` / `呢` | pitch up, rate slightly down | — |
+| `!` | volume up, emphasis | compression + treble |
+| `...` / `……` | rate down | reverb up |
+| `哈哈` / `开心` | pitch up, rate up | treble up |
+| `呜` / `难过` / `哭` | pitch down, rate down | reverb + warmth |
+| `生气` / `讨厌` | pitch up, rate up, volume up | compression + bass |
+| `怎么办` / `担心` | pitch up, rate up | reverb + compression |
+| `终于` / `放心` | pitch/rate down | warmth + reverb |
+| long sentence (>20 chars) | rate slightly down | — |
 
 Deltas are clamped to safe ranges so the character's base identity is preserved while the line still sounds emotionally appropriate.
 

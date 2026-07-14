@@ -2,35 +2,30 @@
 """
 Semantic Audio Analyzer for the F5-TTS voice skill.
 
-Runs before the sox/ffmpeg effect chain. It inspects each line of dialogue
-and produces dynamic audio-effect overrides that capture:
+Runs **before** edge-tts synthesis and produces two independent control layers:
 
-  - 语气 (tone / emotion)
-  - 语速 (speaking pace)
-  - 语调 (intonation: question, exclamation, trailing, etc.)
-  - 音色 (timbre: brightness, warmth, age/formant shift)
+  1. `prosody`  -> fed into edge-tts via SSML `<prosody>` / `<emphasis>`.
+                   Handles what edge-tts does well: 语速、语调、音量、重音.
 
-The overrides are merged on top of the character's personality preset,
-so a character keeps its base voice while still sounding emotionally
-appropriate for the specific line.
+  2. `post_effect` -> fed into the sox/ffmpeg effect chain.
+                      Handles what sox/ffmpeg does well: 音色、EQ、混响、压缩、空间感.
 
-Design goals:
-  - Zero external dependencies (no LLM / cloud call).
-  - Fast enough to run per line.
-  - Language-aware: Chinese is the primary target, with English fallback.
+Splitting control this way avoids double-processing speed/pitch and gives each
+engine the jobs it is good at:
+
+  - edge-tts controls macro prosody with high-quality neural TTS.
+  - sox/ffmpeg shapes timbre/personality and adds final polish.
+
+The analyzer is rule-based, Chinese-first, English fallback, zero dependencies.
 """
 
 import re
 
 
 class SemanticAudioAnalyzer:
-    """Rule-based semantic analyzer that maps text to audio effect deltas."""
+    """Rule-based semantic analyzer that maps text to prosody + post-effect."""
 
     def __init__(self, language="auto"):
-        """
-        Args:
-            language: 'zh', 'en', or 'auto' (detect per line).
-        """
         self.language = language
 
     # ───────────────────────────────────────────────────────────────────────
@@ -39,31 +34,48 @@ class SemanticAudioAnalyzer:
 
     def analyze(self, text, character_cfg=None):
         """
-        Analyze a single dialogue line and return an effect-delta dict.
-
-        The returned dict uses the same keys as the personality/effect system
-        in generate_f5_voice.py.  Values are additive deltas that will be
-        merged with the base personality effect.
-
-        Args:
-            text: dialogue string.
-            character_cfg: optional character config dict from voice_config.json.
+        Analyze a dialogue line and return prosody + post_effect dicts.
 
         Returns:
-            dict of effect parameter deltas.
+            {
+              "prosody": {
+                "rate": str,      # e.g. "-5%"
+                "pitch": str,     # e.g. "+6%"
+                "volume": str,    # e.g. "+5%"
+                "emphasis": str | None,  # "strong" | "moderate" | "reduced" | None
+              },
+              "post_effect": {
+                # same keys as personality/effect system
+                "pitch": "+0st",  # fine pitch offset applied by sox
+                "formant": "0",
+                "speed": 1.0,
+                "treble": 0,
+                "bass": 0,
+                "presence": 0,
+                "warmth": 0,
+                "reverb": 0.0,
+                "compression": 0.0,
+                ...
+              }
+            }
         """
         if not text or not text.strip():
-            return {}
+            return {"prosody": {}, "post_effect": {}}
 
         lang = self._detect_language(text) if self.language == "auto" else self.language
 
-        effect = {}
-        effect.update(self._analyze_punctuation(text, lang))
-        effect.update(self._analyze_emotion_keywords(text, lang))
-        effect.update(self._analyze_rhythm(text, lang))
-        effect.update(self._analyze_timbre(text, lang, character_cfg))
+        prosody = {}
+        post_effect = {}
 
-        return self._clamp_effect(effect)
+        self._analyze_punctuation(text, lang, prosody, post_effect)
+        self._analyze_emotion_keywords(text, lang, prosody, post_effect)
+        self._analyze_rhythm(text, lang, prosody)
+        self._analyze_timbre(text, lang, character_cfg, prosody, post_effect)
+
+        return {
+            "prosody": self._clamp_prosody(prosody),
+            "post_effect": self._clamp_effect(post_effect),
+        }
 
     # ───────────────────────────────────────────────────────────────────────
     # Language detection
@@ -83,39 +95,36 @@ class SemanticAudioAnalyzer:
     # Punctuation & intonation
     # ───────────────────────────────────────────────────────────────────────
 
-    def _analyze_punctuation(self, text, lang):
-        """Map terminal and internal punctuation to intonation/speed deltas."""
-        effect = {}
+    def _analyze_punctuation(self, text, lang, prosody, post_effect):
         t = text.strip()
         if not t:
-            return effect
+            return
 
-        # Questions -> rising intonation, slight pitch lift at end
+        # Questions -> rising intonation (edge-tts pitch), slight slowdown
         if t[-1] in "?？" or (lang == "zh" and re.search(r"[吗呢吧嘛]$", t)):
-            effect["pitch"] = self._add_semitones(effect.get("pitch", "+0st"), "+1.5st")
-            effect["speed"] = effect.get("speed", 0) - 0.03  # questions often slightly slower
+            prosody["pitch"] = self._add_pct(prosody.get("pitch", "+0%"), "+9%")
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-3%")
 
-        # Exclamations -> emphasis, brighter, tighter compression
+        # Exclamations -> emphasis, louder, brighter post-processing
         if t[-1] in "!！":
-            effect["compression"] = effect.get("compression", 0) + 0.12
-            effect["treble"] = effect.get("treble", 0) + 2
-            effect["speed"] = effect.get("speed", 0) + 0.04
+            prosody["emphasis"] = "strong"
+            prosody["volume"] = self._add_pct(prosody.get("volume", "+0%"), "+8%")
+            post_effect["compression"] = post_effect.get("compression", 0) + 0.12
+            post_effect["treble"] = post_effect.get("treble", 0) + 2
 
         # Trailing ellipses / em-dash -> uncertainty, slower, more space
         if re.search(r"\.{3,}|…{1,}|——$", t):
-            effect["speed"] = effect.get("speed", 0) - 0.06
-            effect["reverb"] = effect.get("reverb", 0) + 0.12
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-6%")
+            post_effect["reverb"] = post_effect.get("reverb", 0) + 0.12
 
         # Mid-sentence ellipsis -> hesitation / pause feel
         if re.search(r"\.{2,}|…{1,}", t) and not re.search(r"\.{3,}|…{1,}$", t):
-            effect["speed"] = effect.get("speed", 0) - 0.04
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-4%")
 
         # Comma clusters or many short clauses -> slightly faster, more energetic
         clause_count = len(re.split(r"[，,。！!？?；;]", t))
         if clause_count >= 4:
-            effect["speed"] = effect.get("speed", 0) + 0.03
-
-        return effect
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "+3%")
 
     # ───────────────────────────────────────────────────────────────────────
     # Emotion keywords
@@ -124,178 +133,195 @@ class SemanticAudioAnalyzer:
     EMOTION_PATTERNS_ZH = {
         "happy": {
             "words": ["哈哈", "嘿嘿", "嘻嘻", "开心", "高兴", "太好", "棒", "耶"],
-            "effect": {"pitch": "+1.0st", "speed": 0.05, "treble": 2, "reverb": -0.05},
+            "prosody": {"pitch": "+6%", "rate": "+5%", "volume": "+3%"},
+            "post_effect": {"treble": 2, "reverb": -0.05, "warmth": 1},
         },
         "sad": {
             "words": ["呜", "呜呜", "难过", "伤心", "哭", "眼泪", "失落", "孤单"],
-            "effect": {"pitch": "-1.0st", "speed": -0.06, "reverb": 0.12, "treble": -2},
+            "prosody": {"pitch": "-6%", "rate": "-6%", "volume": "-5%"},
+            "post_effect": {"reverb": 0.12, "treble": -2, "warmth": 2},
         },
         "angry": {
             "words": ["哼", "生气", "讨厌", "可恶", "混蛋", "烦", "火大", "怒"],
-            "effect": {"pitch": "+0.5st", "speed": 0.07, "compression": 0.14, "bass": 2},
+            "prosody": {"pitch": "+3%", "rate": "+7%", "volume": "+5%", "emphasis": "strong"},
+            "post_effect": {"compression": 0.14, "bass": 2, "treble": 1},
         },
         "surprised": {
             "words": ["哇", "哎呀", "天哪", "真的吗", "居然", "不会吧", "啊？", "啊!", "啊！"],
-            "effect": {"pitch": "+2.0st", "speed": 0.06, "treble": 3, "compression": 0.08},
+            "prosody": {"pitch": "+12%", "rate": "+6%", "volume": "+8%", "emphasis": "strong"},
+            "post_effect": {"treble": 3, "compression": 0.08},
         },
         "worried": {
             "words": ["怎么办", "糟糕", "完了", "怕", "担心", "紧张", "万一"],
-            "effect": {"pitch": "+0.5st", "speed": 0.05, "reverb": 0.08, "compression": 0.06},
+            "prosody": {"pitch": "+3%", "rate": "+5%", "volume": "-2%"},
+            "post_effect": {"reverb": 0.08, "compression": 0.06, "treble": 1},
         },
         "relieved": {
             "words": ["太好了", "终于", "松了一口气", "放心", "幸好", "没事了"],
-            "effect": {"pitch": "-0.3st", "speed": -0.04, "reverb": 0.06, "warmth": 1},
+            "prosody": {"pitch": "-3%", "rate": "-4%", "volume": "-3%"},
+            "post_effect": {"reverb": 0.06, "warmth": 1},
         },
         "gentle": {
             "words": ["没关系", "别怕", "慢慢来", "没事", "小心", "温柔"],
-            "effect": {"pitch": "-0.5st", "speed": -0.05, "warmth": 2, "compression": -0.05},
+            "prosody": {"pitch": "-3%", "rate": "-5%", "volume": "-5%"},
+            "post_effect": {"warmth": 2, "compression": -0.05, "reverb": 0.05},
         },
         "proud": {
             "words": ["当然", "没问题", "交给我", "厉害", "看我的", "肯定"],
-            "effect": {"pitch": "-0.3st", "speed": -0.02, "presence": 2, "compression": 0.06},
+            "prosody": {"pitch": "-3%", "rate": "-2%", "volume": "+3%"},
+            "post_effect": {"presence": 2, "compression": 0.06},
         },
     }
 
     EMOTION_PATTERNS_EN = {
         "happy": {
             "words": ["haha", "hehe", "yay", "great", "happy", "awesome", "wow"],
-            "effect": {"pitch": "+1.0st", "speed": 0.05, "treble": 2, "reverb": -0.05},
+            "prosody": {"pitch": "+6%", "rate": "+5%", "volume": "+3%"},
+            "post_effect": {"treble": 2, "reverb": -0.05, "warmth": 1},
         },
         "sad": {
             "words": ["sob", "sad", "cry", "sorry", "lonely", "upset", "tears"],
-            "effect": {"pitch": "-1.0st", "speed": -0.06, "reverb": 0.12, "treble": -2},
+            "prosody": {"pitch": "-6%", "rate": "-6%", "volume": "-5%"},
+            "post_effect": {"reverb": 0.12, "treble": -2, "warmth": 2},
         },
         "angry": {
             "words": ["huh", "angry", "hate", "damn", "annoying", "mad", "furious"],
-            "effect": {"pitch": "+0.5st", "speed": 0.07, "compression": 0.14, "bass": 2},
+            "prosody": {"pitch": "+3%", "rate": "+7%", "volume": "+5%", "emphasis": "strong"},
+            "post_effect": {"compression": 0.14, "bass": 2, "treble": 1},
         },
         "surprised": {
-            "words": ["ah", "wow", "oh", "what", "really", "no way", "gosh"],
-            "effect": {"pitch": "+2.0st", "speed": 0.06, "treble": 3, "compression": 0.08},
+            "words": ["wow", "oh", "what", "really", "no way", "gosh", "ah!"],
+            "prosody": {"pitch": "+12%", "rate": "+6%", "volume": "+8%", "emphasis": "strong"},
+            "post_effect": {"treble": 3, "compression": 0.08},
         },
         "worried": {
             "words": ["what if", "worried", "nervous", "scared", "anxious", "bad"],
-            "effect": {"pitch": "+0.5st", "speed": 0.05, "reverb": 0.08, "compression": 0.06},
+            "prosody": {"pitch": "+3%", "rate": "+5%", "volume": "-2%"},
+            "post_effect": {"reverb": 0.08, "compression": 0.06, "treble": 1},
         },
         "relieved": {
             "words": ["finally", "relieved", "safe", "glad", "phew", "okay"],
-            "effect": {"pitch": "-0.3st", "speed": -0.04, "reverb": 0.06, "warmth": 1},
+            "prosody": {"pitch": "-3%", "rate": "-4%", "volume": "-3%"},
+            "post_effect": {"reverb": 0.06, "warmth": 1},
         },
         "gentle": {
             "words": ["it's okay", "don't worry", "gentle", "careful", "soft"],
-            "effect": {"pitch": "-0.5st", "speed": -0.05, "warmth": 2, "compression": -0.05},
+            "prosody": {"pitch": "-3%", "rate": "-5%", "volume": "-5%"},
+            "post_effect": {"warmth": 2, "compression": -0.05, "reverb": 0.05},
         },
         "proud": {
             "words": ["of course", "leave it", "definitely", "sure", "proud"],
-            "effect": {"pitch": "-0.3st", "speed": -0.02, "presence": 2, "compression": 0.06},
+            "prosody": {"pitch": "-3%", "rate": "-2%", "volume": "+3%"},
+            "post_effect": {"presence": 2, "compression": 0.06},
         },
     }
 
-    def _analyze_emotion_keywords(self, text, lang):
-        """Look up emotional keywords and accumulate their effect deltas."""
+    def _analyze_emotion_keywords(self, text, lang, prosody, post_effect):
         patterns = self.EMOTION_PATTERNS_ZH if lang == "zh" else self.EMOTION_PATTERNS_EN
-        merged = {}
-        matched_emotions = []
 
         for emotion, data in patterns.items():
             score = 0
             for word in data["words"]:
                 if lang == "zh":
-                    # Chinese: substring match
-                    count = text.count(word)
+                    score += text.count(word)
                 else:
-                    # English: word-boundary match
-                    count = len(re.findall(rf"\b{re.escape(word)}\b", text, re.IGNORECASE))
-                score += count
+                    score += len(re.findall(rf"\b{re.escape(word)}\b", text, re.IGNORECASE))
 
-            if score > 0:
-                matched_emotions.append((emotion, score))
-                for key, value in data["effect"].items():
-                    if key == "pitch":
-                        merged[key] = self._add_semitones(merged.get(key, "+0st"), value)
-                    else:
-                        # Weight by number of keyword hits so strong emotions dominate.
-                        merged[key] = merged.get(key, 0) + value * min(score, 2)
+            if score == 0:
+                continue
 
-        # Normalize pitch delta so multiple emotions don't explode the value.
-        if "pitch" in merged:
-            merged["pitch"] = self._clamp_semitones(merged["pitch"], -2.5, 2.5)
+            weight = min(score, 2)
 
-        return merged
+            for key, value in data["prosody"].items():
+                if key == "emphasis":
+                    # Stronger emotion wins; keep strongest emphasis.
+                    current = prosody.get("emphasis")
+                    strength = {"reduced": 0, "moderate": 1, "strong": 2}
+                    if strength.get(value, 0) > strength.get(current, 0):
+                        prosody[key] = value
+                else:
+                    prosody[key] = self._add_pct(prosody.get(key, "+0%"), self._scale_pct(value, weight))
+
+            for key, value in data["post_effect"].items():
+                post_effect[key] = post_effect.get(key, 0) + value * weight
 
     # ───────────────────────────────────────────────────────────────────────
-    # Rhythm (语速 + 停顿感)
+    # Rhythm
     # ───────────────────────────────────────────────────────────────────────
 
-    def _analyze_rhythm(self, text, lang):
-        """Adjust pace based on sentence length and structural density."""
-        effect = {}
+    def _analyze_rhythm(self, text, lang, prosody):
         char_count = len(re.findall(r"[\u4e00-\u9fff]", text)) if lang == "zh" else len(text.split())
 
-        # Long lines naturally need a hair more time to be intelligible.
         if char_count > 20:
-            effect["speed"] = effect.get("speed", 0) - 0.03
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "-3%")
         elif char_count < 6:
-            # Short interjections can be a bit punchier.
-            effect["speed"] = effect.get("speed", 0) + 0.02
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), "+2%")
 
-        # Many repeated characters (e.g. "啊啊啊", "哈哈哈") -> emphasis / drawn out
         repeats = len(re.findall(r"(.)\1{2,}", text))
         if repeats:
-            effect["speed"] = effect.get("speed", 0) - 0.03 * repeats
-            effect["compression"] = effect.get("compression", 0) + 0.05 * repeats
-
-        return effect
+            prosody["rate"] = self._add_pct(prosody.get("rate", "+0%"), f"{-3 * repeats}%")
+            # Repeated sounds also get a little post-compression for punch.
 
     # ───────────────────────────────────────────────────────────────────────
-    # Timbre (音色)
+    # Timbre
     # ───────────────────────────────────────────────────────────────────────
 
-    def _analyze_timbre(self, text, lang, character_cfg=None):
-        """
-        Fine-tune timbre (brightness/warmth/age) based on semantic cues.
-
-        We deliberately keep timbre deltas subtle: the character's base voice
-        and F5-TTS reference are responsible for the core identity.  The
-        analyzer only nudges timbre to match the emotional color of the line.
-        """
-        effect = {}
+    def _analyze_timbre(self, text, lang, character_cfg, prosody, post_effect):
         t = text
 
-        # Whisper / secret / fear -> darker, more intimate, less bright
+        # Whisper / secret / fear -> darker, more intimate
         if re.search(r"小声|秘密|悄悄|害怕|恐惧|whisper|secret|afraid", t):
-            effect["treble"] = effect.get("treble", 0) - 2
-            effect["warmth"] = effect.get("warmth", 0) + 1
-            effect["compression"] = effect.get("compression", 0) - 0.05
+            prosody["volume"] = self._add_pct(prosody.get("volume", "+0%"), "-10%")
+            post_effect["treble"] = post_effect.get("treble", 0) - 2
+            post_effect["warmth"] = post_effect.get("warmth", 0) + 1
 
         # Shout / call / cheer -> brighter, more present
         if re.search(r"叫|喊|救命|加油|快来|shout|scream|help", t):
-            effect["treble"] = effect.get("treble", 0) + 2
-            effect["presence"] = effect.get("presence", 0) + 2
-            effect["compression"] = effect.get("compression", 0) + 0.08
+            prosody["volume"] = self._add_pct(prosody.get("volume", "+0%"), "+10%")
+            prosody["emphasis"] = "strong"
+            post_effect["treble"] = post_effect.get("treble", 0) + 2
+            post_effect["presence"] = post_effect.get("presence", 0) + 2
+            post_effect["compression"] = post_effect.get("compression", 0) + 0.08
 
-        # Childish / cute register -> slightly lift formant (younger)
+        # Cute register -> younger formant color (sox), slight pitch lift (prosody)
         if re.search(r"嘛|啦|呀|呢|哼|cute|little", t):
-            effect["formant"] = self._add_semitones(effect.get("formant", "0"), "-0.5")
+            prosody["pitch"] = self._add_pct(prosody.get("pitch", "+0%"), "+3%")
+            post_effect["formant"] = self._add_semitones(post_effect.get("formant", "0"), "-0.5")
 
-        # Authority / narration / teaching -> slightly lower formant (older/warmer)
+        # Authority / narration -> slightly older/warmer formant
         if character_cfg and character_cfg.get("role") in ("narrator", "teacher", "adult"):
-            effect["formant"] = self._add_semitones(effect.get("formant", "0"), "+0.3")
-
-        return effect
+            post_effect["formant"] = self._add_semitones(post_effect.get("formant", "0"), "+0.3")
 
     # ───────────────────────────────────────────────────────────────────────
     # Helpers
     # ───────────────────────────────────────────────────────────────────────
 
     @staticmethod
+    def _parse_pct(value):
+        m = re.match(r"([+-]?\d+(?:\.\d+)?)%", str(value).strip())
+        return float(m.group(1)) if m else 0.0
+
+    @staticmethod
+    def _format_pct(value):
+        value = max(-30, min(30, value))
+        sign = "+" if value >= 0 else ""
+        return f"{sign}{value:.0f}%"
+
+    @staticmethod
+    def _add_pct(a, b):
+        total = SemanticAudioAnalyzer._parse_pct(a) + SemanticAudioAnalyzer._parse_pct(b)
+        return SemanticAudioAnalyzer._format_pct(total)
+
+    @staticmethod
+    def _scale_pct(value, weight):
+        return SemanticAudioAnalyzer._format_pct(SemanticAudioAnalyzer._parse_pct(value) * weight)
+
+    @staticmethod
     def _add_semitones(base, delta):
-        """Add two semitone strings like '+1st' and '-0.5st'."""
         base_val = SemanticAudioAnalyzer._parse_semitones(base)
         delta_val = SemanticAudioAnalyzer._parse_semitones(delta)
         total = base_val + delta_val
-        sign = "+" if total >= 0 else ""
-        return f"{sign}{total:.1f}st"
+        return f"{total:+.1f}"
 
     @staticmethod
     def _parse_semitones(value):
@@ -304,30 +330,33 @@ class SemanticAudioAnalyzer:
         m = re.match(r"([+-]?\d+(?:\.\d+)?)st?", str(value).strip())
         return float(m.group(1)) if m else 0.0
 
-    @staticmethod
-    def _clamp_semitones(value, min_st, max_st):
-        val = SemanticAudioAnalyzer._parse_semitones(value)
-        val = max(min_st, min(max_st, val))
-        sign = "+" if val >= 0 else ""
-        return f"{sign}{val:.1f}st"
-
-    @staticmethod
-    def _clamp_effect(effect):
-        """Clamp numeric deltas to reasonable ranges."""
+    def _clamp_prosody(self, prosody):
         clamps = {
-            "speed": (-0.25, 0.25),
+            "rate": (-25, 25),
+            "pitch": (-15, 20),
+            "volume": (-20, 20),
+        }
+        for key, (lo, hi) in clamps.items():
+            if key in prosody and key != "emphasis":
+                val = self._parse_pct(prosody[key])
+                prosody[key] = self._format_pct(max(lo, min(hi, val)))
+        return prosody
+
+    def _clamp_effect(self, effect):
+        clamps = {
+            "speed": (0.75, 1.25),
             "compression": (-0.2, 0.35),
             "reverb": (-0.2, 0.3),
             "treble": (-5, 6),
             "bass": (-4, 5),
             "presence": (-3, 4),
             "warmth": (-3, 4),
-            "formant": (-1.5, 1.5),  # numeric semitones
+            "formant": (-1.5, 1.5),
         }
         for key, (lo, hi) in clamps.items():
             if key in effect:
                 if key == "formant":
-                    effect[key] = max(lo, min(hi, effect[key]))
+                    effect[key] = max(lo, min(hi, self._parse_semitones(effect[key])))
                 else:
                     effect[key] = max(lo, min(hi, effect[key]))
         return effect
@@ -338,7 +367,6 @@ class SemanticAudioAnalyzer:
 # ─────────────────────────────────────────────────────────────────────────
 
 def analyze_text(text, character_cfg=None, language="auto"):
-    """Analyze a line of text and return effect deltas."""
     analyzer = SemanticAudioAnalyzer(language=language)
     return analyzer.analyze(text, character_cfg)
 

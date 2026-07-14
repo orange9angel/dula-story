@@ -213,6 +213,69 @@ def merge_effects(base, delta):
     return merged
 
 
+def _parse_pct(value):
+    m = re.match(r"([+-]?\d+(?:\.\d+)?)%", str(value).strip())
+    return float(m.group(1)) if m else 0.0
+
+
+def _format_pct(value):
+    value = max(-50, min(50, value))
+    sign = "+" if value >= 0 else ""
+    return f"{sign}{value:.0f}%"
+
+
+def _add_pct_strings(a, b):
+    return _format_pct(_parse_pct(a) + _parse_pct(b))
+
+
+def _estimate_base_f0(voice_name):
+    """Rough fundamental frequency estimate for Hz-to-percent conversion."""
+    name = (voice_name or "").lower()
+    if "yunxi" in name or "yunjian" in name or "male" in name:
+        return 150.0
+    if "xiaoyi" in name or "xiaoxiao" in name or "female" in name:
+        return 240.0
+    return 200.0
+
+
+def _pitch_hz_to_pct(hz_value, voice_name):
+    """Convert a pitch value like '+10Hz' to an approximate percentage."""
+    m = re.match(r"([+-]?\d+(?:\.\d+)?)Hz", str(hz_value).strip())
+    if not m:
+        return "+0%"
+    hz = float(m.group(1))
+    base_f0 = _estimate_base_f0(voice_name)
+    return _format_pct(hz / base_f0 * 100)
+
+
+def combine_prosody(base_rate, base_pitch, base_volume, prosody, voice_name):
+    """Combine character base prosody with semantic per-line prosody deltas.
+
+    edge-tts accepts rate/volume as percentage strings and pitch as Hz.
+    The semantic analyzer outputs pitch deltas as percentages, so we convert
+    them to Hz using a rough base-F0 estimate for the target voice.
+    """
+    prosody = prosody or {}
+
+    rate = _add_pct_strings(base_rate, prosody.get("rate", "+0%"))
+    volume = _add_pct_strings(base_volume, prosody.get("volume", "+0%"))
+
+    # Base pitch is in Hz; semantic pitch is in percent.
+    base_f0 = _estimate_base_f0(voice_name)
+    base_hz = _parse_hz(base_pitch)
+    semantic_pct = _parse_pct(prosody.get("pitch", "+0%"))
+    # Add semantic pitch on top in Hz space.
+    combined_hz = base_hz + base_f0 * (semantic_pct / 100.0)
+    pitch = f"{combined_hz:+.0f}Hz"
+
+    return rate, pitch, volume
+
+
+def _parse_hz(value):
+    m = re.match(r"([+-]?\d+(?:\.\d+)?)Hz", str(value).strip())
+    return float(m.group(1)) if m else 0.0
+
+
 def build_ffmpeg_filter(effect):
     """Build ffmpeg -af filter chain from effect dict."""
     parts = []
@@ -718,16 +781,26 @@ async def generate_base_tts(entries, voice_cfg, output_dir, use_sox=False):
         pitch = cfg.get("pitch", "+0Hz")
         volume = cfg.get("volume", "+0%")
 
+        # Analyze text for per-line prosody (edge-tts) and timbre (sox/ffmpeg).
+        semantic = semantic_analyzer.analyze(dialogue, cfg)
+        prosody = semantic.get("prosody", {})
+        post_effect = semantic.get("post_effect", {})
+
+        # Combine base prosody with semantic deltas and feed directly to edge-tts.
+        combined_rate, combined_pitch, combined_volume = combine_prosody(
+            rate, pitch, volume, prosody, voice
+        )
+
         communicate = edge_tts.Communicate(
             text=dialogue,
             voice=voice,
-            rate=rate,
-            pitch=pitch,
-            volume=volume,
+            rate=combined_rate,
+            pitch=combined_pitch,
+            volume=combined_volume,
         )
         await communicate.save(raw_path)
 
-        # Build effect: personality < semantic analysis < manual override
+        # Build post-processing effect: personality < semantic post_effect < manual override
         effect = {}
         personality_tags = f5_cfg.get("personality", f5_cfg.get("style", []))
         if isinstance(personality_tags, str):
@@ -735,16 +808,14 @@ async def generate_base_tts(entries, voice_cfg, output_dir, use_sox=False):
         if personality_tags:
             effect = resolve_personality(personality_tags)
 
-        # Layer in semantic tone/speed/intonation/timbre deltas from the dialogue text.
-        semantic_effect = semantic_analyzer.analyze(dialogue, cfg)
-        if semantic_effect:
-            effect = merge_effects(effect, semantic_effect)
+        if post_effect:
+            effect = merge_effects(effect, post_effect)
 
         if f5_cfg.get("effect"):
             effect.update(f5_cfg["effect"])
 
         if effect:
-            print(f"[base] {char} entry {entry['index']} personality={personality_tags} semantic={semantic_effect} -> {effect}")
+            print(f"[base] {char} entry {entry['index']} personality={personality_tags} prosody={prosody} semantic_post={post_effect} -> {effect}")
         apply_effect(raw_path, out_path, effect, use_sox=use_sox)
 
         try:
