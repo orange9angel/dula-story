@@ -1,7 +1,7 @@
 1
 00:00:00,000 --> 00:00:05,000
 @NobitaRoom{Position:Nobita|x=0.0|y=0.01|z=0.5|face=center}{Position:Doraemon|x=1.8|y=0.01|z=0.5|face=Nobita}{Camera:Static|position=0,3.0,7.0|lookAt=0,1.0,0}{Music:Play|name=room_theme|fadeIn=1.0|baseVolume=0.55|endTime=80}
-[Narrator]一个平凡的下午，大雄坐在房间里叹气。
+[Narrator]这天下午，大雄像往常一样坐在房间里叹气。
 
 2
 00:00:05,500 --> 00:00:10,000
@@ -16,7 +16,7 @@
 4
 00:00:16,500 --> 00:00:21,000
 {Position:Nobita|x=0.0|y=0.01|z=0.5|face=center}{Position:Doraemon|x=1.5|y=0.01|z=0.5|face=Nobita}{Camera:Static|position=0,3.0,7.0|lookAt=0,1.0,0}
-[Nobita]{FaceSurprised} {SurprisedJump}真的吗？那岂不是很厉害！
+[Nobita]{FaceSurprised} {SurprisedJump}{Prop:hat|character=Nobita}真的吗？那岂不是很厉害！
 
 5
 00:00:21,500 --> 00:00:27,000
@@ -46,7 +46,7 @@
 10
 00:00:49,500 --> 00:00:55,000
 {Position:Nobita|x=-1.0|y=0.01|z=1.5|face=center}{Position:Shizuka|x=-2.5|y=0.01|z=1.0|face=Doraemon}{Position:Doraemon|x=2.5|y=0.01|z=1.0|face=Shizuka}{Camera:Static|position=0,3.0,8.0|lookAt=0,1.0,0}
-[Narrator]大雄急忙摘下帽子，世界一下子又有了声音。
+[Narrator]{Prop:hat|character=Nobita|action=detach}大雄急忙摘下帽子，世界一下子又有了声音。
 
 11
 00:00:55,500 --> 00:01:00,000

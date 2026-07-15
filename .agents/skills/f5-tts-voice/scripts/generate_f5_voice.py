@@ -279,6 +279,21 @@ def _parse_hz(value):
     return float(m.group(1)) if m else 0.0
 
 
+def _chinese_char_count(text):
+    """Count Chinese characters (rough speech units)."""
+    return len(re.sub(r"[^\u4e00-\u9fff]", "", text))
+
+
+def _target_duration_for_line(dialogue, target_cps, min_duration=1.5):
+    """Calculate a target audio duration from target characters-per-second."""
+    if not target_cps:
+        return None
+    chars = _chinese_char_count(dialogue)
+    if chars == 0:
+        return None
+    return max(min_duration, chars / target_cps)
+
+
 def build_ffmpeg_filter(effect):
     """Build ffmpeg -af filter chain from effect dict."""
     parts = []
@@ -842,6 +857,57 @@ def load_f5_tts_model(device=None):
     return model
 
 
+def _audio_duration(path):
+    """Return audio file duration in seconds using ffprobe."""
+    try:
+        out = subprocess.run(
+            [
+                "ffprobe",
+                "-v",
+                "error",
+                "-show_entries",
+                "format=duration",
+                "-of",
+                "default=noprint_wrappers=1:nokey=1",
+                str(path),
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return float(out.stdout.strip())
+    except Exception as e:
+        print(f"[f5-tts] failed to get duration for {path}: {e}")
+        return None
+
+
+def _stretch_audio(src_path, dst_path, target_dur):
+    """Stretch audio to target duration using ffmpeg rubberband."""
+    src_dur = _audio_duration(src_path)
+    if src_dur is None or src_dur <= 0 or target_dur <= src_dur:
+        return False
+    tempo = src_dur / target_dur
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-y",
+            "-i",
+            str(src_path),
+            "-af",
+            f"rubberband=tempo={tempo:.4f}",
+            "-ar",
+            "24000",
+            "-ac",
+            "1",
+            str(dst_path),
+        ],
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    return True
+
+
 def generate_f5_tts(
     entries,
     ref_path,
@@ -851,10 +917,14 @@ def generate_f5_tts(
     seed=None,
     device=None,
     model=None,
+    target_cps=None,
 ):
     """Run F5-TTS inference for each line.
 
     If ``model`` is provided it is reused; otherwise a new model is loaded.
+    When ``target_cps`` is provided, the generated F5-TTS output is stretched
+    with rubberband so the final line duration equals ``chars / target_cps``.
+    This decouples output pace from the reference clip's speaking rate.
     """
     if model is None:
         model = load_f5_tts_model(device=device)
@@ -868,6 +938,7 @@ def generate_f5_tts(
             print(f"[f5-tts] exists: {out_path}")
             continue
 
+        target_dur = _target_duration_for_line(dialogue, target_cps)
         print(f"[f5-tts] entry {entry['index']} ({char}): {dialogue[:40]}...")
         model.infer(
             ref_file=ref_path,
@@ -878,6 +949,22 @@ def generate_f5_tts(
             seed=seed,
             nfe_step=32,
         )
+        if target_dur is not None:
+            actual_dur = _audio_duration(out_path)
+            if actual_dur is not None and actual_dur > 0:
+                if actual_dur < target_dur:
+                    stretched_path = f"{out_path}.stretched.wav"
+                    if _stretch_audio(out_path, stretched_path, target_dur):
+                        os.replace(stretched_path, out_path)
+                        print(
+                            f"[f5-tts] stretched {entry['index']} "
+                            f"{actual_dur:.2f}s -> {target_dur:.2f}s (target_cps={target_cps})"
+                        )
+                else:
+                    print(
+                        f"[f5-tts] {entry['index']} already >= target "
+                        f"({actual_dur:.2f}s >= {target_dur:.2f}s), no stretch"
+                    )
         print(f"[f5-tts] saved: {out_path}")
 
 
@@ -932,6 +1019,7 @@ def main():
     parser.add_argument("--ref-strategy", default=None, help="Override reference selection: auto/first/longest/<index>")
     parser.add_argument("--ref-duration", type=float, default=None, help="Override reference duration in seconds")
     parser.add_argument("--personality", default=None, help="Override personality tags, comma-separated")
+    parser.add_argument("--target-cps", type=float, default=None, help="Target Chinese characters per second for F5-TTS output")
     args = parser.parse_args()
 
     if args.use_sox and args.no_sox:
@@ -1013,6 +1101,7 @@ def main():
         print(f"[f5-tts-voice] Reference audio for {char}: {ref_path}")
         print(f"[f5-tts-voice] Reference text for {char}: {ref_text}")
 
+        target_cps = args.target_cps if args.target_cps is not None else f5_cfg.get("target_cps", None)
         generate_f5_tts(
             char_entries,
             ref_path,
@@ -1021,6 +1110,7 @@ def main():
             speed=f5_cfg.get("speed", 1.0),
             seed=f5_cfg.get("seed"),
             model=model,
+            target_cps=target_cps,
         )
 
     episode_assets_audio = episode / "assets" / "audio"

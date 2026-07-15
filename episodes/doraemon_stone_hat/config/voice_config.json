@@ -9,7 +9,7 @@
       "effect": {
         "pitch": "+3st",
         "formant": "-2",
-        "speed": 0.95,
+        "speed": 1.0,
         "treble": 3,
         "compression": 0.4,
         "reverb": 0.12,
@@ -17,7 +17,8 @@
       },
       "ref_strategy": "auto",
       "ref_duration": 4.0,
-      "speed": 0.88,
+      "speed": 0.85,
+      "target_cps": 4.0,
       "seed": 42
     }
   },
@@ -31,14 +32,15 @@
       "effect": {
         "pitch": "+0st",
         "formant": "-2",
-        "speed": 0.92,
+        "speed": 1.0,
         "treble": 1,
         "compression": 0.3,
         "reverb": 0.08
       },
       "ref_strategy": "auto",
       "ref_duration": 4.0,
-      "speed": 0.85,
+      "speed": 0.80,
+      "target_cps": 4.5,
       "seed": 42
     }
   },
@@ -59,13 +61,14 @@
       },
       "ref_strategy": "auto",
       "ref_duration": 4.0,
-      "speed": 1.0,
+      "speed": 0.85,
+      "target_cps": 4.5,
       "seed": 42
     }
   },
   "Narrator": {
     "voice": "zh-CN-YunxiNeural",
-    "rate": "-12%",
+    "rate": "+0%",
     "pitch": "-5Hz",
     "f5_tts": {
       "enabled": true,
@@ -73,14 +76,15 @@
       "effect": {
         "pitch": "-1st",
         "formant": "+1",
-        "speed": 0.98,
+        "speed": 1.0,
         "treble": 2,
         "compression": 0.55,
         "reverb": 0.15
       },
       "ref_strategy": "auto",
       "ref_duration": 4.0,
-      "speed": 0.85,
+      "speed": 1.0,
+      "target_cps": 5.2,
       "seed": 42
     }
   }
