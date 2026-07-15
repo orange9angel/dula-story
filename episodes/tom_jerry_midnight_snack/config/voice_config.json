@@ -1,0 +1,41 @@
+{
+  "Tom": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+8%",
+    "pitch": "-12Hz",
+    "volume": "+10%",
+    "effect": {
+      "af": "highpass=f=70,lowpass=f=8200,equalizer=f=150:t=q:w=1.0:g=2.2,equalizer=f=3200:t=q:w=1.2:g=1.0,acompressor=threshold=0.14:ratio=2.5:attack=10:release=120:makeup=1.25,alimiter=limit=0.96"
+    },
+    "f5_tts": {
+      "enabled": true,
+      "personality": ["male", "funny", "annoyed"],
+      "effect": {
+        "pitch": "-2st",
+        "formant": "+1",
+        "speed": 1.02,
+        "bass": 3,
+        "treble": 1,
+        "compression": 0.48,
+        "reverb": 0.06
+      },
+      "ref_strategy": "longest",
+      "ref_duration": 4.0,
+      "speed": 0.98,
+      "target_cps": 4.2,
+      "seed": 117
+    }
+  },
+  "Jerry": {
+    "voice": "zh-CN-XiaoyiNeural",
+    "rate": "+18%",
+    "pitch": "+25Hz",
+    "volume": "+7%",
+    "effect": {
+      "af": "highpass=f=125,lowpass=f=9400,equalizer=f=3900:t=q:w=1.0:g=2.4,acompressor=threshold=0.16:ratio=2.0:attack=7:release=90:makeup=1.18,alimiter=limit=0.96"
+    },
+    "f5_tts": {
+      "enabled": false
+    }
+  }
+}
