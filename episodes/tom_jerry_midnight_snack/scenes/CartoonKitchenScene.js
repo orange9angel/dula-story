@@ -45,12 +45,13 @@ function characterByName(scene, name) {
 export class CartoonKitchenScene extends SceneBase {
   constructor() {
     super('CartoonKitchenScene');
+    this.toneContext = 'comedy';
     this.layout = {
       groundY: 0.02,
       bounds: { xMin: -7.5, xMax: 7.5, zMin: -5.4, zMax: 5.4 },
       anchors: {
-        tomStart: new THREE.Vector3(-3.4, 0.02, 2.0),
-        jerryStart: new THREE.Vector3(2.7, 0.02, 1.8),
+        tomStart: new THREE.Vector3(-4.2, 0.02, 2.0),
+        jerryStart: new THREE.Vector3(5.4, 0.02, -4.9),
         islandFrontLeft: new THREE.Vector3(-2.5, 0.02, 1.2),
         islandFrontRight: new THREE.Vector3(2.5, 0.02, 1.2),
         fridge: new THREE.Vector3(-5.4, 0.02, -3.2),
@@ -74,17 +75,26 @@ export class CartoonKitchenScene extends SceneBase {
     this.kitchenTimer = null;
     this.dishStack = null;
     this.crumbs = [];
+    this.cakeSplat = null;
+    this.splatCrumbs = [];
+    this._crashPieces = [];
     this._storyEvents = new Map();
     this._storyState = {
       jerryEntered: false,
-      firstSliceTaken: false,
-      secondSliceTaken: false,
-      dishesRestacked: false,
-      jerryTrapped: false,
-      timerEscaped: false,
+      cherryTaken: false,
+      cakeSplatted: false,
       crashed: false,
     };
     this._sceneTime = 0;
+
+    this._cakeState = 'onStand';
+    this._cakePath = {
+      stand: new THREE.Vector3(0.12, 1.63, -0.65),
+      pushed: new THREE.Vector3(0.1, 0.58, 0.75),
+      bounced: new THREE.Vector3(-1.0, 0.58, 1.05),
+      rolled: new THREE.Vector3(0.75, 0.58, 1.15),
+    };
+    this._cakeStartPos = this._cakePath.stand.clone();
   }
 
   build() {
@@ -151,17 +161,63 @@ export class CartoonKitchenScene extends SceneBase {
   }
 
   _beginStoryEvent(name, duration, data = {}) {
-    this._storyEvents.set(name, {
-      start: this._sceneTime,
+    const context = this._storyEventContext;
+    const event = {
+      start: Number.isFinite(context?.startTime) ? context.startTime : this._sceneTime,
       duration,
       data,
-    });
+    };
+    this._storyEvents.set(name, event);
+    return event;
   }
 
   _storyProgress(name, time) {
     const event = this._storyEvents.get(name);
-    if (!event) return null;
+    if (!event || time < event.start) return null;
     return clamp01((time - event.start) / Math.max(0.001, event.duration));
+  }
+
+  _storyEventTime() {
+    return Number.isFinite(this._storyEventContext?.currentTime)
+      ? this._storyEventContext.currentTime
+      : this._sceneTime;
+  }
+
+  _placeCherryOnCake() {
+    if (!this.cherry || !this.cake) return;
+    if (this.cherry.parent !== this.cake) this.cake.add(this.cherry);
+    this.cherry.visible = true;
+    this.cherry.position.set(0.02, 0.32, 0.02);
+    this.cherry.rotation.set(0, 0, 0);
+    this.cherry.scale.setScalar(1);
+  }
+
+  _placeCherryOnJerry() {
+    const jerry = characterByName(this, 'Jerry');
+    if (!this.cherry || !jerry?.rightWrist) return;
+    if (this.cherry.parent !== jerry.rightWrist) {
+      this.scene.updateMatrixWorld(true);
+      jerry.rightWrist.attach(this.cherry);
+    }
+    this.cherry.visible = true;
+    this.cherry.position.set(0, -0.075, 0.055);
+    this.cherry.rotation.set(0, 0, -0.25);
+    this.cherry.scale.setScalar(0.9);
+  }
+
+  _resetCakeSplat() {
+    if (this.cakeSplat) {
+      if (this.cakeSplat.parent !== this.scene) this.scene.add(this.cakeSplat);
+      this.cakeSplat.visible = false;
+      this.cakeSplat.position.set(0, 0, 0);
+      this.cakeSplat.rotation.set(0, 0, 0);
+      this.cakeSplat.scale.setScalar(0.05);
+    }
+    for (const crumb of this.splatCrumbs) {
+      crumb.visible = false;
+      crumb.position.set(0, 0, 0);
+      crumb.rotation.set(0, 0, 0);
+    }
   }
 
   revealCake() {
@@ -171,120 +227,129 @@ export class CartoonKitchenScene extends SceneBase {
   jerryEntrance() {
     this._storyState.jerryEntered = true;
     const jerry = characterByName(this, 'Jerry');
-    if (jerry?.mesh) {
-      jerry.mesh.visible = true;
-      jerry.mesh.scale.setScalar(0.01);
+    const start = jerry?.mesh?.position.clone() || this.layout.anchors.jerryStart.clone();
+    const end = new THREE.Vector3(1.5, 0.02, 1.1);
+    const event = this._beginStoryEvent('jerryEntrance', 0.9, {
+      start,
+      end,
+      completed: false,
+    });
+    if (!jerry?.mesh) return;
+
+    jerry.mesh.visible = true;
+    if (this._storyEventTime() >= event.start + event.duration) {
+      jerry.mesh.position.copy(end);
+      jerry.mesh.scale.setScalar(1);
+      event.data.completed = true;
+    } else {
+      jerry.mesh.scale.setScalar(0.65);
     }
-    this._beginStoryEvent('jerryEntrance', 0.48);
   }
 
-  offerCrumb() {
-    const crumb = this.crumbs[0];
-    if (crumb) {
+  cakePushJerry() {
+    this._cakeState = 'pushed';
+    if (this.cake) {
+      this.cake.visible = true;
+      this.cake.scale.setScalar(1);
+    }
+    this._beginStoryEvent('cakePushJerry', 1.35, {
+      start: this._cakePath.stand.clone(),
+      end: this._cakePath.pushed.clone(),
+    });
+  }
+
+  cakeBounce() {
+    this._cakeState = 'bouncing';
+    this._beginStoryEvent('cakeBounce', 1.45, {
+      start: this._cakePath.pushed.clone(),
+      end: this._cakePath.bounced.clone(),
+    });
+  }
+
+  cakeRoll() {
+    this._cakeState = 'rolling';
+    this._beginStoryEvent('cakeRoll', 1.55, {
+      start: this._cakePath.bounced.clone(),
+      end: this._cakePath.rolled.clone(),
+    });
+  }
+
+  cakeToTom() {
+    this._cakeState = 'flyingToTom';
+    this._beginStoryEvent('cakeToTom', 3.75, {
+      start: this._cakePath.rolled.clone(),
+    });
+  }
+
+  cakeSplatTom() {
+    this._cakeState = 'splat';
+    this._storyState.cakeSplatted = true;
+    if (this.cake) this.cake.visible = false;
+
+    const tom = characterByName(this, 'Tom');
+    if (tom?.headGroup && this.cakeSplat) {
+      this.scene.updateMatrixWorld(true);
+      tom.headGroup.attach(this.cakeSplat);
+      this.cakeSplat.position.set(0, -0.12, 0.47);
+      this.cakeSplat.rotation.set(0, 0, 0);
+      this.cakeSplat.scale.setScalar(0.05);
+      this.cakeSplat.visible = true;
+    }
+
+    const bursts = this.splatCrumbs.map((crumb, index) => {
       crumb.visible = true;
-      crumb.scale.setScalar(2.1);
-      crumb.position.set(0.25, 0.11, 1.05);
-    }
-    this._beginStoryEvent('offerCrumb', 0.8);
+      return {
+        object: crumb,
+        offset: new THREE.Vector3(
+          Math.cos(index * 1.7) * (0.35 + index * 0.035),
+          0,
+          Math.sin(index * 1.7) * (0.3 + index * 0.025),
+        ),
+      };
+    });
+    this._beginStoryEvent('cakeSplatTom', 0.9, { bursts });
   }
 
-  utensilThreatOne() {
-    this._beginStoryEvent('utensilThreatOne', 0.9);
-  }
-
-  utensilThreatTwo() {
-    this._beginStoryEvent('utensilThreatTwo', 0.95);
-  }
-
-  jerryTakesSlice() {
-    this._storyState.firstSliceTaken = true;
-    if (this.cakeSlices[0]) this.cakeSlices[0].visible = false;
-    if (this.carriedSlices?.[0]) this.carriedSlices[0].visible = true;
-    this._beginStoryEvent('jerryTakesSlice', 0.7);
-  }
-
-  rattleRack() {
-    this._beginStoryEvent('rattleRack', 4.4);
-  }
-
-  secondSlice() {
-    this._storyState.secondSliceTaken = true;
-    if (this.cakeSlices[1]) this.cakeSlices[1].visible = false;
-    if (this.carriedSlices?.[1]) this.carriedSlices[1].visible = true;
-    this._beginStoryEvent('secondSlice', 0.75);
-  }
-
-  bowlTrap() {
-    const jerry = characterByName(this, 'Jerry');
-    const target = jerry?.mesh
-      ? new THREE.Vector3(jerry.mesh.position.x, 0.48, jerry.mesh.position.z)
-      : new THREE.Vector3(1.1, 0.48, 0.9);
-    this._storyState.jerryTrapped = true;
-    if (jerry?.mesh) jerry.mesh.visible = false;
-    for (const slice of this.carriedSlices || []) slice.visible = false;
-    this._beginStoryEvent('bowlTrap', 0.52, { target });
-  }
-
-  bowlCrawl() {
-    this._beginStoryEvent('bowlCrawl', 3.6);
-  }
-
-  restackDishes() {
-    this._storyState.dishesRestacked = true;
-    this._beginStoryEvent('restackDishes', 3.4);
-  }
-
-  timerEscape() {
-    this._storyState.timerEscaped = true;
-    const trapTarget = this._storyEvents.get('bowlTrap')?.data.target
-      || new THREE.Vector3(1.1, 0.48, 0.9);
-    const start = new THREE.Vector3(trapTarget.x + 1.82, trapTarget.y + 0.10, trapTarget.z + 0.04);
-    const end = (this.kitchenTimer?.userData.basePosition || new THREE.Vector3(1.34, 1.68, -0.65))
-      .clone()
-      .add(new THREE.Vector3(0, 0.04, 0.13));
-    const fork = this.utensils[1];
-    if (fork && fork.parent !== this.scene) this.scene.attach(fork);
-    this._beginStoryEvent('timerEscape', 3.7, { start, end });
-  }
-
-  timerRoll() {
-    this._beginStoryEvent('timerRoll', 3.35);
-  }
-
-  timerDing() {
-    this._beginStoryEvent('timerDing', 1.5);
-  }
-
-  crockeryCrash() {
+  dishesCrash() {
     this._storyState.crashed = true;
-    const tom = characterByName(this, 'Tom');
-    const target = tom?.mesh
-      ? new THREE.Vector3(tom.mesh.position.x, 1.25, tom.mesh.position.z + 0.28)
-      : new THREE.Vector3(1.0, 1.25, 1.2);
-    this._beginStoryEvent('crockeryCrash', 2.2, { target });
+    this.scene.updateMatrixWorld(true);
+
+    const objects = [...this.dishes, ...this.cups, this.fryingPan].filter(Boolean);
+    const pieces = objects.map((object, index) => {
+      const angle = -1.2 + index * 0.58;
+      const distance = 0.9 + (index % 4) * 0.25;
+      const isPlate = this.dishes.includes(object);
+      const isCup = this.cups.includes(object);
+      const landingY = isPlate ? 0.055 : (isCup ? 0.21 : 0.10);
+      return {
+        object,
+        parent: object.parent,
+        start: object.position.clone(),
+        startRotation: object.rotation.clone(),
+        angle,
+        distance,
+        landingY,
+        arc: 0.75 + (index % 3) * 0.18,
+        spinX: (index + 1) * 1.1,
+        spinZ: (index % 2 === 0 ? 1 : -1) * (2.4 + index * 0.25),
+        endRotation: new THREE.Euler(
+          0,
+          angle * 0.45,
+          isCup ? (index % 2 === 0 ? 0.28 : -0.28) : 0,
+        ),
+      };
+    });
+    this._crashPieces = pieces;
+    this._beginStoryEvent('dishesCrash', 1.5, { pieces });
   }
 
-  finalCrumb() {
-    const tom = characterByName(this, 'Tom');
-    const jerry = characterByName(this, 'Jerry');
-    this._storyState.jerryTrapped = false;
-    if (jerry?.mesh) jerry.mesh.visible = true;
-    if (this._storyState.firstSliceTaken && this.carriedSlices?.[0]) this.carriedSlices[0].visible = true;
-    if (this._storyState.secondSliceTaken && this.carriedSlices?.[1]) this.carriedSlices[1].visible = true;
-    const crumb = this.crumbs[this.crumbs.length - 1];
-    if (crumb) {
-      crumb.visible = true;
-      crumb.scale.setScalar(2.6);
-      crumb.position.set(
-        (tom?.mesh.position.x ?? 1.0) + 0.32,
-        0.12,
-        (tom?.mesh.position.z ?? 0.9) + 0.55,
-      );
-    }
-    this._beginStoryEvent('finalCrumb', 0.9);
+  jerryTakesCherry() {
+    this._storyState.cherryTaken = true;
+    this._beginStoryEvent('jerryTakesCherry', 0.35);
+    this._placeCherryOnJerry();
   }
 
-  update(time, delta) {
+  _updateLegacyUnused(time, delta) {
     super.update(time, delta);
     this._sceneTime = time;
 
@@ -408,6 +473,104 @@ export class CartoonKitchenScene extends SceneBase {
       this.kitchenTimer.scale.setScalar(pulse);
     }
 
+    // ── New slapstick cake chase with visible cause-and-effect trajectory ──
+    const cakePush = this._storyProgress('cakePushJerry', time);
+    if (cakePush !== null && this.cake) {
+      const p = easeInOutSine(cakePush);
+      this.cake.position.lerpVectors(this._cakeStartPos, new THREE.Vector3(0.12, 1.63, 0.85), p);
+      this.cake.rotation.z = p * Math.PI * 0.35;
+    }
+
+    const cakeBounce = this._storyProgress('cakeBounce', time);
+    if (cakeBounce !== null && this.cake) {
+      const p = easeOutCubic(cakeBounce);
+      const start = new THREE.Vector3(0.12, 1.63, 0.85);
+      const end = new THREE.Vector3(-0.8, 0.18, 1.4);
+      this.cake.position.lerpVectors(start, end, p);
+      this.cake.position.y += Math.sin(p * Math.PI) * 0.55;
+      this.cake.rotation.x = p * Math.PI * 2.5;
+      this.cake.rotation.z = p * Math.PI * 0.8;
+    }
+
+    const cakeRoll = this._storyProgress('cakeRoll', time);
+    if (cakeRoll !== null && this.cake) {
+      const p = easeInOutSine(cakeRoll);
+      const start = new THREE.Vector3(-0.8, 0.18, 1.4);
+      const end = new THREE.Vector3(0.2, 0.18, 1.0);
+      this.cake.position.lerpVectors(start, end, p);
+      this.cake.rotation.z = p * Math.PI * 3;
+    }
+
+    const cakeFly = this._storyProgress('cakeToTom', time);
+    if (cakeFly !== null && this.cake) {
+      const p = easeOutCubic(cakeFly);
+      const start = new THREE.Vector3(0.2, 0.18, 1.0);
+      const tom = characterByName(this, 'Tom');
+      const end = tom?.mesh
+        ? new THREE.Vector3(tom.mesh.position.x, tom.mesh.position.y + 1.35, tom.mesh.position.z + 0.28)
+        : new THREE.Vector3(0.5, 1.4, 1.4);
+      this.cake.position.lerpVectors(start, end, p);
+      this.cake.position.y += Math.sin(p * Math.PI) * 0.65;
+      this.cake.rotation.x = p * Math.PI * 1.8;
+      this.cake.rotation.z = p * Math.PI * 1.2;
+    }
+
+    const cakeSplat = this._storyProgress('cakeSplatTom', time);
+    if (cakeSplat !== null && this.cake) {
+      const p = easeOutCubic(cakeSplat);
+      const squash = 1 - p * 0.72;
+      this.cake.scale.set(1.0 + p * 0.55, Math.max(0.28, squash), 1.0 + p * 0.55);
+      this.cake.position.y -= p * 0.12;
+      for (let index = 1; index < this.crumbs.length - 1; index++) {
+        const crumb = this.crumbs[index];
+        const seed = crumb.userData.seed;
+        crumb.visible = true;
+        crumb.position.set(
+          this.cake.position.x + Math.cos(seed) * p * (0.3 + index * 0.03),
+          0.08 + Math.sin(p * Math.PI) * (0.35 + (index % 4) * 0.12),
+          this.cake.position.z + Math.sin(seed) * p * (0.25 + index * 0.025),
+        );
+      }
+    }
+
+    const newCrash = this._storyProgress('dishesCrash', time);
+    const newCrashEvent = this._storyEvents.get('dishesCrash');
+    if (newCrash !== null && newCrashEvent) {
+      const p = easeOutCubic(newCrash);
+      for (let index = 0; index < this.dishes.length; index++) {
+        const dish = this.dishes[index];
+        const angle = -1.0 + index * 0.38;
+        const speed = 0.9 + index * 0.12;
+        dish.position.set(
+          newCrashEvent.data.target.x + Math.cos(angle) * p * speed,
+          dish.userData.basePosition.y + Math.sin(p * Math.PI) * (0.6 + index * 0.05) - p * 1.25,
+          newCrashEvent.data.target.z + Math.sin(angle) * p * speed,
+        );
+        dish.rotation.x = p * (index + 1) * 1.5;
+        dish.rotation.z = p * (index % 2 === 0 ? 2.8 : -2.8);
+      }
+      for (let index = 0; index < this.cups.length; index++) {
+        const cup = this.cups[index];
+        cup.position.x = cup.userData.basePosition.x + p * (index === 0 ? -1.8 : 1.5);
+        cup.position.y = cup.userData.basePosition.y + Math.sin(p * Math.PI) * 1.1 - p * 1.5;
+        cup.rotation.z = p * (index === 0 ? -5 : 4.5);
+      }
+      if (this.fryingPan) {
+        this.fryingPan.position.set(-3.55 + p * 3.2, 1.67 + Math.sin(p * Math.PI) * 1.4 - p * 1.3, -0.45 + p * 0.7);
+        this.fryingPan.rotation.x = p * Math.PI * 3.5;
+        this.fryingPan.rotation.z = p * Math.PI * 2;
+      }
+    }
+
+    const cherryEvent = this._storyProgress('jerryTakesCherry', time);
+    if (cherryEvent !== null && this.cherry) {
+      const jerry = characterByName(this, 'Jerry');
+      if (jerry?.mesh) {
+        const base = jerry.mesh.position;
+        this.cherry.position.set(base.x + 0.18, base.y + 0.55, base.z + 0.12);
+      }
+    }
+
     const crash = this._storyProgress('crockeryCrash', time);
     const crashEvent = this._storyEvents.get('crockeryCrash');
     if (crash !== null && crashEvent) {
@@ -453,6 +616,198 @@ export class CartoonKitchenScene extends SceneBase {
           crashEvent.data.target.z + Math.sin(seed) * p * (0.3 + index * 0.03),
         );
       }
+    }
+  }
+
+  update(time, delta) {
+    super.update(time, delta);
+    this._sceneTime = time;
+
+    const reveal = this._storyProgress('revealCake', time);
+    const revealEvent = this._storyEvents.get('revealCake');
+    if (reveal !== null && this.cloche) {
+      const p = easeOutCubic(reveal);
+      this.cloche.position.set(0.12 - p * 1.05, 1.46 + p * 1.35, -0.65);
+      this.cloche.rotation.z = -p * 0.5;
+      this.cloche.visible = reveal < 1;
+    } else if (this.cloche && (!revealEvent || time < revealEvent.start)) {
+      this.cloche.position.set(0.12, 1.46, -0.65);
+      this.cloche.rotation.set(0, 0, 0);
+      this.cloche.visible = true;
+    }
+
+    const entrance = this._storyProgress('jerryEntrance', time);
+    const entranceEvent = this._storyEvents.get('jerryEntrance');
+    const jerry = characterByName(this, 'Jerry');
+    if (entranceEvent && jerry?.mesh) {
+      const entranceEnd = entranceEvent.start + entranceEvent.duration;
+      if (time < entranceEvent.start) {
+        this._storyState.jerryEntered = false;
+        entranceEvent.data.completed = false;
+        jerry.mesh.visible = false;
+        jerry.mesh.position.copy(entranceEvent.data.start);
+        jerry.mesh.scale.setScalar(1);
+      } else if (time <= entranceEnd && entrance !== null) {
+        this._storyState.jerryEntered = true;
+        entranceEvent.data.completed = false;
+        jerry.mesh.visible = true;
+        const p = easeOutCubic(entrance);
+        jerry.mesh.position.lerpVectors(entranceEvent.data.start, entranceEvent.data.end, p);
+        const entranceBounce = Math.sin(entrance * Math.PI) * 0.12;
+        jerry.mesh.scale.setScalar(Math.min(1, 0.65 + p * 0.35 + entranceBounce));
+      } else if (!entranceEvent.data.completed) {
+        jerry.mesh.visible = true;
+        jerry.mesh.position.copy(entranceEvent.data.end);
+        jerry.mesh.scale.setScalar(1);
+        entranceEvent.data.completed = true;
+      }
+    }
+
+    const splat = this._storyProgress('cakeSplatTom', time);
+    const splatEvent = this._storyEvents.get('cakeSplatTom');
+    const fly = this._storyProgress('cakeToTom', time);
+    const flyEvent = this._storyEvents.get('cakeToTom');
+    const roll = this._storyProgress('cakeRoll', time);
+    const rollEvent = this._storyEvents.get('cakeRoll');
+    const bounce = this._storyProgress('cakeBounce', time);
+    const bounceEvent = this._storyEvents.get('cakeBounce');
+    const push = this._storyProgress('cakePushJerry', time);
+    const pushEvent = this._storyEvents.get('cakePushJerry');
+
+    if (splat !== null && splatEvent) {
+      this._storyState.cakeSplatted = true;
+      if (this.cake) this.cake.visible = false;
+      const tom = characterByName(this, 'Tom');
+      if (tom?.headGroup && this.cakeSplat) {
+        if (this.cakeSplat.parent !== tom.headGroup) {
+          this.scene.updateMatrixWorld(true);
+          tom.headGroup.attach(this.cakeSplat);
+        }
+        this.cakeSplat.position.set(0, -0.12, 0.47);
+        this.cakeSplat.rotation.set(0, 0, 0);
+        this.cakeSplat.visible = true;
+      }
+      const p = easeOutCubic(splat);
+      if (this.cakeSplat) this.cakeSplat.scale.setScalar(Math.max(0.05, p));
+      let origin = new THREE.Vector3(-1.3, 1.55, 1.9);
+      if (tom?.headGroup) {
+        tom.mesh.updateMatrixWorld(true);
+        origin = tom.headGroup.localToWorld(new THREE.Vector3(0, -0.08, 0.5));
+      }
+      for (let index = 0; index < splatEvent.data.bursts.length; index++) {
+        const burst = splatEvent.data.bursts[index];
+        const end = new THREE.Vector3(
+          origin.x + burst.offset.x,
+          0.035,
+          origin.z + burst.offset.z,
+        );
+        burst.object.visible = true;
+        burst.object.position.lerpVectors(origin, end, p);
+        burst.object.position.y += Math.sin(p * Math.PI) * (0.35 + index * 0.035);
+        burst.object.rotation.x = p * (index + 1) * 0.7;
+        burst.object.rotation.z = p * (index % 2 === 0 ? 2.4 : -2.4);
+      }
+    } else if (fly !== null && flyEvent && this.cake) {
+      this._storyState.cakeSplatted = false;
+      this._resetCakeSplat();
+      this.cake.visible = true;
+      const p = easeInOutSine(fly);
+      const tom = characterByName(this, 'Tom');
+      let target = new THREE.Vector3(-1.3, 1.55, 1.9);
+      if (tom?.headGroup) {
+        tom.mesh.updateMatrixWorld(true);
+        target = tom.headGroup.localToWorld(new THREE.Vector3(0, -0.08, 0.58));
+      }
+      this.cake.position.lerpVectors(flyEvent.data.start, target, p);
+      this.cake.position.y += Math.sin(p * Math.PI) * 0.7;
+      this.cake.rotation.x = Math.PI / 2 + p * Math.PI * 1.2;
+      this.cake.rotation.z = p * Math.PI * 3.2;
+    } else if (roll !== null && rollEvent && this.cake) {
+      this._storyState.cakeSplatted = false;
+      this._resetCakeSplat();
+      this.cake.visible = true;
+      const p = easeInOutSine(roll);
+      this.cake.position.lerpVectors(rollEvent.data.start, rollEvent.data.end, p);
+      this.cake.rotation.x = Math.PI / 2;
+      this.cake.rotation.z = p * Math.PI * 4;
+    } else if (bounce !== null && bounceEvent && this.cake) {
+      this._storyState.cakeSplatted = false;
+      this._resetCakeSplat();
+      this.cake.visible = true;
+      const p = easeOutCubic(bounce);
+      this.cake.position.lerpVectors(bounceEvent.data.start, bounceEvent.data.end, p);
+      this.cake.position.y += Math.sin(p * Math.PI) * 0.48;
+      this.cake.rotation.x = Math.PI / 2;
+      this.cake.rotation.z = p * Math.PI * 2.5;
+    } else if (push !== null && pushEvent && this.cake) {
+      this._storyState.cakeSplatted = false;
+      this._resetCakeSplat();
+      this.cake.visible = true;
+      const p = easeInOutSine(push);
+      this.cake.position.lerpVectors(pushEvent.data.start, pushEvent.data.end, p);
+      this.cake.position.y += Math.sin(p * Math.PI) * 0.18;
+      this.cake.rotation.x = p * Math.PI / 2;
+      this.cake.rotation.z = p * 0.35;
+    } else if (this.cake) {
+      this._storyState.cakeSplatted = false;
+      this._resetCakeSplat();
+      this.cake.visible = true;
+      this.cake.position.copy(this._cakePath.stand);
+      this.cake.rotation.set(0, 0, 0);
+      this.cake.scale.setScalar(1);
+    }
+
+    const crash = this._storyProgress('dishesCrash', time);
+    const crashEvent = this._storyEvents.get('dishesCrash');
+    if (crash !== null && crashEvent) {
+      this._storyState.crashed = true;
+      const p = easeOutCubic(crash);
+      const tom = characterByName(this, 'Tom');
+      const center = tom?.mesh?.position || new THREE.Vector3(-1.3, 0.02, 1.4);
+      this.scene.updateMatrixWorld(true);
+      for (const piece of crashEvent.data.pieces) {
+        const endWorld = new THREE.Vector3(
+          center.x + Math.cos(piece.angle) * piece.distance,
+          piece.landingY,
+          center.z + Math.sin(piece.angle) * piece.distance,
+        );
+        const end = piece.parent === this.scene
+          ? endWorld
+          : piece.parent.worldToLocal(endWorld.clone());
+        piece.object.position.lerpVectors(piece.start, end, p);
+        piece.object.position.y += Math.sin(p * Math.PI) * piece.arc;
+        const spin = Math.sin(p * Math.PI);
+        piece.object.rotation.x = THREE.MathUtils.lerp(
+          piece.startRotation.x,
+          piece.endRotation.x,
+          p,
+        ) + spin * piece.spinX;
+        piece.object.rotation.y = THREE.MathUtils.lerp(
+          piece.startRotation.y,
+          piece.endRotation.y,
+          p,
+        );
+        piece.object.rotation.z = THREE.MathUtils.lerp(
+          piece.startRotation.z,
+          piece.endRotation.z,
+          p,
+        ) + spin * piece.spinZ;
+      }
+    } else if (crashEvent && time < crashEvent.start) {
+      this._storyState.crashed = false;
+      for (const piece of crashEvent.data.pieces) {
+        piece.object.position.copy(piece.start);
+        piece.object.rotation.copy(piece.startRotation);
+      }
+    }
+
+    const cherryEvent = this._storyEvents.get('jerryTakesCherry');
+    if (cherryEvent && time >= cherryEvent.start) {
+      this._storyState.cherryTaken = true;
+      this._placeCherryOnJerry();
+    } else {
+      this._storyState.cherryTaken = false;
+      this._placeCherryOnCake();
     }
   }
 
@@ -809,6 +1164,49 @@ export class CartoonKitchenScene extends SceneBase {
       this.cake.add(berry);
     }
 
+    // A visible cherry is planted on the cake so Jerry's later handoff is causal.
+    this.cherry = new THREE.Group();
+    this.cherry.name = 'JerryCherry';
+    this.cherry.position.set(0.02, 0.32, 0.02);
+    this.cherry.visible = true;
+    this.cake.add(this.cherry);
+    const cherryBody = new THREE.Mesh(new THREE.SphereGeometry(0.055, 10, 8), toonMaterial(0xc73f55));
+    cherryBody.position.y = 0;
+    this.cherry.add(cherryBody);
+    const cherryStem = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.07, 6), toonMaterial(0x4a6b3a));
+    cherryStem.position.set(0.02, 0.055, 0);
+    cherryStem.rotation.z = -0.35;
+    this.cherry.add(cherryStem);
+
+    // The intact cake disappears on impact; this smaller cream decal stays on Tom.
+    this.cakeSplat = new THREE.Group();
+    this.cakeSplat.name = 'TomCakeSplat';
+    this.cakeSplat.visible = false;
+    this.scene.add(this.cakeSplat);
+    const splatBody = new THREE.Mesh(new THREE.SphereGeometry(0.31, 18, 14), icingMat);
+    splatBody.scale.set(1.05, 0.78, 0.16);
+    this.cakeSplat.add(splatBody);
+    for (const [x, y, scale] of [
+      [-0.22, -0.20, 0.42],
+      [0.0, -0.25, 0.55],
+      [0.22, -0.18, 0.38],
+    ]) {
+      const drip = new THREE.Mesh(new THREE.SphereGeometry(0.12, 10, 8), icingMat);
+      drip.position.set(x, y, 0);
+      drip.scale.set(scale, 1.0, 0.18);
+      this.cakeSplat.add(drip);
+    }
+    for (const [x, y, color] of [
+      [-0.15, 0.02, 0xc73f55],
+      [0.16, -0.04, 0x7b4a9c],
+      [0.02, -0.16, 0xc73f55],
+    ]) {
+      const topping = new THREE.Mesh(new THREE.SphereGeometry(0.035, 8, 6), toonMaterial(color));
+      topping.position.set(x, y, 0.055);
+      topping.scale.z = 0.35;
+      this.cakeSplat.add(topping);
+    }
+
     this.cloche = new THREE.Group();
     this.cloche.name = 'CakeCloche';
     this.cloche.position.set(0.12, 1.46, -0.65);
@@ -1015,6 +1413,7 @@ export class CartoonKitchenScene extends SceneBase {
       this.scene.add(crumb);
       this.crumbs.push(crumb);
     }
+    this.splatCrumbs = this.crumbs.slice(1, 9);
 
     this.carriedSlices = [0, 1].map((index) => {
       const group = new THREE.Group();

@@ -180,7 +180,13 @@
     "verify:deposit_duel": "dula-verify ./episodes/last_deposit_duel_validation",
     "preview:deposit_duel": "dula-preview ./episodes/last_deposit_duel_validation",
     "render:deposit_duel": "dula-render ./episodes/last_deposit_duel_validation",
-    "build:deposit_duel": "npm run audio:deposit_duel && npm run render:deposit_duel"
+    "build:deposit_duel": "npm run audio:deposit_duel && npm run render:deposit_duel",
+    "score:tom_jerry_midnight_snack": "python ../docs/skills/episode-scoring/scripts/run_scoring.py ./episodes/tom_jerry_midnight_snack --no-download",
+    "audio:tom_jerry_midnight_snack": "dula-audio ./episodes/tom_jerry_midnight_snack --provider=f5-tts",
+    "audio:tom_jerry_midnight_snack:force": "dula-audio ./episodes/tom_jerry_midnight_snack --provider=f5-tts --force",
+    "verify:tom_jerry_midnight_snack": "dula-verify ./episodes/tom_jerry_midnight_snack",
+    "render:tom_jerry_midnight_snack": "dula-render ./episodes/tom_jerry_midnight_snack",
+    "build:tom_jerry_midnight_snack": "npm run score:tom_jerry_midnight_snack && npm run verify:tom_jerry_midnight_snack && npm run audio:tom_jerry_midnight_snack:force && npm run verify:tom_jerry_midnight_snack && npm run render:tom_jerry_midnight_snack"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

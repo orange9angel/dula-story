@@ -31,6 +31,11 @@ export class Jerry extends CharacterBase {
       'Celebrate', 'HitStagger', 'Knockdown', 'GetUp', 'FaceConfused',
       'FaceHappy', 'FacePain', 'FaceSmirk', 'FaceSurprised',
     ];
+    this.semanticPerformanceProfile = {
+      surprise: { emotion: 'surprise', action: 'MouseOffer', intensity: 0.55, layer: 'upper' },
+      taunt: { emotion: 'smile', action: 'MousePushCake', intensity: 0.75, layer: 'full' },
+      tease: { emotion: 'smile', action: 'MouseTaunt', intensity: 0.65, layer: 'upper' },
+    };
     this.allowedBodyAnimations = null;
   }
 
@@ -87,40 +92,54 @@ export class Jerry extends CharacterBase {
       this.earGroups.push(earGroup);
     }
 
-    const muzzleGeo = new THREE.SphereGeometry(0.095, 14, 10);
+    const muzzleGeo = new THREE.SphereGeometry(0.10, 14, 10);
     for (const side of [-1, 1]) {
       const muzzle = new THREE.Mesh(muzzleGeo, bellyMat);
-      muzzle.position.set(side * 0.060, -0.060, 0.177);
-      muzzle.scale.set(0.95, 0.66, 0.50);
+      muzzle.name = side < 0 ? 'JerryLeftMuzzle' : 'JerryRightMuzzle';
+      muzzle.position.set(side * 0.062, -0.065, 0.182);
+      muzzle.scale.set(1.0, 0.72, 0.55);
       this.headGroup.add(muzzle);
     }
 
-    const eyeGeo = new THREE.SphereGeometry(0.067, 14, 12);
+    const eyeRadius = 0.078;
+    const eyeScale = new THREE.Vector3(0.9, 1.32, 0.52);
+    const irisMat2 = toonMaterial(0x5a3a22);
     for (const side of [-1, 1]) {
       const eyeGroup = new THREE.Group();
-      eyeGroup.position.set(side * 0.072, 0.045, 0.185);
+      eyeGroup.name = side < 0 ? 'JerryLeftEye' : 'JerryRightEye';
+      eyeGroup.position.set(side * 0.085, 0.055, 0.195);
 
-      const white = new THREE.Mesh(eyeGeo, eyeWhite);
-      white.scale.set(0.88, 1.24, 0.46);
+      const white = new THREE.Mesh(new THREE.SphereGeometry(eyeRadius, 18, 14), eyeWhite);
+      white.name = side < 0 ? 'JerryLeftEyeWhite' : 'JerryRightEyeWhite';
+      white.scale.copy(eyeScale);
       eyeGroup.add(white);
 
-      const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.026, 10, 8), black);
-      pupil.position.set(0, -0.006, 0.052);
-      pupil.scale.set(0.72, 1.18, 0.42);
+      const iris = new THREE.Mesh(new THREE.SphereGeometry(0.045, 12, 10), irisMat2);
+      iris.name = side < 0 ? 'JerryLeftIris' : 'JerryRightIris';
+      iris.position.set(0, -0.008, 0.058);
+      iris.scale.set(0.82, 1.15, 0.44);
+      eyeGroup.add(iris);
+
+      const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.03, 10, 8), black);
+      pupil.name = side < 0 ? 'JerryLeftPupil' : 'JerryRightPupil';
+      pupil.position.set(0, -0.012, 0.086);
+      pupil.scale.set(0.68, 1.18, 0.42);
       pupil.userData.baseX = 0;
       pupil.userData.baseY = pupil.position.y;
-      pupil.userData.eyeRadius = 0.055;
+      pupil.userData.eyeRadius = 0.06;
       eyeGroup.add(pupil);
 
-      const highlight = new THREE.Mesh(new THREE.SphereGeometry(0.008, 6, 5), eyeWhite);
-      highlight.position.set(-side * 0.006, 0.010, 0.069);
+      const highlight = new THREE.Mesh(new THREE.SphereGeometry(0.01, 6, 5), eyeWhite);
+      highlight.name = side < 0 ? 'JerryLeftEyeHighlight' : 'JerryRightEyeHighlight';
+      highlight.position.set(-side * 0.008, 0.014, 0.075);
       eyeGroup.add(highlight);
 
       const eyelid = new THREE.Mesh(
-        new THREE.SphereGeometry(0.069, 12, 10, 0, Math.PI * 2, 0, Math.PI * 0.5),
+        new THREE.SphereGeometry(eyeRadius, 16, 12, 0, Math.PI * 2, 0, Math.PI * 0.5),
         fur,
       );
-      eyelid.scale.set(0.88, 1.24, 0.47);
+      eyelid.name = side < 0 ? 'JerryLeftEyelid' : 'JerryRightEyelid';
+      eyelid.scale.copy(eyeScale);
       eyelid.visible = false;
       eyeGroup.add(eyelid);
 
@@ -128,44 +147,56 @@ export class Jerry extends CharacterBase {
         this.leftEyeGroup = eyeGroup;
         this.leftPupil = pupil;
         this.leftEyelid = eyelid;
+        this.leftEyelidBaseY = eyelid.position.y;
+        this.leftEyelidBaseScaleY = eyelid.scale.y;
       } else {
         this.rightEyeGroup = eyeGroup;
         this.rightPupil = pupil;
         this.rightEyelid = eyelid;
+        this.rightEyelidBaseY = eyelid.position.y;
+        this.rightEyelidBaseScaleY = eyelid.scale.y;
       }
       this.headGroup.add(eyeGroup);
     }
 
-    const browGeo = new THREE.CapsuleGeometry(0.006, 0.055, 3, 6);
+    const browGeo = new THREE.CapsuleGeometry(0.01, 0.075, 3, 6);
     for (const side of [-1, 1]) {
       const brow = new THREE.Mesh(browGeo, darkFur);
-      brow.position.set(side * 0.075, 0.124, 0.193);
+      brow.name = side < 0 ? 'JerryLeftEyebrow' : 'JerryRightEyebrow';
+      brow.position.set(side * 0.09, 0.145, 0.205);
       brow.rotation.z = Math.PI / 2 - side * 0.06;
       this.headGroup.add(brow);
-      if (side < 0) this.leftEyebrow = brow;
-      else this.rightEyebrow = brow;
+      if (side < 0) {
+        this.leftEyebrow = brow;
+        this.leftBrow = brow;
+      } else {
+        this.rightEyebrow = brow;
+        this.rightBrow = brow;
+      }
     }
-    this.leftBrow = this.leftEyebrow;
-    this.rightBrow = this.rightEyebrow;
     this.leftBrowBaseY = this.leftEyebrow.position.y;
     this.rightBrowBaseY = this.rightEyebrow.position.y;
 
-    const nose = new THREE.Mesh(new THREE.SphereGeometry(0.034, 12, 8), noseMat);
+    const nose = new THREE.Mesh(new THREE.SphereGeometry(0.038, 12, 8), noseMat);
     nose.name = 'JerryNose';
-    nose.position.set(0, -0.055, 0.252);
+    nose.position.set(0, -0.06, 0.262);
     nose.scale.set(1.15, 0.82, 0.82);
     this.headGroup.add(nose);
 
+    // Flattened sphere keeps the standard mouth axes: X=width, Y=open/close.
     this.mouth = new THREE.Mesh(new THREE.SphereGeometry(0.048, 12, 10), black);
     this.mouth.name = 'JerryMouth';
-    this.mouth.position.set(0, -0.145, 0.205);
-    this.mouth.scale.set(1.0, 0.17, 0.31);
+    this.mouth.position.set(0, -0.15, 0.212);
+    this.mouth.scale.set(1.0, 0.18, 0.31);
     this.mouthVisual = this.mouth;
     this.headGroup.add(this.mouth);
     this.mouthBaseScaleX = this.mouth.scale.x;
     this.mouthBaseScaleY = this.mouth.scale.y;
     this.mouthBaseScaleZ = this.mouth.scale.z;
     this.mouthBaseY = this.mouth.position.y;
+
+    // 捕获完整面部基线
+    this._captureFaceBaseState();
 
     const whiskerGeo = new THREE.CylinderGeometry(0.002, 0.002, 0.19, 5);
     for (const side of [-1, 1]) {

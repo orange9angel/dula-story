@@ -15,7 +15,19 @@ import {
   MouseOffer,
   MouseScamper,
   MouseTaunt,
+  CatReachCake,
+  CatGrab,
+  CatSlip,
+  CatPieFace,
+  MousePushCake,
+  MouseDodge,
+  MouseWaveGoodbye,
 } from './animations/SlapstickActions.js';
+import {
+  FaceMischief,
+  FaceGloat,
+  FaceShockComedy,
+} from './animations/ComedyFaces.js';
 
 registerAll();
 
@@ -33,3 +45,13 @@ registerAnimation('CartoonShush', CartoonShush);
 registerAnimation('MouseTaunt', MouseTaunt);
 registerAnimation('CatTrapPress', CatTrapPress);
 registerAnimation('CatDoom', CatDoom);
+registerAnimation('CatReachCake', CatReachCake);
+registerAnimation('CatGrab', CatGrab);
+registerAnimation('CatSlip', CatSlip);
+registerAnimation('CatPieFace', CatPieFace);
+registerAnimation('MousePushCake', MousePushCake);
+registerAnimation('MouseDodge', MouseDodge);
+registerAnimation('MouseWaveGoodbye', MouseWaveGoodbye);
+registerAnimation('FaceMischief', FaceMischief);
+registerAnimation('FaceGloat', FaceGloat);
+registerAnimation('FaceShockComedy', FaceShockComedy);

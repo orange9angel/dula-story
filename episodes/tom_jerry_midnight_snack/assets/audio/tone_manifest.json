@@ -1,0 +1,210 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-07-16T17:08:19.366Z",
+  "entryCount": 7,
+  "entries": [
+    {
+      "index": 3,
+      "character": "Tom",
+      "text": "嘿嘿，今晚这块蛋糕，全归我。",
+      "startTime": 8.25,
+      "endTime": 12.25,
+      "toneId": "contempt",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": -1,
+        "speed": 0.85,
+        "volume": 0.8,
+        "breaks": [
+          0.15
+        ]
+      },
+      "emotion": "smile",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "comedy",
+      "semanticExpression": "smile",
+      "semanticAction": "CrossArms",
+      "requestedBodyGesture": {
+        "anim": "CrossArms",
+        "intensity": 0.55,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 4,
+      "character": "Jerry",
+      "text": "那最上面的樱桃，也归你？",
+      "startTime": 12.55,
+      "endTime": 16,
+      "toneId": "surprise",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 3,
+        "speed": 1.2,
+        "volume": 1,
+        "breaks": [
+          0.02
+        ]
+      },
+      "emotion": "surprise",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "comedy",
+      "semanticExpression": "surprise",
+      "semanticAction": "MouseOffer",
+      "requestedBodyGesture": {
+        "anim": "MouseOffer",
+        "intensity": 0.55,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 5,
+      "character": "Tom",
+      "text": "当然。连蛋糕屑都姓猫。",
+      "startTime": 16.3,
+      "endTime": 20,
+      "toneId": "contempt",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": -1,
+        "speed": 0.85,
+        "volume": 0.8,
+        "breaks": [
+          0.15
+        ]
+      },
+      "emotion": "smile",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "comedy",
+      "semanticExpression": "smile",
+      "semanticAction": "CrossArms",
+      "requestedBodyGesture": {
+        "anim": "CrossArms",
+        "intensity": 0.55,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 7,
+      "character": "Jerry",
+      "text": "好啊，那就让它自己选。",
+      "startTime": 24.25,
+      "endTime": 28,
+      "toneId": "taunt",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 1,
+        "speed": 0.95,
+        "volume": 0.9,
+        "breaks": [
+          0.12
+        ]
+      },
+      "emotion": "smile",
+      "mouthTension": 0,
+      "intensity": 0.7,
+      "sceneContext": "comedy",
+      "semanticExpression": "smile",
+      "semanticAction": "MousePushCake",
+      "requestedBodyGesture": {
+        "anim": "MousePushCake",
+        "intensity": 0.75,
+        "layer": "full"
+      }
+    },
+    {
+      "index": 10,
+      "character": "Tom",
+      "text": "等等——它选错了！",
+      "startTime": 36.25,
+      "endTime": 40,
+      "toneId": "panic",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 3,
+        "speed": 1.4,
+        "volume": 1,
+        "breaks": [
+          0.03
+        ]
+      },
+      "emotion": "fear",
+      "mouthTension": 0,
+      "intensity": 0.9,
+      "sceneContext": "comedy",
+      "semanticExpression": "fear",
+      "semanticAction": "CatSlip",
+      "requestedBodyGesture": {
+        "anim": "CatSlip",
+        "intensity": 0.9,
+        "layer": "full"
+      }
+    },
+    {
+      "index": 13,
+      "character": "Jerry",
+      "text": "蛋糕归你，樱桃归我。",
+      "startTime": 48.25,
+      "endTime": 52,
+      "toneId": "tease",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 1,
+        "speed": 1,
+        "volume": 0.9,
+        "breaks": [
+          0.12
+        ]
+      },
+      "emotion": "smile",
+      "mouthTension": 0,
+      "intensity": 0.5,
+      "sceneContext": "comedy",
+      "semanticExpression": "smile",
+      "semanticAction": "MouseTaunt",
+      "requestedBodyGesture": {
+        "anim": "MouseTaunt",
+        "intensity": 0.65,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 15,
+      "character": "Tom",
+      "text": "下次……我先吃樱桃。",
+      "startTime": 56.25,
+      "endTime": 60,
+      "toneId": "despair",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": -3,
+        "speed": 0.7,
+        "volume": 0.75,
+        "breaks": [
+          0.2
+        ]
+      },
+      "emotion": "sad",
+      "mouthTension": 0.3,
+      "intensity": 0.9,
+      "sceneContext": "comedy",
+      "semanticExpression": "sad",
+      "semanticAction": "CatDoom",
+      "requestedBodyGesture": {
+        "anim": "CatDoom",
+        "intensity": 0.85,
+        "layer": "full"
+      }
+    }
+  ]
+}

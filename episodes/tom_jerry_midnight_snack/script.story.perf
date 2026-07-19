@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:04,000
+@CartoonKitchenScene{Position:Tom|x=-4.5|y=0.02|z=2.0|face=center}{Position:Jerry|x=5.4|y=0.02|z=-4.9|face=Tom}{Camera:Static|position=0,3.2,8.5|lookAt=0,1.25,0}{Music:Play|name=tom_jerry_type|fadeIn=0.5|fadeOut=1.0|baseVolume=0.08|endTime=62}{SFX:Play|name=kitchen_roomtone|endTime=62|baseVolume=0.18}{SFX:Play|name=clock_tick|endTime=62|baseVolume=0.16}
+
+2
+00:00:04,250 --> 00:00:08,000
+{Event:Move|character=Tom|x=-1.6|z=1.6|duration=3.5|action=CatSneak}{Camera:Static|position=0.8,2.8,7.0|lookAt=-0.4,1.0,0.6}
+
+3
+00:00:08,250 --> 00:00:12,250
+{Event:RevealCake}{SFX:Play|name=cloche_lift|offset=0.2|baseVolume=0.72}
+[Tom]{CatSneak}{Animation:FaceSmirk|character=Tom}{Voice:calm}{Camera:CloseUp|characterName=Tom|distance=3.8|sideAngle=16}嘿嘿，这块蛋糕归我了。
+
+4
+00:00:12,550 --> 00:00:16,000
+{Event:JerryEntrance}{SFX:Play|name=slide_whoosh|offset=0.1|baseVolume=0.6}
+[Jerry]{MouseOffer}{Animation:FaceMischief|character=Jerry}{Voice:curious}{Camera:TwoShot|characterA=Tom|characterB=Jerry|distance=6.5}见面分一口？
+
+5
+00:00:16,300 --> 00:00:20,000
+[Tom]{CrossArms}{Animation:FaceSmirk|character=Tom}{Voice:proud}{Camera:CloseUp|characterName=Tom|distance=3.8|sideAngle=-14}想得美，没你的份。
+
+6
+00:00:20,250 --> 00:00:24,000
+{Event:Move|character=Jerry|x=1.4|z=0.7|duration=2.8|action=MouseScamper}{Event:Move|character=Tom|x=0.2|z=1.3|duration=2.8|action=CatReachCake}{SFX:Play|name=whoosh_fast|offset=0.2|baseVolume=0.6}{Camera:Static|position=0,3.0,7.5|lookAt=0.8,0.9,0.4}
+
+7
+00:00:24,250 --> 00:00:28,000
+{Event:CakePushJerry}{SFX:Play|name=slide_whoosh|offset=0.2|baseVolume=0.72}
+[Jerry]{MousePushCake}{Animation:FaceGloat|character=Jerry}{Voice:teasing}{Camera:CloseUp|characterName=Jerry|distance=3.2|sideAngle=-18}那我自己拿咯！
+
+8
+00:00:28,250 --> 00:00:32,000
+{Event:CakeBounce}{Event:Move|character=Tom|x=-1.0|z=1.5|duration=2.5|action=CatGrab}{SFX:Play|name=whoosh_fast|offset=0.3|baseVolume=0.68}{Camera:Static|position=-1.2,2.6,6.8|lookAt=0.2,1.0,0.5}
+
+9
+00:00:32,250 --> 00:00:36,000
+{Event:CakeRoll}{Event:Move|character=Jerry|x=-1.8|z=1.2|duration=2.5|action=MouseDodge}{SFX:Play|name=plate_wobble|offset=0.2|baseVolume=0.7}{Camera:Static|position=0.5,2.4,7.0|lookAt=-0.5,0.8,0.6}
+
+10
+00:00:36,250 --> 00:00:40,000
+{Event:CakeToTom}{Event:Move|character=Tom|x=0.5|z=1.4|duration=2.5|action=CatSlip}{SFX:Play|name=slide_whoosh|offset=0.2|baseVolume=0.72}
+[Tom]{CatSlip}{Animation:FaceShockComedy|character=Tom}{Voice:worried}{Camera:CloseUp|characterName=Tom|distance=3.6|sideAngle=12}啊——！
+
+11
+00:00:40,250 --> 00:00:44,000
+{Event:CakeSplatTom}{Animation:CatPieFace|character=Tom}{Animation:FacePain|character=Tom}{SFX:Play|name=cake_splat|offset=0.2|baseVolume=0.9}{SFX:Play|name=impact_thud|offset=0.3|baseVolume=0.8}{Camera:CloseUp|characterName=Tom|distance=3.4|sideAngle=-10}
+
+12
+00:00:44,250 --> 00:00:48,000
+{Event:DishesCrash}{Animation:FlailArms|character=Tom}{SFX:Play|name=crockery_crash|offset=0.2|baseVolume=1.0}{SFX:Play|name=pan_clatter|offset=0.4|baseVolume=0.85}{Camera:Shake|intensity=0.35|duration=1.0}
+
+13
+00:00:48,250 --> 00:00:52,000
+{Event:JerryTakesCherry}{Camera:Static|position=1.2,2.4,4.5|lookAt=0.2,1.6,-0.6}
+[Jerry]{MouseTaunt}{Animation:FaceGloat|character=Jerry}{Voice:teasing}谢谢款待！
+
+14
+00:00:52,250 --> 00:00:56,000
+{Event:Move|character=Jerry|x=5.4|z=-4.9|duration=2.5|action=MouseWaveGoodbye}{Animation:MouseWaveGoodbye|character=Jerry}{Animation:FaceSmirk|character=Jerry}{SFX:Play|name=whoosh_fast|offset=0.1|baseVolume=0.55}{Camera:Static|position=3.5,2.2,6.0|lookAt=4.0,0.6,-2.5}
+
+15
+00:00:56,250 --> 00:01:00,000
+[Tom]{CatDoom}{Animation:FacePain|character=Tom}{Voice:worried}{Camera:CloseUp|characterName=Tom|distance=4.0|sideAngle=-8}喵……下次再算账。
+
+16
+00:01:00,250 --> 00:01:01,000
+{Transition:Fade|duration=0.35}

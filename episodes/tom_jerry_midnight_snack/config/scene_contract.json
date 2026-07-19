@@ -50,9 +50,9 @@
         "zones": [
           {
             "id": "chaseLane",
-            "bounds": {"min": [-6.0, 0.0, -0.2], "max": [3.2, 2.0, 3.0]},
+            "bounds": {"min": [-6.0, 0.0, -5.4], "max": [5.4, 2.0, 3.0]},
             "walkable": true,
-            "purpose": ["Carry all scripted character entrances, pursuit beats, and the final reaction."]
+            "purpose": ["Carry all scripted character entrances, pursuit beats, and the final reaction, including the offscreen mouse hole."]
           },
           {
             "id": "islandWorktop",
@@ -62,8 +62,8 @@
           }
         ],
         "anchors": {
-          "tomStart": {"space": "world", "relativeTo": "$scene", "position": [-5.0, 0.01, 1.8], "purpose": "Tom's first-frame sneaking position."},
-          "jerryStart": {"space": "world", "relativeTo": "$scene", "position": [2.1, 0.01, 0.8], "purpose": "Jerry's hidden entrance position before his reveal."},
+          "tomStart": {"space": "world", "relativeTo": "$scene", "position": [-4.2, 0.02, 2.0], "purpose": "Tom's first-frame sneaking position."},
+          "jerryStart": {"space": "world", "relativeTo": "$scene", "position": [5.4, 0.02, -4.9], "purpose": "Jerry's hidden entrance position before his reveal."},
           "cakeCenter": {"space": "world", "relativeTo": "$scene", "position": [0.12, 1.63, -0.65], "purpose": "Primary food focal point and crash origin."},
           "bowlStart": {"space": "world", "relativeTo": "$scene", "position": [-1.35, 1.54, -0.55], "purpose": "Start of the bowl trap arc."},
           "timerStart": {"space": "world", "relativeTo": "$scene", "position": [1.34, 1.68, -0.65], "purpose": "Destination for the escaping fork and start of the timer roll."},
@@ -99,17 +99,17 @@
     {
       "id": "Tom", "scene": "CartoonKitchenScene", "kind": "character", "runtimeName": "Tom", "binding": "character:Tom", "parent": "$scene", "initialPresence": "onstage", "visualForwardAxis": "unknown",
       "focusPoints": {"body": [0.0, 1.0, 0.0], "face": [0.0, 1.65, 0.0]},
-      "initial": {"visible": true, "transform": {"space": "world", "relativeTo": "$scene", "position": [-5.0, 0.01, 1.8]}}
+      "initial": {"visible": true, "transform": {"space": "world", "relativeTo": "$scene", "position": [-4.2, 0.02, 2.0]}}
     },
     {
       "id": "Jerry", "scene": "CartoonKitchenScene", "kind": "character", "runtimeName": "Jerry", "binding": "character:Jerry", "parent": "$scene", "initialPresence": "offstage", "visualForwardAxis": "unknown",
-      "focusPoints": {"body": [0.0, 0.32, 0.0], "face": [0.0, 0.55, 0.0]},
-      "initial": {"visible": false, "transform": {"space": "world", "relativeTo": "$scene", "position": [2.1, 0.01, 0.8]}}
+      "focusPoints": {"body": [0.0, 0.32, 0.0], "face": [0.0, 0.69, 0.0]},
+      "initial": {"visible": false, "transform": {"space": "world", "relativeTo": "$scene", "position": [5.4, 0.02, -4.9]}}
     },
     {
       "id": "cake", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "MidnightCake", "binding": "cake", "parent": "$scene", "initialPresence": "onstage",
       "initial": {"visible": true, "transform": {"space": "world", "relativeTo": "$scene", "position": [0.12, 1.63, -0.65]}},
-      "states": ["intact", "smashed"], "initialState": "intact"
+      "states": ["onStand", "pushed", "bouncing", "rolling", "flyingToTom", "splat", "intact", "smashed"], "initialState": "onStand"
     },
     {
       "id": "cloche", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "CakeCloche", "binding": "cloche", "parent": "$scene", "initialPresence": "onstage",
@@ -125,6 +125,16 @@
       "id": "crumbFinal", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "CakeCrumb12", "binding": "crumbs[crumbs.length - 1]", "parent": "$scene", "initialPresence": "onstage",
       "initial": {"visible": false, "transform": {"space": "world", "relativeTo": "$scene", "position": [0.0, 0.0, 0.0]}},
       "states": ["hidden", "offered"], "initialState": "hidden"
+    },
+    {
+      "id": "cherry", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "JerryCherry", "binding": "cherry", "parent": "cake", "initialPresence": "onstage",
+      "initial": {"visible": true, "transform": {"space": "local", "relativeTo": "cake", "position": [0.02, 0.32, 0.02]}},
+      "states": ["onCake", "carried"], "initialState": "onCake"
+    },
+    {
+      "id": "cakeSplat", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "TomCakeSplat", "binding": "cakeSplat", "parent": "$scene", "initialPresence": "onstage",
+      "initial": {"visible": false, "transform": {"space": "world", "relativeTo": "$scene", "position": [0.0, 0.0, 0.0]}},
+      "states": ["hidden", "attachedToTom"], "initialState": "hidden"
     },
     {
       "id": "spoon1", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "Spoon1", "binding": "utensils[0]", "parent": "utensilRack", "initialPresence": "onstage",
@@ -179,7 +189,17 @@
     {
       "id": "dishStack", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "DishStack", "binding": "dishStack", "parent": "$scene", "initialPresence": "onstage",
       "initial": {"visible": true, "transform": {"space": "world", "relativeTo": "$scene", "position": [-2.72, 1.47, -0.62]}},
-      "states": ["stacked", "restacked", "crashed"], "initialState": "stacked"
+      "states": ["stacked", "crashed"], "initialState": "stacked"
+    },
+    {
+      "id": "plate1", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "Plate1", "binding": "dishes[0]", "parent": "dishStack", "initialPresence": "onstage",
+      "initial": {"visible": true, "transform": {"space": "local", "relativeTo": "dishStack", "position": [0.0, 0.0, 0.0]}},
+      "states": ["stacked", "crashed"], "initialState": "stacked"
+    },
+    {
+      "id": "plate4", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "Plate4", "binding": "dishes[3]", "parent": "dishStack", "initialPresence": "onstage",
+      "initial": {"visible": true, "transform": {"space": "local", "relativeTo": "dishStack", "position": [0.0, 0.186, 0.0]}},
+      "states": ["stacked", "crashed"], "initialState": "stacked"
     },
     {
       "id": "fryingPan", "scene": "CartoonKitchenScene", "kind": "prop", "objectName": "FryingPan", "binding": "fryingPan", "parent": "$scene", "initialPresence": "onstage",
@@ -189,135 +209,124 @@
   ],
   "state": {
     "jerryEntered": {"type": "boolean", "initial": false, "binding": "_storyState.jerryEntered"},
-    "firstSliceTaken": {"type": "boolean", "initial": false, "binding": "_storyState.firstSliceTaken"},
-    "secondSliceTaken": {"type": "boolean", "initial": false, "binding": "_storyState.secondSliceTaken"},
-    "dishesRestacked": {"type": "boolean", "initial": false, "binding": "_storyState.dishesRestacked"},
-    "jerryTrapped": {"type": "boolean", "initial": false, "binding": "_storyState.jerryTrapped"},
-    "timerEscaped": {"type": "boolean", "initial": false, "binding": "_storyState.timerEscaped"},
+    "cherryTaken": {"type": "boolean", "initial": false, "binding": "_storyState.cherryTaken"},
+    "cakeSplatted": {"type": "boolean", "initial": false, "binding": "_storyState.cakeSplatted"},
     "crashed": {"type": "boolean", "initial": false, "binding": "_storyState.crashed"}
   },
   "events": [
     {
       "tag": "RevealCake", "scene": "CartoonKitchenScene", "handler": "revealCake", "argumentMode": "none", "durationSeconds": 1.15, "requires": [],
-      "effects": [{"op": "setEntityState", "entity": "cloche", "from": "covering", "to": "lifted"}]
+      "effects": [
+        {"op": "setEntityState", "entity": "cloche", "from": "covering", "to": "lifted"},
+        {"op": "motion", "entity": "cloche", "space": "world", "relativeTo": "$scene", "from": [0.12, 1.46, -0.65], "to": [-0.93, 2.81, -0.65], "tolerance": 0.08}
+      ]
     },
     {
-      "tag": "JerryEntrance", "scene": "CartoonKitchenScene", "handler": "jerryEntrance", "argumentMode": "none", "durationSeconds": 0.48, "requires": ["RevealCake"],
+      "tag": "JerryEntrance", "scene": "CartoonKitchenScene", "handler": "jerryEntrance", "argumentMode": "none", "durationSeconds": 0.9, "requires": ["RevealCake"],
       "effects": [
         {"op": "presence", "character": "Jerry", "from": "offstage", "to": "onstage"},
-        {"op": "setState", "state": "jerryEntered", "value": true}
+        {"op": "setState", "state": "jerryEntered", "value": true},
+        {"op": "motion", "entity": "Jerry", "space": "world", "relativeTo": "$scene", "from": [5.4, 0.02, -4.9], "to": [1.5, 0.02, 1.1], "tolerance": 0.08}
       ]
     },
     {
-      "tag": "OfferCrumb", "scene": "CartoonKitchenScene", "handler": "offerCrumb", "argumentMode": "none", "durationSeconds": 0.8, "requires": ["JerryEntrance"],
-      "effects": [{"op": "setEntityState", "entity": "crumb1", "from": "hidden", "to": "offered"}]
-    },
-    {
-      "tag": "UtensilThreatOne", "scene": "CartoonKitchenScene", "handler": "utensilThreatOne", "argumentMode": "none", "durationSeconds": 0.9, "requires": ["OfferCrumb"],
-      "effects": [{"op": "setEntityState", "entity": "spoon1", "from": "hanging", "to": "threatening"}]
-    },
-    {
-      "tag": "UtensilThreatTwo", "scene": "CartoonKitchenScene", "handler": "utensilThreatTwo", "argumentMode": "none", "durationSeconds": 0.95, "requires": ["UtensilThreatOne"],
-      "effects": [{"op": "setEntityState", "entity": "cup1", "from": "staged", "to": "threatening"}]
-    },
-    {
-      "tag": "JerryTakesSlice", "scene": "CartoonKitchenScene", "handler": "jerryTakesSlice", "argumentMode": "none", "durationSeconds": 0.7, "requires": ["UtensilThreatTwo"],
+      "tag": "CakePushJerry", "scene": "CartoonKitchenScene", "handler": "cakePushJerry", "argumentMode": "none", "durationSeconds": 1.35, "requires": ["JerryEntrance"],
       "effects": [
-        {"op": "setState", "state": "firstSliceTaken", "value": true},
-        {"op": "setEntityState", "entity": "cakeSlice1", "from": "present", "to": "taken"},
-        {"op": "setEntityState", "entity": "carriedSlice1", "from": "hidden", "to": "carried"}
+        {"op": "setEntityState", "entity": "cake", "from": "onStand", "to": "pushed"},
+        {"op": "motion", "entity": "cake", "space": "world", "relativeTo": "$scene", "from": [0.12, 1.63, -0.65], "to": [0.1, 0.58, 0.75], "tolerance": 0.08}
       ]
     },
     {
-      "tag": "RattleRack", "scene": "CartoonKitchenScene", "handler": "rattleRack", "argumentMode": "none", "durationSeconds": 4.4, "requires": ["JerryTakesSlice"],
-      "effects": [{"op": "setEntityState", "entity": "utensilRack", "from": "stable", "to": "rattling"}]
-    },
-    {
-      "tag": "SecondSlice", "scene": "CartoonKitchenScene", "handler": "secondSlice", "argumentMode": "none", "durationSeconds": 0.75, "requires": ["RattleRack"],
+      "tag": "CakeBounce", "scene": "CartoonKitchenScene", "handler": "cakeBounce", "argumentMode": "none", "durationSeconds": 1.45, "requires": ["CakePushJerry"],
       "effects": [
-        {"op": "setState", "state": "secondSliceTaken", "value": true},
-        {"op": "setEntityState", "entity": "cakeSlice2", "from": "present", "to": "taken"},
-        {"op": "setEntityState", "entity": "carriedSlice2", "from": "hidden", "to": "carried"}
+        {"op": "setEntityState", "entity": "cake", "from": "pushed", "to": "bouncing"},
+        {"op": "motion", "entity": "cake", "space": "world", "relativeTo": "$scene", "from": [0.1, 0.58, 0.75], "to": [-1.0, 0.58, 1.05], "tolerance": 0.08}
       ]
     },
     {
-      "tag": "BowlTrap", "scene": "CartoonKitchenScene", "handler": "bowlTrap", "argumentMode": "none", "durationSeconds": 0.52, "requires": ["SecondSlice"],
+      "tag": "CakeRoll", "scene": "CartoonKitchenScene", "handler": "cakeRoll", "argumentMode": "none", "durationSeconds": 1.55, "requires": ["CakeBounce"],
       "effects": [
-        {"op": "presence", "character": "Jerry", "from": "onstage", "to": "concealed", "by": "mixingBowl"},
-        {"op": "setState", "state": "jerryTrapped", "value": true},
-        {"op": "setEntityState", "entity": "mixingBowl", "from": "staged", "to": "coveringJerry"},
-        {"op": "setEntityState", "entity": "carriedSlice1", "from": "carried", "to": "concealed"},
-        {"op": "setEntityState", "entity": "carriedSlice2", "from": "carried", "to": "concealed"},
-        {"op": "motion", "entity": "mixingBowl", "space": "world", "relativeTo": "$scene", "from": "initial", "to": {"entity": "Jerry", "offset": [0.0, 0.48, 0.0]}, "tolerance": 0.12}
+        {"op": "setEntityState", "entity": "cake", "from": "bouncing", "to": "rolling"},
+        {"op": "motion", "entity": "cake", "space": "world", "relativeTo": "$scene", "from": [-1.0, 0.58, 1.05], "to": [0.75, 0.58, 1.15], "tolerance": 0.08}
       ]
     },
     {
-      "tag": "BowlCrawl", "scene": "CartoonKitchenScene", "handler": "bowlCrawl", "argumentMode": "none", "durationSeconds": 3.6, "requires": ["BowlTrap"],
+      "tag": "JerryTakesCherry", "scene": "CartoonKitchenScene", "handler": "jerryTakesCherry", "argumentMode": "none", "durationSeconds": 0.35, "requires": ["CakeRoll"],
       "effects": [
-        {"op": "setEntityState", "entity": "mixingBowl", "from": "coveringJerry", "to": "crawling"},
-        {"op": "motion", "entity": "mixingBowl", "space": "world", "relativeTo": "$scene", "from": "current", "to": [2.65, 0.48, 1.12], "tolerance": 0.15}
+        {"op": "setState", "state": "cherryTaken", "value": true},
+        {"op": "setEntityState", "entity": "cherry", "from": "onCake", "to": "carried"},
+        {"op": "reparent", "entity": "cherry", "to": "Jerry", "preserveWorld": true},
+        {"op": "motion", "entity": "cherry", "space": "local", "relativeTo": "Jerry", "from": "current", "to": "Jerry.rightWristGrip", "tolerance": 0.03}
       ]
     },
     {
-      "tag": "RestackDishes", "scene": "CartoonKitchenScene", "handler": "restackDishes", "argumentMode": "none", "durationSeconds": 3.4, "requires": ["BowlCrawl"],
+      "tag": "CakeToTom", "scene": "CartoonKitchenScene", "handler": "cakeToTom", "argumentMode": "none", "durationSeconds": 3.75, "requires": ["CakeRoll", "JerryTakesCherry"],
       "effects": [
-        {"op": "setState", "state": "dishesRestacked", "value": true},
-        {"op": "setEntityState", "entity": "dishStack", "from": "stacked", "to": "restacked"}
+        {"op": "setEntityState", "entity": "cake", "from": "rolling", "to": "flyingToTom"},
+        {"op": "motion", "entity": "cake", "space": "world", "relativeTo": "$scene", "from": [0.75, 0.58, 1.15], "to": {"entity": "Tom", "offset": [0.0, 1.53, 0.58]}, "tolerance": 0.1}
       ]
     },
     {
-      "tag": "TimerEscape", "scene": "CartoonKitchenScene", "handler": "timerEscape", "argumentMode": "none", "durationSeconds": 3.7, "requires": ["BowlTrap", "RestackDishes"],
+      "tag": "CakeSplatTom", "scene": "CartoonKitchenScene", "handler": "cakeSplatTom", "argumentMode": "none", "durationSeconds": 0.9, "requires": ["CakeToTom"],
       "effects": [
-        {"op": "setState", "state": "timerEscaped", "value": true},
-        {"op": "setEntityState", "entity": "fork2", "from": "hanging", "to": "escaped"},
-        {"op": "reparent", "entity": "fork2", "to": "$scene", "preserveWorld": true},
-        {"op": "motion", "entity": "fork2", "space": "world", "relativeTo": "$scene", "from": "current", "to": {"entity": "timer", "offset": [0.0, 0.04, 0.13]}, "tolerance": 0.1}
+        {"op": "setState", "state": "cakeSplatted", "value": true},
+        {"op": "setEntityState", "entity": "cake", "from": "flyingToTom", "to": "splat"},
+        {"op": "reparent", "entity": "cakeSplat", "to": "Tom", "preserveWorld": true},
+        {"op": "motion", "entity": "cakeSplat", "space": "local", "relativeTo": "Tom", "from": "current", "to": "Tom.headGroupFaceDecal", "tolerance": 0.03},
+        {"op": "setEntityState", "entity": "cakeSplat", "from": "hidden", "to": "attachedToTom"}
       ]
     },
     {
-      "tag": "TimerRoll", "scene": "CartoonKitchenScene", "handler": "timerRoll", "argumentMode": "none", "durationSeconds": 3.35, "requires": ["TimerEscape"],
-      "effects": [
-        {"op": "setEntityState", "entity": "timer", "from": "staged", "to": "rolling"},
-        {"op": "motion", "entity": "timer", "space": "world", "relativeTo": "$scene", "from": [1.34, 1.68, -0.65], "to": [3.44, 0.33, 0.73], "tolerance": 0.12}
-      ]
-    },
-    {
-      "tag": "TimerDing", "scene": "CartoonKitchenScene", "handler": "timerDing", "argumentMode": "none", "durationSeconds": 1.5, "requires": ["TimerRoll"],
-      "effects": [{"op": "setEntityState", "entity": "timer", "from": "rolling", "to": "ringing"}]
-    },
-    {
-      "tag": "CrockeryCrash", "scene": "CartoonKitchenScene", "handler": "crockeryCrash", "argumentMode": "none", "durationSeconds": 2.2, "requires": ["TimerDing"],
+      "tag": "DishesCrash", "scene": "CartoonKitchenScene", "handler": "dishesCrash", "argumentMode": "none", "durationSeconds": 1.5, "requires": ["CakeSplatTom"],
       "effects": [
         {"op": "setState", "state": "crashed", "value": true},
-        {"op": "setEntityState", "entity": "dishStack", "from": "restacked", "to": "crashed"},
-        {"op": "setEntityState", "entity": "cup1", "from": "threatening", "to": "crashed"},
+        {"op": "setEntityState", "entity": "dishStack", "from": "stacked", "to": "crashed"},
+        {"op": "setEntityState", "entity": "plate1", "from": "stacked", "to": "crashed"},
+        {"op": "motion", "entity": "plate1", "space": "world", "relativeTo": "$scene", "from": "current", "to": {"entity": "Tom", "offset": [0.326, 0.035, -0.839]}, "conversion": "worldToLocal", "tolerance": 0.15},
+        {"op": "setEntityState", "entity": "plate4", "from": "stacked", "to": "crashed"},
+        {"op": "motion", "entity": "plate4", "space": "world", "relativeTo": "$scene", "from": "current", "to": {"entity": "Tom", "offset": [1.415, 0.035, 0.848]}, "conversion": "worldToLocal", "tolerance": 0.15},
+        {"op": "setEntityState", "entity": "cup1", "from": "staged", "to": "crashed"},
+        {"op": "motion", "entity": "cup1", "space": "world", "relativeTo": "$scene", "from": "current", "to": {"entity": "Tom", "offset": [-1.585, 0.19, 0.459]}, "tolerance": 0.15},
         {"op": "setEntityState", "entity": "fryingPan", "from": "staged", "to": "airborne"},
-        {"op": "setEntityState", "entity": "cake", "from": "intact", "to": "smashed"},
-        {"op": "motion", "entity": "cake", "space": "world", "relativeTo": "$scene", "from": "current", "to": {"entity": "Tom", "offset": [0.0, 1.25, 0.28]}, "tolerance": 0.2}
-      ]
-    },
-    {
-      "tag": "FinalCrumb", "scene": "CartoonKitchenScene", "handler": "finalCrumb", "argumentMode": "none", "durationSeconds": 0.9, "requires": ["CrockeryCrash"],
-      "effects": [
-        {"op": "presence", "character": "Jerry", "from": "concealed", "to": "onstage"},
-        {"op": "setState", "state": "jerryTrapped", "value": false},
-        {"op": "setEntityState", "entity": "carriedSlice1", "from": "concealed", "to": "carried"},
-        {"op": "setEntityState", "entity": "carriedSlice2", "from": "concealed", "to": "carried"},
-        {"op": "setEntityState", "entity": "crumbFinal", "from": "hidden", "to": "offered"}
+        {"op": "motion", "entity": "fryingPan", "space": "world", "relativeTo": "$scene", "from": "current", "to": {"entity": "Tom", "offset": [-0.733, 0.08, -0.886]}, "tolerance": 0.15}
       ]
     }
   ],
   "blocking": [
-    {"id": "tomStart", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 1, "from": [-5.0, 0.01, 1.8], "to": [-5.0, 0.01, 1.8], "zone": "chaseLane", "clearance": 0.45, "purpose": "Hold Tom at the frame edge before the kitchen sneak begins."},
-    {"id": "jerryStart", "scene": "CartoonKitchenScene", "character": "Jerry", "entry": 1, "from": [2.1, 0.01, 0.8], "to": [2.1, 0.01, 0.8], "zone": "chaseLane", "clearance": 0.2, "purpose": "Pre-place hidden Jerry so his entrance preserves spatial continuity."},
-    {"id": "tomSneak", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 2, "from": [-5.0, 0.01, 1.8], "to": [-1.8, 0.0, 1.7], "zone": "chaseLane", "clearance": 0.45, "purpose": "Move Tom toward the island while leaving room for the cake reveal."},
-    {"id": "jerryChase", "scene": "CartoonKitchenScene", "character": "Jerry", "entry": 12, "from": [2.1, 0.01, 0.8], "to": [-2.6, 0.0, 1.0], "zone": "chaseLane", "clearance": 0.2, "purpose": "Lead the pursuit past the rattling utensil rack."},
-    {"id": "tomChase", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 12, "from": [-1.8, 0.0, 1.7], "to": [-1.1, 0.0, 1.5], "zone": "chaseLane", "clearance": 0.45, "purpose": "Keep Tom close enough to threaten Jerry without overlapping him."},
-    {"id": "tomPounce", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 14, "from": [-1.1, 0.0, 1.5], "to": [1.0, 0.0, 0.9], "zone": "chaseLane", "clearance": 0.45, "purpose": "Land Tom beside the bowl trap and establish the next gag's eyeline."}
+    {"id": "tomStart", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 1, "from": [-4.2, 0.02, 2.0], "to": [-4.2, 0.02, 2.0], "zone": "chaseLane", "clearance": 0.45, "purpose": "Tom sneaks in from off-screen left."},
+    {"id": "jerryStart", "scene": "CartoonKitchenScene", "character": "Jerry", "entry": 1, "from": [5.4, 0.02, -4.9], "to": [5.4, 0.02, -4.9], "zone": "chaseLane", "clearance": 0.2, "purpose": "Jerry waits at the mouse hole before his entrance."},
+    {"id": "tomSneak", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 2, "from": [-4.2, 0.02, 2.0], "to": [-1.4, 0.02, 1.4], "zone": "chaseLane", "clearance": 0.45, "purpose": "Tom tiptoes up to the cake stand."},
+    {"id": "tomRevealPose", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 3, "from": [-1.4, 0.02, 1.4], "to": [-1.4, 0.02, 1.4], "zone": "chaseLane", "clearance": 0.45, "purpose": "Lock Tom's front-facing gloat position for the reveal close-up."},
+    {"id": "jerryToCake", "scene": "CartoonKitchenScene", "character": "Jerry", "entry": 6, "from": [1.5, 0.02, 1.1], "to": [0.9, 0.02, 0.85], "zone": "chaseLane", "clearance": 0.2, "purpose": "Jerry darts to the cake while Tom is gloating."},
+    {"id": "tomToCake", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 6, "from": [-1.4, 0.02, 1.4], "to": [-0.6, 0.02, 1.2], "zone": "chaseLane", "clearance": 0.45, "purpose": "Tom reaches for the cake at the same time."},
+    {"id": "tomCatch", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 8, "from": [-0.6, 0.02, 1.2], "to": [-1.3, 0.02, 1.4], "zone": "chaseLane", "clearance": 0.45, "purpose": "Tom dives after the bouncing cake."},
+    {"id": "jerryDodge", "scene": "CartoonKitchenScene", "character": "Jerry", "entry": 9, "from": [0.9, 0.02, 0.85], "to": [1.8, 0.02, 1.0], "zone": "chaseLane", "clearance": 0.2, "purpose": "Jerry dodges the rolling cake."},
+    {"id": "tomFlightPose", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 10, "from": [-1.3, 0.02, 1.4], "to": [-1.3, 0.02, 1.4], "zone": "chaseLane", "clearance": 0.45, "purpose": "Hold Tom in the side-facing reaction lane while the cake flies toward him."},
+    {"id": "tomSplatPose", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 11, "from": [-1.3, 0.02, 1.4], "to": [-1.3, 0.02, 1.4], "zone": "chaseLane", "clearance": 0.45, "purpose": "Lock the cake-splat close-up on Tom's face."},
+    {"id": "jerryGloatPose", "scene": "CartoonKitchenScene", "character": "Jerry", "entry": 13, "from": [1.8, 0.02, 1.0], "to": [1.8, 0.02, 1.0], "zone": "chaseLane", "clearance": 0.2, "purpose": "Lock Jerry and the stolen cherry in the gloat close-up."},
+    {"id": "jerryExit", "scene": "CartoonKitchenScene", "character": "Jerry", "entry": 14, "from": [1.8, 0.02, 1.0], "to": [5.4, 0.02, -4.9], "zone": "chaseLane", "clearance": 0.2, "purpose": "Jerry escapes with the cherry."},
+    {"id": "tomDefeatedPose", "scene": "CartoonKitchenScene", "character": "Tom", "entry": 15, "from": [-1.3, 0.02, 1.4], "to": [-1.3, 0.02, 1.4], "zone": "chaseLane", "clearance": 0.45, "purpose": "Hold Tom front-on for the final cake-covered reaction."}
   ],
   "shotChecks": [
     {
-      "id": "twoShotEntrance", "scene": "CartoonKitchenScene", "entry": 4, "offsetSeconds": 1.0, "purpose": "Read Tom's surprise and Jerry's confident entrance together.",
+      "id": "tomSneakToCake", "scene": "CartoonKitchenScene", "entry": 2, "offsetSeconds": 2.5, "purpose": "Read Tom's mischievous sneak as he closes in on the cake.",
+      "mustSee": [
+        {"entity": "Tom", "focus": "body", "minFrameArea": 0.02, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.3},
+        {"entity": "cake", "minFrameArea": 0.004, "maxOcclusion": 0.35, "safeMargin": 0.03}
+      ],
+      "mustHavePresence": [{"character": "Tom", "value": "onstage"}],
+      "mustShowTogether": ["Tom", "cake"]
+    },
+    {
+      "id": "tomGloat", "scene": "CartoonKitchenScene", "entry": 3, "offsetSeconds": 1.5, "purpose": "Close-up on Tom's semantically directed smug smile before Jerry interrupts the victory.",
+      "mustSee": [
+        {"entity": "Tom", "focus": "face", "minFrameArea": 0.03, "maxOcclusion": 0.2, "safeMargin": 0.03, "minFacingDot": -0.2}
+      ],
+      "mustHavePresence": [{"character": "Tom", "value": "onstage"}],
+      "mustShowTogether": ["Tom"]
+    },
+    {
+      "id": "jerryEntrance", "scene": "CartoonKitchenScene", "entry": 4, "offsetSeconds": 1.0, "purpose": "Show Jerry's cheeky entrance and Tom's reaction in the same two-shot.",
       "mustSee": [
         {"entity": "Tom", "focus": "face", "minFrameArea": 0.02, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.2},
         {"entity": "Jerry", "focus": "face", "minFrameArea": 0.006, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.2}
@@ -326,59 +335,87 @@
       "mustShowTogether": ["Tom", "Jerry"]
     },
     {
-      "id": "utensilReaction", "scene": "CartoonKitchenScene", "entry": 8, "offsetSeconds": 0.8, "purpose": "Connect the threatening spoon motion directly to Tom's reaction.",
-      "mustSee": [
-        {"entity": "Tom", "focus": "face", "minFrameArea": 0.025, "maxOcclusion": 0.2, "safeMargin": 0.04, "minFacingDot": -0.2},
-        {"entity": "spoon1", "minFrameArea": 0.002, "maxOcclusion": 0.35, "safeMargin": 0.02}
-      ],
-      "mustHavePresence": [],
-      "mustShowTogether": ["Tom", "spoon1"]
-    },
-    {
-      "id": "bowlTrapRead", "scene": "CartoonKitchenScene", "entry": 15, "offsetSeconds": 1.0, "purpose": "Show that the bowl, rather than a continuity error, is hiding Jerry.",
-      "mustSee": [
-        {"entity": "Tom", "focus": "face", "minFrameArea": 0.018, "maxOcclusion": 0.3, "safeMargin": 0.03, "minFacingDot": -0.3},
-        {"entity": "mixingBowl", "minFrameArea": 0.006, "maxOcclusion": 0.25, "safeMargin": 0.03}
-      ],
-      "mustHavePresence": [{"character": "Jerry", "value": "concealed"}],
-      "mustShowTogether": ["Tom", "mixingBowl"]
-    },
-    {
-      "id": "timerPan", "scene": "CartoonKitchenScene", "entry": 19, "offsetSeconds": 1.2, "purpose": "Keep the escaped fork and rolling timer legible during the unguarded pan.",
-      "mustSee": [
-        {"entity": "fork2", "minFrameArea": 0.002, "maxOcclusion": 0.35, "safeMargin": 0.02},
-        {"entity": "timer", "minFrameArea": 0.005, "maxOcclusion": 0.25, "safeMargin": 0.03}
-      ],
-      "mustHavePresence": [{"character": "Jerry", "value": "concealed"}],
-      "mustShowTogether": ["fork2", "timer"]
-    },
-    {
-      "id": "timerDoom", "scene": "CartoonKitchenScene", "entry": 20, "offsetSeconds": 0.9, "purpose": "Frame the ringing timer as the cause of Tom's impending disaster.",
-      "mustSee": [
-        {"entity": "Tom", "focus": "face", "minFrameArea": 0.02, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.25},
-        {"entity": "timer", "minFrameArea": 0.006, "maxOcclusion": 0.25, "safeMargin": 0.03}
-      ],
-      "mustHavePresence": [{"character": "Jerry", "value": "concealed"}],
-      "mustShowTogether": ["Tom", "timer"]
-    },
-    {
-      "id": "crashShake", "scene": "CartoonKitchenScene", "entry": 21, "offsetSeconds": 1.0, "purpose": "Preserve cause and target readability while the unguarded shake amplifies impact.",
-      "mustSee": [
-        {"entity": "Tom", "focus": "body", "minFrameArea": 0.02, "maxOcclusion": 0.35, "safeMargin": 0.02, "minFacingDot": -0.5},
-        {"entity": "cake", "minFrameArea": 0.008, "maxOcclusion": 0.35, "safeMargin": 0.02},
-        {"entity": "dishStack", "minFrameArea": 0.006, "maxOcclusion": 0.4, "safeMargin": 0.02}
-      ],
-      "mustHavePresence": [{"character": "Jerry", "value": "concealed"}],
-      "mustShowTogether": ["Tom", "cake", "dishStack"]
-    },
-    {
-      "id": "jerryReturn", "scene": "CartoonKitchenScene", "entry": 22, "offsetSeconds": 0.8, "purpose": "Confirm Jerry has emerged safely and owns the final crumb punchline.",
+      "id": "jerryPushCake", "scene": "CartoonKitchenScene", "entry": 7, "offsetSeconds": 1.0, "purpose": "Close-up on Jerry's semantically directed taunt as he shoves the cake off its stand.",
       "mustSee": [
         {"entity": "Jerry", "focus": "face", "minFrameArea": 0.012, "maxOcclusion": 0.2, "safeMargin": 0.04, "minFacingDot": -0.2},
-        {"entity": "crumbFinal", "minFrameArea": 0.001, "maxOcclusion": 0.25, "safeMargin": 0.02}
+        {"entity": "cake", "minFrameArea": 0.005, "maxOcclusion": 0.3, "safeMargin": 0.03}
       ],
       "mustHavePresence": [{"character": "Jerry", "value": "onstage"}],
-      "mustShowTogether": ["Jerry", "crumbFinal"]
+      "mustShowTogether": ["Jerry", "cake"]
+    },
+    {
+      "id": "cakeBounce", "scene": "CartoonKitchenScene", "entry": 8, "offsetSeconds": 1.0, "purpose": "Keep the bouncing cake and Tom's desperate grab readable together.",
+      "mustSee": [
+        {"entity": "Tom", "focus": "body", "minFrameArea": 0.02, "maxOcclusion": 0.3, "safeMargin": 0.03, "minFacingDot": -0.3},
+        {"entity": "cake", "minFrameArea": 0.006, "maxOcclusion": 0.25, "safeMargin": 0.03}
+      ],
+      "mustHavePresence": [{"character": "Tom", "value": "onstage"}],
+      "mustShowTogether": ["Tom", "cake"]
+    },
+    {
+      "id": "jerryDodgeRoll", "scene": "CartoonKitchenScene", "entry": 9, "offsetSeconds": 1.0, "purpose": "Show Jerry dodging the rolling cake with visible cause and effect.",
+      "mustSee": [
+        {"entity": "Jerry", "focus": "body", "minFrameArea": 0.008, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.2},
+        {"entity": "cake", "minFrameArea": 0.006, "maxOcclusion": 0.3, "safeMargin": 0.03}
+      ],
+      "mustHavePresence": [{"character": "Jerry", "value": "onstage"}],
+      "mustShowTogether": ["Jerry", "cake"]
+    },
+    {
+      "id": "cakeFlyingToTom", "scene": "CartoonKitchenScene", "entry": 10, "offsetSeconds": 1.2, "purpose": "Frame Tom's slip and the cake's visible flight path before impact.",
+      "mustSee": [
+        {"entity": "Tom", "focus": "face", "minFrameArea": 0.025, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.2},
+        {"entity": "cake", "minFrameArea": 0.006, "maxOcclusion": 0.25, "safeMargin": 0.03}
+      ],
+      "mustHavePresence": [{"character": "Tom", "value": "onstage"}],
+      "mustShowTogether": ["Tom", "cake"]
+    },
+    {
+      "id": "cakeSplatTom", "scene": "CartoonKitchenScene", "entry": 11, "offsetSeconds": 0.5, "purpose": "Confirm the cake lands squarely on Tom's face for the slapstick punchline.",
+      "mustSee": [
+        {"entity": "Tom", "focus": "face", "minFrameArea": 0.025, "maxOcclusion": 0.3, "safeMargin": 0.03, "minFacingDot": -0.2},
+        {"entity": "cakeSplat", "minFrameArea": 0.006, "maxOcclusion": 0.3, "safeMargin": 0.02}
+      ],
+      "mustHavePresence": [{"character": "Tom", "value": "onstage"}],
+      "mustShowTogether": ["Tom", "cakeSplat"]
+    },
+    {
+      "id": "dishesCrash", "scene": "CartoonKitchenScene", "entry": 12, "offsetSeconds": 0.8, "purpose": "Show the secondary prop crash amplifying Tom's defeat.",
+      "mustSee": [
+        {"entity": "Tom", "focus": "body", "minFrameArea": 0.02, "maxOcclusion": 0.35, "safeMargin": 0.02, "minFacingDot": -0.5},
+        {"entity": "cup1", "minFrameArea": 0.004, "maxOcclusion": 0.4, "safeMargin": 0.02},
+        {"entity": "plate1", "minFrameArea": 0.002, "maxOcclusion": 0.45, "safeMargin": 0.02},
+        {"entity": "plate4", "minFrameArea": 0.002, "maxOcclusion": 0.45, "safeMargin": 0.02}
+      ],
+      "mustHavePresence": [{"character": "Tom", "value": "onstage"}],
+      "mustShowTogether": ["Tom", "plate1", "plate4", "cup1"]
+    },
+    {
+      "id": "jerryGloat", "scene": "CartoonKitchenScene", "entry": 13, "offsetSeconds": 0.8, "purpose": "Close-up on Jerry's gloating face and the stolen cherry.",
+      "mustSee": [
+        {"entity": "Jerry", "focus": "face", "minFrameArea": 0.012, "maxOcclusion": 0.2, "safeMargin": 0.04, "minFacingDot": -0.2},
+        {"entity": "cherry", "minFrameArea": 0.0015, "maxOcclusion": 0.25, "safeMargin": 0.02}
+      ],
+      "mustHavePresence": [{"character": "Jerry", "value": "onstage"}],
+      "mustShowTogether": ["Jerry", "cherry"]
+    },
+    {
+      "id": "jerryExit", "scene": "CartoonKitchenScene", "entry": 14, "offsetSeconds": 1.2, "purpose": "Read Jerry's goodbye wave as he escapes with the cherry.",
+      "mustSee": [
+        {"entity": "Jerry", "focus": "body", "minFrameArea": 0.008, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.2},
+        {"entity": "cherry", "minFrameArea": 0.0015, "maxOcclusion": 0.3, "safeMargin": 0.02}
+      ],
+      "mustHavePresence": [{"character": "Jerry", "value": "onstage"}],
+      "mustShowTogether": ["Jerry", "cherry"]
+    },
+    {
+      "id": "tomDefeated", "scene": "CartoonKitchenScene", "entry": 15, "offsetSeconds": 1.5, "purpose": "Final close-up on Tom's semantically directed despair beneath the cake splat.",
+      "mustSee": [
+        {"entity": "Tom", "focus": "face", "minFrameArea": 0.03, "maxOcclusion": 0.25, "safeMargin": 0.03, "minFacingDot": -0.2},
+        {"entity": "cakeSplat", "minFrameArea": 0.006, "maxOcclusion": 0.3, "safeMargin": 0.02}
+      ],
+      "mustHavePresence": [{"character": "Tom", "value": "onstage"}],
+      "mustShowTogether": ["Tom", "cakeSplat"]
     }
   ],
   "acceptance": {

@@ -34,6 +34,11 @@ export class Tom extends CharacterBase {
       'StompFoot', 'HitStagger', 'Knockdown', 'GetUp', 'FaceAngry',
       'FaceConfused', 'FaceHappy', 'FacePain', 'FaceSmirk', 'FaceSurprised',
     ];
+    this.semanticPerformanceProfile = {
+      contempt: { emotion: 'smile', action: 'CrossArms', intensity: 0.55, layer: 'upper' },
+      panic: { emotion: 'fear', action: 'CatSlip', intensity: 0.9, layer: 'full' },
+      despair: { emotion: 'sad', action: 'CatDoom', intensity: 0.85, layer: 'full' },
+    };
     // Do not install an allowlist yet: the episode bootstrap adds chase-specific
     // animations after the character class is constructed.
     this.allowedBodyAnimations = null;
@@ -101,46 +106,54 @@ export class Tom extends CharacterBase {
       this.earGroups.push(earGroup);
     }
 
-    const cheekGeo = new THREE.SphereGeometry(0.19, 16, 12);
+    // ── 更夸张的脸部：大眼睛、可动粗眉毛、胶囊嘴、鼓脸颊 ──
+    const cheekGeo = new THREE.SphereGeometry(0.21, 18, 14);
     for (const side of [-1, 1]) {
       const cheek = new THREE.Mesh(cheekGeo, lightFur);
-      cheek.position.set(side * 0.135, -0.09, 0.32);
-      cheek.scale.set(1.0, 0.72, 0.52);
+      cheek.position.set(side * 0.155, -0.12, 0.345);
+      cheek.scale.set(1.05, 0.78, 0.62);
+      cheek.name = side < 0 ? 'TomLeftCheek' : 'TomRightCheek';
       this.headGroup.add(cheek);
     }
 
-    const eyeGeo = new THREE.SphereGeometry(0.135, 18, 16);
-    const pupilGeo = new THREE.SphereGeometry(0.048, 12, 10);
+    const eyeRadius = 0.16;
+    const eyeScale = new THREE.Vector3(0.88, 1.38, 0.55);
     for (const side of [-1, 1]) {
       const eyeGroup = new THREE.Group();
-      eyeGroup.position.set(side * 0.135, 0.075, 0.355);
+      eyeGroup.name = side < 0 ? 'TomLeftEye' : 'TomRightEye';
+      eyeGroup.position.set(side * 0.152, 0.095, 0.365);
 
-      const white = new THREE.Mesh(eyeGeo, eyeWhite);
-      white.scale.set(0.82, 1.30, 0.48);
+      const white = new THREE.Mesh(new THREE.SphereGeometry(eyeRadius, 22, 18), eyeWhite);
+      white.name = side < 0 ? 'TomLeftEyeWhite' : 'TomRightEyeWhite';
+      white.scale.copy(eyeScale);
       eyeGroup.add(white);
 
-      const iris = new THREE.Mesh(new THREE.SphereGeometry(0.072, 12, 10), irisMat);
-      iris.position.set(0, -0.018, 0.060);
-      iris.scale.set(0.82, 1.15, 0.44);
+      const iris = new THREE.Mesh(new THREE.SphereGeometry(0.092, 14, 12), irisMat);
+      iris.name = side < 0 ? 'TomLeftIris' : 'TomRightIris';
+      iris.position.set(0, -0.02, 0.075);
+      iris.scale.set(0.85, 1.18, 0.46);
       eyeGroup.add(iris);
 
-      const pupil = new THREE.Mesh(pupilGeo, black);
-      pupil.position.set(0, -0.022, 0.092);
-      pupil.scale.set(0.58, 1.18, 0.42);
+      const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.058, 12, 10), black);
+      pupil.name = side < 0 ? 'TomLeftPupil' : 'TomRightPupil';
+      pupil.position.set(0, -0.026, 0.112);
+      pupil.scale.set(0.6, 1.18, 0.44);
       pupil.userData.baseX = 0;
       pupil.userData.baseY = pupil.position.y;
-      pupil.userData.eyeRadius = 0.11;
+      pupil.userData.eyeRadius = 0.12;
       eyeGroup.add(pupil);
 
-      const highlight = new THREE.Mesh(new THREE.SphereGeometry(0.014, 8, 6), eyeWhite);
-      highlight.position.set(-side * 0.012, 0.013, 0.118);
+      const highlight = new THREE.Mesh(new THREE.SphereGeometry(0.018, 8, 6), eyeWhite);
+      highlight.name = side < 0 ? 'TomLeftEyeHighlight' : 'TomRightEyeHighlight';
+      highlight.position.set(-side * 0.016, 0.02, 0.138);
       eyeGroup.add(highlight);
 
       const eyelid = new THREE.Mesh(
-        new THREE.SphereGeometry(0.14, 16, 12, 0, Math.PI * 2, 0, Math.PI * 0.5),
+        new THREE.SphereGeometry(eyeRadius, 20, 16, 0, Math.PI * 2, 0, Math.PI * 0.5),
         fur,
       );
-      eyelid.scale.set(0.82, 1.30, 0.49);
+      eyelid.name = side < 0 ? 'TomLeftEyelid' : 'TomRightEyelid';
+      eyelid.scale.copy(eyeScale);
       eyelid.visible = false;
       eyeGroup.add(eyelid);
 
@@ -148,38 +161,46 @@ export class Tom extends CharacterBase {
         this.leftEyeGroup = eyeGroup;
         this.leftPupil = pupil;
         this.leftEyelid = eyelid;
+        this.leftEyelidBaseY = eyelid.position.y;
+        this.leftEyelidBaseScaleY = eyelid.scale.y;
       } else {
         this.rightEyeGroup = eyeGroup;
         this.rightPupil = pupil;
         this.rightEyelid = eyelid;
+        this.rightEyelidBaseY = eyelid.position.y;
+        this.rightEyelidBaseScaleY = eyelid.scale.y;
       }
       this.headGroup.add(eyeGroup);
     }
 
-    const browGeo = new THREE.CapsuleGeometry(0.012, 0.125, 4, 8);
+    const browGeo = new THREE.CapsuleGeometry(0.02, 0.18, 4, 8);
     for (const side of [-1, 1]) {
       const brow = new THREE.Mesh(browGeo, darkFur);
-      brow.position.set(side * 0.145, 0.245, 0.365);
+      brow.name = side < 0 ? 'TomLeftEyebrow' : 'TomRightEyebrow';
+      brow.position.set(side * 0.165, 0.285, 0.388);
       brow.rotation.z = Math.PI / 2 - side * 0.08;
       this.headGroup.add(brow);
-      if (side < 0) this.leftEyebrow = brow;
-      else this.rightEyebrow = brow;
+      if (side < 0) {
+        this.leftEyebrow = brow;
+        this.leftBrow = brow;
+      } else {
+        this.rightEyebrow = brow;
+        this.rightBrow = brow;
+      }
     }
-    // FacialAnimationSystem still accepts these legacy aliases for emotion cues.
-    this.leftBrow = this.leftEyebrow;
-    this.rightBrow = this.rightEyebrow;
     this.leftBrowBaseY = this.leftEyebrow.position.y;
     this.rightBrowBaseY = this.rightEyebrow.position.y;
 
-    const nose = new THREE.Mesh(new THREE.SphereGeometry(0.075, 14, 10), noseMat);
+    const nose = new THREE.Mesh(new THREE.SphereGeometry(0.082, 14, 10), noseMat);
     nose.name = 'TomNose';
-    nose.position.set(0, -0.085, 0.465);
+    nose.position.set(0, -0.095, 0.482);
     nose.scale.set(1.15, 0.75, 0.72);
     this.headGroup.add(nose);
 
+    // Flattened sphere keeps the standard mouth axes: X=width, Y=open/close.
     this.mouth = new THREE.Mesh(new THREE.SphereGeometry(0.105, 16, 12), black);
     this.mouth.name = 'TomMouth';
-    this.mouth.position.set(0, -0.235, 0.405);
+    this.mouth.position.set(0, -0.245, 0.425);
     this.mouth.scale.set(1.0, 0.18, 0.34);
     this.mouthVisual = this.mouth;
     this.headGroup.add(this.mouth);
@@ -187,6 +208,9 @@ export class Tom extends CharacterBase {
     this.mouthBaseScaleY = this.mouth.scale.y;
     this.mouthBaseScaleZ = this.mouth.scale.z;
     this.mouthBaseY = this.mouth.position.y;
+
+    // 捕获完整面部基线，供 FaceReset 使用
+    this._captureFaceBaseState();
 
     const whiskerGeo = new THREE.CylinderGeometry(0.004, 0.004, 0.37, 6);
     for (const side of [-1, 1]) {

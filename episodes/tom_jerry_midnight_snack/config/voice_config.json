@@ -35,7 +35,22 @@
       "af": "highpass=f=125,lowpass=f=9400,equalizer=f=3900:t=q:w=1.0:g=2.4,acompressor=threshold=0.16:ratio=2.0:attack=7:release=90:makeup=1.18,alimiter=limit=0.96"
     },
     "f5_tts": {
-      "enabled": false
+      "enabled": true,
+      "personality": ["male", "child", "cute", "funny"],
+      "effect": {
+        "pitch": "+2st",
+        "formant": "+2",
+        "speed": 1.08,
+        "bass": 2,
+        "treble": 2,
+        "compression": 0.42,
+        "reverb": 0.04
+      },
+      "ref_strategy": "longest",
+      "ref_duration": 3.5,
+      "speed": 1.05,
+      "target_cps": 5.2,
+      "seed": 218
     }
   }
 }

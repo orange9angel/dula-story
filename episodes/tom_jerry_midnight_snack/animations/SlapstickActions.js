@@ -220,3 +220,140 @@ export class CatDoom extends CartoonAction {
     return pose;
   }
 }
+
+export class CatReachCake extends CartoonAction {
+  constructor(options = {}) {
+    super('CatReachCake', options, 1.0, ['cartoon-cat']);
+  }
+
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const reach = Math.sin(Math.min(1, t * 1.4) * Math.PI * 0.5);
+    pose.mesh = { rx: 0.22 * reach, y: -0.08 * reach };
+    pose.rightShoulder = { rx: -1.15 * reach, rz: -0.35 * reach };
+    pose.rightElbow = { rx: -0.55 * reach };
+    pose.rightWrist = { rx: -0.3 * reach };
+    pose.leftShoulder = { rx: -0.35 * reach, rz: 0.2 * reach };
+    pose.leftElbow = { rx: -0.25 * reach };
+    pose.headGroup = { rx: -0.12 * reach };
+    return pose;
+  }
+}
+
+export class CatGrab extends CartoonAction {
+  constructor(options = {}) {
+    super('CatGrab', options, 0.8, ['cartoon-cat']);
+  }
+
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const grab = Math.sin(Math.min(1, t * 1.8) * Math.PI * 0.5);
+    pose.mesh = { rx: 0.18 * grab, y: -0.12 * grab };
+    pose.rightShoulder = { rx: -1.05 * grab, rz: -0.25 * grab };
+    pose.rightElbow = { rx: -0.85 * grab };
+    pose.rightWrist = { rx: -0.55 * grab };
+    pose.leftShoulder = { rx: -1.05 * grab, rz: 0.25 * grab };
+    pose.leftElbow = { rx: -0.85 * grab };
+    pose.leftWrist = { rx: -0.55 * grab };
+    return pose;
+  }
+}
+
+export class CatSlip extends CartoonAction {
+  constructor(options = {}) {
+    super('CatSlip', options, 1.1, ['cartoon-cat']);
+  }
+
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const slip = Math.min(1, t * 1.3);
+    const wobble = Math.sin(t * TAU * 7) * (1 - slip) * 0.12;
+    pose.mesh = { rx: 0.45 * slip, y: -0.18 * slip, rz: wobble };
+    pose.rightShoulder = { rx: 0.95 * slip, rz: -0.55 * slip };
+    pose.rightElbow = { rx: -0.55 * slip };
+    pose.leftShoulder = { rx: 0.85 * slip, rz: 0.55 * slip };
+    pose.leftElbow = { rx: -0.45 * slip };
+    pose.rightHip = { rx: -0.35 * slip };
+    pose.leftHip = { rx: -0.55 * slip };
+    pose.rightKnee = { rx: 0.45 * slip };
+    pose.leftKnee = { rx: 0.65 * slip };
+    pose.headGroup = { rx: -0.25 * slip };
+    return pose;
+  }
+}
+
+export class CatPieFace extends CartoonAction {
+  constructor(options = {}) {
+    super('CatPieFace', options, 0.9, ['cartoon-cat']);
+  }
+
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const hit = t < 0.25 ? t / 0.25 : Math.max(0, 1 - (t - 0.25) / 0.75);
+    const recoilPhase = Math.max(0, Math.min(1, (t - 0.25) / 0.75));
+    const recoil = Math.sin(recoilPhase * Math.PI);
+    pose.mesh = { rx: -0.35 * hit + 0.25 * recoil, y: 0.08 * hit - 0.12 * recoil };
+    pose.rightShoulder = { rx: -1.0 * hit, rz: -0.45 * hit };
+    pose.rightElbow = { rx: -0.9 * hit };
+    pose.leftShoulder = { rx: -1.0 * hit, rz: 0.45 * hit };
+    pose.leftElbow = { rx: -0.9 * hit };
+    pose.headGroup = {
+      rx: -0.45 * hit + 0.2 * recoil,
+      rz: Math.sin(t * TAU * 11) * hit * 0.05,
+    };
+    return pose;
+  }
+}
+
+export class MousePushCake extends CartoonAction {
+  constructor(options = {}) {
+    super('MousePushCake', options, 0.8, ['cartoon-mouse']);
+  }
+
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const push = Math.sin(Math.min(1, t * 1.8) * Math.PI * 0.5);
+    pose.mesh = { rx: -0.15 * push, y: -0.02 * push };
+    pose.rightShoulder = { rx: -0.95 * push, rz: -0.25 * push };
+    pose.rightElbow = { rx: -0.55 * push };
+    pose.leftShoulder = { rx: -0.95 * push, rz: 0.25 * push };
+    pose.leftElbow = { rx: -0.55 * push };
+    pose.headGroup = { rx: 0.08 * push };
+    return pose;
+  }
+}
+
+export class MouseDodge extends CartoonAction {
+  constructor(options = {}) {
+    super('MouseDodge', options, 0.6, ['cartoon-mouse']);
+  }
+
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const dodge = Math.sin(Math.min(1, t * 2.2) * Math.PI);
+    pose.mesh = { y: 0.06 * dodge, rz: -0.55 * dodge };
+    pose.rightShoulder = { rx: -0.55 * dodge, rz: 0.35 * dodge };
+    pose.leftShoulder = { rx: -0.45 * dodge, rz: -0.35 * dodge };
+    pose.rightHip = { rz: 0.2 * dodge };
+    pose.leftHip = { rz: -0.2 * dodge };
+    return pose;
+  }
+}
+
+export class MouseWaveGoodbye extends CartoonAction {
+  constructor(options = {}) {
+    super('MouseWaveGoodbye', options, 1.0, ['cartoon-mouse']);
+  }
+
+  getPoseMatrix(t) {
+    const pose = new PoseMatrix();
+    const wave = Math.sin(t * TAU * 4);
+    const raise = Math.sin(Math.min(1, t * 1.6) * Math.PI * 0.5);
+    pose.mesh = { y: Math.abs(wave) * 0.02 * raise, rz: wave * 0.04 * raise };
+    pose.rightShoulder = { rx: -1.4 * raise, rz: -0.35 * raise };
+    pose.rightElbow = { rx: -0.55 * raise, rz: wave * 0.45 * raise };
+    pose.rightWrist = { rz: wave * 0.55 * raise };
+    pose.headGroup = { rz: -wave * 0.05 * raise };
+    return pose;
+  }
+}
