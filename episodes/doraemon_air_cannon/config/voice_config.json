@@ -1,0 +1,132 @@
+{
+  "Doraemon": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "rate": "-5%",
+    "pitch": "+10Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": [
+        "child",
+        "cute",
+        "calm"
+      ],
+      "effect": {
+        "pitch": "+3st",
+        "formant": "-2",
+        "speed": 1.0,
+        "treble": 3,
+        "compression": 0.4,
+        "reverb": 0.12,
+        "presence": 2
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 0.85,
+      "target_cps": 4.0,
+      "seed": 42
+    }
+  },
+  "Nobita": {
+    "voice": "zh-CN-YunxiaNeural",
+    "rate": "-8%",
+    "pitch": "+0Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": [
+        "child",
+        "funny",
+        "shy"
+      ],
+      "effect": {
+        "pitch": "+0st",
+        "formant": "-2",
+        "speed": 1.0,
+        "treble": 1,
+        "compression": 0.3,
+        "reverb": 0.08
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 0.8,
+      "target_cps": 4.5,
+      "seed": 42
+    }
+  },
+  "Gian": {
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "-5%",
+    "pitch": "-15Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": [
+        "child",
+        "rough",
+        "loud"
+      ],
+      "effect": {
+        "pitch": "-2st",
+        "formant": "+2",
+        "speed": 1.0,
+        "treble": 0,
+        "compression": 0.5,
+        "reverb": 0.1
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 0.9,
+      "target_cps": 4.2,
+      "seed": 42
+    }
+  },
+  "Suneo": {
+    "voice": "zh-CN-YunxiaNeural",
+    "rate": "+5%",
+    "pitch": "+10Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": [
+        "child",
+        "sly",
+        "timid"
+      ],
+      "effect": {
+        "pitch": "+2st",
+        "formant": "-1",
+        "speed": 1.0,
+        "treble": 2,
+        "compression": 0.3,
+        "reverb": 0.08
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 0.95,
+      "target_cps": 4.8,
+      "seed": 42
+    }
+  },
+  "Narrator": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+0%",
+    "pitch": "-5Hz",
+    "f5_tts": {
+      "enabled": true,
+      "personality": [
+        "broadcast",
+        "calm"
+      ],
+      "effect": {
+        "pitch": "-1st",
+        "formant": "+1",
+        "speed": 1.0,
+        "treble": 2,
+        "compression": 0.55,
+        "reverb": 0.15
+      },
+      "ref_strategy": "auto",
+      "ref_duration": 4.0,
+      "speed": 1.0,
+      "target_cps": 5.2,
+      "seed": 42
+    }
+  }
+}
