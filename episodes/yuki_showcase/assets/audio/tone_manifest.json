@@ -1,0 +1,121 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-07-20T13:22:04.046Z",
+  "entryCount": 4,
+  "entries": [
+    {
+      "index": 2,
+      "character": "Yuki",
+      "text": "你好，我是小雪！",
+      "startTime": 0,
+      "endTime": 2.5,
+      "toneId": "surprise",
+      "toneSource": "inferred",
+      "confidence": 0.8999999999999999,
+      "ttsParams": {
+        "pitch": 3,
+        "speed": 1.2,
+        "volume": 1,
+        "breaks": [
+          0.02
+        ]
+      },
+      "emotion": "surprise",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "ParkScene",
+      "semanticExpression": null,
+      "semanticAction": "LookAround",
+      "requestedBodyGesture": {
+        "anim": "LookAround",
+        "intensity": 0.4,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 3,
+      "character": "Yuki",
+      "text": "今天天气真好呢。",
+      "startTime": 2.5,
+      "endTime": 5,
+      "toneId": "neutral",
+      "toneSource": "inferred",
+      "confidence": 0.7,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "ParkScene",
+      "semanticExpression": null,
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    },
+    {
+      "index": 4,
+      "character": "Yuki",
+      "text": "诶？那边有什么声音！",
+      "startTime": 5,
+      "endTime": 7.5,
+      "toneId": "angry",
+      "toneSource": "inferred",
+      "confidence": 0.95,
+      "ttsParams": {
+        "pitch": 1,
+        "speed": 1.15,
+        "volume": 1.1,
+        "breaks": [
+          0.08
+        ]
+      },
+      "emotion": "anger",
+      "mouthTension": 0,
+      "intensity": 0.8,
+      "sceneContext": "ParkScene",
+      "semanticExpression": null,
+      "semanticAction": "CrossArms",
+      "requestedBodyGesture": {
+        "anim": "CrossArms",
+        "intensity": 0.6,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 5,
+      "character": "Yuki",
+      "text": "走吧，一起去看看！",
+      "startTime": 7.5,
+      "endTime": 10,
+      "toneId": "angry",
+      "toneSource": "inferred",
+      "confidence": 0.95,
+      "ttsParams": {
+        "pitch": 1,
+        "speed": 1.15,
+        "volume": 1.1,
+        "breaks": [
+          0.08
+        ]
+      },
+      "emotion": "anger",
+      "mouthTension": 0,
+      "intensity": 0.8,
+      "sceneContext": "ParkScene",
+      "semanticExpression": null,
+      "semanticAction": "CrossArms",
+      "requestedBodyGesture": {
+        "anim": "CrossArms",
+        "intensity": 0.6,
+        "layer": "upper"
+      }
+    }
+  ]
+}
