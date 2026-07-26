@@ -1,0 +1,84 @@
+{
+  "version": 2,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "states": ["closed", "half", "open"],
+  "notes": "Only the tight mouth rectangle is copied from generated variants; all other pixels come from the stable open base.",
+  "rigs": {
+    "girl_opening": {
+      "entry": 1,
+      "mode": "procedural",
+      "anchor": [856, 142],
+      "size": [13, 6]
+    },
+    "boy_door_entry7": {
+      "entry": 7,
+      "mode": "image",
+      "rect": [936, 252, 82, 72],
+      "variants": {
+        "closed": "mouth_variants/frame_10_closed_locked_v2.png",
+        "half": "mouth_variants/frame_10_half_locked_v2.png",
+        "open": "keyframes/frame_10.png"
+      }
+    },
+    "girl_reply_entry8": {
+      "entry": 8,
+      "mode": "image",
+      "rect": [602, 226, 86, 72],
+      "variants": {
+        "closed": "mouth_variants/frame_12_closed_v2.png",
+        "half": "mouth_variants/frame_12_half_v2.png",
+        "open": "keyframes/frame_12.png"
+      }
+    },
+    "boy_defense_entry9": {
+      "entry": 9,
+      "mode": "image",
+      "rect": [908, 228, 100, 90],
+      "variants": {
+        "closed": "dialogue_shots/boy_defense_closed_locked_v2.png",
+        "half": "dialogue_shots/boy_defense_half_locked_v2.png",
+        "open": "dialogue_shots/boy_defense_open_v2.png"
+      }
+    },
+    "girl_tease_entry10": {
+      "entry": 10,
+      "mode": "image",
+      "rect": [566, 445, 92, 82],
+      "variants": {
+        "closed": "mouth_variants/frame_14_closed_v2.png",
+        "half": "mouth_variants/frame_14_half_v2.png",
+        "open": "keyframes/frame_14.png"
+      }
+    },
+    "boy_defense_entry11": {
+      "entry": 11,
+      "mode": "image",
+      "rect": [908, 228, 100, 90],
+      "variants": {
+        "closed": "dialogue_shots/boy_defense_closed_locked_v2.png",
+        "half": "dialogue_shots/boy_defense_half_locked_v2.png",
+        "open": "dialogue_shots/boy_defense_open_v2.png"
+      }
+    },
+    "boy_protest_entry18": {
+      "entry": 18,
+      "mode": "image",
+      "rect": [1082, 300, 98, 84],
+      "variants": {
+        "closed": "mouth_variants/frame_27_closed_locked_v2.png",
+        "half": "mouth_variants/frame_27_half_locked_v2.png",
+        "open": "keyframes/frame_27.png"
+      }
+    },
+    "girl_goodbye_entry19": {
+      "entry": 19,
+      "mode": "image",
+      "rect": [930, 222, 102, 94],
+      "variants": {
+        "closed": "dialogue_shots/girl_goodbye_closed_locked_v2.png",
+        "half": "dialogue_shots/girl_goodbye_half_locked_v2.png",
+        "open": "dialogue_shots/girl_goodbye_open_v2.png"
+      }
+    }
+  }
+}

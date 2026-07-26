@@ -1,0 +1,26 @@
+{
+  "Higurashi": {
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+2%",
+    "pitch": "+0Hz",
+    "volume": "+1%",
+    "effect": {
+      "af": "atempo=1.1,highpass=f=90,lowpass=f=10500,equalizer=f=3200:t=q:w=1.1:g=0.5,acompressor=threshold=0.23:ratio=1.3:attack=22:release=170:makeup=1.02,alimiter=limit=0.95,areverse,silenceremove=start_periods=1:start_duration=0.05:start_threshold=-48dB:start_silence=0.1,areverse"
+    },
+    "f5_tts": {
+      "enabled": false
+    }
+  },
+  "Boy": {
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+1%",
+    "pitch": "+0Hz",
+    "volume": "+1%",
+    "effect": {
+      "af": "atempo=1.18,highpass=f=80,lowpass=f=10000,equalizer=f=180:t=q:w=1.0:g=-0.3,equalizer=f=2800:t=q:w=1.1:g=0.6,acompressor=threshold=0.23:ratio=1.3:attack=20:release=175:makeup=1.02,alimiter=limit=0.95,areverse,silenceremove=start_periods=1:start_duration=0.05:start_threshold=-48dB:start_silence=0.1,areverse"
+    },
+    "f5_tts": {
+      "enabled": false
+    }
+  }
+}

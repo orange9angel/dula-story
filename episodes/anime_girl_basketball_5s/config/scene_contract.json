@@ -1,0 +1,330 @@
+{
+  "$schema": "../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "anime_girl_basketball_5s",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "A thirty-second two-character school-gym challenge built from reaction-cut dialogue plates, energy-gated Chinese viseme cels, generated action in-betweens, Foley, subtitles, and a three-part semantic score.",
+    "audience": "Viewers evaluating a compact but complete 2D anime short with stable generated characters, readable sports motion, and synchronized sound.",
+    "designPriorities": [
+      "Keep Higurashi's face, teal ponytail, two hair clips, number 07 uniform, proportions, and screen direction stable across the original and newly generated frames.",
+      "Keep the boy's black hair, blue eyes, five-button navy gakuran, white indoor shoes, and charcoal school bag stable from entrance through the closing reaction.",
+      "Use hard cuts for all action poses so the ball and limbs never double through a dissolve.",
+      "Gate visible closed, half, and open mouth cels at 12 fps from the exact post-trim final dialogue stem, then select limited visemes from the known Chinese syllables, never from subtitle duration.",
+      "Derive frame selection, mouth state, crop motion, transitions, and subtitles only from absolute story time so seeks and segmented renders remain deterministic.",
+      "Preserve exactly one basketball and clear door, sideline, court, and hoop geography in every applicable shot."
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": ["AnimeBasketballSequenceScene"],
+    "characters": ["Higurashi", "Boy"]
+  },
+  "scenes": [
+    {
+      "registryName": "AnimeBasketballSequenceScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "AnimeBasketballSequenceScene",
+        "module": "scenes/AnimeBasketballSequenceScene.js",
+        "export": "AnimeBasketballSequenceScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "A warm late-afternoon Japanese high-school basketball gym with a readable side door, corridor, sideline, court, and rear-left hoop, all baked into full-frame 2D artwork.",
+        "timeOfDay": "Late afternoon progressing toward warmer sunset light in the final doorway shots.",
+        "tone": ["playful", "athletic", "warm", "lightly competitive"],
+        "storyFunction": "Establish Higurashi's last-shot ritual, introduce a uniformed boy through the gym door, escalate their banter into a short one-on-one play, and end on his amused resignation after she scores.",
+        "visualRules": [
+          "Every source PNG fills the 1920 by 1080 presentation canvas without aspect-ratio distortion.",
+          "The keyframe timeline, rather than equal frame division, determines every image boundary and camera-like crop move.",
+          "Each spoken line keeps one stable speaker plate; only a tight mouth rectangle changes between closed, half, and open states.",
+          "Action coverage uses generated in-between poses and hard cuts at sub-second cadence while SFX timestamps land on the matching ball or foot contact.",
+          "Chinese subtitles are rendered in code over text-free source art and must remain inside the lower safe area.",
+          "The scene uses a CanvasTexture as the Three.js background, so runtime camera collision geometry is intentionally inapplicable and camera obstacles remain empty.",
+          "Higurashi and Boy are voice-only story speakers whose visible bodies are baked into the keyframes; no 3D character meshes may be layered over the artwork."
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": ["X", "Z"],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {"min": [-8, -4.5, -1], "max": [8, 4.5, 1]},
+        "zones": [
+          {
+            "id": "presentationZone",
+            "bounds": {"min": [-8, -4.5, -1], "max": [8, 4.5, 1]},
+            "walkable": false,
+            "purpose": ["Represent the full-frame timed 2D presentation rather than a navigable 3D stage."]
+          }
+        ],
+        "anchors": {
+          "screenCenter": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [0, 0, 0],
+            "purpose": "Stable center of the full-frame keyframe canvas."
+          },
+          "bakedSideDoor": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [6, 0, 0],
+            "purpose": "Semantic screen-right entrance represented inside the generated artwork."
+          },
+          "bakedHoop": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [-4, 2.8, 0],
+            "purpose": "Semantic rear-left basket represented inside the generated artwork."
+          }
+        }
+      },
+      "lighting": {
+        "mood": "Warm cel-animated late-afternoon sunlight with a gentle sunset lift for the closing doorway beat.",
+        "readabilityRules": [
+          "Do not apply runtime lighting or grading that changes character colors between generated frames.",
+          "Keep faces, the navy and white costume silhouettes, the orange ball, the open doorway, and the hoop readable during all crop motion and transitions.",
+          "Keep subtitle contrast independent of the baked background by using a dark translucent backing and outlined white text."
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "sideDoorSound",
+          "kind": "point",
+          "semantic": "School gym side-door latch and hinge opening from screen right.",
+          "position": [6, 1, 0],
+          "radius": 2.5,
+          "loop": false
+        },
+        {
+          "id": "courtFoley",
+          "kind": "region",
+          "semantic": "Basketball impacts and indoor-shoe squeaks across the painted court.",
+          "position": [0, 0, 0],
+          "radius": 7,
+          "loop": false
+        },
+        {
+          "id": "hoopNetSound",
+          "kind": "point",
+          "semantic": "Clean basketball net swish from the rear-left hoop.",
+          "position": [-4, 3, 0],
+          "radius": 2,
+          "loop": false
+        }
+      ],
+      "dependencies": [
+        {"id": "storyTimeline", "type": "other", "path": "script.story", "required": true},
+        {"id": "keyframeTimeline", "type": "other", "path": "config/keyframe_timeline.json", "required": true},
+        {"id": "lipSyncCues", "type": "other", "path": "config/lipsync_cues.json", "required": true},
+        {"id": "mouthRigs", "type": "other", "path": "config/mouth_rigs.json", "required": true},
+        {"id": "voiceConfiguration", "type": "other", "path": "config/voice_config.json", "required": true},
+        {"id": "audioMixConfiguration", "type": "other", "path": "config/audio_mix.json", "required": true},
+        {"id": "transitionConfiguration", "type": "other", "path": "config/transitions.json", "required": true},
+        {"id": "bakedSpeakerAdapter", "type": "other", "path": "characters/BakedSpeaker.js", "required": true},
+        {"id": "girlReference", "type": "texture", "path": "assets/character_reference.png", "required": true},
+        {"id": "boyReference", "type": "texture", "path": "assets/male_character_reference.png", "required": true},
+        {"id": "boyDefenseDialogue", "type": "texture", "path": "assets/dialogue_shots/boy_defense_open_v2.png", "required": true},
+        {"id": "girlGoodbyeDialogue", "type": "texture", "path": "assets/dialogue_shots/girl_goodbye_open_v2.png", "required": true},
+        {"id": "frame00", "type": "texture", "path": "assets/keyframes/frame_00.png", "required": true},
+        {"id": "frame01", "type": "texture", "path": "assets/keyframes/frame_01.png", "required": true},
+        {"id": "frame02", "type": "texture", "path": "assets/keyframes/frame_02.png", "required": true},
+        {"id": "frame03", "type": "texture", "path": "assets/keyframes/frame_03.png", "required": true},
+        {"id": "frame04", "type": "texture", "path": "assets/keyframes/frame_04.png", "required": true},
+        {"id": "frame05", "type": "texture", "path": "assets/keyframes/frame_05.png", "required": true},
+        {"id": "frame06", "type": "texture", "path": "assets/keyframes/frame_06.png", "required": true},
+        {"id": "frame07LandingFixed", "type": "texture", "path": "assets/keyframes/frame_07_landing_fixed_v3.png", "required": true},
+        {"id": "openingLandingBridge", "type": "texture", "path": "assets/action_inbetweens/opening_06_07_landing_v3.png", "required": true},
+        {"id": "duelGatherBridge", "type": "texture", "path": "assets/action_inbetweens/duel_21_22_gather_v3.png", "required": true},
+        {"id": "frame08", "type": "texture", "path": "assets/keyframes/frame_08.png", "required": true},
+        {"id": "frame09", "type": "texture", "path": "assets/keyframes/frame_09.png", "required": true},
+        {"id": "frame10", "type": "texture", "path": "assets/keyframes/frame_10.png", "required": true},
+        {"id": "frame11", "type": "texture", "path": "assets/keyframes/frame_11.png", "required": true},
+        {"id": "frame12", "type": "texture", "path": "assets/keyframes/frame_12.png", "required": true},
+        {"id": "frame13", "type": "texture", "path": "assets/keyframes/frame_13.png", "required": true},
+        {"id": "frame14", "type": "texture", "path": "assets/keyframes/frame_14.png", "required": true},
+        {"id": "frame15", "type": "texture", "path": "assets/keyframes/frame_15.png", "required": true},
+        {"id": "frame16", "type": "texture", "path": "assets/keyframes/frame_16.png", "required": true},
+        {"id": "frame17", "type": "texture", "path": "assets/keyframes/frame_17.png", "required": true},
+        {"id": "frame18", "type": "texture", "path": "assets/keyframes/frame_18.png", "required": true},
+        {"id": "frame19", "type": "texture", "path": "assets/keyframes/frame_19.png", "required": true},
+        {"id": "frame20", "type": "texture", "path": "assets/keyframes/frame_20.png", "required": true},
+        {"id": "frame21", "type": "texture", "path": "assets/keyframes/frame_21.png", "required": true},
+        {"id": "frame22", "type": "texture", "path": "assets/keyframes/frame_22.png", "required": true},
+        {"id": "frame23", "type": "texture", "path": "assets/keyframes/frame_23.png", "required": true},
+        {"id": "frame24", "type": "texture", "path": "assets/keyframes/frame_24.png", "required": true},
+        {"id": "frame25", "type": "texture", "path": "assets/keyframes/frame_25.png", "required": true},
+        {"id": "frame26", "type": "texture", "path": "assets/keyframes/frame_26.png", "required": true},
+        {"id": "frame27", "type": "texture", "path": "assets/keyframes/frame_27.png", "required": true},
+        {"id": "frame29", "type": "texture", "path": "assets/keyframes/frame_29.png", "required": true},
+        {"id": "frame30", "type": "texture", "path": "assets/keyframes/frame_30.png", "required": true},
+        {"id": "frame31", "type": "texture", "path": "assets/keyframes/frame_31.png", "required": true},
+        {"id": "frame32", "type": "texture", "path": "assets/keyframes/frame_32.png", "required": true}
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "Higurashi",
+      "scene": "AnimeBasketballSequenceScene",
+      "kind": "character",
+      "runtimeName": "Higurashi",
+      "binding": "character:Higurashi",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {"body": [0, 0, 0], "face": [0, 0, 0]},
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [-1, 0, 0]
+        }
+      }
+    },
+    {
+      "id": "Boy",
+      "scene": "AnimeBasketballSequenceScene",
+      "kind": "character",
+      "runtimeName": "Boy",
+      "binding": "character:Boy",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {"body": [0, 0, 0], "face": [0, 0, 0]},
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [1, 0, 0]
+        }
+      }
+    },
+    {
+      "id": "keyframeSurface",
+      "scene": "AnimeBasketballSequenceScene",
+      "kind": "prop",
+      "objectName": "sequenceCanvas",
+      "binding": "sequenceTexture",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [0, 0, 0],
+          "scale": [1, 1, 1]
+        }
+      },
+      "states": ["timed-sequence-active"],
+      "initialState": "timed-sequence-active"
+    }
+  ],
+  "state": {
+    "timelineVersion": {
+      "type": "number",
+      "initial": 2,
+      "binding": "keyframe_timeline.version"
+    }
+  },
+  "events": [],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "openingPractice",
+      "scene": "AnimeBasketballSequenceScene",
+      "entry": 1,
+      "offsetSeconds": 0.4,
+      "purpose": "Confirm Higurashi's established design and basketball practice fill the first frame with subtitle-safe margins.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "doorEntrance",
+      "scene": "AnimeBasketballSequenceScene",
+      "entry": 6,
+      "offsetSeconds": 0.12,
+      "purpose": "Confirm the open right-side door, corridor, and boy's entrance are unmistakable at the door Foley cue.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "firstTwoShot",
+      "scene": "AnimeBasketballSequenceScene",
+      "entry": 7,
+      "offsetSeconds": 0.4,
+      "purpose": "Confirm both baked characters, exactly one ball, and the boy's school bag are readable in one entrance shot.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "challengeStaging",
+      "scene": "AnimeBasketballSequenceScene",
+      "entry": 9,
+      "offsetSeconds": 0.6,
+      "purpose": "Confirm the bag is safely on the sideline and the uniformed boy's defensive stance reads against Higurashi's ball control.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "crossoverBeat",
+      "scene": "AnimeBasketballSequenceScene",
+      "entry": 13,
+      "offsetSeconds": 0.2,
+      "purpose": "Confirm the low crossover has one ball, readable foot placement, consistent screen direction, and no doubled limbs.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "cleanSwish",
+      "scene": "AnimeBasketballSequenceScene",
+      "entry": 17,
+      "offsetSeconds": 0.35,
+      "purpose": "Confirm the single ball passes cleanly through the net at the synchronized swish cue.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "closingReaction",
+      "scene": "AnimeBasketballSequenceScene",
+      "entry": 19,
+      "offsetSeconds": 1.4,
+      "purpose": "Confirm Higurashi begins the final line on camera with syllable-aware visemes before the cut follows her toward the warm doorway.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": ["scene-tool", "story-tool", "node-check"],
+    "runtimeChecks": ["dula-inspect-team", "dula-verify", "visual-review", "audio-review"]
+  }
+}
