@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-07-27T13:08:47.943Z",
+  "entryCount": 4,
+  "entries": [
+    {
+      "index": 2,
+      "character": "Girl",
+      "text": "今天的雨，下得真久啊。",
+      "startTime": 3.8,
+      "endTime": 6.6,
+      "toneId": "neutral",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "RainyRooftopScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    },
+    {
+      "index": 3,
+      "character": "Girl",
+      "text": "咦？你也躲在这里吗？",
+      "startTime": 6.8,
+      "endTime": 9.3,
+      "toneId": "surprise",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 3,
+        "speed": 1.2,
+        "volume": 1,
+        "breaks": [
+          0.02
+        ]
+      },
+      "emotion": "surprise",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "RainyRooftopScene",
+      "semanticExpression": "surprise",
+      "semanticAction": "LookAround",
+      "requestedBodyGesture": {
+        "anim": "LookAround",
+        "intensity": 0.4,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 5,
+      "character": "Girl",
+      "text": "分你一半伞，不许客气。",
+      "startTime": 13,
+      "endTime": 15.8,
+      "toneId": "surprise",
+      "toneSource": "inferred",
+      "confidence": 0.95,
+      "ttsParams": {
+        "pitch": 3,
+        "speed": 1.2,
+        "volume": 1,
+        "breaks": [
+          0.02
+        ]
+      },
+      "emotion": "surprise",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "RainyRooftopScene",
+      "semanticExpression": "surprise",
+      "semanticAction": "LookAround",
+      "requestedBodyGesture": {
+        "anim": "LookAround",
+        "intensity": 0.4,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 10,
+      "character": "Girl",
+      "text": "那，跟我回家吧。",
+      "startTime": 26.8,
+      "endTime": 29,
+      "toneId": "neutral",
+      "toneSource": "inferred",
+      "confidence": 0.7,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "RainyRooftopScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    }
+  ]
+}

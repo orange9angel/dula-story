@@ -1,0 +1,88 @@
+{
+  "version": 2,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "states": ["closed", "half", "open"],
+  "notes": "Only the tight mouth rectangle is copied from generated variants; all other pixels come from the stable closed-mouth base frame.",
+  "rigs": {
+    "girl_frame02_entry2": {
+      "entry": 2,
+      "mode": "image",
+      "rect": [630, 308, 74, 72],
+      "variants": {
+        "closed": "keyframes/frame_02.png",
+        "half": "mouth_variants/frame_02_half_locked_v1.png",
+        "open": "mouth_variants/frame_02_open_locked_v1.png"
+      }
+    },
+    "girl_frame07_entry5": {
+      "entry": 5,
+      "mode": "image",
+      "rect": [818, 462, 92, 78],
+      "variants": {
+        "closed": "keyframes/frame_07.png",
+        "half": "mouth_variants/frame_07_half_locked_v1.png",
+        "open": "mouth_variants/frame_07_open_locked_v1.png"
+      }
+    },
+    "girl_frame05_entry4": {
+      "entry": 4,
+      "mode": "image",
+      "rect": [620, 262, 76, 66],
+      "variants": {
+        "closed": "keyframes/frame_05.png",
+        "half": "mouth_variants/frame_05_half_locked_v1.png",
+        "open": "mouth_variants/frame_05_open_locked_v1.png"
+      }
+    },
+    "girl_frame06_entry5": {
+      "entry": 5,
+      "mode": "image",
+      "rect": [629, 252, 61, 51],
+      "variants": {
+        "closed": "keyframes/frame_06.png",
+        "half": "mouth_variants/frame_06_half_locked_v1.png",
+        "open": "mouth_variants/frame_06_open_locked_v1.png"
+      }
+    },
+    "cat_frame04_meow": {
+      "entry": 103,
+      "mode": "image",
+      "rect": [744, 634, 124, 104],
+      "variants": {
+        "closed": "keyframes/frame_04.png",
+        "half": "mouth_variants/frame_04_half_locked_v1.png",
+        "open": "mouth_variants/frame_04_open_locked_v1.png"
+      }
+    },
+    "cat_frame03_meow": {
+      "entry": 103,
+      "mode": "image",
+      "rect": [805, 468, 105, 68],
+      "variants": {
+        "closed": "keyframes/frame_03.png",
+        "half": "mouth_variants/frame_03_half_locked_v1.png",
+        "open": "mouth_variants/frame_03_open_locked_v1.png"
+      }
+    },
+    "cat_frame08_meow": {
+      "entry": 6,
+      "mode": "image",
+      "rect": [716, 436, 128, 104],
+      "variants": {
+        "closed": "keyframes/frame_08.png",
+        "half": "mouth_variants/frame_08_half_locked_v1.png",
+        "open": "mouth_variants/frame_08_open_locked_v1.png"
+      }
+    },
+    "girl_frame14_entry10": {
+      "entry": 10,
+      "mode": "image",
+      "rect": [690, 420, 104, 90],
+      "variants": {
+        "closed": "keyframes/frame_14.png",
+        "half": "mouth_variants/frame_14_half_locked_v1.png",
+        "open": "mouth_variants/frame_14_open_locked_v1.png"
+      }
+    }
+  }
+}

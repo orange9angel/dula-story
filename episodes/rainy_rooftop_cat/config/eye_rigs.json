@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "notes": "Blink rigs. The closed variant is feather-locked onto the base frame; only the rect region is copied during a blink. Interval is per-rig randomized by the scene's deterministic scheduler.",
+  "rigs": {
+    "cat_frame08_blink": {
+      "rect": [680, 275, 390, 150],
+      "closed": "eye_variants/frame_08_eyes_closed_locked_v1.png",
+      "intervalSeconds": [3.2, 5.0]
+    },
+    "girl_frame05_blink": {
+      "rect": [613, 209, 115, 95],
+      "closed": "eye_variants/frame_05_eyes_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame02_blink": {
+      "rect": [585, 244, 114, 78],
+      "closed": "eye_variants/frame_02_eyes_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame06_blink": {
+      "rect": [606, 201, 141, 87],
+      "closed": "eye_variants/frame_06_eyes_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame07_blink": {
+      "rect": [741, 257, 288, 181],
+      "closed": "eye_variants/frame_07_eyes_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame09_blink": {
+      "rect": [811, 272, 250, 174],
+      "closed": "eye_variants/frame_09_eyes_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame14_blink": {
+      "rect": [626, 261, 295, 139],
+      "closed": "eye_variants/frame_14_eyes_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    }
+  }
+}

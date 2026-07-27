@@ -1,0 +1,256 @@
+{
+  "$schema": "../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "rainy_rooftop_cat",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "A thirty-one-second single-character healing short on a rainy school rooftop, built from approved 2D keyframes, 2D crop moves, energy-gated Chinese viseme cels for the girl's spoken lines, rain Foley, subtitles, and a gentle semantic score that lifts when the rain stops.",
+    "audience": "Viewers evaluating a compact but complete 2D anime short with a stable generated heroine, a consistent orange tabby cat, readable rainy-to-rainbow progression, and synchronized sound.",
+    "designPriorities": [
+      "Keep the girl's waist-length dark-blue hair, amber eyes, white shirt, navy plaid pleated skirt, navy school bag, and transparent umbrella stable across every frame.",
+      "Keep the orange tabby cat's white chest, white paws, and green eyes stable as it dries off after the rain.",
+      "Use hard cuts for all beats so character and cat silhouettes never double through a dissolve; reserve the single closing crossfade for the final empty-rooftop shot.",
+      "Gate visible closed, half, and open mouth cels at 12 fps from the exact post-trim final dialogue stem, then select limited visemes from the known Chinese syllables, never from subtitle duration.",
+      "Derive frame selection, mouth state, crop motion, transitions, and subtitles only from absolute story time so seeks and segmented renders remain deterministic.",
+      "Preserve exactly one girl, one cat, one umbrella, and clear rooftop railing, puddle, and stairwell geography in every applicable shot."
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": ["RainyRooftopScene"],
+    "characters": ["Girl"]
+  },
+  "scenes": [
+    {
+      "registryName": "RainyRooftopScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "RainyRooftopScene",
+        "module": "scenes/RainyRooftopSequenceScene.js",
+        "export": "RainyRooftopScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "A Japanese school rooftop with rain-pooled concrete, surrounding iron railings, a distant city skyline, and a stairwell entrance, all baked into full-frame 2D artwork.",
+        "timeOfDay": "An overcast rainy afternoon that clears into luminous post-rain light with a rainbow for the final third.",
+        "tone": ["gentle", "healing", "quiet", "hopeful"],
+        "storyFunction": "Establish the rain-soaked rooftop, let the girl discover a drenched cat by a cardboard box, share her umbrella at her own expense, and close on her decision to take the cat home as the sky clears.",
+        "visualRules": [
+          "Every source PNG fills the 1920 by 1080 presentation canvas through cover-crop without aspect-ratio distortion.",
+          "The keyframe timeline, rather than equal frame division, determines every image boundary and camera-like crop move.",
+          "Each spoken line keeps one stable speaker plate; only a tight mouth rectangle changes between closed, half, and open states.",
+          "Chinese subtitles are rendered in code over text-free source art and must remain inside the lower safe area.",
+          "The scene uses a CanvasTexture as the Three.js background, so runtime camera collision geometry is intentionally inapplicable and camera obstacles remain empty.",
+          "Girl is a voice-only story speaker whose visible body is baked into the keyframes; no 3D character meshes may be layered over the artwork."
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": ["X", "Z"],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {"min": [-8, -4.5, -1], "max": [8, 4.5, 1]},
+        "zones": [
+          {
+            "id": "presentationZone",
+            "bounds": {"min": [-8, -4.5, -1], "max": [8, 4.5, 1]},
+            "walkable": false,
+            "purpose": ["Represent the full-frame timed 2D presentation rather than a navigable 3D stage."]
+          }
+        ],
+        "anchors": {
+          "screenCenter": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [0, 0, 0],
+            "purpose": "Stable center of the full-frame keyframe canvas."
+          },
+          "bakedCatCorner": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [4, -1, 0],
+            "purpose": "Semantic screen-right cardboard-box corner where the drenched cat hides, represented inside the generated artwork."
+          },
+          "bakedStairwell": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [-5, 0, 0],
+            "purpose": "Semantic screen-left stairwell exit used by the closing walk-away shot, represented inside the generated artwork."
+          }
+        }
+      },
+      "lighting": {
+        "mood": "Soft grey rainy-day diffusion clearing into transparent post-rain sunlight with a rainbow lift for the closing beats.",
+        "readabilityRules": [
+          "Do not apply runtime lighting or grading that changes character colors between generated frames.",
+          "Keep faces, the navy and white costume silhouette, the orange cat, the transparent umbrella, and the rainbow readable during all crop motion and transitions.",
+          "Keep subtitle contrast independent of the baked background by using a dark translucent backing and outlined white text."
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "rainAmbience",
+          "kind": "region",
+          "semantic": "Steady rain loop over the whole rooftop that fades once the sky clears.",
+          "position": [0, 0, 0],
+          "radius": 8,
+          "loop": true
+        },
+        {
+          "id": "catCornerSound",
+          "kind": "point",
+          "semantic": "Cat meows and purring from the cardboard-box corner.",
+          "position": [4, 0, 0],
+          "radius": 2.5,
+          "loop": false
+        },
+        {
+          "id": "stairwellFootsteps",
+          "kind": "point",
+          "semantic": "Footsteps on wet concrete as the girl carries the cat toward the stairwell.",
+          "position": [-5, 0, 0],
+          "radius": 2.5,
+          "loop": false
+        }
+      ],
+      "dependencies": [
+        {"id": "storyTimeline", "type": "other", "path": "script.story", "required": true},
+        {"id": "keyframeTimeline", "type": "other", "path": "config/keyframe_timeline.json", "required": true},
+        {"id": "lipSyncCues", "type": "other", "path": "config/lipsync_cues.json", "required": true},
+        {"id": "mouthRigs", "type": "other", "path": "config/mouth_rigs.json", "required": true},
+        {"id": "voiceConfiguration", "type": "other", "path": "config/voice_config.json", "required": true},
+        {"id": "audioMixConfiguration", "type": "other", "path": "config/audio_mix.json", "required": true},
+        {"id": "transitionConfiguration", "type": "other", "path": "config/transitions.json", "required": true},
+        {"id": "bakedSpeakerAdapter", "type": "other", "path": "characters/BakedSpeaker.js", "required": true},
+        {"id": "girlReference", "type": "texture", "path": "assets/girl_reference.png", "required": true},
+        {"id": "catReference", "type": "texture", "path": "assets/cat_reference.png", "required": true},
+        {"id": "frame00", "type": "texture", "path": "assets/keyframes/frame_00.png", "required": true},
+        {"id": "frame01", "type": "texture", "path": "assets/keyframes/frame_01.png", "required": true},
+        {"id": "frame02", "type": "texture", "path": "assets/keyframes/frame_02.png", "required": true},
+        {"id": "frame03", "type": "texture", "path": "assets/keyframes/frame_03.png", "required": true},
+        {"id": "frame04", "type": "texture", "path": "assets/keyframes/frame_04.png", "required": true},
+        {"id": "frame05", "type": "texture", "path": "assets/keyframes/frame_05.png", "required": true},
+        {"id": "frame06", "type": "texture", "path": "assets/keyframes/frame_06.png", "required": true},
+        {"id": "frame07", "type": "texture", "path": "assets/keyframes/frame_07.png", "required": true},
+        {"id": "frame08", "type": "texture", "path": "assets/keyframes/frame_08.png", "required": true},
+        {"id": "frame09", "type": "texture", "path": "assets/keyframes/frame_09.png", "required": true},
+        {"id": "frame10", "type": "texture", "path": "assets/keyframes/frame_10.png", "required": true},
+        {"id": "frame11", "type": "texture", "path": "assets/keyframes/frame_11.png", "required": true},
+        {"id": "frame12", "type": "texture", "path": "assets/keyframes/frame_12.png", "required": true},
+        {"id": "frame13", "type": "texture", "path": "assets/keyframes/frame_13.png", "required": true},
+        {"id": "frame14", "type": "texture", "path": "assets/keyframes/frame_14.png", "required": true},
+        {"id": "frame15", "type": "texture", "path": "assets/keyframes/frame_15.png", "required": true},
+        {"id": "frame16", "type": "texture", "path": "assets/keyframes/frame_16.png", "required": true},
+        {"id": "frame17", "type": "texture", "path": "assets/keyframes/frame_17.png", "required": true}
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "Girl",
+      "scene": "RainyRooftopScene",
+      "kind": "character",
+      "runtimeName": "Girl",
+      "binding": "character:Girl",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {"body": [0, 0, 0], "face": [0, 0, 0]},
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [0, 0, 0]
+        }
+      }
+    },
+    {
+      "id": "keyframeSurface",
+      "scene": "RainyRooftopScene",
+      "kind": "prop",
+      "objectName": "sequenceCanvas",
+      "binding": "sequenceTexture",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [0, 0, 0],
+          "scale": [1, 1, 1]
+        }
+      },
+      "states": ["timed-sequence-active"],
+      "initialState": "timed-sequence-active"
+    }
+  ],
+  "state": {
+    "timelineVersion": {
+      "type": "number",
+      "initial": 2,
+      "binding": "keyframe_timeline.version"
+    }
+  },
+  "events": [],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "rainEstablishing",
+      "scene": "RainyRooftopScene",
+      "entry": 1,
+      "offsetSeconds": 0.4,
+      "purpose": "Confirm the empty rain-soaked rooftop, railings, and puddle reflections fill the first frame with subtitle-safe margins.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "girlEnters",
+      "scene": "RainyRooftopScene",
+      "entry": 2,
+      "offsetSeconds": 0.6,
+      "purpose": "Confirm the girl with the transparent umbrella is readable in her full-figure entrance during the first monologue line.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "skyClears",
+      "scene": "RainyRooftopScene",
+      "entry": 7,
+      "offsetSeconds": 0.8,
+      "purpose": "Confirm the weakening rain and first sunbeam read clearly as the girl announces the clearing sky.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "closingInvitation",
+      "scene": "RainyRooftopScene",
+      "entry": 10,
+      "offsetSeconds": 0.5,
+      "purpose": "Confirm the girl begins the final take-home line on camera with syllable-aware visemes before she lifts the cat.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": ["scene-tool", "story-tool", "node-check"],
+    "runtimeChecks": ["dula-inspect-team", "dula-verify", "visual-review", "audio-review"]
+  }
+}
