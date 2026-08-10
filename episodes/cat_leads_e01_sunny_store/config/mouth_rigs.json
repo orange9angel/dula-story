@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "states": ["closed", "half", "open"],
+  "notes": "Only the tight mouth rectangle is copied from generated variants; all other pixels come from the stable closed-mouth base frame. Variants are the feather-locked outputs of tools/auto_lock_variants.py. Rects calibrated from PIL diff bboxes (threshold 30) of each *_locked_v1.png against its base keyframe, unioned over half+open and expanded 14px for the feather zone. Cat rigs are driven by SFX cue energy (SRT entries 3 and 7 are the SFX-only meow cues).",
+  "rigs": {
+    "girl_frame01_entry2": {
+      "entry": 2,
+      "mode": "image",
+      "rect": [889, 316, 45, 36],
+      "variants": {
+        "closed": "keyframes/frame_01.png",
+        "half": "mouth_variants/frame_01_half_locked_v1.png",
+        "open": "mouth_variants/frame_01_open_locked_v1.png"
+      }
+    },
+    "girl_frame03_entry4": {
+      "entry": 4,
+      "mode": "image",
+      "rect": [769, 266, 42, 45],
+      "variants": {
+        "closed": "keyframes/frame_03.png",
+        "half": "mouth_variants/frame_03_half_locked_v1.png",
+        "open": "mouth_variants/frame_03_open_locked_v1.png"
+      }
+    },
+    "girl_frame08_entry6": {
+      "entry": 6,
+      "mode": "image",
+      "rect": [654, 281, 60, 45],
+      "variants": {
+        "closed": "keyframes/frame_08.png",
+        "half": "mouth_variants/frame_08_half_locked_v1.png",
+        "open": "mouth_variants/frame_08_open_locked_v1.png"
+      }
+    },
+    "girl_frame15_entry10": {
+      "entry": 10,
+      "mode": "image",
+      "rect": [709, 267, 52, 51],
+      "variants": {
+        "closed": "keyframes/frame_15.png",
+        "half": "mouth_variants/frame_15_half_locked_v1.png",
+        "open": "mouth_variants/frame_15_open_locked_v1.png"
+      }
+    },
+    "girl_frame22_entry12": {
+      "entry": 12,
+      "mode": "image",
+      "rect": [819, 442, 82, 58],
+      "variants": {
+        "closed": "keyframes/frame_22.png",
+        "half": "mouth_variants/frame_22_half_locked_v1.png",
+        "open": "mouth_variants/frame_22_open_locked_v1.png"
+      }
+    },
+    "cat_frame02_meow": {
+      "entry": 3,
+      "mode": "image",
+      "rect": [731, 353, 90, 69],
+      "variants": {
+        "closed": "keyframes/frame_02.png",
+        "half": "mouth_variants/frame_02_half_locked_v1.png",
+        "open": "mouth_variants/frame_02_open_locked_v1.png"
+      }
+    },
+    "cat_frame10_meow": {
+      "entry": 7,
+      "mode": "image",
+      "rect": [1038, 463, 70, 62],
+      "variants": {
+        "closed": "keyframes/frame_10.png",
+        "half": "mouth_variants/frame_10_half_locked_v1.png",
+        "open": "mouth_variants/frame_10_open_locked_v1.png"
+      }
+    }
+  }
+}

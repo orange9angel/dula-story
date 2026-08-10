@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "store_cat_frame16",
+  "sequencePlan": "store_cat_frame16.json",
+  "projectRoot": "../..",
+  "provider": {
+    "name": "built-in-imagegen",
+    "model": "built-in",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": false,
+      "acceptsRequestedCount": false,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": false,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {}
+  },
+  "strategy": {
+    "mode": "group-first",
+    "preferSequentialGroup": true,
+    "maxShotsPerGroup": 5,
+    "overlapShots": 1,
+    "fallbackRequiresApprovedContinuityFrame": true
+  },
+  "aspectRatio": "16:9",
+  "references": [
+    {
+      "role": "identity",
+      "path": "assets/cat_reference.png"
+    },
+    {
+      "role": "style",
+      "path": "assets/cat_reference.png"
+    },
+    {
+      "role": "style",
+      "path": "assets/keyframes/frame_15.png"
+    },
+    {
+      "role": "setting",
+      "path": "assets/keyframes/frame_15.png"
+    }
+  ],
+  "negativeConstraints": [
+    "different character identity",
+    "face drift",
+    "wardrobe changes",
+    "extra characters",
+    "extra limbs or fingers",
+    "duplicate moving props",
+    "unplanned camera or background changes",
+    "text or watermark",
+    "open mouth or visible tongue",
+    "extra cats or people",
+    "duplicate paws, ears, eyes, or tail",
+    "malformed anatomy",
+    "wet or photorealistic fur",
+    "stepped or striped sky, banding, grain, noise, paper texture, halftone, airbrush, or blur",
+    "photorealism, 3D render, lens flare, glow effects, or Makoto Shinkai style"
+  ],
+  "candidateDirectory": "assets/keyframes/_candidates",
+  "group": {
+    "prompt": "Aim to create one ordered sequential story-image group with one image for each of these 1 narrative shots.\nPreserve the numbered action order even if the active tool controls the actual return count.\nTreat the frames as neighboring moments of one continuous action, not unrelated variants.\nKeep the same character identity, scene state, visual style, camera setup, lighting, scale, and screen direction unless a shot explicitly allows a change.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- exactly one small orange tabby cat\n- darker orange tabby stripes in the same placement pattern as the canonical cat reference\n- white muzzle, white chest patch, and four white paws\n- green eyes\n- dry fluffy fur rendered as crisp cel shapes\n- upright ears, upward gaze, attentive calm expression, mouth fully closed\nwardrobe:\n- no collar, clothing, tags, or accessories\nscene:\n- inside the same bright teal-and-white convenience store as frame_15\n- sunlit shelves and glass entrance may appear only as simplified close-up background context\n- no people or additional animals\ncamera:\n- 16:9 landscape\n- close-up of the cat from chest or forelegs upward\n- slightly low eye-level view emphasizing the cat looking upward\n- cat is the single dominant subject and both ears remain fully inside frame\nstyle:\n- original sunprint illustration style\n- razor-clean flat color shapes with zero texture\n- crisp cel-style rendering with exactly one shadow layer\n- warm brown outlines on lit edges and muted purple outlines on shadow edges\n- complementary lavender and teal-green shadows, never black or grey\n- flat gold geometric sunlight shapes with no glow or haze\n- the only permitted soft gradient is one broad smooth cyan-to-aqua sky transition if any sky is visible\nprops:\n- no held props\n\nORDERED ACTION FRAMES:\n1. [shot_01 | key] Close-up inside the store: the orange tabby looks upward with ears raised, attentive expression, and mouth closed\n   state after: body=small cat upright and still; head=tilted upward toward the girl; ears=both raised and attentive; eyes=both open and looking upward; mouth=fully closed\n   change only: pose, expression, gaze\n\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark\n- open mouth or visible tongue\n- extra cats or people\n- duplicate paws, ears, eyes, or tail\n- malformed anatomy\n- wet or photorealistic fur\n- stepped or striped sky, banding, grain, noise, paper texture, halftone, airbrush, or blur\n- photorealism, 3D render, lens flare, glow effects, or Makoto Shinkai style",
+    "shotIds": [
+      "shot_01"
+    ],
+    "desiredCount": 1,
+    "requestedCount": null
+  },
+  "resultPolicy": {
+    "countIsAdvisory": true,
+    "orderIsAdvisory": true,
+    "assignmentMode": "visual-review",
+    "onShortfall": "assign valid returns, then generate only unfilled shots",
+    "onSurplus": "retain extras as unassigned candidates"
+  },
+  "shots": [
+    {
+      "id": "shot_01",
+      "order": 1,
+      "actionPhase": "key",
+      "prompt": "Create only shot_01, action phase key, as part of the same continuous sequence.\nClose-up inside the store: the orange tabby looks upward with ears raised, attentive expression, and mouth closed\nUse the canonical references for identity and the approved continuity frame for immediate temporal state when supplied.\nDo not redesign the character, wardrobe, scene, camera, lighting, or visual style.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- exactly one small orange tabby cat\n- darker orange tabby stripes in the same placement pattern as the canonical cat reference\n- white muzzle, white chest patch, and four white paws\n- green eyes\n- dry fluffy fur rendered as crisp cel shapes\n- upright ears, upward gaze, attentive calm expression, mouth fully closed\nwardrobe:\n- no collar, clothing, tags, or accessories\nscene:\n- inside the same bright teal-and-white convenience store as frame_15\n- sunlit shelves and glass entrance may appear only as simplified close-up background context\n- no people or additional animals\ncamera:\n- 16:9 landscape\n- close-up of the cat from chest or forelegs upward\n- slightly low eye-level view emphasizing the cat looking upward\n- cat is the single dominant subject and both ears remain fully inside frame\nstyle:\n- original sunprint illustration style\n- razor-clean flat color shapes with zero texture\n- crisp cel-style rendering with exactly one shadow layer\n- warm brown outlines on lit edges and muted purple outlines on shadow edges\n- complementary lavender and teal-green shadows, never black or grey\n- flat gold geometric sunlight shapes with no glow or haze\n- the only permitted soft gradient is one broad smooth cyan-to-aqua sky transition if any sky is visible\nprops:\n- no held props\nSTATE AFTER: body=small cat upright and still; head=tilted upward toward the girl; ears=both raised and attentive; eyes=both open and looking upward; mouth=fully closed\nCHANGE ONLY:\n- pose\n- expression\n- gaze\nPRESERVE:\n- character identity\n- wardrobe\n- body proportions\n- scene geometry\n- lighting\n- camera\n- visual style\n- screen direction\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark\n- open mouth or visible tongue\n- extra cats or people\n- duplicate paws, ears, eyes, or tail\n- malformed anatomy\n- wet or photorealistic fur\n- stepped or striped sky, banding, grain, noise, paper texture, halftone, airbrush, or blur\n- photorealism, 3D render, lens flare, glow effects, or Makoto Shinkai style",
+      "continuityReference": null,
+      "output": "assets/keyframes/shot_01.png"
+    }
+  ]
+}

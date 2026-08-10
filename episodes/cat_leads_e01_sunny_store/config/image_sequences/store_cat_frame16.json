@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "store_cat_frame16",
+  "source": {
+    "story": "storyboard.md#seg2-shot-17",
+    "notes": "Frame 16: 36.5–38.0 s, cat looks up in close-up inside the store; blink-ready base frame."
+  },
+  "paths": {
+    "projectRoot": "../..",
+    "outputDirectory": "assets/keyframes"
+  },
+  "output": {
+    "aspectRatio": "16:9"
+  },
+  "provider": {
+    "name": "built-in-imagegen",
+    "model": "built-in",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": false,
+      "acceptsRequestedCount": false,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": false,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {}
+  },
+  "continuity": {
+    "identityReferences": [
+      "assets/cat_reference.png"
+    ],
+    "styleReferences": [
+      "assets/cat_reference.png",
+      "assets/keyframes/frame_15.png"
+    ],
+    "settingReferences": [
+      "assets/keyframes/frame_15.png"
+    ],
+    "allowTextOnly": false,
+    "hardLocks": {
+      "characters": [
+        "exactly one small orange tabby cat",
+        "darker orange tabby stripes in the same placement pattern as the canonical cat reference",
+        "white muzzle, white chest patch, and four white paws",
+        "green eyes",
+        "dry fluffy fur rendered as crisp cel shapes",
+        "upright ears, upward gaze, attentive calm expression, mouth fully closed"
+      ],
+      "wardrobe": [
+        "no collar, clothing, tags, or accessories"
+      ],
+      "scene": [
+        "inside the same bright teal-and-white convenience store as frame_15",
+        "sunlit shelves and glass entrance may appear only as simplified close-up background context",
+        "no people or additional animals"
+      ],
+      "camera": [
+        "16:9 landscape",
+        "close-up of the cat from chest or forelegs upward",
+        "slightly low eye-level view emphasizing the cat looking upward",
+        "cat is the single dominant subject and both ears remain fully inside frame"
+      ],
+      "style": [
+        "original sunprint illustration style",
+        "razor-clean flat color shapes with zero texture",
+        "crisp cel-style rendering with exactly one shadow layer",
+        "warm brown outlines on lit edges and muted purple outlines on shadow edges",
+        "complementary lavender and teal-green shadows, never black or grey",
+        "flat gold geometric sunlight shapes with no glow or haze",
+        "the only permitted soft gradient is one broad smooth cyan-to-aqua sky transition if any sky is visible"
+      ],
+      "props": [
+        "no held props"
+      ]
+    },
+    "negativeConstraints": [
+      "different character identity",
+      "face drift",
+      "wardrobe changes",
+      "extra characters",
+      "extra limbs or fingers",
+      "duplicate moving props",
+      "unplanned camera or background changes",
+      "text or watermark",
+      "open mouth or visible tongue",
+      "extra cats or people",
+      "duplicate paws, ears, eyes, or tail",
+      "malformed anatomy",
+      "wet or photorealistic fur",
+      "stepped or striped sky, banding, grain, noise, paper texture, halftone, airbrush, or blur",
+      "photorealism, 3D render, lens flare, glow effects, or Makoto Shinkai style"
+    ],
+    "grouping": {
+      "preferSequentialGroup": true,
+      "maxShotsPerGroup": 5,
+      "overlapShots": 1
+    }
+  },
+  "shots": [
+    {
+      "id": "shot_01",
+      "order": 1,
+      "actionPhase": "key",
+      "description": "Close-up inside the store: the orange tabby looks upward with ears raised, attentive expression, and mouth closed",
+      "stateBefore": {},
+      "stateAfter": {
+        "body": "small cat upright and still",
+        "head": "tilted upward toward the girl",
+        "ears": "both raised and attentive",
+        "eyes": "both open and looking upward",
+        "mouth": "fully closed"
+      },
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_16.png",
+      "review": {
+        "issues": [],
+        "notes": "Checked final saved PNG: one small orange tabby only; canonical green eyes, orange stripes, white muzzle and chest; upright ears; gaze clearly upward; mouth fully closed; no person or extra animal; store continuity preserved; close-up composition; clean flat-color sunprint rendering; no malformed visible anatomy or text."
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "path": "assets/keyframes/frame_16.png",
+      "status": "assigned",
+      "suggestedShotId": null,
+      "assignedShotId": "shot_01",
+      "sourceRunId": "20260728T184020Z-external-group-89dab2c6"
+    }
+  ],
+  "runs": [
+    {
+      "runId": "20260728T184020Z-external-group-89dab2c6",
+      "provider": "built-in-imagegen",
+      "model": "built-in",
+      "mode": "external-group",
+      "shotIds": [],
+      "referencePaths": [
+        "assets/cat_reference.png",
+        "assets/cat_reference.png",
+        "assets/keyframes/frame_15.png",
+        "assets/keyframes/frame_15.png"
+      ],
+      "taskId": null,
+      "seed": null,
+      "requestedCount": 1,
+      "returnedCount": 1,
+      "assignmentMode": "visual-review",
+      "outputs": [],
+      "candidateOutputs": [
+        "assets/keyframes/frame_16.png"
+      ],
+      "createdAt": "2026-07-28T18:40:20Z"
+    }
+  ]
+}

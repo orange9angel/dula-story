@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "notes": "Blink rigs. The closed variant is feather-locked onto the base frame (tools/auto_lock_variants.py); only the rect region is copied during a blink. Interval is per-rig randomized by the scene's deterministic scheduler. Rects calibrated from PIL diff bboxes (threshold 30) of each frame_XX_closed_locked_v1.png against its base keyframe, expanded 14px for the feather zone. frame_21 has no blink rig: its base frame already shows the cat asleep with eyes closed; the shot's motion comes from the breathing crop move.",
+  "rigs": {
+    "girl_frame01_blink": {
+      "rect": [834, 245, 149, 77],
+      "closed": "eye_variants/frame_01_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame03_blink": {
+      "rect": [748, 189, 140, 89],
+      "closed": "eye_variants/frame_03_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame08_blink": {
+      "rect": [589, 181, 183, 121],
+      "closed": "eye_variants/frame_08_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame11_blink": {
+      "rect": [609, 143, 150, 90],
+      "closed": "eye_variants/frame_11_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame15_blink": {
+      "rect": [683, 195, 136, 81],
+      "closed": "eye_variants/frame_15_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame20_blink": {
+      "rect": [866, 200, 192, 107],
+      "closed": "eye_variants/frame_20_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "girl_frame22_blink": {
+      "rect": [656, 268, 330, 180],
+      "closed": "eye_variants/frame_22_closed_locked_v1.png",
+      "intervalSeconds": [2.8, 4.4]
+    },
+    "cat_frame02_blink": {
+      "rect": [691, 271, 177, 90],
+      "closed": "eye_variants/frame_02_closed_locked_v1.png",
+      "intervalSeconds": [3.0, 4.8]
+    },
+    "cat_frame05_blink": {
+      "rect": [860, 421, 121, 78],
+      "closed": "eye_variants/frame_05_closed_locked_v1.png",
+      "intervalSeconds": [3.0, 4.8]
+    },
+    "cat_frame10_blink": {
+      "rect": [1005, 409, 138, 74],
+      "closed": "eye_variants/frame_10_closed_locked_v1.png",
+      "intervalSeconds": [3.0, 4.8]
+    },
+    "cat_frame16_blink": {
+      "rect": [740, 265, 307, 155],
+      "closed": "eye_variants/frame_16_closed_locked_v1.png",
+      "intervalSeconds": [3.0, 4.8]
+    }
+  }
+}

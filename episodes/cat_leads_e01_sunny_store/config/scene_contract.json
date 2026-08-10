@@ -1,0 +1,269 @@
+{
+  "$schema": "../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "cat_leads_e01_sunny_store",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "A sixty-second sunny-day healing short in the flat sunprint style: the adopted orange tabby leads the girl from her afternoon room through a quiet residential lane into a bright convenience store, told through approved 2D keyframes, 2D crop moves, procedural flat-shape sunprint layers (cloud drift, dappled-light sway, steam, automatic-door light band), energy-gated Chinese viseme cels for the girl's inner monologue, and a gentle semantic score that lifts at the final line.",
+    "audience": "Viewers evaluating a compact but complete 2D anime short with a stable generated heroine, a consistent orange tabby cat, a readable room-to-street-to-store progression, and synchronized sound.",
+    "designPriorities": [
+      "Keep the girl's waist-length dark-blue hair, amber eyes, white shirt, and navy plaid pleated skirt stable across every frame; no umbrella, no school bag in this episode.",
+      "Keep the orange tabby cat's white chest, white paws, and green eyes stable; it is dry and fluffy after the previous episode's rescue.",
+      "Use hard cuts for all beats so character and cat silhouettes never double through a dissolve; reserve the single closing crossfade for the final sky tilt-out shot.",
+      "Gate visible closed, half, and open mouth cels at 12 fps from the exact post-trim final dialogue stem, then select limited visemes from the known Chinese syllables, never from subtitle duration; cat meows are gated from the SFX-only cue entries 3 and 7.",
+      "Derive frame selection, mouth state, crop motion, transitions, and subtitles only from absolute story time so seeks and segmented renders remain deterministic.",
+      "Draw every procedural layer (cloud drift, dappled light, steam, door light band) as razor-clean flat vector shapes in source-image space; zero grain, zero gradients, per STYLE_BIBLE.md."
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": ["SunlitStoreScene"],
+    "characters": ["Girl"]
+  },
+  "scenes": [
+    {
+      "registryName": "SunlitStoreScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "SunlitStoreScene",
+        "module": "scenes/SunlitStoreSequenceScene.js",
+        "export": "SunlitStoreScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "A sunlit afternoon bedroom, a quiet residential lane with white walls and utility poles, and a white-and-aqua convenience store with an automatic door, oden counter, and window bench, all baked into full-frame 2D artwork.",
+        "timeOfDay": "A bright sunny afternoon that warms into golden pre-sunset light for the closing beats.",
+        "tone": ["gentle", "healing", "quiet", "warm"],
+        "storyFunction": "Follow the cat leading the girl out of her room, down the sunny lane, and into the convenience store it visits every day, closing on her realization that the places the cat takes her all carry warm light.",
+        "visualRules": [
+          "Every source PNG fills the 1920 by 1080 presentation canvas through cover-crop without aspect-ratio distortion.",
+          "The keyframe timeline, rather than equal frame division, determines every image boundary and camera-like crop move.",
+          "Each spoken line keeps one stable speaker plate; only a tight mouth rectangle changes between closed, half, and open states.",
+          "Chinese subtitles are rendered in code over text-free source art and must remain inside the lower safe area.",
+          "The scene uses a CanvasTexture as the Three.js background, so runtime camera collision geometry is intentionally inapplicable and camera obstacles remain empty.",
+          "Girl is a voice-only story speaker whose visible body is baked into the keyframes; no 3D character meshes may be layered over the artwork.",
+          "No runtime grain, noise, or texture layer may be composited over the sunprint artwork."
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": ["X", "Z"],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {"min": [-8, -4.5, -1], "max": [8, 4.5, 1]},
+        "zones": [
+          {
+            "id": "presentationZone",
+            "bounds": {"min": [-8, -4.5, -1], "max": [8, 4.5, 1]},
+            "walkable": false,
+            "purpose": ["Represent the full-frame timed 2D presentation rather than a navigable 3D stage."]
+          }
+        ],
+        "anchors": {
+          "screenCenter": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [0, 0, 0],
+            "purpose": "Stable center of the full-frame keyframe canvas."
+          },
+          "bakedStoreDoor": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [4, -1, 0],
+            "purpose": "Semantic screen-right automatic-door corner where the cat waits and leads the girl inside, represented inside the generated artwork."
+          },
+          "bakedWindowBench": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [-5, 0, 0],
+            "purpose": "Semantic window-bench area used by the closing sit-together shots, represented inside the generated artwork."
+          }
+        }
+      },
+      "lighting": {
+        "mood": "Bright flat sunny-day color with complementary lavender shadows, warming into golden pre-sunset light for the final third.",
+        "readabilityRules": [
+          "Do not apply runtime lighting or grading that changes character colors between generated frames.",
+          "Keep faces, the navy and white costume silhouette, the orange cat, and the white-and-aqua storefront readable during all crop motion and transitions.",
+          "Keep subtitle contrast independent of the baked background by using a dark translucent backing and outlined white text."
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "roomAndCicadas",
+          "kind": "region",
+          "semantic": "Daytime room tone and summer cicadas over the first half, fading at the store entry.",
+          "position": [0, 0, 0],
+          "radius": 8,
+          "loop": true
+        },
+        {
+          "id": "storeDoorSounds",
+          "kind": "point",
+          "semantic": "Automatic-door chime at both entries, cat meows at the door beats.",
+          "position": [4, 0, 0],
+          "radius": 2.5,
+          "loop": false
+        },
+        {
+          "id": "streetFootsteps",
+          "kind": "point",
+          "semantic": "Daytime footsteps on the lane as the girl follows the cat toward the store.",
+          "position": [-5, 0, 0],
+          "radius": 2.5,
+          "loop": false
+        }
+      ],
+      "dependencies": [
+        {"id": "storyTimeline", "type": "other", "path": "script.story", "required": true},
+        {"id": "keyframeTimeline", "type": "other", "path": "config/keyframe_timeline.json", "required": true},
+        {"id": "lipSyncCues", "type": "other", "path": "config/lipsync_cues.json", "required": true},
+        {"id": "mouthRigs", "type": "other", "path": "config/mouth_rigs.json", "required": true},
+        {"id": "voiceConfiguration", "type": "other", "path": "config/voice_config.json", "required": true},
+        {"id": "audioMixConfiguration", "type": "other", "path": "config/audio_mix.json", "required": true},
+        {"id": "transitionConfiguration", "type": "other", "path": "config/transitions.json", "required": true},
+        {"id": "bakedSpeakerAdapter", "type": "other", "path": "characters/BakedSpeaker.js", "required": true},
+        {"id": "girlReference", "type": "texture", "path": "assets/girl_reference.png", "required": true},
+        {"id": "catReference", "type": "texture", "path": "assets/cat_reference.png", "required": true},
+        {"id": "frame00", "type": "texture", "path": "assets/keyframes/frame_00.png", "required": true},
+        {"id": "frame01", "type": "texture", "path": "assets/keyframes/frame_01.png", "required": true},
+        {"id": "frame02", "type": "texture", "path": "assets/keyframes/frame_02.png", "required": true},
+        {"id": "frame03", "type": "texture", "path": "assets/keyframes/frame_03.png", "required": true},
+        {"id": "frame04", "type": "texture", "path": "assets/keyframes/frame_04.png", "required": true},
+        {"id": "frame05", "type": "texture", "path": "assets/keyframes/frame_05.png", "required": true},
+        {"id": "frame06", "type": "texture", "path": "assets/keyframes/frame_06.png", "required": true},
+        {"id": "frame07", "type": "texture", "path": "assets/keyframes/frame_07.png", "required": true},
+        {"id": "frame08", "type": "texture", "path": "assets/keyframes/frame_08.png", "required": true},
+        {"id": "frame09", "type": "texture", "path": "assets/keyframes/frame_09.png", "required": true},
+        {"id": "frame10", "type": "texture", "path": "assets/keyframes/frame_10.png", "required": true},
+        {"id": "frame11", "type": "texture", "path": "assets/keyframes/frame_11.png", "required": true},
+        {"id": "frame12", "type": "texture", "path": "assets/keyframes/frame_12.png", "required": true},
+        {"id": "frame13", "type": "texture", "path": "assets/keyframes/frame_13.png", "required": true},
+        {"id": "frame14", "type": "texture", "path": "assets/keyframes/frame_14.png", "required": true},
+        {"id": "frame15", "type": "texture", "path": "assets/keyframes/frame_15.png", "required": true},
+        {"id": "frame16", "type": "texture", "path": "assets/keyframes/frame_16.png", "required": true},
+        {"id": "frame17", "type": "texture", "path": "assets/keyframes/frame_17.png", "required": true},
+        {"id": "frame18", "type": "texture", "path": "assets/keyframes/frame_18.png", "required": true},
+        {"id": "frame19", "type": "texture", "path": "assets/keyframes/frame_19.png", "required": true},
+        {"id": "frame20", "type": "texture", "path": "assets/keyframes/frame_20.png", "required": true},
+        {"id": "frame21", "type": "texture", "path": "assets/keyframes/frame_21.png", "required": true},
+        {"id": "frame22", "type": "texture", "path": "assets/keyframes/frame_22.png", "required": true},
+        {"id": "frame23", "type": "texture", "path": "assets/keyframes/frame_23.png", "required": true},
+        {"id": "frame24", "type": "texture", "path": "assets/keyframes/frame_24.png", "required": true},
+        {"id": "frame25", "type": "texture", "path": "assets/keyframes/frame_25.png", "required": true},
+        {"id": "ib01", "type": "texture", "path": "assets/action_inbetweens/ib_01.png", "required": true},
+        {"id": "ib02", "type": "texture", "path": "assets/action_inbetweens/ib_02.png", "required": true},
+        {"id": "ib03", "type": "texture", "path": "assets/action_inbetweens/ib_03.png", "required": true},
+        {"id": "ib04", "type": "texture", "path": "assets/action_inbetweens/ib_04.png", "required": true}
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "Girl",
+      "scene": "SunlitStoreScene",
+      "kind": "character",
+      "runtimeName": "Girl",
+      "binding": "character:Girl",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {"body": [0, 0, 0], "face": [0, 0, 0]},
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [0, 0, 0]
+        }
+      }
+    },
+    {
+      "id": "keyframeSurface",
+      "scene": "SunlitStoreScene",
+      "kind": "prop",
+      "objectName": "sequenceCanvas",
+      "binding": "sequenceTexture",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [0, 0, 0],
+          "scale": [1, 1, 1]
+        }
+      },
+      "states": ["timed-sequence-active"],
+      "initialState": "timed-sequence-active"
+    }
+  ],
+  "state": {
+    "timelineVersion": {
+      "type": "number",
+      "initial": 2,
+      "binding": "keyframe_timeline.version"
+    }
+  },
+  "events": [],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "roomEstablishing",
+      "scene": "SunlitStoreScene",
+      "entry": 1,
+      "offsetSeconds": 0.4,
+      "purpose": "Confirm the sunlit afternoon room, desk, and window sky fill the first frame with subtitle-safe margins.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "firstMonologue",
+      "scene": "SunlitStoreScene",
+      "entry": 2,
+      "offsetSeconds": 0.6,
+      "purpose": "Confirm the girl at her desk is readable during the first monologue line with syllable-aware visemes.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "doorOpens",
+      "scene": "SunlitStoreScene",
+      "entry": 8,
+      "offsetSeconds": 0.5,
+      "purpose": "Confirm the automatic-door light band opens with the chime as the pair enters the bright store.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "closingLine",
+      "scene": "SunlitStoreScene",
+      "entry": 12,
+      "offsetSeconds": 0.5,
+      "purpose": "Confirm the girl begins the final warm-light line on camera with syllable-aware visemes before the golden pull-out.",
+      "mustSee": [
+        {"entity": "keyframeSurface", "minFrameArea": 0.95, "maxOcclusion": 0, "safeMargin": 0}
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": ["scene-tool", "story-tool", "node-check"],
+    "runtimeChecks": ["dula-inspect-team", "dula-verify", "visual-review", "audio-review"]
+  }
+}

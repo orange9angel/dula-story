@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "store_entry_frame12",
+  "sequencePlan": "store_entry_frame12.json",
+  "projectRoot": "../..",
+  "provider": {
+    "name": "builtin-imagegen",
+    "model": "builtin-image-generator",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": false,
+      "acceptsRequestedCount": false,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": false,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {}
+  },
+  "strategy": {
+    "mode": "group-first",
+    "preferSequentialGroup": false,
+    "maxShotsPerGroup": 5,
+    "overlapShots": 1,
+    "fallbackRequiresApprovedContinuityFrame": true
+  },
+  "aspectRatio": "16:9",
+  "references": [
+    {
+      "role": "identity",
+      "path": "assets/girl_reference.png"
+    },
+    {
+      "role": "identity",
+      "path": "assets/cat_reference.png"
+    },
+    {
+      "role": "style",
+      "path": "assets/style_master.png"
+    },
+    {
+      "role": "setting",
+      "path": "assets/keyframes/frame_09.png"
+    },
+    {
+      "role": "setting",
+      "path": "assets/scene_store.png"
+    }
+  ],
+  "negativeConstraints": [
+    "different character identity",
+    "face drift",
+    "wardrobe changes",
+    "extra characters",
+    "extra people or cats",
+    "extra limbs or fingers",
+    "duplicate limbs",
+    "malformed hands or paws",
+    "duplicate moving props",
+    "unplanned camera or background changes",
+    "closed or partially closed automatic door",
+    "front or side view of the entering characters",
+    "stepped or striped sky",
+    "banding",
+    "grain, noise, paper texture, halftone, airbrush, or blur",
+    "photorealism or 3D rendering",
+    "lens flare, glow, or haze",
+    "Makoto Shinkai style",
+    "text, captions, logos, watermark, or signature"
+  ],
+  "candidateDirectory": "assets/keyframes/_candidates",
+  "group": {
+    "prompt": "Aim to create one ordered sequential story-image group with one image for each of these 1 narrative shots.\nPreserve the numbered action order even if the active tool controls the actual return count.\nTreat the frames as neighboring moments of one continuous action, not unrelated variants.\nKeep the same character identity, scene state, visual style, camera setup, lighting, scale, and screen direction unless a shot explicitly allows a change.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- exactly one slim 16-year-old girl seen from behind, with waist-length straight deep-blue hair and straight bangs, plus exactly one small orange tabby cat\n- cat has darker stripes, white chest patch, four white paws, green eyes, and dry fluffy fur\nwardrobe:\n- white short-sleeve school shirt, navy-blue plaid pleated skirt, black knee socks, black loafers; no bag and no umbrella\nscene:\n- same white-and-aqua convenience-store facade and entrance geometry as frame_09, with both sliding glass door panels fully open and bright stocked interior visible\ncamera:\n- 16:9 landscape, eye-level exterior rear view, both full bodies visible as they cross the threshold\nstyle:\n- original Sunprint illustration style: razor-clean flat color shapes like a high-definition retro silkscreen poster, with zero texture\n- sky alone may use one wide soft smooth transition band from #2E9BD6 at top to #7FD4E8 near horizon; no stepped or striped banding\n- hard-edged rounded clouds in #FDFBF4 with one flat #8E7CC3 shadow tone\n- all shadows are flat lavender or teal-green, never black or grey; sunlight is flat geometric #F5B942 shapes with no glow or haze\n- characters use crisp cel-style flat color, one shadow layer, warm-brown lit outlines, and muted-purple shadow outlines\nprops:\n- no carried props; no signs, text, logos, captions, or watermark\n\nORDERED ACTION FRAMES:\n1. [shot_01 | threshold crossing] frame_12: rear exterior view as the fully opened automatic glass door admits the girl and cat walking together into the bright store interior\n   state before: girl=walking toward the closed entrance from outside; cat=leading the girl at the entrance; door=opening in response to their approach\n   state after: girl=one natural walking step across the threshold, moving away from camera; cat=walking beside and slightly ahead of the girl into the store; door=both glass sliding panels fully retracted and entrance unobstructed\n   change only: pose, walking leg phase, hair secondary motion, cat tail position, automatic door panel position\n\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra people or cats\n- extra limbs or fingers\n- duplicate limbs\n- malformed hands or paws\n- duplicate moving props\n- unplanned camera or background changes\n- closed or partially closed automatic door\n- front or side view of the entering characters\n- stepped or striped sky\n- banding\n- grain, noise, paper texture, halftone, airbrush, or blur\n- photorealism or 3D rendering\n- lens flare, glow, or haze\n- Makoto Shinkai style\n- text, captions, logos, watermark, or signature",
+    "shotIds": [
+      "shot_01"
+    ],
+    "desiredCount": 1,
+    "requestedCount": null
+  },
+  "resultPolicy": {
+    "countIsAdvisory": true,
+    "orderIsAdvisory": true,
+    "assignmentMode": "visual-review",
+    "onShortfall": "assign valid returns, then generate only unfilled shots",
+    "onSurplus": "retain extras as unassigned candidates"
+  },
+  "shots": [
+    {
+      "id": "shot_01",
+      "order": 1,
+      "actionPhase": "threshold crossing",
+      "prompt": "Create only shot_01, action phase threshold crossing, as part of the same continuous sequence.\nframe_12: rear exterior view as the fully opened automatic glass door admits the girl and cat walking together into the bright store interior\nUse the canonical references for identity and the approved continuity frame for immediate temporal state when supplied.\nDo not redesign the character, wardrobe, scene, camera, lighting, or visual style.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- exactly one slim 16-year-old girl seen from behind, with waist-length straight deep-blue hair and straight bangs, plus exactly one small orange tabby cat\n- cat has darker stripes, white chest patch, four white paws, green eyes, and dry fluffy fur\nwardrobe:\n- white short-sleeve school shirt, navy-blue plaid pleated skirt, black knee socks, black loafers; no bag and no umbrella\nscene:\n- same white-and-aqua convenience-store facade and entrance geometry as frame_09, with both sliding glass door panels fully open and bright stocked interior visible\ncamera:\n- 16:9 landscape, eye-level exterior rear view, both full bodies visible as they cross the threshold\nstyle:\n- original Sunprint illustration style: razor-clean flat color shapes like a high-definition retro silkscreen poster, with zero texture\n- sky alone may use one wide soft smooth transition band from #2E9BD6 at top to #7FD4E8 near horizon; no stepped or striped banding\n- hard-edged rounded clouds in #FDFBF4 with one flat #8E7CC3 shadow tone\n- all shadows are flat lavender or teal-green, never black or grey; sunlight is flat geometric #F5B942 shapes with no glow or haze\n- characters use crisp cel-style flat color, one shadow layer, warm-brown lit outlines, and muted-purple shadow outlines\nprops:\n- no carried props; no signs, text, logos, captions, or watermark\nSTATE BEFORE: girl=walking toward the closed entrance from outside; cat=leading the girl at the entrance; door=opening in response to their approach\nSTATE AFTER: girl=one natural walking step across the threshold, moving away from camera; cat=walking beside and slightly ahead of the girl into the store; door=both glass sliding panels fully retracted and entrance unobstructed\nCHANGE ONLY:\n- pose\n- walking leg phase\n- hair secondary motion\n- cat tail position\n- automatic door panel position\nPRESERVE:\n- character identity\n- wardrobe\n- body proportions\n- scene geometry\n- lighting\n- camera\n- visual style\n- screen direction\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra people or cats\n- extra limbs or fingers\n- duplicate limbs\n- malformed hands or paws\n- duplicate moving props\n- unplanned camera or background changes\n- closed or partially closed automatic door\n- front or side view of the entering characters\n- stepped or striped sky\n- banding\n- grain, noise, paper texture, halftone, airbrush, or blur\n- photorealism or 3D rendering\n- lens flare, glow, or haze\n- Makoto Shinkai style\n- text, captions, logos, watermark, or signature",
+      "continuityReference": "assets/keyframes/frame_11.png",
+      "output": "assets/keyframes/shot_01.png"
+    }
+  ]
+}
