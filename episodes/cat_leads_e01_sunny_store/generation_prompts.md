@@ -55,18 +55,21 @@ Makoto Shinkai style, text, captions, logos, watermark, signature.
 |----|------|--------|------|
 | frame_00 | 午后房间全景，阳光斜照书桌（建立镜头） | style_master + scene_room | 通过 |
 | frame_01 | 小蓝书桌前托腮，中景（独白1 口型基帧，嘴闭无遮挡） | girl_reference + frame_00 | 通过 |
+| frame_01_closed_v3 / locked_v3 | 仅修正闭眼相：画面左眼弧线缩短、压平、减薄到与右眼一致；脸型、眼眶、头发和全画幅不变 | frame_01 + closed_locked_v2 | 通过（锁定区仅占全图 0.7%，区外最大像素差 0；成片闭眼无左眼肿胀） |
 | frame_02 | 窗台小橘回头看室内，特写（猫叫口型基帧） | cat_reference + frame_00 | 通过 |
 | frame_03 | 小蓝抬头看猫，中景（独白2 口型基帧） | girl_reference + frame_01 | 通过 |
 | ib_01 | 门口弯腰穿鞋（中间画） | girl_reference + frame_03 | 通过 |
 | frame_04 | 阳光街道远景：她跟猫走，全身 | scene_street + 双母版 | 通过 |
-| ib_02 | 换步循环 alt（同构图，腿部相位相反） | frame_04 | 通过（像素 diff 验证：1.5% 变化 confined 在腿部/猫区域，背景零变化） |
+| frame_04_walk_alt_full-v4 | 侧面等幅反相触地 B：保留同一前后落脚点，画面左髋腿明显交叉至右前鞋、右髋腿接左后鞋 | frame_04 + v3 | 通过（大腿/膝部交叠在远景也可见；双脚落地，步幅相同） |
 | frame_05 | 猫走前头回头，中景 | cat_reference + frame_04 | 通过 |
 | frame_06 | 她跟走背影，远处可见便利店 | frame_04 + frame_05 | 通过（猫在画外前方，符合"猫在前引导"银幕方向，记录在案） |
+| frame_06_walk_contact_a_full-v6 / b_full-v6 | 背面等幅反相触地 A/B：远脚左、近脚右 ↔ 远脚右、近脚左；脚心横向至少分离约一只鞋宽 | frame_06 + v5 | 通过（远近脚的外轮廓直接左右互换；双脚落地，鞋轴沿道路透视） |
 | frame_07 | 猫停巷口，阳光下便利店白绿立面 | frame_06 + style_master | 通过 |
 | frame_08 | 她站定望向巷口，中景（独白3 口型基帧） | girl_reference + frame_07 | 通过 |
 | frame_09 | 便利店外景全景：白绿立面、自动门、洒金光斑 | style_master + frame_07 | 通过 |
 | frame_10 | 猫坐门口回头叫（猫叫口型基帧） | cat_reference + frame_09 | 通过（roll 2 中景回头版；roll 1 废：猫太小且背对，嘴不可见，23.4s 猫叫 cue 无 rig 可挂。废帧存 tmp/frame_10_roll1_rejected.png） |
 | frame_11 | 她微笑走近，中近景 | girl_reference + frame_10 | 通过 |
+| frame_11_walk_contact_a_full-v2 / b_full-v3 | 门口近景新 A/B：画面右腿前伸 ↔ 画面左腿前伸，等幅、落地 | frame_11 + 反相大腿参考 | 通过（不再使用中立站姿；前伸大腿大小一致，上半身固定） |
 | frame_12 | 自动门全开，一人一猫走入明亮店内 | frame_09 + frame_11 | 通过 |
 
 ### seg2（Day 3，30–60s）
@@ -83,7 +86,7 @@ Makoto Shinkai style, text, captions, logos, watermark, signature.
 | frame_19 | 窗边长凳全景：她坐下，猫跳上蜷着 | 双母版 + frame_13 | 通过 |
 | ib_04 | 坐下中间画 | frame_19 | 通过 |
 | frame_20 | 特写：她双手捧杯，眨眼基帧 | girl_reference + frame_19 | 通过 |
-| frame_21 | 猫蜷脚边特写（猫呼噜） | cat_reference + frame_20 | 通过（注意：基帧猫眼已闭合，撤销其眨眼 rig，靠呼吸 crop 起伏表"活"） |
+| frame_21-v2 | 猫蜷在女孩身旁的同一张长凳上特写（猫呼噜）；左侧必须看出女孩坐姿 | frame_21 + frame_19 | 通过（裙摆、弯膝和从凳沿垂下的小腿明确为坐姿；猫眼闭合，靠呼吸 crop 起伏表“活”） |
 | frame_22 | 她近景微笑（独白5 口型基帧，嘴闭无遮挡），阳光偏暖金 | girl_reference + frame_20 | 通过（暖金色调 ✓） |
 | frame_23 | 窗边全景：一人一猫映在明亮玻璃上 | frame_19 + frame_22 | 通过 |
 | frame_24 | 店外空镜：夕阳前奏暖金色的便利店，窗里两个影子 | frame_09 + frame_23 | 通过（窗内双影可见 ✓） |

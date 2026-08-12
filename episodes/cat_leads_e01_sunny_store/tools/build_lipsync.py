@@ -81,6 +81,13 @@ PINYIN_BY_CHAR = {
     "暖": "nuan",
     "和": "huo",
     "光": "guang",
+    "就": "jiu",
+    "样": "yang",
+    "晒": "shai",
+    "着": "zhe",
+    "也": "ye",
+    "挺": "ting",
+    "好": "hao",
 }
 
 

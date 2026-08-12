@@ -1,11 +1,11 @@
 {
   "version": 1,
   "sourceCoordinateSpace": "native-image-pixels",
-  "notes": "Blink rigs. The closed variant is feather-locked onto the base frame (tools/auto_lock_variants.py); only the rect region is copied during a blink. Interval is per-rig randomized by the scene's deterministic scheduler. Rects calibrated from PIL diff bboxes (threshold 30) of each frame_XX_closed_locked_v1.png against its base keyframe, expanded 14px for the feather zone. frame_21 has no blink rig: its base frame already shows the cat asleep with eyes closed; the shot's motion comes from the breathing crop move.",
+  "notes": "Blink rigs. The closed variant is feather-locked onto the base frame (tools/auto_lock_variants.py); only the rect region is copied during a blink. Interval is per-rig randomized by the scene's deterministic scheduler. Rects are calibrated from PIL diff bboxes (threshold 30) of each locked closed variant against its base keyframe, expanded 14px for the feather zone. frame_01 uses v4 (thin light lid arcs — v3 still read as swollen at the 4s blink); the other listed rigs retain v1. frame_21 has no blink rig: its base frame already shows the cat asleep with eyes closed; the shot's motion comes from the breathing crop move.",
   "rigs": {
     "girl_frame01_blink": {
       "rect": [834, 245, 149, 77],
-      "closed": "eye_variants/frame_01_closed_locked_v1.png",
+      "closed": "eye_variants/frame_01_closed_locked_v4.png",
       "intervalSeconds": [2.8, 4.4]
     },
     "girl_frame03_blink": {

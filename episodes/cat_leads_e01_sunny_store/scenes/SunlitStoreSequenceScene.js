@@ -43,6 +43,10 @@ const MOTION_PRESETS = {
   tilt_up: { zoom: [1.018, 1.04], panX: [0, 0], panY: [0.22, -0.5] },
   tilt_up_fast: { zoom: [1.026, 1.052], panX: [0, 0], panY: [0.42, -0.68] },
   tilt_down: { zoom: [1.032, 1.045], panX: [0.05, -0.05], panY: [-0.38, 0.55] },
+  // Walk shots: constant zoom (no per-cel scale pulsation) with a continuous
+  // crop pan across the whole motionGroup span. The world slides screen-left
+  // so the right-walking girl reads as actually going somewhere.
+  walk_follow: { zoom: [1.1, 1.1], panX: [-0.5, 0.5], panY: [0.06, 0.06] },
 };
 
 function clamp(value, min, max) {
@@ -156,6 +160,11 @@ function normalizeTimeline(rawTimeline, storyDuration) {
       // Walk-cycle cuts reuse one blink rig across several sub-frames; this
       // carries the shot-clock forward so the scheduler can still fire.
       blinkCarry: Number(frame.blinkCarry) || 0,
+      // Walk-cycle sub-cuts sharing one motionGroup sample their crop motion
+      // over the whole group span instead of restarting per cel.
+      motionGroup: typeof frame.motionGroup === 'string' && frame.motionGroup
+        ? frame.motionGroup
+        : null,
       cloudDrift: normalizeCloudDrift(frame.cloudDrift),
       dappleSway: normalizeDappleSway(frame.dappleSway),
       steam: normalizeSteam(frame.steam),
@@ -281,7 +290,9 @@ function normalizeEyeRigs(rawRigs) {
       rect,
       closed: normalizeAssetPath(source.closed, 'eye_variants'),
       interval,
-      seed: hash01(id.length * 31 + id.charCodeAt(0)),
+      // Hash the whole rig id so every shot blinks on its own schedule;
+      // the old length+first-char seed made all girl rigs identical.
+      seed: hash01([...id].reduce((acc, ch) => (acc * 31 + ch.charCodeAt(0)) % 100003, 7)),
     });
   }
   return rigs;
@@ -494,7 +505,27 @@ export class SunlitStoreScene extends SceneBase {
     const nextFrame = this.timeline[frameIndex + 1] || null;
     const frameEnd = nextFrame ? nextFrame.at : this.sequenceDuration;
     const frameDuration = Math.max(0.001, frameEnd - frame.at);
-    const frameProgress = smoothstep01((sequenceTime - frame.at) / frameDuration);
+    let frameProgress = smoothstep01((sequenceTime - frame.at) / frameDuration);
+    if (frame.motionGroup) {
+      // Walk-cycle sub-cuts: sample the crop motion over the whole group span
+      // so the pan sweeps continuously instead of restarting at every cel.
+      let groupStart = frameIndex;
+      let groupEnd = frameIndex;
+      while (groupStart > 0 && this.timeline[groupStart - 1].motionGroup === frame.motionGroup) {
+        groupStart -= 1;
+      }
+      while (
+        groupEnd < this.timeline.length - 1
+        && this.timeline[groupEnd + 1].motionGroup === frame.motionGroup
+      ) {
+        groupEnd += 1;
+      }
+      const groupAt = this.timeline[groupStart].at;
+      const groupEndAt = groupEnd + 1 < this.timeline.length
+        ? this.timeline[groupEnd + 1].at
+        : this.sequenceDuration;
+      frameProgress = smoothstep01((sequenceTime - groupAt) / Math.max(0.001, groupEndAt - groupAt));
+    }
     const motion = this._sampleMotion(frame, frameProgress, sequenceTime);
 
     const ctx = this.sequenceContext;
@@ -564,20 +595,28 @@ export class SunlitStoreScene extends SceneBase {
 
     if (frame.eyeRig) {
       const rig = this.eyeRigs.get(frame.eyeRig);
-      if (rig && this._blinkClosedAt(rig, sequenceTime - frame.at + frame.blinkCarry)) {
+      const coverage = rig
+        ? this._blinkCoverageAt(rig, sequenceTime - frame.at + frame.blinkCarry)
+        : 0;
+      if (rig && coverage > 0) {
         const variant = this.imageByFile.get(rig.closed);
         if (variant) {
           const [x, y, patchWidth, patchHeight] = rig.rect;
+          // Paste only the top `coverage` fraction of the closed-lid rect: on
+          // the way down the lid line sweeps over the eyes, on the way up it
+          // lifts again — a cheap half-lid transition instead of a hard cut
+          // between fully open and fully closed.
+          const coveredHeight = Math.max(1, Math.round(patchHeight * coverage));
           ctx.drawImage(
             variant,
             x,
             y,
             patchWidth,
-            patchHeight,
+            coveredHeight,
             x,
             y,
             patchWidth,
-            patchHeight
+            coveredHeight
           );
         }
       }
@@ -597,17 +636,25 @@ export class SunlitStoreScene extends SceneBase {
   // the shot, then one every interval[0]..interval[1] seconds. shotLocalTime
   // is seconds since the current timeline frame started, plus the optional
   // blinkCarry that keeps walk-cycle sub-cuts on one continuous shot clock.
-  _blinkClosedAt(rig, shotLocalTime) {
+  // Returns lid coverage 0..1: a 0.16s blink with ~0.05s close/open sweeps so
+  // the lids ease through a half-closed pose instead of snapping shut.
+  _blinkCoverageAt(rig, shotLocalTime) {
     const offset = lerp(0.7, 1.3, rig.seed);
-    if (shotLocalTime < offset) return false;
+    if (shotLocalTime < offset) return 0;
     const period = lerp(rig.interval[0], rig.interval[1], rig.seed);
-    const phase = ((shotLocalTime - offset) / period) % 1;
-    return phase < 0.13 / period;
+    const phase = (shotLocalTime - offset) % period;
+    const blinkSeconds = 0.16;
+    const sweepSeconds = 0.05;
+    if (phase >= blinkSeconds) return 0;
+    if (phase < sweepSeconds) return phase / sweepSeconds;
+    if (phase > blinkSeconds - sweepSeconds) return (blinkSeconds - phase) / sweepSeconds;
+    return 1;
   }
 
-  // Flat bubble cloud: a white main blob with two bumps over a single flat
-  // lavender shadow blob. Drifts right at cloud[4] px/s and wraps across the
-  // source image; the phase is a pure function of absolute time.
+  // Sunprint bubble cloud: a flat-based body with four uneven bumps, drawn
+  // twice — squished lavender shadow pass underneath, white pass on top.
+  // Drifts right at cloud[4] px/s and wraps across the source image; the
+  // phase is a pure function of absolute time.
   _drawCloudDrift(config, sequenceTime, sourceWidth) {
     const ctx = this.sourceContext;
     ctx.save();
@@ -617,23 +664,28 @@ export class SunlitStoreScene extends SceneBase {
       const span = sourceWidth + margin * 2;
       const x = ((cx + sequenceTime * speed + margin) % span) - margin;
 
+      const cluster = (dy, squash) => {
+        const bump = (ox, oy, r) => {
+          ctx.beginPath();
+          ctx.arc(x + ox, cy + dy + oy * squash, r * squash, 0, Math.PI * 2);
+          ctx.fill();
+        };
+        ctx.beginPath();
+        ctx.ellipse(x, cy + dy + ry * 0.12 * squash, rx, ry * 0.62 * squash, 0, 0, Math.PI * 2);
+        ctx.fill();
+        bump(-rx * 0.5, -ry * 0.1, ry * 0.55);
+        bump(-rx * 0.12, -ry * 0.42, ry * 0.78);
+        bump(rx * 0.34, -ry * 0.3, ry * 0.66);
+        bump(rx * 0.58, 0, ry * 0.45);
+      };
+
       ctx.fillStyle = SUNPRINT.cloudShadow;
       ctx.globalAlpha = 0.32;
-      ctx.beginPath();
-      ctx.ellipse(x - rx * 0.08, cy + ry * 0.3, rx, ry * 0.82, 0, 0, Math.PI * 2);
-      ctx.fill();
+      cluster(ry * 0.34, 0.6);
 
       ctx.fillStyle = SUNPRINT.cloudWhite;
       ctx.globalAlpha = 0.95;
-      ctx.beginPath();
-      ctx.ellipse(x, cy, rx, ry, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(x - rx * 0.42, cy - ry * 0.38, ry * 0.72, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(x + rx * 0.38, cy - ry * 0.3, ry * 0.6, 0, Math.PI * 2);
-      ctx.fill();
+      cluster(0, 1);
     }
     ctx.restore();
   }
