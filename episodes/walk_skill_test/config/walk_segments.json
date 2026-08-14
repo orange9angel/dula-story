@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "description": "Walk segments for keyframe_timeline.json, rebuilt by dula-skills/walk-director/scripts/build_walk_timeline.py. Cel selection rules: dula-skills/walk-director/references/keyframe-walk-shots.md.",
+  "segments": [
+    {
+      "group": "street_walk",
+      "start": 3.0,
+      "end": 6.0,
+      "rate": 3.2,
+      "move": "walk_follow",
+      "cels": [
+        {
+          "file": "keyframes/frame_04.png",
+          "shot": "street_walk_contact1"
+        },
+        {
+          "file": "action_inbetweens/frame_04_walk_alt_full-v4.png",
+          "shot": "street_walk_contact2"
+        }
+      ]
+    },
+    {
+      "group": "follow_back",
+      "start": 6.5,
+      "end": 10.0,
+      "rate": 2.7,
+      "move": "walk_follow",
+      "cels": [
+        {
+          "file": "action_inbetweens/frame_06_walk_contact_a_full-v10.png",
+          "shot": "follow_back_contact_a"
+        },
+        {
+          "file": "action_inbetweens/frame_06_walk_passing-v8.png",
+          "shot": "follow_back_passing"
+        }
+      ]
+    },
+    {
+      "group": "girl_approaches",
+      "start": 10.5,
+      "end": 13.0,
+      "rate": 2.4,
+      "move": "walk_follow",
+      "eyeRig": "girl_frame11_blink",
+      "cels": [
+        {
+          "file": "action_inbetweens/frame_11_walk_contact_a_full-v2.png",
+          "shot": "girl_approaches_right_leg_forward"
+        },
+        {
+          "file": "action_inbetweens/frame_11_walk_contact_b_full-v3.png",
+          "shot": "girl_approaches_left_leg_forward"
+        }
+      ]
+    }
+  ]
+}
