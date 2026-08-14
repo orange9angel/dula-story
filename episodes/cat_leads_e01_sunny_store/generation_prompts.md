@@ -64,6 +64,8 @@ Makoto Shinkai style, text, captions, logos, watermark, signature.
 | frame_05 | 猫走前头回头，中景 | cat_reference + frame_04 | 通过 |
 | frame_06 | 她跟走背影，远处可见便利店 | frame_04 + frame_05 | 通过（猫在画外前方，符合"猫在前引导"银幕方向，记录在案） |
 | frame_06_walk_contact_a_full-v6 / b_full-v6 | 背面等幅反相触地 A/B：远脚左、近脚右 ↔ 远脚右、近脚左；脚心横向至少分离约一只鞋宽 | frame_06 + v5 | 通过（远近脚的外轮廓直接左右互换；双脚落地，鞋轴沿道路透视） |
+| frame_06_far | 远景帧：同机位同街景，女孩缩小至约 1/3、走到靠近便利店的路段（配合 frame_06 组成"近→远"两拍，替代已废弃的 A/B 换脚） | frame_06 + girl_reference | 通过（机位/街景/风格一致；女孩一 roll 通过，无多余人物/猫） |
+| frame_06_walk_contact_b_full-v7 | 【已废弃，未入时间线】合成修复版 B：试图以 A 为底贴回 B 的腿部修复背景闪烁，但 B 下半身整体左偏 3px，+3px 对齐后臀部仍错开。结论：整图重画的 A/B 换脚不适合做连续动作，14.0–16.5s 改为 frame_06 + frame_06_far 双静帧 + 拉远运镜 | tools/lock_walk_b_legs.py（离线合成，非 imagegen） | 废弃（方案本身被否决，废帧存 tmp/ 备查） |
 | frame_07 | 猫停巷口，阳光下便利店白绿立面 | frame_06 + style_master | 通过 |
 | frame_08 | 她站定望向巷口，中景（独白3 口型基帧） | girl_reference + frame_07 | 通过 |
 | frame_09 | 便利店外景全景：白绿立面、自动门、洒金光斑 | style_master + frame_07 | 通过 |

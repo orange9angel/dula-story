@@ -47,6 +47,11 @@ const MOTION_PRESETS = {
   // crop pan across the whole motionGroup span. The world slides screen-left
   // so the right-walking girl reads as actually going somewhere.
   walk_follow: { zoom: [1.1, 1.1], panX: [-0.5, 0.5], panY: [0.06, 0.06] },
+  // Walk-away shot: single static cel, slow zoom-out so the girl recedes
+  // toward the storefront. Replaces A/B leg-swap cels (repaint drift between
+  // full-image cels made the calves/hips flicker; see generation_prompts.md
+  // frame_06_walk_contact_* notes).
+  walk_away: { zoom: [1.14, 1.045], panX: [0, 0], panY: [0.1, -0.04] },
 };
 
 function clamp(value, min, max) {
