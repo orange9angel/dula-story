@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "notes": "Blink rigs. Closed variants feather-locked onto the base frame; rect calibrated by tools/calibrate_rigs.py (diff bbox, threshold 30, +14px pad).",
+  "rigs": {
+    "tsumugi_frame05_blink": {
+      "rect": [
+        632,
+        265,
+        151,
+        83
+      ],
+      "closed": "eye_variants/frame_05_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "tsumugi_frame09_blink": {
+      "rect": [
+        746,
+        268,
+        240,
+        119
+      ],
+      "closed": "eye_variants/frame_09_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "tsumugi_frame12_blink": {
+      "rect": [
+        624,
+        293,
+        412,
+        162
+      ],
+      "closed": "eye_variants/frame_12_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "tsumugi_frame14_blink": {
+      "rect": [
+        602,
+        174,
+        148,
+        79
+      ],
+      "closed": "eye_variants/frame_14_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "fox_frame04_blink": {
+      "rect": [
+        649,
+        442,
+        297,
+        121
+      ],
+      "closed": "eye_variants/frame_04_closed_locked_v1.png",
+      "intervalSeconds": [
+        3.2,
+        5.0
+      ]
+    },
+    "fox_frame13_blink": {
+      "rect": [
+        677,
+        306,
+        279,
+        111
+      ],
+      "closed": "eye_variants/frame_13_closed_locked_v1.png",
+      "intervalSeconds": [
+        3.2,
+        5.0
+      ]
+    }
+  }
+}

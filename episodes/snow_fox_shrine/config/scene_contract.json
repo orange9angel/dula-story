@@ -1,0 +1,51 @@
+{
+  "$schema": "../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "snow_fox_shrine",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "A ~100-second snowy New Year's Eve healing short in the flat yukie woodblock-print style: Tsumugi carries a roasted sweet potato up to a small shrine, finds a shivering fox cub by the offering box, shares half, hears the distant New Year bells, and promises to come back with the first snow next year — told through approved 2D keyframes, 2D crop moves, procedural flat-shape yukie layers (snowfall, breath fog, sweet-potato steam, lantern flicker), energy-gated Chinese viseme cels for the girl's monologue, and a slow music-box score.",
+    "audience": "Viewers evaluating a compact but complete 2D anime short with a stable generated heroine, a consistent fox cub, a readable approach-to-farewell progression, and synchronized sound.",
+    "designPriorities": [
+      "Keep Tsumugi's vermilion coat, cream scarf and earmuffs, and dark-brown bob stable across every frame; the fox keeps its orange-red coat, cream chest, and white tail tip.",
+      "Use hard cuts for all beats; reserve the single closing crossfade for the final wide shot.",
+      "No A/B leg-swap walk cycles: walking reads through static cels plus crop moves, and the departure uses a near/far two-cel cut (walk-director selection rule).",
+      "Gate visible closed, half, and open mouth cels at 12 fps from the exact post-trim final dialogue stem, never from subtitle duration.",
+      "Derive frame selection, mouth state, crop motion, transitions, and subtitles only from absolute story time so seeks and segmented renders remain deterministic.",
+      "Draw every procedural layer (snowfall, breath fog, steam, lantern flicker) as razor-clean flat vector shapes in source-image space; zero grain, zero gradients, per STYLE_BIBLE.md."
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": ["SnowFoxShrineScene"],
+    "characters": ["Tsumugi", "Fox"]
+  },
+  "scenes": [
+    {
+      "registryName": "SnowFoxShrineScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "SnowFoxShrineScene",
+        "module": "scenes/SnowFoxShrineScene.js",
+        "export": "SnowFoxShrineScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "A small mountain-shrine approach at night: vermilion torii, snow-covered stone steps, stone lanterns, and a wooden offering box under the eave, all baked into full-frame 2D artwork.",
+        "timeOfDay": "New Year's Eve night during the first snow, lit by warm stone lanterns.",
+        "tone": ["quiet", "healing", "wintry", "warm"],
+        "storyFunction": "Approach, discovery, sharing, the distant bells, and the promise to return.",
+        "visualRules": [
+          "Every source PNG fills the 1920 by 1080 presentation canvas through cover-crop without aspect-ratio distortion.",
+          "The keyframe timeline, rather than equal frame division, determines every image boundary and camera-like crop move.",
+          "Each spoken line keeps one stable speaker plate; only a tight mouth rectangle changes between closed, half, and open states.",
+          "Chinese subtitles are rendered in code over text-free source art and must remain inside the lower safe area.",
+          "The scene uses a CanvasTexture as the Three.js background, so runtime camera collision geometry is intentionally inapplicable and camera obstacles remain empty.",
+          "Tsumugi and Fox are voice-only story performers whose visible bodies are baked into the keyframes; no 3D character meshes may be layered over the artwork.",
+          "No runtime grain, noise, or texture layer may be composited over the yukie artwork."
+        ]
+      }
+    }
+  ]
+}

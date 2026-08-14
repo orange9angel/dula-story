@@ -1,0 +1,75 @@
+{
+  "version": 2,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "states": [
+    "closed",
+    "half",
+    "open"
+  ],
+  "notes": "Rects calibrated by tools/calibrate_rigs.py: PIL diff bbox (threshold 30) of each *_locked_v1.png against its base keyframe, unioned over half+open, padded 14px for the feather zone. frame_12's rig covers SRT entries 10 and 11.",
+  "rigs": {
+    "tsumugi_frame05_entry3": {
+      "entry": 3,
+      "mode": "image",
+      "rect": [
+        668,
+        337,
+        56,
+        42
+      ],
+      "variants": {
+        "closed": "keyframes/frame_05.png",
+        "half": "mouth_variants/frame_05_half_locked_v1.png",
+        "open": "mouth_variants/frame_05_open_locked_v1.png"
+      }
+    },
+    "tsumugi_frame09_entry7": {
+      "entry": 7,
+      "mode": "image",
+      "rect": [
+        804,
+        399,
+        74,
+        52
+      ],
+      "variants": {
+        "closed": "keyframes/frame_09.png",
+        "half": "mouth_variants/frame_09_half_locked_v1.png",
+        "open": "mouth_variants/frame_09_open_locked_v1.png"
+      }
+    },
+    "tsumugi_frame12_entries10_11": {
+      "entry": [
+        10,
+        11
+      ],
+      "mode": "image",
+      "rect": [
+        781,
+        486,
+        111,
+        61
+      ],
+      "variants": {
+        "closed": "keyframes/frame_12.png",
+        "half": "mouth_variants/frame_12_half_locked_v1.png",
+        "open": "mouth_variants/frame_12_open_locked_v1.png"
+      }
+    },
+    "tsumugi_frame14_entry12": {
+      "entry": 12,
+      "mode": "image",
+      "rect": [
+        634,
+        241,
+        55,
+        41
+      ],
+      "variants": {
+        "closed": "keyframes/frame_14.png",
+        "half": "mouth_variants/frame_14_half_locked_v1.png",
+        "open": "mouth_variants/frame_14_open_locked_v1.png"
+      }
+    }
+  }
+}
