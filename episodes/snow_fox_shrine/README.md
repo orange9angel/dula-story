@@ -22,10 +22,11 @@ basketball（夕暮球馆）均不同：本片是**夜景雪景 + 新版画平�
 - **程序化 yukie 层**（全部源图空间平涂形状、确定性）：双层视差落雪
   snowfall、呼气白雾 breathFog、红薯蒸汽 steam、灯笼火光呼吸
   lanternFlicker、冻狐高频微抖 shiver（移植自 rainy）。
-- **音频**：edge-tts（zh-CN-XiaoyiNeural）6 句独白；SFX 与 BGM 全部
-  程序化合成（`tools/build_sfx.py`：风雪底噪/踏雪/布料/狐鸣/远寺钟；
-  `tools/build_bgm.py`：D 大调 3/4 八音盒《snow_lullaby》102s）。
-  全部确定性 seeded，重跑逐字节一致。
+- **音频**：edge-tts（zh-CN-XiaoyiNeural）6 句独白；SFX 全部程序化合成
+  （`tools/build_sfx.py`：风雪底噪/踏雪/布料/狐鸣/远寺钟，seeded 可复现）；
+  BGM 为 Pixabay 真人曲目 "December – Calm Winter Ambient"（Clavier-Music，
+  免版税，见 `assets/audio/music/README.md`），经 `music_cues.json` 0–102s
+  循环铺底。`tools/build_bgm.py` 的八音盒合成仅留作离线兜底（未被引用）。
 
 ## 复现流程（从 dula-story 根目录）
 
@@ -37,6 +38,7 @@ bash episodes/snow_fox_shrine/tools/gen_variants.sh
 
 # 音频
 .venv/Scripts/python.exe episodes/snow_fox_shrine/tools/build_sfx.py
+# BGM 兜底合成（正式片用 Pixabay 曲目，此步可跳过）：
 .venv/Scripts/python.exe episodes/snow_fox_shrine/tools/build_bgm.py
 npx dula-audio ./episodes/snow_fox_shrine --provider=edge --force
 .venv/Scripts/python.exe episodes/snow_fox_shrine/tools/build_lipsync.py
