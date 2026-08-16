@@ -1,0 +1,36 @@
+{
+  "Girl": {
+    "default": {
+      "model": "cosyvoice-v3-flash",
+      "voice": "longxiaoxia_v3",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "volume": 50,
+      "edge_voice": "zh-TW-HsiaoChenNeural",
+      "edge_rate": "+0%",
+      "edge_pitch": "+0Hz",
+      "edge_volume": "+0%"
+    },
+    "calm": { "rate": 0.96, "pitch": 0.98 },
+    "curious": { "rate": 1.06, "pitch": 1.05, "volume": 52 },
+    "gentle": { "rate": 0.92, "pitch": 0.96, "volume": 47 },
+    "bright": { "rate": 1.08, "pitch": 1.06, "volume": 53 }
+  },
+  "Boy": {
+    "default": {
+      "model": "cosyvoice-v3-flash",
+      "voice": "longshu_v3",
+      "rate": 1.0,
+      "pitch": 1.04,
+      "volume": 50,
+      "edge_voice": "zh-CN-YunxiNeural",
+      "edge_rate": "+0%",
+      "edge_pitch": "+0Hz",
+      "edge_volume": "+0%"
+    },
+    "calm": { "rate": 0.96, "pitch": 1.02 },
+    "curious": { "rate": 1.05, "pitch": 1.08, "volume": 52 },
+    "gentle": { "rate": 0.93, "pitch": 1.03, "volume": 47 },
+    "bright": { "rate": 1.06, "pitch": 1.08, "volume": 53 }
+  }
+}

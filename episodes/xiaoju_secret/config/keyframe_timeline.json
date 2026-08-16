@@ -1,0 +1,410 @@
+{
+  "version": 2,
+  "duration": 130.4,
+  "description": "Warm romantic 130 s two-character opening built from 42 approved keyframes plus run/walk in-betweens; hard cuts with one closing crossfade, 2D crop moves, procedural golden dust-mote overlay, energy-gated Chinese viseme cels for the girl and the boy, and one SFX-gated meow cel for the cat.",
+  "frames": [
+    {
+      "at": 0.0,
+      "file": "keyframes/frame_00.png",
+      "shot": "morning_room_establishing",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 3.8,
+      "file": "keyframes/frame_01.png",
+      "shot": "cat_sleeping_sunny_windowsill",
+      "move": "drift_right",
+      "transition": "cut"
+    },
+    {
+      "at": 6.8,
+      "file": "keyframes/frame_02.png",
+      "shot": "girl_putting_on_shoes",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 9.4,
+      "file": "keyframes/frame_03.png",
+      "shot": "cat_seeing_off_on_mat",
+      "move": "push_in",
+      "eyeRig": "cat_frame03_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 12.6,
+      "file": "keyframes/frame_04.png",
+      "shot": "girl_crouch_petting_cat",
+      "move": "push_in",
+      "eyeRig": "girl_frame04_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 15.4,
+      "file": "keyframes/frame_05.png",
+      "shot": "girl_closeup_gentle_reminder",
+      "move": "push_in",
+      "mouthRig": "girl_frame05_entry4",
+      "eyeRig": "girl_frame05_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 18.9,
+      "file": "keyframes/frame_06.png",
+      "shot": "cat_purring_closeup",
+      "move": "push_in_strong",
+      "transition": "cut"
+    },
+    {
+      "at": 21.4,
+      "file": "keyframes/frame_07.png",
+      "shot": "girl_waving_goodbye_doorway",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 24.2,
+      "file": "keyframes/frame_08.png",
+      "shot": "cat_gazing_out_window",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 27.2,
+      "file": "keyframes/frame_09.png",
+      "shot": "cat_eyes_reflecting_sky",
+      "move": "push_in_strong",
+      "eyeRig": "cat_frame09_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 29.8,
+      "file": "keyframes/frame_10.png",
+      "shot": "dusk_homecoming_empty_room",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 34.2,
+      "file": "keyframes/frame_11.png",
+      "shot": "window_gap_cat_hair",
+      "move": "push_in_strong",
+      "transition": "cut"
+    },
+    {
+      "at": 38.2,
+      "file": "keyframes/frame_12.png",
+      "shot": "girl_hurrying_downstairs",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 40.2,
+      "file": "keyframes/frame_13.png",
+      "shot": "alley_tail_vanishing_corner",
+      "move": "push_in_strong",
+      "transition": "cut"
+    },
+    {
+      "at": 43.8,
+      "file": "keyframes/frame_14.png",
+      "shot": "girl_run_cycle_base_one",
+      "move": "drift_right_fast",
+      "transition": "cut"
+    },
+    {
+      "at": 44.175,
+      "file": "action_inbetweens/run_alt.png",
+      "shot": "girl_run_cycle_alt_one",
+      "move": "drift_right_fast",
+      "transition": "cut"
+    },
+    {
+      "at": 44.55,
+      "file": "keyframes/frame_14.png",
+      "shot": "girl_run_cycle_base_two",
+      "move": "drift_right_fast",
+      "transition": "cut"
+    },
+    {
+      "at": 44.925,
+      "file": "action_inbetweens/run_alt.png",
+      "shot": "girl_run_cycle_alt_two",
+      "move": "drift_right_fast",
+      "transition": "cut"
+    },
+    {
+      "at": 45.3,
+      "file": "keyframes/frame_14.png",
+      "shot": "girl_run_cycle_base_three",
+      "move": "drift_right_fast",
+      "transition": "cut"
+    },
+    {
+      "at": 45.675,
+      "file": "action_inbetweens/run_alt.png",
+      "shot": "girl_run_cycle_alt_three",
+      "move": "drift_right_fast",
+      "transition": "cut"
+    },
+    {
+      "at": 46.4,
+      "file": "keyframes/frame_15.png",
+      "shot": "cat_wall_walk_base_one",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 46.775,
+      "file": "action_inbetweens/catwalk_alt.png",
+      "shot": "cat_wall_walk_alt_one",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 47.15,
+      "file": "keyframes/frame_15.png",
+      "shot": "cat_wall_walk_base_two",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 47.525,
+      "file": "action_inbetweens/catwalk_alt.png",
+      "shot": "cat_wall_walk_alt_two",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 48.3,
+      "file": "keyframes/frame_15.png",
+      "shot": "cat_wall_walk_base_three",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 49.0,
+      "file": "keyframes/frame_16.png",
+      "shot": "girl_catching_breath",
+      "move": "push_in",
+      "mouthRig": "girl_frame16_entry14",
+      "eyeRig": "girl_frame16_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 53.6,
+      "file": "keyframes/frame_17.png",
+      "shot": "cat_looking_back_on_wall",
+      "move": "pull_out",
+      "eyeRig": "cat_frame17_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 57.8,
+      "file": "keyframes/frame_18.png",
+      "shot": "alley_opens_to_riverside",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 61.2,
+      "file": "keyframes/frame_19.png",
+      "shot": "boy_sketching_from_behind",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 64.2,
+      "file": "keyframes/frame_20.png",
+      "shot": "cat_trotting_down_steps",
+      "move": "drift_right",
+      "eyeRig": "cat_frame20_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 66.2,
+      "file": "keyframes/frame_21.png",
+      "shot": "boy_side_face_petting_cat",
+      "move": "push_in",
+      "eyeRig": ["boy_frame21_blink", "cat_frame21_blink"],
+      "transition": "cut"
+    },
+    {
+      "at": 67.2,
+      "file": "action_inbetweens/nuzzle_pet_alt.png",
+      "shot": "cat_nuzzles_into_hand",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 68.4,
+      "file": "keyframes/frame_21.png",
+      "shot": "boy_side_face_petting_cat_return",
+      "move": "push_in",
+      "eyeRig": ["boy_frame21_blink", "cat_frame21_blink"],
+      "transition": "cut"
+    },
+    {
+      "at": 69.9,
+      "file": "keyframes/frame_22.png",
+      "shot": "boy_watching_cat_eat",
+      "move": "push_in",
+      "mouthRig": "boy_frame22_entry19",
+      "transition": "cut"
+    },
+    {
+      "at": 73.4,
+      "file": "keyframes/frame_23.png",
+      "shot": "girl_peeking_from_wall",
+      "move": "push_in",
+      "mouthRig": "girl_frame23_entry20",
+      "eyeRig": "girl_frame23_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 77.2,
+      "file": "keyframes/frame_24.png",
+      "shot": "sketchbook_full_of_cat_sketches",
+      "move": "push_in_strong",
+      "transition": "cut"
+    },
+    {
+      "at": 80.2,
+      "file": "keyframes/frame_25.png",
+      "shot": "cat_looks_back_meow_betrayal",
+      "move": "push_in_strong",
+      "mouthRig": "cat_frame25_meow",
+      "transition": "cut"
+    },
+    {
+      "at": 82.6,
+      "file": "keyframes/frame_26.png",
+      "shot": "girl_startled_behind_wall",
+      "move": "push_in",
+      "eyeRig": "girl_frame26_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 84.0,
+      "file": "keyframes/frame_27.png",
+      "shot": "boy_first_full_face_surprised",
+      "move": "push_in",
+      "mouthRig": "boy_frame27_entry23",
+      "eyeRig": "boy_frame27_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 87.8,
+      "file": "keyframes/frame_28.png",
+      "shot": "girl_flustered_waving_hands",
+      "move": "static",
+      "mouthRig": "girl_frame28_entry24",
+      "transition": "cut"
+    },
+    {
+      "at": 91.6,
+      "file": "keyframes/frame_29.png",
+      "shot": "boy_knowing_smile",
+      "move": "push_in",
+      "mouthRig": "boy_frame29_entry25",
+      "eyeRig": "boy_frame29_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 95.2,
+      "file": "keyframes/frame_30.png",
+      "shot": "two_shot_cat_between",
+      "move": "pull_out",
+      "transition": "cut"
+    },
+    {
+      "at": 98.2,
+      "file": "keyframes/frame_31.png",
+      "shot": "boy_offering_sketchbook",
+      "move": "push_in",
+      "mouthRig": "boy_frame31_entry26",
+      "transition": "cut"
+    },
+    {
+      "at": 102.2,
+      "file": "keyframes/frame_32.png",
+      "shot": "girl_delighted_at_sketchbook",
+      "move": "push_in_strong",
+      "mouthRig": "girl_frame32_entry27",
+      "eyeRig": "girl_frame32_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 105.4,
+      "file": "keyframes/frame_33.png",
+      "shot": "sketch_umbrella_girl_callback",
+      "move": "push_in_strong",
+      "transition": "cut"
+    },
+    {
+      "at": 108.2,
+      "file": "keyframes/frame_34.png",
+      "shot": "girl_looks_up_blushing",
+      "move": "push_in",
+      "mouthRig": "girl_frame34_entry28",
+      "transition": "cut"
+    },
+    {
+      "at": 110.4,
+      "file": "keyframes/frame_35.png",
+      "shot": "boy_looks_back_at_her",
+      "move": "push_in",
+      "eyeRig": "boy_frame35_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 111.6,
+      "file": "keyframes/frame_36.png",
+      "shot": "boy_sheepish_head_scratch",
+      "move": "push_in",
+      "mouthRig": "boy_frame36_entry29",
+      "eyeRig": "boy_frame36_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 115.8,
+      "file": "keyframes/frame_37.png",
+      "shot": "hands_touching_on_cat",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 118.6,
+      "file": "keyframes/frame_38.png",
+      "shot": "both_looking_away_shy",
+      "move": "pull_out",
+      "eyeRig": "boy_frame38_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 121.8,
+      "file": "keyframes/frame_39.png",
+      "shot": "girl_stands_holding_cat",
+      "move": "pull_out",
+      "mouthRig": "girl_frame39_entry32",
+      "eyeRig": "girl_frame39_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 124.8,
+      "file": "keyframes/frame_40.png",
+      "shot": "sunset_farewell_wide",
+      "move": "pull_out",
+      "transition": "cut"
+    },
+    {
+      "at": 128.0,
+      "file": "keyframes/frame_41.png",
+      "shot": "empty_steps_closing",
+      "move": "static",
+      "transition": "crossfade",
+      "transitionSeconds": 0.25
+    }
+  ]
+}

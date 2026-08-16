@@ -186,7 +186,11 @@
     "audio:tom_jerry_midnight_snack:force": "dula-audio ./episodes/tom_jerry_midnight_snack --provider=f5-tts --force",
     "verify:tom_jerry_midnight_snack": "dula-verify ./episodes/tom_jerry_midnight_snack",
     "render:tom_jerry_midnight_snack": "dula-render ./episodes/tom_jerry_midnight_snack",
-    "build:tom_jerry_midnight_snack": "npm run score:tom_jerry_midnight_snack && npm run verify:tom_jerry_midnight_snack && npm run audio:tom_jerry_midnight_snack:force && npm run verify:tom_jerry_midnight_snack && npm run render:tom_jerry_midnight_snack"
+    "build:tom_jerry_midnight_snack": "npm run score:tom_jerry_midnight_snack && npm run verify:tom_jerry_midnight_snack && npm run audio:tom_jerry_midnight_snack:force && npm run verify:tom_jerry_midnight_snack && npm run render:tom_jerry_midnight_snack",
+    "render:xiaoju_secret": "dula-render ./episodes/xiaoju_secret",
+    "verify:xiaoju_secret": "dula-verify ./episodes/xiaoju_secret",
+    "audio:xiaoju_secret": ".venv/Scripts/python.exe ./episodes/xiaoju_secret/tools/generate_audio_cosyvoice.py",
+    "build:xiaoju_secret": "npm run audio:xiaoju_secret && npm run render:xiaoju_secret"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
