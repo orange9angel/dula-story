@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "notes": "Blink rigs. The closed variant is feather-locked onto the base frame (tools/auto_lock_variants.py); only the rect region is copied during a blink. Interval is per-rig randomized by the scene's deterministic scheduler (full-name hash stagger). Rects calibrated by tools/build_rigs.py from PIL diff bboxes (threshold 30), expanded 14px.",
+  "rigs": {
+    "girl_frame01_blink": {
+      "rect": [
+        1113,
+        216,
+        65,
+        68
+      ],
+      "closed": "eye_variants/frame_01_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame03_blink": {
+      "rect": [
+        916,
+        139,
+        99,
+        75
+      ],
+      "closed": "eye_variants/frame_03_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame04_blink": {
+      "rect": [
+        946,
+        144,
+        85,
+        63
+      ],
+      "closed": "eye_variants/frame_04_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame06_blink": {
+      "rect": [
+        773,
+        222,
+        77,
+        83
+      ],
+      "closed": "eye_variants/frame_06_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame11_blink": {
+      "rect": [
+        757,
+        234,
+        90,
+        54
+      ],
+      "closed": "eye_variants/frame_11_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame14_blink": {
+      "rect": [
+        674,
+        144,
+        96,
+        71
+      ],
+      "closed": "eye_variants/frame_14_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame16_blink": {
+      "rect": [
+        923,
+        259,
+        129,
+        154
+      ],
+      "closed": "eye_variants/frame_16_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "cat_frame02_blink": {
+      "rect": [
+        872,
+        257,
+        176,
+        86
+      ],
+      "closed": "eye_variants/frame_02_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "cat_frame08_blink": {
+      "rect": [
+        482,
+        331,
+        116,
+        68
+      ],
+      "closed": "eye_variants/frame_08_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "cat_frame12_blink": {
+      "rect": [
+        977,
+        258,
+        150,
+        78
+      ],
+      "closed": "eye_variants/frame_12_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    }
+  }
+}

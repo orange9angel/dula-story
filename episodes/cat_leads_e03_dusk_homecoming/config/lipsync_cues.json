@@ -1,0 +1,5674 @@
+{
+  "version": 3,
+  "timebase": "seconds",
+  "signal": "post-trim-final-dialogue-stem",
+  "source": "assets/audio/_temp_dialogue.wav",
+  "visemeMethod": "energy-gated-text-viseme-v1",
+  "visemeStates": [
+    "closed",
+    "half",
+    "open"
+  ],
+  "cueFrameRate": 60,
+  "mouthFrameRate": 12,
+  "mixTrimSeconds": 0.2,
+  "entries": [
+    {
+      "index": 2,
+      "character": "Girl",
+      "dialogue": "太阳要下山了呢。",
+      "timelineStart": 3.2,
+      "timelineEnd": 4.2357,
+      "sourceDuration": 1.046667,
+      "sourceOffset": 0.011,
+      "effectiveDuration": 1.035667,
+      "alignment": "energy-gated-text-viseme-v1",
+      "syllables": [
+        "tai",
+        "yang",
+        "yao",
+        "xia",
+        "shan",
+        "le",
+        "ne"
+      ],
+      "audibleSegments": [
+        {
+          "start": 3.2,
+          "end": 4.2
+        }
+      ],
+      "energyCells": [
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "closed"
+      ],
+      "cells": [
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.1481,
+          "jawOpen": 0.2119,
+          "onset": 0.42,
+          "brightness": 0.8346
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.2361,
+          "jawOpen": 0.261,
+          "onset": 0.2436,
+          "brightness": 0.8346
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.3459,
+          "jawOpen": 0.364,
+          "onset": 0.2544,
+          "brightness": 0.8457
+        },
+        {
+          "t": 0.05,
+          "energy": 0.4682,
+          "jawOpen": 0.5104,
+          "onset": 0.4421,
+          "brightness": 0.5628
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.6096,
+          "jawOpen": 0.6499,
+          "onset": 0.4948,
+          "brightness": 0.3023
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.7123,
+          "jawOpen": 0.72,
+          "onset": 0.3594,
+          "brightness": 0.2576
+        },
+        {
+          "t": 0.1,
+          "energy": 0.7508,
+          "jawOpen": 0.7283,
+          "onset": 0.2084,
+          "brightness": 0.2018
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.7583,
+          "jawOpen": 0.7194,
+          "onset": 0.1209,
+          "brightness": 0.1385
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.8064,
+          "jawOpen": 0.7808,
+          "onset": 0.2165,
+          "brightness": 0.1497
+        },
+        {
+          "t": 0.15,
+          "energy": 0.8519,
+          "jawOpen": 0.8172,
+          "onset": 0.1858,
+          "brightness": 0.1534
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.8513,
+          "jawOpen": 0.8026,
+          "onset": 0.1078,
+          "brightness": 0.1646
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.8323,
+          "jawOpen": 0.777,
+          "onset": 0.0625,
+          "brightness": 0.1609
+        },
+        {
+          "t": 0.2,
+          "energy": 0.8085,
+          "jawOpen": 0.7503,
+          "onset": 0.0362,
+          "brightness": 0.0976
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.7821,
+          "jawOpen": 0.7233,
+          "onset": 0.021,
+          "brightness": 0.105
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.7756,
+          "jawOpen": 0.7363,
+          "onset": 0.1264,
+          "brightness": 0.1385
+        },
+        {
+          "t": 0.25,
+          "energy": 0.8053,
+          "jawOpen": 0.7791,
+          "onset": 0.2122,
+          "brightness": 0.1162
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.8097,
+          "jawOpen": 0.767,
+          "onset": 0.1231,
+          "brightness": 0.0715
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.7856,
+          "jawOpen": 0.7356,
+          "onset": 0.0714,
+          "brightness": 0.7973
+        },
+        {
+          "t": 0.3,
+          "energy": 0.7406,
+          "jawOpen": 0.6888,
+          "onset": 0.0414,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.7145,
+          "jawOpen": 0.676,
+          "onset": 0.1038,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.7087,
+          "jawOpen": 0.6697,
+          "onset": 0.0983,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.35,
+          "energy": 0.7801,
+          "jawOpen": 0.7915,
+          "onset": 0.4103,
+          "brightness": 0.9462
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.8738,
+          "jawOpen": 0.8786,
+          "onset": 0.4148,
+          "brightness": 0.1646
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.9276,
+          "jawOpen": 0.8967,
+          "onset": 0.2406,
+          "brightness": 0.1683
+        },
+        {
+          "t": 0.4,
+          "energy": 0.904,
+          "jawOpen": 0.8568,
+          "onset": 0.1395,
+          "brightness": 0.1497
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.8569,
+          "jawOpen": 0.8029,
+          "onset": 0.0809,
+          "brightness": 0.5517
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.8102,
+          "jawOpen": 0.7538,
+          "onset": 0.0469,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.45,
+          "energy": 0.7763,
+          "jawOpen": 0.7245,
+          "onset": 0.0574,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.7625,
+          "jawOpen": 0.7075,
+          "onset": 0.0333,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.8216,
+          "jawOpen": 0.8341,
+          "onset": 0.4344,
+          "brightness": 0.5145
+        },
+        {
+          "t": 0.5,
+          "energy": 0.8977,
+          "jawOpen": 0.8966,
+          "onset": 0.393,
+          "brightness": 0.1571
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.9413,
+          "jawOpen": 0.907,
+          "onset": 0.228,
+          "brightness": 0.1906
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.9359,
+          "jawOpen": 0.8848,
+          "onset": 0.1322,
+          "brightness": 0.1832
+        },
+        {
+          "t": 0.55,
+          "energy": 0.8996,
+          "jawOpen": 0.8414,
+          "onset": 0.0767,
+          "brightness": 0.0939
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.8516,
+          "jawOpen": 0.7915,
+          "onset": 0.0445,
+          "brightness": 0.0641
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.8134,
+          "jawOpen": 0.754,
+          "onset": 0.0317,
+          "brightness": 0.0417
+        },
+        {
+          "t": 0.6,
+          "energy": 0.7981,
+          "jawOpen": 0.7592,
+          "onset": 0.1382,
+          "brightness": 0.0752
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.8007,
+          "jawOpen": 0.7694,
+          "onset": 0.1825,
+          "brightness": 0.1236
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.8142,
+          "jawOpen": 0.7754,
+          "onset": 0.1464,
+          "brightness": 0.1385
+        },
+        {
+          "t": 0.65,
+          "energy": 0.7999,
+          "jawOpen": 0.7512,
+          "onset": 0.0849,
+          "brightness": 0.0752
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.7855,
+          "jawOpen": 0.7315,
+          "onset": 0.0492,
+          "brightness": 0.0157
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.7786,
+          "jawOpen": 0.7283,
+          "onset": 0.0662,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.7,
+          "energy": 0.7702,
+          "jawOpen": 0.7155,
+          "onset": 0.0384,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.7542,
+          "jawOpen": 0.6979,
+          "onset": 0.0223,
+          "brightness": 0.0306
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.7415,
+          "jawOpen": 0.6849,
+          "onset": 0.015,
+          "brightness": 0.1385
+        },
+        {
+          "t": 0.75,
+          "energy": 0.7438,
+          "jawOpen": 0.7013,
+          "onset": 0.0946,
+          "brightness": 0.2055
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.7419,
+          "jawOpen": 0.6924,
+          "onset": 0.0549,
+          "brightness": 0.1981
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.7241,
+          "jawOpen": 0.6719,
+          "onset": 0.0318,
+          "brightness": 0.213
+        },
+        {
+          "t": 0.8,
+          "energy": 0.6934,
+          "jawOpen": 0.6413,
+          "onset": 0.0185,
+          "brightness": 0.2167
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.6509,
+          "jawOpen": 0.6007,
+          "onset": 0.0107,
+          "brightness": 0.1757
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.5966,
+          "jawOpen": 0.55,
+          "onset": 0.0062,
+          "brightness": 0.146
+        },
+        {
+          "t": 0.85,
+          "energy": 0.5184,
+          "jawOpen": 0.4776,
+          "onset": 0.0036,
+          "brightness": 0.0901
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.4232,
+          "jawOpen": 0.3897,
+          "onset": 0.0021,
+          "brightness": 0.0269
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.3436,
+          "jawOpen": 0.3164,
+          "onset": 0.0012,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.9,
+          "energy": 0.279,
+          "jawOpen": 0.2568,
+          "onset": 0.0007,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.2265,
+          "jawOpen": 0.2085,
+          "onset": 0.0004,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.1839,
+          "jawOpen": 0.1693,
+          "onset": 0.0002,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.95,
+          "energy": 0.1493,
+          "jawOpen": 0.1374,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.1213,
+          "jawOpen": 0.1116,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.0984,
+          "jawOpen": 0.0906,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.0,
+          "energy": 0.0799,
+          "jawOpen": 0.0735,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.0649,
+          "jawOpen": 0.0597,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.0527,
+          "jawOpen": 0.0485,
+          "onset": 0.0,
+          "brightness": 0.0
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "character": "Girl",
+      "dialogue": "知道啦，这就回去。",
+      "timelineStart": 12.6,
+      "timelineEnd": 14.3825,
+      "sourceDuration": 1.792458,
+      "sourceOffset": 0.01,
+      "effectiveDuration": 1.782458,
+      "alignment": "energy-gated-text-viseme-v1",
+      "syllables": [
+        "zhi",
+        "dao",
+        "la",
+        "zhe",
+        "jiu",
+        "hui",
+        "qu"
+      ],
+      "audibleSegments": [
+        {
+          "start": 12.6,
+          "end": 13.2667
+        },
+        {
+          "start": 13.4333,
+          "end": 14.35
+        }
+      ],
+      "energyCells": [
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "closed",
+        "closed",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "closed"
+      ],
+      "cells": [
+        "half",
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "closed",
+        "closed",
+        "half",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.2043,
+          "jawOpen": 0.2635,
+          "onset": 0.42,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.3215,
+          "jawOpen": 0.3396,
+          "onset": 0.2436,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.4214,
+          "jawOpen": 0.4328,
+          "onset": 0.2508,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.05,
+          "energy": 0.4788,
+          "jawOpen": 0.4667,
+          "onset": 0.1456,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.4949,
+          "jawOpen": 0.4705,
+          "onset": 0.0844,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.5662,
+          "jawOpen": 0.5676,
+          "onset": 0.2594,
+          "brightness": 0.481
+        },
+        {
+          "t": 0.1,
+          "energy": 0.655,
+          "jawOpen": 0.6586,
+          "onset": 0.3109,
+          "brightness": 0.0752
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.6685,
+          "jawOpen": 0.6475,
+          "onset": 0.1803,
+          "brightness": 0.0715
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.6373,
+          "jawOpen": 0.6052,
+          "onset": 0.1046,
+          "brightness": 0.105
+        },
+        {
+          "t": 0.15,
+          "energy": 0.6642,
+          "jawOpen": 0.622,
+          "onset": 0.0607,
+          "brightness": 0.4102
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.7639,
+          "jawOpen": 0.7847,
+          "onset": 0.4552,
+          "brightness": 0.481
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.8645,
+          "jawOpen": 0.8691,
+          "onset": 0.4097,
+          "brightness": 0.1832
+        },
+        {
+          "t": 0.2,
+          "energy": 0.9223,
+          "jawOpen": 0.8913,
+          "onset": 0.2376,
+          "brightness": 0.2427
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.9554,
+          "jawOpen": 0.9038,
+          "onset": 0.1378,
+          "brightness": 0.2949
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.9744,
+          "jawOpen": 0.9108,
+          "onset": 0.0799,
+          "brightness": 0.2949
+        },
+        {
+          "t": 0.25,
+          "energy": 0.9853,
+          "jawOpen": 0.9148,
+          "onset": 0.0464,
+          "brightness": 0.2911
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.9916,
+          "jawOpen": 0.9171,
+          "onset": 0.0269,
+          "brightness": 0.2837
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.9826,
+          "jawOpen": 0.9068,
+          "onset": 0.0156,
+          "brightness": 0.2427
+        },
+        {
+          "t": 0.3,
+          "energy": 0.959,
+          "jawOpen": 0.8839,
+          "onset": 0.009,
+          "brightness": 0.1869
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.9191,
+          "jawOpen": 0.8466,
+          "onset": 0.0052,
+          "brightness": 0.1162
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.8873,
+          "jawOpen": 0.8175,
+          "onset": 0.0066,
+          "brightness": 0.1274
+        },
+        {
+          "t": 0.35,
+          "energy": 0.8824,
+          "jawOpen": 0.8412,
+          "onset": 0.1634,
+          "brightness": 0.1869
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.9111,
+          "jawOpen": 0.878,
+          "onset": 0.2209,
+          "brightness": 0.2465
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.9374,
+          "jawOpen": 0.8914,
+          "onset": 0.1611,
+          "brightness": 0.2725
+        },
+        {
+          "t": 0.4,
+          "energy": 0.9343,
+          "jawOpen": 0.8763,
+          "onset": 0.0935,
+          "brightness": 0.2874
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.9165,
+          "jawOpen": 0.8529,
+          "onset": 0.0542,
+          "brightness": 0.2911
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.8809,
+          "jawOpen": 0.8161,
+          "onset": 0.0314,
+          "brightness": 0.28
+        },
+        {
+          "t": 0.45,
+          "energy": 0.8394,
+          "jawOpen": 0.7755,
+          "onset": 0.0182,
+          "brightness": 0.2762
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.7969,
+          "jawOpen": 0.7351,
+          "onset": 0.0106,
+          "brightness": 0.2762
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.7449,
+          "jawOpen": 0.6864,
+          "onset": 0.0061,
+          "brightness": 0.2949
+        },
+        {
+          "t": 0.5,
+          "energy": 0.6826,
+          "jawOpen": 0.6286,
+          "onset": 0.0036,
+          "brightness": 0.3432
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.6002,
+          "jawOpen": 0.5526,
+          "onset": 0.0021,
+          "brightness": 0.3693
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.5273,
+          "jawOpen": 0.4853,
+          "onset": 0.0012,
+          "brightness": 0.4028
+        },
+        {
+          "t": 0.55,
+          "energy": 0.4594,
+          "jawOpen": 0.4228,
+          "onset": 0.0007,
+          "brightness": 0.4847
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.3941,
+          "jawOpen": 0.3627,
+          "onset": 0.0004,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.3327,
+          "jawOpen": 0.3061,
+          "onset": 0.0002,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.6,
+          "energy": 0.2756,
+          "jawOpen": 0.2536,
+          "onset": 0.0001,
+          "brightness": 0.5628
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.225,
+          "jawOpen": 0.207,
+          "onset": 0.0001,
+          "brightness": 0.347
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.1831,
+          "jawOpen": 0.1684,
+          "onset": 0.0,
+          "brightness": 0.0492
+        },
+        {
+          "t": 0.65,
+          "energy": 0.1486,
+          "jawOpen": 0.1367,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.1207,
+          "jawOpen": 0.111,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.098,
+          "jawOpen": 0.0901,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.7,
+          "energy": 0.0796,
+          "jawOpen": 0.0732,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.0646,
+          "jawOpen": 0.0594,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.0524,
+          "jawOpen": 0.0483,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.75,
+          "energy": 0.0426,
+          "jawOpen": 0.0392,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.0346,
+          "jawOpen": 0.0318,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.0282,
+          "jawOpen": 0.026,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.8,
+          "energy": 0.0408,
+          "jawOpen": 0.0376,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.102,
+          "jawOpen": 0.0942,
+          "onset": 0.0021,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.1749,
+          "jawOpen": 0.1873,
+          "onset": 0.1465,
+          "brightness": 0.6968
+        },
+        {
+          "t": 0.85,
+          "energy": 0.2909,
+          "jawOpen": 0.341,
+          "onset": 0.4076,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.4322,
+          "jawOpen": 0.4809,
+          "onset": 0.4627,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.5882,
+          "jawOpen": 0.6651,
+          "onset": 0.6884,
+          "brightness": 0.8085
+        },
+        {
+          "t": 0.9,
+          "energy": 0.7393,
+          "jawOpen": 0.7892,
+          "onset": 0.6058,
+          "brightness": 0.1497
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.8234,
+          "jawOpen": 0.8208,
+          "onset": 0.3513,
+          "brightness": 0.2651
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.8479,
+          "jawOpen": 0.8167,
+          "onset": 0.2038,
+          "brightness": 0.2874
+        },
+        {
+          "t": 0.95,
+          "energy": 0.8345,
+          "jawOpen": 0.789,
+          "onset": 0.1182,
+          "brightness": 0.1757
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.791,
+          "jawOpen": 0.7401,
+          "onset": 0.0685,
+          "brightness": 0.0939
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.7194,
+          "jawOpen": 0.669,
+          "onset": 0.0398,
+          "brightness": 0.9835
+        },
+        {
+          "t": 1.0,
+          "energy": 0.6916,
+          "jawOpen": 0.6782,
+          "onset": 0.2334,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.709,
+          "jawOpen": 0.752,
+          "onset": 0.5541,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.7359,
+          "jawOpen": 0.7451,
+          "onset": 0.3779,
+          "brightness": 0.347
+        },
+        {
+          "t": 1.05,
+          "energy": 0.7322,
+          "jawOpen": 0.713,
+          "onset": 0.2192,
+          "brightness": 0.0604
+        },
+        {
+          "t": 1.0667,
+          "energy": 0.7126,
+          "jawOpen": 0.6784,
+          "onset": 0.1271,
+          "brightness": 0.0827
+        },
+        {
+          "t": 1.0833,
+          "energy": 0.6915,
+          "jawOpen": 0.6495,
+          "onset": 0.0737,
+          "brightness": 0.0715
+        },
+        {
+          "t": 1.1,
+          "energy": 0.6478,
+          "jawOpen": 0.6036,
+          "onset": 0.0428,
+          "brightness": 0.3432
+        },
+        {
+          "t": 1.1167,
+          "energy": 0.5646,
+          "jawOpen": 0.5239,
+          "onset": 0.0248,
+          "brightness": 0.8346
+        },
+        {
+          "t": 1.1333,
+          "energy": 0.5082,
+          "jawOpen": 0.4701,
+          "onset": 0.0144,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.15,
+          "energy": 0.4819,
+          "jawOpen": 0.445,
+          "onset": 0.0094,
+          "brightness": 0.8085
+        },
+        {
+          "t": 1.1667,
+          "energy": 0.4899,
+          "jawOpen": 0.5273,
+          "onset": 0.4254,
+          "brightness": 0.4512
+        },
+        {
+          "t": 1.1833,
+          "energy": 0.5548,
+          "jawOpen": 0.5984,
+          "onset": 0.4892,
+          "brightness": 0.1348
+        },
+        {
+          "t": 1.2,
+          "energy": 0.6194,
+          "jawOpen": 0.6375,
+          "onset": 0.3757,
+          "brightness": 0.0492
+        },
+        {
+          "t": 1.2167,
+          "energy": 0.6351,
+          "jawOpen": 0.6236,
+          "onset": 0.2179,
+          "brightness": 0.0455
+        },
+        {
+          "t": 1.2333,
+          "energy": 0.6361,
+          "jawOpen": 0.608,
+          "onset": 0.1264,
+          "brightness": 0.0529
+        },
+        {
+          "t": 1.25,
+          "energy": 0.6553,
+          "jawOpen": 0.6272,
+          "onset": 0.1355,
+          "brightness": 0.0529
+        },
+        {
+          "t": 1.2667,
+          "energy": 0.6832,
+          "jawOpen": 0.6529,
+          "onset": 0.1354,
+          "brightness": 0.0455
+        },
+        {
+          "t": 1.2833,
+          "energy": 0.6754,
+          "jawOpen": 0.6355,
+          "onset": 0.0785,
+          "brightness": 0.1609
+        },
+        {
+          "t": 1.3,
+          "energy": 0.6148,
+          "jawOpen": 0.5739,
+          "onset": 0.0456,
+          "brightness": 0.8978
+        },
+        {
+          "t": 1.3167,
+          "energy": 0.5568,
+          "jawOpen": 0.517,
+          "onset": 0.0264,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.3333,
+          "energy": 0.5324,
+          "jawOpen": 0.5401,
+          "onset": 0.2794,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.35,
+          "energy": 0.5387,
+          "jawOpen": 0.5652,
+          "onset": 0.3867,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.3667,
+          "energy": 0.5689,
+          "jawOpen": 0.5798,
+          "onset": 0.3134,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.3833,
+          "energy": 0.5669,
+          "jawOpen": 0.5542,
+          "onset": 0.1818,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.4,
+          "energy": 0.549,
+          "jawOpen": 0.524,
+          "onset": 0.1054,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.4167,
+          "energy": 0.5434,
+          "jawOpen": 0.5131,
+          "onset": 0.0728,
+          "brightness": 0.8941
+        },
+        {
+          "t": 1.4333,
+          "energy": 0.5957,
+          "jawOpen": 0.6035,
+          "onset": 0.308,
+          "brightness": 0.0976
+        },
+        {
+          "t": 1.45,
+          "energy": 0.6746,
+          "jawOpen": 0.6822,
+          "onset": 0.3424,
+          "brightness": 0.0529
+        },
+        {
+          "t": 1.4667,
+          "energy": 0.7362,
+          "jawOpen": 0.7229,
+          "onset": 0.2534,
+          "brightness": 0.0901
+        },
+        {
+          "t": 1.4833,
+          "energy": 0.7304,
+          "jawOpen": 0.6984,
+          "onset": 0.147,
+          "brightness": 0.1087
+        },
+        {
+          "t": 1.5,
+          "energy": 0.7092,
+          "jawOpen": 0.6678,
+          "onset": 0.0852,
+          "brightness": 0.105
+        },
+        {
+          "t": 1.5167,
+          "energy": 0.6714,
+          "jawOpen": 0.6266,
+          "onset": 0.0494,
+          "brightness": 0.1125
+        },
+        {
+          "t": 1.5333,
+          "energy": 0.6157,
+          "jawOpen": 0.5716,
+          "onset": 0.0287,
+          "brightness": 0.1609
+        },
+        {
+          "t": 1.55,
+          "energy": 0.5504,
+          "jawOpen": 0.5094,
+          "onset": 0.0166,
+          "brightness": 0.2055
+        },
+        {
+          "t": 1.5667,
+          "energy": 0.4844,
+          "jawOpen": 0.4473,
+          "onset": 0.0096,
+          "brightness": 0.2949
+        },
+        {
+          "t": 1.5833,
+          "energy": 0.4245,
+          "jawOpen": 0.3915,
+          "onset": 0.0056,
+          "brightness": 0.4214
+        },
+        {
+          "t": 1.6,
+          "energy": 0.3687,
+          "jawOpen": 0.3398,
+          "onset": 0.0032,
+          "brightness": 0.574
+        },
+        {
+          "t": 1.6167,
+          "energy": 0.3124,
+          "jawOpen": 0.2877,
+          "onset": 0.0019,
+          "brightness": 0.3842
+        },
+        {
+          "t": 1.6333,
+          "energy": 0.2589,
+          "jawOpen": 0.2384,
+          "onset": 0.0011,
+          "brightness": 0.0715
+        },
+        {
+          "t": 1.65,
+          "energy": 0.2102,
+          "jawOpen": 0.1935,
+          "onset": 0.0006,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6667,
+          "energy": 0.1707,
+          "jawOpen": 0.1571,
+          "onset": 0.0004,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6833,
+          "energy": 0.1386,
+          "jawOpen": 0.1275,
+          "onset": 0.0002,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.7,
+          "energy": 0.1125,
+          "jawOpen": 0.1036,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.7167,
+          "energy": 0.0914,
+          "jawOpen": 0.0841,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.7333,
+          "energy": 0.0742,
+          "jawOpen": 0.0683,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.75,
+          "energy": 0.0602,
+          "jawOpen": 0.0554,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.7667,
+          "energy": 0.0489,
+          "jawOpen": 0.045,
+          "onset": 0.0,
+          "brightness": 0.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "character": "Girl",
+      "dialogue": "桥上能看好远的河啊。",
+      "timelineStart": 20.6,
+      "timelineEnd": 22.8602,
+      "sourceDuration": 2.274208,
+      "sourceOffset": 0.014,
+      "effectiveDuration": 2.260208,
+      "alignment": "energy-gated-text-viseme-v1",
+      "syllables": [
+        "qiao",
+        "shang",
+        "neng",
+        "kan",
+        "hao",
+        "yuan",
+        "de",
+        "he",
+        "a"
+      ],
+      "audibleSegments": [
+        {
+          "start": 20.6,
+          "end": 22.7667
+        }
+      ],
+      "energyCells": [
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "open",
+        "open",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "closed",
+        "closed"
+      ],
+      "cells": [
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "open",
+        "open",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "closed",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.1698,
+          "jawOpen": 0.2318,
+          "onset": 0.42,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.2717,
+          "jawOpen": 0.2938,
+          "onset": 0.2436,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.3792,
+          "jawOpen": 0.4066,
+          "onset": 0.3208,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.05,
+          "energy": 0.47,
+          "jawOpen": 0.4833,
+          "onset": 0.2832,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.4949,
+          "jawOpen": 0.4848,
+          "onset": 0.1642,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.5888,
+          "jawOpen": 0.599,
+          "onset": 0.3186,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.1,
+          "energy": 0.7287,
+          "jawOpen": 0.7652,
+          "onset": 0.5269,
+          "brightness": 0.3209
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.8443,
+          "jawOpen": 0.8531,
+          "onset": 0.4241,
+          "brightness": 0.213
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.9107,
+          "jawOpen": 0.8821,
+          "onset": 0.246,
+          "brightness": 0.2353
+        },
+        {
+          "t": 0.15,
+          "energy": 0.944,
+          "jawOpen": 0.8941,
+          "onset": 0.1427,
+          "brightness": 0.2353
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.9435,
+          "jawOpen": 0.8829,
+          "onset": 0.0827,
+          "brightness": 0.2018
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.9265,
+          "jawOpen": 0.861,
+          "onset": 0.048,
+          "brightness": 0.1609
+        },
+        {
+          "t": 0.2,
+          "energy": 0.8959,
+          "jawOpen": 0.8293,
+          "onset": 0.0278,
+          "brightness": 0.1087
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.8548,
+          "jawOpen": 0.7893,
+          "onset": 0.0161,
+          "brightness": 0.0417
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.7985,
+          "jawOpen": 0.7363,
+          "onset": 0.0094,
+          "brightness": 0.5331
+        },
+        {
+          "t": 0.25,
+          "energy": 0.7404,
+          "jawOpen": 0.6821,
+          "onset": 0.0054,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.7023,
+          "jawOpen": 0.6591,
+          "onset": 0.0722,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.6687,
+          "jawOpen": 0.6228,
+          "onset": 0.0419,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.3,
+          "energy": 0.6368,
+          "jawOpen": 0.5902,
+          "onset": 0.0243,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.6378,
+          "jawOpen": 0.629,
+          "onset": 0.2341,
+          "brightness": 0.7043
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.711,
+          "jawOpen": 0.7223,
+          "onset": 0.3788,
+          "brightness": 0.239
+        },
+        {
+          "t": 0.35,
+          "energy": 0.7726,
+          "jawOpen": 0.7622,
+          "onset": 0.2856,
+          "brightness": 0.2725
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.7932,
+          "jawOpen": 0.7595,
+          "onset": 0.1656,
+          "brightness": 0.2465
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.7799,
+          "jawOpen": 0.7348,
+          "onset": 0.0961,
+          "brightness": 0.1757
+        },
+        {
+          "t": 0.4,
+          "energy": 0.7488,
+          "jawOpen": 0.6989,
+          "onset": 0.0557,
+          "brightness": 0.0715
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.7103,
+          "jawOpen": 0.6593,
+          "onset": 0.0323,
+          "brightness": 0.0157
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.6774,
+          "jawOpen": 0.6266,
+          "onset": 0.0187,
+          "brightness": 0.0045
+        },
+        {
+          "t": 0.45,
+          "energy": 0.6478,
+          "jawOpen": 0.5979,
+          "onset": 0.0109,
+          "brightness": 0.0045
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.6381,
+          "jawOpen": 0.6078,
+          "onset": 0.1155,
+          "brightness": 0.0641
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.6376,
+          "jawOpen": 0.6087,
+          "onset": 0.1229,
+          "brightness": 0.1087
+        },
+        {
+          "t": 0.5,
+          "energy": 0.6339,
+          "jawOpen": 0.5961,
+          "onset": 0.0713,
+          "brightness": 0.1125
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.6093,
+          "jawOpen": 0.568,
+          "onset": 0.0414,
+          "brightness": 0.0641
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.5786,
+          "jawOpen": 0.5366,
+          "onset": 0.024,
+          "brightness": 0.0231
+        },
+        {
+          "t": 0.55,
+          "energy": 0.5505,
+          "jawOpen": 0.5089,
+          "onset": 0.0139,
+          "brightness": 0.0082
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.5149,
+          "jawOpen": 0.4752,
+          "onset": 0.0081,
+          "brightness": 0.0269
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.4612,
+          "jawOpen": 0.4251,
+          "onset": 0.0047,
+          "brightness": 0.2837
+        },
+        {
+          "t": 0.6,
+          "energy": 0.4063,
+          "jawOpen": 0.3742,
+          "onset": 0.0027,
+          "brightness": 0.7713
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.3742,
+          "jawOpen": 0.3917,
+          "onset": 0.2638,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.3607,
+          "jawOpen": 0.3837,
+          "onset": 0.2882,
+          "brightness": 0.7936
+        },
+        {
+          "t": 0.65,
+          "energy": 0.3796,
+          "jawOpen": 0.3834,
+          "onset": 0.1899,
+          "brightness": 0.7117
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.4583,
+          "jawOpen": 0.465,
+          "onset": 0.2407,
+          "brightness": 0.507
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.5719,
+          "jawOpen": 0.6268,
+          "onset": 0.5596,
+          "brightness": 0.347
+        },
+        {
+          "t": 0.7,
+          "energy": 0.7241,
+          "jawOpen": 0.7775,
+          "onset": 0.6184,
+          "brightness": 0.2986
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.8398,
+          "jawOpen": 0.8542,
+          "onset": 0.4534,
+          "brightness": 0.2688
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.8805,
+          "jawOpen": 0.8574,
+          "onset": 0.263,
+          "brightness": 0.2316
+        },
+        {
+          "t": 0.75,
+          "energy": 0.8698,
+          "jawOpen": 0.8277,
+          "onset": 0.1525,
+          "brightness": 0.2241
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.837,
+          "jawOpen": 0.786,
+          "onset": 0.0885,
+          "brightness": 0.2092
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.7833,
+          "jawOpen": 0.7298,
+          "onset": 0.0513,
+          "brightness": 0.2502
+        },
+        {
+          "t": 0.8,
+          "energy": 0.7104,
+          "jawOpen": 0.6589,
+          "onset": 0.0298,
+          "brightness": 0.3656
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.628,
+          "jawOpen": 0.5809,
+          "onset": 0.0173,
+          "brightness": 0.4921
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.5466,
+          "jawOpen": 0.5047,
+          "onset": 0.01,
+          "brightness": 0.6187
+        },
+        {
+          "t": 0.85,
+          "energy": 0.4777,
+          "jawOpen": 0.4405,
+          "onset": 0.0058,
+          "brightness": 0.6708
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.4204,
+          "jawOpen": 0.3874,
+          "onset": 0.0034,
+          "brightness": 0.7155
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.3742,
+          "jawOpen": 0.3449,
+          "onset": 0.0038,
+          "brightness": 0.6931
+        },
+        {
+          "t": 0.9,
+          "energy": 0.3593,
+          "jawOpen": 0.3309,
+          "onset": 0.0022,
+          "brightness": 0.7006
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.3812,
+          "jawOpen": 0.3743,
+          "onset": 0.131,
+          "brightness": 0.5331
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.4622,
+          "jawOpen": 0.5082,
+          "onset": 0.461,
+          "brightness": 0.2986
+        },
+        {
+          "t": 0.95,
+          "energy": 0.5774,
+          "jawOpen": 0.6322,
+          "onset": 0.5612,
+          "brightness": 0.1757
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.6836,
+          "jawOpen": 0.7117,
+          "onset": 0.46,
+          "brightness": 0.1646
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.7661,
+          "jawOpen": 0.7658,
+          "onset": 0.3391,
+          "brightness": 0.1646
+        },
+        {
+          "t": 1.0,
+          "energy": 0.8249,
+          "jawOpen": 0.8012,
+          "onset": 0.235,
+          "brightness": 0.1385
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.8582,
+          "jawOpen": 0.8141,
+          "onset": 0.1363,
+          "brightness": 0.1274
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.8653,
+          "jawOpen": 0.8103,
+          "onset": 0.079,
+          "brightness": 0.1385
+        },
+        {
+          "t": 1.05,
+          "energy": 0.8621,
+          "jawOpen": 0.8014,
+          "onset": 0.0458,
+          "brightness": 0.146
+        },
+        {
+          "t": 1.0667,
+          "energy": 0.8526,
+          "jawOpen": 0.7892,
+          "onset": 0.0266,
+          "brightness": 0.0939
+        },
+        {
+          "t": 1.0833,
+          "energy": 0.8363,
+          "jawOpen": 0.7721,
+          "onset": 0.0154,
+          "brightness": 0.0455
+        },
+        {
+          "t": 1.1,
+          "energy": 0.8084,
+          "jawOpen": 0.7453,
+          "onset": 0.0089,
+          "brightness": 0.0343
+        },
+        {
+          "t": 1.1167,
+          "energy": 0.7742,
+          "jawOpen": 0.7132,
+          "onset": 0.0052,
+          "brightness": 0.0343
+        },
+        {
+          "t": 1.1333,
+          "energy": 0.7767,
+          "jawOpen": 0.7389,
+          "onset": 0.1352,
+          "brightness": 0.0306
+        },
+        {
+          "t": 1.15,
+          "energy": 0.8719,
+          "jawOpen": 0.8884,
+          "onset": 0.4792,
+          "brightness": 0.0269
+        },
+        {
+          "t": 1.1667,
+          "energy": 0.9265,
+          "jawOpen": 0.9024,
+          "onset": 0.2779,
+          "brightness": 0.0269
+        },
+        {
+          "t": 1.1833,
+          "energy": 0.9578,
+          "jawOpen": 0.9102,
+          "onset": 0.1612,
+          "brightness": 0.0752
+        },
+        {
+          "t": 1.2,
+          "energy": 0.9758,
+          "jawOpen": 0.9146,
+          "onset": 0.0935,
+          "brightness": 0.1236
+        },
+        {
+          "t": 1.2167,
+          "energy": 0.9861,
+          "jawOpen": 0.917,
+          "onset": 0.0542,
+          "brightness": 0.1646
+        },
+        {
+          "t": 1.2333,
+          "energy": 0.9595,
+          "jawOpen": 0.8884,
+          "onset": 0.0315,
+          "brightness": 0.1981
+        },
+        {
+          "t": 1.25,
+          "energy": 0.8932,
+          "jawOpen": 0.8251,
+          "onset": 0.0182,
+          "brightness": 0.1274
+        },
+        {
+          "t": 1.2667,
+          "energy": 0.8046,
+          "jawOpen": 0.7421,
+          "onset": 0.0106,
+          "brightness": 0.0231
+        },
+        {
+          "t": 1.2833,
+          "energy": 0.7185,
+          "jawOpen": 0.6622,
+          "onset": 0.0061,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.3,
+          "energy": 0.6486,
+          "jawOpen": 0.5974,
+          "onset": 0.0036,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.3167,
+          "energy": 0.6112,
+          "jawOpen": 0.5985,
+          "onset": 0.2015,
+          "brightness": 0.0157
+        },
+        {
+          "t": 1.3333,
+          "energy": 0.6046,
+          "jawOpen": 0.611,
+          "onset": 0.3046,
+          "brightness": 0.0715
+        },
+        {
+          "t": 1.35,
+          "energy": 0.6004,
+          "jawOpen": 0.5858,
+          "onset": 0.1857,
+          "brightness": 0.1013
+        },
+        {
+          "t": 1.3667,
+          "energy": 0.5687,
+          "jawOpen": 0.5426,
+          "onset": 0.1077,
+          "brightness": 0.0976
+        },
+        {
+          "t": 1.3833,
+          "energy": 0.5074,
+          "jawOpen": 0.478,
+          "onset": 0.0625,
+          "brightness": 0.3209
+        },
+        {
+          "t": 1.4,
+          "energy": 0.4252,
+          "jawOpen": 0.3977,
+          "onset": 0.0362,
+          "brightness": 0.5815
+        },
+        {
+          "t": 1.4167,
+          "energy": 0.3599,
+          "jawOpen": 0.3368,
+          "onset": 0.0318,
+          "brightness": 0.6708
+        },
+        {
+          "t": 1.4333,
+          "energy": 0.2922,
+          "jawOpen": 0.2721,
+          "onset": 0.0185,
+          "brightness": 0.8271
+        },
+        {
+          "t": 1.45,
+          "energy": 0.2372,
+          "jawOpen": 0.2202,
+          "onset": 0.0107,
+          "brightness": 0.9537
+        },
+        {
+          "t": 1.4667,
+          "energy": 0.1926,
+          "jawOpen": 0.1783,
+          "onset": 0.0062,
+          "brightness": 0.9686
+        },
+        {
+          "t": 1.4833,
+          "energy": 0.1564,
+          "jawOpen": 0.1445,
+          "onset": 0.0036,
+          "brightness": 0.9053
+        },
+        {
+          "t": 1.5,
+          "energy": 0.127,
+          "jawOpen": 0.1172,
+          "onset": 0.0021,
+          "brightness": 0.7899
+        },
+        {
+          "t": 1.5167,
+          "energy": 0.1031,
+          "jawOpen": 0.0951,
+          "onset": 0.0012,
+          "brightness": 0.7117
+        },
+        {
+          "t": 1.5333,
+          "energy": 0.0966,
+          "jawOpen": 0.089,
+          "onset": 0.0007,
+          "brightness": 0.6336
+        },
+        {
+          "t": 1.55,
+          "energy": 0.1301,
+          "jawOpen": 0.1198,
+          "onset": 0.0004,
+          "brightness": 0.5926
+        },
+        {
+          "t": 1.5667,
+          "energy": 0.1789,
+          "jawOpen": 0.1961,
+          "onset": 0.1748,
+          "brightness": 0.373
+        },
+        {
+          "t": 1.5833,
+          "energy": 0.2479,
+          "jawOpen": 0.2954,
+          "onset": 0.3739,
+          "brightness": 0.1311
+        },
+        {
+          "t": 1.6,
+          "energy": 0.3284,
+          "jawOpen": 0.373,
+          "onset": 0.3936,
+          "brightness": 0.0194
+        },
+        {
+          "t": 1.6167,
+          "energy": 0.3969,
+          "jawOpen": 0.4197,
+          "onset": 0.303,
+          "brightness": 0.0306
+        },
+        {
+          "t": 1.6333,
+          "energy": 0.4528,
+          "jawOpen": 0.4582,
+          "onset": 0.2311,
+          "brightness": 0.0343
+        },
+        {
+          "t": 1.65,
+          "energy": 0.4923,
+          "jawOpen": 0.4815,
+          "onset": 0.159,
+          "brightness": 0.0939
+        },
+        {
+          "t": 1.6667,
+          "energy": 0.5293,
+          "jawOpen": 0.5122,
+          "onset": 0.1402,
+          "brightness": 0.1274
+        },
+        {
+          "t": 1.6833,
+          "energy": 0.5498,
+          "jawOpen": 0.5205,
+          "onset": 0.0813,
+          "brightness": 0.0939
+        },
+        {
+          "t": 1.7,
+          "energy": 0.5668,
+          "jawOpen": 0.5332,
+          "onset": 0.0648,
+          "brightness": 0.079
+        },
+        {
+          "t": 1.7167,
+          "energy": 0.5795,
+          "jawOpen": 0.5416,
+          "onset": 0.0471,
+          "brightness": 0.0901
+        },
+        {
+          "t": 1.7333,
+          "energy": 0.6142,
+          "jawOpen": 0.5865,
+          "onset": 0.1192,
+          "brightness": 0.0939
+        },
+        {
+          "t": 1.75,
+          "energy": 0.6607,
+          "jawOpen": 0.6363,
+          "onset": 0.1583,
+          "brightness": 0.1236
+        },
+        {
+          "t": 1.7667,
+          "energy": 0.7106,
+          "jawOpen": 0.6844,
+          "onset": 0.1698,
+          "brightness": 0.172
+        },
+        {
+          "t": 1.7833,
+          "energy": 0.7625,
+          "jawOpen": 0.7333,
+          "onset": 0.1764,
+          "brightness": 0.2204
+        },
+        {
+          "t": 1.8,
+          "energy": 0.8022,
+          "jawOpen": 0.7624,
+          "onset": 0.1353,
+          "brightness": 0.2427
+        },
+        {
+          "t": 1.8167,
+          "energy": 0.8249,
+          "jawOpen": 0.773,
+          "onset": 0.0785,
+          "brightness": 0.2576
+        },
+        {
+          "t": 1.8333,
+          "energy": 0.824,
+          "jawOpen": 0.7663,
+          "onset": 0.0455,
+          "brightness": 0.2465
+        },
+        {
+          "t": 1.85,
+          "energy": 0.8173,
+          "jawOpen": 0.7566,
+          "onset": 0.0264,
+          "brightness": 0.2204
+        },
+        {
+          "t": 1.8667,
+          "energy": 0.8082,
+          "jawOpen": 0.7463,
+          "onset": 0.0153,
+          "brightness": 0.213
+        },
+        {
+          "t": 1.8833,
+          "energy": 0.8017,
+          "jawOpen": 0.7404,
+          "onset": 0.0156,
+          "brightness": 0.2465
+        },
+        {
+          "t": 1.9,
+          "energy": 0.7919,
+          "jawOpen": 0.7302,
+          "onset": 0.0091,
+          "brightness": 0.2688
+        },
+        {
+          "t": 1.9167,
+          "energy": 0.7725,
+          "jawOpen": 0.7116,
+          "onset": 0.0053,
+          "brightness": 0.3097
+        },
+        {
+          "t": 1.9333,
+          "energy": 0.7419,
+          "jawOpen": 0.6831,
+          "onset": 0.0031,
+          "brightness": 0.3432
+        },
+        {
+          "t": 1.95,
+          "energy": 0.7026,
+          "jawOpen": 0.6467,
+          "onset": 0.0018,
+          "brightness": 0.3097
+        },
+        {
+          "t": 1.9667,
+          "energy": 0.6533,
+          "jawOpen": 0.6012,
+          "onset": 0.001,
+          "brightness": 0.2688
+        },
+        {
+          "t": 1.9833,
+          "energy": 0.5976,
+          "jawOpen": 0.5499,
+          "onset": 0.0006,
+          "brightness": 0.2316
+        },
+        {
+          "t": 2.0,
+          "energy": 0.5272,
+          "jawOpen": 0.4851,
+          "onset": 0.0003,
+          "brightness": 0.2167
+        },
+        {
+          "t": 2.0167,
+          "energy": 0.4371,
+          "jawOpen": 0.4021,
+          "onset": 0.0002,
+          "brightness": 0.2353
+        },
+        {
+          "t": 2.0333,
+          "energy": 0.3549,
+          "jawOpen": 0.3265,
+          "onset": 0.0001,
+          "brightness": 0.2762
+        },
+        {
+          "t": 2.05,
+          "energy": 0.2881,
+          "jawOpen": 0.2651,
+          "onset": 0.0001,
+          "brightness": 0.2874
+        },
+        {
+          "t": 2.0667,
+          "energy": 0.2339,
+          "jawOpen": 0.2152,
+          "onset": 0.0,
+          "brightness": 0.1683
+        },
+        {
+          "t": 2.0833,
+          "energy": 0.1899,
+          "jawOpen": 0.1748,
+          "onset": 0.0,
+          "brightness": 0.012
+        },
+        {
+          "t": 2.1,
+          "energy": 0.1542,
+          "jawOpen": 0.1419,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.1167,
+          "energy": 0.1252,
+          "jawOpen": 0.1152,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.1333,
+          "energy": 0.1017,
+          "jawOpen": 0.0935,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.15,
+          "energy": 0.0826,
+          "jawOpen": 0.0759,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.1667,
+          "energy": 0.067,
+          "jawOpen": 0.0617,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.1833,
+          "energy": 0.0544,
+          "jawOpen": 0.0501,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.2,
+          "energy": 0.0442,
+          "jawOpen": 0.0407,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.2167,
+          "energy": 0.0359,
+          "jawOpen": 0.033,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.2333,
+          "energy": 0.0291,
+          "jawOpen": 0.0268,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 2.25,
+          "energy": 0.0,
+          "jawOpen": 0.0,
+          "onset": 0.0,
+          "brightness": 0.0
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "character": "Girl",
+      "dialogue": "白天没注意这条路呢。",
+      "timelineStart": 37.6,
+      "timelineEnd": 39.2335,
+      "sourceDuration": 1.643458,
+      "sourceOffset": 0.01,
+      "effectiveDuration": 1.633458,
+      "alignment": "energy-gated-text-viseme-v1",
+      "syllables": [
+        "bai",
+        "tian",
+        "mei",
+        "zhu",
+        "yi",
+        "zhe",
+        "tiao",
+        "lu",
+        "ne"
+      ],
+      "audibleSegments": [
+        {
+          "start": 37.6,
+          "end": 39.1
+        }
+      ],
+      "energyCells": [
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "closed",
+        "closed"
+      ],
+      "cells": [
+        "closed",
+        "open",
+        "open",
+        "open",
+        "closed",
+        "open",
+        "half",
+        "half",
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "half",
+        "closed",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.4262,
+          "jawOpen": 0.4677,
+          "onset": 0.42,
+          "brightness": 0.2911
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.6708,
+          "jawOpen": 0.661,
+          "onset": 0.2436,
+          "brightness": 0.2911
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.8111,
+          "jawOpen": 0.7717,
+          "onset": 0.1413,
+          "brightness": 0.1906
+        },
+        {
+          "t": 0.05,
+          "energy": 0.8916,
+          "jawOpen": 0.8351,
+          "onset": 0.0819,
+          "brightness": 0.2204
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.9378,
+          "jawOpen": 0.8714,
+          "onset": 0.0475,
+          "brightness": 0.2241
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.963,
+          "jawOpen": 0.8909,
+          "onset": 0.0276,
+          "brightness": 0.2316
+        },
+        {
+          "t": 0.1,
+          "energy": 0.9431,
+          "jawOpen": 0.8705,
+          "onset": 0.016,
+          "brightness": 0.1869
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.9025,
+          "jawOpen": 0.8319,
+          "onset": 0.0093,
+          "brightness": 0.0976
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.8303,
+          "jawOpen": 0.7648,
+          "onset": 0.0054,
+          "brightness": 0.0752
+        },
+        {
+          "t": 0.15,
+          "energy": 0.6936,
+          "jawOpen": 0.6386,
+          "onset": 0.0031,
+          "brightness": 0.146
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.5906,
+          "jawOpen": 0.5681,
+          "onset": 0.137,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.5179,
+          "jawOpen": 0.5139,
+          "onset": 0.2079,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2,
+          "energy": 0.4902,
+          "jawOpen": 0.4923,
+          "onset": 0.23,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.5011,
+          "jawOpen": 0.4929,
+          "onset": 0.1772,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.5695,
+          "jawOpen": 0.618,
+          "onset": 0.5228,
+          "brightness": 0.8606
+        },
+        {
+          "t": 0.25,
+          "energy": 0.6712,
+          "jawOpen": 0.7099,
+          "onset": 0.5129,
+          "brightness": 0.2279
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.7558,
+          "jawOpen": 0.7647,
+          "onset": 0.3853,
+          "brightness": 0.1795
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.8193,
+          "jawOpen": 0.803,
+          "onset": 0.2736,
+          "brightness": 0.2465
+        },
+        {
+          "t": 0.3,
+          "energy": 0.8527,
+          "jawOpen": 0.813,
+          "onset": 0.1587,
+          "brightness": 0.1832
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.839,
+          "jawOpen": 0.7884,
+          "onset": 0.092,
+          "brightness": 0.0901
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.8044,
+          "jawOpen": 0.7497,
+          "onset": 0.0534,
+          "brightness": 0.012
+        },
+        {
+          "t": 0.35,
+          "energy": 0.78,
+          "jawOpen": 0.7282,
+          "onset": 0.0588,
+          "brightness": 0.012
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.7696,
+          "jawOpen": 0.727,
+          "onset": 0.1054,
+          "brightness": 0.0045
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.7969,
+          "jawOpen": 0.7722,
+          "onset": 0.2168,
+          "brightness": 0.0194
+        },
+        {
+          "t": 0.4,
+          "energy": 0.8473,
+          "jawOpen": 0.8231,
+          "onset": 0.242,
+          "brightness": 0.0604
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.8686,
+          "jawOpen": 0.8244,
+          "onset": 0.1404,
+          "brightness": 0.1199
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.8539,
+          "jawOpen": 0.8003,
+          "onset": 0.0814,
+          "brightness": 0.1199
+        },
+        {
+          "t": 0.45,
+          "energy": 0.8403,
+          "jawOpen": 0.7816,
+          "onset": 0.0472,
+          "brightness": 0.0827
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.8246,
+          "jawOpen": 0.7636,
+          "onset": 0.0274,
+          "brightness": 0.0194
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.7973,
+          "jawOpen": 0.7364,
+          "onset": 0.0159,
+          "brightness": 0.012
+        },
+        {
+          "t": 0.5,
+          "energy": 0.745,
+          "jawOpen": 0.6871,
+          "onset": 0.0092,
+          "brightness": 0.012
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.6729,
+          "jawOpen": 0.62,
+          "onset": 0.0053,
+          "brightness": 0.2614
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.6335,
+          "jawOpen": 0.659,
+          "onset": 0.4231,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.55,
+          "energy": 0.6315,
+          "jawOpen": 0.6542,
+          "onset": 0.407,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.7027,
+          "jawOpen": 0.7461,
+          "onset": 0.5532,
+          "brightness": 0.9425
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.7731,
+          "jawOpen": 0.7868,
+          "onset": 0.4197,
+          "brightness": 0.1162
+        },
+        {
+          "t": 0.6,
+          "energy": 0.8276,
+          "jawOpen": 0.8137,
+          "onset": 0.2907,
+          "brightness": 0.0045
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.8546,
+          "jawOpen": 0.8166,
+          "onset": 0.1686,
+          "brightness": 0.0045
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.8683,
+          "jawOpen": 0.8165,
+          "onset": 0.0978,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.65,
+          "energy": 0.8672,
+          "jawOpen": 0.808,
+          "onset": 0.0567,
+          "brightness": 0.0045
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.8547,
+          "jawOpen": 0.7922,
+          "onset": 0.0329,
+          "brightness": 0.0045
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.8282,
+          "jawOpen": 0.7654,
+          "onset": 0.0191,
+          "brightness": 0.038
+        },
+        {
+          "t": 0.7,
+          "energy": 0.7949,
+          "jawOpen": 0.7333,
+          "onset": 0.0111,
+          "brightness": 0.0752
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.7653,
+          "jawOpen": 0.7052,
+          "onset": 0.0064,
+          "brightness": 0.0343
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.7279,
+          "jawOpen": 0.6703,
+          "onset": 0.0037,
+          "brightness": 0.0492
+        },
+        {
+          "t": 0.75,
+          "energy": 0.6673,
+          "jawOpen": 0.6143,
+          "onset": 0.0022,
+          "brightness": 0.4735
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.6084,
+          "jawOpen": 0.5599,
+          "onset": 0.0013,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.5867,
+          "jawOpen": 0.5729,
+          "onset": 0.184,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.8,
+          "energy": 0.606,
+          "jawOpen": 0.6348,
+          "onset": 0.4294,
+          "brightness": 0.6745
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.6628,
+          "jawOpen": 0.6822,
+          "onset": 0.4023,
+          "brightness": 0.0641
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.6769,
+          "jawOpen": 0.6648,
+          "onset": 0.2333,
+          "brightness": 0.0194
+        },
+        {
+          "t": 0.85,
+          "energy": 0.6463,
+          "jawOpen": 0.619,
+          "onset": 0.1353,
+          "brightness": 0.1683
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.5613,
+          "jawOpen": 0.5305,
+          "onset": 0.0785,
+          "brightness": 0.9165
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.5132,
+          "jawOpen": 0.496,
+          "onset": 0.1324,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.9,
+          "energy": 0.4967,
+          "jawOpen": 0.5189,
+          "onset": 0.3442,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.5176,
+          "jawOpen": 0.5634,
+          "onset": 0.4844,
+          "brightness": 0.481
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.5863,
+          "jawOpen": 0.6242,
+          "onset": 0.4709,
+          "brightness": 0.146
+        },
+        {
+          "t": 0.95,
+          "energy": 0.6444,
+          "jawOpen": 0.6533,
+          "onset": 0.3357,
+          "brightness": 0.1795
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.7242,
+          "jawOpen": 0.7293,
+          "onset": 0.3502,
+          "brightness": 0.1534
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.7921,
+          "jawOpen": 0.7787,
+          "onset": 0.2775,
+          "brightness": 0.1236
+        },
+        {
+          "t": 1.0,
+          "energy": 0.8056,
+          "jawOpen": 0.7701,
+          "onset": 0.161,
+          "brightness": 0.079
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.7695,
+          "jawOpen": 0.7248,
+          "onset": 0.0934,
+          "brightness": 0.012
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.7285,
+          "jawOpen": 0.68,
+          "onset": 0.0541,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.05,
+          "energy": 0.716,
+          "jawOpen": 0.6927,
+          "onset": 0.1889,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.0667,
+          "energy": 0.7428,
+          "jawOpen": 0.7332,
+          "onset": 0.2768,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.0833,
+          "energy": 0.8016,
+          "jawOpen": 0.7925,
+          "onset": 0.3059,
+          "brightness": 0.0045
+        },
+        {
+          "t": 1.1,
+          "energy": 0.8491,
+          "jawOpen": 0.8215,
+          "onset": 0.2238,
+          "brightness": 0.0082
+        },
+        {
+          "t": 1.1167,
+          "energy": 0.8803,
+          "jawOpen": 0.8355,
+          "onset": 0.1426,
+          "brightness": 0.0008
+        },
+        {
+          "t": 1.1333,
+          "energy": 0.9,
+          "jawOpen": 0.8441,
+          "onset": 0.0891,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.15,
+          "energy": 0.9088,
+          "jawOpen": 0.8454,
+          "onset": 0.0517,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.1667,
+          "energy": 0.8987,
+          "jawOpen": 0.8322,
+          "onset": 0.03,
+          "brightness": 0.0157
+        },
+        {
+          "t": 1.1833,
+          "energy": 0.865,
+          "jawOpen": 0.7989,
+          "onset": 0.0174,
+          "brightness": 0.0082
+        },
+        {
+          "t": 1.2,
+          "energy": 0.8108,
+          "jawOpen": 0.7478,
+          "onset": 0.0101,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.2167,
+          "energy": 0.7582,
+          "jawOpen": 0.6986,
+          "onset": 0.0058,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.2333,
+          "energy": 0.7214,
+          "jawOpen": 0.6725,
+          "onset": 0.049,
+          "brightness": 0.0417
+        },
+        {
+          "t": 1.25,
+          "energy": 0.7052,
+          "jawOpen": 0.6725,
+          "onset": 0.1316,
+          "brightness": 0.1683
+        },
+        {
+          "t": 1.2667,
+          "energy": 0.6942,
+          "jawOpen": 0.6555,
+          "onset": 0.0932,
+          "brightness": 0.213
+        },
+        {
+          "t": 1.2833,
+          "energy": 0.6736,
+          "jawOpen": 0.6294,
+          "onset": 0.0541,
+          "brightness": 0.213
+        },
+        {
+          "t": 1.3,
+          "energy": 0.6402,
+          "jawOpen": 0.5946,
+          "onset": 0.0314,
+          "brightness": 0.1646
+        },
+        {
+          "t": 1.3167,
+          "energy": 0.5978,
+          "jawOpen": 0.5532,
+          "onset": 0.0182,
+          "brightness": 0.1162
+        },
+        {
+          "t": 1.3333,
+          "energy": 0.5499,
+          "jawOpen": 0.5078,
+          "onset": 0.0105,
+          "brightness": 0.1236
+        },
+        {
+          "t": 1.35,
+          "energy": 0.4934,
+          "jawOpen": 0.455,
+          "onset": 0.0061,
+          "brightness": 0.1757
+        },
+        {
+          "t": 1.3667,
+          "energy": 0.4296,
+          "jawOpen": 0.3958,
+          "onset": 0.0035,
+          "brightness": 0.2874
+        },
+        {
+          "t": 1.3833,
+          "energy": 0.3501,
+          "jawOpen": 0.3225,
+          "onset": 0.0021,
+          "brightness": 0.3619
+        },
+        {
+          "t": 1.4,
+          "energy": 0.2843,
+          "jawOpen": 0.2617,
+          "onset": 0.0012,
+          "brightness": 0.347
+        },
+        {
+          "t": 1.4167,
+          "energy": 0.2308,
+          "jawOpen": 0.2125,
+          "onset": 0.0007,
+          "brightness": 0.3023
+        },
+        {
+          "t": 1.4333,
+          "energy": 0.1874,
+          "jawOpen": 0.1725,
+          "onset": 0.0004,
+          "brightness": 0.2167
+        },
+        {
+          "t": 1.45,
+          "energy": 0.1522,
+          "jawOpen": 0.14,
+          "onset": 0.0002,
+          "brightness": 0.0566
+        },
+        {
+          "t": 1.4667,
+          "energy": 0.1235,
+          "jawOpen": 0.1137,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.4833,
+          "energy": 0.1003,
+          "jawOpen": 0.0923,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.5,
+          "energy": 0.0814,
+          "jawOpen": 0.0749,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.5167,
+          "energy": 0.0661,
+          "jawOpen": 0.0608,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.5333,
+          "energy": 0.0537,
+          "jawOpen": 0.0494,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.55,
+          "energy": 0.0436,
+          "jawOpen": 0.0401,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.5667,
+          "energy": 0.0354,
+          "jawOpen": 0.0326,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.5833,
+          "energy": 0.0287,
+          "jawOpen": 0.0264,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6,
+          "energy": 0.0,
+          "jawOpen": 0.0,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6167,
+          "energy": 0.0,
+          "jawOpen": 0.0,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6333,
+          "energy": 0.0,
+          "jawOpen": 0.0,
+          "onset": 0.0,
+          "brightness": 0.0
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "character": "Girl",
+      "dialogue": "明天，还要带我去哪里呀？",
+      "timelineStart": 50.3,
+      "timelineEnd": 52.003,
+      "sourceDuration": 1.713042,
+      "sourceOffset": 0.01,
+      "effectiveDuration": 1.703042,
+      "alignment": "energy-gated-text-viseme-v1",
+      "syllables": [
+        "ming",
+        "tian",
+        "hai",
+        "yao",
+        "dai",
+        "wo",
+        "qu",
+        "na",
+        "li",
+        "ya"
+      ],
+      "audibleSegments": [
+        {
+          "start": 50.3,
+          "end": 51.9667
+        }
+      ],
+      "energyCells": [
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "closed"
+      ],
+      "cells": [
+        "closed",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.0857,
+          "jawOpen": 0.1306,
+          "onset": 0.2872,
+          "brightness": 0.0566
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.1553,
+          "jawOpen": 0.1728,
+          "onset": 0.1666,
+          "brightness": 0.0566
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.2278,
+          "jawOpen": 0.2573,
+          "onset": 0.265,
+          "brightness": 0.0306
+        },
+        {
+          "t": 0.05,
+          "energy": 0.3085,
+          "jawOpen": 0.3367,
+          "onset": 0.2938,
+          "brightness": 0.0678
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.3674,
+          "jawOpen": 0.3763,
+          "onset": 0.2126,
+          "brightness": 0.0976
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.3938,
+          "jawOpen": 0.3845,
+          "onset": 0.1233,
+          "brightness": 0.0641
+        },
+        {
+          "t": 0.1,
+          "energy": 0.3939,
+          "jawOpen": 0.3752,
+          "onset": 0.0715,
+          "brightness": 0.0194
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.3872,
+          "jawOpen": 0.3637,
+          "onset": 0.0415,
+          "brightness": 0.0008
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.3758,
+          "jawOpen": 0.35,
+          "onset": 0.0241,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.15,
+          "energy": 0.3615,
+          "jawOpen": 0.3351,
+          "onset": 0.014,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.342,
+          "jawOpen": 0.3161,
+          "onset": 0.0081,
+          "brightness": 0.0
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.3041,
+          "jawOpen": 0.2806,
+          "onset": 0.0047,
+          "brightness": 0.1385
+        },
+        {
+          "t": 0.2,
+          "energy": 0.2469,
+          "jawOpen": 0.2277,
+          "onset": 0.0027,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.216,
+          "jawOpen": 0.199,
+          "onset": 0.0016,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.2322,
+          "jawOpen": 0.2138,
+          "onset": 0.0009,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.25,
+          "energy": 0.284,
+          "jawOpen": 0.2992,
+          "onset": 0.2109,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.3667,
+          "jawOpen": 0.435,
+          "onset": 0.5423,
+          "brightness": 0.6745
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.4717,
+          "jawOpen": 0.5316,
+          "onset": 0.5423,
+          "brightness": 0.1087
+        },
+        {
+          "t": 0.3,
+          "energy": 0.5646,
+          "jawOpen": 0.5957,
+          "onset": 0.424,
+          "brightness": 0.0939
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.616,
+          "jawOpen": 0.611,
+          "onset": 0.2459,
+          "brightness": 0.1609
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.6226,
+          "jawOpen": 0.5984,
+          "onset": 0.1426,
+          "brightness": 0.146
+        },
+        {
+          "t": 0.35,
+          "energy": 0.6126,
+          "jawOpen": 0.5785,
+          "onset": 0.0827,
+          "brightness": 0.1013
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.5992,
+          "jawOpen": 0.5599,
+          "onset": 0.048,
+          "brightness": 0.0901
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.5823,
+          "jawOpen": 0.5407,
+          "onset": 0.0278,
+          "brightness": 0.1087
+        },
+        {
+          "t": 0.4,
+          "energy": 0.5654,
+          "jawOpen": 0.5231,
+          "onset": 0.0161,
+          "brightness": 0.1087
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.5512,
+          "jawOpen": 0.5088,
+          "onset": 0.0094,
+          "brightness": 0.172
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.5343,
+          "jawOpen": 0.4925,
+          "onset": 0.0054,
+          "brightness": 0.213
+        },
+        {
+          "t": 0.45,
+          "energy": 0.5004,
+          "jawOpen": 0.4609,
+          "onset": 0.0031,
+          "brightness": 0.2204
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.4359,
+          "jawOpen": 0.4014,
+          "onset": 0.0018,
+          "brightness": 0.3842
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.3702,
+          "jawOpen": 0.3408,
+          "onset": 0.0011,
+          "brightness": 0.5703
+        },
+        {
+          "t": 0.5,
+          "energy": 0.3232,
+          "jawOpen": 0.3132,
+          "onset": 0.0879,
+          "brightness": 0.7192
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.2915,
+          "jawOpen": 0.29,
+          "onset": 0.1213,
+          "brightness": 0.7862
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.2705,
+          "jawOpen": 0.268,
+          "onset": 0.1066,
+          "brightness": 0.7341
+        },
+        {
+          "t": 0.55,
+          "energy": 0.269,
+          "jawOpen": 0.2716,
+          "onset": 0.1337,
+          "brightness": 0.5926
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.3265,
+          "jawOpen": 0.3345,
+          "onset": 0.1897,
+          "brightness": 0.4586
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.427,
+          "jawOpen": 0.454,
+          "onset": 0.3395,
+          "brightness": 0.2874
+        },
+        {
+          "t": 0.6,
+          "energy": 0.5524,
+          "jawOpen": 0.6083,
+          "onset": 0.5564,
+          "brightness": 0.2241
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.6746,
+          "jawOpen": 0.7091,
+          "onset": 0.4913,
+          "brightness": 0.213
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.7283,
+          "jawOpen": 0.7213,
+          "onset": 0.285,
+          "brightness": 0.1869
+        },
+        {
+          "t": 0.65,
+          "energy": 0.7372,
+          "jawOpen": 0.708,
+          "onset": 0.1653,
+          "brightness": 0.1348
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.7161,
+          "jawOpen": 0.676,
+          "onset": 0.0959,
+          "brightness": 0.0715
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.6586,
+          "jawOpen": 0.6159,
+          "onset": 0.0556,
+          "brightness": 0.0752
+        },
+        {
+          "t": 0.7,
+          "energy": 0.6178,
+          "jawOpen": 0.5742,
+          "onset": 0.0322,
+          "brightness": 0.172
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.6173,
+          "jawOpen": 0.5713,
+          "onset": 0.0187,
+          "brightness": 0.4586
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.6903,
+          "jawOpen": 0.7126,
+          "onset": 0.4308,
+          "brightness": 0.4363
+        },
+        {
+          "t": 0.75,
+          "energy": 0.8223,
+          "jawOpen": 0.8558,
+          "onset": 0.5519,
+          "brightness": 0.239
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.898,
+          "jawOpen": 0.8838,
+          "onset": 0.3201,
+          "brightness": 0.1795
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.9415,
+          "jawOpen": 0.8996,
+          "onset": 0.1857,
+          "brightness": 0.1869
+        },
+        {
+          "t": 0.8,
+          "energy": 0.9664,
+          "jawOpen": 0.9085,
+          "onset": 0.1077,
+          "brightness": 0.1609
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.9807,
+          "jawOpen": 0.9135,
+          "onset": 0.0625,
+          "brightness": 0.1274
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.9704,
+          "jawOpen": 0.8993,
+          "onset": 0.0362,
+          "brightness": 0.1125
+        },
+        {
+          "t": 0.85,
+          "energy": 0.9285,
+          "jawOpen": 0.858,
+          "onset": 0.021,
+          "brightness": 0.105
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.8702,
+          "jawOpen": 0.8027,
+          "onset": 0.0122,
+          "brightness": 0.1125
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.8087,
+          "jawOpen": 0.7452,
+          "onset": 0.0071,
+          "brightness": 0.1236
+        },
+        {
+          "t": 0.9,
+          "energy": 0.7374,
+          "jawOpen": 0.6791,
+          "onset": 0.0041,
+          "brightness": 0.0976
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.6517,
+          "jawOpen": 0.6,
+          "onset": 0.0024,
+          "brightness": 0.6931
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.5832,
+          "jawOpen": 0.5368,
+          "onset": 0.0014,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.95,
+          "energy": 0.5429,
+          "jawOpen": 0.5294,
+          "onset": 0.1666,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.5095,
+          "jawOpen": 0.4861,
+          "onset": 0.0966,
+          "brightness": 1.0
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.4893,
+          "jawOpen": 0.4697,
+          "onset": 0.1089,
+          "brightness": 0.9574
+        },
+        {
+          "t": 1.0,
+          "energy": 0.4829,
+          "jawOpen": 0.4694,
+          "onset": 0.1393,
+          "brightness": 0.2614
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.4763,
+          "jawOpen": 0.4528,
+          "onset": 0.0808,
+          "brightness": 0.0306
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.4699,
+          "jawOpen": 0.4408,
+          "onset": 0.0469,
+          "brightness": 0.012
+        },
+        {
+          "t": 1.05,
+          "energy": 0.5322,
+          "jawOpen": 0.5328,
+          "onset": 0.2397,
+          "brightness": 0.0082
+        },
+        {
+          "t": 1.0667,
+          "energy": 0.642,
+          "jawOpen": 0.6801,
+          "onset": 0.4969,
+          "brightness": 0.0566
+        },
+        {
+          "t": 1.0833,
+          "energy": 0.7556,
+          "jawOpen": 0.7775,
+          "onset": 0.4578,
+          "brightness": 0.1757
+        },
+        {
+          "t": 1.1,
+          "energy": 0.805,
+          "jawOpen": 0.7884,
+          "onset": 0.2655,
+          "brightness": 0.2725
+        },
+        {
+          "t": 1.1167,
+          "energy": 0.7966,
+          "jawOpen": 0.7606,
+          "onset": 0.154,
+          "brightness": 0.3135
+        },
+        {
+          "t": 1.1333,
+          "energy": 0.7718,
+          "jawOpen": 0.7262,
+          "onset": 0.0893,
+          "brightness": 0.3097
+        },
+        {
+          "t": 1.15,
+          "energy": 0.7458,
+          "jawOpen": 0.6954,
+          "onset": 0.0518,
+          "brightness": 0.3284
+        },
+        {
+          "t": 1.1667,
+          "energy": 0.7373,
+          "jawOpen": 0.7011,
+          "onset": 0.1266,
+          "brightness": 0.3581
+        },
+        {
+          "t": 1.1833,
+          "energy": 0.7468,
+          "jawOpen": 0.7153,
+          "onset": 0.157,
+          "brightness": 0.3284
+        },
+        {
+          "t": 1.2,
+          "energy": 0.7433,
+          "jawOpen": 0.7003,
+          "onset": 0.0911,
+          "brightness": 0.213
+        },
+        {
+          "t": 1.2167,
+          "energy": 0.7336,
+          "jawOpen": 0.6844,
+          "onset": 0.0528,
+          "brightness": 0.0641
+        },
+        {
+          "t": 1.2333,
+          "energy": 0.7175,
+          "jawOpen": 0.6657,
+          "onset": 0.0306,
+          "brightness": 0.0231
+        },
+        {
+          "t": 1.25,
+          "energy": 0.7016,
+          "jawOpen": 0.6487,
+          "onset": 0.0178,
+          "brightness": 0.0566
+        },
+        {
+          "t": 1.2667,
+          "energy": 0.6901,
+          "jawOpen": 0.6386,
+          "onset": 0.0208,
+          "brightness": 0.0752
+        },
+        {
+          "t": 1.2833,
+          "energy": 0.6834,
+          "jawOpen": 0.6345,
+          "onset": 0.0322,
+          "brightness": 0.0901
+        },
+        {
+          "t": 1.3,
+          "energy": 0.6857,
+          "jawOpen": 0.643,
+          "onset": 0.0677,
+          "brightness": 0.079
+        },
+        {
+          "t": 1.3167,
+          "energy": 0.721,
+          "jawOpen": 0.6909,
+          "onset": 0.1532,
+          "brightness": 0.1571
+        },
+        {
+          "t": 1.3333,
+          "energy": 0.8106,
+          "jawOpen": 0.8035,
+          "onset": 0.3211,
+          "brightness": 0.1609
+        },
+        {
+          "t": 1.35,
+          "energy": 0.8913,
+          "jawOpen": 0.8712,
+          "onset": 0.2845,
+          "brightness": 0.1609
+        },
+        {
+          "t": 1.3667,
+          "energy": 0.9366,
+          "jawOpen": 0.8914,
+          "onset": 0.165,
+          "brightness": 0.1609
+        },
+        {
+          "t": 1.3833,
+          "energy": 0.9452,
+          "jawOpen": 0.8868,
+          "onset": 0.0957,
+          "brightness": 0.239
+        },
+        {
+          "t": 1.4,
+          "energy": 0.9619,
+          "jawOpen": 0.9021,
+          "onset": 0.0952,
+          "brightness": 0.2762
+        },
+        {
+          "t": 1.4167,
+          "energy": 0.9643,
+          "jawOpen": 0.8971,
+          "onset": 0.0552,
+          "brightness": 0.2874
+        },
+        {
+          "t": 1.4333,
+          "energy": 0.9346,
+          "jawOpen": 0.8656,
+          "onset": 0.032,
+          "brightness": 0.2353
+        },
+        {
+          "t": 1.45,
+          "energy": 0.8653,
+          "jawOpen": 0.7994,
+          "onset": 0.0186,
+          "brightness": 0.1795
+        },
+        {
+          "t": 1.4667,
+          "energy": 0.7731,
+          "jawOpen": 0.7132,
+          "onset": 0.0108,
+          "brightness": 0.1422
+        },
+        {
+          "t": 1.4833,
+          "energy": 0.6721,
+          "jawOpen": 0.6195,
+          "onset": 0.0063,
+          "brightness": 0.1274
+        },
+        {
+          "t": 1.5,
+          "energy": 0.5542,
+          "jawOpen": 0.5105,
+          "onset": 0.0036,
+          "brightness": 0.1795
+        },
+        {
+          "t": 1.5167,
+          "energy": 0.45,
+          "jawOpen": 0.4143,
+          "onset": 0.0021,
+          "brightness": 0.1981
+        },
+        {
+          "t": 1.5333,
+          "energy": 0.3653,
+          "jawOpen": 0.3363,
+          "onset": 0.0012,
+          "brightness": 0.1311
+        },
+        {
+          "t": 1.55,
+          "energy": 0.2966,
+          "jawOpen": 0.273,
+          "onset": 0.0007,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.5667,
+          "energy": 0.2408,
+          "jawOpen": 0.2217,
+          "onset": 0.0004,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.5833,
+          "energy": 0.1955,
+          "jawOpen": 0.1799,
+          "onset": 0.0002,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6,
+          "energy": 0.1588,
+          "jawOpen": 0.1461,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6167,
+          "energy": 0.1289,
+          "jawOpen": 0.1186,
+          "onset": 0.0001,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6333,
+          "energy": 0.1047,
+          "jawOpen": 0.0963,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.65,
+          "energy": 0.085,
+          "jawOpen": 0.0782,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6667,
+          "energy": 0.069,
+          "jawOpen": 0.0635,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.6833,
+          "energy": 0.056,
+          "jawOpen": 0.0515,
+          "onset": 0.0,
+          "brightness": 0.0
+        },
+        {
+          "t": 1.7,
+          "energy": 0.0455,
+          "jawOpen": 0.0419,
+          "onset": 0.0,
+          "brightness": 0.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "character": "Cat",
+      "dialogue": "",
+      "timelineStart": 6.6,
+      "timelineEnd": 7.824,
+      "sourceDuration": 1.224014,
+      "sourceOffset": 0.0,
+      "effectiveDuration": 1.224014,
+      "alignment": "energy-gated-sfx-v1",
+      "syllables": [
+        "miao"
+      ],
+      "audibleSegments": [
+        {
+          "start": 6.6,
+          "end": 7.7667
+        }
+      ],
+      "energyCells": [
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "cells": [
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.0,
+          "jawOpen": 0.0,
+          "onset": 0.0,
+          "brightness": 0.1035
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.0442,
+          "jawOpen": 0.0407,
+          "onset": 0.0,
+          "brightness": 0.1035
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.087,
+          "jawOpen": 0.08,
+          "onset": 0.0,
+          "brightness": 0.2534
+        },
+        {
+          "t": 0.05,
+          "energy": 0.1289,
+          "jawOpen": 0.1662,
+          "onset": 0.2646,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.1644,
+          "jawOpen": 0.1859,
+          "onset": 0.1921,
+          "brightness": 0.1684
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.2158,
+          "jawOpen": 0.2186,
+          "onset": 0.1114,
+          "brightness": 0.1562
+        },
+        {
+          "t": 0.1,
+          "energy": 0.2959,
+          "jawOpen": 0.2839,
+          "onset": 0.0646,
+          "brightness": 0.2129
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.4095,
+          "jawOpen": 0.4591,
+          "onset": 0.4575,
+          "brightness": 0.3831
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.5422,
+          "jawOpen": 0.6011,
+          "onset": 0.5679,
+          "brightness": 0.5371
+        },
+        {
+          "t": 0.15,
+          "energy": 0.6506,
+          "jawOpen": 0.6773,
+          "onset": 0.4374,
+          "brightness": 0.6464
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.7011,
+          "jawOpen": 0.6907,
+          "onset": 0.2537,
+          "brightness": 0.691
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.7076,
+          "jawOpen": 0.6774,
+          "onset": 0.1471,
+          "brightness": 0.7032
+        },
+        {
+          "t": 0.2,
+          "energy": 0.7504,
+          "jawOpen": 0.7294,
+          "onset": 0.2165,
+          "brightness": 0.6951
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.7799,
+          "jawOpen": 0.7431,
+          "onset": 0.1421,
+          "brightness": 0.6221
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.786,
+          "jawOpen": 0.7379,
+          "onset": 0.0824,
+          "brightness": 0.5695
+        },
+        {
+          "t": 0.25,
+          "energy": 0.7772,
+          "jawOpen": 0.7236,
+          "onset": 0.0478,
+          "brightness": 0.5371
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.7701,
+          "jawOpen": 0.7136,
+          "onset": 0.0281,
+          "brightness": 0.5411
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.7668,
+          "jawOpen": 0.7116,
+          "onset": 0.0344,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3,
+          "energy": 0.7764,
+          "jawOpen": 0.7274,
+          "onset": 0.0728,
+          "brightness": 0.5533
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.8047,
+          "jawOpen": 0.7616,
+          "onset": 0.1185,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.8358,
+          "jawOpen": 0.7902,
+          "onset": 0.1185,
+          "brightness": 0.5168
+        },
+        {
+          "t": 0.35,
+          "energy": 0.8481,
+          "jawOpen": 0.7926,
+          "onset": 0.0688,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.8467,
+          "jawOpen": 0.7862,
+          "onset": 0.0399,
+          "brightness": 0.5208
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.8787,
+          "jawOpen": 0.8334,
+          "onset": 0.1388,
+          "brightness": 0.5087
+        },
+        {
+          "t": 0.4,
+          "energy": 0.9304,
+          "jawOpen": 0.8906,
+          "onset": 0.1922,
+          "brightness": 0.4925
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.9601,
+          "jawOpen": 0.9033,
+          "onset": 0.1115,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.9771,
+          "jawOpen": 0.9106,
+          "onset": 0.0647,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.45,
+          "energy": 0.9869,
+          "jawOpen": 0.9147,
+          "onset": 0.0375,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.9802,
+          "jawOpen": 0.9057,
+          "onset": 0.0218,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.9565,
+          "jawOpen": 0.8823,
+          "onset": 0.0126,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5,
+          "energy": 0.9343,
+          "jawOpen": 0.8609,
+          "onset": 0.0073,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.9285,
+          "jawOpen": 0.8716,
+          "onset": 0.0967,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.9451,
+          "jawOpen": 0.896,
+          "onset": 0.1474,
+          "brightness": 0.4803
+        },
+        {
+          "t": 0.55,
+          "energy": 0.9654,
+          "jawOpen": 0.9101,
+          "onset": 0.1218,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.9702,
+          "jawOpen": 0.9053,
+          "onset": 0.0707,
+          "brightness": 0.4763
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.9599,
+          "jawOpen": 0.8905,
+          "onset": 0.041,
+          "brightness": 0.4115
+        },
+        {
+          "t": 0.6,
+          "energy": 0.9388,
+          "jawOpen": 0.868,
+          "onset": 0.0238,
+          "brightness": 0.375
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.9128,
+          "jawOpen": 0.8423,
+          "onset": 0.0138,
+          "brightness": 0.3345
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.8906,
+          "jawOpen": 0.8208,
+          "onset": 0.008,
+          "brightness": 0.298
+        },
+        {
+          "t": 0.65,
+          "energy": 0.875,
+          "jawOpen": 0.8091,
+          "onset": 0.0228,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.8648,
+          "jawOpen": 0.8015,
+          "onset": 0.0324,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.8515,
+          "jawOpen": 0.7867,
+          "onset": 0.0188,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.7,
+          "energy": 0.8293,
+          "jawOpen": 0.7649,
+          "onset": 0.0109,
+          "brightness": 0.2737
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.8049,
+          "jawOpen": 0.7417,
+          "onset": 0.0063,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.7872,
+          "jawOpen": 0.7276,
+          "onset": 0.0187,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.75,
+          "energy": 0.7675,
+          "jawOpen": 0.7081,
+          "onset": 0.0109,
+          "brightness": 0.2696
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.751,
+          "jawOpen": 0.6921,
+          "onset": 0.0063,
+          "brightness": 0.2656
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.733,
+          "jawOpen": 0.6751,
+          "onset": 0.0037,
+          "brightness": 0.2656
+        },
+        {
+          "t": 0.8,
+          "energy": 0.7106,
+          "jawOpen": 0.6541,
+          "onset": 0.0021,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.6874,
+          "jawOpen": 0.6327,
+          "onset": 0.0012,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.6689,
+          "jawOpen": 0.616,
+          "onset": 0.0032,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.85,
+          "energy": 0.6497,
+          "jawOpen": 0.598,
+          "onset": 0.0019,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.6271,
+          "jawOpen": 0.5771,
+          "onset": 0.0011,
+          "brightness": 0.2332
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.598,
+          "jawOpen": 0.5503,
+          "onset": 0.0006,
+          "brightness": 0.1805
+        },
+        {
+          "t": 0.9,
+          "energy": 0.5677,
+          "jawOpen": 0.5224,
+          "onset": 0.0004,
+          "brightness": 0.1765
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.5341,
+          "jawOpen": 0.4914,
+          "onset": 0.0002,
+          "brightness": 0.2089
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.4947,
+          "jawOpen": 0.4552,
+          "onset": 0.0001,
+          "brightness": 0.1805
+        },
+        {
+          "t": 0.95,
+          "energy": 0.4579,
+          "jawOpen": 0.4213,
+          "onset": 0.0001,
+          "brightness": 0.1562
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.4269,
+          "jawOpen": 0.3928,
+          "onset": 0.0,
+          "brightness": 0.1238
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.3942,
+          "jawOpen": 0.3626,
+          "onset": 0.0,
+          "brightness": 0.298
+        },
+        {
+          "t": 1.0,
+          "energy": 0.3567,
+          "jawOpen": 0.3282,
+          "onset": 0.0,
+          "brightness": 0.3061
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.3222,
+          "jawOpen": 0.2965,
+          "onset": 0.0,
+          "brightness": 0.5168
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.2771,
+          "jawOpen": 0.255,
+          "onset": 0.0,
+          "brightness": 0.533
+        },
+        {
+          "t": 1.05,
+          "energy": 0.2319,
+          "jawOpen": 0.2133,
+          "onset": 0.0,
+          "brightness": 0.5533
+        },
+        {
+          "t": 1.0667,
+          "energy": 0.1882,
+          "jawOpen": 0.1732,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.0833,
+          "energy": 0.1528,
+          "jawOpen": 0.1406,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.1,
+          "energy": 0.1244,
+          "jawOpen": 0.1144,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.1167,
+          "energy": 0.1013,
+          "jawOpen": 0.0932,
+          "onset": 0.0,
+          "brightness": 0.8004
+        },
+        {
+          "t": 1.1333,
+          "energy": 0.0827,
+          "jawOpen": 0.0767,
+          "onset": 0.0035,
+          "brightness": 0.2696
+        },
+        {
+          "t": 1.15,
+          "energy": 0.0672,
+          "jawOpen": 0.0622,
+          "onset": 0.002,
+          "brightness": 0.1481
+        },
+        {
+          "t": 1.1667,
+          "energy": 0.0545,
+          "jawOpen": 0.0504,
+          "onset": 0.0012,
+          "brightness": 0.1643
+        },
+        {
+          "t": 1.1833,
+          "energy": 0.0443,
+          "jawOpen": 0.0409,
+          "onset": 0.0007,
+          "brightness": 0.2737
+        },
+        {
+          "t": 1.2,
+          "energy": 0.036,
+          "jawOpen": 0.0331,
+          "onset": 0.0004,
+          "brightness": 0.3912
+        },
+        {
+          "t": 1.2167,
+          "energy": 0.0292,
+          "jawOpen": 0.0269,
+          "onset": 0.0002,
+          "brightness": 0.5686
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "character": "Cat",
+      "dialogue": "",
+      "timelineStart": 26.0,
+      "timelineEnd": 27.224,
+      "sourceDuration": 1.224014,
+      "sourceOffset": 0.0,
+      "effectiveDuration": 1.224014,
+      "alignment": "energy-gated-sfx-v1",
+      "syllables": [
+        "miao"
+      ],
+      "audibleSegments": [
+        {
+          "start": 26.0,
+          "end": 27.1667
+        }
+      ],
+      "energyCells": [
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "cells": [
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.0,
+          "jawOpen": 0.0,
+          "onset": 0.0,
+          "brightness": 0.1035
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.0442,
+          "jawOpen": 0.0407,
+          "onset": 0.0,
+          "brightness": 0.1035
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.087,
+          "jawOpen": 0.08,
+          "onset": 0.0,
+          "brightness": 0.2534
+        },
+        {
+          "t": 0.05,
+          "energy": 0.1289,
+          "jawOpen": 0.1662,
+          "onset": 0.2646,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.1644,
+          "jawOpen": 0.1859,
+          "onset": 0.1921,
+          "brightness": 0.1684
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.2158,
+          "jawOpen": 0.2186,
+          "onset": 0.1114,
+          "brightness": 0.1562
+        },
+        {
+          "t": 0.1,
+          "energy": 0.2959,
+          "jawOpen": 0.2839,
+          "onset": 0.0646,
+          "brightness": 0.2129
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.4095,
+          "jawOpen": 0.4591,
+          "onset": 0.4575,
+          "brightness": 0.3831
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.5422,
+          "jawOpen": 0.6011,
+          "onset": 0.5679,
+          "brightness": 0.5371
+        },
+        {
+          "t": 0.15,
+          "energy": 0.6506,
+          "jawOpen": 0.6773,
+          "onset": 0.4374,
+          "brightness": 0.6464
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.7011,
+          "jawOpen": 0.6907,
+          "onset": 0.2537,
+          "brightness": 0.691
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.7076,
+          "jawOpen": 0.6774,
+          "onset": 0.1471,
+          "brightness": 0.7032
+        },
+        {
+          "t": 0.2,
+          "energy": 0.7504,
+          "jawOpen": 0.7294,
+          "onset": 0.2165,
+          "brightness": 0.6951
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.7799,
+          "jawOpen": 0.7431,
+          "onset": 0.1421,
+          "brightness": 0.6221
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.786,
+          "jawOpen": 0.7379,
+          "onset": 0.0824,
+          "brightness": 0.5695
+        },
+        {
+          "t": 0.25,
+          "energy": 0.7772,
+          "jawOpen": 0.7236,
+          "onset": 0.0478,
+          "brightness": 0.5371
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.7701,
+          "jawOpen": 0.7136,
+          "onset": 0.0281,
+          "brightness": 0.5411
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.7668,
+          "jawOpen": 0.7116,
+          "onset": 0.0344,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3,
+          "energy": 0.7764,
+          "jawOpen": 0.7274,
+          "onset": 0.0728,
+          "brightness": 0.5533
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.8047,
+          "jawOpen": 0.7616,
+          "onset": 0.1185,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.8358,
+          "jawOpen": 0.7902,
+          "onset": 0.1185,
+          "brightness": 0.5168
+        },
+        {
+          "t": 0.35,
+          "energy": 0.8481,
+          "jawOpen": 0.7926,
+          "onset": 0.0688,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.8467,
+          "jawOpen": 0.7862,
+          "onset": 0.0399,
+          "brightness": 0.5208
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.8787,
+          "jawOpen": 0.8334,
+          "onset": 0.1388,
+          "brightness": 0.5087
+        },
+        {
+          "t": 0.4,
+          "energy": 0.9304,
+          "jawOpen": 0.8906,
+          "onset": 0.1922,
+          "brightness": 0.4925
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.9601,
+          "jawOpen": 0.9033,
+          "onset": 0.1115,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.9771,
+          "jawOpen": 0.9106,
+          "onset": 0.0647,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.45,
+          "energy": 0.9869,
+          "jawOpen": 0.9147,
+          "onset": 0.0375,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.9802,
+          "jawOpen": 0.9057,
+          "onset": 0.0218,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.9565,
+          "jawOpen": 0.8823,
+          "onset": 0.0126,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5,
+          "energy": 0.9343,
+          "jawOpen": 0.8609,
+          "onset": 0.0073,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.9285,
+          "jawOpen": 0.8716,
+          "onset": 0.0967,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.9451,
+          "jawOpen": 0.896,
+          "onset": 0.1474,
+          "brightness": 0.4803
+        },
+        {
+          "t": 0.55,
+          "energy": 0.9654,
+          "jawOpen": 0.9101,
+          "onset": 0.1218,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.9702,
+          "jawOpen": 0.9053,
+          "onset": 0.0707,
+          "brightness": 0.4763
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.9599,
+          "jawOpen": 0.8905,
+          "onset": 0.041,
+          "brightness": 0.4115
+        },
+        {
+          "t": 0.6,
+          "energy": 0.9388,
+          "jawOpen": 0.868,
+          "onset": 0.0238,
+          "brightness": 0.375
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.9128,
+          "jawOpen": 0.8423,
+          "onset": 0.0138,
+          "brightness": 0.3345
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.8906,
+          "jawOpen": 0.8208,
+          "onset": 0.008,
+          "brightness": 0.298
+        },
+        {
+          "t": 0.65,
+          "energy": 0.875,
+          "jawOpen": 0.8091,
+          "onset": 0.0228,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.8648,
+          "jawOpen": 0.8015,
+          "onset": 0.0324,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.8515,
+          "jawOpen": 0.7867,
+          "onset": 0.0188,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.7,
+          "energy": 0.8293,
+          "jawOpen": 0.7649,
+          "onset": 0.0109,
+          "brightness": 0.2737
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.8049,
+          "jawOpen": 0.7417,
+          "onset": 0.0063,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.7872,
+          "jawOpen": 0.7276,
+          "onset": 0.0187,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.75,
+          "energy": 0.7675,
+          "jawOpen": 0.7081,
+          "onset": 0.0109,
+          "brightness": 0.2696
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.751,
+          "jawOpen": 0.6921,
+          "onset": 0.0063,
+          "brightness": 0.2656
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.733,
+          "jawOpen": 0.6751,
+          "onset": 0.0037,
+          "brightness": 0.2656
+        },
+        {
+          "t": 0.8,
+          "energy": 0.7106,
+          "jawOpen": 0.6541,
+          "onset": 0.0021,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.6874,
+          "jawOpen": 0.6327,
+          "onset": 0.0012,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.6689,
+          "jawOpen": 0.616,
+          "onset": 0.0032,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.85,
+          "energy": 0.6497,
+          "jawOpen": 0.598,
+          "onset": 0.0019,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.6271,
+          "jawOpen": 0.5771,
+          "onset": 0.0011,
+          "brightness": 0.2332
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.598,
+          "jawOpen": 0.5503,
+          "onset": 0.0006,
+          "brightness": 0.1805
+        },
+        {
+          "t": 0.9,
+          "energy": 0.5677,
+          "jawOpen": 0.5224,
+          "onset": 0.0004,
+          "brightness": 0.1765
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.5341,
+          "jawOpen": 0.4914,
+          "onset": 0.0002,
+          "brightness": 0.2089
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.4947,
+          "jawOpen": 0.4552,
+          "onset": 0.0001,
+          "brightness": 0.1805
+        },
+        {
+          "t": 0.95,
+          "energy": 0.4579,
+          "jawOpen": 0.4213,
+          "onset": 0.0001,
+          "brightness": 0.1562
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.4269,
+          "jawOpen": 0.3928,
+          "onset": 0.0,
+          "brightness": 0.1238
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.3942,
+          "jawOpen": 0.3626,
+          "onset": 0.0,
+          "brightness": 0.298
+        },
+        {
+          "t": 1.0,
+          "energy": 0.3567,
+          "jawOpen": 0.3282,
+          "onset": 0.0,
+          "brightness": 0.3061
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.3222,
+          "jawOpen": 0.2965,
+          "onset": 0.0,
+          "brightness": 0.5168
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.2771,
+          "jawOpen": 0.255,
+          "onset": 0.0,
+          "brightness": 0.533
+        },
+        {
+          "t": 1.05,
+          "energy": 0.2319,
+          "jawOpen": 0.2133,
+          "onset": 0.0,
+          "brightness": 0.5533
+        },
+        {
+          "t": 1.0667,
+          "energy": 0.1882,
+          "jawOpen": 0.1732,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.0833,
+          "energy": 0.1528,
+          "jawOpen": 0.1406,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.1,
+          "energy": 0.1244,
+          "jawOpen": 0.1144,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.1167,
+          "energy": 0.1013,
+          "jawOpen": 0.0932,
+          "onset": 0.0,
+          "brightness": 0.8004
+        },
+        {
+          "t": 1.1333,
+          "energy": 0.0827,
+          "jawOpen": 0.0767,
+          "onset": 0.0035,
+          "brightness": 0.2696
+        },
+        {
+          "t": 1.15,
+          "energy": 0.0672,
+          "jawOpen": 0.0622,
+          "onset": 0.002,
+          "brightness": 0.1481
+        },
+        {
+          "t": 1.1667,
+          "energy": 0.0545,
+          "jawOpen": 0.0504,
+          "onset": 0.0012,
+          "brightness": 0.1643
+        },
+        {
+          "t": 1.1833,
+          "energy": 0.0443,
+          "jawOpen": 0.0409,
+          "onset": 0.0007,
+          "brightness": 0.2737
+        },
+        {
+          "t": 1.2,
+          "energy": 0.036,
+          "jawOpen": 0.0331,
+          "onset": 0.0004,
+          "brightness": 0.3912
+        },
+        {
+          "t": 1.2167,
+          "energy": 0.0292,
+          "jawOpen": 0.0269,
+          "onset": 0.0002,
+          "brightness": 0.5686
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "character": "Cat",
+      "dialogue": "",
+      "timelineStart": 40.6,
+      "timelineEnd": 41.824,
+      "sourceDuration": 1.224014,
+      "sourceOffset": 0.0,
+      "effectiveDuration": 1.224014,
+      "alignment": "energy-gated-sfx-v1",
+      "syllables": [
+        "miao"
+      ],
+      "audibleSegments": [
+        {
+          "start": 40.6,
+          "end": 41.7667
+        }
+      ],
+      "energyCells": [
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "cells": [
+        "half",
+        "half",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "open",
+        "half",
+        "half",
+        "half",
+        "closed"
+      ],
+      "frames": [
+        {
+          "t": 0.0,
+          "energy": 0.0,
+          "jawOpen": 0.0,
+          "onset": 0.0,
+          "brightness": 0.1035
+        },
+        {
+          "t": 0.0167,
+          "energy": 0.0442,
+          "jawOpen": 0.0407,
+          "onset": 0.0,
+          "brightness": 0.1035
+        },
+        {
+          "t": 0.0333,
+          "energy": 0.087,
+          "jawOpen": 0.08,
+          "onset": 0.0,
+          "brightness": 0.2534
+        },
+        {
+          "t": 0.05,
+          "energy": 0.1289,
+          "jawOpen": 0.1662,
+          "onset": 0.2646,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.0667,
+          "energy": 0.1644,
+          "jawOpen": 0.1859,
+          "onset": 0.1921,
+          "brightness": 0.1684
+        },
+        {
+          "t": 0.0833,
+          "energy": 0.2158,
+          "jawOpen": 0.2186,
+          "onset": 0.1114,
+          "brightness": 0.1562
+        },
+        {
+          "t": 0.1,
+          "energy": 0.2959,
+          "jawOpen": 0.2839,
+          "onset": 0.0646,
+          "brightness": 0.2129
+        },
+        {
+          "t": 0.1167,
+          "energy": 0.4095,
+          "jawOpen": 0.4591,
+          "onset": 0.4575,
+          "brightness": 0.3831
+        },
+        {
+          "t": 0.1333,
+          "energy": 0.5422,
+          "jawOpen": 0.6011,
+          "onset": 0.5679,
+          "brightness": 0.5371
+        },
+        {
+          "t": 0.15,
+          "energy": 0.6506,
+          "jawOpen": 0.6773,
+          "onset": 0.4374,
+          "brightness": 0.6464
+        },
+        {
+          "t": 0.1667,
+          "energy": 0.7011,
+          "jawOpen": 0.6907,
+          "onset": 0.2537,
+          "brightness": 0.691
+        },
+        {
+          "t": 0.1833,
+          "energy": 0.7076,
+          "jawOpen": 0.6774,
+          "onset": 0.1471,
+          "brightness": 0.7032
+        },
+        {
+          "t": 0.2,
+          "energy": 0.7504,
+          "jawOpen": 0.7294,
+          "onset": 0.2165,
+          "brightness": 0.6951
+        },
+        {
+          "t": 0.2167,
+          "energy": 0.7799,
+          "jawOpen": 0.7431,
+          "onset": 0.1421,
+          "brightness": 0.6221
+        },
+        {
+          "t": 0.2333,
+          "energy": 0.786,
+          "jawOpen": 0.7379,
+          "onset": 0.0824,
+          "brightness": 0.5695
+        },
+        {
+          "t": 0.25,
+          "energy": 0.7772,
+          "jawOpen": 0.7236,
+          "onset": 0.0478,
+          "brightness": 0.5371
+        },
+        {
+          "t": 0.2667,
+          "energy": 0.7701,
+          "jawOpen": 0.7136,
+          "onset": 0.0281,
+          "brightness": 0.5411
+        },
+        {
+          "t": 0.2833,
+          "energy": 0.7668,
+          "jawOpen": 0.7116,
+          "onset": 0.0344,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3,
+          "energy": 0.7764,
+          "jawOpen": 0.7274,
+          "onset": 0.0728,
+          "brightness": 0.5533
+        },
+        {
+          "t": 0.3167,
+          "energy": 0.8047,
+          "jawOpen": 0.7616,
+          "onset": 0.1185,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3333,
+          "energy": 0.8358,
+          "jawOpen": 0.7902,
+          "onset": 0.1185,
+          "brightness": 0.5168
+        },
+        {
+          "t": 0.35,
+          "energy": 0.8481,
+          "jawOpen": 0.7926,
+          "onset": 0.0688,
+          "brightness": 0.533
+        },
+        {
+          "t": 0.3667,
+          "energy": 0.8467,
+          "jawOpen": 0.7862,
+          "onset": 0.0399,
+          "brightness": 0.5208
+        },
+        {
+          "t": 0.3833,
+          "energy": 0.8787,
+          "jawOpen": 0.8334,
+          "onset": 0.1388,
+          "brightness": 0.5087
+        },
+        {
+          "t": 0.4,
+          "energy": 0.9304,
+          "jawOpen": 0.8906,
+          "onset": 0.1922,
+          "brightness": 0.4925
+        },
+        {
+          "t": 0.4167,
+          "energy": 0.9601,
+          "jawOpen": 0.9033,
+          "onset": 0.1115,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.4333,
+          "energy": 0.9771,
+          "jawOpen": 0.9106,
+          "onset": 0.0647,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.45,
+          "energy": 0.9869,
+          "jawOpen": 0.9147,
+          "onset": 0.0375,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.4667,
+          "energy": 0.9802,
+          "jawOpen": 0.9057,
+          "onset": 0.0218,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.4833,
+          "energy": 0.9565,
+          "jawOpen": 0.8823,
+          "onset": 0.0126,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5,
+          "energy": 0.9343,
+          "jawOpen": 0.8609,
+          "onset": 0.0073,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5167,
+          "energy": 0.9285,
+          "jawOpen": 0.8716,
+          "onset": 0.0967,
+          "brightness": 0.4844
+        },
+        {
+          "t": 0.5333,
+          "energy": 0.9451,
+          "jawOpen": 0.896,
+          "onset": 0.1474,
+          "brightness": 0.4803
+        },
+        {
+          "t": 0.55,
+          "energy": 0.9654,
+          "jawOpen": 0.9101,
+          "onset": 0.1218,
+          "brightness": 0.4884
+        },
+        {
+          "t": 0.5667,
+          "energy": 0.9702,
+          "jawOpen": 0.9053,
+          "onset": 0.0707,
+          "brightness": 0.4763
+        },
+        {
+          "t": 0.5833,
+          "energy": 0.9599,
+          "jawOpen": 0.8905,
+          "onset": 0.041,
+          "brightness": 0.4115
+        },
+        {
+          "t": 0.6,
+          "energy": 0.9388,
+          "jawOpen": 0.868,
+          "onset": 0.0238,
+          "brightness": 0.375
+        },
+        {
+          "t": 0.6167,
+          "energy": 0.9128,
+          "jawOpen": 0.8423,
+          "onset": 0.0138,
+          "brightness": 0.3345
+        },
+        {
+          "t": 0.6333,
+          "energy": 0.8906,
+          "jawOpen": 0.8208,
+          "onset": 0.008,
+          "brightness": 0.298
+        },
+        {
+          "t": 0.65,
+          "energy": 0.875,
+          "jawOpen": 0.8091,
+          "onset": 0.0228,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.6667,
+          "energy": 0.8648,
+          "jawOpen": 0.8015,
+          "onset": 0.0324,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.6833,
+          "energy": 0.8515,
+          "jawOpen": 0.7867,
+          "onset": 0.0188,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.7,
+          "energy": 0.8293,
+          "jawOpen": 0.7649,
+          "onset": 0.0109,
+          "brightness": 0.2737
+        },
+        {
+          "t": 0.7167,
+          "energy": 0.8049,
+          "jawOpen": 0.7417,
+          "onset": 0.0063,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.7333,
+          "energy": 0.7872,
+          "jawOpen": 0.7276,
+          "onset": 0.0187,
+          "brightness": 0.2778
+        },
+        {
+          "t": 0.75,
+          "energy": 0.7675,
+          "jawOpen": 0.7081,
+          "onset": 0.0109,
+          "brightness": 0.2696
+        },
+        {
+          "t": 0.7667,
+          "energy": 0.751,
+          "jawOpen": 0.6921,
+          "onset": 0.0063,
+          "brightness": 0.2656
+        },
+        {
+          "t": 0.7833,
+          "energy": 0.733,
+          "jawOpen": 0.6751,
+          "onset": 0.0037,
+          "brightness": 0.2656
+        },
+        {
+          "t": 0.8,
+          "energy": 0.7106,
+          "jawOpen": 0.6541,
+          "onset": 0.0021,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8167,
+          "energy": 0.6874,
+          "jawOpen": 0.6327,
+          "onset": 0.0012,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8333,
+          "energy": 0.6689,
+          "jawOpen": 0.616,
+          "onset": 0.0032,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.85,
+          "energy": 0.6497,
+          "jawOpen": 0.598,
+          "onset": 0.0019,
+          "brightness": 0.2615
+        },
+        {
+          "t": 0.8667,
+          "energy": 0.6271,
+          "jawOpen": 0.5771,
+          "onset": 0.0011,
+          "brightness": 0.2332
+        },
+        {
+          "t": 0.8833,
+          "energy": 0.598,
+          "jawOpen": 0.5503,
+          "onset": 0.0006,
+          "brightness": 0.1805
+        },
+        {
+          "t": 0.9,
+          "energy": 0.5677,
+          "jawOpen": 0.5224,
+          "onset": 0.0004,
+          "brightness": 0.1765
+        },
+        {
+          "t": 0.9167,
+          "energy": 0.5341,
+          "jawOpen": 0.4914,
+          "onset": 0.0002,
+          "brightness": 0.2089
+        },
+        {
+          "t": 0.9333,
+          "energy": 0.4947,
+          "jawOpen": 0.4552,
+          "onset": 0.0001,
+          "brightness": 0.1805
+        },
+        {
+          "t": 0.95,
+          "energy": 0.4579,
+          "jawOpen": 0.4213,
+          "onset": 0.0001,
+          "brightness": 0.1562
+        },
+        {
+          "t": 0.9667,
+          "energy": 0.4269,
+          "jawOpen": 0.3928,
+          "onset": 0.0,
+          "brightness": 0.1238
+        },
+        {
+          "t": 0.9833,
+          "energy": 0.3942,
+          "jawOpen": 0.3626,
+          "onset": 0.0,
+          "brightness": 0.298
+        },
+        {
+          "t": 1.0,
+          "energy": 0.3567,
+          "jawOpen": 0.3282,
+          "onset": 0.0,
+          "brightness": 0.3061
+        },
+        {
+          "t": 1.0167,
+          "energy": 0.3222,
+          "jawOpen": 0.2965,
+          "onset": 0.0,
+          "brightness": 0.5168
+        },
+        {
+          "t": 1.0333,
+          "energy": 0.2771,
+          "jawOpen": 0.255,
+          "onset": 0.0,
+          "brightness": 0.533
+        },
+        {
+          "t": 1.05,
+          "energy": 0.2319,
+          "jawOpen": 0.2133,
+          "onset": 0.0,
+          "brightness": 0.5533
+        },
+        {
+          "t": 1.0667,
+          "energy": 0.1882,
+          "jawOpen": 0.1732,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.0833,
+          "energy": 0.1528,
+          "jawOpen": 0.1406,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.1,
+          "energy": 0.1244,
+          "jawOpen": 0.1144,
+          "onset": 0.0,
+          "brightness": 1.0
+        },
+        {
+          "t": 1.1167,
+          "energy": 0.1013,
+          "jawOpen": 0.0932,
+          "onset": 0.0,
+          "brightness": 0.8004
+        },
+        {
+          "t": 1.1333,
+          "energy": 0.0827,
+          "jawOpen": 0.0767,
+          "onset": 0.0035,
+          "brightness": 0.2696
+        },
+        {
+          "t": 1.15,
+          "energy": 0.0672,
+          "jawOpen": 0.0622,
+          "onset": 0.002,
+          "brightness": 0.1481
+        },
+        {
+          "t": 1.1667,
+          "energy": 0.0545,
+          "jawOpen": 0.0504,
+          "onset": 0.0012,
+          "brightness": 0.1643
+        },
+        {
+          "t": 1.1833,
+          "energy": 0.0443,
+          "jawOpen": 0.0409,
+          "onset": 0.0007,
+          "brightness": 0.2737
+        },
+        {
+          "t": 1.2,
+          "energy": 0.036,
+          "jawOpen": 0.0331,
+          "onset": 0.0004,
+          "brightness": 0.3912
+        },
+        {
+          "t": 1.2167,
+          "energy": 0.0292,
+          "jawOpen": 0.0269,
+          "onset": 0.0002,
+          "brightness": 0.5686
+        }
+      ]
+    }
+  ]
+}

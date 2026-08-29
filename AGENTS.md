@@ -16,9 +16,12 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/xiaoju_secret/`**（《小橘的秘密》——130 秒温情浪漫开场，rainy_rooftop_cat 续篇：双角色 + 橘猫，42 关键帧 + 裁剪强制局部变体管线）
+**最新 Episode**：`episodes/cat_leads_e03_dusk_homecoming/`（《猫带我去的地方》E03《暮色归途》——60 秒黄昏治愈系，E02 同日傍晚归途；连续动作镜头升级 wan2.6-i2v **标准档**（¥0.6/s，跑步漂移解决，Seedance 未启用）；口型/眨眼变体全 codex 局部编辑零 fallback）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/cat_leads_e03_dusk_homecoming/` — 《暮色归途》（I2V 标准档验证集）
+- `episodes/cat_leads_e02_morning_riverbank/` — 《清晨河堤》（I2V 视频 cel 工艺首用）
+- `episodes/cat_leads_e01_sunny_store/` — 《晴天便利店》（晴印风格 60s 治愈系首集）
 - `episodes/xiaoju_secret/` — 《小橘的秘密》（温情浪漫，rainy_rooftop_cat 同工艺续篇）
 - `episodes/rainy_rooftop_cat/` — 《雨后天台》（31 秒单角色治愈系，2D 有限动画模板集）
 - `episodes/last_deposit/` — 90 年代声波机器人风格原创机甲剧集

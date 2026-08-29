@@ -1,0 +1,1207 @@
+{
+  "version": 3,
+  "duration": 60.0,
+  "description": "Dusk healing short (sunprint flat-color style, golden-hour variant) driven by 20 keyframes plus 2 action in-betweens, with the four continuous-action shots (cat bank run, girl bridge walk, cat dusk wall walk, girl lane walk) rendered as 2-3s wan2.6-i2v standard-tier image-to-video clips extracted to 12fps cel sequences played as static full-frame cels. Hard cuts; one crossfade at the seg2 lane transition and one closing crossfade. 2D crop moves, procedural flat-shape sunprint layers (cloud drift, river glint bands, door-lamp pool), energy-gated Chinese viseme cels for the girl's monologues, SFX-gated meow cels for the cat. Homecoming direction: all travel is screen-left.",
+  "frames": [
+    {
+      "at": 0.0,
+      "file": "keyframes/frame_00.png",
+      "shot": "riverbank_dusk_establishing",
+      "move": "push_in",
+      "dappleSway": {
+        "spots": [
+          [
+            900,
+            560,
+            180,
+            14
+          ],
+          [
+            1250,
+            625,
+            220,
+            16
+          ],
+          [
+            1500,
+            590,
+            160,
+            12
+          ]
+        ],
+        "period": [
+          2.2,
+          3.6
+        ],
+        "alpha": 0.4
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 3.0,
+      "file": "keyframes/frame_01.png",
+      "shot": "girl_sits_cat_rises",
+      "move": "push_in",
+      "mouthRig": "girl_frame01_entry2",
+      "eyeRig": "girl_frame01_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 6.0,
+      "file": "keyframes/frame_02.png",
+      "shot": "cat_lookback_closeup",
+      "move": "push_in",
+      "mouthRig": "cat_frame02_meow",
+      "eyeRig": "cat_frame02_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 8.0,
+      "file": "action_inbetweens/ib_01.png",
+      "shot": "girl_rises_inbetween",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 8.8,
+      "file": "keyframes/frame_03.png",
+      "shot": "girl_brushes_skirt",
+      "move": "push_in",
+      "eyeRig": "girl_frame03_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 10.5,
+      "file": "i2v/cat_run_bank/f_0001.png",
+      "shot": "cat_run_bank_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 10.5833,
+      "file": "i2v/cat_run_bank/f_0002.png",
+      "shot": "cat_run_bank_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 10.6667,
+      "file": "i2v/cat_run_bank/f_0003.png",
+      "shot": "cat_run_bank_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 10.75,
+      "file": "i2v/cat_run_bank/f_0004.png",
+      "shot": "cat_run_bank_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 10.8333,
+      "file": "i2v/cat_run_bank/f_0005.png",
+      "shot": "cat_run_bank_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 10.9167,
+      "file": "i2v/cat_run_bank/f_0006.png",
+      "shot": "cat_run_bank_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.0,
+      "file": "i2v/cat_run_bank/f_0007.png",
+      "shot": "cat_run_bank_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.0833,
+      "file": "i2v/cat_run_bank/f_0008.png",
+      "shot": "cat_run_bank_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.1667,
+      "file": "i2v/cat_run_bank/f_0009.png",
+      "shot": "cat_run_bank_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.25,
+      "file": "i2v/cat_run_bank/f_0010.png",
+      "shot": "cat_run_bank_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.3333,
+      "file": "i2v/cat_run_bank/f_0011.png",
+      "shot": "cat_run_bank_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.4167,
+      "file": "i2v/cat_run_bank/f_0012.png",
+      "shot": "cat_run_bank_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.5,
+      "file": "i2v/cat_run_bank/f_0013.png",
+      "shot": "cat_run_bank_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.5833,
+      "file": "i2v/cat_run_bank/f_0014.png",
+      "shot": "cat_run_bank_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.6667,
+      "file": "i2v/cat_run_bank/f_0015.png",
+      "shot": "cat_run_bank_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.75,
+      "file": "i2v/cat_run_bank/f_0016.png",
+      "shot": "cat_run_bank_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.8333,
+      "file": "i2v/cat_run_bank/f_0017.png",
+      "shot": "cat_run_bank_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.9167,
+      "file": "i2v/cat_run_bank/f_0018.png",
+      "shot": "cat_run_bank_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.0,
+      "file": "i2v/cat_run_bank/f_0019.png",
+      "shot": "cat_run_bank_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.0833,
+      "file": "i2v/cat_run_bank/f_0020.png",
+      "shot": "cat_run_bank_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.1667,
+      "file": "i2v/cat_run_bank/f_0021.png",
+      "shot": "cat_run_bank_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.25,
+      "file": "i2v/cat_run_bank/f_0022.png",
+      "shot": "cat_run_bank_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.3333,
+      "file": "i2v/cat_run_bank/f_0023.png",
+      "shot": "cat_run_bank_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.4167,
+      "file": "i2v/cat_run_bank/f_0024.png",
+      "shot": "cat_run_bank_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.5,
+      "file": "keyframes/frame_04.png",
+      "shot": "girl_follows_slope",
+      "move": "drift_left",
+      "mouthRig": "girl_frame04_entry5",
+      "eyeRig": "girl_frame04_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 15.0,
+      "file": "keyframes/frame_05.png",
+      "shot": "bridge_reveal_cat_waits",
+      "move": "push_in",
+      "cloudDrift": {
+        "clouds": [
+          [
+            1250,
+            150,
+            130,
+            44,
+            8
+          ],
+          [
+            500,
+            100,
+            90,
+            32,
+            6
+          ]
+        ]
+      },
+      "dappleSway": {
+        "spots": [
+          [
+            900,
+            560,
+            180,
+            14
+          ],
+          [
+            1250,
+            625,
+            220,
+            16
+          ],
+          [
+            1500,
+            590,
+            160,
+            12
+          ]
+        ],
+        "period": [
+          2.2,
+          3.6
+        ],
+        "alpha": 0.4
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 17.5,
+      "file": "i2v/girl_bridge_walk/f_0001.png",
+      "shot": "girl_bridge_walk_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 17.5833,
+      "file": "i2v/girl_bridge_walk/f_0002.png",
+      "shot": "girl_bridge_walk_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 17.6667,
+      "file": "i2v/girl_bridge_walk/f_0003.png",
+      "shot": "girl_bridge_walk_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 17.75,
+      "file": "i2v/girl_bridge_walk/f_0004.png",
+      "shot": "girl_bridge_walk_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 17.8333,
+      "file": "i2v/girl_bridge_walk/f_0005.png",
+      "shot": "girl_bridge_walk_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 17.9167,
+      "file": "i2v/girl_bridge_walk/f_0006.png",
+      "shot": "girl_bridge_walk_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.0,
+      "file": "i2v/girl_bridge_walk/f_0007.png",
+      "shot": "girl_bridge_walk_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.0833,
+      "file": "i2v/girl_bridge_walk/f_0008.png",
+      "shot": "girl_bridge_walk_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.1667,
+      "file": "i2v/girl_bridge_walk/f_0009.png",
+      "shot": "girl_bridge_walk_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.25,
+      "file": "i2v/girl_bridge_walk/f_0010.png",
+      "shot": "girl_bridge_walk_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.3333,
+      "file": "i2v/girl_bridge_walk/f_0011.png",
+      "shot": "girl_bridge_walk_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.4167,
+      "file": "i2v/girl_bridge_walk/f_0012.png",
+      "shot": "girl_bridge_walk_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.5,
+      "file": "i2v/girl_bridge_walk/f_0013.png",
+      "shot": "girl_bridge_walk_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.5833,
+      "file": "i2v/girl_bridge_walk/f_0014.png",
+      "shot": "girl_bridge_walk_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.6667,
+      "file": "i2v/girl_bridge_walk/f_0015.png",
+      "shot": "girl_bridge_walk_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.75,
+      "file": "i2v/girl_bridge_walk/f_0016.png",
+      "shot": "girl_bridge_walk_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.8333,
+      "file": "i2v/girl_bridge_walk/f_0017.png",
+      "shot": "girl_bridge_walk_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.9167,
+      "file": "i2v/girl_bridge_walk/f_0018.png",
+      "shot": "girl_bridge_walk_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.0,
+      "file": "i2v/girl_bridge_walk/f_0019.png",
+      "shot": "girl_bridge_walk_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.0833,
+      "file": "i2v/girl_bridge_walk/f_0020.png",
+      "shot": "girl_bridge_walk_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.1667,
+      "file": "i2v/girl_bridge_walk/f_0021.png",
+      "shot": "girl_bridge_walk_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.25,
+      "file": "i2v/girl_bridge_walk/f_0022.png",
+      "shot": "girl_bridge_walk_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.3333,
+      "file": "i2v/girl_bridge_walk/f_0023.png",
+      "shot": "girl_bridge_walk_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.4167,
+      "file": "i2v/girl_bridge_walk/f_0024.png",
+      "shot": "girl_bridge_walk_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.5,
+      "file": "i2v/girl_bridge_walk/f_0025.png",
+      "shot": "girl_bridge_walk_24",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.5833,
+      "file": "i2v/girl_bridge_walk/f_0026.png",
+      "shot": "girl_bridge_walk_25",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.6667,
+      "file": "i2v/girl_bridge_walk/f_0027.png",
+      "shot": "girl_bridge_walk_26",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.75,
+      "file": "i2v/girl_bridge_walk/f_0028.png",
+      "shot": "girl_bridge_walk_27",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.8333,
+      "file": "i2v/girl_bridge_walk/f_0029.png",
+      "shot": "girl_bridge_walk_28",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.9167,
+      "file": "i2v/girl_bridge_walk/f_0030.png",
+      "shot": "girl_bridge_walk_29",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.0,
+      "file": "i2v/girl_bridge_walk/f_0031.png",
+      "shot": "girl_bridge_walk_30",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.0833,
+      "file": "i2v/girl_bridge_walk/f_0032.png",
+      "shot": "girl_bridge_walk_31",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.1667,
+      "file": "i2v/girl_bridge_walk/f_0033.png",
+      "shot": "girl_bridge_walk_32",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.25,
+      "file": "i2v/girl_bridge_walk/f_0034.png",
+      "shot": "girl_bridge_walk_33",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.3333,
+      "file": "i2v/girl_bridge_walk/f_0035.png",
+      "shot": "girl_bridge_walk_34",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.4167,
+      "file": "i2v/girl_bridge_walk/f_0036.png",
+      "shot": "girl_bridge_walk_35",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.5,
+      "file": "keyframes/frame_06.png",
+      "shot": "girl_leans_railing",
+      "move": "push_in",
+      "mouthRig": "girl_frame06_entry7",
+      "eyeRig": "girl_frame06_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 23.0,
+      "file": "keyframes/frame_07.png",
+      "shot": "river_sunset_insert",
+      "move": "push_in",
+      "dappleSway": {
+        "spots": [
+          [
+            900,
+            560,
+            180,
+            14
+          ],
+          [
+            1250,
+            625,
+            220,
+            16
+          ],
+          [
+            1500,
+            590,
+            160,
+            12
+          ]
+        ],
+        "period": [
+          2.2,
+          3.6
+        ],
+        "alpha": 0.4
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 25.5,
+      "file": "keyframes/frame_08.png",
+      "shot": "cat_bridge_end_lookback",
+      "move": "push_in",
+      "mouthRig": "cat_frame08_meow",
+      "eyeRig": "cat_frame08_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 28.0,
+      "file": "keyframes/frame_09.png",
+      "shot": "lane_depth_from_bridge",
+      "move": "push_in",
+      "transition": "crossfade",
+      "transitionSeconds": 0.3
+    },
+    {
+      "at": 30.0,
+      "file": "keyframes/frame_10.png",
+      "shot": "lane_dusk_wide",
+      "move": "pull_out",
+      "cloudDrift": {
+        "clouds": [
+          [
+            1250,
+            150,
+            130,
+            44,
+            8
+          ],
+          [
+            500,
+            100,
+            90,
+            32,
+            6
+          ]
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 32.5,
+      "file": "i2v/cat_wall_walk_dusk/f_0001.png",
+      "shot": "cat_wall_walk_dusk_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 32.5833,
+      "file": "i2v/cat_wall_walk_dusk/f_0002.png",
+      "shot": "cat_wall_walk_dusk_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 32.6667,
+      "file": "i2v/cat_wall_walk_dusk/f_0003.png",
+      "shot": "cat_wall_walk_dusk_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 32.75,
+      "file": "i2v/cat_wall_walk_dusk/f_0004.png",
+      "shot": "cat_wall_walk_dusk_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 32.8333,
+      "file": "i2v/cat_wall_walk_dusk/f_0005.png",
+      "shot": "cat_wall_walk_dusk_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 32.9167,
+      "file": "i2v/cat_wall_walk_dusk/f_0006.png",
+      "shot": "cat_wall_walk_dusk_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.0,
+      "file": "i2v/cat_wall_walk_dusk/f_0007.png",
+      "shot": "cat_wall_walk_dusk_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.0833,
+      "file": "i2v/cat_wall_walk_dusk/f_0008.png",
+      "shot": "cat_wall_walk_dusk_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.1667,
+      "file": "i2v/cat_wall_walk_dusk/f_0009.png",
+      "shot": "cat_wall_walk_dusk_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.25,
+      "file": "i2v/cat_wall_walk_dusk/f_0010.png",
+      "shot": "cat_wall_walk_dusk_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.3333,
+      "file": "i2v/cat_wall_walk_dusk/f_0011.png",
+      "shot": "cat_wall_walk_dusk_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.4167,
+      "file": "i2v/cat_wall_walk_dusk/f_0012.png",
+      "shot": "cat_wall_walk_dusk_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.5,
+      "file": "i2v/cat_wall_walk_dusk/f_0013.png",
+      "shot": "cat_wall_walk_dusk_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.5833,
+      "file": "i2v/cat_wall_walk_dusk/f_0014.png",
+      "shot": "cat_wall_walk_dusk_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.6667,
+      "file": "i2v/cat_wall_walk_dusk/f_0015.png",
+      "shot": "cat_wall_walk_dusk_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.75,
+      "file": "i2v/cat_wall_walk_dusk/f_0016.png",
+      "shot": "cat_wall_walk_dusk_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.8333,
+      "file": "i2v/cat_wall_walk_dusk/f_0017.png",
+      "shot": "cat_wall_walk_dusk_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 33.9167,
+      "file": "i2v/cat_wall_walk_dusk/f_0018.png",
+      "shot": "cat_wall_walk_dusk_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.0,
+      "file": "i2v/cat_wall_walk_dusk/f_0019.png",
+      "shot": "cat_wall_walk_dusk_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.0833,
+      "file": "i2v/cat_wall_walk_dusk/f_0020.png",
+      "shot": "cat_wall_walk_dusk_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.1667,
+      "file": "i2v/cat_wall_walk_dusk/f_0021.png",
+      "shot": "cat_wall_walk_dusk_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.25,
+      "file": "i2v/cat_wall_walk_dusk/f_0022.png",
+      "shot": "cat_wall_walk_dusk_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.3333,
+      "file": "i2v/cat_wall_walk_dusk/f_0023.png",
+      "shot": "cat_wall_walk_dusk_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.4167,
+      "file": "i2v/cat_wall_walk_dusk/f_0024.png",
+      "shot": "cat_wall_walk_dusk_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.5,
+      "file": "i2v/cat_wall_walk_dusk/f_0025.png",
+      "shot": "cat_wall_walk_dusk_24",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.5833,
+      "file": "i2v/cat_wall_walk_dusk/f_0026.png",
+      "shot": "cat_wall_walk_dusk_25",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.6667,
+      "file": "i2v/cat_wall_walk_dusk/f_0027.png",
+      "shot": "cat_wall_walk_dusk_26",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.75,
+      "file": "i2v/cat_wall_walk_dusk/f_0028.png",
+      "shot": "cat_wall_walk_dusk_27",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.8333,
+      "file": "i2v/cat_wall_walk_dusk/f_0029.png",
+      "shot": "cat_wall_walk_dusk_28",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.9167,
+      "file": "i2v/cat_wall_walk_dusk/f_0030.png",
+      "shot": "cat_wall_walk_dusk_29",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.0,
+      "file": "i2v/cat_wall_walk_dusk/f_0031.png",
+      "shot": "cat_wall_walk_dusk_30",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.0833,
+      "file": "i2v/cat_wall_walk_dusk/f_0032.png",
+      "shot": "cat_wall_walk_dusk_31",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.1667,
+      "file": "i2v/cat_wall_walk_dusk/f_0033.png",
+      "shot": "cat_wall_walk_dusk_32",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.25,
+      "file": "i2v/cat_wall_walk_dusk/f_0034.png",
+      "shot": "cat_wall_walk_dusk_33",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.3333,
+      "file": "i2v/cat_wall_walk_dusk/f_0035.png",
+      "shot": "cat_wall_walk_dusk_34",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.4167,
+      "file": "i2v/cat_wall_walk_dusk/f_0036.png",
+      "shot": "cat_wall_walk_dusk_35",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.5,
+      "file": "i2v/girl_lane_walk/f_0001.png",
+      "shot": "girl_lane_walk_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.5833,
+      "file": "i2v/girl_lane_walk/f_0002.png",
+      "shot": "girl_lane_walk_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.6667,
+      "file": "i2v/girl_lane_walk/f_0003.png",
+      "shot": "girl_lane_walk_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.75,
+      "file": "i2v/girl_lane_walk/f_0004.png",
+      "shot": "girl_lane_walk_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.8333,
+      "file": "i2v/girl_lane_walk/f_0005.png",
+      "shot": "girl_lane_walk_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.9167,
+      "file": "i2v/girl_lane_walk/f_0006.png",
+      "shot": "girl_lane_walk_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.0,
+      "file": "i2v/girl_lane_walk/f_0007.png",
+      "shot": "girl_lane_walk_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.0833,
+      "file": "i2v/girl_lane_walk/f_0008.png",
+      "shot": "girl_lane_walk_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.1667,
+      "file": "i2v/girl_lane_walk/f_0009.png",
+      "shot": "girl_lane_walk_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.25,
+      "file": "i2v/girl_lane_walk/f_0010.png",
+      "shot": "girl_lane_walk_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.3333,
+      "file": "i2v/girl_lane_walk/f_0011.png",
+      "shot": "girl_lane_walk_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.4167,
+      "file": "i2v/girl_lane_walk/f_0012.png",
+      "shot": "girl_lane_walk_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.5,
+      "file": "i2v/girl_lane_walk/f_0013.png",
+      "shot": "girl_lane_walk_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.5833,
+      "file": "i2v/girl_lane_walk/f_0014.png",
+      "shot": "girl_lane_walk_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.6667,
+      "file": "i2v/girl_lane_walk/f_0015.png",
+      "shot": "girl_lane_walk_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.75,
+      "file": "i2v/girl_lane_walk/f_0016.png",
+      "shot": "girl_lane_walk_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.8333,
+      "file": "i2v/girl_lane_walk/f_0017.png",
+      "shot": "girl_lane_walk_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.9167,
+      "file": "i2v/girl_lane_walk/f_0018.png",
+      "shot": "girl_lane_walk_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.0,
+      "file": "i2v/girl_lane_walk/f_0019.png",
+      "shot": "girl_lane_walk_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.0833,
+      "file": "i2v/girl_lane_walk/f_0020.png",
+      "shot": "girl_lane_walk_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.1667,
+      "file": "i2v/girl_lane_walk/f_0021.png",
+      "shot": "girl_lane_walk_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.25,
+      "file": "i2v/girl_lane_walk/f_0022.png",
+      "shot": "girl_lane_walk_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.3333,
+      "file": "i2v/girl_lane_walk/f_0023.png",
+      "shot": "girl_lane_walk_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.4167,
+      "file": "i2v/girl_lane_walk/f_0024.png",
+      "shot": "girl_lane_walk_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.5,
+      "file": "keyframes/frame_11.png",
+      "shot": "girl_looks_up_cat",
+      "move": "push_in",
+      "mouthRig": "girl_frame11_entry11",
+      "eyeRig": "girl_frame11_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 40.0,
+      "file": "keyframes/frame_12.png",
+      "shot": "cat_wall_silhouette_closeup",
+      "move": "push_in",
+      "mouthRig": "cat_frame12_meow",
+      "eyeRig": "cat_frame12_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 42.5,
+      "file": "keyframes/frame_13.png",
+      "shot": "home_entrance_lamp",
+      "move": "drift_left",
+      "dappleSway": {
+        "spots": [
+          [
+            420,
+            700,
+            170,
+            26
+          ],
+          [
+            430,
+            480,
+            120,
+            40
+          ]
+        ],
+        "period": [
+          3.2,
+          4.6
+        ],
+        "alpha": 0.28
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 45.0,
+      "file": "action_inbetweens/ib_02.png",
+      "shot": "door_open_inbetween",
+      "move": "drift_left",
+      "transition": "cut"
+    },
+    {
+      "at": 45.7,
+      "file": "keyframes/frame_14.png",
+      "shot": "girl_opens_door_looks_back",
+      "move": "drift_left",
+      "eyeRig": "girl_frame14_blink",
+      "dappleSway": {
+        "spots": [
+          [
+            420,
+            700,
+            170,
+            26
+          ],
+          [
+            430,
+            480,
+            120,
+            40
+          ]
+        ],
+        "period": [
+          3.2,
+          4.6
+        ],
+        "alpha": 0.28
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 47.5,
+      "file": "keyframes/frame_15.png",
+      "shot": "pair_doorway_silhouette",
+      "move": "pull_out",
+      "transition": "cut"
+    },
+    {
+      "at": 50.0,
+      "file": "keyframes/frame_16.png",
+      "shot": "girl_profile_smile_lamplight",
+      "move": "push_in",
+      "mouthRig": "girl_frame16_entry16",
+      "eyeRig": "girl_frame16_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 53.0,
+      "file": "keyframes/frame_17.png",
+      "shot": "rooftops_dusk_wide",
+      "move": "pull_out",
+      "dappleSway": {
+        "spots": [
+          [
+            550,
+            830,
+            150,
+            30
+          ],
+          [
+            1000,
+            870,
+            140,
+            28
+          ],
+          [
+            1400,
+            800,
+            110,
+            22
+          ]
+        ],
+        "period": [
+          5.0,
+          7.0
+        ],
+        "alpha": 0.3
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 56.0,
+      "file": "keyframes/frame_18.png",
+      "shot": "dusk_clouds_insert",
+      "move": "tilt_up",
+      "transition": "cut"
+    },
+    {
+      "at": 58.0,
+      "file": "keyframes/frame_19.png",
+      "shot": "dusk_sky_final",
+      "move": "tilt_up",
+      "transition": "crossfade",
+      "transitionSeconds": 0.25
+    }
+  ]
+}
