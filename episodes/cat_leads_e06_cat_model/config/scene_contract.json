@@ -1,0 +1,460 @@
+{
+  "$schema": "../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "cat_leads_e06_cat_model",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "A sixty-second late-morning healing short in the flat sunprint style (daytime baseline: clear cyan-blue sky top, pale aqua horizon, flat gold dapple under the tree shade, lavender-purple shadow sides, flat warm-white clouds): on the riverbank steps in the morning, the transfer student Boy (阿澈) tries to paint a formal portrait of the orange tabby 小橘. The cat poses proudly at first, then a passing butterfly steals its attention and it leaps off the steps to chase it across the grass. The girl (小蓝) and the boy sit watching from the tree shade; the tired cat returns, falls asleep in the dappled shade, and the finished sketch turns out to be the sleeping cat — told through approved 2D keyframes with A/B pose variants for cloth/hair/ear micro-motion, a single seedance-2.0 1080p I2V clip for the full-body chase, procedural flat-shape layers (daylight dapple sway, cloud drift), OmniHuman talking shots for the dialogue, and gentle day ambience.",
+    "audience": "Viewers evaluating a polished 2D anime short with a stable generated heroine, a consistent orange tabby cat, an on-model boy, bright-scene composition density (foreground framing, three depth layers, color script), and synchronized sound.",
+    "designPriorities": [
+      "Keep the girl's waist-length dark-blue hair, amber eyes, white shirt, and navy plaid pleated skirt stable across every frame.",
+      "Keep the orange tabby cat's white chest, white paws, and green eyes stable.",
+      "Keep the boy's slim build, short black hair with slightly messy fringe, white short-sleeve school shirt, navy trousers, white sneakers, and the single kraft-paper-cover sketchbook stable across every frame.",
+      "Bright-scene density: every shot carries a foreground framing element (overhanging canopy, grass blades, step edge), a midground subject, and a layered background; never a subject against a flat empty background.",
+      "Cloth/hair/ear/tail micro-motion goes through A/B keyframe pose variants (0.4-0.6s alternation), never through I2V; I2V is reserved for the single full-body displacement (cat jumping off the steps).",
+      "Shaped elements (butterfly, birds, leaves) are painted into keyframes, never procedural layers; only dappleSway and cloudDrift stay procedural.",
+      "Derive frame selection, mouth state, crop motion, transitions, and subtitles only from absolute story time so seeks and segmented renders remain deterministic.",
+      "Draw every procedural layer (dapple sway, cloud drift) as razor-clean flat vector shapes in source-image space; zero grain, zero gradients, no haze, per STYLE_BIBLE.md."
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "CatPortraitScene"
+    ],
+    "characters": [
+      "Girl",
+      "Cat",
+      "Boy"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "CatPortraitScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "CatPortraitScene",
+        "module": "scenes/CatPortraitSequenceScene.js",
+        "export": "CatPortraitScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "A late-morning riverbank with grassy steps under a large shade tree whose canopy frames the top of the picture, a grass slope, and the river beyond, all baked into full-frame 2D artwork plus one baked-motion I2V cel sequence for the cat's chase.",
+        "timeOfDay": "Clear summer late morning: cyan-blue sky top softening into pale aqua at the horizon, flat gold dappled light under the tree shade, lavender-purple shadow sides.",
+        "tone": [
+          "gentle",
+          "healing",
+          "quiet",
+          "warm"
+        ],
+        "storyFunction": "Stage the portrait sitting: the boy sketches the posing cat on the riverbank steps, the cat chases a butterfly away, the two kids talk in the shade, and the sleeping cat becomes the finished portrait.",
+        "visualRules": [
+          "Every source PNG fills the 1920 by 1080 presentation canvas through cover-crop without aspect-ratio distortion.",
+          "The keyframe timeline, rather than equal frame division, determines every image boundary and camera-like crop move.",
+          "Each spoken line keeps one stable speaker plate; only a tight mouth rectangle changes between closed, half, and open states.",
+          "Chinese subtitles are rendered in code over text-free source art and must remain inside the lower safe area.",
+          "The scene uses a CanvasTexture as the Three.js background, so runtime camera collision geometry is intentionally inapplicable and camera obstacles remain empty.",
+          "Girl, Cat and Boy are voice-only story speakers whose visible bodies are baked into the keyframes; no 3D character meshes may be layered over the artwork.",
+          "No runtime grain, noise, haze, or texture layer may be composited over the sunprint artwork.",
+          "Dapple sway and cloud drift are deterministic time-driven programmatic flat-shape layers; masters and keyframes stay free of baked light dots."
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -8,
+            -4.5,
+            -1
+          ],
+          "max": [
+            8,
+            4.5,
+            1
+          ]
+        },
+        "zones": [
+          {
+            "id": "presentationZone",
+            "bounds": {
+              "min": [
+                -8,
+                -4.5,
+                -1
+              ],
+              "max": [
+                8,
+                4.5,
+                1
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "Represent the full-frame timed 2D presentation rather than a navigable 3D stage."
+            ]
+          }
+        ],
+        "anchors": {
+          "screenCenter": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "purpose": "Stable center of the full-frame keyframe canvas."
+          },
+          "bakedRiverbankSteps": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "purpose": "Semantic riverbank steps where the portrait sitting opens and the shade conversation lands, represented inside the generated artwork."
+          }
+        }
+      },
+      "lighting": {
+        "mood": "Clear late-morning flat color: cyan-blue sky top, pale aqua horizon, flat gold dapple under the shade tree, lavender-purple shadow sides.",
+        "readabilityRules": [
+          "Do not apply runtime lighting or grading that changes character colors between generated frames.",
+          "Keep faces, the navy and white costume silhouette, the orange cat, and the boy's white shirt and navy trousers readable against the bright day plates during all crop motion and transitions.",
+          "Keep subtitle contrast independent of the baked background by using a dark translucent backing and outlined white text."
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "dayBirdsAndLeaves",
+          "kind": "region",
+          "semantic": "Morning bird bed plus wind-in-leaves bed over the whole episode.",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "radius": 8,
+          "loop": true
+        },
+        {
+          "id": "stepsAndSketchbook",
+          "kind": "point",
+          "semantic": "Grass and stone footsteps during the cat's chase; pencil scratches and sketchbook page turns at the closing sketch beats.",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "radius": 4,
+          "loop": false
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "storyTimeline",
+          "type": "other",
+          "path": "script.story",
+          "required": true
+        },
+        {
+          "id": "keyframeTimeline",
+          "type": "other",
+          "path": "config/keyframe_timeline.json",
+          "required": true
+        },
+        {
+          "id": "lipSyncCues",
+          "type": "other",
+          "path": "config/lipsync_cues.json",
+          "required": true
+        },
+        {
+          "id": "mouthRigs",
+          "type": "other",
+          "path": "config/mouth_rigs.json",
+          "required": true
+        },
+        {
+          "id": "voiceConfiguration",
+          "type": "other",
+          "path": "config/voice_config.json",
+          "required": true
+        },
+        {
+          "id": "audioMixConfiguration",
+          "type": "other",
+          "path": "config/audio_mix.json",
+          "required": true
+        },
+        {
+          "id": "transitionConfiguration",
+          "type": "other",
+          "path": "config/transitions.json",
+          "required": true
+        },
+        {
+          "id": "bakedSpeakerAdapter",
+          "type": "other",
+          "path": "characters/BakedSpeaker.js",
+          "required": true
+        },
+        {
+          "id": "girlReference",
+          "type": "texture",
+          "path": "assets/girl_reference.png",
+          "required": true
+        },
+        {
+          "id": "catReference",
+          "type": "texture",
+          "path": "assets/cat_reference.png",
+          "required": true
+        },
+        {
+          "id": "boyReference",
+          "type": "texture",
+          "path": "assets/boy_reference.png",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "Girl",
+      "scene": "CatPortraitScene",
+      "kind": "character",
+      "runtimeName": "Girl",
+      "binding": "character:Girl",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "Cat",
+      "scene": "CatPortraitScene",
+      "kind": "character",
+      "runtimeName": "Cat",
+      "binding": "character:Cat",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "Boy",
+      "scene": "CatPortraitScene",
+      "kind": "character",
+      "runtimeName": "Boy",
+      "binding": "character:Boy",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "keyframeSurface",
+      "scene": "CatPortraitScene",
+      "kind": "prop",
+      "objectName": "sequenceCanvas",
+      "binding": "sequenceTexture",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "states": [
+        "timed-sequence-active"
+      ],
+      "initialState": "timed-sequence-active"
+    }
+  ],
+  "state": {
+    "timelineVersion": {
+      "type": "number",
+      "initial": 1,
+      "binding": "keyframe_timeline.version"
+    }
+  },
+  "events": [],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "riverbankEstablishing",
+      "scene": "CatPortraitScene",
+      "entry": 1,
+      "offsetSeconds": 0.4,
+      "purpose": "Confirm the morning riverbank establishing frame with canopy foreground, three depth layers and dapple spots fills the first frame with subtitle-safe margins.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "firstBoyLine",
+      "scene": "CatPortraitScene",
+      "entry": 2,
+      "offsetSeconds": 0.6,
+      "purpose": "Confirm the boy opening his sketchbook on the steps is readable during his first line with syllable-aware visemes.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "i2vCatChase",
+      "scene": "CatPortraitScene",
+      "entry": 8,
+      "offsetSeconds": 1.0,
+      "purpose": "Confirm the single I2V clip (cat jumping off the steps toward the grass) is playing (mid-clip frame differs from the first frame).",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "sketchReveal",
+      "scene": "CatPortraitScene",
+      "entry": 11,
+      "offsetSeconds": 0.5,
+      "purpose": "Confirm the sketchbook close-up reveal of the sleeping-cat sketch is readable at the closing beat.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "dula-inspect-team",
+      "dula-verify",
+      "visual-review",
+      "audio-review"
+    ]
+  }
+}

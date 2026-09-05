@@ -201,7 +201,10 @@
     "build:bio_armor_s1e1": "npm run audio:bio_armor_s1e1 && npm run render:bio_armor_s1e1",
     "audio:e05": "dula-audio ./episodes/cat_leads_e05_morning_sketch",
     "verify:e05": "dula-verify ./episodes/cat_leads_e05_morning_sketch",
-    "render:e05": "dula-render ./episodes/cat_leads_e05_morning_sketch"
+    "render:e05": "dula-render ./episodes/cat_leads_e05_morning_sketch",
+    "audio:e06": "dula-audio ./episodes/cat_leads_e06_cat_model",
+    "verify:e06": "dula-verify ./episodes/cat_leads_e06_cat_model",
+    "render:e06": "dula-render ./episodes/cat_leads_e06_cat_model"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

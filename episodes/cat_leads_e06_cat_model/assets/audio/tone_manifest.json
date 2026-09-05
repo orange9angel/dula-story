@@ -1,0 +1,285 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-09-05T06:53:06.538Z",
+  "entryCount": 10,
+  "entries": [
+    {
+      "index": 2,
+      "character": "Boy",
+      "text": "小橘，别动，今天给你画张正式的。",
+      "startTime": 3.2,
+      "endTime": 6.1,
+      "toneId": "surprise",
+      "toneSource": "inferred",
+      "confidence": 0.95,
+      "ttsParams": {
+        "pitch": 3,
+        "speed": 1.2,
+        "volume": 1,
+        "breaks": [
+          0.02
+        ]
+      },
+      "emotion": "surprise",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "surprise",
+      "semanticAction": "LookAround",
+      "requestedBodyGesture": {
+        "anim": "LookAround",
+        "intensity": 0.4,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 3,
+      "character": "Cat",
+      "text": "哼，画好看点。",
+      "startTime": 6.6,
+      "endTime": 8,
+      "toneId": "contempt",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": -1,
+        "speed": 0.85,
+        "volume": 0.8,
+        "breaks": [
+          0.15
+        ]
+      },
+      "emotion": "disgust",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "disgust",
+      "semanticAction": "CrossArms",
+      "requestedBodyGesture": {
+        "anim": "CrossArms",
+        "intensity": 0.5,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 4,
+      "character": "Girl",
+      "text": "小橘，坐直一点嘛。",
+      "startTime": 8.4,
+      "endTime": 10.4,
+      "toneId": "neutral",
+      "toneSource": "inferred",
+      "confidence": 0.75,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    },
+    {
+      "index": 5,
+      "character": "Girl",
+      "text": "别动呀，蝴蝶待会儿再看。",
+      "startTime": 14.2,
+      "endTime": 17.2,
+      "toneId": "surprise",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 3,
+        "speed": 1.2,
+        "volume": 1,
+        "breaks": [
+          0.02
+        ]
+      },
+      "emotion": "surprise",
+      "mouthTension": 0,
+      "intensity": 0.6,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "surprise",
+      "semanticAction": "LookAround",
+      "requestedBodyGesture": {
+        "anim": "LookAround",
+        "intensity": 0.4,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 7,
+      "character": "Girl",
+      "text": "啊，跑掉了！",
+      "startTime": 20,
+      "endTime": 21.8,
+      "toneId": "angry",
+      "toneSource": "inferred",
+      "confidence": 0.8,
+      "ttsParams": {
+        "pitch": 1,
+        "speed": 1.15,
+        "volume": 1.1,
+        "breaks": [
+          0.08
+        ]
+      },
+      "emotion": "anger",
+      "mouthTension": 0,
+      "intensity": 0.8,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "anger",
+      "semanticAction": "CrossArms",
+      "requestedBodyGesture": {
+        "anim": "CrossArms",
+        "intensity": 0.6,
+        "layer": "upper"
+      }
+    },
+    {
+      "index": 8,
+      "character": "Boy",
+      "text": "算了，由它去吧。",
+      "startTime": 22,
+      "endTime": 24,
+      "toneId": "neutral",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    },
+    {
+      "index": 9,
+      "character": "Girl",
+      "text": "它开心就好啦。",
+      "startTime": 27.6,
+      "endTime": 29.7,
+      "toneId": "neutral",
+      "toneSource": "inferred",
+      "confidence": 0.65,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    },
+    {
+      "index": 10,
+      "character": "Boy",
+      "text": "嗯，这样也挺好。",
+      "startTime": 30.1,
+      "endTime": 32.1,
+      "toneId": "neutral",
+      "toneSource": "inferred",
+      "confidence": 0.7,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    },
+    {
+      "index": 13,
+      "character": "Girl",
+      "text": "这张……最像它了。",
+      "startTime": 42.7,
+      "endTime": 45.3,
+      "toneId": "neutral",
+      "toneSource": "inferred",
+      "confidence": 0.75,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    },
+    {
+      "index": 14,
+      "character": "Cat",
+      "text": "……嗯。",
+      "startTime": 45.7,
+      "endTime": 47.5,
+      "toneId": "neutral",
+      "toneSource": "explicit",
+      "confidence": 1,
+      "ttsParams": {
+        "pitch": 0,
+        "speed": 1,
+        "volume": 1,
+        "breaks": []
+      },
+      "emotion": "neutral",
+      "mouthTension": 0,
+      "intensity": 0,
+      "sceneContext": "CatPortraitScene",
+      "semanticExpression": "neutral",
+      "semanticAction": null,
+      "requestedBodyGesture": {
+        "anim": null,
+        "intensity": 0,
+        "layer": "none"
+      }
+    }
+  ]
+}
