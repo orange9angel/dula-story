@@ -39,3 +39,9 @@ Cat 2，含一句睡猫梦话）。
    codex 一次通过率高（4/4）。
 4. **seed-tts 时长只能靠槽位调**：加宽窗口时注意级联（omni 槽、I2V 槽、
    SFX 条目、后续静态帧 at 全部要动），build_timeline.py 是唯一权威。
+5. **BGM v1 平曲翻车**：prompt 写"结构平稳起伏小"导致大模型出平曲
+   （onset 149 但 RMS 近乎直线）。v2 按
+   `dula-skills/episode-scoring/references/composition-prompt-craft.md`
+   的曲式化 prompt 重生成：动态比 13→226，pp→mf→pp 弧线完整，
+   已换入正片并重渲染（*_bgmv2.mp4）。决议：正式集 BGM 一律走 Seed-Audio
+   大模型作曲 + 曲式化 prompt，不用网上曲库。
