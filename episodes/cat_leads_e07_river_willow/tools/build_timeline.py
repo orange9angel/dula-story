@@ -53,7 +53,8 @@ STATIC_SHOTS = [
     (54.4, "keyframes/frame_23.png", "cat_deflects", "push_in", {}),
     # A/B light-spot drift finale (1.2s cadence)
     (56.4, "keyframes/frame_24a.png", "finale_drift_a", "pull_out", {}),
-    (57.6, "keyframes/frame_24b.png", "finale_drift_b", "pull_out", {}),
+    (57.6, "keyframes/frame_24b.png", "finale_drift_b", "pull_out",
+     {"transition": "crossfade", "transitionSeconds": 0.25}),
     (58.8, "keyframes/frame_24a.png", "finale_fade", "static",
      {"transition": "crossfade", "transitionSeconds": 0.25}),
 ]

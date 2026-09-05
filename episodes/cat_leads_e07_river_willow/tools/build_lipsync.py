@@ -34,6 +34,8 @@ SFX_CUES: list[dict] = []
 # instead of adding a runtime pinyin dependency. Every spoken Han character in
 # script.story must be represented here; unknown characters fail generation.
 PINYIN_BY_CHAR = {
+    # E07 V3 additions
+    "净": "jing", "干": "gan", "很": "hen", "色": "se", "许": "xu",
     # E07 additions (river_willow dialogue)
     "三": "san", "伙": "huo", "十": "shi", "又": "you", "发": "fa",
     "哟": "yo", "喽": "lou", "定": "ding", "己": "ji", "年": "nian",
