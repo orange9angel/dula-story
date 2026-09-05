@@ -23,13 +23,13 @@ CEL_FPS = 12
 
 # (at, file, shot, move, extras)
 STATIC_SHOTS = [
-    (0.0,  "keyframes/frame_00.png", "willow_bank_establishing", "push_in", {}),
+    # 0.0-3.0 occupied by I2V willow_bank_living (living establishing shot)
     (3.0,  "keyframes/frame_01.png", "girl_asks_on_path", "push_in", {}),
     (5.6,  "keyframes/frame_02.png", "cat_walks_ahead_lookback", "push_in", {}),
     (6.0,  "keyframes/frame_03.png", "cat_signature_line", "push_in", {}),
     (8.6,  "keyframes/frame_04.png", "path_into_willow_shade", "push_in", {}),
     (12.5, "keyframes/frame_06.png", "oldman_reveal_wide", "push_in", {}),
-    (14.0, "keyframes/frame_07.png", "girl_amazed_willows", "push_in", {}),
+    # 14.0-15.8 occupied by I2V girl_steps_in_day (walk-in + look up)
     (15.8, "keyframes/frame_08.png", "cat_trots_to_oldman", "push_in", {}),
     (17.8, "keyframes/frame_09.png", "oldman_hello_closeup", "push_in", {}),
     (21.7, "keyframes/frame_10.png", "group_gather_wide", "push_in", {}),
@@ -61,7 +61,9 @@ STATIC_SHOTS = [
 
 # I2V segments: (start, end, cel dir under assets/i2v/, shot prefix)
 I2V_SEGMENTS = [
+    (0.0,  3.0,  "willow_bank_living", "willow_bank_living"),
     (10.0, 12.5, "trio_path_walk_day", "trio_path_walk_day"),
+    (14.0, 15.8, "girl_steps_in_day", "girl_steps_in_day"),
 ]
 
 # OmniHuman talking shots (start, end, cel dir under assets/omni/, prefix).

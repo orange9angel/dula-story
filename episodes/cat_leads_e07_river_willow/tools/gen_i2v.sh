@@ -34,4 +34,10 @@ i2v() { # name slot_seconds firstframe prompt
 
 i2v trio_path_walk_day 2.5 "$K/frame_05.png" "The girl, the boy and the orange tabby cat walk together toward the RIGHT along the riverside path under the willow shade, unhurried afternoon stroll, the cat trotting a step ahead; the tips of the girl's long hair sway faintly with her steps; the hanging willow branches overhead stay almost still. The camera is completely fixed; the background scrolls slowly left as they advance. Character count, poses and framing stay exactly as in the first frame."
 
+# V5 additions: environment-motion shots (no characters = I2V's legal zone)
+# and a full-body walk-in for the girl's arrival beat.
+i2v willow_bank_living 3 "$K/frame_00.png" "The hanging willow branches sway gently in a light breeze from the LEFT, their tips trailing; slow flat ripples drift across the calm river surface; the dappled gold light spots stay fixed on the ground. The fishing stool, bucket and rod stay still. No people, no animals. The camera is completely fixed. Framing stays exactly as in the first frame."
+
+i2v girl_steps_in_day 1.8 "$K/frame_07.png" "The girl takes one slow step forward toward the RIGHT and looks up at the willow branches above, the tips of her long deep-blue hair swaying gently; the willow branches sway faintly and slow ripples drift on the river behind her. The camera is completely fixed; the background stays still. Character count, poses and framing stay exactly as in the first frame."
+
 echo "== i2v all done"

@@ -8,11 +8,26 @@
       "sampleRate": 24000,
       "volume": 50
     },
-    "calm": { "emotion": "calm", "emotion_scale": 2 },
-    "curious": { "emotion": "surprised", "emotion_scale": 2 },
-    "gentle": { "emotion": "tenderness", "emotion_scale": 2 },
-    "amazed": { "emotion": "surprised", "emotion_scale": 3 },
-    "bright": { "emotion": "happy", "emotion_scale": 2 }
+    "calm": {
+      "emotion": "calm",
+      "emotion_scale": 2
+    },
+    "curious": {
+      "emotion": "surprised",
+      "emotion_scale": 2
+    },
+    "gentle": {
+      "emotion": "tenderness",
+      "emotion_scale": 2
+    },
+    "amazed": {
+      "emotion": "surprised",
+      "emotion_scale": 3
+    },
+    "bright": {
+      "emotion": "happy",
+      "emotion_scale": 2
+    }
   },
   "Cat": {
     "default": {
@@ -27,7 +42,8 @@
     },
     "calm": {},
     "bright": {},
-    "proud": {}
+    "proud": {},
+    "gentle": {}
   },
   "Boy": {
     "default": {
@@ -38,11 +54,23 @@
       "sampleRate": 24000,
       "volume": 50
     },
-    "gentle": { "emotion": "tenderness", "emotion_scale": 2 },
+    "gentle": {
+      "emotion": "tenderness",
+      "emotion_scale": 2
+    },
     "nervous": {},
-    "bright": { "emotion": "happy", "emotion_scale": 2 },
-    "calm": { "emotion": "calm", "emotion_scale": 2 },
-    "curious": { "emotion": "surprised", "emotion_scale": 2 }
+    "bright": {
+      "emotion": "happy",
+      "emotion_scale": 2
+    },
+    "calm": {
+      "emotion": "calm",
+      "emotion_scale": 2
+    },
+    "curious": {
+      "emotion": "surprised",
+      "emotion_scale": 2
+    }
   },
   "OldMan": {
     "default": {
@@ -53,9 +81,21 @@
       "sampleRate": 24000,
       "volume": 50
     },
-    "gentle": { "emotion": "tenderness", "emotion_scale": 2 },
-    "calm": { "emotion": "calm", "emotion_scale": 2 },
-    "bright": { "emotion": "happy", "emotion_scale": 2 },
-    "curious": { "emotion": "surprised", "emotion_scale": 2 }
+    "gentle": {
+      "emotion": "tenderness",
+      "emotion_scale": 2
+    },
+    "calm": {
+      "emotion": "calm",
+      "emotion_scale": 2
+    },
+    "bright": {
+      "emotion": "happy",
+      "emotion_scale": 2
+    },
+    "curious": {
+      "emotion": "surprised",
+      "emotion_scale": 2
+    }
   }
 }
