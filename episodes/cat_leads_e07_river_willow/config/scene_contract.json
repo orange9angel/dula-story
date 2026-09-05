@@ -1,0 +1,488 @@
+{
+  "$schema": "../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "cat_leads_e07_river_willow",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "A sixty-second early-afternoon healing short in the flat sunprint style (daytime baseline, no time-of-day override): the orange tabby 小橘 leads 小蓝 (Girl) and 阿澈 (Boy) upstream along the river to a willow bank where an old fisherman, 老周 (OldMan), an old acquaintance of the cat, is fishing under the willows. Over idle fishing talk the old man mentions that the river surface glows with pale green light at night (foreshadow F03, dialogue only). The cat stares toward the back hill in a long held still frame (foreshadow F02, 2.9s no camera move) until the girl calls it back. The episode ends with the four of them under the willow, dappled light drifting.",
+    "audience": "Viewers of the 《猫带我去的地方》 series; this episode extends 小橘's social circle with a new recurring elder and plants two series foreshadows.",
+    "designPriorities": [
+      "New character lock: 老周 — slim 68-year-old fisherman with a slight stoop, worn flat-top straw hat, khaki multi-pocket fishing vest over a white rolled-sleeve shirt, dark gray trousers, old rubber shoes; bamboo rod, tin bucket, folding stool beside him; wrinkles drawn with only two or three restrained lines.",
+      "Keep the girl, the orange tabby cat, and the boy on their existing model references; the new old man must sit in the same frames without color-temperature or stroke jumps.",
+      "Environment micro-motion via A/B keyframe variant pairs extended from characters to the environment: willow-branch sway pair and dappled-light drift pair (pixel-identical except the target element), 1.0-1.2s alternation.",
+      "cloudDrift procedural clouds are allowed (opaque flat shapes); everything else shaped stays baked into keyframes.",
+      "The F02 back-hill stare must read as deliberately long: 2.9s held still frame, no crop motion, score continues.",
+      "Derive frame selection, mouth state, crop motion, transitions, and subtitles only from absolute story time so seeks and segmented renders remain deterministic.",
+      "Draw every procedural layer as razor-clean flat vector shapes in source-image space; zero grain, zero gradients, no haze, per STYLE_BIBLE.md."
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "WillowFishingScene"
+    ],
+    "characters": [
+      "Girl",
+      "Cat",
+      "Boy",
+      "OldMan"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "WillowFishingScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "WillowFishingScene",
+        "module": "scenes/WillowFishingSequenceScene.js",
+        "export": "WillowFishingScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "An upstream willow bank in the early afternoon: hanging willow branches frame the top of the picture, a shallow bank, the river, and the far levee form three depth layers, all baked into full-frame 2D artwork plus one full-body-displacement I2V cel of the trio walking the riverside path.",
+        "timeOfDay": "Clear summer early afternoon (daytime baseline): cyan-blue sky top, pale aqua horizon, flat gold dappled light under the willows, lavender-purple shadow sides.",
+        "tone": [
+          "gentle",
+          "healing",
+          "quiet",
+          "nostalgic"
+        ],
+        "storyFunction": "Introduce 老周 and his fishing spot as 小橘's old haunt; deliver the F03 green-river-glow foreshadow as dialogue and the F02 back-hill stare as a held still frame; close on the four resting under the willow.",
+        "visualRules": [
+          "Every source PNG fills the 1920 by 1080 presentation canvas through cover-crop without aspect-ratio distortion.",
+          "The keyframe timeline, rather than equal frame division, determines every image boundary and camera-like crop move.",
+          "Spoken lines are carried by OmniHuman video cels; Chinese subtitles are rendered in code over text-free source art and must remain inside the lower safe area.",
+          "The scene uses a CanvasTexture as the Three.js background, so runtime camera collision geometry is intentionally inapplicable and camera obstacles remain empty.",
+          "Girl, Cat, Boy and OldMan are voice-only story speakers whose visible bodies are baked into the keyframes; no 3D character meshes may be layered over the artwork.",
+          "No runtime grain, noise, haze, or texture layer may be composited over the sunprint artwork.",
+          "Dapple sway and cloud drift are deterministic time-driven programmatic flat-shape layers; masters and keyframes stay free of baked light dots."
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -8,
+            -4.5,
+            -1
+          ],
+          "max": [
+            8,
+            4.5,
+            1
+          ]
+        },
+        "zones": [
+          {
+            "id": "presentationZone",
+            "bounds": {
+              "min": [
+                -8,
+                -4.5,
+                -1
+              ],
+              "max": [
+                8,
+                4.5,
+                1
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "Represent the full-frame timed 2D presentation rather than a navigable 3D stage."
+            ]
+          }
+        ],
+        "anchors": {
+          "screenCenter": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "purpose": "Stable center of the full-frame keyframe canvas."
+          },
+          "bakedWillowBank": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "purpose": "Semantic willow bank where the fishing conversation happens, represented inside the generated artwork."
+          }
+        }
+      },
+      "lighting": {
+        "mood": "Clear early-afternoon flat color: cyan-blue sky top, pale aqua horizon, flat gold dapple under the willows, lavender-purple shadow sides.",
+        "readabilityRules": [
+          "Do not apply runtime lighting or grading that changes character colors between generated frames.",
+          "Keep faces, the old man's straw hat and khaki vest, the orange cat, and the kids' costumes readable against the bright day plates during all crop motion and transitions.",
+          "Keep subtitle contrast independent of the baked background by using a dark translucent backing and outlined white text."
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "dayBirdsRiverLeaves",
+          "kind": "region",
+          "semantic": "Morning bird bed, river water bed and wind-in-leaves bed over the whole episode.",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "radius": 8,
+          "loop": true
+        },
+        {
+          "id": "footstepsAndCast",
+          "kind": "point",
+          "semantic": "Soft grass footsteps during the riverside walk; a single fishing-rod cast whoosh at the casting beat.",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "radius": 4,
+          "loop": false
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "storyTimeline",
+          "type": "other",
+          "path": "script.story",
+          "required": true
+        },
+        {
+          "id": "keyframeTimeline",
+          "type": "other",
+          "path": "config/keyframe_timeline.json",
+          "required": true
+        },
+        {
+          "id": "lipSyncCues",
+          "type": "other",
+          "path": "config/lipsync_cues.json",
+          "required": true
+        },
+        {
+          "id": "mouthRigs",
+          "type": "other",
+          "path": "config/mouth_rigs.json",
+          "required": true
+        },
+        {
+          "id": "voiceConfiguration",
+          "type": "other",
+          "path": "config/voice_config.json",
+          "required": true
+        },
+        {
+          "id": "audioMixConfiguration",
+          "type": "other",
+          "path": "config/audio_mix.json",
+          "required": true
+        },
+        {
+          "id": "transitionConfiguration",
+          "type": "other",
+          "path": "config/transitions.json",
+          "required": true
+        },
+        {
+          "id": "bakedSpeakerAdapter",
+          "type": "other",
+          "path": "characters/BakedSpeaker.js",
+          "required": true
+        },
+        {
+          "id": "girlReference",
+          "type": "texture",
+          "path": "assets/girl_reference.png",
+          "required": true
+        },
+        {
+          "id": "catReference",
+          "type": "texture",
+          "path": "assets/cat_reference.png",
+          "required": true
+        },
+        {
+          "id": "boyReference",
+          "type": "texture",
+          "path": "assets/boy_reference.png",
+          "required": true
+        },
+        {
+          "id": "oldmanReference",
+          "type": "texture",
+          "path": "assets/oldman_reference.png",
+          "required": false
+        },
+        {
+          "id": "willowBankMaster",
+          "type": "texture",
+          "path": "assets/scene_willow_bank_day.png",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "Girl",
+      "scene": "WillowFishingScene",
+      "kind": "character",
+      "runtimeName": "Girl",
+      "binding": "character:Girl",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "Cat",
+      "scene": "WillowFishingScene",
+      "kind": "character",
+      "runtimeName": "Cat",
+      "binding": "character:Cat",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "Boy",
+      "scene": "WillowFishingScene",
+      "kind": "character",
+      "runtimeName": "Boy",
+      "binding": "character:Boy",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "OldMan",
+      "scene": "WillowFishingScene",
+      "kind": "character",
+      "runtimeName": "OldMan",
+      "binding": "character:OldMan",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "keyframeSurface",
+      "scene": "WillowFishingScene",
+      "kind": "prop",
+      "objectName": "sequenceCanvas",
+      "binding": "sequenceTexture",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "states": [
+        "timed-sequence-active"
+      ],
+      "initialState": "timed-sequence-active"
+    }
+  ],
+  "state": {
+    "timelineVersion": {
+      "type": "number",
+      "initial": 1,
+      "binding": "keyframe_timeline.version"
+    }
+  },
+  "events": [],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "willowBankEstablishing",
+      "scene": "WillowFishingScene",
+      "entry": 1,
+      "offsetSeconds": 0.4,
+      "purpose": "Confirm the afternoon willow-bank establishing frame with hanging-branch foreground, three depth layers and dapple spots fills the first frame with subtitle-safe margins.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "oldmanReveal",
+      "scene": "WillowFishingScene",
+      "entry": 6,
+      "offsetSeconds": 0.6,
+      "purpose": "Confirm the first OldMan talking shot (straw-hat smile under the willow) is readable with syllable-aware visemes.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "backHillStare",
+      "scene": "WillowFishingScene",
+      "entry": 15,
+      "offsetSeconds": 1.0,
+      "purpose": "Confirm the F02 held still frame (cat staring toward the back hill, 2.9s, no crop motion) plays as a deliberate long hold.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "dula-inspect-team",
+      "dula-verify",
+      "visual-review",
+      "audio-review"
+    ]
+  }
+}

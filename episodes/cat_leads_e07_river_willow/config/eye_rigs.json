@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "notes": "Blink rigs. The closed variant is feather-locked onto the base frame (tools/auto_lock_variants.py); only the rect region is copied during a blink. Interval is per-rig randomized by the scene's deterministic scheduler (full-name hash stagger). Rects calibrated by tools/build_rigs.py with dense-core diff bboxes (threshold 30 + 5x5 density >=10), expanded 14px. E05: no blink rigs yet — rigs intentionally empty.",
+  "rigs": {}
+}

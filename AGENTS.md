@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/cat_leads_e06_cat_model/`（《猫带我去的地方》E06《模特小橘》——60 秒白天治愈系，阿澈给小橘画肖像被蝴蝶搅局；**正片打磨验证集**：亮场景美术密度规则（前景遮挡/三层纵深/色彩脚本）、布料与微动回关键帧 A/B 变体语法、I2V 收敛到全身位移（全片仅 1 段）、光斑全部烘焙进位图）
+**最新 Episode**：`episodes/cat_leads_e07_river_willow/`（《猫带我去的地方》E07《柳树下的老钓友》——60 秒午后治愈系，新角色老周（钓鱼翁，seed-tts 儒雅逸辰）登场；**长篇结构验证集**：环境微动 A/B 变体（柳枝摇摆/光斑漂移）、伏笔 F02/F03 首埋、BGM 三版选一首次执行、签名句式"去见个老朋友"）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/cat_leads_e07_river_willow/` — 《柳树下的老钓友》（长篇结构验证集：新角色老周、伏笔 F02/F03、环境微动 A/B）
 - `episodes/cat_leads_e06_cat_model/` — 《模特小橘》（正片打磨验证集：亮场景密度 + 关键帧微动语法）
 - `episodes/cat_leads_e05_morning_sketch/` — 《清晨速写》（优化方案验证集：1080p I2V + seed-tts-2.0 全角色配音）
 - `episodes/cat_leads_e04_firefly_night/` — 《夏夜流萤》（火山全家桶首集）
