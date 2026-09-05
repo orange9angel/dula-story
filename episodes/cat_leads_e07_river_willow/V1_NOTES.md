@@ -105,3 +105,13 @@
 - 老年音色：ListSpeakers 工具（volc-balance skill）拉出 seed-tts-2.0 全部
   444 音色；中文老年男声唯一候选"幽默大爷 2.0"，备选胡子叔叔/神秘法师/
   儒雅才俊。试听在 tmp/oldman_audition_*.mp3，待导演定夺后老周全量重配。
+
+## V8（导演定稿轮，2026-09-06 凌晨）
+
+- **老周音色定稿：幽默大爷 2.0**（ICL_uranus_zh_male_youmodaye_tob，
+  ListSpeakers 全量检索出的唯一中文老年男声）。情感参数全摘，用原生语气。
+  5 句重配 + 5 镜 omni 全量重跑。
+- **结尾无声**：连喵也去掉了——画面没动嘴就不该出声。纯留白收在
+  「你在看什么呀？」之后，悬念靠画面不靠声音。
+- 收尾时 gen_omni_shots.py 残留 shot10 条目报 016_Cat.wav 缺失——
+  拆镜头要两边同步（OMNI_SHOTS 表 + gen_omni_shots.py SHOTS 表）。

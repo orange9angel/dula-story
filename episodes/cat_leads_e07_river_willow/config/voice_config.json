@@ -76,26 +76,14 @@
     "default": {
       "provider": "seedtts",
       "resourceId": "seed-tts-2.0",
-      "speaker": "zh_male_ruyayichen_uranus_bigtts",
+      "speaker": "ICL_uranus_zh_male_youmodaye_tob",
       "format": "mp3",
       "sampleRate": 24000,
       "volume": 50
     },
-    "gentle": {
-      "emotion": "tenderness",
-      "emotion_scale": 2
-    },
-    "calm": {
-      "emotion": "calm",
-      "emotion_scale": 2
-    },
-    "bright": {
-      "emotion": "happy",
-      "emotion_scale": 2
-    },
-    "curious": {
-      "emotion": "surprised",
-      "emotion_scale": 2
-    }
+    "gentle": {},
+    "calm": {},
+    "bright": {},
+    "curious": {}
   }
 }
