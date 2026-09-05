@@ -36,9 +36,12 @@ STATIC_SHOTS = [
     (22.3, "keyframes/frame_11.png", "girl_greets_politely", "push_in", {}),
     (25.2, "keyframes/frame_12.png", "oldman_rod_cast", "push_in", {}),
     (25.6, "keyframes/frame_13.png", "oldman_watches_float", "push_in", {}),
-    # A/B willow sway (1.05s cadence)
+    # Willow sway flipbook cycle A-mid-B-mid (0.475s cadence, in-between
+    # softens the strobe; E07 V1 导演反馈两帧交替太闪)
     (31.1, "keyframes/frame_14a.png", "willow_sway_a", "static", {}),
+    (31.575, "keyframes/frame_14ab_mid.png", "willow_sway_mid1", "static", {}),
     (32.05, "keyframes/frame_14b.png", "willow_sway_b", "static", {}),
+    (32.525, "keyframes/frame_14ab_mid.png", "willow_sway_mid2", "static", {}),
     (33.0, "keyframes/frame_15.png", "boy_curious_about_rod", "push_in", {}),
     (35.9, "keyframes/frame_16.png", "oldman_proud_of_rod", "push_in", {}),
     (40.7, "keyframes/frame_18.png", "oldman_mystery_low_voice", "push_in", {}),
