@@ -77,7 +77,6 @@ OMNI_SHOTS = [
     (35.9, 39.8, "shot07_oldman_proud", "omni_oldman_proud"),
     (40.7, 45.0, "shot08_oldman_mystery", "omni_oldman_mystery"),
     (46.2, 50.8, "shot09_oldman_laugh", "omni_oldman_laugh"),
-    (54.4, 56.4, "shot10_cat_deflect", "omni_cat_deflect"),
 ]
 
 
