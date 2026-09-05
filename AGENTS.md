@@ -19,6 +19,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 **最新 Episode**：`episodes/cat_leads_e05_morning_sketch/`（《猫带我去的地方》E05《清晨速写》——60 秒清晨治愈系，阿澈（Boy，设计锁沿用 xiaoju_secret）首次进入本系列；**优化方案验证集**：I2V 升级 Seedance 2.0 满血版 1080p（doubao-seedance-2-0-260128，E04 mini/720p 放大虚边消除），关键帧 prompt 表情分层描写，I2V prompt 带 L1 布料/发丝次级动态词表，OmniHuman prompt 神态分层；**V2 起人类角色配音全迁火山 seed-tts-2.0**（Girl=Vivi 2.0、Boy=小天 2.0，emotion_scale=2 弱档，A/B 判定优于 CosyVoice））
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/cat_leads_e05_morning_sketch/` — 《清晨速写》（优化方案验证集：1080p I2V + seed-tts-2.0 全角色配音）
 - `episodes/cat_leads_e04_firefly_night/` — 《夏夜流萤》（火山全家桶首集）
 - `episodes/cat_leads_e03_dusk_homecoming/` — 《暮色归途》（I2V 标准档验证集）
 - `episodes/cat_leads_e02_morning_riverbank/` — 《清晨河堤》（I2V 视频 cel 工艺首用）
