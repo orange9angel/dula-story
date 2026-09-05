@@ -115,3 +115,21 @@
   「你在看什么呀？」之后，悬念靠画面不靠声音。
 - 收尾时 gen_omni_shots.py 残留 shot10 条目报 016_Cat.wav 缺失——
   拆镜头要两边同步（OMNI_SHOTS 表 + gen_omni_shots.py SHOTS 表）。
+
+## V9（导演复片：向往语法定调，2026-09-06）
+
+1. **基调裁决（导演）**：青光段和结尾猫帧读出了"悬疑/不舒服"，与本剧"阳光、
+   温暖、高阶文明"基调冲突。根因不是暗线元素，而是**呈现语法借自恐怖片**：
+   老人压声转述、孩子不安对视、猫回避+警觉表情、留白当悬念。
+   定调升级为**向往语法**：信息差保留，每拍情绪符号为正（渴望而非害怕）。
+   纪律全文写入 docs/cat_leads_series_bible.md 2.0 节。
+2. **三帧 prompt 修正**（tools/gen_seg2.sh，旧帧备份 tmp/old_frames_v8/）：
+   - frame_19：孩子对视困惑 → 眼睛发亮、惊叹向往（"想看！"的能量）
+   - frame_21（F02）：删掉 "unnaturally focused / tail wrapped tight" →
+     放松眷恋，"像猫看初雪、像看老朋友的家"
+   - frame_23（结尾回头）：删掉 "deliberately neutral / as if nothing
+     happened"（回避语法，成片读作警惕）→ 半阖眼温柔眷恋、安静告别心爱的风景
+3. **老周定位修正**：暗线的守护者而非证人——河里的光是他的老朋友，
+   「这条河，它比我熟」在此解读下成立，为交汇集回收预留重估接口。
+4. 纪律回写：story-writer/references/directing-craft.md（信息不对称一节加
+   情绪符号规则）、series-architect SKILL.md（核心规则加向往条款）。

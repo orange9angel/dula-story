@@ -44,13 +44,13 @@ STATIC_SHOTS = [
     (32.525, "keyframes/frame_14ab_mid.png", "willow_sway_mid2", "static", {}),
     (33.0, "keyframes/frame_15.png", "boy_curious_about_rod", "push_in", {}),
     (35.9, "keyframes/frame_16.png", "oldman_proud_of_rod", "push_in", {}),
-    (40.7, "keyframes/frame_18.png", "oldman_mystery_low_voice", "push_in", {}),
-    (45.0, "keyframes/frame_19.png", "kids_exchange_glance", "push_in", {}),
+    (40.7, "keyframes/frame_18.png", "oldman_fond_telling", "push_in", {}),
+    (45.0, "keyframes/frame_19.png", "kids_light_up_with_wonder", "push_in", {}),
     (46.2, "keyframes/frame_20.png", "oldman_self_deprecating_laugh", "push_in", {}),
-    # F02 foreshadow: deliberately held, no crop move
-    (50.8, "keyframes/frame_21.png", "cat_stares_back_mountain", "static", {}),
+    # F02 foreshadow: deliberately held, no crop move (fond gazing, not wary)
+    (50.8, "keyframes/frame_21.png", "cat_gazes_fondly_upstream", "static", {}),
     (53.2, "keyframes/frame_22.png", "girl_notices_cat", "push_in", {}),
-    (54.4, "keyframes/frame_23.png", "cat_deflects", "push_in", {}),
+    (54.4, "keyframes/frame_23.png", "cat_soft_farewell_lookback", "push_in", {}),
     # A/B light-spot drift finale (1.2s cadence)
     (56.4, "keyframes/frame_24a.png", "finale_drift_a", "pull_out", {}),
     (57.6, "keyframes/frame_24b.png", "finale_drift_b", "pull_out",
@@ -148,10 +148,11 @@ def main() -> None:
             "shots, and exactly one Seedance 2.0 FULL 1080p I2V segment "
             "(trio path walk, full-body displacement only). New character "
             "OldMan (fisherman) debuts. Foreshadow beats: F03 (cyan light "
-            "line, dialogue) and F02 (cat staring at the back mountain, held "
-            "static frame). No programmatic overlay layers (cloudDrift "
-            "ellipses read as stickers against baked clouds). Hard cuts; "
-            "one closing crossfade."
+            "line, dialogue) and F02 (cat gazing fondly toward the back "
+            "mountain, held static frame). No programmatic overlay layers "
+            "(cloudDrift ellipses read as stickers against baked clouds). "
+            "Hard cuts; one closing crossfade. Yearning grammar: every "
+            "hidden-layer beat presented with positive valence (E07 V9)."
         ),
         "frames": frames,
     }
