@@ -30,7 +30,7 @@ lit side, muted purple on the shadow side. Composition: 16:9 landscape, full
 body visible, eye-level view, cheerful quiet street, green plants (#58A05C).
 Avoid: stepped or striped sky, banding, grain, noise, paper texture, halftone,
 airbrush, blur, photorealism, 3D render, lens flare, glow effects,
-Makoto Shinkai style, text, captions, logos, watermark, signature.
+realistic anime film lighting, text, captions, logos, watermark, signature.
 并把成品 PNG 保存到 $OUT/sunprint_v2.png。"
 
 echo "== gen sunprint_v2"

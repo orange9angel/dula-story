@@ -20,7 +20,7 @@ smile. Design lock: slim build; warm light skin; short black hair with slightly 
 fringe; dark gray eyes; white short-sleeve school shirt matching the uniform in image 1;
 navy-blue trousers; white sneakers; exactly one sketchbook and one pencil. Style: same
 polished 2D Japanese animation as image 1, clean cel shading, crisp line art, golden
-late-afternoon sunlight, sparkling river in the background, Makoto Shinkai inspired
+late-afternoon sunlight, sparkling river in the background, realistic anime film
 lighting. Composition: 16:9 landscape, full body visible sitting on the steps at center,
 eye-level three-quarter side view. Avoid: extra people, cats, duplicate limbs, text,
 captions, logos, watermark, signature, photorealism, 3D render.

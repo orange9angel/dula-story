@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "under_umbrella",
+  "source": {
+    "story": "script.story",
+    "notes": ""
+  },
+  "paths": {
+    "projectRoot": "../..",
+    "outputDirectory": "assets/keyframes"
+  },
+  "output": {
+    "aspectRatio": "16:9"
+  },
+  "provider": {
+    "name": "dashscope",
+    "model": "wan2.7-image-pro",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": true,
+      "acceptsRequestedCount": true,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": true,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {
+      "size": "2K",
+      "watermark": false
+    }
+  },
+  "continuity": {
+    "identityReferences": [
+      "characters/ancient_girl_master_ref.jpg",
+      "characters/ancient_boy_master_ref.jpg"
+    ],
+    "styleReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "settingReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "allowTextOnly": false,
+    "hardLocks": {
+      "characters": [
+        "Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces"
+      ],
+      "wardrobe": [
+        "Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash"
+      ],
+      "scene": [
+        "ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements"
+      ],
+      "camera": [
+        "16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence"
+      ],
+      "style": [
+        "original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia"
+      ],
+      "props": [
+        "exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified"
+      ]
+    },
+    "negativeConstraints": [
+      "different character identity",
+      "face drift",
+      "wardrobe changes",
+      "extra characters",
+      "extra limbs or fingers",
+      "duplicate moving props",
+      "unplanned camera or background changes",
+      "text or watermark"
+    ],
+    "grouping": {
+      "preferSequentialGroup": true,
+      "maxShotsPerGroup": 5,
+      "overlapShots": 1
+    }
+  },
+  "shots": [
+    {
+      "id": "frame_30",
+      "order": 1,
+      "actionPhase": "setup",
+      "description": "Upward intimate two-shot from beneath the open umbrella, hand-painted mineral-gold sun and bamboo ribs overhead, warm reflected light on both faces, droplets at rim.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_30.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_31",
+      "order": 2,
+      "actionPhase": "anticipation",
+      "description": "Girl points at one small leak with amused smile, medium close two-shot under umbrella, Boy looks toward the drip.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_31.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_32",
+      "order": 3,
+      "actionPhase": "action",
+      "description": "Boy close-up replies playfully that the sun is in rain for the first time, shy confident smile, warm gold rim light, rain bokeh behind.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_32.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_33",
+      "order": 4,
+      "actionPhase": "apex_or_contact",
+      "description": "Girl close-up laughs openly, eyes crescent-bright, natural expressive joy, one droplet glints near umbrella rim.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_33.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_34",
+      "order": 5,
+      "actionPhase": "recovery",
+      "description": "Wide lyrical side view: Girl and Boy walk slowly right-to-left together along canal under the one umbrella, wet stone reflections, steady rain, balanced shared spacing.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_34.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    }
+  ],
+  "candidates": [],
+  "runs": []
+}

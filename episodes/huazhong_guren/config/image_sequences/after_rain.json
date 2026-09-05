@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "after_rain",
+  "source": {
+    "story": "script.story",
+    "notes": ""
+  },
+  "paths": {
+    "projectRoot": "../..",
+    "outputDirectory": "assets/keyframes"
+  },
+  "output": {
+    "aspectRatio": "16:9"
+  },
+  "provider": {
+    "name": "dashscope",
+    "model": "wan2.7-image-pro",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": true,
+      "acceptsRequestedCount": true,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": true,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {
+      "size": "2K",
+      "watermark": false
+    }
+  },
+  "continuity": {
+    "identityReferences": [
+      "characters/ancient_girl_master_ref.jpg",
+      "characters/ancient_boy_master_ref.jpg"
+    ],
+    "styleReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "settingReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "allowTextOnly": false,
+    "hardLocks": {
+      "characters": [
+        "Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces"
+      ],
+      "wardrobe": [
+        "Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash"
+      ],
+      "scene": [
+        "ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements"
+      ],
+      "camera": [
+        "16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence"
+      ],
+      "style": [
+        "original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia"
+      ],
+      "props": [
+        "exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified"
+      ]
+    },
+    "negativeConstraints": [
+      "different character identity",
+      "face drift",
+      "wardrobe changes",
+      "extra characters",
+      "extra limbs or fingers",
+      "duplicate moving props",
+      "unplanned camera or background changes",
+      "text or watermark"
+    ],
+    "grouping": {
+      "preferSequentialGroup": true,
+      "maxShotsPerGroup": 5,
+      "overlapShots": 1
+    }
+  },
+  "shots": [
+    {
+      "id": "frame_35",
+      "order": 1,
+      "actionPhase": "setup",
+      "description": "Rain begins easing as the couple pauses beneath umbrella; fine drizzle, clouds opening, cool street and canal still reflective.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_35.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_36",
+      "order": 2,
+      "actionPhase": "anticipation",
+      "description": "Spectacular wide Jiangnan canal: clean golden sunbeams break through dark blue clouds onto wet stone and water, couple small beneath indigo umbrella, strong cool-warm contrast.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_36.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_37",
+      "order": 3,
+      "actionPhase": "action",
+      "description": "Girl medium close-up tilts her face toward the clearing sky with quiet wonder, amber eyes catch sunlight, umbrella edge above.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_37.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_38",
+      "order": 4,
+      "actionPhase": "apex_or_contact",
+      "description": "Boy intimate close-up looks at Girl rather than the sky, gentle youthful expression as he says she carried the umbrella through, no solemn narrator face.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_38.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_39",
+      "order": 5,
+      "actionPhase": "recovery",
+      "description": "Close-up of their two hands now calmly sharing the wooden umbrella handle, sleeves distinct, warm light on wet knuckles, anatomically correct fingers.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_39.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    }
+  ],
+  "candidates": [],
+  "runs": []
+}

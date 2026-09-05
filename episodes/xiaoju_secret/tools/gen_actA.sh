@@ -8,7 +8,7 @@ C="assets/cat_reference.png"
 K="assets/keyframes"
 T="tmp/gen"
 
-STYLE="Style: polished 2D Japanese animation, clean cel shading, crisp line art, warm Makoto Shinkai inspired lighting. Composition: 16:9 landscape. Avoid: extra people, extra cats, duplicate limbs, malformed hands, text, captions, logos, watermark, signature, photorealism, 3D render."
+STYLE="Style: polished 2D Japanese animation, clean cel shading, crisp line art, warm realistic anime film lighting. Composition: 16:9 landscape. Avoid: extra people, extra cats, duplicate limbs, malformed hands, text, captions, logos, watermark, signature, photorealism, 3D render."
 SIZE="输出与输入完全相同的尺寸（1672x941）PNG"
 GIRL="the same 16-year-old girl as the reference: waist-length straight deep-blue hair, straight bangs, large amber eyes, white short-sleeve school shirt, navy-blue plaid pleated skirt, black knee socks, black loafers, exactly one navy school bag"
 CAT="the same orange tabby cat as the reference: darker orange stripes, white chest patch, four white paws, green eyes, small slim body, fur now dry and fluffy"

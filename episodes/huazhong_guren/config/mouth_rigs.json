@@ -1,0 +1,98 @@
+{
+  "version": 2,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "states": ["closed", "half", "open"],
+  "notes": "Eight high-value dialogue close-ups use pixel-locked local mouth edits; frame 13 serves two separate spoken entries.",
+  "rigs": {
+    "girl_frame05_entry4": {
+      "entry": 4,
+      "mode": "image",
+      "rect": [1126, 386, 190, 138],
+      "variants": {
+        "closed": "mouth_variants/frame_05_closed_locked.png",
+        "half": "mouth_variants/frame_05_half_locked.png",
+        "open": "keyframes/frame_05.png"
+      }
+    },
+    "boy_frame06_entry5": {
+      "entry": 5,
+      "mode": "image",
+      "rect": [1316, 366, 238, 158],
+      "variants": {
+        "closed": "mouth_variants/frame_06_closed_locked.png",
+        "half": "mouth_variants/frame_06_half_locked.png",
+        "open": "keyframes/frame_06.png"
+      }
+    },
+    "boy_frame12_entry10": {
+      "entry": 10,
+      "mode": "image",
+      "rect": [1316, 446, 258, 188],
+      "variants": {
+        "closed": "mouth_variants/frame_12_closed_locked.png",
+        "half": "mouth_variants/frame_12_half_locked.png",
+        "open": "keyframes/frame_12.png"
+      }
+    },
+    "girl_frame13_entry11": {
+      "entry": 11,
+      "mode": "image",
+      "rect": [1056, 466, 248, 188],
+      "variants": {
+        "closed": "mouth_variants/frame_13_closed_locked.png",
+        "half": "mouth_variants/frame_13_half_locked.png",
+        "open": "keyframes/frame_13.png"
+      }
+    },
+    "girl_frame13_entry13": {
+      "entry": 13,
+      "mode": "image",
+      "rect": [1056, 466, 248, 188],
+      "variants": {
+        "closed": "mouth_variants/frame_13_closed_locked.png",
+        "half": "mouth_variants/frame_13_half_locked.png",
+        "open": "keyframes/frame_13.png"
+      }
+    },
+    "boy_frame27_entry26": {
+      "entry": 26,
+      "mode": "image",
+      "rect": [911, 421, 188, 138],
+      "variants": {
+        "closed": "mouth_variants/frame_27_closed_locked.png",
+        "half": "mouth_variants/frame_27_half_locked.png",
+        "open": "keyframes/frame_27.png"
+      }
+    },
+    "girl_frame28_entry27": {
+      "entry": 27,
+      "mode": "image",
+      "rect": [676, 386, 178, 138],
+      "variants": {
+        "closed": "mouth_variants/frame_28_half_locked.png",
+        "half": "mouth_variants/frame_28_half_locked.png",
+        "open": "keyframes/frame_28.png"
+      }
+    },
+    "boy_frame37_entry33": {
+      "entry": 33,
+      "mode": "image",
+      "rect": [911, 486, 194, 158],
+      "variants": {
+        "closed": "mouth_variants/frame_37_closed_locked.png",
+        "half": "mouth_variants/frame_37_half_locked.png",
+        "open": "keyframes/frame_37.png"
+      }
+    },
+    "girl_frame38_entry34": {
+      "entry": 34,
+      "mode": "image",
+      "rect": [588, 406, 176, 148],
+      "variants": {
+        "closed": "keyframes/frame_38.png",
+        "half": "mouth_variants/frame_38_half_locked.png",
+        "open": "mouth_variants/frame_38_open_locked.png"
+      }
+    }
+  }
+}

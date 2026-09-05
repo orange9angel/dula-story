@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "notes": "Final: all ten blink rigs are codex local edits (auto_lock v1, outside max diff=0). The qwen v2 cat blinks (frame_02/13) were retired in V4: their content rect included qwen-re-rendered forehead fur, so the blink sweep showed a horizontal seam line.",
+  "rigs": {
+    "girl_frame01_blink": {
+      "rect": [
+        493,
+        195,
+        74,
+        65
+      ],
+      "closed": "eye_variants/frame_01_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame03_blink": {
+      "rect": [
+        1105,
+        153,
+        97,
+        61
+      ],
+      "closed": "eye_variants/frame_03_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame06_blink": {
+      "rect": [
+        770,
+        93,
+        94,
+        63
+      ],
+      "closed": "eye_variants/frame_06_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame11_blink": {
+      "rect": [
+        685,
+        197,
+        136,
+        100
+      ],
+      "closed": "eye_variants/frame_11_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame14_blink": {
+      "rect": [
+        474,
+        224,
+        131,
+        86
+      ],
+      "closed": "eye_variants/frame_14_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame16_blink": {
+      "rect": [
+        619,
+        265,
+        115,
+        109
+      ],
+      "closed": "eye_variants/frame_16_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "cat_frame02_blink": {
+      "rect": [
+        952,
+        305,
+        151,
+        71
+      ],
+      "closed": "eye_variants/frame_02_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "cat_frame05_blink": {
+      "rect": [
+        839,
+        459,
+        109,
+        68
+      ],
+      "closed": "eye_variants/frame_05_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "cat_frame10_blink": {
+      "rect": [
+        826,
+        410,
+        68,
+        68
+      ],
+      "closed": "eye_variants/frame_10_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "cat_frame13_blink": {
+      "rect": [
+        567,
+        358,
+        170,
+        83
+      ],
+      "closed": "eye_variants/frame_13_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    }
+  }
+}

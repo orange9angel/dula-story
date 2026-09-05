@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "duration": 59.0,
+  "description": "Bio-Armor Academy S1E1 living-manga sequence: 13 keyframes with 2D crop moves, a page-turn entrance on frame_00, manga speech bubbles / narrator caption, onomatopoeia overlays, a chapter title card, converging speedlines on frame_07, and an invert impact flash on frame_08. Energy-gated Chinese viseme cels on entries 2/3/4/5/6/7/8/10/11, blink rigs on the five close-ups.",
+  "sfxTexts": [
+    {"text": "铛——!!", "from": 38.9, "to": 40.2, "style": "red", "x": 0.5, "y": 0.42},
+    {"text": "嗡…", "from": 40.4, "to": 43.8, "style": "teal", "x": 0.72, "y": 0.25}
+  ],
+  "titleCard": {"text": "第一集 选中者", "sub": "殖装学园", "from": 0.4, "to": 3.8, "x": 0.78, "y": 0.2},
+  "frames": [
+    {"at": 0.0, "file": "keyframes/frame_00.png", "shot": "dusk_campus_gym_establishing", "move": "push_in", "transition": "page", "transitionSeconds": 1.0},
+    {"at": 4.3, "file": "keyframes/frame_01.png", "shot": "leixiao_sleeve_closeup", "move": "push_in", "mouthRig": "frame_01_mouth", "eyeRig": "frame_01_eyes", "bubbleAnchors": {"LeiXiao": [0.42, 0.55]}, "transition": "cut"},
+    {"at": 9.6, "file": "keyframes/frame_02.png", "shot": "bailan_backlit_mid", "move": "static", "mouthRig": "frame_02_mouth", "bubbleAnchors": {"BaiLan": [0.6, 0.45]}, "transition": "cut"},
+    {"at": 12.7, "file": "keyframes/frame_03.png", "shot": "leixiao_shocked_closeup", "move": "static", "shiver": true, "mouthRig": "frame_03_mouth", "eyeRig": "frame_03_eyes", "bubbleAnchors": {"LeiXiao": [0.42, 0.55]}, "transition": "cut"},
+    {"at": 17.0, "file": "keyframes/frame_04.png", "shot": "two_shot_gym_long_shadows", "move": "drift_left", "mouthRig": "frame_04_mouth", "bubbleAnchors": {"BaiLan": [0.35, 0.4]}, "transition": "cut"},
+    {"at": 23.8, "file": "keyframes/frame_05.png", "shot": "leixiao_shout_closeup", "move": "push_in", "mouthRig": "frame_05_mouth", "eyeRig": "frame_05_eyes", "bubbleAnchors": {"LeiXiao": [0.42, 0.55]}, "transition": "cut"},
+    {"at": 29.1, "file": "keyframes/frame_06.png", "shot": "bailan_low_angle_cold", "move": "static", "mouthRig": "frame_06_mouth", "eyeRig": "frame_06_eyes", "bubbleAnchors": {"BaiLan": [0.6, 0.45]}, "transition": "cut"},
+    {"at": 32.9, "file": "keyframes/frame_07.png", "shot": "bailan_raises_shinai", "move": "push_in", "mouthRig": "frame_07_mouth", "bubbleAnchors": {"BaiLan": [0.6, 0.45]}, "speedlines": {"type": "converge", "cx": 0.5, "cy": 0.42, "density": 40}, "transition": "cut"},
+    {"at": 38.0, "file": "keyframes/frame_08.png", "shot": "impact_block_sparks", "move": "static", "fx": {"type": "impact", "at": 0.9, "duration": 0.12}, "transition": "cut"},
+    {"at": 40.3, "file": "keyframes/frame_09.png", "shot": "leixiao_armored_arm_surprise", "move": "push_in", "mouthRig": "frame_09_mouth", "eyeRig": "frame_09_eyes", "bubbleAnchors": {"LeiXiao": [0.42, 0.55]}, "transition": "cut"},
+    {"at": 44.1, "file": "keyframes/frame_10.png", "shot": "bailan_smirk_closeup", "move": "static", "mouthRig": "frame_10_mouth", "bubbleAnchors": {"BaiLan": [0.6, 0.45]}, "transition": "cut"},
+    {"at": 47.9, "file": "keyframes/frame_11.png", "shot": "bailan_walkaway_backlit", "move": "static", "bubbleAnchors": {"BaiLan": [1.05, 0.4]}, "transition": "crossfade", "transitionSeconds": 0.4},
+    {"at": 53.2, "file": "keyframes/frame_12.png", "shot": "finale_core_glow_wide", "move": "pull_out", "transition": "cut"}
+  ]
+}

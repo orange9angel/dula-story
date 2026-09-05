@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "painting_banter",
+  "source": {
+    "story": "script.story",
+    "notes": ""
+  },
+  "paths": {
+    "projectRoot": "../..",
+    "outputDirectory": "assets/keyframes"
+  },
+  "output": {
+    "aspectRatio": "16:9"
+  },
+  "provider": {
+    "name": "dashscope",
+    "model": "wan2.7-image-pro",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": true,
+      "acceptsRequestedCount": true,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": true,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {
+      "size": "2K",
+      "watermark": false
+    }
+  },
+  "continuity": {
+    "identityReferences": [
+      "characters/ancient_girl_master_ref.jpg",
+      "characters/ancient_boy_master_ref.jpg"
+    ],
+    "styleReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "settingReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "allowTextOnly": false,
+    "hardLocks": {
+      "characters": [
+        "Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces"
+      ],
+      "wardrobe": [
+        "Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash"
+      ],
+      "scene": [
+        "ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements"
+      ],
+      "camera": [
+        "16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence"
+      ],
+      "style": [
+        "original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia"
+      ],
+      "props": [
+        "exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified"
+      ]
+    },
+    "negativeConstraints": [
+      "different character identity",
+      "face drift",
+      "wardrobe changes",
+      "extra characters",
+      "extra limbs or fingers",
+      "duplicate moving props",
+      "unplanned camera or background changes",
+      "text or watermark"
+    ],
+    "grouping": {
+      "preferSequentialGroup": true,
+      "maxShotsPerGroup": 5,
+      "overlapShots": 1
+    }
+  },
+  "shots": [
+    {
+      "id": "frame_10",
+      "order": 1,
+      "actionPhase": "setup",
+      "description": "Close-up of Boy's hands grinding bright mineral gold powder in a small inkstone beside brushes and the inner surface of the indigo umbrella.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_10.png",
+      "review": {
+        "issues": [],
+        "notes": "Reviewed identity, Chinese wardrobe, scene, prop count, anatomy, and intended action phase; accepted for inheritance."
+      }
+    },
+    {
+      "id": "frame_11",
+      "order": 2,
+      "actionPhase": "anticipation",
+      "description": "Close-up of brush tip painting the first curved gold rays on the umbrella INNER surface, bamboo ribs visible, Girl's shadow crosses the work.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_11.png",
+      "review": {
+        "issues": [],
+        "notes": "Reviewed identity, Chinese wardrobe, scene, prop count, anatomy, and intended action phase; accepted for inheritance."
+      }
+    },
+    {
+      "id": "frame_12",
+      "order": 3,
+      "actionPhase": "action",
+      "description": "Boy medium close-up glances up with playful smile while still painting, telling Girl her shadow blocks his sun.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_12.png",
+      "review": {
+        "issues": [],
+        "notes": "Reviewed identity, Chinese wardrobe, scene, prop count, anatomy, and intended action phase; accepted for inheritance."
+      }
+    },
+    {
+      "id": "frame_13",
+      "order": 4,
+      "actionPhase": "apex_or_contact",
+      "description": "Girl medium close-up leans around the umbrella edge and teases him, lively amber eyes, one eyebrow raised.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_13.png",
+      "review": {
+        "issues": [],
+        "notes": "Reviewed identity, Chinese wardrobe, scene, prop count, anatomy, and intended action phase; accepted for inheritance."
+      }
+    },
+    {
+      "id": "frame_14",
+      "order": 5,
+      "actionPhase": "recovery",
+      "description": "Two-shot across the umbrella edge: Boy looks shy after a playful answer, Girl suppresses a laugh, half-painted gold sun visible only on inner surface.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_14.png",
+      "review": {
+        "issues": [],
+        "notes": "Reviewed identity, Chinese wardrobe, scene, prop count, anatomy, and intended action phase; accepted for inheritance."
+      }
+    }
+  ],
+  "candidates": [],
+  "runs": [
+    {
+      "runId": "20260820T170939Z-sequential-group-5618a120",
+      "provider": "dashscope",
+      "model": "wan2.7-image-pro",
+      "mode": "sequential-group",
+      "shotIds": [
+        "frame_10",
+        "frame_11",
+        "frame_12",
+        "frame_13",
+        "frame_14"
+      ],
+      "referencePaths": [
+        "characters/ancient_girl_master_ref.jpg",
+        "characters/ancient_boy_master_ref.jpg",
+        "characters/ancient_couple_master_ref.jpg",
+        "characters/ancient_couple_master_ref.jpg"
+      ],
+      "taskId": "a4c39efa-1cf2-44eb-a218-9c00aa77e0ad",
+      "seed": null,
+      "requestedCount": 5,
+      "returnedCount": 5,
+      "assignmentMode": "position",
+      "outputs": [
+        "assets/keyframes/frame_10.png",
+        "assets/keyframes/frame_11.png",
+        "assets/keyframes/frame_12.png",
+        "assets/keyframes/frame_13.png",
+        "assets/keyframes/frame_14.png"
+      ],
+      "candidateOutputs": [],
+      "createdAt": "2026-08-20T17:09:42Z"
+    }
+  ]
+}

@@ -1,0 +1,1817 @@
+{
+  "version": 3,
+  "duration": 60.0,
+  "description": "Summer-night healing short (sunprint flat-color night variant) driven by 20 keyframes plus 2 action in-betweens, with the four continuous-action shots (cat night wall walk, girl night bridge walk, cat night bank run, girl night bank walk) rendered as seedance-2.0-mini image-to-video clips extracted to 12fps cel sequences played as static full-frame cels. Hard cuts; one crossfade at the seg2 riverbank transition and one closing crossfade. 2D crop moves, procedural flat-shape night layers (star twinkle, moonlight river band, firefly drift, door-lamp pool), energy-gated Chinese viseme cels for the girl's monologues and the talking cat's lines, SFX-gated meow cels. Night outing direction: all travel is screen-right.",
+  "frames": [
+    {
+      "at": 0.0,
+      "file": "keyframes/frame_00.png",
+      "shot": "lane_home_night_establishing",
+      "move": "push_in",
+      "starTwinkle": {
+        "stars": [
+          [
+            220,
+            90,
+            3,
+            0.6
+          ],
+          [
+            520,
+            150,
+            2.5,
+            0.9
+          ],
+          [
+            830,
+            70,
+            3,
+            0.5
+          ],
+          [
+            1150,
+            130,
+            2.5,
+            1.1
+          ],
+          [
+            1420,
+            90,
+            3,
+            0.7
+          ],
+          [
+            1560,
+            190,
+            2,
+            0.8
+          ],
+          [
+            350,
+            210,
+            2,
+            1.0
+          ],
+          [
+            960,
+            180,
+            2,
+            0.6
+          ]
+        ],
+        "alpha": 0.7
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 3.0,
+      "file": "keyframes/frame_01.png",
+      "shot": "girl_peeks_door_cat_waits",
+      "move": "push_in",
+      "mouthRig": "girl_frame01_entry3",
+      "eyeRig": "girl_frame01_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 6.0,
+      "file": "keyframes/frame_02.png",
+      "shot": "cat_wall_lookback_night",
+      "move": "push_in",
+      "mouthRig": "cat_frame02_entry4",
+      "eyeRig": "cat_frame02_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 9.5,
+      "file": "action_inbetweens/ib_01.png",
+      "shot": "girl_closing_door_inbetween",
+      "move": "push_in",
+      "transition": "cut"
+    },
+    {
+      "at": 10.3,
+      "file": "keyframes/frame_03.png",
+      "shot": "girl_closes_door",
+      "move": "push_in",
+      "eyeRig": "girl_frame03_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 11.5,
+      "file": "i2v/cat_wall_walk_night/f_0001.png",
+      "shot": "cat_wall_walk_night_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.5833,
+      "file": "i2v/cat_wall_walk_night/f_0002.png",
+      "shot": "cat_wall_walk_night_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.6667,
+      "file": "i2v/cat_wall_walk_night/f_0003.png",
+      "shot": "cat_wall_walk_night_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.75,
+      "file": "i2v/cat_wall_walk_night/f_0004.png",
+      "shot": "cat_wall_walk_night_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.8333,
+      "file": "i2v/cat_wall_walk_night/f_0005.png",
+      "shot": "cat_wall_walk_night_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 11.9167,
+      "file": "i2v/cat_wall_walk_night/f_0006.png",
+      "shot": "cat_wall_walk_night_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.0,
+      "file": "i2v/cat_wall_walk_night/f_0007.png",
+      "shot": "cat_wall_walk_night_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.0833,
+      "file": "i2v/cat_wall_walk_night/f_0008.png",
+      "shot": "cat_wall_walk_night_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.1667,
+      "file": "i2v/cat_wall_walk_night/f_0009.png",
+      "shot": "cat_wall_walk_night_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.25,
+      "file": "i2v/cat_wall_walk_night/f_0010.png",
+      "shot": "cat_wall_walk_night_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.3333,
+      "file": "i2v/cat_wall_walk_night/f_0011.png",
+      "shot": "cat_wall_walk_night_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.4167,
+      "file": "i2v/cat_wall_walk_night/f_0012.png",
+      "shot": "cat_wall_walk_night_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.5,
+      "file": "i2v/cat_wall_walk_night/f_0013.png",
+      "shot": "cat_wall_walk_night_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.5833,
+      "file": "i2v/cat_wall_walk_night/f_0014.png",
+      "shot": "cat_wall_walk_night_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.6667,
+      "file": "i2v/cat_wall_walk_night/f_0015.png",
+      "shot": "cat_wall_walk_night_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.75,
+      "file": "i2v/cat_wall_walk_night/f_0016.png",
+      "shot": "cat_wall_walk_night_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.8333,
+      "file": "i2v/cat_wall_walk_night/f_0017.png",
+      "shot": "cat_wall_walk_night_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 12.9167,
+      "file": "i2v/cat_wall_walk_night/f_0018.png",
+      "shot": "cat_wall_walk_night_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 13.0,
+      "file": "i2v/cat_wall_walk_night/f_0019.png",
+      "shot": "cat_wall_walk_night_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 13.0833,
+      "file": "i2v/cat_wall_walk_night/f_0020.png",
+      "shot": "cat_wall_walk_night_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 13.1667,
+      "file": "i2v/cat_wall_walk_night/f_0021.png",
+      "shot": "cat_wall_walk_night_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 13.25,
+      "file": "i2v/cat_wall_walk_night/f_0022.png",
+      "shot": "cat_wall_walk_night_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 13.3333,
+      "file": "i2v/cat_wall_walk_night/f_0023.png",
+      "shot": "cat_wall_walk_night_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 13.4167,
+      "file": "i2v/cat_wall_walk_night/f_0024.png",
+      "shot": "cat_wall_walk_night_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 13.5,
+      "file": "keyframes/frame_04.png",
+      "shot": "girl_follows_lane",
+      "move": "drift_right",
+      "mouthRig": "girl_frame04_entry7",
+      "eyeRig": "girl_frame04_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 16.0,
+      "file": "keyframes/frame_05.png",
+      "shot": "bridge_night_reveal_cat_waits",
+      "move": "push_in",
+      "starTwinkle": {
+        "stars": [
+          [
+            220,
+            90,
+            3,
+            0.6
+          ],
+          [
+            520,
+            150,
+            2.5,
+            0.9
+          ],
+          [
+            830,
+            70,
+            3,
+            0.5
+          ],
+          [
+            1150,
+            130,
+            2.5,
+            1.1
+          ],
+          [
+            1420,
+            90,
+            3,
+            0.7
+          ],
+          [
+            1560,
+            190,
+            2,
+            0.8
+          ],
+          [
+            350,
+            210,
+            2,
+            1.0
+          ],
+          [
+            960,
+            180,
+            2,
+            0.6
+          ]
+        ],
+        "alpha": 0.7
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 18.5,
+      "file": "i2v/girl_bridge_walk_night/f_0001.png",
+      "shot": "girl_bridge_walk_night_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.5833,
+      "file": "i2v/girl_bridge_walk_night/f_0002.png",
+      "shot": "girl_bridge_walk_night_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.6667,
+      "file": "i2v/girl_bridge_walk_night/f_0003.png",
+      "shot": "girl_bridge_walk_night_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.75,
+      "file": "i2v/girl_bridge_walk_night/f_0004.png",
+      "shot": "girl_bridge_walk_night_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.8333,
+      "file": "i2v/girl_bridge_walk_night/f_0005.png",
+      "shot": "girl_bridge_walk_night_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 18.9167,
+      "file": "i2v/girl_bridge_walk_night/f_0006.png",
+      "shot": "girl_bridge_walk_night_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.0,
+      "file": "i2v/girl_bridge_walk_night/f_0007.png",
+      "shot": "girl_bridge_walk_night_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.0833,
+      "file": "i2v/girl_bridge_walk_night/f_0008.png",
+      "shot": "girl_bridge_walk_night_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.1667,
+      "file": "i2v/girl_bridge_walk_night/f_0009.png",
+      "shot": "girl_bridge_walk_night_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.25,
+      "file": "i2v/girl_bridge_walk_night/f_0010.png",
+      "shot": "girl_bridge_walk_night_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.3333,
+      "file": "i2v/girl_bridge_walk_night/f_0011.png",
+      "shot": "girl_bridge_walk_night_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.4167,
+      "file": "i2v/girl_bridge_walk_night/f_0012.png",
+      "shot": "girl_bridge_walk_night_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.5,
+      "file": "i2v/girl_bridge_walk_night/f_0013.png",
+      "shot": "girl_bridge_walk_night_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.5833,
+      "file": "i2v/girl_bridge_walk_night/f_0014.png",
+      "shot": "girl_bridge_walk_night_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.6667,
+      "file": "i2v/girl_bridge_walk_night/f_0015.png",
+      "shot": "girl_bridge_walk_night_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.75,
+      "file": "i2v/girl_bridge_walk_night/f_0016.png",
+      "shot": "girl_bridge_walk_night_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.8333,
+      "file": "i2v/girl_bridge_walk_night/f_0017.png",
+      "shot": "girl_bridge_walk_night_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 19.9167,
+      "file": "i2v/girl_bridge_walk_night/f_0018.png",
+      "shot": "girl_bridge_walk_night_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.0,
+      "file": "i2v/girl_bridge_walk_night/f_0019.png",
+      "shot": "girl_bridge_walk_night_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.0833,
+      "file": "i2v/girl_bridge_walk_night/f_0020.png",
+      "shot": "girl_bridge_walk_night_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.1667,
+      "file": "i2v/girl_bridge_walk_night/f_0021.png",
+      "shot": "girl_bridge_walk_night_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.25,
+      "file": "i2v/girl_bridge_walk_night/f_0022.png",
+      "shot": "girl_bridge_walk_night_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.3333,
+      "file": "i2v/girl_bridge_walk_night/f_0023.png",
+      "shot": "girl_bridge_walk_night_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.4167,
+      "file": "i2v/girl_bridge_walk_night/f_0024.png",
+      "shot": "girl_bridge_walk_night_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.5,
+      "file": "i2v/girl_bridge_walk_night/f_0025.png",
+      "shot": "girl_bridge_walk_night_24",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.5833,
+      "file": "i2v/girl_bridge_walk_night/f_0026.png",
+      "shot": "girl_bridge_walk_night_25",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.6667,
+      "file": "i2v/girl_bridge_walk_night/f_0027.png",
+      "shot": "girl_bridge_walk_night_26",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.75,
+      "file": "i2v/girl_bridge_walk_night/f_0028.png",
+      "shot": "girl_bridge_walk_night_27",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.8333,
+      "file": "i2v/girl_bridge_walk_night/f_0029.png",
+      "shot": "girl_bridge_walk_night_28",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 20.9167,
+      "file": "i2v/girl_bridge_walk_night/f_0030.png",
+      "shot": "girl_bridge_walk_night_29",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 21.0,
+      "file": "i2v/girl_bridge_walk_night/f_0031.png",
+      "shot": "girl_bridge_walk_night_30",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 21.0833,
+      "file": "i2v/girl_bridge_walk_night/f_0032.png",
+      "shot": "girl_bridge_walk_night_31",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 21.1667,
+      "file": "i2v/girl_bridge_walk_night/f_0033.png",
+      "shot": "girl_bridge_walk_night_32",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 21.25,
+      "file": "i2v/girl_bridge_walk_night/f_0034.png",
+      "shot": "girl_bridge_walk_night_33",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 21.3333,
+      "file": "i2v/girl_bridge_walk_night/f_0035.png",
+      "shot": "girl_bridge_walk_night_34",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 21.4167,
+      "file": "i2v/girl_bridge_walk_night/f_0036.png",
+      "shot": "girl_bridge_walk_night_35",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 21.5,
+      "file": "keyframes/frame_06.png",
+      "shot": "girl_leans_railing_night",
+      "move": "push_in",
+      "mouthRig": "girl_frame06_entry10",
+      "eyeRig": "girl_frame06_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 24.0,
+      "file": "keyframes/frame_07.png",
+      "shot": "river_moonlight_insert",
+      "move": "push_in",
+      "starTwinkle": {
+        "stars": [
+          [
+            220,
+            90,
+            3,
+            0.6
+          ],
+          [
+            520,
+            150,
+            2.5,
+            0.9
+          ],
+          [
+            830,
+            70,
+            3,
+            0.5
+          ],
+          [
+            1150,
+            130,
+            2.5,
+            1.1
+          ],
+          [
+            1420,
+            90,
+            3,
+            0.7
+          ],
+          [
+            1560,
+            190,
+            2,
+            0.8
+          ],
+          [
+            350,
+            210,
+            2,
+            1.0
+          ],
+          [
+            960,
+            180,
+            2,
+            0.6
+          ]
+        ],
+        "alpha": 0.7
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 26.5,
+      "file": "keyframes/frame_08.png",
+      "shot": "cat_bridge_end_lookback",
+      "move": "push_in",
+      "mouthRig": "cat_frame08_entry11",
+      "eyeRig": "cat_frame08_blink",
+      "transition": "cut"
+    },
+    {
+      "at": 29.5,
+      "file": "keyframes/frame_09.png",
+      "shot": "riverbank_from_bridge_firefly_hint",
+      "move": "push_in",
+      "transition": "crossfade",
+      "transitionSeconds": 0.3,
+      "fireflies": {
+        "region": [
+          700,
+          480,
+          700,
+          260
+        ],
+        "count": 3,
+        "seed": 20260829,
+        "size": 4,
+        "alpha": 0.7,
+        "drift": 22,
+        "rise": 0,
+        "period": [
+          3.5,
+          6.0
+        ]
+      },
+      "starTwinkle": {
+        "stars": [
+          [
+            220,
+            90,
+            3,
+            0.6
+          ],
+          [
+            520,
+            150,
+            2.5,
+            0.9
+          ],
+          [
+            830,
+            70,
+            3,
+            0.5
+          ],
+          [
+            1150,
+            130,
+            2.5,
+            1.1
+          ],
+          [
+            1420,
+            90,
+            3,
+            0.7
+          ],
+          [
+            1560,
+            190,
+            2,
+            0.8
+          ],
+          [
+            350,
+            210,
+            2,
+            1.0
+          ],
+          [
+            960,
+            180,
+            2,
+            0.6
+          ]
+        ],
+        "alpha": 0.7
+      }
+    },
+    {
+      "at": 31.5,
+      "file": "keyframes/frame_10.png",
+      "shot": "riverbank_night_wide",
+      "move": "pull_out",
+      "starTwinkle": {
+        "stars": [
+          [
+            180,
+            80,
+            3,
+            0.6
+          ],
+          [
+            430,
+            140,
+            2.5,
+            0.9
+          ],
+          [
+            700,
+            60,
+            3,
+            0.5
+          ],
+          [
+            980,
+            120,
+            2.5,
+            1.1
+          ],
+          [
+            1240,
+            80,
+            3,
+            0.7
+          ],
+          [
+            1500,
+            170,
+            2,
+            0.8
+          ],
+          [
+            300,
+            240,
+            2,
+            1.0
+          ],
+          [
+            860,
+            220,
+            2,
+            0.6
+          ],
+          [
+            1180,
+            260,
+            2.5,
+            0.75
+          ],
+          [
+            1450,
+            300,
+            2,
+            0.95
+          ],
+          [
+            620,
+            300,
+            2,
+            0.85
+          ],
+          [
+            120,
+            320,
+            2,
+            0.7
+          ]
+        ],
+        "alpha": 0.8
+      },
+      "fireflies": {
+        "region": [
+          400,
+          450,
+          1000,
+          380
+        ],
+        "count": 18,
+        "seed": 20260829,
+        "size": 5,
+        "alpha": 0.85,
+        "drift": 30,
+        "rise": 0,
+        "period": [
+          3.0,
+          6.0
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 34.0,
+      "file": "i2v/cat_run_bank_night/f_0001.png",
+      "shot": "cat_run_bank_night_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.0833,
+      "file": "i2v/cat_run_bank_night/f_0002.png",
+      "shot": "cat_run_bank_night_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.1667,
+      "file": "i2v/cat_run_bank_night/f_0003.png",
+      "shot": "cat_run_bank_night_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.25,
+      "file": "i2v/cat_run_bank_night/f_0004.png",
+      "shot": "cat_run_bank_night_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.3333,
+      "file": "i2v/cat_run_bank_night/f_0005.png",
+      "shot": "cat_run_bank_night_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.4167,
+      "file": "i2v/cat_run_bank_night/f_0006.png",
+      "shot": "cat_run_bank_night_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.5,
+      "file": "i2v/cat_run_bank_night/f_0007.png",
+      "shot": "cat_run_bank_night_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.5833,
+      "file": "i2v/cat_run_bank_night/f_0008.png",
+      "shot": "cat_run_bank_night_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.6667,
+      "file": "i2v/cat_run_bank_night/f_0009.png",
+      "shot": "cat_run_bank_night_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.75,
+      "file": "i2v/cat_run_bank_night/f_0010.png",
+      "shot": "cat_run_bank_night_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.8333,
+      "file": "i2v/cat_run_bank_night/f_0011.png",
+      "shot": "cat_run_bank_night_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 34.9167,
+      "file": "i2v/cat_run_bank_night/f_0012.png",
+      "shot": "cat_run_bank_night_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.0,
+      "file": "i2v/cat_run_bank_night/f_0013.png",
+      "shot": "cat_run_bank_night_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.0833,
+      "file": "i2v/cat_run_bank_night/f_0014.png",
+      "shot": "cat_run_bank_night_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.1667,
+      "file": "i2v/cat_run_bank_night/f_0015.png",
+      "shot": "cat_run_bank_night_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.25,
+      "file": "i2v/cat_run_bank_night/f_0016.png",
+      "shot": "cat_run_bank_night_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.3333,
+      "file": "i2v/cat_run_bank_night/f_0017.png",
+      "shot": "cat_run_bank_night_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.4167,
+      "file": "i2v/cat_run_bank_night/f_0018.png",
+      "shot": "cat_run_bank_night_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.5,
+      "file": "i2v/cat_run_bank_night/f_0019.png",
+      "shot": "cat_run_bank_night_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.5833,
+      "file": "i2v/cat_run_bank_night/f_0020.png",
+      "shot": "cat_run_bank_night_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.6667,
+      "file": "i2v/cat_run_bank_night/f_0021.png",
+      "shot": "cat_run_bank_night_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.75,
+      "file": "i2v/cat_run_bank_night/f_0022.png",
+      "shot": "cat_run_bank_night_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.8333,
+      "file": "i2v/cat_run_bank_night/f_0023.png",
+      "shot": "cat_run_bank_night_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 35.9167,
+      "file": "i2v/cat_run_bank_night/f_0024.png",
+      "shot": "cat_run_bank_night_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.0,
+      "file": "i2v/cat_run_bank_night/f_0025.png",
+      "shot": "cat_run_bank_night_24",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.0833,
+      "file": "i2v/cat_run_bank_night/f_0026.png",
+      "shot": "cat_run_bank_night_25",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.1667,
+      "file": "i2v/cat_run_bank_night/f_0027.png",
+      "shot": "cat_run_bank_night_26",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.25,
+      "file": "i2v/cat_run_bank_night/f_0028.png",
+      "shot": "cat_run_bank_night_27",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.3333,
+      "file": "i2v/cat_run_bank_night/f_0029.png",
+      "shot": "cat_run_bank_night_28",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.4167,
+      "file": "i2v/cat_run_bank_night/f_0030.png",
+      "shot": "cat_run_bank_night_29",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.5,
+      "file": "i2v/cat_run_bank_night/f_0031.png",
+      "shot": "cat_run_bank_night_30",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.5833,
+      "file": "i2v/cat_run_bank_night/f_0032.png",
+      "shot": "cat_run_bank_night_31",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.6667,
+      "file": "i2v/cat_run_bank_night/f_0033.png",
+      "shot": "cat_run_bank_night_32",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.75,
+      "file": "i2v/cat_run_bank_night/f_0034.png",
+      "shot": "cat_run_bank_night_33",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.8333,
+      "file": "i2v/cat_run_bank_night/f_0035.png",
+      "shot": "cat_run_bank_night_34",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 36.9167,
+      "file": "i2v/cat_run_bank_night/f_0036.png",
+      "shot": "cat_run_bank_night_35",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.0,
+      "file": "i2v/girl_bank_walk_night/f_0001.png",
+      "shot": "girl_bank_walk_night_00",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.0833,
+      "file": "i2v/girl_bank_walk_night/f_0002.png",
+      "shot": "girl_bank_walk_night_01",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.1667,
+      "file": "i2v/girl_bank_walk_night/f_0003.png",
+      "shot": "girl_bank_walk_night_02",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.25,
+      "file": "i2v/girl_bank_walk_night/f_0004.png",
+      "shot": "girl_bank_walk_night_03",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.3333,
+      "file": "i2v/girl_bank_walk_night/f_0005.png",
+      "shot": "girl_bank_walk_night_04",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.4167,
+      "file": "i2v/girl_bank_walk_night/f_0006.png",
+      "shot": "girl_bank_walk_night_05",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.5,
+      "file": "i2v/girl_bank_walk_night/f_0007.png",
+      "shot": "girl_bank_walk_night_06",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.5833,
+      "file": "i2v/girl_bank_walk_night/f_0008.png",
+      "shot": "girl_bank_walk_night_07",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.6667,
+      "file": "i2v/girl_bank_walk_night/f_0009.png",
+      "shot": "girl_bank_walk_night_08",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.75,
+      "file": "i2v/girl_bank_walk_night/f_0010.png",
+      "shot": "girl_bank_walk_night_09",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.8333,
+      "file": "i2v/girl_bank_walk_night/f_0011.png",
+      "shot": "girl_bank_walk_night_10",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 37.9167,
+      "file": "i2v/girl_bank_walk_night/f_0012.png",
+      "shot": "girl_bank_walk_night_11",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.0,
+      "file": "i2v/girl_bank_walk_night/f_0013.png",
+      "shot": "girl_bank_walk_night_12",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.0833,
+      "file": "i2v/girl_bank_walk_night/f_0014.png",
+      "shot": "girl_bank_walk_night_13",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.1667,
+      "file": "i2v/girl_bank_walk_night/f_0015.png",
+      "shot": "girl_bank_walk_night_14",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.25,
+      "file": "i2v/girl_bank_walk_night/f_0016.png",
+      "shot": "girl_bank_walk_night_15",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.3333,
+      "file": "i2v/girl_bank_walk_night/f_0017.png",
+      "shot": "girl_bank_walk_night_16",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.4167,
+      "file": "i2v/girl_bank_walk_night/f_0018.png",
+      "shot": "girl_bank_walk_night_17",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.5,
+      "file": "i2v/girl_bank_walk_night/f_0019.png",
+      "shot": "girl_bank_walk_night_18",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.5833,
+      "file": "i2v/girl_bank_walk_night/f_0020.png",
+      "shot": "girl_bank_walk_night_19",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.6667,
+      "file": "i2v/girl_bank_walk_night/f_0021.png",
+      "shot": "girl_bank_walk_night_20",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.75,
+      "file": "i2v/girl_bank_walk_night/f_0022.png",
+      "shot": "girl_bank_walk_night_21",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.8333,
+      "file": "i2v/girl_bank_walk_night/f_0023.png",
+      "shot": "girl_bank_walk_night_22",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 38.9167,
+      "file": "i2v/girl_bank_walk_night/f_0024.png",
+      "shot": "girl_bank_walk_night_23",
+      "move": "static",
+      "transition": "cut"
+    },
+    {
+      "at": 39.0,
+      "file": "keyframes/frame_11.png",
+      "shot": "girl_amazed_fireflies_rise",
+      "move": "push_in",
+      "mouthRig": "girl_frame11_entry14",
+      "eyeRig": "girl_frame11_blink",
+      "fireflies": {
+        "region": [
+          300,
+          400,
+          1100,
+          450
+        ],
+        "count": 30,
+        "seed": 20260830,
+        "size": 5,
+        "alpha": 0.9,
+        "drift": 34,
+        "rise": 0,
+        "period": [
+          2.5,
+          5.0
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 41.5,
+      "file": "keyframes/frame_12.png",
+      "shot": "cat_in_fireflies_closeup",
+      "move": "push_in",
+      "mouthRig": "cat_frame12_entry15",
+      "eyeRig": "cat_frame12_blink",
+      "fireflies": {
+        "region": [
+          500,
+          350,
+          700,
+          420
+        ],
+        "count": 12,
+        "seed": 20260831,
+        "size": 5,
+        "alpha": 0.9,
+        "drift": 26,
+        "rise": 0,
+        "period": [
+          3.0,
+          5.5
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 45.0,
+      "file": "action_inbetweens/ib_02.png",
+      "shot": "girl_crouch_inbetween",
+      "move": "drift_right",
+      "fireflies": {
+        "region": [
+          400,
+          450,
+          1000,
+          380
+        ],
+        "count": 18,
+        "seed": 20260829,
+        "size": 5,
+        "alpha": 0.85,
+        "drift": 30,
+        "rise": 0,
+        "period": [
+          3.0,
+          6.0
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 45.7,
+      "file": "keyframes/frame_13.png",
+      "shot": "girl_crouches_reaching",
+      "move": "drift_right",
+      "eyeRig": "girl_frame13_blink",
+      "fireflies": {
+        "region": [
+          300,
+          400,
+          1100,
+          450
+        ],
+        "count": 30,
+        "seed": 20260830,
+        "size": 5,
+        "alpha": 0.9,
+        "drift": 34,
+        "rise": 0,
+        "period": [
+          2.5,
+          5.0
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 47.5,
+      "file": "keyframes/frame_14.png",
+      "shot": "girl_looks_back_smile",
+      "move": "drift_right",
+      "eyeRig": "girl_frame14_blink",
+      "fireflies": {
+        "region": [
+          400,
+          450,
+          1000,
+          380
+        ],
+        "count": 18,
+        "seed": 20260829,
+        "size": 5,
+        "alpha": 0.85,
+        "drift": 30,
+        "rise": 0,
+        "period": [
+          3.0,
+          6.0
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 49.5,
+      "file": "keyframes/frame_15.png",
+      "shot": "pair_slope_firefly_sea",
+      "move": "pull_out",
+      "fireflies": {
+        "region": [
+          250,
+          380,
+          1200,
+          480
+        ],
+        "count": 40,
+        "seed": 20260832,
+        "size": 5,
+        "alpha": 0.9,
+        "drift": 36,
+        "rise": 0,
+        "period": [
+          2.5,
+          5.5
+        ]
+      },
+      "starTwinkle": {
+        "stars": [
+          [
+            180,
+            80,
+            3,
+            0.6
+          ],
+          [
+            430,
+            140,
+            2.5,
+            0.9
+          ],
+          [
+            700,
+            60,
+            3,
+            0.5
+          ],
+          [
+            980,
+            120,
+            2.5,
+            1.1
+          ],
+          [
+            1240,
+            80,
+            3,
+            0.7
+          ],
+          [
+            1500,
+            170,
+            2,
+            0.8
+          ],
+          [
+            300,
+            240,
+            2,
+            1.0
+          ],
+          [
+            860,
+            220,
+            2,
+            0.6
+          ],
+          [
+            1180,
+            260,
+            2.5,
+            0.75
+          ],
+          [
+            1450,
+            300,
+            2,
+            0.95
+          ],
+          [
+            620,
+            300,
+            2,
+            0.85
+          ],
+          [
+            120,
+            320,
+            2,
+            0.7
+          ]
+        ],
+        "alpha": 0.8
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 52.0,
+      "file": "keyframes/frame_16.png",
+      "shot": "girl_profile_smile_fireflylight",
+      "move": "push_in",
+      "mouthRig": "girl_frame16_entry17",
+      "eyeRig": "girl_frame16_blink",
+      "fireflies": {
+        "region": [
+          500,
+          350,
+          700,
+          420
+        ],
+        "count": 12,
+        "seed": 20260831,
+        "size": 5,
+        "alpha": 0.9,
+        "drift": 26,
+        "rise": 0,
+        "period": [
+          3.0,
+          5.5
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 55.0,
+      "file": "keyframes/frame_17.png",
+      "shot": "slope_starry_sky_wide",
+      "move": "pull_out",
+      "starTwinkle": {
+        "stars": [
+          [
+            180,
+            80,
+            3,
+            0.6
+          ],
+          [
+            430,
+            140,
+            2.5,
+            0.9
+          ],
+          [
+            700,
+            60,
+            3,
+            0.5
+          ],
+          [
+            980,
+            120,
+            2.5,
+            1.1
+          ],
+          [
+            1240,
+            80,
+            3,
+            0.7
+          ],
+          [
+            1500,
+            170,
+            2,
+            0.8
+          ],
+          [
+            300,
+            240,
+            2,
+            1.0
+          ],
+          [
+            860,
+            220,
+            2,
+            0.6
+          ],
+          [
+            1180,
+            260,
+            2.5,
+            0.75
+          ],
+          [
+            1450,
+            300,
+            2,
+            0.95
+          ],
+          [
+            620,
+            300,
+            2,
+            0.85
+          ],
+          [
+            120,
+            320,
+            2,
+            0.7
+          ]
+        ],
+        "alpha": 0.8
+      },
+      "fireflies": {
+        "region": [
+          400,
+          450,
+          1000,
+          380
+        ],
+        "count": 18,
+        "seed": 20260829,
+        "size": 5,
+        "alpha": 0.85,
+        "drift": 30,
+        "rise": 0,
+        "period": [
+          3.0,
+          6.0
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 57.0,
+      "file": "keyframes/frame_18.png",
+      "shot": "fireflies_rise_to_sky",
+      "move": "tilt_up",
+      "starTwinkle": {
+        "stars": [
+          [
+            180,
+            80,
+            3,
+            0.6
+          ],
+          [
+            430,
+            140,
+            2.5,
+            0.9
+          ],
+          [
+            700,
+            60,
+            3,
+            0.5
+          ],
+          [
+            980,
+            120,
+            2.5,
+            1.1
+          ],
+          [
+            1240,
+            80,
+            3,
+            0.7
+          ],
+          [
+            1500,
+            170,
+            2,
+            0.8
+          ],
+          [
+            300,
+            240,
+            2,
+            1.0
+          ],
+          [
+            860,
+            220,
+            2,
+            0.6
+          ],
+          [
+            1180,
+            260,
+            2.5,
+            0.75
+          ],
+          [
+            1450,
+            300,
+            2,
+            0.95
+          ],
+          [
+            620,
+            300,
+            2,
+            0.85
+          ],
+          [
+            120,
+            320,
+            2,
+            0.7
+          ]
+        ],
+        "alpha": 0.8
+      },
+      "fireflies": {
+        "region": [
+          200,
+          100,
+          1300,
+          700
+        ],
+        "count": 26,
+        "seed": 20260833,
+        "size": 5,
+        "alpha": 0.85,
+        "drift": 24,
+        "rise": 18,
+        "period": [
+          3.0,
+          6.0
+        ]
+      },
+      "transition": "cut"
+    },
+    {
+      "at": 58.5,
+      "file": "keyframes/frame_19.png",
+      "shot": "starry_sky_final",
+      "move": "tilt_up",
+      "starTwinkle": {
+        "stars": [
+          [
+            180,
+            80,
+            3,
+            0.6
+          ],
+          [
+            430,
+            140,
+            2.5,
+            0.9
+          ],
+          [
+            700,
+            60,
+            3,
+            0.5
+          ],
+          [
+            980,
+            120,
+            2.5,
+            1.1
+          ],
+          [
+            1240,
+            80,
+            3,
+            0.7
+          ],
+          [
+            1500,
+            170,
+            2,
+            0.8
+          ],
+          [
+            300,
+            240,
+            2,
+            1.0
+          ],
+          [
+            860,
+            220,
+            2,
+            0.6
+          ],
+          [
+            1180,
+            260,
+            2.5,
+            0.75
+          ],
+          [
+            1450,
+            300,
+            2,
+            0.95
+          ],
+          [
+            620,
+            300,
+            2,
+            0.85
+          ],
+          [
+            120,
+            320,
+            2,
+            0.7
+          ]
+        ],
+        "alpha": 0.8
+      },
+      "transition": "crossfade",
+      "transitionSeconds": 0.25
+    }
+  ]
+}

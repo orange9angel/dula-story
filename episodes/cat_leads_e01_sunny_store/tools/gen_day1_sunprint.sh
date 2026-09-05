@@ -26,7 +26,7 @@ in crisp cel-style flat color with one shadow layer; outlines warm brown on the
 lit side, muted purple on the shadow side. Composition: 16:9 landscape, full
 body visible, eye-level view, cheerful quiet street, green plants (#58A05C).
 Avoid: grain, noise, paper texture, halftone, airbrush, blur, smooth gradients,
-photorealism, 3D render, lens flare, glow effects, Makoto Shinkai style, text,
+photorealism, 3D render, lens flare, glow effects, realistic anime film lighting, text,
 captions, logos, watermark, signature.
 并把成品 PNG 保存到 $OUT/sunprint_v1.png。"
 

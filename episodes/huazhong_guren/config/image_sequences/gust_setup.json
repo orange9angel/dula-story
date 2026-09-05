@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "gust_setup",
+  "source": {
+    "story": "script.story",
+    "notes": ""
+  },
+  "paths": {
+    "projectRoot": "../..",
+    "outputDirectory": "assets/keyframes"
+  },
+  "output": {
+    "aspectRatio": "16:9"
+  },
+  "provider": {
+    "name": "dashscope",
+    "model": "wan2.7-image-pro",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": true,
+      "acceptsRequestedCount": true,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": true,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {
+      "size": "2K",
+      "watermark": false
+    }
+  },
+  "continuity": {
+    "identityReferences": [
+      "characters/ancient_girl_master_ref.jpg",
+      "characters/ancient_boy_master_ref.jpg"
+    ],
+    "styleReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "settingReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "allowTextOnly": false,
+    "hardLocks": {
+      "characters": [
+        "Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces"
+      ],
+      "wardrobe": [
+        "Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash"
+      ],
+      "scene": [
+        "ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements"
+      ],
+      "camera": [
+        "16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence"
+      ],
+      "style": [
+        "original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia"
+      ],
+      "props": [
+        "exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified"
+      ]
+    },
+    "negativeConstraints": [
+      "different character identity",
+      "face drift",
+      "wardrobe changes",
+      "extra characters",
+      "extra limbs or fingers",
+      "duplicate moving props",
+      "unplanned camera or background changes",
+      "text or watermark"
+    ],
+    "grouping": {
+      "preferSequentialGroup": true,
+      "maxShotsPerGroup": 5,
+      "overlapShots": 1
+    }
+  },
+  "shots": [
+    {
+      "id": "frame_15",
+      "order": 1,
+      "actionPhase": "setup",
+      "description": "Girl close-up rolls her eyes with an amused smile after saying smooth talker, loose blue hair strand lifting in the first breeze.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_15.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_16",
+      "order": 2,
+      "actionPhase": "anticipation",
+      "description": "Medium-wide stall shot as a sudden gust catches the partly open indigo umbrella, papers and willow leaves lift, both characters turn sharply.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_16.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_17",
+      "order": 3,
+      "actionPhase": "action",
+      "description": "Umbrella tears free and rises diagonally toward frame right above the stone street, Girl stretches one arm upward, Boy drops his brush.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_17.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_18",
+      "order": 4,
+      "actionPhase": "apex_or_contact",
+      "description": "Girl lunges forward from frame left with skirt and sleeves streaming, reaching toward the airborne umbrella moving right.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_18.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_19",
+      "order": 5,
+      "actionPhase": "recovery",
+      "description": "Both characters launch into a run from left to right after the umbrella, wide side view, clear forward body lean and separated running phases.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_19.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    }
+  ],
+  "candidates": [],
+  "runs": []
+}

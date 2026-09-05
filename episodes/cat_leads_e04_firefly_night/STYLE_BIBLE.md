@@ -1,0 +1,123 @@
+# 《猫带我去的地方》风格圣经 —「晴印」（Sunprint）纯净版
+
+本系列（含 E01《晴天便利店》）所有位图的唯一画风基准。每张 imagegen 提示词必须
+逐字携带「风格 hardLock」段落，并附风格母版 `assets/style_master.png` 作为第一
+参考图。任何镜头不得偏离本文件。
+
+> 废案留档：淡彩钢笔绘本风（商业日漫底色未除，否）、刮夜 Scratchnight
+> （太暗黑，否）。测试图存于 `assets/style_tests/`，教训：质感纹理=马赛克感，
+> 本系列**零纹理**。
+
+## 画风五要素
+
+1. **锐边平涂**：全画面色块边缘干净如刀切。零颗粒、零噪点、零纹理、零喷枪、
+   零模糊——高清复古丝网海报感。
+2. **天空两段色**：顶部深青蓝 `#2E9BD6` → 地平线浅湖绿 `#7FD4E8`，中间只允许
+   **一条宽而柔和的过渡带**（自然天空）。禁止阶梯/条纹分带。这是全画面唯一
+   允许的柔和渐变。
+3. **互补色阴影**：阴影一律用薰衣草紫 `#8E7CC3` 或青绿，严禁黑灰。云的暗部、
+   地面树影、人物投影全是紫色系——"明亮感"的来源，也是与写实日漫电影光影的
+   分界线。
+4. **阳光是形状**：阳光以平涂几何形状出现（斜切光带、圆形洒金光斑）`#F5B942`，
+   禁止光晕、薄雾、镜头光斑。
+5. **人物赛璐璐**：平涂 + 一线阴影；轮廓线冷暖分边——受光侧暖棕、背光侧灰紫。
+
+## 色板
+
+| 色 | 用途 |
+|----|------|
+| 晴空青 `#2E9BD6` | 天空顶部、冷色主调 |
+| 浅湖绿 `#7FD4E8` | 地平线天空、便利店立面点缀 |
+| 云白 `#FDFBF4` | 云、衬衫、留白 |
+| 阳光金 `#F5B942` | 光斑、暖色点缀 |
+| 影紫 `#8E7CC3` | 一切阴影 |
+| 叶绿 `#58A05C` | 植物 |
+
+## 风格 hardLock（imagegen 提示词逐字段，英文）
+
+```text
+Style lock: original illustration style "sunprint" -- bright sunny-day scene
+rendered as razor-clean flat color shapes, like a high-definition retro
+silkscreen poster with zero texture. Sky: deep clear cyan blue (#2E9BD6) at
+the top softening into light aqua (#7FD4E8) near the horizon through ONE wide
+soft smooth transition band -- no steps, no stripes; this sky transition is
+the only soft gradient allowed in the entire image. Clouds: hard-edged rounded
+bubble shapes, pure white (#FDFBF4) with a single flat lavender shadow tone
+(#8E7CC3). Shadows everywhere use complementary colors (lavender, teal-green),
+never black or grey. Sunlight is rendered as flat geometric shapes (diagonal
+light bands, round dappled light spots) in flat gold (#F5B942), never glow,
+never haze. Characters in crisp cel-style flat color with one shadow layer;
+outlines warm brown on the lit side, muted purple on the shadow side.
+Avoid: stepped or striped sky, banding, grain, noise, paper texture, halftone,
+airbrush, blur, photorealism, 3D render, lens flare, glow effects,
+realistic anime film lighting, text, captions, logos, watermark, signature.
+```
+
+## 后期统一层
+
+- Three.js 合成时**不加**任何颗粒/纹理层（纯净是风格的一部分）。
+- 程序化动效层（蒸汽、云漂移、洒金光斑摆动、走路循环、眨眼/口型 cel）全部
+  画成平涂矢量形状，与位图同一语言，画在源图空间随镜头 crop 移动。
+
+## 母版链
+
+1. `assets/style_master.png` — 风格母版（晴印 v2 测试图定稿）
+2. `assets/girl_reference.png` / `assets/cat_reference.png` — 角色母版
+   （设计锁沿用 rainy_rooftop_cat：蓝发少女小蓝、橘虎斑小橘；无伞无书包）
+3. `assets/scene_{room,street,store}.png` — 场景母版（白天版：房间/街道/便利店）
+
+---
+
+## E03 黄昏变体（dusk variant，2026-08-28）
+
+E03《暮色归途》全片为**黄昏低日阳光**，以下规则覆盖上文对应条目，其余
+（零纹理、锐边平涂、互补色阴影、赛璐璐人物）不变：
+
+1. **天空两段色（黄昏版）**：顶部深紫蓝 `#4A4E8F` → 地平线暖橙金 `#F5A442`，
+   中间仍只允许一条宽而柔和的过渡带。低空可有一线更亮的落日金 `#F5B942`。
+2. **光更斜更暖**：影子最长最斜；受光面描金橙边（rim light），背光面影紫不变。
+3. **灯火初上**：窗户/门灯为平涂暖黄矩形 `#FFD97A`，黄昏段才出现，清晨/白天不用。
+4. 黄昏 hardLock 追加段（接在通用 hardLock 之后）：
+
+```text
+Time-of-day override: late golden-hour dusk. Sky: deep violet blue (#4A4E8F)
+at the top softening into warm orange gold (#F5A442) near the horizon through
+ONE wide soft transition band, with one brighter flat gold (#F5B942) band low
+over the horizon. Sun very low; shadows extremely long and slanted; lit edges
+rimmed in warm orange-gold, shadow side stays lavender purple (#8E7CC3).
+Windows and door lamps glow as flat warm-yellow (#FFD97A) rectangles.
+No glow, no haze, no gradients other than the sky band.
+```
+
+---
+
+## E04 夜晚变体（night variant，2026-08-29）
+
+E04《夏夜流萤》全片为**夏夜（约 21:00，晴夜）**，以下规则覆盖上文对应条目，
+其余（零纹理、锐边平涂、互补色阴影、赛璐璐人物）不变：
+
+1. **天空两段色（夜晚版）**：顶部深靛蓝 `#1B2A5E` → 地平线暗紫 `#3A2E5C`，
+   中间仍只允许一条宽而柔和的过渡带。星为稀疏平涂白点，月为一枚平涂淡黄
+   月牙——星月都是硬边形状，禁止光晕。
+2. **月光是冷色 rim**：受光边描冷蓝银 `#9FB8E8`；阴影面用深薰衣草藏青
+   `#3B3566`，严禁纯黑。地面/路面带一层淡冷蓝月色。
+3. **暖光是点不是面**：门灯与少数亮窗为平涂暖黄矩形 `#FFD97A`，比黄昏更稀疏；
+   夜晚画面中暖光源越少越珍贵。
+4. **萤火是形状**：萤火虫为平涂暖黄绿小圆点 `#E8F29A`（核心更浅 `#FFF7C0`），
+   硬边、无光晕；成片出现时保持点状，不连成光带。程序化萤火层也按此绘制。
+5. 夜晚 hardLock 追加段（接在通用 hardLock 之后）：
+
+```text
+Time-of-day override: clear summer night, about 9pm. Sky: deep indigo blue
+(#1B2A5E) with ONE wide soft transition band to dark violet (#3A2E5C) near
+the horizon; this sky transition is the only soft gradient allowed. Stars are
+tiny flat white dots sparsely scattered, plus one flat pale-yellow crescent
+moon -- all hard-edged shapes, no glow. Moonlight is rendered as cool
+blue-silver (#9FB8E8) rim light on top edges and rooflines; shadow side stays
+deep lavender-navy (#3B3566), never pure black. Ground and road surfaces carry
+a faint cool blue moon tint. Door lamps and the few lit windows glow as flat
+warm-yellow (#FFD97A) rectangles, sparser than at dusk. Fireflies, when
+present, are small flat warm yellow-green dots (#E8F29A) with a paler core
+(#FFF7C0), hard-edged shapes only. No glow, no halo, no haze, no gradients
+other than the sky band.
+```

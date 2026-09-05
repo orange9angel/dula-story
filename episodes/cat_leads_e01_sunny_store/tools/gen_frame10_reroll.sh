@@ -24,7 +24,7 @@ with one shadow layer; outlines warm brown on the lit side, muted purple on
 the shadow side.
 Avoid: stepped or striped sky, banding, grain, noise, paper texture, halftone,
 airbrush, blur, photorealism, 3D render, lens flare, glow effects,
-Makoto Shinkai style, text, captions, logos, watermark, signature."
+realistic anime film lighting, text, captions, logos, watermark, signature."
 
 echo "== gen frame_10 (roll 2)"
 cp "$K/frame_10.png" "tmp/frame_10_roll1_rejected.png"

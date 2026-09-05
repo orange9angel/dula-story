@@ -1,0 +1,981 @@
+{
+  "version": 1,
+  "status": "reviewed",
+  "sources": [
+    {
+      "path": "script.story",
+      "sha256": "b284fdaac4adaf6bddcf935613d1379c095c876b7c9ec71341b062e72193a929"
+    },
+    {
+      "path": "config/keyframe_timeline.json",
+      "sha256": "8c3a286f998e6cac1e44a1765352a0bf92c9c0b22b844bbf9db078414ae427a3"
+    },
+    {
+      "path": "config/voice_config.json",
+      "sha256": "28c01f68a433584507f546eecce4fcb0f447e81dfc6d575eff0736e34ed95f9b"
+    },
+    {
+      "path": "config/audio_mix.json",
+      "sha256": "7735ed2bcacab7fb16f60655acb20ca23cf85cbbea97d748ea3600a2a2f779c7"
+    }
+  ],
+  "policies": {
+    "priority": [
+      "dialogue",
+      "storySfx",
+      "ambience",
+      "music"
+    ],
+    "musicMode": "directed",
+    "ambienceMode": "directed",
+    "breath": "natural-tts-pauses-no-layered-breath"
+  },
+  "mix": {
+    "dialogueVolume": 1.12,
+    "bgmVolume": 0.26,
+    "sfxVolume": 0.78,
+    "useDucking": true,
+    "duckDepth": 0.32
+  },
+  "characters": {
+    "Girl": {
+      "voice": "longxiaoxia_v3",
+      "locale": "unspecified",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Boy": {
+      "voice": "longze_v3",
+      "locale": "unspecified",
+      "identityPolicy": "preserve-native-voice"
+    }
+  },
+  "dialogue": [
+    {
+      "entry": 2,
+      "character": "Girl",
+      "text": "江南的雨季，有些人卖伞，有些人卖画。",
+      "startTime": 3.2,
+      "endTime": 6.6,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_crosses_misty_bridge"
+      ],
+      "previousEntry": null,
+      "nextEntry": 3,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 3,
+      "character": "Girl",
+      "text": "小蓝两样都不买，只抱着一把破伞，站到阿澈摊前。",
+      "startTime": 7.4,
+      "endTime": 10.8,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_painting_at_stall"
+      ],
+      "previousEntry": 2,
+      "nextEntry": 4,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 4,
+      "character": "Girl",
+      "text": "能不能替我在伞里，画个太阳？",
+      "startTime": 12.0,
+      "endTime": 15.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "broken_indigo_umbrella_detail",
+        "girl_asks_for_sun"
+      ],
+      "previousEntry": 3,
+      "nextEntry": 5,
+      "intent": "curious",
+      "subtext": "",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 5,
+      "character": "Boy",
+      "text": "太阳？伞撑开时，旁人可看不见。",
+      "startTime": 16.0,
+      "endTime": 19.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_teasing_reply"
+      ],
+      "previousEntry": 4,
+      "nextEntry": 6,
+      "intent": "curious",
+      "subtext": "",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 6,
+      "character": "Girl",
+      "text": "我自己看得见就好。",
+      "startTime": 20.0,
+      "endTime": 23.0,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_points_at_gray_sky"
+      ],
+      "previousEntry": 5,
+      "nextEntry": 7,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 7,
+      "character": "Girl",
+      "text": "下雨时，人总得有个抬头的理由。",
+      "startTime": 23.8,
+      "endTime": 27.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_orders_bright_sun"
+      ],
+      "previousEntry": 6,
+      "nextEntry": 8,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 8,
+      "character": "Girl",
+      "text": "阿澈没笑她。他把伞翻过来，磨了一碟金粉。",
+      "startTime": 28.0,
+      "endTime": 31.4,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_opens_umbrella_to_paint",
+        "brush_loads_gold"
+      ],
+      "previousEntry": 7,
+      "nextEntry": 10,
+      "intent": "calm",
+      "subtext": "",
+      "delivery": {
+        "tone": "calm",
+        "energy": 0.34,
+        "pace": 0.98,
+        "volume": 0.96,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 10,
+      "character": "Boy",
+      "text": "别动。你的影子，挡住我的太阳了。",
+      "startTime": 33.0,
+      "endTime": 36.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "sun_takes_shape_inside_canopy",
+        "boy_says_sun_costs_more"
+      ],
+      "previousEntry": 8,
+      "nextEntry": 11,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 11,
+      "character": "Girl",
+      "text": "你到底在画伞，还是画我？",
+      "startTime": 37.0,
+      "endTime": 39.8,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_bargains_with_smile"
+      ],
+      "previousEntry": 10,
+      "nextEntry": 12,
+      "intent": "curious",
+      "subtext": "",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 12,
+      "character": "Boy",
+      "text": "先画伞。你……顺手。",
+      "startTime": 40.4,
+      "endTime": 43.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_names_price"
+      ],
+      "previousEntry": 11,
+      "nextEntry": 13,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 13,
+      "character": "Girl",
+      "text": "油嘴滑舌。",
+      "startTime": 43.8,
+      "endTime": 46.0,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_promises_no_rain"
+      ],
+      "previousEntry": 12,
+      "nextEntry": 15,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 15,
+      "character": "Girl",
+      "text": "伞！",
+      "startTime": 47.8,
+      "endTime": 49.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_lunges_after_umbrella"
+      ],
+      "previousEntry": 13,
+      "nextEntry": 17,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 17,
+      "character": "Boy",
+      "text": "抓到了！",
+      "startTime": 56.0,
+      "endTime": 58.7,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_catches_umbrella"
+      ],
+      "previousEntry": 15,
+      "nextEntry": 18,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 18,
+      "character": "Girl",
+      "text": "你抓到的是我的袖子。",
+      "startTime": 59.3,
+      "endTime": 62.1,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_accidentally_catches_sleeve"
+      ],
+      "previousEntry": 17,
+      "nextEntry": 19,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 19,
+      "character": "Boy",
+      "text": "……抱歉。",
+      "startTime": 62.7,
+      "endTime": 64.8,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_notices_held_sleeve"
+      ],
+      "previousEntry": 18,
+      "nextEntry": 20,
+      "intent": "curious",
+      "subtext": "",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 20,
+      "character": "Girl",
+      "text": "两个人还没站稳，雨先追了上来。",
+      "startTime": 65.5,
+      "endTime": 69.0,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "first_rain_on_bridge"
+      ],
+      "previousEntry": 19,
+      "nextEntry": 22,
+      "intent": "calm",
+      "subtext": "",
+      "delivery": {
+        "tone": "calm",
+        "energy": 0.34,
+        "pace": 0.98,
+        "volume": 0.96,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 22,
+      "character": "Boy",
+      "text": "金粉没干，会花。",
+      "startTime": 69.5,
+      "endTime": 72.3,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_shields_wet_gold_paint"
+      ],
+      "previousEntry": 20,
+      "nextEntry": 23,
+      "intent": "worried",
+      "subtext": "",
+      "delivery": {
+        "tone": "worried",
+        "energy": 0.55,
+        "pace": 1.03,
+        "volume": 0.96,
+        "pitchSemitones": 0.1,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 23,
+      "character": "Girl",
+      "text": "那就撑起来。",
+      "startTime": 72.8,
+      "endTime": 75.3,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_opens_painted_umbrella"
+      ],
+      "previousEntry": 22,
+      "nextEntry": 25,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 25,
+      "character": "Girl",
+      "text": "你画的太阳，在漏雨。",
+      "startTime": 83.0,
+      "endTime": 86.4,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_points_out_leak"
+      ],
+      "previousEntry": 23,
+      "nextEntry": 26,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 26,
+      "character": "Boy",
+      "text": "太阳第一次淋雨，难免失礼。",
+      "startTime": 87.0,
+      "endTime": 90.5,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_calls_it_rain_window"
+      ],
+      "previousEntry": 25,
+      "nextEntry": 27,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 27,
+      "character": "Girl",
+      "text": "它倒比你会道歉。",
+      "startTime": 91.2,
+      "endTime": 94.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_laughs_under_umbrella"
+      ],
+      "previousEntry": 26,
+      "nextEntry": 29,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 29,
+      "character": "Girl",
+      "text": "你看，真的放晴了。",
+      "startTime": 101.0,
+      "endTime": 104.3,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_sees_real_sun"
+      ],
+      "previousEntry": 27,
+      "nextEntry": 30,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 30,
+      "character": "Boy",
+      "text": "不是我画得好。",
+      "startTime": 105.0,
+      "endTime": 108.0,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_watches_her_not_sky"
+      ],
+      "previousEntry": 29,
+      "nextEntry": 31,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 31,
+      "character": "Boy",
+      "text": "是你把伞撑过来了。",
+      "startTime": 108.5,
+      "endTime": 112.0,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "hands_share_umbrella_handle"
+      ],
+      "previousEntry": 30,
+      "nextEntry": 32,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 32,
+      "character": "Girl",
+      "text": "那明天，再替我画一把。",
+      "startTime": 112.8,
+      "endTime": 116.0,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "after_rain_two_shot",
+        "girl_invites_him_tomorrow"
+      ],
+      "previousEntry": 31,
+      "nextEntry": 33,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 33,
+      "character": "Boy",
+      "text": "还画太阳？",
+      "startTime": 116.5,
+      "endTime": 119.2,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "boy_asks_for_another_sun"
+      ],
+      "previousEntry": 32,
+      "nextEntry": 34,
+      "intent": "curious",
+      "subtext": "",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 34,
+      "character": "Girl",
+      "text": "不。画两个等雨的人。",
+      "startTime": 119.8,
+      "endTime": 124.0,
+      "scene": "HuazhongGurenScene",
+      "shotIds": [
+        "girl_says_two_people_waiting_for_rain"
+      ],
+      "previousEntry": 33,
+      "nextEntry": null,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    }
+  ],
+  "ambience": [
+    {
+      "id": "ambience-1-canal-morning",
+      "entry": 1,
+      "name": "canal_morning",
+      "startTime": 0.0,
+      "volume": 0.24,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [
+        "jiangnan_morning_establishing"
+      ],
+      "endTime": 65.5
+    },
+    {
+      "id": "ambience-14-wind-gust",
+      "entry": 14,
+      "name": "wind_gust",
+      "startTime": 46.2,
+      "volume": 0.78,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [
+        "gust_lifts_umbrella"
+      ]
+    },
+    {
+      "id": "ambience-21-canal-rain",
+      "entry": 21,
+      "name": "canal_rain",
+      "startTime": 65.5,
+      "volume": 0.35,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [
+        "first_rain_on_bridge"
+      ],
+      "endTime": 100.5
+    },
+    {
+      "id": "ambience-24-cloth-rain",
+      "entry": 24,
+      "name": "cloth_rain",
+      "startTime": 75.5,
+      "volume": 0.28,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [
+        "both_under_gold_sun"
+      ],
+      "endTime": 100.5
+    },
+    {
+      "id": "ambience-28-rain-easing",
+      "entry": 28,
+      "name": "rain_easing",
+      "startTime": 95.0,
+      "volume": 0.34,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [
+        "pair_walk_in_rain"
+      ],
+      "endTime": 104.5
+    },
+    {
+      "id": "ambience-35-canal-after-rain",
+      "entry": 35,
+      "name": "canal_after_rain",
+      "startTime": 124.0,
+      "volume": 0.25,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [
+        "bridge_closing_wide"
+      ],
+      "endTime": 128.5
+    }
+  ],
+  "sfx": [
+    {
+      "id": "sfx-9-inkstone-grind",
+      "entry": 9,
+      "name": "inkstone_grind",
+      "startTime": 31.8,
+      "volume": 0.44,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "brush_loads_gold"
+      ]
+    },
+    {
+      "id": "sfx-14-umbrella-snap",
+      "entry": 14,
+      "name": "umbrella_snap",
+      "startTime": 46.45,
+      "volume": 0.74,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "gust_lifts_umbrella"
+      ]
+    },
+    {
+      "id": "sfx-16-running-stone",
+      "entry": 16,
+      "name": "running_stone",
+      "startTime": 49.3,
+      "volume": 0.58,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "chase_through_market"
+      ]
+    },
+    {
+      "id": "sfx-24-umbrella-open",
+      "entry": 24,
+      "name": "umbrella_open",
+      "startTime": 75.5,
+      "volume": 0.62,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "both_under_gold_sun"
+      ]
+    }
+  ],
+  "music": [
+    {
+      "id": "music-umbrella-sun-theme",
+      "name": "umbrella_sun_theme",
+      "startTime": 0.0,
+      "endTime": 67.0,
+      "role": "warm-market-guzheng",
+      "fadeIn": 2.2,
+      "fadeOut": 1.5,
+      "priority": "music",
+      "duckUnderDialogue": true
+    },
+    {
+      "id": "music-rain-gold-theme",
+      "name": "rain_gold_theme",
+      "startTime": 65.5,
+      "endTime": 128.5,
+      "role": "rain-romance-and-sunrise",
+      "fadeIn": 1.5,
+      "fadeOut": 4.5,
+      "priority": "music",
+      "duckUnderDialogue": true
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "exclude-japanese-or-festival-cliches",
+      "reason": "The episode's cultural language is explicitly Jiangnan Chinese; avoid Japanese instruments, matsuri colors and generic New Year fanfares."
+    },
+    {
+      "id": "exclude-comic-stingers-under-romance",
+      "reason": "The umbrella intimacy beat needs rain, breath and melody rather than sitcom punctuation."
+    },
+    {
+      "id": "exclude-layered-artificial-breaths",
+      "reason": "Natural pauses are already present in the generated performance and extra breaths would create false exertion."
+    }
+  ]
+}

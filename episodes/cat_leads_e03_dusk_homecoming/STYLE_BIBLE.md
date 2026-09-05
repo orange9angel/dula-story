@@ -16,7 +16,7 @@
    **一条宽而柔和的过渡带**（自然天空）。禁止阶梯/条纹分带。这是全画面唯一
    允许的柔和渐变。
 3. **互补色阴影**：阴影一律用薰衣草紫 `#8E7CC3` 或青绿，严禁黑灰。云的暗部、
-   地面树影、人物投影全是紫色系——"明亮感"的来源，也是与新海诚写实光影的
+   地面树影、人物投影全是紫色系——"明亮感"的来源，也是与写实日漫电影光影的
    分界线。
 4. **阳光是形状**：阳光以平涂几何形状出现（斜切光带、圆形洒金光斑）`#F5B942`，
    禁止光晕、薄雾、镜头光斑。
@@ -50,7 +50,7 @@ never haze. Characters in crisp cel-style flat color with one shadow layer;
 outlines warm brown on the lit side, muted purple on the shadow side.
 Avoid: stepped or striped sky, banding, grain, noise, paper texture, halftone,
 airbrush, blur, photorealism, 3D render, lens flare, glow effects,
-Makoto Shinkai style, text, captions, logos, watermark, signature.
+realistic anime film lighting, text, captions, logos, watermark, signature.
 ```
 
 ## 后期统一层

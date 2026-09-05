@@ -26,7 +26,7 @@ simplified, expressions in a few strokes. Strict palette discipline: at most 5
 colors in the whole frame. Composition: 16:9 landscape, full body visible,
 eye-level view, quiet empty street around the store.
 Avoid: smooth digital gradients, photorealism, 3D render, lens flare, airbrush,
-cel-shaded anime look, Makoto Shinkai style, text, captions, logos, watermark,
+cel-shaded anime look, realistic anime film lighting, text, captions, logos, watermark,
 signature.
 并把成品 PNG 保存到 $OUT/scratchnight_v1.png。"
 

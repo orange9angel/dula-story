@@ -21,7 +21,7 @@ deep indigo night sky and quiet street around the store."
 LOCK_TAIL="visible watercolor paper grain texture, slight pigment bleed at
 color edges, generous off-white paper negative space (#F2EAD9) for highlights.
 Flat lighting storytelling: no lens flare, no god rays, no glossy gradients.
-Avoid: Makoto Shinkai style, photorealistic backgrounds, digital airbrush,
+Avoid: realistic anime film lighting, photorealistic backgrounds, digital airbrush,
 3D render, lens flare, volumetric light beams, neon cyberpunk, text, captions,
 logos, watermark, signature."
 

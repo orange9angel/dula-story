@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "bridge_chase",
+  "source": {
+    "story": "script.story",
+    "notes": ""
+  },
+  "paths": {
+    "projectRoot": "../..",
+    "outputDirectory": "assets/keyframes"
+  },
+  "output": {
+    "aspectRatio": "16:9"
+  },
+  "provider": {
+    "name": "dashscope",
+    "model": "wan2.7-image-pro",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": true,
+      "acceptsRequestedCount": true,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": true,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {
+      "size": "2K",
+      "watermark": false
+    }
+  },
+  "continuity": {
+    "identityReferences": [
+      "characters/ancient_girl_master_ref.jpg",
+      "characters/ancient_boy_master_ref.jpg"
+    ],
+    "styleReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "settingReferences": [
+      "characters/ancient_couple_master_ref.jpg"
+    ],
+    "allowTextOnly": false,
+    "hardLocks": {
+      "characters": [
+        "Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces"
+      ],
+      "wardrobe": [
+        "Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash"
+      ],
+      "scene": [
+        "ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements"
+      ],
+      "camera": [
+        "16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence"
+      ],
+      "style": [
+        "original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia"
+      ],
+      "props": [
+        "exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified"
+      ]
+    },
+    "negativeConstraints": [
+      "different character identity",
+      "face drift",
+      "wardrobe changes",
+      "extra characters",
+      "extra limbs or fingers",
+      "duplicate moving props",
+      "unplanned camera or background changes",
+      "text or watermark"
+    ],
+    "grouping": {
+      "preferSequentialGroup": true,
+      "maxShotsPerGroup": 5,
+      "overlapShots": 1
+    }
+  },
+  "shots": [
+    {
+      "id": "frame_20",
+      "order": 1,
+      "actionPhase": "setup",
+      "description": "Wide side view on stone bridge, Girl and Boy sprint left-to-right after the single airborne umbrella, Girl half a step ahead, clear contact running pose.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_20.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_21",
+      "order": 2,
+      "actionPhase": "anticipation",
+      "description": "Next action phase: Girl in passing pose with lifted foot toe down, skirt and long hair streaming, Boy accelerates behind, umbrella farther right.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_21.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_22",
+      "order": 3,
+      "actionPhase": "action",
+      "description": "Boy stretches his right arm toward the falling umbrella while Girl reaches with both hands, anticipation pose, screen direction remains left-to-right.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_22.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_23",
+      "order": 4,
+      "actionPhase": "apex_or_contact",
+      "description": "Apex contact: Boy catches the wooden umbrella handle with one hand at bridge crest while momentum carries him forward, Girl almost collides with him.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_23.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    },
+    {
+      "id": "frame_24",
+      "order": 5,
+      "actionPhase": "recovery",
+      "description": "Recovery medium shot: umbrella secured, Boy accidentally grips the loose end of Girl's sleeve with his other hand; both freeze, surprised and slightly breathless, no injury.",
+      "stateBefore": {},
+      "stateAfter": {},
+      "allowedChanges": [
+        "pose",
+        "expression",
+        "gaze",
+        "moving prop position",
+        "secondary motion"
+      ],
+      "preserve": [
+        "character identity",
+        "wardrobe",
+        "body proportions",
+        "scene geometry",
+        "lighting",
+        "camera",
+        "visual style",
+        "screen direction"
+      ],
+      "referenceFrame": null,
+      "status": "accepted",
+      "output": "assets/keyframes/frame_24.png",
+      "review": {
+        "issues": [],
+        "notes": "Vision-reviewed: identity, Chinese wardrobe, umbrella prop, spatial continuity and cinematic beat accepted."
+      }
+    }
+  ],
+  "candidates": [],
+  "runs": []
+}

@@ -16,7 +16,7 @@ large amber eyes; long straight deep-blue hair reaching her waist; straight bang
 short-sleeve school shirt; navy-blue plaid pleated skirt; black knee socks; black loafers;
 exactly one navy school bag slung on one shoulder; exactly one transparent umbrella.
 Style: original polished 2D Japanese animation, clean cel shading, crisp line art, luminous
-overcast sky, wet concrete rooftop with puddle reflections, Makoto Shinkai inspired lighting.
+overcast sky, wet concrete rooftop with puddle reflections, realistic anime film lighting.
 Composition: 16:9 landscape, full body visible, eye-level three-quarter front view.
 Avoid: extra people, duplicate limbs, extra umbrellas, text, captions, logos, watermark,
 signature, photorealism, 3D render.

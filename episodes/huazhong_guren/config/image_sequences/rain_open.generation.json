@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "sequenceId": "rain_open",
+  "sequencePlan": "rain_open.json",
+  "projectRoot": "../..",
+  "provider": {
+    "name": "dashscope",
+    "model": "wan2.7-image-pro",
+    "capabilities": {
+      "referenceImages": true,
+      "multiImageReference": true,
+      "sequentialGroup": true,
+      "acceptsRequestedCount": true,
+      "guaranteesRequestedCount": false,
+      "orderedSequentialOutputs": true,
+      "imageEdit": true,
+      "seed": false,
+      "negativePrompt": false,
+      "maskEdit": false
+    },
+    "options": {
+      "size": "2K",
+      "watermark": false
+    }
+  },
+  "strategy": {
+    "mode": "group-first",
+    "preferSequentialGroup": true,
+    "maxShotsPerGroup": 5,
+    "overlapShots": 1,
+    "fallbackRequiresApprovedContinuityFrame": true
+  },
+  "aspectRatio": "16:9",
+  "references": [
+    {
+      "role": "identity",
+      "path": "characters/ancient_girl_master_ref.jpg"
+    },
+    {
+      "role": "identity",
+      "path": "characters/ancient_boy_master_ref.jpg"
+    },
+    {
+      "role": "style",
+      "path": "characters/ancient_couple_master_ref.jpg"
+    },
+    {
+      "role": "setting",
+      "path": "characters/ancient_couple_master_ref.jpg"
+    }
+  ],
+  "negativeConstraints": [
+    "different character identity",
+    "face drift",
+    "wardrobe changes",
+    "extra characters",
+    "extra limbs or fingers",
+    "duplicate moving props",
+    "unplanned camera or background changes",
+    "text or watermark"
+  ],
+  "candidateDirectory": "assets/keyframes/_candidates",
+  "group": {
+    "prompt": "Aim to create one ordered sequential story-image group with one image for each of these 5 narrative shots.\nPreserve the numbered action order even if the active tool controls the actual return count.\nTreat the frames as neighboring moments of one continuous action, not unrelated variants.\nKeep the same character identity, scene state, visual style, camera setup, lighting, scale, and screen direction unless a shot explicitly allows a change.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces\nwardrobe:\n- Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash\nscene:\n- ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements\ncamera:\n- 16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence\nstyle:\n- original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia\nprops:\n- exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified\n\nORDERED ACTION FRAMES:\n1. [frame_25 | setup] Wide bridge recovery as dark peacock-blue rain clouds arrive and first large drops strike stone, both characters beside the caught umbrella, cool dramatic light.\n   change only: pose, expression, gaze, moving prop position, secondary motion\n2. [frame_26 | anticipation] Boy crouches slightly shielding the half-painted gold inner umbrella surface with his body and sleeve, worried about wet pigment, rain strengthening.\n   change only: pose, expression, gaze, moving prop position, secondary motion\n3. [frame_27 | action] Girl decisively takes the umbrella shaft from him and starts to push it open, medium two-shot, bamboo ribs still mostly folded.\n   change only: pose, expression, gaze, moving prop position, secondary motion\n4. [frame_28 | apex_or_contact] Opening action phase: umbrella canopy halfway expanded overhead, Girl braces the shaft, Boy ducks closer, rain streaks and wet stone reflections.\n   change only: pose, expression, gaze, moving prop position, secondary motion\n5. [frame_29 | recovery] Recovery under fully open umbrella: both young adults stand close but not touching, gold sun on inner canopy warmly illuminates their faces, heavy cool rain outside.\n   change only: pose, expression, gaze, moving prop position, secondary motion\n\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark",
+    "shotIds": [
+      "frame_25",
+      "frame_26",
+      "frame_27",
+      "frame_28",
+      "frame_29"
+    ],
+    "desiredCount": 5,
+    "requestedCount": 5
+  },
+  "resultPolicy": {
+    "countIsAdvisory": true,
+    "orderIsAdvisory": false,
+    "assignmentMode": "position",
+    "onShortfall": "assign valid returns, then generate only unfilled shots",
+    "onSurplus": "retain extras as unassigned candidates"
+  },
+  "shots": [
+    {
+      "id": "frame_25",
+      "order": 1,
+      "actionPhase": "setup",
+      "prompt": "Create only frame_25, action phase setup, as part of the same continuous sequence.\nWide bridge recovery as dark peacock-blue rain clouds arrive and first large drops strike stone, both characters beside the caught umbrella, cool dramatic light.\nUse the canonical references for identity and the approved continuity frame for immediate temporal state when supplied.\nDo not redesign the character, wardrobe, scene, camera, lighting, or visual style.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces\nwardrobe:\n- Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash\nscene:\n- ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements\ncamera:\n- 16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence\nstyle:\n- original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia\nprops:\n- exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified\nCHANGE ONLY:\n- pose\n- expression\n- gaze\n- moving prop position\n- secondary motion\nPRESERVE:\n- character identity\n- wardrobe\n- body proportions\n- scene geometry\n- lighting\n- camera\n- visual style\n- screen direction\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark",
+      "continuityReference": null,
+      "output": "assets/keyframes/frame_25.png"
+    },
+    {
+      "id": "frame_26",
+      "order": 2,
+      "actionPhase": "anticipation",
+      "prompt": "Create only frame_26, action phase anticipation, as part of the same continuous sequence.\nBoy crouches slightly shielding the half-painted gold inner umbrella surface with his body and sleeve, worried about wet pigment, rain strengthening.\nUse the canonical references for identity and the approved continuity frame for immediate temporal state when supplied.\nDo not redesign the character, wardrobe, scene, camera, lighting, or visual style.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces\nwardrobe:\n- Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash\nscene:\n- ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements\ncamera:\n- 16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence\nstyle:\n- original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia\nprops:\n- exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified\nCHANGE ONLY:\n- pose\n- expression\n- gaze\n- moving prop position\n- secondary motion\nPRESERVE:\n- character identity\n- wardrobe\n- body proportions\n- scene geometry\n- lighting\n- camera\n- visual style\n- screen direction\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark",
+      "continuityReference": null,
+      "output": "assets/keyframes/frame_26.png"
+    },
+    {
+      "id": "frame_27",
+      "order": 3,
+      "actionPhase": "action",
+      "prompt": "Create only frame_27, action phase action, as part of the same continuous sequence.\nGirl decisively takes the umbrella shaft from him and starts to push it open, medium two-shot, bamboo ribs still mostly folded.\nUse the canonical references for identity and the approved continuity frame for immediate temporal state when supplied.\nDo not redesign the character, wardrobe, scene, camera, lighting, or visual style.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces\nwardrobe:\n- Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash\nscene:\n- ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements\ncamera:\n- 16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence\nstyle:\n- original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia\nprops:\n- exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified\nCHANGE ONLY:\n- pose\n- expression\n- gaze\n- moving prop position\n- secondary motion\nPRESERVE:\n- character identity\n- wardrobe\n- body proportions\n- scene geometry\n- lighting\n- camera\n- visual style\n- screen direction\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark",
+      "continuityReference": null,
+      "output": "assets/keyframes/frame_27.png"
+    },
+    {
+      "id": "frame_28",
+      "order": 4,
+      "actionPhase": "apex_or_contact",
+      "prompt": "Create only frame_28, action phase apex_or_contact, as part of the same continuous sequence.\nOpening action phase: umbrella canopy halfway expanded overhead, Girl braces the shaft, Boy ducks closer, rain streaks and wet stone reflections.\nUse the canonical references for identity and the approved continuity frame for immediate temporal state when supplied.\nDo not redesign the character, wardrobe, scene, camera, lighting, or visual style.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces\nwardrobe:\n- Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash\nscene:\n- ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements\ncamera:\n- 16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence\nstyle:\n- original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia\nprops:\n- exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified\nCHANGE ONLY:\n- pose\n- expression\n- gaze\n- moving prop position\n- secondary motion\nPRESERVE:\n- character identity\n- wardrobe\n- body proportions\n- scene geometry\n- lighting\n- camera\n- visual style\n- screen direction\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark",
+      "continuityReference": null,
+      "output": "assets/keyframes/frame_28.png"
+    },
+    {
+      "id": "frame_29",
+      "order": 5,
+      "actionPhase": "recovery",
+      "prompt": "Create only frame_29, action phase recovery, as part of the same continuous sequence.\nRecovery under fully open umbrella: both young adults stand close but not touching, gold sun on inner canopy warmly illuminates their faces, heavy cool rain outside.\nUse the canonical references for identity and the approved continuity frame for immediate temporal state when supplied.\nDo not redesign the character, wardrobe, scene, camera, lighting, or visual style.\n\nHARD CONTINUITY LOCKS — preserve these in every frame:\ncharacters:\n- Girl has amber-gold eyes and waist-length straight deep-indigo hair; Boy has warm gray-brown eyes and half-tied black hair with natural fringe; both are youthful adults and preserve approved faces\nwardrobe:\n- Girl wears moon-white Chinese right-lapel top and deep-indigo mamian skirt with thin cinnabar accents; Boy wears rice-white Chinese right-lapel robe, blue-gray sleeveless outer layer and indigo sash\nscene:\n- ancient Chinese Jiangnan canal town with white walls, black tiled roofs, stone bridge, willow and riverside painting stall; no modern or Japanese elements\ncamera:\n- 16:9 cinematic frame with layered foreground midground background and stable screen direction within the sequence\nstyle:\n- original New Gongbi cinematic 2D animation, meticulous Chinese line art, blue-green mineral pigments, subtle silk grain, crisp contrast, cool shadows and clean golden highlights, never sepia\nprops:\n- exactly one old deep-indigo Chinese oil-paper umbrella with bamboo ribs and wooden handle; gold sun appears only on its inner surface when specified\nCHANGE ONLY:\n- pose\n- expression\n- gaze\n- moving prop position\n- secondary motion\nPRESERVE:\n- character identity\n- wardrobe\n- body proportions\n- scene geometry\n- lighting\n- camera\n- visual style\n- screen direction\nAVOID:\n- different character identity\n- face drift\n- wardrobe changes\n- extra characters\n- extra limbs or fingers\n- duplicate moving props\n- unplanned camera or background changes\n- text or watermark",
+      "continuityReference": null,
+      "output": "assets/keyframes/frame_29.png"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ color with one shadow layer; outlines warm dark brown on the lit side, muted
 indigo on the shadow side.
 Avoid: stepped or striped sky, banding, grain, noise, paper texture,
 halftone, airbrush, blur, photorealism, 3D render, lens flare, glow effects,
-Makoto Shinkai style, text, captions, logos, watermark, signature."
+realistic anime film lighting, text, captions, logos, watermark, signature."
 
 GIRL="The girl Tsumugi: 10-year-old, short dark-brown bob hair, round cream
 knitted earmuffs, thick cream scarf wrapped high, vermilion red coat, dark

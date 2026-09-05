@@ -1,0 +1,98 @@
+{
+  "version": 2,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "states": ["closed", "half", "open"],
+  "notes": "Only the tight mouth rectangle is copied from generated variants; all other pixels come from the stable base frame. Variants are feather-locked via tools/lock_region_variant.py with a --window around the mouth (codex imagegen adds full-frame re-encode noise; the window restricts diff detection to the feature). Rects are the union of the half/open/closed lock rects per frame.",
+  "rigs": {
+    "frame_01_mouth": {
+      "entry": 2,
+      "mode": "image",
+      "rect": [720, 329, 260, 171],
+      "variants": {
+        "closed": "mouth_variants/frame_01_mouth_closed_locked_v1.png",
+        "half": "mouth_variants/frame_01_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_01_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_02_mouth": {
+      "entry": 3,
+      "mode": "image",
+      "rect": [770, 145, 220, 193],
+      "variants": {
+        "closed": "keyframes/frame_02.png",
+        "half": "mouth_variants/frame_02_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_02_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_03_mouth": {
+      "entry": 4,
+      "mode": "image",
+      "rect": [848, 405, 197, 190],
+      "variants": {
+        "closed": "mouth_variants/frame_03_mouth_closed_locked_v1.png",
+        "half": "mouth_variants/frame_03_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_03_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_04_mouth": {
+      "entry": 5,
+      "mode": "image",
+      "rect": [550, 150, 190, 190],
+      "variants": {
+        "closed": "keyframes/frame_04.png",
+        "half": "mouth_variants/frame_04_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_04_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_05_mouth": {
+      "entry": 6,
+      "mode": "image",
+      "rect": [660, 315, 200, 185],
+      "variants": {
+        "closed": "mouth_variants/frame_05_mouth_closed_locked_v1.png",
+        "half": "mouth_variants/frame_05_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_05_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_06_mouth": {
+      "entry": 7,
+      "mode": "image",
+      "rect": [620, 295, 225, 170],
+      "variants": {
+        "closed": "keyframes/frame_06.png",
+        "half": "mouth_variants/frame_06_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_06_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_07_mouth": {
+      "entry": 8,
+      "mode": "image",
+      "rect": [720, 205, 180, 155],
+      "variants": {
+        "closed": "keyframes/frame_07.png",
+        "half": "mouth_variants/frame_07_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_07_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_09_mouth": {
+      "entry": 10,
+      "mode": "image",
+      "rect": [835, 252, 199, 168],
+      "variants": {
+        "closed": "mouth_variants/frame_09_mouth_closed_locked_v1.png",
+        "half": "mouth_variants/frame_09_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_09_mouth_open_locked_v1.png"
+      }
+    },
+    "frame_10_mouth": {
+      "entry": 11,
+      "mode": "image",
+      "rect": [730, 535, 340, 220],
+      "variants": {
+        "closed": "keyframes/frame_10.png",
+        "half": "mouth_variants/frame_10_mouth_half_locked_v1.png",
+        "open": "mouth_variants/frame_10_mouth_open_locked_v1.png"
+      }
+    }
+  }
+}

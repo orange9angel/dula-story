@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "notes": "Blink rigs. The closed variant is feather-locked onto the base frame (tools/auto_lock_variants.py); only the rect region is copied during a blink. Interval is per-rig randomized by the scene's deterministic scheduler (full-name hash stagger). Rects calibrated by tools/build_rigs.py with dense-core diff bboxes (threshold 30 + 5x5 density >=10), expanded 14px.",
+  "rigs": {
+    "girl_frame03_blink": {
+      "rect": [
+        550,
+        170,
+        100,
+        92
+      ],
+      "closed": "eye_variants/frame_03_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame13_blink": {
+      "rect": [
+        462,
+        184,
+        74,
+        73
+      ],
+      "closed": "eye_variants/frame_13_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    },
+    "girl_frame14_blink": {
+      "rect": [
+        705,
+        182,
+        62,
+        68
+      ],
+      "closed": "eye_variants/frame_14_closed_locked_v1.png",
+      "intervalSeconds": [
+        2.8,
+        4.4
+      ]
+    }
+  }
+}

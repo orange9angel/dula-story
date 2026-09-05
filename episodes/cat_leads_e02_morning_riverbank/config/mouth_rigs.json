@@ -1,0 +1,132 @@
+{
+  "version": 2,
+  "sourceCoordinateSpace": "native-image-pixels",
+  "states": [
+    "closed",
+    "half",
+    "open"
+  ],
+  "notes": "Final: ALL mouth rigs are codex local edits feather-locked (auto_lock_variants.py, outside max diff=0). Cat mouths redone by codex in the V3 fix after the qwen v2 content-paste versions read as oversized voids over the muzzle. Rects recalibrated (threshold 30, union, +14px).",
+  "rigs": {
+    "girl_frame01_entry2": {
+      "entry": 2,
+      "mode": "image",
+      "rect": [
+        557,
+        257,
+        44,
+        42
+      ],
+      "variants": {
+        "closed": "keyframes/frame_01.png",
+        "half": "mouth_variants/frame_01_half_locked_v1.png",
+        "open": "mouth_variants/frame_01_open_locked_v1.png"
+      }
+    },
+    "girl_frame03_entry4": {
+      "entry": 4,
+      "mode": "image",
+      "rect": [
+        1133,
+        189,
+        49,
+        41
+      ],
+      "variants": {
+        "closed": "keyframes/frame_03.png",
+        "half": "mouth_variants/frame_03_half_locked_v1.png",
+        "open": "mouth_variants/frame_03_open_locked_v1.png"
+      }
+    },
+    "girl_frame06_entry8": {
+      "entry": 8,
+      "mode": "image",
+      "rect": [
+        797,
+        141,
+        52,
+        42
+      ],
+      "variants": {
+        "closed": "keyframes/frame_06.png",
+        "half": "mouth_variants/frame_06_half_locked_v1.png",
+        "open": "mouth_variants/frame_06_open_locked_v1.png"
+      }
+    },
+    "girl_frame11_entry11": {
+      "entry": 11,
+      "mode": "image",
+      "rect": [
+        729,
+        280,
+        57,
+        43
+      ],
+      "variants": {
+        "closed": "keyframes/frame_11.png",
+        "half": "mouth_variants/frame_11_half_locked_v1.png",
+        "open": "mouth_variants/frame_11_open_locked_v1.png"
+      }
+    },
+    "girl_frame16_entry14": {
+      "entry": 14,
+      "mode": "image",
+      "rect": [
+        671,
+        414,
+        65,
+        55
+      ],
+      "variants": {
+        "closed": "keyframes/frame_16.png",
+        "half": "mouth_variants/frame_16_half_locked_v1.png",
+        "open": "mouth_variants/frame_16_open_locked_v1.png"
+      }
+    },
+    "cat_frame02_meow": {
+      "entry": 3,
+      "mode": "image",
+      "rect": [
+        988,
+        381,
+        74,
+        57
+      ],
+      "variants": {
+        "closed": "keyframes/frame_02.png",
+        "half": "mouth_variants/frame_02_half_locked_v1.png",
+        "open": "mouth_variants/frame_02_open_locked_v1.png"
+      }
+    },
+    "cat_frame05_meow": {
+      "entry": 7,
+      "mode": "image",
+      "rect": [
+        858,
+        504,
+        56,
+        50
+      ],
+      "variants": {
+        "closed": "keyframes/frame_05.png",
+        "half": "mouth_variants/frame_05_half_locked_v1.png",
+        "open": "mouth_variants/frame_05_open_locked_v1.png"
+      }
+    },
+    "cat_frame13_meow": {
+      "entry": 12,
+      "mode": "image",
+      "rect": [
+        608,
+        430,
+        103,
+        75
+      ],
+      "variants": {
+        "closed": "keyframes/frame_13.png",
+        "half": "mouth_variants/frame_13_half_locked_v1.png",
+        "open": "mouth_variants/frame_13_open_locked_v1.png"
+      }
+    }
+  }
+}

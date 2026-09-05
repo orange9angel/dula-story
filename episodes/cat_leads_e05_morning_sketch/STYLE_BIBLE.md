@@ -51,7 +51,7 @@ no gradients other than the sky band.
 
 外貌元素锁（来自 `../../xiaoju_secret/storyboard.md` 与
 `../../xiaoju_secret/generation_prompts.md`，**仅继承设计元素，画风必须重绘为
-晴印**——xiaoju_secret 原图是新海诚式日漫风，禁止作为风格参考）：
+晴印**——xiaoju_secret 原图是写实日漫电影风，禁止作为风格参考）：
 
 - 17 岁男生，slim 偏瘦体型，暖调浅肤色
 - 黑色短发微翘（slightly messy fringe），深灰色眼瞳
