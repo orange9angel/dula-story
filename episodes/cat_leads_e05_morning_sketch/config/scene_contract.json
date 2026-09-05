@@ -1,0 +1,481 @@
+{
+  "$schema": "../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "cat_leads_e05_morning_sketch",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "A sixty-second clear-summer-morning healing short in the flat sunprint style (morning variant: cyan-blue to peach-gold sky, one brighter flat gold band low over the horizon, a low hard-edged pale-gold sun disc in the east, long slanted shadows pointing west, lavender-purple shadow sides, sparse flat white four-point dew sparkles): at about 6am the orange tabby calls the girl out early and leads her through the dew-lit lane and over the stone bridge to the riverbank, where the transfer student Boy sits sketching on the steps — his sketchbook is full of the cat, who has slipped out every morning to keep him company, told through approved 2D keyframes, 2D crop moves, seedance-2.0 full-tier 1080p image-to-video clips played as 12fps cel sequences for the continuous-action shots (cat lane lead, girl bridge walk, cat slope run), procedural flat-shape sunprint layers (dew sparkle, morning light dapple, cloud drift, door light band, bird flyby), energy-gated Chinese viseme cels / OmniHuman talking shots for the dialogue, and a gentle morning score. All travel is screen-right (morning outing, same direction as E01/E02/E04).",
+    "audience": "Viewers evaluating a compact but complete 2D anime short with a stable generated heroine, a consistent orange tabby cat, a newly introduced boy held on-model, a readable home-to-lane-to-bridge-to-riverbank morning progression, and synchronized sound.",
+    "designPriorities": [
+      "Keep the girl's waist-length dark-blue hair, amber eyes, white shirt, and navy plaid pleated skirt stable across every frame; no umbrella, no school bag.",
+      "Keep the orange tabby cat's white chest, white paws, and green eyes stable; it is dry and fluffy after the previous episode's rescue.",
+      "Keep the boy's slim build, short black hair with slightly messy fringe, white short-sleeve school shirt, navy trousers, white sneakers, and the single kraft-paper-cover sketchbook stable across every frame.",
+      "Use hard cuts for all beats so character and cat silhouettes never double through a dissolve; reserve the single closing crossfade for the final pull-out shot.",
+      "Gate visible closed, half, and open mouth cels at 12 fps from the exact post-trim final dialogue stem, then select limited visemes from the known Chinese syllables, never from subtitle duration.",
+      "Derive frame selection, mouth state, crop motion, transitions, and subtitles only from absolute story time so seeks and segmented renders remain deterministic.",
+      "Draw every procedural layer (dew sparkle, morning light dapple, cloud drift, door light band, bird flyby) as razor-clean flat vector shapes in source-image space; zero grain, zero gradients, no haze, per STYLE_BIBLE.md."
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "MorningSketchScene"
+    ],
+    "characters": [
+      "Girl",
+      "Cat",
+      "Boy"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "MorningSketchScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "MorningSketchScene",
+        "module": "scenes/MorningSketchSequenceScene.js",
+        "export": "MorningSketchScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "A morning home entrance with a white porch, a dew-lit residential lane running east, a small stone bridge over the sunrise-gold river, and a morning riverbank with grassy steps under a cyan-to-peach sky, all baked into full-frame 2D artwork plus baked-motion I2V cel sequences; dew sparkles and the bird flyby are programmatic layers, never baked into masters.",
+        "timeOfDay": "Clear summer morning about 6am, just after sunrise: cyan-blue sky top softening into peach gold at the horizon, one brighter flat gold band low over the horizon, a low hard-edged pale-gold sun disc in the east, long slanted shadows pointing west.",
+        "tone": [
+          "gentle",
+          "healing",
+          "quiet",
+          "warm"
+        ],
+        "storyFunction": "Follow the cat leading the girl out at dawn: from the front door, along the dew-lit lane, over the stone bridge, to the riverbank where the transfer student Boy is sketching the cat, closing on the two kids and the cat sitting together as birds fly by in the morning light.",
+        "visualRules": [
+          "Every source PNG fills the 1920 by 1080 presentation canvas through cover-crop without aspect-ratio distortion.",
+          "The keyframe timeline, rather than equal frame division, determines every image boundary and camera-like crop move.",
+          "Each spoken line keeps one stable speaker plate; only a tight mouth rectangle changes between closed, half, and open states.",
+          "Chinese subtitles are rendered in code over text-free source art and must remain inside the lower safe area.",
+          "The scene uses a CanvasTexture as the Three.js background, so runtime camera collision geometry is intentionally inapplicable and camera obstacles remain empty.",
+          "Girl, Cat and Boy are voice-only story speakers whose visible bodies are baked into the keyframes; no 3D character meshes may be layered over the artwork.",
+          "No runtime grain, noise, haze, or texture layer may be composited over the sunprint artwork.",
+          "Dew sparkles and the bird flyby are deterministic time-driven programmatic flat-shape layers; masters and keyframes stay free of baked light dots or birds."
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -8,
+            -4.5,
+            -1
+          ],
+          "max": [
+            8,
+            4.5,
+            1
+          ]
+        },
+        "zones": [
+          {
+            "id": "presentationZone",
+            "bounds": {
+              "min": [
+                -8,
+                -4.5,
+                -1
+              ],
+              "max": [
+                8,
+                4.5,
+                1
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "Represent the full-frame timed 2D presentation rather than a navigable 3D stage."
+            ]
+          }
+        ],
+        "anchors": {
+          "screenCenter": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "purpose": "Stable center of the full-frame keyframe canvas."
+          },
+          "bakedHomeDoor": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -4,
+              -1,
+              0
+            ],
+            "purpose": "Semantic screen-left front door where the morning outing begins, represented inside the generated artwork."
+          },
+          "bakedRiverbankSteps": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              5,
+              0,
+              0
+            ],
+            "purpose": "Semantic screen-right riverbank steps where the boy sketches and the closing sit-together shot lands, represented inside the generated artwork."
+          }
+        }
+      },
+      "lighting": {
+        "mood": "Quiet clear-summer-morning flat color: cyan-blue sky top, peach-gold horizon, one flat gold low band, hard-edged pale-gold sun disc, lavender-purple shadow sides, sparse white dew sparkles.",
+        "readabilityRules": [
+          "Do not apply runtime lighting or grading that changes character colors between generated frames.",
+          "Keep faces, the navy and white costume silhouette, the orange cat, and the boy's white shirt and navy trousers readable against the brighter morning plates during all crop motion and transitions.",
+          "Keep subtitle contrast independent of the baked background by using a dark translucent backing and outlined white text."
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "morningBirds",
+          "kind": "region",
+          "semantic": "Early-morning bird bed over the whole episode, thickening toward the riverbank.",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "radius": 8,
+          "loop": true
+        },
+        {
+          "id": "laneSteps",
+          "kind": "point",
+          "semantic": "Lane and stone-bridge footsteps while the girl follows the cat; the front door opens and closes at the first beats.",
+          "position": [
+            -5,
+            0,
+            0
+          ],
+          "radius": 2.5,
+          "loop": false
+        },
+        {
+          "id": "riverBeds",
+          "kind": "region",
+          "semantic": "River water bed from the bridge reveal to the end; grass footsteps on the slope; sketchbook page turns and a bird flyby at the riverbank.",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "radius": 8,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "storyTimeline",
+          "type": "other",
+          "path": "script.story",
+          "required": true
+        },
+        {
+          "id": "keyframeTimeline",
+          "type": "other",
+          "path": "config/keyframe_timeline.json",
+          "required": true
+        },
+        {
+          "id": "lipSyncCues",
+          "type": "other",
+          "path": "config/lipsync_cues.json",
+          "required": true
+        },
+        {
+          "id": "mouthRigs",
+          "type": "other",
+          "path": "config/mouth_rigs.json",
+          "required": true
+        },
+        {
+          "id": "voiceConfiguration",
+          "type": "other",
+          "path": "config/voice_config.json",
+          "required": true
+        },
+        {
+          "id": "audioMixConfiguration",
+          "type": "other",
+          "path": "config/audio_mix.json",
+          "required": true
+        },
+        {
+          "id": "transitionConfiguration",
+          "type": "other",
+          "path": "config/transitions.json",
+          "required": true
+        },
+        {
+          "id": "bakedSpeakerAdapter",
+          "type": "other",
+          "path": "characters/BakedSpeaker.js",
+          "required": true
+        },
+        {
+          "id": "girlReference",
+          "type": "texture",
+          "path": "assets/girl_reference.png",
+          "required": true
+        },
+        {
+          "id": "catReference",
+          "type": "texture",
+          "path": "assets/cat_reference.png",
+          "required": true
+        },
+        {
+          "id": "boyReference",
+          "type": "texture",
+          "path": "assets/boy_reference.png",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "Girl",
+      "scene": "MorningSketchScene",
+      "kind": "character",
+      "runtimeName": "Girl",
+      "binding": "character:Girl",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "Cat",
+      "scene": "MorningSketchScene",
+      "kind": "character",
+      "runtimeName": "Cat",
+      "binding": "character:Cat",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "Boy",
+      "scene": "MorningSketchScene",
+      "kind": "character",
+      "runtimeName": "Boy",
+      "binding": "character:Boy",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "unknown",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ],
+        "face": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "keyframeSurface",
+      "scene": "MorningSketchScene",
+      "kind": "prop",
+      "objectName": "sequenceCanvas",
+      "binding": "sequenceTexture",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "states": [
+        "timed-sequence-active"
+      ],
+      "initialState": "timed-sequence-active"
+    }
+  ],
+  "state": {
+    "timelineVersion": {
+      "type": "number",
+      "initial": 1,
+      "binding": "keyframe_timeline.version"
+    }
+  },
+  "events": [],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "morningHomeEstablishing",
+      "scene": "MorningSketchScene",
+      "entry": 1,
+      "offsetSeconds": 0.4,
+      "purpose": "Confirm the morning home entrance, dew sparkles and low gold light fill the first frame with subtitle-safe margins.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "firstMonologue",
+      "scene": "MorningSketchScene",
+      "entry": 3,
+      "offsetSeconds": 0.6,
+      "purpose": "Confirm the girl peeking out of the front door is readable during the first line with syllable-aware visemes.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "i2vLaneLead",
+      "scene": "MorningSketchScene",
+      "entry": 6,
+      "offsetSeconds": 1.2,
+      "purpose": "Confirm the I2V cat-lane-lead cel sequence is playing (mid-clip frame differs from the first frame).",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "boyReveal",
+      "scene": "MorningSketchScene",
+      "entry": 13,
+      "offsetSeconds": 0.5,
+      "purpose": "Confirm the boy turning on the riverbank steps is readable for his first clear appearance.",
+      "mustSee": [
+        {
+          "entity": "keyframeSurface",
+          "minFrameArea": 0.95,
+          "maxOcclusion": 0,
+          "safeMargin": 0
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "dula-inspect-team",
+      "dula-verify",
+      "visual-review",
+      "audio-review"
+    ]
+  }
+}

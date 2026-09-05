@@ -190,7 +190,18 @@
     "render:xiaoju_secret": "dula-render ./episodes/xiaoju_secret",
     "verify:xiaoju_secret": "dula-verify ./episodes/xiaoju_secret",
     "audio:xiaoju_secret": ".venv/Scripts/python.exe ./episodes/xiaoju_secret/tools/generate_audio_cosyvoice.py",
-    "build:xiaoju_secret": "npm run audio:xiaoju_secret && npm run render:xiaoju_secret"
+    "build:xiaoju_secret": "npm run audio:xiaoju_secret && npm run render:xiaoju_secret",
+    "audio:huazhong_guren": ".venv/Scripts/python.exe ./episodes/huazhong_guren/tools/generate_audio.py",
+    "verify:huazhong_guren": "dula-verify ./episodes/huazhong_guren",
+    "render:huazhong_guren": "dula-render ./episodes/huazhong_guren",
+    "build:huazhong_guren": "npm run audio:huazhong_guren && npm run verify:huazhong_guren && npm run render:huazhong_guren",
+    "audio:bio_armor_s1e1": ".venv/Scripts/python.exe ./episodes/bio_armor_academy_s1e1/tools/generate_audio_cosyvoice.py",
+    "verify:bio_armor_s1e1": "dula-verify ./episodes/bio_armor_academy_s1e1",
+    "render:bio_armor_s1e1": "dula-render ./episodes/bio_armor_academy_s1e1",
+    "build:bio_armor_s1e1": "npm run audio:bio_armor_s1e1 && npm run render:bio_armor_s1e1",
+    "audio:e05": "dula-audio ./episodes/cat_leads_e05_morning_sketch",
+    "verify:e05": "dula-verify ./episodes/cat_leads_e05_morning_sketch",
+    "render:e05": "dula-render ./episodes/cat_leads_e05_morning_sketch"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/cat_leads_e03_dusk_homecoming/`（《猫带我去的地方》E03《暮色归途》——60 秒黄昏治愈系，E02 同日傍晚归途；连续动作镜头升级 wan2.6-i2v **标准档**（¥0.6/s，跑步漂移解决，Seedance 未启用）；口型/眨眼变体全 codex 局部编辑零 fallback）
+**最新 Episode**：`episodes/cat_leads_e05_morning_sketch/`（《猫带我去的地方》E05《清晨速写》——60 秒清晨治愈系，阿澈（Boy，设计锁沿用 xiaoju_secret）首次进入本系列；**优化方案验证集**：I2V 升级 Seedance 2.0 满血版 1080p（doubao-seedance-2-0-260128，E04 mini/720p 放大虚边消除），关键帧 prompt 表情分层描写，I2V prompt 带 L1 布料/发丝次级动态词表，OmniHuman prompt 神态分层；**V2 起人类角色配音全迁火山 seed-tts-2.0**（Girl=Vivi 2.0、Boy=小天 2.0，emotion_scale=2 弱档，A/B 判定优于 CosyVoice））
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/cat_leads_e04_firefly_night/` — 《夏夜流萤》（火山全家桶首集）
 - `episodes/cat_leads_e03_dusk_homecoming/` — 《暮色归途》（I2V 标准档验证集）
 - `episodes/cat_leads_e02_morning_riverbank/` — 《清晨河堤》（I2V 视频 cel 工艺首用）
 - `episodes/cat_leads_e01_sunny_store/` — 《晴天便利店》（晴印风格 60s 治愈系首集）

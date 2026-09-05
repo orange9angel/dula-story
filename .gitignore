@@ -44,3 +44,9 @@ Thumbs.db
 
 # Scratch / experiments (douyin, TTS probes)
 tmp/
+.env.speech
+.env.cv
+
+# Regenerable cel extractions (I2V/OmniHuman frame dumps; sources mp4/keyframes kept)
+episodes/*/assets/i2v/*/
+episodes/*/assets/omni/
