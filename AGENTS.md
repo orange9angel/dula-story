@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/cat_leads_e09_live_riverbank/`（《猫带我去的地方》E09——**真人工艺实验集**（导演决议，不占晴印主线）：20s 全视频管线（5 段 I2V 720p）、零正脸唇形、双 VO、背影/侧面一致性方案）
+**最新 Episode**：`episodes/cat_leads_e06_cat_model_live/`（《模特小橘》真人版——V1 已出片（60s 全视频，I2V×11+OmniHuman×8+DreamActor×1，≈¥64-72）；V2 视频参考链升级**暂停**（三世界并存，导演叫停，累计 ≈¥220-240）。**教训已固化**：世界锚点纪律（skill 规则 14 + references/live-action.md）。下周做世界统一实验）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/cat_leads_e06_cat_model_live/` — 《模特小橘》真人版（V1 出片；V2 暂停待世界锚点实验）
 - `episodes/cat_leads_e09_live_riverbank/` — 真人实验集（20s 全 I2V 720p）
 - `episodes/cat_leads_e08_drifting_page/` — 《漂走的那张画》（质感集：F01 首埋、720p 分辨率档首执行、视频占比 ~67%）
 - `episodes/cat_leads_e07_river_willow/` — 《柳树下的老钓友》（长篇结构验证集：新角色老周、伏笔 F02/F03、环境微动 A/B）
