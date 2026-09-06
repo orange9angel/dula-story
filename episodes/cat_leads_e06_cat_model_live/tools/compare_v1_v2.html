@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E06 新旧版对比</title>
+<style>body{margin:0;background:#14181b;color:#eef2f3;font:16px/1.6 system-ui,sans-serif}main{max-width:1500px;margin:auto;padding:28px}h1{font-size:26px}p{color:#bdc7cc}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}video{width:100%;background:#000}button,select{font:inherit;padding:8px 14px;border:0;border-radius:5px;margin:4px}input{width:100%;accent-color:#72cbbb}.note{border-left:3px solid #d9a455;padding:12px 18px;background:#232526}small{color:#a7b2b8}@media(max-width:800px){.pair{grid-template-columns:1fr}}</style>
+<main><h1>E06《模特小橘》新旧版对比</h1>
+<p class="note">V2 是待验收预览：7 个新对白镜头，32.5 秒、47.5 秒的两句仍用旧版占位。角色外观与 V1 有变化，场景细节也尚未完全连续；请勿当作定稿。</p>
+<div class="pair"><section><h2>V1</h2><video id="old" src="output_v1_backup.mp4" preload="metadata" playsinline></video></section><section><h2>V2 预览</h2><video id="new" src="v2_review_preview.mp4" preload="metadata" playsinline></video></section></div>
+<p><button id="play">同步播放</button><button id="reset">回到开头</button><label>听哪版声音：<select id="audio"><option value="new">V2：连续环境音</option><option value="old">V1：原混音</option></select></label><span id="time">0.0 / 60.0 秒</span></p>
+<input id="seek" type="range" min="0" max="60" value="0" step="0.01" aria-label="两版同步进度">
+<p><button data-t="3.6">男孩第一句</button><button data-t="8">猫说话</button><button data-t="10.5">女孩第一句</button><button data-t="29.5">它开心就好啦</button><button data-t="47">结尾占位</button></p>
+<p>复核重点：说话时河水、风叶声是否还在；猫嘴开合和配音是否合拍；新旧角色外观、树影和石阶能否接上。V2 保留原配音，未把生成视频自带的人声或环境声直接混入。</p>
+<small>两版同时播放，仅所选版本出声。直接打开本文件即可比较，无需上传或安装模型。</small></main>
+<script>
+const old=document.querySelector('#old'),fresh=document.querySelector('#new'),play=document.querySelector('#play'),seek=document.querySelector('#seek'),selection=document.querySelector('#audio');
+function volume(){old.muted=selection.value!=='old';fresh.muted=selection.value!=='new'}volume();selection.onchange=volume;
+function jump(t){old.currentTime=t;fresh.currentTime=t;seek.value=t}seek.oninput=()=>jump(+seek.value);document.querySelector('#reset').onclick=()=>jump(0);document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>jump(+b.dataset.t));
+play.onclick=async()=>{if(fresh.paused){old.currentTime=fresh.currentTime;try{await Promise.all([old.play(),fresh.play()]);play.textContent='暂停'}catch(e){old.pause();fresh.pause();play.textContent='同步播放';alert('无法播放，请确认两个 MP4 和本文件在同一目录。')}}else{old.pause();fresh.pause();play.textContent='同步播放'}};
+fresh.ontimeupdate=()=>{seek.value=fresh.currentTime;document.querySelector('#time').textContent=fresh.currentTime.toFixed(1)+' / 60.0 秒';if(!fresh.paused&&Math.abs(old.currentTime-fresh.currentTime)>.12)old.currentTime=fresh.currentTime};fresh.onended=()=>{old.pause();play.textContent='同步播放'};
+</script></html>

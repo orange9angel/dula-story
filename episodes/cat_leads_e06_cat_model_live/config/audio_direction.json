@@ -1,0 +1,415 @@
+{
+  "version": 1,
+  "status": "reviewed",
+  "sources": [
+    {
+      "path": "script.story",
+      "sha256": "2361146b4dc316215545f02dca0bfcc40c10799f8c1ef200b345d7ad4040e15a"
+    },
+    {
+      "path": "config/v2_edit.json",
+      "sha256": "5a57d9df0212e136d39ed7d6766d61cb0d5b9060231724a80f7f2448bdee4ff2"
+    }
+  ],
+  "policies": {
+    "priority": [
+      "dialogue",
+      "storySfx",
+      "ambience",
+      "music"
+    ],
+    "musicMode": "directed",
+    "ambienceMode": "directed",
+    "breath": "natural-tts-pauses-no-layered-breath",
+    "ambienceDucking": false
+  },
+  "mix": {
+    "dialogueVolume": 1.6,
+    "bgmVolume": 0.14,
+    "sfxVolume": 0.8,
+    "useDucking": true,
+    "duckDepth": 0.45
+  },
+  "characters": {
+    "Boy": {
+      "voice": "zh_male_taocheng_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Cat": {
+      "voice": "preserved tmp/cat_line.mp3",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Girl": {
+      "voice": "zh_female_vv_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    }
+  },
+  "dialogue": [
+    {
+      "entry": 2,
+      "character": "Boy",
+      "text": "小橘，别动，今天给你画张正式的。",
+      "startTime": 4.0,
+      "endTime": 7.067,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s01"
+      ],
+      "previousEntry": null,
+      "nextEntry": 3,
+      "intent": "bright",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/boy1_bright.mp3",
+      "placementOffsetSec": 0
+    },
+    {
+      "entry": 3,
+      "character": "Cat",
+      "text": "哼，画好看点。",
+      "startTime": 8.5,
+      "endTime": 11,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s03"
+      ],
+      "previousEntry": 2,
+      "nextEntry": 4,
+      "intent": "proud",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "proud",
+        "energy": 0.58,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "tmp/cat_line.mp3",
+      "placementOffsetSec": 0
+    },
+    {
+      "entry": 4,
+      "character": "Girl",
+      "text": "小橘，坐直一点嘛。",
+      "startTime": 11.0,
+      "endTime": 13.5,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s04"
+      ],
+      "previousEntry": 3,
+      "nextEntry": 5,
+      "intent": "gentle",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/girl1_gentle.mp3",
+      "placementOffsetSec": 0
+    },
+    {
+      "entry": 5,
+      "character": "Girl",
+      "text": "别动呀，蝴蝶待会儿再看。",
+      "startTime": 16.0,
+      "endTime": 18.867,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s06"
+      ],
+      "previousEntry": 4,
+      "nextEntry": 6,
+      "intent": "curious",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.45,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/girl2_curious.mp3",
+      "placementOffsetSec": 0
+    },
+    {
+      "entry": 6,
+      "character": "Girl",
+      "text": "啊，跑掉了！",
+      "startTime": 22.0,
+      "endTime": 24,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s08"
+      ],
+      "previousEntry": 5,
+      "nextEntry": 7,
+      "intent": "amazed",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "amazed",
+        "energy": 0.45,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/girl3_amazed.mp3",
+      "placementOffsetSec": 0.35
+    },
+    {
+      "entry": 7,
+      "character": "Boy",
+      "text": "算了，由它去吧。",
+      "startTime": 24.0,
+      "endTime": 26.5,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s09"
+      ],
+      "previousEntry": 6,
+      "nextEntry": 8,
+      "intent": "calm",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "calm",
+        "energy": 0.34,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/boy2_calm.mp3",
+      "placementOffsetSec": 0.8
+    },
+    {
+      "entry": 8,
+      "character": "Girl",
+      "text": "它开心就好啦。",
+      "startTime": 30.0,
+      "endTime": 32.5,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s11"
+      ],
+      "previousEntry": 7,
+      "nextEntry": 9,
+      "intent": "gentle",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/girl4_gentle.mp3",
+      "placementOffsetSec": 0.7
+    },
+    {
+      "entry": 9,
+      "character": "Boy",
+      "text": "嗯，这样也挺好。",
+      "startTime": 32.5,
+      "endTime": 35,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s12"
+      ],
+      "previousEntry": 8,
+      "nextEntry": 12,
+      "intent": "gentle",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/boy3_gentle.mp3",
+      "placementOffsetSec": 0
+    },
+    {
+      "entry": 12,
+      "character": "Girl",
+      "text": "这张最像它了。",
+      "startTime": 47.5,
+      "endTime": 50.5,
+      "scene": "LiveRiverbankScene",
+      "shotIds": [
+        "s17"
+      ],
+      "previousEntry": 9,
+      "nextEntry": null,
+      "intent": "gentle",
+      "subtext": "???????????????????",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "audioSource": "assets/audio/girl5_gentle.mp3",
+      "placementOffsetSec": 0
+    }
+  ],
+  "ambience": [
+    {
+      "id": "ambience-1-morning-birds",
+      "entry": 1,
+      "name": "morning_birds",
+      "startTime": 0.0,
+      "volume": 0.12,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [],
+      "endTime": 60.0
+    },
+    {
+      "id": "ambience-1-river-water",
+      "entry": 1,
+      "name": "river_water",
+      "startTime": 0.0,
+      "volume": 0.14,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [],
+      "endTime": 60.0
+    },
+    {
+      "id": "ambience-1-wind-leaves",
+      "entry": 1,
+      "name": "wind_leaves",
+      "startTime": 0.0,
+      "volume": 0.12,
+      "role": "bed",
+      "priority": "ambience",
+      "shotIds": [],
+      "endTime": 60.0
+    }
+  ],
+  "sfx": [
+    {
+      "id": "sfx-10-pencil-scratch",
+      "entry": 10,
+      "name": "pencil_scratch",
+      "startTime": 42.5,
+      "volume": 0.2,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": []
+    },
+    {
+      "id": "sfx-11-paper-flutter",
+      "entry": 11,
+      "name": "paper_flutter",
+      "startTime": 45.0,
+      "volume": 0.2,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": []
+    },
+    {
+      "id": "sfx-13-cat-purr-sleep",
+      "entry": 13,
+      "name": "cat_purr_sleep",
+      "startTime": 50.5,
+      "volume": 0.24,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": []
+    }
+  ],
+  "music": [
+    {
+      "id": "existing-cat-model-theme",
+      "startTime": 0,
+      "endTime": 60,
+      "source": "assets/audio/cat_model_theme.wav",
+      "fadeIn": 1,
+      "fadeOut": 5,
+      "baseVolume": 0.14,
+      "purpose": "???????????????????????"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "no-generated-shot-audio",
+      "scope": "whole-episode",
+      "sound": "Seedance clip audio",
+      "reason": "??????????????????????????????"
+    },
+    {
+      "id": "no-ambience-duck",
+      "scope": "whole-episode",
+      "sound": "speech-driven ambience gating",
+      "reason": "??????????????????????"
+    }
+  ]
+}

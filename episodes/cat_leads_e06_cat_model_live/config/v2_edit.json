@@ -1,0 +1,238 @@
+{
+  "status": "preview_pending_two_shots_and_visual_acceptance",
+  "fps": 30,
+  "duration": 60,
+  "dialogueGain": 1.6,
+  "musicGain": 0.14,
+  "musicDuckGain": 0.45,
+  "ambienceDuckGain": 1.0,
+  "shots": [
+    {
+      "id": "s00",
+      "start": 0,
+      "end": 4,
+      "source": "assets/i2v/f00.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s01",
+      "start": 4,
+      "end": 7.066666667,
+      "entry": 2,
+      "source": "tmp/video_chain/v2_s01_boy_r2.mp4",
+      "audio": "assets/audio/boy1_bright.mp3",
+      "generatedSpeech": [
+        1.7,
+        4.28
+      ],
+      "targetSpeech": [
+        0.26,
+        2.83
+      ],
+      "grade": "eq=brightness=0.018:saturation=1.07"
+    },
+    {
+      "id": "s02",
+      "start": 7.066666667,
+      "end": 8.5,
+      "source": "assets/i2v/f02.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s03",
+      "start": 8.5,
+      "end": 11,
+      "entry": 3,
+      "source": "tmp/video_chain/v2_s03_cat.mp4",
+      "audio": "tmp/cat_line.mp3",
+      "generatedSpeech": [
+        1.1,
+        2.35
+      ],
+      "targetSpeech": [
+        0.13,
+        1.15
+      ],
+      "grade": "eq=brightness=0.025:saturation=1.1"
+    },
+    {
+      "id": "s04",
+      "start": 11,
+      "end": 13.5,
+      "entry": 4,
+      "source": "tmp/video_chain/v2_s04_girl_r2.mp4",
+      "audio": "assets/audio/girl1_gentle.mp3",
+      "generatedSpeech": [
+        2.12,
+        4.97
+      ],
+      "targetSpeech": [
+        0.34,
+        2.25
+      ],
+      "grade": "eq=brightness=0.025:saturation=1.12"
+    },
+    {
+      "id": "s05",
+      "start": 13.5,
+      "end": 16,
+      "source": "assets/i2v/f05.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s06",
+      "start": 16,
+      "end": 18.866666667,
+      "entry": 5,
+      "source": "tmp/video_chain/v2_s06_girl.mp4",
+      "audio": "assets/audio/girl2_curious.mp3",
+      "generatedSpeech": [
+        2.7,
+        4.96
+      ],
+      "targetSpeech": [
+        0.2,
+        2.64
+      ],
+      "grade": "eq=brightness=0.025:saturation=1.12"
+    },
+    {
+      "id": "s07",
+      "start": 18.866666667,
+      "end": 22,
+      "source": "assets/i2v/f07.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s08",
+      "start": 22,
+      "end": 24,
+      "entry": 6,
+      "source": "tmp/video_chain/v2_s08_girl_r2.mp4",
+      "audio": "assets/audio/girl3_amazed.mp3",
+      "generatedSpeech": [
+        2.68,
+        3.97
+      ],
+      "targetSpeech": [
+        0.53,
+        1.65
+      ],
+      "grade": "eq=brightness=0.025:saturation=1.12",
+      "audioOffset": 0.35
+    },
+    {
+      "id": "s09",
+      "start": 24,
+      "end": 26.5,
+      "entry": 7,
+      "source": "tmp/video_chain/v2_s09_boy.mp4",
+      "audio": "assets/audio/boy2_calm.mp3",
+      "generatedSpeech": [
+        2.19,
+        3.8
+      ],
+      "targetSpeech": [
+        1.04,
+        2.11
+      ],
+      "grade": "eq=brightness=0.018:saturation=1.07",
+      "audioOffset": 0.8
+    },
+    {
+      "id": "s10",
+      "start": 26.5,
+      "end": 30,
+      "source": "assets/i2v/f10.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s11",
+      "start": 30,
+      "end": 32.5,
+      "entry": 8,
+      "source": "tmp/video_chain/v2_s11_girl.mp4",
+      "audio": "assets/audio/girl4_gentle.mp3",
+      "generatedSpeech": [
+        2.51,
+        3.57
+      ],
+      "targetSpeech": [
+        0.99,
+        2.13
+      ],
+      "grade": "eq=brightness=0.025:saturation=1.12",
+      "audioOffset": 0.7
+    },
+    {
+      "id": "s12",
+      "start": 32.5,
+      "end": 35,
+      "entry": 9,
+      "source": "tmp/video_chain/v2_s12_boy.mp4",
+      "fallback": "assets/omni/omni_boy_12.mp4",
+      "audio": "assets/audio/boy3_gentle.mp3",
+      "pending": true
+    },
+    {
+      "id": "s13",
+      "start": 35,
+      "end": 38.5,
+      "source": "assets/i2v/f13.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s14",
+      "start": 38.5,
+      "end": 42.5,
+      "source": "assets/i2v/f14.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s15",
+      "start": 42.5,
+      "end": 45,
+      "source": "assets/i2v/f15.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s16",
+      "start": 45,
+      "end": 47.5,
+      "source": "assets/i2v/f16.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s17",
+      "start": 47.5,
+      "end": 50.5,
+      "entry": 12,
+      "source": "tmp/video_chain/v2_s17_girl.mp4",
+      "fallback": "assets/omni/omni_girl_17.mp4",
+      "audio": "assets/audio/girl5_gentle.mp3",
+      "pending": true
+    },
+    {
+      "id": "s18",
+      "start": 50.5,
+      "end": 53.5,
+      "source": "assets/i2v/f18.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s19",
+      "start": 53.5,
+      "end": 57.5,
+      "source": "assets/i2v/f19.mp4",
+      "reuse": true
+    },
+    {
+      "id": "s20",
+      "start": 57.5,
+      "end": 60,
+      "source": "assets/i2v/f19.mp4",
+      "reuse": true,
+      "tailExtension": true
+    }
+  ]
+}

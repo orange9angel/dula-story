@@ -3,7 +3,7 @@
 @LiveRiverbankScene{SFX:Play|name=morning_birds|endTime=60|baseVolume=0.12}{SFX:Play|name=river_water|endTime=60|baseVolume=0.14}{SFX:Play|name=wind_leaves|endTime=60|baseVolume=0.12}
 
 2
-00:00:04,000 --> 00:00:06,500
+00:00:04,000 --> 00:00:07,067
 [Boy]{Voice:bright}小橘，别动，今天给你画张正式的。
 
 3
@@ -15,7 +15,7 @@
 [Girl]{Voice:gentle}小橘，坐直一点嘛。
 
 5
-00:00:16,000 --> 00:00:18,500
+00:00:16,000 --> 00:00:18,867
 [Girl]{Voice:curious}别动呀，蝴蝶待会儿再看。
 
 6
@@ -49,3 +49,7 @@
 13
 00:00:50,500 --> 00:00:53,500
 {SFX:Play|name=cat_purr_sleep|baseVolume=0.24}
+
+14
+00:00:55,000 --> 00:01:00,000
+{Music:FadeOut|duration=5}
