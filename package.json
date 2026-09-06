@@ -207,7 +207,10 @@
     "render:e06": "dula-render ./episodes/cat_leads_e06_cat_model",
     "verify:e07": "dula-verify ./episodes/cat_leads_e07_river_willow",
     "render:e07": "dula-render ./episodes/cat_leads_e07_river_willow",
-    "audio:e07": "dula-audio ./episodes/cat_leads_e07_river_willow"
+    "audio:e07": "dula-audio ./episodes/cat_leads_e07_river_willow",
+    "audio:e08": "dula-audio ./episodes/cat_leads_e08_drifting_page",
+    "verify:e08": "dula-verify ./episodes/cat_leads_e08_drifting_page",
+    "render:e08": "dula-render ./episodes/cat_leads_e08_drifting_page"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

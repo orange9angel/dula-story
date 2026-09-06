@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/cat_leads_e07_river_willow/`（《猫带我去的地方》E07《柳树下的老钓友》——60 秒午后治愈系，新角色老周（钓鱼翁，seed-tts 儒雅逸辰）登场；**长篇结构验证集**：环境微动 A/B 变体（柳枝摇摆/光斑漂移）、伏笔 F02/F03 首埋、BGM 三版选一首次执行、签名句式"去见个老朋友"）
+**最新 Episode**：`episodes/cat_leads_e08_drifting_page/`（《猫带我去的地方》E08《漂走的那张画》——60 秒午后治愈系质感集；伏笔 F01（速写本角落符号）首埋，F02/F03 冷却；**720p 生成分辨率档首次全量执行**，I2V 占比 27% + omni 40%，视频占比 ~67%）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/cat_leads_e08_drifting_page/` — 《漂走的那张画》（质感集：F01 首埋、720p 分辨率档首执行、视频占比 ~67%）
 - `episodes/cat_leads_e07_river_willow/` — 《柳树下的老钓友》（长篇结构验证集：新角色老周、伏笔 F02/F03、环境微动 A/B）
 - `episodes/cat_leads_e06_cat_model/` — 《模特小橘》（正片打磨验证集：亮场景密度 + 关键帧微动语法）
 - `episodes/cat_leads_e05_morning_sketch/` — 《清晨速写》（优化方案验证集：1080p I2V + seed-tts-2.0 全角色配音）
