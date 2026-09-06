@@ -133,3 +133,14 @@
    「这条河，它比我熟」在此解读下成立，为交汇集回收预留重估接口。
 4. 纪律回写：story-writer/references/directing-craft.md（信息不对称一节加
    情绪符号规则）、series-architect SKILL.md（核心规则加向往条款）。
+
+## V10（omni 丢失事故修复，2026-09-06）
+
+1. **事故**：V9 重渲染后导演发现"老爷爷动作全没了，变成静态图片"。根因：
+   重建时间轴时跑了 `python tools/build_timeline.py`（默认 `--mode cel`），
+   9 个 omni 说话镜头全部回退成静态关键帧。
+2. **修复**：`--mode omni` 重建（504 entries / 399 omni cels）+ 重渲染，
+   抽帧验证 19s/42s 同槽两帧嘴型不同（omni 运动确认）。
+3. **根因治理**：build_timeline.py 默认模式改为 `omni`——脚本本来就有
+   逐镜头回退（cels 缺失自动落静态），默认值不应该选择降级路径。
+   纪律：**重建时间轴后必须抽 omni 槽内的两帧对比验证运动**，再进渲染。

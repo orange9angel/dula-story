@@ -117,9 +117,12 @@ def omni_cel_entries(start: float, end: float, cel_dir: str, prefix: str):
 def main() -> None:
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["cel", "omni"], default="cel",
-                        help="cel: static talking shots; omni: OmniHuman video "
-                             "cels replace them when present")
+    parser.add_argument("--mode", choices=["cel", "omni"], default="omni",
+                        help="omni (default): OmniHuman video cels replace "
+                             "static talking shots when present (per-shot "
+                             "fallback to static); cel: force static. "
+                             "V9 incident: cel default silently dropped all "
+                             "omni motion in a re-render")
     args = parser.parse_args()
     omni_start = ({start: (end, cel_dir, prefix) for start, end, cel_dir, prefix in OMNI_SHOTS}
                   if args.mode == "omni" else {})
