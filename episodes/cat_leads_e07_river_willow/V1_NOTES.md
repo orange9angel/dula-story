@@ -144,3 +144,16 @@
 3. **根因治理**：build_timeline.py 默认模式改为 `omni`——脚本本来就有
    逐镜头回退（cels 缺失自动落静态），默认值不应该选择降级路径。
    纪律：**重建时间轴后必须抽 omni 槽内的两帧对比验证运动**，再进渲染。
+
+## V11（生成分辨率档机制落地，E08 起生效）
+
+- **导演决议**：文生图（codex imagegen）+ 图生视频（Seedance I2V）统一
+  720p，消灭静态帧↔I2V 锐度跳变，同预算运动镜头密度×3-4；mini 720p 此前
+  已验证可用。档位做成可切换参数。
+- **机制**：新增 `config/render_spec.json`（`generation_tier` +
+  720p/1080p 两档尺寸表）+ `tools/render_spec.sh`（读取导出
+  `GEN_TIER/IMG_W/IMG_H/I2V_RES`，提供 `normalize_img()` lanczos 原地归一化）。
+- **接线**：gen_masters.sh / gen_seg1.sh / gen_seg2.sh 的 gen() 仅在新生成
+  成功分支归一化（E07 已交付资产不动）；gen_i2v.sh 的 `--resolution` 改为
+  读 `$I2V_RES`。omni 管线（gen_omni_shots.py / omnihuman_gen.py）不在
+  本次统一范围。

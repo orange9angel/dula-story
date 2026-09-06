@@ -3,6 +3,7 @@
 # frame_14a/b (willow sway A/B) .. frame_24a/b (light-spot drift A/B).
 # Codex imagegen; seg1 frames first. LOCK + DENSITY everywhere. Idempotent.
 set -u
+source "$(dirname "$0")/render_spec.sh"
 cd "D:/opensource/movie/dula-story/episodes/cat_leads_e07_river_willow"
 mkdir -p assets/keyframes tmp
 
@@ -26,7 +27,12 @@ gen() { # name prompt refs...
   echo "== gen $name"
   local log="tmp/seg2_$name.log"
   codex exec "$prompt $LOCK $DENSITY $AVOID Save the final PNG to $K/${name}.png" $FLAGS "$@" > "$log" 2>&1
-  if [ -s "$K/$name.png" ]; then echo "== ok $name"; else echo "== MISSING $name (see $log)"; fi
+  if [ -s "$K/$name.png" ]; then
+    echo "== ok $name"
+    normalize_img "$K/$name.png"
+  else
+    echo "== MISSING $name (see $log)"
+  fi
 }
 
 gen frame_14a "Use case: keyframe, willow-sway A/B variant A. Wide view of the willow bank fishing spot: the old man on his stool with rod over the water, the girl and boy standing beside him, the cat sitting at the waterline; the hanging willow branches hang mostly straight down in the top curtain. Composition: 16:9 landscape, group on the right third, identical framing to a following variant -- keep every outline in exactly fixed positions." \

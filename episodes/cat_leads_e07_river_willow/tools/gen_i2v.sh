@@ -1,8 +1,10 @@
 #!/bin/bash
 # E07 I2V: ONE segment -- trio walking up the riverside path (full-body
-# displacement only, per the grammar boundary). Seedance 2.0 FULL 1080p.
+# displacement only, per the grammar boundary). Seedance 2.0 FULL; resolution
+# comes from config/render_spec.json (generation_tier).
 # Requires ARK_API_KEY:  set -a && source ../../.env.ark
 set -u
+source "$(dirname "$0")/render_spec.sh"
 cd "D:/opensource/movie/dula-story/episodes/cat_leads_e07_river_willow"
 mkdir -p assets/i2v tmp
 
@@ -16,10 +18,10 @@ STYLE="Keep the exact flat-color illustration style of the input image: razor-cl
 i2v() { # name slot_seconds firstframe prompt
   local name="$1" dur="$2" frame="$3" prompt="$4"
   if [ -s "$A/i2v/$name.mp4" ]; then echo "== skip $name (exists)"; return 0; fi
-  echo "== i2v $name (slot ${dur}s, gen 4s @1080p)"
+  echo "== i2v $name (slot ${dur}s, gen 4s @${I2V_RES})"
   "$PY" "$GEN" --model doubao-seedance-2-0-260128 --out "$A/i2v/$name.full.mp4" \
     --first-frame "$frame" --prompt "$prompt $STYLE" --duration 4 \
-    --resolution 1080p --ratio adaptive \
+    --resolution "$I2V_RES" --ratio adaptive \
     > "tmp/i2v_$name.log" 2>&1
   if [ ! -s "$A/i2v/$name.full.mp4" ]; then echo "== FAILED $name (see tmp/i2v_$name.log)"; return 1; fi
   ffmpeg -y -i "$A/i2v/$name.full.mp4" -t "$dur" -c:v libx264 -pix_fmt yuv420p \

@@ -3,6 +3,7 @@
 # scene master (new upstream location). Codex imagegen; single-line prompts
 # per codex-cli-imagegen.md. Idempotent.
 set -u
+source "$(dirname "$0")/render_spec.sh"
 cd "D:/opensource/movie/dula-story/episodes/cat_leads_e07_river_willow"
 mkdir -p assets tmp
 
@@ -20,7 +21,12 @@ gen() { # name prompt refs...
   echo "== gen $name"
   local log="tmp/master_$name.log"
   codex exec "$prompt $LOCK Avoid: extra people or animals, duplicate limbs, malformed hands, text, watermark, photorealism, 3D render. Save the final PNG to $A/${name}.png" $FLAGS "$@" > "$log" 2>&1
-  if [ -s "$A/$name.png" ]; then echo "== ok $name"; else echo "== MISSING $name (see $log)"; fi
+  if [ -s "$A/$name.png" ]; then
+    echo "== ok $name"
+    normalize_img "$A/$name.png"
+  else
+    echo "== MISSING $name (see $log)"
+  fi
 }
 
 # 1. OldMan character master (new): sunprint fisherman, design lock from the

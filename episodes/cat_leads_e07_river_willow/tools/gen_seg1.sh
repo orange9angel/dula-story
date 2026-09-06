@@ -3,6 +3,7 @@
 # frame_05 (I2V first frame). Codex imagegen; masters first. LOCK + DENSITY
 # on every prompt; expressions written LAYERED. Idempotent.
 set -u
+source "$(dirname "$0")/render_spec.sh"
 cd "D:/opensource/movie/dula-story/episodes/cat_leads_e07_river_willow"
 mkdir -p assets/keyframes tmp
 
@@ -26,7 +27,12 @@ gen() { # name prompt refs...
   echo "== gen $name"
   local log="tmp/seg1_$name.log"
   codex exec "$prompt $LOCK $DENSITY $AVOID Save the final PNG to $K/${name}.png" $FLAGS "$@" > "$log" 2>&1
-  if [ -s "$K/$name.png" ]; then echo "== ok $name"; else echo "== MISSING $name (see $log)"; fi
+  if [ -s "$K/$name.png" ]; then
+    echo "== ok $name"
+    normalize_img "$K/$name.png"
+  else
+    echo "== MISSING $name (see $log)"
+  fi
 }
 
 gen frame_00 "Use case: establishing shot, wide view of the exact willow bank from the scene reference: hanging willow branches curtain the top of the frame, the empty fishing spot (stool, bucket, rod against the tree) on the right third, shallow shoreline, calm river and distant town behind. No people, no cat. Composition: 16:9 landscape, eye-level wide shot." \

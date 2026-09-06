@@ -49,3 +49,19 @@ E06 验证了角色微动（耳朵/呼吸）的 A/B 变体。E07 扩展到环境
 
 - F03 河面青光：本集以老周台词埋设（无画面）。
 - F02 小橘盯后山：本集 frame_21 长静帧埋设（2.9s 无运镜）。
+
+## 生成分辨率档（E08 起生效）
+
+文生图（codex imagegen）与图生视频（Seedance I2V）统一到同一生成分辨率档，
+档位由 `config/render_spec.json` 的 `generation_tier` 字段切换，当前默认 **720p**
+（文生图归一化到 1280×720，I2V 用 `--resolution 720p`）。
+
+- **统一理由**：消灭静态帧切 I2V 时模型上采样造成的锐度跳变；同预算下
+  720p I2V 的运动镜头密度是 1080p 的 3-4 倍。
+- **切换方式**：改 `config/render_spec.json` 的 `generation_tier` 为
+  `720p` / `1080p` 即可，`tools/render_spec.sh` 统一读取并导出
+  `GEN_TIER / IMG_W / IMG_H / I2V_RES`。
+- **生效范围**：`normalize_img()` 只在 gen() 新生成成功的分支调用，
+  E07 已交付资产保持原样不被回改；720p 档从 E08 新素材开始生效。
+- **omni 不在统一范围**：gen_omni_shots.py / omnihuman_gen.py 的分辨率
+  由 omni 自身管线决定，不读 render_spec。
