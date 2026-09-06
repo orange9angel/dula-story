@@ -8,7 +8,7 @@ Images may be local files (sent as base64 data URIs); audio must be a public
 URL (upload via tos_upload.py first).
 
   gen_seedance25.py --out out.mp4 --prompt "..." \
-      [--ref img.png]... [--audio-url https://...] \
+      [--ref img.png]... [--audio-url https://...] [--video-url https://...] \
       [--model doubao-seedance-2-5-260628] [--resolution 720p] \
       [--duration 4] [--ratio 16:9] [--silent] [--seed N] [--retries 2]
 
@@ -64,6 +64,8 @@ def main() -> int:
                    help="reference image (repeatable, local file)")
     p.add_argument("--audio-url", action="append", default=[],
                    help="reference audio PUBLIC URL (repeatable); upload via tos_upload.py")
+    p.add_argument("--video-url", action="append", default=[],
+                   help="reference video PUBLIC URL (repeatable, 4-30s); upload via tos_upload.py")
     p.add_argument("--model", default=DEFAULT_MODEL)
     p.add_argument("--resolution", default="720p")
     p.add_argument("--duration", type=int, default=4)
@@ -93,8 +95,12 @@ def main() -> int:
         content.append({"type": "audio_url",
                         "audio_url": {"url": url},
                         "role": "reference_audio"})
-    if len(content) < 2:
-        p.error("need at least one --ref or --audio-url (omni-reference mode)")
+    for url in args.video_url:
+        content.append({"type": "video_url",
+                        "video_url": {"url": url},
+                        "role": "reference_video"})
+    if len(args.ref) + len(args.audio_url) + len(args.video_url) == 0:
+        print(f"{Path(args.out).stem}: text-to-video mode (no reference input)", flush=True)
 
     parameters: dict = {
         "resolution": args.resolution,
