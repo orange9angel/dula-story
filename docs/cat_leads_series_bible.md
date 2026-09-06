@@ -1,5 +1,7 @@
 # 《猫带我去的地方》系列圣经（SERIES BIBLE）
 
+> 导演：**刘旭**（晴眼） / 工艺：**Kimi**（锚工）
+
 > 长篇连载的最高设定锁。各集的 `STYLE_BIBLE.md` 管画面、`script.story` 管时序、
 > 本文件管「世界是否自洽」与「伏笔埋收」。与《殖装学园》系列圣经
 > （`episodes/bio_armor_academy_s1e1/SERIES_BIBLE.md`）互为表里——
