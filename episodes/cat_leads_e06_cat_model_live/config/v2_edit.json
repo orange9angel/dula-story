@@ -1,5 +1,5 @@
 {
-  "status": "preview_pending_two_shots_and_visual_acceptance",
+  "status": "final_all_shots_reviewed",
   "fps": 30,
   "duration": 60,
   "dialogueGain": 1.6,
@@ -170,9 +170,17 @@
       "end": 35,
       "entry": 9,
       "source": "tmp/video_chain/v2_s12_boy.mp4",
-      "fallback": "assets/omni/omni_boy_12.mp4",
       "audio": "assets/audio/boy3_gentle.mp3",
-      "pending": true
+      "generatedSpeech": [
+        2.35,
+        3.36
+      ],
+      "targetSpeech": [
+        0.99,
+        2.09
+      ],
+      "grade": "eq=brightness=0.018:saturation=1.07",
+      "audioOffset": 0.75
     },
     {
       "id": "s13",
@@ -208,9 +216,17 @@
       "end": 50.5,
       "entry": 12,
       "source": "tmp/video_chain/v2_s17_girl.mp4",
-      "fallback": "assets/omni/omni_girl_17.mp4",
       "audio": "assets/audio/girl5_gentle.mp3",
-      "pending": true
+      "generatedSpeech": [
+        2.22,
+        3.04
+      ],
+      "targetSpeech": [
+        1.1,
+        2.02
+      ],
+      "grade": "eq=brightness=0.025:saturation=1.12",
+      "audioOffset": 0.8
     },
     {
       "id": "s18",
