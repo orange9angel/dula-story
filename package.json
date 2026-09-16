@@ -212,7 +212,9 @@
     "verify:e08": "dula-verify ./episodes/cat_leads_e08_drifting_page/volcano",
     "render:e08": "dula-render ./episodes/cat_leads_e08_drifting_page/volcano",
     "verify:e08_painted": "node episodes/cat_leads_e08_drifting_page/painted/render.mjs --check",
-    "render:e08_painted": "node episodes/cat_leads_e08_drifting_page/painted/render.mjs"
+    "render:e08_painted": "node episodes/cat_leads_e08_drifting_page/painted/render.mjs",
+    "verify:e10_painted": "node episodes/cat_leads_e10_waiting_rain/painted/render.mjs --check",
+    "render:e10_painted": "node episodes/cat_leads_e10_waiting_rain/painted/render.mjs"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
