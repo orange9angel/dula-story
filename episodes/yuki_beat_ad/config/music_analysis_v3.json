@@ -1,0 +1,133 @@
+{
+  "source": "assets\\audio\\music\\v3\\audition_c.wav",
+  "source_sha256": "6d076c91aded89020d2bf28aebfa9d990e6130c706c8f96e2e7716a31a35c113",
+  "provider": "Seed-Audio 1.0",
+  "selection": "C, selected after model-assisted blind audio comparison; not human approval",
+  "duration": 13.2,
+  "onsets": [
+    {
+      "time": 0.1,
+      "strength": 0.14483
+    },
+    {
+      "time": 0.935,
+      "strength": 0.27104
+    },
+    {
+      "time": 1.675,
+      "strength": 0.15274
+    },
+    {
+      "time": 2.115,
+      "strength": 0.24036
+    },
+    {
+      "time": 2.925,
+      "strength": 0.38524
+    },
+    {
+      "time": 3.67,
+      "strength": 0.40299
+    },
+    {
+      "time": 4.46,
+      "strength": 0.22427
+    },
+    {
+      "time": 4.925,
+      "strength": 0.27643
+    },
+    {
+      "time": 5.27,
+      "strength": 0.2042
+    },
+    {
+      "time": 5.655,
+      "strength": 0.14763
+    },
+    {
+      "time": 6.115,
+      "strength": 0.19446
+    },
+    {
+      "time": 6.935,
+      "strength": 0.32477
+    },
+    {
+      "time": 7.3,
+      "strength": 0.12925
+    },
+    {
+      "time": 7.695,
+      "strength": 0.31945
+    },
+    {
+      "time": 8.075,
+      "strength": 0.27791
+    },
+    {
+      "time": 8.41,
+      "strength": 0.36631
+    },
+    {
+      "time": 8.745,
+      "strength": 0.26838
+    },
+    {
+      "time": 8.98,
+      "strength": 0.26968
+    },
+    {
+      "time": 9.315,
+      "strength": 0.18183
+    },
+    {
+      "time": 9.685,
+      "strength": 0.21982
+    },
+    {
+      "time": 10.205,
+      "strength": 0.18818
+    },
+    {
+      "time": 10.405,
+      "strength": 0.21274
+    },
+    {
+      "time": 10.955,
+      "strength": 0.27908
+    },
+    {
+      "time": 11.71,
+      "strength": 0.21413
+    },
+    {
+      "time": 12.695,
+      "strength": 0.29376
+    }
+  ],
+  "selected_attacks": [
+    0.935,
+    1.675,
+    2.925,
+    3.67,
+    4.925,
+    5.655,
+    6.935,
+    7.695,
+    8.41,
+    8.98,
+    9.685,
+    10.955,
+    11.71,
+    12.695
+  ],
+  "fps": 60,
+  "look_changes": 14,
+  "timeline_source": "script_v3.story",
+  "music_tail_trim_at": 12.97,
+  "mix_edit": "retain natural motif phrasing and short tail; original mix preferred in blind A/B over gated experiment",
+  "comparison_bed": "assets/audio/mixed_v3_bed.wav",
+  "alternate_mix": "assets/audio/mixed_v3_staccato.wav",
+  "review_limit": "audio-only reviews favor this selection; the AV model disagreed about perceived synchronization; user listening remains decisive"
+}

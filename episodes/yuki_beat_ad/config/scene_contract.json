@@ -1,0 +1,332 @@
+{
+  "$schema": "../../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "yuki_beat_ad",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "Yuki introduces her personality through beat-timed dance gestures and invites the audience to join.",
+    "audience": "Viewers of short vertical character IP promos",
+    "designPriorities": [
+      "Readable full-body silhouette",
+      "Music-timed cuts and distinct poses",
+      "Clear face and uncluttered title safe areas"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "BeatStudioScene"
+    ],
+    "characters": [
+      "Yuki"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "BeatStudioScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "BeatStudioScene",
+        "module": "scenes/BeatStudioScene.js",
+        "export": "BeatStudioScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "synchronous"
+      },
+      "intent": {
+        "location": "Open studio with a colored halo and floating geometric accents",
+        "timeOfDay": "Controlled studio daylight",
+        "tone": [
+          "playful",
+          "bright",
+          "confident"
+        ],
+        "storyFunction": "Present Yuki as the face of the DULA character collection",
+        "visualRules": [
+          "Title reserved in top 240 pixels; footer below 1015 pixels",
+          "Keep scenery behind the actor; no props cross her face",
+          "Frontal close-up must retain both eyes and hair silhouette"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0.0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -4,
+            -0.05,
+            -3
+          ],
+          "max": [
+            4,
+            6,
+            6
+          ]
+        },
+        "zones": [
+          {
+            "id": "mainStage",
+            "bounds": {
+              "min": [
+                -1,
+                -0.05,
+                -0.3
+              ],
+              "max": [
+                1,
+                2.5,
+                0.3
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "stationary rhythmic footwork and turning"
+            ]
+          }
+        ],
+        "anchors": {}
+      },
+      "lighting": {
+        "mood": "Soft pastel commercial studio",
+        "keyDirection": [
+          -3,
+          6,
+          5
+        ],
+        "fillDirection": [
+          3,
+          3,
+          -2
+        ],
+        "readabilityRules": [
+          "Keep blue irises and smile readable",
+          "Soft contact shadows locate feet on the floor"
+        ]
+      },
+      "cameraObstacles": [
+        {
+          "id": "halo",
+          "type": "box",
+          "space": "world",
+          "center": [
+            0,
+            1.14,
+            -1.2
+          ],
+          "size": [
+            2.3,
+            2.3,
+            0.3
+          ]
+        }
+      ],
+      "audioAnchors": [],
+      "dependencies": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "Yuki",
+      "scene": "BeatStudioScene",
+      "kind": "character",
+      "runtimeName": "Yuki",
+      "binding": "character:Yuki",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.85,
+          0
+        ],
+        "face": [
+          0,
+          1.28,
+          0.26
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0.0,
+            -0.03,
+            0.0
+          ]
+        }
+      }
+    }
+  ],
+  "state": {},
+  "events": [],
+  "blocking": [
+    {
+      "id": "block1",
+      "scene": "BeatStudioScene",
+      "character": "Yuki",
+      "entry": 1,
+      "from": [
+        0.0,
+        -0.03,
+        0.0
+      ],
+      "to": [
+        0.0,
+        -0.03,
+        0.0
+      ],
+      "zone": "mainStage",
+      "clearance": 0.25,
+      "purpose": "Keep the same center mark through seven edits so personality and camera angle drive the variation."
+    }
+  ],
+  "shotChecks": [
+    {
+      "id": "shot1",
+      "scene": "BeatStudioScene",
+      "entry": 1,
+      "offsetSeconds": 0.5,
+      "purpose": "Read raised waving hand and entire figure",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "body",
+          "minFrameArea": 0.08,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot2",
+      "scene": "BeatStudioScene",
+      "entry": 2,
+      "offsetSeconds": 0.5,
+      "purpose": "Check alternating feet and floor contact",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "body",
+          "minFrameArea": 0.08,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot3",
+      "scene": "BeatStudioScene",
+      "entry": 3,
+      "offsetSeconds": 0.5,
+      "purpose": "Read both arm silhouettes",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "body",
+          "minFrameArea": 0.08,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot4",
+      "scene": "BeatStudioScene",
+      "entry": 4,
+      "offsetSeconds": 0.6,
+      "purpose": "Check rotating hair, back and skirt remain coherent",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "body",
+          "minFrameArea": 0.08,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot5",
+      "scene": "BeatStudioScene",
+      "entry": 5,
+      "offsetSeconds": 0.5,
+      "purpose": "Check landing and raised arms",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "body",
+          "minFrameArea": 0.08,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot6",
+      "scene": "BeatStudioScene",
+      "entry": 6,
+      "offsetSeconds": 0.45,
+      "purpose": "Check blink and unobstructed face",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.08,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot7",
+      "scene": "BeatStudioScene",
+      "entry": 7,
+      "offsetSeconds": 2.5,
+      "purpose": "Read final brand card with frozen smiling figure",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "body",
+          "minFrameArea": 0.08,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "dula-inspect-team",
+      "dula-verify",
+      "visual-review"
+    ]
+  }
+}

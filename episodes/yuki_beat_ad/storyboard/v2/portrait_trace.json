@@ -1,0 +1,925 @@
+{
+  "duration": 12.8,
+  "fps": 30,
+  "errors": [],
+  "shots": [
+    {
+      "t": 0.1,
+      "filename": "portrait_01.jpg",
+      "pose": "wink",
+      "face": "curious",
+      "edit": "pop",
+      "local": 0.1,
+      "pulse": 0.39153575354764736,
+      "roll": 0,
+      "until": 0.18000000000000002,
+      "nearestOnset": 0.03,
+      "apexErrorMs": 70,
+      "frozen": false,
+      "root": [
+        0,
+        0.0004166666666666624,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0982313359858673
+      ],
+      "calls": 58,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 1.0666666666666667,
+      "filename": "portrait_02.jpg",
+      "pose": "wink",
+      "face": "curious",
+      "edit": "pop",
+      "local": 1.0666666666666667,
+      "pulse": 0.018236228074669337,
+      "roll": 0,
+      "until": 0.06333333333333324,
+      "nearestOnset": 0.805,
+      "apexErrorMs": 262,
+      "frozen": false,
+      "root": [
+        0,
+        -0.011249999999999986,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0207257395416356
+      ],
+      "calls": 58,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 1.1333333333333333,
+      "filename": "portrait_03.jpg",
+      "pose": "step",
+      "face": "smile",
+      "edit": "tilt",
+      "local": 0.0033333333333334103,
+      "pulse": 0.8746567021129057,
+      "roll": -0.08792431055085123,
+      "until": 0.30666666666666664,
+      "nearestOnset": 1.13,
+      "apexErrorMs": 3,
+      "frozen": false,
+      "root": [
+        0,
+        -0.01784674636623423,
+        0
+      ],
+      "camera": [
+        -0.8,
+        0.9,
+        3.999995342468084
+      ],
+      "calls": 64,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 1.2333333333333334,
+      "filename": "portrait_04.jpg",
+      "pose": "step",
+      "face": "smile",
+      "edit": "tilt",
+      "local": 0.1033333333333335,
+      "pulse": 0.17659014259728398,
+      "roll": -0.043661920465544665,
+      "until": 0.20666666666666655,
+      "nearestOnset": 1.13,
+      "apexErrorMs": 103,
+      "frozen": false,
+      "root": [
+        0,
+        -0.016936661582107174,
+        0
+      ],
+      "camera": [
+        -0.8,
+        0.9,
+        3.9958130341419014
+      ],
+      "calls": 64,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 2.1,
+      "filename": "portrait_05.jpg",
+      "pose": "step",
+      "face": "smile",
+      "edit": "tilt",
+      "local": 0.9700000000000002,
+      "pulse": 0.0673617154009603,
+      "roll": -0.00010124718967573526,
+      "until": 0.06499999999999995,
+      "nearestOnset": 1.92,
+      "apexErrorMs": 180,
+      "frozen": false,
+      "root": [
+        0,
+        -0.006362418447645405,
+        0
+      ],
+      "camera": [
+        -0.8,
+        0.9,
+        3.8517005284144084
+      ],
+      "calls": 65,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 2.1666666666666665,
+      "filename": "portrait_06.jpg",
+      "pose": "swing",
+      "face": "grin",
+      "edit": "tilt",
+      "local": 0.0016666666666664831,
+      "pulse": 0.43815858720891654,
+      "roll": 0.08895610124986725,
+      "until": 0.19333333333333336,
+      "nearestOnset": 2.165,
+      "apexErrorMs": 2,
+      "frozen": false,
+      "root": [
+        0,
+        -0.005364055617604262,
+        0
+      ],
+      "camera": [
+        0.8,
+        1.45,
+        4.099998788001032
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 2.2666666666666666,
+      "filename": "portrait_07.jpg",
+      "pose": "swing",
+      "face": "grin",
+      "edit": "tilt",
+      "local": 0.10166666666666657,
+      "pulse": 0.08846269308693769,
+      "roll": 0.04417429256326469,
+      "until": 0.09333333333333327,
+      "nearestOnset": 2.165,
+      "apexErrorMs": 102,
+      "frozen": false,
+      "root": [
+        0,
+        -0.015315673831756846,
+        0
+      ],
+      "camera": [
+        0.8,
+        1.45,
+        4.095786689802099
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 3.1333333333333333,
+      "filename": "portrait_08.jpg",
+      "pose": "swing",
+      "face": "grin",
+      "edit": "tilt",
+      "local": 0.9683333333333333,
+      "pulse": 0.06690082779415299,
+      "roll": 0.00010243532419683015,
+      "until": 0.046666666666666856,
+      "nearestOnset": 2.955,
+      "apexErrorMs": 178,
+      "frozen": false,
+      "root": [
+        0,
+        -0.0065147860917254136,
+        0
+      ],
+      "camera": [
+        0.8,
+        1.45,
+        3.950922091471109
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 3.2,
+      "filename": "portrait_09.jpg",
+      "pose": "wink",
+      "face": "surprise",
+      "edit": "snap",
+      "local": 0.020000000000000018,
+      "pulse": 0.8713788444884288,
+      "roll": 0,
+      "until": 0.5749999999999997,
+      "nearestOnset": 3.18,
+      "apexErrorMs": 20,
+      "frozen": false,
+      "root": [
+        0,
+        -0.009068270607119518,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0998468588149595
+      ],
+      "calls": 58,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 3.3,
+      "filename": "portrait_10.jpg",
+      "pose": "wink",
+      "face": "surprise",
+      "edit": "snap",
+      "local": 0.11999999999999966,
+      "pulse": 0.1759283545564211,
+      "roll": 0,
+      "until": 0.4750000000000001,
+      "nearestOnset": 3.18,
+      "apexErrorMs": 120,
+      "frozen": false,
+      "root": [
+        0,
+        -0.013637287570313197,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0949632095771125
+      ],
+      "calls": 58,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 3.9,
+      "filename": "portrait_11.jpg",
+      "pose": "wink",
+      "face": "squeeze",
+      "edit": "snap",
+      "local": 0.7199999999999998,
+      "pulse": 0.16240233988393524,
+      "roll": 0,
+      "until": 0.06499999999999995,
+      "nearestOnset": 3.775,
+      "apexErrorMs": 125,
+      "frozen": false,
+      "root": [
+        0,
+        -0.021362712429686778,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.021554668307367
+      ],
+      "calls": 44,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 3.966666666666667,
+      "filename": "portrait_12.jpg",
+      "pose": "turn",
+      "face": "squeeze",
+      "edit": "spin",
+      "local": 0.0016666666666669272,
+      "pulse": 0.5352489662158408,
+      "roll": 0,
+      "until": 0.27333333333333343,
+      "nearestOnset": 3.965,
+      "apexErrorMs": 2,
+      "frozen": false,
+      "root": [
+        0,
+        -0.02682813170571359,
+        0
+      ],
+      "camera": [
+        -0.4,
+        1.7,
+        4.2499968561466
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 4.066666666666666,
+      "filename": "portrait_13.jpg",
+      "pose": "turn",
+      "face": "squeeze",
+      "edit": "spin",
+      "local": 0.10166666666666657,
+      "pulse": 0.10806490253921784,
+      "roll": 0,
+      "until": 0.17333333333333378,
+      "nearestOnset": 3.965,
+      "apexErrorMs": 102,
+      "frozen": false,
+      "root": [
+        0,
+        -0.008941618390328875,
+        0
+      ],
+      "camera": [
+        -0.4,
+        1.7,
+        4.239541821693077
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 4.333333333333333,
+      "filename": "portrait_14.jpg",
+      "pose": "turn",
+      "face": "squeeze",
+      "edit": "spin",
+      "local": 0.3683333333333332,
+      "pulse": 0.26954719684150436,
+      "roll": 2.259766059807009,
+      "until": 0.2616666666666667,
+      "nearestOnset": 4.24,
+      "apexErrorMs": 93,
+      "frozen": false,
+      "root": [
+        0,
+        0.01824209774581176,
+        0
+      ],
+      "camera": [
+        -0.4,
+        1.7,
+        4.156134391178903
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 4.466666666666667,
+      "filename": "portrait_15.jpg",
+      "pose": "turn",
+      "face": "squeeze",
+      "edit": "spin",
+      "local": 0.5016666666666669,
+      "pulse": 0.031925662999451335,
+      "roll": 4.991459855573373,
+      "until": 0.12833333333333297,
+      "nearestOnset": 4.24,
+      "apexErrorMs": 227,
+      "frozen": false,
+      "root": [
+        0,
+        -0.0001420704148607614,
+        0
+      ],
+      "camera": [
+        -0.4,
+        1.7,
+        4.116137021795458
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 4.533333333333333,
+      "filename": "portrait_16.jpg",
+      "pose": "turn",
+      "face": "squeeze",
+      "edit": "spin",
+      "local": 0.5683333333333334,
+      "pulse": 0.010987337819450198,
+      "roll": 5.947528097372228,
+      "until": 0.061666666666666536,
+      "nearestOnset": 4.24,
+      "apexErrorMs": 293,
+      "frozen": false,
+      "root": [
+        0,
+        -0.014865662188158726,
+        0
+      ],
+      "camera": [
+        -0.4,
+        1.7,
+        4.104030186769331
+      ],
+      "calls": 51,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 4.6,
+      "filename": "portrait_17.jpg",
+      "pose": "pop",
+      "face": "grin",
+      "edit": "burst",
+      "local": 0.004999999999999893,
+      "pulse": 1.1077396156639647,
+      "roll": 0,
+      "until": 0.20999999999999996,
+      "nearestOnset": 4.595,
+      "apexErrorMs": 5,
+      "frozen": false,
+      "root": [
+        0,
+        -0.02324471866229855,
+        0
+      ],
+      "camera": [
+        0,
+        0.9,
+        4.299972246401185
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 4.7,
+      "filename": "portrait_18.jpg",
+      "pose": "pop",
+      "face": "grin",
+      "edit": "burst",
+      "local": 0.10500000000000043,
+      "pulse": 0.22364877124729043,
+      "roll": 0,
+      "until": 0.10999999999999943,
+      "nearestOnset": 4.595,
+      "apexErrorMs": 105,
+      "frozen": false,
+      "root": [
+        0,
+        0.027499220961195177,
+        0
+      ],
+      "camera": [
+        0,
+        0.9,
+        4.289052413537898
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 5.166666666666667,
+      "filename": "portrait_19.jpg",
+      "pose": "pop",
+      "face": "grin",
+      "edit": "burst",
+      "local": 0.5716666666666672,
+      "pulse": 0.13474851227662557,
+      "roll": 0,
+      "until": 0.06333333333333346,
+      "nearestOnset": 5.03,
+      "apexErrorMs": 137,
+      "frozen": false,
+      "root": [
+        0,
+        0.08415511706099191,
+        0
+      ],
+      "camera": [
+        0,
+        0.9,
+        4.154178764962954
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 5.233333333333333,
+      "filename": "portrait_20.jpg",
+      "pose": "swing",
+      "face": "smile",
+      "edit": "tilt",
+      "local": 0.0033333333333329662,
+      "pulse": 1.1376767261920813,
+      "roll": 0.0879243105508515,
+      "until": 0.2866666666666662,
+      "nearestOnset": 5.23,
+      "apexErrorMs": 3,
+      "frozen": false,
+      "root": [
+        0,
+        0.0864873203237541,
+        0
+      ],
+      "camera": [
+        0.8,
+        1.45,
+        4.099999055733632
+      ],
+      "calls": 64,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 5.333333333333333,
+      "filename": "portrait_21.jpg",
+      "pose": "swing",
+      "face": "smile",
+      "edit": "tilt",
+      "local": 0.10333333333333261,
+      "pulse": 0.2296929696217415,
+      "roll": 0.043661920465544936,
+      "until": 0.18666666666666654,
+      "nearestOnset": 5.23,
+      "apexErrorMs": 103,
+      "frozen": false,
+      "root": [
+        0,
+        -0.002031794912108406,
+        0
+      ],
+      "camera": [
+        0.8,
+        1.45,
+        4.099118888066993
+      ],
+      "calls": 64,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 7.466666666666667,
+      "filename": "portrait_22.jpg",
+      "pose": "swing",
+      "face": "smile",
+      "edit": "tilt",
+      "local": 2.2366666666666664,
+      "pulse": 0.017752830119424322,
+      "roll": 1.427705297948674e-8,
+      "until": 0.06333333333333346,
+      "nearestOnset": 7.235,
+      "apexErrorMs": 232,
+      "frozen": false,
+      "root": [
+        0,
+        -0.007016617900682167,
+        0
+      ],
+      "camera": [
+        0.8,
+        1.45,
+        3.9503349460745363
+      ],
+      "calls": 64,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 7.533333333333333,
+      "filename": "portrait_23.jpg",
+      "pose": "wink",
+      "face": "wink",
+      "edit": "snap",
+      "local": 0.0033333333333329662,
+      "pulse": 1.1376767261920813,
+      "roll": 0,
+      "until": 0.19166666666666643,
+      "nearestOnset": 7.53,
+      "apexErrorMs": 3,
+      "frozen": false,
+      "root": [
+        0,
+        -0.012329500709677099,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0999977804842582
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 7.633333333333334,
+      "filename": "portrait_24.jpg",
+      "pose": "wink",
+      "face": "wink",
+      "edit": "snap",
+      "local": 0.1033333333333335,
+      "pulse": 0.2296929696217382,
+      "roll": 0,
+      "until": 0.0916666666666659,
+      "nearestOnset": 7.53,
+      "apexErrorMs": 103,
+      "frozen": false,
+      "root": [
+        0,
+        -0.01614848363117045,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.097997169701341
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 8.566666666666666,
+      "filename": "portrait_25.jpg",
+      "pose": "wink",
+      "face": "squeeze",
+      "edit": "snap",
+      "local": 1.0366666666666662,
+      "pulse": 0.025113615998389783,
+      "roll": 0,
+      "until": 0.05833333333333357,
+      "nearestOnset": 8.325,
+      "apexErrorMs": 242,
+      "frozen": false,
+      "root": [
+        0,
+        -0.007016617900682181,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0206569193944515
+      ],
+      "calls": 44,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 8.633333333333333,
+      "filename": "portrait_26.jpg",
+      "pose": "pop",
+      "face": "surprise",
+      "edit": "burst",
+      "local": 0.00833333333333286,
+      "pulse": 0.9258083467875821,
+      "roll": 0,
+      "until": 0.326666666666668,
+      "nearestOnset": 8.625,
+      "apexErrorMs": 8,
+      "frozen": false,
+      "root": [
+        0,
+        -0.013051616873336978,
+        0
+      ],
+      "camera": [
+        0,
+        0.9,
+        4.299968611382065
+      ],
+      "calls": 67,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 8.733333333333333,
+      "filename": "portrait_27.jpg",
+      "pose": "pop",
+      "face": "surprise",
+      "edit": "burst",
+      "local": 0.1083333333333325,
+      "pulse": 0.18691748154680232,
+      "roll": 0,
+      "until": 0.22666666666666835,
+      "nearestOnset": 8.625,
+      "apexErrorMs": 108,
+      "frozen": false,
+      "root": [
+        0,
+        0.03300383775535197,
+        0
+      ],
+      "camera": [
+        0,
+        0.9,
+        4.295052741408221
+      ],
+      "calls": 67,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 9.566666666666666,
+      "filename": "portrait_28.jpg",
+      "pose": "pop",
+      "face": "surprise",
+      "edit": "burst",
+      "local": 0.9416666666666664,
+      "pulse": 0.1243885543338353,
+      "roll": 0,
+      "until": 0.05333333333333279,
+      "nearestOnset": 9.425,
+      "apexErrorMs": 142,
+      "frozen": false,
+      "root": [
+        0,
+        0.06652568574052344,
+        0
+      ],
+      "camera": [
+        0,
+        0.9,
+        4.151246695982261
+      ],
+      "calls": 65,
+      "leftEyeVisible": true,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 9.633333333333333,
+      "filename": "portrait_29.jpg",
+      "pose": "wink",
+      "face": "wink",
+      "edit": "snap",
+      "local": 0.013333333333333641,
+      "pulse": 0.6253043806690101,
+      "roll": 0,
+      "until": 0.17166666666666686,
+      "nearestOnset": 9.62,
+      "apexErrorMs": 13,
+      "frozen": false,
+      "root": [
+        0,
+        0.07263725895513816,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0999815197505596
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 9.733333333333333,
+      "filename": "portrait_30.jpg",
+      "pose": "wink",
+      "face": "wink",
+      "edit": "snap",
+      "local": 0.11333333333333329,
+      "pulse": 0.12624677714387836,
+      "roll": 0,
+      "until": 0.07166666666666721,
+      "nearestOnset": 9.62,
+      "apexErrorMs": 113,
+      "frozen": false,
+      "root": [
+        0,
+        -0.009326999652808254,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.09872390332896
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": true
+    },
+    {
+      "t": 11.1,
+      "filename": "portrait_31.jpg",
+      "pose": "wink",
+      "face": "squeeze",
+      "edit": "snap",
+      "local": 1.4800000000000004,
+      "pulse": 0.03461911016499376,
+      "roll": 0,
+      "until": 0.03500000000000014,
+      "nearestOnset": 10.92,
+      "apexErrorMs": 180,
+      "frozen": false,
+      "root": [
+        0,
+        -0.013637287570313131,
+        0
+      ],
+      "camera": [
+        0.1,
+        1.6,
+        3.0201261192027773
+      ],
+      "calls": 44,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 11.166666666666666,
+      "filename": "portrait_32.jpg",
+      "pose": "finale",
+      "face": "grin",
+      "edit": "stamp",
+      "local": 0.03166666666666629,
+      "pulse": 0.3436835397369171,
+      "roll": 0,
+      "until": 0.1533333333333342,
+      "nearestOnset": 11.135,
+      "apexErrorMs": 32,
+      "frozen": false,
+      "root": [
+        0,
+        -0.022311952214221904,
+        0
+      ],
+      "camera": [
+        0.35,
+        1.6,
+        4.699839288497467
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 11.266666666666667,
+      "filename": "portrait_33.jpg",
+      "pose": "finale",
+      "face": "grin",
+      "edit": "stamp",
+      "local": 0.1316666666666677,
+      "pulse": 0.06938850996495978,
+      "roll": 0,
+      "until": 0.05333333333333279,
+      "nearestOnset": 11.135,
+      "apexErrorMs": 132,
+      "frozen": false,
+      "root": [
+        0,
+        -0.01153551549675473,
+        0
+      ],
+      "camera": [
+        0.35,
+        1.6,
+        4.697334280987453
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    },
+    {
+      "t": 12.5,
+      "filename": "portrait_34.jpg",
+      "pose": "finale",
+      "face": "grin",
+      "edit": "stamp",
+      "local": 0.3000000000000007,
+      "pulse": 0,
+      "roll": 0,
+      "until": 0.35499999999999865,
+      "nearestOnset": 11.32,
+      "apexErrorMs": 115,
+      "frozen": true,
+      "root": [
+        0,
+        -0.017500000000000092,
+        0
+      ],
+      "camera": [
+        0.35,
+        1.6,
+        4.687145655516729
+      ],
+      "calls": 52,
+      "leftEyeVisible": false,
+      "rightEyeVisible": false
+    }
+  ]
+}
