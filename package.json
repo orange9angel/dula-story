@@ -209,8 +209,10 @@
     "render:e07": "dula-render ./episodes/cat_leads_e07_river_willow",
     "audio:e07": "dula-audio ./episodes/cat_leads_e07_river_willow",
     "audio:e08": "dula-audio ./episodes/cat_leads_e08_drifting_page",
-    "verify:e08": "dula-verify ./episodes/cat_leads_e08_drifting_page",
-    "render:e08": "dula-render ./episodes/cat_leads_e08_drifting_page"
+    "verify:e08": "dula-verify ./episodes/cat_leads_e08_drifting_page/volcano",
+    "render:e08": "dula-render ./episodes/cat_leads_e08_drifting_page/volcano",
+    "verify:e08_painted": "node episodes/cat_leads_e08_drifting_page/painted/render.mjs --check",
+    "render:e08_painted": "node episodes/cat_leads_e08_drifting_page/painted/render.mjs"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",

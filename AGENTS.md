@@ -22,7 +22,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 - `episodes/croc_map_ad/` — 鳄鱼地图转场广告 demo（已出片；待导演评审后决定全量 4 城版）
 - `episodes/cat_leads_e09_live_riverbank/` — 真人实验集（W2 已出片：6s 说话三明治 v3——同源底图+25fps+xfade，背景一致/无鬼影/无 judder；**猫说话 Seedance 2.0 图+音频组合已验证 ¥4/镜**，替代 DreamActor；人说话正脸待验 2.5 参考链）
 - `episodes/cat_leads_e06_cat_model_live/` — 《模特小橘》真人版（V1 出片；V2 暂停待世界锚点实验）
-- `episodes/cat_leads_e08_drifting_page/` — 《漂走的那张画》（质感集：F01 首埋、720p 分辨率档首执行、视频占比 ~67%）
+- `episodes/cat_leads_e08_drifting_page/` — 《漂走的那张画》（质感集：F01 首埋、720p 分辨率档首执行、视频占比 ~67%；**V2 全程序绘制版**：零生成模型，Canvas 平涂 + 口型吃 lipsync_cues，画面成本 ¥0，见 `painted/NOTES.md`；V1 火山版归档在 `volcano/`，自包含可独立重建）
 - `episodes/cat_leads_e07_river_willow/` — 《柳树下的老钓友》（长篇结构验证集：新角色老周、伏笔 F02/F03、环境微动 A/B）
 - `episodes/cat_leads_e06_cat_model/` — 《模特小橘》（正片打磨验证集：亮场景密度 + 关键帧微动语法）
 - `episodes/cat_leads_e05_morning_sketch/` — 《清晨速写》（优化方案验证集：1080p I2V + seed-tts-2.0 全角色配音）
@@ -81,6 +81,12 @@ dula-story/
 ├── README.md
 └── AGENTS.md
 ```
+
+**双管线目录约定**（E08 起）：同一 episode 同时有自绘版与火山生成版时，
+自绘版全部放 `painted/`（painter/viewer/render 工具/检查帧/成片/NOTES），
+火山版全部放 `volcano/`（自包含 episode 目录，可独立 `dula-render` 重建）；
+共享的 `script.story`、`config/`（voice_config/audio_mix/lipsync_cues）、
+`assets/audio/` 留在 episode 根目录，只保留一份权威版本。
 
 ---
 
