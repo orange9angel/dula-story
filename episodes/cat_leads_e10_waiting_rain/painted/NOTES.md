@@ -66,3 +66,33 @@ node episodes\cat_leads_e10_waiting_rain\painted\render.mjs --serve   # 预览
 ## 成本
 
 画面 ¥0；声音：seed-tts 11 句（约 ¥1 量级）+ 程序合成 SFX/BGM ¥0。
+
+## 配乐（R3，2026-09-16）
+
+- 监制意见：引擎 numpy procedural 的 wonder_theme 太拉，按系列正式集标准
+  （E04–E08）换火山 **Seed-Audio 1.0** 大模型作曲。生成脚本
+  `tools/gen_bgm_seedaudio.sh`（`source .env.speech`，VOLC_SPEECH_API_KEY）。
+- prompt 结构按 `dula-skills/episode-scoring/references/composition-prompt-craft.md`，
+  曲式段对齐剧情弧：0–14s 河堤起风（钢琴独奏动机 pp，转阴的犹豫但温暖）→
+  14–26s 穿巷赶雨（木琴/拨弦雨滴点缀，流动渐强）→ 26–62s 檐下听雨
+  （弦乐群托底，主题展开，乐句留白，≤mf，躲雨的安全感）→ 62–76s 云开金光
+  （长笛/双簧管提亮，主题再现，上扬后渐弱收 pp）。C 大调 + IVmaj7，
+  钢琴/木琴/尼龙弦吉他/弦乐群/长笛/双簧管，rubato 66–72 BPM，
+  无鼓组/电子音色/人声/爆音。
+- 三版选一（`tools/compare_bgm_versions.py`：beatcut spectral-flux onset +
+  每秒 RMS；阈值 50 onset/60s 等比 → 76s 需 ≥63）：
+
+  | 版 | 时长 | onsets | RMS 动态范围 | 8 段 RMS dB 轮廓 | 判 |
+  |---|---|---|---|---|---|
+  | v1 | 72.08s | 131 | 46.4 dB | -30.1 -23.0 -18.4 -18.2 -16.8 -17.5 -14.8 -38.3 | 时长不足 76s，尾部需循环，出局 |
+  | v2 | 76.00s | 119 | 35.7 dB | -34.1 -28.7 -24.0 -23.2 -20.1 -18.0 -22.7 -41.1 | 达标，动态对比最小 |
+  | **v3** | **76.00s** | **148** | **48.3 dB** | -40.0 -34.7 -25.1 -21.8 -18.9 -21.4 -24.4 -43.1 | **入选** |
+
+- 选版理由：v3 时长精确 76s（与混音槽 1:1，无循环接缝）；onset 最多
+  （作曲活动度最高）；动态对比最大——开头 -42dB 的 pp 钢琴动机最干净，
+  高点落在 38–57s（檐下听雨段内），结尾 5s 收到 -52dB，pp→mf→pp 大弧线
+  完整且尾韵留得足。候选留存 music/waiting_rain_theme_v1/v2.wav 可替换。
+- 混音：`script.story` 第 1 条 Music 标签改 `name=waiting_rain_theme`
+  （fadeIn/baseVolume/endTime 不动），`tools/generate_audio.py` 重跑
+  （TTS 11 句全部 skip 未重复合成），bgmVolume 维持 0.3 未降——
+  新曲动态虽大但混音后 mean -26.8dB / max -4.5dB 不削波（volumedetect 实测）。

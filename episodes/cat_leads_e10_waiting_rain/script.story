@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:04,000
-@RainShowerScene{Music:Play|name=wonder_theme|fadeIn=2.0|baseVolume=0.5|endTime=75.0}{SFX:Play|name=river_water|endTime=15|baseVolume=0.16}{SFX:Play|name=wind_leaves|endTime=27|baseVolume=0.14}{SFX:Play|name=morning_birds|endTime=14|baseVolume=0.10}
+@RainShowerScene{Music:Play|name=waiting_rain_theme|fadeIn=2.0|baseVolume=0.5|endTime=75.0}{SFX:Play|name=river_water|endTime=15|baseVolume=0.16}{SFX:Play|name=wind_leaves|endTime=27|baseVolume=0.14}{SFX:Play|name=morning_birds|endTime=14|baseVolume=0.10}
 
 2
 00:00:05,000 --> 00:00:08,500
