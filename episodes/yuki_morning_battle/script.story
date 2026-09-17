@@ -13,7 +13,7 @@
 
 3
 00:00:03,900 --> 00:00:06,900
-[Yuki]{FaceRelaxed}{Camera:Static|position=-5.2,1.5,-0.1|lookAt=-6.8,0.75,-2.0} 嘿嘿……别抢我的鸡腿……
+[Yuki]{FaceHappy}{Camera:Static|position=-5.2,1.5,-0.1|lookAt=-6.8,0.75,-2.0} 嘿嘿……别抢我的鸡腿……
 {SceneDirector:Gaze|mode=free}
 
 4
@@ -33,7 +33,7 @@
 
 7
 00:00:17,700 --> 00:00:21,300
-[Yuki]{FaceScared}{Camera:Static|position=0,1.1,2.2|lookAt=0,1.0,0.5} 几点了几点了？完了，要迟到了！
+[Yuki]{FaceSurprised}{Camera:Static|position=0,1.1,2.2|lookAt=0,1.0,0.5} 几点了几点了？完了，要迟到了！
 
 8
 00:00:21,600 --> 00:00:25,000
@@ -77,7 +77,7 @@
 16
 00:00:51,600 --> 00:00:56,200
 [Narrator]{Camera:Static|position=0.2,1.3,3.6|lookAt=-1.5,0.8,0.3} 于是小雪钻回被窝，三秒钟后，睡着了。
-{Event:Move|character=Yuki|x=-4.6|z=-0.4|duration=2.2}{Animation:Walk|character=Yuki|stride=0.3|legLift=low|frequency=1.7}{FaceRelaxed}{SFX:Play|name=impact_thud|offset=2.4|baseVolume=0.5}
+{Event:Move|character=Yuki|x=-4.6|z=-0.4|duration=2.2}{Animation:Walk|character=Yuki|stride=0.3|legLift=low|frequency=1.7}{FaceHappy}{SFX:Play|name=impact_thud|offset=2.4|baseVolume=0.5}
 
 17
 00:00:56,400 --> 00:00:59,300

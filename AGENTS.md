@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/yuki_morning_battle/`（《早起大作战》——小雪主角 62s 搞笑片，全火山音频 seed-tts-2.0 四声线 + Seed-Audio BGM/SFX；自定义场景小雪家 `scenes/YukiRoomScene.js`；Q 版角色同轴靴子腿 + LieSleep 睡姿工艺，翻车史见剧集 VISUAL_REVIEW.md 与 dula-skills/walk-director）
+**最新 Episode**：`episodes/yuki_bento_battle/`（《便当大作战》——小雪系列第二集，101s 群像搞笑：黑猫闪电破窗抢便当、咕噜防盗模式全员恶人、豆豆乱入，揭底便当是减肥餐；新官方角色 Flash/Dodo，场景道具时间态换态工艺；全火山音频六声线）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/yuki_bento_battle/` — 《便当大作战》（小雪系列第二集 101s 群像搞笑；新角色 Flash（瘦黑猫老江湖）/Dodo（幼儿园精力球）入库 dula-assets；场景：小雪家 + 便当盒时间态道具；全火山音频——seed-tts-2.0 六声线 + Seed-Audio BGM/SFX）
 - `episodes/yuki_morning_battle/` — 《早起大作战》（小雪主角 62s 搞笑片：赖床 vs 咕噜号音量攻击，胖猫年糕一句「今天周六」冷面揭底；全火山音频——seed-tts-2.0 四声线 + Seed-Audio BGM/SFX；画面引擎渲染 + sketchify 手绘描边，自定义场景 `scenes/YukiRoomScene.js` 小雪家少女卧室，角色工艺同 yuki_cat_diet）
 - `episodes/cat_leads_e10_waiting_rain/` — 《等雨停》（质感集：F01/F02/F03 全静默；**全程序绘制 76s 三场景天气弧**——阵雨灰蓝→雨后金光色板过渡、雨/白墙巷/便利店门脸新积木、走路/坐姿猫首画、黑场淡入，画面成本 ¥0，见 `painted/NOTES.md`）
 - `episodes/croc_map_ad/` — 鳄鱼地图转场广告 demo（已出片；待导演评审后决定全量 4 城版）
@@ -184,7 +185,7 @@ dula-story/
 [Nobita]{FaceSad} {Shrug}好无聊啊……
 ```
 
-常用标签：`FaceHappy`、`FaceSad`、`FaceAngry`、`FaceSurprised`、`FaceWorried`、`FaceScared`、`FaceProud`、`FaceRelaxed`、`FaceGrin`、`FaceCry`。
+常用标签（**以 dula-assets 实际注册为准**：`FaceHappy`、`FaceSad`、`FaceAngry`、`FaceSurprised`、`FaceDetermined`、`FaceSmirk`、`FaceBlink`、`FaceConfused`、`FacePain`、`FaceReset`）。⚠️ 历史文档里出现的 `FaceScared`/`FaceRelaxed`/`FaceProud`/`FaceWorried`/`FaceGrin`/`FaceCry` **从未注册**，写上会被静默跳过（yuki_bento_battle 验证发现）；害怕用 `FaceSurprised`，放松用 `FaceHappy`。
 
 #### 眼神接触
 

@@ -218,7 +218,11 @@
     "audio:yuki_morning": ".venv/Scripts/python.exe episodes/yuki_morning_battle/tools/generate_audio.py",
     "verify:yuki_morning": "dula-verify ./episodes/yuki_morning_battle",
     "render:yuki_morning": "dula-render ./episodes/yuki_morning_battle",
-    "build:yuki_morning": "npm run audio:yuki_morning && npm run verify:yuki_morning && npm run render:yuki_morning"
+    "build:yuki_morning": "npm run audio:yuki_morning && npm run verify:yuki_morning && npm run render:yuki_morning",
+    "audio:yuki_bento": ".venv/Scripts/python.exe episodes/yuki_bento_battle/tools/generate_audio.py",
+    "verify:yuki_bento": "dula-verify ./episodes/yuki_bento_battle",
+    "render:yuki_bento": "dula-render ./episodes/yuki_bento_battle",
+    "build:yuki_bento": "npm run audio:yuki_bento && npm run verify:yuki_bento && npm run render:yuki_bento"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
