@@ -16,9 +16,10 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/croc_map_ad/`（鳄鱼地图转场广告 demo——陶阿狗君式"3D地图转场"创意片竖切验证：地图 UI 后期覆盖 + 巡城变装 + swipe 卡点 + 哈尔滨开口说话「这旮沓真冻牙」，11.5s ≈¥9。工艺已固化为 dula-skills/map-transition-ad）
+**最新 Episode**：`episodes/yuki_morning_battle/`（《早起大作战》——小雪主角 62s 搞笑片，全火山音频 seed-tts-2.0 四声线 + Seed-Audio BGM/SFX；自定义场景小雪家 `scenes/YukiRoomScene.js`；Q 版角色同轴靴子腿 + LieSleep 睡姿工艺，翻车史见剧集 VISUAL_REVIEW.md 与 dula-skills/walk-director）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/yuki_morning_battle/` — 《早起大作战》（小雪主角 62s 搞笑片：赖床 vs 咕噜号音量攻击，胖猫年糕一句「今天周六」冷面揭底；全火山音频——seed-tts-2.0 四声线 + Seed-Audio BGM/SFX；画面引擎渲染 + sketchify 手绘描边，自定义场景 `scenes/YukiRoomScene.js` 小雪家少女卧室，角色工艺同 yuki_cat_diet）
 - `episodes/cat_leads_e10_waiting_rain/` — 《等雨停》（质感集：F01/F02/F03 全静默；**全程序绘制 76s 三场景天气弧**——阵雨灰蓝→雨后金光色板过渡、雨/白墙巷/便利店门脸新积木、走路/坐姿猫首画、黑场淡入，画面成本 ¥0，见 `painted/NOTES.md`）
 - `episodes/croc_map_ad/` — 鳄鱼地图转场广告 demo（已出片；待导演评审后决定全量 4 城版）
 - `episodes/cat_leads_e09_live_riverbank/` — 真人实验集（W2 已出片：6s 说话三明治 v3——同源底图+25fps+xfade，背景一致/无鬼影/无 judder；**猫说话 Seedance 2.0 图+音频组合已验证 ¥4/镜**，替代 DreamActor；人说话正脸待验 2.5 参考链）

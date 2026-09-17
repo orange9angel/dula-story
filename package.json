@@ -214,7 +214,11 @@
     "verify:e08_painted": "node episodes/cat_leads_e08_drifting_page/painted/render.mjs --check",
     "render:e08_painted": "node episodes/cat_leads_e08_drifting_page/painted/render.mjs",
     "verify:e10_painted": "node episodes/cat_leads_e10_waiting_rain/painted/render.mjs --check",
-    "render:e10_painted": "node episodes/cat_leads_e10_waiting_rain/painted/render.mjs"
+    "render:e10_painted": "node episodes/cat_leads_e10_waiting_rain/painted/render.mjs",
+    "audio:yuki_morning": ".venv/Scripts/python.exe episodes/yuki_morning_battle/tools/generate_audio.py",
+    "verify:yuki_morning": "dula-verify ./episodes/yuki_morning_battle",
+    "render:yuki_morning": "dula-render ./episodes/yuki_morning_battle",
+    "build:yuki_morning": "npm run audio:yuki_morning && npm run verify:yuki_morning && npm run render:yuki_morning"
   },
   "dependencies": {
     "dula-assets": "file:../dula-assets",
