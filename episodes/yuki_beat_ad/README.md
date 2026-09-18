@@ -1,5 +1,35 @@
 # 下一拍，你登场
 
+## V9 MTV 歌姬版（2026-09-19，卡点根治）
+
+成片：`output/yuki_beat_ad_v9.mp4`（29.5 秒，720×1280，60 fps）。
+针对 V8 监制反馈"音乐不卡点、口型对不上"的根治版，音乐沿用 V8 的歌曲
+（`diva_song_v8_a.wav` 不变，零新增模型成本），改的是分析与编排：
+
+- **拍网锁定**：`prepare_v9.py` 用 librosa `beat_track` 提取 123.05 BPM /
+  62 拍 / 15 downbeat 的完整拍网（onset 自相关复核同值），story 38 个条目
+  边界全部吸附拍网（最大偏差 0.00ms）。viewer_v9 的 dance 主干从 onset 散点
+  改为拍网驱动：bounce 顶点压拍点、手臂反拍甩出、downbeat 加 accent。
+- **音节级口型**：HPSS 分离人声（harmonic 支）→ 200Hz–4kHz 带通 → 频谱
+  onset 检测出 57 个音节（关键调参：onset_detect 要作用在带通后 harmonic 的
+  频谱包络上，直接作用全带 harmonic 只出个位数），开口对音节 onset、
+  按峰值分位定 open/half、60ms 攻击/释放平滑。closed 占比 0.366→0.532，
+  伴奏段不再乱动嘴。
+- **MTV 五段式编排**：intro 剪影亮相（灯光压 0.08，首个 downbeat 0.22s
+  渐强）→ verse 持麦近景（2 拍一切）→ chorus 霓虹 1 拍快切 16 条 +
+  双残影伴舞 + 每拍灯光脉冲 + downbeat snap → bridge 星空荷兰角 ±6° →
+  outro 定格 + 「安可」字卡。
+
+```powershell
+.venv\Scripts\python.exe episodes\yuki_beat_ad\tools\prepare_v9.py --input assets/audio/music/diva_song_v8_a.wav
+node episodes\yuki_beat_ad\tools\render.mjs --v9 --check
+node episodes\yuki_beat_ad\tools\render.mjs --v9
+```
+
+检查帧 168 张（`storyboard/v9/`），dance 顶点拍点误差最大 16ms（<1 帧）、
+均值 7.8ms；模型辅助验证，未声称人工验收。已知残留：`move=jump/twirl`
+未接 outro 定格缩放（本版 story 未用到）；chorus 彩纸仅 diva/neon 舞台预排。
+
 ## V8 歌姬版（2026-09-19，边唱边跳）
 
 成片：`output/yuki_beat_ad_v8.mp4`（29.5 秒，720×1280，60 fps）。
