@@ -17,11 +17,16 @@ const v3 = process.argv.includes('--v3');
 const v4 = process.argv.includes('--v4');
 const v5 = process.argv.includes('--v5');
 const v6 = process.argv.includes('--v6');
-const version = v6 ? 'v6' : v5 ? 'v5' : v4 ? 'v4' : v3 ? 'v3' : v2 ? 'v2' : '';
+const v8 = process.argv.includes('--v8');
+const version = v8 ? 'v8' : v6 ? 'v6' : v5 ? 'v5' : v4 ? 'v4' : v3 ? 'v3' : v2 ? 'v2' : '';
 const boardDir = path.join(root, version ? `storyboard/${version}` : 'storyboard');
 const audioFile = version ? `assets/audio/mixed_${version}.wav` : 'assets/audio/mixed.wav';
 const outputFile = version ? `output/yuki_beat_ad_${version}.mp4` : 'output/yuki_beat_ad.mp4';
-const fps = v3 || v4 || v5 || v6 ? 60 : 30;
+const fps = v3 || v4 || v5 || v6 || v8 ? 60 : 30;
+const backendArg = process.argv.find(a => a.startsWith('--video-backend='));
+const videoBackend = backendArg ? backendArg.split('=')[1] : 'program';
+if (videoBackend === 'model') throw new Error('video-backend=model 尚未接入（预留 Seedance 参考链，见 cat_leads_e09），请使用默认 program');
+if (videoBackend !== 'program') throw new Error(`未知 video-backend: ${videoBackend}（可选 program|model）`);
 const mime = {'.js':'text/javascript','.html':'text/html','.json':'application/json','.story':'text/plain','.wav':'audio/wav','.png':'image/png','.jpg':'image/jpeg'};
 const server = http.createServer((req,res) => {
   const url = decodeURIComponent(req.url.split('?')[0]);

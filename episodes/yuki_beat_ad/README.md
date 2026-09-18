@@ -1,5 +1,57 @@
 # 下一拍，你登场
 
+## V8 歌姬版（2026-09-19，边唱边跳）
+
+成片：`output/yuki_beat_ad_v8.mp4`（29.5 秒，720×1280，60 fps）。
+
+首个**带人声歌唱**的版本。歌声来自火山豆包音乐模型（OpenAPI `imagination`
+服务，`GenSongForTime` 后付费 0.002 元/秒，30 秒约 0.06 元），歌词为本片原创
+（`config/diva_lyrics.txt`，8 句 30 秒）。因该产品限制海外 IP
+（错误码 100011 ServerIpLimit），调用经 veFaaS 国内中转函数完成
+（`tools/vefaas_song_relay.py`，零依赖手写 V4 签名，submit+轮询+base64 回传；
+本地入口 `tools/song_gen.py --via-relay`，AK/SK 走 `.env.cv`，
+触发器地址走 `.env.speech` 的 `SONG_RELAY_URL`/`SONG_RELAY_TOKEN`）。
+
+- `tools/prepare_v8.py`：沿用 V5 <150Hz 底鼓锁拍选出 17 个编辑点；
+  新增**人声包络口型**（300Hz–3kHz 带通 RMS，5ms hop，三态
+  closed/half/open 分位量化 + 防抖），写入 `music_analysis_v8.json`
+  的 `vocal_env` 字段（295 段）。
+- `viewer_v8.js`：唱歌窗口内口型由 `vocal_env` 驱动（叠加在表情嘴型之上）；
+  新动作 `mic_hold`（持麦）与 `arm_sweep`；新增 diva 舞台（聚光灯锥 +
+  落地麦架 + 星尘）；底部字幕条在唱歌窗口显示歌词。
+- `tools/render.mjs` 新增 `--v8` 分支与 `--video-backend program|model`
+  开关（默认 program；model 为预留占位，报明确错误）。
+
+```powershell
+.venv\Scripts\python.exe episodes\yuki_beat_ad\tools\prepare_v8.py --input assets/audio/music/diva_song_v8_a.wav
+node episodes\yuki_beat_ad\tools\render.mjs --v8 --check
+node episodes\yuki_beat_ad\tools\render.mjs --v8
+```
+
+画面侧仍零生成模型调用；唯一模型成本为歌曲生成（本次含失败重试共约 0.2 元）。
+口型为能量包络驱动而非音素级 lipsync，逐帧检查帧（`storyboard/v8/`）目检通过；
+模型辅助验证，未声称人工验收。V7 纯器乐版编排仍待接，与本版互不冲突。
+
+**已知问题（监制首看反馈，待修）**：
+1. **音乐不卡点**——生成的歌曲节奏与舞蹈/剪辑点对不齐。prepare_v8 的编辑点
+   是从成曲检测出来的（音乐在先、编排在后），但成曲本身的律动与画面动作
+   缺乏"同一拍网"感；候选方向：改用 Lyrics 分段 + Tempo 参数（v4.3）锁定
+   BPM 后重生成，或编排侧改按歌词句读而非底鼓选点。
+2. **口型对不上歌词**——vocal_env 是 300Hz–3kHz 全频段能量包络，背景音乐
+   泄漏导致开合与人声起始点对不齐；且三态粒度太粗。候选方向：做人声分离
+   （或取模型纯人声音轨）再提包络；参考 E10 build_lipsync.py 的音节级视素。
+
+## V7 音乐重做（2026-09-16，仅音乐）
+
+针对监制"V5/V6 音乐单调"的反馈，只换音乐不动编排：解剖抖音 top 卡点曲
+（`tmp/douyin/learned_features.md`，低频底鼓网格 + RMS 悬崖 + 频段占比），
+按学到的特征写 prompt（`tools/compose_v7.py`）生成四个 14 秒候选到
+`assets/audio/music/v7/`。客观指标选版（重音数/drop 位置/抽空 gap/低频占比/
+高频点缀密度）选中 C（方波芯片 hook + funky 贝斯 + 卡通音效）：4.75s 抽空
+0.25s → 5.05s drop，重音 14 个、低频 79%。母带沿用 V5 链（3:1 压缩 + 110Hz
+低搁架 +2.5dB + 0.85 限制器）产出 `assets/audio/mixed_v7.wav`。这是模型辅助
+选版（纯客观指标，未做盲听），不声称人工验收；V7 编排/成片待接。
+
 ## V6 元素扩充（2026-09-16）
 
 成片：`output/yuki_beat_ad_v6.mp4`（13.6 秒，720×1280，60 fps）。

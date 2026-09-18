@@ -1,0 +1,31 @@
+{
+  "version": "v7",
+  "date": "2026-09-16",
+  "model": "objective-metrics-only (analyze_structure.py)",
+  "human_review": false,
+  "review_limit": "模型辅助选版（客观指标：onset/重音数、RMS 弧线、低频占比、drop±1s RMS 差、抽空静默检测），未做盲听听评，不声称人工验收；用户听感仍是最终决定",
+  "brief": "搞笑+卡点+蓄势释放，14s 竖屏换装广告；特征来自 tmp/douyin/learned_features.md（抖音 top 卡点曲解剖）",
+  "selection_metric_note": "drop±1s RMS 差用 20ms RMS 窗计算；onset/重音为 <150Hz 低频谱通量",
+  "candidates": [
+    {"id": "a", "style": "玩具钢琴+808+bounce鼓组+小号断奏", "bpm": 147.6,
+     "kicks": 21, "accents": 9, "hi_onsets_per_s": 2.0, "low_share": 0.707,
+     "drop": {"t": 0.1, "jump_db": 85.8, "gap_s": 0.0, "rms_diff_1s_db": 78.9},
+     "verdict": "淘汰：drop 是开头起音假象，无蓄势段；重音仅 9 个，高频点缀最稀"},
+    {"id": "b", "style": "木琴+指拨贝斯+摇摆鼓组+铜管/口哨", "bpm": 107.7,
+     "kicks": 29, "accents": 12, "hi_onsets_per_s": 3.7, "low_share": 0.643,
+     "drop": {"t": 1.44, "jump_db": 72.4, "gap_s": 0.48, "rms_diff_1s_db": 26.5},
+     "verdict": "备选：BPM 最准、宏观弧线漂亮（quiet→loud→quiet），但 drop 落在 1.4s 而非 brief 的 5s，蓄势太短"},
+    {"id": "c", "style": "方波芯片音+funky击勾弦贝斯+干底鼓拍手手铃+卡通音效", "bpm": 161.5,
+     "kicks": 34, "accents": 14, "hi_onsets_per_s": 4.0, "low_share": 0.787,
+     "drop": {"t": 5.05, "jump_db": 51.8, "gap_s": 0.25, "rms_diff_1s_db": -1.8},
+     "verdict": "入选：教科书 build-drop——2.8-5.1s 密集鼓 roll 蓄势、4.75s 抽空 0.25s、5.05s 砸下（正是 prompt 指定位置）；重音 14 个全场最多、高频点缀最密、低频最厚；drop 后维持 -9~-10dB 高位平台"},
+    {"id": "d", "style": "马林巴+slap贝斯+bounce鼓组+萨克斯断奏", "bpm": 178.2,
+     "kicks": 28, "accents": 11, "hi_onsets_per_s": 3.9, "low_share": 0.668,
+     "drop": {"t": 8.34, "jump_db": 56.7, "gap_s": 0.36, "rms_diff_1s_db": 1.6},
+     "verdict": "淘汰：0.3-5.1s 重音空窗 4.8s 太长（开头悬念拖），drop 晚至 8.3s，留给释放段的时间不足"}
+  ],
+  "selected": "c",
+  "selected_file": "selected_v7.wav",
+  "reason": "唯一在 brief 指定的 ~5s 位置完成 build-drop 的候选（roll→0.25s 抽空→砸下）；重音密度 14/14s、高频 4.0/s、低频 79% 三项全部对齐抖音 top 卡点曲特征（learned_features.md 第 2/5/6 条）",
+  "post": "ffmpeg 母带链（acompressor 3:1 + 110Hz 低搁架 +2.5dB + alimiter 0.85，同 V5）→ assets/audio/mixed_v7.wav"
+}
