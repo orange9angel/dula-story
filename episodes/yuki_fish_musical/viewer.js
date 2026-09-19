@@ -132,6 +132,7 @@ function draw(t){
   const subtitle=drawSubtitle(t,seg);
   return{index:0,t,segment:seg.id,shot,subtitle,
     storyEntry:entry.index,move:opts.move,yukiLip:{jaw:Math.round(lip.jaw*1000)/1000,char:lip.char},mouth:result.yukiMouth,
+    handPose:result.handPose,yukiHands:posed.hands,
     mochi:mochiState,
     singer:seg.kind==='song'?seg.character:null,
     beat:bi&&bi.index>=0?{index:bi.index,downbeat:bi.downbeat}:null,

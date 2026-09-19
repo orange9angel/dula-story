@@ -2,6 +2,30 @@ import * as THREE from 'three';
 import {poseDance,actFace,buildDanceRig} from './performance_v11.js';
 import {applyLipsV17} from './lipsync_v17.js';
 import {setWardrobe} from './wardrobe_v3.js';
+import {setHandPose} from './bootstrap.js';
+
+// 手型语义切换（手型集见 bootstrap.js buildHandPoses）。同一帧跳变、无渐变；
+// reaction 条目继承前一条目（由 viewer 传入 previous），默认回落 mitten。
+// 右手是手势手；左手陪衬（叉腰/台面放松）。
+function handPoseRule(o){
+  const key=`${o.move}@${o.kind}`;
+  switch(key){
+    case 'fish_accuse@dialogue': return {right:'point',left:'fist'};   // 质问/指认嘴角
+    case 'fish_accuse@song':     return {right:'fist',left:'fist'};    // 听年糕狡辩，叉腰
+    case 'fish_point@song':      return {right:'point',left:'mitten'}; // 「证据在你嘴边」
+    case 'fish_smell@song':      return {right:'hold',left:'mitten'};  // 闻香
+    case 'fish_caught@song':     return {right:'point',left:'open'};   // 「抓到啦就是你」指证
+    case 'fish_verdict@song':    return {right:'fist',left:'mitten'};  // 洗碗判决
+    case 'fish_listen@freeze':   return {right:'wave',left:'mitten'};  // 收尾亮相
+    case 'fish_listen@dialogue': return {right:'mitten',left:'mitten'};
+    default:                     return {right:'mitten',left:'mitten'};
+  }
+}
+function handPoseFor(opts,previous){
+  if(opts.kind==='reaction'&&previous)return handPoseFor(previous.opts,null);
+  return handPoseRule(opts);
+}
+
 export function poseActors(yuki,cat,t,entry,opts,lipY,lipC,beats,previous){
   // 一拍二 (cel-look): body/face acting samples on the 12fps grid; lips
   // (lipY/lipC, computed upstream at full t) and the camera stay at 60fps.
@@ -10,6 +34,8 @@ export function poseActors(yuki,cat,t,entry,opts,lipY,lipC,beats,previous){
   yuki.danceRig.headset.visible=false;
   const py=poseDance(yuki,opts.Yuki,entry,tq,beats,previous);
   py.acting=actFace(yuki,opts.Yuki,entry,tq,previous);
+  const handPose=handPoseFor(opts.Yuki,previous);
+  setHandPose(yuki,'right',handPose.right);setHandPose(yuki,'left',handPose.left);
   yuki.mesh.position.x-=.43;
   const mouth=applyLipsV17(yuki,lipY);
   yuki.leftTail.rotation.z=yuki.leftTail.userData.baseRotZ-.05*Math.sin(tq*5);
@@ -65,5 +91,5 @@ export function poseActors(yuki,cat,t,entry,opts,lipY,lipC,beats,previous){
   rig.dark.scale.set(width,height,1);rig.dark.position.y=-height*.55;
   rig.tongue.visible=jaw>.38;rig.tongue.scale.set(width*.52,height*.20,1);rig.tongue.position.y=-height*1.14;
   cat.mesh.updateMatrixWorld(true);yuki.mesh.updateMatrixWorld(true);
-  return {yuki:py,yukiMouth:mouth,cat:{jaw:Math.round(jaw*1000)/1000,open,width,height:open?height:0,move},opts:opts.Yuki,entry};
+  return {yuki:py,yukiMouth:mouth,cat:{jaw:Math.round(jaw*1000)/1000,open,width,height:open?height:0,move},handPose,opts:opts.Yuki,entry};
 }

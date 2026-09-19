@@ -40,11 +40,25 @@ try{
     return {poseChangeTimes:poseChanges.slice(0,8),offGridCount:offGrid.length,jawChanges};
   });
 
-  // 3. Close-up frames for cel inspection.
-  for(const [name,t] of [['yuki_closeup',20.5],['mochi_sing_closeup',8.3],['wide_two',35.0],['freeze_card',45.4]]){
+  // 3. Hand-pose assertions (hand set in bootstrap.js buildHandPoses).
+  const handCases=[['accuse_point',1.5,'point'],['reaction_inherits_point',2.9,'point'],
+    ['listen_mitten',3.7,'mitten'],['songA_fist',10.0,'fist'],['press_point',20.3,'point'],
+    ['songB_point',27.2,'point'],['songB_hold',31.2,'hold'],['songB_caught_point',34.8,'point'],
+    ['songB_verdict_fist',38.5,'fist'],['freeze_wave',45.4,'wave']];
+  report.hands=await page.evaluate(cases_=>cases_.map(([name,t,want])=>{
+    const s=window.stepAt(t);
+    return {name,t,actual:s.handPose,pass:s.handPose?.right===want,
+      rightHandX:s.yukiHands?.[1]?.[0],rootX:s.root[0]};
+  }),handCases);
+  // 指证帧必须指向年糕方向（年糕在 +x）：右手世界 x 明显大于身体根 x
+  const caught=report.hands.find(h=>h.name==='songB_caught_point');
+  report.pointTowardsCat=caught&&caught.rightHandX>caught.rootX+.15;
+
+  // 4. Close-up frames for cel inspection.
+  for(const [name,t] of [['hand_accuse',1.5],['hand_caught',34.8],['yuki_closeup',20.5],['mochi_sing_closeup',8.3],['wide_two',35.0],['freeze_card',45.4]]){
     const r=await page.evaluate(t=>window.renderAt(t),t);
     fs.writeFileSync(path.join(folder,`${name}.jpg`),Buffer.from(r.image,'base64'));
-    report[name]={t,segment:r.state.segment,move:r.state.move};
+    report[name]={t,segment:r.state.segment,move:r.state.move,handPose:r.state.handPose};
   }
   fs.writeFileSync(path.join(folder,'metadata.json'),JSON.stringify(report,null,2));
   console.log(JSON.stringify(report,null,1));
