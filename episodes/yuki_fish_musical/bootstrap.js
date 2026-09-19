@@ -178,6 +178,24 @@ export function setHandPose(c, side, name) {
   for (const [k, g] of Object.entries(set)) g.visible = k === name;
 }
 
+// 圆锥发梢的顶点在尖端是按面重复的，法线各自分散——逆向壳沿法线外推后在
+// 尖端炸成一把平行细线（发梢"毛边"双线 artifact，f11f8f4 就有）。把锥体中轴
+// 上的顶点法线统一收到轴向，壳尖随之收敛成干净的一点。
+function smoothConeApex(root) {
+  root.traverse(o => {
+    if (!o.isMesh || o.geometry?.type !== 'ConeGeometry') return;
+    const pos = o.geometry.attributes.position, norm = o.geometry.attributes.normal;
+    if (!norm) return;
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i), z = pos.getZ(i);
+      if (x * x + z * z < 1e-8) {
+        norm.setXYZ(i, 0, Math.sign(pos.getY(i)) || 1, 0);
+      }
+    }
+    norm.needsUpdate = true;
+  });
+}
+
 const BaseYuki = CharacterRegistry.Yuki;
 class StudioYuki extends BaseYuki {
   build() {
@@ -186,6 +204,7 @@ class StudioYuki extends BaseYuki {
     this.leftEye = this.leftPupil.parent;
     this.rightEye = this.rightPupil.parent;
     this.leftEye.userData.adBaseScaleY = this.leftEye.scale.y;
+    smoothConeApex(this.mesh);
     // Build the dance rig BEFORE the outline pass so the IK arm/leg segments
     // and all six hand poses carry outlines too (the rig is otherwise created
     // lazily, after the pass). The asset already marks pupils / eyelids /
