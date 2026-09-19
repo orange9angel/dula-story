@@ -383,7 +383,7 @@ def main():
         blocks.append(f'{idx}\n{stamp(start)} --> {stamp(end)}\n{prefix}'
                       f'{{Event:Animate|character={character}|action=AdPose|{tags}}}\n'
                       f'{{Camera:AdCamera|shot=hello}}')
-    prefix0 = ('@BeatStudioScene\n{Position:Yuki|x=0|y=-0.03|z=0|face=forward}\n'
+    prefix0 = ('@HomeKitchenScene\n{Position:Yuki|x=0|y=-0.03|z=0|face=forward}\n'
                '{Position:Mochi|x=0.58|y=0|z=-0.50|face=forward}\n')
     for si, s in enumerate(segs):
         start, end = s['start'], s['end']

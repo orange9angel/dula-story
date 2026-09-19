@@ -3,18 +3,21 @@ import {poseDance,actFace,buildDanceRig} from './performance_v11.js';
 import {applyLipsV17} from './lipsync_v17.js';
 import {setWardrobe} from './wardrobe_v3.js';
 export function poseActors(yuki,cat,t,entry,opts,lipY,lipC,beats,previous){
+  // 一拍二 (cel-look): body/face acting samples on the 12fps grid; lips
+  // (lipY/lipC, computed upstream at full t) and the camera stay at 60fps.
+  const tq=Math.floor(t*12)/12;
   setWardrobe(yuki,'original','none');buildDanceRig(yuki);
   yuki.danceRig.headset.visible=false;
-  const py=poseDance(yuki,opts.Yuki,entry,t,beats,previous);
-  py.acting=actFace(yuki,opts.Yuki,entry,t,previous);
+  const py=poseDance(yuki,opts.Yuki,entry,tq,beats,previous);
+  py.acting=actFace(yuki,opts.Yuki,entry,tq,previous);
   yuki.mesh.position.x-=.43;
   const mouth=applyLipsV17(yuki,lipY);
-  yuki.leftTail.rotation.z=yuki.leftTail.userData.baseRotZ-.05*Math.sin(t*5);
-  yuki.rightTail.rotation.z=yuki.rightTail.userData.baseRotZ+.05*Math.sin(t*5);
-  yuki.ahoge.rotation.z=.6+.04*Math.sin(t*7);
-  const move=opts.Mochi.move,dt=t-entry.startTime;
-  const i=Math.max(0,beats.findLastIndex(b=>b<=t));
-  const phase=Math.min(1,Math.max(0,(t-beats[i])/(beats[i+1]-beats[i]||.5)));
+  yuki.leftTail.rotation.z=yuki.leftTail.userData.baseRotZ-.05*Math.sin(tq*5);
+  yuki.rightTail.rotation.z=yuki.rightTail.userData.baseRotZ+.05*Math.sin(tq*5);
+  yuki.ahoge.rotation.z=.6+.04*Math.sin(tq*7);
+  const move=opts.Mochi.move,dt=tq-entry.startTime;
+  const i=Math.max(0,beats.findLastIndex(b=>b<=tq));
+  const phase=Math.min(1,Math.max(0,(tq-beats[i])/(beats[i+1]-beats[i]||.5)));
   const sway=Math.sin((i+phase)*Math.PI),hit=Math.exp(-phase*8);
   cat.mesh.position.set(.69,0,0);cat.mesh.rotation.set(0,0,0);cat.mesh.scale.set(1,1,1);
   cat.headGroup.position.set(0,cat.headBaseY,.22);cat.headGroup.rotation.set(0,0,0);
@@ -22,7 +25,7 @@ export function poseActors(yuki,cat,t,entry,opts,lipY,lipC,beats,previous){
   for(const eye of [cat.leftEye,cat.rightEye]){eye.visible=true;eye.scale.set(1,1,1);}
   cat.leftEyelid.visible=cat.rightEyelid.visible=true;
   cat.leftEyelid.scale.set(1.05,.55,.5);cat.rightEyelid.scale.set(1.05,.55,.5);
-  cat.tail.rotation.set(0,.20*Math.sin(t*1.4),0);
+  cat.tail.rotation.set(0,.20*Math.sin(tq*1.4),0);
   if(['cat_deny','cat_taste','cat_innocent'].includes(move)){
     cat.mesh.rotation.z=.075*sway;cat.mesh.scale.set(1+.025*hit,1-.045*hit,1+.015*hit);
     cat.headGroup.rotation.z=-.07*sway;
@@ -43,7 +46,7 @@ export function poseActors(yuki,cat,t,entry,opts,lipY,lipC,beats,previous){
   }else if(move==='cat_defeat'||move==='cat_wash'){
     cat.headGroup.rotation.x=.17;cat.mesh.scale.set(1.015,.97,1.015);
     cat.leftEyelid.scale.y=cat.rightEyelid.scale.y=.85;
-    if(move==='cat_wash'){cat.rightArm.rotation.x=-.35-.17*Math.sin(t*11);cat.leftArm.rotation.x=-.25;}
+    if(move==='cat_wash'){cat.rightArm.rotation.x=-.35-.17*Math.sin(tq*11);cat.leftArm.rotation.x=-.25;}
   }else if(move==='cat_talk'){
     cat.headGroup.rotation.z=.07*Math.sin(dt*2);cat.headGroup.rotation.y=-.08;
   }

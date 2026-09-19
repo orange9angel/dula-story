@@ -4,7 +4,7 @@
   "sources": [
     {
       "path": "script.story",
-      "sha256": "93dffc1ad0d6acc55ea26904d08f313fae5661bbc9d7063206ca18384a8b57ff"
+      "sha256": "79611658584be9f58fdb81dcd6037560be0fec0170cd714b13b041102e06c45e"
     },
     {
       "path": "config/voice_config.json",
@@ -48,7 +48,7 @@
       "text": "年糕！我的小鱼干呢？！",
       "startTime": 0.3,
       "endTime": 2.748,
-      "scene": "BeatStudioScene",
+      "scene": "HomeKitchenScene",
       "shotIds": [],
       "previousEntry": null,
       "nextEntry": 4,
@@ -62,7 +62,7 @@
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
-        "space": "small-theatre",
+        "space": "home-kitchen",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
         "breath": "natural"
@@ -75,7 +75,7 @@
       "text": "……喵？",
       "startTime": 3.148,
       "endTime": 4.204,
-      "scene": "BeatStudioScene",
+      "scene": "HomeKitchenScene",
       "shotIds": [],
       "previousEntry": 2,
       "nextEntry": 11,
@@ -89,7 +89,7 @@
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
-        "space": "small-theatre",
+        "space": "home-kitchen",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
         "breath": "natural"
@@ -102,7 +102,7 @@
       "text": "是吗？那你嘴角的是什么？",
       "startTime": 19.004,
       "endTime": 21.644,
-      "scene": "BeatStudioScene",
+      "scene": "HomeKitchenScene",
       "shotIds": [],
       "previousEntry": 4,
       "nextEntry": 13,
@@ -116,7 +116,7 @@
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
-        "space": "small-theatre",
+        "space": "home-kitchen",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
         "breath": "natural"
@@ -129,7 +129,7 @@
       "text": "这是……艺术。",
       "startTime": 21.994,
       "endTime": 24.658,
-      "scene": "BeatStudioScene",
+      "scene": "HomeKitchenScene",
       "shotIds": [],
       "previousEntry": 11,
       "nextEntry": 20,
@@ -143,7 +143,7 @@
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
-        "space": "small-theatre",
+        "space": "home-kitchen",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
         "breath": "natural"
@@ -156,7 +156,7 @@
       "text": "喵呜……",
       "startTime": 42.098,
       "endTime": 44.522,
-      "scene": "BeatStudioScene",
+      "scene": "HomeKitchenScene",
       "shotIds": [],
       "previousEntry": 13,
       "nextEntry": null,
@@ -170,7 +170,7 @@
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
-        "space": "small-theatre",
+        "space": "home-kitchen",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
         "breath": "natural"
@@ -210,10 +210,10 @@
       "reason": "让观众从嘴角物证和冷面回应自己读到包袱。"
     },
     {
-      "id": "no-fake-kitchen-roomtone",
+      "id": "no-appliance-hum",
       "scope": "whole-episode",
-      "sound": "kitchen-ambience",
-      "reason": "这是舞台小品，保留唱白空间，不伪造真实厨房环境。"
+      "sound": "appliance-hum",
+      "reason": "保留安静家居氛围，不额外叠加干扰对白的电器声。"
     }
   ],
   "reviewNote": "Agent contextual review of existing performances; audience voice and lip-sync acceptance remains pending."

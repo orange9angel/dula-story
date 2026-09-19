@@ -63,7 +63,7 @@ def main():
         nonlocal index
         index+=1
         tags=[]
-        if index==1:tags+=['@BeatStudioScene','{Position:Yuki|x=-0.43|y=0|z=0|face=forward}','{Position:Mochi|x=0.69|y=0|z=0|face=forward}']
+        if index==1:tags+=['@HomeKitchenScene','{Position:Yuki|x=-0.43|y=0|z=0|face=forward}','{Position:Mochi|x=0.69|y=0|z=0|face=forward}']
         for char,move in [('Yuki',ym),('Mochi',mm)]:
             opts={'character':char,'action':'AdPose','pose':'hello','duration':round(end-start,3),
                 'move':move,'emotion':emotion if char=='Yuki' else 'calm','expression':'smile','focus':'right' if ym=='fish_accuse' else 'audience',
@@ -95,7 +95,7 @@ def main():
             shot='evidence' if s['id']=='03_yuki_press' else 'cat' if s['character']=='Mochi' else 'wide'
             d=next(d for d in tl['dialogue'] if d['id']==s['id'])
             emit(s,s['start'],s['end'],ym,mm,shot,text=d['display'],speaker=s['character'])
-        else:emit(s,s['start'],s['end'],'finale','cat_wash','wide','warm')
+        else:emit(s,s['start'],s['end'],'fish_listen','cat_wash','wide','proud')
         prev_end=s['end']
     (ROOT/'script.story').write_text('\n\n'.join(blocks)+'\n',encoding='utf-8')
     tl['story_sha256']=hashlib.sha256((ROOT/'script.story').read_bytes()).hexdigest()

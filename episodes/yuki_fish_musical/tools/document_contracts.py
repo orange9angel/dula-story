@@ -18,33 +18,34 @@ def main():
         ('认命接受洗碗','零食好吃，代价太大','defeated',.24)]
     for d,(intent,subtext,tone,energy) in zip(plan['dialogue'],intentions):
         d.update(intent=intent,subtext=subtext)
-        d['delivery'].update(tone=tone,energy=energy,space='small-theatre',pitchSemitones=0)
+        d['delivery'].update(tone=tone,energy=energy,space='home-kitchen',pitchSemitones=0)
         d['sourcePolicy']='Reuse existing native TTS clip; delivery fields describe the performance, not a new synthesis request.'
     plan['music']=[{'id':s['id'],'startTime':s['start'],'endTime':s['end'],'mood':'comic-playful',
         'purpose':'年糕四句狡辩' if s['id']=='songA' else '小雪四句揭底与判决','baseVolume':1,
         'fadeIn':.05,'fadeOut':.3} for s in tl['segments'] if s['kind']=='song']
     plan['mix'].update(bgmVolume=10**(-18/20),useDucking=True)
     plan['exclusions']=[{'id':'no-canned-laughter','scope':'whole-episode','sound':'audience-laughter','reason':'让观众从嘴角物证和冷面回应自己读到包袱。'},
-        {'id':'no-fake-kitchen-roomtone','scope':'whole-episode','sound':'kitchen-ambience','reason':'这是舞台小品，保留唱白空间，不伪造真实厨房环境。'}]
+        {'id':'no-appliance-hum','scope':'whole-episode','sound':'appliance-hum','reason':'保留安静家居氛围，不额外叠加干扰对白的电器声。'}]
     dump('config/audio_direction.json',plan)
     contract=read('config/scene_contract.json');sc=contract['scenes'][0]
     contract['intent']={'premise':'年糕唱歌否认偷吃，嘴角鱼干碎屑却成为物证，最终认命洗碗。','audience':'轻喜剧与角色动画观众','designPriorities':['物证可读','唱白交替','双人表演与反应']}
-    sc['intent']={'location':'帷幕框景的微型厨房剧场','timeOfDay':'暖色舞台灯光','tone':['轻快','温暖','俏皮'],
+    sc['intent']={'location':'小雪家的日常厨房','timeOfDay':'窗边日间柔光','tone':['轻快','温暖','生活化'],
         'storyFunction':'空盘提出问题，嘴角碎屑反驳狡辩，餐盘堆收尾','visualRules':['近景对准当前唱者或证据','全景保留双人脚底与空盘','口型覆盖表情笑嘴']}
-    sc['stage']={'bounds':{'min':[-3,-.1,-2],'max':[3,4,7]},'zones':[{'id':'mainStage','bounds':{'min':[-1.65,-.1,-.8],'max':[1.65,2.5,.9]},'walkable':True,'purpose':['小雪原地踏拍；年糕保持右侧位置']}],'anchors':{}}
-    sc['lighting']={'mood':'暖色柔光，低强度可见灯束','readabilityRules':['嘴角碎屑不能被高光冲掉','保留猫眼瞳孔和人脸层次']}
-    sc['cameraObstacles']=[{'id':'backdrop','type':'box','space':'world','center':[0,1.55,-1.8],'size':[4.6,3.6,.08]}]
+    sc['stage']={'bounds':{'min':[-3,-.1,-2],'max':[3,4,7]},'zones':[{'id':'mainStage','bounds':{'min':[-1.65,-.1,-.8],'max':[1.65,2.5,.9]},'walkable':True,'purpose':['厨房柜台前的日常对话与短唱']}],'anchors':{}}
+    sc['lighting']={'mood':'固定自然窗光与柔和室内补光','readabilityRules':['歌唱不触发聚光灯或灯光脉冲','保留猫眼瞳孔和人脸层次']}
+    sc['cameraObstacles']=[{'id':'backWall','type':'box','space':'world','center':[0,1.72,-1.92],'size':[6,3.5,.1]},
+        {'id':'counter','type':'box','space':'world','center':[.39,.405,-1.47],'size':[2.45,.77,.54]}]
     contract['entities']=[e for e in contract['entities'] if e['kind']=='character']
     for e in contract['entities']:
         e['visualForwardAxis']='+Z';e['focusPoints']={'body':[0,.45,0],'face':[0,.60,.22]} if e['id']=='Mochi' else {'body':[0,.85,0],'face':[0,1.28,0]}
-    for ident,binding,parent,pos,state in [('MochiHead','mochiHead','Mochi',[0,.60,.22],'attached'),('EmptyDish','emptyDish','$scene',[.08,.035,.38],'empty'),('Crumbs','crumbs','MochiHead',[.063,-.062,.254],'visible'),('Dishes','dishes','$scene',[1.35,.06,.58],'stacked')]:
+    for ident,binding,parent,pos,state in [('MochiHead','mochiHead','Mochi',[0,.60,.22],'attached'),('EmptyDish','emptyDish','$scene',[.08,.024,.38],'empty'),('Crumbs','crumbs','MochiHead',[.063,-.062,.254],'visible'),('Dishes','dishes','$scene',[.85,.047,.53],'stacked')]:
         contract['entities']=[e for e in contract['entities'] if e['id']!=ident]
-        contract['entities'].append({'id':ident,'scene':'BeatStudioScene','kind':'prop','binding':binding,'parent':parent,'initialPresence':'onstage','focusPoints':{'body':[0,0,0]},
+        contract['entities'].append({'id':ident,'scene':'HomeKitchenScene','kind':'prop','binding':binding,'parent':parent,'initialPresence':'onstage','focusPoints':{'body':[0,0,0]},
             'initial':{'visible':True,'transform':{'space':'world' if parent=='$scene' else 'local','relativeTo':parent,'position':pos}},'states':[state],'initialState':state})
-    for b in contract['blocking']:b['purpose']='左右分台，根部保持至少1米距离；前方留出空盘物证。'
+    for b in contract['blocking']:b['purpose']='两人在厨房柜台前说话，根部保持至少1米距离；前方保留空盘。'
     contract['shotChecks']=[]
-    for ident,entry,offset,purpose,entity,focus in [('emptyDish',2,.5,'空盘与两名角色一起建立案件','EmptyDish','body'),('catSings',6,1,'年糕实际张口而非缩放笑嘴','Mochi','face'),('evidence',11,1,'嘴角碎屑与圈示清楚','Crumbs','body'),('art',13,1,'死不认账的反应近景','Mochi','face'),('wash',21,1,'餐盘、海绵与年糕认命动作可读','Mochi','body')]:
-        contract['shotChecks'].append({'id':ident,'scene':'BeatStudioScene','entry':entry,'offsetSeconds':offset,'purpose':purpose,
+    for ident,entry,offset,purpose,entity,focus in [('emptyDish',2,.5,'空盘与两名角色一起建立案件','EmptyDish','body'),('catSings',6,1,'年糕实际张口而非缩放笑嘴','Mochi','face'),('evidence',11,1,'嘴角碎屑可从自然近景读出','Crumbs','body'),('art',13,1,'死不认账的反应近景','Mochi','face'),('wash',21,1,'餐盘、海绵与年糕认命动作可读','Mochi','body')]:
+        contract['shotChecks'].append({'id':ident,'scene':'HomeKitchenScene','entry':entry,'offsetSeconds':offset,'purpose':purpose,
             'mustSee':[{'entity':entity,'focus':focus,'minFrameArea':.0001 if entity in ('Crumbs','EmptyDish') else .02,'maxOcclusion':.05,'safeMargin':.01}],
             'mustHavePresence':[],'mustShowTogether':[]})
     checked={s['entry'] for s in contract['shotChecks']}
@@ -55,7 +56,7 @@ def main():
         if entry in checked:continue
         st,en=map(seconds,rows[1].split(' --> '))
         entity='Mochi' if '|shot=cat|' in block else 'Yuki'
-        contract['shotChecks'].append({'id':f'entry{entry}','scene':'BeatStudioScene','entry':entry,'offsetSeconds':round((en-st)/2,3),
+        contract['shotChecks'].append({'id':f'entry{entry}','scene':'HomeKitchenScene','entry':entry,'offsetSeconds':round((en-st)/2,3),
             'purpose':'实际自定义 viewer 中点构图与表情检查','mustSee':[{'entity':entity,'focus':'face','minFrameArea':.01,'maxOcclusion':.1,'safeMargin':.01}],
             'mustHavePresence':[],'mustShowTogether':[]})
     contract['acceptance']['runtimeChecks']=['episode-render-check','full-frame-trace','visual-review','model-assisted-av-review']

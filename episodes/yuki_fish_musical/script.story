@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:00,300
-@BeatStudioScene
+@HomeKitchenScene
 {Position:Yuki|x=-0.43|y=0|z=0|face=forward}
 {Position:Mochi|x=0.69|y=0|z=0|face=forward}
 {Event:Animate|character=Yuki|action=AdPose|pose=hello|duration=0.3|move=fish_accuse|emotion=focused|expression=smile|focus=right|hit=0.2|land=5.12|shot=wide|outfit=original|accessory=none|motif=none|segment=reaction|line=-1|kind=reaction}
@@ -128,6 +128,6 @@
 
 21
 00:00:44,522 --> 00:00:46,322
-{Event:Animate|character=Yuki|action=AdPose|pose=hello|duration=1.8|move=finale|emotion=warm|expression=smile|focus=audience|hit=44.722|land=44.819|shot=wide|outfit=original|accessory=none|motif=none|segment=freeze|line=-1|kind=freeze}
+{Event:Animate|character=Yuki|action=AdPose|pose=hello|duration=1.8|move=fish_listen|emotion=proud|expression=smile|focus=audience|hit=44.722|land=44.819|shot=wide|outfit=original|accessory=none|motif=none|segment=freeze|line=-1|kind=freeze}
 {Event:Animate|character=Mochi|action=AdPose|pose=hello|duration=1.8|move=cat_wash|emotion=calm|expression=smile|focus=audience|hit=44.722|land=44.819|shot=wide|outfit=original|accessory=none|motif=none|segment=freeze|line=-1|kind=freeze}
 {Camera:AdCamera|shot=hello}
