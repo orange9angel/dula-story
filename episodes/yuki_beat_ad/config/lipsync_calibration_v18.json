@@ -1,0 +1,2414 @@
+{
+  "vocal_stem_sha256": "3cbdc29f31a75174044fd12efe9b484728e45ea97ddf135b7937a2c17e2e8b19",
+  "base_master_sha256": "7fb9ea7ac55d1816329f7db71db5428101f83fa8520af66b0d491f26a0d61390",
+  "method": "Vocal spectral-flux leading edges, gated by vocal energy rise; unique/order-constrained local anchoring",
+  "scan_step_ms": 5,
+  "scan_range_ms": [
+    -600,
+    600
+  ],
+  "global": {
+    "candidate_ms": 155,
+    "candidate_score_ratio_to_zero": 1.9908536354288993,
+    "competitor_ms": -120,
+    "peak_margin": 0.12328408485524922,
+    "phrase_votes_ms": [
+      -105,
+      145,
+      145,
+      165,
+      160,
+      80,
+      -140,
+      150
+    ],
+    "agreeing_phrases": 5,
+    "accepted": false,
+    "applied_ms": 0,
+    "energy_rise_candidate_ms": 155,
+    "reason": "periodic_alias_or_phrase_disagreement"
+  },
+  "inherited_overlaps": [
+    {
+      "previous": 1,
+      "next": 2,
+      "overlap_ms": 115
+    },
+    {
+      "previous": 5,
+      "next": 6,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 6,
+      "next": 7,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 8,
+      "next": 9,
+      "overlap_ms": 105
+    },
+    {
+      "previous": 9,
+      "next": 10,
+      "overlap_ms": 115
+    },
+    {
+      "previous": 11,
+      "next": 12,
+      "overlap_ms": 25
+    },
+    {
+      "previous": 14,
+      "next": 15,
+      "overlap_ms": 85
+    },
+    {
+      "previous": 15,
+      "next": 16,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 16,
+      "next": 17,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 17,
+      "next": 18,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 18,
+      "next": 19,
+      "overlap_ms": 135
+    },
+    {
+      "previous": 19,
+      "next": 20,
+      "overlap_ms": 165
+    },
+    {
+      "previous": 20,
+      "next": 21,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 21,
+      "next": 22,
+      "overlap_ms": 95
+    },
+    {
+      "previous": 22,
+      "next": 23,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 23,
+      "next": 24,
+      "overlap_ms": 165
+    },
+    {
+      "previous": 26,
+      "next": 27,
+      "overlap_ms": 95
+    },
+    {
+      "previous": 27,
+      "next": 28,
+      "overlap_ms": 135
+    },
+    {
+      "previous": 28,
+      "next": 29,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 29,
+      "next": 30,
+      "overlap_ms": 45
+    },
+    {
+      "previous": 30,
+      "next": 31,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 31,
+      "next": 32,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 32,
+      "next": 33,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 41,
+      "next": 42,
+      "overlap_ms": 65
+    },
+    {
+      "previous": 42,
+      "next": 43,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 43,
+      "next": 44,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 44,
+      "next": 45,
+      "overlap_ms": 145
+    },
+    {
+      "previous": 54,
+      "next": 55,
+      "overlap_ms": 55
+    },
+    {
+      "previous": 55,
+      "next": 56,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 56,
+      "next": 57,
+      "overlap_ms": 135
+    },
+    {
+      "previous": 58,
+      "next": 59,
+      "overlap_ms": 115
+    },
+    {
+      "previous": 59,
+      "next": 60,
+      "overlap_ms": 125
+    },
+    {
+      "previous": 60,
+      "next": 61,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 66,
+      "next": 67,
+      "overlap_ms": 125
+    },
+    {
+      "previous": 67,
+      "next": 68,
+      "overlap_ms": 135
+    },
+    {
+      "previous": 71,
+      "next": 72,
+      "overlap_ms": 65
+    },
+    {
+      "previous": 74,
+      "next": 75,
+      "overlap_ms": 75
+    },
+    {
+      "previous": 75,
+      "next": 76,
+      "overlap_ms": 175
+    },
+    {
+      "previous": 76,
+      "next": 77,
+      "overlap_ms": 55
+    }
+  ],
+  "new_overlaps": 0,
+  "anchored_characters": 51,
+  "retained_dtw_characters": 29,
+  "anticipation_ms": 30,
+  "characters": [
+    {
+      "index": 0,
+      "char": "跟",
+      "line": 0,
+      "dtw_start": 0.155,
+      "inherited_start": 0.145,
+      "audio_start": 0.155,
+      "visual_start": 0.125,
+      "delta_ms": 0,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 0,
+        "time": 0.155,
+        "peak": 0.17,
+        "strength": 0.02697426154202655,
+        "energy": 0.918,
+        "rise": 0.24689239740216085
+      }
+    },
+    {
+      "index": 1,
+      "char": "上",
+      "line": 0,
+      "dtw_start": 0.3,
+      "inherited_start": 0.3,
+      "audio_start": 0.32,
+      "visual_start": 0.29,
+      "delta_ms": 20,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 1,
+        "time": 0.32,
+        "peak": 0.36,
+        "strength": 0.012119144256109722,
+        "energy": 0.78,
+        "rise": 0.05623922580661672
+      }
+    },
+    {
+      "index": 2,
+      "char": "这",
+      "line": 0,
+      "dtw_start": 0.58,
+      "inherited_start": 0.465,
+      "audio_start": 0.58,
+      "visual_start": 0.55,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 3,
+      "char": "一",
+      "line": 0,
+      "dtw_start": 0.84,
+      "inherited_start": 0.895,
+      "audio_start": 0.905,
+      "visual_start": 0.875,
+      "delta_ms": 65,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 4,
+        "time": 0.905,
+        "peak": 0.925,
+        "strength": 0.013210700675492815,
+        "energy": 0.685,
+        "rise": 0.17817632731025929
+      }
+    },
+    {
+      "index": 4,
+      "char": "拍",
+      "line": 0,
+      "dtw_start": 1.04,
+      "inherited_start": 1.065,
+      "audio_start": 1.05,
+      "visual_start": 1.02,
+      "delta_ms": 10,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 5,
+        "time": 1.05,
+        "peak": 1.09,
+        "strength": 0.02510179505941821,
+        "energy": 0.944,
+        "rise": 0.2393354134619372
+      }
+    },
+    {
+      "index": 5,
+      "char": "跟",
+      "line": 0,
+      "dtw_start": 1.18,
+      "inherited_start": 1.18,
+      "audio_start": 1.18,
+      "visual_start": 1.15,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 6,
+      "char": "我",
+      "line": 0,
+      "dtw_start": 1.48,
+      "inherited_start": 1.335,
+      "audio_start": 1.48,
+      "visual_start": 1.45,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 7,
+      "char": "一",
+      "line": 0,
+      "dtw_start": 1.78,
+      "inherited_start": 1.635,
+      "audio_start": 1.78,
+      "visual_start": 1.75,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 8,
+      "char": "起",
+      "line": 0,
+      "dtw_start": 2.16,
+      "inherited_start": 2.165,
+      "audio_start": 2.175,
+      "visual_start": 2.145,
+      "delta_ms": 15,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 8,
+        "time": 2.175,
+        "peak": 2.21,
+        "strength": 0.014697195664430278,
+        "energy": 0.457,
+        "rise": 0.09953006158384936
+      }
+    },
+    {
+      "index": 9,
+      "char": "来",
+      "line": 0,
+      "dtw_start": 2.38,
+      "inherited_start": 2.275,
+      "audio_start": 2.38,
+      "visual_start": 2.35,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 10,
+      "char": "迈",
+      "line": 1,
+      "dtw_start": 2.8,
+      "inherited_start": 2.685,
+      "audio_start": 2.8,
+      "visual_start": 2.77,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 11,
+      "char": "开",
+      "line": 1,
+      "dtw_start": 3.22,
+      "inherited_start": 3.22,
+      "audio_start": 3.115,
+      "visual_start": 3.085,
+      "delta_ms": -105,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 11,
+        "time": 3.115,
+        "peak": 3.135,
+        "strength": 0.01769107197583404,
+        "energy": 0.503,
+        "rise": 0.12729520943738276
+      }
+    },
+    {
+      "index": 12,
+      "char": "小",
+      "line": 1,
+      "dtw_start": 3.3,
+      "inherited_start": 3.275,
+      "audio_start": 3.39,
+      "visual_start": 3.36,
+      "delta_ms": 90,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 13,
+        "time": 3.39,
+        "peak": 3.435,
+        "strength": 0.016853041480869756,
+        "energy": 0.556,
+        "rise": 0.13546145713715513
+      }
+    },
+    {
+      "index": 13,
+      "char": "步",
+      "line": 1,
+      "dtw_start": 3.52,
+      "inherited_start": 3.555,
+      "audio_start": 3.52,
+      "visual_start": 3.49,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 14,
+      "char": "快",
+      "line": 1,
+      "dtw_start": 3.62,
+      "inherited_start": 3.62,
+      "audio_start": 3.7,
+      "visual_start": 3.67,
+      "delta_ms": 80,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 15,
+        "time": 3.7,
+        "peak": 3.745,
+        "strength": 0.018481462044113058,
+        "energy": 0.841,
+        "rise": 0.20925273234364655
+      }
+    },
+    {
+      "index": 15,
+      "char": "乐",
+      "line": 1,
+      "dtw_start": 3.94,
+      "inherited_start": 3.855,
+      "audio_start": 4.015,
+      "visual_start": 3.985,
+      "delta_ms": 75,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 17,
+        "time": 4.015,
+        "peak": 4.06,
+        "strength": 0.029866946620188392,
+        "energy": 1.0,
+        "rise": 0.08185380494433359
+      }
+    },
+    {
+      "index": 16,
+      "char": "放",
+      "line": 1,
+      "dtw_start": 4.18,
+      "inherited_start": 4.035,
+      "audio_start": 4.305,
+      "visual_start": 4.275,
+      "delta_ms": 125,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 18,
+        "time": 4.305,
+        "peak": 4.325,
+        "strength": 0.03993982683535741,
+        "energy": 0.864,
+        "rise": 0.18959517052403102
+      }
+    },
+    {
+      "index": 17,
+      "char": "大",
+      "line": 1,
+      "dtw_start": 4.48,
+      "inherited_start": 4.305,
+      "audio_start": 4.61,
+      "visual_start": 4.58,
+      "delta_ms": 130,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 19,
+        "time": 4.61,
+        "peak": 4.625,
+        "strength": 0.03217147790509854,
+        "energy": 1.0,
+        "rise": 0.21997492376757344
+      }
+    },
+    {
+      "index": 18,
+      "char": "转",
+      "line": 2,
+      "dtw_start": 4.78,
+      "inherited_start": 4.605,
+      "audio_start": 4.865,
+      "visual_start": 4.835,
+      "delta_ms": 85,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 20,
+        "time": 4.865,
+        "peak": 4.89,
+        "strength": 0.029135777927729846,
+        "energy": 0.412,
+        "rise": 0.11827565882728613
+      }
+    },
+    {
+      "index": 19,
+      "char": "个",
+      "line": 2,
+      "dtw_start": 5.04,
+      "inherited_start": 4.905,
+      "audio_start": 5.04,
+      "visual_start": 5.01,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 20,
+      "char": "圈",
+      "line": 2,
+      "dtw_start": 5.36,
+      "inherited_start": 5.195,
+      "audio_start": 5.41,
+      "visual_start": 5.38,
+      "delta_ms": 50,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 22,
+        "time": 5.41,
+        "peak": 5.44,
+        "strength": 0.02993906990908663,
+        "energy": 0.599,
+        "rise": 0.15556664137695078
+      }
+    },
+    {
+      "index": 21,
+      "char": "圈",
+      "line": 2,
+      "dtw_start": 5.64,
+      "inherited_start": 5.495,
+      "audio_start": 5.64,
+      "visual_start": 5.61,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 22,
+      "char": "世",
+      "line": 2,
+      "dtw_start": 5.9,
+      "inherited_start": 5.805,
+      "audio_start": 5.93,
+      "visual_start": 5.9,
+      "delta_ms": 30,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 24,
+        "time": 5.93,
+        "peak": 5.96,
+        "strength": 0.03363892256318519,
+        "energy": 0.741,
+        "rise": 0.01675562571295612
+      }
+    },
+    {
+      "index": 23,
+      "char": "界",
+      "line": 2,
+      "dtw_start": 6.28,
+      "inherited_start": 6.105,
+      "audio_start": 6.395,
+      "visual_start": 6.365,
+      "delta_ms": 115,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 27,
+        "time": 6.395,
+        "peak": 6.425,
+        "strength": 0.04299542993631199,
+        "energy": 1.0,
+        "rise": 0.2062748447020314
+      }
+    },
+    {
+      "index": 24,
+      "char": "发",
+      "line": 2,
+      "dtw_start": 6.56,
+      "inherited_start": 6.395,
+      "audio_start": 6.69,
+      "visual_start": 6.66,
+      "delta_ms": 130,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 28,
+        "time": 6.69,
+        "peak": 6.705,
+        "strength": 0.03506494799270333,
+        "energy": 1.0,
+        "rise": 0.27708246885984894
+      }
+    },
+    {
+      "index": 25,
+      "char": "光",
+      "line": 2,
+      "dtw_start": 6.965,
+      "inherited_start": 6.985,
+      "audio_start": 6.96,
+      "visual_start": 6.93,
+      "delta_ms": -5,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 29,
+        "time": 6.96,
+        "peak": 7.0,
+        "strength": 0.011131554822811675,
+        "energy": 1.0,
+        "rise": 0.1971148888147795
+      }
+    },
+    {
+      "index": 26,
+      "char": "小",
+      "line": 3,
+      "dtw_start": 8.955,
+      "inherited_start": 8.935,
+      "audio_start": 8.985,
+      "visual_start": 8.955,
+      "delta_ms": 30,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 32,
+        "time": 8.985,
+        "peak": 9.03,
+        "strength": 0.01975926623171215,
+        "energy": 0.546,
+        "rise": 0.08517123932975326
+      }
+    },
+    {
+      "index": 27,
+      "char": "雪",
+      "line": 3,
+      "dtw_start": 9.16,
+      "inherited_start": 9.065,
+      "audio_start": 9.22,
+      "visual_start": 9.19,
+      "delta_ms": 60,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 33,
+        "time": 9.22,
+        "peak": 9.265,
+        "strength": 0.028159557603024334,
+        "energy": 0.794,
+        "rise": 0.20580590832237353
+      }
+    },
+    {
+      "index": 28,
+      "char": "登",
+      "line": 3,
+      "dtw_start": 9.38,
+      "inherited_start": 9.245,
+      "audio_start": 9.38,
+      "visual_start": 9.35,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 29,
+      "char": "场",
+      "line": 3,
+      "dtw_start": 9.7,
+      "inherited_start": 9.525,
+      "audio_start": 9.7,
+      "visual_start": 9.67,
+      "delta_ms": 0,
+      "status": "ambiguous_or_weak_attack",
+      "attack": null
+    },
+    {
+      "index": 30,
+      "char": "心",
+      "line": 3,
+      "dtw_start": 9.86,
+      "inherited_start": 9.815,
+      "audio_start": 10.0,
+      "visual_start": 9.97,
+      "delta_ms": 140,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 37,
+        "time": 10.0,
+        "peak": 10.02,
+        "strength": 0.025853304917126934,
+        "energy": 0.606,
+        "rise": 0.03917569156318275
+      }
+    },
+    {
+      "index": 31,
+      "char": "跳",
+      "line": 3,
+      "dtw_start": 10.26,
+      "inherited_start": 10.115,
+      "audio_start": 10.26,
+      "visual_start": 10.23,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 32,
+      "char": "打",
+      "line": 3,
+      "dtw_start": 10.56,
+      "inherited_start": 10.415,
+      "audio_start": 10.56,
+      "visual_start": 10.53,
+      "delta_ms": 0,
+      "status": "ambiguous_or_weak_attack",
+      "attack": null
+    },
+    {
+      "index": 33,
+      "char": "拍",
+      "line": 3,
+      "dtw_start": 10.88,
+      "inherited_start": 10.705,
+      "audio_start": 11.01,
+      "visual_start": 10.98,
+      "delta_ms": 130,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 42,
+        "time": 11.01,
+        "peak": 11.055,
+        "strength": 0.02370289361874716,
+        "energy": 1.0,
+        "rise": 0.2621388777601802
+      }
+    },
+    {
+      "index": 34,
+      "char": "左",
+      "line": 4,
+      "dtw_start": 11.705,
+      "inherited_start": 11.765,
+      "audio_start": 11.77,
+      "visual_start": 11.74,
+      "delta_ms": 65,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 43,
+        "time": 11.77,
+        "peak": 11.78,
+        "strength": 0.032643951722741676,
+        "energy": 1.0,
+        "rise": 0.2237740969327412
+      }
+    },
+    {
+      "index": 35,
+      "char": "一",
+      "line": 4,
+      "dtw_start": 11.9,
+      "inherited_start": 11.9,
+      "audio_start": 12.04,
+      "visual_start": 12.01,
+      "delta_ms": 140,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 44,
+        "time": 12.04,
+        "peak": 12.06,
+        "strength": 0.011541317923916578,
+        "energy": 0.521,
+        "rise": 0.13283370849140425
+      }
+    },
+    {
+      "index": 36,
+      "char": "步",
+      "line": 4,
+      "dtw_start": 12.28,
+      "inherited_start": 12.345,
+      "audio_start": 12.36,
+      "visual_start": 12.33,
+      "delta_ms": 80,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 46,
+        "time": 12.36,
+        "peak": 12.375,
+        "strength": 0.01417101911088748,
+        "energy": 0.974,
+        "rise": 0.23217769276138983
+      }
+    },
+    {
+      "index": 37,
+      "char": "右",
+      "line": 4,
+      "dtw_start": 12.52,
+      "inherited_start": 12.52,
+      "audio_start": 12.52,
+      "visual_start": 12.49,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 38,
+      "char": "一",
+      "line": 4,
+      "dtw_start": 12.78,
+      "inherited_start": 12.78,
+      "audio_start": 12.78,
+      "visual_start": 12.75,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 39,
+      "char": "步",
+      "line": 4,
+      "dtw_start": 13.1,
+      "inherited_start": 13.1,
+      "audio_start": 13.23,
+      "visual_start": 13.2,
+      "delta_ms": 130,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 49,
+        "time": 13.23,
+        "peak": 13.245,
+        "strength": 0.02359365200595467,
+        "energy": 1.0,
+        "rise": 0.22960057967734354
+      }
+    },
+    {
+      "index": 40,
+      "char": "节",
+      "line": 4,
+      "dtw_start": 14.085,
+      "inherited_start": 14.125,
+      "audio_start": 14.095,
+      "visual_start": 14.065,
+      "delta_ms": 10,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 52,
+        "time": 14.095,
+        "peak": 14.13,
+        "strength": 0.03201166719777507,
+        "energy": 0.598,
+        "rise": 0.13788907710963433
+      }
+    },
+    {
+      "index": 41,
+      "char": "奏",
+      "line": 4,
+      "dtw_start": 14.24,
+      "inherited_start": 14.24,
+      "audio_start": 14.24,
+      "visual_start": 14.21,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 42,
+      "char": "自",
+      "line": 4,
+      "dtw_start": 14.62,
+      "inherited_start": 14.555,
+      "audio_start": 14.62,
+      "visual_start": 14.59,
+      "delta_ms": 0,
+      "status": "ambiguous_or_weak_attack",
+      "attack": null
+    },
+    {
+      "index": 43,
+      "char": "己",
+      "line": 4,
+      "dtw_start": 14.88,
+      "inherited_start": 14.735,
+      "audio_start": 15.0,
+      "visual_start": 14.97,
+      "delta_ms": 120,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 56,
+        "time": 15.0,
+        "peak": 15.045,
+        "strength": 0.02096882180667292,
+        "energy": 0.972,
+        "rise": 0.2344865836355825
+      }
+    },
+    {
+      "index": 44,
+      "char": "掌",
+      "line": 4,
+      "dtw_start": 15.16,
+      "inherited_start": 15.015,
+      "audio_start": 15.27,
+      "visual_start": 15.24,
+      "delta_ms": 110,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 57,
+        "time": 15.27,
+        "peak": 15.315,
+        "strength": 0.035547619566942135,
+        "energy": 0.5,
+        "rise": 0.09824485941590791
+      }
+    },
+    {
+      "index": 45,
+      "char": "握",
+      "line": 4,
+      "dtw_start": 15.46,
+      "inherited_start": 15.315,
+      "audio_start": 15.605,
+      "visual_start": 15.575,
+      "delta_ms": 145,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 58,
+        "time": 15.605,
+        "peak": 15.62,
+        "strength": 0.02014746893975621,
+        "energy": 1.0,
+        "rise": 0.05478557258729619
+      }
+    },
+    {
+      "index": 46,
+      "char": "跳",
+      "line": 5,
+      "dtw_start": 16.155,
+      "inherited_start": 16.195,
+      "audio_start": 16.155,
+      "visual_start": 16.125,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 47,
+      "char": "一",
+      "line": 5,
+      "dtw_start": 16.3,
+      "inherited_start": 16.345,
+      "audio_start": 16.35,
+      "visual_start": 16.32,
+      "delta_ms": 50,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 60,
+        "time": 16.35,
+        "peak": 16.375,
+        "strength": 0.019092781568200712,
+        "energy": 0.654,
+        "rise": 0.15876442280384123
+      }
+    },
+    {
+      "index": 48,
+      "char": "跳",
+      "line": 5,
+      "dtw_start": 16.56,
+      "inherited_start": 16.565,
+      "audio_start": 16.65,
+      "visual_start": 16.62,
+      "delta_ms": 90,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 61,
+        "time": 16.65,
+        "peak": 16.67,
+        "strength": 0.01783718833138417,
+        "energy": 1.0,
+        "rise": 0.2434673233606492
+      }
+    },
+    {
+      "index": 49,
+      "char": "转",
+      "line": 5,
+      "dtw_start": 17.345,
+      "inherited_start": 17.375,
+      "audio_start": 17.385,
+      "visual_start": 17.355,
+      "delta_ms": 40,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 63,
+        "time": 17.385,
+        "peak": 17.43,
+        "strength": 0.021193499459403454,
+        "energy": 0.7,
+        "rise": 0.1379822872331205
+      }
+    },
+    {
+      "index": 50,
+      "char": "一",
+      "line": 5,
+      "dtw_start": 17.48,
+      "inherited_start": 17.535,
+      "audio_start": 17.54,
+      "visual_start": 17.51,
+      "delta_ms": 60,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 64,
+        "time": 17.54,
+        "peak": 17.565,
+        "strength": 0.03246814427820154,
+        "energy": 0.878,
+        "rise": 0.22037096085911784
+      }
+    },
+    {
+      "index": 51,
+      "char": "转",
+      "line": 5,
+      "dtw_start": 17.7,
+      "inherited_start": 17.7,
+      "audio_start": 17.8,
+      "visual_start": 17.77,
+      "delta_ms": 100,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 65,
+        "time": 17.8,
+        "peak": 17.845,
+        "strength": 0.020027357053483796,
+        "energy": 0.677,
+        "rise": 0.22009657413952388
+      }
+    },
+    {
+      "index": 52,
+      "char": "每",
+      "line": 5,
+      "dtw_start": 18.405,
+      "inherited_start": 18.405,
+      "audio_start": 18.405,
+      "visual_start": 18.375,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 53,
+      "char": "一",
+      "line": 5,
+      "dtw_start": 18.7,
+      "inherited_start": 18.7,
+      "audio_start": 18.74,
+      "visual_start": 18.71,
+      "delta_ms": 40,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 68,
+        "time": 18.74,
+        "peak": 18.775,
+        "strength": 0.0164203992100287,
+        "energy": 0.698,
+        "rise": 0.0744834236621115
+      }
+    },
+    {
+      "index": 54,
+      "char": "拍",
+      "line": 5,
+      "dtw_start": 18.98,
+      "inherited_start": 19.015,
+      "audio_start": 19.005,
+      "visual_start": 18.975,
+      "delta_ms": 25,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 69,
+        "time": 19.005,
+        "peak": 19.03,
+        "strength": 0.04349402982295674,
+        "energy": 0.962,
+        "rise": 0.18167587884745767
+      }
+    },
+    {
+      "index": 55,
+      "char": "都",
+      "line": 5,
+      "dtw_start": 19.22,
+      "inherited_start": 19.165,
+      "audio_start": 19.13,
+      "visual_start": 19.1,
+      "delta_ms": -90,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 70,
+        "time": 19.13,
+        "peak": 19.175,
+        "strength": 0.014836697347326544,
+        "energy": 0.892,
+        "rise": 0.1314146356775598
+      }
+    },
+    {
+      "index": 56,
+      "char": "闪",
+      "line": 5,
+      "dtw_start": 19.64,
+      "inherited_start": 19.465,
+      "audio_start": 19.76,
+      "visual_start": 19.73,
+      "delta_ms": 120,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 73,
+        "time": 19.76,
+        "peak": 19.805,
+        "strength": 0.03289860020161902,
+        "energy": 0.768,
+        "rise": 0.21653547344340773
+      }
+    },
+    {
+      "index": 57,
+      "char": "烁",
+      "line": 5,
+      "dtw_start": 19.92,
+      "inherited_start": 19.785,
+      "audio_start": 19.925,
+      "visual_start": 19.895,
+      "delta_ms": 5,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 74,
+        "time": 19.925,
+        "peak": 19.96,
+        "strength": 0.0220312782823267,
+        "energy": 0.509,
+        "rise": 0.016398037824862606
+      }
+    },
+    {
+      "index": 58,
+      "char": "跟",
+      "line": 6,
+      "dtw_start": 20.755,
+      "inherited_start": 20.755,
+      "audio_start": 20.755,
+      "visual_start": 20.725,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 59,
+      "char": "上",
+      "line": 6,
+      "dtw_start": 21.06,
+      "inherited_start": 20.945,
+      "audio_start": 20.945,
+      "visual_start": 20.915,
+      "delta_ms": -115,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 76,
+        "time": 20.945,
+        "peak": 20.965,
+        "strength": 0.013085855113222035,
+        "energy": 0.878,
+        "rise": 0.23116058041291176
+      }
+    },
+    {
+      "index": 60,
+      "char": "这",
+      "line": 6,
+      "dtw_start": 21.24,
+      "inherited_start": 21.115,
+      "audio_start": 21.24,
+      "visual_start": 21.21,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 61,
+      "char": "一",
+      "line": 6,
+      "dtw_start": 21.6,
+      "inherited_start": 21.425,
+      "audio_start": 21.71,
+      "visual_start": 21.68,
+      "delta_ms": 110,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 78,
+        "time": 21.71,
+        "peak": 21.73,
+        "strength": 0.026511860527972723,
+        "energy": 0.87,
+        "rise": 0.18109424483624892
+      }
+    },
+    {
+      "index": 62,
+      "char": "拍",
+      "line": 6,
+      "dtw_start": 21.96,
+      "inherited_start": 21.995,
+      "audio_start": 21.99,
+      "visual_start": 21.96,
+      "delta_ms": 30,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 79,
+        "time": 21.99,
+        "peak": 22.025,
+        "strength": 0.027072508063689302,
+        "energy": 0.928,
+        "rise": 0.22934185117495542
+      }
+    },
+    {
+      "index": 63,
+      "char": "把",
+      "line": 6,
+      "dtw_start": 22.16,
+      "inherited_start": 22.16,
+      "audio_start": 22.16,
+      "visual_start": 22.13,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 64,
+      "char": "快",
+      "line": 6,
+      "dtw_start": 22.46,
+      "inherited_start": 22.46,
+      "audio_start": 22.585,
+      "visual_start": 22.555,
+      "delta_ms": 125,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 81,
+        "time": 22.585,
+        "peak": 22.615,
+        "strength": 0.02214242640900297,
+        "energy": 1.0,
+        "rise": 0.26542431147798373
+      }
+    },
+    {
+      "index": 65,
+      "char": "乐",
+      "line": 6,
+      "dtw_start": 22.78,
+      "inherited_start": 22.78,
+      "audio_start": 22.78,
+      "visual_start": 22.75,
+      "delta_ms": 0,
+      "status": "ambiguous_or_weak_attack",
+      "attack": null
+    },
+    {
+      "index": 66,
+      "char": "唱",
+      "line": 6,
+      "dtw_start": 23.02,
+      "inherited_start": 23.02,
+      "audio_start": 23.02,
+      "visual_start": 22.99,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 67,
+      "char": "出",
+      "line": 6,
+      "dtw_start": 23.3,
+      "inherited_start": 23.175,
+      "audio_start": 23.4,
+      "visual_start": 23.37,
+      "delta_ms": 100,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 85,
+        "time": 23.4,
+        "peak": 23.425,
+        "strength": 0.021486665345855967,
+        "energy": 0.363,
+        "rise": 0.08560875884171482
+      }
+    },
+    {
+      "index": 68,
+      "char": "来",
+      "line": 6,
+      "dtw_start": 23.62,
+      "inherited_start": 23.485,
+      "audio_start": 23.765,
+      "visual_start": 23.735,
+      "delta_ms": 145,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 86,
+        "time": 23.765,
+        "peak": 23.81,
+        "strength": 0.018385188106322913,
+        "energy": 0.842,
+        "rise": 0.017684316176313837
+      }
+    },
+    {
+      "index": 69,
+      "char": "下",
+      "line": 7,
+      "dtw_start": 25.005,
+      "inherited_start": 24.995,
+      "audio_start": 25.075,
+      "visual_start": 25.045,
+      "delta_ms": 70,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 90,
+        "time": 25.075,
+        "peak": 25.12,
+        "strength": 0.04210455613756436,
+        "energy": 0.661,
+        "rise": 0.17756515253140737
+      }
+    },
+    {
+      "index": 70,
+      "char": "一",
+      "line": 7,
+      "dtw_start": 25.24,
+      "inherited_start": 25.24,
+      "audio_start": 25.25,
+      "visual_start": 25.22,
+      "delta_ms": 10,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 91,
+        "time": 25.25,
+        "peak": 25.295,
+        "strength": 0.014745762651603397,
+        "energy": 0.786,
+        "rise": 0.044164183354348505
+      }
+    },
+    {
+      "index": 71,
+      "char": "拍",
+      "line": 7,
+      "dtw_start": 25.52,
+      "inherited_start": 25.555,
+      "audio_start": 25.55,
+      "visual_start": 25.52,
+      "delta_ms": 30,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 92,
+        "time": 25.55,
+        "peak": 25.565,
+        "strength": 0.03976375430582703,
+        "energy": 1.0,
+        "rise": 0.2169847346220005
+      }
+    },
+    {
+      "index": 72,
+      "char": "你",
+      "line": 7,
+      "dtw_start": 25.76,
+      "inherited_start": 25.695,
+      "audio_start": 25.76,
+      "visual_start": 25.73,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 73,
+      "char": "登",
+      "line": 7,
+      "dtw_start": 26.02,
+      "inherited_start": 26.02,
+      "audio_start": 26.16,
+      "visual_start": 26.13,
+      "delta_ms": 140,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 95,
+        "time": 26.16,
+        "peak": 26.17,
+        "strength": 0.048409486415397926,
+        "energy": 1.0,
+        "rise": 0.2837763177653783
+      }
+    },
+    {
+      "index": 74,
+      "char": "场",
+      "line": 7,
+      "dtw_start": 26.34,
+      "inherited_start": 26.385,
+      "audio_start": 26.34,
+      "visual_start": 26.31,
+      "delta_ms": 0,
+      "status": "ambiguous_or_weak_attack",
+      "attack": null
+    },
+    {
+      "index": 75,
+      "char": "和",
+      "line": 7,
+      "dtw_start": 26.54,
+      "inherited_start": 26.465,
+      "audio_start": 26.54,
+      "visual_start": 26.51,
+      "delta_ms": 0,
+      "status": "no_clear_attack",
+      "attack": null
+    },
+    {
+      "index": 76,
+      "char": "我",
+      "line": 7,
+      "dtw_start": 26.94,
+      "inherited_start": 26.765,
+      "audio_start": 26.94,
+      "visual_start": 26.91,
+      "delta_ms": 0,
+      "status": "ambiguous_or_weak_attack",
+      "attack": null
+    },
+    {
+      "index": 77,
+      "char": "一",
+      "line": 7,
+      "dtw_start": 27.24,
+      "inherited_start": 27.185,
+      "audio_start": 27.24,
+      "visual_start": 27.21,
+      "delta_ms": 0,
+      "status": "ambiguous_or_weak_attack",
+      "attack": null
+    },
+    {
+      "index": 78,
+      "char": "起",
+      "line": 7,
+      "dtw_start": 27.64,
+      "inherited_start": 27.665,
+      "audio_start": 27.65,
+      "visual_start": 27.62,
+      "delta_ms": 10,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 103,
+        "time": 27.65,
+        "peak": 27.695,
+        "strength": 0.011665579971915072,
+        "energy": 1.0,
+        "rise": 0.1614182305851694
+      }
+    },
+    {
+      "index": 79,
+      "char": "嗨",
+      "line": 7,
+      "dtw_start": 27.8,
+      "inherited_start": 27.8,
+      "audio_start": 27.765,
+      "visual_start": 27.735,
+      "delta_ms": -35,
+      "status": "clear_unique_vocal_attack",
+      "attack": {
+        "id": 104,
+        "time": 27.765,
+        "peak": 27.805,
+        "strength": 0.03663509530017394,
+        "energy": 0.825,
+        "rise": 0.0476876336000697
+      }
+    }
+  ],
+  "attacks": [
+    {
+      "id": 0,
+      "time": 0.155,
+      "peak": 0.17,
+      "strength": 0.02697426154202655,
+      "energy": 0.918,
+      "rise": 0.24689239740216085
+    },
+    {
+      "id": 1,
+      "time": 0.32,
+      "peak": 0.36,
+      "strength": 0.012119144256109722,
+      "energy": 0.78,
+      "rise": 0.05623922580661672
+    },
+    {
+      "id": 2,
+      "time": 0.43,
+      "peak": 0.475,
+      "strength": 0.03668242393425379,
+      "energy": 0.937,
+      "rise": 0.14942473232052197
+    },
+    {
+      "id": 3,
+      "time": 0.71,
+      "peak": 0.735,
+      "strength": 0.0342341275034991,
+      "energy": 0.576,
+      "rise": 0.1488638288009207
+    },
+    {
+      "id": 4,
+      "time": 0.905,
+      "peak": 0.925,
+      "strength": 0.013210700675492815,
+      "energy": 0.685,
+      "rise": 0.17817632731025929
+    },
+    {
+      "id": 5,
+      "time": 1.05,
+      "peak": 1.09,
+      "strength": 0.02510179505941821,
+      "energy": 0.944,
+      "rise": 0.2393354134619372
+    },
+    {
+      "id": 6,
+      "time": 1.335,
+      "peak": 1.375,
+      "strength": 0.013622691311881006,
+      "energy": 0.565,
+      "rise": 0.14512353304757677
+    },
+    {
+      "id": 7,
+      "time": 1.94,
+      "peak": 1.95,
+      "strength": 0.016458658608934237,
+      "energy": 0.393,
+      "rise": 0.08932412567535099
+    },
+    {
+      "id": 8,
+      "time": 2.175,
+      "peak": 2.21,
+      "strength": 0.014697195664430278,
+      "energy": 0.457,
+      "rise": 0.09953006158384936
+    },
+    {
+      "id": 9,
+      "time": 2.265,
+      "peak": 2.295,
+      "strength": 0.02280311464551718,
+      "energy": 1.0,
+      "rise": 0.2375654238274123
+    },
+    {
+      "id": 10,
+      "time": 2.645,
+      "peak": 2.69,
+      "strength": 0.01921323484770116,
+      "energy": 1.0,
+      "rise": 0.10664487451441695
+    },
+    {
+      "id": 11,
+      "time": 3.115,
+      "peak": 3.135,
+      "strength": 0.01769107197583404,
+      "energy": 0.503,
+      "rise": 0.12729520943738276
+    },
+    {
+      "id": 12,
+      "time": 3.255,
+      "peak": 3.27,
+      "strength": 0.024315007862541475,
+      "energy": 0.879,
+      "rise": 0.23592233349207178
+    },
+    {
+      "id": 13,
+      "time": 3.39,
+      "peak": 3.435,
+      "strength": 0.016853041480869756,
+      "energy": 0.556,
+      "rise": 0.13546145713715513
+    },
+    {
+      "id": 14,
+      "time": 3.56,
+      "peak": 3.58,
+      "strength": 0.011484157758523367,
+      "energy": 0.825,
+      "rise": 0.19183153357645066
+    },
+    {
+      "id": 15,
+      "time": 3.7,
+      "peak": 3.745,
+      "strength": 0.018481462044113058,
+      "energy": 0.841,
+      "rise": 0.20925273234364655
+    },
+    {
+      "id": 16,
+      "time": 3.83,
+      "peak": 3.875,
+      "strength": 0.01195060113269909,
+      "energy": 0.938,
+      "rise": 0.09100991793180319
+    },
+    {
+      "id": 17,
+      "time": 4.015,
+      "peak": 4.06,
+      "strength": 0.029866946620188392,
+      "energy": 1.0,
+      "rise": 0.08185380494433359
+    },
+    {
+      "id": 18,
+      "time": 4.305,
+      "peak": 4.325,
+      "strength": 0.03993982683535741,
+      "energy": 0.864,
+      "rise": 0.18959517052403102
+    },
+    {
+      "id": 19,
+      "time": 4.61,
+      "peak": 4.625,
+      "strength": 0.03217147790509854,
+      "energy": 1.0,
+      "rise": 0.21997492376757344
+    },
+    {
+      "id": 20,
+      "time": 4.865,
+      "peak": 4.89,
+      "strength": 0.029135777927729846,
+      "energy": 0.412,
+      "rise": 0.11827565882728613
+    },
+    {
+      "id": 21,
+      "time": 5.195,
+      "peak": 5.22,
+      "strength": 0.01855012205635418,
+      "energy": 1.0,
+      "rise": 0.25725811339824123
+    },
+    {
+      "id": 22,
+      "time": 5.41,
+      "peak": 5.44,
+      "strength": 0.02993906990908663,
+      "energy": 0.599,
+      "rise": 0.15556664137695078
+    },
+    {
+      "id": 23,
+      "time": 5.8,
+      "peak": 5.845,
+      "strength": 0.010507548472637015,
+      "energy": 0.743,
+      "rise": 0.11340896051813679
+    },
+    {
+      "id": 24,
+      "time": 5.93,
+      "peak": 5.96,
+      "strength": 0.03363892256318519,
+      "energy": 0.741,
+      "rise": 0.01675562571295612
+    },
+    {
+      "id": 25,
+      "time": 6.06,
+      "peak": 6.105,
+      "strength": 0.01308658438409437,
+      "energy": 0.476,
+      "rise": 0.026882160224307863
+    },
+    {
+      "id": 26,
+      "time": 6.195,
+      "peak": 6.24,
+      "strength": 0.015801258596993856,
+      "energy": 0.699,
+      "rise": 0.07104467037279003
+    },
+    {
+      "id": 27,
+      "time": 6.395,
+      "peak": 6.425,
+      "strength": 0.04299542993631199,
+      "energy": 1.0,
+      "rise": 0.2062748447020314
+    },
+    {
+      "id": 28,
+      "time": 6.69,
+      "peak": 6.705,
+      "strength": 0.03506494799270333,
+      "energy": 1.0,
+      "rise": 0.27708246885984894
+    },
+    {
+      "id": 29,
+      "time": 6.96,
+      "peak": 7.0,
+      "strength": 0.011131554822811675,
+      "energy": 1.0,
+      "rise": 0.1971148888147795
+    },
+    {
+      "id": 30,
+      "time": 7.09,
+      "peak": 7.135,
+      "strength": 0.015121749778047242,
+      "energy": 1.0,
+      "rise": 0.12624102311774102
+    },
+    {
+      "id": 31,
+      "time": 7.455,
+      "peak": 7.5,
+      "strength": 0.019699975519993987,
+      "energy": 0.967,
+      "rise": 0.04699588210125237
+    },
+    {
+      "id": 32,
+      "time": 8.985,
+      "peak": 9.03,
+      "strength": 0.01975926623171215,
+      "energy": 0.546,
+      "rise": 0.08517123932975326
+    },
+    {
+      "id": 33,
+      "time": 9.22,
+      "peak": 9.265,
+      "strength": 0.028159557603024334,
+      "energy": 0.794,
+      "rise": 0.20580590832237353
+    },
+    {
+      "id": 34,
+      "time": 9.53,
+      "peak": 9.545,
+      "strength": 0.0595806104802537,
+      "energy": 1.0,
+      "rise": 0.29983403636365985
+    },
+    {
+      "id": 35,
+      "time": 9.585,
+      "peak": 9.63,
+      "strength": 0.008868910869961971,
+      "energy": 1.0,
+      "rise": 0.10900740949782523
+    },
+    {
+      "id": 36,
+      "time": 9.765,
+      "peak": 9.79,
+      "strength": 0.029591154750422864,
+      "energy": 0.387,
+      "rise": 0.07925025155172956
+    },
+    {
+      "id": 37,
+      "time": 10.0,
+      "peak": 10.02,
+      "strength": 0.025853304917126934,
+      "energy": 0.606,
+      "rise": 0.03917569156318275
+    },
+    {
+      "id": 38,
+      "time": 10.095,
+      "peak": 10.14,
+      "strength": 0.009780459889586784,
+      "energy": 0.701,
+      "rise": 0.15267371689331038
+    },
+    {
+      "id": 39,
+      "time": 10.405,
+      "peak": 10.45,
+      "strength": 0.02706920241292932,
+      "energy": 1.0,
+      "rise": 0.2419182740234992
+    },
+    {
+      "id": 40,
+      "time": 10.49,
+      "peak": 10.535,
+      "strength": 0.008220149134386076,
+      "energy": 1.0,
+      "rise": 0.025597516139863784
+    },
+    {
+      "id": 41,
+      "time": 10.71,
+      "peak": 10.725,
+      "strength": 0.039291855160793906,
+      "energy": 1.0,
+      "rise": 0.30778973590612635
+    },
+    {
+      "id": 42,
+      "time": 11.01,
+      "peak": 11.055,
+      "strength": 0.02370289361874716,
+      "energy": 1.0,
+      "rise": 0.2621388777601802
+    },
+    {
+      "id": 43,
+      "time": 11.77,
+      "peak": 11.78,
+      "strength": 0.032643951722741676,
+      "energy": 1.0,
+      "rise": 0.2237740969327412
+    },
+    {
+      "id": 44,
+      "time": 12.04,
+      "peak": 12.06,
+      "strength": 0.011541317923916578,
+      "energy": 0.521,
+      "rise": 0.13283370849140425
+    },
+    {
+      "id": 45,
+      "time": 12.155,
+      "peak": 12.2,
+      "strength": 0.018528709058321633,
+      "energy": 0.718,
+      "rise": 0.01855244491295588
+    },
+    {
+      "id": 46,
+      "time": 12.36,
+      "peak": 12.375,
+      "strength": 0.01417101911088748,
+      "energy": 0.974,
+      "rise": 0.23217769276138983
+    },
+    {
+      "id": 47,
+      "time": 12.645,
+      "peak": 12.69,
+      "strength": 0.016938077287779692,
+      "energy": 1.0,
+      "rise": 0.22767111426281494
+    },
+    {
+      "id": 48,
+      "time": 12.925,
+      "peak": 12.94,
+      "strength": 0.035082449971968174,
+      "energy": 0.66,
+      "rise": 0.1438507186103209
+    },
+    {
+      "id": 49,
+      "time": 13.23,
+      "peak": 13.245,
+      "strength": 0.02359365200595467,
+      "energy": 1.0,
+      "rise": 0.22960057967734354
+    },
+    {
+      "id": 50,
+      "time": 13.56,
+      "peak": 13.605,
+      "strength": 0.02698682501058667,
+      "energy": 0.72,
+      "rise": 0.058992007965203805
+    },
+    {
+      "id": 51,
+      "time": 13.825,
+      "peak": 13.87,
+      "strength": 0.008817131337028376,
+      "energy": 0.135,
+      "rise": 0.03461657084254402
+    },
+    {
+      "id": 52,
+      "time": 14.095,
+      "peak": 14.13,
+      "strength": 0.03201166719777507,
+      "energy": 0.598,
+      "rise": 0.13788907710963433
+    },
+    {
+      "id": 53,
+      "time": 14.415,
+      "peak": 14.445,
+      "strength": 0.02615313874173475,
+      "energy": 0.873,
+      "rise": 0.16982893926400172
+    },
+    {
+      "id": 54,
+      "time": 14.51,
+      "peak": 14.555,
+      "strength": 0.011071278936809635,
+      "energy": 0.669,
+      "rise": 0.04255114559635571
+    },
+    {
+      "id": 55,
+      "time": 14.74,
+      "peak": 14.755,
+      "strength": 0.02243137050810311,
+      "energy": 1.0,
+      "rise": 0.22171741991916077
+    },
+    {
+      "id": 56,
+      "time": 15.0,
+      "peak": 15.045,
+      "strength": 0.02096882180667292,
+      "energy": 0.972,
+      "rise": 0.2344865836355825
+    },
+    {
+      "id": 57,
+      "time": 15.27,
+      "peak": 15.315,
+      "strength": 0.035547619566942135,
+      "energy": 0.5,
+      "rise": 0.09824485941590791
+    },
+    {
+      "id": 58,
+      "time": 15.605,
+      "peak": 15.62,
+      "strength": 0.02014746893975621,
+      "energy": 1.0,
+      "rise": 0.05478557258729619
+    },
+    {
+      "id": 59,
+      "time": 16.235,
+      "peak": 16.28,
+      "strength": 0.013881861367522442,
+      "energy": 0.849,
+      "rise": 0.1606796530936313
+    },
+    {
+      "id": 60,
+      "time": 16.35,
+      "peak": 16.375,
+      "strength": 0.019092781568200712,
+      "energy": 0.654,
+      "rise": 0.15876442280384123
+    },
+    {
+      "id": 61,
+      "time": 16.65,
+      "peak": 16.67,
+      "strength": 0.01783718833138417,
+      "energy": 1.0,
+      "rise": 0.2434673233606492
+    },
+    {
+      "id": 62,
+      "time": 16.79,
+      "peak": 16.83,
+      "strength": 0.029292014452973046,
+      "energy": 0.986,
+      "rise": 0.14485224791445211
+    },
+    {
+      "id": 63,
+      "time": 17.385,
+      "peak": 17.43,
+      "strength": 0.021193499459403454,
+      "energy": 0.7,
+      "rise": 0.1379822872331205
+    },
+    {
+      "id": 64,
+      "time": 17.54,
+      "peak": 17.565,
+      "strength": 0.03246814427820154,
+      "energy": 0.878,
+      "rise": 0.22037096085911784
+    },
+    {
+      "id": 65,
+      "time": 17.8,
+      "peak": 17.845,
+      "strength": 0.020027357053483796,
+      "energy": 0.677,
+      "rise": 0.22009657413952388
+    },
+    {
+      "id": 66,
+      "time": 17.97,
+      "peak": 17.995,
+      "strength": 0.033306611335633125,
+      "energy": 0.821,
+      "rise": 0.07227746234883436
+    },
+    {
+      "id": 67,
+      "time": 18.58,
+      "peak": 18.625,
+      "strength": 0.011131891564226738,
+      "energy": 0.879,
+      "rise": 0.20506299286788643
+    },
+    {
+      "id": 68,
+      "time": 18.74,
+      "peak": 18.775,
+      "strength": 0.0164203992100287,
+      "energy": 0.698,
+      "rise": 0.0744834236621115
+    },
+    {
+      "id": 69,
+      "time": 19.005,
+      "peak": 19.03,
+      "strength": 0.04349402982295674,
+      "energy": 0.962,
+      "rise": 0.18167587884745767
+    },
+    {
+      "id": 70,
+      "time": 19.13,
+      "peak": 19.175,
+      "strength": 0.014836697347326544,
+      "energy": 0.892,
+      "rise": 0.1314146356775598
+    },
+    {
+      "id": 71,
+      "time": 19.47,
+      "peak": 19.495,
+      "strength": 0.04384089236046762,
+      "energy": 1.0,
+      "rise": 0.2868265944577941
+    },
+    {
+      "id": 72,
+      "time": 19.55,
+      "peak": 19.595,
+      "strength": 0.010372508551631,
+      "energy": 1.0,
+      "rise": 0.027678437384222914
+    },
+    {
+      "id": 73,
+      "time": 19.76,
+      "peak": 19.805,
+      "strength": 0.03289860020161902,
+      "energy": 0.768,
+      "rise": 0.21653547344340773
+    },
+    {
+      "id": 74,
+      "time": 19.925,
+      "peak": 19.96,
+      "strength": 0.0220312782823267,
+      "energy": 0.509,
+      "rise": 0.016398037824862606
+    },
+    {
+      "id": 75,
+      "time": 20.2,
+      "peak": 20.24,
+      "strength": 0.014001858042877628,
+      "energy": 0.817,
+      "rise": 0.062095717868211005
+    },
+    {
+      "id": 76,
+      "time": 20.945,
+      "peak": 20.965,
+      "strength": 0.013085855113222035,
+      "energy": 0.878,
+      "rise": 0.23116058041291176
+    },
+    {
+      "id": 77,
+      "time": 21.395,
+      "peak": 21.44,
+      "strength": 0.03987305914632033,
+      "energy": 0.841,
+      "rise": 0.20580013709554762
+    },
+    {
+      "id": 78,
+      "time": 21.71,
+      "peak": 21.73,
+      "strength": 0.026511860527972723,
+      "energy": 0.87,
+      "rise": 0.18109424483624892
+    },
+    {
+      "id": 79,
+      "time": 21.99,
+      "peak": 22.025,
+      "strength": 0.027072508063689302,
+      "energy": 0.928,
+      "rise": 0.22934185117495542
+    },
+    {
+      "id": 80,
+      "time": 22.3,
+      "peak": 22.32,
+      "strength": 0.03493507152358093,
+      "energy": 0.98,
+      "rise": 0.24794315413918933
+    },
+    {
+      "id": 81,
+      "time": 22.585,
+      "peak": 22.615,
+      "strength": 0.02214242640900297,
+      "energy": 1.0,
+      "rise": 0.26542431147798373
+    },
+    {
+      "id": 82,
+      "time": 22.65,
+      "peak": 22.695,
+      "strength": 0.00919708811241407,
+      "energy": 1.0,
+      "rise": 0.12169104598715047
+    },
+    {
+      "id": 83,
+      "time": 22.905,
+      "peak": 22.92,
+      "strength": 0.017602125016262547,
+      "energy": 0.91,
+      "rise": 0.12302898057635026
+    },
+    {
+      "id": 84,
+      "time": 23.15,
+      "peak": 23.195,
+      "strength": 0.02599275112274332,
+      "energy": 0.68,
+      "rise": 0.22102911301565886
+    },
+    {
+      "id": 85,
+      "time": 23.4,
+      "peak": 23.425,
+      "strength": 0.021486665345855967,
+      "energy": 0.363,
+      "rise": 0.08560875884171482
+    },
+    {
+      "id": 86,
+      "time": 23.765,
+      "peak": 23.81,
+      "strength": 0.018385188106322913,
+      "energy": 0.842,
+      "rise": 0.017684316176313837
+    },
+    {
+      "id": 87,
+      "time": 23.955,
+      "peak": 24.0,
+      "strength": 0.011211694802037254,
+      "energy": 0.528,
+      "rise": 0.04842855201272736
+    },
+    {
+      "id": 88,
+      "time": 24.095,
+      "peak": 24.14,
+      "strength": 0.015547249962761769,
+      "energy": 0.805,
+      "rise": 0.058464041545001164
+    },
+    {
+      "id": 89,
+      "time": 24.995,
+      "peak": 25.025,
+      "strength": 0.01202691948611143,
+      "energy": 0.395,
+      "rise": 0.0970821101393966
+    },
+    {
+      "id": 90,
+      "time": 25.075,
+      "peak": 25.12,
+      "strength": 0.04210455613756436,
+      "energy": 0.661,
+      "rise": 0.17756515253140737
+    },
+    {
+      "id": 91,
+      "time": 25.25,
+      "peak": 25.295,
+      "strength": 0.014745762651603397,
+      "energy": 0.786,
+      "rise": 0.044164183354348505
+    },
+    {
+      "id": 92,
+      "time": 25.55,
+      "peak": 25.565,
+      "strength": 0.03976375430582703,
+      "energy": 1.0,
+      "rise": 0.2169847346220005
+    },
+    {
+      "id": 93,
+      "time": 25.625,
+      "peak": 25.67,
+      "strength": 0.015235948680808941,
+      "energy": 1.0,
+      "rise": 0.07644598005571929
+    },
+    {
+      "id": 94,
+      "time": 25.96,
+      "peak": 26.005,
+      "strength": 0.011597595491106928,
+      "energy": 0.704,
+      "rise": 0.0353083593729767
+    },
+    {
+      "id": 95,
+      "time": 26.16,
+      "peak": 26.17,
+      "strength": 0.048409486415397926,
+      "energy": 1.0,
+      "rise": 0.2837763177653783
+    },
+    {
+      "id": 96,
+      "time": 26.38,
+      "peak": 26.4,
+      "strength": 0.00794962187553025,
+      "energy": 0.571,
+      "rise": 0.07123972192194826
+    },
+    {
+      "id": 97,
+      "time": 26.435,
+      "peak": 26.48,
+      "strength": 0.02795445387306414,
+      "energy": 0.719,
+      "rise": 0.1827903687996432
+    },
+    {
+      "id": 98,
+      "time": 26.755,
+      "peak": 26.78,
+      "strength": 0.0262982055340577,
+      "energy": 1.0,
+      "rise": 0.2644478905656463
+    },
+    {
+      "id": 99,
+      "time": 27.02,
+      "peak": 27.065,
+      "strength": 0.007905555806886212,
+      "energy": 1.0,
+      "rise": 0.1090556549009206
+    },
+    {
+      "id": 100,
+      "time": 27.195,
+      "peak": 27.22,
+      "strength": 0.03659610395056023,
+      "energy": 0.873,
+      "rise": 0.033537305066341616
+    },
+    {
+      "id": 101,
+      "time": 27.345,
+      "peak": 27.36,
+      "strength": 0.052670234708547495,
+      "energy": 1.0,
+      "rise": 0.2594363024349317
+    },
+    {
+      "id": 102,
+      "time": 27.565,
+      "peak": 27.59,
+      "strength": 0.02403297561782334,
+      "energy": 0.634,
+      "rise": 0.16742700754120937
+    },
+    {
+      "id": 103,
+      "time": 27.65,
+      "peak": 27.695,
+      "strength": 0.011665579971915072,
+      "energy": 1.0,
+      "rise": 0.1614182305851694
+    },
+    {
+      "id": 104,
+      "time": 27.765,
+      "peak": 27.805,
+      "strength": 0.03663509530017394,
+      "energy": 0.825,
+      "rise": 0.0476876336000697
+    },
+    {
+      "id": 105,
+      "time": 27.93,
+      "peak": 27.975,
+      "strength": 0.026155324833145765,
+      "energy": 0.966,
+      "rise": 0.1698785327523425
+    },
+    {
+      "id": 106,
+      "time": 28.025,
+      "peak": 28.07,
+      "strength": 0.02624795708700424,
+      "energy": 1.0,
+      "rise": 0.02259649728314467
+    }
+  ],
+  "limits": [
+    "Onset correlation is not phoneme ground truth or perceptual acceptance.",
+    "Do not apply this offset again to an already anchored time table.",
+    "Energy gating alone must not cancel the 30ms visual preparation."
+  ]
+}

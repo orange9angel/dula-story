@@ -158,28 +158,49 @@ def submit(client, *, prompt: str | None, lyrics: str | None, duration: int,
 
 
 def generate_via_relay(body: dict, out: Path, timeout: int) -> None:
-    """经 veFaaS 中转函数生成（国内 IP），base64 回传避免音频 URL 地域限制。"""
+    """经 veFaaS 中转函数生成（国内 IP）。先尝试返回 URL 本地下载（轻快），
+    下载失败再回退 base64 回传（7MB JSON，偶发截断，带重试）。"""
     relay_url = os.environ.get("SONG_RELAY_URL", "")
     if not relay_url:
         raise SongGenError("SONG_RELAY_URL not set (put it in .env.speech)")
-    payload = dict(body)
-    payload["token"] = os.environ.get("SONG_RELAY_TOKEN", "")
-    payload["ReturnBase64"] = True
-    print(f"[relay] {relay_url} (submit+poll inside function, may take a while)")
-    req = urllib.request.Request(
-        relay_url, data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-        headers={"Content-Type": "application/json"}, method="POST")
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        resp = json.loads(r.read().decode("utf-8"))
-    if isinstance(resp, dict) and "body" in resp and isinstance(resp["body"], str):
-        resp = json.loads(resp["body"])
-    if not resp.get("ok"):
-        raise SongGenError(f"relay failed: {resp.get('error')}")
+
+    def call(want_b64: bool) -> dict:
+        payload = dict(body)
+        payload["token"] = os.environ.get("SONG_RELAY_TOKEN", "")
+        payload["ReturnBase64"] = want_b64
+        print(f"[relay] {relay_url} (base64={want_b64}, submit+poll inside function)")
+        req = urllib.request.Request(
+            relay_url, data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            headers={"Content-Type": "application/json"}, method="POST")
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            resp = json.loads(r.read().decode("utf-8"))
+        if isinstance(resp, dict) and "body" in resp and isinstance(resp["body"], str):
+            resp = json.loads(resp["body"])
+        if not resp.get("ok"):
+            raise SongGenError(f"relay failed: {resp.get('error')}")
+        return resp
+
+    resp = call(want_b64=False)
     print(f"[task] {resp.get('task_id')}")
     out.parent.mkdir(parents=True, exist_ok=True)
-    data = base64.b64decode(resp["base64"])
-    out.write_bytes(data)
-    print(f"[done] {out} ({out.stat().st_size / 1024:.0f} KB)")
+    url = resp.get("url", "")
+    if url:
+        try:
+            download(url, out)
+            return
+        except Exception as exc:
+            print(f"[relay] 直接下载失败（{exc}），回退 base64")
+    for attempt in range(3):
+        try:
+            resp = call(want_b64=True)
+            data = base64.b64decode(resp["base64"])
+            out.write_bytes(data)
+            print(f"[done] {out} ({out.stat().st_size / 1024:.0f} KB)")
+            return
+        except Exception as exc:
+            print(f"[relay] base64 回传第 {attempt + 1} 次失败（{exc}）")
+            if attempt == 2:
+                raise SongGenError(f"relay base64 failed after 3 attempts: {exc}")
 
 
 def poll(client, task_id: str, timeout: int) -> dict:
