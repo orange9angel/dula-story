@@ -23,6 +23,23 @@ class StudioYuki extends BaseYuki {
   }
 }
 registerCharacter('Yuki', StudioYuki);
+// StudioMochi (V16): the cat keeps its pure toon look (no sketchify) and only
+// gains the eye-group handles the shared AdPose stage animation writes to
+// (pupil parents, same trick as StudioYuki), so {Event:Animate|action=AdPose}
+// entries for Mochi cannot crash. The V16 viewer re-poses the cat every frame.
+const BaseMochi = CharacterRegistry.Mochi;
+if (BaseMochi) {
+  class StudioMochi extends BaseMochi {
+    build() {
+      super.build();
+      this.leftEye = this.leftPupil.parent;
+      this.rightEye = this.rightPupil.parent;
+      this.leftEye.userData.adBaseScaleY = this.leftEye.scale.y;
+      this.rightEye.userData.adBaseScaleY = this.rightEye.scale.y;
+    }
+  }
+  registerCharacter('Mochi', StudioMochi);
+}
 registerScene('BeatStudioScene', BeatStudioScene);
 registerAnimation('AdPose', AdPose);
 registerCameraMove('AdCamera', AdCamera);

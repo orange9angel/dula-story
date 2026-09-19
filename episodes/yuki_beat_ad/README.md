@@ -1,5 +1,15 @@
 # 下一拍，你登场
 
+## V16 年糕伴舞（2026-09-19，待播放评审）
+
+成片：`output/yuki_beat_ad_v16.mp4`（29.5 秒，720×1280，60 fps）。
+胖橘猫年糕（Mochi，来自 dula-assets，《早起大作战》角色）作为冷面伴舞加入：
+chorus 首个 downbeat 从右侧滑入（两拍到位），loaf 压缩回弹/左右摇晃/抬爪
+拍点/bridge 整猫慢转，全部锁拍网但**慢半拍**（0.244s 滞后时钟）制造反差萌；
+finale 前打一个哈欠，定格比小雪晚半拍收住。猫不张嘴唱、表情全程 deadpan。
+`prepare_v16.py` 在 script_v13 基础上追加 Mochi 角色 lane（小雪条目逐字节
+不变）；`bootstrap.js` 注册纯色 StudioMochi。其余与 V15 一致。
+
 ## V15 连续视素口型（2026-09-19，待播放评审）
 
 成片：`output/yuki_beat_ad_v15.mp4`（29.5 秒，720×1280，60 fps）。
