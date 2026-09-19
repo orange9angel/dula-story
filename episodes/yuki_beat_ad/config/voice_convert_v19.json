@@ -1,0 +1,25 @@
+{
+  "song": "assets/audio/music/v19/candidate_d.wav",
+  "base_master": "assets/audio/mixed_v19_base.wav",
+  "vocals_stem": "assets/audio/stems_v19/vocals.wav",
+  "reference": "assets/audio/voice_morning/morning_reference.wav",
+  "converted_input": "assets/audio/voice_v19/converted/vc_vocals_morning_reference_1.0_30_0.65.wav",
+  "seed_vc": {
+    "steps": 30,
+    "cfg": 0.65,
+    "length_adjust": 1.0,
+    "f0_condition": true,
+    "semi_tone_shift": 0
+  },
+  "samples": 1413120,
+  "seconds": 29.44,
+  "vc_length_drift_ms": -8.688,
+  "vc_lag_samples": 0,
+  "vc_lag_method": "10ms RMS envelope xcorr",
+  "gain": 0.9044247421482019,
+  "pre_limit_peak": 0.9227930298484174,
+  "common_gain": 0.9969732867955492,
+  "final_peak": 0.92,
+  "mixed_v19_sha256": "9b745c89b87c584822322c3e0fa47973797278117d0cf41d1c4864a8afde45f9",
+  "method": "base - original vocals + gain-matched converted vocals (finish_morning_voice pattern); alimiter-equivalent 0.92 ceiling"
+}

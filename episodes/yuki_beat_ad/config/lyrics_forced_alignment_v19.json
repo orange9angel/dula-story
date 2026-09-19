@@ -1,0 +1,581 @@
+{
+  "stem_sha256": "8b0920bcf2f01b0238ffdeef7172a06f2f70f6d85ce7093fc8b4751d1a82741b",
+  "text": "踮起脚尖听节拍敲门张开手臂把星星点亮跟上这一拍跟我一起来左一步右一步节奏自己掌握跳一跳转一转每一拍都闪烁小雪登场心跳打拍世界跟着我一起发光下一拍你登场和我一起嗨",
+  "method": "faster-whisper small CPU int8; supplied per-character tokens; cross-attention DTW",
+  "version": 1,
+  "chars": [
+    {
+      "ch": "踮",
+      "start": 0.0,
+      "end": 0.26,
+      "probability": 0.4752
+    },
+    {
+      "ch": "起",
+      "start": 0.26,
+      "end": 0.44,
+      "probability": 0.9016
+    },
+    {
+      "ch": "脚",
+      "start": 0.44,
+      "end": 0.68,
+      "probability": 0.4951
+    },
+    {
+      "ch": "尖",
+      "start": 0.68,
+      "end": 0.96,
+      "probability": 0.5585
+    },
+    {
+      "ch": "听",
+      "start": 0.96,
+      "end": 1.48,
+      "probability": 0.0105
+    },
+    {
+      "ch": "节",
+      "start": 1.48,
+      "end": 1.68,
+      "probability": 0.0047
+    },
+    {
+      "ch": "拍",
+      "start": 1.68,
+      "end": 1.86,
+      "probability": 0.172
+    },
+    {
+      "ch": "敲",
+      "start": 1.86,
+      "end": 2.18,
+      "probability": 0.7187
+    },
+    {
+      "ch": "门",
+      "start": 2.18,
+      "end": 2.7,
+      "probability": 0.9605
+    },
+    {
+      "ch": "张",
+      "start": 2.7,
+      "end": 3.5,
+      "probability": 0.0002
+    },
+    {
+      "ch": "开",
+      "start": 3.5,
+      "end": 3.72,
+      "probability": 0.6694
+    },
+    {
+      "ch": "手",
+      "start": 3.72,
+      "end": 3.9,
+      "probability": 0.8007
+    },
+    {
+      "ch": "臂",
+      "start": 3.9,
+      "end": 4.24,
+      "probability": 0.9554
+    },
+    {
+      "ch": "把",
+      "start": 4.24,
+      "end": 4.68,
+      "probability": 0.727
+    },
+    {
+      "ch": "星",
+      "start": 4.68,
+      "end": 4.94,
+      "probability": 0.1291
+    },
+    {
+      "ch": "星",
+      "start": 4.94,
+      "end": 5.16,
+      "probability": 0.9946
+    },
+    {
+      "ch": "点",
+      "start": 5.16,
+      "end": 5.48,
+      "probability": 0.0025
+    },
+    {
+      "ch": "亮",
+      "start": 5.48,
+      "end": 6.08,
+      "probability": 0.9887
+    },
+    {
+      "ch": "跟",
+      "start": 6.08,
+      "end": 6.6,
+      "probability": 0.1028
+    },
+    {
+      "ch": "上",
+      "start": 6.6,
+      "end": 6.82,
+      "probability": 0.9094
+    },
+    {
+      "ch": "这",
+      "start": 6.82,
+      "end": 7.06,
+      "probability": 0.8134
+    },
+    {
+      "ch": "一",
+      "start": 7.06,
+      "end": 7.28,
+      "probability": 0.9879
+    },
+    {
+      "ch": "拍",
+      "start": 7.28,
+      "end": 7.56,
+      "probability": 0.0802
+    },
+    {
+      "ch": "跟",
+      "start": 7.56,
+      "end": 8.04,
+      "probability": 0.031
+    },
+    {
+      "ch": "我",
+      "start": 8.04,
+      "end": 8.36,
+      "probability": 0.9734
+    },
+    {
+      "ch": "一",
+      "start": 8.36,
+      "end": 8.72,
+      "probability": 0.0275
+    },
+    {
+      "ch": "起",
+      "start": 8.72,
+      "end": 8.86,
+      "probability": 0.3847
+    },
+    {
+      "ch": "来",
+      "start": 8.86,
+      "end": 9.28,
+      "probability": 0.9977
+    },
+    {
+      "ch": "左",
+      "start": 9.28,
+      "end": 9.92,
+      "probability": 0.1762
+    },
+    {
+      "ch": "一",
+      "start": 9.92,
+      "end": 10.16,
+      "probability": 0.9514
+    },
+    {
+      "ch": "步",
+      "start": 10.16,
+      "end": 10.34,
+      "probability": 0.9487
+    },
+    {
+      "ch": "右",
+      "start": 10.34,
+      "end": 10.54,
+      "probability": 0.6422
+    },
+    {
+      "ch": "一",
+      "start": 10.54,
+      "end": 10.72,
+      "probability": 0.9968
+    },
+    {
+      "ch": "步",
+      "start": 10.72,
+      "end": 11.0,
+      "probability": 0.9946
+    },
+    {
+      "ch": "节",
+      "start": 11.0,
+      "end": 11.34,
+      "probability": 0.1266
+    },
+    {
+      "ch": "奏",
+      "start": 11.34,
+      "end": 11.52,
+      "probability": 0.9801
+    },
+    {
+      "ch": "自",
+      "start": 11.52,
+      "end": 11.74,
+      "probability": 0.0737
+    },
+    {
+      "ch": "己",
+      "start": 11.74,
+      "end": 11.94,
+      "probability": 0.0068
+    },
+    {
+      "ch": "掌",
+      "start": 11.94,
+      "end": 12.18,
+      "probability": 0.8529
+    },
+    {
+      "ch": "握",
+      "start": 12.18,
+      "end": 12.6,
+      "probability": 0.9965
+    },
+    {
+      "ch": "跳",
+      "start": 12.6,
+      "end": 13.46,
+      "probability": 0.8716
+    },
+    {
+      "ch": "一",
+      "start": 13.46,
+      "end": 13.78,
+      "probability": 0.9856
+    },
+    {
+      "ch": "跳",
+      "start": 13.78,
+      "end": 14.3,
+      "probability": 0.9992
+    },
+    {
+      "ch": "转",
+      "start": 14.3,
+      "end": 15.04,
+      "probability": 0.9822
+    },
+    {
+      "ch": "一",
+      "start": 15.04,
+      "end": 15.36,
+      "probability": 0.9899
+    },
+    {
+      "ch": "转",
+      "start": 15.36,
+      "end": 15.76,
+      "probability": 0.9489
+    },
+    {
+      "ch": "每",
+      "start": 15.76,
+      "end": 16.38,
+      "probability": 0.8912
+    },
+    {
+      "ch": "一",
+      "start": 16.38,
+      "end": 16.78,
+      "probability": 0.9981
+    },
+    {
+      "ch": "拍",
+      "start": 16.78,
+      "end": 17.12,
+      "probability": 0.7099
+    },
+    {
+      "ch": "都",
+      "start": 17.12,
+      "end": 17.4,
+      "probability": 0.9645
+    },
+    {
+      "ch": "闪",
+      "start": 17.4,
+      "end": 17.8,
+      "probability": 0.9565
+    },
+    {
+      "ch": "烁",
+      "start": 17.8,
+      "end": 18.24,
+      "probability": 0.9762
+    },
+    {
+      "ch": "小",
+      "start": 18.24,
+      "end": 19.14,
+      "probability": 0.4754
+    },
+    {
+      "ch": "雪",
+      "start": 19.14,
+      "end": 19.36,
+      "probability": 0.179
+    },
+    {
+      "ch": "登",
+      "start": 19.36,
+      "end": 19.56,
+      "probability": 0.3932
+    },
+    {
+      "ch": "场",
+      "start": 19.56,
+      "end": 19.7,
+      "probability": 0.9776
+    },
+    {
+      "ch": "心",
+      "start": 19.7,
+      "end": 19.96,
+      "probability": 0.2348
+    },
+    {
+      "ch": "跳",
+      "start": 19.96,
+      "end": 20.2,
+      "probability": 0.2162
+    },
+    {
+      "ch": "打",
+      "start": 20.2,
+      "end": 20.36,
+      "probability": 0.0546
+    },
+    {
+      "ch": "拍",
+      "start": 20.36,
+      "end": 20.82,
+      "probability": 0.3666
+    },
+    {
+      "ch": "世",
+      "start": 20.82,
+      "end": 21.18,
+      "probability": 0.0082
+    },
+    {
+      "ch": "界",
+      "start": 21.18,
+      "end": 21.5,
+      "probability": 0.0742
+    },
+    {
+      "ch": "跟",
+      "start": 21.5,
+      "end": 21.8,
+      "probability": 0.9905
+    },
+    {
+      "ch": "着",
+      "start": 21.8,
+      "end": 22.02,
+      "probability": 0.9951
+    },
+    {
+      "ch": "我",
+      "start": 22.02,
+      "end": 22.26,
+      "probability": 0.999
+    },
+    {
+      "ch": "一",
+      "start": 22.26,
+      "end": 22.5,
+      "probability": 0.0012
+    },
+    {
+      "ch": "起",
+      "start": 22.5,
+      "end": 22.64,
+      "probability": 0.141
+    },
+    {
+      "ch": "发",
+      "start": 22.64,
+      "end": 22.86,
+      "probability": 0.9613
+    },
+    {
+      "ch": "光",
+      "start": 22.86,
+      "end": 23.6,
+      "probability": 0.994
+    },
+    {
+      "ch": "下",
+      "start": 23.6,
+      "end": 24.7,
+      "probability": 0.0041
+    },
+    {
+      "ch": "一",
+      "start": 24.7,
+      "end": 25.02,
+      "probability": 0.7482
+    },
+    {
+      "ch": "拍",
+      "start": 25.02,
+      "end": 25.4,
+      "probability": 0.497
+    },
+    {
+      "ch": "你",
+      "start": 25.4,
+      "end": 25.76,
+      "probability": 0.9099
+    },
+    {
+      "ch": "登",
+      "start": 25.76,
+      "end": 26.24,
+      "probability": 0.2311
+    },
+    {
+      "ch": "场",
+      "start": 26.24,
+      "end": 26.66,
+      "probability": 0.9893
+    },
+    {
+      "ch": "和",
+      "start": 26.66,
+      "end": 27.36,
+      "probability": 0.983
+    },
+    {
+      "ch": "我",
+      "start": 27.36,
+      "end": 27.56,
+      "probability": 0.9912
+    },
+    {
+      "ch": "一",
+      "start": 27.56,
+      "end": 27.86,
+      "probability": 0.0409
+    },
+    {
+      "ch": "起",
+      "start": 27.86,
+      "end": 27.98,
+      "probability": 0.8133
+    },
+    {
+      "ch": "嗨",
+      "start": 27.98,
+      "end": 28.34,
+      "probability": 0.5177
+    }
+  ],
+  "warnings": [
+    {
+      "ch": "听",
+      "start": 0.96,
+      "end": 1.48,
+      "probability": 0.0105
+    },
+    {
+      "ch": "节",
+      "start": 1.48,
+      "end": 1.68,
+      "probability": 0.0047
+    },
+    {
+      "ch": "张",
+      "start": 2.7,
+      "end": 3.5,
+      "probability": 0.0002
+    },
+    {
+      "ch": "点",
+      "start": 5.16,
+      "end": 5.48,
+      "probability": 0.0025
+    },
+    {
+      "ch": "拍",
+      "start": 7.28,
+      "end": 7.56,
+      "probability": 0.0802
+    },
+    {
+      "ch": "跟",
+      "start": 7.56,
+      "end": 8.04,
+      "probability": 0.031
+    },
+    {
+      "ch": "一",
+      "start": 8.36,
+      "end": 8.72,
+      "probability": 0.0275
+    },
+    {
+      "ch": "自",
+      "start": 11.52,
+      "end": 11.74,
+      "probability": 0.0737
+    },
+    {
+      "ch": "己",
+      "start": 11.74,
+      "end": 11.94,
+      "probability": 0.0068
+    },
+    {
+      "ch": "打",
+      "start": 20.2,
+      "end": 20.36,
+      "probability": 0.0546
+    },
+    {
+      "ch": "世",
+      "start": 20.82,
+      "end": 21.18,
+      "probability": 0.0082
+    },
+    {
+      "ch": "界",
+      "start": 21.18,
+      "end": 21.5,
+      "probability": 0.0742
+    },
+    {
+      "ch": "一",
+      "start": 22.26,
+      "end": 22.5,
+      "probability": 0.0012
+    },
+    {
+      "ch": "下",
+      "start": 23.6,
+      "end": 24.7,
+      "probability": 0.0041
+    },
+    {
+      "ch": "一",
+      "start": 27.56,
+      "end": 27.86,
+      "probability": 0.0409
+    }
+  ],
+  "phoneme_timing": "not measured; viseme consonant/vowel transitions remain an animation approximation"
+}

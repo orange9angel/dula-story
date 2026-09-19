@@ -148,10 +148,15 @@ def build_body(*, prompt: str | None, lyrics: str | None, duration: int,
 
 def submit(client, *, prompt: str | None, lyrics: str | None, duration: int,
            model_version: str, genre: str | None, mood: str | None,
-           gender: str | None, timbre: str | None, fmt: str) -> str:
+           gender: str | None, timbre: str | None, fmt: str,
+           key: str | None = None, tempo: str | None = None,
+           instrument: str | None = None) -> str:
     body = build_body(prompt=prompt, lyrics=lyrics, duration=duration,
                       model_version=model_version, genre=genre, mood=mood,
                       gender=gender, timbre=timbre, fmt=fmt)
+    for k, v in (("Key", key), ("Tempo", tempo), ("Instrument", instrument)):
+        if v:
+            body[k] = v
     resp = _call(client, "GenSongForTime", body)
     print(f"[submit] {json.dumps(resp, ensure_ascii=False)[:600]}")
     return _find_task_id(resp)
@@ -243,6 +248,9 @@ def main() -> int:
     ap.add_argument("--gender", choices=["Female", "Male"])
     ap.add_argument("--timbre", help="音色，v4.3 最多 3 个逗号分隔")
     ap.add_argument("--format", default="wav", choices=["wav", "mp3"])
+    ap.add_argument("--key", help="调性，如 C、G（v4.3）")
+    ap.add_argument("--tempo", help="节拍速度（v4.3）")
+    ap.add_argument("--instrument", help="配器，最多 5 个逗号分隔（v4.3）")
     ap.add_argument("--out", required=True, type=Path, help="输出音频路径")
     ap.add_argument("--timeout", type=int, default=600)
     ap.add_argument("--via-relay", action="store_true",
@@ -253,12 +261,18 @@ def main() -> int:
     if args.lyrics_file:
         lyrics = Path(args.lyrics_file).read_text(encoding="utf-8-sig").strip()
 
+    extra = {}
+    for k, v in (("Key", args.key), ("Tempo", args.tempo), ("Instrument", args.instrument)):
+        if v:
+            extra[k] = v
+
     _load_env()
     if args.via_relay:
         body = build_body(prompt=args.prompt, lyrics=lyrics, duration=args.duration,
                           model_version=args.model_version, genre=args.genre,
                           mood=args.mood, gender=args.gender, timbre=args.timbre,
                           fmt=args.format)
+        body.update(extra)
         generate_via_relay(body, args.out, args.timeout)
         return 0
     client = _client()
