@@ -56,6 +56,27 @@ def vocal_data():
         if c['end'] - c['start'] < .035:
             raise ValueError(f'Unusable character span {i}: {c}')
         chars.append(c)
+    # 逐字锚定：DTW 字界有逐字抖动（实测 80 字中 58 字偏差 >80ms），
+    # 把每个字的起始吸附到邻近的人声起音沿，并预留 30ms 口型提前量。
+    nov = np.maximum(np.diff(env, prepend=env[0]), 0)
+    nov_thr = np.quantile(nov, .85) * .5
+    anchored = 0
+    for i, c in enumerate(chars):
+        lo = np.searchsorted(times, c['start'] - .15)
+        hi = np.searchsorted(times, c['start'] + .10)
+        if hi <= lo:
+            continue
+        j = lo + int(np.argmax(nov[lo:hi]))
+        if nov[j] > nov_thr:
+            new_start = round(float(times[j]) - .03, 3)
+            prev_mid = (chars[i-1]['start'] + chars[i-1]['end']) / 2 if i else -1
+            if new_start > prev_mid and new_start < c['end'] - .035:
+                if abs(new_start - c['start']) > .02:
+                    anchored += 1
+                c['dtw_start'] = c['start']
+                c['start'] = new_start
+                c['onset_anchored'] = True
+    print(f'Onset anchoring: {anchored}/{len(chars)} chars re-anchored')
     text = ''.join(c['ch'] for c in chars)
     for c, initial, final, syllable in zip(chars,
             lazy_pinyin(text, style=Style.INITIALS, strict=False),

@@ -18,7 +18,9 @@ def main():
     assert clearance>.01,f'Hand enters head: {clearance}'
     assert all(f['vocalOpen']==0 for f in silent)
     old=json.loads((ROOT/'storyboard/v10/performance_trace.json').read_text(encoding='utf-8'))['frames']
-    assert all(a['lip']==b['lip'] for a,b in zip(frames,old)), 'V10 viseme regression'
+    # 口型对齐已做过起音锚定修正（prepare_v10 逐字吸附人声起音沿），
+    # 与 V10 旧口型不一致是预期行为，统计差异帧数而非断言一致。
+    lip_diff=sum(a['lip']!=b['lip'] for a,b in zip(frames,old))
     measurements=[]
     for cue in plan['cues']:
         ff=[f for f in frames if cue['start']<=f['t']<cue['end']]
@@ -31,7 +33,7 @@ def main():
         ranges=[[round(max(f['hands'][i][k] for f in ff)-min(f['hands'][i][k] for f in ff),3) for k in range(3)] for i in (0,1)]
         measurements.append({'move':cue['move'],'intent':cue['intent'],'hand_ranges_xyz':ranges})
     report={'frames':len(frames),'browser_errors':portraits['errors'],'feet_bottom_min':floor,
-        'hand_head_clearance_min':clearance,'v10_lip_states_identical':True,'rest_or_silent_frames_closed':len(silent),
+        'hand_head_clearance_min':clearance,'lip_frames_changed_by_anchoring':lip_diff,'rest_or_silent_frames_closed':len(silent),
         'acting_moods':sorted(set(f['acting']['mood'] for f in frames)),
         'eye_openness_range':[min(f['acting']['eye'] for f in frames),max(f['acting']['eye'] for f in frames)],
         'closed_eyes_frames':sum(f['acting']['closedL'] and f['acting']['closedR'] for f in frames),
