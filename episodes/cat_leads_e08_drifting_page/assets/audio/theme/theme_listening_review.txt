@@ -1,0 +1,54 @@
+{
+  "segments": [
+    {
+      "id": "A",
+      "instruments": ["埙"],
+      "vibe": "哀而不伤，空灵悠远，带思念与留白",
+      "is_ethnic_real": true,
+      "sync_issue": "无"
+    },
+    {
+      "id": "B",
+      "instruments": ["竹笛"],
+      "vibe": "哀而不伤，清越婉转，略带浪漫与温润",
+      "is_ethnic_real": true,
+      "sync_issue": "无"
+    },
+    {
+      "id": "C",
+      "instruments": ["竹笛"],
+      "vibe": "哀而不伤，旋律性强，情绪稍提，有叙事感",
+      "is_ethnic_real": true,
+      "sync_issue": "无"
+    },
+    {
+      "id": "D",
+      "instruments": ["埙 + 人声歌谣（非AI）"],
+      "vibe": "哀而不伤，温暖中带思念，人声略带民谣质朴感",
+      "is_ethnic_real": true,
+      "sync_issue": "真采样与人声衔接自然，调性统一，情绪连贯"
+    },
+    {
+      "id": "E",
+      "instruments": ["埙 + AI纯音乐（钢琴+弦乐）"],
+      "vibe": "哀而不伤，温暖浪漫，留白感强，符合和田薰/久石让风格",
+      "is_ethnic_real": true,
+      "sync_issue": "真埙与AI底衔接自然，调性一致（C大调倾向），情绪无断裂，AI底强化了氛围"
+    },
+    {
+      "id": "F",
+      "instruments": ["AI人声（女声）"],
+      "vibe": "哀而不伤，温柔浪漫，旋律性强，适合主歌",
+      "is_ethnic_real": false,
+      "sync_issue": "与真埙/笛采样衔接需谨慎，若调性匹配可自然过渡，否则有割裂感"
+    },
+    {
+      "id": "G",
+      "instruments": ["AI纯音乐（钢琴+弦乐）"],
+      "vibe": "哀而不伤，温暖留白，适合尾奏或过渡，具久石让式叙事感",
+      "is_ethnic_real": false,
+      "sync_issue": "与真采样衔接需调性对齐，若匹配则自然，否则易显突兀"
+    }
+  ],
+  "recommendation": "推荐使用A（埙开场）、B/C（笛子间奏）、E（AI纯音乐+埙尾奏）拼接主题曲。D段人声可作为主歌，F段AI人声可替换或补充主歌，G段AI纯音乐适合作为尾奏或转场。真采样与AI底在E段已验证衔接自然，建议在调性统一前提下（如C大调）使用。避免在无调性过渡情况下直接拼接F/G与真采样，防止情绪断裂。整体风格应保持‘哀而不伤、温暖浪漫、留白叙事’，参考和田薰与久石让的融合美学。"
+}
