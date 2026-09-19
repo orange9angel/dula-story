@@ -1,11 +1,45 @@
 import * as THREE from 'three';
 import { registerAll } from 'dula-assets';
-import { CharacterRegistry, registerCharacter, registerScene, registerAnimation, registerCameraMove, sketchify, BoilSystem } from 'dula-engine';
+import { CharacterRegistry, registerCharacter, registerScene, registerAnimation, registerCameraMove } from 'dula-engine';
 import { HomeKitchenScene } from './scenes/HomeKitchenScene.js';
 import { AdPose, AdCamera } from './performance.js';
 import { buildDanceRig } from './performance_v10.js';
 
 registerAll();
+
+// 干净均匀描线（监制口径：标准 TV 动画赛璐璐描边，不是速写线）。
+// sketchify 的 per-vertex 宽度抖动和 overshoot 碎线无法参数关停，这里独立实现：
+// 逆向壳法 —— BackSide 克隆顶点沿法线外推固定量，宽度按部件 boundingSphere
+// 自适应收缩（同 sketchify 的局部单位处理），无抖动、无 boil、无硬边碎线。
+// 只保留轮廓壳；资产里的小部件（瞳孔/眼皮/高光/睫毛等）已由 userData.noSketch 跳过。
+function cleanOutline(root, { color = 0x25222a, width = 0.012, minRadius = 0.02 } = {}) {
+  root.traverse(obj => {
+    if (!obj.isMesh) return;
+    if (obj.userData.noSketch || obj.userData.stroke || obj.userData.sketchLine || obj.userData.cleanOutline) return;
+    const geo = obj.geometry;
+    const pos = geo.attributes.position;
+    if (!pos) return;
+    if (!geo.attributes.normal) geo.computeVertexNormals();
+    geo.computeBoundingSphere?.();
+    const radius = geo.boundingSphere ? geo.boundingSphere.radius : 1;
+    if (radius < minRadius) return;
+    const w = Math.min(width, radius * 0.3);
+    const norm = geo.attributes.normal;
+    const p = new Float32Array(pos.count * 3);
+    for (let i = 0; i < pos.count; i++) {
+      p[i * 3] = pos.getX(i) + norm.getX(i) * w;
+      p[i * 3 + 1] = pos.getY(i) + norm.getY(i) * w;
+      p[i * 3 + 2] = pos.getZ(i) + norm.getZ(i) * w;
+    }
+    const hullGeo = new THREE.BufferGeometry();
+    hullGeo.setAttribute('position', new THREE.BufferAttribute(p, 3));
+    if (geo.index) hullGeo.setIndex(geo.index.clone());
+    const hull = new THREE.Mesh(hullGeo, new THREE.MeshBasicMaterial({ color, side: THREE.BackSide }));
+    hull.userData.cleanOutline = true;
+    hull.frustumCulled = false;
+    obj.add(hull);
+  });
+}
 
 // Cel-look (dula-skills/cel-look): hard 2-3-step toon gradient instead of the
 // asset's soft 4-step one — cel shading is "base color + one shadow band".
@@ -72,27 +106,25 @@ class StudioYuki extends BaseYuki {
     this.leftEye = this.leftPupil.parent;
     this.rightEye = this.rightPupil.parent;
     this.leftEye.userData.adBaseScaleY = this.leftEye.scale.y;
-    // Build the dance rig BEFORE sketchify so the IK arm/leg segments and the
-    // mitten hands carry ink lines too (the rig is otherwise created lazily,
-    // after the outline pass). The asset already marks pupils / eyelids /
+    // Build the dance rig BEFORE the outline pass so the IK arm/leg segments
+    // and the mitten hands carry outlines too (the rig is otherwise created
+    // lazily, after the pass). The asset already marks pupils / eyelids /
     // catchlights / brows / lashes userData.noSketch.
     buildDanceRig(this);
     mittenize(this);
     this.danceRig.headset.traverse(o => { o.userData.noSketch = true; });
     hardenToon(this.mesh);
-    sketchify(this.mesh, { color: 0x25222a, width: 0.012, threshold: 40, seed: 11 });
-    BoilSystem.add(this.mesh, { amplitude: 0.0015, fps: 12 });
+    cleanOutline(this.mesh, { color: 0x25222a, width: 0.012 });
   }
   update(time, delta) {
     super.update(time, delta);
-    BoilSystem.update(time); // tick-seeded from storyboard time: deterministic
   }
 }
 registerCharacter('Yuki', StudioYuki);
 
 // StudioMochi: eye-group handles for the shared AdPose writes (pupil parents),
-// cel-look hard toon gradient (fur kept deep orange), sketchify ink + 12fps
-// boil. Cat paws are mitten-shaped already — kept as-is.
+// cel-look hard toon gradient (fur kept deep orange), clean uniform outline
+// (close-up width tier). Cat paws are mitten-shaped already — kept as-is.
 const BaseMochi = CharacterRegistry.Mochi;
 if (BaseMochi) {
   class StudioMochi extends BaseMochi {
@@ -103,12 +135,7 @@ if (BaseMochi) {
       this.leftEye.userData.adBaseScaleY = this.leftEye.scale.y;
       this.rightEye.userData.adBaseScaleY = this.rightEye.scale.y;
       hardenToon(this.mesh, { from: 0xe8a050, to: 0xd98a3c });
-      sketchify(this.mesh, { color: 0x2a2320, width: 0.006, threshold: 40, seed: 23 });
-      BoilSystem.add(this.mesh, { amplitude: 0.0012, fps: 12 });
-    }
-    update(time, delta) {
-      super.update(time, delta);
-      BoilSystem.update(time);
+      cleanOutline(this.mesh, { color: 0x25222a, width: 0.006 });
     }
   }
   registerCharacter('Mochi', StudioMochi);
