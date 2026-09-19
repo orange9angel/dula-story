@@ -1,0 +1,849 @@
+{
+  "video": "output\\yuki_beat_ad_v12.mp4",
+  "frames": 1769,
+  "duration": "29.483333",
+  "resolution": [
+    720,
+    1280
+  ],
+  "fps": 60,
+  "browser_errors": [],
+  "master_and_decoded_aac_identical_to_v11": true,
+  "aac_peak": 0.7733704447746277,
+  "v11_body_and_camera_unchanged": true,
+  "old_overlaps": 32,
+  "new_overlaps": 0,
+  "characters_with_actual_rendered_coverage": 80,
+  "max_start_to_render_delay_ms": 15.0,
+  "rest_frames_closed": 281,
+  "bilabial_frames_closed": 18,
+  "anticipation_frames": 140,
+  "global_calibration": {
+    "candidate_ms": -125,
+    "candidate_score_ratio_to_zero": 2.112225893870803,
+    "competitor_ms": 110,
+    "peak_margin": 0.010751311725329504,
+    "phrase_votes_ms": [
+      -150,
+      110,
+      -115,
+      115,
+      560,
+      -130,
+      -120,
+      70
+    ],
+    "agreeing_phrases": 4,
+    "accepted": false,
+    "applied_ms": 0,
+    "energy_rise_candidate_ms": -115,
+    "reason": "periodic_alias_or_phrase_disagreement"
+  },
+  "coverage": [
+    {
+      "char": "跟",
+      "index": 0,
+      "visual_start": 0.11,
+      "acoustic_start": 0.14,
+      "first_rendered_frame": 7,
+      "sampling_delay_ms": 6.667,
+      "old_first_rendered_time": 0.15,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "上",
+      "index": 1,
+      "visual_start": 0.27,
+      "acoustic_start": 0.3,
+      "first_rendered_frame": 17,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 0.3,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "这",
+      "index": 2,
+      "visual_start": 0.575,
+      "acoustic_start": 0.605,
+      "first_rendered_frame": 35,
+      "sampling_delay_ms": 8.333,
+      "old_first_rendered_time": 0.5,
+      "visible_change_ms": 83.33
+    },
+    {
+      "char": "一",
+      "index": 3,
+      "visual_start": 0.665,
+      "acoustic_start": 0.695,
+      "first_rendered_frame": 40,
+      "sampling_delay_ms": 1.667,
+      "old_first_rendered_time": 0.75,
+      "visible_change_ms": -83.33
+    },
+    {
+      "char": "拍",
+      "index": 4,
+      "visual_start": 1.07,
+      "acoustic_start": 1.1,
+      "first_rendered_frame": 65,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 1.1166666666666667,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "跟",
+      "index": 5,
+      "visual_start": 1.79,
+      "acoustic_start": 1.82,
+      "first_rendered_frame": 108,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 1.8166666666666667,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "我",
+      "index": 6,
+      "visual_start": 1.95,
+      "acoustic_start": 1.98,
+      "first_rendered_frame": 117,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 1.9833333333333334,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "一",
+      "index": 7,
+      "visual_start": 2.385,
+      "acoustic_start": 2.415,
+      "first_rendered_frame": 144,
+      "sampling_delay_ms": 15.0,
+      "old_first_rendered_time": 2.466666666666667,
+      "visible_change_ms": -66.67
+    },
+    {
+      "char": "起",
+      "index": 8,
+      "visual_start": 2.695,
+      "acoustic_start": 2.725,
+      "first_rendered_frame": 162,
+      "sampling_delay_ms": 5.0,
+      "old_first_rendered_time": 2.75,
+      "visible_change_ms": -50.0
+    },
+    {
+      "char": "来",
+      "index": 9,
+      "visual_start": 2.89,
+      "acoustic_start": 2.92,
+      "first_rendered_frame": 174,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 2.933333333333333,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "迈",
+      "index": 10,
+      "visual_start": 3.71,
+      "acoustic_start": 3.74,
+      "first_rendered_frame": 223,
+      "sampling_delay_ms": 6.667,
+      "old_first_rendered_time": 3.7,
+      "visible_change_ms": 16.67
+    },
+    {
+      "char": "开",
+      "index": 11,
+      "visual_start": 3.83,
+      "acoustic_start": 3.86,
+      "first_rendered_frame": 230,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 3.8666666666666667,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "小",
+      "index": 12,
+      "visual_start": 4.03,
+      "acoustic_start": 4.06,
+      "first_rendered_frame": 242,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 4.066666666666666,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "步",
+      "index": 13,
+      "visual_start": 4.33,
+      "acoustic_start": 4.36,
+      "first_rendered_frame": 260,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 4.366666666666666,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "快",
+      "index": 14,
+      "visual_start": 4.625,
+      "acoustic_start": 4.655,
+      "first_rendered_frame": 278,
+      "sampling_delay_ms": 8.333,
+      "old_first_rendered_time": 4.566666666666666,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "乐",
+      "index": 15,
+      "visual_start": 4.83,
+      "acoustic_start": 4.86,
+      "first_rendered_frame": 290,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 4.866666666666666,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "放",
+      "index": 16,
+      "visual_start": 5.155,
+      "acoustic_start": 5.185,
+      "first_rendered_frame": 310,
+      "sampling_delay_ms": 11.667,
+      "old_first_rendered_time": 5.066666666666666,
+      "visible_change_ms": 100.0
+    },
+    {
+      "char": "大",
+      "index": 17,
+      "visual_start": 5.365,
+      "acoustic_start": 5.395,
+      "first_rendered_frame": 322,
+      "sampling_delay_ms": 1.667,
+      "old_first_rendered_time": 5.466666666666667,
+      "visible_change_ms": -100.0
+    },
+    {
+      "char": "转",
+      "index": 18,
+      "visual_start": 7.02,
+      "acoustic_start": 7.05,
+      "first_rendered_frame": 422,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 7.066666666666666,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "个",
+      "index": 19,
+      "visual_start": 7.275,
+      "acoustic_start": 7.305,
+      "first_rendered_frame": 437,
+      "sampling_delay_ms": 8.333,
+      "old_first_rendered_time": 7.2,
+      "visible_change_ms": 83.33
+    },
+    {
+      "char": "圈",
+      "index": 20,
+      "visual_start": 7.485,
+      "acoustic_start": 7.515,
+      "first_rendered_frame": 450,
+      "sampling_delay_ms": 15.0,
+      "old_first_rendered_time": 7.45,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "圈",
+      "index": 21,
+      "visual_start": 7.61,
+      "acoustic_start": 7.64,
+      "first_rendered_frame": 457,
+      "sampling_delay_ms": 6.667,
+      "old_first_rendered_time": 7.65,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "世",
+      "index": 22,
+      "visual_start": 7.83,
+      "acoustic_start": 7.86,
+      "first_rendered_frame": 470,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 7.866666666666666,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "界",
+      "index": 23,
+      "visual_start": 8.195,
+      "acoustic_start": 8.225,
+      "first_rendered_frame": 492,
+      "sampling_delay_ms": 5.0,
+      "old_first_rendered_time": 8.183333333333334,
+      "visible_change_ms": 16.67
+    },
+    {
+      "char": "发",
+      "index": 24,
+      "visual_start": 8.47,
+      "acoustic_start": 8.5,
+      "first_rendered_frame": 509,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 8.5,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "光",
+      "index": 25,
+      "visual_start": 8.705,
+      "acoustic_start": 8.735,
+      "first_rendered_frame": 523,
+      "sampling_delay_ms": 11.667,
+      "old_first_rendered_time": 8.65,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "小",
+      "index": 26,
+      "visual_start": 9.15,
+      "acoustic_start": 9.18,
+      "first_rendered_frame": 549,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 9.166666666666666,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "雪",
+      "index": 27,
+      "visual_start": 9.54,
+      "acoustic_start": 9.57,
+      "first_rendered_frame": 573,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 9.666666666666666,
+      "visible_change_ms": -116.67
+    },
+    {
+      "char": "登",
+      "index": 28,
+      "visual_start": 10.135,
+      "acoustic_start": 10.165,
+      "first_rendered_frame": 609,
+      "sampling_delay_ms": 15.0,
+      "old_first_rendered_time": 10.083333333333334,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "场",
+      "index": 29,
+      "visual_start": 10.27,
+      "acoustic_start": 10.3,
+      "first_rendered_frame": 617,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 10.3,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "心",
+      "index": 30,
+      "visual_start": 10.52,
+      "acoustic_start": 10.55,
+      "first_rendered_frame": 632,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 10.45,
+      "visible_change_ms": 83.33
+    },
+    {
+      "char": "跳",
+      "index": 31,
+      "visual_start": 10.83,
+      "acoustic_start": 10.86,
+      "first_rendered_frame": 650,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 10.783333333333333,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "打",
+      "index": 32,
+      "visual_start": 11.09,
+      "acoustic_start": 11.12,
+      "first_rendered_frame": 666,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 11.033333333333333,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "拍",
+      "index": 33,
+      "visual_start": 11.33,
+      "acoustic_start": 11.36,
+      "first_rendered_frame": 680,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 11.266666666666667,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "左",
+      "index": 34,
+      "visual_start": 13.705,
+      "acoustic_start": 13.735,
+      "first_rendered_frame": 823,
+      "sampling_delay_ms": 11.667,
+      "old_first_rendered_time": 13.716666666666667,
+      "visible_change_ms": 0.0
+    },
+    {
+      "char": "一",
+      "index": 35,
+      "visual_start": 13.89,
+      "acoustic_start": 13.92,
+      "first_rendered_frame": 834,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 13.933333333333334,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "步",
+      "index": 36,
+      "visual_start": 14.18,
+      "acoustic_start": 14.21,
+      "first_rendered_frame": 851,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 14.216666666666667,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "右",
+      "index": 37,
+      "visual_start": 14.29,
+      "acoustic_start": 14.32,
+      "first_rendered_frame": 858,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 14.333333333333334,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "一",
+      "index": 38,
+      "visual_start": 14.62,
+      "acoustic_start": 14.65,
+      "first_rendered_frame": 878,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 14.666666666666666,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "步",
+      "index": 39,
+      "visual_start": 14.895,
+      "acoustic_start": 14.925,
+      "first_rendered_frame": 894,
+      "sampling_delay_ms": 5.0,
+      "old_first_rendered_time": 14.8,
+      "visible_change_ms": 100.0
+    },
+    {
+      "char": "节",
+      "index": 40,
+      "visual_start": 15.09,
+      "acoustic_start": 15.12,
+      "first_rendered_frame": 906,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 15.133333333333333,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "奏",
+      "index": 41,
+      "visual_start": 15.57,
+      "acoustic_start": 15.6,
+      "first_rendered_frame": 935,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 15.6,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "自",
+      "index": 42,
+      "visual_start": 15.95,
+      "acoustic_start": 15.98,
+      "first_rendered_frame": 957,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 16.05,
+      "visible_change_ms": -100.0
+    },
+    {
+      "char": "己",
+      "index": 43,
+      "visual_start": 16.55,
+      "acoustic_start": 16.58,
+      "first_rendered_frame": 993,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 16.533333333333335,
+      "visible_change_ms": 16.67
+    },
+    {
+      "char": "掌",
+      "index": 44,
+      "visual_start": 16.78,
+      "acoustic_start": 16.81,
+      "first_rendered_frame": 1007,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 16.733333333333334,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "握",
+      "index": 45,
+      "visual_start": 16.95,
+      "acoustic_start": 16.98,
+      "first_rendered_frame": 1017,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 16.983333333333334,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "跳",
+      "index": 46,
+      "visual_start": 17.495,
+      "acoustic_start": 17.525,
+      "first_rendered_frame": 1050,
+      "sampling_delay_ms": 5.0,
+      "old_first_rendered_time": 17.55,
+      "visible_change_ms": -50.0
+    },
+    {
+      "char": "一",
+      "index": 47,
+      "visual_start": 17.595,
+      "acoustic_start": 17.625,
+      "first_rendered_frame": 1056,
+      "sampling_delay_ms": 5.0,
+      "old_first_rendered_time": 17.683333333333334,
+      "visible_change_ms": -83.33
+    },
+    {
+      "char": "跳",
+      "index": 48,
+      "visual_start": 17.965,
+      "acoustic_start": 17.995,
+      "first_rendered_frame": 1078,
+      "sampling_delay_ms": 1.667,
+      "old_first_rendered_time": 17.983333333333334,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "转",
+      "index": 49,
+      "visual_start": 18.205,
+      "acoustic_start": 18.235,
+      "first_rendered_frame": 1093,
+      "sampling_delay_ms": 11.667,
+      "old_first_rendered_time": 18.166666666666668,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "一",
+      "index": 50,
+      "visual_start": 18.39,
+      "acoustic_start": 18.42,
+      "first_rendered_frame": 1104,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 18.433333333333334,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "转",
+      "index": 51,
+      "visual_start": 18.67,
+      "acoustic_start": 18.7,
+      "first_rendered_frame": 1121,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 18.683333333333334,
+      "visible_change_ms": 0.0
+    },
+    {
+      "char": "每",
+      "index": 52,
+      "visual_start": 18.89,
+      "acoustic_start": 18.92,
+      "first_rendered_frame": 1134,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 18.933333333333334,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "一",
+      "index": 53,
+      "visual_start": 19.41,
+      "acoustic_start": 19.44,
+      "first_rendered_frame": 1165,
+      "sampling_delay_ms": 6.667,
+      "old_first_rendered_time": 19.45,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "拍",
+      "index": 54,
+      "visual_start": 19.87,
+      "acoustic_start": 19.9,
+      "first_rendered_frame": 1193,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 19.9,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "都",
+      "index": 55,
+      "visual_start": 20.125,
+      "acoustic_start": 20.155,
+      "first_rendered_frame": 1208,
+      "sampling_delay_ms": 8.333,
+      "old_first_rendered_time": 20.3,
+      "visible_change_ms": -166.67
+    },
+    {
+      "char": "闪",
+      "index": 56,
+      "visual_start": 20.49,
+      "acoustic_start": 20.52,
+      "first_rendered_frame": 1230,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 20.533333333333335,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "烁",
+      "index": 57,
+      "visual_start": 20.815,
+      "acoustic_start": 20.845,
+      "first_rendered_frame": 1249,
+      "sampling_delay_ms": 1.667,
+      "old_first_rendered_time": 20.766666666666666,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "跟",
+      "index": 58,
+      "visual_start": 21.31,
+      "acoustic_start": 21.34,
+      "first_rendered_frame": 1279,
+      "sampling_delay_ms": 6.667,
+      "old_first_rendered_time": 21.35,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "上",
+      "index": 59,
+      "visual_start": 21.525,
+      "acoustic_start": 21.555,
+      "first_rendered_frame": 1292,
+      "sampling_delay_ms": 8.333,
+      "old_first_rendered_time": 21.483333333333334,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "这",
+      "index": 60,
+      "visual_start": 21.78,
+      "acoustic_start": 21.81,
+      "first_rendered_frame": 1307,
+      "sampling_delay_ms": 3.333,
+      "old_first_rendered_time": 21.733333333333334,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "一",
+      "index": 61,
+      "visual_start": 22.035,
+      "acoustic_start": 22.065,
+      "first_rendered_frame": 1323,
+      "sampling_delay_ms": 15.0,
+      "old_first_rendered_time": 21.983333333333334,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "拍",
+      "index": 62,
+      "visual_start": 22.27,
+      "acoustic_start": 22.3,
+      "first_rendered_frame": 1337,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 22.316666666666666,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "把",
+      "index": 63,
+      "visual_start": 22.515,
+      "acoustic_start": 22.545,
+      "first_rendered_frame": 1351,
+      "sampling_delay_ms": 1.667,
+      "old_first_rendered_time": 22.533333333333335,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "快",
+      "index": 64,
+      "visual_start": 22.735,
+      "acoustic_start": 22.765,
+      "first_rendered_frame": 1365,
+      "sampling_delay_ms": 15.0,
+      "old_first_rendered_time": 22.683333333333334,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "乐",
+      "index": 65,
+      "visual_start": 22.99,
+      "acoustic_start": 23.02,
+      "first_rendered_frame": 1380,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 22.933333333333334,
+      "visible_change_ms": 66.67
+    },
+    {
+      "char": "唱",
+      "index": 66,
+      "visual_start": 23.4,
+      "acoustic_start": 23.43,
+      "first_rendered_frame": 1404,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 23.5,
+      "visible_change_ms": -100.0
+    },
+    {
+      "char": "出",
+      "index": 67,
+      "visual_start": 23.67,
+      "acoustic_start": 23.7,
+      "first_rendered_frame": 1421,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 23.7,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "来",
+      "index": 68,
+      "visual_start": 24.2,
+      "acoustic_start": 24.23,
+      "first_rendered_frame": 1452,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 24.1,
+      "visible_change_ms": 100.0
+    },
+    {
+      "char": "下",
+      "index": 69,
+      "visual_start": 24.585,
+      "acoustic_start": 24.615,
+      "first_rendered_frame": 1476,
+      "sampling_delay_ms": 15.0,
+      "old_first_rendered_time": 24.616666666666667,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "一",
+      "index": 70,
+      "visual_start": 24.805,
+      "acoustic_start": 24.835,
+      "first_rendered_frame": 1489,
+      "sampling_delay_ms": 11.667,
+      "old_first_rendered_time": 24.95,
+      "visible_change_ms": -133.33
+    },
+    {
+      "char": "拍",
+      "index": 71,
+      "visual_start": 25.37,
+      "acoustic_start": 25.4,
+      "first_rendered_frame": 1523,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 25.4,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "你",
+      "index": 72,
+      "visual_start": 25.55,
+      "acoustic_start": 25.58,
+      "first_rendered_frame": 1533,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 25.583333333333332,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "登",
+      "index": 73,
+      "visual_start": 25.85,
+      "acoustic_start": 25.88,
+      "first_rendered_frame": 1551,
+      "sampling_delay_ms": 0.0,
+      "old_first_rendered_time": 25.883333333333333,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "场",
+      "index": 74,
+      "visual_start": 26.04,
+      "acoustic_start": 26.07,
+      "first_rendered_frame": 1563,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 26.033333333333335,
+      "visible_change_ms": 16.67
+    },
+    {
+      "char": "和",
+      "index": 75,
+      "visual_start": 26.29,
+      "acoustic_start": 26.32,
+      "first_rendered_frame": 1578,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 26.25,
+      "visible_change_ms": 50.0
+    },
+    {
+      "char": "我",
+      "index": 76,
+      "visual_start": 26.49,
+      "acoustic_start": 26.52,
+      "first_rendered_frame": 1590,
+      "sampling_delay_ms": 10.0,
+      "old_first_rendered_time": 26.533333333333335,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "一",
+      "index": 77,
+      "visual_start": 26.805,
+      "acoustic_start": 26.835,
+      "first_rendered_frame": 1609,
+      "sampling_delay_ms": 11.667,
+      "old_first_rendered_time": 26.85,
+      "visible_change_ms": -33.33
+    },
+    {
+      "char": "起",
+      "index": 78,
+      "visual_start": 27.46,
+      "acoustic_start": 27.49,
+      "first_rendered_frame": 1648,
+      "sampling_delay_ms": 6.667,
+      "old_first_rendered_time": 27.483333333333334,
+      "visible_change_ms": -16.67
+    },
+    {
+      "char": "嗨",
+      "index": 79,
+      "visual_start": 27.72,
+      "acoustic_start": 27.75,
+      "first_rendered_frame": 1664,
+      "sampling_delay_ms": 13.333,
+      "old_first_rendered_time": 27.683333333333334,
+      "visible_change_ms": 50.0
+    }
+  ],
+  "limits": [
+    "Render sampling error is not acoustic alignment accuracy.",
+    "Local spectral/energy onsets remain estimates; singing phoneme timing is not measured.",
+    "Normal-speed user playback acceptance remains pending."
+  ]
+}

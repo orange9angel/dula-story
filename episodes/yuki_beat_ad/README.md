@@ -1,10 +1,58 @@
 # 下一拍，你登场
 
+## V12 口型时序校准（2026-09-19，待用户对比播放）
+
+成片：[output/yuki_beat_ad_v12.mp4](output/yuki_beat_ad_v12.mp4)，29.483 秒、720×1280、60 fps。
+先看 [10.25 秒脸部同步对比](output/yuki_lips_v11_v12_compare.mp4)：左 V11、右 V12，
+选取开头、“小雪登场心跳打拍”、“把快乐唱出来”，共用同一条声音。
+动作、表情、机位和最终音轨逐帧/解码比对均与当前 V11 一致。
+
+**本次发现**：接班时 V11 已做逐字起音锚定，但只提前 start、没有修正前字 end，
+留下 32 处重叠（5–175 ms）。旧驱动使用 `findIndex`，前字在重叠区优先，
+提前的新字口型被遮住。V12 重建不重叠字窗，运行时遇到重叠直接报错。
+
+- 从分离人声的频谱起音沿提取候选，并用能量上升复核；±150 ms 局部搜索、
+  相邻字中点约束、一个起音只分配一次。56 字找到较明确锚点，24 字保留 DTW。
+- 视觉准备窗提前 30 ms，和声音/字幕时钟分开；双唇音在声头前闭唇、到声头释放。
+  连续元音衔接，不再每个字都额外从零开口；停顿仍强制闭嘴。
+- ±600 ms 全局扫描复现 −125 ms 候选，但 +110 ms 得分只低约 1.1%，
+  8 句仅 4 句支持负偏移，存在节奏周期歧义，**未全曲强制平移 −125 ms**。
+  见 [测量与逐字记录](config/lipsync_calibration_v12.json)、
+  [偏移扫描及实际开口曲线](storyboard/v12/timing_review.png)。
+
+全帧检查：1769 帧、80 字均实际呈现、0 重叠、281 个字窗外帧闭嘴、18 个双唇音
+准备帧闭嘴；头/手与足底检查通过。嘴形起点到首个渲染帧最大 15 ms，仅表示
+60 fps 的采样误差，**不表示对歌声误差 15 ms**。
+[验证记录](storyboard/v12/verification.json)与[画面对比](storyboard/v12/review_sheet.jpg)。
+额外去掉版本标签做模型辅助视听评审，结果为“两者难以分辨”，并指出“心跳打拍”
+仍有疑点；原文在 [model_av_review.txt](storyboard/v12/model_av_review.txt)。
+因此本版是可播放的修订候选，尚不能宣称用户感知同步已通过。
+
+重建（从 `dula-story` 根目录；需现有 V11 成片/全帧轨迹及缓存人声轨）：
+
+```powershell
+.venv\Scripts\python.exe episodes\yuki_beat_ad\tools\prepare_v12.py
+node episodes\yuki_beat_ad\tools\check_lips_v12.mjs
+node episodes\yuki_beat_ad\tools\render.mjs --v12
+.venv\Scripts\python.exe episodes\yuki_beat_ad\tools\review_v12.py
+.venv\Scripts\python.exe episodes\yuki_beat_ad\tools\build_review_media_v12.py
+```
+
+V12 使用独立分析文件，不把新的校准反写到 V10/V11。仓库保留接班时 V11 起音
+实验的数据和代码作为对照；`lipsync_baseline_v11.json` 固定其字表与成片 hash。
+不要在已锚定的字表上重复施加全局偏移或口型提前量。
+
+小雪音色也已有独立 [6 秒歌声转换试听](output/yuki_voice_audition_6s.wav)，
+可对照 [原歌相同 6 秒](output/yuki_voice_original_6s.wav)。参考来自《便当大作战》
+小雪的三句现有 VV 配音；本地 Seed-VC 保留源歌音高/时长设置，音色相似度未听审。
+没有替换 V12 正式母带；若采纳，须重新验证转换后人声和口型。
+
 ## V11 歌词表演编排（2026-09-19，待播放评审）
 
 成片：`output/yuki_beat_ad_v11.mp4`（29.483 秒，720×1280，60 fps）。
-**音频与口型完全沿用 V10**（`review_v11.py` 断言 `v10_lip_states_identical`），
-本版只改表演层：`tools/prepare_v11.py` 按歌词逐句编排 12+ 个表演 cue
+初版音频与口型沿用 V10；接班后又试过起音锚定并重渲染，当前 V11 的口型已不同，
+`review_v11.py` 记录差异帧。该实验仍获用户“嘴型不符合”的反馈，重叠问题见 V12。
+表演层由 `tools/prepare_v11.py` 按歌词逐句编排 23 个表演 cue
 （`config/performance_plan_v11.json`：招手邀请/碎步点踏/捧心/合掌打拍/
 左右移步/空气鼓/转圈/张臂放大……每个 cue 带情绪、视线焦点、动机与中文
 导演意图），`performance_v11.js` 复用 V10 的 rig 与唇形驱动并扩展动作库，

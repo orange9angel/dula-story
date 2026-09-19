@@ -23,5 +23,16 @@
   "source_seconds": 6.0,
   "method": "Seed-VC V1 F0-conditioned 44.1k; no transposition or duration adjustment",
   "upstream": "https://github.com/Plachtaa/seed-vc",
-  "status": "reference_prepared"
+  "status": "6s_conversion_rendered_not_accepted",
+  "converted_file": "assets\\audio\\voice_audition\\converted\\vc_original_vocal_6s_yuki_reference_1.0_30_0.7.wav",
+  "comparison_original": "output\\yuki_voice_original_6s.wav",
+  "comparison_candidate": "output\\yuki_voice_audition_6s.wav",
+  "vocal_rms_match_gain": 0.7051927587131386,
+  "comparison_common_gain": 1,
+  "sample_rate": 48000,
+  "limits": [
+    "Zero-shot reference timbre conversion; no measured identity or user listening acceptance.",
+    "Original pitch and duration settings requested, not a claim of perfect phonetic preservation.",
+    "V12 final master and mouth timing do not use this audition."
+  ]
 }
