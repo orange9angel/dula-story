@@ -23,11 +23,12 @@ const v10 = process.argv.includes('--v10');
 const v11 = process.argv.includes('--v11');
 const v12 = process.argv.includes('--v12');
 const v13 = process.argv.includes('--v13');
-const version = v13 ? 'v13' : v12 ? 'v12' : v11 ? 'v11' : v10 ? 'v10' : v9 ? 'v9' : v8 ? 'v8' : v6 ? 'v6' : v5 ? 'v5' : v4 ? 'v4' : v3 ? 'v3' : v2 ? 'v2' : '';
+const v14 = process.argv.includes('--v14');
+const version = v14 ? 'v14' : v13 ? 'v13' : v12 ? 'v12' : v11 ? 'v11' : v10 ? 'v10' : v9 ? 'v9' : v8 ? 'v8' : v6 ? 'v6' : v5 ? 'v5' : v4 ? 'v4' : v3 ? 'v3' : v2 ? 'v2' : '';
 const boardDir = path.join(root, version ? `storyboard/${version}` : 'storyboard');
-const audioFile = version ? `assets/audio/mixed_${version}.wav` : 'assets/audio/mixed.wav';
+const audioFile = version==='v14' ? 'assets/audio/mixed_v13.wav' : version ? `assets/audio/mixed_${version}.wav` : 'assets/audio/mixed.wav';
 const outputFile = version ? `output/yuki_beat_ad_${version}.mp4` : 'output/yuki_beat_ad.mp4';
-const fps = v3 || v4 || v5 || v6 || v8 || v9 || v10 || v11 || v12 || v13 ? 60 : 30;
+const fps = v3 || v4 || v5 || v6 || v8 || v9 || v10 || v11 || v12 || v13 || v14 ? 60 : 30;
 const backendArg = process.argv.find(a => a.startsWith('--video-backend='));
 const videoBackend = backendArg ? backendArg.split('=')[1] : 'program';
 if (videoBackend === 'model') throw new Error('video-backend=model 尚未接入（预留 Seedance 参考链，见 cat_leads_e09），请使用默认 program');
@@ -69,7 +70,7 @@ if (!serveOnly) {
       const t=i/fps;
       const capture=!check || (ci<checks.length && t >= checks[ci]);
       const result = await page.evaluate((t,capture)=> capture ? window.renderAt(t) : (window.stepAt ? window.stepAt(t) : window.renderAt(t).state), t, capture);
-      if(v10 || v11 || v12 || v13) performanceTrace.push({frame:i,...(capture?result.state:result)});
+      if(v10 || v11 || v12 || v13 || v14) performanceTrace.push({frame:i,...(capture?result.state:result)});
       if(capture) {
         const buffer=Buffer.from(result.image,'base64');
         if(!check && !encoder.stdin.write(buffer)) await once(encoder.stdin,'drain');
@@ -84,7 +85,7 @@ if (!serveOnly) {
     if(encoder){encoder.stdin.end();const [code]=await once(encoder,'close');if(code!==0)throw new Error(`ffmpeg failed: ${code}`);}
     if(errors.length)throw new Error(errors.join('\n'));
     fs.writeFileSync(path.join(boardDir,'portrait_trace.json'),JSON.stringify({duration,fps,errors,shots:trace},null,2));
-    if(v10 || v11 || v12 || v13) fs.writeFileSync(path.join(boardDir,'performance_trace.json'),JSON.stringify({duration,fps,frames:performanceTrace}));
+    if(v10 || v11 || v12 || v13 || v14) fs.writeFileSync(path.join(boardDir,'performance_trace.json'),JSON.stringify({duration,fps,frames:performanceTrace}));
     console.log(check?'Portrait checks complete':'Video complete');
   } finally { if(encoder&&!encoder.killed)encoder.kill();if(browser)await browser.close();server.close(); }
 }
