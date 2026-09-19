@@ -1,0 +1,27 @@
+{
+  "purpose": "Zero-shot singing timbre audition; not an accepted replacement master.",
+  "voice_config": "episodes\\yuki_bento_battle\\config\\voice_config.json",
+  "sources": [
+    {
+      "path": "episodes\\yuki_bento_battle\\assets\\audio\\003_Yuki.mp3",
+      "text": "双层特制便当！放学之前，谁都不许碰！",
+      "sha256": "d94d14a4d3d6d0611ac526dd47eb2afb5e2c40a7d2c86b24d750ca3dac943f63"
+    },
+    {
+      "path": "episodes\\yuki_bento_battle\\assets\\audio\\019_Yuki.mp3",
+      "text": "啊……装错了。这是我的减肥餐。",
+      "sha256": "1f26e40d8ff6d0b1fbe39c95580354a93283876f1db05f53522d76a805557e9a"
+    },
+    {
+      "path": "episodes\\yuki_bento_battle\\assets\\audio\\026_Yuki.mp3",
+      "text": "……行吧。下次直接做兔子饭。",
+      "sha256": "76b3a9ddefde5b5456ef27df9ee9c762ed802bf4c3bde8f81a05eedd1b8d8977"
+    }
+  ],
+  "reference_seconds": 12.336009070294784,
+  "source_start": 0,
+  "source_seconds": 6.0,
+  "method": "Seed-VC V1 F0-conditioned 44.1k; no transposition or duration adjustment",
+  "upstream": "https://github.com/Plachtaa/seed-vc",
+  "status": "reference_prepared"
+}

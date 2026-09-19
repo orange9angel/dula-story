@@ -1,0 +1,405 @@
+{
+  "frames": 1769,
+  "browser_errors": [],
+  "feet_bottom_min": 0.0027499999999997596,
+  "hand_head_clearance_min": 0.03299999999999981,
+  "v10_lip_states_identical": true,
+  "rest_or_silent_frames_closed": 395,
+  "acting_moods": [
+    "belting",
+    "cheeky",
+    "confident",
+    "delight",
+    "excited",
+    "expectant",
+    "focused",
+    "inviting",
+    "joyful",
+    "mischief",
+    "playful",
+    "proud",
+    "tender",
+    "triumph",
+    "warm",
+    "wonder"
+  ],
+  "eye_openness_range": [
+    0.2702857142857085,
+    1.23
+  ],
+  "closed_eyes_frames": 176,
+  "phrases": [
+    {
+      "move": "beckon",
+      "intent": "手掌向观众招两下，眉毛上挑，点头请你跟拍",
+      "hand_ranges_xyz": [
+        [
+          0.06,
+          0.028,
+          0.0
+        ],
+        [
+          0.06,
+          0.129,
+          0.09
+        ]
+      ]
+    },
+    {
+      "move": "come_along",
+      "intent": "两手向自己招呼，侧身碎步，回头邀请",
+      "hand_ranges_xyz": [
+        [
+          0.105,
+          0.06,
+          0.126
+        ],
+        [
+          0.113,
+          0.079,
+          0.175
+        ]
+      ]
+    },
+    {
+      "move": "tiny_steps",
+      "intent": "低头看脚，轻快踏两小步，抬头得意",
+      "hand_ranges_xyz": [
+        [
+          0.071,
+          0.201,
+          0.104
+        ],
+        [
+          0.088,
+          0.238,
+          0.101
+        ]
+      ]
+    },
+    {
+      "move": "joy_expand",
+      "intent": "双手胸前捧住快乐，屈膝蓄势，在大字张臂放大",
+      "hand_ranges_xyz": [
+        [
+          0.46,
+          0.325,
+          0.21
+        ],
+        [
+          0.462,
+          0.274,
+          0.21
+        ]
+      ]
+    },
+    {
+      "move": "twirl",
+      "intent": "手臂先收后打开，完整转圈，膝盖软着陆",
+      "hand_ranges_xyz": [
+        [
+          1.034,
+          0.195,
+          0.805
+        ],
+        [
+          0.903,
+          0.127,
+          0.804
+        ]
+      ]
+    },
+    {
+      "move": "light_world",
+      "intent": "眼神追随手掌，捧光向上展开，惊喜睁眼",
+      "hand_ranges_xyz": [
+        [
+          0.294,
+          0.36,
+          0.22
+        ],
+        [
+          0.302,
+          0.364,
+          0.22
+        ]
+      ]
+    },
+    {
+      "move": "introduce",
+      "intent": "指向自己，抬下巴，俏皮眨眼后亮相",
+      "hand_ranges_xyz": [
+        [
+          0.343,
+          0.314,
+          0.297
+        ],
+        [
+          0.115,
+          0.305,
+          0.106
+        ]
+      ]
+    },
+    {
+      "move": "heart",
+      "intent": "两手护在心口，心形随胸口起伏",
+      "hand_ranges_xyz": [
+        [
+          0.064,
+          0.052,
+          0.01
+        ],
+        [
+          0.267,
+          0.229,
+          0.147
+        ]
+      ]
+    },
+    {
+      "move": "clap",
+      "intent": "从心口张手再合掌打拍，肩膀和膝盖同拍回弹",
+      "hand_ranges_xyz": [
+        [
+          0.315,
+          0.064,
+          0.139
+        ],
+        [
+          0.297,
+          0.064,
+          0.139
+        ]
+      ]
+    },
+    {
+      "move": "step_left",
+      "intent": "先看左方再移步，左手领路，右肩反向摆",
+      "hand_ranges_xyz": [
+        [
+          0.307,
+          0.156,
+          0.075
+        ],
+        [
+          0.208,
+          0.066,
+          0.075
+        ]
+      ]
+    },
+    {
+      "move": "step_right",
+      "intent": "眼神换到右方，再右移并收脚，动作做成呼应",
+      "hand_ranges_xyz": [
+        [
+          0.51,
+          0.279,
+          0.0
+        ],
+        [
+          0.51,
+          0.144,
+          0.0
+        ]
+      ]
+    },
+    {
+      "move": "air_drums",
+      "intent": "左右手交替敲虚拟鼓点，配合膝盖律动",
+      "hand_ranges_xyz": [
+        [
+          0.239,
+          0.276,
+          0.229
+        ],
+        [
+          0.349,
+          0.277,
+          0.177
+        ]
+      ]
+    },
+    {
+      "move": "take_control",
+      "intent": "先指自己再握拳收回，挑眉表示节奏由我掌握",
+      "hand_ranges_xyz": [
+        [
+          0.262,
+          0.149,
+          0.193
+        ],
+        [
+          0.2,
+          0.195,
+          0.104
+        ]
+      ]
+    },
+    {
+      "move": "hop",
+      "intent": "先蹲再轻快跳起，手臂上扬，落在鼓点",
+      "hand_ranges_xyz": [
+        [
+          0.045,
+          0.613,
+          0.0
+        ],
+        [
+          0.216,
+          0.58,
+          0.17
+        ]
+      ]
+    },
+    {
+      "move": "twirl",
+      "intent": "接跳跃收势转一整圈，甩开双臂亮相",
+      "hand_ranges_xyz": [
+        [
+          0.843,
+          0.129,
+          0.805
+        ],
+        [
+          0.844,
+          0.129,
+          0.805
+        ]
+      ]
+    },
+    {
+      "move": "sparkle",
+      "intent": "左右斜上方交替点星，身体反向摆，眼睛随手追光",
+      "hand_ranges_xyz": [
+        [
+          0.317,
+          0.417,
+          0.09
+        ],
+        [
+          0.317,
+          0.417,
+          0.142
+        ]
+      ]
+    },
+    {
+      "move": "beckon",
+      "intent": "主动探身邀请，再用点头把观众带回拍子",
+      "hand_ranges_xyz": [
+        [
+          0.093,
+          0.336,
+          0.134
+        ],
+        [
+          0.226,
+          0.19,
+          0.253
+        ]
+      ]
+    },
+    {
+      "move": "sing_joy",
+      "intent": "手从胸前向外送出快乐，抬眉唱出，再闭眼陶醉",
+      "hand_ranges_xyz": [
+        [
+          0.337,
+          0.107,
+          0.12
+        ],
+        [
+          0.342,
+          0.083,
+          0.12
+        ]
+      ]
+    },
+    {
+      "move": "count_in",
+      "intent": "竖起手指提醒下一拍，歪头等观众接棒",
+      "hand_ranges_xyz": [
+        [
+          0.093,
+          0.257,
+          0.06
+        ],
+        [
+          0.158,
+          0.214,
+          0.089
+        ]
+      ]
+    },
+    {
+      "move": "your_stage",
+      "intent": "向左侧让位，双手把右侧空舞台介绍给观众",
+      "hand_ranges_xyz": [
+        [
+          0.196,
+          0.127,
+          0.18
+        ],
+        [
+          0.215,
+          0.243,
+          0.019
+        ]
+      ]
+    },
+    {
+      "move": "together",
+      "intent": "伸手拉近观众，再回到中心做两拍摇摆",
+      "hand_ranges_xyz": [
+        [
+          0.25,
+          0.046,
+          0.064
+        ],
+        [
+          0.246,
+          0.05,
+          0.249
+        ]
+      ]
+    },
+    {
+      "move": "cheer",
+      "intent": "蹲下蓄势，嗨字举手跃起，落地后笑着收势",
+      "hand_ranges_xyz": [
+        [
+          0.156,
+          0.594,
+          0.134
+        ],
+        [
+          0.107,
+          0.594,
+          0.134
+        ]
+      ]
+    },
+    {
+      "move": "finale",
+      "intent": "手掌挥别，眨眼，停在开心的闭嘴笑",
+      "hand_ranges_xyz": [
+        [
+          0.026,
+          0.141,
+          0.038
+        ],
+        [
+          0.097,
+          0.275,
+          0.019
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Expressiveness and voice likeness require user playback review.",
+    "Head checks use a sphere; rendered pose checks are also required."
+  ]
+}

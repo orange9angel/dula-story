@@ -1,5 +1,22 @@
 # 下一拍，你登场
 
+## V11 歌词表演编排（2026-09-19，待播放评审）
+
+成片：`output/yuki_beat_ad_v11.mp4`（29.483 秒，720×1280，60 fps）。
+**音频与口型完全沿用 V10**（`review_v11.py` 断言 `v10_lip_states_identical`），
+本版只改表演层：`tools/prepare_v11.py` 按歌词逐句编排 12+ 个表演 cue
+（`config/performance_plan_v11.json`：招手邀请/碎步点踏/捧心/合掌打拍/
+左右移步/空气鼓/转圈/张臂放大……每个 cue 带情绪、视线焦点、动机与中文
+导演意图），`performance_v11.js` 复用 V10 的 rig 与唇形驱动并扩展动作库，
+`viewer_v11.js` 消费新计划。自检：1769 帧 0 浏览器错误、395 个休止帧闭嘴、
+16 种表演情绪、足底/手-头余量断言通过。本节为模型辅助补记（Codex 离场后
+整理），未声称人工视听验收。
+
+另含实验性工具 `tools/prepare_voice_audition.py` +
+`config/voice_audition.json`：用小雪既有配音音色做歌声转换试听
+（zero-shot timbre audition），**未采纳为正式母带**，仅为后续"角色本音唱歌"
+方向探路。
+
 ## V10 唱跳修订（2026-09-19，待播放评审）
 
 成片：[output/yuki_beat_ad_v10.mp4](output/yuki_beat_ad_v10.mp4)
