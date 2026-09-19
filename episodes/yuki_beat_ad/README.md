@@ -1,5 +1,21 @@
 # 下一拍，你登场
 
+## V17 发音细节 + 年糕手绘修复（2026-09-19，待播放评审）
+
+成片：`output/yuki_beat_ad_v17.mp4`（29.5 秒，720×1280，60 fps）。
+
+- **口型发音细节**：视素轨道新增 `purse`（撮口）与 `teeth`（露齿）通道
+  （`prepare_v17.py` → `viseme_track_v17.json`，333 关键帧）。u/ü 及 ou/ao/iu
+  尾段渲染成小圆孔（嘴角内收 + rounding 拉满 + jaw 收 18%），
+  如「步 bù」= 双唇闭合→40ms 快速释放→撮口；s/z/c/sh/zh/j/q/x 等擦音段
+  露上齿；b/p/m 爆破释放 ≤40ms。几何经 `lipsync_v17.js` 包装实现，
+  `lipsync_v13.js` 原文件未动。
+- **年糕手绘细节回归**：StudioMochi 加回 sketchify 描边 + BoilSystem
+  抖动（`bootstrap.js`），并参照 StudioYuki 把 MeshToonMaterial 转
+  MeshStandardMaterial + 毛色加深（0xd98a3c），解决舞台强光洗白。
+  Boil 抖动由 storyboard 时间驱动，逐帧确定性已验证（同帧两次渲染逐字节一致）。
+- 已知边界：s/z/c+i 的舌尖元音段仍按普通 i 处理（未全程露齿）。
+
 ## V16 年糕伴舞（2026-09-19，待播放评审）
 
 成片：`output/yuki_beat_ad_v16.mp4`（29.5 秒，720×1280，60 fps）。
