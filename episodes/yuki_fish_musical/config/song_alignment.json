@@ -1,0 +1,664 @@
+{
+  "stem_sha256": "a1481ab6bbbd71dbabd18973ede3813ae6f9c6d02fe43014db8a26cac42fdc4a",
+  "text": "不是我别看我我只是一只小猫咪小鱼干什么味人家早就忘记你看我这么乖眼睛多么透明真的不是我喵证据在你嘴边还闪着光小鱼干的味道藏不住的香抓到啦就是你别再假装下一顿你洗碗没得商量",
+  "method": "faster-whisper small CPU int8; supplied per-character tokens; cross-attention DTW",
+  "version": 1,
+  "chars": [
+    {
+      "ch": "不",
+      "start": 0.0,
+      "end": 0.26,
+      "probability": 0.0353
+    },
+    {
+      "ch": "是",
+      "start": 0.26,
+      "end": 0.52,
+      "probability": 0.0082
+    },
+    {
+      "ch": "我",
+      "start": 0.52,
+      "end": 0.74,
+      "probability": 0.9866
+    },
+    {
+      "ch": "别",
+      "start": 0.74,
+      "end": 0.9,
+      "probability": 0.1535
+    },
+    {
+      "ch": "看",
+      "start": 0.9,
+      "end": 1.16,
+      "probability": 0.9959
+    },
+    {
+      "ch": "我",
+      "start": 1.16,
+      "end": 1.36,
+      "probability": 0.9862
+    },
+    {
+      "ch": "我",
+      "start": 1.36,
+      "end": 1.62,
+      "probability": 0.8611
+    },
+    {
+      "ch": "只",
+      "start": 1.62,
+      "end": 1.8,
+      "probability": 0.0156
+    },
+    {
+      "ch": "是",
+      "start": 1.8,
+      "end": 2.12,
+      "probability": 0.0851
+    },
+    {
+      "ch": "一",
+      "start": 2.12,
+      "end": 2.38,
+      "probability": 0.5782
+    },
+    {
+      "ch": "只",
+      "start": 2.38,
+      "end": 2.5,
+      "probability": 0.8043
+    },
+    {
+      "ch": "小",
+      "start": 2.5,
+      "end": 2.76,
+      "probability": 0.2341
+    },
+    {
+      "ch": "猫",
+      "start": 2.76,
+      "end": 2.94,
+      "probability": 0.2438
+    },
+    {
+      "ch": "咪",
+      "start": 2.94,
+      "end": 3.32,
+      "probability": 0.9454
+    },
+    {
+      "ch": "小",
+      "start": 3.32,
+      "end": 3.9,
+      "probability": 0.7384
+    },
+    {
+      "ch": "鱼",
+      "start": 3.9,
+      "end": 4.08,
+      "probability": 0.682
+    },
+    {
+      "ch": "干",
+      "start": 4.08,
+      "end": 4.3,
+      "probability": 0.6628
+    },
+    {
+      "ch": "什",
+      "start": 4.3,
+      "end": 4.5,
+      "probability": 0.001
+    },
+    {
+      "ch": "么",
+      "start": 4.5,
+      "end": 4.78,
+      "probability": 0.0208
+    },
+    {
+      "ch": "味",
+      "start": 4.78,
+      "end": 5.0,
+      "probability": 0.0011
+    },
+    {
+      "ch": "人",
+      "start": 5.0,
+      "end": 5.22,
+      "probability": 0.9445
+    },
+    {
+      "ch": "家",
+      "start": 5.22,
+      "end": 5.52,
+      "probability": 0.9594
+    },
+    {
+      "ch": "早",
+      "start": 5.52,
+      "end": 5.9,
+      "probability": 0.9346
+    },
+    {
+      "ch": "就",
+      "start": 5.9,
+      "end": 6.1,
+      "probability": 0.9947
+    },
+    {
+      "ch": "忘",
+      "start": 6.1,
+      "end": 6.48,
+      "probability": 0.9963
+    },
+    {
+      "ch": "记",
+      "start": 6.48,
+      "end": 6.96,
+      "probability": 0.9926
+    },
+    {
+      "ch": "你",
+      "start": 6.96,
+      "end": 7.48,
+      "probability": 0.0369
+    },
+    {
+      "ch": "看",
+      "start": 7.48,
+      "end": 7.7,
+      "probability": 0.9719
+    },
+    {
+      "ch": "我",
+      "start": 7.7,
+      "end": 7.94,
+      "probability": 0.9971
+    },
+    {
+      "ch": "这",
+      "start": 7.94,
+      "end": 8.18,
+      "probability": 0.0505
+    },
+    {
+      "ch": "么",
+      "start": 8.18,
+      "end": 8.34,
+      "probability": 0.7475
+    },
+    {
+      "ch": "乖",
+      "start": 8.34,
+      "end": 8.72,
+      "probability": 0.5553
+    },
+    {
+      "ch": "眼",
+      "start": 8.72,
+      "end": 9.3,
+      "probability": 0.9772
+    },
+    {
+      "ch": "睛",
+      "start": 9.3,
+      "end": 9.52,
+      "probability": 0.9981
+    },
+    {
+      "ch": "多",
+      "start": 9.52,
+      "end": 9.76,
+      "probability": 0.9158
+    },
+    {
+      "ch": "么",
+      "start": 9.76,
+      "end": 9.92,
+      "probability": 0.998
+    },
+    {
+      "ch": "透",
+      "start": 9.92,
+      "end": 10.18,
+      "probability": 0.0396
+    },
+    {
+      "ch": "明",
+      "start": 10.18,
+      "end": 10.42,
+      "probability": 0.8376
+    },
+    {
+      "ch": "真",
+      "start": 10.42,
+      "end": 11.0,
+      "probability": 0.014
+    },
+    {
+      "ch": "的",
+      "start": 11.0,
+      "end": 11.34,
+      "probability": 0.0215
+    },
+    {
+      "ch": "不",
+      "start": 11.34,
+      "end": 11.64,
+      "probability": 0.0263
+    },
+    {
+      "ch": "是",
+      "start": 11.64,
+      "end": 12.06,
+      "probability": 0.0068
+    },
+    {
+      "ch": "我",
+      "start": 12.06,
+      "end": 12.7,
+      "probability": 0.9994
+    },
+    {
+      "ch": "喵",
+      "start": 12.7,
+      "end": 13.3,
+      "probability": 0.2206
+    },
+    {
+      "ch": "证",
+      "start": 13.3,
+      "end": 13.58,
+      "probability": 0.585
+    },
+    {
+      "ch": "据",
+      "start": 13.58,
+      "end": 13.8,
+      "probability": 0.9901
+    },
+    {
+      "ch": "在",
+      "start": 13.8,
+      "end": 14.1,
+      "probability": 0.9949
+    },
+    {
+      "ch": "你",
+      "start": 14.1,
+      "end": 14.56,
+      "probability": 0.992
+    },
+    {
+      "ch": "嘴",
+      "start": 14.56,
+      "end": 14.96,
+      "probability": 0.9891
+    },
+    {
+      "ch": "边",
+      "start": 14.96,
+      "end": 15.48,
+      "probability": 0.9513
+    },
+    {
+      "ch": "还",
+      "start": 15.48,
+      "end": 15.8,
+      "probability": 0.5473
+    },
+    {
+      "ch": "闪",
+      "start": 15.8,
+      "end": 16.16,
+      "probability": 0.8329
+    },
+    {
+      "ch": "着",
+      "start": 16.16,
+      "end": 16.66,
+      "probability": 0.9804
+    },
+    {
+      "ch": "光",
+      "start": 16.66,
+      "end": 17.08,
+      "probability": 0.1735
+    },
+    {
+      "ch": "小",
+      "start": 17.08,
+      "end": 17.68,
+      "probability": 0.9536
+    },
+    {
+      "ch": "鱼",
+      "start": 17.68,
+      "end": 17.96,
+      "probability": 0.9931
+    },
+    {
+      "ch": "干",
+      "start": 17.96,
+      "end": 18.28,
+      "probability": 0.0023
+    },
+    {
+      "ch": "的",
+      "start": 18.28,
+      "end": 18.54,
+      "probability": 0.8673
+    },
+    {
+      "ch": "味",
+      "start": 18.54,
+      "end": 18.76,
+      "probability": 0.9971
+    },
+    {
+      "ch": "道",
+      "start": 18.76,
+      "end": 19.06,
+      "probability": 0.9997
+    },
+    {
+      "ch": "藏",
+      "start": 19.06,
+      "end": 19.42,
+      "probability": 0.9889
+    },
+    {
+      "ch": "不",
+      "start": 19.42,
+      "end": 19.84,
+      "probability": 0.9988
+    },
+    {
+      "ch": "住",
+      "start": 19.84,
+      "end": 20.22,
+      "probability": 0.998
+    },
+    {
+      "ch": "的",
+      "start": 20.22,
+      "end": 20.7,
+      "probability": 0.9585
+    },
+    {
+      "ch": "香",
+      "start": 20.7,
+      "end": 21.18,
+      "probability": 0.8535
+    },
+    {
+      "ch": "抓",
+      "start": 21.18,
+      "end": 21.88,
+      "probability": 0.9487
+    },
+    {
+      "ch": "到",
+      "start": 21.88,
+      "end": 22.14,
+      "probability": 0.0724
+    },
+    {
+      "ch": "啦",
+      "start": 22.14,
+      "end": 22.42,
+      "probability": 0.0175
+    },
+    {
+      "ch": "就",
+      "start": 22.42,
+      "end": 22.58,
+      "probability": 0.1357
+    },
+    {
+      "ch": "是",
+      "start": 22.58,
+      "end": 22.78,
+      "probability": 0.0043
+    },
+    {
+      "ch": "你",
+      "start": 22.78,
+      "end": 23.04,
+      "probability": 0.9947
+    },
+    {
+      "ch": "别",
+      "start": 23.04,
+      "end": 23.24,
+      "probability": 0.9939
+    },
+    {
+      "ch": "再",
+      "start": 23.24,
+      "end": 23.46,
+      "probability": 0.8984
+    },
+    {
+      "ch": "假",
+      "start": 23.46,
+      "end": 23.82,
+      "probability": 0.7948
+    },
+    {
+      "ch": "装",
+      "start": 23.82,
+      "end": 24.26,
+      "probability": 0.9988
+    },
+    {
+      "ch": "下",
+      "start": 24.26,
+      "end": 24.82,
+      "probability": 0.0014
+    },
+    {
+      "ch": "一",
+      "start": 24.82,
+      "end": 25.12,
+      "probability": 0.3301
+    },
+    {
+      "ch": "顿",
+      "start": 25.12,
+      "end": 25.32,
+      "probability": 0.7494
+    },
+    {
+      "ch": "你",
+      "start": 25.32,
+      "end": 25.74,
+      "probability": 0.9014
+    },
+    {
+      "ch": "洗",
+      "start": 25.74,
+      "end": 26.06,
+      "probability": 0.0693
+    },
+    {
+      "ch": "碗",
+      "start": 26.06,
+      "end": 26.4,
+      "probability": 0.5135
+    },
+    {
+      "ch": "没",
+      "start": 26.4,
+      "end": 27.14,
+      "probability": 0.1279
+    },
+    {
+      "ch": "得",
+      "start": 27.14,
+      "end": 27.6,
+      "probability": 0.3922
+    },
+    {
+      "ch": "商",
+      "start": 27.6,
+      "end": 28.16,
+      "probability": 0.8819
+    },
+    {
+      "ch": "量",
+      "start": 28.16,
+      "end": 28.72,
+      "probability": 0.9994
+    }
+  ],
+  "lines": [
+    "不是我 别看我 我只是一只小猫咪",
+    "小鱼干 什么味 人家早就忘记",
+    "你看我 这么乖 眼睛多么透明",
+    "真的不是我 喵",
+    "证据在 你嘴边 还闪着光",
+    "小鱼干的味道 藏不住的香",
+    "抓到啦 就是你 别再假装",
+    "下一顿 你洗碗 没得商量"
+  ],
+  "line_char_counts": [
+    14,
+    12,
+    12,
+    6,
+    10,
+    11,
+    10,
+    10
+  ],
+  "ab_boundary": 13.3,
+  "ab_boundary_char": 44,
+  "duration": 29.44,
+  "warnings": [
+    {
+      "ch": "不",
+      "start": 0.0,
+      "end": 0.26,
+      "probability": 0.0353
+    },
+    {
+      "ch": "是",
+      "start": 0.26,
+      "end": 0.52,
+      "probability": 0.0082
+    },
+    {
+      "ch": "只",
+      "start": 1.62,
+      "end": 1.8,
+      "probability": 0.0156
+    },
+    {
+      "ch": "是",
+      "start": 1.8,
+      "end": 2.12,
+      "probability": 0.0851
+    },
+    {
+      "ch": "什",
+      "start": 4.3,
+      "end": 4.5,
+      "probability": 0.001
+    },
+    {
+      "ch": "么",
+      "start": 4.5,
+      "end": 4.78,
+      "probability": 0.0208
+    },
+    {
+      "ch": "味",
+      "start": 4.78,
+      "end": 5.0,
+      "probability": 0.0011
+    },
+    {
+      "ch": "你",
+      "start": 6.96,
+      "end": 7.48,
+      "probability": 0.0369
+    },
+    {
+      "ch": "这",
+      "start": 7.94,
+      "end": 8.18,
+      "probability": 0.0505
+    },
+    {
+      "ch": "透",
+      "start": 9.92,
+      "end": 10.18,
+      "probability": 0.0396
+    },
+    {
+      "ch": "真",
+      "start": 10.42,
+      "end": 11.0,
+      "probability": 0.014
+    },
+    {
+      "ch": "的",
+      "start": 11.0,
+      "end": 11.34,
+      "probability": 0.0215
+    },
+    {
+      "ch": "不",
+      "start": 11.34,
+      "end": 11.64,
+      "probability": 0.0263
+    },
+    {
+      "ch": "是",
+      "start": 11.64,
+      "end": 12.06,
+      "probability": 0.0068
+    },
+    {
+      "ch": "干",
+      "start": 17.96,
+      "end": 18.28,
+      "probability": 0.0023
+    },
+    {
+      "ch": "到",
+      "start": 21.88,
+      "end": 22.14,
+      "probability": 0.0724
+    },
+    {
+      "ch": "啦",
+      "start": 22.14,
+      "end": 22.42,
+      "probability": 0.0175
+    },
+    {
+      "ch": "是",
+      "start": 22.58,
+      "end": 22.78,
+      "probability": 0.0043
+    },
+    {
+      "ch": "下",
+      "start": 24.26,
+      "end": 24.82,
+      "probability": 0.0014
+    },
+    {
+      "ch": "洗",
+      "start": 25.74,
+      "end": 26.06,
+      "probability": 0.0693
+    }
+  ],
+  "phoneme_timing": "not measured; viseme timing remains an animation approximation"
+}

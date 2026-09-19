@@ -1,0 +1,1230 @@
+{
+  "duration": 46.322,
+  "fps": 60,
+  "bpm": 136.0,
+  "segments": [
+    {
+      "id": "01_yuki_angry",
+      "kind": "dialogue",
+      "character": "Yuki",
+      "text": "年糕我的小鱼干呢",
+      "move": "talk_angry",
+      "shot": "medium",
+      "start": 0.3,
+      "display": "年糕！我的小鱼干呢？！",
+      "end": 2.748
+    },
+    {
+      "id": "02_mochi_meh",
+      "kind": "dialogue",
+      "character": "Mochi",
+      "text": "喵",
+      "move": "cat_talk",
+      "shot": "medium",
+      "start": 3.148,
+      "display": "……喵？",
+      "end": 4.204
+    },
+    {
+      "id": "songA",
+      "kind": "song",
+      "character": "Mochi",
+      "move": "cat_sing",
+      "shot": "wide",
+      "start": 5.004,
+      "end": 18.304,
+      "song_range": [
+        0.0,
+        13.3
+      ]
+    },
+    {
+      "id": "03_yuki_press",
+      "kind": "dialogue",
+      "character": "Yuki",
+      "text": "是吗那你嘴角的是什么",
+      "move": "talk_press",
+      "shot": "close",
+      "start": 19.004,
+      "display": "是吗？那你嘴角的是什么？",
+      "end": 21.644
+    },
+    {
+      "id": "04_mochi_art",
+      "kind": "dialogue",
+      "character": "Mochi",
+      "text": "这是艺术",
+      "move": "cat_talk",
+      "shot": "medium",
+      "start": 21.994,
+      "display": "这是……艺术。",
+      "end": 24.658
+    },
+    {
+      "id": "songB",
+      "kind": "song",
+      "character": "Yuki",
+      "move": "sing",
+      "shot": "wide",
+      "start": 25.358,
+      "end": 41.498,
+      "song_range": [
+        13.3,
+        29.44
+      ]
+    },
+    {
+      "id": "05_mochi_defeat",
+      "kind": "dialogue",
+      "character": "Mochi",
+      "text": "喵呜",
+      "move": "cat_talk",
+      "shot": "medium",
+      "start": 42.098,
+      "end": 44.522
+    },
+    {
+      "id": "freeze",
+      "kind": "freeze",
+      "character": null,
+      "move": "finale",
+      "shot": "wide",
+      "start": 44.522,
+      "end": 46.322
+    }
+  ],
+  "beat_grid": {
+    "bpm": 136.0,
+    "beats": [
+      5.12,
+      5.492,
+      5.863,
+      6.304,
+      6.722,
+      7.21,
+      7.674,
+      8.115,
+      8.557,
+      9.021,
+      9.462,
+      9.903,
+      10.321,
+      10.809,
+      11.273,
+      11.691,
+      12.156,
+      12.597,
+      13.061,
+      13.526,
+      13.99,
+      14.431,
+      14.872,
+      15.337,
+      15.778,
+      16.242,
+      16.684,
+      17.148,
+      17.589,
+      18.054,
+      25.549,
+      26.013,
+      26.454,
+      26.919,
+      27.36,
+      27.801,
+      28.266,
+      28.707,
+      29.148,
+      29.612,
+      30.053,
+      30.518,
+      30.959,
+      31.4,
+      31.865,
+      32.306,
+      32.77,
+      33.235,
+      33.676,
+      34.117,
+      34.558,
+      35.023,
+      35.464,
+      35.928,
+      36.369,
+      36.834,
+      37.275,
+      37.739,
+      38.18,
+      38.622,
+      39.086,
+      39.527,
+      39.968,
+      40.409,
+      40.85,
+      41.291,
+      41.732,
+      42.173,
+      42.614,
+      43.055,
+      43.496,
+      43.937,
+      44.378,
+      44.819,
+      45.26,
+      45.701,
+      46.142
+    ],
+    "downbeats": [
+      5.863,
+      7.674,
+      9.462,
+      11.273,
+      13.061,
+      14.872,
+      16.684,
+      25.549,
+      27.36,
+      29.148,
+      30.959,
+      32.77,
+      34.558,
+      36.369,
+      38.18,
+      39.944,
+      41.708,
+      43.472,
+      45.236
+    ]
+  },
+  "songA": {
+    "start": 5.004,
+    "end": 18.304,
+    "song_offset": 0.0,
+    "lines": [
+      {
+        "text": "不是我 别看我 我只是一只小猫咪",
+        "line": 0,
+        "char0": 0,
+        "n_chars": 14,
+        "start": 5.004,
+        "end": 8.324
+      },
+      {
+        "text": "小鱼干 什么味 人家早就忘记",
+        "line": 1,
+        "char0": 14,
+        "n_chars": 12,
+        "start": 8.324,
+        "end": 11.964
+      },
+      {
+        "text": "你看我 这么乖 眼睛多么透明",
+        "line": 2,
+        "char0": 26,
+        "n_chars": 12,
+        "start": 11.964,
+        "end": 15.424
+      },
+      {
+        "text": "真的不是我 喵",
+        "line": 3,
+        "char0": 38,
+        "n_chars": 6,
+        "start": 15.424,
+        "end": 18.304
+      }
+    ],
+    "chars": [
+      {
+        "ch": "不",
+        "start": 5.004,
+        "end": 5.264,
+        "probability": 0.0353,
+        "initial": "b",
+        "final": "u"
+      },
+      {
+        "ch": "是",
+        "start": 5.264,
+        "end": 5.524,
+        "probability": 0.0082,
+        "initial": "sh",
+        "final": "i"
+      },
+      {
+        "ch": "我",
+        "start": 5.524,
+        "end": 5.744,
+        "probability": 0.9866,
+        "initial": "w",
+        "final": "o"
+      },
+      {
+        "ch": "别",
+        "start": 5.744,
+        "end": 5.904,
+        "probability": 0.1535,
+        "initial": "b",
+        "final": "ie"
+      },
+      {
+        "ch": "看",
+        "start": 5.904,
+        "end": 6.164,
+        "probability": 0.9959,
+        "initial": "k",
+        "final": "an"
+      },
+      {
+        "ch": "我",
+        "start": 6.164,
+        "end": 6.364,
+        "probability": 0.9862,
+        "initial": "w",
+        "final": "o"
+      },
+      {
+        "ch": "我",
+        "start": 6.364,
+        "end": 6.624,
+        "probability": 0.8611,
+        "initial": "w",
+        "final": "o"
+      },
+      {
+        "ch": "只",
+        "start": 6.624,
+        "end": 6.804,
+        "probability": 0.0156,
+        "initial": "zh",
+        "final": "i"
+      },
+      {
+        "ch": "是",
+        "start": 6.804,
+        "end": 7.124,
+        "probability": 0.0851,
+        "initial": "sh",
+        "final": "i"
+      },
+      {
+        "ch": "一",
+        "start": 7.124,
+        "end": 7.384,
+        "probability": 0.5782,
+        "initial": "y",
+        "final": "i"
+      },
+      {
+        "ch": "只",
+        "start": 7.384,
+        "end": 7.504,
+        "probability": 0.8043,
+        "initial": "zh",
+        "final": "i"
+      },
+      {
+        "ch": "小",
+        "start": 7.504,
+        "end": 7.764,
+        "probability": 0.2341,
+        "initial": "x",
+        "final": "iao"
+      },
+      {
+        "ch": "猫",
+        "start": 7.764,
+        "end": 7.944,
+        "probability": 0.2438,
+        "initial": "m",
+        "final": "ao"
+      },
+      {
+        "ch": "咪",
+        "start": 7.944,
+        "end": 8.324,
+        "probability": 0.9454,
+        "initial": "m",
+        "final": "i"
+      },
+      {
+        "ch": "小",
+        "start": 8.324,
+        "end": 8.904,
+        "probability": 0.7384,
+        "initial": "x",
+        "final": "iao"
+      },
+      {
+        "ch": "鱼",
+        "start": 8.904,
+        "end": 9.084,
+        "probability": 0.682,
+        "initial": "y",
+        "final": "u"
+      },
+      {
+        "ch": "干",
+        "start": 9.084,
+        "end": 9.304,
+        "probability": 0.6628,
+        "initial": "g",
+        "final": "an"
+      },
+      {
+        "ch": "什",
+        "start": 9.304,
+        "end": 9.504,
+        "probability": 0.001,
+        "initial": "sh",
+        "final": "en"
+      },
+      {
+        "ch": "么",
+        "start": 9.504,
+        "end": 9.784,
+        "probability": 0.0208,
+        "initial": "m",
+        "final": "e"
+      },
+      {
+        "ch": "味",
+        "start": 9.784,
+        "end": 10.004,
+        "probability": 0.0011,
+        "initial": "w",
+        "final": "ei"
+      },
+      {
+        "ch": "人",
+        "start": 10.004,
+        "end": 10.224,
+        "probability": 0.9445,
+        "initial": "r",
+        "final": "en"
+      },
+      {
+        "ch": "家",
+        "start": 10.224,
+        "end": 10.524,
+        "probability": 0.9594,
+        "initial": "j",
+        "final": "ia"
+      },
+      {
+        "ch": "早",
+        "start": 10.524,
+        "end": 10.904,
+        "probability": 0.9346,
+        "initial": "z",
+        "final": "ao"
+      },
+      {
+        "ch": "就",
+        "start": 10.904,
+        "end": 11.104,
+        "probability": 0.9947,
+        "initial": "j",
+        "final": "iu"
+      },
+      {
+        "ch": "忘",
+        "start": 11.104,
+        "end": 11.484,
+        "probability": 0.9963,
+        "initial": "w",
+        "final": "ang"
+      },
+      {
+        "ch": "记",
+        "start": 11.484,
+        "end": 11.964,
+        "probability": 0.9926,
+        "initial": "j",
+        "final": "i"
+      },
+      {
+        "ch": "你",
+        "start": 11.964,
+        "end": 12.484,
+        "probability": 0.0369,
+        "initial": "n",
+        "final": "i"
+      },
+      {
+        "ch": "看",
+        "start": 12.484,
+        "end": 12.704,
+        "probability": 0.9719,
+        "initial": "k",
+        "final": "an"
+      },
+      {
+        "ch": "我",
+        "start": 12.704,
+        "end": 12.944,
+        "probability": 0.9971,
+        "initial": "w",
+        "final": "o"
+      },
+      {
+        "ch": "这",
+        "start": 12.944,
+        "end": 13.184,
+        "probability": 0.0505,
+        "initial": "zh",
+        "final": "e"
+      },
+      {
+        "ch": "么",
+        "start": 13.184,
+        "end": 13.344,
+        "probability": 0.7475,
+        "initial": "m",
+        "final": "e"
+      },
+      {
+        "ch": "乖",
+        "start": 13.344,
+        "end": 13.724,
+        "probability": 0.5553,
+        "initial": "g",
+        "final": "uai"
+      },
+      {
+        "ch": "眼",
+        "start": 13.724,
+        "end": 14.304,
+        "probability": 0.9772,
+        "initial": "y",
+        "final": "an"
+      },
+      {
+        "ch": "睛",
+        "start": 14.304,
+        "end": 14.524,
+        "probability": 0.9981,
+        "initial": "j",
+        "final": "ing"
+      },
+      {
+        "ch": "多",
+        "start": 14.524,
+        "end": 14.764,
+        "probability": 0.9158,
+        "initial": "d",
+        "final": "uo"
+      },
+      {
+        "ch": "么",
+        "start": 14.764,
+        "end": 14.924,
+        "probability": 0.998,
+        "initial": "m",
+        "final": "e"
+      },
+      {
+        "ch": "透",
+        "start": 14.924,
+        "end": 15.184,
+        "probability": 0.0396,
+        "initial": "t",
+        "final": "ou"
+      },
+      {
+        "ch": "明",
+        "start": 15.184,
+        "end": 15.424,
+        "probability": 0.8376,
+        "initial": "m",
+        "final": "ing"
+      },
+      {
+        "ch": "真",
+        "start": 15.424,
+        "end": 16.004,
+        "probability": 0.014,
+        "initial": "zh",
+        "final": "en"
+      },
+      {
+        "ch": "的",
+        "start": 16.004,
+        "end": 16.344,
+        "probability": 0.0215,
+        "initial": "d",
+        "final": "e"
+      },
+      {
+        "ch": "不",
+        "start": 16.344,
+        "end": 16.644,
+        "probability": 0.0263,
+        "initial": "b",
+        "final": "u"
+      },
+      {
+        "ch": "是",
+        "start": 16.644,
+        "end": 17.064,
+        "probability": 0.0068,
+        "initial": "sh",
+        "final": "i"
+      },
+      {
+        "ch": "我",
+        "start": 17.064,
+        "end": 17.704,
+        "probability": 0.9994,
+        "initial": "w",
+        "final": "o"
+      },
+      {
+        "ch": "喵",
+        "start": 17.704,
+        "end": 18.304,
+        "probability": 0.2206,
+        "initial": "m",
+        "final": "iao"
+      }
+    ]
+  },
+  "songB": {
+    "start": 25.358,
+    "end": 41.498,
+    "song_offset": 13.3,
+    "lines": [
+      {
+        "text": "证据在 你嘴边 还闪着光",
+        "line": 4,
+        "char0": 0,
+        "n_chars": 10,
+        "start": 25.358,
+        "end": 29.138
+      },
+      {
+        "text": "小鱼干的味道 藏不住的香",
+        "line": 5,
+        "char0": 10,
+        "n_chars": 11,
+        "start": 29.138,
+        "end": 33.238
+      },
+      {
+        "text": "抓到啦 就是你 别再假装",
+        "line": 6,
+        "char0": 21,
+        "n_chars": 10,
+        "start": 33.238,
+        "end": 36.318
+      },
+      {
+        "text": "下一顿 你洗碗 没得商量",
+        "line": 7,
+        "char0": 31,
+        "n_chars": 10,
+        "start": 36.318,
+        "end": 40.778
+      }
+    ],
+    "chars": [
+      {
+        "ch": "证",
+        "start": 25.358,
+        "end": 25.638,
+        "probability": 0.585,
+        "initial": "zh",
+        "final": "eng"
+      },
+      {
+        "ch": "据",
+        "start": 25.638,
+        "end": 25.858,
+        "probability": 0.9901,
+        "initial": "j",
+        "final": "u"
+      },
+      {
+        "ch": "在",
+        "start": 25.858,
+        "end": 26.158,
+        "probability": 0.9949,
+        "initial": "z",
+        "final": "ai"
+      },
+      {
+        "ch": "你",
+        "start": 26.158,
+        "end": 26.618,
+        "probability": 0.992,
+        "initial": "n",
+        "final": "i"
+      },
+      {
+        "ch": "嘴",
+        "start": 26.618,
+        "end": 27.018,
+        "probability": 0.9891,
+        "initial": "z",
+        "final": "ui"
+      },
+      {
+        "ch": "边",
+        "start": 27.018,
+        "end": 27.538,
+        "probability": 0.9513,
+        "initial": "b",
+        "final": "ian"
+      },
+      {
+        "ch": "还",
+        "start": 27.538,
+        "end": 27.858,
+        "probability": 0.5473,
+        "initial": "h",
+        "final": "ai"
+      },
+      {
+        "ch": "闪",
+        "start": 27.858,
+        "end": 28.218,
+        "probability": 0.8329,
+        "initial": "sh",
+        "final": "an"
+      },
+      {
+        "ch": "着",
+        "start": 28.218,
+        "end": 28.718,
+        "probability": 0.9804,
+        "initial": "zh",
+        "final": "e"
+      },
+      {
+        "ch": "光",
+        "start": 28.718,
+        "end": 29.138,
+        "probability": 0.1735,
+        "initial": "g",
+        "final": "uang"
+      },
+      {
+        "ch": "小",
+        "start": 29.138,
+        "end": 29.738,
+        "probability": 0.9536,
+        "initial": "x",
+        "final": "iao"
+      },
+      {
+        "ch": "鱼",
+        "start": 29.738,
+        "end": 30.018,
+        "probability": 0.9931,
+        "initial": "y",
+        "final": "u"
+      },
+      {
+        "ch": "干",
+        "start": 30.018,
+        "end": 30.338,
+        "probability": 0.0023,
+        "initial": "g",
+        "final": "an"
+      },
+      {
+        "ch": "的",
+        "start": 30.338,
+        "end": 30.598,
+        "probability": 0.8673,
+        "initial": "d",
+        "final": "e"
+      },
+      {
+        "ch": "味",
+        "start": 30.598,
+        "end": 30.818,
+        "probability": 0.9971,
+        "initial": "w",
+        "final": "ei"
+      },
+      {
+        "ch": "道",
+        "start": 30.818,
+        "end": 31.118,
+        "probability": 0.9997,
+        "initial": "d",
+        "final": "ao"
+      },
+      {
+        "ch": "藏",
+        "start": 31.118,
+        "end": 31.478,
+        "probability": 0.9889,
+        "initial": "z",
+        "final": "ang"
+      },
+      {
+        "ch": "不",
+        "start": 31.478,
+        "end": 31.898,
+        "probability": 0.9988,
+        "initial": "b",
+        "final": "u"
+      },
+      {
+        "ch": "住",
+        "start": 31.898,
+        "end": 32.278,
+        "probability": 0.998,
+        "initial": "zh",
+        "final": "u"
+      },
+      {
+        "ch": "的",
+        "start": 32.278,
+        "end": 32.758,
+        "probability": 0.9585,
+        "initial": "d",
+        "final": "e"
+      },
+      {
+        "ch": "香",
+        "start": 32.758,
+        "end": 33.238,
+        "probability": 0.8535,
+        "initial": "x",
+        "final": "iang"
+      },
+      {
+        "ch": "抓",
+        "start": 33.238,
+        "end": 33.938,
+        "probability": 0.9487,
+        "initial": "zh",
+        "final": "ua"
+      },
+      {
+        "ch": "到",
+        "start": 33.938,
+        "end": 34.198,
+        "probability": 0.0724,
+        "initial": "d",
+        "final": "ao"
+      },
+      {
+        "ch": "啦",
+        "start": 34.198,
+        "end": 34.478,
+        "probability": 0.0175,
+        "initial": "l",
+        "final": "a"
+      },
+      {
+        "ch": "就",
+        "start": 34.478,
+        "end": 34.638,
+        "probability": 0.1357,
+        "initial": "j",
+        "final": "iu"
+      },
+      {
+        "ch": "是",
+        "start": 34.638,
+        "end": 34.838,
+        "probability": 0.0043,
+        "initial": "sh",
+        "final": "i"
+      },
+      {
+        "ch": "你",
+        "start": 34.838,
+        "end": 35.098,
+        "probability": 0.9947,
+        "initial": "n",
+        "final": "i"
+      },
+      {
+        "ch": "别",
+        "start": 35.098,
+        "end": 35.298,
+        "probability": 0.9939,
+        "initial": "b",
+        "final": "ie"
+      },
+      {
+        "ch": "再",
+        "start": 35.298,
+        "end": 35.518,
+        "probability": 0.8984,
+        "initial": "z",
+        "final": "ai"
+      },
+      {
+        "ch": "假",
+        "start": 35.518,
+        "end": 35.878,
+        "probability": 0.7948,
+        "initial": "j",
+        "final": "ia"
+      },
+      {
+        "ch": "装",
+        "start": 35.878,
+        "end": 36.318,
+        "probability": 0.9988,
+        "initial": "zh",
+        "final": "uang"
+      },
+      {
+        "ch": "下",
+        "start": 36.318,
+        "end": 36.878,
+        "probability": 0.0014,
+        "initial": "x",
+        "final": "ia"
+      },
+      {
+        "ch": "一",
+        "start": 36.878,
+        "end": 37.178,
+        "probability": 0.3301,
+        "initial": "y",
+        "final": "i"
+      },
+      {
+        "ch": "顿",
+        "start": 37.178,
+        "end": 37.378,
+        "probability": 0.7494,
+        "initial": "d",
+        "final": "un"
+      },
+      {
+        "ch": "你",
+        "start": 37.378,
+        "end": 37.798,
+        "probability": 0.9014,
+        "initial": "n",
+        "final": "i"
+      },
+      {
+        "ch": "洗",
+        "start": 37.798,
+        "end": 38.118,
+        "probability": 0.0693,
+        "initial": "x",
+        "final": "i"
+      },
+      {
+        "ch": "碗",
+        "start": 38.118,
+        "end": 38.458,
+        "probability": 0.5135,
+        "initial": "w",
+        "final": "an"
+      },
+      {
+        "ch": "没",
+        "start": 38.458,
+        "end": 39.198,
+        "probability": 0.1279,
+        "initial": "m",
+        "final": "ei"
+      },
+      {
+        "ch": "得",
+        "start": 39.198,
+        "end": 39.658,
+        "probability": 0.3922,
+        "initial": "d",
+        "final": "e"
+      },
+      {
+        "ch": "商",
+        "start": 39.658,
+        "end": 40.218,
+        "probability": 0.8819,
+        "initial": "sh",
+        "final": "ang"
+      },
+      {
+        "ch": "量",
+        "start": 40.218,
+        "end": 40.778,
+        "probability": 0.9994,
+        "initial": "l",
+        "final": "iang"
+      }
+    ]
+  },
+  "dialogue": [
+    {
+      "id": "01_yuki_angry",
+      "character": "Yuki",
+      "text": "年糕我的小鱼干呢",
+      "display": "年糕！我的小鱼干呢？！",
+      "start": 0.3,
+      "end": 2.748,
+      "chars": [
+        {
+          "ch": "年",
+          "start": 0.3,
+          "end": 1.0,
+          "probability": 0.3034,
+          "initial": "n",
+          "final": "ian"
+        },
+        {
+          "ch": "糕",
+          "start": 1.0,
+          "end": 1.28,
+          "probability": 0.8641,
+          "initial": "g",
+          "final": "ao"
+        },
+        {
+          "ch": "我",
+          "start": 1.28,
+          "end": 1.64,
+          "probability": 0.0083,
+          "initial": "w",
+          "final": "o"
+        },
+        {
+          "ch": "的",
+          "start": 1.64,
+          "end": 1.76,
+          "probability": 0.007,
+          "initial": "d",
+          "final": "e"
+        },
+        {
+          "ch": "小",
+          "start": 1.76,
+          "end": 1.9,
+          "probability": 0.9886,
+          "initial": "x",
+          "final": "iao"
+        },
+        {
+          "ch": "鱼",
+          "start": 1.9,
+          "end": 2.02,
+          "probability": 0.7148,
+          "initial": "y",
+          "final": "u"
+        },
+        {
+          "ch": "干",
+          "start": 2.02,
+          "end": 2.16,
+          "probability": 0.2482,
+          "initial": "g",
+          "final": "an"
+        },
+        {
+          "ch": "呢",
+          "start": 2.16,
+          "end": 2.34,
+          "probability": 0.9814,
+          "initial": "n",
+          "final": "e"
+        }
+      ]
+    },
+    {
+      "id": "02_mochi_meh",
+      "character": "Mochi",
+      "text": "喵",
+      "display": "……喵？",
+      "start": 3.148,
+      "end": 4.204,
+      "chars": [
+        {
+          "ch": "喵",
+          "start": 3.148,
+          "end": 3.788,
+          "probability": 0.8808,
+          "initial": "m",
+          "final": "iao"
+        }
+      ]
+    },
+    {
+      "id": "03_yuki_press",
+      "character": "Yuki",
+      "text": "是吗那你嘴角的是什么",
+      "display": "是吗？那你嘴角的是什么？",
+      "start": 19.004,
+      "end": 21.644,
+      "chars": [
+        {
+          "ch": "是",
+          "start": 19.004,
+          "end": 19.584,
+          "probability": 0.6854,
+          "initial": "sh",
+          "final": "i"
+        },
+        {
+          "ch": "吗",
+          "start": 19.584,
+          "end": 19.784,
+          "probability": 0.3867,
+          "initial": "m",
+          "final": "a"
+        },
+        {
+          "ch": "那",
+          "start": 19.784,
+          "end": 20.424,
+          "probability": 0.1644,
+          "initial": "n",
+          "final": "a"
+        },
+        {
+          "ch": "你",
+          "start": 20.424,
+          "end": 20.544,
+          "probability": 0.9497,
+          "initial": "n",
+          "final": "i"
+        },
+        {
+          "ch": "嘴",
+          "start": 20.544,
+          "end": 20.684,
+          "probability": 0.9986,
+          "initial": "z",
+          "final": "ui"
+        },
+        {
+          "ch": "角",
+          "start": 20.684,
+          "end": 20.804,
+          "probability": 0.9833,
+          "initial": "j",
+          "final": "iao"
+        },
+        {
+          "ch": "的",
+          "start": 20.804,
+          "end": 20.924,
+          "probability": 0.0384,
+          "initial": "d",
+          "final": "e"
+        },
+        {
+          "ch": "是",
+          "start": 20.924,
+          "end": 21.044,
+          "probability": 0.5775,
+          "initial": "sh",
+          "final": "i"
+        },
+        {
+          "ch": "什",
+          "start": 21.044,
+          "end": 21.184,
+          "probability": 0.0022,
+          "initial": "sh",
+          "final": "en"
+        },
+        {
+          "ch": "么",
+          "start": 21.184,
+          "end": 21.284,
+          "probability": 0.0319,
+          "initial": "m",
+          "final": "e"
+        }
+      ]
+    },
+    {
+      "id": "04_mochi_art",
+      "character": "Mochi",
+      "text": "这是艺术",
+      "display": "这是……艺术。",
+      "start": 21.994,
+      "end": 24.658,
+      "chars": [
+        {
+          "ch": "这",
+          "start": 21.994,
+          "end": 22.594,
+          "probability": 0.0159,
+          "initial": "zh",
+          "final": "e"
+        },
+        {
+          "ch": "是",
+          "start": 22.594,
+          "end": 22.994,
+          "probability": 0.1818,
+          "initial": "sh",
+          "final": "i"
+        },
+        {
+          "ch": "艺",
+          "start": 22.994,
+          "end": 23.694,
+          "probability": 0.8772,
+          "initial": "y",
+          "final": "i"
+        },
+        {
+          "ch": "术",
+          "start": 23.694,
+          "end": 24.134,
+          "probability": 0.9988,
+          "initial": "sh",
+          "final": "u"
+        }
+      ]
+    },
+    {
+      "id": "05_mochi_defeat",
+      "character": "Mochi",
+      "text": "喵呜",
+      "display": "喵呜……",
+      "start": 42.098,
+      "end": 44.522,
+      "chars": [
+        {
+          "ch": "喵",
+          "start": 42.098,
+          "end": 42.958,
+          "probability": 0.7638,
+          "initial": "m",
+          "final": "iao"
+        },
+        {
+          "ch": "呜",
+          "start": 42.958,
+          "end": 43.398,
+          "probability": 0.4434,
+          "initial": "w",
+          "final": "u"
+        }
+      ]
+    }
+  ],
+  "vc": {
+    "A": {
+      "gain": 0.39816118378389576,
+      "reference": "voice_ref/mochi_reference.wav"
+    },
+    "B": {
+      "gain": 1.0336668825298743,
+      "reference": "voice_ref/yuki_reference.wav"
+    }
+  },
+  "mix": {
+    "bed_gain_db": -18,
+    "final_peak": 0.92,
+    "common_gain": 0.9477039517411471
+  },
+  "story_sha256": "93dffc1ad0d6acc55ea26904d08f313fae5661bbc9d7063206ca18384a8b57ff",
+  "source_note": "Media schedule cache. Viewer consumes script.story for performance and camera."
+}

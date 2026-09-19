@@ -1,0 +1,190 @@
+{
+  "method": "faster-whisper small CPU int8 per-line DTW",
+  "dialogue": {
+    "01_yuki_angry": {
+      "character": "Yuki",
+      "text": "年糕我的小鱼干呢",
+      "duration": 2.448,
+      "chars": [
+        {
+          "ch": "年",
+          "start": 0.0,
+          "end": 0.7,
+          "probability": 0.3034
+        },
+        {
+          "ch": "糕",
+          "start": 0.7,
+          "end": 0.98,
+          "probability": 0.8641
+        },
+        {
+          "ch": "我",
+          "start": 0.98,
+          "end": 1.34,
+          "probability": 0.0083
+        },
+        {
+          "ch": "的",
+          "start": 1.34,
+          "end": 1.46,
+          "probability": 0.007
+        },
+        {
+          "ch": "小",
+          "start": 1.46,
+          "end": 1.6,
+          "probability": 0.9886
+        },
+        {
+          "ch": "鱼",
+          "start": 1.6,
+          "end": 1.72,
+          "probability": 0.7148
+        },
+        {
+          "ch": "干",
+          "start": 1.72,
+          "end": 1.86,
+          "probability": 0.2482
+        },
+        {
+          "ch": "呢",
+          "start": 1.86,
+          "end": 2.04,
+          "probability": 0.9814
+        }
+      ]
+    },
+    "02_mochi_meh": {
+      "character": "Mochi",
+      "text": "喵",
+      "duration": 1.056,
+      "chars": [
+        {
+          "ch": "喵",
+          "start": 0.0,
+          "end": 0.64,
+          "probability": 0.8808
+        }
+      ]
+    },
+    "03_yuki_press": {
+      "character": "Yuki",
+      "text": "是吗那你嘴角的是什么",
+      "duration": 2.64,
+      "chars": [
+        {
+          "ch": "是",
+          "start": 0.0,
+          "end": 0.58,
+          "probability": 0.6854
+        },
+        {
+          "ch": "吗",
+          "start": 0.58,
+          "end": 0.78,
+          "probability": 0.3867
+        },
+        {
+          "ch": "那",
+          "start": 0.78,
+          "end": 1.42,
+          "probability": 0.1644
+        },
+        {
+          "ch": "你",
+          "start": 1.42,
+          "end": 1.54,
+          "probability": 0.9497
+        },
+        {
+          "ch": "嘴",
+          "start": 1.54,
+          "end": 1.68,
+          "probability": 0.9986
+        },
+        {
+          "ch": "角",
+          "start": 1.68,
+          "end": 1.8,
+          "probability": 0.9833
+        },
+        {
+          "ch": "的",
+          "start": 1.8,
+          "end": 1.92,
+          "probability": 0.0384
+        },
+        {
+          "ch": "是",
+          "start": 1.92,
+          "end": 2.04,
+          "probability": 0.5775
+        },
+        {
+          "ch": "什",
+          "start": 2.04,
+          "end": 2.18,
+          "probability": 0.0022
+        },
+        {
+          "ch": "么",
+          "start": 2.18,
+          "end": 2.28,
+          "probability": 0.0319
+        }
+      ]
+    },
+    "04_mochi_art": {
+      "character": "Mochi",
+      "text": "这是艺术",
+      "duration": 2.664,
+      "chars": [
+        {
+          "ch": "这",
+          "start": 0.0,
+          "end": 0.6,
+          "probability": 0.0159
+        },
+        {
+          "ch": "是",
+          "start": 0.6,
+          "end": 1.0,
+          "probability": 0.1818
+        },
+        {
+          "ch": "艺",
+          "start": 1.0,
+          "end": 1.7,
+          "probability": 0.8772
+        },
+        {
+          "ch": "术",
+          "start": 1.7,
+          "end": 2.14,
+          "probability": 0.9988
+        }
+      ]
+    },
+    "05_mochi_defeat": {
+      "character": "Mochi",
+      "text": "喵呜",
+      "duration": 2.424,
+      "chars": [
+        {
+          "ch": "喵",
+          "start": 0.0,
+          "end": 0.86,
+          "probability": 0.7638
+        },
+        {
+          "ch": "呜",
+          "start": 0.86,
+          "end": 1.3,
+          "probability": 0.4434
+        }
+      ]
+    }
+  }
+}

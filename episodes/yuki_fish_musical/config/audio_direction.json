@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "status": "reviewed",
+  "sources": [
+    {
+      "path": "script.story",
+      "sha256": "93dffc1ad0d6acc55ea26904d08f313fae5661bbc9d7063206ca18384a8b57ff"
+    },
+    {
+      "path": "config/voice_config.json",
+      "sha256": "0b26ec28895fe905587435b979b8e13e0e674864ef98197f0c75e995c3e39622"
+    }
+  ],
+  "policies": {
+    "priority": [
+      "dialogue",
+      "storySfx",
+      "ambience",
+      "music"
+    ],
+    "musicMode": "directed",
+    "ambienceMode": "directed",
+    "breath": "natural-tts-pauses-no-layered-breath"
+  },
+  "mix": {
+    "dialogueVolume": 1.0,
+    "bgmVolume": 0.12589254117941673,
+    "sfxVolume": 0.8,
+    "useDucking": true,
+    "duckDepth": 0.3
+  },
+  "characters": {
+    "Yuki": {
+      "voice": "zh_female_vv_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Mochi": {
+      "voice": "ICL_uranus_zh_male_youmodaye_tob",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    }
+  },
+  "dialogue": [
+    {
+      "entry": 2,
+      "character": "Yuki",
+      "text": "年糕！我的小鱼干呢？！",
+      "startTime": 0.3,
+      "endTime": 2.748,
+      "scene": "BeatStudioScene",
+      "shotIds": [],
+      "previousEntry": null,
+      "nextEntry": 4,
+      "intent": "质问失踪零食",
+      "subtext": "我知道你有嫌疑，但还没有物证",
+      "delivery": {
+        "tone": "angry",
+        "energy": 0.75,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "small-theatre",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "sourcePolicy": "Reuse existing native TTS clip; delivery fields describe the performance, not a new synthesis request."
+    },
+    {
+      "entry": 4,
+      "character": "Mochi",
+      "text": "……喵？",
+      "startTime": 3.148,
+      "endTime": 4.204,
+      "scene": "BeatStudioScene",
+      "shotIds": [],
+      "previousEntry": 2,
+      "nextEntry": 11,
+      "intent": "装作听不懂",
+      "subtext": "先卖萌，看能否蒙混过关",
+      "delivery": {
+        "tone": "deadpan",
+        "energy": 0.28,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "small-theatre",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "sourcePolicy": "Reuse existing native TTS clip; delivery fields describe the performance, not a new synthesis request."
+    },
+    {
+      "entry": 11,
+      "character": "Yuki",
+      "text": "是吗？那你嘴角的是什么？",
+      "startTime": 19.004,
+      "endTime": 21.644,
+      "scene": "BeatStudioScene",
+      "shotIds": [],
+      "previousEntry": 4,
+      "nextEntry": 13,
+      "intent": "轻声亮出嘴角证据",
+      "subtext": "别急着认，先让你自己看",
+      "delivery": {
+        "tone": "teasing",
+        "energy": 0.5,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "small-theatre",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "sourcePolicy": "Reuse existing native TTS clip; delivery fields describe the performance, not a new synthesis request."
+    },
+    {
+      "entry": 13,
+      "character": "Mochi",
+      "text": "这是……艺术。",
+      "startTime": 21.994,
+      "endTime": 24.658,
+      "scene": "BeatStudioScene",
+      "shotIds": [],
+      "previousEntry": 11,
+      "nextEntry": 20,
+      "intent": "硬把碎屑解释成艺术",
+      "subtext": "被抓住也要保持体面",
+      "delivery": {
+        "tone": "deadpan",
+        "energy": 0.32,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "small-theatre",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "sourcePolicy": "Reuse existing native TTS clip; delivery fields describe the performance, not a new synthesis request."
+    },
+    {
+      "entry": 20,
+      "character": "Mochi",
+      "text": "喵呜……",
+      "startTime": 42.098,
+      "endTime": 44.522,
+      "scene": "BeatStudioScene",
+      "shotIds": [],
+      "previousEntry": 13,
+      "nextEntry": null,
+      "intent": "认命接受洗碗",
+      "subtext": "零食好吃，代价太大",
+      "delivery": {
+        "tone": "defeated",
+        "energy": 0.24,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "small-theatre",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "sourcePolicy": "Reuse existing native TTS clip; delivery fields describe the performance, not a new synthesis request."
+    }
+  ],
+  "ambience": [],
+  "sfx": [],
+  "music": [
+    {
+      "id": "songA",
+      "startTime": 5.004,
+      "endTime": 18.304,
+      "mood": "comic-playful",
+      "purpose": "年糕四句狡辩",
+      "baseVolume": 1,
+      "fadeIn": 0.05,
+      "fadeOut": 0.3
+    },
+    {
+      "id": "songB",
+      "startTime": 25.358,
+      "endTime": 41.498,
+      "mood": "comic-playful",
+      "purpose": "小雪四句揭底与判决",
+      "baseVolume": 1,
+      "fadeIn": 0.05,
+      "fadeOut": 0.3
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "no-canned-laughter",
+      "scope": "whole-episode",
+      "sound": "audience-laughter",
+      "reason": "让观众从嘴角物证和冷面回应自己读到包袱。"
+    },
+    {
+      "id": "no-fake-kitchen-roomtone",
+      "scope": "whole-episode",
+      "sound": "kitchen-ambience",
+      "reason": "这是舞台小品，保留唱白空间，不伪造真实厨房环境。"
+    }
+  ],
+  "reviewNote": "Agent contextual review of existing performances; audience voice and lip-sync acceptance remains pending."
+}

@@ -1,0 +1,753 @@
+{
+  "$schema": "../../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "yuki_fish_musical",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "年糕唱歌否认偷吃，嘴角鱼干碎屑却成为物证，最终认命洗碗。",
+    "audience": "轻喜剧与角色动画观众",
+    "designPriorities": [
+      "物证可读",
+      "唱白交替",
+      "双人表演与反应"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "BeatStudioScene"
+    ],
+    "characters": [
+      "Mochi",
+      "Yuki"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "BeatStudioScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "BeatStudioScene",
+        "module": "scenes/BeatStudioScene.js",
+        "export": "BeatStudioScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "synchronous"
+      },
+      "intent": {
+        "location": "帷幕框景的微型厨房剧场",
+        "timeOfDay": "暖色舞台灯光",
+        "tone": [
+          "轻快",
+          "温暖",
+          "俏皮"
+        ],
+        "storyFunction": "空盘提出问题，嘴角碎屑反驳狡辩，餐盘堆收尾",
+        "visualRules": [
+          "近景对准当前唱者或证据",
+          "全景保留双人脚底与空盘",
+          "口型覆盖表情笑嘴"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0.0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -3,
+            -0.1,
+            -2
+          ],
+          "max": [
+            3,
+            4,
+            7
+          ]
+        },
+        "zones": [
+          {
+            "id": "mainStage",
+            "bounds": {
+              "min": [
+                -1.65,
+                -0.1,
+                -0.8
+              ],
+              "max": [
+                1.65,
+                2.5,
+                0.9
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "小雪原地踏拍；年糕保持右侧位置"
+            ]
+          }
+        ],
+        "anchors": {}
+      },
+      "lighting": {
+        "mood": "暖色柔光，低强度可见灯束",
+        "readabilityRules": [
+          "嘴角碎屑不能被高光冲掉",
+          "保留猫眼瞳孔和人脸层次"
+        ]
+      },
+      "cameraObstacles": [
+        {
+          "id": "backdrop",
+          "type": "box",
+          "space": "world",
+          "center": [
+            0,
+            1.55,
+            -1.8
+          ],
+          "size": [
+            4.6,
+            3.6,
+            0.08
+          ]
+        }
+      ],
+      "audioAnchors": [],
+      "dependencies": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "Mochi",
+      "scene": "BeatStudioScene",
+      "kind": "character",
+      "runtimeName": "Mochi",
+      "binding": "character:Mochi",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.45,
+          0
+        ],
+        "face": [
+          0,
+          0.6,
+          0.22
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0.69,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "Yuki",
+      "scene": "BeatStudioScene",
+      "kind": "character",
+      "runtimeName": "Yuki",
+      "binding": "character:Yuki",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.85,
+          0
+        ],
+        "face": [
+          0,
+          1.28,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.43,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "MochiHead",
+      "scene": "BeatStudioScene",
+      "kind": "prop",
+      "binding": "mochiHead",
+      "parent": "Mochi",
+      "initialPresence": "onstage",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "local",
+          "relativeTo": "Mochi",
+          "position": [
+            0,
+            0.6,
+            0.22
+          ]
+        }
+      },
+      "states": [
+        "attached"
+      ],
+      "initialState": "attached"
+    },
+    {
+      "id": "EmptyDish",
+      "scene": "BeatStudioScene",
+      "kind": "prop",
+      "binding": "emptyDish",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0.08,
+            0.035,
+            0.38
+          ]
+        }
+      },
+      "states": [
+        "empty"
+      ],
+      "initialState": "empty"
+    },
+    {
+      "id": "Crumbs",
+      "scene": "BeatStudioScene",
+      "kind": "prop",
+      "binding": "crumbs",
+      "parent": "MochiHead",
+      "initialPresence": "onstage",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "local",
+          "relativeTo": "MochiHead",
+          "position": [
+            0.063,
+            -0.062,
+            0.254
+          ]
+        }
+      },
+      "states": [
+        "visible"
+      ],
+      "initialState": "visible"
+    },
+    {
+      "id": "Dishes",
+      "scene": "BeatStudioScene",
+      "kind": "prop",
+      "binding": "dishes",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            1.35,
+            0.06,
+            0.58
+          ]
+        }
+      },
+      "states": [
+        "stacked"
+      ],
+      "initialState": "stacked"
+    }
+  ],
+  "state": {},
+  "events": [],
+  "blocking": [
+    {
+      "id": "block1",
+      "scene": "BeatStudioScene",
+      "character": "Yuki",
+      "entry": 1,
+      "from": [
+        -0.43,
+        0.0,
+        0.0
+      ],
+      "to": [
+        -0.43,
+        0.0,
+        0.0
+      ],
+      "zone": "mainStage",
+      "clearance": 0.25,
+      "purpose": "左右分台，根部保持至少1米距离；前方留出空盘物证。"
+    },
+    {
+      "id": "block2",
+      "scene": "BeatStudioScene",
+      "character": "Mochi",
+      "entry": 1,
+      "from": [
+        0.69,
+        0.0,
+        0.0
+      ],
+      "to": [
+        0.69,
+        0.0,
+        0.0
+      ],
+      "zone": "mainStage",
+      "clearance": 0.25,
+      "purpose": "左右分台，根部保持至少1米距离；前方留出空盘物证。"
+    }
+  ],
+  "shotChecks": [
+    {
+      "id": "emptyDish",
+      "scene": "BeatStudioScene",
+      "entry": 2,
+      "offsetSeconds": 0.5,
+      "purpose": "空盘与两名角色一起建立案件",
+      "mustSee": [
+        {
+          "entity": "EmptyDish",
+          "focus": "body",
+          "minFrameArea": 0.0001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "catSings",
+      "scene": "BeatStudioScene",
+      "entry": 6,
+      "offsetSeconds": 1,
+      "purpose": "年糕实际张口而非缩放笑嘴",
+      "mustSee": [
+        {
+          "entity": "Mochi",
+          "focus": "face",
+          "minFrameArea": 0.02,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "evidence",
+      "scene": "BeatStudioScene",
+      "entry": 11,
+      "offsetSeconds": 1,
+      "purpose": "嘴角碎屑与圈示清楚",
+      "mustSee": [
+        {
+          "entity": "Crumbs",
+          "focus": "body",
+          "minFrameArea": 0.0001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "art",
+      "scene": "BeatStudioScene",
+      "entry": 13,
+      "offsetSeconds": 1,
+      "purpose": "死不认账的反应近景",
+      "mustSee": [
+        {
+          "entity": "Mochi",
+          "focus": "face",
+          "minFrameArea": 0.02,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "wash",
+      "scene": "BeatStudioScene",
+      "entry": 21,
+      "offsetSeconds": 1,
+      "purpose": "餐盘、海绵与年糕认命动作可读",
+      "mustSee": [
+        {
+          "entity": "Mochi",
+          "focus": "body",
+          "minFrameArea": 0.02,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry1",
+      "scene": "BeatStudioScene",
+      "entry": 1,
+      "offsetSeconds": 0.15,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry3",
+      "scene": "BeatStudioScene",
+      "entry": 3,
+      "offsetSeconds": 0.2,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry4",
+      "scene": "BeatStudioScene",
+      "entry": 4,
+      "offsetSeconds": 0.528,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Mochi",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry5",
+      "scene": "BeatStudioScene",
+      "entry": 5,
+      "offsetSeconds": 0.4,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry7",
+      "scene": "BeatStudioScene",
+      "entry": 7,
+      "offsetSeconds": 1.82,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry8",
+      "scene": "BeatStudioScene",
+      "entry": 8,
+      "offsetSeconds": 1.73,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Mochi",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry9",
+      "scene": "BeatStudioScene",
+      "entry": 9,
+      "offsetSeconds": 1.44,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry10",
+      "scene": "BeatStudioScene",
+      "entry": 10,
+      "offsetSeconds": 0.35,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry12",
+      "scene": "BeatStudioScene",
+      "entry": 12,
+      "offsetSeconds": 0.175,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry14",
+      "scene": "BeatStudioScene",
+      "entry": 14,
+      "offsetSeconds": 0.35,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry15",
+      "scene": "BeatStudioScene",
+      "entry": 15,
+      "offsetSeconds": 1.89,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry16",
+      "scene": "BeatStudioScene",
+      "entry": 16,
+      "offsetSeconds": 2.05,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry17",
+      "scene": "BeatStudioScene",
+      "entry": 17,
+      "offsetSeconds": 1.54,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry18",
+      "scene": "BeatStudioScene",
+      "entry": 18,
+      "offsetSeconds": 2.59,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry19",
+      "scene": "BeatStudioScene",
+      "entry": 19,
+      "offsetSeconds": 0.3,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Yuki",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "entry20",
+      "scene": "BeatStudioScene",
+      "entry": 20,
+      "offsetSeconds": 1.212,
+      "purpose": "实际自定义 viewer 中点构图与表情检查",
+      "mustSee": [
+        {
+          "entity": "Mochi",
+          "focus": "face",
+          "minFrameArea": 0.01,
+          "maxOcclusion": 0.1,
+          "safeMargin": 0.01
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "episode-render-check",
+      "full-frame-trace",
+      "visual-review",
+      "model-assisted-av-review"
+    ]
+  }
+}

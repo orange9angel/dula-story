@@ -19,6 +19,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 **最新 Episode**：`episodes/yuki_bento_battle/`（《便当大作战》——小雪系列第二集，101s 群像搞笑：黑猫闪电破窗抢便当、咕噜防盗模式全员恶人、豆豆乱入，揭底便当是减肥餐；新官方角色 Flash/Dodo，场景道具时间态换态工艺；全火山音频六声线）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/yuki_fish_musical/` — 《谁动了我的小鱼干》迷你音乐喜剧试播版（46.3s，五句对白 + 两段各四句短唱，早起集声线参考换声，嘴角物证/空盘/洗碗道具，最终人声驱动双角色口型；自定义 viewer 链，正常速度试听待监制评审）
 - `episodes/yuki_beat_ad/` — 《下一拍，你登场》小雪歌姬唱跳广告（V17 监制首看通过：豆包音乐模型 GenSongForTime 经 veFaaS 中转生成 30s 人声歌曲，Demucs 分离 + Whisper find_alignment DTW 逐字对齐 + 连续视素轨道口型，拍网锁定 MTV 五段式编排，年糕 Mochi 冷面伴舞；自包含 viewer/prepare/render 链，不走 dula-render；小雪本音歌声转换 A/B 试听待选版）
 - `episodes/yuki_bento_battle/` — 《便当大作战》（小雪系列第二集 101s 群像搞笑；新角色 Flash（瘦黑猫老江湖）/Dodo（幼儿园精力球）入库 dula-assets；场景：小雪家 + 便当盒时间态道具；全火山音频——seed-tts-2.0 六声线 + Seed-Audio BGM/SFX）
 - `episodes/yuki_morning_battle/` — 《早起大作战》（小雪主角 62s 搞笑片：赖床 vs 咕噜号音量攻击，胖猫年糕一句「今天周六」冷面揭底；全火山音频——seed-tts-2.0 四声线 + Seed-Audio BGM/SFX；画面引擎渲染 + sketchify 手绘描边，自定义场景 `scenes/YukiRoomScene.js` 小雪家少女卧室，角色工艺同 yuki_cat_diet）
