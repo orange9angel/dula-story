@@ -19,11 +19,12 @@ const v5 = process.argv.includes('--v5');
 const v6 = process.argv.includes('--v6');
 const v8 = process.argv.includes('--v8');
 const v9 = process.argv.includes('--v9');
-const version = v9 ? 'v9' : v8 ? 'v8' : v6 ? 'v6' : v5 ? 'v5' : v4 ? 'v4' : v3 ? 'v3' : v2 ? 'v2' : '';
+const v10 = process.argv.includes('--v10');
+const version = v10 ? 'v10' : v9 ? 'v9' : v8 ? 'v8' : v6 ? 'v6' : v5 ? 'v5' : v4 ? 'v4' : v3 ? 'v3' : v2 ? 'v2' : '';
 const boardDir = path.join(root, version ? `storyboard/${version}` : 'storyboard');
 const audioFile = version ? `assets/audio/mixed_${version}.wav` : 'assets/audio/mixed.wav';
 const outputFile = version ? `output/yuki_beat_ad_${version}.mp4` : 'output/yuki_beat_ad.mp4';
-const fps = v3 || v4 || v5 || v6 || v8 || v9 ? 60 : 30;
+const fps = v3 || v4 || v5 || v6 || v8 || v9 || v10 ? 60 : 30;
 const backendArg = process.argv.find(a => a.startsWith('--video-backend='));
 const videoBackend = backendArg ? backendArg.split('=')[1] : 'program';
 if (videoBackend === 'model') throw new Error('video-backend=model 尚未接入（预留 Seedance 参考链，见 cat_leads_e09），请使用默认 program');
@@ -57,7 +58,7 @@ if (!serveOnly) {
     fs.mkdirSync(boardDir,{recursive:true});
     fs.mkdirSync(path.join(root,'output'),{recursive:true});
     const checks=version ? await page.evaluate(()=>window.checkTimes) : [0.5,2.1,3.7,5.4,6.9,8.45,10.4,12.1];
-    let ci=0; const trace=[];
+    let ci=0; const trace=[], performanceTrace=[];
     if (!check) {
       encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0','-i',path.join(root,audioFile),'-map','0:v:0','-map','1:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-ar','48000','-ac','2','-b:a','192k','-t',String(duration),'-movflags','+faststart',path.join(root,outputFile)],{stdio:['pipe','inherit','inherit']});
     }
@@ -65,6 +66,7 @@ if (!serveOnly) {
       const t=i/fps;
       const capture=!check || (ci<checks.length && t >= checks[ci]);
       const result = await page.evaluate((t,capture)=> capture ? window.renderAt(t) : (window.stepAt ? window.stepAt(t) : window.renderAt(t).state), t, capture);
+      if(v10) performanceTrace.push({frame:i,...(capture?result.state:result)});
       if(capture) {
         const buffer=Buffer.from(result.image,'base64');
         if(!check && !encoder.stdin.write(buffer)) await once(encoder.stdin,'drain');
@@ -79,6 +81,7 @@ if (!serveOnly) {
     if(encoder){encoder.stdin.end();const [code]=await once(encoder,'close');if(code!==0)throw new Error(`ffmpeg failed: ${code}`);}
     if(errors.length)throw new Error(errors.join('\n'));
     fs.writeFileSync(path.join(boardDir,'portrait_trace.json'),JSON.stringify({duration,fps,errors,shots:trace},null,2));
+    if(v10) fs.writeFileSync(path.join(boardDir,'performance_trace.json'),JSON.stringify({duration,fps,frames:performanceTrace}));
     console.log(check?'Portrait checks complete':'Video complete');
   } finally { if(encoder&&!encoder.killed)encoder.kill();if(browser)await browser.close();server.close(); }
 }

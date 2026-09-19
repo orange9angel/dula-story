@@ -1,20 +1,68 @@
 # 下一拍，你登场
 
-## V9 MTV 歌姬版（2026-09-19，卡点根治）
+## V10 唱跳修订（2026-09-19，待播放评审）
+
+成片：[output/yuki_beat_ad_v10.mp4](output/yuki_beat_ad_v10.mp4)
+（29.483 秒，720×1280，60 fps，1769 帧，H.264 + AAC，17.6 MB）。
+检查图：[storyboard/v10/review_sheet.jpg](storyboard/v10/review_sheet.jpg)；
+验证记录：[storyboard/v10/verification.json](storyboard/v10/verification.json)。
+
+针对 V9 首看反馈“口型不准、持麦手穿模、舞蹈仍未配合音乐”重新做表演。
+歌曲和最终母带沿用 V9，未重新调用付费音乐接口。
+
+- **歌词与嘴形**：Hybrid Demucs 从最终母带分离 vocals/drums；把原文逐字 tokens
+  交给 Whisper `find_alignment` 做已知文本 DTW 对齐，得到 80 字时间窗。用人声
+  包络修剪休止，并保留前一字拖音。拼音驱动闭唇、唇齿、A/E/I/O/U 嘴形，长元音
+  保持，双唇音先闭嘴；静音直接覆盖笑脸表情。字幕按同一字表高亮。
+- **连续编舞**：19 段动作替代每拍重新起步的旧舞步。包括招手邀请、小步点踏、
+  张臂、完整转圈、胸前击拍、左右移步、起跳落地、交替上指和收势。
+  “心跳”使用胸前动作；“跳一跳”“转一转”有独立动作窗。鼓轨攻击点细化原拍网，
+  脚步和落地跟随音乐，换装与机位留在乐句层，足部动作采用全景。
+- **角色与麦克风**：改用脸侧耳麦，腾出双手；这是舞台设计调整，未声称修好旧
+  手持麦的 IK。增加双节手臂、腿部 IK、关节球、脚掌补偿和头部代理体避碰。
+
+已检查全片 1769 帧状态及 256 张检查图中的代表画面：395 个休止/低能量帧闭嘴，
+36 个双唇音帧闭嘴，80 字均有发音状态；两次转圈均完整；足底最低高于舞台
+0.00275 场景单位，手到头部代理体的最小余量 0.0216；浏览器错误 0。
+最终 AAC 解码峰值 0.7734，音画流均从 0 开始；严格剧本和场景检查均无错误。
+
+**验收边界**：以上是自动时序/几何检查和模型辅助抽帧目检，未完成用户正常速度
+视听验收。字符对齐不等于音素标注，辅音/复元音转换仍是拼音规则估计；它仍是
+程序玩偶角色的近似口型与编舞，不能称为真人级 lip sync 或“根治”。
+
+从 `dula-story` 根目录重建（需原歌曲、V9 母带和本地 Whisper small 模型缓存；
+首次分离会下载 PyTorch 官方约 319 MB 的模型到本集 `tmp/models/`）：
+
+```powershell
+.venv\Scripts\python.exe episodes\yuki_beat_ad\tools\prepare_v10.py
+node episodes\yuki_beat_ad\tools\render.mjs --v10 --check
+node episodes\yuki_beat_ad\tools\render.mjs --v10
+.venv\Scripts\python.exe episodes\yuki_beat_ad\tools\review_v10.py
+```
+
+如果 V9 母带缺失，先运行下节的 `prepare_v9.py`。若 Whisper 缓存缺失，先通过
+`faster_whisper.WhisperModel('small', device='cpu', compute_type='int8')` 下载；正式
+对齐使用 `local_files_only=True`。本轮使用 faster-whisper 1.2.1、pypinyin 0.55.0。
+人声分离可能残留伴奏；原始对齐边界及 token likelihood 保存在
+`config/lyrics_forced_alignment_v10.json`，likelihood 不作为同步精度分数。
+`.story` 为动作/机位时序源；分析 JSON 的 choreography 是其生成来源快照。
+音频、成片和大体积全帧轨迹保留本地，Git 保存代码、对齐数据和精简检查证据。
+
+## V9 MTV 歌姬试片（2026-09-19，首看未通过）
 
 成片：`output/yuki_beat_ad_v9.mp4`（29.5 秒，720×1280，60 fps）。
-针对 V8 监制反馈"音乐不卡点、口型对不上"的根治版，音乐沿用 V8 的歌曲
+尝试处理 V8 监制反馈"音乐不卡点、口型对不上"，音乐沿用 V8 的歌曲
 （`diva_song_v8_a.wav` 不变，零新增模型成本），改的是分析与编排：
 
 - **拍网锁定**：`prepare_v9.py` 用 librosa `beat_track` 提取 123.05 BPM /
   62 拍 / 15 downbeat 的完整拍网（onset 自相关复核同值），story 38 个条目
   边界全部吸附拍网（最大偏差 0.00ms）。viewer_v9 的 dance 主干从 onset 散点
   改为拍网驱动：bounce 顶点压拍点、手臂反拍甩出、downbeat 加 accent。
-- **音节级口型**：HPSS 分离人声（harmonic 支）→ 200Hz–4kHz 带通 → 频谱
+- **包络口型尝试**：HPSS 谐波支（仍含伴奏，并非纯人声）→ 200Hz–4kHz 带通 → 频谱
   onset 检测出 57 个音节（关键调参：onset_detect 要作用在带通后 harmonic 的
   频谱包络上，直接作用全带 harmonic 只出个位数），开口对音节 onset、
-  按峰值分位定 open/half、60ms 攻击/释放平滑。closed 占比 0.366→0.532，
-  伴奏段不再乱动嘴。
+  按峰值分位定 open/half、60ms 攻击/释放平滑。closed 占比 0.366→0.532；
+  该数值未证明观感正确，静音时回退张嘴表情的问题于 V10 修正。
 - **MTV 五段式编排**：intro 剪影亮相（灯光压 0.08，首个 downbeat 0.22s
   渐强）→ verse 持麦近景（2 拍一切）→ chorus 霓虹 1 拍快切 16 条 +
   双残影伴舞 + 每拍灯光脉冲 + downbeat snap → bridge 星空荷兰角 ±6° →
@@ -29,6 +77,9 @@ node episodes\yuki_beat_ad\tools\render.mjs --v9
 检查帧 168 张（`storyboard/v9/`），dance 顶点拍点误差最大 16ms（<1 帧）、
 均值 7.8ms；模型辅助验证，未声称人工验收。已知残留：`move=jump/twirl`
 未接 outro 定格缩放（本版 story 未用到）；chorus 彩纸仅 diva/neon 舞台预排。
+
+**随后用户首看未通过**：口型不准、持麦手穿模、舞蹈仍未配合音乐。
+上面的拍网/截图指标只能证明部分实现，不构成观感通过；以这次反馈为准。
 
 ## V8 歌姬版（2026-09-19，边唱边跳）
 
