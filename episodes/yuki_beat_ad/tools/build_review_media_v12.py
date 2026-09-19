@@ -1,6 +1,7 @@
 """Export synchronized face comparisons and the existing 6s voice audition."""
 from pathlib import Path
 import json
+import argparse
 import subprocess
 import numpy as np
 import soundfile as sf
@@ -9,13 +10,17 @@ from scipy.signal import resample_poly
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--before',choices=['v11','v12'],default='v11')
+    parser.add_argument('--after',choices=['v12','v13'],default='v12')
+    args=parser.parse_args()
     # One audio clock, equal crops, continuous speed. Both picture columns show
     # the exact same frame times in each excerpt.
     inputs=[]
-    for ver in ('v11','v12'):inputs+=['-i',str(ROOT/f'output/yuki_beat_ad_{ver}.mp4')]
+    for ver in (args.before,args.after):inputs+=['-i',str(ROOT/f'output/yuki_beat_ad_{ver}.mp4')]
     filters=[];segments=[]
     for i,(start,end) in enumerate([(0,3.4),(9.1,12.7),(21.3,24.55)]):
-        for j,ver in enumerate(('V11','V12')):
+        for j,ver in enumerate((args.before.upper(),args.after.upper())):
             filters.append(f'[{j}:v]trim=start={start}:end={end},setpts=PTS-STARTPTS,'
                 f'crop=480:640:120:260,pad=480:700:0:60:color=0x120e1c,'
                 f'drawtext=text={ver}:fontcolor=white:fontsize=30:x=(w-tw)/2:y=14[v{j}_{i}]')
@@ -23,10 +28,11 @@ def main():
         filters.append(f'[1:a]atrim=start={start}:end={end},asetpts=PTS-STARTPTS[a{i}]')
         segments.append(f'[v{i}][a{i}]')
     filters.append(''.join(segments)+'concat=n=3:v=1:a=1[outv][outa]')
-    target=ROOT/'output/yuki_lips_v11_v12_compare.mp4'
+    target=ROOT/f'output/yuki_lips_{args.before}_{args.after}_compare.mp4'
     subprocess.run(['ffmpeg','-y','-v','error',*inputs,'-filter_complex',';'.join(filters),'-map','[outv]','-map','[outa]',
         '-c:v','libx264','-crf','18','-preset','fast','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-movflags','+faststart',str(target)],check=True)
     print(f'Lip comparison: {target.name}')
+    if args.after!='v12':return
     # Finish the previously generated audition, without adopting its voice in
     # V12. Actual likeness and singing quality need normal-speed user listening.
     folder=ROOT/'assets/audio/voice_audition'

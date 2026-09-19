@@ -1,0 +1,78 @@
+{
+  "reference_episode": "yuki_morning_battle",
+  "speaker": "zh_female_vv_uranus_bigtts",
+  "sources": [
+    {
+      "path": "episodes\\yuki_morning_battle\\assets\\audio\\007_Yuki.mp3",
+      "text": "几点了几点了？完了，要迟到了！",
+      "sha256": "7b3063058166f207abe86d4b313cdb0c5e25b2408035c15a8e4247f36008179d"
+    },
+    {
+      "path": "episodes\\yuki_morning_battle\\assets\\audio\\009_Yuki.mp3",
+      "text": "袜子！书包！年糕你别挡路！",
+      "sha256": "6b462257a597b30a1968896f1d101c9a6a51b6a63b44d39d6badf3dd37c82719"
+    },
+    {
+      "path": "episodes\\yuki_morning_battle\\assets\\audio\\011_Yuki.mp3",
+      "text": "你……你说什么？",
+      "sha256": "1c30de8ea98cfde161b2545ae29c2d3865d899fcbf0b219d038406c2e27bc731"
+    },
+    {
+      "path": "episodes\\yuki_morning_battle\\assets\\audio\\013_Yuki.mp3",
+      "text": "那我刚才百米冲刺是为了什么？！",
+      "sha256": "5349704711887b8045cfc0b746f4ae44c24715592d5eec1de592a3fc066ae4b3"
+    }
+  ],
+  "reference_seconds": 11.488027210884354,
+  "song_seconds": 6.5,
+  "status": "two_candidates_rendered",
+  "accepted": false,
+  "method": "Seed-VC F0-conditioned; no pitch or speed adjustment",
+  "candidates": [
+    {
+      "label": "A",
+      "steps": 30,
+      "cfg": 0.65,
+      "gain": 0.8169849050938834,
+      "input": "assets\\audio\\voice_morning\\converted\\vc_song_6p5s_morning_reference_1.0_30_0.65.wav",
+      "seconds": 6.5,
+      "peak": 0.7913551004744779
+    },
+    {
+      "label": "B",
+      "steps": 40,
+      "cfg": 0.85,
+      "gain": 0.7867867139335419,
+      "input": "assets\\audio\\voice_morning\\converted\\vc_song_6p5s_morning_reference_1.0_40_0.85.wav",
+      "seconds": 6.5,
+      "peak": 0.7921475964379034
+    }
+  ],
+  "common_mix_gain": 1,
+  "review_timeline": [
+    {
+      "label": "reference",
+      "start": 0,
+      "end": 11.488041666666666
+    },
+    {
+      "label": "original",
+      "start": 12.238041666666666,
+      "end": 18.738041666666668
+    },
+    {
+      "label": "A",
+      "start": 19.488041666666668,
+      "end": 25.988041666666668
+    },
+    {
+      "label": "B",
+      "start": 26.738041666666668,
+      "end": 33.23804166666667
+    }
+  ],
+  "limitations": [
+    "Reference episode identity is exact; perceived singing identity remains unaccepted.",
+    "V13 visual comparison uses the original song. A chosen converted master needs fresh lip validation."
+  ]
+}

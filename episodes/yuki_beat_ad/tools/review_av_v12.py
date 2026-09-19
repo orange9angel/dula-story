@@ -5,6 +5,7 @@ This cannot replace human listening or measure millisecond offsets.
 """
 from pathlib import Path
 import base64
+import argparse
 import json
 import os
 import subprocess
@@ -13,10 +14,14 @@ import urllib.request
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--before',choices=['v11','v12'],default='v11')
+    parser.add_argument('--after',choices=['v12','v13'],default='v12')
+    args=parser.parse_args()
     key=os.environ.get('DASHSCOPE_API_KEY')
     if not key:raise SystemExit('DASHSCOPE_API_KEY is required for optional audiovisual review.')
-    video=ROOT/'output/yuki_lips_v11_v12_compare.mp4'
-    compact=ROOT/'output/_review_lips_v12.mp4'
+    video=ROOT/f'output/yuki_lips_{args.before}_{args.after}_compare.mp4'
+    compact=ROOT/f'output/_review_lips_{args.after}.mp4'
     subprocess.run(['ffmpeg','-y','-v','error','-i',str(video),'-vf','crop=960:640:0:60,scale=720:480',
         '-r','30','-c:v','libx264','-crf','25','-c:a','aac','-b:a','128k',str(compact)],check=True)
     prompt='''请正常速度观看并聆听这段约10秒、同一歌曲、左右并排的Q版角色唱歌对比。
@@ -39,7 +44,7 @@ remaining_issues, limitation。避免夸奖。'''
             data=line[5:].strip()
             if data==b'[DONE]':break
             for choice in json.loads(data).get('choices',[]):answer+=choice.get('delta',{}).get('content') or ''
-    (ROOT/'storyboard/v12/model_av_review.txt').write_text(answer,encoding='utf-8')
+    (ROOT/f'storyboard/{args.after}/model_av_review.txt').write_text(answer,encoding='utf-8')
     print(answer)
 
 if __name__=='__main__':main()
