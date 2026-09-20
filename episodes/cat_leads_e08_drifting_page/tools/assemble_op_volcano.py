@@ -30,7 +30,7 @@ SEGS = [
     ('e08v', 11.5, 6.9, 'xf0.5'),  # 树下双人+猫（建立镜头）
     # 主歌：人物与猫日常
     ('e06', 3.0, 5.74, 'xf0.5'),   # 阿澈树下速写
-    ('e06', 9.0, 5.74, 'xf0.5'),   # 小蓝蹲摸小橘
+    ('e06', 13.0, 5.74, 'xf0.5'),  # 小蓝蹲摸小橘（原窗口 11.5-13.0 源片静止，前移避开）
     ('e07', 2.5, 5.74, 'xf0.5'),   # 小蓝柳道
     ('e06', 20.5, 5.74, 'xf0.5'),  # 小蓝惊呼「跑掉了」
     ('e06', 36.0, 5.74, 'cut'),    # 小橘打盹+速写本猫咪画 reveal —— 主歌收，硬切进副歌
@@ -38,10 +38,10 @@ SEGS = [
     ('e08v', 16.8, 5.3, 'cut'),    # 画页飞向天空
     ('e08v', 30.5, 5.3, 'cut'),    # 画页贴水漂流
     ('e08v', 22.5, 5.3, 'cut'),    # 小蓝急/阿澈「别追」
-    ('e08v', 49.5, 5.07, 'xf0.5'), # 画页特写
+    ('e08v', 49.5, 5.07, 'xf0.5:kb'), # 画页特写（源片静止 → Ken Burns 缓推）
     # 尾奏
     ('e08v', 54.5, 4.5, 'xf0.8'),  # 树下双人远景
-    ('title', 0, 5.2, None),       # 片名卡
+    ('title', 0, 5.2, 'kb'),       # 片名卡（缓慢推近）
 ]
 SRC = {'e06': E06, 'e07': E07, 'e08v': E08V}
 
@@ -73,6 +73,10 @@ def main():
     # 每段裁剪 + 统一格式
     labels = []
     for i, (key, st, dur, trans) in enumerate(SEGS):
+        kb = bool(trans and 'kb' in trans)
+        trans = trans.split(':')[0] if trans else trans
+        kb_f = ",zoompan=z='1+0.00035*on':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30" if kb else ''
+        SEGS[i] = (key, st, dur, trans)
         if key == 'title':
             # 纯色底 + 白字片名卡
             filters.append(
@@ -80,11 +84,11 @@ def main():
                 f"drawtext=fontfile='{FONT}':text='漂走的那张画':fontcolor=white:fontsize=88:"
                 f"x=(w-text_w)/2:y=(h-text_h)/2-20,"
                 f"drawtext=fontfile='{FONT}':text='片头曲「漂吧」':fontcolor=0xbfd4e6:fontsize=36:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2+60[s{i}]")
+                f"x=(w-text_w)/2:y=(h-text_h)/2+60{kb_f}{',settb=AVTB' if kb else ''}[s{i}]")
         else:
             filters.append(
                 f"[{src_idx[key]}:v]trim={st}:{st + dur},setpts=PTS-STARTPTS,"
-                f"fps={FPS},format=yuv420p,setsar=1,settb=AVTB[s{i}]")
+                f"fps={FPS},format=yuv420p,setsar=1{kb_f},settb=AVTB[s{i}]")
         labels.append((f'[s{i}]', trans))
 
     # 串接：xfade 用偏移，cut 用 concat
@@ -103,17 +107,19 @@ def main():
             cur, cur_len = out, cur_len + nxt_len
     total = cur_len
 
-    # 歌词条：15.5-63.1s 常驻深色底条（盖住素材自带对白条），逐句白字
-    bar = ("drawbox=x=(iw-1400)/2:y=ih-145:w=1400:h=90:color=0x14202e:t=fill:"
-           "enable='between(t,15.5,63.1)'")
+    # 歌词条：无底色——白字 + 深色描边 + 投影（家庭剧 MV 惯例）。
+    # 素材自带对白条已在段落级用 delogo 涂抹，这里不再放任何色块。
     texts = []
     for i, (a, b, text) in enumerate(LYRICS):
         # 句间空挡延续上一句，避免空底条
         end = LYRICS[i + 1][0] if i + 1 < len(LYRICS) else 63.1
         texts.append(
             f"drawtext=fontfile='{FONT}':text='{esc(text)}':fontcolor=white:fontsize=40:"
-            f"x=(w-text_w)/2:y=h-102:enable='between(t,{a},{end})'")
-    filters.append(f'[{cur}]{bar},{",".join([]) and ""}' if False else f'[{cur}]{bar}[b0]')
+            f"x=(w-text_w)/2:y=h-102:borderw=3:bordercolor=0x14202e:"
+            f"shadowcolor=0x000000aa:shadowx=2:shadowy=2:enable='between(t,{a},{end})'")
+    # 统一裁底 135px（源片自带对白条带）再 lanczos 拉回 1080 —— 比 delogo 干净，
+    # 全程一致构图；歌词白字+描边+投影直接压在画面上，无底条色块。
+    filters.append(f'[{cur}]crop=1920:945:0:0,scale=1920:1080:flags=lanczos[b0]')
     prev = 'b0'
     for i, dt in enumerate(texts):
         filters.append(f'[{prev}]{dt}[b{i + 1}]')
