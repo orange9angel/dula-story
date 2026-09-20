@@ -52,8 +52,6 @@ def main():
         'setsar=8/7,settb=AVTB,'
         f"drawtext=fontfile='{FONT}':text='漂走的那张画':fontcolor=white:fontsize=92:"
         'shadowcolor=0x14202e99:shadowx=2:shadowy=3:x=(w-text_w)/2:y=740,'
-        f"drawtext=fontfile='{FONT}':text='片头曲「漂吧」':fontcolor=0xf2f4f3:fontsize=38:"
-        'shadowcolor=0x14202e99:shadowx=1:shadowy=2:x=(w-text_w)/2:y=845,'
         'format=yuvj420p[card]',
         '[river][card]xfade=transition=fade:duration=0.8:offset=0[closing]',
         '[clean][closing]concat=n=2:v=1:a=0,setsar=8/7,format=yuvj420p[tail]',

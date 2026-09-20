@@ -93,10 +93,7 @@ def main():
                 f"[{src_idx['title']}:v]fps={FPS},format=yuv420p,setsar=1{kb_f},settb=AVTB,"
                 f"drawtext=fontfile='{TITLE_FONT}':text='漂走的那张画':fontcolor=white:fontsize=92:"
                 f"shadowcolor=0x00000066:shadowx=2:shadowy=3:"
-                f"x=(w-text_w)/2:y=h*0.60,"
-                f"drawtext=fontfile='{TITLE_FONT}':text='片头曲「漂吧」':fontcolor=0xf2e9d8:fontsize=38:"
-                f"shadowcolor=0x00000066:shadowx=1:shadowy=2:"
-                f"x=(w-text_w)/2:y=h*0.60+90[s{i}]")
+                f"x=(w-text_w)/2:y=h*0.60[s{i}]")
         else:
             filters.append(
                 f"[{src_idx[key]}:v]trim={st}:{st + dur},setpts=PTS-STARTPTS,"
