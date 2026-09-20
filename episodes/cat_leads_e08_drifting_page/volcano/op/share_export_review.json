@@ -1,0 +1,59 @@
+{
+  "source": "op.mp4",
+  "output": "op_wechat.mp4",
+  "source_sha256": "8eea68db9643da56bc7ad89645a90a1fef2d156f2f4f42e39f1c3f97cec9046b",
+  "output_sha256": "95a4b25c087c8d45208d627b8ab388e55f2a37482df785381e664e7ac7abdb23",
+  "bytes": 42604660,
+  "duration_s": 71.072,
+  "video": {
+    "codec": "h264",
+    "profile": "Main",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "pixel_format": "yuv420p",
+    "fps": "30/1",
+    "frames": 2132,
+    "sar": "1:1",
+    "start_s": "0.000000",
+    "time_base": "1/90000"
+  },
+  "audio": {
+    "codec": "aac",
+    "profile": "LC",
+    "sample_rate": "48000",
+    "channels": 2,
+    "start_s": "0.000000",
+    "duration_s": "71.072000"
+  },
+  "audio_alignment_windows": [
+    {
+      "time_s": 5,
+      "duration_s": 4,
+      "best_lag_ms": 0.0,
+      "waveform_correlation": 0.999852
+    },
+    {
+      "time_s": 25,
+      "duration_s": 4,
+      "best_lag_ms": 0.0,
+      "waveform_correlation": 0.999781
+    },
+    {
+      "time_s": 50,
+      "duration_s": 4,
+      "best_lag_ms": 0.0,
+      "waveform_correlation": 0.999817
+    },
+    {
+      "time_s": 65,
+      "duration_s": 4,
+      "best_lag_ms": 0.0,
+      "waveform_correlation": 0.999859
+    }
+  ],
+  "decode_errors": 0,
+  "platform_round_trip_tested": false,
+  "diagnosis": "96 kHz source is a compatibility suspect, not a confirmed cause; unchanged pitch does not match simple 96-to-48 sample rate misinterpretation. Original packet timestamps are continuous."
+}

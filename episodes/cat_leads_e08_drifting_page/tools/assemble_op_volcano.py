@@ -139,7 +139,8 @@ def main():
     cmd += ['-i', str(AUDIO), '-filter_complex', ';'.join(filters),
             '-map', '[vout]', '-map', f'{len(inputs)}:a:0',
             '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p',
-            '-c:a', 'aac', '-b:a', '192k', '-t', f'{total:.2f}', '-movflags', '+faststart', str(OUT)]
+            '-c:a', 'aac', '-profile:a', 'aac_low', '-ar', '48000', '-ac', '2',
+            '-b:a', '192k', '-t', f'{total:.2f}', '-movflags', '+faststart', str(OUT)]
     subprocess.run(cmd, check=True)
     dur = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
                           '-of', 'csv=p=0', str(OUT)], capture_output=True, text=True).stdout.strip()
