@@ -22,7 +22,7 @@ OUT = ROOT / 'volcano/op/op.mp4'
 FPS = 30
 FONT = 'C\\:/Windows/Fonts/msyh.ttc'
 TITLE_FONT = 'C\\:/Windows/Fonts/STKAITI.TTF'
-ENDCARD = ROOT / 'volcano/op/endcard_3.png'
+ENDCARD = ROOT / 'volcano/op/endcard_matched_v2.png'
 
 # (源key, 源起点, 时长, 到下一段的转场: 'xfade.5' | 'cut' | None)
 SEGS = [
@@ -87,7 +87,7 @@ def main():
         kb_f = ",zoompan=z='1+0.00035*on':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30" if kb else ''
         SEGS[i] = (key, st, dur, trans)
         if key == 'title':
-            # 片尾卡：Seedream 黄昏河岸图（volcano/op/endcard_3.png）+ 楷体白字微投影，
+            # 片尾卡：与正片青蓝日景匹配的动画河岸图 + 楷体白字微投影，
             # 居中偏下，Ken Burns 缓推保留
             filters.append(
                 f"[{src_idx['title']}:v]fps={FPS},format=yuv420p,setsar=1{kb_f},settb=AVTB,"

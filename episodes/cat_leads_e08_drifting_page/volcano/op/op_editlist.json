@@ -107,7 +107,7 @@
       "transition_to_next": "xf0.8"
     },
     {
-      "src": "title@ffmpeg color+drawtext",
+      "src": "endcard_matched_v2.png + ffmpeg drawtext",
       "src_range": [
         0,
         5.2
@@ -172,5 +172,13 @@
       ],
       "text": "你还会 回到我身旁"
     }
-  ]
+  ],
+  "endcard_revision": {
+    "date": "2026-09-20",
+    "background": "endcard_matched_v2.png",
+    "transition_start_frame": 1976,
+    "transition_frames": 24,
+    "preserved_audio_from": "op.mp4 before endcard replacement",
+    "review": "endcard_replacement_review.json"
+  }
 }
