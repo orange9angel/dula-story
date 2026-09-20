@@ -1,0 +1,1340 @@
+{
+  "stem_sha256": "f5d8737da38c645ca0f59da82f744f5be400128e8eb8ba310b6dbda0b4c7ace9",
+  "method": "transcribe(no-VAD) sung-segment anchors + per-line known-text DTW",
+  "note": "Suno 实际唱词以本对齐为准; transcript 列保留识别原文, 低置信字见 warnings",
+  "lines": [
+    {
+      "line": 0,
+      "text": "雨停了 河面泛着光",
+      "start": 15.51,
+      "end": 20.75,
+      "mean_p": 0.796,
+      "transcript": "雨停了河面泛着光",
+      "transcript_span": [
+        15.86,
+        20.86
+      ]
+    },
+    {
+      "line": 1,
+      "text": "那张画 顺着水流向远方",
+      "start": 22.05,
+      "end": 28.47,
+      "mean_p": 0.852,
+      "transcript": "那张画顺着水流向远方",
+      "transcript_span": [
+        22.4,
+        28.52
+      ]
+    },
+    {
+      "line": 2,
+      "text": "画里的你 还在微笑吗",
+      "start": 29.55,
+      "end": 37.45,
+      "mean_p": 0.838,
+      "transcript": "画里的你还在微笑吗",
+      "transcript_span": [
+        29.9,
+        37.62
+      ]
+    },
+    {
+      "line": 3,
+      "text": "风把答案 吹成了浪",
+      "start": 37.27,
+      "end": 43.21,
+      "mean_p": 0.817,
+      "transcript": "风把答案吹成了浪",
+      "transcript_span": [
+        37.62,
+        43.44
+      ]
+    },
+    {
+      "line": 4,
+      "text": "我追着 岸边的柳影长",
+      "start": 44.21,
+      "end": 48.69,
+      "mean_p": 0.498,
+      "transcript": "我追着岸边的流音",
+      "transcript_span": [
+        44.56,
+        48.34
+      ]
+    },
+    {
+      "line": 5,
+      "text": "唤一声 回音轻轻荡",
+      "start": 47.99,
+      "end": 52.47,
+      "mean_p": 0.404,
+      "transcript": "换一生回忆轻轻的",
+      "transcript_span": [
+        48.34,
+        52.44
+      ]
+    },
+    {
+      "line": 6,
+      "text": "如果你也 听见这方向",
+      "start": 52.09,
+      "end": 56.23,
+      "mean_p": 0.704,
+      "transcript": "如果你也听见这方向",
+      "transcript_span": [
+        52.44,
+        56.34
+      ]
+    },
+    {
+      "line": 7,
+      "text": "请把思念 折成星光",
+      "start": 55.99,
+      "end": 61.91,
+      "mean_p": 0.687,
+      "transcript": "请把思念折成星光",
+      "transcript_span": [
+        56.34,
+        62.24
+      ]
+    },
+    {
+      "line": 8,
+      "text": "漂吧 漂吧 带着我的牵挂",
+      "start": 64.47,
+      "end": 68.99,
+      "mean_p": 0.534,
+      "transcript": "飘吧飘吧带着我的牵挂",
+      "transcript_span": [
+        64.82,
+        68.9
+      ]
+    },
+    {
+      "line": 9,
+      "text": "穿过桥影 穿过晚霞",
+      "start": 68.55,
+      "end": 71.73,
+      "mean_p": 0.626,
+      "transcript": "穿过脚印穿过晚霞",
+      "transcript_span": [
+        68.9,
+        71.72
+      ]
+    },
+    {
+      "line": 10,
+      "text": "某一天 你停下靠岸的地方",
+      "start": 71.37,
+      "end": 75.95,
+      "mean_p": 0.632,
+      "transcript": "某一天你停下那靠岸的地方",
+      "transcript_span": [
+        71.72,
+        75.78
+      ]
+    },
+    {
+      "line": 11,
+      "text": "会有人替我 把你收藏",
+      "start": 75.43,
+      "end": 78.77,
+      "mean_p": 0.752,
+      "transcript": "会有人替我把你收藏",
+      "transcript_span": [
+        75.78,
+        79.04
+      ]
+    },
+    {
+      "line": 12,
+      "text": "漂吧 漂吧 别怕路太长",
+      "start": 80.21,
+      "end": 83.39,
+      "mean_p": 0.636,
+      "transcript": "飘吧飘吧别把路太长",
+      "transcript_span": [
+        80.56,
+        83.42
+      ]
+    },
+    {
+      "line": 13,
+      "text": "碎玻璃里 映着你的模样",
+      "start": 83.07,
+      "end": 86.25,
+      "mean_p": 0.595,
+      "transcript": "随波里淋着你的模样",
+      "transcript_span": [
+        83.42,
+        86.7
+      ]
+    },
+    {
+      "line": 14,
+      "text": "当春风 又吹动我的头发",
+      "start": 87.21,
+      "end": 92.39,
+      "mean_p": 0.592,
+      "transcript": "当春风又吹动我的头发",
+      "transcript_span": [
+        87.56,
+        92.58
+      ]
+    },
+    {
+      "line": 15,
+      "text": "你还会 回到我身旁",
+      "start": 92.23,
+      "end": 100.07,
+      "mean_p": 0.741,
+      "transcript": "你还会回到身旁",
+      "transcript_span": [
+        92.58,
+        100.7
+      ]
+    }
+  ],
+  "chars": [
+    {
+      "ch": "雨",
+      "start": 15.51,
+      "end": 17.05,
+      "probability": 0.9456,
+      "line": 0
+    },
+    {
+      "ch": "停",
+      "start": 17.05,
+      "end": 17.71,
+      "probability": 0.9059,
+      "line": 0
+    },
+    {
+      "ch": "了",
+      "start": 17.71,
+      "end": 18.31,
+      "probability": 0.9962,
+      "line": 0
+    },
+    {
+      "ch": "河",
+      "start": 18.31,
+      "end": 18.75,
+      "probability": 0.6702,
+      "line": 0
+    },
+    {
+      "ch": "面",
+      "start": 18.75,
+      "end": 19.19,
+      "probability": 0.9165,
+      "line": 0
+    },
+    {
+      "ch": "泛",
+      "start": 19.19,
+      "end": 19.69,
+      "probability": 0.6436,
+      "line": 0
+    },
+    {
+      "ch": "着",
+      "start": 19.69,
+      "end": 20.33,
+      "probability": 0.323,
+      "line": 0
+    },
+    {
+      "ch": "光",
+      "start": 20.33,
+      "end": 20.75,
+      "probability": 0.9661,
+      "line": 0
+    },
+    {
+      "ch": "那",
+      "start": 22.05,
+      "end": 23.45,
+      "probability": 0.8716,
+      "line": 1
+    },
+    {
+      "ch": "张",
+      "start": 23.45,
+      "end": 23.83,
+      "probability": 0.66,
+      "line": 1
+    },
+    {
+      "ch": "画",
+      "start": 23.83,
+      "end": 24.49,
+      "probability": 0.2949,
+      "line": 1
+    },
+    {
+      "ch": "顺",
+      "start": 24.49,
+      "end": 25.21,
+      "probability": 0.7821,
+      "line": 1
+    },
+    {
+      "ch": "着",
+      "start": 25.21,
+      "end": 25.69,
+      "probability": 0.986,
+      "line": 1
+    },
+    {
+      "ch": "水",
+      "start": 25.69,
+      "end": 26.19,
+      "probability": 0.9708,
+      "line": 1
+    },
+    {
+      "ch": "流",
+      "start": 26.19,
+      "end": 26.69,
+      "probability": 0.9891,
+      "line": 1
+    },
+    {
+      "ch": "向",
+      "start": 26.69,
+      "end": 27.11,
+      "probability": 0.9947,
+      "line": 1
+    },
+    {
+      "ch": "远",
+      "start": 27.11,
+      "end": 27.67,
+      "probability": 0.9777,
+      "line": 1
+    },
+    {
+      "ch": "方",
+      "start": 27.67,
+      "end": 28.47,
+      "probability": 0.9964,
+      "line": 1
+    },
+    {
+      "ch": "画",
+      "start": 29.55,
+      "end": 30.97,
+      "probability": 0.0169,
+      "line": 2
+    },
+    {
+      "ch": "里",
+      "start": 30.97,
+      "end": 31.51,
+      "probability": 0.9334,
+      "line": 2
+    },
+    {
+      "ch": "的",
+      "start": 31.51,
+      "end": 31.95,
+      "probability": 0.9953,
+      "line": 2
+    },
+    {
+      "ch": "你",
+      "start": 31.95,
+      "end": 33.69,
+      "probability": 0.9408,
+      "line": 2
+    },
+    {
+      "ch": "还",
+      "start": 33.69,
+      "end": 35.57,
+      "probability": 0.6719,
+      "line": 2
+    },
+    {
+      "ch": "在",
+      "start": 35.57,
+      "end": 35.97,
+      "probability": 0.9964,
+      "line": 2
+    },
+    {
+      "ch": "微",
+      "start": 35.97,
+      "end": 36.43,
+      "probability": 0.9949,
+      "line": 2
+    },
+    {
+      "ch": "笑",
+      "start": 36.43,
+      "end": 36.95,
+      "probability": 0.9993,
+      "line": 2
+    },
+    {
+      "ch": "吗",
+      "start": 36.95,
+      "end": 37.45,
+      "probability": 0.9907,
+      "line": 2
+    },
+    {
+      "ch": "风",
+      "start": 37.27,
+      "end": 38.71,
+      "probability": 0.1315,
+      "line": 3
+    },
+    {
+      "ch": "把",
+      "start": 38.71,
+      "end": 39.05,
+      "probability": 0.9297,
+      "line": 3
+    },
+    {
+      "ch": "答",
+      "start": 39.05,
+      "end": 39.47,
+      "probability": 0.8974,
+      "line": 3
+    },
+    {
+      "ch": "案",
+      "start": 39.47,
+      "end": 40.63,
+      "probability": 0.9994,
+      "line": 3
+    },
+    {
+      "ch": "吹",
+      "start": 40.63,
+      "end": 41.33,
+      "probability": 0.8303,
+      "line": 3
+    },
+    {
+      "ch": "成",
+      "start": 41.33,
+      "end": 41.99,
+      "probability": 0.984,
+      "line": 3
+    },
+    {
+      "ch": "了",
+      "start": 41.99,
+      "end": 42.63,
+      "probability": 0.9219,
+      "line": 3
+    },
+    {
+      "ch": "浪",
+      "start": 42.63,
+      "end": 43.21,
+      "probability": 0.8397,
+      "line": 3
+    },
+    {
+      "ch": "我",
+      "start": 44.21,
+      "end": 45.59,
+      "probability": 0.7595,
+      "line": 4
+    },
+    {
+      "ch": "追",
+      "start": 45.59,
+      "end": 45.89,
+      "probability": 0.8444,
+      "line": 4
+    },
+    {
+      "ch": "着",
+      "start": 45.89,
+      "end": 46.39,
+      "probability": 0.1808,
+      "line": 4
+    },
+    {
+      "ch": "岸",
+      "start": 46.39,
+      "end": 46.89,
+      "probability": 0.4706,
+      "line": 4
+    },
+    {
+      "ch": "边",
+      "start": 46.89,
+      "end": 47.23,
+      "probability": 0.231,
+      "line": 4
+    },
+    {
+      "ch": "的",
+      "start": 47.23,
+      "end": 47.49,
+      "probability": 0.9943,
+      "line": 4
+    },
+    {
+      "ch": "柳",
+      "start": 47.49,
+      "end": 47.81,
+      "probability": 0.5377,
+      "line": 4
+    },
+    {
+      "ch": "影",
+      "start": 47.81,
+      "end": 48.31,
+      "probability": 0.1399,
+      "line": 4
+    },
+    {
+      "ch": "长",
+      "start": 48.31,
+      "end": 48.69,
+      "probability": 0.3203,
+      "line": 4
+    },
+    {
+      "ch": "唤",
+      "start": 47.99,
+      "end": 48.23,
+      "probability": 0.0358,
+      "line": 5
+    },
+    {
+      "ch": "一",
+      "start": 48.23,
+      "end": 49.49,
+      "probability": 0.0015,
+      "line": 5
+    },
+    {
+      "ch": "声",
+      "start": 49.49,
+      "end": 50.05,
+      "probability": 0.2843,
+      "line": 5
+    },
+    {
+      "ch": "回",
+      "start": 50.05,
+      "end": 50.57,
+      "probability": 0.1969,
+      "line": 5
+    },
+    {
+      "ch": "音",
+      "start": 50.57,
+      "end": 51.11,
+      "probability": 0.3864,
+      "line": 5
+    },
+    {
+      "ch": "轻",
+      "start": 51.11,
+      "end": 51.51,
+      "probability": 0.8356,
+      "line": 5
+    },
+    {
+      "ch": "轻",
+      "start": 51.51,
+      "end": 52.13,
+      "probability": 0.9927,
+      "line": 5
+    },
+    {
+      "ch": "荡",
+      "start": 52.13,
+      "end": 52.47,
+      "probability": 0.4974,
+      "line": 5
+    },
+    {
+      "ch": "如",
+      "start": 52.09,
+      "end": 53.31,
+      "probability": 0.0009,
+      "line": 6
+    },
+    {
+      "ch": "果",
+      "start": 53.31,
+      "end": 53.59,
+      "probability": 0.017,
+      "line": 6
+    },
+    {
+      "ch": "你",
+      "start": 53.59,
+      "end": 53.79,
+      "probability": 0.9403,
+      "line": 6
+    },
+    {
+      "ch": "也",
+      "start": 53.79,
+      "end": 54.03,
+      "probability": 0.9182,
+      "line": 6
+    },
+    {
+      "ch": "听",
+      "start": 54.03,
+      "end": 54.39,
+      "probability": 0.731,
+      "line": 6
+    },
+    {
+      "ch": "见",
+      "start": 54.39,
+      "end": 54.81,
+      "probability": 0.991,
+      "line": 6
+    },
+    {
+      "ch": "这",
+      "start": 54.81,
+      "end": 55.23,
+      "probability": 0.8603,
+      "line": 6
+    },
+    {
+      "ch": "方",
+      "start": 55.23,
+      "end": 55.73,
+      "probability": 0.8779,
+      "line": 6
+    },
+    {
+      "ch": "向",
+      "start": 55.73,
+      "end": 56.23,
+      "probability": 0.9982,
+      "line": 6
+    },
+    {
+      "ch": "请",
+      "start": 55.99,
+      "end": 57.53,
+      "probability": 0.1001,
+      "line": 7
+    },
+    {
+      "ch": "把",
+      "start": 57.53,
+      "end": 57.77,
+      "probability": 0.5752,
+      "line": 7
+    },
+    {
+      "ch": "思",
+      "start": 57.77,
+      "end": 58.23,
+      "probability": 0.9818,
+      "line": 7
+    },
+    {
+      "ch": "念",
+      "start": 58.23,
+      "end": 58.81,
+      "probability": 0.9994,
+      "line": 7
+    },
+    {
+      "ch": "折",
+      "start": 58.81,
+      "end": 59.61,
+      "probability": 0.647,
+      "line": 7
+    },
+    {
+      "ch": "成",
+      "start": 59.61,
+      "end": 60.15,
+      "probability": 0.3588,
+      "line": 7
+    },
+    {
+      "ch": "星",
+      "start": 60.15,
+      "end": 61.23,
+      "probability": 0.8353,
+      "line": 7
+    },
+    {
+      "ch": "光",
+      "start": 61.23,
+      "end": 61.91,
+      "probability": 0.9963,
+      "line": 7
+    },
+    {
+      "ch": "漂",
+      "start": 64.47,
+      "end": 65.73,
+      "probability": 0.01,
+      "line": 8
+    },
+    {
+      "ch": "吧",
+      "start": 65.73,
+      "end": 66.15,
+      "probability": 0.2108,
+      "line": 8
+    },
+    {
+      "ch": "漂",
+      "start": 66.15,
+      "end": 66.59,
+      "probability": 0.7696,
+      "line": 8
+    },
+    {
+      "ch": "吧",
+      "start": 66.59,
+      "end": 67.11,
+      "probability": 0.985,
+      "line": 8
+    },
+    {
+      "ch": "带",
+      "start": 67.11,
+      "end": 67.45,
+      "probability": 0.6202,
+      "line": 8
+    },
+    {
+      "ch": "着",
+      "start": 67.45,
+      "end": 67.67,
+      "probability": 0.9491,
+      "line": 8
+    },
+    {
+      "ch": "我",
+      "start": 67.67,
+      "end": 67.89,
+      "probability": 0.0102,
+      "line": 8
+    },
+    {
+      "ch": "的",
+      "start": 67.89,
+      "end": 68.07,
+      "probability": 0.0977,
+      "line": 8
+    },
+    {
+      "ch": "牵",
+      "start": 68.07,
+      "end": 68.49,
+      "probability": 0.8404,
+      "line": 8
+    },
+    {
+      "ch": "挂",
+      "start": 68.49,
+      "end": 68.99,
+      "probability": 0.8421,
+      "line": 8
+    },
+    {
+      "ch": "穿",
+      "start": 68.55,
+      "end": 69.29,
+      "probability": 0.9325,
+      "line": 9
+    },
+    {
+      "ch": "过",
+      "start": 69.29,
+      "end": 69.49,
+      "probability": 0.3989,
+      "line": 9
+    },
+    {
+      "ch": "桥",
+      "start": 69.49,
+      "end": 69.77,
+      "probability": 0.5031,
+      "line": 9
+    },
+    {
+      "ch": "影",
+      "start": 69.77,
+      "end": 69.97,
+      "probability": 0.0921,
+      "line": 9
+    },
+    {
+      "ch": "穿",
+      "start": 69.97,
+      "end": 70.35,
+      "probability": 0.9433,
+      "line": 9
+    },
+    {
+      "ch": "过",
+      "start": 70.35,
+      "end": 70.77,
+      "probability": 0.9882,
+      "line": 9
+    },
+    {
+      "ch": "晚",
+      "start": 70.77,
+      "end": 71.23,
+      "probability": 0.169,
+      "line": 9
+    },
+    {
+      "ch": "霞",
+      "start": 71.23,
+      "end": 71.73,
+      "probability": 0.9801,
+      "line": 9
+    },
+    {
+      "ch": "某",
+      "start": 71.37,
+      "end": 72.57,
+      "probability": 0.2408,
+      "line": 10
+    },
+    {
+      "ch": "一",
+      "start": 72.57,
+      "end": 72.85,
+      "probability": 0.7373,
+      "line": 10
+    },
+    {
+      "ch": "天",
+      "start": 72.85,
+      "end": 73.19,
+      "probability": 0.9871,
+      "line": 10
+    },
+    {
+      "ch": "你",
+      "start": 73.19,
+      "end": 73.55,
+      "probability": 0.7119,
+      "line": 10
+    },
+    {
+      "ch": "停",
+      "start": 73.55,
+      "end": 73.97,
+      "probability": 0.9551,
+      "line": 10
+    },
+    {
+      "ch": "下",
+      "start": 73.97,
+      "end": 74.53,
+      "probability": 0.9818,
+      "line": 10
+    },
+    {
+      "ch": "靠",
+      "start": 74.53,
+      "end": 74.95,
+      "probability": 0.5558,
+      "line": 10
+    },
+    {
+      "ch": "岸",
+      "start": 74.95,
+      "end": 75.17,
+      "probability": 0.54,
+      "line": 10
+    },
+    {
+      "ch": "的",
+      "start": 75.17,
+      "end": 75.35,
+      "probability": 0.9921,
+      "line": 10
+    },
+    {
+      "ch": "地",
+      "start": 75.35,
+      "end": 75.57,
+      "probability": 0.0018,
+      "line": 10
+    },
+    {
+      "ch": "方",
+      "start": 75.57,
+      "end": 75.95,
+      "probability": 0.2473,
+      "line": 10
+    },
+    {
+      "ch": "会",
+      "start": 75.43,
+      "end": 76.29,
+      "probability": 0.1297,
+      "line": 11
+    },
+    {
+      "ch": "有",
+      "start": 76.29,
+      "end": 76.55,
+      "probability": 0.0069,
+      "line": 11
+    },
+    {
+      "ch": "人",
+      "start": 76.55,
+      "end": 76.91,
+      "probability": 0.9154,
+      "line": 11
+    },
+    {
+      "ch": "替",
+      "start": 76.91,
+      "end": 77.27,
+      "probability": 0.9892,
+      "line": 11
+    },
+    {
+      "ch": "我",
+      "start": 77.27,
+      "end": 77.49,
+      "probability": 0.9946,
+      "line": 11
+    },
+    {
+      "ch": "把",
+      "start": 77.49,
+      "end": 77.73,
+      "probability": 0.9779,
+      "line": 11
+    },
+    {
+      "ch": "你",
+      "start": 77.73,
+      "end": 77.93,
+      "probability": 0.992,
+      "line": 11
+    },
+    {
+      "ch": "收",
+      "start": 77.93,
+      "end": 78.29,
+      "probability": 0.8098,
+      "line": 11
+    },
+    {
+      "ch": "藏",
+      "start": 78.29,
+      "end": 78.77,
+      "probability": 0.9543,
+      "line": 11
+    },
+    {
+      "ch": "漂",
+      "start": 80.21,
+      "end": 80.71,
+      "probability": 0.2046,
+      "line": 12
+    },
+    {
+      "ch": "吧",
+      "start": 80.71,
+      "end": 81.11,
+      "probability": 0.8566,
+      "line": 12
+    },
+    {
+      "ch": "漂",
+      "start": 81.11,
+      "end": 81.59,
+      "probability": 0.343,
+      "line": 12
+    },
+    {
+      "ch": "吧",
+      "start": 81.59,
+      "end": 82.09,
+      "probability": 0.9984,
+      "line": 12
+    },
+    {
+      "ch": "别",
+      "start": 82.09,
+      "end": 82.39,
+      "probability": 0.2828,
+      "line": 12
+    },
+    {
+      "ch": "怕",
+      "start": 82.39,
+      "end": 82.69,
+      "probability": 0.3198,
+      "line": 12
+    },
+    {
+      "ch": "路",
+      "start": 82.69,
+      "end": 82.85,
+      "probability": 0.8285,
+      "line": 12
+    },
+    {
+      "ch": "太",
+      "start": 82.85,
+      "end": 83.09,
+      "probability": 0.9834,
+      "line": 12
+    },
+    {
+      "ch": "长",
+      "start": 83.09,
+      "end": 83.39,
+      "probability": 0.91,
+      "line": 12
+    },
+    {
+      "ch": "碎",
+      "start": 83.07,
+      "end": 83.83,
+      "probability": 0.5061,
+      "line": 13
+    },
+    {
+      "ch": "玻",
+      "start": 83.83,
+      "end": 84.07,
+      "probability": 0.706,
+      "line": 13
+    },
+    {
+      "ch": "璃",
+      "start": 84.07,
+      "end": 84.31,
+      "probability": 0.9992,
+      "line": 13
+    },
+    {
+      "ch": "里",
+      "start": 84.31,
+      "end": 84.51,
+      "probability": 0.0009,
+      "line": 13
+    },
+    {
+      "ch": "映",
+      "start": 84.51,
+      "end": 84.77,
+      "probability": 0.4978,
+      "line": 13
+    },
+    {
+      "ch": "着",
+      "start": 84.77,
+      "end": 84.99,
+      "probability": 0.7909,
+      "line": 13
+    },
+    {
+      "ch": "你",
+      "start": 84.99,
+      "end": 85.21,
+      "probability": 0.0079,
+      "line": 13
+    },
+    {
+      "ch": "的",
+      "start": 85.21,
+      "end": 85.47,
+      "probability": 0.5399,
+      "line": 13
+    },
+    {
+      "ch": "模",
+      "start": 85.47,
+      "end": 85.77,
+      "probability": 0.9879,
+      "line": 13
+    },
+    {
+      "ch": "样",
+      "start": 85.77,
+      "end": 86.25,
+      "probability": 0.916,
+      "line": 13
+    },
+    {
+      "ch": "当",
+      "start": 87.21,
+      "end": 87.79,
+      "probability": 0.0675,
+      "line": 14
+    },
+    {
+      "ch": "春",
+      "start": 87.79,
+      "end": 88.09,
+      "probability": 0.0303,
+      "line": 14
+    },
+    {
+      "ch": "风",
+      "start": 88.09,
+      "end": 88.81,
+      "probability": 0.9246,
+      "line": 14
+    },
+    {
+      "ch": "又",
+      "start": 88.81,
+      "end": 89.51,
+      "probability": 0.757,
+      "line": 14
+    },
+    {
+      "ch": "吹",
+      "start": 89.51,
+      "end": 89.97,
+      "probability": 0.9935,
+      "line": 14
+    },
+    {
+      "ch": "动",
+      "start": 89.97,
+      "end": 90.45,
+      "probability": 0.8911,
+      "line": 14
+    },
+    {
+      "ch": "我",
+      "start": 90.45,
+      "end": 90.99,
+      "probability": 0.0221,
+      "line": 14
+    },
+    {
+      "ch": "的",
+      "start": 90.99,
+      "end": 91.29,
+      "probability": 0.2452,
+      "line": 14
+    },
+    {
+      "ch": "头",
+      "start": 91.29,
+      "end": 91.69,
+      "probability": 0.9927,
+      "line": 14
+    },
+    {
+      "ch": "发",
+      "start": 91.69,
+      "end": 92.39,
+      "probability": 0.9984,
+      "line": 14
+    },
+    {
+      "ch": "你",
+      "start": 92.23,
+      "end": 95.15,
+      "probability": 0.6578,
+      "line": 15
+    },
+    {
+      "ch": "还",
+      "start": 95.15,
+      "end": 95.61,
+      "probability": 0.4752,
+      "line": 15
+    },
+    {
+      "ch": "会",
+      "start": 95.61,
+      "end": 96.29,
+      "probability": 0.9902,
+      "line": 15
+    },
+    {
+      "ch": "回",
+      "start": 96.29,
+      "end": 97.45,
+      "probability": 0.8003,
+      "line": 15
+    },
+    {
+      "ch": "到",
+      "start": 97.45,
+      "end": 98.09,
+      "probability": 0.9807,
+      "line": 15
+    },
+    {
+      "ch": "我",
+      "start": 98.09,
+      "end": 98.55,
+      "probability": 0.0395,
+      "line": 15
+    },
+    {
+      "ch": "身",
+      "start": 98.55,
+      "end": 99.25,
+      "probability": 0.9988,
+      "line": 15
+    },
+    {
+      "ch": "旁",
+      "start": 99.25,
+      "end": 100.07,
+      "probability": 0.9824,
+      "line": 15
+    }
+  ],
+  "warnings": [
+    {
+      "ch": "画",
+      "start": 29.55,
+      "end": 30.97,
+      "probability": 0.0169,
+      "line": 2
+    },
+    {
+      "ch": "唤",
+      "start": 47.99,
+      "end": 48.23,
+      "probability": 0.0358,
+      "line": 5
+    },
+    {
+      "ch": "一",
+      "start": 48.23,
+      "end": 49.49,
+      "probability": 0.0015,
+      "line": 5
+    },
+    {
+      "ch": "如",
+      "start": 52.09,
+      "end": 53.31,
+      "probability": 0.0009,
+      "line": 6
+    },
+    {
+      "ch": "果",
+      "start": 53.31,
+      "end": 53.59,
+      "probability": 0.017,
+      "line": 6
+    },
+    {
+      "ch": "漂",
+      "start": 64.47,
+      "end": 65.73,
+      "probability": 0.01,
+      "line": 8
+    },
+    {
+      "ch": "我",
+      "start": 67.67,
+      "end": 67.89,
+      "probability": 0.0102,
+      "line": 8
+    },
+    {
+      "ch": "的",
+      "start": 67.89,
+      "end": 68.07,
+      "probability": 0.0977,
+      "line": 8
+    },
+    {
+      "ch": "影",
+      "start": 69.77,
+      "end": 69.97,
+      "probability": 0.0921,
+      "line": 9
+    },
+    {
+      "ch": "地",
+      "start": 75.35,
+      "end": 75.57,
+      "probability": 0.0018,
+      "line": 10
+    },
+    {
+      "ch": "有",
+      "start": 76.29,
+      "end": 76.55,
+      "probability": 0.0069,
+      "line": 11
+    },
+    {
+      "ch": "里",
+      "start": 84.31,
+      "end": 84.51,
+      "probability": 0.0009,
+      "line": 13
+    },
+    {
+      "ch": "你",
+      "start": 84.99,
+      "end": 85.21,
+      "probability": 0.0079,
+      "line": 13
+    },
+    {
+      "ch": "当",
+      "start": 87.21,
+      "end": 87.79,
+      "probability": 0.0675,
+      "line": 14
+    },
+    {
+      "ch": "春",
+      "start": 87.79,
+      "end": 88.09,
+      "probability": 0.0303,
+      "line": 14
+    },
+    {
+      "ch": "我",
+      "start": 90.45,
+      "end": 90.99,
+      "probability": 0.0221,
+      "line": 14
+    },
+    {
+      "ch": "我",
+      "start": 98.09,
+      "end": 98.55,
+      "probability": 0.0395,
+      "line": 15
+    }
+  ],
+  "duet_section": {
+    "lines": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "start": 80.21,
+    "end": 100.07
+  }
+}

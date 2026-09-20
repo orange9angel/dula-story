@@ -1,0 +1,81 @@
+{
+  "duet_section": {
+    "lines": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "start": 80.21,
+    "end": 100.07
+  },
+  "per_line": [
+    {
+      "line": 12,
+      "text": "漂吧 漂吧 别怕路太长",
+      "voice": "blue",
+      "ref": "girl",
+      "start": 80.21,
+      "end": 83.39,
+      "gain": 0.446,
+      "lag_ms_raw": 0,
+      "lag_ms_corrected": 0,
+      "drift_ms": 0.0
+    },
+    {
+      "line": 13,
+      "text": "碎玻璃里 映着你的模样",
+      "voice": "che",
+      "ref": "boy",
+      "start": 83.07,
+      "end": 86.25,
+      "gain": 0.522,
+      "lag_ms_raw": -10,
+      "lag_ms_corrected": 0,
+      "drift_ms": 0.0
+    },
+    {
+      "line": 14,
+      "text": "当春风 又吹动我的头发",
+      "voice": "blue",
+      "ref": "girl",
+      "start": 87.21,
+      "end": 92.39,
+      "gain": 0.394,
+      "lag_ms_raw": 0,
+      "lag_ms_corrected": 0,
+      "drift_ms": 0.0
+    },
+    {
+      "line": 15,
+      "text": "你还会 回到我身旁",
+      "voice": "che",
+      "ref": "boy",
+      "start": 92.23,
+      "end": 100.07,
+      "gain": 0.247,
+      "lag_ms_raw": 0,
+      "lag_ms_corrected": 0,
+      "drift_ms": 0.0
+    }
+  ],
+  "outputs": {
+    "duet": "assets\\audio\\theme\\漂吧_对唱版.wav",
+    "op_cut": "assets\\audio\\theme\\漂吧_对唱版_op.wav"
+  },
+  "op_structure": {
+    "intro_plus_verse1": [
+      0,
+      43.21
+    ],
+    "duet_chorus": [
+      80.21,
+      100.07
+    ],
+    "outro_tail_s": 8.0,
+    "join_xfade_s": 1.0,
+    "op_seconds": 71.07
+  },
+  "loudnorm": "I=-16 TP=-1.5 LRA=11 (both outputs)",
+  "final_peak_pre_norm": 1.019
+}
