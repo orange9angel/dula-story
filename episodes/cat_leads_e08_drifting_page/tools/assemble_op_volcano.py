@@ -17,10 +17,12 @@ ROOT = Path(__file__).resolve().parents[1]
 E06 = ROOT.parents[0] / 'cat_leads_e06_cat_model/output/2026_9_5_1623_bgmv2.mp4'
 E07 = ROOT.parents[0] / 'cat_leads_e07_river_willow/output/2026_9_6_0143_v8.mp4'
 E08V = ROOT / 'volcano/output/2026_9_6_01.mp4'
-AUDIO = ROOT / 'assets/audio/theme/漂吧_op_vo.wav'
+AUDIO = ROOT / 'assets/audio/theme/漂吧_op_final.wav'
 OUT = ROOT / 'volcano/op/op.mp4'
 FPS = 30
 FONT = 'C\\:/Windows/Fonts/msyh.ttc'
+TITLE_FONT = 'C\\:/Windows/Fonts/STKAITI.TTF'
+ENDCARD = ROOT / 'volcano/op/endcard_3.png'
 
 # (源key, 源起点, 时长, 到下一段的转场: 'xfade.5' | 'cut' | None)
 SEGS = [
@@ -66,9 +68,16 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     inputs, filters = [], []
     src_idx = {}
+    input_args = []
     for key, path in SRC.items():
         src_idx[key] = len(inputs)
         inputs.append(str(path))
+        input_args += ['-i', str(path)]
+    # 片尾卡图片输入（loop 到段长）
+    title_dur = next(d for k, st, d, tr in SEGS if k == 'title')
+    src_idx['title'] = len(inputs)
+    inputs.append(str(ENDCARD))
+    input_args += ['-loop', '1', '-t', str(title_dur), '-i', str(ENDCARD)]
 
     # 每段裁剪 + 统一格式
     labels = []
@@ -78,13 +87,16 @@ def main():
         kb_f = ",zoompan=z='1+0.00035*on':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30" if kb else ''
         SEGS[i] = (key, st, dur, trans)
         if key == 'title':
-            # 纯色底 + 白字片名卡
+            # 片尾卡：Seedream 黄昏河岸图（volcano/op/endcard_3.png）+ 楷体白字微投影，
+            # 居中偏下，Ken Burns 缓推保留
             filters.append(
-                f"color=c=0x1c2a3a:s=1920x1080:r={FPS}:d={dur},format=yuv420p,setsar=1,settb=AVTB,"
-                f"drawtext=fontfile='{FONT}':text='漂走的那张画':fontcolor=white:fontsize=88:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2-20,"
-                f"drawtext=fontfile='{FONT}':text='片头曲「漂吧」':fontcolor=0xbfd4e6:fontsize=36:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2+60{kb_f}{',settb=AVTB' if kb else ''}[s{i}]")
+                f"[{src_idx['title']}:v]fps={FPS},format=yuv420p,setsar=1{kb_f},settb=AVTB,"
+                f"drawtext=fontfile='{TITLE_FONT}':text='漂走的那张画':fontcolor=white:fontsize=92:"
+                f"shadowcolor=0x00000066:shadowx=2:shadowy=3:"
+                f"x=(w-text_w)/2:y=h*0.60,"
+                f"drawtext=fontfile='{TITLE_FONT}':text='片头曲「漂吧」':fontcolor=0xf2e9d8:fontsize=38:"
+                f"shadowcolor=0x00000066:shadowx=1:shadowy=2:"
+                f"x=(w-text_w)/2:y=h*0.60+90[s{i}]")
         else:
             filters.append(
                 f"[{src_idx[key]}:v]trim={st}:{st + dur},setpts=PTS-STARTPTS,"
@@ -126,9 +138,7 @@ def main():
         prev = f'b{i + 1}'
     filters.append(f'[{prev}]format=yuv420p[vout]')
 
-    cmd = ['ffmpeg', '-y', '-v', 'error']
-    for p in inputs:
-        cmd += ['-i', p]
+    cmd = ['ffmpeg', '-y', '-v', 'error'] + input_args
     cmd += ['-i', str(AUDIO), '-filter_complex', ';'.join(filters),
             '-map', '[vout]', '-map', f'{len(inputs)}:a:0',
             '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p',
