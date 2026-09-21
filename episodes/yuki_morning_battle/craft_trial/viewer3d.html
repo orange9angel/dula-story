@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小雪 · 四肢修型与转面</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eee8e3;color:#3e3540;font:15px 'Microsoft YaHei',sans-serif}main{max-width:1500px;margin:auto;padding:20px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}h1{font-size:21px;margin:0}p{margin:6px 0;color:#786c74;font-size:13px}canvas{width:100%;display:block;border-radius:10px}nav{display:flex;gap:12px;align-items:center;padding:14px 0;flex-wrap:wrap}button,select{padding:9px 16px;border:1px solid #cabfc4;border-radius:8px;background:#fffaf6;color:#3e3540;cursor:pointer}#time{flex:1;min-width:180px}a{color:#79615f}.capture main{padding:0;max-width:none}.capture header,.capture nav{display:none}.capture canvas{border-radius:0}
+</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/","dula-engine":"/node_modules/dula-engine/index.js","dula-engine/":"/node_modules/dula-engine/","dula-assets":"/node_modules/dula-assets/index.js"}}</script>
+</head><body><main><header><div><h1>小雪 · 四肢修型与转面</h1><p>手势 / 迈步 / 360° 造型检查 · 拖动视角可检查任意一侧</p></div><a href="/trial/output/yuki_craft_3d.mp4">下载试片</a></header><canvas id="film"></canvas>
+<nav><button id="play">播放</button><select id="mode"><option value="volume">彩色试片</option><option value="silhouette">剪影检查</option></select><label>视角 <input id="angle" type="range" min="-180" max="180" value="0"><span id="degrees">0°</span></label><button id="reset">恢复视角</button><input id="time" type="range" min="0" step="0.033333"><span id="clock"></span></nav>
+</main><script type="module" src="/trial/viewer3d.js"></script></body></html>

@@ -58,7 +58,7 @@ episodes/<name>/
 
 | 目录 | 主题/备注 |
 |------|----------|
-| [`yuki_morning_battle/craft_trial`](episodes/yuki_morning_battle/craft_trial/) | 6.4s 二维修型试片：手型、四肢曲线与迈步落地；用户认可效果明显改善，罗圈腿留待后续修正。[制作记录与运行命令](episodes/yuki_morning_battle/VISUAL_REVIEW.md) |
+| [`yuki_morning_battle/craft_trial`](episodes/yuki_morning_battle/craft_trial/) | 保留获认可的 6.4s 二维基线；新增 12.4s 三维四肢修正、手势、迈步与 360° 转台，可交互检查侧背面。[制作记录与运行命令](episodes/yuki_morning_battle/VISUAL_REVIEW.md) |
 | `kimi_showcase_s1e1` | Kimi 能力展示第一集（原创角色/场景/配音） |
 | `she_ra` / `she_ra_s2` | She-Ra 公主力量（变身、对抗 Hordak） |
 | `hurdles_championship` | 跨栏锦标赛，分 3 个 segment 拼接的长片 |

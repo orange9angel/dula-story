@@ -108,6 +108,9 @@ function eye(c,x,y,turn,angry,blink,far=false){
   c.restore();
 }
 
+// Reuse the approved eye drawing as a texture on the 3D head surface.
+export {eye as drawEye};
+
 function head(c,p){
   c.save();c.translate(p.head.x,p.head.y);c.rotate(-p.anticipation*.055+p.point*.035);
   // Back cap, ears, face, then explicitly drawn bangs and side locks.
