@@ -19,6 +19,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 **最新 Episode**：`episodes/yuki_bento_battle/`（《便当大作战》——小雪系列第二集，101s 群像搞笑：黑猫闪电破窗抢便当、咕噜防盗模式全员恶人、豆豆乱入，揭底便当是减肥餐；新官方角色 Flash/Dodo，场景道具时间态换态工艺；全火山音频六声线）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/yuki_morning_battle/craft_trial/` — 《早起大作战》二维修型试片（6.4s、1080p/30fps、无声；三维卧室 + 关节驱动二维小雪；手势与迈步、对比版/单独版、交互 viewer；2026-09-21 用户认可“效果好非常多”，罗圈腿仍为 P1 待后续修正，当前只同步；入口与复现见该集 `VISUAL_REVIEW.md`）
 - `episodes/yuki_fish_musical/` — 《谁动了我的小鱼干》迷你音乐喜剧（46s：对白+双唱段、一首歌切两段实现动机复现、年糕/小雪各自本音演唱、家庭厨房场景、cel-look 纪律首验——描边 boil/一拍二/连指手/硬切阴影；自包含 viewer 链，不走 dula-render）
 - `episodes/yuki_fish_musical/` — 《谁动了我的小鱼干》迷你音乐喜剧试播版（46.3s，五句对白 + 两段各四句短唱，早起集声线参考换声，嘴角物证/空盘/洗碗道具，最终人声驱动双角色口型；自定义 viewer 链，正常速度试听待监制评审）
 - `episodes/yuki_beat_ad/` — 《下一拍，你登场》小雪歌姬唱跳广告（V17 监制首看通过：豆包音乐模型 GenSongForTime 经 veFaaS 中转生成 30s 人声歌曲，Demucs 分离 + Whisper find_alignment DTW 逐字对齐 + 连续视素轨道口型，拍网锁定 MTV 五段式编排，年糕 Mochi 冷面伴舞；自包含 viewer/prepare/render 链，不走 dula-render；小雪本音歌声转换 A/B 试听待选版）
