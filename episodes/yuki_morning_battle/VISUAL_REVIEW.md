@@ -75,3 +75,44 @@
 
 ## 出片
 `output/output.mp4` — 62.0s，1920×1080，h264+aac，混音 RMS -22.2dB。
+
+## 2026-09-21：动画作画监督 skill 的独立试片
+
+试片位于 `craft_trial/`，使用原三维卧室和可变形的二维小雪。原版 62s 成片与 bootstrap 保留。
+
+- `craft_trial/output/yuki_craft_comparison.mp4`：左侧为原模型在新动作目标下的关节压力测试，右侧为二维修型；左侧不是原成片摘录。
+- `craft_trial/output/yuki_craft_after.mp4`：单独查看修型角色。
+- 两片均为 1920×1080、30fps、192 帧、6.4s，无声。角色姿态按 15Hz 采样，对应 30fps 一拍二。
+- 试片时段由原 `script.story` 第 15 条（48.4–51.4s）和第 8 条（21.6–25.0s）派生；借用动作语义和时长，没有复制原片对白或声轨。
+
+### 本轮改动
+
+以连续路径重画手掌、三根主指加拇指、腕口、鞋头/鞋跟/鞋底；四肢用关节驱动的变宽曲线，替换胶囊拼件外观。脸、头发和服装沿用识别特征重画为稳定线稿。加入指向的预备与回收、眉形变化、眨眼、发尾跟随和交替落脚。
+
+支撑脚在世界坐标固定，摆动脚沿抬脚弧线前进；全身和脚使用同一曝光采样，避免根位移与脚的时钟分离。姿势从绝对时间求值，直接 seek 与连续推进共用同一实现。
+
+### 发现与修正
+
+1. `CharacterBase` 构造函数会执行 `RigAdapter.adapt()`，自动创建肘、腕、膝、踝；原资产 build 中缺少这些节点，不等于运行时没有。适配器按 mesh 中心位置重新挂接，但不会把单块胶囊变成连续弯曲的皮肤。这是原模型关节压力测试中断口的实际重要原因。
+2. 初版二维站姿的膝弯曲全部落在画面平面内，呈现过度外弯。已调整站姿髋高使其接近伸直，保留运动段的弯曲。手脚线条流畅不能以过度弯曲为代价。
+
+### 检查结果与范围
+
+- 两种输出均完整顺序渲染 192 帧，无浏览器脚本错误。
+- 逐帧计算：同一支撑段的足部世界坐标漂移为 0；二连杆腿长最大误差约 `2.22e-16` 世界单位。
+- 每种输出 11 个关键帧的顺序渲染与倒序直接 seek 的 PNG SHA-256 全部一致。
+- 查看了指向、迈步关键图、剪影及从最终 MP4 解码的 16 格动作图；这些检查不等于已完成正常速度的用户审美评审。
+- ffprobe 确认最终视频尺寸、时长、帧数与帧率符合预期。详细记录可重建至 `craft_trial/storyboard/*_validation.json`。
+
+这是固定机位附近的二维角色原型，采用正面/轻微转面与局部分层；尚不支持任意三维转身、与场景前景物体交错遮挡、完整跑步、持物或对白口型。它验证了轮廓和动作工艺，未直接替换整集，也不代表已达到最终播出质量。
+
+从 `dula-story/` 运行：
+
+```powershell
+node episodes/yuki_morning_battle/craft_trial/render.mjs --check
+node episodes/yuki_morning_battle/craft_trial/render.mjs
+node episodes/yuki_morning_battle/craft_trial/render.mjs --mode after
+node episodes/yuki_morning_battle/craft_trial/render.mjs --serve --port 4198
+```
+
+自包含 viewer 链负责本次试片的渲染与检查；普通 `dula-verify` 仍对应原集，不能用它的通过状态替代本试片验证。
