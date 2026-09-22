@@ -56,6 +56,7 @@ if(serve){console.log('Visual trial viewer ready');}else{
     browser=await puppeteer.launch({headless:true,args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
     const page=await browser.newPage();await page.setViewport({width:1920,height:1080,deviceScaleFactor:1});
     const errors=[];page.on('pageerror',e=>{errors.push(e.message);console.error(e.message);});
+    page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
     page.on('response',r=>{if(r.status()>=400)console.error(`HTTP ${r.status()} ${r.url()}`);});
     await page.goto(`${url}?capture=1&mode=${mode}`,{waitUntil:'networkidle0'});
     await page.waitForFunction('window.ready===true',{timeout:30000});
@@ -99,6 +100,11 @@ if(serve){console.log('Visual trial viewer ready');}else{
         fs.writeFileSync(path.join(board,`volume_angle_${angle}.png`),Buffer.from(await page.evaluate(()=>window.pngAt(1.2)),'base64'));
       }
       await page.evaluate(()=>window.setAngle(0));
+      const handChecks=await page.evaluate(()=>window.handChecks());
+      if(handChecks.some(c=>c.maxWeightError>1e-6))throw new Error('Hand skin weights are not normalized');
+      fs.writeFileSync(path.join(board,'hand_validation.json'),JSON.stringify(handChecks,null,2));
+      await page.evaluate(()=>window.setMode('hands'));
+      fs.writeFileSync(path.join(board,'hand_multiview.png'),Buffer.from(await page.evaluate(()=>window.pngAt(1.2)),'base64'));
     }
     await page.evaluate(()=>window.setMode('silhouette'));
     for(const t of (volume?[0,1.2,4.27,9.4]:[1.2,4.27]))fs.writeFileSync(path.join(board,`${volume?'volume_':''}silhouette_${t.toFixed(2)}.png`),Buffer.from(await page.evaluate(t=>window.pngAt(t),t),'base64'));

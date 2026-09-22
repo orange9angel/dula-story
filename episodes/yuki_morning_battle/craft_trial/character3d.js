@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {TessellateModifier} from 'three/addons/modifiers/TessellateModifier.js';
 import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
 import {drawEye} from './character.js';
+import {ArticulatedHand} from './hand3d.js';
 
 const C={ink:'#382d38',skin:'#ffe3d1',hair:'#644039',hairDark:'#4a3030',white:'#fff9ed',
   navy:'#35466f',navyDark:'#293452',red:'#d95863',shoe:'#684c45',sole:'#352f39'};
@@ -133,25 +134,6 @@ function faceTexture(point,blink){
   texture.anisotropy=4;return texture;
 }
 
-function handGeometry(point,sign){
-  const relaxed=1-point,index=.105+.044*point,low=.089*relaxed+.055*point,mid=.111*relaxed+.063*point;
-  const g=shapeGeometry(s=>{
-    s.moveTo(-.014,-.023);s.bezierCurveTo(.019,-.029,.037,-.031,.052,-.031);
-    s.bezierCurveTo(low,-.042,low+.014,-.042,low+.014,-.030);
-    s.bezierCurveTo(low+.015,-.018,.069,-.018,.057,-.016);
-    s.bezierCurveTo(mid,-.024,mid+.014,-.021,mid+.014,-.009);
-    s.bezierCurveTo(mid+.012,.001,.080,.002,.060,.003);
-    s.bezierCurveTo(.081,.008,index,.004,index+.005,.018);
-    s.bezierCurveTo(index+.006,.031,index-.017,.033,.062,.028);
-    s.quadraticCurveTo(.048,.029,.041,.034);
-    s.bezierCurveTo(.043,.052,.035,.069,.025,.065);
-    s.bezierCurveTo(.013,.062,.018,.043,.004,.023);s.lineTo(-.014,.023);s.closePath();
-  },.035);
-  g.translate(0,0,-.0175);
-  const contour=new Float32Array(g.attributes.position.count);
-  for(let i=0;i<contour.length;i++)contour[i]=THREE.MathUtils.clamp((g.attributes.position.getX(i)+.012)/.032,0,1);
-  g.setAttribute('contour',new THREE.BufferAttribute(contour,1));return g;
-}
 function shoeGeometry(){
   const pos=[],idx=[],rows=[[-.073,.001,-.048],[-.062,.043,.028],[-.04,.053,.043],
     [0,.056,.037],[.045,.063,.007],[.10,.057,-.017],[.137,.036,-.035],[.150,.001,-.055]];
@@ -175,7 +157,7 @@ export class YukiCraft3D {
       this.socks[side]=new LimbSurface(this.mesh,C.white,[[0,.04],[.77,.041],[1,.03]],{start:.77});
       this.limbs[side+'Arm']=new LimbSurface(this.mesh,C.skin,[[0,.046],[.23,.044],[.51,.031],[.68,.035],[1,.022]],{depth:.85});
       this.sleeves[side]=new LimbSurface(this.mesh,C.white,[[0,.064],[.12,.064],[.28,.052],[1,.04]],{end:.28});
-      const hand=mesh(this.mesh,handGeometry(0,sign),C.skin);hand.children[0].material=jointInk;this.hands[side]=hand;
+      const hand=new ArticulatedHand(sign,mat(C.skin),jointInk);this.mesh.add(hand);this.hands[side]=hand;
       const shoe=new THREE.Group();this.mesh.add(shoe);this.feet[side]=shoe;
       mesh(shoe,shoeGeometry(),C.shoe);
       // Sole has a real flat underside; the ankle remains inside the shoe opening.
@@ -234,7 +216,7 @@ export class YukiCraft3D {
       this.tails.push({sign,tail});
       const band=ellipsoid(this.head,[sign*.282,.145,-.045],[.056,.033,.055],C.red);band.rotation.z=sign*.25;
     }
-    this.lastFace='';this.lastHand=-1;
+    this.lastFace='';
   }
   setPose(p){
     this.mesh.position.x=p.rootX;this.mesh.rotation.y=p.yaw;this.body.position.y=p.bob;
@@ -244,14 +226,16 @@ export class YukiCraft3D {
       this.limbs[side+'Arm'].update(arm);this.sleeves[side].update(arm);
       this.limbs[side+'Leg'].update(leg);this.socks[side].update(leg);
       const hand=this.hands[side],x=V(arm[2]).sub(V(arm[1])).normalize();
-      const y=new THREE.Vector3(x.y*sign,-x.x*sign,0).normalize(),z=x.clone().cross(y).normalize();
+      const forward=new THREE.Vector3(0,0,1);
+      const y=forward.clone().addScaledVector(x,-forward.dot(x)).normalize(),z=x.clone().cross(y).normalize();
       y.copy(z).cross(x).normalize();hand.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
-      // A slight forearm roll keeps the relaxed palm readable from front and side.
-      hand.quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),sign*.55*(side==='right'?1-p.point:1)));
+      // Rest: palms toward thighs, thumbs forward. Point: roll forearm so the
+      // thumb faces upward and the folded fingers occupy real depth.
+      const point=side==='right'?p.point:0;
+      const roll=THREE.MathUtils.lerp(-sign*.35,-Math.PI/2,point);
+      hand.quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),roll));
+      hand.setGesture({point});
       hand.position.copy(V(arm[2]));this.feet[side].position.copy(V(leg[2]));
-    }
-    if(this.lastHand!==p.point){
-      const h=this.hands.right,g=handGeometry(p.point,1);h.geometry.dispose();h.geometry=g;h.children[0].geometry=g;this.lastHand=p.point;
     }
     const faceKey=`${p.point.toFixed(2)}/${p.blink.toFixed(2)}`;
     if(faceKey!==this.lastFace){this.faceMat.map.dispose();this.faceMat.map=faceTexture(p.point,p.blink);this.lastFace=faceKey;}
