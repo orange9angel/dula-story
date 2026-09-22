@@ -36,23 +36,23 @@ const handScene=new THREE.Scene();handScene.background=new THREE.Color('#f5eee8'
 handScene.add(new THREE.AmbientLight(0xffffff,.7));
 const handLight=new THREE.DirectionalLight(0xffffff,1.5);handLight.position.set(-1,2,4);handScene.add(handLight);
 const handStudy=new ArticulatedHand(1,actor.hands.right.surface.material,actor.hands.right.outline.material);handScene.add(handStudy);
-const handCamera=new THREE.OrthographicCamera(-.195,.195,.076,-.076,.001,10);
+const handCamera=new THREE.OrthographicCamera(-.1445,.1445,.076,-.076,.001,10);
 handCamera.position.set(.045,.005,.4);handCamera.lookAt(.045,.005,0);
 function drawHands(){
   ctx.fillStyle='#e3d6cc';ctx.fillRect(0,0,W,H);
-  const columns=[['放松',{}],['指向',{point:1}],['握拳',{fist:1}]];
+  const columns=[['张开',{open:1}],['放松',{}],['指向',{point:1}],['握拳',{fist:1}]];
   const rows=[['掌心',0],['斜侧',Math.PI/4],['侧面',Math.PI/2],['手背',Math.PI]];
-  const pw=620,ph=242;
+  const pw=460,ph=242;
   renderer.setSize(pw,ph,false);
   for(let col=0;col<columns.length;col++)for(let row=0;row<rows.length;row++){
     const [title,gesture]=columns[col],[view,turn]=rows[row];
     handStudy.setGesture(gesture);handStudy.rotation.x=turn+angle*Math.PI/180;
     renderer.render(handScene,handCamera);
-    const x=14+col*640,y=74+row*250;
+    const x=10+col*480,y=74+row*250;
     ctx.drawImage(renderer.domElement,x,y,pw,ph);
     label(`${title} · ${angle===0?view:Math.round(((turn*180/Math.PI+angle)%360+360)%360)+'°'}`,x+15,y+29,21);
   }
-  label('小雪 · 同一个三维手模型 / 三种手势 / 四个角度',28,45,27);
+  label('小雪 · 五指三维手 / 四种手势 / 四个角度',28,45,27);
   renderer.setSize(W,H,false);
 }
 function draw(t){

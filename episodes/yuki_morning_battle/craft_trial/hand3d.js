@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {MarchingCubes} from 'three/addons/objects/MarchingCubes.js';
 import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
 
-// Four-digit cartoon hand: three main fingers plus a thumb. Local +X goes
+// Five-digit hand: index, middle, ring, little finger and thumb. Local +X goes
 // from wrist to fingertips, +Y toward the thumb, sign * Z toward the palm.
 // The volume is meshed once; a real finger skeleton deforms its fixed topology.
 const clamp=THREE.MathUtils.clamp;
@@ -10,9 +10,10 @@ const mix=THREE.MathUtils.lerp;
 const smooth=x=>{x=clamp(x,0,1);return x*x*(3-2*x);};
 const V=(x,y,z=0)=>new THREE.Vector3(x,y,z);
 const digits=[
-  {name:'index',base:[.050,.024,0],angle:.075,lengths:[.031,.021,.015],radius:.0102},
-  {name:'middle',base:[.055,0,0],angle:0,lengths:[.034,.023,.015],radius:.0107},
-  {name:'little',base:[.046,-.024,0],angle:-.11,lengths:[.027,.019,.013],radius:.0093},
+  {name:'index',base:[.050,.027,0],angle:.10,lengths:[.031,.021,.015],radius:.0082},
+  {name:'middle',base:[.055,.009,0],angle:.025,lengths:[.034,.023,.015],radius:.0087},
+  {name:'ring',base:[.052,-.009,0],angle:-.025,lengths:[.031,.022,.014],radius:.0084},
+  {name:'little',base:[.045,-.027,0],angle:-.14,lengths:[.025,.018,.013],radius:.0074},
   {name:'thumb',base:[.012,.024,0],angle:.94,lengths:[.026,.021],radius:.0118},
 ];
 const geometryCache=new Map();
@@ -37,7 +38,7 @@ function buildGeometry(chains,sign,material){
     segments.push([chain.points[i],chain.points[i+1],chain.radius*(1-f*.28),chain.radius*(1-g*.28)]);
   }
   const field=(x,y,z)=>{
-    let d=ellipsoid(x,y,z,[.025,0,0],[.037,.032,.0205]);
+    let d=ellipsoid(x,y,z,[.025,0,0],[.037,.035,.0205]);
     d=softMin(d,ellipsoid(x,y,z,[.017,.023,sign*.003],[.024,.017,.019]),.006);
     // The wrist tapers into the palm instead of ending at a flat cuff.
     const wrist=ellipsoid(x,y,z,[-.012,0,0],[.024,.0208,.018]);
@@ -150,7 +151,7 @@ export class ArticulatedHand extends THREE.Group {
     const p=this.geometry.attributes.position,w=this.geometry.attributes.skinWeight;
     let maxWeightError=0;
     for(let i=0;i<w.count;i++)maxWeightError=Math.max(maxWeightError,Math.abs(w.getX(i)+w.getY(i)+w.getZ(i)+w.getW(i)-1));
-    return {vertices:p.count,triangles:this.geometry.index.count/3,bones:this.skeleton.bones.length,maxWeightError,gesture:this.gesture};
+    return {digits:this.chains.map(c=>c.name),vertices:p.count,triangles:this.geometry.index.count/3,bones:this.skeleton.bones.length,maxWeightError,gesture:this.gesture};
   }
   validateDeformation(){
     this.updateMatrixWorld(true);this.skeleton.update();
