@@ -58,7 +58,7 @@ episodes/<name>/
 
 | 目录 | 主题/备注 |
 |------|----------|
-| [`yuki_morning_battle/craft_trial`](episodes/yuki_morning_battle/craft_trial/) | 保留 6.4s 二维基线；12.4s 三维四肢修正、手势、迈步与 360° 转台，立体手掌已按用户反馈补成五指，提供四手势 × 四视角近景。[制作记录与运行命令](episodes/yuki_morning_battle/VISUAL_REVIEW.md) |
+| [`yuki_morning_battle/craft_trial`](episodes/yuki_morning_battle/craft_trial/) | 用户认可五指与四肢自然度；继续修正头颈、侧脸、发型与领片，提供 12.4s 全身/头颈近景和转头俯仰对照。保留二维基线。[制作记录与运行命令](episodes/yuki_morning_battle/VISUAL_REVIEW.md) |
 | `kimi_showcase_s1e1` | Kimi 能力展示第一集（原创角色/场景/配音） |
 | `she_ra` / `she_ra_s2` | She-Ra 公主力量（变身、对抗 Hordak） |
 | `hurdles_championship` | 跨栏锦标赛，分 3 个 segment 拼接的长片 |

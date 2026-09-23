@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {TessellateModifier} from 'three/addons/modifiers/TessellateModifier.js';
 import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
-import {drawEye} from './character.js';
+import {HeadAssembly} from './head3d.js';
 import {ArticulatedHand} from './hand3d.js';
 
 const C={ink:'#382d38',skin:'#ffe3d1',hair:'#644039',hairDark:'#4a3030',white:'#fff9ed',
@@ -46,6 +46,28 @@ function shapeGeometry(d,depth=.008){
   g.computeVertexNormals();return g;
 }
 function panel(parent,draw,color,z){const m=mesh(parent,shapeGeometry(draw),color);m.position.z=z;return m;}
+const shirtProfile=[[.797,.158,.10],[.85,.15,.106],[.98,.158,.113],[1.07,.178,.10],[1.10,.071,.061]];
+function collarPanel(parent,draw,front=true){
+  const raw=shapeGeometry(draw),g=new TessellateModifier(.015,6).modify(raw);raw.dispose();
+  const p=g.attributes.position;
+  for(let i=0;i<p.count;i++){
+    const x=p.getX(i),y=p.getY(i);let rx=.071,rz=.061;
+    for(let k=1;k<shirtProfile.length;k++)if(y<=shirtProfile[k][0]){
+      const a=shirtProfile[k-1],b=shirtProfile[k],u=THREE.MathUtils.clamp((y-a[0])/(b[0]-a[0]),0,1);
+      rx=THREE.MathUtils.lerp(a[1],b[1],u);rz=THREE.MathUtils.lerp(a[2],b[2],u);break;
+    }
+    p.setZ(i,(front?1:-1)*(rz*Math.sqrt(Math.max(0,1-(x/rx)**2))+.009+p.getZ(i)));
+  }
+  // Mirroring the back panel reverses winding; keep its outer face outward.
+  if(!front){
+    for(let i=0;i<p.count;i+=3){
+      const v=new THREE.Vector3().fromBufferAttribute(p,i);
+      p.setXYZ(i,p.getX(i+2),p.getY(i+2),p.getZ(i+2));p.setXYZ(i+2,v.x,v.y,v.z);
+    }
+  }
+  g.deleteAttribute('normal');g.deleteAttribute('uv');const joined=mergeVertices(g,1e-5);g.dispose();joined.computeVertexNormals();
+  return mesh(parent,joined,C.navy);
+}
 
 // Connected rings, shared vertices and one silhouette. Upper/lower axes remain
 // straight except for a short rounded elbow/knee transition (not a global spline).
@@ -118,22 +140,6 @@ function ringsGeometry(levels,{pleats=0,faceUV=false}={}){
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
   g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(index);g.computeVertexNormals();return g;
 }
-function faceTexture(point,blink){
-  const canvas=document.createElement('canvas');canvas.width=canvas.height=1024;
-  const c=canvas.getContext('2d');c.fillStyle=C.skin;c.fillRect(0,0,1024,1024);
-  c.translate(512,512);c.scale(1024/.7,-1024/.7);
-  drawEye(c,-.106,.005,0,point,blink,true);drawEye(c,.103,.005,0,point,blink,false);
-  c.lineCap='round';c.strokeStyle=C.hairDark;c.lineWidth=.007;
-  for(const sign of [-1,1]){
-    c.beginPath();c.moveTo(sign*.165,.126);c.quadraticCurveTo(sign*.123,.146-.03*point,sign*.064,.123-.033*point);c.stroke();
-    c.fillStyle='#efafa5';c.beginPath();c.ellipse(sign*.177,-.10,.035,.013,0,0,Math.PI*2);c.fill();
-  }
-  c.strokeStyle='#985c64';c.lineWidth=.0045;c.beginPath();c.moveTo(-.031,-.153);
-  c.quadraticCurveTo(.002,point>.35?-.144:-.184,.037,-.149);c.stroke();
-  const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;
-  texture.anisotropy=4;return texture;
-}
-
 function shoeGeometry(){
   const pos=[],idx=[],rows=[[-.073,.001,-.048],[-.062,.043,.028],[-.04,.053,.043],
     [0,.056,.037],[.045,.063,.007],[.10,.057,-.017],[.137,.036,-.035],[.150,.001,-.055]];
@@ -165,62 +171,18 @@ export class YukiCraft3D {
       const strap=ellipsoid(shoe,[0,.023,-.003],[.054,.009,.034],'#98796b',false);
       strap.rotation.x=-.23;
     }
-    mesh(this.body,ringsGeometry([[.797,.158,.10],[.85,.15,.106],[.98,.158,.113],[1.07,.178,.10],[1.10,.071,.061]]),C.white);
-    ellipsoid(this.body,[0,1.12,0],[.055,.087,.049],C.skin);
+    mesh(this.body,ringsGeometry(shirtProfile),C.white);
     mesh(this.body,ringsGeometry([[.543,.257,.174],[.565,.25,.172],[.70,.196,.137],[.802,.165,.111]],{pleats:.028}),C.navy);
     mesh(this.body,ringsGeometry([[.560,.254,.177],[.568,.252,.176]],{pleats:.028}),'#7382a2',false);
-    panel(this.body,s=>{s.moveTo(-.172,1.077);s.lineTo(-.065,1.099);s.lineTo(0,1.017);s.lineTo(.065,1.099);s.lineTo(.172,1.077);s.quadraticCurveTo(.09,.996,0,.966);s.quadraticCurveTo(-.10,1.003,-.172,1.077);},C.navy,.107);
+    collarPanel(this.body,s=>{s.moveTo(-.151,1.067);s.lineTo(-.055,1.095);s.lineTo(0,1.017);s.lineTo(.055,1.095);s.lineTo(.151,1.067);s.quadraticCurveTo(.09,.996,0,.966);s.quadraticCurveTo(-.10,1.003,-.151,1.067);});
     panel(this.body,s=>{s.moveTo(-.018,1.013);s.quadraticCurveTo(-.067,1.023,-.086,.980);s.lineTo(-.027,.951);s.lineTo(0,.987);s.lineTo(.027,.951);s.lineTo(.086,.980);s.quadraticCurveTo(.067,1.023,.018,1.013);s.closePath();},C.red,.132);
     panel(this.body,s=>{s.moveTo(-.015,.991);s.lineTo(-.035,.924);s.lineTo(0,.900);s.lineTo(.035,.924);s.lineTo(.015,.991);s.closePath();},C.red,.13);
-    const back=panel(this.body,s=>{s.moveTo(-.151,1.075);s.lineTo(.151,1.075);s.lineTo(.136,1.003);s.lineTo(-.136,1.003);s.closePath();},C.navy,-.117);
-    back.material.side=THREE.DoubleSide;
-    this.head=new THREE.Group();this.head.position.y=1.325;this.body.add(this.head);
-    this.faceMat=new THREE.MeshBasicMaterial({map:faceTexture(0,0)});
-    const profile=[];
-    const guides=[[-.27,.009,.025],[-.25,.084,.10],[-.20,.18,.163],[-.13,.244,.202],[-.04,.275,.226],[.07,.278,.227],[.16,.247,.202],[.24,.18,.15],[.285,.09,.078],[.30,.001,.001]];
-    for(let i=0;i<guides.length-1;i++)for(let k=0;k<4;k++)profile.push(guides[i].map((v,j)=>THREE.MathUtils.lerp(v,guides[i+1][j],k/4)));
-    profile.push(guides.at(-1));mesh(this.head,ringsGeometry(profile,{faceUV:true}),this.faceMat);
-    for(const sign of [-1,1])ellipsoid(this.head,[sign*.266,-.065,-.003],[.037,.053,.04],C.skin);
-    ellipsoid(this.head,[0,-.088,.216],[.010,.017,.019],C.skin,false);
-    // The cap has a high front hairline and low nape, so it cannot cover the face.
-    const hp=[],hi=[],N=80,R=24;
-    for(let i=0;i<=R;i++)for(let j=0;j<=N;j++){
-      const a=j/N*Math.PI*2,front=Math.cos(a),edge=front>0?-.12+.32*front**2:-.205;
-      const latitude=i/R*Math.acos(edge/.338);
-      hp.push(.313*Math.sin(latitude)*Math.sin(a),.338*Math.cos(latitude),-.016+.264*Math.sin(latitude)*front);
-      if(i<R&&j<N){const k=i*(N+1)+j;hi.push(k,k+N+1,k+1,k+1,k+N+1,k+N+2);}
-    }
-    const hg=new THREE.BufferGeometry();hg.setAttribute('position',new THREE.Float32BufferAttribute(hp,3));hg.setIndex(hi);hg.computeVertexNormals();mesh(this.head,hg,C.hair);
-    const flatBangs=shapeGeometry(s=>{
-      s.moveTo(-.277,.044);s.bezierCurveTo(-.325,.186,-.245,.335,-.093,.337);
-      s.quadraticCurveTo(.093,.377,.212,.289);s.quadraticCurveTo(.283,.230,.269,.084);
-      s.quadraticCurveTo(.244,.113,.222,.151);s.quadraticCurveTo(.218,.093,.192,.073);
-      s.quadraticCurveTo(.172,.152,.135,.177);s.quadraticCurveTo(.125,.115,.091,.088);
-      s.quadraticCurveTo(.083,.184,.019,.220);s.quadraticCurveTo(.029,.169,-.010,.125);
-      s.quadraticCurveTo(-.043,.158,-.066,.221);s.quadraticCurveTo(-.115,.157,-.193,.142);
-      s.quadraticCurveTo(-.207,.076,-.226,-.051);s.lineTo(-.266,-.084);s.quadraticCurveTo(-.285,-.012,-.277,.044);
-    },.009);
-    const bangs=new TessellateModifier(.024,7).modify(flatBangs);flatBangs.dispose();
-    const bp=bangs.attributes.position;
-    for(let i=0;i<bp.count;i++){
-      const x=bp.getX(i),y=bp.getY(i);
-      bp.setZ(i,bp.getZ(i)-.009+.265*Math.sqrt(Math.max(0,1-(x/.313)**2-(y/.338)**2)));
-    }
-    // Weld the subdivided patch before normals: no triangle-by-triangle shading.
-    bangs.deleteAttribute('normal');bangs.deleteAttribute('uv');
-    const smoothBangs=mergeVertices(bangs,1e-5);bangs.dispose();smoothBangs.computeVertexNormals();
-    mesh(this.head,smoothBangs,C.hair);
-    this.tails=[];
-    for(const sign of [-1,1]){
-      const tail=new LimbSurface(this.head,C.hairDark,[[0,.053],[.20,.080],[.56,.066],[.85,.043],[1,.003]],{depth:.85});
-      this.tails.push({sign,tail});
-      const band=ellipsoid(this.head,[sign*.282,.145,-.045],[.056,.033,.055],C.red);band.rotation.z=sign*.25;
-    }
-    this.lastFace='';
+    collarPanel(this.body,s=>{s.moveTo(-.151,1.068);s.lineTo(.151,1.068);s.lineTo(.136,1.003);s.lineTo(-.136,1.003);s.closePath();},false);
+    this.headAssembly=new HeadAssembly({mesh,ellipsoid,C});this.body.add(this.headAssembly);
   }
   setPose(p){
     this.mesh.position.x=p.rootX;this.mesh.rotation.y=p.yaw;this.body.position.y=p.bob;
-    this.head.rotation.z=p.point*.023-p.anticipation*.025;
+    this.headAssembly.setPose(p);
     for(const [side,sign] of [['left',-1],['right',1]]){
       const arm=p[side+'Arm'],leg=p[side+'Leg'];
       this.limbs[side+'Arm'].update(arm);this.sleeves[side].update(arm);
@@ -236,12 +198,6 @@ export class YukiCraft3D {
       hand.quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),roll));
       hand.setGesture({point});
       hand.position.copy(V(arm[2]));this.feet[side].position.copy(V(leg[2]));
-    }
-    const faceKey=`${p.point.toFixed(2)}/${p.blink.toFixed(2)}`;
-    if(faceKey!==this.lastFace){this.faceMat.map.dispose();this.faceMat.map=faceTexture(p.point,p.blink);this.lastFace=faceKey;}
-    for(const {sign,tail} of this.tails){
-      const swing=Math.sin(p.t*4)*.010;
-      tail.update([{x:sign*.285,y:.15,z:-.06},{x:sign*(.363+swing),y:-.06,z:-.07},{x:sign*(.335+swing),y:-.365,z:-.10}]);
     }
     this.mesh.updateMatrixWorld(true);
   }

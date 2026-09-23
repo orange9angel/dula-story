@@ -198,3 +198,32 @@ node episodes/yuki_morning_battle/craft_trial/render.mjs --3d --serve --port 419
 - 已检查重新解码的手部动作图与整段转台动作图。四指视频本地保留为 `craft_trial/output/yuki_craft_3d_four_fingers.mp4`；旧二维基线与原集未修改。
 
 本轮完成五指结构修正与局部试片验证；用户此前的认可针对上一版整体改善，五指版的最终观感仍由用户复看。
+
+## 2026-09-23：头颈、侧脸与发型修正
+
+用户反馈“手脚感觉都挺自然了”，要求继续做脖子及以上。保留已认可的五指、四肢形态与运动参数，工作集中在头颈和相接领片。
+
+- 新增 `craft_trial/head3d.js`。中性头部中心由 1.325 提至 1.40，下颌底部从中心尖点改为向前收圆，露出脖子；颈根留在领口，上端随颅底转动，旋转节点放在颈部连接处。
+- 脸面区分前后截面，鼻梁、鼻尖与口周融入曲面；保留原蓝眼睛、眉眼表情和腮红。近景发现旧眨眼会把瞳孔压扁，改为眼睑裁切固定形状的眼球，完全闭合只画眼睑线。增加耳廓及内耳，遵守侧面遮挡。
+- 用有厚度的连续发壳连接头顶和刘海，消除旧投影发片侧面的竖起接缝；调整发壳与额头的间隙。双马尾改为连续曲线，根部固定、末梢小幅摆动。领片贴合衣服截面，改善侧面悬空和背面深度冲突。
+
+### 输出
+
+- `craft_trial/output/yuki_craft_3d.mp4`：更新后的全身版。
+- `craft_trial/output/yuki_craft_head.mp4`：新增头颈近景版，同一模型与时间轴，便于检查表情、侧脸和转台；两版均为 12.4s / 1920×1080 / 30fps / 372 帧，无声。
+- `craft_trial/storyboard/head_multiview.png`：放松、指向表情 × 正面、斜侧、侧面、背面。
+- `craft_trial/storyboard/neck_multiview.png`：身体不动时，左右转头 35°、抬低头 12°的正面与斜侧检查。
+- `craft_trial/storyboard/head_blink_sequence.jpg`：最终近景视频 2.73s 起的半闭—全闭—睁眼解码图，确认没有压扁的瞳孔残留。
+- `craft_trial/storyboard/head_comparison.jpg`：上排旧版、下排新版，同机位的正面、斜侧和侧面。旧视频保留为 `output/yuki_craft_3d_before_head.mp4`。
+
+交互入口仍为 `http://127.0.0.1:4199/viewer3d.html`，增加“头颈近景试片”“头颈多角度近景”“转头与俯仰检查”；静态检查可拖动视角。全身及静态图重建命令不变，近景视频从 `dula-story/` 执行：
+
+```powershell
+node episodes/yuki_morning_battle/craft_trial/render.mjs --3d --mode portrait
+```
+
+### 实际验证与边界
+
+全身与近景各完整顺序渲染 372 帧，各 16 个关键帧倒序直接 seek 一致，无浏览器错误；支撑脚最大漂移约 `1.39e-17`，臂腿长度指标与上版一致。左右手原 12 个姿态仍通过；新增 10 个头颈姿态的世界矩阵、顶点、法线有限值与空间范围检查，报告位于 `head_validation.json`。检查了多角度图、转头俯仰图及最终 MP4 解码的 `head_motion_sheet.jpg` / `volume_motion_sheet.jpg`；实测交互模式切换、拖角度、重置和近景播放正常。ffprobe 确认近景成片参数。
+
+头部风格尚待用户复看。视频使用原试片动作与模型转台，独立转头和俯仰另以静态姿势检查；尚未制作专门的点头摇头表演段、对白口型、牙齿舌头或头发物理碰撞，也未替换共享角色和原集。

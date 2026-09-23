@@ -63,7 +63,7 @@ if(serve){console.log('Visual trial viewer ready');}else{
     const frames=Math.round(plan.duration*30),checkFrames=volume?[0,18,36,57,79,96,110,128,149,168,186,192,237,282,327,371]:[0,18,36,57,79,96,110,128,149,168,186];
     const trace=[],hashes={},metrics={maxStanceDrift:0,maxLegLengthError:0,maxArmLengthError:0,seekMatches:true,frames,evaluatedFrames:0};
     if(!check){
-      const file=path.join(output,volume?'yuki_craft_3d.mp4':mode==='compare'?'yuki_craft_comparison.mp4':'yuki_craft_after.mp4');
+      const file=path.join(output,volume?(mode==='portrait'?'yuki_craft_head.mp4':'yuki_craft_3d.mp4'):mode==='compare'?'yuki_craft_comparison.mp4':'yuki_craft_after.mp4');
       encoder=spawn('ffmpeg',['-y','-hide_banner','-loglevel','error','-f','image2pipe','-framerate','30','-vcodec','mjpeg','-i','pipe:0','-an','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',file],{stdio:['pipe','inherit','inherit'],windowsHide:true});
       encoderClosed=once(encoder,'close');encoder.stdin.on('error',e=>console.error(`encoder: ${e.message}`));
     }
@@ -105,6 +105,12 @@ if(serve){console.log('Visual trial viewer ready');}else{
       fs.writeFileSync(path.join(board,'hand_validation.json'),JSON.stringify(handChecks,null,2));
       await page.evaluate(()=>window.setMode('hands'));
       fs.writeFileSync(path.join(board,'hand_multiview.png'),Buffer.from(await page.evaluate(()=>window.pngAt(1.2)),'base64'));
+      const headChecks=await page.evaluate(()=>window.headChecks());
+      fs.writeFileSync(path.join(board,'head_validation.json'),JSON.stringify(headChecks,null,2));
+      await page.evaluate(()=>window.setMode('heads'));
+      fs.writeFileSync(path.join(board,'head_multiview.png'),Buffer.from(await page.evaluate(()=>window.pngAt(1.2)),'base64'));
+      await page.evaluate(()=>window.setMode('neck'));
+      fs.writeFileSync(path.join(board,'neck_multiview.png'),Buffer.from(await page.evaluate(()=>window.pngAt(1.2)),'base64'));
     }
     await page.evaluate(()=>window.setMode('silhouette'));
     for(const t of (volume?[0,1.2,4.27,9.4]:[1.2,4.27]))fs.writeFileSync(path.join(board,`${volume?'volume_':''}silhouette_${t.toFixed(2)}.png`),Buffer.from(await page.evaluate(t=>window.pngAt(t),t),'base64'));
