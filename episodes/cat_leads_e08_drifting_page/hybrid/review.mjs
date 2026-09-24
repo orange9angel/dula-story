@@ -15,5 +15,7 @@ for(const [name,start,duration,fps,scale,tile] of [
   ['page_motion',18.5,2.5,'4','384:216','5x2'],['drawing_motion',40.5,4.5,'4','320:180','6x3'],['transfer_motion',45,4.5,'4','320:180','6x3']
 ])run('ffmpeg',['-y','-hide_banner','-loglevel','error','-ss',String(start),'-i',film,'-t',String(duration),'-vf',`fps=${fps},scale=${scale},tile=${tile}`,'-frames:v','1',path.join(here,`storyboard/${name}.jpg`)]);
 run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',original,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','0:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/comparison.mp4')]);
+const baseline=path.join(here,'output/before_refinement.mp4');
+if(fs.existsSync(baseline))run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',baseline,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','0:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/refinement_comparison.mp4')]);
 const result={audioPacketTimingIdentical:true,audioPackets:after.length,firstAudioPacket:after[0],lastAudioPacket:after.at(-1),...info};
 fs.writeFileSync(path.join(here,'storyboard/media_validation.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));

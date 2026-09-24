@@ -48,7 +48,7 @@ if(!serve){
       const r=await page.evaluate(t=>window.renderAt(t),i/30),buffer=Buffer.from(r.image,'base64');
       if(encoder&&!encoder.stdin.write(buffer))await once(encoder.stdin,'drain');
       for(const p of [r.state.girl,r.state.boy])for(const limb of ['leftArm','rightArm','leftLeg','rightLeg']){
-        const points=p[limb],lengths=limb.endsWith('Arm')?p.armLengths:[.305,.295];
+        const points=p[limb],lengths=limb.endsWith('Arm')?p.armLengths:p.legLengths;
         for(let j=0;j<2;j++){const a=points[j],b=points[j+1],error=Math.abs(Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z)-lengths[j]);if(!Number.isFinite(error))throw new Error('Non-finite bone');metrics.maxBoneError=Math.max(metrics.maxBoneError,error);}
       }
       metrics.maxHandContactError=Math.max(metrics.maxHandContactError,r.state.handError);
@@ -62,10 +62,12 @@ if(!serve){
     if(encoder){encoder.stdin.end();const [code]=await encoderDone;if(code!==0)throw new Error(`ffmpeg ${code}`);encoder=undefined;}
     for(const frame of [...keyFrames].sort((a,b)=>b-a)){
       const r=await page.evaluate(t=>window.renderAt(t),frame/30),hash=createHash('sha256').update(Buffer.from(r.image,'base64')).digest('hex');
-      if(hash!==hashes[frame]){metrics.seekMatches=false;throw new Error(`Seek differs at ${frame}`);}
+      if(hash!==hashes[frame]){metrics.seekMatches=false;fs.writeFileSync(path.join(board,`seek_difference_${frame}.jpg`),Buffer.from(r.image,'base64'));throw new Error(`Seek differs at ${frame}`);}
     }
     const characters=await page.evaluate(()=>window.characterChecks());
     const contactChecks=await page.evaluate(()=>window.contactChecks());
+    const refinements=await page.evaluate(()=>window.refinementChecks());
+    if(refinements.maxSupportDrift>1e-6||refinements.maxSolePenetration>.001||refinements.grips.some(g=>!g.opposed||Object.values(g.pads).some(p=>!p.samples||p.nearest>.004)))throw new Error(`Refinement checks failed: ${JSON.stringify(refinements)}`);
     if(contactChecks.some(s=>s.error>.005))throw new Error(`Transfer contact failed: ${JSON.stringify(contactChecks)}`);
     if(errors.length||metrics.maxBoneError>1e-6||metrics.maxHandContactError>.005||metrics.maxPenContactError>.005)throw new Error(`Validation failed: ${JSON.stringify({errors,metrics})}`);
     if(!check){
@@ -73,7 +75,7 @@ if(!serve){
       metrics.originalAudioHash=hashAudio(original);metrics.outputAudioHash=hashAudio(output);metrics.audioIdentical=metrics.originalAudioHash===metrics.outputAudioHash;
       if(!metrics.audioIdentical)throw new Error('Original audio packets changed');
     }
-    fs.writeFileSync(path.join(board,check?'preview_validation.json':'validation.json'),JSON.stringify({duration,fps:30,metrics,errors,characters,trace},null,2));
+    fs.writeFileSync(path.join(board,check?'preview_validation.json':'validation.json'),JSON.stringify({duration,fps:30,metrics,errors,characters,refinements,trace},null,2));
     console.log(JSON.stringify(metrics));
   }finally{if(encoder&&!encoder.killed)encoder.kill();if(browser)await browser.close();server.close();}
 }

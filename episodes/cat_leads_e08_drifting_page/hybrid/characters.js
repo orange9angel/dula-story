@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {LimbSurface,ringsGeometry,shoeGeometry,mesh,ellipsoid,mat,jointInk} from '/craft/character3d.js';
 import {ArticulatedHand} from '/craft/hand3d.js';
 import {HeadAssembly} from './head3d.js';
+import {setPaperFingers} from './paper-grip.js';
 
 const V=p=>new THREE.Vector3(p.x,p.y,p.z??0);
 export class RiverKid {
@@ -14,15 +15,17 @@ export class RiverKid {
       this.limbs[side+'Leg']=new LimbSurface(this.mesh,C.skin,[[0,.064],[.25,.057],[.51,.037],[.69,.044],[1,.027]]);
       this.limbs[side+'Arm']=new LimbSurface(this.mesh,C.skin,[[0,.047],[.25,.042],[.51,.030],[.7,.034],[1,.022]],{depth:.87});
       this.clothes[side+'Sleeve']=new LimbSurface(this.mesh,girl?'#fff8e6':'#eda45f',[[0,.067],[.18,.067],[.35,.057],[1,.044]],{end:.31});
-      this.clothes[side+'Leg']=new LimbSurface(this.mesh,girl?'#fff8e6':'#bba984',girl?[[0,.045],[.82,.039],[1,.03]]:[[0,.077],[.3,.075],[.65,.064],[1,.044]],girl?{start:.83}:{end:.58});
+      this.clothes[side+'Leg']=new LimbSurface(this.mesh,girl?'#fff8e6':'#bba984',girl?[[0,.045],[.82,.039],[1,.03]]:[[0,.076],[.3,.071],[.52,.05],[.72,.055],[1,.037]],girl?{start:.83}:{end:.95});
       const hand=new ArticulatedHand(sign,mat(C.skin),jointInk);this.mesh.add(hand);this.hands[side]=hand;
       const shoe=new THREE.Group();this.mesh.add(shoe);this.feet[side]=shoe;
       mesh(shoe,shoeGeometry(),girl?'#3b506b':'#706057');
       const sole=mesh(shoe,shoeGeometry(),'#eee1c6');sole.scale.y=.13;sole.position.y=-.08447;
       ellipsoid(shoe,[0,.022,-.001],[.054,.007,.025],girl?'#6584b3':'#c6bda8',false);
     }
-    mesh(this.body,ringsGeometry([[.75,.155,.11],[.87,.149,.105],[.99,.157,.113],[1.071,.178,.10],[1.10,.072,.061]]),girl?'#fff8e6':'#eda45f');
-    for(const sign of [-1,1])ellipsoid(this.body,[sign*.153,1.047,0],[.078,.061,.101],girl?'#fff8e6':'#eda45f',false);
+    const torso=new THREE.Group();this.body.add(torso);
+    if(!girl){torso.scale.set(1.18,1.25,1.05);torso.position.y=-.70*.25;}
+    mesh(torso,ringsGeometry([[.75,.155,.11],[.87,.149,.105],[.99,.157,.113],[1.071,.178,.10],[1.10,.072,.061]]),girl?'#fff8e6':'#eda45f');
+    for(const sign of [-1,1])ellipsoid(torso,[sign*.153,1.047,0],[.078,.061,.101],girl?'#fff8e6':'#eda45f',false);
     if(girl){
       mesh(this.body,ringsGeometry([[.54,.25,.17],[.565,.25,.17],[.71,.183,.13],[.86,.16,.116]]),'#4e7fd4');
       const bib=mesh(this.body,new THREE.BoxGeometry(.20,.21,.012),'#4e7fd4');bib.position.set(0,.95,.111);
@@ -49,8 +52,10 @@ export class RiverKid {
       y.normalize();const z=x.clone().cross(y).normalize();y.copy(z).cross(x).normalize();
       hand.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
       hand.quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),p[side+'Roll']??-sign*.35));
+      if(p[side+'GripQuaternion'])hand.quaternion.slerp(p[side+'GripQuaternion'],p[side+'GripWeight']??1);
       hand.setGesture(p[side+'Gesture']??{});hand.position.copy(V(arm[2]));
-      this.feet[side].position.copy(V(leg[2]));this.feet[side].rotation.y=p[side+'FootYaw']??0;
+      if(p[side+'GripWeight'])setPaperFingers(hand,p[side+'GripWeight']);
+      this.feet[side].position.copy(V(leg[2]));this.feet[side].rotation.set(p[side+'FootPitch']??0,p[side+'FootYaw']??0,0,'YXZ');
     }
     this.mesh.updateMatrixWorld(true);
   }

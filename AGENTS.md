@@ -29,7 +29,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 - `episodes/croc_map_ad/` — 鳄鱼地图转场广告 demo（已出片；待导演评审后决定全量 4 城版）
 - `episodes/cat_leads_e09_live_riverbank/` — 真人实验集（W2 已出片：6s 说话三明治 v3——同源底图+25fps+xfade，背景一致/无鬼影/无 judder；**猫说话 Seedance 2.0 图+音频组合已验证 ¥4/镜**，替代 DreamActor；人说话正脸待验 2.5 参考链）
 - `episodes/cat_leads_e06_cat_model_live/` — 《模特小橘》真人版（V1 出片；V2 暂停待世界锚点实验）
-- `episodes/cat_leads_e08_drifting_page/` — 《漂走的那张画》（2026-09-24：新增 `hybrid/` 完整 60s 混合三维重制，小蓝/阿澈采用连续四肢与五指手，18 镜同场景运镜、阵风飞鸟、持笔和递画接触；1800 帧检查通过，原 AAC 包流与时间戳一致，用户画风复看待进行。viewer 4200，见 `VISUAL_REVIEW.md` / `hybrid/NOTES.md`；原绘制版 `painted/` 与火山版 `volcano/` 保留）
+- `episodes/cat_leads_e08_drifting_page/` — 《漂走的那张画》（2026-09-24：`hybrid/` 60s 混合三维重制完成用户反馈修正：五指夹纸交接、小蓝低抬脚与跟掌缓冲、阿澈少年头身和长裤；18 镜及阵风飞鸟保留，1800 帧检查通过，原 AAC 包流不变，附 `refinement_comparison.mp4` 左旧右新；效果待用户复看。viewer 4200，见 `VISUAL_REVIEW.md` / `hybrid/NOTES.md`；原 `painted/` 与 `volcano/` 保留）
 - `episodes/cat_leads_e07_river_willow/` — 《柳树下的老钓友》（长篇结构验证集：新角色老周、伏笔 F02/F03、环境微动 A/B）
 - `episodes/cat_leads_e06_cat_model/` — 《模特小橘》（正片打磨验证集：亮场景密度 + 关键帧微动语法）
 - `episodes/cat_leads_e05_morning_sketch/` — 《清晨速写》（优化方案验证集：1080p I2V + seed-tts-2.0 全角色配音）

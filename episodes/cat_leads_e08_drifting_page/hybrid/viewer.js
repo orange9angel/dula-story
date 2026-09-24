@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {compile,smooth} from './timeline.js';
 import {EpisodeScene,cameraAt} from './scene.js';
+import {inspectPaperPads} from './paper-grip.js';
 const capture=new URLSearchParams(location.search).has('capture');if(capture)document.body.classList.add('capture');
 const [story,direction,lips]=await Promise.all([fetch('/script.story').then(r=>r.text()),fetch('/hybrid/direction.json').then(r=>r.json()),fetch('/config/lipsync_cues.json').then(r=>r.json())]);
 const plan=compile(story,direction,lips),episode=new EpisodeScene(plan);
@@ -29,6 +30,30 @@ window.characterChecks=()=>{draw(10);return [episode.girl,episode.boy].map(k=>({
 window.contactChecks=()=>{
   const samples=[];for(let i=0;i<=240;i++){const t=plan.beats.offer+i/60,s=episode.update(t,camera);if(s.handError>.003)samples.push({t,error:s.handError});}
   return samples;
+};
+window.refinementChecks=()=>{
+  let maxSupportDrift=0,maxSolePenetration=0,maxSwingClearance=0,maxFrameRootStep=0;
+  const previous={};let lastRoot;
+  for(let i=0;i<=120;i++){
+    const t=plan.beats.arrival+i/60,state=episode.update(t,camera),p=state.girl;
+    if(lastRoot!==undefined)maxFrameRootStep=Math.max(maxFrameRootStep,Math.abs(p.rootX-lastRoot));lastRoot=p.rootX;
+    for(const side of ['left','right']){
+      const anchor=p[side+'SupportAnchor'],contact=p[side+'Contact'];
+      if(contact&&previous[side]?.contact&&anchor)maxSupportDrift=Math.max(maxSupportDrift,anchor.distanceTo(previous[side].anchor));
+      previous[side]={contact,anchor};maxSwingClearance=Math.max(maxSwingClearance,p[side+'Clearance']??0);
+      const sole=episode.girl.feet[side].children[1],positions=sole.geometry.attributes.position;
+      for(let j=0;j<positions.count;j++)maxSolePenetration=Math.max(maxSolePenetration,-sole.localToWorld(new THREE.Vector3().fromBufferAttribute(positions,j)).y);
+    }
+  }
+  const grips=[];
+  for(const t of [46.8,47.5,49.5]){
+    const state=episode.update(t,camera);
+    for(const kid of [episode.girl,episode.boy])for(const side of ['left','right']){
+      const p=kid===episode.girl?state.girl:state.boy;
+      if(p[side+'GripWeight']>.999)grips.push({t,kind:kid.kind,side,...inspectPaperPads(kid.hands[side])});
+    }
+  }
+  return {maxSupportDrift,maxSolePenetration,maxSwingClearance,maxFrameRootStep,grips};
 };
 await document.fonts.ready;draw(0);window.ready=true;
 if(!capture){

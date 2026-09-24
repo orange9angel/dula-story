@@ -5,6 +5,7 @@ import {RiverKid,LoafCat} from './characters.js';
 import {V,sampleKid,worldPoint,bookLocal,penLocal,loosePageAt,SKETCH,SKETCH_BREAKS,sketchAt} from './performance.js';
 import {smooth,mix,clamp} from './timeline.js';
 import {twoBone} from '/craft/pose3d.js';
+import {gripAnchor,paperHandQuaternion} from './paper-grip.js';
 
 function line(parent,points,color='#7c8178',width=1){
   const m=new THREE.Line(new THREE.BufferGeometry().setFromPoints(points),new THREE.LineBasicMaterial({color,linewidth:width}));parent.add(m);return m;
@@ -31,14 +32,15 @@ function paintPage(canvas,progress,symbol){
 }
 function paper(map,width=.40,height=.29){return new THREE.Mesh(new THREE.PlaneGeometry(width,height,10,8),new THREE.MeshBasicMaterial({map,side:THREE.DoubleSide}));}
 function worldQuat(p,q=new THREE.Quaternion()){return new THREE.Quaternion().setFromAxisAngle(V(0,1,0),p.yaw).multiply(q);}
-function setHandTarget(p,side,grip,direction){
-  const inv=new THREE.Quaternion().setFromAxisAngle(V(0,1,0),-p.yaw),dir=direction.clone().applyQuaternion(inv).normalize();
-  const target=grip.clone().sub(V(p.rootX,0,p.rootZ)).applyQuaternion(inv).addScaledVector(dir,-.065);
+function setHandTarget(p,side,grip,quaternion,weight=1){
+  const sign=side==='left'?-1:1,inv=new THREE.Quaternion().setFromAxisAngle(V(0,1,0),-p.yaw),q=inv.clone().multiply(quaternion);
+  const target=grip.clone().sub(V(p.rootX,0,p.rootZ)).applyQuaternion(inv).sub(gripAnchor(sign).applyQuaternion(q));
+  target.lerp(V(p[side+'Arm'][2].x,p[side+'Arm'][2].y,p[side+'Arm'][2].z),1-weight);
   const start=p[side+'Arm'][0],d=target.clone().sub(start),lengths=p.armLengths,max=lengths[0]+lengths[1]-.002;
   if(d.length()>max)target.copy(start).add(d.setLength(max));
   p[side+'Arm']=[start,twoBone(start,target,V(side==='left'?-.25:.25,-.7,-.7),...lengths),target];
-  p[side+'HandDirection']=dir;p[side+'Roll']=0;p[side+'Gesture']={fist:.22};
-  return worldPoint(p,target.clone().addScaledVector(dir,.065)).distanceTo(grip);
+  p[side+'GripQuaternion']=q;p[side+'GripWeight']=weight;
+  return weight>.999?worldPoint(p,target.clone().add(gripAnchor(sign).applyQuaternion(q))).distanceTo(grip):0;
 }
 
 export class EpisodeScene {
@@ -57,8 +59,8 @@ export class EpisodeScene {
       m.rotation.x=-Math.PI/2;m.position.set(x,.006,z);m.scale.set(sx,sz,1);this.scene.add(m);this.shadows.push(m);
     }
     const stool=new THREE.Group();stool.position.set(.52,0,.18);stool.rotation.y=-.58;this.scene.add(stool);
-    const seat=mesh(stool,new THREE.CylinderGeometry(.22,.23,.06,24),'#b49a73');seat.position.y=.35;
-    for(const x of [-.14,.14])for(const z of [-.12,.12]){const leg=mesh(stool,new THREE.CylinderGeometry(.025,.035,.33,10),'#8f7a5e');leg.position.set(x,.165,z);}
+    const seat=mesh(stool,new THREE.CylinderGeometry(.22,.23,.06,24),'#b49a73');seat.position.y=.3975;
+    for(const x of [-.14,.14])for(const z of [-.12,.12]){const leg=mesh(stool,new THREE.CylinderGeometry(.025,.035,.3775,10),'#8f7a5e');leg.position.set(x,.18875,z);}
     for(let i=0;i<32;i++)ellipsoid(this.scene,[-10+i*.64,-.02,-.91],[.34,.12,.21],['#b6b99c','#a9b391','#c2c4a4'][i%3],false);
     // Back-side scenery is real volume as well, so dialogue reverse shots have a set.
     for(const [x,z] of [[-5,3.5],[8.2,3.1],[7,1.7],[-8,-9],[3,-9.4]]){
@@ -102,16 +104,24 @@ export class EpisodeScene {
     this.ripple.visible=t>=B.drift;this.ripple.position.copy(loose.position);this.ripple.position.y=.015;this.ripple.scale.setScalar(1+.06*Math.sin(t*2));
     this.gift.visible=t>=B.offer;
     let handError=0;
+    const bookSupport=1-smooth((t-(B.stop-.25))/.65)*(1-smooth((t-(B.calm+1))/(B.drift-.1-(B.calm+1))));
+    const supportWeight=Math.max(bookSupport*(1-smooth((t-(B.offer-.25))/.6)),smooth((t-(B.accept-.25))/.65));
+    if(supportWeight>0){const q=paperHandQuaternion(this.book.quaternion,1,-1),grip=V(-.21,-.035,.004).applyQuaternion(this.book.quaternion).add(this.book.position);setHandTarget(boy,'left',grip,q,supportWeight);}
+    if(!drawing){const q=paperHandQuaternion(this.book.quaternion,-1,1),grip=V(.21,-.035,.004).applyQuaternion(this.book.quaternion).add(this.book.position);setHandTarget(boy,'right',grip,q);}
     if(this.gift.visible){
-      const u=smooth((t-B.offer)/1.7),receive=smooth((t-(B.accept-.5))/.8);
-      const held=worldPoint(girl,V(0,.94,.285)),target=V(-.08,.84,.37),initial=this.book.position.clone().add(V(0,.018,0));
+      const u=smooth((t-(B.offer+.55))/1.15),receive=smooth((t-(B.accept-.35))/.85);
+      const held=worldPoint(girl,V(0,1.00,.28)),target=V(-.24,1.00,.51),initial=this.book.position.clone().add(V(0,.018,0));
       this.gift.position.copy(initial.lerp(target,u).lerp(held,receive));
       const q0=this.book.quaternion.clone(),q1=new THREE.Quaternion(),q2=worldQuat(girl);
       this.gift.quaternion.copy(q0.slerp(q1,u).slerp(q2,receive));
-      const edge=sign=>V(sign*.21,0,0).applyQuaternion(this.gift.quaternion).add(this.gift.position);
-      if(t<B.accept-.5){const grip=V(mix(-.12,.21,u),0,0).applyQuaternion(this.gift.quaternion).add(this.gift.position);handError=Math.max(handError,setHandTarget(boy,'left',grip,V(-.7,-.3,.5)));}
-      if(t>B.offer+1.4){const grip=V(mix(-.21,.21,receive),0,0).applyQuaternion(this.gift.quaternion).add(this.gift.position);handError=Math.max(handError,setHandTarget(girl,'right',grip,V(0,-1,0)));}
-      if(receive>.7)handError=Math.max(handError,setHandTarget(girl,'left',edge(-1),V(0,-1,0)));
+      const hold=(p,side,edge,y,weight)=>{
+        if(weight<=0)return;
+        const grip=V(edge*.21,y,0).applyQuaternion(this.gift.quaternion).add(this.gift.position),q=paperHandQuaternion(this.gift.quaternion,-edge,side==='left'?-1:1);
+        handError=Math.max(handError,setHandTarget(p,side,grip,q,weight));
+      };
+      hold(boy,'left',1,.018,smooth((t-B.offer)/.50)*(1-smooth((t-(B.accept-.65))/.28)));
+      hold(girl,'left',-1,-.018,smooth((t-(B.offer+1.08))/.62));
+      hold(girl,'right',1,-.018,smooth((t-(B.accept-.05))/.65));
     }
     this.girl.setPose(girl);this.boy.setPose(boy);this.cat.update(t);
     this.shadows[0].position.x=girl.rootX;
@@ -126,13 +136,13 @@ export function cameraAt(t,shot,episode,camera){
     establish:[[5.8,3.0,7.4],[4.6,2.7,6.7],[0,.9,-.55],39],
     arrival:[[2.4,1.75,5.1],[1.8,1.6,4.6],[-.15,.87,.15],36],
     girl:[[-.10,1.5,2.35],[-.18,1.48,2.25],[-.68,1.30,.46],33],
-    boy:[[-.2,1.25,2.22],[-.13,1.23,2.12],[.52,1.05,.18],32],
+    boy:[[-.2,1.39,2.22],[-.13,1.37,2.12],[.52,1.14,.18],32],
     sketchWide:[[-2.2,1.9,4.2],[-1.7,1.8,4.0],[-.10,.86,.05],38],
     gust:[[-1.4,2.45,5.4],[-.8,2.22,4.9],[-.65,1.18,-.4],42],
     girlAlarm:[[.05,1.60,2.85],[-.03,1.54,2.60],[-.60,1.19,.45],36],
-    stop:[[-.6,1.23,2.55],[-.48,1.22,2.30],[.39,1.0,.21],36],
-    boyRiver:[[-.5,1.24,2.30],[-.2,1.24,2.30],[.50,1.05,.18],34],
-    overGirl:[[-2.1,1.50,2.15],[-2.04,1.48,2.10],[.48,1.02,.18],38],
+    stop:[[-.6,1.37,2.55],[-.48,1.36,2.30],[.39,1.10,.21],36],
+    boyRiver:[[-.5,1.38,2.30],[-.2,1.38,2.30],[.50,1.15,.18],34],
+    overGirl:[[-2.1,1.60,2.15],[-2.04,1.58,2.10],[.48,1.12,.18],38],
     offer:[[.7,1.6,3.6],[.3,1.45,3.3],[-.1,.95,.36],37],
     accept:[[-.03,1.49,2.6],[-.16,1.47,2.45],[-.61,1.23,.45],35],
     farewell:[[2.8,2.35,5.2],[5.5,3.6,8.1],[.0,1.0,-.4],39]

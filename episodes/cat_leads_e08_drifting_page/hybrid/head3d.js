@@ -13,7 +13,7 @@ function geometry(pos,index,uv){
 function strip(index,a,b){index.push(a,a+1,b,a+1,b+1,b);}
 function interpolate(a,b,c,d,t){return .5*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t*t+(-a+3*b-3*c+d)*t*t*t);}
 
-function faceGeometry(){
+function faceGeometry(style){
   // y, width, front, back. The chin sits forward of the neck rather than
   // collapsing all jaw rings to the same central point.
   const guides=[[-.250,.008,.112,.099],[-.238,.065,.145,.057],[-.211,.139,.181,-.020],
@@ -34,7 +34,8 @@ function faceGeometry(){
         z+=.006*gaussian(x,y,0,-.041,.019,.047);
         z+=.006*gaussian(x,y,0,-.154,.065,.019);
       }
-      pos.push(x,y,z);uv.push(f<0?.015:.5+x/.70,f<0?.985:.5+y/.70);
+      const teen=style==='short';
+      pos.push(x*(teen?1-.08*gaussian(0,y,0,-.11,1,.13):1),y*(teen&&y<0?1.11:1),z);uv.push(f<0?.015:.5+x/.70,f<0?.985:.5+y/.70);
       if(row<profiles.length-1&&col<sides)strip(idx,row*(sides+1)+col,(row+1)*(sides+1)+col);
     }
   });
@@ -48,9 +49,13 @@ function faceTexture(C,mouth=0,blink=0,emotion='calm'){
   const alarm=emotion==='alarmed',sad=emotion==='regret',happy=emotion==='happy';
   for(const sign of [-1,1]){
     c.save();c.translate(sign*.105,.006);
+    if(C.style==='short')c.scale(1.06,.57);
     const lid=.077*(1-blink),bottom=-.051;
     if(blink<.95){
-      c.save();c.beginPath();c.ellipse(0,(lid+bottom)/2,.049,(lid-bottom)/2,0,0,Math.PI*2);c.clip();
+      c.save();c.beginPath();
+      if(C.style==='short'){c.moveTo(-.051,.006);c.bezierCurveTo(-.032,lid+.005,.022,lid+.012,.051,.008);c.bezierCurveTo(.030,-.035,-.031,-.033,-.051,.006);}
+      else c.ellipse(0,(lid+bottom)/2,.049,(lid-bottom)/2,0,0,Math.PI*2);
+      c.clip();
       c.fillStyle='#fffdf0';c.fillRect(-.06,-.065,.12,.17);
       c.fillStyle=C.iris;c.beginPath();c.ellipse(0,.007,.024,.043,0,0,Math.PI*2);c.fill();
       c.fillStyle='#263445';c.beginPath();c.ellipse(0,.009,.011,.026,0,0,Math.PI*2);c.fill();
@@ -58,11 +63,12 @@ function faceTexture(C,mouth=0,blink=0,emotion='calm'){
     }
     c.strokeStyle=C.ink;c.lineWidth=C.style==='bob'?.0055:.0045;c.beginPath();
     if(blink>.95){c.moveTo(-.047,-.020);c.quadraticCurveTo(0,-.038,.047,-.020);}
-    else{c.moveTo(-.049,.008);c.bezierCurveTo(-.039,lid+.024,.037,lid+.024,.049,.012);}
+    else{c.moveTo(-.049,.008);c.bezierCurveTo(-.039,lid+(C.style==='short'?.003:.024),.037,lid+(C.style==='short'?.009:.024),.049,.012);}
     c.stroke();c.restore();
     c.strokeStyle=C.hairDark;c.lineWidth=.0055;c.beginPath();
-    c.moveTo(sign*.16,.120+(alarm?.025:0));c.quadraticCurveTo(sign*.112,.137+(sad?.012:0),sign*.065,.124+(sad?.025:0));c.stroke();
-    c.fillStyle='#edb3a7';c.beginPath();c.ellipse(sign*.174,-.094,.028,.010,0,0,Math.PI*2);c.fill();
+    const brow=C.style==='short'?-.041:0;
+    c.moveTo(sign*.16,.120+brow+(alarm?.025:0));c.quadraticCurveTo(sign*.112,.137+brow+(sad?.012:0),sign*.065,.124+brow+(sad?.025:0));c.stroke();
+    if(C.style==='bob'){c.fillStyle='#edb3a7';c.beginPath();c.ellipse(sign*.174,-.094,.028,.010,0,0,Math.PI*2);c.fill();}
   }
   c.strokeStyle='#cb9789';c.lineWidth=.0025;c.beginPath();c.moveTo(.005,-.081);c.quadraticCurveTo(.012,-.094,.002,-.096);c.stroke();
   if(mouth>0){
@@ -81,7 +87,7 @@ function hairGeometry(style){
   // previously created a vertical fin on the crown in profile views.
   const hem=style==='bob'?
     [[-180,-.273],[-125,-.273],[-97,-.245],[-75,-.21],[-60,-.09],[-50,.10],[-35,.142],[-19,.126],[0,.153],[19,.127],[35,.142],[50,.105],[60,-.09],[75,-.21],[97,-.245],[125,-.273],[180,-.273]]:
-    [[-180,-.093],[-130,-.076],[-95,-.030],[-75,.014],[-60,.075],[-44,.145],[-30,.099],[-17,.181],[-2,.079],[13,.158],[27,.098],[40,.175],[58,.085],[75,.032],[95,-.025],[130,-.071],[180,-.093]];
+    [[-180,-.068],[-130,-.055],[-95,-.019],[-75,.050],[-60,.114],[-44,.204],[-30,.165],[-17,.238],[-2,.168],[13,.206],[27,.132],[40,.181],[58,.080],[75,.044],[95,-.009],[130,-.050],[180,-.068]];
   const edge=a=>{
     for(let i=1;i<hem.length;i++)if(a<=hem[i][0]){
       const u=(a-hem[i-1][0])/(hem[i][0]-hem[i-1][0]);
@@ -112,8 +118,9 @@ export class HeadAssembly extends THREE.Group {
     super();this.C=C;this.name='neck-and-head';
     this.neckRig=new THREE.Group();this.neckRig.position.set(0,1.16,-.022);this.add(this.neckRig);
     this.head=new THREE.Group();this.head.position.set(0,.24,.022);this.neckRig.add(this.head);
+    if(C.style==='short'){this.neckRig.position.y=1.275;this.head.position.y=.195;this.head.scale.set(.64,.74,.68);}
     this.faceCache=new Map();this.faceMat=new THREE.MeshBasicMaterial({map:faceTexture(C,0,0)});
-    mesh(this.head,faceGeometry(),this.faceMat);
+    mesh(this.head,faceGeometry(C.style),this.faceMat);
     for(const sign of [-1,1]){
       ellipsoid(this.head,[sign*.266,-.071,-.025],[.033,.052,.028],C.skin);
       ellipsoid(this.head,[sign*.287,-.072,-.004],[.010,.027,.012],'#e5b6a6',false);
@@ -131,7 +138,8 @@ export class HeadAssembly extends THREE.Group {
   setPose(p){
     this.neckRig.rotation.set(p.headPitch??p.anticipation*.045,p.headYaw??p.point*.08,p.headRoll??(p.point*.023-p.anticipation*.025),'YXZ');
     const top=V(0,.097,0).applyQuaternion(this.neckRig.quaternion).add(this.neckRig.position);
-    const bottom=V(0,1.073,-.023),middle=V(0,1.153,-.026),N=48,R=24,pos=this.neckGeometry.attributes.position;
+    const teen=this.C.style==='short';
+    const bottom=V(0,teen?1.168:1.073,-.023),middle=V(0,teen?1.252:1.153,-.026),N=48,R=24,pos=this.neckGeometry.attributes.position;
     for(let row=0;row<=R;row++){
       const u=row/R,center=bottom.clone().multiplyScalar((1-u)**2).addScaledVector(middle,2*u*(1-u)).addScaledVector(top,u*u);
       const rx=u<.4?mix(.072,.047,smooth(u/.4)):mix(.047,.055,smooth((u-.4)/.6));
