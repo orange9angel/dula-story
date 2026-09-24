@@ -114,11 +114,15 @@ class HairTail {
     this.geometry=geometry(pos,idx);this.mesh=mesh(parent,this.geometry,color);
     this.mesh.frustumCulled=false;this.mesh.children[0].frustumCulled=false;this.update(0);
   }
-  update(t){
+  update(t,wind=V()){
     const sign=this.sign,swing=Math.sin(t*4)*.009;
     const curve=new THREE.CatmullRomCurve3([
       V(sign*.285,.127,-.077),V(sign*.351,.064,-.087),V(sign*(.365+swing*.4),-.091,-.091),
       V(sign*(.355+swing),-.239,-.070),V(sign*(.317+swing*1.3),-.377,-.041)]);
+    for(let i=1;i<curve.points.length;i++){
+      const bend=(i/(curve.points.length-1))**2;
+      curve.points[i].addScaledVector(wind,.10*bend);curve.points[i].y+=.016*wind.length()*bend;
+    }
     const widths=[[0,.037],[.17,.073],[.43,.068],[.70,.047],[.90,.024],[1,.001]];
     const p=this.geometry.attributes.position;
     for(let i=0;i<=this.rows;i++){
@@ -176,7 +180,9 @@ export class HeadAssembly extends THREE.Group {
     pos.needsUpdate=true;this.neckGeometry.computeVertexNormals();this.neckGeometry.computeBoundingSphere();
     const key=`${p.point.toFixed(2)}/${p.blink.toFixed(2)}`;
     if(key!==this.lastFace){this.faceMat.map.dispose();this.faceMat.map=faceTexture(this.C,p.point,p.blink);this.lastFace=key;}
-    for(const tail of this.tails)tail.update(p.t);
+    const wind=V(p.windWorld?.x??0,0,p.windWorld?.z??0).applyAxisAngle(V(0,1,0),-(p.yaw??0));
+    wind.applyQuaternion(this.neckRig.quaternion.clone().invert());
+    for(const tail of this.tails)tail.update(p.t,wind);
   }
   validate(){
     this.updateWorldMatrix(true,true);let meshes=0,vertices=0;

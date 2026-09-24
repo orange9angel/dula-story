@@ -4,10 +4,14 @@ import '/episode/bootstrap.js';
 import {samplePose3D} from './pose3d.js';
 import {YukiCraft3D} from './character3d.js';
 import {ArticulatedHand} from './hand3d.js';
+import {HybridRiver} from './environment3d.js';
+import {parseEnvironmentStory} from './environment-motion.js';
 
 const query=new URLSearchParams(location.search),capture=query.has('capture');
 if(capture)document.body.classList.add('capture');
 const plan=await(await fetch('/plan.json')).json();
+const environmentCues=parseEnvironmentStory(await(await fetch('/trial/environment.story')).text(),plan.duration);
+let river;
 const canvas=document.querySelector('#film'),ctx=canvas.getContext('2d'),W=1920,H=1080;
 canvas.width=W;canvas.height=H;
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
@@ -79,24 +83,27 @@ function draw(t){
   current=Math.max(0,Math.min(t,plan.duration-1/300));
   const shot=plan.shots.find(s=>current>=s.start&&current<s.end)??plan.shots.at(-1);
   const p=samplePose3D(current-shot.start,shot.kind,shot.end-shot.start);
-  actor.setPose(p);actor.mesh.position.x-=1;
+  const hybrid=mode==='hybrid'||mode==='hybrid-still';
+  if(hybrid&&!river)river=new HybridRiver(environmentCues,plan.duration);
   const inspection=shot.kind==='turn'||Math.abs(angle)>.001||mode==='silhouette'||mode==='portrait';
-  const scene=inspection?studio:room.scene;scene.add(actor.mesh);
+  const scene=hybrid?river.scene:inspection?studio:room.scene;scene.add(actor.mesh);
   for(const [i,side] of ['left','right'].entries()){
     const f=p[side+'Foot'],shadow=contactShadows[i];shadow.position.set(f.x-1,.003,f.z);
     shadow.rotation.z=-p.yaw;shadow.material.opacity=Math.max(.04,.18-(f.y-.095));
   }
-  const targetX=-1+(inspection?p.rootX:0),azimuth=angle*Math.PI/180;
-  const portrait=mode==='portrait',distance=portrait?1.80:3.50;
-  camera.position.set(targetX+Math.sin(azimuth)*distance,portrait?1.39:1.14,Math.cos(azimuth)*distance);
-  camera.lookAt(targetX,portrait?1.36:.88,0);camera.updateMatrixWorld(true);
+  const targetX=-1+((inspection||hybrid)?p.rootX:0),azimuth=angle*Math.PI/180+(hybrid?.055*Math.sin(current*.43):0);
+  const portrait=mode==='portrait',distance=hybrid?4.85:portrait?1.80:3.50;
+  camera.position.set(targetX+Math.sin(azimuth)*distance,hybrid?1.50:portrait?1.39:1.14,Math.cos(azimuth)*distance);
+  camera.lookAt(targetX,hybrid?.95:portrait?1.36:.88,0);camera.updateMatrixWorld(true);
+  const environment=hybrid?river.update(current,camera,p.rootX-1,{moving:mode==='hybrid'}):undefined;
+  actor.setPose({...p,windWorld:environment?.windWorld});actor.mesh.position.x-=1;
   const saved=[];
   if(mode==='silhouette')actor.mesh.traverse(o=>{if(o.isMesh){saved.push([o,o.material]);o.material=flat;}});
   renderer.render(scene,camera);for(const [o,m] of saved)o.material=m;
   ctx.drawImage(renderer.domElement,0,0);
   ctx.fillStyle='rgba(255,248,241,.94)';ctx.fillRect(25,24,566,57);
-  label(mode==='silhouette'?'小雪 · 三维剪影检查':portrait?'小雪 · 头颈与发型修正':'小雪 · 三维造型与转面',43,63,28);
-  const text=shot.kind==='point'?'手势 · 上臂 / 肘 / 前臂 / 手掌':shot.kind==='walk'?'迈步 · 膝盖朝前 / 支撑脚锁地':'360° 转台 · 正面 / 侧面 / 背面';
+  label(hybrid?(mode==='hybrid'?'河岸 · 风起与飞鸟':'河岸 · 静态环境对照'):mode==='silhouette'?'小雪 · 三维剪影检查':portrait?'小雪 · 头颈与发型修正':'小雪 · 三维造型与转面',43,63,28);
+  const text=hybrid?(mode==='hybrid-still'?'同一人物与机位 · 环境暂停':environment.wind>.6?'阵风掠过 · 柳枝、落叶与发梢':'微风 · 水纹与飞鸟'):shot.kind==='point'?'手势 · 上臂 / 肘 / 前臂 / 手掌':shot.kind==='walk'?'迈步 · 膝盖朝前 / 支撑脚锁地':'360° 转台 · 正面 / 侧面 / 背面';
   ctx.fillStyle='rgba(255,248,241,.94)';ctx.fillRect(25,H-71,710,47);label(text,43,H-39);
   if(shot.kind==='turn'){label(`${Math.round(p.yaw*180/Math.PI)}°`,W-132,63,28);}
   if(mode==='hands')drawHands();
@@ -105,7 +112,7 @@ function draw(t){
   document.querySelector('#time').disabled=document.querySelector('#play').disabled=staticModes.includes(mode);
   document.querySelector('#clock').textContent=staticModes.includes(mode)?'静态造型对照 · 可拖动视角':`${current.toFixed(2)} / ${plan.duration.toFixed(2)}s`;
   return {t:current,shot:shot.kind,sourceEntry:shot.sourceEntry,yaw:p.yaw,leftContact:p.leftContact,rightContact:p.rightContact,
-    leftFoot:p.leftFoot,rightFoot:p.rightFoot,leftLeg:p.leftLeg,rightLeg:p.rightLeg,leftArm:p.leftArm,rightArm:p.rightArm};
+    leftFoot:p.leftFoot,rightFoot:p.rightFoot,leftLeg:p.leftLeg,rightLeg:p.rightLeg,leftArm:p.leftArm,rightArm:p.rightArm,environment};
 }
 window.ready=true;window.duration=plan.duration;window.plan=plan;window.stepAt=draw;
 window.setMode=m=>{mode=m;if(staticModes.includes(m)){playing=false;document.querySelector('#play').textContent='播放';}draw(current);};

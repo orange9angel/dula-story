@@ -63,7 +63,8 @@ if(serve){console.log('Visual trial viewer ready');}else{
     const frames=Math.round(plan.duration*30),checkFrames=volume?[0,18,36,57,79,96,110,128,149,168,186,192,237,282,327,371]:[0,18,36,57,79,96,110,128,149,168,186];
     const trace=[],hashes={},metrics={maxStanceDrift:0,maxLegLengthError:0,maxArmLengthError:0,seekMatches:true,frames,evaluatedFrames:0};
     if(!check){
-      const file=path.join(output,volume?(mode==='portrait'?'yuki_craft_head.mp4':'yuki_craft_3d.mp4'):mode==='compare'?'yuki_craft_comparison.mp4':'yuki_craft_after.mp4');
+      const volumeName={portrait:'yuki_craft_head.mp4',hybrid:'yuki_craft_hybrid.mp4','hybrid-still':'yuki_craft_hybrid_still.mp4'}[mode]??'yuki_craft_3d.mp4';
+      const file=path.join(output,volume?volumeName:mode==='compare'?'yuki_craft_comparison.mp4':'yuki_craft_after.mp4');
       encoder=spawn('ffmpeg',['-y','-hide_banner','-loglevel','error','-f','image2pipe','-framerate','30','-vcodec','mjpeg','-i','pipe:0','-an','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',file],{stdio:['pipe','inherit','inherit'],windowsHide:true});
       encoderClosed=once(encoder,'close');encoder.stdin.on('error',e=>console.error(`encoder: ${e.message}`));
     }
@@ -97,7 +98,7 @@ if(serve){console.log('Visual trial viewer ready');}else{
     if(volume){
       for(const angle of [-90,-45,45,90,180]){
         await page.evaluate(a=>window.setAngle(a),angle);
-        fs.writeFileSync(path.join(board,`volume_angle_${angle}.png`),Buffer.from(await page.evaluate(()=>window.pngAt(1.2)),'base64'));
+        fs.writeFileSync(path.join(board,`${mode}_angle_${angle}.png`),Buffer.from(await page.evaluate(()=>window.pngAt(1.2)),'base64'));
       }
       await page.evaluate(()=>window.setAngle(0));
       const handChecks=await page.evaluate(()=>window.handChecks());

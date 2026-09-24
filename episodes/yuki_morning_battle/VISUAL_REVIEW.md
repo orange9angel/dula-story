@@ -227,3 +227,34 @@ node episodes/yuki_morning_battle/craft_trial/render.mjs --3d --mode portrait
 全身与近景各完整顺序渲染 372 帧，各 16 个关键帧倒序直接 seek 一致，无浏览器错误；支撑脚最大漂移约 `1.39e-17`，臂腿长度指标与上版一致。左右手原 12 个姿态仍通过；新增 10 个头颈姿态的世界矩阵、顶点、法线有限值与空间范围检查，报告位于 `head_validation.json`。检查了多角度图、转头俯仰图及最终 MP4 解码的 `head_motion_sheet.jpg` / `volume_motion_sheet.jpg`；实测交互模式切换、拖角度、重置和近景播放正常。ffprobe 确认近景成片参数。
 
 头部风格尚待用户复看。视频使用原试片动作与模型转台，独立转头和俯仰另以静态姿势检查；尚未制作专门的点头摇头表演段、对白口型、牙齿舌头或头发物理碰撞，也未替换共享角色和原集。
+
+## 2026-09-23：河岸混合环境与非匀速风
+
+用户认可头颈改善，以 `cat_leads_e08_drifting_page/painted/output/output.mp4` 为参考，希望当前三维作品具备二维片中的风、飞鸟和环境活力。检查该 60s / 1080p / 30fps 成片抽帧及 `painted/painter.js`，参考其分层视差、阵风建立/消退和飞鸟调度，在本试片增加独立河岸模式。
+
+### 实现与范围
+
+- `environment3d.js`：人物、地面、树干和柳条保留三维空间；远岸、云、树冠色块、叶片和飞鸟采用程序绘制的二维纹理/轮廓，参与真实深度测试。镜头轻微横移与转角产生视差，可继续拖视角。树根放在近岸地面上。
+- `environment.story`：定义两次阵风、两批鸟的局部检查时段；原人物手势、走路及模型转台仍取原试片时间轴。
+- `environment-motion.js`：阵风快起慢落，叠加轻微变化与位置传播延迟；草叶、柳枝、发梢有不同响应延迟。漂移位置按速度积分，240Hz 固定步长预计算、绝对时间插值，避免风变弱时粒子倒退。
+- 飞鸟使用九态二维扑翼图形，沿三维路径前进，错开相位并穿插滑翔；落叶自转并分布在人物前后。`head3d.js` 把世界风向换到头部局部空间，让人物转面时仍受同一方向的风。
+- 新增“河岸动态环境”“河岸静态对照”模式；同时修正原头颈菜单两处问号文字。原室内角色基线保留。
+
+### 输出与验证
+
+- `craft_trial/output/yuki_craft_hybrid.mp4`：动态河岸，12.4s / 1920×1080 / 30fps / 372 帧，无声。
+- `craft_trial/output/yuki_craft_hybrid_still.mp4`：同人物、动作与相机的环境暂停对照，同规格。
+- `craft_trial/output/yuki_craft_hybrid_comparison.mp4`：左静态、右动态，12.4s / 1920×540 / 30fps。
+- `storyboard/hybrid_motion_sheet.jpg`、`bird_motion_sheet.jpg` 为实际动态成片解码图；`hybrid_angle_*.png` 是额外摄影机方向。
+- 动态与静态各完整顺序渲染 372 帧，各 16 帧直接 seek 哈希一致，无浏览器错误。支撑脚、臂腿及手部检查保持通过；旧室内 16 个关键帧与本轮前哈希完全一致。
+- `check-environment.mjs` 检查衰减期漂移不倒退、速度确有变化、鸟的飞行方向与随机访问稳定性。积分基准速度约 0.687–1.987 场景单位/s，峰谷比 2.89；落叶再按统一比例映射位移。报告为 `environment_motion_validation.json`。
+
+从 `dula-story/` 运行：
+
+```powershell
+node episodes/yuki_morning_battle/craft_trial/check-environment.mjs
+node episodes/yuki_morning_battle/craft_trial/render.mjs --3d --mode hybrid
+node episodes/yuki_morning_battle/craft_trial/render.mjs --3d --mode hybrid-still
+```
+
+交互地址：`http://127.0.0.1:4199/viewer3d.html?mode=hybrid`。此轮为简化河岸工艺试片，仍待用户动态审美复看；远景鸟不是完整三维鸟模型，近距离绕拍需增加多视图或三维替身，尚无流体/布料求解、环境音效或正片接入。
