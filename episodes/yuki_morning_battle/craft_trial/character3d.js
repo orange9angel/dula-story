@@ -6,6 +6,8 @@ import {ArticulatedHand} from './hand3d.js';
 
 const C={ink:'#382d38',skin:'#ffe3d1',hair:'#644039',hairDark:'#4a3030',white:'#fff9ed',
   navy:'#35466f',navyDark:'#293452',red:'#d95863',shoe:'#684c45',sole:'#352f39'};
+// Named building blocks reused by the E08 episode variant; Yuki stays unchanged.
+export {LimbSurface,ringsGeometry,shoeGeometry,mesh,ellipsoid,mat,jointInk};
 const V=p=>new THREE.Vector3(p.x,p.y,p.z??0);
 const ramp=new THREE.DataTexture(new Uint8Array([150,227,255]),3,1,THREE.RedFormat);
 ramp.minFilter=ramp.magFilter=THREE.NearestFilter;ramp.needsUpdate=true;

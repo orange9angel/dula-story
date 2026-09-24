@@ -1,5 +1,7 @@
 # E08《漂走的那张画》V2 — 全程序绘制版
 
+2026-09-24：新增保留本成片原声的混合三维重制版，见 [hybrid/NOTES.md](../hybrid/NOTES.md)。本目录原版保留，作为音频来源和画面对照。
+
 > 目标：画面零生成模型调用（不跑 imagegen / Seedance I2V / OmniHuman），
 > 全部视觉由本地 Canvas 程序绘制。声音链不变：TTS 配音、环境音、SFX、BGM
 > 全部沿用 V1 已生成的 `assets/audio/mixed.wav`。

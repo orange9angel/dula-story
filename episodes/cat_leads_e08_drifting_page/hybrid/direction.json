@@ -1,0 +1,22 @@
+{
+  "shots": [
+    {"name":"河岸建立","anchor":1,"edge":"start","camera":"establish"},
+    {"name":"小蓝走近","anchor":1,"edge":"end","camera":"arrival"},
+    {"name":"小蓝问河","anchor":2,"edge":"start","camera":"girl"},
+    {"name":"阿澈回答","anchor":3,"edge":"start","camera":"boy"},
+    {"name":"树影与速写","anchor":3,"edge":"end","camera":"sketchWide"},
+    {"name":"阵风经过","anchor":4,"edge":"start","camera":"gust"},
+    {"name":"画页离手","anchor":5,"edge":"start","camera":"pageLift"},
+    {"name":"小蓝伸手","anchor":6,"edge":"start","camera":"girlAlarm"},
+    {"name":"阿澈劝住","anchor":6,"edge":"end","camera":"stop"},
+    {"name":"顺流去看看","anchor":7,"edge":"start","camera":"boyRiver"},
+    {"name":"贴水漂页","anchor":7,"edge":"end","camera":"water"},
+    {"name":"小蓝惋惜","anchor":8,"edge":"start","camera":"girl"},
+    {"name":"过肩回应","anchor":9,"edge":"start","camera":"overGirl"},
+    {"name":"俯拍重画","anchor":10,"edge":"start","camera":"drawing"},
+    {"name":"递画与接画","anchor":11,"edge":"start","camera":"offer"},
+    {"name":"珍藏画页","anchor":12,"edge":"start","camera":"accept"},
+    {"name":"速写本角落","anchor":12,"edge":"end","camera":"symbol"},
+    {"name":"河岸收尾","anchor":12,"edge":"end","offset":3,"camera":"farewell"}
+  ]
+}
