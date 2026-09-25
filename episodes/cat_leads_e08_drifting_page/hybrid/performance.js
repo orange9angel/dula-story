@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {twoBone} from '/craft/pose3d.js';
 import {smooth,mix,clamp,mouthAt} from './timeline.js';
 import {arrivalWalk} from './arrival-walk.js';
+import {penAnchor,penAxis} from './paper-grip.js';
 export const V=(x=0,y=0,z=0)=>new THREE.Vector3(x,y,z);
 const lerp=(a,b,u)=>a.clone().lerp(b,u);
 const envelope=(t,a,b,c,d)=>smooth((t-a)/(b-a))*(1-smooth((t-c)/(d-c)));
@@ -19,20 +20,58 @@ const strokes=[
 ];
 export const SKETCH=[],SKETCH_BREAKS=new Set();
 for(const stroke of strokes){if(SKETCH.length)SKETCH_BREAKS.add(SKETCH.length);SKETCH.push(...stroke);}
+// Pen travel needs time as well as the marks. Equal time per vertex rushed
+// across a whole page between strokes in one frame.
+const sketchDistance=[0];
+for(let i=1;i<SKETCH.length;i++)sketchDistance.push(sketchDistance.at(-1)+Math.hypot((SKETCH[i][0]-SKETCH[i-1][0])*.40,(SKETCH[i][1]-SKETCH[i-1][1])*.29));
 export function sketchAt(t,plan){
-  const progress=t<plan.beats.draw?1:clamp((t-plan.beats.draw)/3.95);
-  const value=t<plan.beats.draw?SKETCH.length-15+12*(.5+.5*Math.sin(t*1.1)):progress*(SKETCH.length-1),i=Math.min(SKETCH.length-2,Math.floor(value));
-  return {progress,x:mix(SKETCH[i][0],SKETCH[i+1][0],value-i),y:mix(SKETCH[i][1],SKETCH[i+1][1],value-i),lift:SKETCH_BREAKS.has(i+1)?.022*Math.sin((value-i)*Math.PI):0};
+  let value=SKETCH.length-15+12*(.5+.5*Math.sin(t*1.1));
+  if(t>=plan.beats.draw){
+    const distance=clamp((t-plan.beats.draw)/3.95)*sketchDistance.at(-1);
+    let i=1;while(i<sketchDistance.length-1&&sketchDistance[i]<distance)i++;
+    value=i-1+(distance-sketchDistance[i-1])/(sketchDistance[i]-sketchDistance[i-1]);
+  }
+  const i=Math.min(SKETCH.length-2,Math.floor(value)),travel=SKETCH_BREAKS.has(i+1),u=travel?smooth(value-i):value-i;
+  return {progress:t<plan.beats.draw?1:value/(SKETCH.length-1),x:mix(SKETCH[i][0],SKETCH[i+1][0],u),y:mix(SKETCH[i][1],SKETCH[i+1][1],u),lift:travel?.030*Math.sin((value-i)*Math.PI):0};
 }
-export function bookLocal(p){return {position:V(-.11*(p.bookShift??0),p.hipY+.290,.38-.065*(p.bookShift??0)),quaternion:new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI/2+.16,0,0))};}
+export function bookLocal(p){return {position:V(-.15*(p.bookShift??0),p.hipY+.290,.38-.085*(p.bookShift??0)),quaternion:new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI/2+.16,0,0))};}
 export function penLocal(p,t,plan){
   const b=bookLocal(p),s=sketchAt(t,plan),tip=V(s.x*.40,-s.y*.29,.009+s.lift).applyQuaternion(b.quaternion).add(b.position);
-  const grip=tip.clone().add(V(.015,.095,-.025)),direction=V(0,-.85,.5).normalize();
-  return {tip,grip,wrist:grip.clone().addScaledVector(direction,-.065),direction};
+  const x=V(-.80,-.60,0),z=V(0,0,-1),y=z.clone().cross(x);
+  const quaternion=b.quaternion.clone().multiply(new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z)));
+  quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(V(0,1,0),.25));
+  const axis=penAxis.clone().applyQuaternion(quaternion),grip=tip.clone().addScaledVector(axis,.060);
+  return {tip,grip,wrist:grip.clone().sub(penAnchor.clone().applyQuaternion(quaternion)),quaternion,axis};
 }
 function solve(start,target,pole,a,b){
   const d=target.clone().sub(start),max=a+b-.002;if(d.length()>max)target=start.clone().add(d.setLength(max));
   return [start,twoBone(start,target,pole,a,b),target];
+}
+export function solveArm(start,target,lengths,sign,handQuaternion,p){
+  const end=target.clone(),delta=end.clone().sub(start),[a,b]=lengths,max=a+b-.002;
+  if(delta.length()>max)end.copy(start).add(delta.setLength(max));
+  if(!handQuaternion)return solve(start,end,V(sign*.25,-.7,-.7),a,b);
+  const axis=end.clone().sub(start).normalize(),d=end.distanceTo(start),along=(a*a-b*b+d*d)/(2*d),radius=Math.sqrt(Math.max(0,a*a-along*along));
+  let u=V(1,0,0).addScaledVector(axis,-axis.x);if(u.length()<.01)u=V(0,0,1).addScaledVector(axis,-axis.z);u.normalize();
+  const v=axis.clone().cross(u),center=start.clone().addScaledVector(axis,along),forward=V(1,0,0).applyQuaternion(handQuaternion);
+  const bodyQ=new THREE.Quaternion().setFromEuler(new THREE.Euler(p.bodyTilt??0,0,p.bodyRoll??0)).invert();
+  const local=point=>point.clone().sub(V(0,.70+p.bob,0)).applyQuaternion(bodyQ).add(V(0,.70,0));
+  const joint=angle=>center.clone().addScaledVector(u,radius*Math.cos(angle)).addScaledVector(v,radius*Math.sin(angle));
+  const score=angle=>{
+    const elbow=joint(angle),body=local(elbow),forearm=end.clone().sub(elbow).normalize();
+    let cost=1-forearm.dot(forward);
+    cost+=180*Math.max(0,.18-sign*body.x)**2+100*Math.max(0,elbow.y-start.y+.025)**2+100*Math.max(0,-.02-body.z)**2;
+    for(const q of [elbow,elbow.clone().lerp(end,.33),elbow.clone().lerp(start,.33)]){
+      const r=local(q),heightWeight=smooth((r.y-.70)/.10)*(1-smooth((r.y-1.10)/.12));
+      cost+=500*heightWeight*Math.max(0,Math.min(.18-Math.abs(r.x),.145-r.z))**2;
+    }
+    return cost;
+  };
+  let best=0,value=Infinity;const step=Math.PI*2/48;
+  for(let i=0;i<48;i++){const s=score(i*step);if(s<value){value=s;best=i*step;}}
+  let lo=best-step,hi=best+step;
+  for(let i=0;i<18;i++){const l=lo+(hi-lo)/3,r=hi-(hi-lo)/3;if(score(l)<score(r))hi=r;else lo=l;}
+  return [start,joint((lo+hi)/2),end];
 }
 export function sampleKid(kind,t,plan,wind){
   const B=plan.beats,girl=kind==='Girl';
@@ -47,6 +86,8 @@ export function sampleKid(kind,t,plan,wind){
   p.bookShift=smooth((t-B.offer)/.45)*(1-smooth((t-(B.accept-.1))/.6));
   p.bodyTilt=girl?0:.075;
   p.bodyRoll=girl?0:.045;
+  const offerLean=envelope(t,B.offer+.2,B.offer+1.45,B.accept-.55,B.accept+.15);
+  p.bodyTilt+=offerLean*(girl?.10:.22);p.bodyRoll+=girl?0:offerLean*.14;
   if(girl&&t<B.arrived)feet=arrivalWalk(p,t,B);
   const speaking=girl?0:Math.max(0,...plan.entries.filter(e=>e.character==='Boy').map(e=>smooth((t-e.start+.2)/.4)*(1-smooth((t-e.end)/.3))));
   p.emotion=girl?(t<B.gust?'curious':alarm>.15?'alarmed':t>=B.regret&&t<B.reassure?'regret':t>=B.accept?'happy':'gentle'):'gentle';
@@ -71,7 +112,7 @@ export function sampleKid(kind,t,plan,wind){
     wrists[0]=lerp(wrists[0],V(-.34,.98,.08),stop);p.leftGesture={open:stop,fist:.20*(1-stop)};p.leftRoll=-1.1*stop;
     p.leftHandDirection=lerp(bookHand,V(-.2,1,0),stop).normalize();
     if(drawing){
-      const pen=penLocal(p,t,plan);wrists[1]=pen.wrist;p.rightHandDirection=pen.direction;p.rightGesture={fist:.58};p.rightRoll=.0;
+      const pen=penLocal(p,t,plan);wrists[1]=pen.wrist;p.rightGripQuaternion=pen.quaternion;p.rightGripKind='pen';p.rightGripWeight=1;p.rightGesture={fist:.72};
     }
     wrists[0]=lerp(wrists[0],V(-.36,.78,.10),reach);p.leftGesture={fist:.18*reach,open:stop};
   }
@@ -79,7 +120,7 @@ export function sampleKid(kind,t,plan,wind){
     const hip=V(sign*.075,p.hipY),shoulder=V(sign*(girl?.175:.2065),(girl?1.075:1.16875)-.70).applyEuler(new THREE.Euler(p.bodyTilt,0,p.bodyRoll)).add(V(0,.70+p.bob,0));
     if(girl&&t<B.arrived){wrists[i]=V(sign*.228,shoulder.y-.345,.045+sign*p.stride*.28);}
     p[side+'Leg']=solve(hip,feet[i],V(0,0,1),...p.legLengths);
-    p[side+'Arm']=solve(shoulder,wrists[i],V(sign*.25,-.7,-.7),...p.armLengths);
+    p[side+'Arm']=solveArm(shoulder,wrists[i],p.armLengths,sign,p[side+'GripQuaternion'],p);
   }
   return p;
 }

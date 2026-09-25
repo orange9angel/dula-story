@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
 
-const here=path.dirname(fileURLToPath(import.meta.url)),original=path.resolve(here,'../painted/output/output.mp4'),film=path.join(here,'output/output.mp4');
+const here=path.dirname(fileURLToPath(import.meta.url)),original=path.resolve(here,'../painted/output/output.mp4'),film=path.resolve(here,process.argv[2]??'output/output.mp4');
 const run=(tool,args)=>execFileSync(tool,args,{encoding:'utf8',windowsHide:true,maxBuffer:16*1024*1024});
 const packetInfo=file=>JSON.parse(run('ffprobe',['-v','error','-select_streams','a:0','-show_packets','-show_entries','packet=pts_time,dts_time,duration_time,size,flags','-of','json',file])).packets;
 const before=packetInfo(original),after=packetInfo(film);
@@ -12,10 +12,12 @@ const info=JSON.parse(run('ffprobe',['-v','error','-show_entries','stream=codec_
 const v=info.streams.find(s=>s.codec_type==='video');if(Number(v.nb_frames)!==1800||Number(v.duration)!==60)throw new Error('Unexpected video duration');
 for(const [name,start,duration,fps,scale,tile] of [
   ['film_sheet',0,60,'1/3','384:216','5x4'],['arrival_motion',3.5,2,'6','480:270','4x3'],
-  ['page_motion',18.5,2.5,'4','384:216','5x2'],['drawing_motion',40.5,4.5,'4','320:180','6x3'],['transfer_motion',45,4.5,'4','320:180','6x3']
+  ['page_motion',18.5,2.5,'4','384:216','5x2'],['drawing_motion',40.5,4.5,'4','320:180','6x3'],['transfer_motion',45,6.5,'4','384:216','7x4']
 ])run('ffmpeg',['-y','-hide_banner','-loglevel','error','-ss',String(start),'-i',film,'-t',String(duration),'-vf',`fps=${fps},scale=${scale},tile=${tile}`,'-frames:v','1',path.join(here,`storyboard/${name}.jpg`)]);
 run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',original,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','0:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/comparison.mp4')]);
 const baseline=path.join(here,'output/before_refinement.mp4');
 if(fs.existsSync(baseline))run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',baseline,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','0:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/refinement_comparison.mp4')]);
+const graspBaseline=path.join(here,'output/before_grasp_fix.mp4');
+if(fs.existsSync(graspBaseline))run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',graspBaseline,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','1:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/grasp_comparison.mp4')]);
 const result={audioPacketTimingIdentical:true,audioPackets:after.length,firstAudioPacket:after[0],lastAudioPacket:after.at(-1),...info};
 fs.writeFileSync(path.join(here,'storyboard/media_validation.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));

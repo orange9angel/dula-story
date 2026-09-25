@@ -58,7 +58,7 @@ episodes/<name>/
 
 | 目录 | 主题/备注 |
 |------|----------|
-| [`cat_leads_e08_drifting_page/hybrid`](episodes/cat_leads_e08_drifting_page/hybrid/) | 《漂走的那张画》60s 混合三维重制：五指夹纸与交接、小蓝轻步、阿澈少年比例、18 镜河岸运镜及风鸟，原绘制版音轨校验一致；附本轮前后对照。[制作说明](episodes/cat_leads_e08_drifting_page/hybrid/NOTES.md) |
+| [`cat_leads_e08_drifting_page/hybrid`](episodes/cat_leads_e08_drifting_page/hybrid/) | 《漂走的那张画》60s 混合三维重制：三指握笔、相对夹纸与连续交接转腕、小蓝轻步、阿澈少年比例、18 镜河岸运镜及风鸟，原绘制版音轨保留；手部对照 `grasp_comparison.mp4` 左旧右新。[制作说明](episodes/cat_leads_e08_drifting_page/hybrid/NOTES.md) |
 | [`yuki_morning_battle/craft_trial`](episodes/yuki_morning_battle/craft_trial/) | 五指、四肢、头颈三维试片；新增 12.4s 混合河岸、非匀速风与飞鸟，提供静态/动态并排对照，保留室内及二维基线。[制作记录与运行命令](episodes/yuki_morning_battle/VISUAL_REVIEW.md) |
 | `kimi_showcase_s1e1` | Kimi 能力展示第一集（原创角色/场景/配音） |
 | `she_ra` / `she_ra_s2` | She-Ra 公主力量（变身、对抗 Hordak） |

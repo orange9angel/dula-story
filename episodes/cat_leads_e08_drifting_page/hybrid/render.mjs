@@ -67,7 +67,9 @@ if(!serve){
     const characters=await page.evaluate(()=>window.characterChecks());
     const contactChecks=await page.evaluate(()=>window.contactChecks());
     const refinements=await page.evaluate(()=>window.refinementChecks());
-    if(refinements.maxSupportDrift>1e-6||refinements.maxSolePenetration>.001||refinements.grips.some(g=>!g.opposed||Object.values(g.pads).some(p=>!p.samples||p.nearest>.004)))throw new Error(`Refinement checks failed: ${JSON.stringify(refinements)}`);
+    if(refinements.maxSupportDrift>1e-6||refinements.maxSolePenetration>.001||refinements.grips.some(g=>!g.opposed||g.oppositionOffset>.006)||refinements.pens.some(g=>g.surfaceHits.length||g.wristAngle>60||Object.values(g.pads).some(p=>p.radialDistance<.008||p.radialDistance>.016||Math.abs(p.along)>.012)))throw new Error(`Refinement checks failed: ${JSON.stringify(refinements)}`);
+    if(refinements.drawing.maxWristAngle>35||refinements.drawing.maxElbowStep>.05||refinements.drawing.maxWristStep>.04)throw new Error(`Drawing continuity failed: ${JSON.stringify(refinements.drawing)}`);
+    if(refinements.paperWrists.some(p=>p.maxWristAngle>75||p.maxRotationStep>10||p.maxElbowStep>.05))throw new Error(`Paper wrist continuity failed: ${JSON.stringify(refinements.paperWrists)}`);
     if(contactChecks.some(s=>s.error>.005))throw new Error(`Transfer contact failed: ${JSON.stringify(contactChecks)}`);
     if(errors.length||metrics.maxBoneError>1e-6||metrics.maxHandContactError>.005||metrics.maxPenContactError>.005)throw new Error(`Validation failed: ${JSON.stringify({errors,metrics})}`);
     if(!check){

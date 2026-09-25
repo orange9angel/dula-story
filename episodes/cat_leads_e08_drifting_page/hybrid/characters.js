@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import {LimbSurface,ringsGeometry,shoeGeometry,mesh,ellipsoid,mat,jointInk} from '/craft/character3d.js';
-import {ArticulatedHand} from '/craft/hand3d.js';
+import {ArticulatedHand} from './hand3d.js';
 import {HeadAssembly} from './head3d.js';
-import {setPaperFingers} from './paper-grip.js';
+import {setGraspFingers} from './paper-grip.js';
 
 const V=p=>new THREE.Vector3(p.x,p.y,p.z??0);
 export class RiverKid {
@@ -54,7 +54,7 @@ export class RiverKid {
       hand.quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),p[side+'Roll']??-sign*.35));
       if(p[side+'GripQuaternion'])hand.quaternion.slerp(p[side+'GripQuaternion'],p[side+'GripWeight']??1);
       hand.setGesture(p[side+'Gesture']??{});hand.position.copy(V(arm[2]));
-      if(p[side+'GripWeight'])setPaperFingers(hand,p[side+'GripWeight']);
+      if(p[side+'GripWeight'])setGraspFingers(hand,p[side+'GripKind']??'paper',p[side+'GripWeight']);
       this.feet[side].position.copy(V(leg[2]));this.feet[side].rotation.set(p[side+'FootPitch']??0,p[side+'FootYaw']??0,0,'YXZ');
     }
     this.mesh.updateMatrixWorld(true);

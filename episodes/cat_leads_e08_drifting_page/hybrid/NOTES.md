@@ -4,9 +4,10 @@
 
 ## 入口
 
-- 成片：`hybrid/output/output.mp4`，60 秒，1920×1080，30fps。
+- 本轮成片归档：`hybrid/output/2026_9_25.mp4`，60 秒，1920×1080，30fps。重新渲染默认生成 `hybrid/output/output.mp4`。
 - 对照：`hybrid/output/comparison.mp4`，左原二维、右混合三维，沿用同一音轨。
-- 本轮对照：`hybrid/output/refinement_comparison.mp4`，左为修正前的三维版，右为本轮修正；原三维成片另存为 `before_refinement.mp4`。
+- 手部修正对照：`hybrid/output/grasp_comparison.mp4`，左为上一轮交付，右为当前版；上一轮成片保存在 `before_grasp_fix.mp4`。重点看 40.5–51.5 秒的作画和交接。
+- 初版三维对照：`hybrid/output/refinement_comparison.mp4`，左为 `before_refinement.mp4`，右为当前版，包含步态、年龄与手部的累积修正。
 - 交互预览：`http://127.0.0.1:4200/hybrid/viewer.html`，支持播放、拖时间和选镜头。
 
 从 `dula-story/` 运行：
@@ -15,7 +16,11 @@
 node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs --check
 node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs
 node episodes/cat_leads_e08_drifting_page/hybrid/review.mjs
+# 若检查按日期归档的本轮成片，路径相对于 hybrid/：
+node episodes/cat_leads_e08_drifting_page/hybrid/review.mjs output/2026_9_25.mp4
 node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs --serve
+# 保持上面的服务运行，在另一个终端检查握笔、夹纸的七个近景机位：
+node episodes/cat_leads_e08_drifting_page/hybrid/inspect-grasps.mjs
 ```
 
 ## 角色、场景与镜头
@@ -26,7 +31,9 @@ node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs --serve
 
 `arrival-walk.js` 单独编排 3.5–5.5 秒走近动作，按输出帧连续采样，脚的额外摆动净空从 0.095 降为 0.032。鞋跟落地、前掌蹬离通过脚底支点转动实现；支撑脚位置和朝向保存在世界空间，转向分配给最后两次迈步，避免身体转向时把着地脚一起拧过去。步态含小幅重心起伏和反向摆臂，最后一脚在对白切镜前完成缓冲。
 
-`paper-grip.js` 为同一套五指骨骼增加夹纸姿势：四指在一面、拇指在另一面，手腕位于纸边外侧；不是把半握拳手掌对到虚拟锚点。45 秒起先将本子轻移到左膝方向、伸手夹住纸边，再抬纸递出；小蓝左手先接住，阿澈松手后小蓝右手辅助收好。纸上的接触位置在持握期间固定，手指不会沿纸边换位。
+`paper-grip.js` 分别定义三指握笔、薄纸夹持和本子表面扶手。握笔时拇指、食指和中指形成三个接触点，无名指与小指收拢；笔从指间经过，拇指从掌侧闭合，避免笔杆穿过拇指。薄纸由拇指和食指在近乎同一个纸面位置夹住，另三指放松。45 秒起先将本子轻移到左膝方向、伸手夹住纸的侧边，再抬纸递出；小蓝左手接住底边，阿澈松手后小蓝右手辅助收好。纸逐渐倾向阅读方向，固定握点保持不滑动。本子上的手指自然搭在上页，不套用薄纸夹持去夹厚封面。
+
+握姿使用本集 `hand3d.js` 的五指连续蒙皮变体，只调整拇指基部和指节比例。手腕方向按书本真实坐标确定，前臂与掌部连续；肘部求解同时考虑腕部折角、肘部朝外朝下及躯干间隙。接纸时掌轴可在纸面内随前臂来向调整，阿澈抬纸阶段的转腕采用连续曲线，防止逐帧求最优姿态造成肘部突然换向。作画线路按实际移动距离分配时间，换笔画时抬笔移动，避免原先按顶点等分时间导致的跨页跳动。笔尖、笔迹进度和手臂仍由同一采样点驱动。
 
 三维人物、树干、树冠、凳子、岸石和速写本道具组成同一空间；远景、云、叶片和鸟群沿用绘制图形。阵风驱动柳条、树冠、草、落叶、发梢，鸟群交替扑翼与滑翔。小橘改为有体积的三维蜷卧模型，保持呼吸和尾巴微动。
 
@@ -42,12 +49,14 @@ node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs --serve
 
 ## 实现依赖与范围
 
-本集自包含渲染器沿用绘制版的浏览器逐帧流程。`/craft/` 映射到 `yuki_morning_battle/craft_trial/`，复用其四肢、鞋、五指手、IK 和阵风实现；只给原 `character3d.js` 增加命名导出，不更改小雪行为。E08 的发型、脸部、服装、动作和镜头保存在本目录。当前没有升级共享资产注册表，也不声称已经接入通用正片引擎。
+本集自包含渲染器沿用绘制版的浏览器逐帧流程。`/craft/` 映射到 `yuki_morning_battle/craft_trial/`，复用其四肢、鞋、基础 IK 和阵风实现；初版给原 `character3d.js` 增加了命名导出。本轮五指手在 E08 本地派生，不更改已认可的小雪手部。E08 的发型、脸部、服装、动作和镜头保存在本目录。当前没有升级共享资产注册表，也不声称已经接入通用正片引擎。
 
 远景鸟仍是二维动作片；近距离绕拍鸟需要独立模型。当前为风格化程序动画重制，尚未采用布料、流体或头发碰撞求解。姿势、接触与随机访问检查可重复执行，成片表演和画风仍由用户复看。
 
 ## 验证记录
 
-检查报告位于忽略目录 `hybrid/storyboard/`：`preview_validation.json` 为 65 个关键时点，`validation.json` 为完整顺序渲染；渲染器同时检查四肢长度、持笔与递画接触、倒序 seek 图像一致、头颈与五指变形，以及音频包流哈希。递画额外按 60Hz 检查中间时点，避免关键帧遗漏短暂脱手。新增 `refinements` 检查走路的支撑脚漂移、实际鞋底顶点与地面关系，以及变形后拇指/食指末端皮肤位于夹纸平面两侧；这些几何指标不代替动作与审美复看。
+检查报告位于忽略目录 `hybrid/storyboard/`：`preview_validation.json` 为 65 个关键时点，`validation.json` 为完整顺序渲染；渲染器同时检查四肢长度、持笔与递画接触、倒序 seek 图像一致、头颈与五指变形，以及音频包流哈希。递画和作画另按 60Hz 检查中间姿势。`refinements` 包含走路支点/鞋底检查、夹纸拇指与食指骨端的两侧关系及面内偏差、握笔三个骨端距笔轴的距离、实际变形皮肤与笔杆中心线的双面求交、作画腕部折角和逐采样手肘/手腕位移。骨端距离不等于皮肤接触；中心线不相交也不等于整个笔杆圆柱零穿插，不将这些指标称作完整碰撞验证。
+
+`inspect-grasps.mjs` 输出 `grasp_*.jpg` 与 `grasp_views.json`，从七个近景机位检查指间关系及腕部来向。完整交接另记录持续夹持阶段的腕部折角、旋转步长与肘部位移。`review.mjs` 从最终 MP4 解码作画、完整交接动作序列和全片概览，并生成三种对照视频。几何与序列抽帧检查不代替正常速度的表演复看。
 
 最终导出检查结果另记录在本集 `VISUAL_REVIEW.md`。

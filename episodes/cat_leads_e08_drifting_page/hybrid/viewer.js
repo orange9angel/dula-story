@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {compile,smooth} from './timeline.js';
 import {EpisodeScene,cameraAt} from './scene.js';
-import {inspectPaperPads} from './paper-grip.js';
+import {inspectPaperPads,inspectPenPads,inspectPenSurface} from './paper-grip.js';
 const capture=new URLSearchParams(location.search).has('capture');if(capture)document.body.classList.add('capture');
 const [story,direction,lips]=await Promise.all([fetch('/script.story').then(r=>r.text()),fetch('/hybrid/direction.json').then(r=>r.json()),fetch('/config/lipsync_cues.json').then(r=>r.json())]);
 const plan=compile(story,direction,lips),episode=new EpisodeScene(plan);
@@ -50,10 +50,35 @@ window.refinementChecks=()=>{
     const state=episode.update(t,camera);
     for(const kid of [episode.girl,episode.boy])for(const side of ['left','right']){
       const p=kid===episode.girl?state.girl:state.boy;
-      if(p[side+'GripWeight']>.999)grips.push({t,kind:kid.kind,side,...inspectPaperPads(kid.hands[side])});
+      if(p[side+'GripWeight']>.999&&p[side+'GripKind']==='paper')grips.push({t,kind:kid.kind,side,...inspectPaperPads(kid.hands[side])});
     }
   }
-  return {maxSupportDrift,maxSolePenetration,maxSwingClearance,maxFrameRootStep,grips};
+  const pens=[9.5,41,43.5].map(t=>{
+    const {boy}=episode.update(t,camera),hand=episode.boy.hands.right,arm=boy.rightArm;
+    const forearm=new THREE.Vector3(arm[2].x-arm[1].x,arm[2].y-arm[1].y,arm[2].z-arm[1].z).normalize();
+    return {t,pads:inspectPenPads(hand),surfaceHits:inspectPenSurface(hand),wristAngle:forearm.angleTo(new THREE.Vector3(1,0,0).applyQuaternion(hand.quaternion))*180/Math.PI};
+  });
+  const drawing={maxWristAngle:0,maxElbowStep:0,maxWristStep:0};let lastArm;
+  for(let i=0;i<270;i++){
+    const {boy}=episode.update(plan.beats.draw+i/60,camera),arm=boy.rightArm,hand=episode.boy.hands.right;
+    const points=arm.map(a=>new THREE.Vector3(a.x,a.y,a.z));
+    drawing.maxWristAngle=Math.max(drawing.maxWristAngle,points[2].clone().sub(points[1]).angleTo(new THREE.Vector3(1,0,0).applyQuaternion(hand.quaternion))*180/Math.PI);
+    if(lastArm){drawing.maxElbowStep=Math.max(drawing.maxElbowStep,points[1].distanceTo(lastArm[1]));drawing.maxWristStep=Math.max(drawing.maxWristStep,points[2].distanceTo(lastArm[2]));}lastArm=points;
+  }
+  const paperWrists=[],lastPaper={};
+  for(let i=0;i<=390;i++){
+    const t=plan.beats.offer+i/60,state=episode.update(t,camera);
+    for(const kid of [episode.girl,episode.boy])for(const side of ['left','right']){
+      const p=kid===episode.girl?state.girl:state.boy;if(p[side+'GripKind']!=='paper'||p[side+'GripWeight']<.999)continue;
+      const arm=p[side+'Arm'],forearm=new THREE.Vector3().copy(arm[2]).sub(arm[1]),angle=forearm.angleTo(new THREE.Vector3(1,0,0).applyQuaternion(kid.hands[side].quaternion))*180/Math.PI;
+      const record=paperWrists.find(r=>r.character===kid.kind&&r.side===side);
+      const key=kid.kind+side,q=kid.hands[side].quaternion.clone(),prior=lastPaper[key],rotationStep=prior?q.angleTo(prior.q)*180/Math.PI:0,elbowStep=prior?new THREE.Vector3().copy(arm[1]).distanceTo(prior.elbow):0;
+      if(!record)paperWrists.push({character:kid.kind,side,maxWristAngle:angle,t,maxRotationStep:0,maxElbowStep:0});else{
+        if(angle>record.maxWristAngle)Object.assign(record,{maxWristAngle:angle,t});record.maxRotationStep=Math.max(record.maxRotationStep,rotationStep);record.maxElbowStep=Math.max(record.maxElbowStep,elbowStep);
+      }lastPaper[key]={q,elbow:new THREE.Vector3().copy(arm[1])};
+    }
+  }
+  return {maxSupportDrift,maxSolePenetration,maxSwingClearance,maxFrameRootStep,grips,pens,drawing,paperWrists};
 };
 await document.fonts.ready;draw(0);window.ready=true;
 if(!capture){
