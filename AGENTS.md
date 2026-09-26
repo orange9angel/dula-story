@@ -16,7 +16,7 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/yuki_bento_battle/`（《便当大作战》——小雪系列第二集，101s 群像搞笑：黑猫闪电破窗抢便当、咕噜防盗模式全员恶人、豆豆乱入，揭底便当是减肥餐；新官方角色 Flash/Dodo，场景道具时间态换态工艺；全火山音频六声线）
+**最新 Episode**：`episodes/bio_armor_academy_s1e1/`（《9章》——生物机械校园剧：虫化仿生设定（几丁质/蝉翼刃/羽化）重构完成；30s 打斗试片封版——风林火山节奏、镜头三类 I2V 路径（口型镜图+音频组合/动作镜首尾帧双钉/覆盖镜独立 I2V）、Seed-Audio 演绎人声（战损嘶哑零播音腔）、程序化水墨转场卡，见 `storyboard_fight.md`）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
 - `episodes/yuki_morning_battle/craft_trial/` — 《早起大作战》工艺试片（2026-09-23：用户认可五指、四肢与头颈改善；新增二维三维混合河岸、非匀速阵风和飞鸟，12.4s 动态/静态各 372 帧检查通过并提供并排对照，环境效果待复看；原室内 16 帧哈希不变；viewer 4199，未替换共享角色或原集；入口见 `VISUAL_REVIEW.md`）

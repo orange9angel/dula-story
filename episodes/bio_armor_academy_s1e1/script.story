@@ -1,10 +1,10 @@
 1
 00:00:00,000 --> 00:00:04,000
-@BioArmorCityScene{Position:LeiXiao|x=0|y=0|z=0|face=center}{Position:BaiLan|x=2|y=0|z=0|face=LeiXiao}{Camera:Static|position=0,0,10|lookAt=0,0,0}{SFX:Play|name=wind_dusk|baseVolume=0.25|endTime=59}{SFX:Play|name=crow_caws|offset=0.8|baseVolume=0.35}{SFX:Play|name=distant_traffic|offset=2.2|baseVolume=0.3}
+@BioArmorCityScene{Position:LeiXiao|x=0|y=0|z=0|face=center}{Position:BaiLan|x=2|y=0|z=0|face=LeiXiao}{Camera:Static|position=0,0,10|lookAt=0,0,0}{SFX:Play|name=dusk_cicadas|baseVolume=0.3|endTime=53}{SFX:Play|name=wind_dusk|baseVolume=0.25|endTime=59}{SFX:Play|name=distant_traffic|offset=2.2|baseVolume=0.3}
 
 2
 00:00:04,300 --> 00:00:09,300
-[LeiXiao]{Voice:nervous}冷静点，雷晓……它只是睡着了。昨天之后，就没动过。
+[LeiXiao]{Voice:nervous}别慌，雷晓……昨天，它只是有点痒。今天，它长成壳了。
 
 3
 00:00:09,600 --> 00:00:12,400
@@ -16,39 +16,39 @@
 
 5
 00:00:17,000 --> 00:00:23,500
-[BaiLan]{Voice:cold}三天前，后山那道光。全校的碎片都在发烫——只有你，被零式选中了。
+[BaiLan]{Voice:cold}三天前，后山落下一道光。我的蝉叫了一整夜——它在怕，怕你那只。
 
 6
 00:00:23,800 --> 00:00:28,800
-[LeiXiao]{Voice:shout}什么零式……我什么都不想要！这东西谁爱要，谁拿走！
+[LeiXiao]{Voice:shout}什么9章……我什么都不想要！这东西谁爱要，谁拿走！
 
 7
 00:00:29,100 --> 00:00:32,600
-[BaiLan]{Voice:cold}拿走？它已经，长进你的骨头里了。
+[BaiLan]{Voice:cold}拿走？它已经在你的骨头里，开始羽化了。
 
 8
 00:00:32,900 --> 00:00:37,900
-[BaiLan]{Voice:declare}社团战第一条：被单元选中者，无权退场。——接刀！
+[BaiLan]{Voice:declare}社团战第一条：被选中者，无权退场。——鸣切，接得住吗！
 
 9
 00:00:38,000 --> 00:00:40,000
-{SFX:Play|name=shinai_whoosh|baseVolume=0.8}{SFX:Play|name=bio_impact_metal|offset=0.9|baseVolume=1.0}{SFX:Play|name=floor_crack|offset=1.1|baseVolume=0.85}
+{SFX:Play|name=cicada_wing_buzz|baseVolume=0.8}{SFX:Play|name=chitin_impact|offset=0.9|baseVolume=1.0}{SFX:Play|name=floor_crack|offset=1.1|baseVolume=0.85}
 
 10
 00:00:40,300 --> 00:00:43,800
-[LeiXiao]{Voice:shocked}我的手……它自己动了？！
+[LeiXiao]{Voice:shocked}这壳……是它自己张开的？！
 
 11
 00:00:44,100 --> 00:00:47,600
-[BaiLan]{Voice:cold}零式的自动防御……合格了。
+[BaiLan]{Voice:cold}本能先于意识。……合格了，9章。
 
 12
 00:00:47,900 --> 00:00:52,900
-[BaiLan]{Voice:declare}明天放学，西岸废工地。带上你的壳，回家部。
+[BaiLan]{Voice:declare}明天放学，西岸废工地。让我看看，你会羽化成什么。——回家部。
 
 13
 00:00:53,200 --> 00:00:57,700
-[Narrator]{Voice:calm}从这一天起，课本变成了战书。放学后的城市，变成了战场。
+{SFX:Play|name=cicadas_stop|baseVolume=0.4}
 
 14
 00:00:57,900 --> 00:00:59,000
