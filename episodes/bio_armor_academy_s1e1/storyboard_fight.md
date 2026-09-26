@@ -66,4 +66,4 @@ BGM：`furyu_fight_theme`（Seed-Audio，太鼓+弦乐+电子脉冲，16s 骤停
 | `tools/gen_fight_chain.sh` | 续拍链（已被首尾帧取代，留档） |
 | `tools/mix_fight.sh` | 混音母带 |
 | `tools/assemble_fight.sh` | 净版终装（裁窗/24fps/冲击帧/对轨，STAMPS=1 出贴字版） |
-| `tools/make_transition.py` | 程序化转场卡（底图/副标可配） |
+| `tools/make_transition.py` | 程序化转场卡（底图/副标可配；已毕业为独立 skill `dula-skills/title-card`，参数化 CLI，输出与本脚本像素级一致） |
