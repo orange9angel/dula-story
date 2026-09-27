@@ -13,9 +13,10 @@ const opt=(name)=>{const i=args.indexOf(name);return i>=0?args[i+1]:null;};
 const cameraArg=opt('--camera'); // "px,py,pz,lx,ly,lz[,fov]" — locks a free camera for the whole run
 const rangeArg=opt('--range');   // "start,end" in seconds
 const outArg=opt('--out');       // filename under craft3d/output/
+const noRefine=args.includes('--norefine'); // 关闭精修层（任务 B 前后对比帧用）
 const board=path.join(here,'storyboard');
-const audioFile=path.join(root,'assets/audio/mixed.wav');
-const output=path.join(here,'output',outArg??'craft3d_v2.mp4');
+const audioFile=path.join(here,'assets3d/mixed.wav');
+const output=path.join(here,'output',outArg??'craft3d_full.mp4');
 const fps=60;
 fs.mkdirSync(board,{recursive:true});fs.mkdirSync(path.dirname(output),{recursive:true});
 const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json','.story':'text/plain','.wav':'audio/wav','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png'};
@@ -41,7 +42,7 @@ if(!serve){
     page.on('console',m=>{if(m.type()==='error')console.error(m.text());});
     page.on('response',r=>{if(r.status()>=400)console.error(`HTTP ${r.status()} ${r.url()}`);});
     await page.setViewport({width:720,height:1280,deviceScaleFactor:1});
-    await page.goto(url+'?capture=1',{waitUntil:'networkidle0'});
+    await page.goto(url+'?capture=1'+(noRefine?'&norefine=1':''),{waitUntil:'networkidle0'});
     await page.waitForFunction('window.ready===true',{timeout:120000});
     if(cameraArg){
       const n=cameraArg.split(',').map(Number);
