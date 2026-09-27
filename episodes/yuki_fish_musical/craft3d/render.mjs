@@ -9,9 +9,13 @@ import {once} from 'node:events';
 const here=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(here,'..'),storyRoot=path.resolve(root,'../..');
 const require=createRequire(path.join(storyRoot,'node_modules/dula-engine/package.json')),puppeteer=require('puppeteer');
 const args=process.argv.slice(2),check=args.includes('--check'),serve=args.includes('--serve');
+const opt=(name)=>{const i=args.indexOf(name);return i>=0?args[i+1]:null;};
+const cameraArg=opt('--camera'); // "px,py,pz,lx,ly,lz[,fov]" — locks a free camera for the whole run
+const rangeArg=opt('--range');   // "start,end" in seconds
+const outArg=opt('--out');       // filename under craft3d/output/
 const board=path.join(here,'storyboard');
 const audioFile=path.join(root,'assets/audio/mixed.wav');
-const output=path.join(here,'output/craft3d_v1.mp4');
+const output=path.join(here,'output',outArg??'craft3d_v2.mp4');
 const fps=60;
 fs.mkdirSync(board,{recursive:true});fs.mkdirSync(path.dirname(output),{recursive:true});
 const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json','.story':'text/plain','.wav':'audio/wav','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png'};
@@ -39,14 +43,22 @@ if(!serve){
     await page.setViewport({width:720,height:1280,deviceScaleFactor:1});
     await page.goto(url+'?capture=1',{waitUntil:'networkidle0'});
     await page.waitForFunction('window.ready===true',{timeout:120000});
+    if(cameraArg){
+      const n=cameraArg.split(',').map(Number);
+      if(n.length!==6&&n.length!==7||n.some(x=>!Number.isFinite(x)))throw new Error(`Bad --camera "${cameraArg}"`);
+      await page.evaluate(cfg=>window.setFreeCamera(cfg),{pos:n.slice(0,3),lookAt:n.slice(3,6),fov:n[6]});
+    }
     const duration=await page.evaluate(()=>window.duration);
     const checks=await page.evaluate(()=>window.checkTimes);
     const frames=Math.round(duration*fps);
+    const range=rangeArg?rangeArg.split(',').map(Number):null;
+    const startFrame=range?Math.round(range[0]*fps):0,endFrame=range?Math.min(frames,Math.round(range[1]*fps)):frames;
     let ci=0;const trace=[];
     if(!check){
-      encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0','-i',audioFile,'-map','0:v:0','-map','1:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-ar','48000','-ac','2','-b:a','192k','-t',String(duration),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
+      const audioArgs=range?['-ss',String(range[0]),'-t',String(range[1]-range[0])]:[];
+      encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-ar','48000','-ac','2','-b:a','192k','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
     }
-    for(let i=0;i<frames;i++){
+    for(let i=startFrame;i<endFrame;i++){
       const t=i/fps;
       const capture=!check||(ci<checks.length&&t>=checks[ci]);
       const result=await page.evaluate((t,capture)=>capture?window.renderAt(t):window.stepAt(t),t,capture);
@@ -59,7 +71,7 @@ if(!serve){
           trace.push({t,filename,...result.state});ci++;
         }
       }
-      if(i%300===0)console.log(`${check?'check':'render'} ${i}/${frames}`);
+      if(i%300===0)console.log(`${check?'check':'render'} ${i}/${endFrame}`);
     }
     if(encoder){encoder.stdin.end();const [code]=await once(encoder,'close');if(code!==0)throw new Error(`ffmpeg failed: ${code}`);}
     if(errors.length)throw new Error(errors.join('\n'));

@@ -2,11 +2,11 @@
 // viewer.js (StoryParser entries + timeline.json + viseme tracks + voice
 // features), Yuki retargeted to YukiCraft3D, Mochi as a temporary cel mix-in.
 import * as THREE from 'three';
-import {StoryParser, CharacterRegistry} from 'dula-engine';
-import '/episode/bootstrap.js'; // registers StudioMochi (hardenToon + cleanOutline 0x25222a)
+import {StoryParser} from 'dula-engine';
 import {HomeKitchenScene} from '/episode/scenes/HomeKitchenScene.js';
 import {buildHomeProps, updateHomeProps} from '/episode/home_props.js';
 import {YukiCraft3D} from '/craft/character3d.js';
+import {MochiCraft3D} from './mochi3d.js';
 import {poseYukiCraft, poseMochiCel, prepareMochi} from './performance3d.js';
 import {CraftMouth} from './mouth3d.js';
 
@@ -47,16 +47,32 @@ inkJoint.onBeforeCompile=shader=>{
     '#include <begin_vertex>\ntransformed += normalize(normal) * (0.012 * contour);');
 };
 inkJoint.customProgramCacheKey=()=>'fish-craft3d-joint-ink-v1';
-actor.mesh.traverse(o=>{
+// Cel 口径里年糕用 0.006（角色只有小雪一半高），故描边替换按角色分宽度。
+const inkSolidCat=new THREE.MeshBasicMaterial({color:0x25222a,side:THREE.BackSide});
+inkSolidCat.onBeforeCompile=shader=>{
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
+    '#include <begin_vertex>\ntransformed += normalize(normal) * 0.006;');
+};
+inkSolidCat.customProgramCacheKey=()=>'fish-craft3d-ink-cat-v1';
+const inkJointCat=new THREE.MeshBasicMaterial({color:0x25222a,side:THREE.BackSide});
+inkJointCat.onBeforeCompile=shader=>{
+  shader.vertexShader='attribute float contour;\n'+shader.vertexShader;
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
+    '#include <begin_vertex>\ntransformed += normalize(normal) * (0.006 * contour);');
+};
+inkJointCat.customProgramCacheKey=()=>'fish-craft3d-joint-ink-cat-v1';
+const recolorInk=(root,solid,joint)=>root.traverse(o=>{
   if(!o.isMesh||o.material?.side!==THREE.BackSide)return;
   const key=o.material.customProgramCacheKey?.();
-  if(key==='craft-contour-v1')o.material=inkSolid;
-  else if(key==='craft-open-joint-contour-v1')o.material=inkJoint;
+  if(key==='craft-contour-v1')o.material=solid;
+  else if(key==='craft-open-joint-contour-v1')o.material=joint;
 });
+recolorInk(actor.mesh,inkSolid,inkJoint);
 const mouth=new CraftMouth(actor.headAssembly);
 
-// Temporary cel mix-in (Phase 3 replaces this with MochiCraft3D).
-const cat=new CharacterRegistry.Mochi('Mochi');
+// MochiCraft3D（三维年糕，句柄契约同 cel 资产，表演桥原样驱动）
+const cat=new MochiCraft3D();
+recolorInk(cat.mesh,inkSolidCat,inkJointCat);
 kitchen.scene.add(cat.mesh);
 prepareMochi(cat);
 const home=buildHomeProps(kitchen.scene,cat);
@@ -121,6 +137,11 @@ function drawSubtitle(t,seg){
 }
 
 const camera=new THREE.PerspectiveCamera(35,W/H,.1,150);
+// Free camera override: while set, the shot table is ignored (3D selling point —
+// same performance, any angle). window.setFreeCamera({pos:[x,y,z],lookAt:[x,y,z],fov?})
+let freeCamera=null;
+window.setFreeCamera=cfg=>{freeCamera=cfg;};
+window.clearFreeCamera=()=>{freeCamera=null;};
 {
   const times=[];
   for(const s of authored){times.push(s.startTime+.05,(s.startTime+s.endTime)/2,Math.max(s.endTime-.06,s.startTime+.06));}
@@ -140,12 +161,18 @@ function draw(t){
   updateHomeProps(home,t,entry,allOpts);
 
   const shot=allOpts.Yuki.shot??'wide';
-  const distance=shot==='evidence'?3.10:shot==='cat'?3.55:shot==='yuki'?3.8:6.25;
-  const targetY=shot==='evidence'?.69:shot==='cat'?.70:shot==='yuki'?1.22:1.00;
-  const focusX=['cat','evidence'].includes(shot)?.69:shot==='yuki'?-.43:.05;
-  camera.position.set(focusX+.025*Math.sin(t*.6),targetY+.10,distance);
-  camera.lookAt(focusX,targetY,0);
-  camera.fov=35;camera.updateProjectionMatrix();
+  if(freeCamera){
+    camera.position.set(...freeCamera.pos);
+    camera.lookAt(...freeCamera.lookAt);
+    camera.fov=freeCamera.fov??35;camera.updateProjectionMatrix();
+  }else{
+    const distance=shot==='evidence'?3.10:shot==='cat'?3.55:shot==='yuki'?3.8:6.25;
+    const targetY=shot==='evidence'?.69:shot==='cat'?.70:shot==='yuki'?1.22:1.00;
+    const focusX=['cat','evidence'].includes(shot)?.69:shot==='yuki'?-.43:.05;
+    camera.position.set(focusX+.025*Math.sin(t*.6),targetY+.10,distance);
+    camera.lookAt(focusX,targetY,0);
+    camera.fov=35;camera.updateProjectionMatrix();
+  }
 
   renderer.render(kitchen.scene,camera);ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);
   const subtitle=drawSubtitle(t,seg);
