@@ -19,6 +19,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 **最新 Episode**：`episodes/bio_armor_academy_s1e1/`（《9章》——生物机械校园剧：虫化仿生设定（几丁质/蝉翼刃/羽化）重构完成；30s 打斗试片封版——风林火山节奏、镜头三类 I2V 路径（口型镜图+音频组合/动作镜首尾帧双钉/覆盖镜独立 I2V）、Seed-Audio 演绎人声（战损嘶哑零播音腔）、程序化水墨转场卡，见 `storyboard_fight.md`）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
+- `episodes/yuki_fish_musical/craft3d/` — 《谁动了我的小鱼干》三维化（2026-09-27：YukiCraft3D/MochiCraft3D 全三维双主角、V17 几何嘴上纹理脸、自由机位 setFreeCamera、/craft/ 映射复用 craft_trial 只读；v2 全片已出，Phase 4 补开场/结尾剧情+形象精修进行中；原 cel 版不动，见 `craft3d/NOTES.md`）
 - `episodes/yuki_morning_battle/craft_trial/` — 《早起大作战》工艺试片（2026-09-23：用户认可五指、四肢与头颈改善；新增二维三维混合河岸、非匀速阵风和飞鸟，12.4s 动态/静态各 372 帧检查通过并提供并排对照，环境效果待复看；原室内 16 帧哈希不变；viewer 4199，未替换共享角色或原集；入口见 `VISUAL_REVIEW.md`）
 - `episodes/yuki_fish_musical/` — 《谁动了我的小鱼干》迷你音乐喜剧（46s：对白+双唱段、一首歌切两段实现动机复现、年糕/小雪各自本音演唱、家庭厨房场景、cel-look 纪律首验——描边 boil/一拍二/连指手/硬切阴影；自包含 viewer 链，不走 dula-render）
 - `episodes/yuki_fish_musical/` — 《谁动了我的小鱼干》迷你音乐喜剧试播版（46.3s，五句对白 + 两段各四句短唱，早起集声线参考换声，嘴角物证/空盘/洗碗道具，最终人声驱动双角色口型；自定义 viewer 链，正常速度试听待监制评审）
