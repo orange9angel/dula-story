@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {compile,smooth} from './timeline.js';
 import {EpisodeScene,cameraAt} from './scene.js';
 import {inspectPaperPads,inspectPenPads,inspectPenSurface} from './paper-grip.js';
+import {inspectTransitions} from './transition-checks.js';
 const capture=new URLSearchParams(location.search).has('capture');if(capture)document.body.classList.add('capture');
 const [story,direction,lips]=await Promise.all([fetch('/script.story').then(r=>r.text()),fetch('/hybrid/direction.json').then(r=>r.json()),fetch('/config/lipsync_cues.json').then(r=>r.json())]);
 const plan=compile(story,direction,lips),episode=new EpisodeScene(plan);
@@ -31,6 +32,7 @@ window.contactChecks=()=>{
   const samples=[];for(let i=0;i<=240;i++){const t=plan.beats.offer+i/60,s=episode.update(t,camera);if(s.handError>.003)samples.push({t,error:s.handError});}
   return samples;
 };
+window.transitionChecks=()=>inspectTransitions(episode,camera);
 window.refinementChecks=()=>{
   let maxSupportDrift=0,maxSolePenetration=0,maxSwingClearance=0,maxFrameRootStep=0;
   const previous={};let lastRoot;

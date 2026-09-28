@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {LimbSurface,ringsGeometry,shoeGeometry,mesh,ellipsoid,mat,jointInk} from '/craft/character3d.js';
 import {ArticulatedHand} from './hand3d.js';
 import {HeadAssembly} from './head3d.js';
-import {setGraspFingers} from './paper-grip.js';
+import {setGraspFingers,handQuaternion} from './paper-grip.js';
 
 const V=p=>new THREE.Vector3(p.x,p.y,p.z??0);
 export class RiverKid {
@@ -46,15 +46,10 @@ export class RiverKid {
       const arm=p[side+'Arm'],leg=p[side+'Leg'];
       this.limbs[side+'Arm'].update(arm);this.limbs[side+'Leg'].update(leg);
       this.clothes[side+'Sleeve'].update(arm);this.clothes[side+'Leg'].update(leg);
-      const hand=this.hands[side],x=p[side+'HandDirection']?V(p[side+'HandDirection']).normalize():V(arm[2]).sub(V(arm[1])).normalize();
-      let y=new THREE.Vector3(0,0,1).addScaledVector(x,-x.z);
-      if(y.length()<.01)y=new THREE.Vector3(0,1,0).addScaledVector(x,-x.y);
-      y.normalize();const z=x.clone().cross(y).normalize();y.copy(z).cross(x).normalize();
-      hand.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
-      hand.quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),p[side+'Roll']??-sign*.35));
-      if(p[side+'GripQuaternion'])hand.quaternion.slerp(p[side+'GripQuaternion'],p[side+'GripWeight']??1);
+      const hand=this.hands[side];hand.quaternion.copy(handQuaternion(p,side));
       hand.setGesture(p[side+'Gesture']??{});hand.position.copy(V(arm[2]));
-      if(p[side+'GripWeight'])setGraspFingers(hand,p[side+'GripKind']??'paper',p[side+'GripWeight']);
+      if(p[side+'Grasps'])for(const pose of p[side+'Grasps'])setGraspFingers(hand,pose.kind,pose.weight);
+      else if(p[side+'GripWeight'])setGraspFingers(hand,p[side+'GripKind']??'paper',p[side+'GripWeight']);
       this.feet[side].position.copy(V(leg[2]));this.feet[side].rotation.set(p[side+'FootPitch']??0,p[side+'FootYaw']??0,0,'YXZ');
     }
     this.mesh.updateMatrixWorld(true);

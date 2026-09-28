@@ -36,12 +36,23 @@ export function sketchAt(t,plan){
 }
 export function bookLocal(p){return {position:V(-.15*(p.bookShift??0),p.hipY+.290,.38-.085*(p.bookShift??0)),quaternion:new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI/2+.16,0,0))};}
 export function penLocal(p,t,plan){
-  const b=bookLocal(p),s=sketchAt(t,plan),tip=V(s.x*.40,-s.y*.29,.009+s.lift).applyQuaternion(b.quaternion).add(b.position);
+  const b=bookLocal(p),B=plan.beats,point=at=>{const s=sketchAt(at,plan);return V(s.x*.40,-s.y*.29,.009+s.lift);};
+  // The idle pen stays in front of his right side while the notebook shifts
+  // across his knees; following that shift would drive the hand into his chest.
+  const shift=p.bookShift??0,held=V(.175+.15*shift,-.040-.085*shift,.045);let localTip=point(t),phase='drawing';
+  if(t>=B.lift-.35&&t<B.draw-.70){
+    localTip=point(B.lift-.35).lerp(held,smooth((t-(B.lift-.35))/.65));phase='held';
+  }else if(t>=B.draw-.70&&t<B.draw){
+    const u=smooth((t-(B.draw-.70))/.70);localTip=held.clone().lerp(point(B.draw),u);localTip.z+=.025*Math.sin(Math.PI*u);phase='resume';
+  }else if(t>=B.offer-.55){
+    localTip=point(B.offer-.55).lerp(held,smooth((t-(B.offer-.55))/.65));phase='held';
+  }
+  const tip=localTip.applyQuaternion(b.quaternion).add(b.position);
   const x=V(-.80,-.60,0),z=V(0,0,-1),y=z.clone().cross(x);
   const quaternion=b.quaternion.clone().multiply(new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z)));
   quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(V(0,1,0),.25));
   const axis=penAxis.clone().applyQuaternion(quaternion),grip=tip.clone().addScaledVector(axis,.060);
-  return {tip,grip,wrist:grip.clone().sub(penAnchor.clone().applyQuaternion(quaternion)),quaternion,axis};
+  return {tip,grip,wrist:grip.clone().sub(penAnchor.clone().applyQuaternion(quaternion)),quaternion,axis,phase};
 }
 function solve(start,target,pole,a,b){
   const d=target.clone().sub(start),max=a+b-.002;if(d.length()>max)target=start.clone().add(d.setLength(max));
@@ -73,6 +84,16 @@ export function solveArm(start,target,lengths,sign,handQuaternion,p){
   for(let i=0;i<18;i++){const l=lo+(hi-lo)/3,r=hi-(hi-lo)/3;if(score(l)<score(r))hi=r;else lo=l;}
   return [start,joint((lo+hi)/2),end];
 }
+export function blendArm(from,to,lengths,weight,sign){
+  if(weight>=1)return to;if(weight<=0)return from;
+  const start=V().copy(from[0]),end=V().copy(from[2]).lerp(to[2],weight),[a,b]=lengths;
+  const axis=end.clone().sub(start),d=axis.length();axis.divideScalar(d);
+  const along=(a*a-b*b+d*d)/(2*d),radius=Math.sqrt(Math.max(0,a*a-along*along)),center=start.clone().addScaledVector(axis,along);
+  const guide=V(sign*.65,-.65,-.2);guide.addScaledVector(axis,-guide.dot(axis)).normalize();
+  const bend=V().copy(from[1]).lerp(to[1],weight).sub(center);
+  bend.addScaledVector(axis,-bend.dot(axis)).addScaledVector(guide,radius*1.6*Math.sin(Math.PI*weight)).normalize();
+  return [start,center.addScaledVector(bend,radius),end];
+}
 export function sampleKid(kind,t,plan,wind){
   const B=plan.beats,girl=kind==='Girl';
   let rootX=girl?-.68:.52,rootZ=girl?.46:.18,yaw=girl?.88:-.58,hipY=girl?.6925:.45;
@@ -81,7 +102,6 @@ export function sampleKid(kind,t,plan,wind){
   let feet=[V(-.086,.095,girl?0:.49),V(.086,.095,girl?0:.49)];
   const alarm=envelope(t,B.alarm-.35,B.alarm+.3,B.stop-.3,B.calm+.1);
   const reach=envelope(t,B.offer-.25,B.offer+1.5,B.accept-.1,B.accept+.7);
-  const hold=smooth((t-(B.accept-.55))/.7);
   const drawing=t<B.lift||t>=B.draw&&t<B.offer;
   p.bookShift=smooth((t-B.offer)/.45)*(1-smooth((t-(B.accept-.1))/.6));
   p.bodyTilt=girl?0:.075;
@@ -97,11 +117,10 @@ export function sampleKid(kind,t,plan,wind){
   p.headRoll=girl?-.018-.028*Math.sin(t*.6):-.07;
   let wrists=[V(-.23,1.075+p.bob-.348,.05),V(.23,1.075+p.bob-.348,.05)];
   if(girl){
-    wrists[1]=lerp(wrists[1],V(.28,1.08,.17),alarm);p.rightGesture={open:alarm};p.rightRoll=-.6*alarm;
-    wrists[0]=lerp(wrists[0],V(-.14,.99,.27),hold);wrists[1]=lerp(wrists[1],V(.14,.99,.27),hold);
-    p.leftGesture={fist:.23*hold};p.rightGesture={fist:.23*hold,open:alarm*(1-hold)};
-    p.leftRoll=mix(.35,-1.3,hold);p.rightRoll=mix(-.35,1.3,hold);
-    if(reach>0&&!hold){wrists[1]=lerp(wrists[1],V(.33,.98,.13),reach);p.rightGesture={open:.6};}
+    // The paper constraints own both reaching hands. A second reach/hold pose
+    // here fought that motion and snapped when its boolean branch changed.
+    wrists[1]=lerp(wrists[1],V(.28,1.08,.17),alarm);
+    p.leftGesture={};p.rightGesture={open:alarm};p.leftRoll=.35;p.rightRoll=-.35;
   }else{
     const book=bookLocal(p),bookHand=V(0,-.75,.55).normalize();
     for(const [i,side,sign] of [[0,'left',-1],[1,'right',1]]){
@@ -111,7 +130,7 @@ export function sampleKid(kind,t,plan,wind){
     const stop=envelope(t,B.stop-.25,B.stop+.65,B.calm+1,B.drift-.1);
     wrists[0]=lerp(wrists[0],V(-.34,.98,.08),stop);p.leftGesture={open:stop,fist:.20*(1-stop)};p.leftRoll=-1.1*stop;
     p.leftHandDirection=lerp(bookHand,V(-.2,1,0),stop).normalize();
-    if(drawing){
+    {
       const pen=penLocal(p,t,plan);wrists[1]=pen.wrist;p.rightGripQuaternion=pen.quaternion;p.rightGripKind='pen';p.rightGripWeight=1;p.rightGesture={fist:.72};
     }
     wrists[0]=lerp(wrists[0],V(-.36,.78,.10),reach);p.leftGesture={fist:.18*reach,open:stop};

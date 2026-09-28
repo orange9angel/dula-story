@@ -2,9 +2,9 @@ import * as THREE from 'three';
 import {HybridRiver} from '/craft/environment3d.js';
 import {mesh,ellipsoid} from '/craft/character3d.js';
 import {RiverKid,LoafCat} from './characters.js';
-import {V,sampleKid,worldPoint,bookLocal,penLocal,loosePageAt,SKETCH,SKETCH_BREAKS,sketchAt,solveArm} from './performance.js';
+import {V,sampleKid,worldPoint,bookLocal,penLocal,loosePageAt,SKETCH,SKETCH_BREAKS,sketchAt,solveArm,blendArm} from './performance.js';
 import {smooth,mix,clamp} from './timeline.js';
-import {gripAnchor,paperHandQuaternion,restAnchor,restHandQuaternion,penAnchor} from './paper-grip.js';
+import {gripAnchor,paperHandQuaternion,restAnchor,restHandQuaternion,penAnchor,handQuaternion} from './paper-grip.js';
 
 function line(parent,points,color='#7c8178',width=1){
   const m=new THREE.Line(new THREE.BufferGeometry().setFromPoints(points),new THREE.LineBasicMaterial({color,linewidth:width}));parent.add(m);return m;
@@ -33,12 +33,17 @@ function paper(map,width=.40,height=.29){return new THREE.Mesh(new THREE.PlaneGe
 function worldQuat(p,q=new THREE.Quaternion()){return new THREE.Quaternion().setFromAxisAngle(V(0,1,0),p.yaw).multiply(q);}
 function setHandTarget(p,side,grip,quaternion,weight=1,kind='paper'){
   const sign=side==='left'?-1:1,inv=new THREE.Quaternion().setFromAxisAngle(V(0,1,0),-p.yaw),q=inv.clone().multiply(quaternion);
+  const blendedQ=handQuaternion(p,side).slerp(q,weight),sourceArm=p[side+'Arm'];
+  p[side+'Grasps']??=p[side+'GripWeight']?[{kind:p[side+'GripKind'],weight:p[side+'GripWeight']}]:[];
+  p[side+'Grasps'].push({kind,weight});
   const anchor=kind==='rest'?restAnchor(sign):gripAnchor(sign);
   const target=grip.clone().sub(V(p.rootX,0,p.rootZ)).applyQuaternion(inv).sub(anchor.clone().applyQuaternion(q));
-  target.lerp(V(p[side+'Arm'][2].x,p[side+'Arm'][2].y,p[side+'Arm'][2].z),1-weight);
   const start=p[side+'Arm'][0],d=target.clone().sub(start),lengths=p.armLengths,max=lengths[0]+lengths[1]-.002;
   if(d.length()>max)target.copy(start).add(d.setLength(max));
-  p[side+'Arm']=solveArm(start,target,lengths,sign,q,p);
+  // Solve the complete target pose first. Optimizing a new elbow at every
+  // blend weight can switch branches partway through an otherwise smooth reach.
+  p[side+'Arm']=blendArm(sourceArm,solveArm(start,target,lengths,sign,q,p),lengths,weight,sign);
+  p[side+'HandQuaternion']=blendedQ;
   p[side+'GripQuaternion']=q;p[side+'GripWeight']=weight;p[side+'GripKind']=kind;
   const error=weight>.999?worldPoint(p,target.clone().add(anchor.clone().applyQuaternion(q))).distanceTo(grip):0;
   p[side+'GripError']=error;return error;
@@ -90,12 +95,10 @@ export class EpisodeScene {
     const girl=sampleKid('Girl',t,plan,env.windWorld),boy=sampleKid('Boy',t,plan,env.windWorld);
     const book=bookLocal(boy);this.book.position.copy(worldPoint(boy,book.position));this.book.quaternion.copy(worldQuat(boy,book.quaternion));
     const pen=penLocal(boy,t,plan),tip=worldPoint(boy,pen.tip),grip=worldPoint(boy,pen.grip);
-    const drawing=t<B.lift||t>=B.draw&&t<B.offer;
-    const penContactError=drawing?worldPoint(boy,V(boy.rightArm[2].x,boy.rightArm[2].y,boy.rightArm[2].z).add(penAnchor.clone().applyQuaternion(pen.quaternion))).distanceTo(grip):0;
+    const penContactError=worldPoint(boy,V(boy.rightArm[2].x,boy.rightArm[2].y,boy.rightArm[2].z).add(penAnchor.clone().applyQuaternion(pen.quaternion))).distanceTo(grip);
     this.pencil.position.copy(tip);this.pencil.quaternion.setFromUnitVectors(V(0,1,0),grip.clone().sub(tip).normalize());
-    this.pencil.visible=t<B.lift||t>=B.draw&&t<B.offer;
-    // Keep the pencil beside the notebook after drawing, instead of erasing it.
-    if(!this.pencil.visible){this.pencil.visible=true;this.pencil.position.copy(V(-.184,-.10,.019).applyQuaternion(this.book.quaternion).add(this.book.position));this.pencil.quaternion.copy(this.book.quaternion);}
+    // He keeps the pen in his right hand while talking and passing the page.
+    this.pencil.visible=true;
     const progress=t<B.lift?1:t<B.draw?0:sketchAt(t,plan).progress,symbol=t>=B.symbol;
     const key=`${Math.floor(progress*120)}/${symbol}`;
     if(key!==this.lastBook){paintPage(this.bookMap.image,progress,symbol);this.bookMap.needsUpdate=true;this.lastBook=key;}
@@ -107,9 +110,10 @@ export class EpisodeScene {
     this.gift.visible=t>=B.offer;
     let handError=0;
     const bookSupport=1-smooth((t-(B.stop-.25))/.65)*(1-smooth((t-(B.calm+1))/(B.drift-.1-(B.calm+1))));
-    const supportWeight=Math.max(bookSupport*(1-smooth((t-(B.offer-.25))/.6)),smooth((t-(B.accept-.25))/.65));
+    // Keep a coherent resting pose underneath the paper action, so release
+    // returns directly to the book instead of detouring through a spare reach.
+    const supportWeight=bookSupport;
     if(supportWeight>0){const q=restHandQuaternion(this.book.quaternion,1),grip=V(-.145,.020,.009).applyQuaternion(this.book.quaternion).add(this.book.position);setHandTarget(boy,'left',grip,q,supportWeight,'rest');}
-    if(!drawing){const q=restHandQuaternion(this.book.quaternion,-1),grip=V(.145,.020,.009).applyQuaternion(this.book.quaternion).add(this.book.position);setHandTarget(boy,'right',grip,q,1,'rest');}
     if(this.gift.visible){
       const u=smooth((t-(B.offer+.55))/1.15),receive=smooth((t-(B.accept-.35))/.85);
       const held=worldPoint(girl,V(0,1.00,.34)),target=V(-.335,1.070,.57),initial=this.book.position.clone().add(V(0,.018,0));
@@ -135,7 +139,7 @@ export class EpisodeScene {
         }
         handError=Math.max(handError,setHandTarget(p,side,grip,q,weight));
       };
-      hold(boy,'left',1,-.018,smooth((t-B.offer)/.50)*(1-smooth((t-(B.accept-.65))/.28)));
+      hold(boy,'left',1,-.018,smooth((t-B.offer)/.50)*(1-smooth((t-(B.accept-.65))/.65)));
       hold(girl,'left',-1,-.130,smooth((t-(B.offer+1.08))/.62));
       hold(girl,'right',1,-.130,smooth((t-(B.accept-.05))/.65));
     }

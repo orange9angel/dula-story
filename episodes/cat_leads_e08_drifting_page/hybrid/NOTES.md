@@ -4,9 +4,10 @@
 
 ## 入口
 
-- 本轮成片归档：`hybrid/output/2026_9_25.mp4`，60 秒，1920×1080，30fps。重新渲染默认生成 `hybrid/output/output.mp4`。
+- 本轮成片归档：`hybrid/output/2026_9_29.mp4`，60 秒，1920×1080，30fps。重新渲染默认生成 `hybrid/output/output.mp4`。
+- 动作切换对照：`hybrid/output/transition_comparison.mp4`，左为 `2026_9_25.mp4`，右为当前版；重点看 18.5 秒停笔、39.8–40.5 秒落笔与 45–49.5 秒递接纸张。
 - 对照：`hybrid/output/comparison.mp4`，左原二维、右混合三维，沿用同一音轨。
-- 手部修正对照：`hybrid/output/grasp_comparison.mp4`，左为上一轮交付，右为当前版；上一轮成片保存在 `before_grasp_fix.mp4`。重点看 40.5–51.5 秒的作画和交接。
+- 手型修正累计对照：`hybrid/output/grasp_comparison.mp4`，左为 `before_grasp_fix.mp4`，右为当前版；包含 9 月 25 日的握姿修正及本轮动作切换修正。
 - 初版三维对照：`hybrid/output/refinement_comparison.mp4`，左为 `before_refinement.mp4`，右为当前版，包含步态、年龄与手部的累积修正。
 - 交互预览：`http://127.0.0.1:4200/hybrid/viewer.html`，支持播放、拖时间和选镜头。
 
@@ -17,10 +18,11 @@ node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs --check
 node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs
 node episodes/cat_leads_e08_drifting_page/hybrid/review.mjs
 # 若检查按日期归档的本轮成片，路径相对于 hybrid/：
-node episodes/cat_leads_e08_drifting_page/hybrid/review.mjs output/2026_9_25.mp4
+node episodes/cat_leads_e08_drifting_page/hybrid/review.mjs output/2026_9_29.mp4
 node episodes/cat_leads_e08_drifting_page/hybrid/render.mjs --serve
 # 保持上面的服务运行，在另一个终端检查握笔、夹纸的七个近景机位：
 node episodes/cat_leads_e08_drifting_page/hybrid/inspect-grasps.mjs
+node episodes/cat_leads_e08_drifting_page/hybrid/inspect-transitions.mjs
 ```
 
 ## 角色、场景与镜头
@@ -34,6 +36,8 @@ node episodes/cat_leads_e08_drifting_page/hybrid/inspect-grasps.mjs
 `paper-grip.js` 分别定义三指握笔、薄纸夹持和本子表面扶手。握笔时拇指、食指和中指形成三个接触点，无名指与小指收拢；笔从指间经过，拇指从掌侧闭合，避免笔杆穿过拇指。薄纸由拇指和食指在近乎同一个纸面位置夹住，另三指放松。45 秒起先将本子轻移到左膝方向、伸手夹住纸的侧边，再抬纸递出；小蓝左手接住底边，阿澈松手后小蓝右手辅助收好。纸逐渐倾向阅读方向，固定握点保持不滑动。本子上的手指自然搭在上页，不套用薄纸夹持去夹厚封面。
 
 握姿使用本集 `hand3d.js` 的五指连续蒙皮变体，只调整拇指基部和指节比例。手腕方向按书本真实坐标确定，前臂与掌部连续；肘部求解同时考虑腕部折角、肘部朝外朝下及躯干间隙。接纸时掌轴可在纸面内随前臂来向调整，阿澈抬纸阶段的转腕采用连续曲线，防止逐帧求最优姿态造成肘部突然换向。作画线路按实际移动距离分配时间，换笔画时抬笔移动，避免原先按顶点等分时间导致的跨页跳动。笔尖、笔迹进度和手臂仍由同一采样点驱动。
+
+9 月 29 日继续补齐动作切换。阿澈停画、说话及递纸时继续用右手握笔，39.8 秒起移向第一笔的位置，40.5 秒随原作画音效落笔；画完后抬笔留在身体右前方。本子向左膝移位时，空闲握笔手保持在右侧，避免跟着本子钻进胸口。接纸与收纸由同一套约束负责，不再叠加相互抢控制权的默认伸手姿势。夹纸动作以已经求好的扶本子姿态作为过渡起点；掌向和手指逐层混合，肘部在保持固定骨长的圆周上经朝外、朝下的引导方向过渡。阿澈松手收回延长到 0.65 秒，直接回到扶本子的姿态。
 
 三维人物、树干、树冠、凳子、岸石和速写本道具组成同一空间；远景、云、叶片和鸟群沿用绘制图形。阵风驱动柳条、树冠、草、落叶、发梢，鸟群交替扑翼与滑翔。小橘改为有体积的三维蜷卧模型，保持呼吸和尾巴微动。
 
@@ -57,6 +61,8 @@ node episodes/cat_leads_e08_drifting_page/hybrid/inspect-grasps.mjs
 
 检查报告位于忽略目录 `hybrid/storyboard/`：`preview_validation.json` 为 65 个关键时点，`validation.json` 为完整顺序渲染；渲染器同时检查四肢长度、持笔与递画接触、倒序 seek 图像一致、头颈与五指变形，以及音频包流哈希。递画和作画另按 60Hz 检查中间姿势。`refinements` 包含走路支点/鞋底检查、夹纸拇指与食指骨端的两侧关系及面内偏差、握笔三个骨端距笔轴的距离、实际变形皮肤与笔杆中心线的双面求交、作画腕部折角和逐采样手肘/手腕位移。骨端距离不等于皮肤接触；中心线不相交也不等于整个笔杆圆柱零穿插，不将这些指标称作完整碰撞验证。
 
-`inspect-grasps.mjs` 输出 `grasp_*.jpg` 与 `grasp_views.json`，从七个近景机位检查指间关系及腕部来向。完整交接另记录持续夹持阶段的腕部折角、旋转步长与肘部位移。`review.mjs` 从最终 MP4 解码作画、完整交接动作序列和全片概览，并生成三种对照视频。几何与序列抽帧检查不代替正常速度的表演复看。
+`inspect-grasps.mjs` 输出 `grasp_*.jpg` 与 `grasp_views.json`，从七个近景机位检查指间关系及腕部来向。完整交接另记录持续夹持阶段的腕部折角、旋转步长与肘部位移。`transition-checks.js` 在停画、重画、递出、松手四个窗口按 60Hz 覆盖所有权重的中间姿势，检查笔、手腕、掌向和肘部的相邻采样变化；它同时接入整片渲染门禁，亦可用 `inspect-transitions.mjs` 单独输出 `transition_validation.json`。
+
+`review.mjs` 从最终 MP4 解码作画、完整交接和全片概览，另输出 8fps 的 `resume_motion.jpg`、`release_motion.jpg`，并生成四种对照视频及记录左右来源的 `media_validation.json`。几何与序列抽帧检查不代替正常速度的表演复看。
 
 最终导出检查结果另记录在本集 `VISUAL_REVIEW.md`。

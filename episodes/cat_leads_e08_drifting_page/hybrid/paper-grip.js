@@ -16,6 +16,17 @@ export const penPads={
 };
 export const gripAnchor=sign=>V(.071,.023,sign*.026);
 export const restAnchor=sign=>V(.075,0,sign*.024);
+export function handQuaternion(p,side){
+  if(p[side+'HandQuaternion'])return p[side+'HandQuaternion'].clone();
+  const sign=side==='left'?-1:1,arm=p[side+'Arm'];
+  const x=p[side+'HandDirection']?V().copy(p[side+'HandDirection']).normalize():V().copy(arm[2]).sub(arm[1]).normalize();
+  let y=V(0,0,1).addScaledVector(x,-x.z);if(y.length()<.01)y=V(0,1,0).addScaledVector(x,-x.y);
+  y.normalize();const z=x.clone().cross(y).normalize();y.copy(z).cross(x).normalize();
+  const q=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
+  q.multiply(new THREE.Quaternion().setFromAxisAngle(V(1,0,0),p[side+'Roll']??-sign*.35));
+  if(p[side+'GripQuaternion'])q.slerp(p[side+'GripQuaternion'],p[side+'GripWeight']??1);
+  return q;
+}
 export function paperHandQuaternion(sheetQuaternion,sign,reach){
   // Project the shoulder-to-grip direction onto the sheet. A receiving hand
   // reaches in from the side before turning up into the final reading pose.

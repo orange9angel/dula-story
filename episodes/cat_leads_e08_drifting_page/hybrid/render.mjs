@@ -67,6 +67,8 @@ if(!serve){
     const characters=await page.evaluate(()=>window.characterChecks());
     const contactChecks=await page.evaluate(()=>window.contactChecks());
     const refinements=await page.evaluate(()=>window.refinementChecks());
+    const transitions=await page.evaluate(()=>window.transitionChecks());
+    if(transitions.some(s=>s.penStep>.04||s.penRotation>12||Object.values(s.hands).some(h=>h.wristStep>.04||h.elbowStep>.05||h.rotationStep>12)))throw new Error(`Action transition failed: ${JSON.stringify(transitions)}`);
     if(refinements.maxSupportDrift>1e-6||refinements.maxSolePenetration>.001||refinements.grips.some(g=>!g.opposed||g.oppositionOffset>.006)||refinements.pens.some(g=>g.surfaceHits.length||g.wristAngle>60||Object.values(g.pads).some(p=>p.radialDistance<.008||p.radialDistance>.016||Math.abs(p.along)>.012)))throw new Error(`Refinement checks failed: ${JSON.stringify(refinements)}`);
     if(refinements.drawing.maxWristAngle>35||refinements.drawing.maxElbowStep>.05||refinements.drawing.maxWristStep>.04)throw new Error(`Drawing continuity failed: ${JSON.stringify(refinements.drawing)}`);
     if(refinements.paperWrists.some(p=>p.maxWristAngle>75||p.maxRotationStep>10||p.maxElbowStep>.05))throw new Error(`Paper wrist continuity failed: ${JSON.stringify(refinements.paperWrists)}`);
@@ -77,7 +79,7 @@ if(!serve){
       metrics.originalAudioHash=hashAudio(original);metrics.outputAudioHash=hashAudio(output);metrics.audioIdentical=metrics.originalAudioHash===metrics.outputAudioHash;
       if(!metrics.audioIdentical)throw new Error('Original audio packets changed');
     }
-    fs.writeFileSync(path.join(board,check?'preview_validation.json':'validation.json'),JSON.stringify({duration,fps:30,metrics,errors,characters,refinements,trace},null,2));
+    fs.writeFileSync(path.join(board,check?'preview_validation.json':'validation.json'),JSON.stringify({duration,fps:30,metrics,errors,characters,refinements,transitions,trace},null,2));
     console.log(JSON.stringify(metrics));
   }finally{if(encoder&&!encoder.killed)encoder.kill();if(browser)await browser.close();server.close();}
 }

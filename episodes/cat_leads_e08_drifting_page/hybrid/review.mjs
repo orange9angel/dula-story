@@ -12,12 +12,14 @@ const info=JSON.parse(run('ffprobe',['-v','error','-show_entries','stream=codec_
 const v=info.streams.find(s=>s.codec_type==='video');if(Number(v.nb_frames)!==1800||Number(v.duration)!==60)throw new Error('Unexpected video duration');
 for(const [name,start,duration,fps,scale,tile] of [
   ['film_sheet',0,60,'1/3','384:216','5x4'],['arrival_motion',3.5,2,'6','480:270','4x3'],
-  ['page_motion',18.5,2.5,'4','384:216','5x2'],['drawing_motion',40.5,4.5,'4','320:180','6x3'],['transfer_motion',45,6.5,'4','384:216','7x4']
+  ['page_motion',18.5,2.5,'4','384:216','5x2'],['drawing_motion',40.5,4.5,'4','320:180','6x3'],['transfer_motion',45,6.5,'4','384:216','7x4'],
+  ['resume_motion',39.1,1.8,'8','480:270','4x4'],['release_motion',47.5,2,'8','480:270','4x4']
 ])run('ffmpeg',['-y','-hide_banner','-loglevel','error','-ss',String(start),'-i',film,'-t',String(duration),'-vf',`fps=${fps},scale=${scale},tile=${tile}`,'-frames:v','1',path.join(here,`storyboard/${name}.jpg`)]);
-run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',original,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','0:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/comparison.mp4')]);
-const baseline=path.join(here,'output/before_refinement.mp4');
-if(fs.existsSync(baseline))run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',baseline,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','0:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/refinement_comparison.mp4')]);
-const graspBaseline=path.join(here,'output/before_grasp_fix.mp4');
-if(fs.existsSync(graspBaseline))run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',graspBaseline,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','1:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,'output/grasp_comparison.mp4')]);
-const result={audioPacketTimingIdentical:true,audioPackets:after.length,firstAudioPacket:after[0],lastAudioPacket:after.at(-1),...info};
+const comparisons=[];
+for(const [baseline,name] of [[original,'comparison'],[path.join(here,'output/before_refinement.mp4'),'refinement_comparison'],[path.join(here,'output/before_grasp_fix.mp4'),'grasp_comparison'],[path.join(here,'output/2026_9_25.mp4'),'transition_comparison']]){
+  if(!fs.existsSync(baseline)||baseline===film)continue;
+  run('ffmpeg',['-y','-hide_banner','-loglevel','error','-i',baseline,'-i',film,'-filter_complex','[0:v]scale=960:540[a];[1:v]scale=960:540[b];[a][b]hstack=inputs=2[v]','-map','[v]','-map','1:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',path.join(here,`output/${name}.mp4`)]);
+  comparisons.push({file:`output/${name}.mp4`,left:path.relative(here,baseline),right:path.relative(here,film)});
+}
+const result={film:path.relative(here,film),comparisons,audioPacketTimingIdentical:true,audioPackets:after.length,firstAudioPacket:after[0],lastAudioPacket:after.at(-1),...info};
 fs.writeFileSync(path.join(here,'storyboard/media_validation.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
