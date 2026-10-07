@@ -1,0 +1,278 @@
+{
+  "$schema": "../../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "bio_armor_academy_s1e2",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "雷晓绕路躲轰刚失败，社团战被迫应战，首次意志驱动殖装惨胜，左臂浮现第一道蚀纹。",
+    "audience": "少年漫/生物机械校园剧观众",
+    "designPriorities": [
+      "黄昏废工地氛围（逆光、积水倒映、乌鸦、风动篷布）",
+      "打斗格的风林火山动静反差",
+      "殖装只在右臂（三态）与左臂蚀纹的可读性"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "RuinsDuskScene"
+    ],
+    "characters": [
+      "LeiXiao",
+      "HongGang"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "RuinsDuskScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "RuinsDuskScene",
+        "module": "scenes/RuinsDuskScene.js",
+        "export": "RuinsDuskScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "synchronous"
+      },
+      "intent": {
+        "location": "西岸废工地（社团战百年决斗场）",
+        "timeOfDay": "黄昏（金橙夕阳+深蓝阴影）",
+        "tone": [
+          "浓郁暮色",
+          "热血",
+          "肃杀"
+        ],
+        "storyFunction": "冷开场日常被打破→社团战规则宣告→升级→逆转→收刀钩子",
+        "visualRules": [
+          "殖装只在雷晓右臂，左臂完全正常皮肤（直到蚀纹）",
+          "黑甲必须黑曜石湿亮+硬轮廓光，禁止哑光",
+          "背景无文字招牌（平行世界）",
+          "积水倒映夕阳、篷布与乌鸦保持风的方向性"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0.0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -23,
+            0,
+            -58
+          ],
+          "max": [
+            23,
+            18,
+            12
+          ]
+        },
+        "zones": [
+          {
+            "id": "duelGround",
+            "bounds": {
+              "min": [
+                -3,
+                0,
+                -5
+              ],
+              "max": [
+                5,
+                2,
+                0
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "决斗主区（雷晓中心位 / 轰刚入场与击倒区）"
+            ]
+          },
+          {
+            "id": "skeletonFrame",
+            "bounds": {
+              "min": [
+                -13.5,
+                0,
+                -16
+              ],
+              "max": [
+                -6.5,
+                13,
+                -10
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "钢筋骨架烂尾楼（篷布、观察者高位）"
+            ]
+          }
+        ],
+        "anchors": {
+          "pipeJumpTop": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              4.6,
+              1.5,
+              -5.2
+            ],
+            "purpose": "轰刚起跳的混凝土管顶"
+          },
+          "observerPost": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -7.3,
+              6.15,
+              -11.8
+            ],
+            "purpose": "结尾钩子观察者剪影站位（骨架高处）"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "金橙逆光 + 深蓝环境 + 青绿生物光点睛",
+        "readabilityRules": [
+          "角色逆光轮廓可读",
+          "黑甲靠硬轮廓光与高光分离于暗背景",
+          "蚀纹青绿在左臂近景可读"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "dusk_ruins",
+          "kind": "roomtone",
+          "semantic": "黄昏废墟：晚风 + 暮蝉 + 偶发乌鸦",
+          "position": [
+            0,
+            2,
+            -4
+          ],
+          "radius": 15,
+          "loop": true
+        }
+      ],
+      "dependencies": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "LeiXiao",
+      "scene": "RuinsDuskScene",
+      "kind": "character",
+      "runtimeName": "LeiXiao",
+      "binding": "character:LeiXiao",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.9,
+          0
+        ],
+        "face": [
+          0,
+          1.54,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.5,
+            0,
+            -2
+          ]
+        }
+      }
+    },
+    {
+      "id": "HongGang",
+      "scene": "RuinsDuskScene",
+      "kind": "character",
+      "runtimeName": "HongGang",
+      "binding": "character:HongGang",
+      "parent": "$scene",
+      "initialPresence": "offstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          1.0,
+          0
+        ],
+        "face": [
+          0,
+          1.7,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            4.6,
+            1.5,
+            -5.2
+          ]
+        }
+      }
+    },
+    {
+      "id": "Observer",
+      "scene": "RuinsDuskScene",
+      "kind": "character",
+      "runtimeName": "Observer",
+      "binding": "character:Observer",
+      "parent": "$scene",
+      "initialPresence": "concealed",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.5,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -7.3,
+            6.15,
+            -11.8
+          ]
+        }
+      }
+    }
+  ],
+  "state": {},
+  "events": [],
+  "blocking": [],
+  "shotChecks": [],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "custom viewer render.mjs --check",
+      "visual-review",
+      "representative sequential clip"
+    ]
+  }
+}
