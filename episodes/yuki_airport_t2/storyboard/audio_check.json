@@ -1,0 +1,36 @@
+{
+ "duration": 123.633,
+ "mix_peak_dbfs": -4.78,
+ "lines": {
+  "01_yuki_open": 5.61,
+  "02_mochi_fee": 4.616,
+  "03_yuki_roof": 16.331,
+  "04_mochi_climb": 5.21,
+  "05_yuki_leaves": 7.201,
+  "06_mochi_gate": 4.231,
+  "07_yuki_sea": 5.256,
+  "08_mochi_logic": 4.592,
+  "09_yuki_belt": 5.037,
+  "10_mochi_ship": 5.963,
+  "11_yuki_usb": 4.18,
+  "12_mochi_phone": 6.512,
+  "13_yuki_toilet": 3.967,
+  "14_mochi_paw": 5.375,
+  "15_yuki_numbers": 6.817,
+  "16_mochi_shop": 4.072,
+  "17_yuki_retort": 2.187,
+  "18_mochi_life": 3.682,
+  "09_mochi_gtc": 3.31,
+  "10_yuki_gtc": 5.98,
+  "11_mochi_cold": 3.843,
+  "19_pa_welcome": 5.231
+ },
+ "bgm": {
+  "source": "Seed-Audio 1.0（seedaudio_gen.py，器乐 prompt，无歌声）",
+  "src_duration_s": 112.0,
+  "bgm_rms_db_vs_voice": -18.3,
+  "duck_max_db": -7.0,
+  "pa_dip": 0.7
+ },
+ "note": "PA 低通2600+高通300+aecho；底噪为程序化棕噪（无外部素材）"
+}

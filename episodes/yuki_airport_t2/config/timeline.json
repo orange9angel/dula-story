@@ -1,0 +1,4720 @@
+{
+ "duration": 123.633,
+ "step": 0.01,
+ "segments": [
+  {
+   "id": "establish",
+   "entry": 1,
+   "kind": "action",
+   "character": null,
+   "start": 0.0,
+   "end": 1.5,
+   "move": "establish",
+   "shot": "establish"
+  },
+  {
+   "id": "01_yuki_open",
+   "entry": 2,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 1.54,
+   "end": 7.2,
+   "move": "guide_wave",
+   "shot": "wide"
+  },
+  {
+   "id": "02_mochi_fee",
+   "entry": 3,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 7.24,
+   "end": 11.906,
+   "move": "beg",
+   "shot": "cat"
+  },
+  {
+   "id": "03_yuki_roof",
+   "entry": 4,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 11.946,
+   "end": 28.327,
+   "move": "point_up",
+   "shot": "roof"
+  },
+  {
+   "id": "04_mochi_climb",
+   "entry": 5,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 28.367,
+   "end": 33.627,
+   "move": "cat_climb",
+   "shot": "cat"
+  },
+  {
+   "id": "05_yuki_leaves",
+   "entry": 6,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 33.667,
+   "end": 40.918,
+   "move": "point_up2",
+   "shot": "ceiling"
+  },
+  {
+   "id": "06_mochi_gate",
+   "entry": 7,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 40.958,
+   "end": 45.239,
+   "move": "cat_kiosk",
+   "shot": "cat"
+  },
+  {
+   "id": "07_yuki_sea",
+   "entry": 8,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 45.279,
+   "end": 50.585,
+   "move": "sea_point",
+   "shot": "sea"
+  },
+  {
+   "id": "08_mochi_logic",
+   "entry": 9,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 50.625,
+   "end": 55.267,
+   "move": "sea_listen",
+   "shot": "sea"
+  },
+  {
+   "id": "09_mochi_gtc",
+   "entry": 10,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 55.307,
+   "end": 58.667,
+   "move": "gtc_ask",
+   "shot": "gtc"
+  },
+  {
+   "id": "10_yuki_gtc",
+   "entry": 11,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 58.707,
+   "end": 64.737,
+   "move": "gtc_tell",
+   "shot": "gtc"
+  },
+  {
+   "id": "11_mochi_cold",
+   "entry": 12,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 64.777,
+   "end": 68.67,
+   "move": "gtc_punch",
+   "shot": "gtc"
+  },
+  {
+   "id": "09_yuki_belt",
+   "entry": 13,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 68.71,
+   "end": 73.797,
+   "move": "checkin_push",
+   "shot": "checkin"
+  },
+  {
+   "id": "10_mochi_ship",
+   "entry": 14,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 73.837,
+   "end": 79.85,
+   "move": "checkin_idle",
+   "shot": "checkin"
+  },
+  {
+   "id": "11_yuki_usb",
+   "entry": 15,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 79.89,
+   "end": 84.12,
+   "move": "seat_usb",
+   "shot": "seat"
+  },
+  {
+   "id": "12_mochi_phone",
+   "entry": 16,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 84.16,
+   "end": 90.722,
+   "move": "seat_talk",
+   "shot": "seat"
+  },
+  {
+   "id": "13_yuki_toilet",
+   "entry": 17,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 90.762,
+   "end": 94.779,
+   "move": "explain",
+   "shot": "restroom"
+  },
+  {
+   "id": "14_mochi_paw",
+   "entry": 18,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 94.819,
+   "end": 100.244,
+   "move": "press_watch",
+   "shot": "pad"
+  },
+  {
+   "id": "15_yuki_numbers",
+   "entry": 19,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 100.284,
+   "end": 107.151,
+   "move": "finale_proud",
+   "shot": "wide"
+  },
+  {
+   "id": "16_mochi_shop",
+   "entry": 20,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 107.191,
+   "end": 111.313,
+   "move": "peek",
+   "shot": "cat"
+  },
+  {
+   "id": "17_yuki_retort",
+   "entry": 21,
+   "kind": "dialogue",
+   "character": "Yuki",
+   "start": 111.353,
+   "end": 113.59,
+   "move": "speechless",
+   "shot": "yuki"
+  },
+  {
+   "id": "18_mochi_life",
+   "entry": 22,
+   "kind": "dialogue",
+   "character": "Mochi",
+   "start": 113.63,
+   "end": 117.362,
+   "move": "smug",
+   "shot": "cat"
+  },
+  {
+   "id": "19_pa_welcome",
+   "entry": 23,
+   "kind": "voiceover",
+   "character": "PA",
+   "start": 117.402,
+   "end": 123.633,
+   "move": "outro",
+   "shot": "pullback"
+  }
+ ],
+ "dialogue": [
+  {
+   "id": "01_yuki_open",
+   "character": "Yuki",
+   "text": "哈喽哈喽小雪的游记频道开播啦今天带你们逛福州长乐机场T2航站楼",
+   "display": "哈喽哈喽！小雪的游记频道开播啦——今天带你们逛福州长乐机场 T2 航站楼！",
+   "start": 1.54,
+   "end": 7.2,
+   "chars": [
+    {
+     "ch": "哈",
+     "start": 1.54,
+     "end": 1.96,
+     "probability": 0.0886,
+     "initial": "h",
+     "final": "a"
+    },
+    {
+     "ch": "喽",
+     "start": 1.96,
+     "end": 2.04,
+     "probability": 0.6472,
+     "initial": "l",
+     "final": "ou"
+    },
+    {
+     "ch": "哈",
+     "start": 2.04,
+     "end": 2.16,
+     "probability": 0.9673,
+     "initial": "h",
+     "final": "a"
+    },
+    {
+     "ch": "喽",
+     "start": 2.16,
+     "end": 2.4,
+     "probability": 0.9975,
+     "initial": "l",
+     "final": "ou"
+    },
+    {
+     "ch": "小",
+     "start": 2.4,
+     "end": 2.56,
+     "probability": 0.2701,
+     "initial": "x",
+     "final": "iao"
+    },
+    {
+     "ch": "雪",
+     "start": 2.56,
+     "end": 2.72,
+     "probability": 0.9868,
+     "initial": "x",
+     "final": "ue"
+    },
+    {
+     "ch": "的",
+     "start": 2.72,
+     "end": 2.82,
+     "probability": 0.9844,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "游",
+     "start": 2.82,
+     "end": 2.96,
+     "probability": 0.981,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "记",
+     "start": 2.96,
+     "end": 3.08,
+     "probability": 0.3266,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "频",
+     "start": 3.08,
+     "end": 3.2,
+     "probability": 0.9892,
+     "initial": "p",
+     "final": "in"
+    },
+    {
+     "ch": "道",
+     "start": 3.2,
+     "end": 3.34,
+     "probability": 0.9987,
+     "initial": "d",
+     "final": "ao"
+    },
+    {
+     "ch": "开",
+     "start": 3.34,
+     "end": 3.5,
+     "probability": 0.9787,
+     "initial": "k",
+     "final": "ai"
+    },
+    {
+     "ch": "播",
+     "start": 3.5,
+     "end": 3.64,
+     "probability": 0.8917,
+     "initial": "b",
+     "final": "o"
+    },
+    {
+     "ch": "啦",
+     "start": 3.64,
+     "end": 3.86,
+     "probability": 0.8907,
+     "initial": "l",
+     "final": "a"
+    },
+    {
+     "ch": "今",
+     "start": 3.86,
+     "end": 4.16,
+     "probability": 0.0003,
+     "initial": "j",
+     "final": "in"
+    },
+    {
+     "ch": "天",
+     "start": 4.16,
+     "end": 4.3,
+     "probability": 0.2984,
+     "initial": "t",
+     "final": "ian"
+    },
+    {
+     "ch": "带",
+     "start": 4.3,
+     "end": 4.4,
+     "probability": 0.9934,
+     "initial": "d",
+     "final": "ai"
+    },
+    {
+     "ch": "你",
+     "start": 4.4,
+     "end": 4.52,
+     "probability": 0.0119,
+     "initial": "n",
+     "final": "i"
+    },
+    {
+     "ch": "们",
+     "start": 4.52,
+     "end": 4.64,
+     "probability": 0.0045,
+     "initial": "m",
+     "final": "en"
+    },
+    {
+     "ch": "逛",
+     "start": 4.64,
+     "end": 4.78,
+     "probability": 0.9977,
+     "initial": "g",
+     "final": "uang"
+    },
+    {
+     "ch": "福",
+     "start": 4.78,
+     "end": 5.04,
+     "probability": 0.9794,
+     "initial": "f",
+     "final": "u"
+    },
+    {
+     "ch": "州",
+     "start": 5.04,
+     "end": 5.24,
+     "probability": 0.9948,
+     "initial": "zh",
+     "final": "ou"
+    },
+    {
+     "ch": "长",
+     "start": 5.24,
+     "end": 5.44,
+     "probability": 0.8095,
+     "initial": "zh",
+     "final": "ang"
+    },
+    {
+     "ch": "乐",
+     "start": 5.44,
+     "end": 5.58,
+     "probability": 0.9523,
+     "initial": "l",
+     "final": "e"
+    },
+    {
+     "ch": "机",
+     "start": 5.58,
+     "end": 5.72,
+     "probability": 0.9706,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "场",
+     "start": 5.72,
+     "end": 5.94,
+     "probability": 0.991,
+     "initial": "ch",
+     "final": "ang"
+    },
+    {
+     "ch": "T",
+     "start": 5.94,
+     "end": 6.14,
+     "probability": 0.5631
+    },
+    {
+     "ch": "2",
+     "start": 6.14,
+     "end": 6.28,
+     "probability": 0.9441
+    },
+    {
+     "ch": "航",
+     "start": 6.28,
+     "end": 6.42,
+     "probability": 0.9785,
+     "initial": "h",
+     "final": "ang"
+    },
+    {
+     "ch": "站",
+     "start": 6.42,
+     "end": 6.58,
+     "probability": 0.919,
+     "initial": "zh",
+     "final": "an"
+    },
+    {
+     "ch": "楼",
+     "start": 6.58,
+     "end": 6.78,
+     "probability": 0.5439,
+     "initial": "l",
+     "final": "ou"
+    }
+   ]
+  },
+  {
+   "id": "02_mochi_fee",
+   "character": "Mochi",
+   "text": "纠正一下是我们朕的出场费结一下",
+   "display": "纠正一下，是我们。朕的出场费结一下。",
+   "start": 7.24,
+   "end": 11.906,
+   "chars": [
+    {
+     "ch": "纠",
+     "start": 7.24,
+     "end": 7.78,
+     "probability": 0.6315,
+     "initial": "j",
+     "final": "iu"
+    },
+    {
+     "ch": "正",
+     "start": 7.78,
+     "end": 8.0,
+     "probability": 0.9692,
+     "initial": "zh",
+     "final": "eng"
+    },
+    {
+     "ch": "一",
+     "start": 8.0,
+     "end": 8.22,
+     "probability": 0.0011,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "下",
+     "start": 8.22,
+     "end": 8.46,
+     "probability": 0.3144,
+     "initial": "x",
+     "final": "ia"
+    },
+    {
+     "ch": "是",
+     "start": 8.46,
+     "end": 8.92,
+     "probability": 0.5102,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "我",
+     "start": 8.92,
+     "end": 9.12,
+     "probability": 0.0006,
+     "initial": "w",
+     "final": "o"
+    },
+    {
+     "ch": "们",
+     "start": 9.12,
+     "end": 9.34,
+     "probability": 0.503,
+     "initial": "m",
+     "final": "en"
+    },
+    {
+     "ch": "朕",
+     "start": 9.34,
+     "end": 9.64,
+     "probability": 0.5728,
+     "initial": "zh",
+     "final": "en"
+    },
+    {
+     "ch": "的",
+     "start": 9.64,
+     "end": 9.8,
+     "probability": 0.9936,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "出",
+     "start": 9.8,
+     "end": 10.0,
+     "probability": 0.9824,
+     "initial": "ch",
+     "final": "u"
+    },
+    {
+     "ch": "场",
+     "start": 10.0,
+     "end": 10.24,
+     "probability": 0.6491,
+     "initial": "ch",
+     "final": "ang"
+    },
+    {
+     "ch": "费",
+     "start": 10.24,
+     "end": 10.6,
+     "probability": 0.9864,
+     "initial": "f",
+     "final": "ei"
+    },
+    {
+     "ch": "结",
+     "start": 10.6,
+     "end": 10.9,
+     "probability": 0.0678,
+     "initial": "j",
+     "final": "ie"
+    },
+    {
+     "ch": "一",
+     "start": 10.9,
+     "end": 11.16,
+     "probability": 0.1121,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "下",
+     "start": 11.16,
+     "end": 11.38,
+     "probability": 0.9111,
+     "initial": "x",
+     "final": "ia"
+    }
+   ]
+  },
+  {
+   "id": "03_yuki_roof",
+   "character": "Yuki",
+   "text": "你看这个屋顶一道一道的弧线叫马鞍墙是福州古厝的经典造型T2的设计来头可不小当年国际竞赛的第一名是设计了新加坡樟宜机场的CPG和中国建筑设计研究院的联合体落地深化由北京建院完成",
+   "display": "你看这个屋顶，一道一道的弧线叫马鞍墙，是福州古厝的经典造型。T2 的设计来头可不小——当年国际竞赛的第一名，是设计了新加坡樟宜机场的 CPG 和中国建筑设计研究院的联合体，落地深化由北京建院完成！",
+   "start": 11.946,
+   "end": 28.327,
+   "chars": [
+    {
+     "ch": "你",
+     "start": 11.946,
+     "end": 12.366,
+     "probability": 0.004,
+     "initial": "n",
+     "final": "i"
+    },
+    {
+     "ch": "看",
+     "start": 12.366,
+     "end": 12.526,
+     "probability": 0.8039,
+     "initial": "k",
+     "final": "an"
+    },
+    {
+     "ch": "这",
+     "start": 12.526,
+     "end": 12.706,
+     "probability": 0.0015,
+     "initial": "zh",
+     "final": "e"
+    },
+    {
+     "ch": "个",
+     "start": 12.706,
+     "end": 12.806,
+     "probability": 0.0496,
+     "initial": "g",
+     "final": "e"
+    },
+    {
+     "ch": "屋",
+     "start": 12.806,
+     "end": 12.926,
+     "probability": 0.9976,
+     "initial": "w",
+     "final": "u"
+    },
+    {
+     "ch": "顶",
+     "start": 12.926,
+     "end": 13.146,
+     "probability": 0.9959,
+     "initial": "d",
+     "final": "ing"
+    },
+    {
+     "ch": "一",
+     "start": 13.146,
+     "end": 13.326,
+     "probability": 0.9652,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "道",
+     "start": 13.326,
+     "end": 13.466,
+     "probability": 0.9759,
+     "initial": "d",
+     "final": "ao"
+    },
+    {
+     "ch": "一",
+     "start": 13.466,
+     "end": 13.586,
+     "probability": 0.9939,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "道",
+     "start": 13.586,
+     "end": 13.746,
+     "probability": 0.9994,
+     "initial": "d",
+     "final": "ao"
+    },
+    {
+     "ch": "的",
+     "start": 13.746,
+     "end": 13.846,
+     "probability": 0.9831,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "弧",
+     "start": 13.846,
+     "end": 14.006,
+     "probability": 0.5449,
+     "initial": "h",
+     "final": "u"
+    },
+    {
+     "ch": "线",
+     "start": 14.006,
+     "end": 14.266,
+     "probability": 0.9787,
+     "initial": "x",
+     "final": "ian"
+    },
+    {
+     "ch": "叫",
+     "start": 14.266,
+     "end": 14.506,
+     "probability": 0.9355,
+     "initial": "j",
+     "final": "iao"
+    },
+    {
+     "ch": "马",
+     "start": 14.506,
+     "end": 14.706,
+     "probability": 0.7691,
+     "initial": "m",
+     "final": "a"
+    },
+    {
+     "ch": "鞍",
+     "start": 14.706,
+     "end": 14.866,
+     "probability": 0.7863,
+     "initial": "",
+     "final": "an"
+    },
+    {
+     "ch": "墙",
+     "start": 14.866,
+     "end": 15.106,
+     "probability": 0.963,
+     "initial": "q",
+     "final": "iang"
+    },
+    {
+     "ch": "是",
+     "start": 15.106,
+     "end": 15.446,
+     "probability": 0.7377,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "福",
+     "start": 15.446,
+     "end": 15.606,
+     "probability": 0.8668,
+     "initial": "f",
+     "final": "u"
+    },
+    {
+     "ch": "州",
+     "start": 15.606,
+     "end": 15.766,
+     "probability": 0.9892,
+     "initial": "zh",
+     "final": "ou"
+    },
+    {
+     "ch": "古",
+     "start": 15.766,
+     "end": 15.926,
+     "probability": 0.325,
+     "initial": "g",
+     "final": "u"
+    },
+    {
+     "ch": "厝",
+     "start": 15.926,
+     "end": 16.106,
+     "probability": 0.1602,
+     "initial": "c",
+     "final": "uo"
+    },
+    {
+     "ch": "的",
+     "start": 16.106,
+     "end": 16.246,
+     "probability": 0.9972,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "经",
+     "start": 16.246,
+     "end": 16.406,
+     "probability": 0.9812,
+     "initial": "j",
+     "final": "ing"
+    },
+    {
+     "ch": "典",
+     "start": 16.406,
+     "end": 16.586,
+     "probability": 0.999,
+     "initial": "d",
+     "final": "ian"
+    },
+    {
+     "ch": "造",
+     "start": 16.586,
+     "end": 16.746,
+     "probability": 0.9943,
+     "initial": "z",
+     "final": "ao"
+    },
+    {
+     "ch": "型",
+     "start": 16.746,
+     "end": 17.026,
+     "probability": 0.989,
+     "initial": "x",
+     "final": "ing"
+    },
+    {
+     "ch": "T",
+     "start": 17.026,
+     "end": 17.686,
+     "probability": 0.6575
+    },
+    {
+     "ch": "2",
+     "start": 17.686,
+     "end": 17.846,
+     "probability": 0.7922
+    },
+    {
+     "ch": "的",
+     "start": 17.846,
+     "end": 17.966,
+     "probability": 0.9587,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "设",
+     "start": 17.966,
+     "end": 18.126,
+     "probability": 0.9981,
+     "initial": "sh",
+     "final": "e"
+    },
+    {
+     "ch": "计",
+     "start": 18.126,
+     "end": 18.286,
+     "probability": 0.9996,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "来",
+     "start": 18.286,
+     "end": 18.406,
+     "probability": 0.9907,
+     "initial": "l",
+     "final": "ai"
+    },
+    {
+     "ch": "头",
+     "start": 18.406,
+     "end": 18.566,
+     "probability": 0.9841,
+     "initial": "t",
+     "final": "ou"
+    },
+    {
+     "ch": "可",
+     "start": 18.566,
+     "end": 18.686,
+     "probability": 0.9987,
+     "initial": "k",
+     "final": "e"
+    },
+    {
+     "ch": "不",
+     "start": 18.686,
+     "end": 18.846,
+     "probability": 0.9981,
+     "initial": "b",
+     "final": "u"
+    },
+    {
+     "ch": "小",
+     "start": 18.846,
+     "end": 19.046,
+     "probability": 0.984,
+     "initial": "x",
+     "final": "iao"
+    },
+    {
+     "ch": "当",
+     "start": 19.046,
+     "end": 19.306,
+     "probability": 0.8277,
+     "initial": "d",
+     "final": "ang"
+    },
+    {
+     "ch": "年",
+     "start": 19.306,
+     "end": 19.486,
+     "probability": 0.9974,
+     "initial": "n",
+     "final": "ian"
+    },
+    {
+     "ch": "国",
+     "start": 19.486,
+     "end": 19.686,
+     "probability": 0.9518,
+     "initial": "g",
+     "final": "uo"
+    },
+    {
+     "ch": "际",
+     "start": 19.686,
+     "end": 19.846,
+     "probability": 0.9992,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "竞",
+     "start": 19.846,
+     "end": 19.966,
+     "probability": 0.9923,
+     "initial": "j",
+     "final": "ing"
+    },
+    {
+     "ch": "赛",
+     "start": 19.966,
+     "end": 20.146,
+     "probability": 0.9993,
+     "initial": "s",
+     "final": "ai"
+    },
+    {
+     "ch": "的",
+     "start": 20.146,
+     "end": 20.226,
+     "probability": 0.9653,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "第",
+     "start": 20.226,
+     "end": 20.386,
+     "probability": 0.0109,
+     "initial": "d",
+     "final": "i"
+    },
+    {
+     "ch": "一",
+     "start": 20.386,
+     "end": 20.506,
+     "probability": 0.0211,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "名",
+     "start": 20.506,
+     "end": 20.646,
+     "probability": 0.9988,
+     "initial": "m",
+     "final": "ing"
+    },
+    {
+     "ch": "是",
+     "start": 20.646,
+     "end": 20.906,
+     "probability": 0.9867,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "设",
+     "start": 20.906,
+     "end": 21.066,
+     "probability": 0.9874,
+     "initial": "sh",
+     "final": "e"
+    },
+    {
+     "ch": "计",
+     "start": 21.066,
+     "end": 21.246,
+     "probability": 0.9999,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "了",
+     "start": 21.246,
+     "end": 21.366,
+     "probability": 0.9972,
+     "initial": "l",
+     "final": "e"
+    },
+    {
+     "ch": "新",
+     "start": 21.366,
+     "end": 21.546,
+     "probability": 0.9988,
+     "initial": "x",
+     "final": "in"
+    },
+    {
+     "ch": "加",
+     "start": 21.546,
+     "end": 21.706,
+     "probability": 0.9982,
+     "initial": "j",
+     "final": "ia"
+    },
+    {
+     "ch": "坡",
+     "start": 21.706,
+     "end": 21.906,
+     "probability": 0.9987,
+     "initial": "p",
+     "final": "o"
+    },
+    {
+     "ch": "樟",
+     "start": 21.906,
+     "end": 22.106,
+     "probability": 0.3803,
+     "initial": "zh",
+     "final": "ang"
+    },
+    {
+     "ch": "宜",
+     "start": 22.106,
+     "end": 22.226,
+     "probability": 0.5521,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "机",
+     "start": 22.226,
+     "end": 22.366,
+     "probability": 0.9447,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "场",
+     "start": 22.366,
+     "end": 22.566,
+     "probability": 0.9858,
+     "initial": "ch",
+     "final": "ang"
+    },
+    {
+     "ch": "的",
+     "start": 22.566,
+     "end": 22.746,
+     "probability": 0.9889,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "C",
+     "start": 22.746,
+     "end": 22.926,
+     "probability": 0.0886
+    },
+    {
+     "ch": "P",
+     "start": 22.926,
+     "end": 23.066,
+     "probability": 0.443
+    },
+    {
+     "ch": "G",
+     "start": 23.066,
+     "end": 23.346,
+     "probability": 0.9907
+    },
+    {
+     "ch": "和",
+     "start": 23.346,
+     "end": 23.706,
+     "probability": 0.9759,
+     "initial": "h",
+     "final": "e"
+    },
+    {
+     "ch": "中",
+     "start": 23.706,
+     "end": 23.886,
+     "probability": 0.0134,
+     "initial": "zh",
+     "final": "ong"
+    },
+    {
+     "ch": "国",
+     "start": 23.886,
+     "end": 24.066,
+     "probability": 0.9046,
+     "initial": "g",
+     "final": "uo"
+    },
+    {
+     "ch": "建",
+     "start": 24.066,
+     "end": 24.186,
+     "probability": 0.9936,
+     "initial": "j",
+     "final": "ian"
+    },
+    {
+     "ch": "筑",
+     "start": 24.186,
+     "end": 24.326,
+     "probability": 0.9968,
+     "initial": "zh",
+     "final": "u"
+    },
+    {
+     "ch": "设",
+     "start": 24.326,
+     "end": 24.466,
+     "probability": 0.9985,
+     "initial": "sh",
+     "final": "e"
+    },
+    {
+     "ch": "计",
+     "start": 24.466,
+     "end": 24.606,
+     "probability": 0.9998,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "研",
+     "start": 24.606,
+     "end": 24.726,
+     "probability": 0.9978,
+     "initial": "y",
+     "final": "an"
+    },
+    {
+     "ch": "究",
+     "start": 24.726,
+     "end": 24.866,
+     "probability": 0.9997,
+     "initial": "j",
+     "final": "iu"
+    },
+    {
+     "ch": "院",
+     "start": 24.866,
+     "end": 25.046,
+     "probability": 0.9973,
+     "initial": "y",
+     "final": "uan"
+    },
+    {
+     "ch": "的",
+     "start": 25.046,
+     "end": 25.206,
+     "probability": 0.996,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "联",
+     "start": 25.206,
+     "end": 25.366,
+     "probability": 0.9872,
+     "initial": "l",
+     "final": "ian"
+    },
+    {
+     "ch": "合",
+     "start": 25.366,
+     "end": 25.526,
+     "probability": 0.9989,
+     "initial": "h",
+     "final": "e"
+    },
+    {
+     "ch": "体",
+     "start": 25.526,
+     "end": 25.686,
+     "probability": 0.9969,
+     "initial": "t",
+     "final": "i"
+    },
+    {
+     "ch": "落",
+     "start": 25.686,
+     "end": 25.826,
+     "probability": 0.9787,
+     "initial": "l",
+     "final": "uo"
+    },
+    {
+     "ch": "地",
+     "start": 25.826,
+     "end": 25.966,
+     "probability": 0.9986,
+     "initial": "d",
+     "final": "i"
+    },
+    {
+     "ch": "深",
+     "start": 25.966,
+     "end": 26.146,
+     "probability": 0.0362,
+     "initial": "sh",
+     "final": "en"
+    },
+    {
+     "ch": "化",
+     "start": 26.146,
+     "end": 26.386,
+     "probability": 0.9847,
+     "initial": "h",
+     "final": "ua"
+    },
+    {
+     "ch": "由",
+     "start": 26.386,
+     "end": 26.786,
+     "probability": 0.8588,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "北",
+     "start": 26.786,
+     "end": 26.986,
+     "probability": 0.9949,
+     "initial": "b",
+     "final": "ei"
+    },
+    {
+     "ch": "京",
+     "start": 26.986,
+     "end": 27.166,
+     "probability": 0.9995,
+     "initial": "j",
+     "final": "ing"
+    },
+    {
+     "ch": "建",
+     "start": 27.166,
+     "end": 27.326,
+     "probability": 0.9679,
+     "initial": "j",
+     "final": "ian"
+    },
+    {
+     "ch": "院",
+     "start": 27.326,
+     "end": 27.446,
+     "probability": 0.973,
+     "initial": "y",
+     "final": "uan"
+    },
+    {
+     "ch": "完",
+     "start": 27.446,
+     "end": 27.586,
+     "probability": 0.0003,
+     "initial": "w",
+     "final": "an"
+    },
+    {
+     "ch": "成",
+     "start": 27.586,
+     "end": 27.806,
+     "probability": 0.4964,
+     "initial": "ch",
+     "final": "eng"
+    }
+   ]
+  },
+  {
+   "id": "04_mochi_climb",
+   "character": "Mochi",
+   "text": "翻译一下超大号猫爬架而且不让爬",
+   "display": "翻译一下：超大号猫爬架，而且不让爬。",
+   "start": 28.367,
+   "end": 33.627,
+   "chars": [
+    {
+     "ch": "翻",
+     "start": 28.367,
+     "end": 28.967,
+     "probability": 0.9769,
+     "initial": "f",
+     "final": "an"
+    },
+    {
+     "ch": "译",
+     "start": 28.967,
+     "end": 29.167,
+     "probability": 0.8866,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "一",
+     "start": 29.167,
+     "end": 29.327,
+     "probability": 0.0004,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "下",
+     "start": 29.327,
+     "end": 29.587,
+     "probability": 0.6853,
+     "initial": "x",
+     "final": "ia"
+    },
+    {
+     "ch": "超",
+     "start": 29.587,
+     "end": 30.127,
+     "probability": 0.6388,
+     "initial": "ch",
+     "final": "ao"
+    },
+    {
+     "ch": "大",
+     "start": 30.127,
+     "end": 30.467,
+     "probability": 0.993,
+     "initial": "d",
+     "final": "a"
+    },
+    {
+     "ch": "号",
+     "start": 30.467,
+     "end": 30.707,
+     "probability": 0.2846,
+     "initial": "h",
+     "final": "ao"
+    },
+    {
+     "ch": "猫",
+     "start": 30.707,
+     "end": 30.927,
+     "probability": 0.8598,
+     "initial": "m",
+     "final": "ao"
+    },
+    {
+     "ch": "爬",
+     "start": 30.927,
+     "end": 31.287,
+     "probability": 0.9622,
+     "initial": "p",
+     "final": "a"
+    },
+    {
+     "ch": "架",
+     "start": 31.287,
+     "end": 31.787,
+     "probability": 0.7415,
+     "initial": "j",
+     "final": "ia"
+    },
+    {
+     "ch": "而",
+     "start": 31.787,
+     "end": 31.987,
+     "probability": 0.0079,
+     "initial": "",
+     "final": "er"
+    },
+    {
+     "ch": "且",
+     "start": 31.987,
+     "end": 32.247,
+     "probability": 0.9559,
+     "initial": "q",
+     "final": "ie"
+    },
+    {
+     "ch": "不",
+     "start": 32.247,
+     "end": 32.487,
+     "probability": 0.9939,
+     "initial": "b",
+     "final": "u"
+    },
+    {
+     "ch": "让",
+     "start": 32.487,
+     "end": 32.667,
+     "probability": 0.9955,
+     "initial": "r",
+     "final": "ang"
+    },
+    {
+     "ch": "爬",
+     "start": 32.667,
+     "end": 33.047,
+     "probability": 0.998,
+     "initial": "p",
+     "final": "a"
+    }
+   ]
+  },
+  {
+   "id": "05_yuki_leaves",
+   "character": "Yuki",
+   "text": "抬头看天花板上这些树叶一样的大屏幕在循环放福州的宣传片茉莉花都开到天上去啦",
+   "display": "抬头看！天花板上这些树叶一样的大屏幕，在循环放福州的宣传片——茉莉花都开到天上去啦！",
+   "start": 33.667,
+   "end": 40.918,
+   "chars": [
+    {
+     "ch": "抬",
+     "start": 33.667,
+     "end": 34.207,
+     "probability": 0.9348,
+     "initial": "t",
+     "final": "ai"
+    },
+    {
+     "ch": "头",
+     "start": 34.207,
+     "end": 34.407,
+     "probability": 0.8083,
+     "initial": "t",
+     "final": "ou"
+    },
+    {
+     "ch": "看",
+     "start": 34.407,
+     "end": 34.567,
+     "probability": 0.9968,
+     "initial": "k",
+     "final": "an"
+    },
+    {
+     "ch": "天",
+     "start": 34.567,
+     "end": 34.747,
+     "probability": 0.9618,
+     "initial": "t",
+     "final": "ian"
+    },
+    {
+     "ch": "花",
+     "start": 34.747,
+     "end": 34.887,
+     "probability": 0.9964,
+     "initial": "h",
+     "final": "ua"
+    },
+    {
+     "ch": "板",
+     "start": 34.887,
+     "end": 35.047,
+     "probability": 0.9898,
+     "initial": "b",
+     "final": "an"
+    },
+    {
+     "ch": "上",
+     "start": 35.047,
+     "end": 35.227,
+     "probability": 0.995,
+     "initial": "sh",
+     "final": "ang"
+    },
+    {
+     "ch": "这",
+     "start": 35.227,
+     "end": 35.387,
+     "probability": 0.9733,
+     "initial": "zh",
+     "final": "e"
+    },
+    {
+     "ch": "些",
+     "start": 35.387,
+     "end": 35.527,
+     "probability": 0.9988,
+     "initial": "x",
+     "final": "ie"
+    },
+    {
+     "ch": "树",
+     "start": 35.527,
+     "end": 35.727,
+     "probability": 0.8777,
+     "initial": "sh",
+     "final": "u"
+    },
+    {
+     "ch": "叶",
+     "start": 35.727,
+     "end": 35.887,
+     "probability": 0.9943,
+     "initial": "y",
+     "final": "e"
+    },
+    {
+     "ch": "一",
+     "start": 35.887,
+     "end": 36.027,
+     "probability": 0.9935,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "样",
+     "start": 36.027,
+     "end": 36.107,
+     "probability": 0.9992,
+     "initial": "y",
+     "final": "ang"
+    },
+    {
+     "ch": "的",
+     "start": 36.107,
+     "end": 36.187,
+     "probability": 0.993,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "大",
+     "start": 36.187,
+     "end": 36.327,
+     "probability": 0.9976,
+     "initial": "d",
+     "final": "a"
+    },
+    {
+     "ch": "屏",
+     "start": 36.327,
+     "end": 36.507,
+     "probability": 0.9969,
+     "initial": "p",
+     "final": "ing"
+    },
+    {
+     "ch": "幕",
+     "start": 36.507,
+     "end": 36.707,
+     "probability": 0.9998,
+     "initial": "m",
+     "final": "u"
+    },
+    {
+     "ch": "在",
+     "start": 36.707,
+     "end": 37.067,
+     "probability": 0.7029,
+     "initial": "z",
+     "final": "ai"
+    },
+    {
+     "ch": "循",
+     "start": 37.067,
+     "end": 37.267,
+     "probability": 0.8522,
+     "initial": "x",
+     "final": "un"
+    },
+    {
+     "ch": "环",
+     "start": 37.267,
+     "end": 37.467,
+     "probability": 0.9942,
+     "initial": "h",
+     "final": "uan"
+    },
+    {
+     "ch": "放",
+     "start": 37.467,
+     "end": 37.607,
+     "probability": 0.9877,
+     "initial": "f",
+     "final": "ang"
+    },
+    {
+     "ch": "福",
+     "start": 37.607,
+     "end": 37.807,
+     "probability": 0.8128,
+     "initial": "f",
+     "final": "u"
+    },
+    {
+     "ch": "州",
+     "start": 37.807,
+     "end": 37.947,
+     "probability": 0.9517,
+     "initial": "zh",
+     "final": "ou"
+    },
+    {
+     "ch": "的",
+     "start": 37.947,
+     "end": 38.047,
+     "probability": 0.997,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "宣",
+     "start": 38.047,
+     "end": 38.187,
+     "probability": 0.9935,
+     "initial": "x",
+     "final": "uan"
+    },
+    {
+     "ch": "传",
+     "start": 38.187,
+     "end": 38.367,
+     "probability": 0.9999,
+     "initial": "ch",
+     "final": "uan"
+    },
+    {
+     "ch": "片",
+     "start": 38.367,
+     "end": 38.547,
+     "probability": 0.9981,
+     "initial": "p",
+     "final": "ian"
+    },
+    {
+     "ch": "茉",
+     "start": 38.547,
+     "end": 38.927,
+     "probability": 0.4879,
+     "initial": "m",
+     "final": "o"
+    },
+    {
+     "ch": "莉",
+     "start": 38.927,
+     "end": 39.087,
+     "probability": 0.938,
+     "initial": "l",
+     "final": "i"
+    },
+    {
+     "ch": "花",
+     "start": 39.087,
+     "end": 39.267,
+     "probability": 0.9974,
+     "initial": "h",
+     "final": "ua"
+    },
+    {
+     "ch": "都",
+     "start": 39.267,
+     "end": 39.607,
+     "probability": 0.9411,
+     "initial": "d",
+     "final": "ou"
+    },
+    {
+     "ch": "开",
+     "start": 39.607,
+     "end": 39.767,
+     "probability": 0.9943,
+     "initial": "k",
+     "final": "ai"
+    },
+    {
+     "ch": "到",
+     "start": 39.767,
+     "end": 39.927,
+     "probability": 0.9774,
+     "initial": "d",
+     "final": "ao"
+    },
+    {
+     "ch": "天",
+     "start": 39.927,
+     "end": 40.127,
+     "probability": 0.9971,
+     "initial": "t",
+     "final": "ian"
+    },
+    {
+     "ch": "上",
+     "start": 40.127,
+     "end": 40.307,
+     "probability": 0.9981,
+     "initial": "sh",
+     "final": "ang"
+    },
+    {
+     "ch": "去",
+     "start": 40.307,
+     "end": 40.447,
+     "probability": 0.0046,
+     "initial": "q",
+     "final": "u"
+    },
+    {
+     "ch": "啦",
+     "start": 40.447,
+     "end": 40.567,
+     "probability": 0.6067,
+     "initial": "l",
+     "final": "a"
+    }
+   ]
+  },
+  {
+   "id": "06_mochi_gate",
+   "character": "Mochi",
+   "text": "等它开始播小鱼干广告朕再抬头",
+   "display": "等它开始播小鱼干广告，朕再抬头。",
+   "start": 40.958,
+   "end": 45.239,
+   "chars": [
+    {
+     "ch": "等",
+     "start": 40.958,
+     "end": 41.438,
+     "probability": 0.8266,
+     "initial": "d",
+     "final": "eng"
+    },
+    {
+     "ch": "它",
+     "start": 41.438,
+     "end": 41.598,
+     "probability": 0.5181,
+     "initial": "t",
+     "final": "a"
+    },
+    {
+     "ch": "开",
+     "start": 41.598,
+     "end": 41.798,
+     "probability": 0.0005,
+     "initial": "k",
+     "final": "ai"
+    },
+    {
+     "ch": "始",
+     "start": 41.798,
+     "end": 42.058,
+     "probability": 0.0159,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "播",
+     "start": 42.058,
+     "end": 42.318,
+     "probability": 0.8888,
+     "initial": "b",
+     "final": "o"
+    },
+    {
+     "ch": "小",
+     "start": 42.318,
+     "end": 42.618,
+     "probability": 0.9571,
+     "initial": "x",
+     "final": "iao"
+    },
+    {
+     "ch": "鱼",
+     "start": 42.618,
+     "end": 42.778,
+     "probability": 0.8878,
+     "initial": "y",
+     "final": "u"
+    },
+    {
+     "ch": "干",
+     "start": 42.778,
+     "end": 42.938,
+     "probability": 0.1564,
+     "initial": "g",
+     "final": "an"
+    },
+    {
+     "ch": "广",
+     "start": 42.938,
+     "end": 43.158,
+     "probability": 0.992,
+     "initial": "g",
+     "final": "uang"
+    },
+    {
+     "ch": "告",
+     "start": 43.158,
+     "end": 43.478,
+     "probability": 0.9999,
+     "initial": "g",
+     "final": "ao"
+    },
+    {
+     "ch": "朕",
+     "start": 43.478,
+     "end": 44.098,
+     "probability": 0.5,
+     "initial": "zh",
+     "final": "en"
+    },
+    {
+     "ch": "再",
+     "start": 44.098,
+     "end": 44.298,
+     "probability": 0.0235,
+     "initial": "z",
+     "final": "ai"
+    },
+    {
+     "ch": "抬",
+     "start": 44.298,
+     "end": 44.498,
+     "probability": 0.9952,
+     "initial": "t",
+     "final": "ai"
+    },
+    {
+     "ch": "头",
+     "start": 44.498,
+     "end": 44.738,
+     "probability": 0.9916,
+     "initial": "t",
+     "final": "ou"
+    }
+   ]
+  },
+  {
+   "id": "07_yuki_sea",
+   "character": "Yuki",
+   "text": "这边落地窗外面就是大海二十五万五千平方米的航站楼直接建在海边",
+   "display": "这边落地窗外面就是大海！二十五万五千平方米的航站楼，直接建在海边！",
+   "start": 45.279,
+   "end": 50.585,
+   "chars": [
+    {
+     "ch": "这",
+     "start": 45.279,
+     "end": 45.699,
+     "probability": 0.6992,
+     "initial": "zh",
+     "final": "e"
+    },
+    {
+     "ch": "边",
+     "start": 45.699,
+     "end": 45.879,
+     "probability": 0.9945,
+     "initial": "b",
+     "final": "ian"
+    },
+    {
+     "ch": "落",
+     "start": 45.879,
+     "end": 45.999,
+     "probability": 0.9913,
+     "initial": "l",
+     "final": "uo"
+    },
+    {
+     "ch": "地",
+     "start": 45.999,
+     "end": 46.139,
+     "probability": 0.9982,
+     "initial": "d",
+     "final": "i"
+    },
+    {
+     "ch": "窗",
+     "start": 46.139,
+     "end": 46.299,
+     "probability": 0.9896,
+     "initial": "ch",
+     "final": "uang"
+    },
+    {
+     "ch": "外",
+     "start": 46.299,
+     "end": 46.439,
+     "probability": 0.9948,
+     "initial": "w",
+     "final": "ai"
+    },
+    {
+     "ch": "面",
+     "start": 46.439,
+     "end": 46.599,
+     "probability": 0.9928,
+     "initial": "m",
+     "final": "ian"
+    },
+    {
+     "ch": "就",
+     "start": 46.599,
+     "end": 46.699,
+     "probability": 0.0005,
+     "initial": "j",
+     "final": "iu"
+    },
+    {
+     "ch": "是",
+     "start": 46.699,
+     "end": 46.799,
+     "probability": 0.0398,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "大",
+     "start": 46.799,
+     "end": 46.939,
+     "probability": 0.9989,
+     "initial": "d",
+     "final": "a"
+    },
+    {
+     "ch": "海",
+     "start": 46.939,
+     "end": 47.179,
+     "probability": 0.9996,
+     "initial": "h",
+     "final": "ai"
+    },
+    {
+     "ch": "二",
+     "start": 47.179,
+     "end": 47.459,
+     "probability": 0.0033,
+     "initial": "",
+     "final": "er"
+    },
+    {
+     "ch": "十",
+     "start": 47.459,
+     "end": 47.619,
+     "probability": 0.9975,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "五",
+     "start": 47.619,
+     "end": 47.739,
+     "probability": 0.9935,
+     "initial": "w",
+     "final": "u"
+    },
+    {
+     "ch": "万",
+     "start": 47.739,
+     "end": 47.899,
+     "probability": 0.996,
+     "initial": "w",
+     "final": "an"
+    },
+    {
+     "ch": "五",
+     "start": 47.899,
+     "end": 48.039,
+     "probability": 0.9681,
+     "initial": "w",
+     "final": "u"
+    },
+    {
+     "ch": "千",
+     "start": 48.039,
+     "end": 48.239,
+     "probability": 0.9951,
+     "initial": "q",
+     "final": "ian"
+    },
+    {
+     "ch": "平",
+     "start": 48.239,
+     "end": 48.379,
+     "probability": 0.9631,
+     "initial": "p",
+     "final": "ing"
+    },
+    {
+     "ch": "方",
+     "start": 48.379,
+     "end": 48.539,
+     "probability": 0.9931,
+     "initial": "f",
+     "final": "ang"
+    },
+    {
+     "ch": "米",
+     "start": 48.539,
+     "end": 48.699,
+     "probability": 0.9966,
+     "initial": "m",
+     "final": "i"
+    },
+    {
+     "ch": "的",
+     "start": 48.699,
+     "end": 48.779,
+     "probability": 0.9979,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "航",
+     "start": 48.779,
+     "end": 48.919,
+     "probability": 0.9965,
+     "initial": "h",
+     "final": "ang"
+    },
+    {
+     "ch": "站",
+     "start": 48.919,
+     "end": 49.079,
+     "probability": 0.8435,
+     "initial": "zh",
+     "final": "an"
+    },
+    {
+     "ch": "楼",
+     "start": 49.079,
+     "end": 49.299,
+     "probability": 0.9936,
+     "initial": "l",
+     "final": "ou"
+    },
+    {
+     "ch": "直",
+     "start": 49.299,
+     "end": 49.499,
+     "probability": 0.0239,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "接",
+     "start": 49.499,
+     "end": 49.699,
+     "probability": 0.7709,
+     "initial": "j",
+     "final": "ie"
+    },
+    {
+     "ch": "建",
+     "start": 49.699,
+     "end": 49.819,
+     "probability": 0.0934,
+     "initial": "j",
+     "final": "ian"
+    },
+    {
+     "ch": "在",
+     "start": 49.819,
+     "end": 49.959,
+     "probability": 0.9986,
+     "initial": "z",
+     "final": "ai"
+    },
+    {
+     "ch": "海",
+     "start": 49.959,
+     "end": 50.079,
+     "probability": 0.999,
+     "initial": "h",
+     "final": "ai"
+    },
+    {
+     "ch": "边",
+     "start": 50.079,
+     "end": 50.259,
+     "probability": 0.9965,
+     "initial": "b",
+     "final": "ian"
+    }
+   ]
+  },
+  {
+   "id": "08_mochi_logic",
+   "character": "Mochi",
+   "text": "海里有鱼鱼会晒成干逻辑闭环朕悟了",
+   "display": "海里有鱼。鱼会晒成干。逻辑闭环，朕悟了。",
+   "start": 50.625,
+   "end": 55.267,
+   "chars": [
+    {
+     "ch": "海",
+     "start": 50.625,
+     "end": 51.125,
+     "probability": 0.9118,
+     "initial": "h",
+     "final": "ai"
+    },
+    {
+     "ch": "里",
+     "start": 51.125,
+     "end": 51.285,
+     "probability": 0.6054,
+     "initial": "l",
+     "final": "i"
+    },
+    {
+     "ch": "有",
+     "start": 51.285,
+     "end": 51.445,
+     "probability": 0.9877,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "鱼",
+     "start": 51.445,
+     "end": 51.725,
+     "probability": 0.8528,
+     "initial": "y",
+     "final": "u"
+    },
+    {
+     "ch": "鱼",
+     "start": 51.725,
+     "end": 52.045,
+     "probability": 0.7908,
+     "initial": "y",
+     "final": "u"
+    },
+    {
+     "ch": "会",
+     "start": 52.045,
+     "end": 52.165,
+     "probability": 0.9785,
+     "initial": "h",
+     "final": "ui"
+    },
+    {
+     "ch": "晒",
+     "start": 52.165,
+     "end": 52.365,
+     "probability": 0.9847,
+     "initial": "sh",
+     "final": "ai"
+    },
+    {
+     "ch": "成",
+     "start": 52.365,
+     "end": 52.525,
+     "probability": 0.9845,
+     "initial": "ch",
+     "final": "eng"
+    },
+    {
+     "ch": "干",
+     "start": 52.525,
+     "end": 52.765,
+     "probability": 0.4153,
+     "initial": "g",
+     "final": "an"
+    },
+    {
+     "ch": "逻",
+     "start": 52.765,
+     "end": 53.065,
+     "probability": 0.5362,
+     "initial": "l",
+     "final": "uo"
+    },
+    {
+     "ch": "辑",
+     "start": 53.065,
+     "end": 53.345,
+     "probability": 0.0634,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "闭",
+     "start": 53.345,
+     "end": 53.525,
+     "probability": 0.5248,
+     "initial": "b",
+     "final": "i"
+    },
+    {
+     "ch": "环",
+     "start": 53.525,
+     "end": 53.825,
+     "probability": 0.9466,
+     "initial": "h",
+     "final": "uan"
+    },
+    {
+     "ch": "朕",
+     "start": 53.825,
+     "end": 54.085,
+     "probability": 0.4634,
+     "initial": "zh",
+     "final": "en"
+    },
+    {
+     "ch": "悟",
+     "start": 54.085,
+     "end": 54.445,
+     "probability": 0.5761,
+     "initial": "w",
+     "final": "u"
+    },
+    {
+     "ch": "了",
+     "start": 54.445,
+     "end": 54.705,
+     "probability": 0.572,
+     "initial": "l",
+     "final": "e"
+    }
+   ]
+  },
+  {
+   "id": "09_yuki_belt",
+   "character": "Yuki",
+   "text": "值机柜台是零高差的行李箱轻轻一推就滑进去托运不用练举重",
+   "display": "值机柜台是零高差的，行李箱轻轻一推就滑进去，托运不用练举重！",
+   "start": 68.71,
+   "end": 73.797,
+   "chars": [
+    {
+     "ch": "值",
+     "start": 68.71,
+     "end": 69.13,
+     "probability": 0.0007,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "机",
+     "start": 69.13,
+     "end": 69.29,
+     "probability": 0.0135,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "柜",
+     "start": 69.29,
+     "end": 69.43,
+     "probability": 0.8626,
+     "initial": "g",
+     "final": "ui"
+    },
+    {
+     "ch": "台",
+     "start": 69.43,
+     "end": 69.63,
+     "probability": 0.1302,
+     "initial": "t",
+     "final": "ai"
+    },
+    {
+     "ch": "是",
+     "start": 69.63,
+     "end": 69.85,
+     "probability": 0.6914,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "零",
+     "start": 69.85,
+     "end": 70.07,
+     "probability": 0.5911,
+     "initial": "l",
+     "final": "ing"
+    },
+    {
+     "ch": "高",
+     "start": 70.07,
+     "end": 70.19,
+     "probability": 0.9802,
+     "initial": "g",
+     "final": "ao"
+    },
+    {
+     "ch": "差",
+     "start": 70.19,
+     "end": 70.39,
+     "probability": 0.9339,
+     "initial": "ch",
+     "final": "a"
+    },
+    {
+     "ch": "的",
+     "start": 70.39,
+     "end": 70.51,
+     "probability": 0.9896,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "行",
+     "start": 70.51,
+     "end": 70.65,
+     "probability": 0.9913,
+     "initial": "x",
+     "final": "ing"
+    },
+    {
+     "ch": "李",
+     "start": 70.65,
+     "end": 70.81,
+     "probability": 0.9606,
+     "initial": "l",
+     "final": "i"
+    },
+    {
+     "ch": "箱",
+     "start": 70.81,
+     "end": 71.03,
+     "probability": 0.998,
+     "initial": "x",
+     "final": "iang"
+    },
+    {
+     "ch": "轻",
+     "start": 71.03,
+     "end": 71.25,
+     "probability": 0.9397,
+     "initial": "q",
+     "final": "ing"
+    },
+    {
+     "ch": "轻",
+     "start": 71.25,
+     "end": 71.37,
+     "probability": 0.9987,
+     "initial": "q",
+     "final": "ing"
+    },
+    {
+     "ch": "一",
+     "start": 71.37,
+     "end": 71.49,
+     "probability": 0.9221,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "推",
+     "start": 71.49,
+     "end": 71.65,
+     "probability": 0.996,
+     "initial": "t",
+     "final": "ui"
+    },
+    {
+     "ch": "就",
+     "start": 71.65,
+     "end": 71.87,
+     "probability": 0.9637,
+     "initial": "j",
+     "final": "iu"
+    },
+    {
+     "ch": "滑",
+     "start": 71.87,
+     "end": 72.05,
+     "probability": 0.9794,
+     "initial": "h",
+     "final": "ua"
+    },
+    {
+     "ch": "进",
+     "start": 72.05,
+     "end": 72.15,
+     "probability": 0.9952,
+     "initial": "j",
+     "final": "in"
+    },
+    {
+     "ch": "去",
+     "start": 72.15,
+     "end": 72.29,
+     "probability": 0.9994,
+     "initial": "q",
+     "final": "u"
+    },
+    {
+     "ch": "托",
+     "start": 72.29,
+     "end": 72.45,
+     "probability": 0.653,
+     "initial": "t",
+     "final": "uo"
+    },
+    {
+     "ch": "运",
+     "start": 72.45,
+     "end": 72.61,
+     "probability": 0.9956,
+     "initial": "y",
+     "final": "un"
+    },
+    {
+     "ch": "不",
+     "start": 72.61,
+     "end": 72.85,
+     "probability": 0.0028,
+     "initial": "b",
+     "final": "u"
+    },
+    {
+     "ch": "用",
+     "start": 72.85,
+     "end": 72.95,
+     "probability": 0.9854,
+     "initial": "y",
+     "final": "ong"
+    },
+    {
+     "ch": "练",
+     "start": 72.95,
+     "end": 73.11,
+     "probability": 0.9621,
+     "initial": "l",
+     "final": "ian"
+    },
+    {
+     "ch": "举",
+     "start": 73.11,
+     "end": 73.27,
+     "probability": 0.9614,
+     "initial": "j",
+     "final": "u"
+    },
+    {
+     "ch": "重",
+     "start": 73.27,
+     "end": 73.41,
+     "probability": 0.8627,
+     "initial": "zh",
+     "final": "ong"
+    }
+   ]
+  },
+  {
+   "id": "10_mochi_ship",
+   "character": "Mochi",
+   "text": "请问托运一只猫走哪个通道朕自带体检报告",
+   "display": "请问托运一只猫走哪个通道？朕自带体检报告。",
+   "start": 73.837,
+   "end": 79.85,
+   "chars": [
+    {
+     "ch": "请",
+     "start": 73.837,
+     "end": 74.277,
+     "probability": 0.8275,
+     "initial": "q",
+     "final": "ing"
+    },
+    {
+     "ch": "问",
+     "start": 74.277,
+     "end": 74.617,
+     "probability": 0.9861,
+     "initial": "w",
+     "final": "en"
+    },
+    {
+     "ch": "托",
+     "start": 74.617,
+     "end": 75.237,
+     "probability": 0.6228,
+     "initial": "t",
+     "final": "uo"
+    },
+    {
+     "ch": "运",
+     "start": 75.237,
+     "end": 75.457,
+     "probability": 0.9276,
+     "initial": "y",
+     "final": "un"
+    },
+    {
+     "ch": "一",
+     "start": 75.457,
+     "end": 75.617,
+     "probability": 0.8504,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "只",
+     "start": 75.617,
+     "end": 75.757,
+     "probability": 0.9658,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "猫",
+     "start": 75.757,
+     "end": 76.097,
+     "probability": 0.9885,
+     "initial": "m",
+     "final": "ao"
+    },
+    {
+     "ch": "走",
+     "start": 76.097,
+     "end": 76.477,
+     "probability": 0.8929,
+     "initial": "z",
+     "final": "ou"
+    },
+    {
+     "ch": "哪",
+     "start": 76.477,
+     "end": 76.697,
+     "probability": 0.9896,
+     "initial": "n",
+     "final": "a"
+    },
+    {
+     "ch": "个",
+     "start": 76.697,
+     "end": 76.857,
+     "probability": 0.9899,
+     "initial": "g",
+     "final": "e"
+    },
+    {
+     "ch": "通",
+     "start": 76.857,
+     "end": 77.077,
+     "probability": 0.9982,
+     "initial": "t",
+     "final": "ong"
+    },
+    {
+     "ch": "道",
+     "start": 77.077,
+     "end": 77.337,
+     "probability": 0.9896,
+     "initial": "d",
+     "final": "ao"
+    },
+    {
+     "ch": "朕",
+     "start": 77.337,
+     "end": 77.837,
+     "probability": 0.5002,
+     "initial": "zh",
+     "final": "en"
+    },
+    {
+     "ch": "自",
+     "start": 77.837,
+     "end": 78.057,
+     "probability": 0.9892,
+     "initial": "z",
+     "final": "i"
+    },
+    {
+     "ch": "带",
+     "start": 78.057,
+     "end": 78.297,
+     "probability": 0.7519,
+     "initial": "d",
+     "final": "ai"
+    },
+    {
+     "ch": "体",
+     "start": 78.297,
+     "end": 78.477,
+     "probability": 0.7993,
+     "initial": "t",
+     "final": "i"
+    },
+    {
+     "ch": "检",
+     "start": 78.477,
+     "end": 78.757,
+     "probability": 0.9953,
+     "initial": "j",
+     "final": "ian"
+    },
+    {
+     "ch": "报",
+     "start": 78.757,
+     "end": 78.977,
+     "probability": 0.9982,
+     "initial": "b",
+     "final": "ao"
+    },
+    {
+     "ch": "告",
+     "start": 78.977,
+     "end": 79.257,
+     "probability": 0.9979,
+     "initial": "g",
+     "final": "ao"
+    }
+   ]
+  },
+  {
+   "id": "11_yuki_usb",
+   "character": "Yuki",
+   "text": "候机座椅每一个都有USB接口全楼还有WiFi7",
+   "display": "候机座椅每一个都有 USB 接口，全楼还有 WiFi7！",
+   "start": 79.89,
+   "end": 84.12,
+   "chars": [
+    {
+     "ch": "候",
+     "start": 79.89,
+     "end": 80.35,
+     "probability": 0.0045,
+     "initial": "h",
+     "final": "ou"
+    },
+    {
+     "ch": "机",
+     "start": 80.35,
+     "end": 80.55,
+     "probability": 0.1195,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "座",
+     "start": 80.55,
+     "end": 80.73,
+     "probability": 0.9845,
+     "initial": "z",
+     "final": "uo"
+    },
+    {
+     "ch": "椅",
+     "start": 80.73,
+     "end": 80.89,
+     "probability": 0.9577,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "每",
+     "start": 80.89,
+     "end": 81.09,
+     "probability": 0.9644,
+     "initial": "m",
+     "final": "ei"
+    },
+    {
+     "ch": "一",
+     "start": 81.09,
+     "end": 81.25,
+     "probability": 0.0022,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "个",
+     "start": 81.25,
+     "end": 81.37,
+     "probability": 0.7011,
+     "initial": "g",
+     "final": "e"
+    },
+    {
+     "ch": "都",
+     "start": 81.37,
+     "end": 81.51,
+     "probability": 0.0152,
+     "initial": "d",
+     "final": "ou"
+    },
+    {
+     "ch": "有",
+     "start": 81.51,
+     "end": 81.65,
+     "probability": 0.7831,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "U",
+     "start": 81.65,
+     "end": 81.79,
+     "probability": 0.0008
+    },
+    {
+     "ch": "S",
+     "start": 81.79,
+     "end": 81.93,
+     "probability": 0.0007
+    },
+    {
+     "ch": "B",
+     "start": 81.93,
+     "end": 82.11,
+     "probability": 0.9521
+    },
+    {
+     "ch": "接",
+     "start": 82.11,
+     "end": 82.25,
+     "probability": 0.9469,
+     "initial": "j",
+     "final": "ie"
+    },
+    {
+     "ch": "口",
+     "start": 82.25,
+     "end": 82.47,
+     "probability": 0.9981,
+     "initial": "k",
+     "final": "ou"
+    },
+    {
+     "ch": "全",
+     "start": 82.47,
+     "end": 82.77,
+     "probability": 0.1184,
+     "initial": "q",
+     "final": "uan"
+    },
+    {
+     "ch": "楼",
+     "start": 82.77,
+     "end": 82.97,
+     "probability": 0.9786,
+     "initial": "l",
+     "final": "ou"
+    },
+    {
+     "ch": "还",
+     "start": 82.97,
+     "end": 83.09,
+     "probability": 0.0124,
+     "initial": "h",
+     "final": "ai"
+    },
+    {
+     "ch": "有",
+     "start": 83.09,
+     "end": 83.21,
+     "probability": 0.5487,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "W",
+     "start": 83.21,
+     "end": 83.29,
+     "probability": 0.8857
+    },
+    {
+     "ch": "i",
+     "start": 83.29,
+     "end": 83.31,
+     "probability": 0.8204
+    },
+    {
+     "ch": "F",
+     "start": 83.31,
+     "end": 83.37,
+     "probability": 0.0008
+    },
+    {
+     "ch": "i",
+     "start": 83.37,
+     "end": 83.49,
+     "probability": 0.4232
+    },
+    {
+     "ch": "7",
+     "start": 83.49,
+     "end": 83.69,
+     "probability": 0.727
+    }
+   ]
+  },
+  {
+   "id": "12_mochi_phone",
+   "character": "Mochi",
+   "text": "朕的手机只剩百分之一的电别问问就是看了一路猫片",
+   "display": "朕的手机只剩百分之一的电。别问，问就是看了一路猫片。",
+   "start": 84.16,
+   "end": 90.722,
+   "chars": [
+    {
+     "ch": "朕",
+     "start": 84.16,
+     "end": 84.74,
+     "probability": 0.6691,
+     "initial": "zh",
+     "final": "en"
+    },
+    {
+     "ch": "的",
+     "start": 84.74,
+     "end": 84.88,
+     "probability": 0.9325,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "手",
+     "start": 84.88,
+     "end": 85.1,
+     "probability": 0.9945,
+     "initial": "sh",
+     "final": "ou"
+    },
+    {
+     "ch": "机",
+     "start": 85.1,
+     "end": 85.4,
+     "probability": 0.7615,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "只",
+     "start": 85.4,
+     "end": 85.78,
+     "probability": 0.9807,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "剩",
+     "start": 85.78,
+     "end": 85.98,
+     "probability": 0.9997,
+     "initial": "sh",
+     "final": "eng"
+    },
+    {
+     "ch": "百",
+     "start": 85.98,
+     "end": 86.16,
+     "probability": 0.3844,
+     "initial": "b",
+     "final": "ai"
+    },
+    {
+     "ch": "分",
+     "start": 86.16,
+     "end": 86.42,
+     "probability": 0.9989,
+     "initial": "f",
+     "final": "en"
+    },
+    {
+     "ch": "之",
+     "start": 86.42,
+     "end": 86.54,
+     "probability": 0.9996,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "一",
+     "start": 86.54,
+     "end": 86.78,
+     "probability": 0.9693,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "的",
+     "start": 86.78,
+     "end": 86.9,
+     "probability": 0.9856,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "电",
+     "start": 86.9,
+     "end": 87.12,
+     "probability": 0.8789,
+     "initial": "d",
+     "final": "ian"
+    },
+    {
+     "ch": "别",
+     "start": 87.12,
+     "end": 87.8,
+     "probability": 0.3524,
+     "initial": "b",
+     "final": "ie"
+    },
+    {
+     "ch": "问",
+     "start": 87.8,
+     "end": 88.12,
+     "probability": 0.996,
+     "initial": "w",
+     "final": "en"
+    },
+    {
+     "ch": "问",
+     "start": 88.12,
+     "end": 88.6,
+     "probability": 0.2018,
+     "initial": "w",
+     "final": "en"
+    },
+    {
+     "ch": "就",
+     "start": 88.6,
+     "end": 88.8,
+     "probability": 0.0082,
+     "initial": "j",
+     "final": "iu"
+    },
+    {
+     "ch": "是",
+     "start": 88.8,
+     "end": 88.96,
+     "probability": 0.0342,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "看",
+     "start": 88.96,
+     "end": 89.14,
+     "probability": 0.9926,
+     "initial": "k",
+     "final": "an"
+    },
+    {
+     "ch": "了",
+     "start": 89.14,
+     "end": 89.3,
+     "probability": 0.9917,
+     "initial": "l",
+     "final": "e"
+    },
+    {
+     "ch": "一",
+     "start": 89.3,
+     "end": 89.46,
+     "probability": 0.9928,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "路",
+     "start": 89.46,
+     "end": 89.6,
+     "probability": 0.9616,
+     "initial": "l",
+     "final": "u"
+    },
+    {
+     "ch": "猫",
+     "start": 89.6,
+     "end": 89.82,
+     "probability": 0.9208,
+     "initial": "m",
+     "final": "ao"
+    },
+    {
+     "ch": "片",
+     "start": 89.82,
+     "end": 90.12,
+     "probability": 0.8862,
+     "initial": "p",
+     "final": "ian"
+    }
+   ]
+  },
+  {
+   "id": "13_yuki_toilet",
+   "character": "Yuki",
+   "text": "最绝的是洗手间马桶圈是指纹感应自动换垫的",
+   "display": "最绝的是洗手间——马桶圈是指纹感应、自动换垫的！",
+   "start": 90.762,
+   "end": 94.779,
+   "chars": [
+    {
+     "ch": "最",
+     "start": 90.762,
+     "end": 91.282,
+     "probability": 0.8976,
+     "initial": "z",
+     "final": "ui"
+    },
+    {
+     "ch": "绝",
+     "start": 91.282,
+     "end": 91.502,
+     "probability": 0.816,
+     "initial": "j",
+     "final": "ue"
+    },
+    {
+     "ch": "的",
+     "start": 91.502,
+     "end": 91.622,
+     "probability": 0.0148,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "是",
+     "start": 91.622,
+     "end": 91.742,
+     "probability": 0.6124,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "洗",
+     "start": 91.742,
+     "end": 91.902,
+     "probability": 0.9769,
+     "initial": "x",
+     "final": "i"
+    },
+    {
+     "ch": "手",
+     "start": 91.902,
+     "end": 92.062,
+     "probability": 0.9997,
+     "initial": "sh",
+     "final": "ou"
+    },
+    {
+     "ch": "间",
+     "start": 92.062,
+     "end": 92.202,
+     "probability": 0.9966,
+     "initial": "j",
+     "final": "ian"
+    },
+    {
+     "ch": "马",
+     "start": 92.202,
+     "end": 92.342,
+     "probability": 0.947,
+     "initial": "m",
+     "final": "a"
+    },
+    {
+     "ch": "桶",
+     "start": 92.342,
+     "end": 92.522,
+     "probability": 0.7799,
+     "initial": "t",
+     "final": "ong"
+    },
+    {
+     "ch": "圈",
+     "start": 92.522,
+     "end": 92.742,
+     "probability": 0.9984,
+     "initial": "q",
+     "final": "uan"
+    },
+    {
+     "ch": "是",
+     "start": 92.742,
+     "end": 92.922,
+     "probability": 0.8796,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "指",
+     "start": 92.922,
+     "end": 93.122,
+     "probability": 0.9885,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "纹",
+     "start": 93.122,
+     "end": 93.262,
+     "probability": 0.9911,
+     "initial": "w",
+     "final": "en"
+    },
+    {
+     "ch": "感",
+     "start": 93.262,
+     "end": 93.402,
+     "probability": 0.9849,
+     "initial": "g",
+     "final": "an"
+    },
+    {
+     "ch": "应",
+     "start": 93.402,
+     "end": 93.562,
+     "probability": 0.9842,
+     "initial": "y",
+     "final": "ing"
+    },
+    {
+     "ch": "自",
+     "start": 93.562,
+     "end": 93.722,
+     "probability": 0.9887,
+     "initial": "z",
+     "final": "i"
+    },
+    {
+     "ch": "动",
+     "start": 93.722,
+     "end": 93.842,
+     "probability": 0.9992,
+     "initial": "d",
+     "final": "ong"
+    },
+    {
+     "ch": "换",
+     "start": 93.842,
+     "end": 93.982,
+     "probability": 0.9915,
+     "initial": "h",
+     "final": "uan"
+    },
+    {
+     "ch": "垫",
+     "start": 93.982,
+     "end": 94.202,
+     "probability": 0.622,
+     "initial": "d",
+     "final": "ian"
+    },
+    {
+     "ch": "的",
+     "start": 94.202,
+     "end": 94.342,
+     "probability": 0.9922,
+     "initial": "d",
+     "final": "e"
+    }
+   ]
+  },
+  {
+   "id": "14_mochi_paw",
+   "character": "Mochi",
+   "text": "朕按了爪印识别成功尊享喵星贵宾座",
+   "display": "朕按了爪印。识别成功，尊享喵星贵宾座。",
+   "start": 94.819,
+   "end": 100.244,
+   "chars": [
+    {
+     "ch": "朕",
+     "start": 94.819,
+     "end": 95.439,
+     "probability": 0.9289,
+     "initial": "zh",
+     "final": "en"
+    },
+    {
+     "ch": "按",
+     "start": 95.439,
+     "end": 95.659,
+     "probability": 0.9147,
+     "initial": "",
+     "final": "an"
+    },
+    {
+     "ch": "了",
+     "start": 95.659,
+     "end": 95.779,
+     "probability": 0.9109,
+     "initial": "l",
+     "final": "e"
+    },
+    {
+     "ch": "爪",
+     "start": 95.779,
+     "end": 96.099,
+     "probability": 0.9168,
+     "initial": "zh",
+     "final": "ao"
+    },
+    {
+     "ch": "印",
+     "start": 96.099,
+     "end": 96.319,
+     "probability": 0.9986,
+     "initial": "y",
+     "final": "in"
+    },
+    {
+     "ch": "识",
+     "start": 96.319,
+     "end": 96.719,
+     "probability": 0.5186,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "别",
+     "start": 96.719,
+     "end": 96.879,
+     "probability": 0.9966,
+     "initial": "b",
+     "final": "ie"
+    },
+    {
+     "ch": "成",
+     "start": 96.879,
+     "end": 97.079,
+     "probability": 0.997,
+     "initial": "ch",
+     "final": "eng"
+    },
+    {
+     "ch": "功",
+     "start": 97.079,
+     "end": 97.419,
+     "probability": 0.9997,
+     "initial": "g",
+     "final": "ong"
+    },
+    {
+     "ch": "尊",
+     "start": 97.419,
+     "end": 98.079,
+     "probability": 0.6073,
+     "initial": "z",
+     "final": "un"
+    },
+    {
+     "ch": "享",
+     "start": 98.079,
+     "end": 98.359,
+     "probability": 0.3902,
+     "initial": "x",
+     "final": "iang"
+    },
+    {
+     "ch": "喵",
+     "start": 98.359,
+     "end": 98.659,
+     "probability": 0.607,
+     "initial": "m",
+     "final": "iao"
+    },
+    {
+     "ch": "星",
+     "start": 98.659,
+     "end": 98.939,
+     "probability": 0.8734,
+     "initial": "x",
+     "final": "ing"
+    },
+    {
+     "ch": "贵",
+     "start": 98.939,
+     "end": 99.239,
+     "probability": 0.9486,
+     "initial": "g",
+     "final": "ui"
+    },
+    {
+     "ch": "宾",
+     "start": 99.239,
+     "end": 99.459,
+     "probability": 0.8522,
+     "initial": "b",
+     "final": "in"
+    },
+    {
+     "ch": "座",
+     "start": 99.459,
+     "end": 99.759,
+     "probability": 0.9875,
+     "initial": "z",
+     "final": "uo"
+    }
+   ]
+  },
+  {
+   "id": "15_yuki_numbers",
+   "character": "Yuki",
+   "text": "一年三千六百万人次的吞吐量4F级的大机场九月十六号刚刚启用我们算第一批游客啦",
+   "display": "一年三千六百万人次的吞吐量，4F 级的大机场，九月十六号刚刚启用，我们算第一批游客啦！",
+   "start": 100.284,
+   "end": 107.151,
+   "chars": [
+    {
+     "ch": "一",
+     "start": 100.284,
+     "end": 100.704,
+     "probability": 0.7532,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "年",
+     "start": 100.704,
+     "end": 100.904,
+     "probability": 0.9931,
+     "initial": "n",
+     "final": "ian"
+    },
+    {
+     "ch": "三",
+     "start": 100.904,
+     "end": 101.164,
+     "probability": 0.0133,
+     "initial": "s",
+     "final": "an"
+    },
+    {
+     "ch": "千",
+     "start": 101.164,
+     "end": 101.364,
+     "probability": 0.9956,
+     "initial": "q",
+     "final": "ian"
+    },
+    {
+     "ch": "六",
+     "start": 101.364,
+     "end": 101.524,
+     "probability": 0.9957,
+     "initial": "l",
+     "final": "iu"
+    },
+    {
+     "ch": "百",
+     "start": 101.524,
+     "end": 101.724,
+     "probability": 0.9981,
+     "initial": "b",
+     "final": "ai"
+    },
+    {
+     "ch": "万",
+     "start": 101.724,
+     "end": 101.864,
+     "probability": 0.9167,
+     "initial": "w",
+     "final": "an"
+    },
+    {
+     "ch": "人",
+     "start": 101.864,
+     "end": 102.024,
+     "probability": 0.996,
+     "initial": "r",
+     "final": "en"
+    },
+    {
+     "ch": "次",
+     "start": 102.024,
+     "end": 102.204,
+     "probability": 0.9731,
+     "initial": "c",
+     "final": "i"
+    },
+    {
+     "ch": "的",
+     "start": 102.204,
+     "end": 102.324,
+     "probability": 0.9933,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "吞",
+     "start": 102.324,
+     "end": 102.464,
+     "probability": 0.991,
+     "initial": "t",
+     "final": "un"
+    },
+    {
+     "ch": "吐",
+     "start": 102.464,
+     "end": 102.604,
+     "probability": 0.9831,
+     "initial": "t",
+     "final": "u"
+    },
+    {
+     "ch": "量",
+     "start": 102.604,
+     "end": 102.804,
+     "probability": 0.9901,
+     "initial": "l",
+     "final": "iang"
+    },
+    {
+     "ch": "4",
+     "start": 102.804,
+     "end": 103.164,
+     "probability": 0.4514
+    },
+    {
+     "ch": "F",
+     "start": 103.164,
+     "end": 103.344,
+     "probability": 0.7885
+    },
+    {
+     "ch": "级",
+     "start": 103.344,
+     "end": 103.564,
+     "probability": 0.7754,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "的",
+     "start": 103.564,
+     "end": 103.644,
+     "probability": 0.9941,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "大",
+     "start": 103.644,
+     "end": 103.784,
+     "probability": 0.9745,
+     "initial": "d",
+     "final": "a"
+    },
+    {
+     "ch": "机",
+     "start": 103.784,
+     "end": 103.944,
+     "probability": 0.9631,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "场",
+     "start": 103.944,
+     "end": 104.164,
+     "probability": 0.9607,
+     "initial": "ch",
+     "final": "ang"
+    },
+    {
+     "ch": "九",
+     "start": 104.164,
+     "end": 104.484,
+     "probability": 0.0369,
+     "initial": "j",
+     "final": "iu"
+    },
+    {
+     "ch": "月",
+     "start": 104.484,
+     "end": 104.604,
+     "probability": 0.9865,
+     "initial": "y",
+     "final": "ue"
+    },
+    {
+     "ch": "十",
+     "start": 104.604,
+     "end": 104.744,
+     "probability": 0.8743,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "六",
+     "start": 104.744,
+     "end": 104.864,
+     "probability": 0.9984,
+     "initial": "l",
+     "final": "iu"
+    },
+    {
+     "ch": "号",
+     "start": 104.864,
+     "end": 105.024,
+     "probability": 0.9795,
+     "initial": "h",
+     "final": "ao"
+    },
+    {
+     "ch": "刚",
+     "start": 105.024,
+     "end": 105.184,
+     "probability": 0.9921,
+     "initial": "g",
+     "final": "ang"
+    },
+    {
+     "ch": "刚",
+     "start": 105.184,
+     "end": 105.324,
+     "probability": 0.9995,
+     "initial": "g",
+     "final": "ang"
+    },
+    {
+     "ch": "启",
+     "start": 105.324,
+     "end": 105.524,
+     "probability": 0.8603,
+     "initial": "q",
+     "final": "i"
+    },
+    {
+     "ch": "用",
+     "start": 105.524,
+     "end": 105.664,
+     "probability": 0.9779,
+     "initial": "y",
+     "final": "ong"
+    },
+    {
+     "ch": "我",
+     "start": 105.664,
+     "end": 105.924,
+     "probability": 0.0015,
+     "initial": "w",
+     "final": "o"
+    },
+    {
+     "ch": "们",
+     "start": 105.924,
+     "end": 105.984,
+     "probability": 0.0652,
+     "initial": "m",
+     "final": "en"
+    },
+    {
+     "ch": "算",
+     "start": 105.984,
+     "end": 106.084,
+     "probability": 0.994,
+     "initial": "s",
+     "final": "uan"
+    },
+    {
+     "ch": "第",
+     "start": 106.084,
+     "end": 106.304,
+     "probability": 0.0037,
+     "initial": "d",
+     "final": "i"
+    },
+    {
+     "ch": "一",
+     "start": 106.304,
+     "end": 106.404,
+     "probability": 0.0933,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "批",
+     "start": 106.404,
+     "end": 106.504,
+     "probability": 0.9853,
+     "initial": "p",
+     "final": "i"
+    },
+    {
+     "ch": "游",
+     "start": 106.504,
+     "end": 106.644,
+     "probability": 0.8299,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "客",
+     "start": 106.644,
+     "end": 106.764,
+     "probability": 0.9946,
+     "initial": "k",
+     "final": "e"
+    },
+    {
+     "ch": "啦",
+     "start": 106.764,
+     "end": 106.904,
+     "probability": 0.8232,
+     "initial": "l",
+     "final": "a"
+    }
+   ]
+  },
+  {
+   "id": "16_mochi_shop",
+   "character": "Mochi",
+   "text": "导游小姐纪念品商店有小鱼干吗",
+   "display": "导游小姐，纪念品商店有小鱼干吗？",
+   "start": 107.191,
+   "end": 111.313,
+   "chars": [
+    {
+     "ch": "导",
+     "start": 107.191,
+     "end": 107.731,
+     "probability": 0.4945,
+     "initial": "d",
+     "final": "ao"
+    },
+    {
+     "ch": "游",
+     "start": 107.731,
+     "end": 107.971,
+     "probability": 0.9423,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "小",
+     "start": 107.971,
+     "end": 108.151,
+     "probability": 0.9686,
+     "initial": "x",
+     "final": "iao"
+    },
+    {
+     "ch": "姐",
+     "start": 108.151,
+     "end": 108.411,
+     "probability": 0.9981,
+     "initial": "j",
+     "final": "ie"
+    },
+    {
+     "ch": "纪",
+     "start": 108.411,
+     "end": 108.731,
+     "probability": 0.8472,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "念",
+     "start": 108.731,
+     "end": 108.871,
+     "probability": 0.9999,
+     "initial": "n",
+     "final": "ian"
+    },
+    {
+     "ch": "品",
+     "start": 108.871,
+     "end": 109.031,
+     "probability": 0.996,
+     "initial": "p",
+     "final": "in"
+    },
+    {
+     "ch": "商",
+     "start": 109.031,
+     "end": 109.311,
+     "probability": 0.9989,
+     "initial": "sh",
+     "final": "ang"
+    },
+    {
+     "ch": "店",
+     "start": 109.311,
+     "end": 109.591,
+     "probability": 0.9978,
+     "initial": "d",
+     "final": "ian"
+    },
+    {
+     "ch": "有",
+     "start": 109.591,
+     "end": 109.871,
+     "probability": 0.8275,
+     "initial": "y",
+     "final": "ou"
+    },
+    {
+     "ch": "小",
+     "start": 109.871,
+     "end": 110.111,
+     "probability": 0.9713,
+     "initial": "x",
+     "final": "iao"
+    },
+    {
+     "ch": "鱼",
+     "start": 110.111,
+     "end": 110.311,
+     "probability": 0.9718,
+     "initial": "y",
+     "final": "u"
+    },
+    {
+     "ch": "干",
+     "start": 110.311,
+     "end": 110.511,
+     "probability": 0.4231,
+     "initial": "g",
+     "final": "an"
+    },
+    {
+     "ch": "吗",
+     "start": 110.511,
+     "end": 110.831,
+     "probability": 0.8992,
+     "initial": "m",
+     "final": "a"
+    }
+   ]
+  },
+  {
+   "id": "17_yuki_retort",
+   "character": "Yuki",
+   "text": "你是来参观的还是来进货的",
+   "display": "……你是来参观的，还是来进货的？",
+   "start": 111.353,
+   "end": 113.59,
+   "chars": [
+    {
+     "ch": "你",
+     "start": 111.353,
+     "end": 111.793,
+     "probability": 0.0062,
+     "initial": "n",
+     "final": "i"
+    },
+    {
+     "ch": "是",
+     "start": 111.793,
+     "end": 111.913,
+     "probability": 0.3883,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "来",
+     "start": 111.913,
+     "end": 112.013,
+     "probability": 0.5871,
+     "initial": "l",
+     "final": "ai"
+    },
+    {
+     "ch": "参",
+     "start": 112.013,
+     "end": 112.213,
+     "probability": 0.9977,
+     "initial": "c",
+     "final": "an"
+    },
+    {
+     "ch": "观",
+     "start": 112.213,
+     "end": 112.353,
+     "probability": 0.9776,
+     "initial": "g",
+     "final": "uan"
+    },
+    {
+     "ch": "的",
+     "start": 112.353,
+     "end": 112.493,
+     "probability": 0.9945,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "还",
+     "start": 112.493,
+     "end": 112.593,
+     "probability": 0.0028,
+     "initial": "h",
+     "final": "ai"
+    },
+    {
+     "ch": "是",
+     "start": 112.593,
+     "end": 112.713,
+     "probability": 0.4053,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "来",
+     "start": 112.713,
+     "end": 112.813,
+     "probability": 0.9777,
+     "initial": "l",
+     "final": "ai"
+    },
+    {
+     "ch": "进",
+     "start": 112.813,
+     "end": 112.953,
+     "probability": 0.9416,
+     "initial": "j",
+     "final": "in"
+    },
+    {
+     "ch": "货",
+     "start": 112.953,
+     "end": 113.173,
+     "probability": 0.971,
+     "initial": "h",
+     "final": "uo"
+    },
+    {
+     "ch": "的",
+     "start": 113.173,
+     "end": 113.273,
+     "probability": 0.9912,
+     "initial": "d",
+     "final": "e"
+    }
+   ]
+  },
+  {
+   "id": "18_mochi_life",
+   "character": "Mochi",
+   "text": "参观是工作进货是生活",
+   "display": "参观是工作，进货是生活。",
+   "start": 113.63,
+   "end": 117.362,
+   "chars": [
+    {
+     "ch": "参",
+     "start": 113.63,
+     "end": 114.21,
+     "probability": 0.6877,
+     "initial": "c",
+     "final": "an"
+    },
+    {
+     "ch": "观",
+     "start": 114.21,
+     "end": 114.41,
+     "probability": 0.8805,
+     "initial": "g",
+     "final": "uan"
+    },
+    {
+     "ch": "是",
+     "start": 114.41,
+     "end": 114.65,
+     "probability": 0.7975,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "工",
+     "start": 114.65,
+     "end": 114.87,
+     "probability": 0.0004,
+     "initial": "g",
+     "final": "ong"
+    },
+    {
+     "ch": "作",
+     "start": 114.87,
+     "end": 115.21,
+     "probability": 0.1828,
+     "initial": "z",
+     "final": "uo"
+    },
+    {
+     "ch": "进",
+     "start": 115.21,
+     "end": 115.77,
+     "probability": 0.1688,
+     "initial": "j",
+     "final": "in"
+    },
+    {
+     "ch": "货",
+     "start": 115.77,
+     "end": 116.11,
+     "probability": 0.9001,
+     "initial": "h",
+     "final": "uo"
+    },
+    {
+     "ch": "是",
+     "start": 116.11,
+     "end": 116.29,
+     "probability": 0.9497,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "生",
+     "start": 116.29,
+     "end": 116.53,
+     "probability": 0.0007,
+     "initial": "sh",
+     "final": "eng"
+    },
+    {
+     "ch": "活",
+     "start": 116.53,
+     "end": 116.89,
+     "probability": 0.6517,
+     "initial": "h",
+     "final": "uo"
+    }
+   ]
+  },
+  {
+   "id": "09_mochi_gtc",
+   "character": "Mochi",
+   "text": "窗户外面那个大工地是什么",
+   "display": "窗户外面那个大工地，是什么？",
+   "start": 55.307,
+   "end": 58.667,
+   "chars": [
+    {
+     "ch": "窗",
+     "start": 55.307,
+     "end": 55.927,
+     "probability": 0.9177,
+     "initial": "ch",
+     "final": "uang"
+    },
+    {
+     "ch": "户",
+     "start": 55.927,
+     "end": 56.127,
+     "probability": 0.5946,
+     "initial": "h",
+     "final": "u"
+    },
+    {
+     "ch": "外",
+     "start": 56.127,
+     "end": 56.327,
+     "probability": 0.9971,
+     "initial": "w",
+     "final": "ai"
+    },
+    {
+     "ch": "面",
+     "start": 56.327,
+     "end": 56.627,
+     "probability": 0.9879,
+     "initial": "m",
+     "final": "ian"
+    },
+    {
+     "ch": "那",
+     "start": 56.627,
+     "end": 56.747,
+     "probability": 0.0349,
+     "initial": "n",
+     "final": "a"
+    },
+    {
+     "ch": "个",
+     "start": 56.747,
+     "end": 56.887,
+     "probability": 0.0281,
+     "initial": "g",
+     "final": "e"
+    },
+    {
+     "ch": "大",
+     "start": 56.887,
+     "end": 57.107,
+     "probability": 0.9774,
+     "initial": "d",
+     "final": "a"
+    },
+    {
+     "ch": "工",
+     "start": 57.107,
+     "end": 57.327,
+     "probability": 0.8024,
+     "initial": "g",
+     "final": "ong"
+    },
+    {
+     "ch": "地",
+     "start": 57.327,
+     "end": 57.547,
+     "probability": 0.9964,
+     "initial": "d",
+     "final": "i"
+    },
+    {
+     "ch": "是",
+     "start": 57.547,
+     "end": 57.807,
+     "probability": 0.8717,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "什",
+     "start": 57.807,
+     "end": 58.007,
+     "probability": 0.0153,
+     "initial": "sh",
+     "final": "en"
+    },
+    {
+     "ch": "么",
+     "start": 58.007,
+     "end": 58.147,
+     "probability": 0.0956,
+     "initial": "m",
+     "final": "e"
+    }
+   ]
+  },
+  {
+   "id": "10_yuki_gtc",
+   "character": "Yuki",
+   "text": "那是GTC综合交通中心以后高铁和地铁直接开进机场跟航站楼连在一起",
+   "display": "那是 GTC 综合交通中心！以后高铁和地铁直接开进机场，跟航站楼连在一起！",
+   "start": 58.707,
+   "end": 64.737,
+   "chars": [
+    {
+     "ch": "那",
+     "start": 58.707,
+     "end": 59.127,
+     "probability": 0.9345,
+     "initial": "n",
+     "final": "a"
+    },
+    {
+     "ch": "是",
+     "start": 59.127,
+     "end": 59.347,
+     "probability": 0.9865,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "G",
+     "start": 59.347,
+     "end": 59.547,
+     "probability": 0.942
+    },
+    {
+     "ch": "T",
+     "start": 59.547,
+     "end": 59.687,
+     "probability": 0.0017
+    },
+    {
+     "ch": "C",
+     "start": 59.687,
+     "end": 59.887,
+     "probability": 0.6856
+    },
+    {
+     "ch": "综",
+     "start": 59.887,
+     "end": 60.067,
+     "probability": 0.6852,
+     "initial": "z",
+     "final": "ong"
+    },
+    {
+     "ch": "合",
+     "start": 60.067,
+     "end": 60.207,
+     "probability": 0.9992,
+     "initial": "h",
+     "final": "e"
+    },
+    {
+     "ch": "交",
+     "start": 60.207,
+     "end": 60.347,
+     "probability": 0.9889,
+     "initial": "j",
+     "final": "iao"
+    },
+    {
+     "ch": "通",
+     "start": 60.347,
+     "end": 60.467,
+     "probability": 0.9997,
+     "initial": "t",
+     "final": "ong"
+    },
+    {
+     "ch": "中",
+     "start": 60.467,
+     "end": 60.627,
+     "probability": 0.9884,
+     "initial": "zh",
+     "final": "ong"
+    },
+    {
+     "ch": "心",
+     "start": 60.627,
+     "end": 60.807,
+     "probability": 0.9996,
+     "initial": "x",
+     "final": "in"
+    },
+    {
+     "ch": "以",
+     "start": 60.807,
+     "end": 60.947,
+     "probability": 0.9909,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "后",
+     "start": 60.947,
+     "end": 61.107,
+     "probability": 0.9971,
+     "initial": "h",
+     "final": "ou"
+    },
+    {
+     "ch": "高",
+     "start": 61.107,
+     "end": 61.327,
+     "probability": 0.765,
+     "initial": "g",
+     "final": "ao"
+    },
+    {
+     "ch": "铁",
+     "start": 61.327,
+     "end": 61.527,
+     "probability": 0.9912,
+     "initial": "t",
+     "final": "ie"
+    },
+    {
+     "ch": "和",
+     "start": 61.527,
+     "end": 61.687,
+     "probability": 0.9855,
+     "initial": "h",
+     "final": "e"
+    },
+    {
+     "ch": "地",
+     "start": 61.687,
+     "end": 61.827,
+     "probability": 0.9711,
+     "initial": "d",
+     "final": "i"
+    },
+    {
+     "ch": "铁",
+     "start": 61.827,
+     "end": 62.067,
+     "probability": 0.9998,
+     "initial": "t",
+     "final": "ie"
+    },
+    {
+     "ch": "直",
+     "start": 62.067,
+     "end": 62.227,
+     "probability": 0.0025,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "接",
+     "start": 62.227,
+     "end": 62.387,
+     "probability": 0.4921,
+     "initial": "j",
+     "final": "ie"
+    },
+    {
+     "ch": "开",
+     "start": 62.387,
+     "end": 62.507,
+     "probability": 0.9894,
+     "initial": "k",
+     "final": "ai"
+    },
+    {
+     "ch": "进",
+     "start": 62.507,
+     "end": 62.667,
+     "probability": 0.9667,
+     "initial": "j",
+     "final": "in"
+    },
+    {
+     "ch": "机",
+     "start": 62.667,
+     "end": 62.827,
+     "probability": 0.9889,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "场",
+     "start": 62.827,
+     "end": 63.047,
+     "probability": 0.9915,
+     "initial": "ch",
+     "final": "ang"
+    },
+    {
+     "ch": "跟",
+     "start": 63.047,
+     "end": 63.267,
+     "probability": 0.9463,
+     "initial": "g",
+     "final": "en"
+    },
+    {
+     "ch": "航",
+     "start": 63.267,
+     "end": 63.467,
+     "probability": 0.984,
+     "initial": "h",
+     "final": "ang"
+    },
+    {
+     "ch": "站",
+     "start": 63.467,
+     "end": 63.607,
+     "probability": 0.9233,
+     "initial": "zh",
+     "final": "an"
+    },
+    {
+     "ch": "楼",
+     "start": 63.607,
+     "end": 63.767,
+     "probability": 0.9931,
+     "initial": "l",
+     "final": "ou"
+    },
+    {
+     "ch": "连",
+     "start": 63.767,
+     "end": 63.907,
+     "probability": 0.8628,
+     "initial": "l",
+     "final": "ian"
+    },
+    {
+     "ch": "在",
+     "start": 63.907,
+     "end": 64.027,
+     "probability": 0.9929,
+     "initial": "z",
+     "final": "ai"
+    },
+    {
+     "ch": "一",
+     "start": 64.027,
+     "end": 64.227,
+     "probability": 0.0003,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "起",
+     "start": 64.227,
+     "end": 64.367,
+     "probability": 0.2205,
+     "initial": "q",
+     "final": "i"
+    }
+   ]
+  },
+  {
+   "id": "11_mochi_cold",
+   "character": "Mochi",
+   "text": "哦小鱼干的冷链直通车",
+   "display": "哦。小鱼干的冷链直通车。",
+   "start": 64.777,
+   "end": 68.67,
+   "chars": [
+    {
+     "ch": "哦",
+     "start": 64.777,
+     "end": 65.377,
+     "probability": 0.5418,
+     "initial": "",
+     "final": "o"
+    },
+    {
+     "ch": "小",
+     "start": 65.377,
+     "end": 66.137,
+     "probability": 0.1605,
+     "initial": "x",
+     "final": "iao"
+    },
+    {
+     "ch": "鱼",
+     "start": 66.137,
+     "end": 66.357,
+     "probability": 0.8835,
+     "initial": "y",
+     "final": "u"
+    },
+    {
+     "ch": "干",
+     "start": 66.357,
+     "end": 66.577,
+     "probability": 0.3966,
+     "initial": "g",
+     "final": "an"
+    },
+    {
+     "ch": "的",
+     "start": 66.577,
+     "end": 66.777,
+     "probability": 0.9915,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "冷",
+     "start": 66.777,
+     "end": 67.017,
+     "probability": 0.9865,
+     "initial": "l",
+     "final": "eng"
+    },
+    {
+     "ch": "链",
+     "start": 67.017,
+     "end": 67.337,
+     "probability": 0.7817,
+     "initial": "l",
+     "final": "ian"
+    },
+    {
+     "ch": "直",
+     "start": 67.337,
+     "end": 67.577,
+     "probability": 0.896,
+     "initial": "zh",
+     "final": "i"
+    },
+    {
+     "ch": "通",
+     "start": 67.577,
+     "end": 67.837,
+     "probability": 0.9874,
+     "initial": "t",
+     "final": "ong"
+    },
+    {
+     "ch": "车",
+     "start": 67.837,
+     "end": 68.177,
+     "probability": 0.9993,
+     "initial": "ch",
+     "final": "e"
+    }
+   ]
+  },
+  {
+   "id": "19_pa_welcome",
+   "character": "PA",
+   "text": "女士们先生们欢迎来到福州长乐国际机场T2航站楼",
+   "display": "女士们先生们，欢迎来到福州长乐国际机场 T2 航站楼。",
+   "start": 117.402,
+   "end": 123.633,
+   "chars": [
+    {
+     "ch": "女",
+     "start": 117.402,
+     "end": 117.842,
+     "probability": 0.9733
+    },
+    {
+     "ch": "士",
+     "start": 117.842,
+     "end": 118.002,
+     "probability": 0.9933
+    },
+    {
+     "ch": "们",
+     "start": 118.002,
+     "end": 118.142,
+     "probability": 0.3691
+    },
+    {
+     "ch": "先",
+     "start": 118.142,
+     "end": 118.342,
+     "probability": 0.0152
+    },
+    {
+     "ch": "生",
+     "start": 118.342,
+     "end": 118.482,
+     "probability": 0.008
+    },
+    {
+     "ch": "们",
+     "start": 118.482,
+     "end": 118.682,
+     "probability": 0.9844
+    },
+    {
+     "ch": "欢",
+     "start": 118.682,
+     "end": 118.942,
+     "probability": 0.4097
+    },
+    {
+     "ch": "迎",
+     "start": 118.942,
+     "end": 119.122,
+     "probability": 0.9999
+    },
+    {
+     "ch": "来",
+     "start": 119.122,
+     "end": 119.242,
+     "probability": 0.9824
+    },
+    {
+     "ch": "到",
+     "start": 119.242,
+     "end": 119.442,
+     "probability": 0.9806
+    },
+    {
+     "ch": "福",
+     "start": 119.442,
+     "end": 119.742,
+     "probability": 0.963
+    },
+    {
+     "ch": "州",
+     "start": 119.742,
+     "end": 119.982,
+     "probability": 0.9893
+    },
+    {
+     "ch": "长",
+     "start": 119.982,
+     "end": 120.242,
+     "probability": 0.8042
+    },
+    {
+     "ch": "乐",
+     "start": 120.242,
+     "end": 120.462,
+     "probability": 0.9359
+    },
+    {
+     "ch": "国",
+     "start": 120.462,
+     "end": 120.622,
+     "probability": 0.9877
+    },
+    {
+     "ch": "际",
+     "start": 120.622,
+     "end": 120.782,
+     "probability": 0.9985
+    },
+    {
+     "ch": "机",
+     "start": 120.782,
+     "end": 120.922,
+     "probability": 0.9713
+    },
+    {
+     "ch": "场",
+     "start": 120.922,
+     "end": 121.182,
+     "probability": 0.9963
+    },
+    {
+     "ch": "T",
+     "start": 121.182,
+     "end": 121.482,
+     "probability": 0.8338
+    },
+    {
+     "ch": "2",
+     "start": 121.482,
+     "end": 121.662,
+     "probability": 0.9657
+    },
+    {
+     "ch": "航",
+     "start": 121.662,
+     "end": 121.842,
+     "probability": 0.9758
+    },
+    {
+     "ch": "站",
+     "start": 121.842,
+     "end": 122.022,
+     "probability": 0.9392
+    },
+    {
+     "ch": "楼",
+     "start": 122.022,
+     "end": 122.242,
+     "probability": 0.8969
+    }
+   ]
+  }
+ ],
+ "subtitles": [
+  {
+   "character": "Yuki",
+   "text": "哈喽哈喽！小雪的游记频道开播啦——今天带你们逛福州长乐机场 T2 航站楼！",
+   "start": 1.59,
+   "end": 7.15,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "纠正一下，是我们。朕的出场费结一下。",
+   "start": 7.29,
+   "end": 11.856,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "你看这个屋顶，一道一道的弧线叫马鞍墙，是福州古厝的经典造型。T2 的设计来头可不小——当年国际竞赛的第一名，是设计了新加坡樟宜机场的 CPG 和中国建筑设计研究院的联合体，落地深化由北京建院完成！",
+   "start": 11.996,
+   "end": 28.277,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "翻译一下：超大号猫爬架，而且不让爬。",
+   "start": 28.417,
+   "end": 33.577000000000005,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "抬头看！天花板上这些树叶一样的大屏幕，在循环放福州的宣传片——茉莉花都开到天上去啦！",
+   "start": 33.717,
+   "end": 40.868,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "等它开始播小鱼干广告，朕再抬头。",
+   "start": 41.007999999999996,
+   "end": 45.189,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "这边落地窗外面就是大海！二十五万五千平方米的航站楼，直接建在海边！",
+   "start": 45.329,
+   "end": 50.535000000000004,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "海里有鱼。鱼会晒成干。逻辑闭环，朕悟了。",
+   "start": 50.675,
+   "end": 55.217000000000006,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "窗户外面那个大工地，是什么？",
+   "start": 55.357,
+   "end": 58.617000000000004,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "那是 GTC 综合交通中心！以后高铁和地铁直接开进机场，跟航站楼连在一起！",
+   "start": 58.757,
+   "end": 64.687,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "哦。小鱼干的冷链直通车。",
+   "start": 64.827,
+   "end": 68.62,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "值机柜台是零高差的，行李箱轻轻一推就滑进去，托运不用练举重！",
+   "start": 68.75999999999999,
+   "end": 73.747,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "请问托运一只猫走哪个通道？朕自带体检报告。",
+   "start": 73.887,
+   "end": 79.8,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "候机座椅每一个都有 USB 接口，全楼还有 WiFi7！",
+   "start": 79.94,
+   "end": 84.07000000000001,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "朕的手机只剩百分之一的电。别问，问就是看了一路猫片。",
+   "start": 84.21,
+   "end": 90.672,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "最绝的是洗手间——马桶圈是指纹感应、自动换垫的！",
+   "start": 90.812,
+   "end": 94.729,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "朕按了爪印。识别成功，尊享喵星贵宾座。",
+   "start": 94.869,
+   "end": 100.194,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "一年三千六百万人次的吞吐量，4F 级的大机场，九月十六号刚刚启用，我们算第一批游客啦！",
+   "start": 100.334,
+   "end": 107.101,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "导游小姐，纪念品商店有小鱼干吗？",
+   "start": 107.241,
+   "end": 111.263,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Yuki",
+   "text": "……你是来参观的，还是来进货的？",
+   "start": 111.40299999999999,
+   "end": 113.54,
+   "kind": "dialogue"
+  },
+  {
+   "character": "Mochi",
+   "text": "参观是工作，进货是生活。",
+   "start": 113.67999999999999,
+   "end": 117.312,
+   "kind": "dialogue"
+  },
+  {
+   "character": "PA",
+   "text": "女士们先生们，欢迎来到福州长乐国际机场 T2 航站楼。",
+   "start": 117.452,
+   "end": 123.583,
+   "kind": "voiceover"
+  }
+ ]
+}

@@ -1,0 +1,366 @@
+{
+  "$schema": "../../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "yuki_airport_t2",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "小雪带胖猫年糕逛福州长乐机场 T2 航站楼，vlog 游记式吐槽。",
+    "audience": "旅行/日常喜剧观众",
+    "designPriorities": [
+      "竖屏里的高挑出发大厅（马鞍墙波浪吊顶 + 树叶屏）",
+      "玻璃幕墙外的海景",
+      "值机岛/候机椅/洗手间门口四个打卡点"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "ChangleAirportScene"
+    ],
+    "characters": [
+      "Mochi",
+      "Yuki"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "ChangleAirportScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "ChangleAirportScene",
+        "module": "scenes/ChangleAirportScene.js",
+        "export": "ChangleAirportScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "synchronous"
+      },
+      "intent": {
+        "location": "福州长乐国际机场 T2 出发大厅",
+        "timeOfDay": "晴天上午",
+        "tone": [
+          "明亮",
+          "开阔",
+          "轻喜剧"
+        ],
+        "storyFunction": "游记动线：入场 → 屋顶/吊顶 → 海景幕墙 → 值机岛 → 候机椅 → 洗手间门口 → 总结 → 登机口方向收尾",
+        "visualRules": [
+          "竖屏构图保留层高感（吊顶弧线与树叶屏入画）",
+          "玻璃幕墙外海平线可见",
+          "值机行李带与地面齐平（零高差）",
+          "候机椅扶手有 USB 小方块细节"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0.0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -15,
+            0,
+            -78
+          ],
+          "max": [
+            15,
+            8,
+            10
+          ]
+        },
+        "zones": [
+          {
+            "id": "mainStage",
+            "bounds": {
+              "min": [
+                -2.5,
+                0,
+                -1.5
+              ],
+              "max": [
+                2.5,
+                2,
+                1.5
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "双角色主场表演"
+            ]
+          },
+          {
+            "id": "checkinIsland",
+            "bounds": {
+              "min": [
+                -3,
+                0,
+                -3.4
+              ],
+              "max": [
+                -0.4,
+                1.2,
+                -1.7
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "零高差值机示范岛"
+            ]
+          },
+          {
+            "id": "seatRows",
+            "bounds": {
+              "min": [
+                0.8,
+                0,
+                2.2
+              ],
+              "max": [
+                5,
+                1.2,
+                4.6
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "候机座椅（USB 细节、猫瘫坐）"
+            ]
+          },
+          {
+            "id": "restroomDoor",
+            "bounds": {
+              "min": [
+                2.5,
+                0,
+                -3.5
+              ],
+              "max": [
+                5.5,
+                3.2,
+                -1
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "洗手间门口智能显示屏与掌纹面板"
+            ]
+          }
+        ],
+        "anchors": {
+          "catSeat": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              2.28,
+              0.465,
+              2.6
+            ],
+            "purpose": "年糕瘫坐的候机椅坐垫顶面"
+          },
+          "pawPad": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              2.78,
+              0.68,
+              -1.08
+            ],
+            "purpose": "洗手间门口掌纹感应面板中心（猫爪可及）"
+          },
+          "beltFront": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -1.7,
+              0.1,
+              -2.12
+            ],
+            "purpose": "零高差行李带前缘（行李箱推入点）"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "高挑明亮的日间大厅，幕墙透入海面反光",
+        "readabilityRules": [
+          "角色脸部不曝白",
+          "吊顶亮而不盖过角色",
+          "窗外海/天与室内明度分层"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "terminal_hall",
+          "kind": "roomtone",
+          "semantic": "开阔大厅低频环境底噪 + 偶尔广播",
+          "position": [
+            0,
+            3,
+            -2
+          ],
+          "radius": 12,
+          "loop": true
+        }
+      ],
+      "dependencies": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "Yuki",
+      "scene": "ChangleAirportScene",
+      "kind": "character",
+      "runtimeName": "Yuki",
+      "binding": "character:Yuki",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.8,
+          0
+        ],
+        "face": [
+          0,
+          1.4,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.5,
+            0,
+            0.2
+          ]
+        }
+      }
+    },
+    {
+      "id": "Mochi",
+      "scene": "ChangleAirportScene",
+      "kind": "character",
+      "runtimeName": "Mochi",
+      "binding": "character:Mochi",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.3,
+          0
+        ],
+        "face": [
+          0,
+          0.6,
+          0.22
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0.62,
+            0,
+            0.12
+          ]
+        }
+      }
+    },
+    {
+      "id": "suitcase",
+      "scene": "ChangleAirportScene",
+      "kind": "prop",
+      "objectName": "suitcase",
+      "binding": "scene:suitcase",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0.3,
+          0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.95,
+            0,
+            0.62
+          ]
+        }
+      },
+      "states": [
+        "pull",
+        "park",
+        "push"
+      ],
+      "initialState": "park"
+    },
+    {
+      "id": "phone",
+      "scene": "ChangleAirportScene",
+      "kind": "prop",
+      "objectName": "phone",
+      "binding": "scene:phone",
+      "parent": "$scene",
+      "initialPresence": "offstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            2.92,
+            0.7,
+            2.6
+          ]
+        }
+      },
+      "states": [
+        "hidden",
+        "held"
+      ],
+      "initialState": "hidden"
+    }
+  ],
+  "state": {},
+  "events": [],
+  "blocking": [],
+  "shotChecks": [],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "custom viewer render.mjs --check",
+      "visual-review",
+      "representative sequential clip"
+    ]
+  }
+}
