@@ -26,7 +26,7 @@ try{
   }
 }catch{}
 
-const stage=new RuinsDuskScene();stage.build();
+const stage=new RuinsDuskScene();stage.build();await stage.applyHybrid();
 const lei=new LeiXiaoCraft(),hong=new HongGangCraft(),observer=new ObserverCraft();
 stage.scene.add(lei.mesh,hong.mesh,observer.mesh);
 observer.mesh.position.set(-7.3,6.15,-11.8);observer.mesh.rotation.y=2.2;
@@ -73,7 +73,11 @@ function drawSubtitle(t){
   const fragments=(sub.text.match(/[^，。！？…—]+[，。！？…—]?/g)??[sub.text])
     .flatMap(f=>{const out=[];while(f.length>24){out.push(f.slice(0,24));f=f.slice(24);}if(f)out.push(f);return out;});
   const lines=[];let line='';
-  for(const f of fragments){if((line+f).length>24&&line){lines.push(line);line='';}line+=f;}if(line)lines.push(line);
+  for(const f of fragments){
+    if((line+f).length>24&&line){lines.push(line);line='';}
+    line+=f;
+    if(/[！？]$/.test(f)){lines.push(line);line='';} // 叹问句硬断句：跨句不连读
+  }if(line)lines.push(line);
   const y=H-66-(lines.length-1)*34;
   ctx.font='bold 25px Microsoft YaHei';ctx.textAlign='center';ctx.lineWidth=6;ctx.lineJoin='round';
   for(let i=0;i<lines.length;i++){
@@ -131,15 +135,86 @@ const dustRing=new THREE.Mesh(new THREE.TorusGeometry(1,.07,8,40),
   new THREE.MeshBasicMaterial({color:0xc9b89a,transparent:true}));
 dustRing.rotation.x=-Math.PI/2;stage.scene.add(dustRing);
 const impactRing=new THREE.Mesh(new THREE.TorusGeometry(1,.05,8,40),
-  new THREE.MeshBasicMaterial({color:0x3DFFC8,transparent:true}));
+  new THREE.MeshBasicMaterial({color:0x3DFFC8,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
 stage.scene.add(impactRing);
-function ringAt(mesh,x,y,z,t,t0,color,maxR=1.8){
+function ringAt(mesh,x,y,z,t,t0,color,maxR=1.8){ // 时间驱动特效环
   const u=(t-t0)/.55;
   if(u<0||u>1){mesh.visible=false;return;}
   mesh.visible=true;mesh.position.set(x,y,z);
   mesh.scale.setScalar(.2+ease(u)*maxR);mesh.material.opacity=.9*(1-u);
   mesh.material.color.set(color);
   mesh.lookAt(camera.position);
+}
+
+// 反击落点：地面径向裂缝（命中后常驻）+ 碎石飞溅（溅落留作残骸，时间驱动）
+const crackGroup=new THREE.Group();crackGroup.visible=false;stage.scene.add(crackGroup);
+{
+  const cm=new THREE.MeshBasicMaterial({color:0x241d16});
+  for(let i=0;i<8;i++){
+    const a=i/8*Math.PI*2+.3,len=.5+((i*37)%10)/10*.7;
+    const seg=new THREE.Mesh(new THREE.BoxGeometry(.035,.012,len),cm);
+    seg.position.set(Math.cos(a)*len/2,.015,Math.sin(a)*len/2);seg.rotation.y=-a+Math.PI/2;
+    crackGroup.add(seg);
+  }
+  crackGroup.position.set(1.05,.01,-2.0);
+}
+const rubble=[];
+{
+  const rm=new THREE.MeshToonMaterial({color:0x5a5248});
+  for(let i=0;i<10;i++){
+    const r=new THREE.Mesh(new THREE.TetrahedronGeometry(.04+((i*13)%5)*.012),rm);
+    const a=i/10*Math.PI*2+.7,sp=.8+((i*29)%10)/10*1.1;
+    r.userData={dx:Math.cos(a)*sp,dz:Math.sin(a)*sp,v0:1.6+((i*17)%10)/10,ph:i};
+    r.castShadow=true;r.visible=false;stage.scene.add(r);rubble.push(r);
+  }
+}
+function rubbleAt(t,t0){
+  const u=t-t0;
+  for(const r of rubble){
+    if(u<0){r.visible=false;continue;}
+    r.visible=true;const d=r.userData,fl=Math.min(u,.9);
+    r.position.set(1.05+d.dx*fl,.06+Math.max(0,d.v0*u-4.9*u*u),-2.0+d.dz*fl);
+    r.rotation.set(fl*7+d.ph,fl*5,d.ph);
+  }
+}
+const dustRing2=new THREE.Mesh(new THREE.TorusGeometry(1,.07,8,40),
+  new THREE.MeshBasicMaterial({color:0xc9b89a,transparent:true}));
+dustRing2.rotation.x=-Math.PI/2;stage.scene.add(dustRing2);
+// 真光效（加色混合 sprite）：接触闪光 + 火花迸溅，世界锚定时间驱动
+const flareTex=(()=>{const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d');
+  const gr=g.createRadialGradient(64,64,2,64,64,64);
+  gr.addColorStop(0,'#ffffff');gr.addColorStop(.3,'#ffffff');gr.addColorStop(1,'rgba(255,255,255,0)');
+  g.fillStyle=gr;g.fillRect(0,0,128,128);
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;})();
+const flare=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+flare.visible=false;stage.scene.add(flare);
+const sparks=[];
+{let sd=13;const rr=()=>{sd=(sd*1103515245+12345)&0x7fffffff;return sd/0x7fffffff;};
+ for(let i=0;i<16;i++){
+   const s=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+   const a=rr()*Math.PI*2,el=rr()*1.1+.2,sp=2.5+rr()*3;
+   s.userData={vx:Math.cos(a)*Math.cos(el)*sp,vy:Math.sin(el)*sp,vz:Math.sin(a)*Math.cos(el)*sp};
+   s.visible=false;stage.scene.add(s);sparks.push(s);
+ }}
+function flareAt(t,t0,x,y,z,color){
+  const u=(t-t0)/.5;
+  if(u<0||u>1){flare.visible=false;for(const s of sparks)s.visible=false;return;}
+  flare.visible=true;flare.position.set(x,y,z);
+  flare.scale.setScalar(.5+2.6*ease(u));
+  flare.material.opacity=u<.12?u/.12:1-ease((u-.12)/.88);
+  flare.material.color.set(color);
+  const tt=u*.5;
+  for(const s of sparks){const d=s.userData;s.visible=true;
+    s.position.set(x+d.vx*tt,y+d.vy*tt-2.45*tt*tt,z+d.vz*tt);
+    s.material.color.set(color);s.material.opacity=.9*(1-u);s.scale.setScalar(.04+.06*(1-u));}
+}
+// 头顶规避（监制决定镜头躲）：背景筒顶缘 ~19° 仰角，画面上沿不得超过
+function clampSky(c){
+  const maxEl=13.5*Math.PI/180,[px,py,pz]=c.pos,[lx,ly,lz]=c.look;
+  const dx=lx-px,dy=ly-py,dz=lz-pz,rh=Math.hypot(dx,dz);
+  const pitch=Math.atan2(dy,rh),halfV=(c.fov??44)/2*Math.PI/180;
+  if(pitch+halfV<=maxEl)return c;
+  return {...c,look:[lx,py+Math.tan(maxEl-halfV)*rh,lz]};
 }
 
 const lerp3=(a,b,u)=>a.map((x,i)=>x+(b[i]-x)*u);
@@ -149,14 +224,14 @@ function camFor(shot,t,entry){
     case 'establish':return{pos:lerp3([4.5,2.6,8.5],[3.2,2.0,7.2],u),look:[-3,2.6,-14],fov:52};
     case 'walk':return{pos:lerp3([3.6,1.5,4.0],[1.6,1.4,3.4],u),look:lerp3([2.2,1.0,-1.4],[-.5,1.1,-2],u),fov:42};
     case 'hong_drop':return{pos:[1.6,1.3,2.6],look:[4.3,1.1,-4.4],fov:44};
-    case 'hong':return{pos:[1.0,1.6,1.0],look:[3.9,1.35,-3.3],fov:36};
-    case 'lei':return{pos:[1.3,1.4,1.8],look:[-.55,1.22,-2],fov:36};
+    case 'hong':return{pos:[1.9,1.85,-2.25],look:[3.9,1.53,-3.3],fov:36};
+    case 'lei':return{pos:[1.15,1.64,-1.23],look:[-.7,1.35,-2],fov:36};
     case 'wide':return{pos:[.5,1.9,6.2],look:[.4,1.2,-3.6],fov:46};
     case 'block':return{pos:[1.0,1.15,3.0],look:[1.0,1.15,-2.6],fov:40};
-    case 'shout':return{pos:[1.8,1.35,2.2],look:[-.3,1.25,-2],fov:36};
+    case 'shout':return{pos:[lei.mesh.position.x+1.9,1.68,-1.15],look:[lei.mesh.position.x,1.36,-2],fov:38};
     case 'counter':return{pos:[.2,1.7,5.8],look:[1.8,1.2,-3.2],fov:44};
-    case 'laugh':return{pos:[2.0,1.15,1.2],look:[4.3,.75,-2.9],fov:38};
-    case 'mark':return{pos:[1.0,1.25,1.3],look:[-.55,1.05,-2],fov:31};
+    case 'laugh':return{pos:[2.2,1.30,-1.4],look:[4.4,1.02,-2.9],fov:35};
+    case 'mark':return{pos:[1.1,1.49,-1.15],look:[-.50,1.27,-2],fov:34};
     case 'hook':return{pos:lerp3([0,1.3,7.0],[-1.5,2.0,6.2],u),look:[-7.5,5.6,-12.5],fov:46};
     default:return{pos:[.5,1.9,6.2],look:[.4,1.2,-3.6],fov:46};
   }
@@ -165,19 +240,33 @@ function camFor(shot,t,entry){
 function draw(t,capture=true){
   const {entry,i,opts,phase,dt,u,sl,sh}=poseAt(lei,hong,entries,t);
   stage.update(t);
-  lei.setEmotion(sl.emotion,lei.mesh.visible?(poseBlink(t)):0);
-  lei.mouth.apply(lipLei(t));hong.mouth.apply(lipHong(t));
+  lei.setEmotion(sl.emotion,sl.blink??poseBlink(t));
+  hong.setEmotion(sh.emotion??(phase==='hong_laugh'?(u<.3?'laugh':'determined'):'determined'),poseBlink(t+.83)); // 笑只留开头一瞬，随即收住放话
+  lei.mouth.apply(lipLei(t));
+  hong.mouth.apply(phase==='will_up'&&u>.12&&u<.55?{jaw:.5,width:.9}:lipHong(t)); // 被击飞惊呼
   observer.mesh.visible=phase==='hook';
 
   // 3D 特效（必须在 render 之前）
   const es=entry.startTime,dur=entry.endTime-entry.startTime;
   if(phase==='hong_drop')ringAt(dustRing,3.9,.03,-3.3,t,es+dur*.55,'#c9b89a',2.4);
   else dustRing.visible=false;
-  if(phase==='clash1')ringAt(impactRing,.9,1.35,-2.4,t,es+dur*.65,'#3DFFC8',2.2);
-  else if(phase==='will_up')ringAt(impactRing,2.4,1.3,-2.6,t,es+dur*.72,'#FF3B3B',2.6);
+  if(phase==='clash1')ringAt(impactRing,-.05,1.35,-2.15,t,es+dur*.65,'#3DFFC8',2.2);
+  else if(phase==='will_up')ringAt(impactRing,1.05,1.35,-2.0,t,es+dur*.72,'#FF3B3B',2.6);
   else impactRing.visible=false;
+  if(phase==='will_up')ringAt(dustRing2,4.4,.03,-2.9,t,es+dur*.30,'#c9b89a',2.0);
+  else dustRing2.visible=false;
+  if(phase==='clash1')flareAt(t,es+dur*.65,-.05,1.35,-2.15,'#3DFFC8');
+  else if(phase==='clash2')flareAt(t,es+dur*.62,-.05,1.35,-2.15,'#3DFFC8');
+  else if(phase==='will_up')flareAt(t,es+dur*.72,1.05,1.35,-2.0,'#FF6B3B');
+  else{flare.visible=false;for(const s of sparks)s.visible=false;}
+  const willEntry=entries.find(en=>en.storyEvents[0]?.options.move==='will_up');
+  const WILL_HIT=willEntry.startTime+(willEntry.endTime-willEntry.startTime)*.72;
+  crackGroup.visible=t>=WILL_HIT;
+  if(crackGroup.visible)crackGroup.scale.setScalar(Math.max(clamp((t-WILL_HIT)/.12),.001));
+  rubbleAt(t,WILL_HIT);
 
-  const c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'wide',t,entry);
+  let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'wide',t,entry);
+  if(!window.freeCamera)c=clampSky(c);
   camera.position.set(...c.pos);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
 
   const state={entry:i+1,phase,shot:opts.shot,leiEmotion:sl.emotion,leiJaw:lipLei(t).jaw,hongJaw:lipHong(t).jaw,
@@ -188,9 +277,9 @@ function draw(t,capture=true){
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);
   // canvas 叠加层（3D 之上）：速度线/白闪/拟声词/字卡
   if(phase==='hong_drop')drawSFX('轰！','#FF3B3B',es+dur*.55,es+dur*.95,t);
-  if(phase==='clash1'){speedLines(t,es+dur*.1,es+dur*.5);flash(t,es+dur*.65,.09);drawSFX('铛——！','#3DFFC8',es+dur*.65,es+dur*.98,t);}
-  if(phase==='clash2'){speedLines(t,es+dur*.08,es+dur*.45);flash(t,es+dur*.62,.08,.6);if(u>.55)drawCard('flash',(u-.55)/.45);}
-  if(phase==='will_up'){speedLines(t,es+dur*.55,es+dur*.8);flash(t,es+dur*.72,.12,.95);drawSFX('碎！','#FF3B3B',es+dur*.72,es+dur*.98,t);}
+  if(phase==='clash1'){flash(t,es+dur*.65,.09,.55);drawSFX('铛——！','#3DFFC8',es+dur*.65,es+dur*.98,t);}
+  if(phase==='clash2'){flash(t,es+dur*.62,.08,.4);if(u>.55)drawCard('flash',(u-.55)/.45);}
+  if(phase==='will_up'){flash(t,es+dur*.72,.12,.7);drawSFX('碎！','#FF3B3B',es+dur*.72,es+dur*.98,t);}
   if(opts.kind==='card')drawCard(opts.card,u);
   if(phase==='hook'&&u>.6)drawCard('end',(u-.6)/.4);
   state.subtitle=drawSubtitle(t);

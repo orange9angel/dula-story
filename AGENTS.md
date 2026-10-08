@@ -19,7 +19,7 @@ dula-story   ← 本仓库（剧本/配置/素材/输出）
 **最新 Episode**：`episodes/bio_armor_academy_s1e1/`（《9章》——生物机械校园剧：虫化仿生设定（几丁质/蝉翼刃/羽化）重构完成；30s 打斗试片封版——风林火山节奏、镜头三类 I2V 路径（口型镜图+音频组合/动作镜首尾帧双钉/覆盖镜独立 I2V）、Seed-Audio 演绎人声（战损嘶哑零播音腔）、程序化水墨转场卡，见 `storyboard_fight.md`）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
-- `episodes/bio_armor_academy_s1e2/` — 《9章》S1E2《碎岩》（craft3d 工艺横屏 66s：雷晓/轰刚双新程序化角色、右臂殖装三态+左臂蚀纹、废工地黄昏场景、轰刚选定声线咆哮小哥 2.0、8 句 TTS QC 全绿、S1E1 BGM/SFX 库复用、水墨字卡×3、伏笔台账 F04 advance/F07+F08 planted；viewer 4214，git 未提交待监制评审，见 `NOTES.md`）
+- `episodes/bio_armor_academy_s1e2/` — 《9章》S1E2《碎岩》（craft3d 工艺横屏 66s：雷晓/轰刚双新程序化角色、右臂殖装三态+左臂蚀纹、废工地黄昏场景、轰刚选定声线咆哮小哥 2.0、8 句 TTS QC 全绿、水墨字卡×3、伏笔台账 F04 advance/F07+F08 planted；R2 表情/音频重混、R3 打斗接触+场景剪影、R4-R8 craft3d-hybrid 混合场景（Seedream 纹理/圆柱全景/材质化/天穹，见 `dula-skills/hybrid-craft-scene`）、R9 真光效+表演因果、R10-R11 轰刚换声热血少年+全句标点断句根修，成片 `output/craft3d_full_r11.mp4`；viewer 4214，见 `NOTES.md`）
 - `episodes/yuki_airport_t2/` — 《小雪游 T2》（小雪带年糕逛福州长乐机场 T2 幽默游记；craft3d 工艺全新机场场景 ChangleAirportScene：马鞍墙波浪曲面吊顶+喇叭口天窗阵列（R2 按实景改造）/树叶航班屏/幕墙海景/零高差值机岛/掌纹感应桩；19 条 TTS QC 全绿，123.6s 成片 `output/craft3d_full.mp4`（R5 树叶屏改宣传片画面+两句台词；R4 马鞍脊梁+GTC；R3 Seed-Audio BGM）（R1 已修正设计方事实链：CPG×中国院竞赛联合体+北京建院落地深化，见 NOTES）；viewer 4213；只读引用 craft_trial 与 fish craft3d）
 - `episodes/yuki_fish_musical/craft3d/` — 《谁动了我的小鱼干》三维化（2026-09-27 Phase 4 完成：开场（端盘下套/空盘）+ 正片 + 结尾（洗碗/偷瞄零食袋/画外「我看着呢」）共 65.6s 完整剧情短片 `craft3d_full.mp4`；双主角形象精修（分层眼/高光带/裙褶顶点色/猫背分区）；5 条新台词 TTS 全绿；viewer 4210；原 cel 版不动，见 `craft3d/NOTES.md`）
 - `episodes/yuki_morning_battle/craft_trial/` — 《早起大作战》工艺试片（2026-09-23：用户认可五指、四肢与头颈改善；新增二维三维混合河岸、非匀速阵风和飞鸟，12.4s 动态/静态各 372 帧检查通过并提供并排对照，环境效果待复看；原室内 16 帧哈希不变；viewer 4199，未替换共享角色或原集；入口见 `VISUAL_REVIEW.md`）

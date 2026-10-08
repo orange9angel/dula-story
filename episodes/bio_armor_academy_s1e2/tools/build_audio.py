@@ -1,11 +1,5 @@
-"""《9章》S1E2 音频构建：对齐 → 实测排时（回写 script.story）→ 视素轨道 → 特征 → 混音。
-
-产出（viewer 数据链）：
-  config/timeline.json / viseme_leixiao.json / viseme_honggang.json / final_voice_features.json
-  assets3d/mixed.wav
-混音结构：inkblaze_theme 全片铺底 + furyu_fight_theme 打斗段（hong_armor→will_up 末）+
-  SFX 事件总线（S1E1 音效库拷贝 assets3d/sfx/）+ 暮蝉/晚风环境床 + 台词（零点=对齐零点）。
-BGM ducking 口径：基准 RMS=人声−12dB，对白段 gate 包络再 duck −7dB（150ms 平滑）。
+"""Build aligned dialogue timing and visemes, then mix the R2 Suno/Seed-Audio soundtrack.
+For music/SFX-only changes run tools/remix_audio.py to preserve dialogue alignment.
 """
 from pathlib import Path
 import json, subprocess, sys
@@ -133,95 +127,7 @@ def main():
         features[name] = frames
 
     # ── 混音 ──
-    total_n = int(round(duration * SR))
-    mix = np.zeros((total_n, 2))
-    voice = np.zeros((total_n, 2))
-    def place(x, t0, gain=1.0, fade=.02, bus=None, skip_mix=False):
-        k = round(t0 * SR)
-        m = min(len(x), total_n - k)
-        if m <= 0:
-            return
-        seg = x[:m] * gain
-        f = min(round(fade * SR), m // 2)
-        if f > 0:
-            r = np.linspace(0, 1, f)[:, None]
-            seg[:f] *= r; seg[-f:] *= r[::-1]
-        if not skip_mix:
-            mix[k:k + m] += seg
-        if bus is not None:
-            bus[k:k + m] += seg
-
-    for line in LINES:  # 台词，零点=对齐零点
-        seg = seg_of[line['id']]
-        x = load(proc_path(line))
-        peak = float(np.abs(x).max())
-        place(x, seg['start'], .55 / max(peak, 1e-9), bus=voice)
-
-    # 环境床：晚风 + 暮蝉循环
-    def loop_to(path, gain_db):
-        x = load(EP / f'assets3d/sfx/{path}')
-        out = np.zeros((total_n, 2))
-        stride = len(x) - round(.8 * SR)
-        x = x * np.r_[np.linspace(0, 1, round(.8 * SR)), np.ones(len(x) - round(.8 * SR))][:, None]
-        for at in range(0, total_n, stride):
-            m = min(len(x), total_n - at)
-            out[at:at + m] += x[:m]
-        return out * (10 ** (gain_db / 20))
-    mix += loop_to('wind_dusk.wav', -26) + loop_to('dusk_cicadas.wav', -30)
-
-    # BGM：inkblaze 全片铺底 + furyu 打斗段——先入 bgm bus，统一 duck 后入 mix
-    bgm = np.zeros((total_n, 2))
-    ink = load(EP / 'assets3d/inkblaze_theme.mp3')
-    ink *= .10 / max(float(np.abs(ink).max()), 1e-9)
-    place(ink, 0, 1.0, fade=2.0, bus=bgm, skip_mix=True)
-    furyu = load(EP / 'assets3d/furyu_fight_theme.wav')
-    furyu *= .30 / max(float(np.abs(furyu).max()), 1e-9)
-    fa, fb = beat_of['hong_armor']['start'], beat_of['will_up']['end']
-    fl = min(len(furyu), round((fb - fa) * SR))
-    place(furyu[:fl], fa, 1.0, fade=.6, bus=bgm, skip_mix=True)
-
-    # SFX 事件总线（S1E1 音效库）
-    def sfx(name, t0, gain=1.0):
-        x = load(EP / f'assets3d/sfx/{name}.wav')
-        x *= .5 / max(float(np.abs(x).max()), 1e-9)
-        place(x, t0, gain, fade=.03)
-    b = beat_of
-    sfx('crow_caws', b['establish']['start'] + .8, .8)
-    sfx('ground_crater', b['hong_drop']['start'] + (b['hong_drop']['end'] - b['hong_drop']['start']) * .55, 1.0)
-    sfx('wind_gust', b['hong_drop']['start'] + .3, .5)
-    sfx('wing_hum_rising', b['hong_armor']['start'] + 1.2, .7)
-    for beat, hit_gain in (('clash1', 1.0), ('clash2', .6)):
-        e = b[beat]
-        sfx('dash_gale', e['start'] + (e['end'] - e['start']) * .15, .7)
-        sfx('chitin_impact', e['start'] + (e['end'] - e['start']) * .65, hit_gain)
-    sfx('shockwave_ring', b['clash1']['start'] + (b['clash1']['end'] - b['clash1']['start']) * .65, .8)
-    sfx('cicada_wing_buzz', b['will_up']['start'] + (b['will_up']['end'] - b['will_up']['start']) * .35, .7)
-    wu = b['will_up']
-    hit_t = wu['start'] + (wu['end'] - wu['start']) * .72
-    sfx('bio_impact_metal', hit_t, 1.0)
-    sfx('floor_crack', hit_t + .15, .8)
-    sfx('debris_scatter', hit_t + .3, .6)
-    sfx('heartbeat_core', b['first_mark']['start'] + .3, .9)
-    sfx('steps_fading', b['hook']['start'] + .5, .6)
-    sfx('wind_faint', b['hook']['start'], .7)
-
-    # BGM ducking（人声 gate 包络）后入 mix；心跳段 BGM 稍收
-    gate = np.maximum(np.array([f['gate'] for f in features['LeiXiao']]),
-                      np.array([f['gate'] for f in features['HongGang']]))
-    from scipy.ndimage import gaussian_filter1d as _gf
-    duck = np.interp(np.arange(total_n) / SR, np.arange(len(gate)) * step, gate)
-    duck = _gf(duck, .15 * SR)
-    bgm_env = (1 - .68 * np.clip(duck, 0, 1))[:, None]
-    mk = beat_of['first_mark']
-    i0, i1 = round(mk['start'] * SR), round(mk['end'] * SR)
-    bgm_env[i0:i1] *= .7
-    mix += bgm * bgm_env
-
-    peak = float(np.abs(mix).max())
-    if peak > .89:
-        mix *= .89 / peak
-    sf.write(EP / 'assets3d/mixed.wav', mix, SR, subtype='PCM_24')
-
+    # R2 mixing uses verified Suno/Seed-Audio sources via remix_audio.py.
     cfg = EP / 'config'
     (cfg / 'timeline.json').write_text(json.dumps({
         'duration': duration, 'step': step,
@@ -239,14 +145,8 @@ def main():
             ensure_ascii=False), encoding='utf-8')
     (cfg / 'final_voice_features.json').write_text(json.dumps(
         {'step': step, 'characters': features}, ensure_ascii=False), encoding='utf-8')
-    (EP / 'storyboard/audio_check.json').write_text(json.dumps({
-        'duration': duration, 'mix_peak_dbfs': round(20 * np.log10(float(np.abs(mix).max())), 2),
-        'lines': {l['id']: round(durations[l['id']], 3) for l in LINES},
-        'bgm': {'bed': 'inkblaze_theme（S1E1）铺底 -20dB 级', 'fight': 'furyu_fight_theme（S1E1）打斗段',
-                'ducking': 'gate 包络 -7dB/150ms'},
-        'sfx': 'S1E1 音效库 16 支拷贝 assets3d/sfx/，事件表见 build_audio.py',
-    }, ensure_ascii=False, indent=1), encoding='utf-8')
-    print(f'mixed.wav {duration}s peak {peak:.3f}')
+    subprocess.run([sys.executable, str(EP / 'tools/remix_audio.py')], check=True)
+    print(f'R2 timeline and mix complete: {duration}s')
 
 
 if __name__ == '__main__':

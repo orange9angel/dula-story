@@ -1,0 +1,16 @@
+{
+  "provider": "suno",
+  "model": "v6",
+  "song_url": "https://suno.com/song/22280731-2fe4-47b1-8d18-e711ff96ba55",
+  "other_generated_candidate": "https://suno.com/song/c0b83d41-2527-406d-8de8-ac2a02610800",
+  "file": "assets3d/refinement/music/suno_duel_22280731.mp3",
+  "selection_basis": "Instrumental request, confirmed Suno file metadata; quiet opening and a stronger later section selected using the measured energy arc. Final musical taste remains subject to normal-speed review.",
+  "cues": [
+    {"id":"unease", "start_beat":"card_open", "end_beat":"hong_armor", "end_edge":"start", "source_offset":0, "relative_rms_db":-14, "fade_in":1.5, "fade_out":0.6},
+    {"id":"duel", "start_beat":"hong_armor", "end_beat":"will_up", "end_edge":"end", "source_offset":97, "relative_rms_db":-10, "fade_in":0.6, "fade_out":0.6},
+    {"id":"aftermath", "start_beat":"hong_laugh", "end_beat":"first_mark", "end_edge":"start", "source_offset":129.5, "relative_rms_db":-17, "fade_in":0.7, "fade_out":0.7},
+    {"id":"unresolved", "start_beat":"hook", "end_beat":"hook", "end_edge":"end", "source_offset":1.5, "relative_rms_db":-17, "fade_in":1.2, "fade_out":2.0}
+  ],
+  "silence": "first_mark: expose the heartbeat and the new left-arm mark",
+  "dialogue_duck_db": -8
+}

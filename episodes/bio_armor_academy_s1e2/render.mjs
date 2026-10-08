@@ -85,10 +85,27 @@ if(!serve){
     if(check){
       const seek=[];
       for(const shot of [...trace].reverse()){
-        const result=await page.evaluate(t=>window.renderAt(t),shot.t);
-        const equal=Buffer.from(result.image,'base64').equals(fs.readFileSync(path.join(board,shot.filename)));
-        if(!equal)fs.writeFileSync(path.join(board,shot.filename.replace('.jpg','_seek.jpg')),Buffer.from(result.image,'base64'));
-        seek.push({t:shot.t,equal});
+        // 像素容差比较：JPEG 编码器在复杂边缘偶有单个 8×8 块的字节级非确定性，
+        // 字节相等会把"同一画面不同编码"误判为状态漂移（2026-10-08 shot_32 实测）。
+        const refB64=fs.readFileSync(path.join(board,shot.filename)).toString('base64');
+        const stats=await page.evaluate(async(t,ref)=>{
+          const r=window.renderAt(t);
+          const load=b=>new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.src='data:image/jpeg;base64,'+b;});
+          const [a,b]=await Promise.all([load(r.image),load(ref)]);
+          const W=a.width,H=a.height,c=document.createElement('canvas');c.width=W;c.height=H;
+          const g=c.getContext('2d',{willReadFrequently:true});
+          g.drawImage(a,0,0);const da=g.getImageData(0,0,W,H).data;
+          g.drawImage(b,0,0);const db=g.getImageData(0,0,W,H).data;
+          let bad=0,max=0;
+          for(let i=0;i<da.length;i+=4){
+            const d=Math.max(Math.abs(da[i]-db[i]),Math.abs(da[i+1]-db[i+1]),Math.abs(da[i+2]-db[i+2]));
+            if(d>max)max=d;if(d>16)bad++;
+          }
+          return{bad,max,image:r.image};
+        },shot.t,refB64);
+        const equal=stats.bad<=64; // 至多约两个 8×8 编码块的噪声
+        if(!equal)fs.writeFileSync(path.join(board,shot.filename.replace('.jpg','_seek.jpg')),Buffer.from(stats.image,'base64'));
+        seek.push({t:shot.t,equal,bad:stats.bad,max:stats.max});
       }
       fs.writeFileSync(path.join(board,'seek_check.json'),JSON.stringify({checks:seek,passed:seek.every(s=>s.equal)},null,2));
       fs.writeFileSync(path.join(board,'craft3d_trace.json'),JSON.stringify({duration,fps,errors,shots:trace},null,2));

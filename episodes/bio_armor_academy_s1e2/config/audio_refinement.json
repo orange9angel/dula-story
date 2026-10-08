@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "status": "reviewed",
+  "music": {"provider": "suno", "intent": "Sparse unease, a decisive action build, then an exposed heartbeat and unresolved ending. Use one composition edited into successive cues; never stack independent full scores."},
+  "ambience": {"provider": "seed-audio-1.0", "intent": "Quiet open-air dusk at an abandoned construction site. Wind establishes space; cicadas and crows remain distant and irregular. No musical pulse."},
+  "preserve": ["dialogue files", "dialogue placement", "viseme tracks", "script.story timing"],
+  "replacements": [
+    {"name": "wind_dusk", "prompt": "生成一段72秒纯真实环境录音：夏日黄昏废弃工地的极轻微空气流动，宽阔室外，远处柔和低沉城市底噪。平稳、无阵风、无节律性涌动、音量恒定，没有循环节拍。没有人声、音乐、旋律、鸟虫叫、敲击、金属声。空气声柔和不刺耳，避免高频白噪嘶声。开头和结尾保持相同空间和音量。"},
+    {"name": "crow_caws", "prompt": "生成一段4秒纯自然音效：远处一只乌鸦叫两声，间隔不规则，真实沙哑短促鸟叫，带宽阔室外的距离感。背景几乎安静，无人声无音乐无节奏无其他动物，结束有自然衰减。"},
+    {"name": "floor_crack", "prompt": "生成一段2秒纯音效：一记重击造成混凝土地面开裂，开头立刻清晰干脆裂响，接极短低沉断裂和细碎砂石落地。真实硬质混凝土，室外近景，有重量但不刺耳，不要爆炸、不做金属铃声、不加持续低音。无人声无音乐。"},
+    {"name": "heartbeat_core", "prompt": "生成一段4秒纯音效：安静空间中两组低沉清楚的生物心跳，每组为轻重不同的咚咚双音，之间留安静空隙。近距离有机组织共鸣，自然收尾，不要旋律，不要配乐，不要电子高频、不加背景噪声，无人声。"},
+    {"name": "bio_impact_metal", "prompt": "生成一段2秒纯音效：重拳击中厚硬的生物几丁质护甲，起始瞬间低沉猛烈的实心撞击伴一声短促甲壳碎裂，随后零星细小壳片掉落并迅速收尾。声音有重量而干净，无金属长鸣、无人声、无音乐、无电子旋律。"},
+    {"name": "shield_deploy", "prompt": "生成一段1.5秒纯音效：两片生物几丁质骨板从前臂瞬间弹开成盾，开头一声干脆短促的甲壳展开咔哒，伴随极短的骨质滑动摩擦，收尾带一丝低沉有机共鸣。近景室外，快速干净，无音乐无人声无金属声无电子音。"}
+  ]
+}

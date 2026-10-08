@@ -11,7 +11,7 @@ STORY = EP.parents[1]
 SKILL = STORY.parent / 'dula-skills/volc-voice-casting/scripts'
 PY = STORY / '.venv/Scripts/python.exe'
 SPEAKERS = {'LeiXiao': 'ICL_uranus_zh_male_chanruoshaoye_tob',
-            'HongGang': 'ICL_uranus_zh_male_paoxiaoxiaoge_tob'}
+            'HongGang': 'ICL_uranus_zh_male_rexueshaonian_tob'}
 
 lines = json.loads((Path(__file__).parent / 'lines.json').read_text(encoding='utf-8'))
 sys.path.insert(0, str(Path(__file__).parent))
@@ -24,7 +24,7 @@ manifest = []
 for line in lines:
     out = out_dir / f"{line['id']}.mp3"
     if not out.exists():
-        cmd = [str(PY), str(SKILL / 'seedtts_say.py'), '--text', line['text'],
+        cmd = [str(PY), str(SKILL / 'seedtts_say.py'), '--text', line.get('tts_text', line['text']),
                '--speaker', SPEAKERS[line['character']],
                '--emotion', line['emotion'], '--emotion-scale', '2',
                '--out', str(out)]

@@ -107,7 +107,7 @@ function specHong(phase,u,dt,t){
     }
     case 'charge1':case 'charge2':{ // 冲锋直拳（风拍）
       const a=ease(u/.4);
-      s.rootX=mix(3.9,1.7,a);s.rootZ=mix(-3.3,-2.5,a);
+      s.rootX=mix(3.9,.55,a);s.rootZ=mix(-3.3,-2.35,a);s.lean=.12*a; // 前冲压身
       s.gauntletT=1;
       s.punchT=clamp((u-.45)/.2);
       const p=ease(s.punchT);
@@ -117,9 +117,9 @@ function specHong(phase,u,dt,t){
       break;
     }
     case 'knockdown':{ // 甲碎、坐地
-      s.gauntletT=1;s.hitT=clamp((u-.1)/.25);
+      s.gauntletT=1;s.hitT=clamp((u-.1)/.25);s.emotion='scared'; // 被击飞是吃惊
       const h=ease(s.hitT);
-      s.rootX=mix(1.7,4.4,h);s.rootZ=mix(-2.5,-2.9,h);s.air=Math.sin(h*Math.PI)*.5;
+      s.rootX=mix(.55,4.4,h);s.rootZ=mix(-2.35,-2.9,h);s.air=Math.sin(h*Math.PI)*.5; // 从接触点被击飞
       if(s.hitT>.55){s.sit=true;s.hornBroken=true;s.gauntletT=.55;}
       s.left=V(-.4,1.3,.3);s.right=V(.4,1.3,.3);s.headPitch=.2;
       break;
@@ -146,7 +146,7 @@ function buildPose(actor,s,t,dims){
   const {hipIdle,shoulderY,shoulderHalf,hipHalf,legA,legB,armA,armB,footY}=dims;
   let hipY=s.sit?.46:(s.hipY??hipIdle+s.bob);
   const p={rootX:s.rootX,rootZ:s.rootZ,yaw:s.yaw,bob:s.bob,blink:s.blink,
-    headYaw:s.headYaw,headPitch:s.headPitch,headRoll:s.headRoll,point:s.point??0};
+    headYaw:s.headYaw,headPitch:s.headPitch,headRoll:s.headRoll,point:s.point??0,fist:s.fist??0,open:s.open??0,lean:s.lean??0};
   if(s.walk){
     const ph=t*4.6;
     for(const [side,sign] of [['left',-1],['right',1]]){
@@ -165,7 +165,8 @@ function buildPose(actor,s,t,dims){
   }
   for(const [side,sign] of [['left',-1],['right',1]]){
     const leg=p[side+'Leg'];leg[1]=twoBone(leg[0],leg[2],V(0,0,1),legA,legB);
-    const shoulder=V(sign*shoulderHalf,shoulderY+s.bob,0),target=V(s[side].x,s[side].y+s.bob,s[side].z);
+    const torsoOffset=s.sit?hipY-hipIdle:(s.walk?hipY-hipIdle:s.bob);
+    const shoulder=V(sign*shoulderHalf,shoulderY+torsoOffset,0),target=V(s[side].x,s[side].y+s.bob,s[side].z);
     const delta=new THREE.Vector3(target.x-shoulder.x,target.y-shoulder.y,target.z-shoulder.z);
     const maxR=armA+armB-.005;
     if(delta.length()>maxR){delta.setLength(maxR);Object.assign(target,V(shoulder.x+delta.x,shoulder.y+delta.y,shoulder.z+delta.z));}
@@ -180,8 +181,8 @@ function buildPose(actor,s,t,dims){
   actor.mesh.visible=s.visible!==false;
   return p;
 }
-const DIMS_LEI={hipIdle:.85,shoulderY:1.375,shoulderHalf:.155,hipHalf:.075,legA:.40,legB:.40,armA:.19,armB:.18,footY:.085};
-const DIMS_HONG={hipIdle:.98,shoulderY:1.56,shoulderHalf:.21,hipHalf:.10,legA:.45,legB:.45,armA:.22,armB:.21,footY:.10};
+const DIMS_LEI={hipIdle:.85,shoulderY:1.375,shoulderHalf:.13,hipHalf:.075,legA:.40,legB:.40,armA:.19,armB:.18,footY:.085};
+const DIMS_HONG={hipIdle:.98,shoulderY:1.56,shoulderHalf:.18,hipHalf:.10,legA:.45,legB:.45,armA:.22,armB:.21,footY:.10};
 
 // 条目→角色 move 映射
 const LEI_PHASE={card_open:'card_open',establish:'establish',walk_in:'walk_in',hong_drop:'lei_idle',
@@ -210,7 +211,7 @@ export function poseAt(lei,hong,entries,t){
     const oh=specHongFix(HONG_PHASE[prev.storyEvents[0].options.move]??'lei_idle_h',pu,prev.endTime-prev.startTime,prev.endTime);
     const a=ease(dt/.3);
     for(const [s,o] of [[sl,ol],[sh,oh]]){
-      for(const key of ['rootX','rootZ','yaw','bob','headYaw','headRoll','headPitch','armorT','shieldT','gauntletT','etchT','air'])
+      for(const key of ['rootX','rootZ','yaw','bob','headYaw','headRoll','headPitch','armorT','shieldT','gauntletT','etchT','air','fist','open','point','lean'])
         if(typeof s[key]==='number')s[key]=mix(o[key]??0,s[key],a);
       s.left=blend(o.left,s.left,a);s.right=blend(o.right,s.right,a);
     }
