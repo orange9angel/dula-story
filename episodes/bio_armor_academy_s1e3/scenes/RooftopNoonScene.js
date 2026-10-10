@@ -125,9 +125,19 @@ export class RooftopNoonScene{
     // ── 楼梯间小屋（门朝镜头 +z；门板 update 里按时间开合）──
     {
       const hut=new THREE.Group();hut.position.set(-6.5,0,-9.3);S.add(hut);this.hut=hut;
-      box(hut,'hut_body',[0,1.35,0],[2.6,2.7,2.6],'#b0aca2',{shadow:true}).material=parapetMat;
+      // Hollow shell with a real 1m doorway. A solid box behind an animated door
+      // is still a wall: both the character and its carried props must pass this opening.
+      for(const [name,p,size] of [
+        ['hut_wall_w',[-1.22,1.35,0],[.16,2.7,2.6]],
+        ['hut_wall_e',[1.22,1.35,0],[.16,2.7,2.6]],
+        ['hut_wall_back',[0,1.35,-1.22],[2.6,2.7,.16]],
+        ['hut_front_l',[-.90,1.35,1.22],[.80,2.7,.16]],
+        ['hut_front_r',[.90,1.35,1.22],[.80,2.7,.16]],
+        ['hut_lintel',[0,2.405,1.22],[1.0,.59,.16]],
+      ])box(hut,name,p,size,null,{mat:parapetMat,shadow:true});
       box(hut,'hut_roof',[0,2.76,0],[3.0,.14,3.0],null,{mat:capMat,shadow:true});
-      box(hut,'hut_step',[0,.04,1.55],[1.6,.08,.7],null,{mat:capMat});
+      // Flush threshold: the shared gait walks on y=0, so no unmodelled 8cm step.
+      box(hut,'hut_step',[0,-.025,1.55],[1.6,.05,.7],null,{mat:capMat});
       // 门框 + 铰链门（门板绕左缘开合）
       box(hut,'door_frame_t',[0,2.06,1.31],[1.15,.1,.1],'#6a6258');
       box(hut,'door_frame_l',[-.55,1.03,1.31],[.1,2.16,.1],'#6a6258');
@@ -213,11 +223,11 @@ export class RooftopNoonScene{
     }
   }
   // 楼梯间门开合（纯时间函数）：雷晓 6.9–7.5 开门、9.2–10.4 带上；
-  // 轰刚 13.55 撞开（人 14.0 才出现：门先扫完净空区再进人，回弹 13.85 起）、15.8–17.2 弹回。
-  // 碰撞代理（check_contact.py 用）：铰链世界 (-6.975,1.02,-7.96)，门板长 .95，高 0.02–2.02。
+  // 轰刚 13.55 撞开，13.85 起回弹；17.1 等人和便当离开扫掠区后再关门。
+  // Probe reads the rendered hut/door meshes and final matrices, including rebound.
   doorA(t){
     const seg=(a,b)=>ease(clamp((t-a)/(b-a)));
-    let a=seg(6.9,7.5)*(1-seg(9.2,10.4))+seg(13.55,13.85)*(1-seg(15.8,17.2));
+    let a=seg(6.9,7.5)*(1-seg(9.2,10.4))+seg(13.55,13.85)*(1-seg(17.1,18.3));
     let ang=-1.75*Math.min(1,a);
     if(t>13.85&&t<15.1)ang-=.10*Math.sin((t-13.85)*22)*Math.exp(-(t-13.85)*5); // 撞门回弹
     return ang;

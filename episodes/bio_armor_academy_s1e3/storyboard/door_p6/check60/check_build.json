@@ -1,0 +1,24 @@
+{
+  "args": [
+    "--check",
+    "--fps",
+    "60",
+    "--range",
+    "6.8,22",
+    "--q",
+    "&probe-door=1",
+    "--board",
+    "storyboard/door_p6/check60",
+    "--trace",
+    "storyboard/door_p6/check60/trace.json"
+  ],
+  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\output\\craft3d_r1.mp4",
+  "sourceSha256": {
+    "performance.js": "463c6b3f8b06cd1fef318e2f74f741b8aaeac66d64af00c5b70bc2349c0c8f82",
+    "viewer.js": "a1651c9be9adab58d982c470419424b72b571a7cfe9df0ab90ca3092849d76e4",
+    "render.mjs": "55e3166f413870aac66917633ed6c8162068044c4dddd889d7a856d74e458165",
+    "scenes/RooftopNoonScene.js": "47e535dfa3530a6c6f8603cb318e1fe1d34d840fb27022aa87ec82a218c8c27d",
+    "tools/door_probe.js": "3dd5f4c85434cc602e540b791590c27dd28d4d8e450166f1fc732d5a7ed17e83",
+    "config/timeline.json": "1ff00ef4671e36862ee802ed1c394ff68cc34cc9e074828ef11a979c0ab599bf"
+  }
+}

@@ -1,6 +1,7 @@
 # 《9章》S1E3《天台便当》— craft3d 工艺（程序化三维 + Seed-Audio 音频）
 
-**当前交付：`output/craft3d_full.mp4`（71.0s，1280×720@30 + AAC 48kHz，25.6MB）**。
+**当前交付：P6 `output/craft3d_full.mp4`（另存 `craft3d_full_p6.mp4`，71.0s，1280×720@30 + AAC 48kHz）**。
+开门修复对比：`output/door_p6_compare.mp4`（7–22s，左 P5 / 右 P6）；旧版保留为 `craft3d_full_p5.mp4`。
 viewer 4215（`node render.mjs --serve`）。texture 质感集：正午天台，零伏笔推进。
 
 ## 构建命令（本集目录）
@@ -78,6 +79,8 @@ node render.mjs --out craft3d_full.mp4                 # 正式成片（带音�
 
 ## P5：复看修复（开门穿模 / 桨板手 / 进食悬浮）+ 接触探针（2026-10-10）
 
+**历史记录：本节“门检通过”仅覆盖轰刚手部标点，不能证明两角色全身无穿模；P6 已纠正该结论与检查范围。**
+
 用户复看三问题的根因与修法：
 
 1. **开门穿模**（13.9–15s 轰刚身体/手与门板穿模）：根因=门 13.92 才撞开、
@@ -103,6 +106,40 @@ node render.mjs --out craft3d_full.mp4                 # 正式成片（带音�
   当前全绿（door_min .53 / bite_min .042 / carry_max_xz .12 / seated∈[.11,.47]）。
 - 工艺整理写回 `dula-skills/direct-animation-craft/references/contact-and-hands.md`
   （SKILL.md 已加指针）。
+
+## P6：真实门洞、完整出门路径与网格检查（2026-10-10）
+
+- 成片复查：雷晓 7–9s 不仅与开门扫掠相交，还沿门口→座位直线穿过实心
+  `hut_body` 及右门框。旧探针只查 13.4–16.5s 轰刚双手，无法发现；基线探针
+  在 30fps 下定位到 47 个碰撞帧（7.0–9.033s 范围内）。
+- 场景改为空心墙壳和真实门洞，保留门板/门框尺寸；门槛顶面与步态地面 y=0
+  齐平。两人从室内出发，沿门洞法线走出，门外换脚转向、绕过墙角再到座位。
+  轰刚出门后才展开挥手；关门由 15.8–17.2s 改至 17.1–18.3s，避开背部。
+- 本集步态适配：共享角色 `setPose` 未消费 FootYaw/FootPitch，现于本集写鞋旋转，
+  静止/坐姿重置；walk/turn/sit 边界使用同一满帧率时钟并清除过期分支。
+  未修改共享角色、音频或对白时间线。
+- `tools/door_probe.js` 在 `?probe-door=1` 时读取实际门、门框、墙体变换，
+  用全身/背包/便当三角形与外扩 15mm 的障碍盒求交。蒙皮手读取变形后顶点和
+  包围盒。`check_contact.py` 核验两次登场、所有主体/障碍和完整采样；
+  缺帧、缺探针及注入碰撞的三个负例均被拒绝。
+- 验证：6.8–22s 的 60Hz 共 **912 帧零碰撞**；整集 30fps 2130 帧 trace、
+  **75 张顺序/seek 检查通过**；正面和斜侧面各 32 张检查通过，并目检关键门区图。
+  落脚/朝向/骨长/鞋底门检通过；进食及持盒接触回归通过。
+- 视频：71.0s、1280×720@30、H.264 + AAC 48kHz 双声道；新旧解码音频
+  SHA256 同为 `135a9bd25a3ce212635a90476fcbe57c98352c97a95f3291bc87b22fb617e7d3`。
+  最终 MP4 已抽帧复查；正常速度审美效果留待用户复看，不以采样检查冒充连续物理保证。
+- 证据：`storyboard/door_p6/{check60,full_check}/` 的 contact/locomotion/seek 报告，
+  `front_sheet.jpg` / `side_sheet.jpg` / `final_video_sheet.jpg`；交付元数据 `delivery.json`。
+  工艺已同步 contact-and-hands、scene-designer 与 walk-director。
+
+```powershell
+node render.mjs --check --fps 60 --range 6.8,22 --q '&probe-door=1' --board storyboard/door_p6/check60 --trace storyboard/door_p6/check60/trace.json
+python tools/check_contact.py storyboard/door_p6/check60/trace.json --door-only
+node render.mjs --check --q '&probe-door=1' --board storyboard/door_p6/full_check --trace storyboard/door_p6/full_check/trace.json
+python tools/check_contact.py storyboard/door_p6/full_check/trace.json
+python tools/check_locomotion.py storyboard/door_p6/full_check/trace.json
+node render.mjs --out craft3d_full_p6.mp4 --board storyboard/door_p6/render
+```
 
 ## 遗留
 
@@ -143,7 +180,7 @@ node render.mjs --out craft3d_full.mp4                 # 正式成片（带音�
 正午顶光：高角度白光主光（投影）+ 天蓝半球光 + 淡蓝正面补光；闭合渐变球壳天穹 +
 程序化积云（toon 阶梯，update 缓移）；水泥地面 canvas 程序纹理（均匀散射、镜像平铺、
 世界顶视投影 UV）；铁丝网=菱格 alphaTest 贴图单面片 + 细杆立柱；楼梯间小屋（门朝镜头，
-门板纯时间函数开合：雷晓 6.9–7.5 开门/9.2–10.4 带上，轰刚 13.92 撞开带回弹）；水塔
+门板纯时间函数开合：雷晓 6.9–7.5 开门/9.2–10.4 带上，轰刚 13.55–13.85 撞开带回弹、17.1–18.3 带上）；水塔
 （圆罐+四腿+拉杆）；校舍剪影与中景楼群压低推远、色随雾走。
 
 ## 机位（viewer.js camFor）

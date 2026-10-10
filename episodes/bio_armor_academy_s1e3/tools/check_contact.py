@@ -2,13 +2,12 @@
 
 Reads a render trace (node render.mjs --check --trace <file>：每帧 state.contact
 含双手/门板角/签尖/嘴/便当盒世界坐标)。断言：
-1. 开门窗口（13.4–16.5s）：轰刚双手到门板扫掠面的最小距离 > 0.06m
+1. 两次出门（6.8–22s）：实际全身及便当网格 vs 实际门/门框/墙体，含 15mm 余量
 2. 坐姿段（22–68s）：每只手到本角色躯干轴的 XZ 距离在 [0.09, 0.60]m（不插进躯干、不悬浮）
 3. 咬下窗口（47.9–48.4s）：签尖到雷晓嘴部距离至少一帧 < 0.09m（证明真送到嘴）
 4. 端盒窗口（雷晓 7.2–11.2s / 轰刚 14.2–21.5s）：手-盒 XZ 距离 < 0.16m 且手不高过盒顶
 
-门板几何（RooftopNoonScene.doorA 注释同款）：铰链 (-6.975, *, -7.96)，长 .95，
-rotation.y=a 时局部 +x → (cos a, 0, -sin a)。
+渲染需加 --q '&probe-door=1'，局部门检可加 --door-only；缺帧/缺主体/缺障碍物即失败。
 """
 import argparse
 import json
@@ -17,44 +16,50 @@ from pathlib import Path
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('trace', type=Path)
+parser.add_argument('--door-only', action='store_true')
 args = parser.parse_args()
 data = json.loads(args.trace.read_text())
-
-HINGE = (-6.975, -7.96)
-DOOR_LEN = .95
-
-
-def pt_seg2d(p, a, b):
-    ax, az = a; bx, bz = b; px, pz = p
-    dx, dz = bx - ax, bz - az
-    u = max(0, min(1, ((px - ax) * dx + (pz - az) * dz) / max(dx * dx + dz * dz, 1e-12)))
-    return math.hypot(px - (ax + dx * u), pz - (az + dz * u))
-
-
-def door_dist(hand, angle):
-    dx, dz = math.cos(angle), -math.sin(angle)
-    return pt_seg2d((hand[0], hand[2]), HINGE,
-                    (HINGE[0] + dx * DOOR_LEN, HINGE[1] + dz * DOOR_LEN))
-
 
 def torso_dist(hand, root):
     return math.hypot(hand[0] - root[0], hand[2] - root[1])
 
 
 failures = []
-stats = {'door_min': 99., 'bite_min': 99., 'carry_max_xz': 0., 'seated_min': 99., 'seated_max': 0.}
+fps=data.get('fps',0)
+door_frames=[f for f in data['frames'] if 6.8 <= f['t'] < 22.0]
+stats = {'door_frames':len(door_frames), 'door_collision_frames':0,
+         'bite_min': 99., 'carry_max_xz': 0., 'seated_min': 99., 'seated_max': 0.}
+if fps < 30:
+    failures.append('door coverage: sampling must be at least 30Hz')
+step=1/max(1,fps)
+if not door_frames or door_frames[0]['t']>6.8+.001 or door_frames[-1]['t']<22-step-.001:
+    failures.append('door coverage: require the complete 6.8–22s window')
+if any(b['t']-a['t']>step+.001 or b['t']<=a['t'] for a,b in zip(door_frames,door_frames[1:])):
+    failures.append('door coverage: missing or nonmonotonic samples')
+required={'door','door_frame_l','door_frame_r','door_frame_t','hut_wall_w','hut_wall_e',
+          'hut_wall_back','hut_front_l','hut_front_r','hut_lintel'}
+for frame in door_frames:
+    t=frame['t'];probe=frame.get('doorway')
+    if not probe:
+        failures.append(f'door probe missing @t={t}');continue
+    if not required.issubset(probe['obstacles']) or probe['margin']<.015:
+        failures.append(f'door obstacle coverage/margin incomplete @t={t}')
+    for subject,start in [('lei',7),('leiBento',7),('hong',14),('hongBoxA',14),('hongBoxB',14)]:
+        if t>=start and not probe['counts'].get(subject):
+            failures.append(f'door subject missing: {subject} @t={t}')
+        if t>=start and subject in ('lei','hong') and probe.get('skinnedCounts',{}).get(subject,0)<2:
+            failures.append(f'door skinned-hand coverage missing: {subject} @t={t}')
+    if probe['hits']:
+        stats['door_collision_frames']+=1
+        failures.append(f'door collision @t={t}: {probe["hits"][:3]}')
+
 for frame in data['frames']:
+    if args.door_only:
+        break
     t = frame['t']
     c = frame.get('contact')
     if not c:
         continue
-    # 1. 开门窗口：轰刚双手 vs 门板
-    if 13.4 <= t <= 16.5:
-        for hand in c['hands']['hong'].values():
-            d = door_dist(hand, c['doorA'])
-            stats['door_min'] = min(stats['door_min'], d)
-            if d < .06:
-                failures.append(f"door clip: hong hand {d:.3f}m @t={t:.2f}")
     # 2. 坐姿段：手-躯干轴 XZ 距离窗口
     if 22.0 <= t <= 68.0:
         for actor, root in (('lei', frame.get('leiRoot')), ('hong', frame.get('hongRoot'))):
@@ -86,9 +91,14 @@ for frame in data['frames']:
         if best > .16 or dy > .08 or dy < -.08:  # 手掌可落在盒盖上沿（托盒/扣沿）
             failures.append(f"carry off-box: {actor} xz={best:.3f} dy={dy:.3f} @t={t:.2f}")
 
-if stats['bite_min'] > .09:
+if not args.door_only and stats['bite_min'] > .09:
     failures.append(f"skewer never reaches mouth: min {stats['bite_min']:.3f}m")
 
+if args.door_only:
+    stats={k:v for k,v in stats.items() if k.startswith('door_')}
+report={'passed':not failures,'stats':stats,'failures':failures,
+        'scope':'Visible solid meshes vs rendered hut OBBs, triangle intersections with 15mm inflation; sampled collision audit, not continuous physics or artistic approval.'}
+args.trace.with_name('contact_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(stats, indent=1))
 if failures:
     print(f"FAIL {len(failures)} contact violations")

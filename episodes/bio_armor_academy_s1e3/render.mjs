@@ -18,7 +18,8 @@ const extraQuery=opt('--q')??''; // 追加 viewer URL 查询串（探针用）�
 const board=path.join(here,opt('--board')??'storyboard/r1/check');
 const output=path.join(here,'output',outArg??'craft3d_r1.mp4');
 const audioFile=path.join(here,'assets3d/mixed.wav'); // P3 起接混音总线（缺失则静默 -an）
-const fps=30;
+const fps=Number(opt('--fps')??30); // 60Hz collision audit; final output defaults to 30fps.
+if(!Number.isInteger(fps)||fps<1||fps>120)throw new Error('Bad --fps (expected integer 1..120)');
 fs.mkdirSync(board,{recursive:true});fs.mkdirSync(path.dirname(output),{recursive:true});
 const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json','.wav':'audio/wav','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png'};
 const server=http.createServer((req,res)=>{
@@ -50,7 +51,7 @@ if(!serve){
       await page.evaluate(cfg=>window.setFreeCamera(cfg),{pos:n.slice(0,3),lookAt:n.slice(3,6),fov:n[6]});
     }
     const duration=await page.evaluate(()=>window.duration);
-    const sources=['performance.js','viewer.js','render.mjs','scenes/RooftopNoonScene.js','config/timeline.json'];
+    const sources=['performance.js','viewer.js','render.mjs','scenes/RooftopNoonScene.js','tools/door_probe.js','config/timeline.json'];
     const {createHash}=await import('node:crypto');
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
       args,output,

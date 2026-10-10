@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "segments": {
+    "lei:walk": {
+      "frames": 269,
+      "support_pairs": 302,
+      "max_slip": 1.3877787807814457e-17,
+      "max_rotation": 0.0,
+      "max_heading_error": 14.449421898640614,
+      "max_leg_error": 2.7755575615628914e-16,
+      "min_track_width": 0.17999999999999924,
+      "min_sole_height": -0.010000000030994412
+    },
+    "lei:turn": {
+      "frames": 84,
+      "support_pairs": 81,
+      "max_slip": 0.0,
+      "max_rotation": 2.9802322387695312e-08,
+      "max_heading_error": 0.0,
+      "max_leg_error": 2.220446049250313e-16,
+      "min_track_width": 100.0,
+      "min_sole_height": -0.010000000030994412
+    },
+    "hong:walk": {
+      "frames": 309,
+      "support_pairs": 356,
+      "max_slip": 1.3877787807814457e-17,
+      "max_rotation": 0.0,
+      "max_heading_error": 15.10544170388486,
+      "max_leg_error": 2.7755575615628914e-16,
+      "min_track_width": 0.23999999999999952,
+      "min_sole_height": -0.002960000038146964
+    },
+    "hong:turn": {
+      "frames": 94,
+      "support_pairs": 91,
+      "max_slip": 0.0,
+      "max_rotation": 4.2146848510894035e-08,
+      "max_heading_error": 0.0,
+      "max_leg_error": 2.220446049250313e-16,
+      "min_track_width": 100.0,
+      "min_sole_height": -0.002960000038146964
+    }
+  },
+  "failures": [],
+  "limits": "Ankle/contact checks do not certify sole collision or artistic quality; inspect normal-speed video too."
+}

@@ -7,6 +7,8 @@ import {LeiXiaoCraft,HongGangCraft} from 'dula-assets/characters/bioarmor/charac
 import {coolShadowRamp,outlined} from 'dula-assets/lib/craft3d/look.js';
 import {RooftopNoonScene} from './scenes/RooftopNoonScene.js';
 import {poseAt,ease,clamp,chewCycle,CHEW,PICK_T,TAKE_T} from './performance.js';
+const doorProbe=new URLSearchParams(location.search).has('probe-door')
+  ?(await import('./tools/door_probe.js')).probeDoorway:null;
 const W=1280,H=720;
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
 window.duration=TL.duration;
@@ -348,6 +350,9 @@ function draw(t,capture=true){
   if(leiBento.visible)contact.leiBento=leiBento.position.toArray();
   if(hongBoxA.visible)contact.hongBoxA=hongBoxA.position.toArray();
   state.contact=contact;
+  if(doorProbe&&t>=6.8&&t<=22.0){
+    state.doorway=doorProbe(stage,{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});
+  }
   if(!capture)return state;
   renderer.render(stage.scene,camera);
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);
@@ -359,7 +364,9 @@ function poseBlink(t){return Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);}
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);
 window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...new Set([...entries.flatMap(e=>[e.startTime+.15,(e.startTime+e.endTime)/2,e.endTime-.10]),
-  6.9,9.0,10.5,12.7,13.85,14.45,14.9,17.5,21.0,21.95,27.5,31.5,42.5,44.8,47.2,48.5,52.2,52.8,53.5,57,63]
+  6.9,7.0,7.3,7.5,7.7,7.9,8.1,8.4,8.8,9.0,9.4,9.8,10.1,10.5,12.7,
+  13.85,14.0,14.45,14.9,15.1,15.4,15.7,16.0,16.4,16.8,17.1,17.5,18.1,
+  21.0,21.95,27.5,31.5,42.5,44.8,47.2,48.5,52.2,52.8,53.5,57,63]
   .filter(t=>t>0&&t<window.duration))].sort((a,b)=>a-b);
 await document.fonts.ready;window.ready=true;
 if(!new URLSearchParams(location.search).has('capture')){

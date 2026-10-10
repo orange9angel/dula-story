@@ -16,7 +16,7 @@ function squashPulse(t,t0,depth){
 }
 
 // 场景锚点：楼梯间门口 / 女儿墙坐位（轰刚在雷晓左侧，雷晓右臂朝外）
-export const DOOR=[-6.6,-7.55],SEAT_LEI=[-2.55,-11.12],SEAT_HONG=[-3.45,-11.12];
+export const DOOR=[-6.5,-8.65],SEAT_LEI=[-2.55,-11.12],SEAT_HONG=[-3.45,-11.12];
 export const FLASH_T=52.2;              // 袖口微光一闪（壳疹 emissive 提亮再压回）
 export const PICK_T=41.2,TAKE_T=44.5;   // 轰刚插签 / 雷晓接过
 // 咀嚼循环：viewer 口型与 performance 手部共用同一相位源
@@ -41,6 +41,30 @@ const IDLE_H={left:V(-.27,1.12,.04),right:V(.27,1.12,.04)};
 const LAP_L={left:V(-.14,.74,.22),right:V(.14,.74,.22)};   // 雷晓坐姿手放便当盒
 const LAP_H={left:V(-.17,.80,.24),right:V(.17,.80,.24)};   // 轰刚坐姿
 
+// Exit along the doorway normal first; turn only after body + props clear the jamb.
+// Both actors use the same safe corridor, with separate finite walk/turn phases.
+function enterRooftop(s,u,to){
+  const outside=[-6.5,-7.12],corner=[-4.45,-7.12];
+  const heading=Math.atan2(to[0]-corner[0],to[1]-corner[1]);
+  const walk=(a,b,from,target)=>{
+    const p=clamp((u-a)/(b-a));
+    s.walk={from,to:target,a:p,noSwing:1};s.turn=null;
+    s.rootX=mix(from[0],target[0],ease(p));s.rootZ=mix(from[1],target[1],ease(p));
+    s.yaw=Math.atan2(target[0]-from[0],target[1]-from[1]);
+  };
+  const turn=(a,b,at,fromYaw,toYaw)=>{
+    const p=clamp((u-a)/(b-a));s.walk=null;s.turn={fromYaw,toYaw,a:p};
+    s.rootX=at[0];s.rootZ=at[1];s.yaw=fromYaw+angleDelta(fromYaw,toYaw)*ease(p);
+  };
+  if(u<.04){s.rootX=DOOR[0];s.rootZ=DOOR[1];s.yaw=0;}
+  else if(u<.20)walk(.04,.20,DOOR,outside);
+  else if(u<.26)turn(.20,.26,outside,0,Math.PI/2);
+  else if(u<.44)walk(.26,.44,outside,corner);
+  else if(u<.50)turn(.44,.50,corner,Math.PI/2,heading);
+  else if(u<.80)walk(.50,.80,corner,to);
+  else turn(.80,.88,to,heading,0);
+}
+
 // ── 雷晓 ─────────────────────────────────────────────────────────
 function specLei(phase,u,dt,t){
   const s={rootX:SEAT_LEI[0],rootZ:SEAT_LEI[1],yaw:0,bob:0,hipY:null,sit:0,sitHip:.55,
@@ -51,7 +75,7 @@ function specLei(phase,u,dt,t){
   switch(phase){
     case 'hidden':s.visible=false;break;
     case 'walk_in':{ // 端便当出楼梯间，左右看一眼，走到围栏角落坐下
-      const from=DOOR,to=[SEAT_LEI[0],-10.55],heading=Math.atan2(to[0]-from[0],to[1]-from[1]);
+      const to=[SEAT_LEI[0],-10.55];
       s.left=V(-.12,1.10,.26);s.right=V(.12,1.10,.26); // 双手端盒
       s.gL={fist:.4};s.gR={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion='worry';
@@ -59,27 +83,16 @@ function specLei(phase,u,dt,t){
       const lookL=ease(clamp(u/.05))*ease(clamp((.12-u)/.05)),
             lookR=ease(clamp((u-.14)/.05))*ease(clamp((.26-u)/.05));
       s.headYaw=-.6*lookL+.55*lookR;
-      const lookLs=ease(clamp((u-.02)/.05))*ease(clamp((.14-u)/.05)),
-            lookRs=ease(clamp((u-.16)/.05))*ease(clamp((.28-u)/.05));
-      if(u<.04){ // 起步预备：反向沉身（大动作预备 0.15-0.3s 的对白级缩小版）
-        const a=ease(u/.04);s.lean=-.025*a;s.bob=-.012*a;
-        s.yaw=heading-.10*lookLs+.09*lookRs;s.rootX=from[0];s.rootZ=from[1];
-      }else if(u<.60){
-        const a=(u-.04)/.56;s.yaw=heading;
-        if(a<1)s.walk={from,to,a,noSwing:1};
-        s.rootX=mix(from[0],to[0],ease(a));s.rootZ=mix(from[1],to[1],ease(a));
-        s.lean=-.025*(1-ease(clamp(a/.12)));s.bob=-.012*(1-ease(clamp(a/.12)));
-        s.headYaw+=.05*Math.sin(t*1.7);
-      }else if(u<.78){ // 转身面向天台
-        const a=(u-.60)/.18;s.turn={fromYaw:heading,toYaw:0,a};
-        s.yaw=heading+angleDelta(heading,0)*ease(a);s.rootX=to[0];s.rootZ=to[1];
+      if(u<.88){
+        enterRooftop(s,u,to);
+        if(u<.04){const a=ease(u/.04);s.lean=-.025*a;s.bob=-.012*a;}
       }else{ // 坐上矮沿（落座瞬间 squash 谷底对齐 bob 最低点）
-        const a=ease((u-.78)/.22);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_LEI[1],a);
+        const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_LEI[1],a);
         s.left=blend(V(-.12,1.10,.26),LAP_L.left,a);s.right=blend(V(.12,1.10,.26),LAP_L.right,a);
         s.emotion='neutral';s.headYaw=0;
       }
       s.squash=squashPulse(t,13.80,.06);
-      s.headYaw+=settle(t,11.2,.05); // 收步跟随：头阻尼衰减
+      s.headYaw+=settle(t,12.6,.05); // 收步跟随：头阻尼衰减
       break;
     }
     case 'startled':{ // 门哐当一响，回头看，见是轰刚才松下来
@@ -161,8 +174,7 @@ function specHong(phase,u,dt,t){
   switch(phase){
     case 'hidden':s.visible=false;break;
     case 'hong_arrive':{ // 端着两人份堆高便当大步入侵（绕行小屋东南角，不穿山墙）
-      const from=DOOR,mid=[-4.5,-6.85],to=[SEAT_HONG[0],-10.55];
-      const h1=Math.atan2(mid[0]-from[0],mid[1]-from[1]),h2=Math.atan2(to[0]-mid[0],to[1]-mid[1]);
+      const to=[SEAT_HONG[0],-10.55];
       s.left=V(-.10,1.27,.31); // 左手托住便当摞（指腹扣盒沿，盒顶 1.27）
       s.gL={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion=u<.35?'laugh':'neutral';s.headPitch=-.04;
@@ -173,21 +185,14 @@ function specHong(phase,u,dt,t){
       s.right.z+=settle(u,.55,.05,9,22); // 手腕 settle：收回后余振
       const wo=.75*ease(clamp((u-.03)/.06))*ease(clamp((.50-u)/.08)); // 挥手=张开掌，收回即半握托盒
       s.gR={open:wo,fist:.4*(1-wo/.75)};
-      if(u<.04){s.rootX=from[0];s.rootZ=from[1];s.yaw=h1;}
-      else if(u<.32){ // 第一段：出门向东绕
-        const a=(u-.04)/.28;s.yaw=h1;
-        if(a<1)s.walk={from,to:mid,a,noSwing:1};
-        s.rootX=mix(from[0],mid[0],ease(a));s.rootZ=mix(from[1],mid[1],ease(a));
-      }else if(u<.72){ // 第二段：转向坐位
-        const a=(u-.32)/.40;
-        s.yaw=h1+angleDelta(h1,h2)*ease(clamp((u-.32)/.10));
-        if(a<1)s.walk={from:mid,to,a,noSwing:1};
-        s.rootX=mix(mid[0],to[0],ease(a));s.rootZ=mix(mid[1],to[1],ease(a));
-      }else if(u<.86){
-        const a=(u-.72)/.14;s.turn={fromYaw:h2,toYaw:0,a};
-        s.yaw=h2+angleDelta(h2,0)*ease(a);s.rootX=to[0];s.rootZ=to[1];
+      // Keep the waving arm inside the aperture until shoulders have cleared it.
+      const clear=ease(clamp((u-.14)/.06));
+      s.right=blend(V(.10,1.30,.30),s.right,clear);
+      s.gR={open:wo*clear,fist:.4*(1-wo*clear/.75)};
+      if(u<.88){
+        enterRooftop(s,u,to);
       }else{
-        const a=ease((u-.86)/.14);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_HONG[1],a);
+        const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_HONG[1],a);
         s.left=blend(V(-.10,1.30,.30),LAP_H.left,a);s.right=blend(s.right,LAP_H.right,a);
       }
       s.squash=squashPulse(t,21.86,.10); // 大块头落座：压缩更深
@@ -277,6 +282,9 @@ function buildPose(actor,s,t,dims){
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
   actor.setPose(p);
+  // Shared characters position the shoes but do not consume FootYaw/FootPitch.
+  // Reset locally as well, so seeking from a turn into a seated pose is deterministic.
+  for(const foot of Object.values(actor.feet))foot.rotation.set(0,0,0);
   // 手势库（viewer 链覆盖 setPose 的共享手型）：静息半握为底，逐 beat 左右手可分别覆盖
   const gRest={fist:.12,open:0,point:s.point??0};
   actor.hands.left.setGesture({...gRest,...(s.gL??{})});
@@ -318,6 +326,7 @@ function buildWalkingPose(actor,s,t,d,p){
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
   actor.setPose(p);actor.mesh.visible=s.visible!==false;
+  for(const side of ['left','right'])actor.feet[side].rotation.set(p[side+'FootPitch']??0,p[side+'FootYaw']??0,0,'YXZ');
   const gRest={fist:.12,open:0,point:s.point??0}; // 行走段同样需要手势（端盒/挥手）
   actor.hands.left.setGesture({...gRest,...(s.gL??{})});
   actor.hands.right.setGesture({...gRest,...(s.gR??{})});
@@ -370,11 +379,16 @@ export function poseAt(lei,hong,entries,t){
   }
   // 行走/转身段：根与步态相位用满帧率重取（支撑脚钉世界地面，量化只落在躯干/四肢姿势层）
   for(const [s,spec,map,dflt] of [[sl,specLei,LEI_PHASE,'sit_listen'],[sh,specHong,HONG_PHASE,'hidden']]){
-    if(!s.walk&&!s.turn)continue;
     const ef=entries.findLast(e=>e.startTime<=t)??entries[0];
     const uf=clamp((t-ef.startTime)/(ef.endTime-ef.startTime));
     const sf=spec(map[ef.opts.move]??dflt,uf,t-ef.startTime,t);
-    if(sf.walk||sf.turn){s.rootX=sf.rootX;s.rootZ=sf.rootZ;if(sf.walk)s.walk=sf.walk;if(sf.turn)s.turn=sf.turn;}
+    if(sf.walk||sf.turn||s.walk||s.turn){
+      s.rootX=sf.rootX;s.rootZ=sf.rootZ;s.yaw=sf.yaw;
+      s.walk=sf.walk;s.turn=sf.turn;
+      // The walk/turn/sit boundary must use one clock; never retain a stale turn
+      // beside a newly active walk (the solver would silently choose the turn).
+      if(!sf.walk&&!sf.turn){s.sit=sf.sit;s.bob=sf.bob;}
+    }
   }
   // 挂载件次级滞后信号：0.12s 前 bob 的差分（≈速度×0.12s），供 viewer 道具解析弹簧跟随
   for(const [s,spec,map,dflt] of [[sl,specLei,LEI_PHASE,'sit_listen'],[sh,specHong,HONG_PHASE,'hidden']]){
