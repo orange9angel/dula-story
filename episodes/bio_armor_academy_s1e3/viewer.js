@@ -198,8 +198,9 @@ const bottle=new THREE.Group();
   bottle.position.set(-3.95,.545,-11.22);
 }
 stage.scene.add(leiBento,hongBoxA,hongBoxB,skewer,hongNug,bottle);
-const FIXED_B=new THREE.Vector3(-2.88,.575,-11.22); // 第二盒：两人中间偏雷晓侧；掀盖立在盒后不碰网（网 -11.37）
-const LEI_SET=new THREE.Vector3(-2.18,.575,-11.21); // 50.4s 起雷晓把自己那盒放上右侧矮沿（给按袖子的左手净空）
+// 放置落点从谱面派生（初始化时对固定释放时刻摆一次姿势读腕部坐标——纯函数常数，seek 安全）
+const LEI_REL=51.35,HONG_REL=22.2,LEI_GRIP=[0,-.055,.05],HONG_GRIP=[0,-.10,.05];
+let LEI_GUIDE=null,HONG_GUIDE=null,HONG_DROP=null,LEI_SET=null,FIXED_B=null;
 const bp=(actor,x,y,z)=>actor.body.localToWorld(new THREE.Vector3(x,y,z));
 function supportedBox(actor,side,offset){
   // Use the solved wrist exactly once: body-space y already includes the sitting drop.
@@ -224,6 +225,20 @@ function trayHand(actor,side,k){
   hand.setGesture({fist:.12+.10*k,open:0,point:0});
   hand.updateMatrixWorld(true);
 }
+// 放置落点校准：对固定释放时刻摆一次谱面姿势，读腕部世界坐标（纯函数常数，seek 安全）；
+// 落点=引导点竖直落到台面（重力沉降），保证"释放帧盒位=静置位姿"零跳变
+function calibratePlacement(){
+  poseAt(lei,hong,entries,LEI_REL);trayHand(lei,'right',1);
+  LEI_GUIDE=lei.hands.right.getWorldPosition(new THREE.Vector3())
+    .add(new THREE.Vector3(...LEI_GRIP).applyQuaternion(lei.mesh.quaternion));
+  LEI_SET=new THREE.Vector3(LEI_GUIDE.x,.575,LEI_GUIDE.z);
+  poseAt(lei,hong,entries,HONG_REL);trayHand(hong,'left',1);
+  HONG_GUIDE=hong.hands.right.getWorldPosition(new THREE.Vector3())
+    .add(new THREE.Vector3(...HONG_GRIP).applyQuaternion(hong.mesh.quaternion));
+  HONG_DROP=new THREE.Vector3(HONG_GUIDE.x,.575,HONG_GUIDE.z); // 落台点=引导点正下方
+  FIXED_B=new THREE.Vector3(-2.88,.575,-11.22); // 推滑终点：两人中间（P5/P6 探针验证过的净空位）
+}
+calibratePlacement();
 function props(t,sl,sh){
   const sitL=sl.sit??0,sitH=sh.sit??0;
   const lagL=Math.max(-.03,Math.min(.03,(sl.bobLag??0)*1.5)),lagH=Math.max(-.03,Math.min(.03,(sh.bobLag??0)*1.5));
@@ -235,16 +250,14 @@ function props(t,sl,sh){
   trayHand(hong,'right',ease(clamp((t-13.9)/.3))*ease(clamp((15.1-t)/.3)));
   leiBento.visible=sl.visible!==false&&t>=6.9;
   if(leiBento.visible){ // 便当盒随身体次级滞后（解析弹簧：bob 差分）
-    const q=ease(clamp((t-50.4)/.9)); // 笑完走神，把盒子放上右侧矮沿
-    const hand=supportedBox(lei,'right',[0,.030,.115]);
-    if(q>0){ // 先向体侧(+x)滑离前臂（略抬 6cm 过指节），再沉到矮沿，不抬到脸前
-      const out=hand.clone().add(new THREE.Vector3(.16,.07,0));
-      const over=new THREE.Vector3(LEI_SET.x,.70,LEI_SET.z);
-      const keys=[[0,hand],[.25,out],[.6,over],[1,LEI_SET]];
-      let j=0;while(j<keys.length-2&&q>keys[j+1][0])j++;
-      leiBento.position.lerpVectors(keys[j][1],keys[j+1][1],ease(clamp((q-keys[j][0])/(keys[j+1][0]-keys[j][0]))));
-    }else leiBento.position.copy(hand);
-    leiBento.rotation.y=lei.mesh.rotation.y*(1-q);
+    const g=ease(clamp((t-50.4)/.3)); // 托盘→提沿抓握偏移过渡（盒随手动、零跳变）
+    if(t<LEI_REL){ // 手持（含放置引导）：盒=腕×偏移
+      leiBento.position.copy(supportedBox(lei,'right',[0,.03-.085*g,.115-.065*g]));
+    }else{ // 释放后重力落台 .15s → 静置（起点=引导点，零跳变）
+      const d=ease(clamp((t-LEI_REL)/.15));
+      leiBento.position.lerpVectors(LEI_GUIDE,LEI_SET,d);
+    }
+    leiBento.rotation.y=t<LEI_REL?lei.mesh.rotation.y:0;
     leiBento.lid.rotation.x=-1.62*ease(clamp((t-13.5)/.6));
   }
   const hongOut=sh.visible!==false;
@@ -254,27 +267,38 @@ function props(t,sl,sh){
     hongBoxA.rotation.y=hong.mesh.rotation.y;
     hongBoxA.lid.rotation.x=-1.62*ease(clamp((t-22.15)/.5));
   }
-  // 两人份的第二盒：端着→坐下后放上矮沿
-  const q=ease(clamp((t-21.3)/.9));
+  // 两人份的第二盒：摞在左手盒上 → 21.3s 右手接过来 → 落座顺势放上矮沿（手全程贴盒，
+  // 释放后重力落台 .15s 到 FIXED_B；FIXED_B 由释放帧谱面派生，见 calibratePlacement）
+  const grab=ease(clamp((t-20.85)/.25)); // 右手到了摞顶才开始接盒
   hongBoxB.visible=hongOut&&t>=13.9;
   if(hongBoxB.visible){
-    const carry=hongBoxA.position.clone().add(new THREE.Vector3(0,.082,0));
-    const lift=carry.clone().add(new THREE.Vector3(0,.10,.24));
-    const beside=new THREE.Vector3(FIXED_B.x,.95,-10.55);
-    const above=new THREE.Vector3(FIXED_B.x,.84,FIXED_B.z);
-    const keys=[[0,carry],[.25,lift],[.65,beside],[.85,above],[1,FIXED_B]];
-    let j=0;while(j<keys.length-2&&q>keys[j+1][0])j++;
-    hongBoxB.position.lerpVectors(keys[j][1],keys[j+1][1],ease(clamp((q-keys[j][0])/(keys[j+1][0]-keys[j][0]))));
-    hongBoxB.rotation.y=hong.mesh.rotation.y*(1-q);
+    if(t>=HONG_REL){ // 释放：重力落台 .15s → 先后推滑离网、再横向推滑到两人中间（分轴不斜扫）
+      const d=ease(clamp((t-HONG_REL)/.15)),slZ=ease(clamp((t-22.35)/.15)),slX=ease(clamp((t-22.35)/.45));
+      hongBoxB.position.lerpVectors(HONG_GUIDE,HONG_DROP,d);
+      hongBoxB.position.z+=(FIXED_B.z-HONG_DROP.z)*slZ;
+      hongBoxB.position.x+=(FIXED_B.x-HONG_DROP.x)*slX;
+      hongBoxB.rotation.y=0;
+    }else{
+      const wrist=hong.hands.right.getWorldPosition(new THREE.Vector3());
+      const grip=new THREE.Vector3(...HONG_GRIP).applyQuaternion(hong.mesh.quaternion);
+      if(grab<1){ // 仍摞在 boxA 上；右手接近时位置连续过渡到抓握点
+        const stack=hongBoxA.position.clone().add(new THREE.Vector3(0,.082,0));
+        hongBoxB.position.lerpVectors(stack,wrist.clone().add(grip),grab);
+      }else hongBoxB.position.copy(wrist).add(grip); // 抓握搬运（物随手动）
+      hongBoxB.rotation.y=hong.mesh.rotation.y;
+    }
     hongBoxB.lid.rotation.x=-1.62*ease(clamp((t-21.7)/.5));
   }
   for(const b of [leiBento,hongBoxA,hongBoxB])for(const f of b.foods)f.visible=b.lid.rotation.x<-.3;
-  // 竹签炸鸡：轰刚右手递出 → 雷晓左手接过（签穿指缝锚定掌心；弧顶腕翻签尖朝嘴）
+  // 竹签炸鸡：轰刚右手递出 → 雷晓左手接过（捏持锚点=拇指腹与食/中指第一节之间）
   skewer.visible=sl.visible!==false&&hongOut&&t>=PICK_T;
   if(skewer.visible){
     const hand=t<TAKE_T?hong.hands.right:lei.hands.left;
-    hand.getWorldPosition(skewer.position);hand.getWorldQuaternion(skewer.quaternion);
-    skewer.position.add(new THREE.Vector3(.025,.006,0).applyQuaternion(skewer.quaternion));
+    const hq=hand.getWorldQuaternion(new THREE.Quaternion());
+    const pinch=new THREE.Vector3(.048,.026,hand.sign*.006); // 手局部捏合区
+    skewer.position.copy(hand.getWorldPosition(new THREE.Vector3()).add(pinch.applyQuaternion(hq)));
+    skewer.quaternion.copy(hq);
+    skewer.position.add(new THREE.Vector3(-.015,0,0).applyQuaternion(hq)); // 捏在签下 1/3 段
     // 腕翻：咬下窗口（crack 47.3–48.6）与空拍咀嚼抬手（raise>.4）把签尖转向嘴
     let bite=ease(clamp((t-47.3)/.4))*ease(clamp((48.6-t)/.25));
     if(t>=55&&t<68)bite=Math.max(bite,chewCycle(t,CHEW.lei.period,CHEW.lei.offset).raise);
@@ -416,6 +440,12 @@ function draw(t,capture=true){
                  right:hong.hands.right.getWorldPosition(new THREE.Vector3()).toArray()}},
     mouthLei:lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).toArray()};
   if(skewer.visible)contact.skewerTip=skewer.position.clone().add(new THREE.Vector3(.13,0,0).applyQuaternion(skewer.quaternion)).toArray();
+  if(skewer.visible)contact.skewerPos=skewer.position.toArray();
+  if(skewer.visible){ // 掌心参考点（捏持断言：签轴-掌心距离）
+    const hand=t<TAKE_T?hong.hands.right:lei.hands.left;
+    contact.palm=hand.getWorldPosition(new THREE.Vector3())
+      .add(new THREE.Vector3(.035,0,0).applyQuaternion(hand.getWorldQuaternion(new THREE.Quaternion()))).toArray();
+  }
   if(skewer.visible&&skewerNug.visible){ // 食物握持：签尖-球心 + 指骨-球心不穿心
     const nc=skewerNug.getWorldPosition(new THREE.Vector3());
     contact.nug=nc.toArray();
@@ -426,6 +456,7 @@ function draw(t,capture=true){
   }
   if(leiBento.visible)contact.leiBento=leiBento.position.toArray();
   if(hongBoxA.visible)contact.hongBoxA=hongBoxA.position.toArray();
+  contact.LEI_SET=LEI_SET.toArray();contact.FIXED_B=FIXED_B.toArray(); // 派生落点（校准可见性）
   state.contact=contact;
   if(doorProbe&&t>=6.8&&t<=22.0){
     state.doorway=doorProbe(stage,{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});

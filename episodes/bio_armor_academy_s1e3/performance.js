@@ -76,7 +76,7 @@ function specLei(phase,u,dt,t){
     case 'hidden':s.visible=false;break;
     case 'walk_in':{ // 端便当出楼梯间，左右看一眼，走到围栏角落坐下
       const to=[SEAT_LEI[0],-10.55];
-      s.left=V(-.12,1.10,.26);s.right=V(.12,1.10,.26); // 双手端盒
+      s.left=V(-.01,1.10,.31);s.right=V(.12,1.10,.26); // 双手端盒：右手托底（锚盒）、左手扶盒左沿
       s.gL={fist:.4};s.gR={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion='worry';
       // 左右张望：视线→头→肩错开起动（肩/身晚约 2-3 帧采同一条曲线）
@@ -86,9 +86,9 @@ function specLei(phase,u,dt,t){
       if(u<.88){
         enterRooftop(s,u,to);
         if(u<.04){const a=ease(u/.04);s.lean=-.025*a;s.bob=-.012*a;}
-      }else{ // 坐上矮沿（落座瞬间 squash 谷底对齐 bob 最低点）
+      }else{ // 坐上矮沿（落座瞬间 squash 谷底对齐 bob 最低点）；左手松开盒沿收回腿上
         const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_LEI[1],a);
-        s.left=blend(V(-.12,1.10,.26),LAP_L.left,a);s.right=blend(V(.12,1.10,.26),LAP_L.right,a);
+        s.left=blend(V(-.01,1.10,.31),LAP_L.left,a);s.right=blend(V(.12,1.10,.26),LAP_L.right,a);
         s.emotion='neutral';s.headYaw=0;
       }
       s.squash=squashPulse(t,13.80,.06);
@@ -137,9 +137,12 @@ function specLei(phase,u,dt,t){
       }else if(dt<3.7){ // 憋不住笑
         s.emotion='laugh';s.headPitch=-.14;s.bob=.012*Math.sin(t*7);s.headRoll=.04*Math.sin(t*3.4);
         s.left=V(-.12,1.0,.26);s.gL={fist:.5};
-      }else if(dt<5.4){ // 笑意未收
+      }else if(dt<5.4){ // 笑意未收 + 右手把盒子放上右侧矮沿（手随盒沉到台面再释放）
         const q=ease((dt-3.7)/1.7);s.emotion='laugh';s.headPitch=mix(-.14,.02,q);
         s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.12,1.0,.26);s.gL={fist:.5};
+        s.right=key(dt,[[3.7,V(.16,.78,.24)],[3.9,V(.28,.72,.08)],[4.4,V(.40,.70,-.07)],
+          [4.85,V(.40,.70,-.07)],[5.1,V(.30,.76,.04)],[5.4,V(.16,.78,.24)]]);
+        s.lean=.15*ease(clamp((dt-3.95)/.3))*ease(clamp((5.15-dt)/.3)); // 微俯身才能够到矮沿
       }else{ // 袖口微光：低头看右臂，左手按住（按臂手平贴前臂）
         const q=ease(clamp((dt-5.4)/.8));
         s.emotion='worry';s.headPitch=mix(.02,.30,q);s.headYaw=.35*q;
@@ -176,13 +179,14 @@ function specHong(phase,u,dt,t){
     case 'hidden':s.visible=false;break;
     case 'hong_arrive':{ // 端着两人份堆高便当大步入侵（绕行小屋东南角，不穿山墙）
       const to=[SEAT_HONG[0],-10.55];
-      s.left=V(-.10,1.27,.31); // 左手托住便当摞（指腹扣盒沿，盒顶 1.27）
+      s.left=V(-.10,1.22,.20); // 左手托住便当摞（抱到胸前，右手才够得着扶沿）
       s.gL={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion=u<.35?'laugh':'neutral';s.headPitch=-.04;
       // 「哟！」举手招呼：反向沉肩预备（u 0-.03）→ 急起到位 → 摆动衰减 → 收回余振
       const wave=V(.44,1.58,.22);
       s.right=key(u,[[0,V(.10,1.30,.30)],[.03,V(.30,1.02,.06)],[.075,wave],[.13,V(.40,1.60,.24)],
-        [.19,V(.48,1.56,.22)],[.25,V(.41,1.59,.23)],[.31,V(.47,1.57,.22)],[.40,wave],[.52,V(.10,1.30,.30)],[1,V(.10,1.30,.30)]]);
+        [.19,V(.48,1.56,.22)],[.25,V(.41,1.59,.23)],[.31,V(.47,1.57,.22)],[.40,wave],[.52,V(.10,1.28,.30)],
+        [.62,V(.28,1.12,.10)],[.80,V(.28,1.12,.10)],[.86,V(-.06,1.33,.36)],[1,V(-.06,1.33,.36)]]); // 挥完垂手；转身时右手抬到摞顶准备接盒
       s.right.z+=settle(u,.55,.05,9,22); // 手腕 settle：收回后余振
       const wo=.75*ease(clamp((u-.03)/.06))*ease(clamp((.50-u)/.08)); // 挥手=张开掌，收回即半握托盒
       s.gR={open:wo,fist:.4*(1-wo/.75)};
@@ -194,21 +198,31 @@ function specHong(phase,u,dt,t){
         enterRooftop(s,u,to);
       }else{
         const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_HONG[1],a);
-        s.left=blend(V(-.10,1.30,.30),LAP_H.left,a);s.right=blend(s.right,LAP_H.right,a);
+        s.left=blend(V(-.10,1.22,.20),LAP_H.left,a);
+        // 右手接摞顶第二盒 → 落座顺势俯身放上右侧矮沿（手随盒、释放后收回，禁止盒子独立飞行）
+        s.right=key(u,[[.88,V(-.06,1.33,.36)],[.93,V(-.06,1.33,.36)], // 摞顶已接到盒（与转身段末同位）
+          [.985,V(.10,.80,-.12)],[1,V(.10,.78,-.12)]]); // 落座小弧沉到腿平面之后（盒不穿膝），落台+推滑在 share_1 开头完成
+        s.lean=.22*ease(clamp((u-.93)/.04)); // 俯身才够到矮沿（share_1 开头由边界混合收回）
+        const grip=ease(clamp((u-.84)/.03))*ease(clamp((1.0-u)/.04)); // 扣盒沿手型
+        s.gR={fist:.12+.30*grip};
       }
       s.squash=squashPulse(t,21.86,.10); // 大块头落座：压缩更深
       break;
     }
     case 'share_1h':{ // 「食堂炸鸡，最后一盒，抢到的。」开盒显摆（得意：胸口起伏）
       s.sit=1;s.left={...LAP_H.left};
-      s.right=key(u,[[0,V(.30,1.02,.30)],[.25,V(.34,.92,.34)],[.55,V(.20,.82,.26)],[1,LAP_H.right]]);
+      // 开头指尖把第二盒推滑到两人中间，然后收回开盒显摆
+      s.right=key(u,[[0,V(.10,.78,-.10)],[.05,V(.14,.74,-.11)],[.11,V(.22,.72,-.10)],[.16,V(.28,.72,-.08)],
+        [.22,V(.32,.74,-.04)],[.30,V(.30,.80,.08)],[.45,V(.34,.92,.34)],[.7,V(.20,.82,.26)],[1,LAP_H.right]]);
+      s.lean=.22*ease(clamp((.2-u)/.1)); // 俯身随推滑收回
+      s.gR={fist:.12+.30*ease(clamp((.14-u)/.06))};
       s.headYaw=.45;s.headPitch=-.06;s.headRoll=.03;s.bob=.012*Math.sin(t*2.6);
       break;
     }
     case 'share_2h':{s.sit=1;lap();s.headYaw=.5;s.headPitch=.06+.05*Math.sin(Math.PI*clamp((u-.2)/.5));break;}
     case 'share_3h':{ // 「你那是啥？跟猫食似的。」凑过去指点
       s.sit=1;s.left={...LAP_H.left};s.right=V(.30,1.02,.34);s.point=.6;
-      s.rootX=mix(SEAT_HONG[0],SEAT_HONG[0]+.12,ease(clamp(u/.4)));
+      s.rootX=mix(SEAT_HONG[0],SEAT_HONG[0]+.06,ease(clamp(u/.4))); // 凑近幅度收敛（不蹭到矮沿上的盒子）
       s.headYaw=.55;s.headPitch=.14;
       break;
     }
@@ -218,7 +232,7 @@ function specHong(phase,u,dt,t){
       break;
     }
     case 'offer_h':{ // 插签递炸鸡：「尝一个。抢来的东西，分着吃才香。」
-      s.sit=1;s.rootX=mix(SEAT_HONG[0],-3.25,ease(clamp(u/.3))); // 凑近
+      s.sit=1;s.rootX=mix(SEAT_HONG[0],-3.32,ease(clamp(u/.3))); // 凑近（收敛：不蹭到身侧矮沿上的盒子）
       // 取签→回拉预备→急出递到雷晓面前（发力 2-3 帧内到位）→ 保持 → 收回
       s.right=key(u,[[0,LAP_H.right],[.10,V(.32,.74,.16)],[.18,V(.22,.88,.20)],[.26,V(.30,1.06,.34)],[.80,V(.30,1.06,.34)],[.95,LAP_H.right],[1,LAP_H.right]]);
       const pinch=ease(clamp((u-.16)/.06))*ease(clamp((.82-u)/.08)); // 持签手：三指捏
@@ -228,7 +242,7 @@ function specHong(phase,u,dt,t){
       break;
     }
     case 'crack_h':{ // 看雷晓笑了跟着乐；随后转身够水壶（正好没看见微光）
-      s.sit=1;s.rootX=-3.25;s.left={...LAP_H.left};
+      s.sit=1;s.rootX=-3.32;s.left={...LAP_H.left};
       const reach=ease(clamp((dt-4.5)/.6))*ease(clamp((7.7-dt)/.8)); // 51.0–54.2
       if(dt<2.2){s.emotion='laugh';s.headPitch=-.1;s.right={...LAP_H.right};} // 看雷晓笑了跟着乐（∩ 笑眼）
       else if(dt<4.2){ // 自己啃一口（进食弧线：抬起→嘴前停顿→咬→撤回）

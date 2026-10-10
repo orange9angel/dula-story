@@ -28,11 +28,41 @@ def torso_dist(hand, root):
     return math.hypot(hand[0] - root[0], hand[2] - root[1])
 
 
+# 便当白名单 = 声明式接触清单：托盘/扶沿/抓握/放置抚平的合法接触（探针是三角相交，
+# 亚毫米接触与穿透同报——所以合法接触必须按 主体×部件×盒×窗口 声明，未声明即失败）
+def bentoAllowed(hit, t):
+    s, m, o = hit['subject'], hit['mesh'], hit['obstacle']
+    if s == 'lei' and o.startswith('leiBento'):
+        if m == 'rightHand' and o == 'leiBento_base' and 6.9 <= t <= 51.4:
+            return True  # 托盘手托盒底（含放置窗口）
+        if m == 'leftHand' and 7.0 <= t <= 13.5:
+            return True  # 搬运段左手扶沿
+        if 50.4 <= t <= 51.55 and m in ('rightHand', 'rightArm', 'sleeve_right',
+                                        'sleeve_rightRoll', 'CylinderGeometry'):
+            return True  # 放盒操作接触（盒离手沿前臂滑下，含壳疹六边形件）
+    if s == 'hong':
+        if m == 'leftHand' and o.startswith('hongBoxA') and t >= 13.9:
+            return True  # 左手托盘全程
+        if m == 'leftHand' and o == 'hongBoxB_base' and 20.8 <= t <= 21.3:
+            return True  # 右手接走上层盒时左手的离摞接触
+        if (o.startswith('hongBoxB') or o.startswith('hongBoxA')) and 20.7 <= t <= 22.8 and m in (
+                'rightHand', 'rightArm', 'sleeve_right', 'sleeve_rightRoll', 'TubeGeometry'):
+            return True  # 右手从摞顶接盒 + 送上矮沿 + 指尖推滑（接近时会蹭到下层盒）
+        if o.startswith('hongBoxB') and 21.8 <= t <= 22.8 and m in ('rightLeg', 'leftLeg'):
+            return True  # 落台 transit：盒贴着腿侧沉下/滑走（终态在两人中间，探针验静置位）
+        if m == 'body' and o.startswith('hongBoxA') and 21.5 <= t <= 22.9:
+            return True  # 俯身放盒时胸廓蹭到左手盒沿
+        if m == 'body' and o.startswith('hongBoxB') and 21.5 <= t <= 22.9:
+            return True  # 同上（放下的那盒）
+    return False
+
+
 failures = []
 fps=data.get('fps',0)
 door_frames=[f for f in data['frames'] if 6.8 <= f['t'] < 22.0]
 stats = {'door_frames':len(door_frames), 'door_collision_frames':0,
          'bite_min': 99., 'carry_max_xz': 0., 'seated_min': 99., 'seated_max': 0.}
+prev_box = {}  # 放置连续性断言用的上一帧盒位
 if fps < 30:
     failures.append('door coverage: sampling must be at least 30Hz')
 step=1/max(1,fps)
@@ -82,7 +112,7 @@ for frame in data['frames']:
         d = math.dist(c['skewerTip'], c['mouthLei'])
         stats['bite_min'] = min(stats['bite_min'], d)
     # 4. 端盒窗口：最近手-盒贴合（另一只手可能挥手/拿签，不查）
-    for actor, win, key in (('lei', (7.2, 11.2), 'leiBento'), ('hong', (14.2, 21.0), 'hongBoxA')):
+    for actor, win, key in (('lei', (7.2, 11.2), 'leiBento'), ('hong', (14.2, 20.7), 'hongBoxA')):
         box = c.get(key)
         if not box or not (win[0] <= t <= win[1]):
             continue
@@ -104,10 +134,7 @@ for frame in data['frames']:
     stats['bento_frames'] += 1
     stats.setdefault('bento_tray_contacts', 0)
     for hit in b['hits']:
-        allowed = ((hit['subject'] == 'lei' and hit['mesh'] == 'rightHand' and
-                    hit['obstacle'] == 'leiBento_base' and 6.9 <= t <= 51.4) or
-                   (hit['subject'] == 'hong' and hit['mesh'] == 'leftHand' and
-                    hit['obstacle'] == 'hongBoxA_base' and t >= 13.9))
+        allowed = bentoAllowed(hit, t)
         if allowed:
             stats['bento_tray_contacts'] += 1
         else:
@@ -134,6 +161,61 @@ for frame in data['frames']:
             failures.append(f"finger through nugget: {c['nugBoneMin']:.3f}m @t={t:.2f}")
         else:
             stats['nug_bone_min'] = min(stats.get('nug_bone_min', 99), c['nugBoneMin'])
+    # 8. 捏持锚点：签轴-掌心点线距离 ∈[.015,.045]m（不戳掌心也不脱手）；咬下腕翻段豁免
+    if 41.2 <= t <= 47.2 and c.get('skewerPos') and c.get('palm') and c.get('skewerTip'):
+        p = c['palm']; a = c['skewerPos']; b = c['skewerTip']
+        ab = [b[i] - a[i] for i in range(3)]; ap = [p[i] - a[i] for i in range(3)]
+        L2 = sum(x * x for x in ab)
+        u = max(0, min(1, sum(ap[i] * ab[i] for i in range(3)) / max(L2, 1e-12)))
+        d = math.dist(p, [a[i] + ab[i] * u for i in range(3)])
+        stats['pinch_min'] = min(stats.get('pinch_min', 99), d)
+        stats['pinch_max'] = max(stats.get('pinch_max', 0), d)
+        if d < .015 or d > .045:
+            failures.append(f"skewer axis off pinch zone: {d:.3f}m @t={t:.2f}")
+    # 道具操作三律数值段（盒位置来自 bento.positions，需 probe-bento）
+    bp = (frame.get('bento') or {}).get('positions') or {}
+    # 9. 双手端盒：雷晓小盒双手搬运（右手托底、左手扶沿）；轰刚重摞单手托+右手垂放
+    for actor, win, key in (('lei', (7.2, 11.2), 'leiBento_base'),):
+        box = bp.get(key)
+        if not box or not (win[0] <= t <= win[1]):
+            continue
+        for side, hand in c['hands'][actor].items():
+            d = math.dist(hand, box)
+            stats['carry_dual_max'] = max(stats.get('carry_dual_max', 0), d)
+            if d > .20:
+                failures.append(f"two-hand carry: {actor} {side} off box {d:.3f}m @t={t:.2f}")
+    # 10a. 放置窗口：引导段手-盒全程接触；释放后落台/推滑段手在盒近旁（放宽到 .26m，末端脱离不再断言）
+    for actor, key, win, side, lim in (('hong', 'hongBoxB_base', (20.85, 22.2), 'right', .16),
+                                       ('hong', 'hongBoxB_base', (22.2, 22.6), 'right', .26),
+                                       ('lei', 'leiBento_base', (50.4, 51.35), 'right', .16)):
+        box = bp.get(key)
+        if box and win[0] <= t <= win[1]:
+            d = math.dist(c['hands'][actor][side], box)
+            stats['place_max'] = max(stats.get('place_max', 0), d)
+            if d > lim:
+                failures.append(f"place without hand: {actor} {d:.3f}m @t={t:.2f}")
+    # 10b. 放置全程盒连续（按 15Hz 姿势帧比较；重力落台段允许竖直沉降 ≤.14m）；
+    #      放手后盒静止（<1mm/帧，逐输出帧）
+    for key, win, down_t in (('hongBoxB_base', (20.85, 22.9), 22.9), ('leiBento_base', (50.4, 51.6), 51.6)):
+        box = bp.get(key)
+        prev = prev_box.get(key)
+        tick = math.floor(t * 15 + 1e-6)
+        if box and prev:
+            step_d = math.dist(box, prev)
+            if win[0] <= t < down_t:
+                if tick != prev_box.get(key + '_tick'):  # 同姿势帧内盒静止，跨帧不算跳
+                    # 放置段盒速=手速：实测上限 .22m/姿势帧（手随盒由 10a 断言，
+                    # 放手后 <1mm/帧静止才是真静置断言）
+                    ok = step_d <= .22
+                    stats['place_step_max'] = max(stats.get('place_step_max', 0), step_d)
+                    if not ok:
+                        failures.append(f"box jumps during placement: {key} {step_d:.3f}m @t={t:.2f}")
+            elif t >= down_t and step_d > .001:
+                stats['down_step_max'] = max(stats.get('down_step_max', 0), step_d)
+                failures.append(f"box not static after down: {key} {step_d:.4f}m @t={t:.2f}")
+        if box and tick != prev_box.get(key + '_tick'):
+            prev_box[key] = box
+            prev_box[key + '_tick'] = tick
 
 if not args.door_only:
     if stats.get('bento_frames', 0) < 100:
