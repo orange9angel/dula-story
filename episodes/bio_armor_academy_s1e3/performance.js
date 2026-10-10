@@ -38,8 +38,10 @@ function key(u,keys){
 
 const IDLE_L={left:V(-.21,.95,.03),right:V(.21,.95,.03)};
 const IDLE_H={left:V(-.27,1.12,.04),right:V(.27,1.12,.04)};
-const LAP_L={left:V(-.14,.74,.22),right:V(.14,.74,.22)};   // 雷晓坐姿手放便当盒
-const LAP_H={left:V(-.17,.80,.24),right:V(.17,.80,.24)};   // 轰刚坐姿
+// 坐姿静息=垂放腿侧、掌心贴腿（本 rig 手臂短：坐姿肩-腿面距离 > 臂长，腿上平放不可达——
+// 垂放腿侧是唯一有支撑的静息；P14 实测 LAP 悬空 .13–.17m 翻车）
+const LAP_L={left:V(-.19,.73,.02),right:V(.14,.74,.22)};   // 雷晓：左垂放腿侧，右手托盒位
+const LAP_H={left:V(-.17,.80,.24),right:V(-.02,.895,.22)};   // 轰刚：左托盒位，右垂放腿侧
 
 // Exit along the doorway normal first; turn only after body + props clear the jamb.
 // Both actors use the same safe corridor, with separate finite walk/turn phases.
@@ -100,7 +102,7 @@ function specLei(phase,u,dt,t){
         if(u<.04){const a=ease(u/.04);s.lean=-.025*a;s.bob=-.012*a;}
       }else{ // 坐上矮沿（落座瞬间 squash 谷底对齐 bob 最低点）；左手顺势掀开自己盒盖再收回腿上
         const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_LEI[1],a);
-        s.left=key(u,[[.88,V(-.01,1.10,.31)],[.93,V(.08,.85,.32)],[.97,V(.08,.85,.32)],[1,LAP_L.left]]); // 手到盖把位→掀盖→收回
+        s.left=key(u,[[.88,V(-.01,1.10,.31)],[.93,V(.08,.85,.32)],[.96,V(.08,.85,.32)],[.985,V(-.14,.74,.18)],[1,LAP_L.left]]); // 手到盖把位→掀盖→从外侧收回腿侧（不直线穿腹）
         s.right=blend(V(.12,1.10,.26),LAP_L.right,a);
         s.emotion='neutral';s.headYaw=0;
       }
@@ -122,7 +124,7 @@ function specLei(phase,u,dt,t){
       break;
     }
     case 'share_3':{ // 被说猫食，把便当往回收一点
-      s.sit=1;s.left=V(-.12,.78,.22);s.right=V(.12,.78,.22);
+      s.sit=1;s.left=V(.05,.82,.24);s.right=V(.12,.78,.22);
       s.headPitch=.12;s.headYaw=-.35;s.emotion='worry';
       break;
     }
@@ -152,7 +154,7 @@ function specLei(phase,u,dt,t){
         s.left=V(-.12,1.0,.26);s.gL={fist:.5};
       }else if(dt<5.4){ // 笑意未收 + 右手把盒子放上右侧矮沿（手随盒沉到台面再释放）
         const q=ease((dt-3.7)/1.7);s.emotion='laugh';s.headPitch=mix(-.14,.02,q);
-        s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.12,1.0,.26);s.gL={fist:.5};
+        s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.15,1.02,.31);s.gL={fist:.5}; // 稍外前让开 lean 前倾的胸廓（P14 手-身嵌入实录）
         s.right=key(dt,[[3.7,V(.16,.78,.24)],[3.9,V(.28,.72,.08)],[4.4,V(.40,.70,-.07)],
           [4.85,V(.40,.70,-.07)],[5.1,V(.30,.76,.04)],[5.4,V(.16,.78,.24)]]);
         s.lean=.12*ease(clamp((dt-3.95)/.3))*ease(clamp((5.15-dt)/.3)); // 微俯身才能够到矮沿（.15→.12，肩窝片兜缝）
@@ -161,7 +163,7 @@ function specLei(phase,u,dt,t){
         s.emotion='worry';s.headPitch=mix(.02,.30,q);s.headYaw=.35*q;
         s.left=blend(V(-.12,1.0,.26),V(.26,.88,.27),ease(clamp((dt-5.5)/.7))); // 稍靠前，退出时扫不进便当盒角
         s.gL={open:.35,fist:0};s.gR={fist:.12};
-        s.right={...LAP_L.right}; // right hand keeps supporting the bento while the left checks the sleeve
+        s.right=V(.19,.73,.02); // 盒已放上矮沿，右手垂放腿侧（不再空手端托盘位）
       }
       s.flashT=Math.exp(-(((t-FLASH_T)/.42)**2));
       s.squash=squashPulse(t,FLASH_T,.05); // 微光瞬间肩部 0.95 压缩 2-3 帧
@@ -170,9 +172,9 @@ function specLei(phase,u,dt,t){
     case 'empty_l':{ // 空拍：并排啃炸鸡（持签手随咀嚼节拍半捏起落）
       s.sit=1;s.emotion='neutral';
       const c=chewCycle(t,CHEW.lei.period,CHEW.lei.offset);
-      s.left=blend(V(-.13,.82,.24),V(-.06,1.15,.26),c.raise); // 抬到嘴前下方（掌心向内，不反掌）
+      s.left=blend(V(-.19,.74,.06),V(-.06,1.15,.26),c.raise); // 不嚼时持签手垂放腿侧；抬到嘴前下方（掌心向内）
       s.gL={fist:.12+.38*c.raise};
-      s.right={...LAP_L.right};
+      s.right=V(.19,.73,.02); // 垂放腿侧（盒已落台，不空手端托盘位）
       s.headPitch=.04;s.headYaw=-.22*(.5+.5*Math.sin(t*.23));s.headRoll=.01*Math.sin(t*.9);
       break;
     }
@@ -215,7 +217,7 @@ function specHong(phase,u,dt,t){
         s.left=blend(V(-.10,1.22,.20),LAP_H.left,a);
         // 右手接摞顶第二盒 → 落座顺势俯身放上右侧矮沿（手随盒、释放后收回，禁止盒子独立飞行）
         s.right=key(u,[[.88,V(-.06,1.33,.36)],[.93,V(-.06,1.33,.36)], // 摞顶已接到盒（与转身段末同位）
-          [.985,V(.10,.80,-.12)],[1,V(.10,.78,-.12)]]); // 落座小弧沉到腿平面之后（盒不穿膝），落台+推滑在 share_1 开头完成
+          [.985,V(.12,.85,-.10)],[1,V(.12,.83,-.10)]]); // 落座小弧沉到腿平面之后（盒不穿膝、手不嵌腿），落台+推滑在 share_1 开头完成
         s.lean=.18*ease(clamp((u-.93)/.04)); // 俯身才够到矮沿（share_1 开头由边界混合收回；减幅+肩窝片兜开缝）
         const grip=ease(clamp((u-.84)/.03))*ease(clamp((1.0-u)/.04)); // 扣盒沿手型
         s.gR={fist:.12+.30*grip};
@@ -268,7 +270,7 @@ function specHong(phase,u,dt,t){
         s.headPitch=.10; // 头迎向食物，手臂不过肩（袖肩接缝）
       }else{
         // 够水壶：手从体前绕行（先向外向前再向后），不横穿腹部
-        s.right=key(dt,[[4.2,LAP_H.right],[4.9,V(.24,.86,.34)],[5.6,V(-.10,.80,.10)],[6.2,V(-.30,.85,-.15)],[7.0,V(-.30,.85,-.15)],[7.35,V(.10,.82,.34)],[7.8,LAP_H.right],[9,LAP_H.right]]);
+        s.right=key(dt,[[4.2,LAP_H.right],[4.9,V(.24,.86,.34)],[5.6,V(-.08,.90,.16)],[6.2,V(-.36,.92,-.16)],[7.0,V(-.36,.92,-.16)],[7.35,V(.10,.82,.34)],[7.8,LAP_H.right],[9,LAP_H.right]]);
         s.gR={open:.3*reach,fist:.12*(1-reach)}; // 够水壶：掌心张开
         s.headYaw=-.75*reach;s.yaw=-.18*reach;s.emotion='neutral';
       }
@@ -277,7 +279,7 @@ function specHong(phase,u,dt,t){
     case 'empty_h':{ // 空拍：啃炸鸡，风微动（持物手随咀嚼节拍半捏起落）
       s.sit=1;s.emotion='neutral';s.left={...LAP_H.left};
       const c=chewCycle(t,CHEW.hong.period,CHEW.hong.offset);
-      s.right=blend(V(.16,.84,.26),V(.12,1.21,.28),c.raise); // 抬到嘴前略下方（掌心向内，不反掌；食物在手不悬空）
+      s.right=blend(V(-.02,.895,.22),V(.12,1.21,.28),c.raise); // 不嚼时垂放腿侧；抬到嘴前略下方（掌心向内；食物在手）
       s.gR={fist:.12+.38*c.raise};
       s.headPitch=.03;s.headYaw=.15+.12*Math.sin(t*.19);
       break;

@@ -222,14 +222,16 @@ export class RooftopNoonScene{
       S.add(g);this.clouds.push(g);
     }
   }
-  // 楼梯间门开合（纯时间函数）：雷晓 6.9–7.5 开门、9.2–10.4 带上；
-  // 轰刚 13.55 撞开，13.85 起回弹；17.1 等人和便当离开扫掠区后再关门。
+  // 楼梯间门开合（纯时间函数；状态迁移必挂触发者——C7 状态一致性）：
+  // 雷晓 6.9–7.5 推门出、弹簧门漂移关 9.2–10.4（ latch 声 10.35）；
+  // 轰刚 13.75–14.0 撞开（他到门口门才动；撞门声 13.85 落在迁移窗内）；
+  // 他撞开就没关严——门一直开着，18.05–18.3 阵风带上（18.2 阵风峰，关门声 18.25）。
   // Probe reads the rendered hut/door meshes and final matrices, including rebound.
   doorA(t){
     const seg=(a,b)=>ease(clamp((t-a)/(b-a)));
-    let a=seg(6.9,7.5)*(1-seg(9.2,10.4))+seg(13.55,13.85)*(1-seg(17.1,18.3));
+    let a=seg(6.9,7.5)*(1-seg(9.2,10.4))+seg(13.75,14.0)*(1-seg(18.05,18.3));
     let ang=-1.75*Math.min(1,a);
-    if(t>13.85&&t<15.1)ang-=.10*Math.sin((t-13.85)*22)*Math.exp(-(t-13.85)*5); // 撞门回弹
+    if(t>14.0&&t<15.25)ang-=.10*Math.sin((t-14.0)*22)*Math.exp(-(t-14.0)*5); // 撞门回弹
     return ang;
   }
   update(t){
@@ -237,12 +239,13 @@ export class RooftopNoonScene{
     for(const c of this.clouds){
       const d=c.userData;c.position.x=d.baseX+((t*d.spd)%30); // 30 米缓程，远距+雾看不出回绕
     }
-    // 角旗风动
+    // 角旗风动（18.2s 阵风脉冲加强——与 viewer windAt 的 gustAt 同源：把门带上的那阵风要可见）
+    const gust=Math.exp(-(((t-18.2)/.35)**2));
     const p=this.flag.geometry.attributes.position;
     for(let i=0;i<p.count;i++){
       const x=this.flagBase[i*3],w=x/.5;
-      p.setZ(i,Math.sin(x*9-t*6.2)*.06*w+Math.sin(t*2.1+x*3)*.03*w);
-      p.setY(i,this.flagBase[i*3+1]+Math.sin(x*7-t*5.1)*.02*w);
+      p.setZ(i,(Math.sin(x*9-t*6.2)*.06*w+Math.sin(t*2.1+x*3)*.03*w)*(1+1.6*gust));
+      p.setY(i,this.flagBase[i*3+1]+Math.sin(x*7-t*5.1)*.02*w*(1+1.6*gust));
     }
     p.needsUpdate=true;this.flag.geometry.computeVertexNormals();
   }

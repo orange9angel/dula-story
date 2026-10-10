@@ -24,6 +24,7 @@
    {"subject": "lei", "parts": ["rightHand"], "obstacle": "leiBento_base", "window": [6.9, 51.4], "note": "托盘手托盒底（含放置窗口）"},
    {"subject": "lei", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "CylinderGeometry"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [6.9, 51.55], "note": "手系锚定后盒底贴掌面：掌/指/前臂/卷袖/壳疹件全程合法接触（P13 扣边托）"},
    {"subject": "lei", "parts": ["leftHand"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [7.0, 13.5], "note": "搬运段左手扶沿"},
+   {"subject": "lei", "parts": ["leftHand", "leftArm"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [30.0, 35.2], "note": "share_3 收盒：左手搭上盒左沿（P14 有支撑静息）"},
    {"subject": "lei", "parts": ["leftHand", "leftArm"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [13.4, 14.2], "note": "掀盖操作接触"},
    {"subject": "lei", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "CylinderGeometry"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [50.4, 51.55], "note": "放盒操作接触（盒离手沿前臂滑下，含壳疹六边形件）"},
    {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 999], "note": "左手托盘全程"},
@@ -34,7 +35,8 @@
    {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxB_base", "window": [20.8, 21.3], "note": "右手接走上层盒时左手的离摞接触"},
    {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [23.4, 24.2], "note": "右手收回途中掀左手盒盖"},
    {"subject": "hong", "parts": ["rightHand", "sleeve_right", "sleeve_rightRoll", "rightArm"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [23.4, 24.2], "note": "掀盖时前臂/袖口过盒盖"},
-   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [50.5, 54.5], "note": "转身够水壶路过左手盒"},
+   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [22.8, 68], "note": "静息右手搭盒 A 右沿（含袖口靠盖）"},
+   {"subject": "hong", "parts": ["rightHand", "sleeve_right"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [50.5, 54.5], "note": "转身够水壶路过左手盒（含袖口）"},
    {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [13.9, 17.2], "note": "出门挥手手过胸前摞盒（擦碰）"},
    {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 17.2], "note": "同上（下层盒盖）"},
    {"subject": "lei", "parts": ["body"], "obstacle": "hongBoxB_base", "window": [46.4, 46.8], "note": "接过签侧身瞬间蹭到两人中间的盒"},
@@ -103,5 +105,55 @@
   "entries": [
    {"key": "LeiXiaoCraft:left", "min_dot": -0.05},
    {"key": "HongGangCraft:right", "min_dot": -0.05}
-  ]}
+  ]},
+ "hand_body_mesh": {"state_key": "handBody", "window": [7, 68], "frame_min": 100,
+  "comment": "手 skinned mesh vs 躯干/大腿代理盒：margin -10mm 深穿才报，未声明即失败",
+  "allowed": [
+   {"subject": "hongL", "obstacle": "torso", "window": [13.9, 21.0], "note": "胸前抱盒搬运：手夹在盒与胸廓间（被盒遮挡，设计如此）"},
+   {"subject": "hongL", "obstacle": "torso", "window": [21.4, 22.8], "note": "落座过渡手贴胸廓（俯身放盒）"},
+   {"subject": "hongR", "obstacle": "torso", "window": [21.4, 22.8], "note": "同上（放盒手）"},
+   {"subject": "hongR", "obstacle": "torso", "window": [50.5, 54.5], "note": "够水壶绕行：代理盒角误报区（真躯干为圆角）"},
+   {"subject": "hongL", "obstacle": "thigh_left", "window": [21.4, 22.8], "note": "落座+放盒过渡扫过腿面（1s 内）"},
+   {"subject": "hongL", "obstacle": "thigh_left", "window": [14.0, 21.0], "note": "端盒行走摆动腿面擦碰（步态峰值帧）"},
+   {"subject": "hongR", "obstacle": "thigh_right", "window": [21.4, 22.8], "note": "同上（放盒手）"},
+   {"subject": "leiL", "obstacle": "torso", "window": [29.9, 35.4], "note": "share_3 收盒左手搭上沿的过渡帧扫过腰侧"}
+  ]},
+ "rest_support": {"window": [22, 68], "actors": ["lei", "hong"], "max_speed": 0.08, "max_y": 0.95,
+  "gap_max": 0.008, "hang_deg": 35, "still_frame_min": 20,
+  "comment": "坐姿静息手必有支撑（垂放贴腿/贴盒）；活动中或高举（≥0.95m）的手不判定",
+  "exclude": [
+   {"hand": "lei:left", "window": [52.2, 53.7], "note": "按袖：左手压右前臂（臂-臂接触，不在腿/盒上）"},
+   {"hand": "lei:left", "window": [53.7, 55.6], "note": "按袖收回→空拍垂放的慢滑过渡"},
+   {"hand": "lei:left", "window": [43.2, 43.6], "note": "接签伸手过渡（缓动尾）"},
+   {"hand": "hong:right", "window": [51.2, 53.9], "note": "转身够水壶：伸臂保持（主动作态）"}
+  ]},
+ "state_consistency": {"comment": "C7 状态一致性：迁移必有触发者/事件必对应迁移/行为必符合状态",
+  "elements": {
+   "door": {"key": "doorOpen", "pos_key": "doorPos", "open_min": 0.7, "closed_max": 0.1,
+    "transitions": [
+     {"id": "lei_open", "window": [6.9, 7.5], "from": "closed", "to": "open",
+      "trigger": {"actor": "lei", "window": [6.9, 7.6], "max_dist": 0.9},
+      "event": {"t": 7.05, "tol": 0.15}},
+     {"id": "lei_close", "window": [9.2, 10.4], "from": "open", "to": "closed",
+      "trigger": {"actor": "lei", "window": [7.0, 8.5], "max_dist": 0.95},
+      "event": {"t": 10.35, "tol": 0.15}, "note": "弹簧门漂移自关：触发=过人，迁移滞后是门物理"},
+     {"id": "hong_slam", "window": [13.75, 14.0], "from": "closed", "to": "open",
+      "trigger": {"actor": "hong", "window": [13.99, 14.2], "max_dist": 0.9},
+      "event": {"t": 13.85, "tol": 0.15}},
+     {"id": "gust_close", "window": [18.05, 18.3], "from": "open", "to": "closed",
+      "trigger": {"gust_key": "windGust", "window": [18.0, 18.35], "min": 0.6},
+      "event": {"t": 18.25, "tol": 0.15}, "note": "轰刚没关严，阵风带上（风在旗/包/发束上可见）"}
+    ],
+    "behavior": {"cross_plane": {"point": [-6.5, -7.99], "normal": [0, 1], "half_width": 0.6,
+      "actors": ["lei", "hong"], "open_min": 0.5}}},
+   "leiBentoLid": {"key": "lidOpen.leiBento", "open_min": 0.7, "closed_max": 0.1,
+    "transitions": [{"id": "open", "window": [13.65, 14.1], "from": "closed", "to": "open",
+      "trigger": {"hand_near": {"tab_key": "leiBento", "max_dist": 0.25}, "window": [13.5, 14.2]}}]},
+   "hongBoxALid": {"key": "lidOpen.hongBoxA", "open_min": 0.7, "closed_max": 0.1,
+    "transitions": [{"id": "open", "window": [23.6, 24.0], "from": "closed", "to": "open",
+      "trigger": {"hand_near": {"tab_key": "hongBoxA", "max_dist": 0.25}, "window": [23.4, 24.2]}}]},
+   "hongBoxBLid": {"key": "lidOpen.hongBoxB", "open_min": 0.7, "closed_max": 0.1,
+    "transitions": [{"id": "open", "window": [21.55, 22.05], "from": "closed", "to": "open",
+      "trigger": {"hand_near": {"tab_key": "hongBoxB", "max_dist": 0.25}, "window": [21.4, 22.2]}}]}
+  }}
 }
