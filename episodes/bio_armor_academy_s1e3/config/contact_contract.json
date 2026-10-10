@@ -22,14 +22,24 @@
   "comment": "声明式接触清单：托盘/扶沿/抓握/落台抚平等合法接触按 主体×部件×盒×窗口 声明，未声明即失败（探针是三角相交，亚毫米接触与穿透同报）",
   "allowed": [
    {"subject": "lei", "parts": ["rightHand"], "obstacle": "leiBento_base", "window": [6.9, 51.4], "note": "托盘手托盒底（含放置窗口）"},
+   {"subject": "lei", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "CylinderGeometry"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [6.9, 51.55], "note": "手系锚定后盒底贴掌面：掌/指/前臂/卷袖/壳疹件全程合法接触（P13 扣边托）"},
    {"subject": "lei", "parts": ["leftHand"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [7.0, 13.5], "note": "搬运段左手扶沿"},
    {"subject": "lei", "parts": ["leftHand", "leftArm"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [13.4, 14.2], "note": "掀盖操作接触"},
    {"subject": "lei", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "CylinderGeometry"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [50.4, 51.55], "note": "放盒操作接触（盒离手沿前臂滑下，含壳疹六边形件）"},
    {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 999], "note": "左手托盘全程"},
+   {"subject": "hong", "parts": ["leftHand", "leftArm", "sleeve_left", "sleeve_leftSleeve", "TubeGeometry"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 999], "note": "手系锚定后盒底贴掌面：左臂/缠带全程合法接触（P13 扣边托）"},
+   {"subject": "hong", "parts": ["leftHand", "leftArm", "sleeve_left", "sleeve_leftSleeve", "TubeGeometry"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [13.9, 21.3], "note": "摞在上层盒期间左臂接触"},
+   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 22.9], "note": "胸前抱盒（手系锚定后盒贴身）"},
+   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [13.9, 21.3], "note": "摞盒贴胸"},
    {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxB_base", "window": [20.8, 21.3], "note": "右手接走上层盒时左手的离摞接触"},
    {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [23.4, 24.2], "note": "右手收回途中掀左手盒盖"},
-   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [20.7, 22.8], "note": "右手接盒+送上矮沿+指尖推滑"},
-   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [20.7, 22.8], "note": "接近时蹭到下层盒"},
+   {"subject": "hong", "parts": ["rightHand", "sleeve_right", "sleeve_rightRoll", "rightArm"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [23.4, 24.2], "note": "掀盖时前臂/袖口过盒盖"},
+   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [50.5, 54.5], "note": "转身够水壶路过左手盒"},
+   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [13.9, 17.2], "note": "出门挥手手过胸前摞盒（擦碰）"},
+   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 17.2], "note": "同上（下层盒盖）"},
+   {"subject": "lei", "parts": ["body"], "obstacle": "hongBoxB_base", "window": [46.4, 46.8], "note": "接过签侧身瞬间蹭到两人中间的盒"},
+   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [20.6, 22.8], "note": "右手接盒+送上矮沿+指尖推滑"},
+   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [20.6, 22.8], "note": "接近时蹭到下层盒"},
    {"subject": "hong", "parts": ["rightLeg", "leftLeg"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [21.8, 22.8], "note": "落台 transit：盒贴腿侧沉下/滑走"},
    {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [21.5, 22.9], "note": "俯身放盒胸廓蹭左手盒沿"},
    {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [21.5, 22.9], "note": "同上（放下的那盒）"}
@@ -83,5 +93,15 @@
    "lei": {"max_elev_deg": 100, "max_shoulder_axis": 0.28},
    "hong": {"max_elev_deg": 85, "max_shoulder_axis": 0.42}
   }},
- "worn_prop": {"state_key": "worn", "frame_min": 100, "comment": "书包 vs 雷晓躯干：margin -20mm（贴胯软接触合法、深穿才报），任何命中即失败（包体/盖/带已 probeExclude）"}
+ "worn_prop": {"state_key": "worn", "frame_min": 100, "comment": "书包 vs 雷晓躯干：margin -20mm（贴胯软接触合法、深穿才报），任何命中即失败（包体/盖/带已 probeExclude）"},
+ "grip": {"frame_min": 50, "comment": "托盘接触成立：盒底贴掌面（≤3mm 且在盒底投影内）+ 至少一指节扣上盒体（≤5mm）；viewer 手系锚定后此断言防回归",
+  "entries": [
+   {"key": "leiR", "window": [7.3, 50.3], "palm_max": 0.003, "finger_max": 0.005},
+   {"key": "hongL", "window": [14.3, 67.9], "palm_max": 0.003, "finger_max": 0.005}
+  ]},
+ "palm_semantic": {"frame_min": 20, "k_min": 0.5, "comment": "送嘴掌向：咬签/咀嚼抬手帧掌心-躯干点积≥min_dot（viewer 只在 physioPalm 激活帧记录）",
+  "entries": [
+   {"key": "LeiXiaoCraft:left", "min_dot": -0.05},
+   {"key": "HongGangCraft:right", "min_dot": -0.05}
+  ]}
 }

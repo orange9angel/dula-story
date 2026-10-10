@@ -101,18 +101,48 @@ if(leiBag){
   leiBag.position.set(-.25,.90,.04);   // 世界挂点=原包顶；外移 8cm 微后移（扫描实证：-.25 起零命中）
   if(bagLid){leiBag.add(bagLid);bagLid.position.set(0,-.015,0);} // 包盖挂到包体上随摆
   leiBag.userData.hangTilt=-.16;       // 重力外倾角（secondary 叠加风摆；负=包底朝外）
+  leiBag.userData.lid=bagLid;leiBag.userData.strap=bagStrap;
+  // 斜挎包可读性：包体提亮（深棕撞深蓝裤子远景读不出——"只有一条绳"实录）+ 背带尾连接件
+  leiBag.material.color.set('#9a6b42');
+  if(bagLid)bagLid.material.color.set('#7a4f30');
+  if(bagStrap){
+    const link=outlined(lei.body,new THREE.CylinderGeometry(.008,.008,1,6),
+      new THREE.MeshToonMaterial({color:'#8a6a3a',gradientMap:ramp}),.0004);
+    link.userData.probeExclude=1;leiBag.userData.strapLink=link;
+  }
   for(const m of [leiBag,bagLid,bagStrap])if(m)m.userData.probeExclude=1;
+}
+// 肩窝覆盖件（viewer 侧补件，资产不动）：lean 俯身时躯干前倾、臂根不动，袖根与肩环开缝——
+// 椭球桥接"躯干肩点（含 lean，body 系换算）→臂根（mesh 系）"，缝隙为零时缩到内嵌不可见
+const shoulderCaps=[];
+for(const [actor,r,c,sh,shY] of [[lei,.055,'#ede8dd',.13,1.375],[hong,.075,'#303440',.18,1.56]]){
+  for(const [side,sign] of [['left',-1],['right',1]]){
+    const cap=outlined(actor.mesh,new THREE.SphereGeometry(1,14,10),
+      new THREE.MeshToonMaterial({color:c,gradientMap:ramp}),.0005);
+    cap.userData.contactPart='body'; // 与躯干同部件参与接触判定
+    shoulderCaps.push({actor,side,sign,cap,r,torso:new THREE.Vector3(sign*(sh-.02),shY-.04,0)});
+  }
 }
 const hongFlaps=hong.body.children.filter(o=>o.isMesh&&Math.abs(Math.abs(o.position.x)-.152)<.005);
 for(const flap of hongFlaps){flap.geometry.translate(0,-1.52,0);flap.position.y=1.52;} // wind pivots at the shoulder, not the ground
 const leiTufts=[];lei.headGroup.traverse(o=>{if(o.isMesh&&o.geometry.type==='TubeGeometry'&&o.material.side!==THREE.BackSide)leiTufts.push(o);});
 // 阵风包络（解析微风正弦，(t,state) 纯函数）：空拍段加强
 function windAt(t){return Math.max(0,.55*Math.sin(t*.31)+.45*Math.sin(t*.13+1.7))*(t>=55&&t<68?1.8:1);}
-function secondary(t,lean=0){
-  const w=windAt(t);
+function secondary(t,sl){
+  const w=windAt(t),lean=sl.lean??0,lerp=THREE.MathUtils.lerp;
   if(leiBag){ // 书包：硬材质，小幅；枢轴在包顶，重力外倾+风摆；俯身时逆 lean 回摆保持垂感
     leiBag.rotation.z=(leiBag.userData.hangTilt??0)+.08*w*Math.sin(t*3.1)+.018*Math.sin(t*7.3);
     leiBag.rotation.x=-.6*lean+.05*w*Math.sin(t*2.6+1);
+    // 挂点保持 P12 净空位（坐姿前摆会重新嵌入大腿——坐姿大腿外侧鼓到 x -.20，实测复穿）；
+    // 可读性靠包体提亮+背带连接件，不靠移位
+    const link=leiBag.userData.strapLink;
+    if(link){ // 背带尾端→包顶挂点的连接绳（随包摆动，body 局部系）
+      const a=new THREE.Vector3(-.14,.85,.08),b=leiBag.position.clone().add(new THREE.Vector3(.03,-.01,0));
+      const d=b.sub(a),len=d.length();
+      link.position.copy(a).addScaledVector(d,.5);
+      link.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());
+      link.scale.set(1,len,1);
+    }
   }
   hongFlaps.forEach((f,i)=>{ // 外套襟：软材质，摆幅稍大
     f.rotation.x=.10*w*Math.sin(t*2.9+i*1.3);
@@ -215,10 +245,18 @@ stage.scene.add(leiBento,hongBoxA,hongBoxB,skewer,hongNug,bottle);
 const LEI_REL=51.35,HONG_REL=22.2,LEI_GRIP=[0,-.055,.05],HONG_GRIP=[0,-.10,.05];
 let LEI_GUIDE=null,HONG_GUIDE=null,HONG_DROP=null,LEI_SET=null,FIXED_B=null;
 const bp=(actor,x,y,z)=>actor.body.localToWorld(new THREE.Vector3(x,y,z));
-function supportedBox(actor,side,offset){
+// 掌面顶面厚度（hand.js：掌椭球半径 .0205 沿 sign*Z=掌向；乘手部 scale 得世界厚度）。
+// 托盘偏移与 grip 断言共用这一常数，避免"拍脑袋偏移"再次浮盒
+const PALM_TOP=.0205;
+function supportedBox(actor,side,offset){ // mesh 系偏移（抓握/提沿段用）
   // Use the solved wrist exactly once: body-space y already includes the sitting drop.
   return actor.hands[side].getWorldPosition(new THREE.Vector3())
     .add(new THREE.Vector3(...offset).applyQuaternion(actor.mesh.quaternion));
+}
+function handBox(actor,side,x,y){ // 手系锚定（托盘段）：盒底中心=掌面中点，落在掌面顶面
+  const hand=actor.hands[side],s=hand.scale.x;
+  return hand.getWorldPosition(new THREE.Vector3())
+    .add(new THREE.Vector3(x*s,y*s,hand.sign*PALM_TOP*s).applyQuaternion(hand.getWorldQuaternion(new THREE.Quaternion())));
 }
 // 道具状态机同源：托盘手强度=盒状态（hidden→held→placing→down）的函数，
 // 只在手持/放下过渡期间生效，放下后缓回谱面手势（杜绝"手举着盒不在"）。
@@ -231,7 +269,8 @@ function trayK(t,appear,placeT1){
 // 手腕生理域（所有手部朝向覆盖的唯一入口）：掌朝向由前臂轴推导，相对自然掌向扭转限 ±60°。
 // 无条件"世界掌心向上"会在前臂下垂时把腕扭到不生理角度（S1E3 23s 特写翻车实录）。
 const wristAudit={}; // 每帧 twist 需求/实际值 → contact 日志
-function physioTray(actor,side,k,arm){
+const palmAudit={};  // 送嘴掌向语义（掌心-躯干点积）→ contact 日志
+function physioTray(actor,side,k,arm,gripFist=.22){
   if(k<=0)return; // k=0：姿势完全归谱面（setPose+gL/gR）
   const hand=actor.hands[side];
   const qBase=hand.quaternion.clone();
@@ -250,10 +289,38 @@ function physioTray(actor,side,k,arm){
   const y=z.clone().cross(fd).normalize();const z2=fd.clone().cross(y).normalize();
   const qTray=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(fd,y,z2));
   hand.quaternion.copy(qBase).slerp(qTray,k);
-  hand.setGesture({fist:.12+.10*k,open:0,point:0});
+  hand.setGesture({fist:.12+(gripFist-.12)*k,open:0,point:0}); // 扣边托：指腹扣上盒侧壁
   hand.updateMatrixWorld(true);
   wristAudit[actor.mesh.name+':'+side]={demandDeg:demand*180/Math.PI,appliedDeg:applied*180/Math.PI,
     palmDot:Math.abs(z.dot(fd)),k}; // palmDot≈0：掌法向量与前臂轴垂直
+}
+// 动作语义掌向约束（与 physioTray 同级）：bring-to-mouth 类动作掌法向量必须朝向躯干半球——
+// 前臂旋后、掌心朝自己；自然基在抬手送嘴时是掌心朝外（反掌送嘴翻车实录）。
+// 只扭腕部朝向，不动手型（持签的半捏由谱面 gL/gR 保持）。
+function physioPalm(actor,side,k,arm){
+  if(k<=0)return;
+  const hand=actor.hands[side];
+  const qBase=hand.quaternion.clone();
+  const fd=actor.mesh.localToWorld(new THREE.Vector3(arm[2].x,arm[2].y,arm[2].z))
+    .sub(actor.mesh.localToWorld(new THREE.Vector3(arm[1].x,arm[1].y,arm[1].z))).normalize();
+  const fwd=new THREE.Vector3(0,0,1);
+  const y0=fwd.clone().addScaledVector(fd,-fwd.dot(fd)).normalize(),z0=fd.clone().cross(y0).normalize();
+  const palmNat=z0.clone().multiplyScalar(hand.sign);
+  const handPos=hand.getWorldPosition(new THREE.Vector3());
+  const inward=actor.mesh.localToWorld(new THREE.Vector3(0,1.15,0)).sub(handPos); // 指向胸口
+  const inw=inward.clone().normalize();
+  const inProj=inw.clone().addScaledVector(fd,-inw.dot(fd));
+  const palmIn=inProj.length()>.1?inProj.normalize():palmNat.clone(); // 前臂直指胸口时退回自然掌向
+  const demand=Math.acos(clamp(palmNat.dot(palmIn),-1,1));
+  const applied=Math.min(demand,Math.PI*4/9); // 前臂旋后生理域 ~85°，限 80°（托盘腕扭仍是 ±60°）
+  const palm=demand>Math.PI*4/9?palmNat.clone().lerp(palmIn,(Math.PI*4/9)/demand).normalize():palmIn;
+  const z=palm.clone().multiplyScalar(hand.sign).normalize();
+  const y=z.clone().cross(fd).normalize();const z2=fd.clone().cross(y).normalize();
+  hand.quaternion.copy(qBase).slerp(new THREE.Quaternion().setFromRotationMatrix(
+    new THREE.Matrix4().makeBasis(fd,y,z2)),k);
+  hand.updateMatrixWorld(true);
+  palmAudit[actor.mesh.name+':'+side]={dot:palm.dot(inw),k, // 世界掌向=palm（sign 已在基底下换算）
+    demandDeg:demand*180/Math.PI}; // dot≥0：掌心在躯干半球
 }
 // 放置落点校准：对固定释放时刻摆一次谱面姿势，读腕部世界坐标（纯函数常数，seek 安全）；
 // 落点=引导点竖直落到台面（重力沉降），保证"释放帧盒位=静置位姿"零跳变
@@ -270,18 +337,27 @@ function calibratePlacement(){
 }
 calibratePlacement();
 function props(t,sl,sh,pL,pH){
+  for(const k in wristAudit)delete wristAudit[k]; // 审计逐帧重建（k=0 的帧不留陈值）
+  for(const k in palmAudit)delete palmAudit[k];
   // 托盘手全部挂道具状态且过手腕生理域限位：雷晓右手托盒 6.9→51.35（放下后 .35s 缓出）；
   // 轰刚左手 13.9 起全程托；雷晓左手扶沿仅搬运段（坐定收回，不续到 40s——空托盘外翻翻车实录）；
-  // 轰刚右手出门段（13.9–15.1）
-  physioTray(lei,'right',trayK(t,6.9,51.35),pL.rightArm);
-  physioTray(hong,'left',trayK(t,13.9,null),pH.leftArm);
-  physioTray(lei,'left',ease(clamp((t-6.9)/.3))*ease(clamp((13.9-t)/.6)),pL.leftArm); // 搬运段扶沿，坐定收回
+  // 轰刚右手出门段（13.9–15.1）。托盘手型=扣边托（指腹扣上盒侧壁，gripFist .45）
+  physioTray(lei,'right',trayK(t,6.9,51.35),pL.rightArm,.45);
+  physioTray(hong,'left',trayK(t,13.9,null),pH.leftArm,.45);
+  physioTray(lei,'left',ease(clamp((t-6.9)/.3))*ease(clamp((13.9-t)/.6)),pL.leftArm,.35); // 搬运段扶沿，坐定收回
   // 轰刚右手不挂托盘：出门段挥手→垂放身侧→21s 接第二盒（挥手时掌心向上=外翻，实录）
+  // 送嘴掌向语义：咬签/咀嚼抬手时掌心向内旋后（盖过自然基的外翻；不动持签手型）
+  physioPalm(lei,'left',Math.max(
+    ease(clamp((t-46.8)/.5))*ease(clamp((48.7-t)/.3)), // crack 进食弧线
+    t>=55&&t<68?ease(clamp((chewCycle(t,CHEW.lei.period,CHEW.lei.offset).raise-.25)/.3)):0)* (t>=TAKE_T?1:0),pL.leftArm);
+  physioPalm(hong,'right',Math.max(
+    ease(clamp((t-48.0)/.35))*ease(clamp((49.9-t)/.4)), // crack_h 自吃嘴前停顿段（抬起过渡不约束）
+    t>=55&&t<68?ease(clamp((chewCycle(t,CHEW.hong.period,CHEW.hong.offset).raise-.25)/.3)):0),pH.rightArm);
   leiBento.visible=sl.visible!==false&&t>=6.9;
   if(leiBento.visible){ // 便当盒随身体次级滞后（解析弹簧：bob 差分）
     const g=ease(clamp((t-50.4)/.3)); // 托盘→提沿抓握偏移过渡（盒随手动、零跳变）
-    if(t<LEI_REL){ // 手持（含放置引导）：盒=腕×偏移
-      leiBento.position.copy(supportedBox(lei,'right',[0,.03-.085*g,.115-.065*g]));
+    if(t<LEI_REL){ // 手持（含放置引导）：托盘段盒底贴掌面（手系锚定），放置段过渡回 mesh 系抓握点
+      leiBento.position.lerpVectors(handBox(lei,'right',.055,0),supportedBox(lei,'right',LEI_GRIP),g);
     }else{ // 释放后重力落台 .15s → 静置（起点=引导点，零跳变）
       const d=ease(clamp((t-LEI_REL)/.15));
       leiBento.position.lerpVectors(LEI_GUIDE,LEI_SET,d);
@@ -292,7 +368,7 @@ function props(t,sl,sh,pL,pH){
   const hongOut=sh.visible!==false;
   hongBoxA.visible=hongOut&&t>=13.9;
   if(hongBoxA.visible){
-    hongBoxA.position.copy(supportedBox(hong,'left',[0,.038,.145]));
+    hongBoxA.position.copy(handBox(hong,'left',.065,0)); // 盒底贴掌面（手系锚定）
     hongBoxA.rotation.y=hong.mesh.rotation.y;
     hongBoxA.lid.rotation.x=-1.62*ease(clamp((t-23.6)/.4)); // 右手推滑收回路过盒盖时掀开（23.6–24.0 手过盖）
   }
@@ -324,18 +400,28 @@ function props(t,sl,sh,pL,pH){
   if(skewer.visible){
     const hand=t<TAKE_T?hong.hands.right:lei.hands.left;
     const hq=hand.getWorldQuaternion(new THREE.Quaternion());
-    const pinch=new THREE.Vector3(.048,.026,hand.sign*.006); // 手局部捏合区
-    skewer.position.copy(hand.getWorldPosition(new THREE.Vector3()).add(pinch.applyQuaternion(hq)));
+    // 捏持锚点先定（手局部捏合区），四元数调整（递签指向/咬下腕翻）全部绕锚点转
+    const anchor=hand.getWorldPosition(new THREE.Vector3())
+      .add(new THREE.Vector3(.048,.026,hand.sign*.006).applyQuaternion(hq));
     skewer.quaternion.copy(hq);
-    skewer.position.add(new THREE.Vector3(-.015,0,0).applyQuaternion(hq)); // 捏在签下 1/3 段
+    // 递签指向：轰刚持签段把签尖（炸鸡端）转向雷晓嘴边——递出去的是吃食不是拳头（近景实录：
+    // 签沿前臂轴自然垂坠时炸鸡端拖在拳后）
+    if(t<TAKE_T){
+      const aimW=ease(clamp((t-41.6)/.4))*ease(clamp((44.6-t)/.3))*.85;
+      if(aimW>.01){
+        const aim=lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).sub(anchor).normalize();
+        skewer.quaternion.slerp(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(1,0,0),aim),aimW);
+      }
+    }
     // 腕翻：咬下窗口（crack 47.3–48.6）与空拍咀嚼抬手（raise>.4）把签尖转向嘴
     let bite=ease(clamp((t-47.3)/.4))*ease(clamp((48.6-t)/.25));
     if(t>=55&&t<68)bite=Math.max(bite,chewCycle(t,CHEW.lei.period,CHEW.lei.offset).raise);
     if(bite>.01&&t>=TAKE_T){
-      const mouth=lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).sub(skewer.position).normalize();
+      const mouth=lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).sub(anchor).normalize();
       const qTarget=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(1,0,0),mouth);
       skewer.quaternion.slerp(qTarget,bite);
     }
+    skewer.position.copy(anchor).add(new THREE.Vector3(-.015,0,0).applyQuaternion(skewer.quaternion)); // 捏在签下 1/3 段
     skewerNug.visible=t<48.3||t>=56.0;
   }
   // 轰刚手里那块
@@ -437,7 +523,20 @@ function draw(t,capture=true){
   lei.mouth.apply(lipLei(t));
   hong.mouth.apply(lipHong(t));
   props(t,sl,sh,performance.pL,performance.pH);
-  secondary(t,sl.lean??0);
+  secondary(t,sl);
+  for(const {actor,side,sign,cap,r,torso} of shoulderCaps){ // 肩窝桥接：躯干肩点（lean 后）→臂根
+    const p=actor===lei?performance.pL:performance.pH,a=p?.[side+'Arm'];
+    if(!a||actor.mesh.visible===false){cap.visible=false;continue;}
+    actor.body.updateWorldMatrix(true,false);
+    const tp=actor.mesh.worldToLocal(actor.body.localToWorld(torso.clone())); // 躯干肩点→mesh 系
+    const ar=new THREE.Vector3(a[0].x,a[0].y,a[0].z);
+    const d=ar.clone().sub(tp),len=d.length();
+    cap.visible=len>.06; // 缝隙<6cm 时袖根内埋足够，桥接件缩回
+    if(!cap.visible)continue;
+    cap.position.copy(tp).addScaledVector(d,.55); // 偏向臂根一侧
+    cap.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());
+    cap.scale.set(r,Math.max(len*.62,r),r);
+  }
 
   let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'two',t,entry);
   camera.position.set(...c.pos);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
@@ -515,6 +614,31 @@ function draw(t,capture=true){
     contact.lidTabDist[name]=Math.min(...['left','right'].map(s=>actor.hands[s].getWorldPosition(new THREE.Vector3()).distanceTo(tab)));
   }
   state.contact=contact;
+  // grip 断言日志：托底接触成立=盒底投影内存在顶点距底面 ≤palm_max（touchMin=min|y|，
+  // 指节扣进盒体底角属合法接触，由 whitelist 三角探针兜底穿透上限）+ 指节-盒体最近距离（扣边）
+  contact.grip={};
+  for(const [key,actor,side,box] of [['leiR',lei,'right',leiBento],['hongL',hong,'left',hongBoxA]]){
+    if(!box.visible)continue;
+    const hand=actor.hands[side];
+    box.updateMatrixWorld(true);
+    hand.skeleton.update();
+    let touchMin=99,fingerMin=99,inFoot=false;const bv=new THREE.Vector3();
+    const pos=hand.surface.geometry.attributes.position;
+    for(let i=0;i<pos.count;i++){
+      hand.surface.getVertexPosition(i,bv); // 蒙皮后局部坐标→世界→盒局部
+      bv.applyMatrix4(hand.surface.matrixWorld);box.worldToLocal(bv);
+      if(Math.abs(bv.x)>.085||Math.abs(bv.z)>.06)continue; // 盒底投影外不算托底
+      if(bv.y<.04){inFoot=true;touchMin=Math.min(touchMin,Math.abs(bv.y));}
+    }
+    for(const ch of hand.chains)for(const bone of ch.bones){
+      bone.getWorldPosition(bv);box.worldToLocal(bv);
+      const dx=Math.max(0,Math.abs(bv.x)-.085),dz=Math.max(0,Math.abs(bv.z)-.06),
+            dy=Math.max(0,-bv.y,bv.y-.052); // 盒身局部范围（含盖）
+      fingerMin=Math.min(fingerMin,Math.hypot(dx,dy,dz));
+    }
+    contact.grip[key]={palmGap:touchMin,inFoot,fingerMin};
+  }
+  contact.palmIn=palmAudit; // 送嘴掌向（physioPalm 激活帧才有记录）
   if(doorProbe&&t>=6.8&&t<=22.0){
     state.doorway=doorProbe(stage,{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});
   }

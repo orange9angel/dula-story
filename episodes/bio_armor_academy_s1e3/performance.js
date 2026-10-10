@@ -142,9 +142,9 @@ function specLei(phase,u,dt,t){
     case 'crack':{ // 接过咬一口，被逗笑破防；笑瞬间右臂微光一闪、左手按住
       s.sit=1;s.right=V(.16,.78,.24);
       s.right.z+=settle(t,51.4,.04); // 放下便当盒后右手带跟随衰减收回腿边
-      if(dt<2.0){ // 进食弧线：胸前→弧顶抬起→嘴前停顿→送入口中→撤回（持签手半捏）
-        s.left=key(dt,[[0,V(-.12,1.05,.28)],[.55,V(-.10,1.14,.34)],[.85,V(-.08,1.20,.31)],
-          [1.15,V(-.08,1.20,.31)],[1.45,V(-.055,1.225,.27)],[1.80,V(-.055,1.225,.27)],[2.0,V(-.10,1.12,.30)]]);
+      if(dt<2.0){ // 进食弧线：胸前→弧顶抬起→嘴前下方停顿（掌心自然朝上向内）→签尖送入口中→撤回（持签手半捏）
+        s.left=key(dt,[[0,V(-.12,1.05,.28)],[.55,V(-.10,1.12,.34)],[.85,V(-.08,1.16,.30)],
+          [1.15,V(-.08,1.16,.30)],[1.45,V(-.06,1.15,.25)],[1.80,V(-.06,1.15,.25)],[2.0,V(-.10,1.12,.30)]]);
         s.gL={fist:.5};
         s.emotion=dt<1.2?'worry':'laugh';s.headPitch=.08;
       }else if(dt<3.7){ // 憋不住笑
@@ -155,7 +155,7 @@ function specLei(phase,u,dt,t){
         s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.12,1.0,.26);s.gL={fist:.5};
         s.right=key(dt,[[3.7,V(.16,.78,.24)],[3.9,V(.28,.72,.08)],[4.4,V(.40,.70,-.07)],
           [4.85,V(.40,.70,-.07)],[5.1,V(.30,.76,.04)],[5.4,V(.16,.78,.24)]]);
-        s.lean=.15*ease(clamp((dt-3.95)/.3))*ease(clamp((5.15-dt)/.3)); // 微俯身才能够到矮沿
+        s.lean=.12*ease(clamp((dt-3.95)/.3))*ease(clamp((5.15-dt)/.3)); // 微俯身才能够到矮沿（.15→.12，肩窝片兜缝）
       }else{ // 袖口微光：低头看右臂，左手按住（按臂手平贴前臂）
         const q=ease(clamp((dt-5.4)/.8));
         s.emotion='worry';s.headPitch=mix(.02,.30,q);s.headYaw=.35*q;
@@ -170,7 +170,7 @@ function specLei(phase,u,dt,t){
     case 'empty_l':{ // 空拍：并排啃炸鸡（持签手随咀嚼节拍半捏起落）
       s.sit=1;s.emotion='neutral';
       const c=chewCycle(t,CHEW.lei.period,CHEW.lei.offset);
-      s.left=blend(V(-.13,.82,.24),V(-.06,1.22,.28),c.raise);
+      s.left=blend(V(-.13,.82,.24),V(-.06,1.15,.26),c.raise); // 抬到嘴前下方（掌心向内，不反掌）
       s.gL={fist:.12+.38*c.raise};
       s.right={...LAP_L.right};
       s.headPitch=.04;s.headYaw=-.22*(.5+.5*Math.sin(t*.23));s.headRoll=.01*Math.sin(t*.9);
@@ -216,7 +216,7 @@ function specHong(phase,u,dt,t){
         // 右手接摞顶第二盒 → 落座顺势俯身放上右侧矮沿（手随盒、释放后收回，禁止盒子独立飞行）
         s.right=key(u,[[.88,V(-.06,1.33,.36)],[.93,V(-.06,1.33,.36)], // 摞顶已接到盒（与转身段末同位）
           [.985,V(.10,.80,-.12)],[1,V(.10,.78,-.12)]]); // 落座小弧沉到腿平面之后（盒不穿膝），落台+推滑在 share_1 开头完成
-        s.lean=.22*ease(clamp((u-.93)/.04)); // 俯身才够到矮沿（share_1 开头由边界混合收回）
+        s.lean=.18*ease(clamp((u-.93)/.04)); // 俯身才够到矮沿（share_1 开头由边界混合收回；减幅+肩窝片兜开缝）
         const grip=ease(clamp((u-.84)/.03))*ease(clamp((1.0-u)/.04)); // 扣盒沿手型
         s.gR={fist:.12+.30*grip};
       }
@@ -229,7 +229,7 @@ function specHong(phase,u,dt,t){
       s.right=key(u,[[0,V(.10,.78,-.10)],[.05,V(.14,.74,-.11)],[.11,V(.22,.72,-.10)],[.16,V(.28,.72,-.08)],
         [.22,V(.32,.74,-.04)],[.28,V(.30,.80,.06)],[.36,V(-.02,.92,.30)],[.42,V(-.02,.92,.30)],
         [.52,V(.14,.82,.24)],[.7,V(.20,.82,.26)],[1,LAP_H.right]]); // 推滑收回途中顺手掀开左手盒盖（23.6–23.9 手过盖把）
-      s.lean=.22*ease(clamp((.2-u)/.1)); // 俯身随推滑收回
+      s.lean=.18*ease(clamp((.2-u)/.1)); // 俯身随推滑收回（.22→.18：减幅兜肩缝，够台不变——臂根不随 lean）
       s.gR={fist:.12+.30*ease(clamp((.14-u)/.06))};
       s.headYaw=.45;s.headPitch=-.06;s.headRoll=.03;s.bob=.012*Math.sin(t*2.6);
       break;
@@ -262,8 +262,8 @@ function specHong(phase,u,dt,t){
       if(dt<2.2){s.emotion='laugh';s.headPitch=-.1;s.right={...LAP_H.right};} // 看雷晓笑了跟着乐（∩ 笑眼）
       else if(dt<4.2){ // 自己啃一口（进食弧线：抬起→嘴前停顿→咬→撤回）
         s.emotion='neutral';
-        s.right=key(dt,[[1.0,LAP_H.right],[1.35,V(.16,1.12,.34)],[1.60,V(.13,1.20,.31)],
-          [1.80,V(.13,1.20,.31)],[2.05,V(.11,1.21,.30)],[2.60,V(.11,1.21,.30)],[3.3,LAP_H.right],[9,LAP_H.right]]);
+        s.right=key(dt,[[1.0,LAP_H.right],[1.35,V(.16,1.11,.33)],[1.60,V(.13,1.18,.30)],
+          [1.80,V(.13,1.18,.30)],[2.05,V(.11,1.19,.29)],[2.60,V(.11,1.19,.29)],[3.3,LAP_H.right],[9,LAP_H.right]]);
         s.gR={fist:.12+.38*ease(clamp((dt-1.2)/.3))*ease(clamp((3.3-dt)/.3))};
         s.headPitch=.10; // 头迎向食物，手臂不过肩（袖肩接缝）
       }else{
@@ -277,7 +277,7 @@ function specHong(phase,u,dt,t){
     case 'empty_h':{ // 空拍：啃炸鸡，风微动（持物手随咀嚼节拍半捏起落）
       s.sit=1;s.emotion='neutral';s.left={...LAP_H.left};
       const c=chewCycle(t,CHEW.hong.period,CHEW.hong.offset);
-      s.right=blend(V(.16,.84,.26),V(.12,1.25,.29),c.raise);
+      s.right=blend(V(.16,.84,.26),V(.12,1.21,.28),c.raise); // 抬到嘴前略下方（掌心向内，不反掌；食物在手不悬空）
       s.gR={fist:.12+.38*c.raise};
       s.headPitch=.03;s.headYaw=.15+.12*Math.sin(t*.19);
       break;

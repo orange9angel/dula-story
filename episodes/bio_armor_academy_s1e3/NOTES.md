@@ -315,6 +315,64 @@ S1E3 的 14 段接触断言泛化为 skill 级通用工具：
 - 工艺写回：physics-gate.md（三 kind + trace 契约 + 穿戴件/抬臂纪律）、
   walk-director SKILL.md（梯形剖面/strideFactor persona/pause 段纪律）。
 
+## P13：细节四类修复 + 逐拍近景审片协议（2026-10-11）
+
+用户复看再指出四个细节，本轮核心产出是**发现环节固化**（断言全绿≠看起来对）：
+
+- **① 掌心向外反掌送嘴**：±60° 腕扭转限位挡得住生理、挡不住语义。修法=physioTray
+  同级新增 `physioPalm`（动作语义掌向约束）：送嘴帧目标掌向=手→胸口 ⊥前臂轴投影，
+  扭转限位用前臂旋后生理域 ±80°；进食弧线 keys 降到嘴前下方（掌心自然朝上向内）。
+  断言 `palm_semantic`：激活帧掌心·躯干点积 ≥−.05（284 帧 min .46）。
+  坑：audit 多乘一次 sign 把左手全员打成假阴性；轰刚抬起过渡段前臂直指胸口时
+  投影退化，约束窗口只盖嘴前停顿段。
+- **② 放盒俯身手臂分开**（21–22s 轰刚 / 51s 雷晓）：躯干 lean 前倾而臂根不随
+  （资产 rig 如此），肩部开缝实测最大 .385m。修法=viewer 侧肩窝桥接件
+  （椭球沿"躯干肩点（lean 后）→臂根"拉伸，缝隙 <6cm 时缩回内嵌）+ lean 减幅
+  （.22→.18 / .15→.12；够台不变——臂根本来就不随 lean）。未动 bioarmor 资产。
+- **③ 盒浮在手上**：根因=盒锚在 mesh 系偏移（掌转了盒不转）+ 偏移量把盒心推到
+  指尖之外。修法=`handBox()` 手系锚定（盒底中心=掌面中点，掌面顶面厚度用 hand.js
+  掌椭球半径 .0205×scale）+ 扣边托手型（physioTray 加 gripFist，指腹扣盒底前缘）；
+  放置过渡段在**位置空间** lerp 回 mesh 系抓握点（零跳变）。断言 `grip`：盒底投影内
+  顶点-底面 min|y| ≤3mm（接触成立）+ 指节-盒体 ≤5mm（扣边成立）。连锁：盒贴掌后
+  手/臂/袖/壳疹件与盒全程相交 → whitelist 补 6 行合法接触行（2.3 万条假阳性实录）。
+- **④ 挎包只有一条绳**：现状确认——包体/包盖/背带其实俱全（P12 修的同一个包），
+  问题是深棕撞深蓝裤子远景读不出+背带尾端与包顶断开。修法=包体提亮 #9a6b42/
+  盖 #7a4f30 + 背带尾→包顶连接绳（随包摆动）。坐姿前摆方案探针实测复穿
+  （坐姿大腿外侧鼓到 x −.20），挂点保持 P12 净空位不动。
+- **审片协议落地**：`render.mjs --shots <json>` 逐镜点名（name/t/camera，不走
+  checkTimes，4s 出 22 帧）；`config/review_shots.json` 覆盖全部道具交互事件
+  （端盒走/停步/掀盖/摞盒走/挥手/放盒×2/推掀开盖/插签/递签/接过/咬签×2/自吃/
+  放盒/释放/按袖/咀嚼×2/挎包/双人道具全景），检查帧 `storyboard/p13_detail_review/`。
+  审片额外抓到并修掉：**递签指向**（签沿前臂轴垂坠、炸鸡端拖在拳后→绕捏点 slerp
+  指向雷晓嘴边；锚点序修正：先定捏点再调四元数，pinch 域不漂）。
+- **验收**：check6 全量 2130 帧 **19 段全绿**（旧 17 段 stats 零退化）+ seek 75/75；
+  22 帧近景五点清单（掌向/接触/支撑/连接/穿戴件）逐张过。成片重出
+  `output/craft3d_full.mp4`（71.0s，混音不动）。
+- 工艺写回：contact-and-hands.md「掌心朝向语义表」（送嘴/托举/握持/垂放 +
+  手系 vs mesh 系锚定 + 审计符号陷阱）；physics-gate.md「逐拍近景审片协议」
+  「穿戴件做工纪律」（三件套/扫描定稿/坐姿鼓包复穿实录）。
+
+## P14：体系化门禁（逐点矫正→开工即完整验收，2026-10-11）
+
+本轮不改画面/成片，把八轮矫正沉淀成新集开工体系：
+
+- **失败类目枚举闭环**：六类=碰撞/支撑/生理域/连接完整性/接触语义/声画同步
+  （P5–P13 串行枚举完毕）。`dula-skills/direct-animation-craft/references/
+  physical-completeness.md`：类目×节拍覆盖矩阵（11 种节拍类型×6 类目→断言 kind）、
+  完整性定义（断言绿+审片全+声画绿，目检只做创意层判断）、新集开工门禁顺序、
+  八轮成本实录。
+- **`scripts/episode_gate.py`**：一条命令总验收——check 渲染（探针 trace+seek）→
+  contact_probe → check_locomotion（有步态段时）→ check_audio_sync（有 mixed.wav 时）→
+  逐拍近景组（有 review_shots.json 时）；汇总 `storyboard/gate/gate_report.json`，
+  contact 失败按 timeline 定位到节拍。**S1E3 完整路径实跑六步全绿**（含渲染 ~97s）。
+- **`scripts/init_viewer_episode.py`**：新集脚手架——原样复制 render.mjs（含
+  --shots/--trace 基建）/viewer.html/bootstrap.js/check_contact 薄包装，模板生成
+  viewer.js/performance.js 注释骨架与 config 四件（timeline/contract/review_shots/
+  voice_config）；scenes/ 与产物不复制。`--smoke` 自查（node --check×4 + JSON×4）
+  在临时目录验证通过。
+- 接入：direct-animation-craft/SKILL.md 门禁节指向体系三件套；dula-skills/AGENTS.md
+  「创作新剧集」加 viewer 链分支。
+
 ## 遗留
 
 - 「事件音效对画」已进 skill 纪律（build-ambience-foley）；本集其他事件

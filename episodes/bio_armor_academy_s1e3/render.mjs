@@ -14,6 +14,7 @@ const cameraArg=opt('--camera'); // "px,py,pz,lx,ly,lz[,fov]" — locks a free c
 const rangeArg=opt('--range');   // "start,end" in seconds
 const outArg=opt('--out');       // filename under output/
 const traceArg=opt('--trace');   // 逐帧 {t,state} 落盘（步态检测用），如 output/gait_trace.json
+const shotsArg=opt('--shots');   // JSON：[{name,t,camera:[px,py,pz,lx,ly,lz,fov?]}] 逐拍近景审片板（逐镜点名，不走 checkTimes）
 const extraQuery=opt('--q')??''; // 追加 viewer URL 查询串（探针用），如 --q "&debug-sweat=1"
 const board=path.join(here,opt('--board')??'storyboard/r1/check');
 const output=path.join(here,'output',outArg??'craft3d_r1.mp4');
@@ -51,6 +52,15 @@ if(!serve){
       await page.evaluate(cfg=>window.setFreeCamera(cfg),{pos:n.slice(0,3),lookAt:n.slice(3,6),fov:n[6]});
     }
     const duration=await page.evaluate(()=>window.duration);
+    const shots=shotsArg?JSON.parse(fs.readFileSync(path.resolve(here,shotsArg),'utf8')):null;
+    if(shots){ // 逐拍近景审片：逐镜 setFreeCamera+renderAt，落 <name>.jpg；跳帧循环与 seek
+      for(const s of shots){
+        if(s.camera)await page.evaluate(cfg=>window.setFreeCamera(cfg),{pos:s.camera.slice(0,3),lookAt:s.camera.slice(3,6),fov:s.camera[6]});
+        const r=await page.evaluate(t=>window.renderAt(t),s.t);
+        fs.writeFileSync(path.join(board,`${s.name}.jpg`),Buffer.from(r.image,'base64'));
+      }
+      console.log(`shots complete: ${shots.length} frames -> ${board}`);
+    }
     const sources=['performance.js','viewer.js','render.mjs','scenes/RooftopNoonScene.js','tools/door_probe.js','config/timeline.json'];
     const {createHash}=await import('node:crypto');
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
@@ -58,12 +68,12 @@ if(!serve){
       sourceSha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(here,p))).digest('hex')]))
     },null,2));
     let checks=await page.evaluate(()=>window.checkTimes);
-    const frames=Math.round(duration*fps);
+    const frames=shots?0:Math.round(duration*fps); // shots 模式不跑帧循环
     const range=rangeArg?rangeArg.split(',').map(Number):null;
     const startFrame=range?Math.round(range[0]*fps):0,endFrame=range?Math.min(frames,Math.round(range[1]*fps)):frames;
     if(range)checks=checks.filter(t=>t>=startFrame/fps&&t<endFrame/fps);
     let ci=0;const trace=[],gaitTrace=[];
-    if(!check){
+    if(!check&&!shots){
       const audioArgs=range?['-ss',String(range[0]),'-t',String(range[1]-range[0])]:[];
       const sound=fs.existsSync(audioFile)?[...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0','-c:a','aac','-ar','48000','-ac','2','-b:a','192k']:['-an'];
       encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',...sound,'-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
@@ -88,7 +98,7 @@ if(!serve){
     if(traceArg){const tp=path.isAbsolute(traceArg)?traceArg:path.join(here,traceArg);fs.mkdirSync(path.dirname(tp),{recursive:true});
       fs.writeFileSync(tp,JSON.stringify({fps,frames:gaitTrace},null,1));console.log(`gait trace: ${tp} (${gaitTrace.length} frames)`);}
     if(errors.length)throw new Error(errors.join('\n'));
-    if(check){
+    if(check&&!shots){
       const seek=[];
       for(const shot of [...trace].reverse()){
         // 像素容差比较：JPEG 编码器在复杂边缘偶有单个 8×8 块的字节级非确定性，
