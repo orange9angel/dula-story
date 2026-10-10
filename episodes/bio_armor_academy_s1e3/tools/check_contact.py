@@ -8,6 +8,8 @@ Reads a render trace (node render.mjs --check --trace <file>：每帧 state.cont
 4. 端盒窗口（雷晓 7.2–11.2s / 轰刚 14.2–21.0s）：手-盒 XZ 距离 < 0.16m 且手不高过盒顶
 5. 便当网格（7–68s，需 --q '&probe-bento=1'）：白名单仅放行托盘手与自己托的盒底
    （lei rightHand↔leiBento_base / hong leftHand↔hongBoxA_base），其余命中即失败
+6. 铁丝网净空（同 probe-bento）：道具/身体任何网格碰网面薄板代理即失败
+7. 食物握持：签尖-炸鸡球心 ≤0.025m（签尖插进球内）；指骨-球心 ≥0.016m（手指不穿心）
 
 渲染需加 --q '&probe-door=1&probe-bento=1'，局部门检可加 --door-only；缺帧/缺主体/缺障碍物即失败。
 """
@@ -112,9 +114,34 @@ for frame in data['frames']:
             stats['bento_bad'] = stats.get('bento_bad', 0) + 1
             failures.append(f"bento clip @t={t}: {hit['subject']} {hit['mesh']} vs {hit['obstacle']}")
 
+    # 6. 铁丝网净空（state.env，随 probe-bento 一起）：道具/身体任何网格碰网即失败
+    env = frame.get('env')
+    if env:
+        stats['env_frames'] = stats.get('env_frames', 0) + 1
+        for hit in env['hits']:
+            stats['env_bad'] = stats.get('env_bad', 0) + 1
+            failures.append(f"fence clip @t={t}: {hit['subject']} {hit['mesh']} vs {hit['obstacle']}")
+    # 7. 食物握持：签尖-球心 ≤.025m（签尖插进球内）；指骨-球心 ≥.016m（手指不穿心）
+    if c.get('nug'):
+        stats['nug_frames'] = stats.get('nug_frames', 0) + 1
+        if c.get('skewerTip'):
+            d = math.dist(c['skewerTip'], c['nug'])
+            stats['nug_tip_max'] = max(stats.get('nug_tip_max', 0), d)
+            if d > .025:
+                failures.append(f"skewer tip outside nugget: {d:.3f}m @t={t:.2f}")
+        if c.get('nugBoneMin', 99) < .016:
+            stats['nug_bone_min'] = min(stats.get('nug_bone_min', 99), c['nugBoneMin'])
+            failures.append(f"finger through nugget: {c['nugBoneMin']:.3f}m @t={t:.2f}")
+        else:
+            stats['nug_bone_min'] = min(stats.get('nug_bone_min', 99), c['nugBoneMin'])
+
 if not args.door_only:
     if stats.get('bento_frames', 0) < 100:
         failures.append('bento probe missing or too sparse: run render with --q "&probe-bento=1"')
+    if stats.get('env_frames', 0) < 100:
+        failures.append('fence probe missing: run render with --q "&probe-bento=1"')
+    if stats.get('nug_frames', 0) < 10:
+        failures.append('food probe missing: skewer window not sampled')
 
 if not args.door_only and stats['bite_min'] > .09:
     failures.append(f"skewer never reaches mouth: min {stats['bite_min']:.3f}m")

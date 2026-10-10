@@ -106,7 +106,7 @@ export class RooftopNoonScene{
     const postMat=toon('#5f6874');
     const net=this.net=new THREE.Mesh(new THREE.PlaneGeometry(29.3,1.62),fenceMat);
     net.position.set(0,1.35,-11.37);S.add(net);
-    const netW=new THREE.Mesh(new THREE.PlaneGeometry(18.6,1.62),fenceMat);
+    const netW=this.netW=new THREE.Mesh(new THREE.PlaneGeometry(18.6,1.62),fenceMat);
     netW.position.set(-14.62,1.35,-2.0);netW.rotation.y=Math.PI/2;S.add(netW);
     for(let i=0;i<=12;i++){
       const p=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,1.68,8),postMat);

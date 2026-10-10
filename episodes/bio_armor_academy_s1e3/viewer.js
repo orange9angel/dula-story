@@ -11,6 +11,15 @@ const doorProbe=new URLSearchParams(location.search).has('probe-door')
   ?(await import('./tools/door_probe.js')).probeDoorway:null;
 const bentoProbe=new URLSearchParams(location.search).has('probe-bento')
   ?(await import('./tools/door_probe.js')).probeBoxMeshes:null;
+// 铁丝网面片的薄板代理（道具/身体 vs 环境的净空探针用，不进画面）
+let fenceProxies=null;
+function ensureFenceProxies(){
+  if(fenceProxies)return fenceProxies;
+  const mk=(name,w,h,rotY,pos)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,.02));
+    m.name=name;m.rotation.y=rotY;m.position.set(...pos);m.visible=false;stage.scene.add(m);return m;};
+  fenceProxies=[mk('fence_n',29.3,1.7,0,[0,1.35,-11.37]),mk('fence_w',18.6,1.7,Math.PI/2,[-14.62,1.35,-2.0])];
+  return fenceProxies;
+}
 const W=1280,H=720;
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
 window.duration=TL.duration;
@@ -178,7 +187,7 @@ const skewer=new THREE.Group();
   const stick=new THREE.Mesh(new THREE.CylinderGeometry(.004,.004,.15,6),pmat('#caa86a'));
   stick.rotation.z=Math.PI/2;stick.position.x=.04;skewer.add(stick);
   var skewerNug=new THREE.Mesh(new THREE.IcosahedronGeometry(.024,1),pmat('#d8963c'));
-  skewerNug.position.x=.115;skewer.add(skewerNug);
+  skewerNug.position.set(.115,.008,0);skewer.add(skewerNug); // 签尖从球体下半进入（球心略高于签轴）
 }
 const hongNug=new THREE.Mesh(new THREE.IcosahedronGeometry(.026,1),pmat('#d8963c'));
 const bottle=new THREE.Group();
@@ -189,26 +198,41 @@ const bottle=new THREE.Group();
   bottle.position.set(-3.95,.545,-11.22);
 }
 stage.scene.add(leiBento,hongBoxA,hongBoxB,skewer,hongNug,bottle);
-const FIXED_B=new THREE.Vector3(-2.88,.575,-11.30); // 第二盒：两人中间偏雷晓侧、贴矮沿外半（轰刚侧身/转向余量 ≥.05m）
-const LEI_SET=new THREE.Vector3(-2.18,.575,-11.28); // 50.6s 起雷晓把自己那盒放上右侧矮沿（给按袖子的左手净空）
+const FIXED_B=new THREE.Vector3(-2.88,.575,-11.22); // 第二盒：两人中间偏雷晓侧；掀盖立在盒后不碰网（网 -11.37）
+const LEI_SET=new THREE.Vector3(-2.18,.575,-11.21); // 50.4s 起雷晓把自己那盒放上右侧矮沿（给按袖子的左手净空）
 const bp=(actor,x,y,z)=>actor.body.localToWorld(new THREE.Vector3(x,y,z));
 function supportedBox(actor,side,offset){
   // Use the solved wrist exactly once: body-space y already includes the sitting drop.
   return actor.hands[side].getWorldPosition(new THREE.Vector3())
     .add(new THREE.Vector3(...offset).applyQuaternion(actor.mesh.quaternion));
 }
-function trayHand(actor,side){
+// 道具状态机同源：托盘手强度=盒状态（hidden→held→placing→down）的函数，
+// 只在手持/放下过渡期间生效，放下后缓回谱面手势（杜绝"手举着盒不在"）。
+function trayK(t,appear,placeT1){
+  if(t<appear)return 0;
+  const inK=ease(clamp((t-appear)/.3));
+  if(placeT1==null)return inK;
+  return inK*(1-ease(clamp((t-placeT1)/.6)));
+}
+function trayHand(actor,side,k){
+  if(k<=0)return; // k=0：姿势完全归谱面（setPose+gL/gR）
+  const hand=actor.hands[side];
+  const qBase=hand.quaternion.clone();
   const x=new THREE.Vector3(0,0,1),y=new THREE.Vector3(side==='right'?1:-1,0,0),z=x.clone().cross(y);
-  actor.hands[side].quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
-  actor.hands[side].setGesture({fist:.22,open:0,point:0});
-  actor.hands[side].updateMatrixWorld(true);
+  const qTray=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
+  hand.quaternion.copy(qBase).slerp(qTray,k); // 边界渐变，不瞬切
+  hand.setGesture({fist:.12+.10*k,open:0,point:0});
+  hand.updateMatrixWorld(true);
 }
 function props(t,sl,sh){
   const sitL=sl.sit??0,sitH=sh.sit??0;
   const lagL=Math.max(-.03,Math.min(.03,(sl.bobLag??0)*1.5)),lagH=Math.max(-.03,Math.min(.03,(sh.bobLag??0)*1.5));
-  trayHand(lei,'right');trayHand(hong,'left');
-  if(t<40)trayHand(lei,'left');
-  if(t<15.1)trayHand(hong,'right');
+  // 托盘手全部挂道具状态：雷晓右手托盒 6.9→51.3（放下后 .6s 缓出）；轰刚左手 13.9 起全程托；
+  // 雷晓左手端盒到递接前（40.2s 缓出）；轰刚右手出门段（13.9–15.1）
+  trayHand(lei,'right',trayK(t,6.9,51.3));
+  trayHand(hong,'left',trayK(t,13.9,null));
+  trayHand(lei,'left',ease(clamp((t-6.9)/.3))*ease(clamp((40.2-t)/.6)));
+  trayHand(hong,'right',ease(clamp((t-13.9)/.3))*ease(clamp((15.1-t)/.3)));
   leiBento.visible=sl.visible!==false&&t>=6.9;
   if(leiBento.visible){ // 便当盒随身体次级滞后（解析弹簧：bob 差分）
     const q=ease(clamp((t-50.4)/.9)); // 笑完走神，把盒子放上右侧矮沿
@@ -392,6 +416,14 @@ function draw(t,capture=true){
                  right:hong.hands.right.getWorldPosition(new THREE.Vector3()).toArray()}},
     mouthLei:lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).toArray()};
   if(skewer.visible)contact.skewerTip=skewer.position.clone().add(new THREE.Vector3(.13,0,0).applyQuaternion(skewer.quaternion)).toArray();
+  if(skewer.visible&&skewerNug.visible){ // 食物握持：签尖-球心 + 指骨-球心不穿心
+    const nc=skewerNug.getWorldPosition(new THREE.Vector3());
+    contact.nug=nc.toArray();
+    const hand=t<TAKE_T?hong.hands.right:lei.hands.left,bv=new THREE.Vector3();
+    let minB=99;
+    for(const ch of hand.chains)for(const bone of ch.bones){bone.getWorldPosition(bv);minB=Math.min(minB,bv.distanceTo(nc));}
+    contact.nugBoneMin=minB;
+  }
   if(leiBento.visible)contact.leiBento=leiBento.position.toArray();
   if(hongBoxA.visible)contact.hongBoxA=hongBoxA.position.toArray();
   state.contact=contact;
@@ -403,6 +435,8 @@ function draw(t,capture=true){
     const boxes=[leiBento,hongBoxA,hongBoxB].filter(b=>b.visible);
     state.bento=bentoProbe(boxes.flatMap(b=>[b.base,b.lid]),{lei:lei.mesh,hong:hong.mesh});
     state.bento.positions=Object.fromEntries(boxes.map(b=>[b.base.name,b.position.toArray()]));
+    // 道具/身体 vs 铁丝网：网面薄板代理，零命中才合格（坐着的合法接触只有矮沿）
+    state.env=bentoProbe(ensureFenceProxies(),{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});
   }
   if(!capture)return state;
   renderer.render(stage.scene,camera);
