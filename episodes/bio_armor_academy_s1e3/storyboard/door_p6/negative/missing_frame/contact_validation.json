@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "stats": {
+    "door_frames": 911,
+    "door_collision_frames": 0
+  },
+  "failures": [
+    "door coverage: missing or nonmonotonic samples"
+  ],
+  "scope": "Visible solid meshes vs rendered hut OBBs, triangle intersections with 15mm inflation; sampled collision audit, not continuous physics or artistic approval."
+}

@@ -9,6 +9,8 @@ import {RooftopNoonScene} from './scenes/RooftopNoonScene.js';
 import {poseAt,ease,clamp,chewCycle,CHEW,PICK_T,TAKE_T} from './performance.js';
 const doorProbe=new URLSearchParams(location.search).has('probe-door')
   ?(await import('./tools/door_probe.js')).probeDoorway:null;
+const bentoProbe=new URLSearchParams(location.search).has('probe-bento')
+  ?(await import('./tools/door_probe.js')).probeBoxMeshes:null;
 const W=1280,H=720;
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
 window.duration=TL.duration;
@@ -51,6 +53,13 @@ try{
 const stage=new RooftopNoonScene();stage.build();
 const lei=new LeiXiaoCraft(),hong=new HongGangCraft();
 stage.scene.add(lei.mesh,hong.mesh);
+for(const actor of [lei,hong]){
+  const label=(root,part)=>root?.traverse(o=>{if(o.isMesh)o.userData.contactPart=part;});
+  label(actor.body,'body');label(actor.headGroup,'head');
+  for(const [key,limb] of Object.entries(actor.limbs))label(limb.mesh,key);
+  for(const [key,sleeve] of Object.entries(actor.sleeves??actor.wraps))label(sleeve.mesh,'sleeve_'+key);
+  for(const side of ['left','right']){label(actor.hands[side],side+'Hand');label(actor.feet[side],side+'Foot');}
+}
 
 // ── 赛璐璐材质统一：全身 toon + 共享 4 阶 ramp（皮肤/头发/衣服/装备一视同仁）──
 // 例外：BackSide 描边壳、透明/加色光效、脸 canvas（animatedHead 组内，Basic 兜底保五官）。
@@ -73,6 +82,7 @@ celUnify(lei.mesh);celUnify(hong.mesh);
 // ── 次级运动挂载件识别（不写回资产，viewer 侧驱动）：雷晓书包 / 轰刚外套襟 / 雷晓发束尖 ──
 const leiBag=lei.body.children.find(o=>o.isMesh&&o.geometry.parameters?.width===.2&&o.geometry.parameters?.height===.24);
 const hongFlaps=hong.body.children.filter(o=>o.isMesh&&Math.abs(Math.abs(o.position.x)-.152)<.005);
+for(const flap of hongFlaps){flap.geometry.translate(0,-1.52,0);flap.position.y=1.52;} // wind pivots at the shoulder, not the ground
 const leiTufts=[];lei.headGroup.traverse(o=>{if(o.isMesh&&o.geometry.type==='TubeGeometry'&&o.material.side!==THREE.BackSide)leiTufts.push(o);});
 // 阵风包络（解析微风正弦，(t,state) 纯函数）：空拍段加强
 function windAt(t){return Math.max(0,.55*Math.sin(t*.31)+.45*Math.sin(t*.13+1.7))*(t>=55&&t<68?1.8:1);}
@@ -145,18 +155,23 @@ const camera=new THREE.PerspectiveCamera(44,W/H,.05,200);
 const pmat=c=>new THREE.MeshToonMaterial({color:c,gradientMap:ramp});
 function bento(base,lid,foods){
   const g=new THREE.Group();
-  outlined(g,new THREE.BoxGeometry(.17,.05,.12),pmat(base),.0006).position.y=.025;
+  const baseM=outlined(g,new THREE.BoxGeometry(.17,.05,.12),pmat(base),.0006);baseM.position.y=.025;
   const lidM=outlined(g,new THREE.BoxGeometry(.17,.012,.12),pmat(lid),.0006);
-  lidM.geometry.translate(0,0,.06);lidM.position.set(0,.052,-.06);lidM.rotation.x=1.95; // 掀开靠在盒后
+  lidM.geometry.translate(0,0,.06);lidM.position.set(0,.052,-.06); // negative X raises the lid
+  g.base=baseM;g.lid=lidM;
+  g.foods=[];
   for(const [x,z,c,r] of foods){
     const f=new THREE.Mesh(new THREE.SphereGeometry(r,10,8),pmat(c));
-    f.scale.y=.7;f.position.set(x,.046,z);g.add(f);
+    f.scale.y=.7;f.position.set(x,.046,z);g.add(f);g.foods.push(f);
   }
   return g;
 }
 const leiBento=bento('#3a4a5a','#2c3844',[[-.04,.02,'#f4f0e6',.030],[.045,-.02,'#7a5a3a',.020],[.03,.035,'#5a7a4a',.016]]);
 const hongBoxA=bento('#5a2e28','#48201c',[[-.04,.02,'#f4f0e6',.030],[.04,-.02,'#d8963c',.024],[.03,.035,'#d8963c',.020]]);
 const hongBoxB=bento('#8a2e22','#6e241c',[[-.045,.02,'#d8963c',.026],[0,-.025,'#d8963c',.026],[.05,.02,'#d8963c',.026]]);
+for(const [name,box] of Object.entries({leiBento,hongBoxA,hongBoxB})){
+  box.base.name=name+'_base';box.lid.name=name+'_lid';
+}
 leiBento.scale.setScalar(1.15);hongBoxA.scale.setScalar(1.25);hongBoxB.scale.setScalar(1.25);
 const skewer=new THREE.Group();
 {
@@ -174,32 +189,62 @@ const bottle=new THREE.Group();
   bottle.position.set(-3.95,.545,-11.22);
 }
 stage.scene.add(leiBento,hongBoxA,hongBoxB,skewer,hongNug,bottle);
-const FIXED_B=new THREE.Vector3(-3.1,.565,-11.05); // 轰刚放在矮沿上的那盒
+const FIXED_B=new THREE.Vector3(-2.88,.575,-11.30); // 第二盒：两人中间偏雷晓侧、贴矮沿外半（轰刚侧身/转向余量 ≥.05m）
+const LEI_SET=new THREE.Vector3(-2.18,.575,-11.28); // 50.6s 起雷晓把自己那盒放上右侧矮沿（给按袖子的左手净空）
 const bp=(actor,x,y,z)=>actor.body.localToWorld(new THREE.Vector3(x,y,z));
+function supportedBox(actor,side,offset){
+  // Use the solved wrist exactly once: body-space y already includes the sitting drop.
+  return actor.hands[side].getWorldPosition(new THREE.Vector3())
+    .add(new THREE.Vector3(...offset).applyQuaternion(actor.mesh.quaternion));
+}
+function trayHand(actor,side){
+  const x=new THREE.Vector3(0,0,1),y=new THREE.Vector3(side==='right'?1:-1,0,0),z=x.clone().cross(y);
+  actor.hands[side].quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
+  actor.hands[side].setGesture({fist:.22,open:0,point:0});
+  actor.hands[side].updateMatrixWorld(true);
+}
 function props(t,sl,sh){
   const sitL=sl.sit??0,sitH=sh.sit??0;
   const lagL=Math.max(-.03,Math.min(.03,(sl.bobLag??0)*1.5)),lagH=Math.max(-.03,Math.min(.03,(sh.bobLag??0)*1.5));
+  trayHand(lei,'right');trayHand(hong,'left');
+  if(t<40)trayHand(lei,'left');
+  if(t<15.1)trayHand(hong,'right');
   leiBento.visible=sl.visible!==false&&t>=6.9;
   if(leiBento.visible){ // 便当盒随身体次级滞后（解析弹簧：bob 差分）
-    leiBento.position.copy(bp(lei,0,(1-sitL)*1.10+sitL*.66,.27));
-    leiBento.position.y-=lagL;
-    leiBento.rotation.y=lei.mesh.rotation.y;
+    const q=ease(clamp((t-50.4)/.9)); // 笑完走神，把盒子放上右侧矮沿
+    const hand=supportedBox(lei,'right',[0,.030,.115]);
+    if(q>0){ // 先向体侧(+x)滑离前臂（略抬 6cm 过指节），再沉到矮沿，不抬到脸前
+      const out=hand.clone().add(new THREE.Vector3(.16,.07,0));
+      const over=new THREE.Vector3(LEI_SET.x,.70,LEI_SET.z);
+      const keys=[[0,hand],[.25,out],[.6,over],[1,LEI_SET]];
+      let j=0;while(j<keys.length-2&&q>keys[j+1][0])j++;
+      leiBento.position.lerpVectors(keys[j][1],keys[j+1][1],ease(clamp((q-keys[j][0])/(keys[j+1][0]-keys[j][0]))));
+    }else leiBento.position.copy(hand);
+    leiBento.rotation.y=lei.mesh.rotation.y*(1-q);
+    leiBento.lid.rotation.x=-1.62*ease(clamp((t-13.5)/.6));
   }
   const hongOut=sh.visible!==false;
   hongBoxA.visible=hongOut&&t>=13.9;
   if(hongBoxA.visible){
-    hongBoxA.position.copy(bp(hong,0,(1-sitH)*1.24+sitH*.70,.30));
-    hongBoxA.position.y-=lagH;
+    hongBoxA.position.copy(supportedBox(hong,'left',[0,.038,.145]));
     hongBoxA.rotation.y=hong.mesh.rotation.y;
+    hongBoxA.lid.rotation.x=-1.62*ease(clamp((t-22.15)/.5));
   }
   // 两人份的第二盒：端着→坐下后放上矮沿
   const q=ease(clamp((t-21.3)/.9));
   hongBoxB.visible=hongOut&&t>=13.9;
   if(hongBoxB.visible){
-    const carry=bp(hong,0,(1-sitH)*1.315+sitH*.775,.30);carry.y-=lagH;
-    hongBoxB.position.lerpVectors(carry,FIXED_B,q);
+    const carry=hongBoxA.position.clone().add(new THREE.Vector3(0,.082,0));
+    const lift=carry.clone().add(new THREE.Vector3(0,.10,.24));
+    const beside=new THREE.Vector3(FIXED_B.x,.95,-10.55);
+    const above=new THREE.Vector3(FIXED_B.x,.84,FIXED_B.z);
+    const keys=[[0,carry],[.25,lift],[.65,beside],[.85,above],[1,FIXED_B]];
+    let j=0;while(j<keys.length-2&&q>keys[j+1][0])j++;
+    hongBoxB.position.lerpVectors(keys[j][1],keys[j+1][1],ease(clamp((q-keys[j][0])/(keys[j+1][0]-keys[j][0]))));
     hongBoxB.rotation.y=hong.mesh.rotation.y*(1-q);
+    hongBoxB.lid.rotation.x=-1.62*ease(clamp((t-21.7)/.5));
   }
+  for(const b of [leiBento,hongBoxA,hongBoxB])for(const f of b.foods)f.visible=b.lid.rotation.x<-.3;
   // 竹签炸鸡：轰刚右手递出 → 雷晓左手接过（签穿指缝锚定掌心；弧顶腕翻签尖朝嘴）
   skewer.visible=sl.visible!==false&&hongOut&&t>=PICK_T;
   if(skewer.visible){
@@ -352,6 +397,12 @@ function draw(t,capture=true){
   state.contact=contact;
   if(doorProbe&&t>=6.8&&t<=22.0){
     state.doorway=doorProbe(stage,{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});
+  }
+  if(bentoProbe&&t>=7&&t<68){
+    stage.scene.updateMatrixWorld(true);
+    const boxes=[leiBento,hongBoxA,hongBoxB].filter(b=>b.visible);
+    state.bento=bentoProbe(boxes.flatMap(b=>[b.base,b.lid]),{lei:lei.mesh,hong:hong.mesh});
+    state.bento.positions=Object.fromEntries(boxes.map(b=>[b.base.name,b.position.toArray()]));
   }
   if(!capture)return state;
   renderer.render(stage.scene,camera);

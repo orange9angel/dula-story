@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "stats": {
+    "door_frames": 456,
+    "door_collision_frames": 0,
+    "bite_min": 0.042250462709377386,
+    "carry_max_xz": 0.1450000000000008,
+    "seated_min": 0.11387400435681491,
+    "seated_max": 0.4693972299031594,
+    "bento_frames": 1830,
+    "bento_tray_contacts": 2927
+  },
+  "failures": [],
+  "scope": "Visible solid meshes vs rendered hut OBBs, triangle intersections with 15mm inflation; sampled collision audit, not continuous physics or artistic approval."
+}

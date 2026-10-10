@@ -109,7 +109,7 @@ function specLei(phase,u,dt,t){
       break;
     }
     case 'share_3':{ // 被说猫食，把便当往回收一点
-      s.sit=1;s.left=V(-.12,.78,.18);s.right=V(.12,.78,.18);
+      s.sit=1;s.left=V(-.12,.78,.22);s.right=V(.12,.78,.22);
       s.headPitch=.12;s.headYaw=-.35;s.emotion='worry';
       break;
     }
@@ -142,9 +142,9 @@ function specLei(phase,u,dt,t){
       }else{ // 袖口微光：低头看右臂，左手按住（按臂手平贴前臂）
         const q=ease(clamp((dt-5.4)/.8));
         s.emotion='worry';s.headPitch=mix(.02,.30,q);s.headYaw=.35*q;
-        s.left=blend(V(-.12,1.0,.26),V(.26,.88,.24),ease(clamp((dt-5.5)/.7)));
+        s.left=blend(V(-.12,1.0,.26),V(.26,.88,.27),ease(clamp((dt-5.5)/.7))); // 稍靠前，退出时扫不进便当盒角
         s.gL={open:.35,fist:0};s.gR={fist:.12};
-        s.right=V(.22,.85,.15);
+        s.right={...LAP_L.right}; // right hand keeps supporting the bento while the left checks the sleeve
       }
       s.flashT=Math.exp(-(((t-FLASH_T)/.42)**2));
       s.squash=squashPulse(t,FLASH_T,.05); // 微光瞬间肩部 0.95 压缩 2-3 帧

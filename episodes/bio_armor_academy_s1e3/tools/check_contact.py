@@ -5,9 +5,11 @@ Reads a render trace (node render.mjs --check --trace <file>：每帧 state.cont
 1. 两次出门（6.8–22s）：实际全身及便当网格 vs 实际门/门框/墙体，含 15mm 余量
 2. 坐姿段（22–68s）：每只手到本角色躯干轴的 XZ 距离在 [0.09, 0.60]m（不插进躯干、不悬浮）
 3. 咬下窗口（47.9–48.4s）：签尖到雷晓嘴部距离至少一帧 < 0.09m（证明真送到嘴）
-4. 端盒窗口（雷晓 7.2–11.2s / 轰刚 14.2–21.5s）：手-盒 XZ 距离 < 0.16m 且手不高过盒顶
+4. 端盒窗口（雷晓 7.2–11.2s / 轰刚 14.2–21.0s）：手-盒 XZ 距离 < 0.16m 且手不高过盒顶
+5. 便当网格（7–68s，需 --q '&probe-bento=1'）：白名单仅放行托盘手与自己托的盒底
+   （lei rightHand↔leiBento_base / hong leftHand↔hongBoxA_base），其余命中即失败
 
-渲染需加 --q '&probe-door=1'，局部门检可加 --door-only；缺帧/缺主体/缺障碍物即失败。
+渲染需加 --q '&probe-door=1&probe-bento=1'，局部门检可加 --door-only；缺帧/缺主体/缺障碍物即失败。
 """
 import argparse
 import json
@@ -90,6 +92,29 @@ for frame in data['frames']:
         dy = hand[1] - box[1]
         if best > .16 or dy > .08 or dy < -.08:  # 手掌可落在盒盖上沿（托盒/扣沿）
             failures.append(f"carry off-box: {actor} xz={best:.3f} dy={dy:.3f} @t={t:.2f}")
+    # 5. 便当网格探针（state.bento，需 --q '&probe-bento=1'）：
+    #    白名单只放行托盘手与自己托的盒底，且仅限托盒窗口
+    #    （雷晓右手托盒 6.9–51.4s 含放下过渡；轰刚左手托盒 14.0s 起到结尾）。
+    b = frame.get('bento')
+    if not b:
+        continue
+    stats.setdefault('bento_frames', 0)
+    stats['bento_frames'] += 1
+    stats.setdefault('bento_tray_contacts', 0)
+    for hit in b['hits']:
+        allowed = ((hit['subject'] == 'lei' and hit['mesh'] == 'rightHand' and
+                    hit['obstacle'] == 'leiBento_base' and 6.9 <= t <= 51.4) or
+                   (hit['subject'] == 'hong' and hit['mesh'] == 'leftHand' and
+                    hit['obstacle'] == 'hongBoxA_base' and t >= 13.9))
+        if allowed:
+            stats['bento_tray_contacts'] += 1
+        else:
+            stats['bento_bad'] = stats.get('bento_bad', 0) + 1
+            failures.append(f"bento clip @t={t}: {hit['subject']} {hit['mesh']} vs {hit['obstacle']}")
+
+if not args.door_only:
+    if stats.get('bento_frames', 0) < 100:
+        failures.append('bento probe missing or too sparse: run render with --q "&probe-bento=1"')
 
 if not args.door_only and stats['bite_min'] > .09:
     failures.append(f"skewer never reaches mouth: min {stats['bite_min']:.3f}m")

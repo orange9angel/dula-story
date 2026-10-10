@@ -1,0 +1,1997 @@
+{
+  "duration": 71,
+  "fps": 30,
+  "errors": [],
+  "shots": [
+    {
+      "t": 6.9,
+      "filename": "shot_01.jpg",
+      "entry": 2,
+      "phase": "establish",
+      "shot": "establish",
+      "leiEmotion": "neutral",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.12
+      ],
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.747358215340614,
+              1.017159481002987,
+              -11.094740669247269
+            ],
+            "right": [
+              -2.3526417846593857,
+              1.017159481002987,
+              -11.094740669247269
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.714832594618402,
+              1.1452628707544796,
+              -11.082296624614044
+            ],
+            "right": [
+              -3.1851674053815984,
+              1.1452628707544796,
+              -11.082296624614044
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.55,
+          1.518,
+          -10.995
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 0,
+          "hong": 0,
+          "leiBento": 0,
+          "hongBoxA": 0,
+          "hongBoxB": 0
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 7.166666666666667,
+      "filename": "shot_02.jpg",
+      "entry": 3,
+      "phase": "walk_in",
+      "shot": "walk",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -6.6,
+        -7.55
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.12
+      ],
+      "contact": {
+        "doorA": -0.7297668038408782,
+        "hands": {
+          "lei": {
+            "left": [
+              -6.326930121169083,
+              1.1042947608413418,
+              -7.602491512952449
+            ],
+            "right": [
+              -6.470211847542943,
+              1.1042947608413418,
+              -7.795921843557161
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.714832594618402,
+              1.1452628707544796,
+              -11.082296624614044
+            ],
+            "right": [
+              -3.1851674053815984,
+              1.1452628707544796,
+              -11.082296624614044
+            ]
+          }
+        },
+        "mouthLei": [
+          -6.501213978492842,
+          1.5137494589724136,
+          -7.5930508802789625
+        ],
+        "leiBento": [
+          -6.3933142439799555,
+          1.105727247994342,
+          -7.703100560014847
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 0,
+          "leiBento": 5,
+          "hongBoxA": 0,
+          "hongBoxB": 0
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": [
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BoxGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BoxGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "SphereGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "SphereGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "CylinderGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "ExtrudeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "ExtrudeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "ExtrudeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "TubeGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BoxGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "door"
+          }
+        ]
+      },
+      "subtitle": null
+    },
+    {
+      "t": 9,
+      "filename": "shot_03.jpg",
+      "entry": 3,
+      "phase": "walk_in",
+      "shot": "walk",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -4.945079856182373,
+        -8.775866773198242
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.12
+      ],
+      "locomotion": {
+        "lei": {
+          "kind": "walk",
+          "step": 4,
+          "steps": 12,
+          "contacts": {
+            "left": {
+              "stance": true,
+              "id": "left:2.290949674965197"
+            },
+            "right": {
+              "stance": true,
+              "id": "right:1.8327597399721576"
+            }
+          },
+          "root": [
+            -4.945082353937804,
+            0,
+            -8.775870145168074
+          ],
+          "yaw": 2.2083451249335893,
+          "feet": {
+            "left": {
+              "position": [
+                -4.705520429534593,
+                0.08500000000000002,
+                -8.841316216235336
+              ],
+              "soleMin": -0.010000000030994398,
+              "quaternion": [
+                0,
+                0.8930922546483474,
+                0,
+                0.4498735652237541
+              ],
+              "stance": true,
+              "id": "left:2.290949674965197"
+            },
+            "right": {
+              "position": [
+                -5.180843206829043,
+                0.085,
+                -8.713229238310118
+              ],
+              "soleMin": -0.010000000030994412,
+              "quaternion": [
+                0,
+                0.8930922546483474,
+                0,
+                0.4498735652237541
+              ],
+              "stance": true,
+              "id": "right:1.8327597399721576"
+            }
+          },
+          "legs": {
+            "left": [
+              {
+                "x": -0.075,
+                "y": 0.8422757262738643,
+                "z": 0
+              },
+              {
+                "x": -0.08217543122773602,
+                "y": 0.48012504626320995,
+                "z": 0.16969206862583966
+              },
+              {
+                "x": -0.09000419630346158,
+                "y": 0.08500000000000002,
+                "z": 0.2314570121851547
+              }
+            ],
+            "right": [
+              {
+                "x": 0.075,
+                "y": 0.8422757262738643,
+                "z": 0
+              },
+              {
+                "x": 0.08284443534449389,
+                "y": 0.4461382072103698,
+                "z": -0.054895635749534814
+              },
+              {
+                "x": 0.08999580369653859,
+                "y": 0.085,
+                "z": -0.22673292280788385
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "doorA": -1.75,
+        "hands": {
+          "lei": {
+            "left": [
+              -4.665130731676823,
+              1.0960315824394062,
+              -8.821566721337021
+            ],
+            "right": [
+              -4.800865688821519,
+              1.0958043144417218,
+              -9.020365402591969
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.714832594618402,
+              1.1452628707544796,
+              -11.082296624614044
+            ],
+            "right": [
+              -3.1851674053815984,
+              1.1452628707544796,
+              -11.082296624614044
+            ]
+          }
+        },
+        "mouthLei": [
+          -4.849145622460663,
+          1.5102757262738644,
+          -8.856002183414228
+        ],
+        "leiBento": [
+          -4.728121911734722,
+          1.0922757262738645,
+          -8.936581583837024
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 0,
+          "leiBento": 5,
+          "hongBoxA": 0,
+          "hongBoxB": 0
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": [
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "hut_body"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "hut_body"
+          },
+          {
+            "subject": "lei",
+            "mesh": "BufferGeometry",
+            "obstacle": "hut_body"
+          }
+        ]
+      },
+      "subtitle": "这里……应该没人来吧。"
+    },
+    {
+      "t": 10.5,
+      "filename": "shot_04.jpg",
+      "entry": 3,
+      "phase": "walk_in",
+      "shot": "walk",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.8913128644314874,
+        -10.297175655976677
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.12
+      ],
+      "locomotion": {
+        "lei": {
+          "kind": "walk",
+          "step": 10,
+          "steps": 12,
+          "contacts": {
+            "left": {
+              "stance": false,
+              "id": "left:4.1237094149373545"
+            },
+            "right": {
+              "stance": true,
+              "id": "right:4.581899349930394"
+            }
+          },
+          "root": [
+            -2.9003446276924474,
+            0,
+            -10.309368536378972
+          ],
+          "yaw": 2.2083451249335893,
+          "feet": {
+            "left": {
+              "position": [
+                -2.7696165061787124,
+                0.14013947032706375,
+                -10.275319122424877
+              ],
+              "soleMin": 0.04513947029606934,
+              "quaternion": [
+                0,
+                0.8930922546483474,
+                0,
+                0.4498735652237541
+              ],
+              "stance": false,
+              "id": "left:4.1237094149373545"
+            },
+            "right": {
+              "position": [
+                -2.9717522977381345,
+                0.085,
+                -10.349592874673755
+              ],
+              "soleMin": -0.010000000030994412,
+              "quaternion": [
+                0,
+                0.8930922546483474,
+                0,
+                0.4498735652237541
+              ],
+              "stance": true,
+              "id": "right:4.581899349930394"
+            }
+          },
+          "legs": {
+            "left": [
+              {
+                "x": -0.075,
+                "y": 0.8575868155392548,
+                "z": 0
+              },
+              {
+                "x": -0.08924357846763739,
+                "y": 0.5189130400384383,
+                "z": 0.21236099985745704
+              },
+              {
+                "x": -0.10517363107851063,
+                "y": 0.14013947032706375,
+                "z": 0.08478037314666975
+              }
+            ],
+            "right": [
+              {
+                "x": 0.075,
+                "y": 0.8575868155392548,
+                "z": 0
+              },
+              {
+                "x": 0.07491218880036579,
+                "y": 0.46686312899424054,
+                "z": 0.08564457403634353
+              },
+              {
+                "x": 0.07482636892149035,
+                "y": 0.085,
+                "z": -0.033437512566455496
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6240073362780922,
+              1.114112367536504,
+              -10.361190008422044
+            ],
+            "right": [
+              -2.7653613779344823,
+              1.114080574783402,
+              -10.556033483568497
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.714832594618402,
+              1.1452628707544796,
+              -11.082296624614044
+            ],
+            "right": [
+              -3.1851674053815984,
+              1.1452628707544796,
+              -11.082296624614044
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.797457554042646,
+          1.5255868155392547,
+          -10.380356211899308
+        ],
+        "leiBento": [
+          -2.683384185489366,
+          1.1075868155392548,
+          -10.470079975047922
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 0,
+          "leiBento": 5,
+          "hongBoxA": 0,
+          "hongBoxB": 0
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": "这里……应该没人来吧。"
+    },
+    {
+      "t": 12.7,
+      "filename": "shot_05.jpg",
+      "entry": 3,
+      "phase": "walk_in",
+      "shot": "walk",
+      "leiEmotion": "neutral",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -10.578040881552436
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.12
+      ],
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6713253312608853,
+              1.0928160183570812,
+              -10.329780360481982
+            ],
+            "right": [
+              -2.4286746687391143,
+              1.0928160183570812,
+              -10.329780360481982
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.714832594618402,
+              1.1452628707544796,
+              -11.082296624614044
+            ],
+            "right": [
+              -3.1851674053815984,
+              1.1452628707544796,
+              -11.082296624614044
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.55,
+          1.5032416412881922,
+          -10.453040881552436
+        ],
+        "leiBento": [
+          -2.55,
+          1.063596048510874,
+          -10.308040881552436
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 73,
+          "hong": 0,
+          "leiBento": 5,
+          "hongBoxA": 0,
+          "hongBoxB": 0
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 13.866666666666667,
+      "filename": "shot_06.jpg",
+      "entry": 3,
+      "phase": "walk_in",
+      "shot": "walk",
+      "leiEmotion": "neutral",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.107921525448932
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.12
+      ],
+      "contact": {
+        "doorA": -1.7829841140150826,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6887317268205106,
+              0.7770580305851476,
+              -10.906549138442896
+            ],
+            "right": [
+              -2.411268273179489,
+              0.7770580305851476,
+              -10.906549138442896
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.714832594618402,
+              1.1452628707544796,
+              -11.082296624614044
+            ],
+            "right": [
+              -3.1851674053815984,
+              1.1452628707544796,
+              -11.082296624614044
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.55,
+          1.1788170918689822,
+          -10.981003254807229
+        ],
+        "leiBento": [
+          -2.55,
+          0.35560111456792154,
+          -10.833778060862855
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 0,
+          "leiBento": 5,
+          "hongBoxA": 0,
+          "hongBoxB": 0
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 13.9,
+      "filename": "shot_07.jpg",
+      "entry": 3,
+      "phase": "walk_in",
+      "shot": "walk",
+      "leiEmotion": "neutral",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.107921525448932
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.12
+      ],
+      "contact": {
+        "doorA": -1.8194072989894847,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6887317268205106,
+              0.7770580305851476,
+              -10.906549138442896
+            ],
+            "right": [
+              -2.411268273179489,
+              0.7770580305851476,
+              -10.906549138442896
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.714832594618402,
+              1.1452628707544796,
+              -11.082296624614044
+            ],
+            "right": [
+              -3.1851674053815984,
+              1.1452628707544796,
+              -11.082296624614044
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.55,
+          1.1788170918689822,
+          -10.981003254807229
+        ],
+        "leiBento": [
+          -2.55,
+          0.35560111456792154,
+          -10.833778060862855
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 0,
+          "leiBento": 5,
+          "hongBoxA": 0,
+          "hongBoxB": 0
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 14.166666666666666,
+      "filename": "shot_08.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "scared",
+      "hongEmotion": "laugh",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -6.6,
+        -7.55
+      ],
+      "contact": {
+        "doorA": -1.7629639642412192,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.688993455463123,
+              0.7684105138235877,
+              -10.922143979811286
+            ],
+            "right": [
+              -2.4110065445368765,
+              0.7684105138235877,
+              -10.922143979811286
+            ]
+          },
+          "hong": {
+            "left": [
+              -6.342686049753549,
+              1.2746807273375562,
+              -7.357458346579557
+            ],
+            "right": [
+              -6.390070734190775,
+              1.163778048824432,
+              -7.7058755710094236
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.5982347244704576,
+          1.2155942016171548,
+          -11.004560385193123
+        ],
+        "leiBento": [
+          -2.55,
+          0.35731740982056764,
+          -10.85
+        ],
+        "hongBoxA": [
+          -6.3153950105848455,
+          1.24,
+          -7.455131670194948
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 14.466666666666667,
+      "filename": "shot_09.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "scared",
+      "hongEmotion": "laugh",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -6.5741700325963714,
+        -7.541390010865457
+      ],
+      "locomotion": {
+        "hong": {
+          "kind": "walk",
+          "step": 0,
+          "steps": 5,
+          "contacts": {
+            "left": {
+              "stance": false,
+              "id": "left:0"
+            },
+            "right": {
+              "stance": true,
+              "id": "right:0"
+            }
+          },
+          "root": [
+            -6.573526110900116,
+            0,
+            -7.543321775954223
+          ],
+          "yaw": 1.2490457723982544,
+          "feet": {
+            "left": {
+              "position": [
+                -6.637202663440729,
+                0.10033420532684505,
+                -7.435909781406841
+              ],
+              "soleMin": -0.0026257947113019226,
+              "quaternion": [
+                0,
+                0.584710284663765,
+                0,
+                0.8112421851755609
+              ],
+              "stance": false,
+              "id": "left:0"
+            },
+            "right": {
+              "position": [
+                -6.562052668077979,
+                0.1,
+                -7.663841995766061
+              ],
+              "soleMin": -0.002960000038146964,
+              "quaternion": [
+                0,
+                0.584710284663765,
+                0,
+                0.8112421851755609
+              ],
+              "stance": true,
+              "id": "right:0"
+            }
+          },
+          "legs": {
+            "left": [
+              {
+                "x": -0.1,
+                "y": 0.9811106868336181,
+                "z": 0
+              },
+              {
+                "x": -0.11108632888183427,
+                "y": 0.5379965602944172,
+                "z": 0.07763352480291522
+              },
+              {
+                "x": -0.12203625919496625,
+                "y": 0.10033420532684505,
+                "z": -0.02644222679358444
+              }
+            ],
+            "right": [
+              {
+                "x": 0.1,
+                "y": 0.9811106868336181,
+                "z": 0
+              },
+              {
+                "x": 0.10903867663217129,
+                "y": 0.5377690320036946,
+                "z": 0.07659294626402628
+              },
+              {
+                "x": 0.1179637408050336,
+                "y": 0.1,
+                "z": -0.02722717629445705
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "doorA": -1.753855200968268,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.688562776068298,
+              0.7624872002428902,
+              -10.931618926497439
+            ],
+            "right": [
+              -2.4114372239317015,
+              0.7624872002428902,
+              -10.931618926497439
+            ]
+          },
+          "hong": {
+            "left": [
+              -6.31480112455745,
+              1.2742302099535239,
+              -7.3502885794168185
+            ],
+            "right": [
+              -6.2843523430405375,
+              1.4066840323012721,
+              -7.864984752227145
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.6516769380986718,
+          1.2143572471239892,
+          -11.04703062868143
+        ],
+        "leiBento": [
+          -2.55,
+          0.36468225851084596,
+          -10.85
+        ],
+        "hongBoxA": [
+          -6.288921121484962,
+          1.2411106868336181,
+          -7.448453446149172
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 14.9,
+      "filename": "shot_10.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "scared",
+      "hongEmotion": "laugh",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -6.250533123405612,
+        -7.433511041135204
+      ],
+      "locomotion": {
+        "hong": {
+          "kind": "walk",
+          "step": 1,
+          "steps": 5,
+          "contacts": {
+            "left": {
+              "stance": true,
+              "id": "left:0.5533985905294663"
+            },
+            "right": {
+              "stance": false,
+              "id": "right:0"
+            }
+          },
+          "root": [
+            -6.252253190843518,
+            0,
+            -7.428350838821484
+          ],
+          "yaw": 1.2490457723982544,
+          "feet": {
+            "left": {
+              "position": [
+                -6.11294733192202,
+                0.1,
+                -7.2611580042339385
+              ],
+              "soleMin": -0.002960000038146964,
+              "quaternion": [
+                0,
+                0.584710284663765,
+                0,
+                0.8112421851755609
+              ],
+              "stance": true,
+              "id": "left:0.5533985905294663"
+            },
+            "right": {
+              "position": [
+                -6.531528391121384,
+                0.10684011370823775,
+                -7.65366723678053
+              ],
+              "soleMin": 0.0038801136700907773,
+              "quaternion": [
+                0,
+                0.584710284663765,
+                0,
+                0.8112421851755609
+              ],
+              "stance": false,
+              "id": "right:0"
+            }
+          },
+          "legs": {
+            "left": [
+              {
+                "x": -0.1,
+                "y": 0.9326668204010488,
+                "z": 0
+              },
+              {
+                "x": -0.10673666394103336,
+                "y": 0.5474237742534406,
+                "z": 0.2324702405768478
+              },
+              {
+                "x": -0.11456066916712462,
+                "y": 0.1,
+                "z": 0.18502815825504917
+              }
+            ],
+            "right": [
+              {
+                "x": 0.1,
+                "y": 0.9326668204010488,
+                "z": 0
+              },
+              {
+                "x": 0.11341440368399588,
+                "y": 0.49720045969448967,
+                "z": -0.1126459163342716
+              },
+              {
+                "x": 0.12543933083287498,
+                "y": 0.10684011370823775,
+                "z": -0.3361950192368731
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "doorA": -1.749530248781665,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.688885034150319,
+              0.766881124317879,
+              -10.924529248692973
+            ],
+            "right": [
+              -2.4111149658496807,
+              0.766881124317879,
+              -10.924529248692973
+            ]
+          },
+          "hong": {
+            "left": [
+              -5.997509713720967,
+              1.2218334359478482,
+              -7.224370649405396
+            ],
+            "right": [
+              -5.877712874448546,
+              1.5411786028823768,
+              -7.72983366969955
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.6516769380986718,
+          1.2143572471239892,
+          -11.04703062868143
+        ],
+        "leiBento": [
+          -2.55,
+          0.3488230638430045,
+          -10.85
+        ],
+        "hongBoxA": [
+          -5.967648201428364,
+          1.1926668204010489,
+          -7.333482509016433
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": "哟！你也躲这儿吃啊！"
+    },
+    {
+      "t": 17.5,
+      "filename": "shot_11.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -4.281419018554687,
+        -7.620237744140624
+      ],
+      "locomotion": {
+        "hong": {
+          "kind": "walk",
+          "step": 1,
+          "steps": 8,
+          "contacts": {
+            "left": {
+              "stance": true,
+              "id": "left:0.5494431318180626"
+            },
+            "right": {
+              "stance": true,
+              "id": "right:1.0988862636361252"
+            }
+          },
+          "root": [
+            -4.281038794099417,
+            0,
+            -7.620129842606021
+          ],
+          "yaw": 2.8650787069723194,
+          "feet": {
+            "left": {
+              "position": [
+                -4.23455844152844,
+                0.1,
+                -7.345810986302472
+              ],
+              "soleMin": -0.002960000038146964,
+              "quaternion": [
+                0,
+                0.9904577192548385,
+                0,
+                0.1378169306308323
+              ],
+              "stance": true,
+              "id": "left:0.5494431318180626"
+            },
+            "right": {
+              "position": [
+                -4.3154415584715595,
+                0.10000000000000002,
+                -7.939903299411813
+              ],
+              "soleMin": -0.00296000003814695,
+              "quaternion": [
+                0,
+                0.9904577192548385,
+                0,
+                0.1378169306308323
+              ],
+              "stance": true,
+              "id": "right:1.0988862636361252"
+            }
+          },
+          "legs": {
+            "left": [
+              {
+                "x": -0.1,
+                "y": 0.9404192012336245,
+                "z": 0
+              },
+              {
+                "x": -0.11047181305566689,
+                "y": 0.4915123012367223,
+                "z": -0.029545494859596358
+              },
+              {
+                "x": -0.11960476161932941,
+                "y": 0.1,
+                "z": -0.2512089948564598
+              }
+            ],
+            "right": [
+              {
+                "x": 0.1,
+                "y": 0.9404192012336245,
+                "z": 0
+              },
+              {
+                "x": 0.10971201606742555,
+                "y": 0.5402196726275187,
+                "z": 0.20553835176763668
+              },
+              {
+                "x": 0.12039523838067154,
+                "y": 0.10000000000000002,
+                "z": 0.29823413696160295
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6891043961663352,
+              0.7700027284277595,
+              -10.919703284340617
+            ],
+            "right": [
+              -2.4108956038336644,
+              0.7700027284277595,
+              -10.919703284340617
+            ]
+          },
+          "hong": {
+            "left": [
+              -4.109106462776191,
+              1.228889087689204,
+              -7.89823753112176
+            ],
+            "right": [
+              -4.587920137994441,
+              1.4831045352353478,
+              -7.947661618013854
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.6460304474281267,
+          1.213991933448305,
+          -11.039730444744007
+        ],
+        "leiBento": [
+          -2.55,
+          0.3600000000000001,
+          -10.85
+        ],
+        "hongBoxA": [
+          -4.199137688427027,
+          1.2004192012336246,
+          -7.908733738784918
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 18,
+      "filename": "shot_12.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -4.0534875,
+        -8.423425
+      ],
+      "locomotion": {
+        "hong": {
+          "kind": "walk",
+          "step": 3,
+          "steps": 8,
+          "contacts": {
+            "left": {
+              "stance": true,
+              "id": "left:1.6483293954541878"
+            },
+            "right": {
+              "stance": false,
+              "id": "right:1.0988862636361252"
+            }
+          },
+          "root": [
+            -4.032435928003993,
+            0,
+            -8.417450905244376
+          ],
+          "yaw": 2.8650787069723194,
+          "feet": {
+            "left": {
+              "position": [
+                -3.9345584415284405,
+                0.1,
+                -8.40295384344533
+              ],
+              "soleMin": -0.002960000038146964,
+              "quaternion": [
+                0,
+                0.9904577192548385,
+                0,
+                0.1378169306308323
+              ],
+              "stance": true,
+              "id": "left:1.6483293954541878"
+            },
+            "right": {
+              "position": [
+                -4.177884192827199,
+                0.17436423202636248,
+                -8.424629254539559
+              ],
+              "soleMin": 0.07140423198821551,
+              "quaternion": [
+                0,
+                0.9904577192548385,
+                0,
+                0.1378169306308323
+              ],
+              "stance": false,
+              "id": "right:1.0988862636361252"
+            }
+          },
+          "legs": {
+            "left": [
+              {
+                "x": -0.1,
+                "y": 0.9919065341899224,
+                "z": 0
+              },
+              {
+                "x": -0.09906039213542782,
+                "y": 0.5468106284115262,
+                "z": 0.0662476550254418
+              },
+              {
+                "x": -0.0981171644512825,
+                "y": 0.1,
+                "z": 0.01277455281477042
+              }
+            ],
+            "right": [
+              {
+                "x": 0.1,
+                "y": 0.9919065341899224,
+                "z": 0
+              },
+              {
+                "x": 0.1213230003308446,
+                "y": 0.5756869886141328,
+                "z": 0.1697251293638455
+              },
+              {
+                "x": 0.14188283554871828,
+                "y": 0.17436423202636248,
+                "z": -0.03280224710809458
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6891043961663352,
+              0.7700027284277595,
+              -10.919703284340617
+            ],
+            "right": [
+              -2.4108956038336644,
+              0.7700027284277595,
+              -10.919703284340617
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.848750262178528,
+              1.2789767904360825,
+              -8.689424676969741
+            ],
+            "right": [
+              -4.069095974143629,
+              1.3252710243354104,
+              -8.742688205934197
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.6396466074972285,
+          1.2136374706690902,
+          -11.032647097857554
+        ],
+        "leiBento": [
+          -2.55,
+          0.3600000000000001,
+          -10.85
+        ],
+        "hongBoxA": [
+          -3.9505348223316035,
+          1.2519065341899225,
+          -8.706054801423274
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 21,
+      "filename": "shot_13.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -3.45,
+        -10.568227951895045
+      ],
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6891043961663352,
+              0.7700027284277595,
+              -10.919703284340617
+            ],
+            "right": [
+              -2.4108956038336644,
+              0.7700027284277595,
+              -10.919703284340617
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.5522385204081637,
+              1.2840105685131196,
+              -10.27014668367347
+            ],
+            "right": [
+              -3.3477614795918367,
+              1.2840105685131196,
+              -10.26846547802231
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.604370691763904,
+          1.2123658020542931,
+          -11.007234923571776
+        ],
+        "leiBento": [
+          -2.55,
+          0.3600000000000001,
+          -10.85
+        ],
+        "hongBoxA": [
+          -3.45,
+          1.2099398688046645,
+          -10.268227951895044
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 21.9,
+      "filename": "shot_14.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.097688694525429
+      ],
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6891043961663352,
+              0.7700027284277595,
+              -10.919703284340617
+            ],
+            "right": [
+              -2.4108956038336644,
+              0.7700027284277595,
+              -10.919703284340617
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.6174350422496016,
+              0.8244633723349966,
+              -10.858669619851382
+            ],
+            "right": [
+              -3.2825656035737367,
+              0.8244453214125914,
+              -10.858696178403237
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.604370691763904,
+          1.2123658020542931,
+          -11.007234923571776
+        ],
+        "leiBento": [
+          -2.55,
+          0.3600000000000001,
+          -10.85
+        ],
+        "hongBoxA": [
+          -3.45,
+          0.31812968306052014,
+          -10.793729385051446
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    },
+    {
+      "t": 21.966666666666665,
+      "filename": "shot_15.jpg",
+      "entry": 4,
+      "phase": "hong_arrive",
+      "shot": "hong_arrive",
+      "leiEmotion": "worry",
+      "hongEmotion": "neutral",
+      "flash": 0,
+      "leiRoot": [
+        -2.55,
+        -11.12
+      ],
+      "hongRoot": [
+        -3.45,
+        -11.114181750080984
+      ],
+      "contact": {
+        "doorA": 0,
+        "hands": {
+          "lei": {
+            "left": [
+              -2.6891043961663352,
+              0.7700027284277595,
+              -10.919703284340617
+            ],
+            "right": [
+              -2.4108956038336644,
+              0.7700027284277595,
+              -10.919703284340617
+            ]
+          },
+          "hong": {
+            "left": [
+              -3.619466181586405,
+              0.8111580167894754,
+              -10.877627301129106
+            ],
+            "right": [
+              -3.2805339429077387,
+              0.8111538457387124,
+              -10.877633529747746
+            ]
+          }
+        },
+        "mouthLei": [
+          -2.604370691763904,
+          1.2123658020542931,
+          -11.007234923571776
+        ],
+        "leiBento": [
+          -2.55,
+          0.3600000000000001,
+          -10.85
+        ],
+        "hongBoxA": [
+          -3.45,
+          0.29133501374442383,
+          -10.810222440607001
+        ]
+      },
+      "doorway": {
+        "margin": 0.015,
+        "counts": {
+          "lei": 72,
+          "hong": 59,
+          "leiBento": 5,
+          "hongBoxA": 5,
+          "hongBoxB": 5
+        },
+        "obstacles": [
+          "hut_body",
+          "hut_roof",
+          "door_frame_t",
+          "door_frame_l",
+          "door_frame_r",
+          "door",
+          "door_knob"
+        ],
+        "hits": []
+      },
+      "subtitle": null
+    }
+  ]
+}

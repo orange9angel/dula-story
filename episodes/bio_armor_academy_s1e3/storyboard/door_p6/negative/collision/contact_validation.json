@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "stats": {
+    "door_frames": 912,
+    "door_collision_frames": 1
+  },
+  "failures": [
+    "door collision @t=8.467: [{'subject': 'lei', 'mesh': 'injected', 'obstacle': 'door'}]"
+  ],
+  "scope": "Visible solid meshes vs rendered hut OBBs, triangle intersections with 15mm inflation; sampled collision audit, not continuous physics or artistic approval."
+}
