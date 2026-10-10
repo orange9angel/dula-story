@@ -1,0 +1,719 @@
+{
+ "duration": 71.0,
+ "step": 0.01,
+ "segments": [
+  {
+   "id": "card_open",
+   "kind": "card",
+   "character": null,
+   "start": 0.0,
+   "end": 2.4,
+   "move": "card_open",
+   "shot": "card",
+   "card": "open"
+  },
+  {
+   "id": "establish",
+   "kind": "action",
+   "character": null,
+   "start": 2.4,
+   "end": 7.0,
+   "move": "establish",
+   "shot": "establish"
+  },
+  {
+   "id": "walk_in",
+   "kind": "dialogue",
+   "character": "LeiXiao",
+   "start": 7.0,
+   "end": 14.0,
+   "move": "walk_in",
+   "shot": "walk"
+  },
+  {
+   "id": "hong_arrive",
+   "kind": "dialogue",
+   "character": "HongGang",
+   "start": 14.0,
+   "end": 22.0,
+   "move": "hong_arrive",
+   "shot": "hong_arrive"
+  },
+  {
+   "id": "share_1",
+   "kind": "dialogue",
+   "character": "HongGang",
+   "start": 22.0,
+   "end": 26.5,
+   "move": "share_1",
+   "shot": "two"
+  },
+  {
+   "id": "share_2",
+   "kind": "dialogue",
+   "character": "LeiXiao",
+   "start": 26.5,
+   "end": 30.0,
+   "move": "share_2",
+   "shot": "two"
+  },
+  {
+   "id": "share_3",
+   "kind": "dialogue",
+   "character": "HongGang",
+   "start": 30.0,
+   "end": 35.0,
+   "move": "share_3",
+   "shot": "two"
+  },
+  {
+   "id": "share_4",
+   "kind": "dialogue",
+   "character": "LeiXiao",
+   "start": 35.0,
+   "end": 40.0,
+   "move": "share_4",
+   "shot": "two"
+  },
+  {
+   "id": "offer",
+   "kind": "dialogue",
+   "character": "HongGang",
+   "start": 40.0,
+   "end": 46.5,
+   "move": "offer",
+   "shot": "offer"
+  },
+  {
+   "id": "crack",
+   "kind": "action",
+   "character": null,
+   "start": 46.5,
+   "end": 55.0,
+   "move": "crack",
+   "shot": "crack"
+  },
+  {
+   "id": "empty_beat",
+   "kind": "action",
+   "character": null,
+   "start": 55.0,
+   "end": 68.0,
+   "move": "empty_beat",
+   "shot": "empty"
+  },
+  {
+   "id": "card_close",
+   "kind": "card",
+   "character": null,
+   "start": 68.0,
+   "end": 71.0,
+   "move": "card_close",
+   "shot": "card",
+   "card": "close"
+  }
+ ],
+ "dialogue": [
+  {
+   "id": "walk_in",
+   "character": "LeiXiao",
+   "text": "这里应该没人来吧",
+   "display": "这里……应该没人来吧。",
+   "start": 8.2,
+   "end": 11.8,
+   "chars": [
+    {
+     "ch": "这",
+     "start": 8.2,
+     "end": 8.86,
+     "probability": 0.0277,
+     "initial": "zh",
+     "final": "e"
+    },
+    {
+     "ch": "里",
+     "start": 8.86,
+     "end": 9.18,
+     "probability": 0.7798,
+     "initial": "l",
+     "final": "i"
+    },
+    {
+     "ch": "应",
+     "start": 9.18,
+     "end": 10.1,
+     "probability": 0.8642,
+     "initial": "y",
+     "final": "ing"
+    },
+    {
+     "ch": "该",
+     "start": 10.1,
+     "end": 10.24,
+     "probability": 0.9998,
+     "initial": "g",
+     "final": "ai"
+    },
+    {
+     "ch": "没",
+     "start": 10.24,
+     "end": 10.42,
+     "probability": 0.9935,
+     "initial": "m",
+     "final": "ei"
+    },
+    {
+     "ch": "人",
+     "start": 10.42,
+     "end": 10.64,
+     "probability": 0.9996,
+     "initial": "r",
+     "final": "en"
+    },
+    {
+     "ch": "来",
+     "start": 10.64,
+     "end": 10.88,
+     "probability": 0.9944,
+     "initial": "l",
+     "final": "ai"
+    },
+    {
+     "ch": "吧",
+     "start": 10.88,
+     "end": 11.12,
+     "probability": 0.9973,
+     "initial": "b",
+     "final": "a"
+    }
+   ]
+  },
+  {
+   "id": "hong_arrive",
+   "character": "HongGang",
+   "text": "哟你也躲这儿吃啊",
+   "display": "哟！你也躲这儿吃啊！",
+   "start": 14.6,
+   "end": 17.5,
+   "chars": [
+    {
+     "ch": "哟",
+     "start": 14.6,
+     "end": 15.02,
+     "probability": 0.4961,
+     "initial": "y",
+     "final": "o"
+    },
+    {
+     "ch": "你",
+     "start": 15.02,
+     "end": 15.88,
+     "probability": 0.1549,
+     "initial": "n",
+     "final": "i"
+    },
+    {
+     "ch": "也",
+     "start": 15.88,
+     "end": 16.02,
+     "probability": 0.9645,
+     "initial": "y",
+     "final": "e"
+    },
+    {
+     "ch": "躲",
+     "start": 16.02,
+     "end": 16.14,
+     "probability": 0.9971,
+     "initial": "d",
+     "final": "uo"
+    },
+    {
+     "ch": "这",
+     "start": 16.14,
+     "end": 16.26,
+     "probability": 0.1566,
+     "initial": "zh",
+     "final": "e"
+    },
+    {
+     "ch": "儿",
+     "start": 16.26,
+     "end": 16.32,
+     "probability": 0.1164,
+     "initial": "",
+     "final": "er"
+    },
+    {
+     "ch": "吃",
+     "start": 16.32,
+     "end": 16.44,
+     "probability": 0.9939,
+     "initial": "ch",
+     "final": "i"
+    },
+    {
+     "ch": "啊",
+     "start": 16.44,
+     "end": 16.6,
+     "probability": 0.7679,
+     "initial": "",
+     "final": "a"
+    }
+   ]
+  },
+  {
+   "id": "share_1",
+   "character": "HongGang",
+   "text": "食堂炸鸡最后一盒抢到的",
+   "display": "食堂炸鸡，最后一盒，抢到的。",
+   "start": 22.1,
+   "end": 26.4,
+   "chars": [
+    {
+     "ch": "食",
+     "start": 22.1,
+     "end": 22.58,
+     "probability": 0.629,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "堂",
+     "start": 22.58,
+     "end": 22.76,
+     "probability": 0.9915,
+     "initial": "t",
+     "final": "ang"
+    },
+    {
+     "ch": "炸",
+     "start": 22.76,
+     "end": 22.9,
+     "probability": 0.7107,
+     "initial": "zh",
+     "final": "a"
+    },
+    {
+     "ch": "鸡",
+     "start": 22.9,
+     "end": 23.12,
+     "probability": 0.6587,
+     "initial": "j",
+     "final": "i"
+    },
+    {
+     "ch": "最",
+     "start": 23.12,
+     "end": 23.58,
+     "probability": 0.7375,
+     "initial": "z",
+     "final": "ui"
+    },
+    {
+     "ch": "后",
+     "start": 23.58,
+     "end": 23.82,
+     "probability": 0.9993,
+     "initial": "h",
+     "final": "ou"
+    },
+    {
+     "ch": "一",
+     "start": 23.82,
+     "end": 24.0,
+     "probability": 0.9912,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "盒",
+     "start": 24.0,
+     "end": 24.2,
+     "probability": 0.991,
+     "initial": "h",
+     "final": "e"
+    },
+    {
+     "ch": "抢",
+     "start": 24.2,
+     "end": 24.76,
+     "probability": 0.9054,
+     "initial": "q",
+     "final": "iang"
+    },
+    {
+     "ch": "到",
+     "start": 24.76,
+     "end": 24.94,
+     "probability": 0.962,
+     "initial": "d",
+     "final": "ao"
+    },
+    {
+     "ch": "的",
+     "start": 24.94,
+     "end": 25.08,
+     "probability": 0.9873,
+     "initial": "d",
+     "final": "e"
+    }
+   ]
+  },
+  {
+   "id": "share_2",
+   "character": "LeiXiao",
+   "text": "恭喜你啊",
+   "display": "……恭喜你啊。",
+   "start": 26.6,
+   "end": 29.9,
+   "chars": [
+    {
+     "ch": "恭",
+     "start": 26.6,
+     "end": 27.16,
+     "probability": 0.0006,
+     "initial": "g",
+     "final": "ong"
+    },
+    {
+     "ch": "喜",
+     "start": 27.16,
+     "end": 27.4,
+     "probability": 0.0547,
+     "initial": "x",
+     "final": "i"
+    },
+    {
+     "ch": "你",
+     "start": 27.4,
+     "end": 27.58,
+     "probability": 0.9342,
+     "initial": "n",
+     "final": "i"
+    },
+    {
+     "ch": "啊",
+     "start": 27.58,
+     "end": 27.8,
+     "probability": 0.3563,
+     "initial": "",
+     "final": "a"
+    }
+   ]
+  },
+  {
+   "id": "share_3",
+   "character": "HongGang",
+   "text": "你那是啥跟猫食似的",
+   "display": "你那是啥？跟猫食似的。",
+   "start": 30.1,
+   "end": 34.9,
+   "chars": [
+    {
+     "ch": "你",
+     "start": 30.1,
+     "end": 30.76,
+     "probability": 0.8319,
+     "initial": "n",
+     "final": "i"
+    },
+    {
+     "ch": "那",
+     "start": 30.76,
+     "end": 30.9,
+     "probability": 0.979,
+     "initial": "n",
+     "final": "a"
+    },
+    {
+     "ch": "是",
+     "start": 30.9,
+     "end": 31.06,
+     "probability": 0.9356,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "啥",
+     "start": 31.06,
+     "end": 31.34,
+     "probability": 0.9946,
+     "initial": "sh",
+     "final": "a"
+    },
+    {
+     "ch": "跟",
+     "start": 31.34,
+     "end": 31.82,
+     "probability": 0.1563,
+     "initial": "g",
+     "final": "en"
+    },
+    {
+     "ch": "猫",
+     "start": 31.82,
+     "end": 32.04,
+     "probability": 0.5598,
+     "initial": "m",
+     "final": "ao"
+    },
+    {
+     "ch": "食",
+     "start": 32.04,
+     "end": 32.24,
+     "probability": 0.7125,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "似",
+     "start": 32.24,
+     "end": 32.42,
+     "probability": 0.9894,
+     "initial": "sh",
+     "final": "i"
+    },
+    {
+     "ch": "的",
+     "start": 32.42,
+     "end": 32.54,
+     "probability": 0.9968,
+     "initial": "d",
+     "final": "e"
+    }
+   ]
+  },
+  {
+   "id": "share_4",
+   "character": "LeiXiao",
+   "text": "普通的便当而已",
+   "display": "普通的便当而已！",
+   "start": 35.1,
+   "end": 39.9,
+   "chars": [
+    {
+     "ch": "普",
+     "start": 35.1,
+     "end": 35.68,
+     "probability": 0.9667,
+     "initial": "p",
+     "final": "u"
+    },
+    {
+     "ch": "通",
+     "start": 35.68,
+     "end": 35.88,
+     "probability": 0.9999,
+     "initial": "t",
+     "final": "ong"
+    },
+    {
+     "ch": "的",
+     "start": 35.88,
+     "end": 35.98,
+     "probability": 0.9868,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "便",
+     "start": 35.98,
+     "end": 36.12,
+     "probability": 0.988,
+     "initial": "b",
+     "final": "ian"
+    },
+    {
+     "ch": "当",
+     "start": 36.12,
+     "end": 36.36,
+     "probability": 0.8674,
+     "initial": "d",
+     "final": "ang"
+    },
+    {
+     "ch": "而",
+     "start": 36.36,
+     "end": 36.5,
+     "probability": 0.0029,
+     "initial": "",
+     "final": "er"
+    },
+    {
+     "ch": "已",
+     "start": 36.5,
+     "end": 36.74,
+     "probability": 0.2491,
+     "initial": "y",
+     "final": "i"
+    }
+   ]
+  },
+  {
+   "id": "offer",
+   "character": "HongGang",
+   "text": "尝一个抢来的东西分着吃才香",
+   "display": "尝一个。抢来的东西，分着吃才香。",
+   "start": 40.2,
+   "end": 46.3,
+   "chars": [
+    {
+     "ch": "尝",
+     "start": 40.2,
+     "end": 40.64,
+     "probability": 0.8825,
+     "initial": "ch",
+     "final": "ang"
+    },
+    {
+     "ch": "一",
+     "start": 40.64,
+     "end": 40.8,
+     "probability": 0.1776,
+     "initial": "y",
+     "final": "i"
+    },
+    {
+     "ch": "个",
+     "start": 40.8,
+     "end": 40.94,
+     "probability": 0.0358,
+     "initial": "g",
+     "final": "e"
+    },
+    {
+     "ch": "抢",
+     "start": 40.94,
+     "end": 42.12,
+     "probability": 0.7301,
+     "initial": "q",
+     "final": "iang"
+    },
+    {
+     "ch": "来",
+     "start": 42.12,
+     "end": 42.26,
+     "probability": 0.9924,
+     "initial": "l",
+     "final": "ai"
+    },
+    {
+     "ch": "的",
+     "start": 42.26,
+     "end": 42.36,
+     "probability": 0.9979,
+     "initial": "d",
+     "final": "e"
+    },
+    {
+     "ch": "东",
+     "start": 42.36,
+     "end": 42.5,
+     "probability": 0.9947,
+     "initial": "d",
+     "final": "ong"
+    },
+    {
+     "ch": "西",
+     "start": 42.5,
+     "end": 42.76,
+     "probability": 0.999,
+     "initial": "x",
+     "final": "i"
+    },
+    {
+     "ch": "分",
+     "start": 42.76,
+     "end": 43.2,
+     "probability": 0.9758,
+     "initial": "f",
+     "final": "en"
+    },
+    {
+     "ch": "着",
+     "start": 43.2,
+     "end": 43.36,
+     "probability": 0.2839,
+     "initial": "zh",
+     "final": "e"
+    },
+    {
+     "ch": "吃",
+     "start": 43.36,
+     "end": 43.5,
+     "probability": 0.9885,
+     "initial": "ch",
+     "final": "i"
+    },
+    {
+     "ch": "才",
+     "start": 43.5,
+     "end": 43.66,
+     "probability": 0.9394,
+     "initial": "c",
+     "final": "ai"
+    },
+    {
+     "ch": "香",
+     "start": 43.66,
+     "end": 43.86,
+     "probability": 0.4961,
+     "initial": "x",
+     "final": "iang"
+    }
+   ]
+  }
+ ],
+ "subtitles": [
+  {
+   "character": "LeiXiao",
+   "text": "这里……应该没人来吧。",
+   "start": 8.2,
+   "end": 11.8,
+   "kind": "dialogue"
+  },
+  {
+   "character": "HongGang",
+   "text": "哟！你也躲这儿吃啊！",
+   "start": 14.6,
+   "end": 17.5,
+   "kind": "dialogue"
+  },
+  {
+   "character": "HongGang",
+   "text": "食堂炸鸡，最后一盒，抢到的。",
+   "start": 22.1,
+   "end": 26.4,
+   "kind": "dialogue"
+  },
+  {
+   "character": "LeiXiao",
+   "text": "……恭喜你啊。",
+   "start": 26.6,
+   "end": 29.9,
+   "kind": "dialogue"
+  },
+  {
+   "character": "HongGang",
+   "text": "你那是啥？跟猫食似的。",
+   "start": 30.1,
+   "end": 34.9,
+   "kind": "dialogue"
+  },
+  {
+   "character": "LeiXiao",
+   "text": "普通的便当而已！",
+   "start": 35.1,
+   "end": 39.9,
+   "kind": "dialogue"
+  },
+  {
+   "character": "HongGang",
+   "text": "尝一个。抢来的东西，分着吃才香。",
+   "start": 40.2,
+   "end": 46.3,
+   "kind": "dialogue"
+  }
+ ]
+}

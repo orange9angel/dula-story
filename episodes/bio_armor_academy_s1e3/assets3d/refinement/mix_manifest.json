@@ -1,0 +1,122 @@
+{
+  "duration": 71.0,
+  "source_files": {
+    "tmp\\proc\\walk_in.wav": {
+      "provider": "volcano/seed-tts-2.0",
+      "sha256": "52462dfa08140b34d917eb83635f05fbbc698b3e91fc8fa08354e8b263175bfa"
+    },
+    "tmp\\proc\\hong_arrive.wav": {
+      "provider": "volcano/seed-tts-2.0",
+      "sha256": "b6b37ed79aa998d3b6a52301c90cb9c4b9075d513e93254146911d2daab5e10f"
+    },
+    "tmp\\proc\\share_1.wav": {
+      "provider": "volcano/seed-tts-2.0",
+      "sha256": "88bf975213f656564d12731c73bccf79fd6fde19c27d1287b60c61ab981b1701"
+    },
+    "tmp\\proc\\share_2.wav": {
+      "provider": "volcano/seed-tts-2.0",
+      "sha256": "56c6bd3a4bdefa401836c417ecf71a1379263647da7eba0abc5c67d05b12b5e5"
+    },
+    "tmp\\proc\\share_3.wav": {
+      "provider": "volcano/seed-tts-2.0",
+      "sha256": "c35574cc359bd17715d5e1f53e84814aa5487d0ca0dbca8ec17bf6f158d78e2b"
+    },
+    "tmp\\proc\\share_4.wav": {
+      "provider": "volcano/seed-tts-2.0",
+      "sha256": "1dd51dbd2ed938b4482138c9e790a49a7dc097e9065997ebe43b59fdcd7f8067"
+    },
+    "tmp\\proc\\offer.wav": {
+      "provider": "volcano/seed-tts-2.0",
+      "sha256": "5a12e15525bd0361c423740e2c767b8e060f303f17f6042005e8059e5a02507b"
+    },
+    "assets3d\\sfx\\wind_noon.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "de7560691276eb746ee77da1866167b190427efc4a6cc55592e1866196775df3"
+    },
+    "assets3d\\sfx\\playground_distant.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "4c77bc1800189a064cd803c19cb9814a4269a476e0d38e8322234f16fe1a491e"
+    },
+    "assets3d\\sfx\\birds_noon.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "265e877a54f3657512eac833dd649b16a8059788bbf2e6b932fce2ac38498d86"
+    },
+    "assets3d\\sfx\\door_close.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "e920a31756c526cbd759aedd9207e86497fbcaa7e34b0a54a4f11b8d498dabfc"
+    },
+    "assets3d\\sfx\\door_slam.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "926d3bfd3fd10a8a955e85e88af850b5c6a12ee98c0c4c3342513a21a927d3ca"
+    },
+    "assets3d\\sfx\\sit_down.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "6b17477e6f6589dfb25ea5dec5dbb6c9560e5833246d438ab20959c95bc989d8"
+    },
+    "assets3d\\sfx\\bento_open.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "470b6bfc564ee8570f8da066fa639291b302e00d5c7718e90ee5ab50dbf28f46"
+    },
+    "assets3d\\sfx\\skewer_pick.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "c544a2467ebda9c79c900147cdca8f2da4c8a6c1667cbba95701dc1240c1489b"
+    },
+    "assets3d\\sfx\\chew_soft.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "d8257a6f5a8b3c9ccdb590355b315b57eb966938cf0c49ca39ea68782c713203"
+    },
+    "assets3d\\sfx\\heartbeat_core.wav": {
+      "provider": "volcano/seed-audio-1.0 (S1E2 asset reuse)",
+      "sha256": "9c5dc495a65528ff3da234fe3928e22f881344532f3cab419cfbc8f4f9f2cdac"
+    },
+    "assets3d\\music\\rooftop_noon_theme.wav": {
+      "provider": "volcano/seed-audio-1.0",
+      "sha256": "d6485f5c08ef1605004e1726fcfd38fc44540bde8d05380c0478771961c199de"
+    }
+  },
+  "bed_qc": {
+    "wind_noon": {
+      "before": {
+        "rms_max_mean": 1.4743538988167204,
+        "envelope_corr_05_1s": 0.19974217462160565,
+        "high_band_4_8k": 1.420602758915739e-07
+      },
+      "after": {
+        "rms_max_mean": 1.1608562945111207,
+        "envelope_corr_05_1s": 0.0948642234036694,
+        "high_band_4_8k": 2.1906856222238608e-07
+      },
+      "treatment": "bandpass 70-1700Hz; shared 0.4s RMS envelope normalization"
+    },
+    "playground_distant": {
+      "before": {
+        "rms_max_mean": 1.232249546233356,
+        "envelope_corr_05_1s": 0.08705490619984066,
+        "high_band_4_8k": 0.0036707625901878423
+      },
+      "after": {
+        "rms_max_mean": 1.028731441779039,
+        "envelope_corr_05_1s": 0.04332363386419677,
+        "high_band_4_8k": 0.003243989720955125
+      },
+      "treatment": "bandpass 100-4000Hz; shared 0.4s RMS envelope normalization"
+    },
+    "birds_noon": {
+      "before": {
+        "rms_max_mean": 1.419288703620691,
+        "envelope_corr_05_1s": 0.10638331690355123,
+        "high_band_4_8k": 0.3627951376463603
+      },
+      "after": {
+        "rms_max_mean": 1.1675324963031615,
+        "envelope_corr_05_1s": 0.12382537249304265,
+        "high_band_4_8k": 0.28657979693249336
+      },
+      "treatment": "bandpass 450-5500Hz; shared 0.4s RMS envelope normalization"
+    }
+  },
+  "mix_peak_dbfs": -5.050947074730425,
+  "global_gain": 1,
+  "voice_rms": 0.0979087806767043,
+  "mix_sha256": "3cf0fa9b5186098ac1fb0ddfbd843825cba45f404c8f89f472db223e59c79393"
+}
