@@ -264,6 +264,23 @@ door_close.wav 降增益变体，零付费调用）；重跑混音。撞门声�
 该纪律已写回 dula-skills/build-ambience-foley/SKILL.md（事件点位登记+对位验证+
 时间轴变更回归）。画面零回归（本次只动音频与文档，`--check` 帧哈希级不变）。
 
+## P10：接触探针工具化（编写期物理门禁，2026-10-10）
+
+S1E3 的 14 段接触断言泛化为 skill 级通用工具：
+
+- `dula-skills/direct-animation-craft/scripts/contact_probe.py`：配置驱动（断言库
+  逐段参数化：doorway/whitelist/env/seated/bite/carry/food/wrist/tray/supporter/
+  lid/pinch/dual/place/continuity），输出 contact_validation.json；trace 契约与
+  门禁工作流写进 `references/physics-gate.md`。
+- 本集参数抽到 `config/contact_contract.json`；`tools/check_contact.py` 改为薄包装
+  （原命令行用法不变）。
+- **等效验证**：用既有 `storyboard/p10_wrist/check/trace.json` 新旧两版对跑——
+  passed/failures/scope 逐字段相同；stats 仅 `nug_frames` 573→663：旧实现把没有
+  bento 段的帧（68–71s 卡段）静默跳过后续所有段，通用版修正为覆盖（严格变大、
+  零新增失败）。
+- 复验：`storyboard/p11_contact_generic/check/` 全链路（渲染 trace → 薄包装 →
+  通用探针）全绿，75 检查帧 + seek passed。本轮画面零改动。
+
 ## 遗留
 
 - 「事件音效对画」已进 skill 纪律（build-ambience-foley）；本集其他事件

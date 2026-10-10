@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "stats": {
+    "door_frames": 456,
+    "door_collision_frames": 0,
+    "bite_min": 0.06423231236660427,
+    "carry_max_xz": 0.14500000000000074,
+    "seated_min": 0.11387400435681491,
+    "seated_max": 0.45343136195018513,
+    "wrist_applied_max": 59.99999999999999,
+    "wrist_demand_max": 90,
+    "bento_frames": 1830,
+    "bento_tray_contacts": 1268,
+    "env_frames": 1830,
+    "unsupported_min": 0.07312788626077885,
+    "tray_leak_max": 0.19566817938334352,
+    "carry_dual_max": 0.1846394477603612,
+    "lid_far_max": 0.23888388360812204,
+    "place_max": 0.22488057488288496,
+    "place_step_max": 0.20390730004468371,
+    "nug_frames": 663,
+    "nug_tip_max": 0.01700000000000118,
+    "nug_bone_min": 0.05774399359572934,
+    "pinch_min": 0.026683328128251756,
+    "pinch_max": 0.026683328128253962
+  },
+  "failures": [],
+  "scope": "Visible solid meshes vs rendered hut OBBs, triangle intersections with 15mm inflation; sampled collision audit, not continuous physics or artistic approval."
+}

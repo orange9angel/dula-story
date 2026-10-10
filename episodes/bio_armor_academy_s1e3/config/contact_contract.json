@@ -1,0 +1,76 @@
+{
+ "scope": "Visible solid meshes vs rendered hut OBBs, triangle intersections with 15mm inflation; sampled collision audit, not continuous physics or artistic approval.",
+ "fps_min": 30,
+ "pose_tick_hz": 15,
+ "doorway": {
+  "state_key": "doorway",
+  "window": [6.8, 22.0],
+  "margin_min": 0.015,
+  "required_obstacles": ["door", "door_frame_l", "door_frame_r", "door_frame_t", "hut_wall_w", "hut_wall_e", "hut_wall_back", "hut_front_l", "hut_front_r", "hut_lintel"],
+  "subjects": [
+   {"name": "lei", "start": 7},
+   {"name": "leiBento", "start": 7},
+   {"name": "hong", "start": 14},
+   {"name": "hongBoxA", "start": 14},
+   {"name": "hongBoxB", "start": 14}
+  ],
+  "skinned_min": {"lei": 2, "hong": 2}
+ },
+ "whitelist": {
+  "state_key": "bento",
+  "frame_min": 100,
+  "comment": "声明式接触清单：托盘/扶沿/抓握/落台抚平等合法接触按 主体×部件×盒×窗口 声明，未声明即失败（探针是三角相交，亚毫米接触与穿透同报）",
+  "allowed": [
+   {"subject": "lei", "parts": ["rightHand"], "obstacle": "leiBento_base", "window": [6.9, 51.4], "note": "托盘手托盒底（含放置窗口）"},
+   {"subject": "lei", "parts": ["leftHand"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [7.0, 13.5], "note": "搬运段左手扶沿"},
+   {"subject": "lei", "parts": ["leftHand", "leftArm"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [13.4, 14.2], "note": "掀盖操作接触"},
+   {"subject": "lei", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "CylinderGeometry"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [50.4, 51.55], "note": "放盒操作接触（盒离手沿前臂滑下，含壳疹六边形件）"},
+   {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 999], "note": "左手托盘全程"},
+   {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxB_base", "window": [20.8, 21.3], "note": "右手接走上层盒时左手的离摞接触"},
+   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [23.4, 24.2], "note": "右手收回途中掀左手盒盖"},
+   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [20.7, 22.8], "note": "右手接盒+送上矮沿+指尖推滑"},
+   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [20.7, 22.8], "note": "接近时蹭到下层盒"},
+   {"subject": "hong", "parts": ["rightLeg", "leftLeg"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [21.8, 22.8], "note": "落台 transit：盒贴腿侧沉下/滑走"},
+   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [21.5, 22.9], "note": "俯身放盒胸廓蹭左手盒沿"},
+   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [21.5, 22.9], "note": "同上（放下的那盒）"}
+  ]
+ },
+ "env": {"state_key": "env", "frame_min": 100, "comment": "铁丝网净空：任何命中即失败"},
+ "seated": {"window": [22.0, 68.0], "actors": {"lei": "leiRoot", "hong": "hongRoot"}, "min": 0.09, "max": 0.60},
+ "bite": {"window": [47.9, 48.4], "a": "skewerTip", "b": "mouthLei", "max": 0.09},
+ "carry": {
+  "entries": [
+   {"actor": "lei", "window": [7.2, 11.2], "box": "leiBento"},
+   {"actor": "hong", "window": [14.2, 20.7], "box": "hongBoxA"}
+  ],
+  "xz_max": 0.16, "dy_max": 0.08
+ },
+ "food": {"present_key": "nug", "frame_min": 10,
+  "tip": {"a": "skewerTip", "b": "nug", "max": 0.025},
+  "bone": {"key": "nugBoneMin", "min": 0.016}},
+ "wrist": {"applied_max_deg": 62, "palm_dot_max": 0.25},
+ "tray": {"k_min": 0.3, "entries": [
+  {"key": "leiR", "actor": "lei", "side": "right", "box": "leiBento", "lim": 0.16},
+  {"key": "leiL", "actor": "lei", "side": "left", "box": "leiBento", "lim": 0.22},
+  {"key": "hongL", "actor": "hong", "side": "left", "box": "hongBoxA", "lim": 0.20}
+ ]},
+ "supporter": {
+  "support_win": {"leiBento": [6.9, 51.35], "hongBoxA": [13.9, 99], "hongBoxB": [20.85, 22.2]},
+  "transit": {"leiBento": [51.35, 51.6], "hongBoxB": [22.2, 22.9]},
+  "actor_of": {"leiBento": "lei", "hongBoxA": "hong", "hongBoxB": "hong"},
+  "lims": {"leiBento": 0.16, "hongBoxA": 0.20, "hongBoxB": 0.16},
+  "stacked": {"hongBoxB": {"below": "hongBoxA", "until": 20.85}}
+ },
+ "lid": {"angle_eps": 0.002, "max_dist": 0.25},
+ "pinch": {"window": [41.2, 47.2], "point": "palm", "a": "skewerPos", "b": "skewerTip", "min": 0.015, "max": 0.045},
+ "dual": {"entries": [{"actor": "lei", "window": [7.2, 11.2], "box": "leiBento_base", "max": 0.20}]},
+ "place": {"entries": [
+  {"actor": "hong", "box": "hongBoxB_base", "window": [20.85, 22.2], "side": "right", "lim": 0.16},
+  {"actor": "hong", "box": "hongBoxB_base", "window": [22.2, 22.6], "side": "right", "lim": 0.26},
+  {"actor": "lei", "box": "leiBento_base", "window": [50.4, 51.35], "side": "right", "lim": 0.16}
+ ]},
+ "continuity": {"entries": [
+  {"box": "hongBoxB_base", "window": [20.85, 22.9], "down_t": 22.9, "step_max": 0.22, "down_step_max": 0.001},
+  {"box": "leiBento_base", "window": [50.4, 51.6], "down_t": 51.6, "step_max": 0.22, "down_step_max": 0.001}
+ ]}
+}
