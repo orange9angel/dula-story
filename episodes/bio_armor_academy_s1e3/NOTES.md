@@ -281,6 +281,40 @@ S1E3 的 14 段接触断言泛化为 skill 级通用工具：
 - 复验：`storyboard/p11_contact_generic/check/` 全链路（渲染 trace → 薄包装 →
   通用探针）全绿，75 检查帧 + seek passed。本轮画面零改动。
 
+## P12：自然度四类修复 + 探针泛化扩展（2026-10-11）
+
+用户复看反馈四类"不自然"，逐项数值复现→修复→断言收口：
+
+- **走路像机器人且太快（walk_in 7–14s）**：根因=ease 根位移（中段峰值 1.5×段均值），
+  实测雷晓 p50 1.85 / p90 2.65 / max 2.84 m/s。修法：`enterRooftop` 加
+  `{profile:'trap',bounds,pause}`——梯形速度剖面（ramp 12%，峰值≈1.14×均值）、
+  转角停步张望段（u .44–.48，headYaw 一瞥）、转弯段 0.42s→0.21s；雷晓 persona
+  `createLocomotion({lift:.05,pitch:.14,sway:.02,hipDelta:.014})` + 新增
+  `dims.strideFactor=.85` 短步。修后：lei max 1.78 / p50 1.73 / bout 均速 1.54，
+  bob 振幅与步频（3.75–4.14 步/s）全在域内；轰刚保持大步快走（max 2.26）。
+  walkingFeet 落脚跟随根投影，剖面换了步频自然跟随、零滑步回归。
+- **抬臂肩部断开**：顶点帧（t≈15.97）袖根脱出躯干肩环覆盖露皮肤三角。修法=谱面
+  限幅：挥手顶点手位 1.58→1.46（轰刚肩高 1.56，手不过肩线），中间摆动键同步压。
+  修后上臂仰角 max 72.6°（断言域 ≤85°），同刻帧（check5/shot_31）肩部连续无断缝。
+- **掌心外翻残留**：漏网嫌疑段（crack 咬签/empty 咀嚼抬手）目检 48.5s/57s 特写——
+  掌向生理、无外翻；physioTray 仍是唯一覆盖入口，本轮未加新路径。
+- **书包嵌入人体**：探针实证包体按资产默认挂点内埋躯干/左腿 5.7cm（全程 3652 帧命中）。
+  修法（viewer 侧常量，零资产改动）：枢轴移到包顶（geometry.translate，描边壳共用
+  geometry 自动跟随）+ 外移 x −.25 + 重力外倾 −.16 + 包盖挂为包体子件随摆 +
+  俯身逆 lean 回摆。offset 用**挂点扫描**一次渲染定稿（逐候选改变换→探针→还原，
+  纯函数不进画面）：−.23 仍命中、−.25 起全程零命中（留 ~2cm 余量）。
+- **探针泛化**：`contact_probe.py` 新增三 kind（追加在 SECTION_ORDER 末尾，保报告
+  帧内序可比）：`gait`（walk 帧速度上限/bout 均速下限/bob 下限/步频域，按角色分参数）、
+  `limb_attach`（上臂仰角域 + 肩点-躯干轴距离域；trace 新增 contact.arms/torsoAxis）、
+  `worn_prop`（state.worn 零命中；包体/盖/带打 `userData.probeExclude` 跳过自身，
+  door_probe.js traverseVisible 通路，margin −20mm 放行贴触只报深穿）。
+  contract 同步加三段（17 段全参数化）；locomotion trace 增 `bob`。
+- **验收**：`storyboard/p12_natural/check5/` 全链路 2130 帧 trace **17 段全绿**
+  （新旧断言零退化：旧段 stats 与 P10 基线逐项一致）；目检走路×3/挥手肩 A-B/
+  进食手部/书包走坐帧全过。成片重出 `output/craft3d_full.mp4`（71.0s，混音不动）。
+- 工艺写回：physics-gate.md（三 kind + trace 契约 + 穿戴件/抬臂纪律）、
+  walk-director SKILL.md（梯形剖面/strideFactor persona/pause 段纪律）。
+
 ## 遗留
 
 - 「事件音效对画」已进 skill 纪律（build-ambience-foley）；本集其他事件

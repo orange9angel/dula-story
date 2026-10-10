@@ -72,5 +72,16 @@
  "continuity": {"entries": [
   {"box": "hongBoxB_base", "window": [20.85, 22.9], "down_t": 22.9, "step_max": 0.22, "down_step_max": 0.001},
   {"box": "leiBento_base", "window": [50.4, 51.6], "down_t": 51.6, "step_max": 0.22, "down_step_max": 0.001}
- ]}
+ ]},
+ "gait": {"comment": "步态域：walk 帧速度上限 + bout 均速下限 + bob 振幅下限（滑翔=机器人）+ 步频域；雷晓小个子短步慢速，轰刚大步快走",
+  "actors": {
+   "lei": {"speed_max": 1.85, "avg_min": 0.9, "bob_min": 0.008, "cadence": [1.5, 4.5]},
+   "hong": {"speed_max": 2.4, "avg_min": 0.9, "bob_min": 0.008, "cadence": [1.5, 4.0]}
+  }},
+ "limb_attach": {"comment": "肩臂衔接：上臂轴与躯干垂线夹角上限（抬臂过肩线=袖根脱嵌风险）+ 肩点到躯干轴线距离上限（含 lean 偏移，轰刚俯身放盒段 ~0.39 为合法）",
+  "actors": {
+   "lei": {"max_elev_deg": 100, "max_shoulder_axis": 0.28},
+   "hong": {"max_elev_deg": 85, "max_shoulder_axis": 0.42}
+  }},
+ "worn_prop": {"state_key": "worn", "frame_min": 100, "comment": "书包 vs 雷晓躯干：margin -20mm（贴胯软接触合法、深穿才报），任何命中即失败（包体/盖/带已 probeExclude）"}
 }

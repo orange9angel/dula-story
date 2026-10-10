@@ -26,6 +26,7 @@ export function probeBoxMeshes(meshes, subjects, margin=.004){
     counts[name]=0;
     skinnedCounts[name]=0;
     root.traverseVisible(o=>{
+      if(o.userData.probeExclude)return; // 穿戴件自身（书包/盖/带）：不作为被检主体
       if(!o.isMesh||!o.geometry?.attributes.position||o.material?.side===THREE.BackSide)return;
       counts[name]++;
       const g=o.geometry,pos=g.attributes.position,index=g.index;

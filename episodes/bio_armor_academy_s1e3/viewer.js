@@ -90,16 +90,29 @@ celUnify(lei.mesh);celUnify(hong.mesh);
 
 // ── 次级运动挂载件识别（不写回资产，viewer 侧驱动）：雷晓书包 / 轰刚外套襟 / 雷晓发束尖 ──
 const leiBag=lei.body.children.find(o=>o.isMesh&&o.geometry.parameters?.width===.2&&o.geometry.parameters?.height===.24);
+// 书包三件套（包体/包盖/背带）是身体的合法穿戴接触：worn_prop 探针里跳过它们自身，
+// 只断言"包体 vs 躯干其它件"的深穿（probeBoxMeshes 无遍历剪枝，靠标记跳过）
+// 穿戴位校正（viewer 侧常量，不改资产）：枢轴移到包顶 + 外移 + 重力外倾，
+// 包底甩出大腿摆动面（原中心枢轴内埋大腿 5.7cm，走路/落座穿模实录）
+if(leiBag){
+  const bagLid=lei.body.children.find(o=>o.isMesh&&o.geometry.parameters?.width===.2&&o.geometry.parameters?.height===.06);
+  const bagStrap=lei.body.children.find(o=>o.isMesh&&o.geometry.type==='TubeGeometry');
+  leiBag.geometry.translate(0,-.12,0); // pivot：中心→包顶（描边壳共用同一 geometry，跟随）
+  leiBag.position.set(-.25,.90,.04);   // 世界挂点=原包顶；外移 8cm 微后移（扫描实证：-.25 起零命中）
+  if(bagLid){leiBag.add(bagLid);bagLid.position.set(0,-.015,0);} // 包盖挂到包体上随摆
+  leiBag.userData.hangTilt=-.16;       // 重力外倾角（secondary 叠加风摆；负=包底朝外）
+  for(const m of [leiBag,bagLid,bagStrap])if(m)m.userData.probeExclude=1;
+}
 const hongFlaps=hong.body.children.filter(o=>o.isMesh&&Math.abs(Math.abs(o.position.x)-.152)<.005);
 for(const flap of hongFlaps){flap.geometry.translate(0,-1.52,0);flap.position.y=1.52;} // wind pivots at the shoulder, not the ground
 const leiTufts=[];lei.headGroup.traverse(o=>{if(o.isMesh&&o.geometry.type==='TubeGeometry'&&o.material.side!==THREE.BackSide)leiTufts.push(o);});
 // 阵风包络（解析微风正弦，(t,state) 纯函数）：空拍段加强
 function windAt(t){return Math.max(0,.55*Math.sin(t*.31)+.45*Math.sin(t*.13+1.7))*(t>=55&&t<68?1.8:1);}
-function secondary(t){
+function secondary(t,lean=0){
   const w=windAt(t);
-  if(leiBag){ // 书包：硬材质，小幅
-    leiBag.rotation.z=.08+.10*w*Math.sin(t*3.1)+.018*Math.sin(t*7.3);
-    leiBag.rotation.x=.05*w*Math.sin(t*2.6+1);
+  if(leiBag){ // 书包：硬材质，小幅；枢轴在包顶，重力外倾+风摆；俯身时逆 lean 回摆保持垂感
+    leiBag.rotation.z=(leiBag.userData.hangTilt??0)+.08*w*Math.sin(t*3.1)+.018*Math.sin(t*7.3);
+    leiBag.rotation.x=-.6*lean+.05*w*Math.sin(t*2.6+1);
   }
   hongFlaps.forEach((f,i)=>{ // 外套襟：软材质，摆幅稍大
     f.rotation.x=.10*w*Math.sin(t*2.9+i*1.3);
@@ -424,7 +437,7 @@ function draw(t,capture=true){
   lei.mouth.apply(lipLei(t));
   hong.mouth.apply(lipHong(t));
   props(t,sl,sh,performance.pL,performance.pH);
-  secondary(t);
+  secondary(t,sl.lean??0);
 
   let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'two',t,entry);
   camera.position.set(...c.pos);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
@@ -442,7 +455,7 @@ function draw(t,capture=true){
       feet[side]={position:foot.getWorldPosition(new THREE.Vector3()).toArray(),soleMin,
         quaternion:foot.getWorldQuaternion(new THREE.Quaternion()).toArray(),...p.locomotion.contacts[side]};
     }
-    locomotion[name]={...p.locomotion,root:actor.mesh.position.toArray(),yaw:actor.mesh.rotation.y,feet,
+    locomotion[name]={...p.locomotion,root:actor.mesh.position.toArray(),yaw:actor.mesh.rotation.y,bob:p.bob,feet,
       legs:Object.fromEntries(['left','right'].map(side=>[side,p[side+'Leg']]))};
   }
   const state={entry:i+1,phase:opts.move,shot:opts.shot,leiEmotion:sl.emotion,hongEmotion:sh.emotion,
@@ -455,6 +468,20 @@ function draw(t,capture=true){
            hong:{left:hong.hands.left.getWorldPosition(new THREE.Vector3()).toArray(),
                  right:hong.hands.right.getWorldPosition(new THREE.Vector3()).toArray()}},
     mouthLei:lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).toArray()};
+  // limb_attach 探针：手臂三点（肩/肘/腕，mesh 局部→世界）+ 躯干轴两点（body 局部 Y 轴，含 bob/lean）
+  contact.arms={};contact.torsoAxis={};
+  for(const [name,actor,p] of [['lei',lei,performance.pL],['hong',hong,performance.pH]]){
+    if(actor.mesh.visible===false)continue;
+    actor.mesh.updateWorldMatrix(true,false);
+    const a={};
+    for(const side of ['left','right']){
+      const arm=p?.[side+'Arm'];
+      if(arm)a[side]=arm.map(v=>actor.mesh.localToWorld(new THREE.Vector3(v.x,v.y,v.z)).toArray());
+    }
+    contact.arms[name]=a;
+    contact.torsoAxis[name]=[actor.body.localToWorld(new THREE.Vector3(0,.6,0)).toArray(),
+      actor.body.localToWorld(new THREE.Vector3(0,1.3,0)).toArray()];
+  }
   if(skewer.visible)contact.skewerTip=skewer.position.clone().add(new THREE.Vector3(.13,0,0).applyQuaternion(skewer.quaternion)).toArray();
   if(skewer.visible)contact.skewerPos=skewer.position.toArray();
   if(skewer.visible){ // 掌心参考点（捏持断言：签轴-掌心距离）
@@ -498,6 +525,10 @@ function draw(t,capture=true){
     state.bento.positions=Object.fromEntries(boxes.map(b=>[b.base.name,b.position.toArray()]));
     // 道具/身体 vs 铁丝网：网面薄板代理，零命中才合格（坐着的合法接触只有矮沿）
     state.env=bentoProbe(ensureFenceProxies(),{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});
+    // 穿戴件净空：书包（probeExclude 跳过包体/盖/带自身） vs 雷晓躯干；margin -20mm：
+    // 挎包贴胯的软接触（<2cm）合法，更深的嵌入才算穿模
+    // （挂点 x=-.25/外倾 -.16 由 wornScan 扫描实证：全程零命中且留 ~2cm 余量）
+    if(leiBag)state.worn=bentoProbe([leiBag],{lei:lei.mesh},-.02);
   }
   if(!capture)return state;
   renderer.render(stage.scene,camera);
