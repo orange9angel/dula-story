@@ -1,13 +1,15 @@
 {
   "args": [
-    "--check"
+    "--check",
+    "--trace",
+    "storyboard/r1/check/check_trace.json"
   ],
   "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\output\\craft3d_r1.mp4",
   "sourceSha256": {
-    "performance.js": "b8a2cc69824ad51db578350f737e92fd3026877a6d74666849ddfc81bc99ec86",
-    "viewer.js": "402c7e4d45e5d1847a736fd24b41bd13bc54a1cdad50041e3425f89983a6e858",
+    "performance.js": "707a93760b8391582be145d623e4793b68ce3a074c2611e0fcd10c27ab02447a",
+    "viewer.js": "2de02155a21348fcd3974a52f29b36670a77668948505f355c5a35043851d5f0",
     "render.mjs": "2cd27d90ce7f129d4504fa786a4fba316a1c0d651ef54cb6e527c323485e5c48",
-    "scenes/RooftopNoonScene.js": "0628345a4b5e4037f599562f41eba2c5a39e0e72d07ed50b6ce1926aa8c339f8",
+    "scenes/RooftopNoonScene.js": "cb072517045c5f1f69e32c322dc68f303ae08a625d6cf9a3dda1225cf8bea249",
     "config/timeline.json": "1ff00ef4671e36862ee802ed1c394ff68cc34cc9e074828ef11a979c0ab599bf"
   }
 }

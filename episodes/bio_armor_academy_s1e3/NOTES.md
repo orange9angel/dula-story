@@ -76,9 +76,40 @@ node render.mjs --out craft3d_full.mp4                 # 正式成片（带音�
 | 混音峰值 | -5.05dBFS（上限 -1）；对白段 RMS≈-23dB vs 非对白 ≈-40/-45dB |
 | 成片 | `output/craft3d_full.mp4` 71.0s 双流完整 |
 
+## P5：复看修复（开门穿模 / 桨板手 / 进食悬浮）+ 接触探针（2026-10-10）
+
+用户复看三问题的根因与修法：
+
+1. **开门穿模**（13.9–15s 轰刚身体/手与门板穿模）：根因=门 13.92 才撞开、
+   人 14.0 已站在门扫掠净空区内。修法=时序型：门提前到 13.55–13.85 全开
+   （人出现前扫完），回弹 13.85 起，SFX 同步移到 13.80。探针实测手-门板
+   最小 0.53m；三机位抽帧（`storyboard/p5_door/{front,side,back}/`）确认零穿模。
+2. **桨板手**：根因=谱面默认 `open:.2` 把指节拉直。修法=手势库进谱面
+   （静息 `fist .12` 为底，逐 beat 左右手分别覆盖：持盒 .4 / 持签 .5 /
+   平贴 open .3 / 挥手 open .75），buildPose 在 setPose 后覆盖 setGesture，
+   gL/gR 进条目边界混合列表（不瞬切）。ArticulatedHand 现有 API 够用，
+   未改 dula-assets。
+3. **进食悬浮**：进食弧线改关键点路径（抬起→弧顶→嘴前停顿 0.3s→送进→撤回），
+    jaw 张口包络与手部关键点同帧对齐；签锚点收回掌心（.025m），咬下与空拍咀嚼
+   窗口用 `quaternion.slerp(朝嘴, 包络)` 把签尖转向嘴（签尖-嘴实测 0.042m）。
+   顺手修掉轰刚够水壶回程手横穿腹部（关键点绕行替代直线 blend）。
+- **新探针 `tools/check_contact.py`**：接触距离断言（门板净空 >.06m / 手-躯干轴
+  XZ ∈[.09,.60]m / 签尖-嘴咬下帧 <.09m / 持盒手-盒 XZ<.16 且 dy∈[-.08,.08]）。
+  运行方式：
+  ```powershell
+  node render.mjs --check --trace storyboard/r1/check/check_trace.json
+  ../../.venv/Scripts/python.exe tools/check_contact.py storyboard/r1/check/check_trace.json
+  ```
+  当前全绿（door_min .53 / bite_min .042 / carry_max_xz .12 / seated∈[.11,.47]）。
+- 工艺整理写回 `dula-skills/direct-animation-craft/references/contact-and-hands.md`
+  （SKILL.md 已加指针）。
+
 ## 遗留
 
 - 程序嘴在双人全景幅度偏小（逐字跟得上）；特写级嘴形需要时再评估 OmniHuman 类通路。
+- 咀嚼 Foley 单采样多点位复用；嫌机械换多采样轮替。
+- 混音峰值余量 -5.05dBFS 偏保守，母带如嫌响度低可整体 +3dB 重混（只改 remix 峰值目标）。
+- 背机位（小屋正后方）抽帧只拍到墙，门区覆盖靠前/侧两机位+数值探针兜底。
 - 咀嚼 Foley 单采样多点位复用（音量 .10-.20）；嫌机械则换多采样轮替。
 - 行走段汗滴移至 12.2s（侧背机位贴脸符号必被遮挡，载体限制）；中景汗滴偏小，
   需要时升大汗滴规格。

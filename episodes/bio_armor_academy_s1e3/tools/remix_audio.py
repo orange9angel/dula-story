@@ -107,7 +107,7 @@ def main():
               fade_in=.004, fade_out=.12)
 
     event('door_close', 10.1, .30)          # 雷晓带上门
-    event('door_slam', 13.95, .75)          # 轰刚撞门（视觉 13.92-14.18 回弹）
+    event('door_slam', 13.80, .75)          # 轰刚撞门（视觉 13.55-13.85 全开+回弹）
     event('sit_down', 13.72, .30)           # 雷晓落座
     event('sit_down', 21.80, .45)           # 轰刚落座（更重）
     event('bento_open', 21.95, .35)         # 第二盒放上矮沿

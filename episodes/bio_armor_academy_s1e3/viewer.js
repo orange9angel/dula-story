@@ -198,12 +198,20 @@ function props(t,sl,sh){
     hongBoxB.position.lerpVectors(carry,FIXED_B,q);
     hongBoxB.rotation.y=hong.mesh.rotation.y*(1-q);
   }
-  // 竹签炸鸡：轰刚右手递出 → 雷晓左手接过
+  // 竹签炸鸡：轰刚右手递出 → 雷晓左手接过（签穿指缝锚定掌心；弧顶腕翻签尖朝嘴）
   skewer.visible=sl.visible!==false&&hongOut&&t>=PICK_T;
   if(skewer.visible){
     const hand=t<TAKE_T?hong.hands.right:lei.hands.left;
     hand.getWorldPosition(skewer.position);hand.getWorldQuaternion(skewer.quaternion);
-    skewer.position.add(new THREE.Vector3(.03,0,.01).applyQuaternion(skewer.quaternion));
+    skewer.position.add(new THREE.Vector3(.025,.006,0).applyQuaternion(skewer.quaternion));
+    // 腕翻：咬下窗口（crack 47.3–48.6）与空拍咀嚼抬手（raise>.4）把签尖转向嘴
+    let bite=ease(clamp((t-47.3)/.4))*ease(clamp((48.6-t)/.25));
+    if(t>=55&&t<68)bite=Math.max(bite,chewCycle(t,CHEW.lei.period,CHEW.lei.offset).raise);
+    if(bite>.01&&t>=TAKE_T){
+      const mouth=lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).sub(skewer.position).normalize();
+      const qTarget=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(1,0,0),mouth);
+      skewer.quaternion.slerp(qTarget,bite);
+    }
     skewerNug.visible=t<48.3||t>=56.0;
   }
   // 轰刚手里那块
@@ -226,7 +234,9 @@ function talkJaw(t,wins){
   return {jaw:Math.max(0,.15+.19*Math.sin(t*8.3)+.09*Math.sin(t*13.7+1))*g,width:1+.05*Math.sin(t*5.1)};
 }
 function lipLei(t){
-  if(t>=46.9&&t<48.6)return{jaw:.28*Math.sin(Math.PI*clamp((t-46.9)/1.7)),width:1}; // 咬一口
+  if(t>=46.9&&t<48.6){const d=t-46.9; // 与手部进食弧线同帧：抬起→嘴前停顿→张口→咬下
+    const open=ease(clamp((d-1.35)/.15))*ease(clamp((1.85-d)/.15));
+    return{jaw:.05+.35*open,width:1};}
   if(t>=48.6&&t<50.2)return{jaw:.28+.06*Math.sin(t*9),width:1.12};                     // 笑
   if(t>=52.0&&t<54.6)return{jaw:.04,width:.9};                                         // 愣住压光
   if(t>=55&&t<68){const c=chewCycle(t,CHEW.lei.period,CHEW.lei.offset);return{jaw:.24*c.chew,width:1};}
@@ -327,6 +337,17 @@ function draw(t,capture=true){
   const state={entry:i+1,phase:opts.move,shot:opts.shot,leiEmotion:sl.emotion,hongEmotion:sh.emotion,
     flash:sl.flashT,leiRoot:[sl.rootX,sl.rootZ],hongRoot:[sh.rootX,sh.rootZ],
     ...(Object.keys(locomotion).length?{locomotion}:{})};
+  // 接触探针数据（tools/check_contact.py）：手/门板/签尖/嘴/便当盒世界坐标
+  const contact={doorA:stage.doorA(t),
+    hands:{lei:{left:lei.hands.left.getWorldPosition(new THREE.Vector3()).toArray(),
+                right:lei.hands.right.getWorldPosition(new THREE.Vector3()).toArray()},
+           hong:{left:hong.hands.left.getWorldPosition(new THREE.Vector3()).toArray(),
+                 right:hong.hands.right.getWorldPosition(new THREE.Vector3()).toArray()}},
+    mouthLei:lei.face.head.localToWorld(new THREE.Vector3(0,.007,.125)).toArray()};
+  if(skewer.visible)contact.skewerTip=skewer.position.clone().add(new THREE.Vector3(.13,0,0).applyQuaternion(skewer.quaternion)).toArray();
+  if(leiBento.visible)contact.leiBento=leiBento.position.toArray();
+  if(hongBoxA.visible)contact.hongBoxA=hongBoxA.position.toArray();
+  state.contact=contact;
   if(!capture)return state;
   renderer.render(stage.scene,camera);
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);

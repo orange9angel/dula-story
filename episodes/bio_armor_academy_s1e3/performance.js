@@ -45,7 +45,7 @@ const LAP_H={left:V(-.17,.80,.24),right:V(.17,.80,.24)};   // 轰刚坐姿
 function specLei(phase,u,dt,t){
   const s={rootX:SEAT_LEI[0],rootZ:SEAT_LEI[1],yaw:0,bob:0,hipY:null,sit:0,sitHip:.55,
     sitFootX:.17,sitFootZ:.42,left:{...IDLE_L.left},right:{...IDLE_L.right},
-    headYaw:0,headPitch:0,headRoll:0,point:0,fist:0,open:.2,emotion:'neutral',
+    headYaw:0,headPitch:0,headRoll:0,point:0,fist:0,open:0,emotion:'neutral',
     walk:null,visible:true,flashT:0};
   const lap=()=>{s.left={...LAP_L.left};s.right={...LAP_L.right};};
   switch(phase){
@@ -53,6 +53,7 @@ function specLei(phase,u,dt,t){
     case 'walk_in':{ // 端便当出楼梯间，左右看一眼，走到围栏角落坐下
       const from=DOOR,to=[SEAT_LEI[0],-10.55],heading=Math.atan2(to[0]-from[0],to[1]-from[1]);
       s.left=V(-.12,1.10,.26);s.right=V(.12,1.10,.26); // 双手端盒
+      s.gL={fist:.4};s.gR={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion='worry';
       // 左右张望：视线→头→肩错开起动（肩/身晚约 2-3 帧采同一条曲线）
       const lookL=ease(clamp(u/.05))*ease(clamp((.12-u)/.05)),
@@ -108,35 +109,39 @@ function specLei(phase,u,dt,t){
       s.sit=1;s.emotion='worry';
       s.headYaw=-.5;s.headPitch=mix(.06,.20,ease(clamp((u-.20)/.30)));
       s.left=key(u,[[0,LAP_L.left],[.50,LAP_L.left],[.66,V(-.30,1.02,.30)],[.82,V(-.30,1.02,.30)],[.95,V(-.12,1.05,.28)],[1,V(-.12,1.05,.28)]]); // 愣住冻到 u=.5 再接
+      s.gL={fist:.12+.38*ease(clamp((u-.60)/.10))}; // 接过时三指捏签
       s.right={...LAP_L.right};
       break;
     }
     case 'crack':{ // 接过咬一口，被逗笑破防；笑瞬间右臂微光一闪、左手按住
       s.sit=1;s.right=V(.16,.78,.24);
-      if(dt<2.0){ // 送到嘴边咬一口
-        const a=Math.sin(Math.PI*clamp(dt/2.0));
-        s.left=blend(V(-.12,1.05,.28),V(-.07,1.22,.30),a);
+      if(dt<2.0){ // 进食弧线：胸前→弧顶抬起→嘴前停顿→送入口中→撤回（持签手半捏）
+        s.left=key(dt,[[0,V(-.12,1.05,.28)],[.55,V(-.10,1.14,.34)],[.85,V(-.08,1.20,.31)],
+          [1.15,V(-.08,1.20,.31)],[1.45,V(-.055,1.225,.27)],[1.80,V(-.055,1.225,.27)],[2.0,V(-.10,1.12,.30)]]);
+        s.gL={fist:.5};
         s.emotion=dt<1.2?'worry':'laugh';s.headPitch=.08;
       }else if(dt<3.7){ // 憋不住笑
         s.emotion='laugh';s.headPitch=-.14;s.bob=.012*Math.sin(t*7);s.headRoll=.04*Math.sin(t*3.4);
-        s.left=V(-.12,1.0,.26);
+        s.left=V(-.12,1.0,.26);s.gL={fist:.5};
       }else if(dt<5.4){ // 笑意未收
         const q=ease((dt-3.7)/1.7);s.emotion='laugh';s.headPitch=mix(-.14,.02,q);
-        s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.12,1.0,.26);
-      }else{ // 袖口微光：低头看右臂，左手按住
+        s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.12,1.0,.26);s.gL={fist:.5};
+      }else{ // 袖口微光：低头看右臂，左手按住（按臂手平贴前臂）
         const q=ease(clamp((dt-5.4)/.8));
         s.emotion='worry';s.headPitch=mix(.02,.30,q);s.headYaw=.35*q;
         s.left=blend(V(-.12,1.0,.26),V(.26,.88,.24),ease(clamp((dt-5.5)/.7)));
+        s.gL={open:.35,fist:0};s.gR={fist:.12};
         s.right=V(.22,.85,.15);
       }
       s.flashT=Math.exp(-(((t-FLASH_T)/.42)**2));
       s.squash=squashPulse(t,FLASH_T,.05); // 微光瞬间肩部 0.95 压缩 2-3 帧
       break;
     }
-    case 'empty_l':{ // 空拍：并排啃炸鸡
+    case 'empty_l':{ // 空拍：并排啃炸鸡（持签手随咀嚼节拍半捏起落）
       s.sit=1;s.emotion='neutral';
       const c=chewCycle(t,CHEW.lei.period,CHEW.lei.offset);
-      s.left=blend(V(-.13,.82,.24),V(-.07,1.22,.30),c.raise);
+      s.left=blend(V(-.13,.82,.24),V(-.06,1.22,.28),c.raise);
+      s.gL={fist:.12+.38*c.raise};
       s.right={...LAP_L.right};
       s.headPitch=.04;s.headYaw=-.22*(.5+.5*Math.sin(t*.23));s.headRoll=.01*Math.sin(t*.9);
       break;
@@ -150,7 +155,7 @@ function specLei(phase,u,dt,t){
 function specHong(phase,u,dt,t){
   const s={rootX:SEAT_HONG[0],rootZ:SEAT_HONG[1],yaw:0,bob:0,hipY:null,sit:0,sitHip:.58,
     sitFootX:.18,sitFootZ:.46,left:{...IDLE_H.left},right:{...IDLE_H.right},
-    headYaw:0,headPitch:0,headRoll:0,point:0,fist:0,open:.2,emotion:'neutral',
+    headYaw:0,headPitch:0,headRoll:0,point:0,fist:0,open:0,emotion:'neutral',
     walk:null,visible:true};
   const lap=()=>{s.left={...LAP_H.left};s.right={...LAP_H.right};};
   switch(phase){
@@ -158,13 +163,16 @@ function specHong(phase,u,dt,t){
     case 'hong_arrive':{ // 端着两人份堆高便当大步入侵（绕行小屋东南角，不穿山墙）
       const from=DOOR,mid=[-4.5,-6.85],to=[SEAT_HONG[0],-10.55];
       const h1=Math.atan2(mid[0]-from[0],mid[1]-from[1]),h2=Math.atan2(to[0]-mid[0],to[1]-mid[1]);
-      s.left=V(-.10,1.30,.30); // 左手托住便当摞
+      s.left=V(-.10,1.27,.31); // 左手托住便当摞（指腹扣盒沿，盒顶 1.27）
+      s.gL={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion=u<.35?'laugh':'neutral';s.headPitch=-.04;
       // 「哟！」举手招呼：反向沉肩预备（u 0-.03）→ 急起到位 → 摆动衰减 → 收回余振
       const wave=V(.44,1.58,.22);
       s.right=key(u,[[0,V(.10,1.30,.30)],[.03,V(.30,1.02,.06)],[.075,wave],[.13,V(.40,1.60,.24)],
         [.19,V(.48,1.56,.22)],[.25,V(.41,1.59,.23)],[.31,V(.47,1.57,.22)],[.40,wave],[.52,V(.10,1.30,.30)],[1,V(.10,1.30,.30)]]);
       s.right.z+=settle(u,.55,.05,9,22); // 手腕 settle：收回后余振
+      const wo=.75*ease(clamp((u-.03)/.06))*ease(clamp((.50-u)/.08)); // 挥手=张开掌，收回即半握托盒
+      s.gR={open:wo,fist:.4*(1-wo/.75)};
       if(u<.04){s.rootX=from[0];s.rootZ=from[1];s.yaw=h1;}
       else if(u<.32){ // 第一段：出门向东绕
         const a=(u-.04)/.28;s.yaw=h1;
@@ -207,6 +215,8 @@ function specHong(phase,u,dt,t){
       s.sit=1;s.rootX=mix(SEAT_HONG[0],-3.25,ease(clamp(u/.3))); // 凑近
       // 取签→回拉预备→急出递到雷晓面前（发力 2-3 帧内到位）→ 保持 → 收回
       s.right=key(u,[[0,LAP_H.right],[.10,V(.32,.74,.16)],[.18,V(.22,.88,.20)],[.26,V(.30,1.06,.34)],[.80,V(.30,1.06,.34)],[.95,LAP_H.right],[1,LAP_H.right]]);
+      const pinch=ease(clamp((u-.16)/.06))*ease(clamp((.82-u)/.08)); // 持签手：三指捏
+      s.gR={fist:.12+.38*pinch};
       s.left={...LAP_H.left};
       s.headYaw=.5;s.headPitch=.06;s.emotion=u>.2&&u<.6?'laugh':'neutral';
       break;
@@ -215,20 +225,25 @@ function specHong(phase,u,dt,t){
       s.sit=1;s.rootX=-3.25;s.left={...LAP_H.left};
       const reach=ease(clamp((dt-4.5)/.6))*ease(clamp((7.7-dt)/.8)); // 51.0–54.2
       if(dt<2.2){s.emotion='laugh';s.headPitch=-.1;s.right={...LAP_H.right};} // 看雷晓笑了跟着乐（∩ 笑眼）
-      else if(dt<4.2){ // 自己啃一口
+      else if(dt<4.2){ // 自己啃一口（进食弧线：抬起→嘴前停顿→咬→撤回）
         s.emotion='neutral';
-        s.right=key(dt,[[1.0,LAP_H.right],[1.6,V(.14,1.26,.32)],[2.4,V(.14,1.26,.32)],[3.2,LAP_H.right],[9,LAP_H.right]]);
+        s.right=key(dt,[[1.0,LAP_H.right],[1.35,V(.16,1.14,.34)],[1.60,V(.14,1.22,.30)],
+          [1.80,V(.14,1.22,.30)],[2.05,V(.12,1.26,.27)],[2.60,V(.12,1.26,.27)],[3.3,LAP_H.right],[9,LAP_H.right]]);
+        s.gR={fist:.12+.38*ease(clamp((dt-1.2)/.3))*ease(clamp((3.3-dt)/.3))};
         s.headPitch=.04;
       }else{
-        s.right=blend(LAP_H.right,V(-.30,.85,-.15),reach);
+        // 够水壶：手从体前绕行（先向外向前再向后），不横穿腹部
+        s.right=key(dt,[[4.2,LAP_H.right],[4.9,V(.24,.86,.34)],[5.6,V(-.10,.80,.10)],[6.2,V(-.30,.85,-.15)],[7.0,V(-.30,.85,-.15)],[7.35,V(.10,.82,.34)],[7.8,LAP_H.right],[9,LAP_H.right]]);
+        s.gR={open:.3*reach,fist:.12*(1-reach)}; // 够水壶：掌心张开
         s.headYaw=-.75*reach;s.yaw=-.18*reach;s.emotion='neutral';
       }
       break;
     }
-    case 'empty_h':{ // 空拍：啃炸鸡，风微动
+    case 'empty_h':{ // 空拍：啃炸鸡，风微动（持物手随咀嚼节拍半捏起落）
       s.sit=1;s.emotion='neutral';s.left={...LAP_H.left};
       const c=chewCycle(t,CHEW.hong.period,CHEW.hong.offset);
-      s.right=blend(V(.16,.84,.26),V(.14,1.26,.32),c.raise);
+      s.right=blend(V(.16,.84,.26),V(.12,1.25,.29),c.raise);
+      s.gR={fist:.12+.38*c.raise};
       s.headPitch=.03;s.headYaw=.15+.12*Math.sin(t*.19);
       break;
     }
@@ -262,6 +277,10 @@ function buildPose(actor,s,t,dims){
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
   actor.setPose(p);
+  // 手势库（viewer 链覆盖 setPose 的共享手型）：静息半握为底，逐 beat 左右手可分别覆盖
+  const gRest={fist:.12,open:0,point:s.point??0};
+  actor.hands.left.setGesture({...gRest,...(s.gL??{})});
+  actor.hands.right.setGesture({...gRest,...(s.gR??{})});
   actor.setArmorState?.(0,0);actor.setEtch?.(0);actor.setGauntlet?.(0);
   actor.mesh.visible=s.visible!==false;
   return p;
@@ -299,6 +318,9 @@ function buildWalkingPose(actor,s,t,d,p){
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
   actor.setPose(p);actor.mesh.visible=s.visible!==false;
+  const gRest={fist:.12,open:0,point:s.point??0}; // 行走段同样需要手势（端盒/挥手）
+  actor.hands.left.setGesture({...gRest,...(s.gL??{})});
+  actor.hands.right.setGesture({...gRest,...(s.gR??{})});
   actor.setArmorState?.(0,0);actor.setEtch?.(0);actor.setGauntlet?.(0);
   return p;
 }
@@ -334,6 +356,16 @@ export function poseAt(lei,hong,entries,t){
       for(const key of ['rootX','rootZ','yaw','bob','headYaw','headRoll','headPitch','sit','fist','open','point','lean','flashT','squash'])
         if(typeof s[key]==='number')s[key]=key==='yaw'?(o[key]??0)+angleDelta(o[key]??0,s[key])*a:mix(o[key]??0,s[key],a);
       s.left=blend(o.left,s.left,a);s.right=blend(o.right,s.right,a);
+      for(const g of ['gL','gR']){ // 手势参数同样进边界混合，换手型不瞬切
+        if(!s[g]&&!o[g])continue;
+        const A=o[g]??{},B=s[g]??{},out={};
+        for(const k of ['fist','open','point']){
+          if(A[k]==null&&B[k]==null)continue;
+          const dft=k==='fist'?.12:0;
+          out[k]=mix(A[k]??dft,B[k]??dft,a);
+        }
+        s[g]=out;
+      }
     }
   }
   // 行走/转身段：根与步态相位用满帧率重取（支撑脚钉世界地面，量化只落在躯干/四肢姿势层）
