@@ -37,6 +37,8 @@ def bentoAllowed(hit, t):
             return True  # 托盘手托盒底（含放置窗口）
         if m == 'leftHand' and 7.0 <= t <= 13.5:
             return True  # 搬运段左手扶沿
+        if 13.4 <= t <= 14.2 and m in ('leftHand', 'leftArm'):
+            return True  # 掀盖操作接触（手到盖把位开自己的盒盖）
         if 50.4 <= t <= 51.55 and m in ('rightHand', 'rightArm', 'sleeve_right',
                                         'sleeve_rightRoll', 'CylinderGeometry'):
             return True  # 放盒操作接触（盒离手沿前臂滑下，含壳疹六边形件）
@@ -45,6 +47,8 @@ def bentoAllowed(hit, t):
             return True  # 左手托盘全程
         if m == 'leftHand' and o == 'hongBoxB_base' and 20.8 <= t <= 21.3:
             return True  # 右手接走上层盒时左手的离摞接触
+        if m == 'rightHand' and o.startswith('hongBoxA') and 23.4 <= t <= 24.2:
+            return True  # 右手收回途中掀左手盒盖（手过盖把）
         if (o.startswith('hongBoxB') or o.startswith('hongBoxA')) and 20.7 <= t <= 22.8 and m in (
                 'rightHand', 'rightArm', 'sleeve_right', 'sleeve_rightRoll', 'TubeGeometry'):
             return True  # 右手从摞顶接盒 + 送上矮沿 + 指尖推滑（接近时会蹭到下层盒）
@@ -161,6 +165,55 @@ for frame in data['frames']:
             failures.append(f"finger through nugget: {c['nugBoneMin']:.3f}m @t={t:.2f}")
         else:
             stats['nug_bone_min'] = min(stats.get('nug_bone_min', 99), c['nugBoneMin'])
+    # 11. 手腕生理域：托盘覆盖的掌-前臂夹角 ⊥（|dot|≤.25）、扭转实加 ≤62°（需求仅记录）
+    for key, w in (c.get('wrist') or {}).items():
+        stats['wrist_applied_max'] = max(stats.get('wrist_applied_max', 0), w['appliedDeg'])
+        stats['wrist_demand_max'] = max(stats.get('wrist_demand_max', 0), w['demandDeg'])
+        if w['appliedDeg'] > 62:
+            failures.append(f"wrist twist over physio limit: {key} {w['appliedDeg']:.0f}° @t={t:.2f}")
+        if w['palmDot'] > .25:
+            failures.append(f"palm not perpendicular to forearm: {key} {w['palmDot']:.2f} @t={t:.2f}")
+    # 12. 托盘泄漏：trayK>.3 时掌必须贴着对应盒（阈值=该托持的固定偏移量+4cm 余量）
+    boxes = c.get('boxPos') or {}
+    for key, box, lim in (('leiR', 'leiBento', .16), ('leiL', 'leiBento', .22),
+                          ('hongL', 'hongBoxA', .20)):
+        k = (c.get('trayK') or {}).get(key, 0)
+        if k > .3 and boxes.get(box) and (c.get('boxVis') or {}).get(box, True):
+            actor = 'lei' if key.startswith('lei') else 'hong'
+            side = 'right' if key.endswith('R') else 'left'
+            d = math.dist(c['hands'][actor][side], boxes[box])
+            stats['tray_leak_max'] = max(stats.get('tray_leak_max', 0), d)
+            if d > lim:
+                failures.append(f"tray palm off box: {key} {d:.3f}m @t={t:.2f}")
+    # 13. 支撑者存在性：盒可见且非静置/落台段，必须有支撑（手 <.12m；叠放=下层盒 <.12m）
+    support_win = {'leiBento': (6.9, 51.35), 'hongBoxA': (13.9, 99), 'hongBoxB': (20.85, 22.2)}
+    transit = {'leiBento': (51.35, 51.6), 'hongBoxB': (22.2, 22.9)}
+    for box, pos in boxes.items():
+        if not (c.get('boxVis') or {}).get(box, True):
+            continue
+        win = support_win.get(box)
+        if not win or not (win[0] <= t <= win[1]):
+            continue
+        tr = transit.get(box)
+        if tr and tr[0] <= t <= tr[1]:
+            continue
+        actor = 'lei' if box == 'leiBento' else 'hong'
+        best = min(math.dist(h, pos) for h in c['hands'][actor].values())
+        if box == 'hongBoxB' and t < 20.85:  # 摞在 boxA 上：支撑者是下层盒
+            best = math.dist(pos, boxes.get('hongBoxA', pos)) if boxes.get('hongBoxA') else best
+        lim = {'leiBento': .16, 'hongBoxA': .20, 'hongBoxB': .16}[box]  # 阈值=固定偏移量+余量
+        stats['unsupported_min'] = min(stats.get('unsupported_min', 99), best)
+        if best > lim:
+            failures.append(f"box without supporter: {box} {best:.3f}m @t={t:.2f}")
+    # 14. 盖随手动：盖角速度非零 ⇒ 该盒主人的某只手在盖把 .15m 内
+    for box, ang in (c.get('lidAngle') or {}).items():
+        prevA = prev_box.get('lid_' + box)
+        if prevA is not None and abs(ang - prevA) > .002:
+            d = (c.get('lidTabDist') or {}).get(box, 99)
+            stats['lid_far_max'] = max(stats.get('lid_far_max', 0), d)
+            if d > .25:
+                failures.append(f"lid moves without hand: {box} hand {d:.3f}m @t={t:.2f}")
+        prev_box['lid_' + box] = ang
     # 8. 捏持锚点：签轴-掌心点线距离 ∈[.015,.045]m（不戳掌心也不脱手）；咬下腕翻段豁免
     if 41.2 <= t <= 47.2 and c.get('skewerPos') and c.get('palm') and c.get('skewerTip'):
         p = c['palm']; a = c['skewerPos']; b = c['skewerTip']

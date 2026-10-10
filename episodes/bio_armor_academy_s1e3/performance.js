@@ -86,9 +86,10 @@ function specLei(phase,u,dt,t){
       if(u<.88){
         enterRooftop(s,u,to);
         if(u<.04){const a=ease(u/.04);s.lean=-.025*a;s.bob=-.012*a;}
-      }else{ // 坐上矮沿（落座瞬间 squash 谷底对齐 bob 最低点）；左手松开盒沿收回腿上
+      }else{ // 坐上矮沿（落座瞬间 squash 谷底对齐 bob 最低点）；左手顺势掀开自己盒盖再收回腿上
         const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_LEI[1],a);
-        s.left=blend(V(-.01,1.10,.31),LAP_L.left,a);s.right=blend(V(.12,1.10,.26),LAP_L.right,a);
+        s.left=key(u,[[.88,V(-.01,1.10,.31)],[.93,V(.08,.85,.32)],[.97,V(.08,.85,.32)],[1,LAP_L.left]]); // 手到盖把位→掀盖→收回
+        s.right=blend(V(.12,1.10,.26),LAP_L.right,a);
         s.emotion='neutral';s.headYaw=0;
       }
       s.squash=squashPulse(t,13.80,.06);
@@ -213,7 +214,8 @@ function specHong(phase,u,dt,t){
       s.sit=1;s.left={...LAP_H.left};
       // 开头指尖把第二盒推滑到两人中间，然后收回开盒显摆
       s.right=key(u,[[0,V(.10,.78,-.10)],[.05,V(.14,.74,-.11)],[.11,V(.22,.72,-.10)],[.16,V(.28,.72,-.08)],
-        [.22,V(.32,.74,-.04)],[.30,V(.30,.80,.08)],[.45,V(.34,.92,.34)],[.7,V(.20,.82,.26)],[1,LAP_H.right]]);
+        [.22,V(.32,.74,-.04)],[.28,V(.30,.80,.06)],[.36,V(-.02,.92,.30)],[.42,V(-.02,.92,.30)],
+        [.52,V(.14,.82,.24)],[.7,V(.20,.82,.26)],[1,LAP_H.right]]); // 推滑收回途中顺手掀开左手盒盖（23.6–23.9 手过盖把）
       s.lean=.22*ease(clamp((.2-u)/.1)); // 俯身随推滑收回
       s.gR={fist:.12+.30*ease(clamp((.14-u)/.06))};
       s.headYaw=.45;s.headPitch=-.06;s.headRoll=.03;s.bob=.012*Math.sin(t*2.6);
@@ -247,10 +249,10 @@ function specHong(phase,u,dt,t){
       if(dt<2.2){s.emotion='laugh';s.headPitch=-.1;s.right={...LAP_H.right};} // 看雷晓笑了跟着乐（∩ 笑眼）
       else if(dt<4.2){ // 自己啃一口（进食弧线：抬起→嘴前停顿→咬→撤回）
         s.emotion='neutral';
-        s.right=key(dt,[[1.0,LAP_H.right],[1.35,V(.16,1.14,.34)],[1.60,V(.14,1.22,.30)],
-          [1.80,V(.14,1.22,.30)],[2.05,V(.12,1.26,.27)],[2.60,V(.12,1.26,.27)],[3.3,LAP_H.right],[9,LAP_H.right]]);
+        s.right=key(dt,[[1.0,LAP_H.right],[1.35,V(.16,1.12,.34)],[1.60,V(.13,1.20,.31)],
+          [1.80,V(.13,1.20,.31)],[2.05,V(.11,1.21,.30)],[2.60,V(.11,1.21,.30)],[3.3,LAP_H.right],[9,LAP_H.right]]);
         s.gR={fist:.12+.38*ease(clamp((dt-1.2)/.3))*ease(clamp((3.3-dt)/.3))};
-        s.headPitch=.04;
+        s.headPitch=.10; // 头迎向食物，手臂不过肩（袖肩接缝）
       }else{
         // 够水壶：手从体前绕行（先向外向前再向后），不横穿腹部
         s.right=key(dt,[[4.2,LAP_H.right],[4.9,V(.24,.86,.34)],[5.6,V(-.10,.80,.10)],[6.2,V(-.30,.85,-.15)],[7.0,V(-.30,.85,-.15)],[7.35,V(.10,.82,.34)],[7.8,LAP_H.right],[9,LAP_H.right]]);

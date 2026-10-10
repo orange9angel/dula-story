@@ -213,41 +213,57 @@ function trayK(t,appear,placeT1){
   if(t<appear)return 0;
   const inK=ease(clamp((t-appear)/.3));
   if(placeT1==null)return inK;
-  return inK*(1-ease(clamp((t-placeT1)/.6)));
+  return inK*(1-ease(clamp((t-placeT1)/.12))); // 放下后 .12s 内缓出（与手部收回同步，防托盘泄漏）
 }
-function trayHand(actor,side,k){
+// 手腕生理域（所有手部朝向覆盖的唯一入口）：掌朝向由前臂轴推导，相对自然掌向扭转限 ±60°。
+// 无条件"世界掌心向上"会在前臂下垂时把腕扭到不生理角度（S1E3 23s 特写翻车实录）。
+const wristAudit={}; // 每帧 twist 需求/实际值 → contact 日志
+function physioTray(actor,side,k,arm){
   if(k<=0)return; // k=0：姿势完全归谱面（setPose+gL/gR）
   const hand=actor.hands[side];
   const qBase=hand.quaternion.clone();
-  const x=new THREE.Vector3(0,0,1),y=new THREE.Vector3(side==='right'?1:-1,0,0),z=x.clone().cross(y);
-  const qTray=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x,y,z));
-  hand.quaternion.copy(qBase).slerp(qTray,k); // 边界渐变，不瞬切
+  const fd=actor.mesh.localToWorld(new THREE.Vector3(arm[2].x,arm[2].y,arm[2].z))
+    .sub(actor.mesh.localToWorld(new THREE.Vector3(arm[1].x,arm[1].y,arm[1].z))).normalize(); // 肘→腕
+  const fwd=new THREE.Vector3(0,0,1);
+  const y0=fwd.clone().addScaledVector(fd,-fwd.dot(fd)).normalize(),z0=fd.clone().cross(y0).normalize();
+  const palmNat=z0.clone().multiplyScalar(hand.sign);
+  const up=new THREE.Vector3(0,1,0);
+  const upProj=up.clone().addScaledVector(fd,-up.dot(fd));
+  const palmUp=upProj.length()>.1?upProj.normalize():palmNat.clone(); // 前臂近竖直时退回自然掌向
+  const demand=Math.acos(clamp(palmNat.dot(palmUp),-1,1));
+  const applied=Math.min(demand,Math.PI/3); // 扭转限位 ±60°
+  const palm=demand>Math.PI/3?palmNat.clone().lerp(palmUp,Math.PI/3/demand).normalize():palmUp;
+  const z=palm.clone().multiplyScalar(hand.sign).normalize();
+  const y=z.clone().cross(fd).normalize();const z2=fd.clone().cross(y).normalize();
+  const qTray=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(fd,y,z2));
+  hand.quaternion.copy(qBase).slerp(qTray,k);
   hand.setGesture({fist:.12+.10*k,open:0,point:0});
   hand.updateMatrixWorld(true);
+  wristAudit[actor.mesh.name+':'+side]={demandDeg:demand*180/Math.PI,appliedDeg:applied*180/Math.PI,
+    palmDot:Math.abs(z.dot(fd)),k}; // palmDot≈0：掌法向量与前臂轴垂直
 }
 // 放置落点校准：对固定释放时刻摆一次谱面姿势，读腕部世界坐标（纯函数常数，seek 安全）；
 // 落点=引导点竖直落到台面（重力沉降），保证"释放帧盒位=静置位姿"零跳变
 function calibratePlacement(){
-  poseAt(lei,hong,entries,LEI_REL);trayHand(lei,'right',1);
+  const perf1=poseAt(lei,hong,entries,LEI_REL);physioTray(lei,'right',1,perf1.pL.rightArm);
   LEI_GUIDE=lei.hands.right.getWorldPosition(new THREE.Vector3())
     .add(new THREE.Vector3(...LEI_GRIP).applyQuaternion(lei.mesh.quaternion));
   LEI_SET=new THREE.Vector3(LEI_GUIDE.x,.575,LEI_GUIDE.z);
-  poseAt(lei,hong,entries,HONG_REL);trayHand(hong,'left',1);
+  const perf2=poseAt(lei,hong,entries,HONG_REL);physioTray(hong,'left',1,perf2.pH.leftArm);
   HONG_GUIDE=hong.hands.right.getWorldPosition(new THREE.Vector3())
     .add(new THREE.Vector3(...HONG_GRIP).applyQuaternion(hong.mesh.quaternion));
   HONG_DROP=new THREE.Vector3(HONG_GUIDE.x,.575,HONG_GUIDE.z); // 落台点=引导点正下方
   FIXED_B=new THREE.Vector3(-2.88,.575,-11.22); // 推滑终点：两人中间（P5/P6 探针验证过的净空位）
 }
 calibratePlacement();
-function props(t,sl,sh){
-  const sitL=sl.sit??0,sitH=sh.sit??0;
-  const lagL=Math.max(-.03,Math.min(.03,(sl.bobLag??0)*1.5)),lagH=Math.max(-.03,Math.min(.03,(sh.bobLag??0)*1.5));
-  // 托盘手全部挂道具状态：雷晓右手托盒 6.9→51.3（放下后 .6s 缓出）；轰刚左手 13.9 起全程托；
-  // 雷晓左手端盒到递接前（40.2s 缓出）；轰刚右手出门段（13.9–15.1）
-  trayHand(lei,'right',trayK(t,6.9,51.3));
-  trayHand(hong,'left',trayK(t,13.9,null));
-  trayHand(lei,'left',ease(clamp((t-6.9)/.3))*ease(clamp((40.2-t)/.6)));
-  trayHand(hong,'right',ease(clamp((t-13.9)/.3))*ease(clamp((15.1-t)/.3)));
+function props(t,sl,sh,pL,pH){
+  // 托盘手全部挂道具状态且过手腕生理域限位：雷晓右手托盒 6.9→51.35（放下后 .35s 缓出）；
+  // 轰刚左手 13.9 起全程托；雷晓左手扶沿仅搬运段（坐定收回，不续到 40s——空托盘外翻翻车实录）；
+  // 轰刚右手出门段（13.9–15.1）
+  physioTray(lei,'right',trayK(t,6.9,51.35),pL.rightArm);
+  physioTray(hong,'left',trayK(t,13.9,null),pH.leftArm);
+  physioTray(lei,'left',ease(clamp((t-6.9)/.3))*ease(clamp((13.9-t)/.6)),pL.leftArm); // 搬运段扶沿，坐定收回
+  // 轰刚右手不挂托盘：出门段挥手→垂放身侧→21s 接第二盒（挥手时掌心向上=外翻，实录）
   leiBento.visible=sl.visible!==false&&t>=6.9;
   if(leiBento.visible){ // 便当盒随身体次级滞后（解析弹簧：bob 差分）
     const g=ease(clamp((t-50.4)/.3)); // 托盘→提沿抓握偏移过渡（盒随手动、零跳变）
@@ -258,14 +274,14 @@ function props(t,sl,sh){
       leiBento.position.lerpVectors(LEI_GUIDE,LEI_SET,d);
     }
     leiBento.rotation.y=t<LEI_REL?lei.mesh.rotation.y:0;
-    leiBento.lid.rotation.x=-1.62*ease(clamp((t-13.5)/.6));
+    leiBento.lid.rotation.x=-1.62*ease(clamp((t-13.65)/.45)); // 左手先到盖把位再掀盖（13.65–14.10 手贴盖）
   }
   const hongOut=sh.visible!==false;
   hongBoxA.visible=hongOut&&t>=13.9;
   if(hongBoxA.visible){
     hongBoxA.position.copy(supportedBox(hong,'left',[0,.038,.145]));
     hongBoxA.rotation.y=hong.mesh.rotation.y;
-    hongBoxA.lid.rotation.x=-1.62*ease(clamp((t-22.15)/.5));
+    hongBoxA.lid.rotation.x=-1.62*ease(clamp((t-23.6)/.4)); // 右手推滑收回路过盒盖时掀开（23.6–24.0 手过盖）
   }
   // 两人份的第二盒：摞在左手盒上 → 21.3s 右手接过来 → 落座顺势放上矮沿（手全程贴盒，
   // 释放后重力落台 .15s 到 FIXED_B；FIXED_B 由释放帧谱面派生，见 calibratePlacement）
@@ -287,7 +303,7 @@ function props(t,sl,sh){
       }else hongBoxB.position.copy(wrist).add(grip); // 抓握搬运（物随手动）
       hongBoxB.rotation.y=hong.mesh.rotation.y;
     }
-    hongBoxB.lid.rotation.x=-1.62*ease(clamp((t-21.7)/.5));
+    hongBoxB.lid.rotation.x=-1.62*ease(clamp((t-21.55)/.5)); // 右手抓握搬运期间开盖（手在盒上）
   }
   for(const b of [leiBento,hongBoxA,hongBoxB])for(const f of b.foods)f.visible=b.lid.rotation.x<-.3;
   // 竹签炸鸡：轰刚右手递出 → 雷晓左手接过（捏持锚点=拇指腹与食/中指第一节之间）
@@ -407,7 +423,7 @@ function draw(t,capture=true){
   if(sl.flashT>.01)lei.dailyMats.forEach(m=>m.emissiveIntensity=Math.min(2.2,m.emissiveIntensity+sl.flashT*1.6)); // 袖口微光一闪
   lei.mouth.apply(lipLei(t));
   hong.mouth.apply(lipHong(t));
-  props(t,sl,sh);
+  props(t,sl,sh,performance.pL,performance.pH);
   secondary(t);
 
   let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'two',t,entry);
@@ -457,6 +473,20 @@ function draw(t,capture=true){
   if(leiBento.visible)contact.leiBento=leiBento.position.toArray();
   if(hongBoxA.visible)contact.hongBoxA=hongBoxA.position.toArray();
   contact.LEI_SET=LEI_SET.toArray();contact.FIXED_B=FIXED_B.toArray(); // 派生落点（校准可见性）
+  // P10 探针日志：托盘强度/手腕审计/盖角度/盖把最近手距/盒位（支撑者存在性断言用）
+  contact.trayK={leiR:trayK(t,6.9,51.35),hongL:trayK(t,13.9,null),
+    leiL:ease(clamp((t-6.9)/.3))*ease(clamp((13.9-t)/.6))};
+  contact.boxVis={leiBento:leiBento.visible,hongBoxA:hongBoxA.visible,hongBoxB:hongBoxB.visible};
+  contact.wrist={...wristAudit};
+  contact.boxPos={leiBento:leiBento.position.toArray(),hongBoxA:hongBoxA.position.toArray(),hongBoxB:hongBoxB.position.toArray()};
+  contact.lidAngle={leiBento:leiBento.lid.rotation.x,hongBoxA:hongBoxA.lid.rotation.x,hongBoxB:hongBoxB.lid.rotation.x};
+  contact.lidTabDist={};
+  for(const [name,box,actor] of [['leiBento',leiBento,lei],['hongBoxA',hongBoxA,hong],['hongBoxB',hongBoxB,hong]]){
+    if(!box.visible)continue;
+    box.updateMatrixWorld(true);
+    const tab=box.lid.localToWorld(new THREE.Vector3(0,0,.12));
+    contact.lidTabDist[name]=Math.min(...['left','right'].map(s=>actor.hands[s].getWorldPosition(new THREE.Vector3()).distanceTo(tab)));
+  }
   state.contact=contact;
   if(doorProbe&&t>=6.8&&t<=22.0){
     state.doorway=doorProbe(stage,{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});

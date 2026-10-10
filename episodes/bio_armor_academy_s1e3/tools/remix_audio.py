@@ -106,8 +106,10 @@ def main():
         place(stems['effects'], x, start, gain * .45 / max(float(np.abs(x).max()), 1e-9),
               fade_in=.004, fade_out=.12)
 
-    event('door_close', 10.1, .30)          # 雷晓带上门
-    event('door_slam', 13.80, .75)          # 轰刚撞门（视觉 13.55-13.85 全开+回弹）
+    event('door_close', 7.05, .30)          # 雷晓开门（轻柔，开门声用关门素材变体）
+    event('door_close', 10.35, .45)         # 雷晓关门（画面 9.2–10.4 闭合，10.4 关严）
+    event('door_slam', 13.85, .75)          # 轰刚撞门（撞击点=全开 13.85，回弹到 15.1）
+    event('door_close', 18.25, .45)         # 轰刚关门（画面 17.1–18.3 闭合，18.3 关严）
     event('sit_down', 13.72, .30)           # 雷晓落座
     event('sit_down', 21.80, .45)           # 轰刚落座（更重）
     event('bento_open', 21.95, .35)         # 第二盒放上矮沿

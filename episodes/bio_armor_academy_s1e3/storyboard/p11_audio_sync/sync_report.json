@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "limit_s": 0.15,
+  "rows": [
+    {
+      "event": "lei_door_open",
+      "target": 7.05,
+      "nearest_onset": 7.045,
+      "offset_s": -0.005,
+      "strongest_onset": 7.077,
+      "note": "doorA: 开门 6.9–7.5"
+    },
+    {
+      "event": "lei_door_close",
+      "target": 10.35,
+      "nearest_onset": 10.345,
+      "offset_s": -0.005,
+      "strongest_onset": 10.142,
+      "note": "doorA: 关门 9.2–10.4（关严 10.4）"
+    },
+    {
+      "event": "hong_door_slam",
+      "target": 13.85,
+      "nearest_onset": 13.962,
+      "offset_s": 0.112,
+      "strongest_onset": 13.962,
+      "note": "doorA: 撞开 13.55–13.85（撞击点=全开）"
+    },
+    {
+      "event": "hong_door_close",
+      "target": 18.25,
+      "nearest_onset": 18.277,
+      "offset_s": 0.027,
+      "strongest_onset": 18.277,
+      "note": "doorA: 关门 17.1–18.3（关严 18.3）"
+    }
+  ],
+  "failures": []
+}
