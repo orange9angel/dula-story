@@ -3,6 +3,7 @@
 // 远处无文字城市天际线、乌鸦归巢）。横屏 1280×720。
 import * as THREE from 'three';
 import {SceneBase} from 'dula-engine';
+import {continuousBackdrop} from './ContinuousBackdrop.js';
 
 const toon=c=>new THREE.MeshToonMaterial({color:c});
 const basic=c=>new THREE.MeshBasicMaterial({color:c});
@@ -197,7 +198,7 @@ export class RuinsDuskScene extends SceneBase {
     }
   }
   // craft3d-hybrid：加载文生图纹理/背景板（assets3d/tex/），任一缺失则该部位保持程序化外观
-  async applyHybrid(base='./assets3d/tex/'){
+  async applyHybrid(base='./assets3d/tex/',{continuousSky=true}={}){
     const L=new THREE.TextureLoader();
     const load=n=>new Promise(res=>L.load(base+n+'.png',
       t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;res(t);},undefined,()=>res(null)));
@@ -251,6 +252,10 @@ export class RuinsDuskScene extends SceneBase {
       const dome=new THREE.Mesh(new THREE.SphereGeometry(95,48,24),
         new THREE.MeshBasicMaterial({map:domeTex,side:THREE.BackSide,fog:false}));
       dome.position.set(0,0,-8);this.scene.add(dome);
+      if(continuousSky){
+        cyl.visible=false;dome.visible=false;
+        this.scene.add(continuousBackdrop(bt,{repeat:rep,offset:bt.offset.x}));
+      }
       if(T.backdrop_nosun){ // 程序化日轮 + 光晕（世界锚定，-z 偏 -x 方位，楼群檐口之上）
         const sunTex=canvasTex(128,128,(c)=>{
           const g=c.createRadialGradient(64,64,4,64,64,64);

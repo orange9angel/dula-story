@@ -5,7 +5,9 @@ import * as THREE from 'three';
 import {StoryParser} from 'dula-engine';
 import {LeiXiaoCraft,HongGangCraft,ObserverCraft} from './characters.js';
 import {poseAt,ease,clamp} from './performance.js';
+import {installFightActors,fightPoseAt,fightCamera} from './fight_trial.js';
 import {RuinsDuskScene} from './scenes/RuinsDuskScene.js';
+const fightTrial=!new URLSearchParams(location.search).has('legacy-performance');
 const W=1280,H=720;
 const storyText=await fetch('./script.story').then(r=>r.text());
 const entries=StoryParser.parse(storyText);
@@ -28,6 +30,7 @@ try{
 
 const stage=new RuinsDuskScene();stage.build();await stage.applyHybrid();
 const lei=new LeiXiaoCraft(),hong=new HongGangCraft(),observer=new ObserverCraft();
+if(fightTrial)installFightActors(lei,hong);
 stage.scene.add(lei.mesh,hong.mesh,observer.mesh);
 observer.mesh.position.set(-7.3,6.15,-11.8);observer.mesh.rotation.y=2.2;
 observer.mesh.visible=false;
@@ -168,12 +171,12 @@ const rubble=[];
     r.castShadow=true;r.visible=false;stage.scene.add(r);rubble.push(r);
   }
 }
-function rubbleAt(t,t0){
+function rubbleAt(t,t0,anchor={x:1.05,y:1.35,z:-2.0}){
   const u=t-t0;
   for(const r of rubble){
     if(u<0){r.visible=false;continue;}
     r.visible=true;const d=r.userData,fl=Math.min(u,.9);
-    r.position.set(1.05+d.dx*fl,.06+Math.max(0,d.v0*u-4.9*u*u),-2.0+d.dz*fl);
+    r.position.set(anchor.x+d.dx*fl,.06+Math.max(0,d.v0*u-4.9*u*u),anchor.z+d.dz*fl);
     r.rotation.set(fl*7+d.ph,fl*5,d.ph);
   }
 }
@@ -238,40 +241,71 @@ function camFor(shot,t,entry){
 }
 
 function draw(t,capture=true){
-  const {entry,i,opts,phase,dt,u,sl,sh}=poseAt(lei,hong,entries,t);
+  const performance=(fightTrial?fightPoseAt:poseAt)(lei,hong,entries,t);
+  const {entry,i,opts,phase,dt,u,sl,sh,trial}=performance;
   stage.update(t);
+  // Eyes follow the acting partner; the counterattack's authored face channels
+  // override this default when it calls for looking at the arm or anticipating a hit.
+  lei.mesh.updateMatrixWorld(true);hong.mesh.updateMatrixWorld(true);
+  const gazeLei=hong.headGroup.getWorldPosition(new THREE.Vector3());
+  const gazeHong=lei.headGroup.getWorldPosition(new THREE.Vector3());
+  lei.face.lookAtWorld?.(gazeLei);hong.face.lookAtWorld?.(gazeHong);
   lei.setEmotion(sl.emotion,sl.blink??poseBlink(t));
   hong.setEmotion(sh.emotion??(phase==='hong_laugh'?(u<.3?'laugh':'determined'):'determined'),poseBlink(t+.83)); // 笑只留开头一瞬，随即收住放话
+  lei.updateWeaponFX?.(t,sl.armorT??0,sl.shieldT??0);
+  hong.updateWeaponFX?.(t,sh.gauntletT??0,{growing:phase==='hong_armor',hitT:sh.hitT??0});
   lei.mouth.apply(lipLei(t));
-  hong.mouth.apply(phase==='will_up'&&u>.12&&u<.55?{jaw:.5,width:.9}:lipHong(t)); // 被击飞惊呼
+  hong.mouth.apply(!trial&&phase==='will_up'&&u>.12&&u<.55?{jaw:.5,width:.9}:lipHong(t)); // 被击飞惊呼
   observer.mesh.visible=phase==='hook';
 
   // 3D 特效（必须在 render 之前）
   const es=entry.startTime,dur=entry.endTime-entry.startTime;
+  const hitPos=trial?.contact??{x:1.05,y:1.35,z:-2.0};
+  const impactTime=trial?.hitTime??es+dur*.72;
   if(phase==='hong_drop')ringAt(dustRing,3.9,.03,-3.3,t,es+dur*.55,'#c9b89a',2.4);
   else dustRing.visible=false;
   if(phase==='clash1')ringAt(impactRing,-.05,1.35,-2.15,t,es+dur*.65,'#3DFFC8',2.2);
-  else if(phase==='will_up')ringAt(impactRing,1.05,1.35,-2.0,t,es+dur*.72,'#FF3B3B',2.6);
+  else if(phase==='will_up')ringAt(impactRing,hitPos.x,hitPos.y,hitPos.z,t,impactTime,'#FF3B3B',trial?1.15:2.6);
   else impactRing.visible=false;
-  if(phase==='will_up')ringAt(dustRing2,4.4,.03,-2.9,t,es+dur*.30,'#c9b89a',2.0);
+  if(phase==='will_up')ringAt(dustRing2,trial?2.85:4.4,.03,trial?-2.85:-2.9,t,trial?.landTime??es+dur*.30,'#c9b89a',trial?1.05:2.0);
   else dustRing2.visible=false;
+  if(trial&&dustRing2.visible){dustRing2.rotation.set(-Math.PI/2,0,0);dustRing2.material.opacity*=.45;}
   if(phase==='clash1')flareAt(t,es+dur*.65,-.05,1.35,-2.15,'#3DFFC8');
   else if(phase==='clash2')flareAt(t,es+dur*.62,-.05,1.35,-2.15,'#3DFFC8');
-  else if(phase==='will_up')flareAt(t,es+dur*.72,1.05,1.35,-2.0,'#FF6B3B');
+  else if(phase==='will_up')flareAt(t,impactTime,hitPos.x,hitPos.y,hitPos.z,'#FF6B3B');
   else{flare.visible=false;for(const s of sparks)s.visible=false;}
+  if(trial&&flare.visible)flare.scale.multiplyScalar(.45);
   const willEntry=entries.find(en=>en.storyEvents[0]?.options.move==='will_up');
   const WILL_HIT=willEntry.startTime+(willEntry.endTime-willEntry.startTime)*.72;
   crackGroup.visible=t>=WILL_HIT;
   if(crackGroup.visible)crackGroup.scale.setScalar(Math.max(clamp((t-WILL_HIT)/.12),.001));
-  rubbleAt(t,WILL_HIT);
+  if(fightTrial)crackGroup.position.set(.38,.01,-2.33);
+  else crackGroup.position.set(1.05,.01,-2.0);
+  rubbleAt(t,WILL_HIT,fightTrial?{x:.38,y:1.185,z:-2.33}:undefined);
 
-  let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'wide',t,entry);
+  let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:(fightCamera(performance)??camFor(opts.shot??'wide',t,entry));
   if(!window.freeCamera)c=clampSky(c);
   camera.position.set(...c.pos);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
 
+  const locomotion={};
+  for(const [name,actor,p] of [['lei',lei,performance.pL],['hong',hong,performance.pH]])if(p?.locomotion){
+    const feet={};actor.mesh.updateMatrixWorld(true);
+    for(const side of ['left','right']){
+      const foot=actor.feet[side];let soleMin=Infinity;
+      const vertex=new THREE.Vector3();
+      foot.traverse(o=>{const a=o.geometry?.attributes.position;if(a)for(let i=0;i<a.count;i++){
+        vertex.fromBufferAttribute(a,i).applyMatrix4(o.matrixWorld);soleMin=Math.min(soleMin,vertex.y);
+      }});
+      feet[side]={position:foot.getWorldPosition(new THREE.Vector3()).toArray(),soleMin,
+        quaternion:foot.getWorldQuaternion(new THREE.Quaternion()).toArray(),...p.locomotion.contacts[side]};
+    }
+    locomotion[name]={...p.locomotion,root:actor.mesh.position.toArray(),yaw:actor.mesh.rotation.y,feet,
+      legs:Object.fromEntries(['left','right'].map(side=>[side,p[side+'Leg']]))};
+  }
   const state={entry:i+1,phase,shot:opts.shot,leiEmotion:sl.emotion,leiJaw:lipLei(t).jaw,hongJaw:lipHong(t).jaw,
     armor:sl.armorT,shield:sl.shieldT,etch:sl.etchT,gauntlet:sh.gauntletT,
-    leiRoot:[sl.rootX,sl.rootZ],hongRoot:[sh.rootX,sh.rootZ]};
+    leiRoot:[sl.rootX,sl.rootZ],hongRoot:[sh.rootX,sh.rootZ],...(trial?{trial}:{} ),
+    ...(fightTrial?{thumbUp:{lei:lei.handThumbUp,hong:hong.handThumbUp}}:{}),...(Object.keys(locomotion).length?{locomotion}:{})};
   if(!capture)return state;
   renderer.render(stage.scene,camera);
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);
@@ -279,7 +313,7 @@ function draw(t,capture=true){
   if(phase==='hong_drop')drawSFX('轰！','#FF3B3B',es+dur*.55,es+dur*.95,t);
   if(phase==='clash1'){flash(t,es+dur*.65,.09,.55);drawSFX('铛——！','#3DFFC8',es+dur*.65,es+dur*.98,t);}
   if(phase==='clash2'){flash(t,es+dur*.62,.08,.4);if(u>.55)drawCard('flash',(u-.55)/.45);}
-  if(phase==='will_up'){flash(t,es+dur*.72,.12,.7);drawSFX('碎！','#FF3B3B',es+dur*.72,es+dur*.98,t);}
+  if(phase==='will_up'){flash(t,impactTime,trial?.067:.12,trial?.28:.7);if(!trial)drawSFX('碎！','#FF3B3B',impactTime,es+dur*.98,t);}
   if(opts.kind==='card')drawCard(opts.card,u);
   if(phase==='hook'&&u>.6)drawCard('end',(u-.6)/.4);
   state.subtitle=drawSubtitle(t);
@@ -290,6 +324,14 @@ window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);
 window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...entries.flatMap(e=>[e.startTime+.15,(e.startTime+e.endTime)/2,e.endTime-.10])]
   .filter(t=>t>0&&t<window.duration).sort((a,b)=>a-b);
+if(fightTrial){
+  const e=entries.find(e=>e.storyEvents[0].options.move==='will_up'),hit=e.startTime+(e.endTime-e.startTime)*.72;
+  const next=entries[entries.indexOf(e)+1];
+  window.fightTrialRange=[Math.ceil(e.startTime*30)/30,Math.floor((next?.startTime??e.endTime)*30)/30];
+  window.checkTimes=[...new Set([...window.checkTimes,...[-4.5,-3.6,-2.4,-1.0,-.35,-.20,-.1,-.04,0,.04,.1,.24,.45,.65,.78,1.0,1.5].map(x=>hit+x)])].sort((a,b)=>a-b);
+  window.checkTimes.push(next.startTime-.04,next.startTime+.04,next.startTime+.4);
+  window.checkTimes.sort((a,b)=>a-b);
+}
 await document.fonts.ready;window.ready=true;
 if(!new URLSearchParams(location.search).has('capture')){
   const audio=new Audio('./assets3d/mixed.wav');

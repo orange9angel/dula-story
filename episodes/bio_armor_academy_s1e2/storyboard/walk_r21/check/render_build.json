@@ -1,0 +1,32 @@
+{
+  "args": [
+    "--out",
+    "craft3d_full_r21.mp4",
+    "--board",
+    "storyboard/walk_r21/check",
+    "--trace",
+    "storyboard/walk_r21/check/render_trace.json"
+  ],
+  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e2\\output\\craft3d_full_r21.mp4",
+  "audioFile": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e2\\output\\craft3d_full_r11_2026_10_9.mp4",
+  "fightFinal": true,
+  "fightTrial": true,
+  "legacyPerformance": false,
+  "sourceOverride": null,
+  "characterLook": "nape-hair-r20",
+  "locomotion": "finite-footsteps-r21",
+  "sourceSha256": {
+    "character_look.js": "6d631e0525a6ff51f9ef3890fdd074c25e71023103e3f72824edca2fdddb67ea",
+    "character_finish.js": "e02c5f6c18b85054b51607df38cfc02c66037d473e03481be8ab15482ff671ba",
+    "character_details.js": "cc1c96ea574d0c0c29f6850a08b8e19544b020925aa47a3c234561213132ad26",
+    "characters.js": "44ce937cd01bb457c953b534fe5cbc23c1d57641f38ab6d052a17d8512af3b0b",
+    "performance.js": "a8ba611891fcc4af46f7f8a4054030c8b14eb122ea897a23d6f7657028388ff8",
+    "locomotion.js": "4326005d19cab103c00e0de451c09b2da47bc986c636645b105fbf148bfacc4b",
+    "fight_trial.js": "53ff83f26ba49f40bdd07c8324495472f16693b7c228aeab2e4723fb994ac345",
+    "fight_trial_face.js": "24637be5d8184d3cca2b3ba2ebcd4ec57a01ac402a0f309e1f724697a52c3d8e",
+    "viewer.js": "3b9c2c99ce99fcb0b0f04a31d12235dfeb83e4b783cfb02b7ea9f623d16e20d2",
+    "render.mjs": "42318fcfd4dde90fc96707e93beb5b362e38dc81d968f261c3f30502d529f17b",
+    "scenes/RuinsDuskScene.js": "3e407568bdb7ac2a2901b7ae3ada40ee1a1b0a6dcee588599dda86853d78b2a8",
+    "scenes/ContinuousBackdrop.js": "5f8e79dd24dd1af68c237da556fac88f53d404247266976090307a32752d135c"
+  }
+}

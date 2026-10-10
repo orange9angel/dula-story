@@ -1,0 +1,653 @@
+{
+  "label": "after",
+  "sourceOverride": null,
+  "sourceSha256": {
+    "character_look.js": "6d631e0525a6ff51f9ef3890fdd074c25e71023103e3f72824edca2fdddb67ea",
+    "character_details.js": "cc1c96ea574d0c0c29f6850a08b8e19544b020925aa47a3c234561213132ad26",
+    "characters.js": "44ce937cd01bb457c953b534fe5cbc23c1d57641f38ab6d052a17d8512af3b0b"
+  },
+  "video": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e2\\output\\hair_r20_after_orbit.mp4",
+  "videoMode": "360 degree camera orbit around fixed story pose",
+  "errors": [],
+  "shots": [
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "view": "front",
+      "filename": "lei_front.jpg",
+      "camera": {
+        "pos": [
+          0.017892625572567877,
+          1.4964709903603954,
+          -2.3798475769274954
+        ],
+        "look": [
+          -0.8322721776366504,
+          1.5421267119714859,
+          -2.005201927722273
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "view": "threequarter",
+      "filename": "lei_threequarter.jpg",
+      "camera": {
+        "pos": [
+          -0.45086210737327254,
+          1.5181907989948926,
+          -2.8532452228267524
+        ],
+        "look": [
+          -0.8322721776366504,
+          1.5421267119714859,
+          -2.005201927722273
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "view": "profile",
+      "filename": "lei_profile.jpg",
+      "camera": {
+        "pos": [
+          -1.0526197404192021,
+          1.556956500269458,
+          -2.9087787252081463
+        ],
+        "look": [
+          -0.8322721776366504,
+          1.5421267119714859,
+          -2.005201927722273
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "view": "rear_quarter",
+      "filename": "lei_rear_quarter.jpg",
+      "camera": {
+        "pos": [
+          -1.6963177828829394,
+          1.6107508624543114,
+          -2.3427518025927654
+        ],
+        "look": [
+          -0.8322721776366504,
+          1.5421267119714859,
+          -2.005201927722273
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "view": "back",
+      "filename": "lei_back.jpg",
+      "camera": {
+        "pos": [
+          -1.6800580269276844,
+          1.6236967695778624,
+          -1.6312641261509773
+        ],
+        "look": [
+          -0.8322721776366504,
+          1.5421267119714859,
+          -2.005201927722273
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "view": "front",
+      "filename": "hong_front.jpg",
+      "camera": {
+        "pos": [
+          3.0028522497377206,
+          1.7839510189122307,
+          -3.5184479589276507
+        ],
+        "look": [
+          3.9037357955848786,
+          1.7102865768037232,
+          -3.2988884298912313
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "view": "threequarter",
+      "filename": "hong_threequarter.jpg",
+      "camera": {
+        "pos": [
+          3.0870220075479184,
+          1.7677800221402398,
+          -2.857416922120167
+        ],
+        "look": [
+          3.9037357955848786,
+          1.7102865768037232,
+          -3.2988884298912313
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "view": "profile",
+      "filename": "hong_profile.jpg",
+      "camera": {
+        "pos": [
+          3.5310784504295203,
+          1.7351810186186245,
+          -2.446990096832359
+        ],
+        "look": [
+          3.9037357955848786,
+          1.7102865768037232,
+          -3.2988884298912313
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "view": "rear_quarter",
+      "filename": "hong_rear_quarter.jpg",
+      "camera": {
+        "pos": [
+          4.386659275969737,
+          1.6868997556292333,
+          -2.5042426165326455
+        ],
+        "look": [
+          3.9037357955848786,
+          1.7102865768037232,
+          -3.2988884298912313
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "view": "back",
+      "filename": "hong_back.jpg",
+      "camera": {
+        "pos": [
+          4.806688397448277,
+          1.672557354132883,
+          -3.07871326202534
+        ],
+        "look": [
+          3.9037357955848786,
+          1.7102865768037232,
+          -3.2988884298912313
+        ]
+      },
+      "nonfinite": 0
+    },
+    {
+      "t": 19.5,
+      "filename": "shot_19.5.jpg",
+      "state": {
+        "entry": 5,
+        "phase": "hong_declare",
+        "shot": "hong",
+        "leiEmotion": "worry",
+        "leiJaw": 0,
+        "hongJaw": 0.18957500000002203,
+        "armor": 0,
+        "shield": 0,
+        "etch": 0,
+        "gauntlet": 0,
+        "leiRoot": [
+          -0.5,
+          -2
+        ],
+        "hongRoot": [
+          3.9,
+          -3.3
+        ],
+        "thumbUp": {
+          "lei": {
+            "left": 0.46903205710246976,
+            "right": 0.46903205710246976
+          },
+          "hong": {
+            "left": 0.4159348343427848,
+            "right": 0.9600613134319644
+          }
+        },
+        "subtitle": "雷晓！拳斗部轰刚！把你手臂里那东西赌上，跟我打一场！"
+      }
+    },
+    {
+      "t": 24.5,
+      "filename": "shot_24.5.jpg",
+      "state": {
+        "entry": 6,
+        "phase": "lei_panic",
+        "shot": "lei",
+        "leiEmotion": "scared",
+        "leiJaw": 0.11434744292795074,
+        "hongJaw": 0,
+        "armor": 0,
+        "shield": 0,
+        "etch": 0,
+        "gauntlet": 0,
+        "leiRoot": [
+          -0.8496015861169535,
+          -2
+        ],
+        "hongRoot": [
+          3.9,
+          -3.3
+        ],
+        "thumbUp": {
+          "lei": {
+            "left": 0.9878643151072709,
+            "right": 0.9878607750376084
+          },
+          "hong": {
+            "left": 0.4159348343427848,
+            "right": 0.6866468893142922
+          }
+        },
+        "subtitle": "我、我不会打架……这东西也不是我想要的！"
+      }
+    },
+    {
+      "t": 33.5,
+      "filename": "shot_33.5.jpg",
+      "state": {
+        "entry": 7,
+        "phase": "hong_armor",
+        "shot": "hong",
+        "leiEmotion": "worry",
+        "leiJaw": 0,
+        "hongJaw": 0.08015101443118665,
+        "armor": 0,
+        "shield": 0,
+        "etch": 0,
+        "gauntlet": 1,
+        "leiRoot": [
+          -0.5,
+          -2
+        ],
+        "hongRoot": [
+          3.9,
+          -3.3
+        ],
+        "thumbUp": {
+          "lei": {
+            "left": 0.46903205710246976,
+            "right": 0.46903205710246976
+          },
+          "hong": {
+            "left": 0.290159141570382,
+            "right": 0.9792891762320974
+          }
+        },
+        "subtitle": "社团战的规矩——输的人，交出碎片。少废话，碎岩，上身！"
+      }
+    },
+    {
+      "t": 50,
+      "filename": "shot_50.0.jpg",
+      "state": {
+        "entry": 11,
+        "phase": "will_up",
+        "shot": "shout",
+        "leiJaw": 0.22403612756385913,
+        "hongJaw": 0,
+        "armor": 0,
+        "shield": 0,
+        "gauntlet": 1,
+        "leiRoot": [
+          -0.5,
+          -2
+        ],
+        "hongRoot": [
+          0.55,
+          -2.35
+        ],
+        "trial": {
+          "hitTime": 53.41008,
+          "landTime": 54.15008,
+          "contact": {
+            "x": 0.38,
+            "y": 1.185,
+            "z": -2.33
+          },
+          "rel": -3.410079999999998,
+          "contactError": 0.793684177907549,
+          "leiWrist": {
+            "x": -0.4484275398903527,
+            "y": 1.278490872033291,
+            "z": -2.1927109394329283
+          },
+          "leiFeet": {
+            "left": {
+              "x": -0.35999999999999993,
+              "y": 0.085,
+              "z": -2.16
+            },
+            "right": {
+              "x": -0.7,
+              "y": 0.085,
+              "z": -1.94
+            }
+          },
+          "hongFeet": {
+            "left": {
+              "x": 0.4617119368715513,
+              "y": 0.1,
+              "z": -2.46404042225907
+            },
+            "right": {
+              "x": 0.6582379628605299,
+              "y": 0.1,
+              "z": -2.237374321774284
+            }
+          },
+          "leiHip": 0.8287100641044542,
+          "hongHip": 0.94,
+          "reachClamp": {
+            "lei": 0,
+            "hong": 0
+          }
+        },
+        "thumbUp": {
+          "lei": {
+            "left": 0.8020097878791287,
+            "right": 0.8894725959347413
+          },
+          "hong": {
+            "left": 0.995512939960395,
+            "right": 0.879463704542004
+          }
+        },
+        "subtitle": "不是它……是我！右臂——听我一次！"
+      }
+    },
+    {
+      "t": 53.4,
+      "filename": "shot_53.4.jpg",
+      "state": {
+        "entry": 11,
+        "phase": "will_up",
+        "shot": "shout",
+        "leiJaw": 0.19178910717757902,
+        "hongJaw": 0,
+        "armor": 1,
+        "shield": 0,
+        "gauntlet": 1,
+        "leiRoot": [
+          0.01211918172494153,
+          -2.169049050278136
+        ],
+        "hongRoot": [
+          0.55,
+          -2.35
+        ],
+        "trial": {
+          "hitTime": 53.41008,
+          "landTime": 54.15008,
+          "contact": {
+            "x": 0.38,
+            "y": 1.185,
+            "z": -2.33
+          },
+          "rel": -0.010079999999999423,
+          "contactError": 0.0047445217246735285,
+          "leiWrist": {
+            "x": 0.3254237526748278,
+            "y": 1.184821507296097,
+            "z": -2.3149434804280284
+          },
+          "leiFeet": {
+            "left": {
+              "x": 0.22999999999999998,
+              "y": 0.08500000000000002,
+              "z": -2.29
+            },
+            "right": {
+              "x": -0.45732622428499903,
+              "y": 0.16206702039586113,
+              "z": -1.9783169119550004
+            }
+          },
+          "hongFeet": {
+            "left": {
+              "x": 0.4617119368715513,
+              "y": 0.1,
+              "z": -2.46404042225907
+            },
+            "right": {
+              "x": 0.6582379628605299,
+              "y": 0.1,
+              "z": -2.237374321774284
+            }
+          },
+          "leiHip": 0.75470660280783,
+          "hongHip": 0.94,
+          "reachClamp": {
+            "lei": 0,
+            "hong": 0
+          }
+        },
+        "thumbUp": {
+          "lei": {
+            "left": 0.6232098976917172,
+            "right": 0.9867277064609752
+          },
+          "hong": {
+            "left": 0.9954987667315831,
+            "right": 0.7409128369116434
+          }
+        },
+        "subtitle": "不是它……是我！右臂——听我一次！"
+      }
+    },
+    {
+      "t": 62,
+      "filename": "shot_62.0.jpg",
+      "state": {
+        "entry": 13,
+        "phase": "first_mark",
+        "shot": "mark",
+        "leiJaw": 0.5213,
+        "hongJaw": 0,
+        "armor": 1,
+        "shield": 0,
+        "etch": 0.4892630551488573,
+        "gauntlet": 0.55,
+        "leiRoot": [
+          0.015000000000000013,
+          -2.17
+        ],
+        "hongRoot": [
+          2.8499999999999996,
+          -2.85
+        ],
+        "thumbUp": {
+          "lei": {
+            "left": 0.9487274460929842,
+            "right": 0.942539180010629
+          },
+          "hong": {
+            "left": 0.9170842371883974,
+            "right": 0.9564237676435071
+          }
+        },
+        "subtitle": "这是什么……"
+      }
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "turn_left",
+      "turn": -0.65,
+      "pitch": 0,
+      "blink": 0,
+      "filename": "lei_turn_left.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "turn_right",
+      "turn": 0.65,
+      "pitch": 0,
+      "blink": 0,
+      "filename": "lei_turn_right.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "look_down",
+      "turn": 0,
+      "pitch": 0.25,
+      "blink": 0,
+      "filename": "lei_look_down.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "look_up",
+      "turn": 0,
+      "pitch": -0.22,
+      "blink": 0,
+      "filename": "lei_look_up.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "half_blink",
+      "turn": 0,
+      "pitch": 0,
+      "blink": 0.5,
+      "filename": "lei_half_blink.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "closed",
+      "turn": 0,
+      "pitch": 0,
+      "blink": 1,
+      "filename": "lei_closed.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "turn_left",
+      "turn": -0.65,
+      "pitch": 0,
+      "blink": 0,
+      "filename": "hong_turn_left.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "turn_right",
+      "turn": 0.65,
+      "pitch": 0,
+      "blink": 0,
+      "filename": "hong_turn_right.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "look_down",
+      "turn": 0,
+      "pitch": 0.25,
+      "blink": 0,
+      "filename": "hong_look_down.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "look_up",
+      "turn": 0,
+      "pitch": -0.22,
+      "blink": 0,
+      "filename": "hong_look_up.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "half_blink",
+      "turn": 0,
+      "pitch": 0,
+      "blink": 0.5,
+      "filename": "hong_half_blink.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "closed",
+      "turn": 0,
+      "pitch": 0,
+      "blink": 1,
+      "filename": "hong_closed.jpg",
+      "inspection": "Head rotation relative to unchanged body; not authored story motion"
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "nape_down",
+      "pitch": 0.25,
+      "filename": "lei_nape_down.jpg",
+      "inspection": "Rear-quarter head pitch relative to unchanged body"
+    },
+    {
+      "actor": "lei",
+      "t": 24.5,
+      "pose": "nape_up",
+      "pitch": -0.22,
+      "filename": "lei_nape_up.jpg",
+      "inspection": "Rear-quarter head pitch relative to unchanged body"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "nape_down",
+      "pitch": 0.25,
+      "filename": "hong_nape_down.jpg",
+      "inspection": "Rear-quarter head pitch relative to unchanged body"
+    },
+    {
+      "actor": "hong",
+      "t": 19.5,
+      "pose": "nape_up",
+      "pitch": -0.22,
+      "filename": "hong_nape_up.jpg",
+      "inspection": "Rear-quarter head pitch relative to unchanged body"
+    }
+  ]
+}

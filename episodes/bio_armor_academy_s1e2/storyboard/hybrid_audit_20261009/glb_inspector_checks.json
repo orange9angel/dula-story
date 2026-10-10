@@ -1,0 +1,41 @@
+[
+  {
+    "args": [
+      "D:\\opensource\\movie\\dula-story\\episodes\\transformers_beast_wars_s1e1\\assets\\models\\rock_smallA.glb"
+    ],
+    "expected": 0,
+    "actual": 0
+  },
+  {
+    "args": [
+      "D:\\opensource\\movie\\dula-story\\episodes\\transformers_beast_wars_s1e1\\assets\\models\\rock_smallA.glb",
+      "--require-skin"
+    ],
+    "expected": 2,
+    "actual": 2
+  },
+  {
+    "args": [
+      "D:\\opensource\\movie\\dula-story\\episodes\\transformers_beast_wars_s1e1\\assets\\models\\rock_smallA.glb",
+      "--require-morph"
+    ],
+    "expected": 2,
+    "actual": 2
+  },
+  {
+    "args": [
+      "D:\\opensource\\movie\\dula-story\\episodes\\transformers_beast_wars_s1e1\\assets\\models\\rock_smallA.glb",
+      "--max-triangles",
+      "1"
+    ],
+    "expected": 2,
+    "actual": 2
+  },
+  {
+    "args": [
+      "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e2\\tmp\\truncated_fixture.glb"
+    ],
+    "expected": 1,
+    "actual": 1
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "path": "D:\\opensource\\movie\\dula-story\\episodes\\transformers_beast_wars_s1e1\\assets\\models\\rock_smallA.glb",
+  "sha256": "df9fff9d711e61370e8df0caa2514c89b8f8a8dc6c6fafaf4eb2ec79c5ae07c1",
+  "bytes": 3044,
+  "generator": "UniGLTF-1.27",
+  "mesh_count": 1,
+  "unique_mesh_triangle_upper_bound": 16,
+  "triangle_count_scope": "Unique stored meshes, before instancing; strips may include degenerates",
+  "meshes": [
+    {
+      "index": 0,
+      "name": "Mesh rock_smallA",
+      "primitives": [
+        {
+          "vertices": 30,
+          "triangle_upper_bound": 3,
+          "mode": 4,
+          "material": 0,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ],
+          "morph_targets": 0
+        },
+        {
+          "vertices": 30,
+          "triangle_upper_bound": 13,
+          "mode": 4,
+          "material": 1,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ],
+          "morph_targets": 0
+        }
+      ],
+      "target_names": []
+    }
+  ],
+  "node_count": 2,
+  "skin_count": 0,
+  "skinned_mesh_nodes": [],
+  "joints_per_skin": [],
+  "max_morph_targets_per_primitive": 0,
+  "animations": [],
+  "materials": [
+    {
+      "name": "grass",
+      "alpha_mode": "OPAQUE",
+      "double_sided": false,
+      "has_base_color_texture": false,
+      "has_normal_texture": false
+    },
+    {
+      "name": "dirt",
+      "alpha_mode": "OPAQUE",
+      "double_sided": false,
+      "has_base_color_texture": false,
+      "has_normal_texture": false
+    }
+  ],
+  "texture_count": 0,
+  "required_extensions": [],
+  "external_resources": [],
+  "warnings": [
+    "No mesh node references a skin; no skeletal animation readiness established",
+    "No morph targets; facial animation requires another system or added targets"
+  ],
+  "limits": "Metadata only. Buffer contents, weights, world dimensions, deformation, collisions and visual quality are not validated.",
+  "requested_metadata_checks_passed": true,
+  "failures": []
+}

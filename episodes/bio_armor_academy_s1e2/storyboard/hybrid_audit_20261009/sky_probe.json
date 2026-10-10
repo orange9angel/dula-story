@@ -1,0 +1,42 @@
+{
+  "baseline": "current RuinsDuskScene, same textures and lights",
+  "study": "continuousBackdrop",
+  "camera": [
+    4,
+    2,
+    7
+  ],
+  "fov": 52,
+  "texture": "http://127.0.0.1:57566/assets3d/tex/backdrop_nosun.png",
+  "groundDiscVRange": [
+    -1.0399999618530273,
+    -1.0399999618530273
+  ],
+  "groundNormalColorSpace": "srgb",
+  "shots": [
+    {
+      "name": "horizon",
+      "pitch": -8,
+      "yaw": 0
+    },
+    {
+      "name": "top_seam",
+      "pitch": 18,
+      "yaw": 0
+    },
+    {
+      "name": "side",
+      "pitch": 22,
+      "yaw": 90
+    },
+    {
+      "name": "zenith",
+      "pitch": 78,
+      "yaw": 0
+    }
+  ],
+  "frames": 180,
+  "fps": 30,
+  "errors": [],
+  "video": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e2\\output\\sky_fusion_study_20261009.mp4"
+}

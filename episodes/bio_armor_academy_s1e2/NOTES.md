@@ -1,19 +1,50 @@
 # 《9章》S1E2《碎岩》— craft3d 工艺（程序化三维，零视频生成费）
 
-横屏 1280×720，viewer 端口 4214，输出 `output/craft3d_full.mp4`。
+当前认可版为 **R21（2026-10-10）**：横屏 1280×720、30fps、70 秒、2100 帧，
+viewer 端口 4214，成片 [output/craft3d_full_r21.mp4](output/craft3d_full_r21.mp4)。
+用户复看确认“效果好很多了”，并要求同步文档、skill 与 Git。
 工艺链路与 `yuki_airport_t2` 同构（自包含 viewer 链）；只读引用 /craft/（craft_trial 积木）
 与 S1E1 音频资产（拷贝入本集 assets3d/）。**不改**其他 episode / dula-engine / dula-assets。
 
-## 入口命令（都在 dula-story 下跑）
+## 当前交付与复用范围
 
-```bash
-node episodes/bio_armor_academy_s1e2/render.mjs --check   # 检查帧 → storyboard/shot_NN.jpg + seek 校验
-node episodes/bio_armor_academy_s1e2/render.mjs           # 全片 → output/craft3d_full.mp4
-node episodes/bio_armor_academy_s1e2/render.mjs --serve   # 交互 viewer，端口 4214
-.venv/Scripts/python.exe episodes/bio_armor_academy_s1e2/tools/make_story.py    # 估算时间轴
-.venv/Scripts/python.exe episodes/bio_armor_academy_s1e2/tools/synth_lines.py   # TTS（跳过已存在）
-.venv/Scripts/python.exe episodes/bio_armor_academy_s1e2/tools/build_audio.py   # 对齐+排时+视素+混音
+- 连续天空与已认可的反击表演自 R16 起接入正式入口；R19 统一肤色，R20 补齐耳后/
+  后颈头发，R21 修正走路方向、左右落脚、收步、后退站距和换脚转身。
+- [入场动作对比](output/walk_r21_detail_compare.mp4)：左 R20、右 R21，先正常速度再半速，
+  无音轨；[原剧情机位对比](output/walk_r21_scene_compare.mp4) 带原对白。
+  [最终动作抽帧](storyboard/walk_r21/final_walk_sheet.jpg) 与
+  [验证记录](storyboard/walk_r21/check/locomotion_validation.json) 随源码归档。
+- 制作方法沉淀在 [walk-director](../../../dula-skills/walk-director/SKILL.md)、
+  [direct-animation-craft](../../../dula-skills/direct-animation-craft/SKILL.md)、
+  [character-modeler](../../../dula-skills/character-modeler/SKILL.md) 和
+  [hybrid-craft-scene](../../../dula-skills/hybrid-craft-scene/SKILL.md)。
+  `locomotion.js` 和角色修型仍是本集实现；换角色需重测比例、落脚与重心，尚未晋升为共享动画资产。
+- 本轮未升级原冲锋跑动、整集对白手势、发束和衣物次级运动；用户认可的是当前改进版。
+- Git 同步源码、文档、改前源码样本、关键对照图和验证记录；完整视频按既有规则留在
+  本地 `output/`，中间渲染帧也不全量归档。历史目录记录的是对应版本的检查结果。
+
+## 当前入口（在本集目录运行）
+
+```powershell
+cd D:\opensource\movie\dula-story\episodes\bio_armor_academy_s1e2
+node render.mjs --serve
+# 复核现有 R21，无需重新渲染或生成音频
+python tools/check_fight_trial.py --full --board storyboard/walk_r21/check --video craft3d_full_r21.mp4
+python tools/check_locomotion.py storyboard/walk_r21/check/render_trace.json
+# 需要重建时，明确指定版本名和证据目录
+node render.mjs --check --out craft3d_full_r21.mp4 --board storyboard/walk_r21/check --trace storyboard/walk_r21/check/check_trace.json
+node render.mjs --out craft3d_full_r21.mp4 --board storyboard/walk_r21/check --trace storyboard/walk_r21/check/render_trace.json
 ```
+
+正式渲染直接复制本地 `output/craft3d_full_r11_2026_10_9.mp4` 的已认可 AAC 音轨；
+新检出环境需先恢复该视频及项目所需的本地音频资产。裸跑 `render.mjs` 仍沿用早期
+默认文件名/证据目录，因此重建 R21 使用上面的显式参数。当前同步未改动已验收的运行源码。
+构建清单的 SHA-256 针对当时文件原始字节；Git 换行归一化可能改变文本哈希，跨环境
+复现应保存本次构建清单并重新验收，不能直接沿用旧哈希和通过结论。
+`make_story.py`、`synth_lines.py`、`build_audio.py` 属于前期制片流程，复核 R21 不需要重跑。
+
+以下版本记录保留当时状态；“待评审”“未提交”等表述仅描述历史节点，当前认可状态以
+本节为准，提交状态以 Git 记录为准。旧版命令用于解释当时工艺，不能用当前源码重建旧版外观。
 
 ## Phase 1 状态（视觉骨架，无声，已目检两轮）
 
@@ -312,3 +343,279 @@ node episodes/bio_armor_academy_s1e2/render.mjs --serve   # 交互 viewer，端�
   （仍在 65-80 目标带边缘，可接受）。
 - QC：内容拼音级 8/8 全对（3 条 ❌ 均为估算窗超窗，实测重排吸收）。
 - 验证：42 检查帧 + 容差 seek 全绿；成片音轨相关 0.9997。
+
+## R14（2026-10-09）：殖装武器活效——从"静态甲"到"活装备"
+
+成片 `output/craft3d_full_r14.mp4`（70.0s；音轨不动）。全部效果为纯 (t,state)
+确定函数（viewer 每帧调 `updateWeaponFX`，方向性语义如"生长中"由谱面 phase
+显式传入），seek 校验不受影响。
+
+- **雷晓殖装活化**：接缝光路改加色混合 + 肘→腕能量行波（生长中 9Hz 加速，
+  平时 2.6Hz 呼吸，波峰泛白）；壳疹皮下微光改心跳双跳节律；新增**生长前锋环**
+  （armorT 蔓延波前的青绿光环，跟着波前走）；爪尖加能量光点；补**肘甲盖 +
+  手背甲**（全甲不再只有前臂五段）；黑甲加青绿返光呼吸（chitin emissive）。
+- **骨板盾力场**：两骨板间新增半透明能量膜（竖向渐变 + 扫描线 canvas 纹理，
+  offset 随时间流动），盾缘改加色脉动——格挡拍（37.45s）盾面读得出"力场"。
+- **轰刚碎岩拳甲活化**：裂缝改熔岩橙加色裂光（5 道，内热呼吸脉动，受击
+  hitT 瞬间炽亮 ×1.9）；拳峰新增三根碎岩棱刺；**生长拼合碎石**——碎岩上身
+  段 12 颗带余热橙光的岩片从四周飞来拼成拳甲（仅 hong_armor 生长段可见）。
+- **翻车修正**：①`mat()` 按色缓存共享（craft_trial/character3d.js），boss
+  熔光必须用 `rock.clone()` 独立材质，否则染到同色甲段；②暗色素岩碎石在
+  黄昏逆光里读成黑团，改独立亮材质 + 余热 emissive；③生长前锋环 r.052→.062
+  加粗加亮才在 talking 机位读得出。
+- 验证：42 检查帧 + 容差 seek 全绿（maxBad=0）；生长段（30.4–32.7s）与
+  意志全甲段（50.8–53.0s）单独出片抽帧复查拼合碎石/生长环成立。
+- 教训写回 character-modeler（dula-skills）。
+
+## R15（2026-10-09）：人物形象精修——去"白板脸"与"泳帽头"
+
+成片 `output/craft3d_full_r15.mp4`（70.0s；音轨不动）。动机：监制判"人的形象
+还比较粗糙"。全部改在 `character_details.js`（脸纹理/头发/颈）与 `characters.js`
+（轰刚嘴位），几何骨架/动画/时间轴不动。
+
+- **脸部体块**：脸纹理加发际线下压影 AO + 双颊体块阴影（轰刚偏下颔、更重）
+  + 雷晓腮红——告别平涂白板脸。
+- **雷晓眼型放大**：眼高 24→27、眼宽 44→48、上睫线 4.5→6、外眼角两根下睫、
+  虹膜/瞳孔/高光同步放大；眉 7→9 加深 #4a3428（原来近景几乎看不见眉）。
+- **轰刚寸头**：泳帽感根修——壳面 44 根放射短茬（沿壳法线、确定性 LCG）+
+  鬓角片 + **发际线画进脸纹理**（壳缘在纹理 canvas y≈168，碎茬只能落
+  160-185 窄带；第一版放 y≈128 全被发壳盖住不出图）。浓眉 13→17。
+- **翻车修正**：3D 发际线碎茬管悬浮在额皮上读成刻度线，撤掉改画进纹理
+  （贴曲面、随头型弯曲、零深度问题）。
+- **轰刚嘴位**：mouthRig y .008→.024（原贴在下巴尖读成悬浮黑痣）；颈加粗
+  .058→.062 撑住大头。
+- 验证：自由机位面部特写逐轮对照（hong 33.5s / lei 62.0s）；42 检查帧 +
+  容差 seek 全绿（maxBad=0）。
+
+## R16（2026-10-09 晚）：连续天空接入正片 + 动画化头 + 已认可表演设为默认
+
+成片 `output/craft3d_full_r16.mp4`（70.0s、2100 帧、30fps、17.97MB；
+AAC 包流与 R11 逐字节相同，直接流复制）。本轮落实 `HYBRID_REVIEW.md`
+诊断的三条主线；构建溯源写入 `storyboard/character_look_r16/check/`
+（check_build.json/render_build.json 记录 7 个源文件 sha256 与全部参数）。
+
+- **天空融合落地**：`scenes/ContinuousBackdrop.js` 从离片试验接入生产——
+  `RuinsDuskScene.applyHybrid` 默认 `continuousSky`，原圆柱+天色带+天穹球壳
+  组合隐藏，低仰角保持原圆柱投影构图、高处对源图顶部区域二维低通后连续
+  过渡到天顶色，任意仰角无硬接缝（R8 球壳方案退役）。`clampSky` 保留作构图
+  纪律但不再是遮缝手段。
+- **动画化头（animated-head-r16）**：`character_look.js`——参数化雕刻头型
+  （轮廓车削 + 鼻部/唇高斯凸出，UV 正脸占中段防拉伸）+ 程序化发壳/发束，
+  五官画在同一张 1024 canvas 上：连续视线（lookAtWorld）、量化眨眼眼皮遮盖、
+  眉形与情绪/表演通道联动、嘴型由视素驱动。`character_details.js` 的
+  `detailedHead` 默认改走 `animatedHead`；`?legacy-look=1` 可回退 R15 头。
+  审查工具：`tools/review_character_look.mjs`（同机位 before/after 肖像 +
+  转头/仰视/俯视/半眨/全闭眼姿势组）、`tools/compare_character_look.py`
+  （对照表 `portrait_comparison.jpg`/`head_motion_checks.jpg` + 10s 对比片
+  `output/character_look_r16_compare.mp4`）。
+- **已认可表演设为默认**：`render.mjs` 默认即 fight-final（R13 监制认可的
+  反击表演 + 全片 fight_trial 状态机），`--legacy-performance` 回退旧表演；
+  will_up 段的命中点/裂缝/残骸/尘环锚定新接触位（.38,1.185,-2.33），
+  默认视线互看对手、 authored 表情通道优先，白闪/闪光/拟声字在试片段收敛。
+- **翻车修正（本轮新发现）**：ContinuousBackdrop 的 `fract(atan)·repeat` UV
+  在回绕方位画出 2px 竖直亮缝（屏幕导数突变 → mip 选最糊级 → 整图平均色）。
+  修法：梯度按周期解缠（`d -= repeat*round(d/repeat)`）后 `textureGrad`
+  显式采样。教训写回 hybrid-craft-scene。
+- 验证：`tools/probe_hybrid_sky.mjs` 4 机位 + 180 帧无错误；62 检查帧 +
+  seek 全绿（maxBad=0）；`check_fight_trial.py --full`（r16 board）全过——
+  命中前受害者零位移、拳端标定误差 0、恢复期支撑脚零滑移、切镜根位置连续、
+  护拳拇指朝向正确、音轨包流 = R11；成片 ffprobe 完好，53.07s 原接缝列
+  像素扫描平滑。局限沿用 FIGHT_TRIAL.md：标定/IK 检查不认证手部网格碰撞、
+  重量感或商业动画质量；前两次冲锋与其他对白表演未推广，仍走谱面动作。
+- git 仍未提交（R2 起全部轮次，等监制评审）。
+
+## R17（2026-10-09 晚）：动作根修——步态滑冰与跳跃假
+
+成片 `output/craft3d_full_r17.mp4`（70.0s、18.0MB；音轨不动，AAC 包流仍 = R11）。
+动机：监制判"动作不自然，比如走路和跳跃"。根因均在源码（非审美分歧）：
+
+- **步态滑冰**：旧 buildPose 步态 `ph=t*4.6` 用 wall-time 驱动（与根位移的
+  ease 脱钩），且双脚 z 向**同相**摆动（剪刀腿原地漂），步幅 .18m 对实速
+  ~1m/s。重写为 `gaitFeet()`：相位=已走路程/步长（与根位移同源），支撑脚
+  在**世界空间钉住**、摆动脚抛物线换步 + 脚背蹬伸（蹬地→勾脚跟着地）、
+  髋部双支撑期微沉。数值自检：支撑脚滑移 8.9e-16m、帧间脚跳变 ≤2.6cm、
+  4.33m 走 8-9 步交替。walk_in / lei_panic 后退步 / charge1·2（run 档）
+  / hook 退场全部接入；fight_trial 的 setPose 包装在非格斗拍也应用脚背 pitch。
+- **跳跃假**：旧 hong_drop 用 ease 全程 + sin 弧（水平竖直都匀速感），空中腿
+  直挺。重写：预备下蹲摆臂（u<.10）→ 抛体飞行（水平**匀速**、竖直 v0=1.2/
+  g=9.8、等效实秒 T=.689，落得越来越快）+ 空中收腿（q<.7）→ 落地前伸腿 →
+  触地深蹲 -.26 回弹 + 宽站距。触地仍在 u=.55，与 viewer 震尘环/「轰！」
+  原锚点一致，音效时间不动。
+- **登场浮起**：条目边界 0.3s 缘插值把上一拍（visible=false）的 air=0 混入，
+  轰刚从地里浮起再升上管顶。改为上一拍不可见则跳过插值，直接定格新拍起点。
+- 验证：三段局部探片片（probe_walk/jump/charge_r17.mp4）逐帧条带目检——
+  走路真迈步（膝盖屈伸、脚平贴地）、跳跃蹲伏/收腿/伸腿/深蹲缓冲成立、
+  冲锋跑步接 punch 成立；62 检查帧 + seek 全绿（maxBad=0）；
+  `check_fight_trial.py --full`（r17）全过；成片 ffprobe 完好。
+- 已知边界：旧表演拍（对白手势等）仍未推广到 fight 状态机；R16 的
+  fract 接缝修复与本轮动作修复互不影响（同一 r17 成片包含两者）。
+- 教训写回 direct-animation-craft（dula-skills）。
+- git 仍未提交（等监制评审）。
+
+## R18（2026-10-09 晚）：身体人形化 + 走路上身动态
+
+成片 `output/craft3d_full_r18.mp4`（70.0s、18.0MB；音轨不动，AAC = R11）。
+动机：监制判"走路好一点了但还不自然，身体不太像人体"。
+
+- **躯干人形化**（characters.js）：旧躯干是等宽椭圆直管（正面读成纸板）。
+  雷晓新断面：骨盆 .127→胯 .143→**收腰 .127**→胸 .149→肩斜 .130→颈根 .064；
+  轰刚：胯 .184→腰 .169→**胸 .207**→肩斜→颈根，外套前襟/背板同步加宽包住
+  新胸廓（旧背板比新胸窄，侧面会穿出）。双肩加三角肌盖（扁椭球遮关节断面）。
+  腿锥度四段→五段（大腿/膝/小腿/踝），直筒感消失。雷晓颈加粗 .044→.048。
+- **走路上身三件套**（performance.js buildPose 走路分支）：①横向重心摆动
+  倒向支撑脚（.5×hipHalf，先摆根再换算脚局部坐标——世界钉脚不受影响）；
+  ②肩线反向扭转（肩点与手目标绕躯干竖轴同转，头 headYaw 反向 1.1 倍稳定）；
+  ③前倾 .03（跑 .09）。起止按剩余距离 18cm 渐出，到位不瞬跳。轰刚退场
+  走路补反相摆臂（±.16m，与步态同相源）。
+- 验证：四个定点机位改造前后对照（胸腰胯/三角肌成立）；走路探片 12 帧条带
+  （迈步+重心摆动+前倾成立）；62 检查帧 + seek 全绿（maxBad=0）；
+  `check_fight_trial.py --full`（r18）全过；成片 ffprobe 完好；抽帧
+  37.45s 格挡 / 55.6s 收场复查无回归。
+- 教训写回 character-modeler（dula-skills）。
+- git 仍未提交（等监制评审）。
+
+## 2026-10-10：人物造型流程与当前完整样板
+
+本次复核输出 `output/craft3d_character_look_20261010.mp4`，使用当前角色、
+表演和连续天空，包含工作区已有的 R17/R18 身体与步态调整。新版头部完成领口
+低头接触、闭嘴情绪与转面复核；保留原剧情与音轨。本条不替代以上历史版本记录。
+
+- 70 秒、1280×720、30fps、2100 帧；反击检查通过，AAC 包流与 R11 完全相同。
+- 新证据单独放 `storyboard/character_look_20261010/`：24 张头像/剧情/头部活动图、
+  同机位 `portrait_comparison.jpg`、`head_motion_checks.jpg`、最终视频抽帧与
+  `check/validation.json`。62 个顺序/seek 检查通过；check/render 的 10 个关键
+  源文件 SHA256 一致，涵盖角色、performance、场景与渲染入口。
+- `output/character_look_compare_20261010.mp4` 为原成片 R15 与当前成片的
+  17.5–27.5 秒对白并排对照；它呈现两版本整体画面差异，并非仅头部材质的隔离实验。
+- 人物造型制作与验收已补入 `dula-skills/direct-animation-craft/` 的
+  `references/character-look-development.md`，入口与 UI 描述同步更新，
+  `cel-look` 补记凹陷面部描边内漏教训；skill 提交 `5f1ecd6`。
+- 当前面部仍以曲面纹理和小幅控制为主；肩部接缝、衣物体积及大幅面部变形仍有
+  程序模型的局限。检查通过不等于整集已达到商业动画的造型与表演水准。
+
+复现（本集目录）：
+
+```powershell
+node render.mjs --check --out craft3d_character_look_20261010.mp4 --board storyboard/character_look_20261010/check --trace storyboard/character_look_20261010/check/check_trace.json
+node render.mjs --out craft3d_character_look_20261010.mp4 --board storyboard/character_look_20261010/check --trace storyboard/character_look_20261010/check/render_trace.json
+python tools/check_fight_trial.py --full --board storyboard/character_look_20261010/check --video craft3d_character_look_20261010.mp4
+node tools/review_character_look.mjs after --board storyboard/character_look_20261010
+python tools/compare_character_look.py --board storyboard/character_look_20261010 --video craft3d_character_look_20261010.mp4 --label CURRENT --out character_look_compare_20261010.mp4
+```
+
+## R19（2026-10-10）：统一肤色与人物细节修正
+
+用户复看指出脸上肤色“一片一片”，其他细节仍有差距。根因是 R16 头部把两颊
+与额头阴影硬画成固定深色区域，耳/颈/手臂还混用了不同肤色与受光材质。
+上一版的外观评价不等于用户已认可，不作为本轮黄金样板。
+
+- `character_finish.js` 统一脸、耳、颈、手臂与裸手的皮肤色板/材质路径；
+  脸部取消额头横带与双颊多边形，只在下颌与颈部保持轻量明度差。
+- `character_look.js` 将正面五官 UV 与常量后脑 UV 在侧缝处分开连接，避免
+  一条三角形横跨五官图；鼻尖凸出减弱、下颌前移并修下缘、柔化眼口线条与短发冠部。
+- 衣料改为较柔和的连续明暗，移除独立肩球，袖根接入胸廓，隐藏袖内上臂根；
+  领片减薄和缩小，减少几何接头与硬切面。身体/动作谱与装备语义沿用当前版本。
+- 成片 `output/craft3d_full_r19.mp4`：70 秒、2100 帧、30fps、1280×720。
+  原 AAC 包流与 R11 完全相同，完整解码无错误；62 个检查点/逆序 seek 与
+  反击接触、支撑脚、切镜连续性检查通过。check/render 的 11 个源文件哈希一致。
+- `storyboard/skin_refine_20261010/` 保留改前源码与同机位样板、改后 24 张检查图、
+  `portrait_comparison.jpg`、`head_motion_checks.jpg`、最终 MP4 抽帧和验证记录。
+  正脸三个脸颊采样点最大通道差从 40 降为 0，仅用于证明该处拼色已去除，不衡量美术质量。
+- 带对白近景对比 `output/character_skin_r19_closeup_compare.mp4`（8 秒）：
+  左改前、右改后，依次取轰刚 19–23 秒与雷晓 23.5–27.5 秒，用相同世界机位。
+  改前使用本轮保存的三份角色源码回放。实际剧情机位对比另见
+  `output/character_skin_r19_scene_compare.mp4`（10 秒）。
+- 尚有差距：衣物褶皱、全身关节变形、发束次级运动和大幅面部变形仍较简化。
+  数值通过只证明已检查项目，不能认证达到商业动画质量。
+- 教训写回 `cel-look` 和 `direct-animation-craft/references/character-look-development.md`。
+
+复现（本集目录，独立输出与证据路径）：
+
+```powershell
+node render.mjs --check --out craft3d_full_r19.mp4 --board storyboard/skin_refine_20261010/check --trace storyboard/skin_refine_20261010/check/check_trace.json
+node render.mjs --out craft3d_full_r19.mp4 --board storyboard/skin_refine_20261010/check --trace storyboard/skin_refine_20261010/check/render_trace.json
+python tools/check_fight_trial.py --full --board storyboard/skin_refine_20261010/check --video craft3d_full_r19.mp4
+node tools/review_character_look.mjs after --board storyboard/skin_refine_20261010 --baseline storyboard/skin_refine_20261010/before/review.json --video output/skin_r19_after_portraits.mp4
+python tools/compare_character_look.py --board storyboard/skin_refine_20261010 --before storyboard/skin_refine_20261010/before --before-video craft3d_character_look_20261010.mp4 --before-label BEFORE --video craft3d_full_r19.mp4 --label AFTER --out character_skin_r19_scene_compare.mp4
+```
+
+## R20（2026-10-10）：后发覆盖、耳后衔接与后颈轮廓
+
+用户确认肤色正常，但认为两人头发像假发、后面太短。本轮沿用 R19 皮肤和脸型，
+重做 `character_look.js` 中后发的覆盖范围与体积关系。
+
+- 雷晓的后发延伸到后颈，增加交叠且长短错开的宽发束，接通耳后发束；轰刚保留
+  短发识别点，以贴近头型的后发和短收边覆盖原先露出的下后脑。
+- 后发截面跟随现有头部轮廓逐渐收紧，避免单纯延长椭球造成膨大发团；根部颜色
+  与主体过渡，减弱规则竖条和独立发片感。抬头时发现的后颈露肤缺口已修正。
+- R19 原始三份角色源码与 16 张基线图保存在 `storyboard/hair_r20/before/`。
+  改后 32 张图包含每人五视图、剧情帧、左右转头、俯仰和后颈检查；10 个静态
+  头像相机与基线完全一致。`before_orbit/` 另保存改前的俯仰与环绕复核，未覆盖基线。
+- `output/hair_r20_orbit_compare.mp4`：8 秒、240 帧，左 R19、右 R20，先轰刚后
+  雷晓，各环绕一周，无音轨。它是固定剧情姿态的相机环绕，不代表发束动态。
+  静态侧后对比为 `storyboard/hair_r20/rear_comparison.jpg`；原剧情对白机位的
+  10 秒对比为 `output/hair_r20_scene_compare.mp4`。
+- 新整片 `output/craft3d_full_r20.mp4`：70 秒、2100 帧、1280×720、30fps。
+  完整解码无错误；62 个顺序/seek 检查及原反击、支撑脚、切镜连续性检查通过，
+  AAC 包流与 R11 完全相同。11 个 check/render 源文件哈希与实际文件一致；相对
+  R19 仅角色外观文件与渲染版本标签改变。最终 MP4 的 19.5/24.5/53.4/62 秒抽帧
+  已复看，证据见 `storyboard/hair_r20/final_checks.jpg` 与 `check/validation.json`。
+- 仍有边界：后发造型改善不等于头发动态完善，本轮没有增加次级摆动或发束物理。
+  制作教训已写入人物造型 skill 参考文件并提交 `54ccab5`；用户随后认可形象改善，
+  本次随 R21 一起同步内容仓库。
+
+复现（本集目录）：
+
+```powershell
+node render.mjs --check --out craft3d_full_r20.mp4 --board storyboard/hair_r20/check --trace storyboard/hair_r20/check/check_trace.json
+node render.mjs --out craft3d_full_r20.mp4 --board storyboard/hair_r20/check --trace storyboard/hair_r20/check/render_trace.json
+python tools/check_fight_trial.py --full --board storyboard/hair_r20/check --video craft3d_full_r20.mp4
+node tools/review_character_look.mjs before_orbit --board storyboard/hair_r20 --baseline storyboard/hair_r20/before/review.json --source storyboard/hair_r20/before/source --orbit-video output/hair_r20_before_orbit.mp4
+node tools/review_character_look.mjs after --board storyboard/hair_r20 --baseline storyboard/hair_r20/before/review.json --orbit-video output/hair_r20_after_orbit.mp4
+python tools/compare_character_look.py --board storyboard/hair_r20 --before storyboard/hair_r20/before --before-video craft3d_full_r19.mp4 --before-label R19 --video craft3d_full_r20.mp4 --label R20 --out hair_r20_scene_compare.mp4 --portraits lei_rear_quarter hong_rear_quarter --portrait-out rear_comparison.jpg
+```
+
+## R21（2026-10-10）：走路方向、有限落脚、起停与转身
+
+用户认可 R20 形象比原来好，继续指出走路奇怪并询问运动 skill。本轮使用现有
+`walk-director` 和 `direct-animation-craft`，保留 R20 角色、场景及原音轨。
+基线源码保存在 `storyboard/walk_r21/before/source/`，基线成片为 R20。
+
+- 诊断：雷晓入场时根向左前进，yaw 却从 -1.9 持续转向 1.86，身体逐渐反向；
+  原步态还把路径左法向用作角色右向，造成左右落脚轨道交叉。同脚循环的路程
+  过短导致碎步，循环截断后双脚突然回默认站位。仅钉脚数值为零不说明步态成立。
+- 新增本集 `locomotion.js`，排有限的左右落脚、末步收脚和原地换脚转身。
+  同脚跨步与交替单步分别计算；距离沿路径投影，重心侧摆不再改动步态进度。
+- 雷晓沿行进方向完成入场，再停步转向；身体经过支撑脚时略微升起，肩根、手
+  目标与躯干共用变换。左手靠书包带，右臂随步反向摆动。慌张后退继续面向对方，
+  由摆动脚逐步加宽落点，避免窄距后退时鞋靠得过近。
+- 轰刚退场先起身、换脚转向，再前进；提高站起后的髋高，减少持续屈膝。
+  跨镜角度用最短圆弧，避免等价角度差 2π 被插值成整圈旋转。
+- `viewer.js` 导出实际模型的世界脚位、鞋朝向、接触段、髋膝踝和鞋底最低点。
+  `tools/check_locomotion.py` 覆盖雷晓前进/转身/后退和轰刚转身/前进五类样本。
+  支撑位移最大约 1.2e-16 m，骨长误差为浮点噪声；正常前进朝向最大偏差约
+  11.8°（含重心侧摆）。鞋底沿用原模型约 1 cm 的地面嵌入容差，未声称实现完整碰撞。
+- 新整片 `output/craft3d_full_r21.mp4`：70 秒、2100 帧、1280×720、30fps。
+  完整解码无错误，62 个顺序/seek 检查、原反击与切镜检查通过；AAC 包流仍与
+  R11 完全一致。check/render/current 的 12 个源文件哈希一致，R20 角色和场景
+  七份源文件哈希未变。证据在 `storyboard/walk_r21/check/` 与 `source_validation.json`。
+- `output/walk_r21_detail_compare.mp4` 是同世界固定机位入场对照，左 R20、右
+  R21，先正常速度再半速（约 18.9 秒，无音轨）；已检查相应时间序列抽帧。
+  `output/walk_r21_scene_compare.mp4` 为原剧情机位 7.4–13.3 秒对照，带原对白。
+  后退和退场另有 `backstep_r21_detail.mp4` / `leave_r21_detail.mp4` 检查机位。
+- 边界：本轮聚焦走路、起停和转身，未升级原冲锋跑动、整集对白手势或次级发束/
+  衣物运动。数值检查与抽帧不等于商业动画观感认证；用户复看后确认“效果好很多了”。
+  程序步态工艺补入 `walk-director/references/procedural-footsteps.md`，skill 提交
+  `d483a29`、`939abf6`；本次补齐 skill 入口、复用边界与历史建议修正，并同步内容仓库。
+
+复现（本集目录）：
+
+```powershell
+node render.mjs --check --out craft3d_full_r21.mp4 --board storyboard/walk_r21/check --trace storyboard/walk_r21/check/check_trace.json
+python tools/check_locomotion.py storyboard/walk_r21/check/check_trace.json
+node render.mjs --out craft3d_full_r21.mp4 --board storyboard/walk_r21/check --trace storyboard/walk_r21/check/render_trace.json
+python tools/check_fight_trial.py --full --board storyboard/walk_r21/check --video craft3d_full_r21.mp4
+python tools/check_locomotion.py storyboard/walk_r21/check/render_trace.json
+node render.mjs --range 7.4,13.7 --camera "1.55,1.15,2.6,1.55,.83,-1.3,48" --out walk_r21_detail_after.mp4 --board storyboard/walk_r21/detail_after --trace storyboard/walk_r21/detail_after/trace.json
+node render.mjs --range 7.4,13.7 --camera "1.55,1.15,2.6,1.55,.83,-1.3,48" --source storyboard/walk_r21/before/source --out walk_r21_detail_before.mp4 --board storyboard/walk_r21/detail_before
+```
