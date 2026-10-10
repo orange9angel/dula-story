@@ -149,6 +149,10 @@ dula-story/
 > - 角色间启用 `BodyCollisionGuard` 与 `JointConstraintSystem`，会互相推开并限制关节穿模。
 >
 > 自动防护**不保证构图美观**，只保证不穿模；所以 `.story` 仍需主动遵守下述规则。
+>
+> **自包含 viewer 链（如 craft3d 各集）不经过引擎，没有上述自动防护**——
+> 须自建碰撞代理与数值探针（交互窗口期断言 + 多机位抽帧），纪律与最小距离表见
+> `dula-skills/direct-animation-craft/references/contact-and-hands.md`。
 
 #### 1. 角色 vs 家具/场景避碰
 - **RoomScene 默认家具**：椅子约在 `z=-1.5`、书桌约在 `z=-3.0`、床在 `x=7`、衣柜在 `x=-7`。
