@@ -4,9 +4,16 @@
   "steps": [
     {
       "name": "render_check",
+      "cmd": "node render.mjs --check --board storyboard/gate --trace storyboard/gate/trace.json --q &probe-door=1&probe-bento=1",
+      "returncode": 0,
       "passed": true,
-      "skipped": true,
-      "note": "reuse D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\storyboard\\gate\\trace.json"
+      "tail": [
+        "check 1500/2130",
+        "check 1800/2130",
+        "check 2100/2130",
+        "gait trace: D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\storyboard\\gate\\trace.json (2130 frames)",
+        "check complete: 75 frames"
+      ]
     },
     {
       "name": "seek_determinism",
@@ -58,7 +65,7 @@
       "returncode": 0,
       "passed": true,
       "tail": [
-        "http://127.0.0.1:65484/viewer.html",
+        "http://127.0.0.1:52722/viewer.html",
         "shots complete: 28 frames -> D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\storyboard\\gate\\shots",
         "check complete: 0 frames"
       ]
@@ -69,9 +76,10 @@
       "returncode": 0,
       "passed": true,
       "tail": [
-        "door_mat: mean 4.4 max 140.0 frac 0.01832",
-        "  fence_far_west: mean 18.85 max 233.0 frac 0.23325",
-        "  fence_far_east: mean 9.67 max 234.0 frac 0.10587",
+        "  fence_far_west: mean 25.62 max 215.0 frac 0.3406 step x1.02@5.9",
+        "  fence_far_east: mean 12.58 max 240.0 frac 0.14403 step x1.02@3.3333333333333335",
+        "  fence_door_west: mean 27.61 max 324.0 frac 0.29403 step x1.32@14.0",
+        "  fence_door_east: mean 28.94 max 320.0 frac 0.26825 step x1.08@14.0",
         "flicker: all regions stable"
       ]
     }

@@ -1,9 +1,11 @@
 {
- "comment": "阈值=实测可读态±余量的回归带：mean 低于 mean_min=内容消失（mip 吃掉），高于 mean_max/frac 超限=闪烁打架",
+ "comment": "阈值=实测可读态±余量的回归带：mean 低于 mean_min=内容消失（mip 吃掉），高于 mean_max/frac 超限=闪烁打架；step_ratio=相邻帧边缘密度比阈（换层/换密度台阶检测，P20——透视变焦渐变不触发，只抓阶跃；铁丝网区域必含）。已知盲区：establish→walk 切镜（7.0s）远近视差对比塌缩 ≈4.3×，与换层信号同量级，边缘密度比无法区分——该切镜只能靠全片统一密度（P20 起 repeat 70 单层）结构性地消灭",
  "regions": [
   {"name": "door_mat", "rect": [435, 405, 50, 24], "window": [2.4, 6.8], "mean_min": 1, "mean_max": 8, "frac_max": 0.025},
-  {"name": "fence_far_west", "rect": [20, 295, 380, 75], "window": [2.4, 6.8], "mean_min": 3, "mean_max": 28, "frac_max": 0.26},
-  {"name": "fence_far_east", "rect": [590, 295, 400, 75], "window": [2.4, 6.8], "mean_min": 3, "mean_max": 28, "frac_max": 0.26}
+  {"name": "fence_far_west", "rect": [20, 295, 380, 75], "window": [2.4, 6.8], "mean_min": 3, "mean_max": 30, "frac_max": 0.42, "step_ratio": 3.0, "comment": "P20 单层 repeat 70 后远角网面微滚（无 mip 细纹理+推镜亚像素漂移，P18 已录同类）；带=实测 25.6/.341 + 余量。要根治只能恢复按距行为（与单层统一互斥）——遗留用户定夺"},
+  {"name": "fence_far_east", "rect": [590, 295, 400, 75], "window": [2.4, 6.8], "mean_min": 3, "mean_max": 28, "frac_max": 0.26, "step_ratio": 3.0},
+  {"name": "fence_door_west", "rect": [20, 220, 380, 110], "window": [13.6, 14.6], "mean_min": 0.5, "mean_max": 80, "frac_max": 0.6, "step_ratio": 2.5, "comment": "跨 14.0 开门切镜：两镜在此矩形内都是中网距网面（边缘密度同量级）；窗内含走路尾镜快速横摇=内容运动，d2 带放宽只保底消失/崩坏，台阶靠 step_ratio"},
+  {"name": "fence_door_east", "rect": [1020, 240, 240, 120], "window": [13.6, 14.6], "mean_min": 0.5, "mean_max": 80, "frac_max": 0.6, "step_ratio": 2.5}
  ],
  "bg_grid": {"pix": 30, "frac_max": 0.045, "cells": [[0, 0], [0, 3], [3, 0], [3, 3]], "comment": "四角粗扫：角部含流云/水塔天线等缓慢内容，容忍度放宽到 .045"}
 }

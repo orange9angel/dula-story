@@ -1,0 +1,100 @@
+{
+  "video": "output\\craft3d_full.mp4",
+  "frames": 2130,
+  "regions": [
+    {
+      "name": "door_mat",
+      "window": [
+        2.4,
+        6.8
+      ],
+      "mean": 4.41,
+      "max": 140.0,
+      "frac_over": 0.01835
+    },
+    {
+      "name": "fence_far_west",
+      "window": [
+        2.4,
+        6.8
+      ],
+      "mean": 25.62,
+      "max": 215.0,
+      "frac_over": 0.3406,
+      "step_peak": 1.02,
+      "step_at": 5.9
+    },
+    {
+      "name": "fence_far_east",
+      "window": [
+        2.4,
+        6.8
+      ],
+      "mean": 12.58,
+      "max": 240.0,
+      "frac_over": 0.14403,
+      "step_peak": 1.02,
+      "step_at": 3.3333333333333335
+    },
+    {
+      "name": "fence_door_west",
+      "window": [
+        13.6,
+        14.6
+      ],
+      "mean": 27.61,
+      "max": 324.0,
+      "frac_over": 0.29403,
+      "step_peak": 1.32,
+      "step_at": 14.0
+    },
+    {
+      "name": "fence_door_east",
+      "window": [
+        13.6,
+        14.6
+      ],
+      "mean": 28.94,
+      "max": 320.0,
+      "frac_over": 0.26825,
+      "step_peak": 1.08,
+      "step_at": 14.0
+    }
+  ],
+  "bg": [
+    {
+      "cell": [
+        0,
+        0
+      ],
+      "mean": 2.49,
+      "frac_over": 0.02205
+    },
+    {
+      "cell": [
+        0,
+        3
+      ],
+      "mean": 4.02,
+      "frac_over": 0.03377
+    },
+    {
+      "cell": [
+        3,
+        0
+      ],
+      "mean": 2.39,
+      "frac_over": 0.01629
+    },
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "mean": 2.21,
+      "frac_over": 0.01528
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

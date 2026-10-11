@@ -316,6 +316,7 @@
     "subject": "hong",
     "parts": [
      "rightHand",
+     "rightArm",
      "sleeve_right"
     ],
     "obstacle": "hongBoxA",
@@ -324,7 +325,7 @@
      13.9,
      17.2
     ],
-    "note": "同上（下层盒）"
+    "note": "同上（下层盒）；P20：右肘极外偏后前臂管擦过盒角 <1cm，并入本擦碰声明"
    },
    {
     "subject": "lei",
@@ -856,10 +857,11 @@
    68
   ],
   "frame_min": 100,
-  "embed_margin": 0.015,
+  "embed_margin": 0.02,
+  "elb_ex_max": 0.02,
   "sep_max": 0.035,
   "sep_deg_max": 30,
-  "comment": "上肢管 vs 躯干椭圆截面：g<-(管半径+15mm)=陷入；分离=静息帧上臂侧向外摆角>sep_deg_max（rootG 距离判别已证伪——正常臂根区也 +.04m）",
+  "comment": "上肢管 vs 躯干椭圆截面：袖根滤除只盖肩点邻域 .06m；肘/上臂中段 g<-20mm=陷入报错（环列插值误差带 ~14mm 实测）；elbEx=肘尖轮廓凸包判据（P21）：肘点横向 X 超同高截面半宽+管半径+20mm=侧影凸包",
   "allowed": [
    {
     "subject": "leiR",
@@ -940,6 +942,38 @@
      52.4
     ],
     "note": "按袖起手摆入（肘外摆让胸线）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     15.2,
+     18.0
+    ],
+    "note": "挥手主动作态：肘顶出侧影=挥臂本体（P21 轮廓判据豁免）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     23.0,
+     23.5
+    ],
+    "note": "落座放盒过渡（主动作态肘摆出）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     40.8,
+     41.1
+    ],
+    "note": "插签起手（主动作态肘摆出）"
+   },
+   {
+    "subject": "leiR",
+    "window": [
+     51.4,
+     51.7
+    ],
+    "note": "放盒落点引导肘摆出（功能性，2 帧）"
    }
   ]
  },
@@ -1024,9 +1058,9 @@
     "subject": "leiL",
     "window": [
      52.4,
-     53.8
+     55.15
     ],
-    "note": "按袖（主动作态接触保持）"
+    "note": "按袖（主动作态接触保持；下压发力全展直到 54.8 放臂+边界混合 2 帧）"
    },
    {
     "subject": "leiR",

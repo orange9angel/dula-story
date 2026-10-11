@@ -46,7 +46,7 @@ function concreteTex(){
 // 铁丝网：菱格双线族，周期整除 128 保证镜像无缝；alphaTest 硬边免排序问题
 function fenceTex(){
   const t=canvasTex(128,128,(c,w,h)=>{
-    c.clearRect(0,0,w,h);c.strokeStyle='rgba(95,104,116,.95)';c.lineWidth=3.2; // 加粗降摩尔纹
+    c.clearRect(0,0,w,h);c.strokeStyle='rgba(95,104,116,.95)';c.lineWidth=4.5; // 线宽随中密补偿（P20：repeat 70 配套；100 实测远景摩尔纹回潮）
     for(let i=-2;i<=2;i++){
       c.beginPath();c.moveTo(i*64-64,0);c.lineTo(i*64+64,128);c.stroke();
       c.beginPath();c.moveTo(i*64-64,128);c.lineTo(i*64+64,0);c.stroke();
@@ -100,15 +100,11 @@ export class RooftopNoonScene{
     box(S,'parapet_s',[0,.26,7.65],[29.6,.52,.3],null,{mat:parapetMat});
 
     // ── 铁丝网围栏：立柱 + 顶杆 + 透明贴图网面（北墙满铺，西墙一段）──
-    // 双层网面（P18 实录：近景细网/远景粗网按相机距离换层——裸 alphaTest+默认 mipmap
-    // 远距被 mip 吃掉时隐时现，关 mip 又糊成亚像素噪点）：粗层把菱格放大到远距可读
-    const fence=fenceTex();fence.repeat.set(140,8); // 网格间距放大，近景摩尔纹减弱
+    // 单一密度（P20 实录：P18 的双层按相机 9m 换层，切镜跨阈值时网格密度跳变穿帮——
+    // "开门前大格子、开门后小格子"；统一细网，远距读感由 flicker 台阶检测兜底回归）
+    const fence=fenceTex();fence.repeat.set(70,4); // 单一中密（P20：140 远距摩尔纹/32 近景太粗，折中 70 + 线宽补偿）
     fence.generateMipmaps=false;fence.minFilter=THREE.LinearFilter; // 关 mipmap 保细线
     const fenceMat=new THREE.MeshBasicMaterial({map:fence,alphaTest:.45,side:THREE.DoubleSide,color:'#8b96a2'});
-    const fenceCoarse=fenceTex();fenceCoarse.repeat.set(32,2); // 远距粗网：菱格 4 倍大
-    fenceCoarse.generateMipmaps=false;fenceCoarse.minFilter=THREE.LinearFilter;
-    const fenceMatFar=new THREE.MeshBasicMaterial({map:fenceCoarse,alphaTest:.45,side:THREE.DoubleSide,color:'#9aa5b2'});
-    this.fenceMats={fine:fenceMat,far:fenceMatFar};
     const postMat=toon('#5f6874');
     const net=this.net=new THREE.Mesh(new THREE.PlaneGeometry(29.3,1.62),fenceMat);
     net.position.set(0,1.35,-11.37);S.add(net);

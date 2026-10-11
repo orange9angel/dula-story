@@ -139,7 +139,9 @@ for(const [actor,tw,tY0,tY1,td,thR] of [[lei,.30,.95,1.45,.19,.077],[hong,.38,.9
 }
 const hongFlaps=hong.body.children.filter(o=>o.isMesh&&Math.abs(Math.abs(o.position.x)-.152)<.005);
 for(const flap of hongFlaps){flap.geometry.translate(0,-1.52,0);flap.position.y=1.52;
-  flap.position.x*=1.22;} // 静态外张：襟片让出垂臂通道（P17 前臂穿襟实录）
+  flap.position.x*=1.22; // 静态外张：襟片让出垂臂通道（P17 前臂穿襟实录）
+  flap.userData.probeExclude=1;} // 襟片是软布：不进三角相交探针的被检主体（襟-臂穿透走专用解析探针；
+                                 // 襟搭在盒盖/臂上是合法 drapery，三角相交分不清贴靠与穿透——P21 臂推入盖实录）
 const leiTufts=[];lei.headGroup.traverse(o=>{if(o.isMesh&&o.geometry.type==='TubeGeometry'&&o.material.side!==THREE.BackSide)leiTufts.push(o);});
 // 阵风包络（解析微风正弦，(t,state) 纯函数）：空拍段加强
 // 18.2s 阵风脉冲：把轰刚没关严的门带上（门迁移的可见环境触发——状态/声音/动因一致）
@@ -165,8 +167,33 @@ function secondary(t,sl,sh,pH){
     const side=f.position.x>0?'right':'left',a=pH?.[side==='left'?'leftArm':'rightArm'];
     let letOff=0; // 前臂前摆/上抬时再加让位（绕臂外倾）
     if(a){const fdz=a[2].z-a[1].z,fdy=a[2].y-a[1].y;letOff=Math.max(0,fdz)*1.2+Math.max(0,fdy)*.3;}
-    f.rotation.x=-.06+w*.10*Math.sin(t*2.9+i*1.3)-letOff*.35; // 底缘微前倾盖过臂外侧
-    f.rotation.z=(f.position.x>0?1:-1)*(.14+letOff*.25)+(f.position.x>0?-1:1)*.05*w*Math.sin(t*3.4+i*.8);
+    const wx=-.06+w*.10*Math.sin(t*2.9+i*1.3),out=f.position.x>0?1:-1;
+    // 臂推（P21 抬臂穿襟实录）：只在臂管**从衣内一侧顶襟面**（lp.z<0 且 |z|<管半径）
+    // 或段真的穿越襟面（肩缝以下）时掀起——贴面搭盖（管在襟外侧）不推
+    // （反噬实录：接触即推→静息托盘前臂把襟片推进盒盖）。
+    let push=0;
+    if(a){
+      f.rotation.x=wx-letOff*.35;f.rotation.z=out*(.14+letOff*.25)-out*.05*w*Math.sin(t*3.4+i*.8);
+      f.updateWorldMatrix(true,false);
+      for(const [x,y,tr] of [[0,1,.075],[1,2,.06]]){
+        const p0=f.worldToLocal(hong.mesh.localToWorld(new THREE.Vector3(a[x].x,a[x].y,a[x].z))),
+              p1=f.worldToLocal(hong.mesh.localToWorld(new THREE.Vector3(a[y].x,a[y].y,a[y].z)));
+        for(let k=0;k<=4;k++){
+          const lp=f.worldToLocal(hong.mesh.localToWorld(new THREE.Vector3(
+            a[x].x+(a[y].x-a[x].x)*k/4,a[x].y+(a[y].y-a[x].y)*k/4,a[x].z+(a[y].z-a[x].z)*k/4)));
+          // 只量襟片肩缝以下的中段/下摆区（肩缝是臂的合法入衣口，恒接触——P21 反噬实录）
+          if(Math.abs(lp.x)<.10&&lp.y>-.66&&lp.y<-.10&&lp.z<0&&lp.z>-tr)
+            push=Math.max(push,(tr+lp.z)/tr);
+        }
+        // 段穿越襟面（肩缝以下）=穿透进行式：按交点深度直接推满
+        if(p0.z*p1.z<0){
+          const u=p0.z/(p0.z-p1.z),cx=p0.x+(p1.x-p0.x)*u,cy=p0.y+(p1.y-p0.y)*u;
+          if(Math.abs(cx)<.085+tr&&cy>-.62&&cy<-.08)push=1;
+        }
+      }
+    }
+    f.rotation.x=wx-letOff*.35-push*.55; // 掀起：下摆向前向上随臂走
+    f.rotation.z=out*(.14+letOff*.25+push*.4)-out*.05*w*Math.sin(t*3.4+i*.8); // 外掀让出臂道
   });
   leiTufts.forEach((m,i)=>{m.rotation.z=.012*w*Math.sin(t*2.2+i*1.9);m.rotation.x=.008*w*Math.sin(t*1.7+i);});
 }
@@ -561,10 +588,7 @@ function draw(t,capture=true){
 
   let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'two',t,entry);
   camera.position.set(...c.pos);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
-  // 铁丝网远近双层：>9m 换粗网（远距细网成亚像素噪点；镜头驱动、(t,state) 纯函数）
-  const netFar=camera.position.distanceTo(stage.net.position)>9;
-  stage.net.material=stage.fenceMats[netFar?'far':'fine'];
-  stage.netW.material=stage.fenceMats[netFar?'far':'fine'];
+  // 铁丝网单一密度（P20：距离换层取消——切镜跨 9m 阈值网格密度跳变穿帮；台阶检测进 flicker_probe 兜底）
   symbols(t); // billboard 朝向必须在相机定位之后（seek 直接跳转时相机无历史帧）
 
   const locomotion={};
@@ -727,23 +751,34 @@ function draw(t,capture=true){
     // 襟片面片（枢轴原点、下摆 −y、法向 z）局部系看臂管段：段端点在面片两侧且
     // 交点落在襟片范围内=穿透；贴面（|z| 小但不换号）=搭盖合法
     if(hongFlaps.length){
-      const hits=[];
+      const hits=[],near=[];
       hongFlaps.forEach((f,i)=>{
         f.updateWorldMatrix(true,false);
         const a=performance.pH?.[f.position.x>0?'rightArm':'leftArm'];if(!a)return;
         for(const [seg,x,y,tr] of [['u',0,1,.075],['f',1,2,.06]]){
-          const p0=f.worldToLocal(new THREE.Vector3(a[x].x,a[x].y,a[x].z)),
-                p1=f.worldToLocal(new THREE.Vector3(a[y].x,a[y].y,a[y].z));
+          // 臂关节是 mesh 局部（四肢挂 mesh 不吃 bob/lean）；襟片在 body 下吃 bob/lean——
+          // 各自带自己的变换到同一世界系再比（P21 实录：漏了 mesh.localToWorld，
+          // 襟局部系 z 恒 ~+11 永不换号，探针上线以来零触发=假绿）
+          const p0=f.worldToLocal(hong.mesh.localToWorld(new THREE.Vector3(a[x].x,a[x].y,a[x].z))),
+                p1=f.worldToLocal(hong.mesh.localToWorld(new THREE.Vector3(a[y].x,a[y].y,a[y].z)));
+          if(new URLSearchParams(location.search).has('debug-cloth')&&Math.abs(t-60.0)<.02)
+            state.clothDebug=(state.clothDebug??[]).concat([{flap:i,seg,
+              p0:[p0.x,p0.y,p0.z].map(v=>Math.round(v*1000)/1000),
+              p1:[p1.x,p1.y,p1.z].map(v=>Math.round(v*1000)/1000)}]);
           if(p0.z*p1.z>=0)continue; // 同侧=未穿
           const u=p0.z/(p0.z-p1.z),cx=p0.x+(p1.x-p0.x)*u,cy=p0.y+(p1.y-p0.y)*u;
-          if(Math.abs(cx)<.085+tr&&cy>-.62&&cy<.03){
+          // cy>-0.08=肩缝入口豁免：手臂从肩缝进入衣襟开口是合法 drapery 路径
+          // （P21 实录：坐标系修复后探针复活，静息垂臂的穿越点全在襟顶 cx≈0/cy≈0 肩缝区）
+          if(Math.abs(cx)<.085+tr&&cy>-.62&&cy<-.08){
             const wp=f.localToWorld(new THREE.Vector3(cx,cy,0));
             hits.push({subject:'flap'+i,obstacle:'arm_'+(f.position.x>0?'right':'left')+'_'+seg,
               point:[wp.x,wp.y,wp.z]});
+          }else{ // 越界穿越=漏报隐患：记录落点供判据审计（P21 空拍抬臂穿襟漏报实录）
+            near.push({flap:i,seg,cx:Math.round(cx*1000)/1000,cy:Math.round(cy*1000)/1000});
           }
         }
       });
-      state.cloth={margin:-.01,hits,obstacles:['arm tubes'],counts:{hong:hits.length}};
+      state.cloth={margin:-.01,hits,obstacles:['arm tubes'],counts:{hong:hits.length},near};
     }
     // 上肢管 vs 躯干侧壁：解析式（躯干截面是变半径椭圆环列，盒代理角部误报率太高——
     // P15 首扫盒代理全员常命中翻车实录）。沿臂轴采样：g=到躯干表面的有符号距离
@@ -771,13 +806,18 @@ function draw(t,capture=true){
             if(by<rings[0][0])continue; // 髋以下不管（腿段）
             const ex=px/(ring[1]*sxz),ez=bz/(ring[2]*sxz),e=Math.sqrt(ex*ex+ez*ez);
             const g=(e-1)*Math.min(ring[1],ring[2])*sxz;
-            if(dSh<.12)continue; // 袖根内埋区
+            if(dSh<.06)continue; // 肩点球关节内埋区（只许盖肩点邻域；肘与上臂中段不许豁免——P20 滤除藏真嵌入实录）
             if(dSh<.22&&(rootG===null||g>rootG))rootG=g; // 袖根邻域间隙（外摆过量=断开）
             if(g<worst){worst=g;worstAt=[Math.round((px)*1000)/1000,Math.round(by*1000)/1000,Math.round(bz*1000)/1000];}
           }
         }
+        // 肘尖轮廓级判据（P21"多一节"实录）：肘点在躯干同高截面半宽之外 = 侧影凸包。
+        // 只量横向 X（前后方向的肘摆不读成凸包）；嵌入/分离判据照旧。
+        const eb=arm[1],epy=eb.y-bob,eby=epy*cl+eb.z*sl2,ebz=-epy*sl2+eb.z*cl;
+        const ering=rings.find(r=>eby<=r[0])??rings[rings.length-1];
+        const elbEx=Math.round((Math.abs(eb.x)-ering[1]*sxz)*10000)/10000;
         limbBody[tag+(side==='left'?'L':'R')]={g:Math.round(worst*10000)/10000,at:worstAt,tubeR:TUBE_R[tag][0],
-          rootG:rootG===null?null:Math.round(rootG*10000)/10000,
+          rootG:rootG===null?null:Math.round(rootG*10000)/10000,elbEx,
           reach:Math.round(Math.hypot(arm[2].x-arm[0].x,arm[2].y-arm[0].y,arm[2].z-arm[0].z)/(tag==='lei'?.37:.43)*1000)/1000};
       }
     }
