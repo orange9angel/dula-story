@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "stats": {
+    "bite_min": 99.0,
+    "carry_max_xz": 0.0,
+    "seated_min": 99.0,
+    "seated_max": 0.0,
+    "env_frames": 1050,
+    "worn_frames": 1050,
+    "limbbody_frames": 1050,
+    "limb_elbEx_max": 0.1026,
+    "limb_rootG_max": 0.1457,
+    "limb_wing_max": 32.664199118049545,
+    "cloth_frames": 1050,
+    "unsupported_min": 0.0,
+    "gait_speed_max_xiaodeng": 0.5268985187567309,
+    "gait_speed_p50_xiaodeng": 0.399,
+    "gait_speed_p95_xiaodeng": 0.526,
+    "gait_avg_min_xiaodeng": 0.354,
+    "gait_cadence_min_xiaodeng": 0.84,
+    "gait_cadence_max_xiaodeng": 0.84
+  },
+  "failures": [],
+  "scope": "《迟到的一拍》P2：障碍物=翼幕四片+台口双柱（灯控台=小灯工作位放行）；道具=歌词卡（阿拍，8-31s）+手电（小灯，102.8s 起手持）；两角色生理域常量见 viewer.js TORSO_RINGS/TUBE_R；POV 相机断言走 tools/check_pov.py（episode 本地）。"
+}

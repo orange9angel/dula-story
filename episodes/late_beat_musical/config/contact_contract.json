@@ -1,0 +1,243 @@
+{
+ "scope": "《迟到的一拍》P2：障碍物=翼幕四片+台口双柱（灯控台=小灯工作位放行）；道具=歌词卡（阿拍，8-31s）+手电（小灯，102.8s 起手持）；两角色生理域常量见 viewer.js TORSO_RINGS/TUBE_R；POV 相机断言走 tools/check_pov.py（episode 本地）。",
+ "fps_min": 30,
+ "pose_tick_hz": 15,
+ "env": {
+  "state_key": "env",
+  "frame_min": 100,
+  "window": [
+   8,
+   170
+  ],
+  "comment": "翼幕/台口柱净空：任何命中即失败（走位路径穿翼门缺口=零命中才合格）"
+ },
+ "gait": {
+  "comment": "走位段步态域：速度上限+bob 下限+步频域（小灯上台 115-122、阿拍上步 70-74.5）；阿拍上步为迟疑表演步（不进 cadence 域，目检覆盖）；入场缓步=表演节奏，cadence 下限放宽到 .8",
+  "actors": {
+   "xiaodeng": {
+    "speed_max": 1.2,
+    "avg_min": 0.3,
+    "bob_min": 0.004,
+    "cadence": [
+     0.8,
+     4.0
+    ]
+   }
+  }
+ },
+ "limb_body_mesh": {
+  "state_key": "limbBody",
+  "window": [
+   7,
+   170
+  ],
+  "frame_min": 100,
+  "embed_margin": 0.02,
+  "elb_ex_max": 0.02,
+  "sep_deg_max": 30,
+  "comment": "上肢管 vs 躯干椭圆截面（口径同 S1E3 P20/P21）：g<-20mm=嵌入；elbEx>管半径+20mm=肘凸；静息翼角>30°=分离",
+  "allowed": [
+   {
+    "subject": "apaiR",
+    "window": [
+     70,
+     74.6
+    ],
+    "note": "上步台唇行走摆臂（主动作态）"
+   },
+   {
+    "subject": "apaiL",
+    "window": [
+     70,
+     74.6
+    ],
+    "note": "同上"
+   },
+   {
+    "subject": "apaiL",
+    "window": [
+     72,
+     92
+    ],
+    "note": "副歌张臂（主动作态，肘凸=动作本体）"
+   },
+   {
+    "subject": "apaiR",
+    "window": [
+     72,
+     92
+    ],
+    "note": "同上"
+   },
+   {
+    "subject": "dengR",
+    "window": [
+     103,
+     106
+    ],
+    "note": "举手电（主动作态）"
+   },
+   {
+    "subject": "dengR",
+    "window": [
+     104,
+     115
+    ],
+    "note": "举灯保持（主动作态）"
+   },
+   {
+    "subject": "dengL",
+    "window": [
+     132,
+     156
+    ],
+    "note": "合唱张臂"
+   },
+   {
+    "subject": "dengR",
+    "window": [
+     132,
+     156
+    ],
+    "note": "同上"
+   },
+   {
+    "subject": "apaiL",
+    "window": [
+     130,
+     156
+    ],
+    "note": "合唱张臂"
+   },
+   {
+    "subject": "apaiR",
+    "window": [
+     130,
+     156
+    ],
+    "note": "同上"
+   },
+   {
+    "subject": "dengR",
+    "window": [
+     103,
+     132
+    ],
+    "note": "取灯/举灯/走位/演唱持灯（道具手=主动作态，肘持家域）"
+   },
+   {
+    "subject": "dengR",
+    "window": [
+     156,
+     160
+    ],
+    "note": "鞠躬持灯垂手"
+   }
+  ]
+ },
+ "reach": {
+  "ratio_max": 0.9,
+  "hang_deg": 35,
+  "comment": "腕-肩距/臂长 >0.9 且非垂臂=超伸僵直；发力帧白名单豁免",
+  "allowed": [
+   {
+    "subject": "dengR",
+    "window": [
+     103.5,
+     115
+    ],
+    "note": "举灯保持（给观众看的信号手——全展直是内容）"
+   },
+   {
+    "subject": "dengR",
+    "window": [
+     115,
+     121
+    ],
+    "note": "走位持灯胸前（道具手）"
+   },
+   {
+    "subject": "dengL",
+    "window": [
+     132,
+     156
+    ],
+    "note": "合唱张臂（主动作态）"
+   },
+   {
+    "subject": "apaiL",
+    "window": [
+     43.9,
+     44.5
+    ],
+    "note": "解冻抬手过渡（2 帧）"
+   },
+   {
+    "subject": "apaiR",
+    "window": [
+     43.9,
+     44.5
+    ],
+    "note": "同上"
+   },
+   {
+    "subject": "apaiL",
+    "window": [
+     70.8,
+     73.3
+    ],
+    "note": "上步台唇摆臂"
+   },
+   {
+    "subject": "apaiR",
+    "window": [
+     70.8,
+     73.3
+    ],
+    "note": "同上"
+   }
+  ]
+ },
+ "cloth_body": {
+  "state_key": "cloth",
+  "window": [
+   8,
+   170
+  ],
+  "frame_min": 100,
+  "comment": "小灯下摆襟片（铰链件）vs 她自己的手臂管：面片换号穿透才报；枢轴在腰、几何下摆 -y",
+  "allowed": []
+ },
+ "worn_prop": {
+  "state_key": "worn",
+  "frame_min": 50,
+  "comment": "腰间悬挂件（小灯腰带/手电挂点位）vs 躯干：margin -10mm；背带/兜片/耳返是服装一体件不走此探针（建造期目检+review 帧）"
+ },
+ "supporter": {
+  "support_win": {
+   "card": [
+    8,
+    31.0
+   ],
+   "torch": [
+    102.8,
+    168
+   ]
+  },
+  "transit": {
+   "card": [
+    30.0,
+    31.2
+   ]
+  },
+  "actor_of": {
+   "card": "apai",
+   "torch": "xiaodeng"
+  },
+  "lims": {
+   "card": 0.2,
+   "torch": 0.2
+  },
+  "comment": "道具必有支撑者：歌词卡=阿拍双手（30-31s 收进裤袋=transit），手电=小灯右手（102.8 从腰间取下）"
+ }
+}

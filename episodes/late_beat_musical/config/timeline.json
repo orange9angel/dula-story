@@ -1,0 +1,25 @@
+{
+ "duration": 170.0,
+ "step": 0.01,
+ "_comment": "《迟到的一拍》唯一时序数据源。节拍表=主代理简报；歌词在 config/lyrics_song1.txt / lyrics_song2.txt（歌1 首句为弱起可唱破句）。观众席第一排 POV：shot 只是观众席内的转头/坐姿微调，相机永不越过台唇平面（z>0）。",
+ "segments": [
+  {"id": "card_open", "kind": "card", "character": null, "start": 0.0, "end": 2.5, "move": "card_open", "shot": "house", "card": "open"},
+  {"id": "house_hint", "kind": "action", "character": null, "start": 2.5, "end": 8.0, "move": "open", "shot": "house", "_note": "场内提示音（音频 P3 接）：脚灯亮、场暗、幕闭"},
+  {"id": "curtain_open", "kind": "action", "character": null, "start": 8.0, "end": 12.0, "move": "open", "shot": "house", "_note": "幕布开：阿拍独自台中攥歌词卡"},
+  {"id": "talk_1", "kind": "dialogue", "character": "Apai", "start": 12.0, "end": 30.0, "move": "talk_1", "shot": "center"},
+  {"id": "song_1a", "kind": "song", "character": "Apai", "start": 30.0, "end": 36.0, "move": "song_1a", "shot": "center", "_note": "歌1 第一句唱砸：唱破+僵住+追光迟疑（灯晚跟/暗抖）"},
+  {"id": "song_1b", "kind": "song", "character": "Apai", "start": 36.0, "end": 50.0, "move": "song_1b", "shot": "center", "_note": "小灯追光呼吸引导（明暗呼吸 2.4s 周期，缓慢回正目标）"},
+  {"id": "song_1c", "kind": "song", "character": "Apai", "start": 50.0, "end": 100.0, "move": "song_1c", "shot": "lip", "_note": "找回：主歌站桩→副歌（70s 起）上步台唇；74s 到位"},
+  {"id": "talk_2a", "kind": "dialogue", "character": "Apai", "start": 100.0, "end": 108.0, "move": "talk_2a", "shot": "side_glance", "_note": "安静一拍：阿拍看侧台；小灯举灯 103-105s"},
+  {"id": "talk_2b", "kind": "dialogue", "character": "Apai", "start": 108.0, "end": 115.0, "move": "talk_2b", "shot": "center"},
+  {"id": "song_2", "kind": "song", "character": "both", "start": 115.0, "end": 160.0, "move": "song_2", "shot": "house", "_note": "小灯持手灯从右翼幕门上台（115-122 走位到 SR），双追光"},
+  {"id": "bow", "kind": "action", "character": "both", "start": 160.0, "end": 167.0, "move": "bow", "shot": "house", "_note": "鞠躬 160-163，hold；166 起幕落"},
+  {"id": "card_close", "kind": "card", "character": null, "start": 167.0, "end": 170.0, "move": "card_close", "shot": "house", "card": "close"}
+ ],
+ "subtitles": [
+  {"start": 13.0, "end": 17.5, "who": "Apai", "text": "大、大家好……我是来顶班的。"},
+  {"start": 22.0, "end": 26.5, "who": "Apai", "text": "（小声）拍子……别丢。"},
+  {"start": 104.0, "end": 108.0, "who": "Xiaodeng", "text": "拍子回来了。"},
+  {"start": 110.0, "end": 114.0, "who": "Apai", "text": "……再来一首？"}
+ ]
+}

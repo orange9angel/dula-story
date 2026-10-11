@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "segments": {
+    "apai:walk": {
+      "frames": 135,
+      "support_pairs": 174,
+      "max_slip": 0.0,
+      "max_rotation": 0.0,
+      "max_heading_error": 14.048088485393388,
+      "max_leg_error": 2.220446049250313e-16,
+      "min_track_width": 0.18,
+      "min_sole_height": 0.5899999999690054
+    },
+    "xiaodeng:walk": {
+      "frames": 180,
+      "support_pairs": 212,
+      "max_slip": 0.0,
+      "max_rotation": 6.661338147750939e-16,
+      "max_heading_error": 13.405892409755158,
+      "max_leg_error": 2.7755575615628914e-16,
+      "min_track_width": 0.19166554278149192,
+      "min_sole_height": 0.5849999999690054
+    }
+  },
+  "failures": [],
+  "limits": "Ankle/contact checks do not certify sole collision or artistic quality; inspect normal-speed video too."
+}
