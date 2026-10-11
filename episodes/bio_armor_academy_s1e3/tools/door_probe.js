@@ -16,7 +16,7 @@ export function probeBoxMeshes(meshes, subjects, margin=.004){
   const obstacles=[];
   for(const o of meshes){
     o.geometry.computeBoundingBox();
-    obstacles.push({name:o.name, inverse:o.matrixWorld.clone().invert(),
+    obstacles.push({name:o.name, inverse:o.matrixWorld.clone().invert(),matrixWorld:o.matrixWorld.clone(),
       local:o.geometry.boundingBox.clone().expandByScalar(margin),
       world:o.geometry.boundingBox.clone().applyMatrix4(o.matrixWorld).expandByScalar(margin)});
   }
@@ -45,7 +45,11 @@ export function probeBoxMeshes(meshes, subjects, margin=.004){
             o.getVertexPosition(index?index.getX(i+j):i+j,v).applyMatrix4(matrix);
           }
           if(obstacle.local.intersectsTriangle(tri)){
-            hits.push({subject:name,mesh:o.userData.contactPart||o.name||g.type,obstacle:obstacle.name});break;
+            // point=命中三角形质心（世界系）：调用方按空间区域过滤（如袖根内埋区 vs 中段）
+            const cp=new THREE.Vector3().add(tri.a).add(tri.b).add(tri.c).multiplyScalar(1/3)
+              .applyMatrix4(obstacle.matrixWorld);
+            hits.push({subject:name,mesh:o.userData.contactPart||o.name||g.type,obstacle:obstacle.name,
+              point:[cp.x,cp.y,cp.z]});break;
           }
         }
       }

@@ -40,8 +40,8 @@ const IDLE_L={left:V(-.21,.95,.03),right:V(.21,.95,.03)};
 const IDLE_H={left:V(-.27,1.12,.04),right:V(.27,1.12,.04)};
 // 坐姿静息=垂放腿侧、掌心贴腿（本 rig 手臂短：坐姿肩-腿面距离 > 臂长，腿上平放不可达——
 // 垂放腿侧是唯一有支撑的静息；P14 实测 LAP 悬空 .13–.17m 翻车）
-const LAP_L={left:V(-.19,.73,.02),right:V(.14,.74,.22)};   // 雷晓：左垂放腿侧，右手托盒位
-const LAP_H={left:V(-.17,.80,.24),right:V(-.02,.895,.22)};   // 轰刚：左托盒位，右垂放腿侧
+const LAP_L={left:V(-.19,.73,.02),right:V(.13,.83,.19)};   // 雷晓：左垂放腿侧，右手托盒位
+const LAP_H={left:V(-.15,.88,.22),right:V(.00,.91,.20)};   // 轰刚：左托盒位，右垂放腿侧
 
 // Exit along the doorway normal first; turn only after body + props clear the jamb.
 // Both actors use the same safe corridor, with separate finite walk/turn phases.
@@ -88,7 +88,7 @@ function specLei(phase,u,dt,t){
     case 'hidden':s.visible=false;break;
     case 'walk_in':{ // 端便当出楼梯间，左右看一眼，走到围栏角落坐下
       const to=[SEAT_LEI[0],-10.55];
-      s.left=V(-.01,1.10,.31);s.right=V(.12,1.10,.26); // 双手端盒：右手托底（锚盒）、左手扶盒左沿
+      s.left=V(-.02,1.19,.22);s.right=V(.11,1.18,.22); // 双手端盒：右手托底（锚盒）、左手扶盒左沿
       s.gL={fist:.4};s.gR={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion='worry';
       // 左右张望：视线→头→肩错开起动（肩/身晚约 2-3 帧采同一条曲线）
@@ -102,8 +102,8 @@ function specLei(phase,u,dt,t){
         if(u<.04){const a=ease(u/.04);s.lean=-.025*a;s.bob=-.012*a;}
       }else{ // 坐上矮沿（落座瞬间 squash 谷底对齐 bob 最低点）；左手顺势掀开自己盒盖再收回腿上
         const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_LEI[1],a);
-        s.left=key(u,[[.88,V(-.01,1.10,.31)],[.93,V(.08,.85,.32)],[.96,V(.08,.85,.32)],[.985,V(-.14,.74,.18)],[1,LAP_L.left]]); // 手到盖把位→掀盖→从外侧收回腿侧（不直线穿腹）
-        s.right=blend(V(.12,1.10,.26),LAP_L.right,a);
+        s.left=key(u,[[.88,V(-.02,1.17,.24)],[.93,V(.08,.91,.30)],[.96,V(.08,.91,.30)],[.985,V(-.15,.78,.14)],[1,LAP_L.left]]); // 手到盖把位→掀盖→从外侧收回腿侧（不直线穿腹）
+        s.right=blend(V(.11,1.18,.22),LAP_L.right,a);
         s.emotion='neutral';s.headYaw=0;
       }
       s.squash=squashPulse(t,13.80,.06);
@@ -124,28 +124,28 @@ function specLei(phase,u,dt,t){
       break;
     }
     case 'share_3':{ // 被说猫食，把便当往回收一点
-      s.sit=1;s.left=V(.05,.82,.24);s.right=V(.12,.78,.22);
+      s.sit=1;s.left=V(-.01,.85,.20);s.right=V(.08,.84,.18);
       s.headPitch=.12;s.headYaw=-.35;s.emotion='worry';
       break;
     }
     case 'share_4':{ // 「普通的便当而已！」嘴硬
-      s.sit=1;s.left={...LAP_L.left};s.right=V(.16,.78,.24);
+      s.sit=1;s.left={...LAP_L.left};s.right=V(.13,.83,.19);
       s.headPitch=-.04;s.headYaw=-.55;s.emotion='determined';
       break;
     }
     case 'offer_l':{ // 愣住，左手伸过去接签
       s.sit=1;s.emotion='worry';
       s.headYaw=-.5;s.headPitch=mix(.06,.20,ease(clamp((u-.20)/.30)));
-      s.left=key(u,[[0,LAP_L.left],[.50,LAP_L.left],[.66,V(-.30,1.02,.30)],[.82,V(-.30,1.02,.30)],[.95,V(-.12,1.05,.28)],[1,V(-.12,1.05,.28)]]); // 愣住冻到 u=.5 再接
+      s.left=key(u,[[0,LAP_L.left],[.50,LAP_L.left],[.66,V(-.27,1.00,.28)],[.82,V(-.27,1.00,.28)],[.95,V(-.12,1.05,.28)],[1,V(-.12,1.05,.28)]]); // 愣住冻到 u=.5 再接
       s.gL={fist:.12+.38*ease(clamp((u-.60)/.10))}; // 接过时三指捏签
       s.right={...LAP_L.right};
       break;
     }
     case 'crack':{ // 接过咬一口，被逗笑破防；笑瞬间右臂微光一闪、左手按住
-      s.sit=1;s.right=V(.16,.78,.24);
+      s.sit=1;s.right=V(.13,.83,.19);
       s.right.z+=settle(t,51.4,.04); // 放下便当盒后右手带跟随衰减收回腿边
       if(dt<2.0){ // 进食弧线：胸前→弧顶抬起→嘴前下方停顿（掌心自然朝上向内）→签尖送入口中→撤回（持签手半捏）
-        s.left=key(dt,[[0,V(-.12,1.05,.28)],[.55,V(-.10,1.12,.34)],[.85,V(-.08,1.16,.30)],
+        s.left=key(dt,[[0,V(-.12,1.05,.28)],[.55,V(-.10,1.12,.30)],[.85,V(-.08,1.16,.30)],
           [1.15,V(-.08,1.16,.30)],[1.45,V(-.06,1.15,.25)],[1.80,V(-.06,1.15,.25)],[2.0,V(-.10,1.12,.30)]]);
         s.gL={fist:.5};
         s.emotion=dt<1.2?'worry':'laugh';s.headPitch=.08;
@@ -155,15 +155,16 @@ function specLei(phase,u,dt,t){
       }else if(dt<5.4){ // 笑意未收 + 右手把盒子放上右侧矮沿（手随盒沉到台面再释放）
         const q=ease((dt-3.7)/1.7);s.emotion='laugh';s.headPitch=mix(-.14,.02,q);
         s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.15,1.02,.31);s.gL={fist:.5}; // 稍外前让开 lean 前倾的胸廓（P14 手-身嵌入实录）
-        s.right=key(dt,[[3.7,V(.16,.78,.24)],[3.9,V(.28,.72,.08)],[4.4,V(.40,.70,-.07)],
+        s.right=key(dt,[[3.7,V(.13,.83,.19)],[3.9,V(.28,.72,.08)],[4.4,V(.40,.70,-.07)],
           [4.85,V(.40,.70,-.07)],[5.1,V(.30,.76,.04)],[5.4,V(.16,.78,.24)]]);
         s.lean=.12*ease(clamp((dt-3.95)/.3))*ease(clamp((5.15-dt)/.3)); // 微俯身才能够到矮沿（.15→.12，肩窝片兜缝）
       }else{ // 袖口微光：低头看右臂，左手按住（按臂手平贴前臂）
         const q=ease(clamp((dt-5.4)/.8));
         s.emotion='worry';s.headPitch=mix(.02,.30,q);s.headYaw=.35*q;
-        s.left=blend(V(-.12,1.0,.26),V(.26,.88,.27),ease(clamp((dt-5.5)/.7))); // 稍靠前，退出时扫不进便当盒角
+        s.left=blend(V(-.12,1.0,.26),V(.13,.93,.13),ease(clamp((dt-5.5)/.7))); // 按上右前臂中段（对凑不超伸）
+        s.leftPole=V(-.55,-.5,-.35); // 按袖：左肘外摆让开胸线（肘横穿胸口=嵌入实录）
         s.gL={open:.35,fist:0};s.gR={fist:.12};
-        s.right=V(.19,.73,.02); // 盒已放上矮沿，右手垂放腿侧（不再空手端托盘位）
+        s.right=blend(V(.19,.73,.02),V(.13,.82,.18),ease(clamp((dt-5.4)/.5))*ease(clamp((54.8-t)/.4))); // 看完放下 // 看微光：右前臂抬起到面前（按袖对凑）
       }
       s.flashT=Math.exp(-(((t-FLASH_T)/.42)**2));
       s.squash=squashPulse(t,FLASH_T,.05); // 微光瞬间肩部 0.95 压缩 2-3 帧
@@ -194,14 +195,14 @@ function specHong(phase,u,dt,t){
     case 'hidden':s.visible=false;break;
     case 'hong_arrive':{ // 端着两人份堆高便当大步入侵（绕行小屋东南角，不穿山墙）
       const to=[SEAT_HONG[0],-10.55];
-      s.left=V(-.10,1.22,.20); // 左手托住便当摞（抱到胸前，右手才够得着扶沿）
+      s.left=V(-.09,1.28,.18); // 左手托住便当摞（抱到胸前，右手才够得着扶沿）
       s.gL={fist:.4}; // 持盒手：指腹扣盒沿
       s.emotion=u<.35?'laugh':'neutral';s.headPitch=-.04;
       // 「哟！」举手招呼：反向沉肩预备（u 0-.03）→ 急起到位 → 摆动衰减 → 收回余振
       // 手不过肩线（肩高 1.56，峰值 1.47）：再高袖根会脱出躯干肩环覆盖（肩部断缝实录）
       const wave=V(.44,1.46,.22);
-      s.right=key(u,[[0,V(.10,1.30,.30)],[.03,V(.30,1.02,.06)],[.075,wave],[.13,V(.40,1.47,.24)],
-        [.19,V(.46,1.44,.22)],[.25,V(.41,1.46,.23)],[.31,V(.45,1.45,.22)],[.40,wave],[.52,V(.10,1.28,.30)],
+      s.right=key(u,[[0,V(.10,1.30,.24)],[.03,V(.30,1.02,.06)],[.075,wave],[.13,V(.40,1.47,.24)],
+        [.19,V(.46,1.44,.22)],[.25,V(.41,1.46,.23)],[.31,V(.45,1.45,.22)],[.40,wave],[.52,V(.10,1.28,.24)],
         [.62,V(.28,1.12,.10)],[.80,V(.28,1.12,.10)],[.86,V(-.06,1.33,.36)],[1,V(-.06,1.33,.36)]]); // 挥完垂手；转身时右手抬到摞顶准备接盒
       s.right.z+=settle(u,.55,.05,9,22); // 手腕 settle：收回后余振
       const wo=.75*ease(clamp((u-.03)/.06))*ease(clamp((.50-u)/.08)); // 挥手=张开掌，收回即半握托盒
@@ -214,9 +215,10 @@ function specHong(phase,u,dt,t){
         enterRooftop(s,u,to);
       }else{
         const a=ease((u-.88)/.12);s.sit=a;s.rootX=to[0];s.rootZ=mix(to[1],SEAT_HONG[1],a);
-        s.left=blend(V(-.10,1.22,.20),LAP_H.left,a);
+        s.left=blend(V(-.09,1.28,.18),LAP_H.left,a);
         // 右手接摞顶第二盒 → 落座顺势俯身放上右侧矮沿（手随盒、释放后收回，禁止盒子独立飞行）
         s.right=key(u,[[.88,V(-.06,1.33,.36)],[.93,V(-.06,1.33,.36)], // 摞顶已接到盒（与转身段末同位）
+          [.955,V(.24,1.06,.14)], // 外摆绕行：肘从体侧下，不横穿胸口（P15 上肢穿胸实录）
           [.985,V(.12,.85,-.10)],[1,V(.12,.83,-.10)]]); // 落座小弧沉到腿平面之后（盒不穿膝、手不嵌腿），落台+推滑在 share_1 开头完成
         s.lean=.18*ease(clamp((u-.93)/.04)); // 俯身才够到矮沿（share_1 开头由边界混合收回；减幅+肩窝片兜开缝）
         const grip=ease(clamp((u-.84)/.03))*ease(clamp((1.0-u)/.04)); // 扣盒沿手型
@@ -270,16 +272,16 @@ function specHong(phase,u,dt,t){
         s.headPitch=.10; // 头迎向食物，手臂不过肩（袖肩接缝）
       }else{
         // 够水壶：手从体前绕行（先向外向前再向后），不横穿腹部
-        s.right=key(dt,[[4.2,LAP_H.right],[4.9,V(.24,.86,.34)],[5.6,V(-.08,.90,.16)],[6.2,V(-.36,.92,-.16)],[7.0,V(-.36,.92,-.16)],[7.35,V(.10,.82,.34)],[7.8,LAP_H.right],[9,LAP_H.right]]);
+        s.right=key(dt,[[4.2,LAP_H.right],[4.9,V(.24,.86,.34)],[5.6,V(0,.82,.30)],[6.2,V(-.20,.80,.30)],[7.0,V(-.20,.80,.30)],[7.2,V(0,.82,.30)],[7.35,V(.10,.82,.34)],[7.8,LAP_H.right],[9,LAP_H.right]]);
         s.gR={open:.3*reach,fist:.12*(1-reach)}; // 够水壶：掌心张开
-        s.headYaw=-.75*reach;s.yaw=-.18*reach;s.emotion='neutral';
+        s.headYaw=-.75*reach;s.yaw=-.34*reach;s.emotion='neutral'; // 转身带动臂不走胸线（P15 穿胸实录：臂全展直指=肘腕线锯胸）
       }
       break;
     }
     case 'empty_h':{ // 空拍：啃炸鸡，风微动（持物手随咀嚼节拍半捏起落）
       s.sit=1;s.emotion='neutral';s.left={...LAP_H.left};
       const c=chewCycle(t,CHEW.hong.period,CHEW.hong.offset);
-      s.right=blend(V(-.02,.895,.22),V(.12,1.21,.28),c.raise); // 不嚼时垂放腿侧；抬到嘴前略下方（掌心向内；食物在手）
+      s.right=blend(V(.00,.91,.20),V(.12,1.21,.28),c.raise); // 不嚼时搭盒A右沿；抬到嘴前略下方（掌心向内；食物在手）
       s.gR={fist:.12+.38*c.raise};
       s.headPitch=.03;s.headYaw=.15+.12*Math.sin(t*.19);
       break;
@@ -310,7 +312,10 @@ function buildPose(actor,s,t,dims){
     const delta=new THREE.Vector3(target.x-shoulder.x,target.y-shoulder.y,target.z-shoulder.z);
     const maxR=armA+armB-.005;
     if(delta.length()>maxR){delta.setLength(maxR);Object.assign(target,V(shoulder.x+delta.x,shoulder.y+delta.y,shoulder.z+delta.z));}
-    p[side+'Arm']=[shoulder,twoBone(shoulder,target,V(sign*.25,-.65,-.5),armA,armB),target];
+    // 坐姿肘极外摆：白袖贴白衬衫时臂-躯干剪影合并读成"嵌入"（0:32 实录）；
+    // 手腕目标不变（IK 钉住），只转肘平面把上臂从躯干侧壁让开
+    const pole=s[side+'Pole']??(s.sit>0?V(sign*.35,-.65,-.4):V(sign*.25,-.65,-.5));
+    p[side+'Arm']=[shoulder,twoBone(shoulder,target,pole,armA,armB),target];
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
   actor.setPose(p);
@@ -398,7 +403,7 @@ export function poseAt(lei,hong,entries,t){
     for(const [s,o] of [[sl,ol],[sh,oh]]){
       if(o.visible===false)continue; // 上一拍未登场：直接定格在新拍起点，不做浮起插值
       for(const key of ['rootX','rootZ','yaw','bob','headYaw','headRoll','headPitch','sit','fist','open','point','lean','flashT','squash'])
-        if(typeof s[key]==='number')s[key]=key==='yaw'?(o[key]??0)+angleDelta(o[key]??0,s[key])*a:mix(o[key]??0,s[key],a);
+        if(typeof s[key]==='number')s[key]=key==='yaw'?(o[key]??0)+angleDelta(o[key]??0,s[key])*a:mix(o[key]??(key==='squash'?1:0),s[key],a); // squash 中性值是 1：旧拍未设置时从 1 混合（46.53 压扁两帧翻车实录）
       s.left=blend(o.left,s.left,a);s.right=blend(o.right,s.right,a);
       for(const g of ['gL','gR']){ // 手势参数同样进边界混合，换手型不瞬切
         if(!s[g]&&!o[g])continue;

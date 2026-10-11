@@ -713,6 +713,43 @@ function draw(t,capture=true){
     // 手 vs 躯干/大腿：margin −10mm 深穿才报（垂放贴腿/贴骨盆侧翼的接触合法）
     state.handBody=bentoProbe(bodyProxies,{leiL:lei.hands.left,leiR:lei.hands.right,
       hongL:hong.hands.left,hongR:hong.hands.right},-.010);
+    // 上肢管 vs 躯干侧壁：解析式（躯干截面是变半径椭圆环列，盒代理角部误报率太高——
+    // P15 首扫盒代理全员常命中翻车实录）。沿臂轴采样：g=到躯干表面的有符号距离
+    // （正=分离，0=贴触，负=嵌入）；嵌入深度 > 管半径+15mm 才报。袖根 .12m 内埋区跳过。
+    const TORSO_RINGS={lei:[[.78,.127,.096],[.88,.140,.102],[.97,.143,.103],[1.06,.127,.091],[1.18,.138,.099],[1.30,.149,.105],[1.38,.130,.090]],
+      hong:[[.90,.170,.118],[1.00,.184,.126],[1.10,.180,.121],[1.18,.169,.113],[1.32,.204,.138],[1.44,.207,.136],[1.52,.172,.116]]};
+    const TUBE_R={lei:[.050,.032],hong:[.065,.045]}; // 上臂/前臂管半径
+    const limbBody={};
+    for(const [actor,p,tag] of [[lei,performance.pL,'lei'],[hong,performance.pH,'hong']]){
+      if(actor.mesh.visible===false)continue;
+      const rings=TORSO_RINGS[tag],bob=actor.body.position.y,lean=actor.body.rotation.x,sxz=actor.body.scale.x;
+      const cl=Math.cos(lean),sl2=Math.sin(lean);
+      for(const [side,sign] of [['left','L'],['right','R']]){
+        const arm=p?.[(side==='left'?'left':'right')+'Arm'];
+        if(!arm)continue;
+        let worst=99,worstAt=null,rootG=null;
+        for(const [a,b,tubeR] of [[arm[0],arm[1],TUBE_R[tag][0]],[arm[1],arm[2],TUBE_R[tag][1]]]){
+          for(let i=1;i<=5;i++){
+            const mx=a.x+(b.x-a.x)*i/5,my=a.y+(b.y-a.y)*i/5,mz=a.z+(b.z-a.z)*i/5;
+            const dSh=Math.hypot(mx-arm[0].x,my-arm[0].y,mz-arm[0].z);
+            // mesh 局部 → body 局部（解 bob/lean；squash 的 sxz 进椭圆半径）
+            const py=my-bob,px=mx,pz=mz;
+            const by=py*cl+pz*sl2,bz=-py*sl2+pz*cl; // rotation.x=lean 的逆变换
+            const ring=rings.find(r=>by<=r[0])??rings[rings.length-1];
+            if(by<rings[0][0])continue; // 髋以下不管（腿段）
+            const ex=px/(ring[1]*sxz),ez=bz/(ring[2]*sxz),e=Math.sqrt(ex*ex+ez*ez);
+            const g=(e-1)*Math.min(ring[1],ring[2])*sxz;
+            if(dSh<.12)continue; // 袖根内埋区
+            if(dSh<.22&&(rootG===null||g>rootG))rootG=g; // 袖根邻域间隙（外摆过量=断开）
+            if(g<worst){worst=g;worstAt=[Math.round((px)*1000)/1000,Math.round(by*1000)/1000,Math.round(bz*1000)/1000];}
+          }
+        }
+        limbBody[tag+(side==='left'?'L':'R')]={g:Math.round(worst*10000)/10000,at:worstAt,tubeR:TUBE_R[tag][0],
+          rootG:rootG===null?null:Math.round(rootG*10000)/10000,
+          reach:Math.round(Math.hypot(arm[2].x-arm[0].x,arm[2].y-arm[0].y,arm[2].z-arm[0].z)/(tag==='lei'?.37:.43)*1000)/1000};
+      }
+    }
+    state.limbBody=limbBody;
     // 道具/身体 vs 铁丝网：网面薄板代理，零命中才合格（坐着的合法接触只有矮沿）
     state.env=bentoProbe(ensureFenceProxies(),{lei:lei.mesh,hong:hong.mesh,leiBento,hongBoxA,hongBoxB});
     // 穿戴件净空：书包（probeExclude 跳过包体/盖/带自身） vs 雷晓躯干；margin -20mm：

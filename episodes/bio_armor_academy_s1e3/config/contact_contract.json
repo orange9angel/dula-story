@@ -4,156 +4,1265 @@
  "pose_tick_hz": 15,
  "doorway": {
   "state_key": "doorway",
-  "window": [6.8, 22.0],
-  "margin_min": 0.015,
-  "required_obstacles": ["door", "door_frame_l", "door_frame_r", "door_frame_t", "hut_wall_w", "hut_wall_e", "hut_wall_back", "hut_front_l", "hut_front_r", "hut_lintel"],
-  "subjects": [
-   {"name": "lei", "start": 7},
-   {"name": "leiBento", "start": 7},
-   {"name": "hong", "start": 14},
-   {"name": "hongBoxA", "start": 14},
-   {"name": "hongBoxB", "start": 14}
+  "window": [
+   6.8,
+   22.0
   ],
-  "skinned_min": {"lei": 2, "hong": 2}
+  "margin_min": 0.015,
+  "required_obstacles": [
+   "door",
+   "door_frame_l",
+   "door_frame_r",
+   "door_frame_t",
+   "hut_wall_w",
+   "hut_wall_e",
+   "hut_wall_back",
+   "hut_front_l",
+   "hut_front_r",
+   "hut_lintel"
+  ],
+  "subjects": [
+   {
+    "name": "lei",
+    "start": 7
+   },
+   {
+    "name": "leiBento",
+    "start": 7
+   },
+   {
+    "name": "hong",
+    "start": 14
+   },
+   {
+    "name": "hongBoxA",
+    "start": 14
+   },
+   {
+    "name": "hongBoxB",
+    "start": 14
+   }
+  ],
+  "skinned_min": {
+   "lei": 2,
+   "hong": 2
+  }
  },
  "whitelist": {
   "state_key": "bento",
   "frame_min": 100,
   "comment": "声明式接触清单：托盘/扶沿/抓握/落台抚平等合法接触按 主体×部件×盒×窗口 声明，未声明即失败（探针是三角相交，亚毫米接触与穿透同报）",
   "allowed": [
-   {"subject": "lei", "parts": ["rightHand"], "obstacle": "leiBento_base", "window": [6.9, 51.4], "note": "托盘手托盒底（含放置窗口）"},
-   {"subject": "lei", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "CylinderGeometry"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [6.9, 51.55], "note": "手系锚定后盒底贴掌面：掌/指/前臂/卷袖/壳疹件全程合法接触（P13 扣边托）"},
-   {"subject": "lei", "parts": ["leftHand"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [7.0, 13.5], "note": "搬运段左手扶沿"},
-   {"subject": "lei", "parts": ["leftHand", "leftArm"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [30.0, 35.2], "note": "share_3 收盒：左手搭上盒左沿（P14 有支撑静息）"},
-   {"subject": "lei", "parts": ["leftHand", "leftArm"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [13.4, 14.2], "note": "掀盖操作接触"},
-   {"subject": "lei", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "CylinderGeometry"], "obstacle": "leiBento", "obstacle_prefix": true, "window": [50.4, 51.55], "note": "放盒操作接触（盒离手沿前臂滑下，含壳疹六边形件）"},
-   {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 999], "note": "左手托盘全程"},
-   {"subject": "hong", "parts": ["leftHand", "leftArm", "sleeve_left", "sleeve_leftSleeve", "TubeGeometry"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 999], "note": "手系锚定后盒底贴掌面：左臂/缠带全程合法接触（P13 扣边托）"},
-   {"subject": "hong", "parts": ["leftHand", "leftArm", "sleeve_left", "sleeve_leftSleeve", "TubeGeometry"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [13.9, 21.3], "note": "摞在上层盒期间左臂接触"},
-   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 22.9], "note": "胸前抱盒（手系锚定后盒贴身）"},
-   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [13.9, 21.3], "note": "摞盒贴胸"},
-   {"subject": "hong", "parts": ["leftHand"], "obstacle": "hongBoxB_base", "window": [20.8, 21.3], "note": "右手接走上层盒时左手的离摞接触"},
-   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [23.4, 24.2], "note": "右手收回途中掀左手盒盖"},
-   {"subject": "hong", "parts": ["rightHand", "sleeve_right", "sleeve_rightRoll", "rightArm"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [23.4, 24.2], "note": "掀盖时前臂/袖口过盒盖"},
-   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [22.8, 68], "note": "静息右手搭盒 A 右沿（含袖口靠盖）"},
-   {"subject": "hong", "parts": ["rightHand", "sleeve_right"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [50.5, 54.5], "note": "转身够水壶路过左手盒（含袖口）"},
-   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [13.9, 17.2], "note": "出门挥手手过胸前摞盒（擦碰）"},
-   {"subject": "hong", "parts": ["rightHand"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [13.9, 17.2], "note": "同上（下层盒盖）"},
-   {"subject": "lei", "parts": ["body"], "obstacle": "hongBoxB_base", "window": [46.4, 46.8], "note": "接过签侧身瞬间蹭到两人中间的盒"},
-   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [20.6, 22.8], "note": "右手接盒+送上矮沿+指尖推滑"},
-   {"subject": "hong", "parts": ["rightHand", "rightArm", "sleeve_right", "sleeve_rightRoll", "TubeGeometry"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [20.6, 22.8], "note": "接近时蹭到下层盒"},
-   {"subject": "hong", "parts": ["rightLeg", "leftLeg"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [21.8, 22.8], "note": "落台 transit：盒贴腿侧沉下/滑走"},
-   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxA", "obstacle_prefix": true, "window": [21.5, 22.9], "note": "俯身放盒胸廓蹭左手盒沿"},
-   {"subject": "hong", "parts": ["body"], "obstacle": "hongBoxB", "obstacle_prefix": true, "window": [21.5, 22.9], "note": "同上（放下的那盒）"}
+   {
+    "subject": "lei",
+    "parts": [
+     "rightHand"
+    ],
+    "obstacle": "leiBento_base",
+    "window": [
+     6.9,
+     51.4
+    ],
+    "note": "托盘手托盒底（含放置窗口）"
+   },
+   {
+    "subject": "lei",
+    "parts": [
+     "rightHand",
+     "rightArm",
+     "sleeve_right",
+     "sleeve_rightRoll",
+     "CylinderGeometry"
+    ],
+    "obstacle": "leiBento",
+    "obstacle_prefix": true,
+    "window": [
+     6.9,
+     51.55
+    ],
+    "note": "手系锚定后盒底贴掌面：掌/指/前臂/卷袖/壳疹件全程合法接触（P13 扣边托）"
+   },
+   {
+    "subject": "lei",
+    "parts": [
+     "leftHand"
+    ],
+    "obstacle": "leiBento",
+    "obstacle_prefix": true,
+    "window": [
+     7.0,
+     13.5
+    ],
+    "note": "搬运段左手扶沿"
+   },
+   {
+    "subject": "lei",
+    "parts": [
+     "leftHand",
+     "leftArm"
+    ],
+    "obstacle": "leiBento",
+    "obstacle_prefix": true,
+    "window": [
+     30.0,
+     35.2
+    ],
+    "note": "share_3 收盒：左手搭上盒左沿（P14 有支撑静息）"
+   },
+   {
+    "subject": "lei",
+    "parts": [
+     "leftHand",
+     "leftArm"
+    ],
+    "obstacle": "leiBento",
+    "obstacle_prefix": true,
+    "window": [
+     7.0,
+     13.6
+    ],
+    "note": "搬运段左手扶沿+前臂贴盒底（抱近胸口后）"
+   },
+   {
+    "subject": "lei",
+    "parts": [
+     "leftHand",
+     "leftArm"
+    ],
+    "obstacle": "leiBento",
+    "obstacle_prefix": true,
+    "window": [
+     13.2,
+     14.2
+    ],
+    "note": "掀盖操作接触（含走近盖把的过渡）"
+   },
+   {
+    "subject": "lei",
+    "parts": [
+     "rightHand",
+     "rightArm",
+     "sleeve_right",
+     "sleeve_rightRoll",
+     "CylinderGeometry"
+    ],
+    "obstacle": "leiBento",
+    "obstacle_prefix": true,
+    "window": [
+     50.4,
+     51.55
+    ],
+    "note": "放盒操作接触（盒离手沿前臂滑下，含壳疹六边形件）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "leftHand"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     13.9,
+     999
+    ],
+    "note": "左手托盘全程"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "leftHand",
+     "leftArm",
+     "sleeve_left",
+     "sleeve_leftSleeve",
+     "TubeGeometry"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     13.9,
+     999
+    ],
+    "note": "手系锚定后盒底贴掌面：左臂/缠带全程合法接触（P13 扣边托）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "leftHand",
+     "leftArm",
+     "sleeve_left",
+     "sleeve_leftSleeve",
+     "TubeGeometry"
+    ],
+    "obstacle": "hongBoxB",
+    "obstacle_prefix": true,
+    "window": [
+     13.9,
+     21.3
+    ],
+    "note": "摞在上层盒期间左臂接触"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "body"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     13.9,
+     22.9
+    ],
+    "note": "胸前抱盒（手系锚定后盒贴身）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "body"
+    ],
+    "obstacle": "hongBoxB",
+    "obstacle_prefix": true,
+    "window": [
+     13.9,
+     21.3
+    ],
+    "note": "摞盒贴胸"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "leftHand"
+    ],
+    "obstacle": "hongBoxB_base",
+    "window": [
+     20.8,
+     21.3
+    ],
+    "note": "右手接走上层盒时左手的离摞接触"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     23.4,
+     24.2
+    ],
+    "note": "右手收回途中掀左手盒盖"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand",
+     "sleeve_right",
+     "sleeve_rightRoll",
+     "rightArm"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     23.4,
+     24.2
+    ],
+    "note": "掀盖时前臂/袖口过盒盖"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand",
+     "rightArm",
+     "sleeve_right",
+     "sleeve_rightRoll"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     22.8,
+     68
+    ],
+    "note": "静息右手搭盒 A 右沿（含袖口靠盖）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand",
+     "sleeve_right"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     50.5,
+     54.5
+    ],
+    "note": "转身够水壶路过左手盒（含袖口）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand",
+     "sleeve_right"
+    ],
+    "obstacle": "hongBoxB",
+    "obstacle_prefix": true,
+    "window": [
+     13.9,
+     17.2
+    ],
+    "note": "出门挥手手过胸前摞盒（擦碰，含袖口）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand",
+     "sleeve_right"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     13.9,
+     17.2
+    ],
+    "note": "同上（下层盒）"
+   },
+   {
+    "subject": "lei",
+    "parts": [
+     "body"
+    ],
+    "obstacle": "hongBoxB_base",
+    "window": [
+     46.4,
+     46.8
+    ],
+    "note": "接过签侧身瞬间蹭到两人中间的盒"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand",
+     "rightArm",
+     "sleeve_right",
+     "sleeve_rightRoll",
+     "TubeGeometry"
+    ],
+    "obstacle": "hongBoxB",
+    "obstacle_prefix": true,
+    "window": [
+     20.6,
+     22.8
+    ],
+    "note": "右手接盒+送上矮沿+指尖推滑"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightHand",
+     "rightArm",
+     "sleeve_right",
+     "sleeve_rightRoll",
+     "TubeGeometry"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     20.6,
+     22.8
+    ],
+    "note": "接近时蹭到下层盒"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "rightLeg",
+     "leftLeg"
+    ],
+    "obstacle": "hongBoxB",
+    "obstacle_prefix": true,
+    "window": [
+     21.8,
+     22.8
+    ],
+    "note": "落台 transit：盒贴腿侧沉下/滑走"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "body"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     21.5,
+     22.9
+    ],
+    "note": "俯身放盒胸廓蹭左手盒沿"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "body"
+    ],
+    "obstacle": "hongBoxB",
+    "obstacle_prefix": true,
+    "window": [
+     21.5,
+     22.9
+    ],
+    "note": "同上（放下的那盒）"
+   }
   ]
  },
- "env": {"state_key": "env", "frame_min": 100, "comment": "铁丝网净空：任何命中即失败"},
- "seated": {"window": [22.0, 68.0], "actors": {"lei": "leiRoot", "hong": "hongRoot"}, "min": 0.09, "max": 0.60},
- "bite": {"window": [47.9, 48.4], "a": "skewerTip", "b": "mouthLei", "max": 0.09},
+ "env": {
+  "state_key": "env",
+  "frame_min": 100,
+  "comment": "铁丝网净空：任何命中即失败"
+ },
+ "seated": {
+  "window": [
+   22.0,
+   68.0
+  ],
+  "actors": {
+   "lei": "leiRoot",
+   "hong": "hongRoot"
+  },
+  "min": 0.09,
+  "max": 0.6
+ },
+ "bite": {
+  "window": [
+   47.9,
+   48.4
+  ],
+  "a": "skewerTip",
+  "b": "mouthLei",
+  "max": 0.09
+ },
  "carry": {
   "entries": [
-   {"actor": "lei", "window": [7.2, 11.2], "box": "leiBento"},
-   {"actor": "hong", "window": [14.2, 20.7], "box": "hongBoxA"}
+   {
+    "actor": "lei",
+    "window": [
+     7.2,
+     11.2
+    ],
+    "box": "leiBento"
+   },
+   {
+    "actor": "hong",
+    "window": [
+     14.2,
+     20.7
+    ],
+    "box": "hongBoxA"
+   }
   ],
-  "xz_max": 0.16, "dy_max": 0.08
+  "xz_max": 0.16,
+  "dy_max": 0.08
  },
- "food": {"present_key": "nug", "frame_min": 10,
-  "tip": {"a": "skewerTip", "b": "nug", "max": 0.025},
-  "bone": {"key": "nugBoneMin", "min": 0.016}},
- "wrist": {"applied_max_deg": 62, "palm_dot_max": 0.25},
- "tray": {"k_min": 0.3, "entries": [
-  {"key": "leiR", "actor": "lei", "side": "right", "box": "leiBento", "lim": 0.16},
-  {"key": "leiL", "actor": "lei", "side": "left", "box": "leiBento", "lim": 0.22},
-  {"key": "hongL", "actor": "hong", "side": "left", "box": "hongBoxA", "lim": 0.20}
- ]},
+ "food": {
+  "present_key": "nug",
+  "frame_min": 10,
+  "tip": {
+   "a": "skewerTip",
+   "b": "nug",
+   "max": 0.025
+  },
+  "bone": {
+   "key": "nugBoneMin",
+   "min": 0.016
+  }
+ },
+ "wrist": {
+  "applied_max_deg": 62,
+  "palm_dot_max": 0.25
+ },
+ "tray": {
+  "k_min": 0.3,
+  "entries": [
+   {
+    "key": "leiR",
+    "actor": "lei",
+    "side": "right",
+    "box": "leiBento",
+    "lim": 0.16
+   },
+   {
+    "key": "leiL",
+    "actor": "lei",
+    "side": "left",
+    "box": "leiBento",
+    "lim": 0.22
+   },
+   {
+    "key": "hongL",
+    "actor": "hong",
+    "side": "left",
+    "box": "hongBoxA",
+    "lim": 0.2
+   }
+  ]
+ },
  "supporter": {
-  "support_win": {"leiBento": [6.9, 51.35], "hongBoxA": [13.9, 99], "hongBoxB": [20.85, 22.2]},
-  "transit": {"leiBento": [51.35, 51.6], "hongBoxB": [22.2, 22.9]},
-  "actor_of": {"leiBento": "lei", "hongBoxA": "hong", "hongBoxB": "hong"},
-  "lims": {"leiBento": 0.16, "hongBoxA": 0.20, "hongBoxB": 0.16},
-  "stacked": {"hongBoxB": {"below": "hongBoxA", "until": 20.85}}
+  "support_win": {
+   "leiBento": [
+    6.9,
+    51.35
+   ],
+   "hongBoxA": [
+    13.9,
+    99
+   ],
+   "hongBoxB": [
+    20.85,
+    22.2
+   ]
+  },
+  "transit": {
+   "leiBento": [
+    51.35,
+    51.6
+   ],
+   "hongBoxB": [
+    22.2,
+    22.9
+   ]
+  },
+  "actor_of": {
+   "leiBento": "lei",
+   "hongBoxA": "hong",
+   "hongBoxB": "hong"
+  },
+  "lims": {
+   "leiBento": 0.16,
+   "hongBoxA": 0.2,
+   "hongBoxB": 0.16
+  },
+  "stacked": {
+   "hongBoxB": {
+    "below": "hongBoxA",
+    "until": 20.85
+   }
+  }
  },
- "lid": {"angle_eps": 0.002, "max_dist": 0.25},
- "pinch": {"window": [41.2, 47.2], "point": "palm", "a": "skewerPos", "b": "skewerTip", "min": 0.015, "max": 0.045},
- "dual": {"entries": [{"actor": "lei", "window": [7.2, 11.2], "box": "leiBento_base", "max": 0.20}]},
- "place": {"entries": [
-  {"actor": "hong", "box": "hongBoxB_base", "window": [20.85, 22.2], "side": "right", "lim": 0.16},
-  {"actor": "hong", "box": "hongBoxB_base", "window": [22.2, 22.6], "side": "right", "lim": 0.26},
-  {"actor": "lei", "box": "leiBento_base", "window": [50.4, 51.35], "side": "right", "lim": 0.16}
- ]},
- "continuity": {"entries": [
-  {"box": "hongBoxB_base", "window": [20.85, 22.9], "down_t": 22.9, "step_max": 0.22, "down_step_max": 0.001},
-  {"box": "leiBento_base", "window": [50.4, 51.6], "down_t": 51.6, "step_max": 0.22, "down_step_max": 0.001}
- ]},
- "gait": {"comment": "步态域：walk 帧速度上限 + bout 均速下限 + bob 振幅下限（滑翔=机器人）+ 步频域；雷晓小个子短步慢速，轰刚大步快走",
-  "actors": {
-   "lei": {"speed_max": 1.85, "avg_min": 0.9, "bob_min": 0.008, "cadence": [1.5, 4.5]},
-   "hong": {"speed_max": 2.4, "avg_min": 0.9, "bob_min": 0.008, "cadence": [1.5, 4.0]}
-  }},
- "limb_attach": {"comment": "肩臂衔接：上臂轴与躯干垂线夹角上限（抬臂过肩线=袖根脱嵌风险）+ 肩点到躯干轴线距离上限（含 lean 偏移，轰刚俯身放盒段 ~0.39 为合法）",
-  "actors": {
-   "lei": {"max_elev_deg": 100, "max_shoulder_axis": 0.28},
-   "hong": {"max_elev_deg": 85, "max_shoulder_axis": 0.42}
-  }},
- "worn_prop": {"state_key": "worn", "frame_min": 100, "comment": "书包 vs 雷晓躯干：margin -20mm（贴胯软接触合法、深穿才报），任何命中即失败（包体/盖/带已 probeExclude）"},
- "grip": {"frame_min": 50, "comment": "托盘接触成立：盒底贴掌面（≤3mm 且在盒底投影内）+ 至少一指节扣上盒体（≤5mm）；viewer 手系锚定后此断言防回归",
+ "lid": {
+  "angle_eps": 0.002,
+  "max_dist": 0.25
+ },
+ "pinch": {
+  "window": [
+   41.2,
+   47.2
+  ],
+  "point": "palm",
+  "a": "skewerPos",
+  "b": "skewerTip",
+  "min": 0.015,
+  "max": 0.045
+ },
+ "dual": {
   "entries": [
-   {"key": "leiR", "window": [7.3, 50.3], "palm_max": 0.003, "finger_max": 0.005},
-   {"key": "hongL", "window": [14.3, 67.9], "palm_max": 0.003, "finger_max": 0.005}
-  ]},
- "palm_semantic": {"frame_min": 20, "k_min": 0.5, "comment": "送嘴掌向：咬签/咀嚼抬手帧掌心-躯干点积≥min_dot（viewer 只在 physioPalm 激活帧记录）",
+   {
+    "actor": "lei",
+    "window": [
+     7.2,
+     11.2
+    ],
+    "box": "leiBento_base",
+    "max": 0.2
+   }
+  ]
+ },
+ "place": {
   "entries": [
-   {"key": "LeiXiaoCraft:left", "min_dot": -0.05},
-   {"key": "HongGangCraft:right", "min_dot": -0.05}
-  ]},
- "hand_body_mesh": {"state_key": "handBody", "window": [7, 68], "frame_min": 100,
+   {
+    "actor": "hong",
+    "box": "hongBoxB_base",
+    "window": [
+     20.85,
+     22.2
+    ],
+    "side": "right",
+    "lim": 0.16
+   },
+   {
+    "actor": "hong",
+    "box": "hongBoxB_base",
+    "window": [
+     22.2,
+     22.6
+    ],
+    "side": "right",
+    "lim": 0.26
+   },
+   {
+    "actor": "lei",
+    "box": "leiBento_base",
+    "window": [
+     50.4,
+     51.35
+    ],
+    "side": "right",
+    "lim": 0.16
+   }
+  ]
+ },
+ "continuity": {
+  "entries": [
+   {
+    "box": "hongBoxB_base",
+    "window": [
+     20.85,
+     22.9
+    ],
+    "down_t": 22.9,
+    "step_max": 0.26,
+    "down_step_max": 0.001
+   },
+   {
+    "box": "leiBento_base",
+    "window": [
+     50.4,
+     51.6
+    ],
+    "down_t": 51.6,
+    "step_max": 0.22,
+    "down_step_max": 0.001
+   }
+  ]
+ },
+ "gait": {
+  "comment": "步态域：walk 帧速度上限 + bout 均速下限 + bob 振幅下限（滑翔=机器人）+ 步频域；雷晓小个子短步慢速，轰刚大步快走",
+  "actors": {
+   "lei": {
+    "speed_max": 1.85,
+    "avg_min": 0.9,
+    "bob_min": 0.008,
+    "cadence": [
+     1.5,
+     4.5
+    ]
+   },
+   "hong": {
+    "speed_max": 2.4,
+    "avg_min": 0.9,
+    "bob_min": 0.008,
+    "cadence": [
+     1.5,
+     4.0
+    ]
+   }
+  }
+ },
+ "limb_attach": {
+  "comment": "肩臂衔接：上臂轴与躯干垂线夹角上限（抬臂过肩线=袖根脱嵌风险）+ 肩点到躯干轴线距离上限（含 lean 偏移，轰刚俯身放盒段 ~0.39 为合法）",
+  "actors": {
+   "lei": {
+    "max_elev_deg": 100,
+    "max_shoulder_axis": 0.28
+   },
+   "hong": {
+    "max_elev_deg": 85,
+    "max_shoulder_axis": 0.42
+   }
+  }
+ },
+ "worn_prop": {
+  "state_key": "worn",
+  "frame_min": 100,
+  "comment": "书包 vs 雷晓躯干：margin -20mm（贴胯软接触合法、深穿才报），任何命中即失败（包体/盖/带已 probeExclude）"
+ },
+ "grip": {
+  "frame_min": 50,
+  "comment": "托盘接触成立：盒底贴掌面（≤3mm 且在盒底投影内）+ 至少一指节扣上盒体（≤5mm）；viewer 手系锚定后此断言防回归",
+  "entries": [
+   {
+    "key": "leiR",
+    "window": [
+     7.3,
+     50.3
+    ],
+    "palm_max": 0.003,
+    "finger_max": 0.005
+   },
+   {
+    "key": "hongL",
+    "window": [
+     14.3,
+     67.9
+    ],
+    "palm_max": 0.003,
+    "finger_max": 0.005
+   }
+  ]
+ },
+ "palm_semantic": {
+  "frame_min": 20,
+  "k_min": 0.5,
+  "comment": "送嘴掌向：咬签/咀嚼抬手帧掌心-躯干点积≥min_dot（viewer 只在 physioPalm 激活帧记录）",
+  "entries": [
+   {
+    "key": "LeiXiaoCraft:left",
+    "min_dot": -0.05
+   },
+   {
+    "key": "HongGangCraft:right",
+    "min_dot": -0.05
+   }
+  ]
+ },
+ "hand_body_mesh": {
+  "state_key": "handBody",
+  "window": [
+   7,
+   68
+  ],
+  "frame_min": 100,
   "comment": "手 skinned mesh vs 躯干/大腿代理盒：margin -10mm 深穿才报，未声明即失败",
   "allowed": [
-   {"subject": "hongL", "obstacle": "torso", "window": [13.9, 21.0], "note": "胸前抱盒搬运：手夹在盒与胸廓间（被盒遮挡，设计如此）"},
-   {"subject": "hongL", "obstacle": "torso", "window": [21.4, 22.8], "note": "落座过渡手贴胸廓（俯身放盒）"},
-   {"subject": "hongR", "obstacle": "torso", "window": [21.4, 22.8], "note": "同上（放盒手）"},
-   {"subject": "hongR", "obstacle": "torso", "window": [50.5, 54.5], "note": "够水壶绕行：代理盒角误报区（真躯干为圆角）"},
-   {"subject": "hongL", "obstacle": "thigh_left", "window": [21.4, 22.8], "note": "落座+放盒过渡扫过腿面（1s 内）"},
-   {"subject": "hongL", "obstacle": "thigh_left", "window": [14.0, 21.0], "note": "端盒行走摆动腿面擦碰（步态峰值帧）"},
-   {"subject": "hongR", "obstacle": "thigh_right", "window": [21.4, 22.8], "note": "同上（放盒手）"},
-   {"subject": "leiL", "obstacle": "torso", "window": [29.9, 35.4], "note": "share_3 收盒左手搭上沿的过渡帧扫过腰侧"}
-  ]},
- "rest_support": {"window": [22, 68], "actors": ["lei", "hong"], "max_speed": 0.08, "max_y": 0.95,
-  "gap_max": 0.008, "hang_deg": 35, "still_frame_min": 20,
+   {
+    "subject": "hongL",
+    "obstacle": "torso",
+    "window": [
+     13.9,
+     21.0
+    ],
+    "note": "胸前抱盒搬运：手夹在盒与胸廓间（被盒遮挡，设计如此）"
+   },
+   {
+    "subject": "hongL",
+    "obstacle": "torso",
+    "window": [
+     21.4,
+     22.8
+    ],
+    "note": "落座过渡手贴胸廓（俯身放盒）"
+   },
+   {
+    "subject": "hongR",
+    "obstacle": "torso",
+    "window": [
+     21.4,
+     22.8
+    ],
+    "note": "同上（放盒手）"
+   },
+   {
+    "subject": "hongR",
+    "obstacle": "torso",
+    "window": [
+     50.5,
+     54.5
+    ],
+    "note": "够水壶绕行：代理盒角误报区（真躯干为圆角）"
+   },
+   {
+    "subject": "hongL",
+    "obstacle": "thigh_left",
+    "window": [
+     21.4,
+     22.8
+    ],
+    "note": "落座+放盒过渡扫过腿面（1s 内）"
+   },
+   {
+    "subject": "hongL",
+    "obstacle": "thigh_left",
+    "window": [
+     14.0,
+     21.0
+    ],
+    "note": "端盒行走摆动腿面擦碰（步态峰值帧）"
+   },
+   {
+    "subject": "hongR",
+    "obstacle": "thigh_right",
+    "window": [
+     21.4,
+     22.8
+    ],
+    "note": "同上（放盒手）"
+   },
+   {
+    "subject": "leiL",
+    "obstacle": "torso",
+    "window": [
+     29.9,
+     35.4
+    ],
+    "note": "share_3 收盒左手搭上沿的过渡帧扫过腰侧"
+   },
+   {
+    "subject": "leiL",
+    "obstacle": "torso",
+    "window": [
+     13.9,
+     14.2
+    ],
+    "note": "落座掀盖后收手：掠过上臂外侧（坐姿肘外摆后的肘平面过渡）"
+   },
+   {
+    "subject": "leiL",
+    "obstacle": "torso",
+    "window": [
+     55.2,
+     55.4
+    ],
+    "note": "空拍入口咀嚼抬起过渡（一拍二量化断点）"
+   },
+   {
+    "subject": "leiL",
+    "obstacle": "torso",
+    "window": [
+     55.0,
+     55.4
+    ],
+    "note": "按袖→垂放边界混合掠过腰侧（2 帧）"
+   }
+  ]
+ },
+ "limb_body_mesh": {
+  "state_key": "limbBody",
+  "window": [
+   7,
+   68
+  ],
+  "frame_min": 100,
+  "embed_margin": 0.015,
+  "sep_max": 0.035,
+  "sep_deg_max": 30,
+  "comment": "上肢管 vs 躯干椭圆截面：g<-(管半径+15mm)=陷入；分离=静息帧上臂侧向外摆角>sep_deg_max（rootG 距离判别已证伪——正常臂根区也 +.04m）",
+  "allowed": [
+   {
+    "subject": "leiR",
+    "window": [
+     50.4,
+     51.5
+    ],
+    "note": "放盒引导段（发力保持）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     21.4,
+     22.9
+    ],
+    "note": "放盒落座段"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     51.2,
+     54.0
+    ],
+    "note": "够水壶"
+   },
+   {
+    "subject": "hongL",
+    "window": [
+     21.4,
+     22.8
+    ],
+    "note": "落座过渡"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     41.0,
+     45.7
+    ],
+    "note": "递签伸手保持（主动作态）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     30.0,
+     35.2
+    ],
+    "note": "指点雷晓便当（主动作态）"
+   },
+   {
+    "subject": "leiL",
+    "window": [
+     43.5,
+     45.7
+    ],
+    "note": "接签伸手（交接瞬间）"
+   },
+   {
+    "subject": "leiL",
+    "window": [
+     13.2,
+     14.0
+    ],
+    "note": "掀盖够盖把（功能性全展直）"
+   },
+   {
+    "subject": "leiL",
+    "window": [
+     55.0,
+     55.4
+    ],
+    "note": "按袖→垂放边界混合掠过腰侧（2 帧）"
+   },
+   {
+    "subject": "leiL",
+    "window": [
+     51.9,
+     52.4
+    ],
+    "note": "按袖起手摆入（肘外摆让胸线）"
+   }
+  ]
+ },
+ "reach": {
+  "ratio_max": 0.9,
+  "hang_deg": 35,
+  "comment": "腕-肩距离/臂长 >0.9 且非垂臂=超伸僵直；发力帧白名单豁免",
+  "allowed": [
+   {
+    "subject": "leiR",
+    "window": [
+     50.4,
+     52.0
+    ],
+    "note": "放置引导段全展直够矮沿（落点探针验证）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     21.4,
+     22.9
+    ],
+    "note": "放盒落座段全展直"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     51.0,
+     54.2
+    ],
+    "note": "够水壶全展直（够不着是表演内容）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     13.9,
+     15.3
+    ],
+    "note": "挥手预备/起幅（主动作态）"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     17.9,
+     21.7
+    ],
+    "note": "行走转弯段垂臂"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     23.4,
+     26.0
+    ],
+    "note": "推滑+开盖操作段"
+   },
+   {
+    "subject": "hongR",
+    "window": [
+     40.4,
+     41.0
+    ],
+    "note": "插签起手"
+   },
+   {
+    "subject": "leiR",
+    "window": [
+     14.4,
+     14.6
+    ],
+    "note": "落座收回过渡"
+   },
+   {
+    "subject": "leiL",
+    "window": [
+     13.2,
+     14.0
+    ],
+    "note": "掀盖够盖把（功能性伸展）"
+   },
+   {
+    "subject": "leiL",
+    "window": [
+     52.4,
+     53.8
+    ],
+    "note": "按袖（主动作态接触保持）"
+   },
+   {
+    "subject": "leiR",
+    "window": [
+     52.2,
+     55.1
+    ],
+    "note": "抬右前臂看微光（主动作态）"
+   }
+  ]
+ },
+ "rest_support": {
+  "window": [
+   22,
+   68
+  ],
+  "actors": [
+   "lei",
+   "hong"
+  ],
+  "max_speed": 0.08,
+  "max_y": 0.95,
+  "gap_max": 0.008,
+  "hang_deg": 35,
+  "still_frame_min": 20,
   "comment": "坐姿静息手必有支撑（垂放贴腿/贴盒）；活动中或高举（≥0.95m）的手不判定",
   "exclude": [
-   {"hand": "lei:left", "window": [52.2, 53.7], "note": "按袖：左手压右前臂（臂-臂接触，不在腿/盒上）"},
-   {"hand": "lei:left", "window": [53.7, 55.6], "note": "按袖收回→空拍垂放的慢滑过渡"},
-   {"hand": "lei:left", "window": [43.2, 43.6], "note": "接签伸手过渡（缓动尾）"},
-   {"hand": "hong:right", "window": [51.2, 53.9], "note": "转身够水壶：伸臂保持（主动作态）"}
-  ]},
- "state_consistency": {"comment": "C7 状态一致性：迁移必有触发者/事件必对应迁移/行为必符合状态",
-  "elements": {
-   "door": {"key": "doorOpen", "pos_key": "doorPos", "open_min": 0.7, "closed_max": 0.1,
-    "transitions": [
-     {"id": "lei_open", "window": [6.9, 7.5], "from": "closed", "to": "open",
-      "trigger": {"actor": "lei", "window": [6.9, 7.6], "max_dist": 0.9},
-      "event": {"t": 7.05, "tol": 0.15}},
-     {"id": "lei_close", "window": [9.2, 10.4], "from": "open", "to": "closed",
-      "trigger": {"actor": "lei", "window": [7.0, 8.5], "max_dist": 0.95},
-      "event": {"t": 10.35, "tol": 0.15}, "note": "弹簧门漂移自关：触发=过人，迁移滞后是门物理"},
-     {"id": "hong_slam", "window": [13.75, 14.0], "from": "closed", "to": "open",
-      "trigger": {"actor": "hong", "window": [13.99, 14.2], "max_dist": 0.9},
-      "event": {"t": 13.85, "tol": 0.15}},
-     {"id": "gust_close", "window": [18.05, 18.3], "from": "open", "to": "closed",
-      "trigger": {"gust_key": "windGust", "window": [18.0, 18.35], "min": 0.6},
-      "event": {"t": 18.25, "tol": 0.15}, "note": "轰刚没关严，阵风带上（风在旗/包/发束上可见）"}
+   {
+    "hand": "lei:left",
+    "window": [
+     52.2,
+     53.7
     ],
-    "behavior": {"cross_plane": {"point": [-6.5, -7.99], "normal": [0, 1], "half_width": 0.6,
-      "actors": ["lei", "hong"], "open_min": 0.5}}},
-   "leiBentoLid": {"key": "lidOpen.leiBento", "open_min": 0.7, "closed_max": 0.1,
-    "transitions": [{"id": "open", "window": [13.65, 14.1], "from": "closed", "to": "open",
-      "trigger": {"hand_near": {"tab_key": "leiBento", "max_dist": 0.25}, "window": [13.5, 14.2]}}]},
-   "hongBoxALid": {"key": "lidOpen.hongBoxA", "open_min": 0.7, "closed_max": 0.1,
-    "transitions": [{"id": "open", "window": [23.6, 24.0], "from": "closed", "to": "open",
-      "trigger": {"hand_near": {"tab_key": "hongBoxA", "max_dist": 0.25}, "window": [23.4, 24.2]}}]},
-   "hongBoxBLid": {"key": "lidOpen.hongBoxB", "open_min": 0.7, "closed_max": 0.1,
-    "transitions": [{"id": "open", "window": [21.55, 22.05], "from": "closed", "to": "open",
-      "trigger": {"hand_near": {"tab_key": "hongBoxB", "max_dist": 0.25}, "window": [21.4, 22.2]}}]}
-  }}
+    "note": "按袖：左手压右前臂（臂-臂接触，不在腿/盒上）"
+   },
+   {
+    "hand": "lei:left",
+    "window": [
+     53.7,
+     55.6
+    ],
+    "note": "按袖收回→空拍垂放的慢滑过渡"
+   },
+   {
+    "hand": "lei:left",
+    "window": [
+     43.2,
+     43.6
+    ],
+    "note": "接签伸手过渡（缓动尾）"
+   },
+   {
+    "hand": "hong:right",
+    "window": [
+     51.2,
+     53.9
+    ],
+    "note": "转身够水壶：伸臂保持（主动作态）"
+   },
+   {
+    "hand": "lei:right",
+    "window": [
+     52.2,
+     55.1
+    ],
+    "note": "抬起右前臂看微光+放下（主动作态）"
+   }
+  ]
+ },
+ "state_consistency": {
+  "comment": "C7 状态一致性：迁移必有触发者/事件必对应迁移/行为必符合状态",
+  "elements": {
+   "door": {
+    "key": "doorOpen",
+    "pos_key": "doorPos",
+    "open_min": 0.7,
+    "closed_max": 0.1,
+    "transitions": [
+     {
+      "id": "lei_open",
+      "window": [
+       6.9,
+       7.5
+      ],
+      "from": "closed",
+      "to": "open",
+      "trigger": {
+       "actor": "lei",
+       "window": [
+        6.9,
+        7.6
+       ],
+       "max_dist": 0.9
+      },
+      "event": {
+       "t": 7.05,
+       "tol": 0.15
+      }
+     },
+     {
+      "id": "lei_close",
+      "window": [
+       9.2,
+       10.4
+      ],
+      "from": "open",
+      "to": "closed",
+      "trigger": {
+       "actor": "lei",
+       "window": [
+        7.0,
+        8.5
+       ],
+       "max_dist": 0.95
+      },
+      "event": {
+       "t": 10.35,
+       "tol": 0.15
+      },
+      "note": "弹簧门漂移自关：触发=过人，迁移滞后是门物理"
+     },
+     {
+      "id": "hong_slam",
+      "window": [
+       13.75,
+       14.0
+      ],
+      "from": "closed",
+      "to": "open",
+      "trigger": {
+       "actor": "hong",
+       "window": [
+        13.99,
+        14.2
+       ],
+       "max_dist": 0.9
+      },
+      "event": {
+       "t": 13.85,
+       "tol": 0.15
+      }
+     },
+     {
+      "id": "gust_close",
+      "window": [
+       18.05,
+       18.3
+      ],
+      "from": "open",
+      "to": "closed",
+      "trigger": {
+       "gust_key": "windGust",
+       "window": [
+        18.0,
+        18.35
+       ],
+       "min": 0.6
+      },
+      "event": {
+       "t": 18.25,
+       "tol": 0.15
+      },
+      "note": "轰刚没关严，阵风带上（风在旗/包/发束上可见）"
+     }
+    ],
+    "behavior": {
+     "cross_plane": {
+      "point": [
+       -6.5,
+       -7.99
+      ],
+      "normal": [
+       0,
+       1
+      ],
+      "half_width": 0.6,
+      "actors": [
+       "lei",
+       "hong"
+      ],
+      "open_min": 0.5
+     }
+    }
+   },
+   "leiBentoLid": {
+    "key": "lidOpen.leiBento",
+    "open_min": 0.7,
+    "closed_max": 0.1,
+    "transitions": [
+     {
+      "id": "open",
+      "window": [
+       13.65,
+       14.1
+      ],
+      "from": "closed",
+      "to": "open",
+      "trigger": {
+       "hand_near": {
+        "tab_key": "leiBento",
+        "max_dist": 0.25
+       },
+       "window": [
+        13.5,
+        14.2
+       ]
+      }
+     }
+    ]
+   },
+   "hongBoxALid": {
+    "key": "lidOpen.hongBoxA",
+    "open_min": 0.7,
+    "closed_max": 0.1,
+    "transitions": [
+     {
+      "id": "open",
+      "window": [
+       23.6,
+       24.0
+      ],
+      "from": "closed",
+      "to": "open",
+      "trigger": {
+       "hand_near": {
+        "tab_key": "hongBoxA",
+        "max_dist": 0.25
+       },
+       "window": [
+        23.4,
+        24.2
+       ]
+      }
+     }
+    ]
+   },
+   "hongBoxBLid": {
+    "key": "lidOpen.hongBoxB",
+    "open_min": 0.7,
+    "closed_max": 0.1,
+    "transitions": [
+     {
+      "id": "open",
+      "window": [
+       21.55,
+       22.05
+      ],
+      "from": "closed",
+      "to": "open",
+      "trigger": {
+       "hand_near": {
+        "tab_key": "hongBoxB",
+        "max_dist": 0.25
+       },
+       "window": [
+        21.4,
+        22.2
+       ]
+      }
+     }
+    ]
+   }
+  }
+ }
 }
