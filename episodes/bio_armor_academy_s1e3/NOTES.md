@@ -489,6 +489,27 @@ beat 过量 → 袖根与躯干张开楔缝，"断开再接一截"。
   polygonOffset；细长 alpha 件禁裸 alphaTest+默认 mipmap）；physics-gate.md 工作流
   门禁加第 5 步。
 
+## P19：肘部"多长一节" + 足踝滚动（2026-10-11）
+
+- **0:20 肘部断开感**：诊断=肘内角 113.8°（不屈也不直，不是肘角问题）+ 坐姿肘外摆
+  pole 把裸前臂段支出去 + 卷袖只覆盖臂长 51%——"袖筒端→肘凸→长裸前臂"读成多一节。
+  修法=坐姿 pole 收到体侧后下方（V(sign·.28,−.66,−.5)，肘 tucked 后凸起消失）；
+  0:32 同色贴壁不回退（分离主要靠 P16 托盘收臂）。对照 ship_020/cur_020 vs
+  `storyboard/p19_elbow/fix_020_elbow.jpg`（+fix_032_regress 无回退）。
+- **跺脚走**（整掌平拍）：`dula-assets/lib/craft3d/locomotion.js` 加支撑期足踝滚动
+  （触地背屈 .26→放平→蹬离跖屈 .22，距离驱动与速度剖面解耦）+ 摆动期微垂→勾脚 +
+  绕踝俯仰的触地支点补偿（背屈跟杠杆 .08/跖屈前掌杠杆 .17，不补就鞋尖插地）。
+  接口不变（walkingFeet/createLocomotion 签名原样），S1E2 用本地旧副本不受影响。
+- **断言**：`foot_roll` kind（支撑 tick 序列三不变量：背屈峰 ≥8°/中途放平/蹬离谷
+  ≤−10°）；采样纪律写进 walk-director（tick 必须 floor、段尾截断只判落地相、站立
+  起步第一支撑相=推离豁免）。check_locomotion 修误报：滑步按 XZ 判（滚动踝部 Y 起伏
+  不是滑步）、支撑旋转只判偏航（绕踝俯仰=滚动本体）。
+- **验收**：check8 全量 26 段全绿 + locomotion passed:true（滑步/偏航/穿地）+ seek
+  75/75；足部侧景特写×3（`storyboard/p19_elbow/foot_heel_strike/mid_flat/toe_off.jpg`：
+  跟着地足尖抬/放平/蹬离跟抬都读得出）。成片重出。
+- 写回：walk-director procedural-footsteps.md 足踝滚动节；physical-completeness.md
+  C3 矩阵行；physics-gate.md 契约行；craft3d/README.md locomotion 导出说明。
+
 ## 遗留
 
 - 「事件音效对画」已进 skill 纪律（build-ambience-foley）；本集其他事件

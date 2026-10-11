@@ -312,9 +312,9 @@ function buildPose(actor,s,t,dims){
     const delta=new THREE.Vector3(target.x-shoulder.x,target.y-shoulder.y,target.z-shoulder.z);
     const maxR=armA+armB-.005;
     if(delta.length()>maxR){delta.setLength(maxR);Object.assign(target,V(shoulder.x+delta.x,shoulder.y+delta.y,shoulder.z+delta.z));}
-    // 坐姿肘极外摆：白袖贴白衬衫时臂-躯干剪影合并读成"嵌入"（0:32 实录）；
-    // 手腕目标不变（IK 钉住），只转肘平面把上臂从躯干侧壁让开
-    const pole=s[side+'Pole']??(s.sit>0?V(sign*.35,-.65,-.4):V(sign*.25,-.65,-.5));
+    // 坐姿肘极：体侧后下方收（.35 外摆在托盘 beat 读成"多长一节"——0:20 实录；
+    // 同色贴壁分离主要靠 P16 托盘收臂，不靠肘翼）
+    const pole=s[side+'Pole']??(s.sit>0?V(sign*.28,-.66,-.5):V(sign*.25,-.65,-.5));
     p[side+'Arm']=[shoulder,twoBone(shoulder,target,pole,armA,armB),target];
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);

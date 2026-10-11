@@ -991,7 +991,7 @@
    {
     "subject": "hongR",
     "window": [
-     23.4,
+     23.2,
      26.0
     ],
     "note": "推滑+开盖操作段"
@@ -1300,5 +1300,16 @@
   "frame_min": 100,
   "comment": "外套襟 vs 手臂管/躯干代理盒：margin -10mm 深穿才报；襟根枢轴邻域 viewer 已滤",
   "allowed": []
+ },
+ "foot_roll": {
+  "heel_deg_min": 8,
+  "mid_deg_max": 3,
+  "toe_deg_min": 10,
+  "run_min": 6,
+  "actors": [
+   "lei",
+   "hong"
+  ],
+  "comment": "足踝滚动：触地背屈≥8°、支撑中期|角|≤3°、蹬离跖屈≥10°（整掌平拍=跺脚，P19 实录）"
  }
 }

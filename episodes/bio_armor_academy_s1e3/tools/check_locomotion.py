@@ -22,9 +22,14 @@ for frame in data['frames']:
                 before=prev['feet'][side]
                 if foot['stance'] and before['stance'] and foot['id']==before['id']:
                     out['support_pairs']+=1
-                    slip=math.dist(foot['position'],before['position'])
-                    dot=abs(sum(x*y for x,y in zip(foot['quaternion'],before['quaternion'])))
-                    rotation=2*math.acos(min(1,dot))
+                    # 滑步按 XZ 判（支撑期足踝滚动会让踝部 Y 起伏，竖直分量不是滑步）
+                    slip=math.hypot(foot['position'][0]-before['position'][0],foot['position'][2]-before['position'][2])
+                    # 支撑期足踝滚动=绕踝俯仰（正当），rotations 只判偏航漂移：YXZ 欧拉取 yaw 差
+                    def yawOf(q):
+                        x,y,z,w=q
+                        return math.atan2(2*(w*y+x*z),1-2*(y*y+x*x))
+                    dy=yawOf(foot['quaternion'])-yawOf(before['quaternion'])
+                    rotation=abs(math.atan2(math.sin(dy),math.cos(dy)))
                     out['max_slip']=max(out['max_slip'],slip)
                     out['max_rotation']=max(out['max_rotation'],rotation)
             dx=pose['root'][0]-prev['root'][0];dz=pose['root'][2]-prev['root'][2]

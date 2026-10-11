@@ -577,6 +577,7 @@ function draw(t,capture=true){
         vertex.fromBufferAttribute(a,i).applyMatrix4(o.matrixWorld);soleMin=Math.min(soleMin,vertex.y);
       }});
       feet[side]={position:foot.getWorldPosition(new THREE.Vector3()).toArray(),soleMin,
+        pitch:p[side+'FootPitch']??0, // 足踝俯仰（足踝滚动断言用；负=背屈足尖抬）
         quaternion:foot.getWorldQuaternion(new THREE.Quaternion()).toArray(),...p.locomotion.contacts[side]};
     }
     locomotion[name]={...p.locomotion,root:actor.mesh.position.toArray(),yaw:actor.mesh.rotation.y,bob:p.bob,feet,
