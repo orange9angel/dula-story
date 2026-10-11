@@ -125,10 +125,11 @@ for(const [actor,r,c,sh,shY] of [[lei,.055,'#ede8dd',.13,1.375],[hong,.075,'#303
 }
 // 手-躯干/大腿网格级探针代理（不可见盒，不渲染；坐姿段手嵌入深穿断言用）：
 // 躯干盒挂 body（随 lean/bob），大腿盒逐帧对准髋→膝段
-const bodyProxies=[],thighProxies=new Map();
+const bodyProxies=[],thighProxies=new Map(),torsoProxyMap=new Map();
 for(const [actor,tw,tY0,tY1,td,thR] of [[lei,.30,.95,1.45,.19,.077],[hong,.38,.98,1.58,.22,.098]]){
   const torso=new THREE.Mesh(new THREE.BoxGeometry(tw,tY1-tY0,td));
-  torso.name='torso';torso.position.y=(tY0+tY1)/2;torso.visible=false;actor.body.add(torso);bodyProxies.push(torso);
+  torso.name='torso';torso.position.y=(tY0+tY1)/2;torso.visible=false;actor.body.add(torso);
+  bodyProxies.push(torso);torsoProxyMap.set(actor,torso);
   const pair={};
   for(const side of ['left','right']){
     const thigh=new THREE.Mesh(new THREE.BoxGeometry(thR*2.2,1,thR*2.0));
@@ -137,13 +138,14 @@ for(const [actor,tw,tY0,tY1,td,thR] of [[lei,.30,.95,1.45,.19,.077],[hong,.38,.9
   thighProxies.set(actor,pair);
 }
 const hongFlaps=hong.body.children.filter(o=>o.isMesh&&Math.abs(Math.abs(o.position.x)-.152)<.005);
-for(const flap of hongFlaps){flap.geometry.translate(0,-1.52,0);flap.position.y=1.52;} // wind pivots at the shoulder, not the ground
+for(const flap of hongFlaps){flap.geometry.translate(0,-1.52,0);flap.position.y=1.52;
+  flap.position.x*=1.22;} // 静态外张：襟片让出垂臂通道（P17 前臂穿襟实录）
 const leiTufts=[];lei.headGroup.traverse(o=>{if(o.isMesh&&o.geometry.type==='TubeGeometry'&&o.material.side!==THREE.BackSide)leiTufts.push(o);});
 // 阵风包络（解析微风正弦，(t,state) 纯函数）：空拍段加强
 // 18.2s 阵风脉冲：把轰刚没关严的门带上（门迁移的可见环境触发——状态/声音/动因一致）
 const gustAt=t=>Math.exp(-(((t-18.2)/.35)**2));
 function windAt(t){return Math.max(0,.55*Math.sin(t*.31)+.45*Math.sin(t*.13+1.7))*(t>=55&&t<68?1.8:1)*(1+1.4*gustAt(t));}
-function secondary(t,sl){
+function secondary(t,sl,sh,pH){
   const w=windAt(t),lean=sl.lean??0,lerp=THREE.MathUtils.lerp;
   if(leiBag){ // 书包：硬材质，小幅；枢轴在包顶，重力外倾+风摆；俯身时逆 lean 回摆保持垂感
     leiBag.rotation.z=(leiBag.userData.hangTilt??0)+.08*w*Math.sin(t*3.1)+.018*Math.sin(t*7.3);
@@ -159,9 +161,12 @@ function secondary(t,sl){
       link.scale.set(1,len,1);
     }
   }
-  hongFlaps.forEach((f,i)=>{ // 外套襟：软材质，摆幅稍大
-    f.rotation.x=.10*w*Math.sin(t*2.9+i*1.3);
-    f.rotation.z=(f.position.x>0?-1:1)*.05*w*Math.sin(t*3.4+i*.8);
+  hongFlaps.forEach((f,i)=>{ // 外套襟：软材质，摆幅稍大；襟片静息即搭在臂前外侧（不共面穿刺），
+    const side=f.position.x>0?'right':'left',a=pH?.[side==='left'?'leftArm':'rightArm'];
+    let letOff=0; // 前臂前摆/上抬时再加让位（绕臂外倾）
+    if(a){const fdz=a[2].z-a[1].z,fdy=a[2].y-a[1].y;letOff=Math.max(0,fdz)*1.2+Math.max(0,fdy)*.3;}
+    f.rotation.x=-.06+w*.10*Math.sin(t*2.9+i*1.3)-letOff*.35; // 底缘微前倾盖过臂外侧
+    f.rotation.z=(f.position.x>0?1:-1)*(.14+letOff*.25)+(f.position.x>0?-1:1)*.05*w*Math.sin(t*3.4+i*.8);
   });
   leiTufts.forEach((m,i)=>{m.rotation.z=.012*w*Math.sin(t*2.2+i*1.9);m.rotation.x=.008*w*Math.sin(t*1.7+i);});
 }
@@ -539,7 +544,7 @@ function draw(t,capture=true){
   lei.mouth.apply(lipLei(t));
   hong.mouth.apply(lipHong(t));
   props(t,sl,sh,performance.pL,performance.pH);
-  secondary(t,sl);
+  secondary(t,sl,sh,performance.pH);
   for(const {actor,side,sign,cap,r,torso} of shoulderCaps){ // 肩窝桥接：躯干肩点（lean 后）→臂根
     const p=actor===lei?performance.pL:performance.pH,a=p?.[side+'Arm'];
     if(!a||actor.mesh.visible===false){cap.visible=false;continue;}
@@ -713,6 +718,28 @@ function draw(t,capture=true){
     // 手 vs 躯干/大腿：margin −10mm 深穿才报（垂放贴腿/贴骨盆侧翼的接触合法）
     state.handBody=bentoProbe(bodyProxies,{leiL:lei.hands.left,leiR:lei.hands.right,
       hongL:hong.hands.left,hongR:hong.hands.right},-.010);
+    // 外套襟 vs 手臂：解析式穿透检测（盒代理太粗、常接触误报——P17 实录）——
+    // 襟片面片（枢轴原点、下摆 −y、法向 z）局部系看臂管段：段端点在面片两侧且
+    // 交点落在襟片范围内=穿透；贴面（|z| 小但不换号）=搭盖合法
+    if(hongFlaps.length){
+      const hits=[];
+      hongFlaps.forEach((f,i)=>{
+        f.updateWorldMatrix(true,false);
+        const a=performance.pH?.[f.position.x>0?'rightArm':'leftArm'];if(!a)return;
+        for(const [seg,x,y,tr] of [['u',0,1,.075],['f',1,2,.06]]){
+          const p0=f.worldToLocal(new THREE.Vector3(a[x].x,a[x].y,a[x].z)),
+                p1=f.worldToLocal(new THREE.Vector3(a[y].x,a[y].y,a[y].z));
+          if(p0.z*p1.z>=0)continue; // 同侧=未穿
+          const u=p0.z/(p0.z-p1.z),cx=p0.x+(p1.x-p0.x)*u,cy=p0.y+(p1.y-p0.y)*u;
+          if(Math.abs(cx)<.085+tr&&cy>-.62&&cy<.03){
+            const wp=f.localToWorld(new THREE.Vector3(cx,cy,0));
+            hits.push({subject:'flap'+i,obstacle:'arm_'+(f.position.x>0?'right':'left')+'_'+seg,
+              point:[wp.x,wp.y,wp.z]});
+          }
+        }
+      });
+      state.cloth={margin:-.01,hits,obstacles:['arm tubes'],counts:{hong:hits.length}};
+    }
     // 上肢管 vs 躯干侧壁：解析式（躯干截面是变半径椭圆环列，盒代理角部误报率太高——
     // P15 首扫盒代理全员常命中翻车实录）。沿臂轴采样：g=到躯干表面的有符号距离
     // （正=分离，0=贴触，负=嵌入）；嵌入深度 > 管半径+15mm 才报。袖根 .12m 内埋区跳过。

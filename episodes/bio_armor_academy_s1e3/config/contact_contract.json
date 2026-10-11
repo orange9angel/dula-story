@@ -411,6 +411,32 @@
      22.9
     ],
     "note": "同上（放下的那盒）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "body"
+    ],
+    "obstacle": "hongBoxB",
+    "obstacle_prefix": true,
+    "window": [
+     41.2,
+     55.1
+    ],
+    "note": "递签前倾胸廓蹭两人中间的盒（矮沿上静置盒）"
+   },
+   {
+    "subject": "hong",
+    "parts": [
+     "body"
+    ],
+    "obstacle": "hongBoxA",
+    "obstacle_prefix": true,
+    "window": [
+     41.2,
+     55.1
+    ],
+    "note": "递签前倾胸廓蹭左手托着的盒沿"
    }
   ]
  },
@@ -925,7 +951,7 @@
    {
     "subject": "leiR",
     "window": [
-     50.4,
+     50.3,
      52.0
     ],
     "note": "放置引导段全展直够矮沿（落点探针验证）"
@@ -1264,5 +1290,15 @@
     ]
    }
   }
+ },
+ "cloth_body": {
+  "state_key": "cloth",
+  "window": [
+   14,
+   68
+  ],
+  "frame_min": 100,
+  "comment": "外套襟 vs 手臂管/躯干代理盒：margin -10mm 深穿才报；襟根枢轴邻域 viewer 已滤",
+  "allowed": []
  }
 }
