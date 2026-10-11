@@ -4,16 +4,9 @@
   "steps": [
     {
       "name": "render_check",
-      "cmd": "node render.mjs --check --board storyboard/gate --trace storyboard/gate/trace.json --q &probe-door=1&probe-bento=1",
-      "returncode": 0,
       "passed": true,
-      "tail": [
-        "check 1500/2130",
-        "check 1800/2130",
-        "check 2100/2130",
-        "gait trace: D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\storyboard\\gate\\trace.json (2130 frames)",
-        "check complete: 75 frames"
-      ]
+      "skipped": true,
+      "note": "reuse D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\storyboard\\gate\\trace.json"
     },
     {
       "name": "seek_determinism",
@@ -65,9 +58,21 @@
       "returncode": 0,
       "passed": true,
       "tail": [
-        "http://127.0.0.1:53944/viewer.html",
+        "http://127.0.0.1:53014/viewer.html",
         "shots complete: 28 frames -> D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\storyboard\\gate\\shots",
         "check complete: 0 frames"
+      ]
+    },
+    {
+      "name": "flicker",
+      "cmd": "D:\\opensource\\movie\\dula-story\\.venv\\Scripts\\python.exe D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\flicker_probe.py D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\output\\craft3d_full.mp4 --watch D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\config\\flicker_watch.json --out D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\storyboard\\gate\\flicker_report.json",
+      "returncode": 0,
+      "passed": true,
+      "tail": [
+        "door_mat: mean 4.4 max 140.0 frac 0.01832",
+        "  fence_far_west: mean 18.85 max 233.0 frac 0.23325",
+        "  fence_far_east: mean 9.67 max 234.0 frac 0.10587",
+        "flicker: all regions stable"
       ]
     }
   ],

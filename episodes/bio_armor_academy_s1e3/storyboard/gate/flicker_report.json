@@ -1,0 +1,72 @@
+{
+  "video": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e3\\output\\craft3d_full.mp4",
+  "frames": 2130,
+  "regions": [
+    {
+      "name": "door_mat",
+      "window": [
+        2.4,
+        6.8
+      ],
+      "mean": 4.4,
+      "max": 140.0,
+      "frac_over": 0.01832
+    },
+    {
+      "name": "fence_far_west",
+      "window": [
+        2.4,
+        6.8
+      ],
+      "mean": 18.85,
+      "max": 233.0,
+      "frac_over": 0.23325
+    },
+    {
+      "name": "fence_far_east",
+      "window": [
+        2.4,
+        6.8
+      ],
+      "mean": 9.67,
+      "max": 234.0,
+      "frac_over": 0.10587
+    }
+  ],
+  "bg": [
+    {
+      "cell": [
+        0,
+        0
+      ],
+      "mean": 2.25,
+      "frac_over": 0.02137
+    },
+    {
+      "cell": [
+        0,
+        3
+      ],
+      "mean": 3.39,
+      "frac_over": 0.0337
+    },
+    {
+      "cell": [
+        3,
+        0
+      ],
+      "mean": 2.26,
+      "frac_over": 0.01484
+    },
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "mean": 2.2,
+      "frac_over": 0.01523
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

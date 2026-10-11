@@ -466,6 +466,29 @@ beat 过量 → 袖根与躯干张开楔缝，"断开再接一截"。
 - 写回：physical-completeness.md（C4 补衣物-肢体 + P17 实录节）、physics-gate.md
   （cloth 契约行）、contact-and-hands.md（薄衣片换号穿透 + 同色剪影合并不是嵌入）。
 
+## P18：渲染稳定性类目 C8（z-fight/alpha 闪烁/同色合并终修，2026-10-11）
+
+- **0:18 手腕没入胸口（用户说"还是"）**：精确定位=startled 段托盘右手（画面左侧=
+  镜像误读）；腕-胸廓 +8.5cm（无 3D 嵌入）——根因是同色剪影合并残留：托盘手再向右下
+  收（V(.16,.84,.22)→V(.15,.85,.20)），前臂剪影落裤/盒沿不叠胸面；胸前"黄色小物件"=
+  盒内炸鸡（正常，签 41.2s 前不出现已确认无泄漏）。对照 `p17_chest/cur_018.png` vs
+  `p18_flicker/fix_018_now.jpg`。
+- **门外白地垫 z-fight**：hut_step 顶面与地面顶面同 y=0 共面 → 抬 2mm（连带扫到
+  parapet_n_cap 底面与墙顶共面，同抬 2mm）。
+- **铁丝网时隐时现**：alphaTest+默认 mipmap 远距吃掉细线。选型实录：alphaHash（覆盖
+  恒定但屏幕抖动噪声随镜头漂移，二阶差更难看→弃）、关 mipmap（远距成亚像素噪点→弃）、
+  **双层网面定型**（近景细 repeat 140 / 远景粗 repeat 32，相机 >9m 换层，镜头驱动纯
+  函数、换层只在镜头沿）。修复前后连拍 5 帧拼条：`storyboard/p18_flicker/strip_*.png`
+  （before 双模式：打架+消失）。
+- **新探针 `flicker_probe.py`**（gate 第七步）：成片逐帧二阶差分；watch 区回归带
+  （mean 带 [下限=内容消失， 上限=闪烁] + 超阈占比）+ 背景 4×4 角格粗扫（含缓慢内容
+  容忍 .045）。修复前片段实测三违全红（地垫打架 10.9/.115、网面消失 .29/.002 低于
+  下限），修后全绿。config/flicker_watch.json 声明 watch 区。
+- gate 七步全绿（flicker 成片比源码旧会跳过并标注）。成片重出；25 段零退化。
+- 写回：physical-completeness.md 加 C8 类目+矩阵列+三例实录与制作纪律（共面件 2mm/
+  polygonOffset；细长 alpha 件禁裸 alphaTest+默认 mipmap）；physics-gate.md 工作流
+  门禁加第 5 步。
+
 ## 遗留
 
 - 「事件音效对画」已进 skill 纪律（build-ambience-foley）；本集其他事件

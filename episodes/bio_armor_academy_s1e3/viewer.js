@@ -561,6 +561,10 @@ function draw(t,capture=true){
 
   let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}:camFor(opts.shot??'two',t,entry);
   camera.position.set(...c.pos);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
+  // 铁丝网远近双层：>9m 换粗网（远距细网成亚像素噪点；镜头驱动、(t,state) 纯函数）
+  const netFar=camera.position.distanceTo(stage.net.position)>9;
+  stage.net.material=stage.fenceMats[netFar?'far':'fine'];
+  stage.netW.material=stage.fenceMats[netFar?'far':'fine'];
   symbols(t); // billboard 朝向必须在相机定位之后（seek 直接跳转时相机无历史帧）
 
   const locomotion={};

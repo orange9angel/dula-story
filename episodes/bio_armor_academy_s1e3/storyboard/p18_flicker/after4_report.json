@@ -1,0 +1,72 @@
+{
+  "video": "output\\_after_flicker.mp4",
+  "frames": 138,
+  "regions": [
+    {
+      "name": "door_mat",
+      "window": [
+        0.0,
+        4.4
+      ],
+      "mean": 3.17,
+      "max": 60.0,
+      "frac_over": 0.00453
+    },
+    {
+      "name": "fence_far_west",
+      "window": [
+        0.0,
+        4.4
+      ],
+      "mean": 18.78,
+      "max": 231.0,
+      "frac_over": 0.23277
+    },
+    {
+      "name": "fence_far_east",
+      "window": [
+        0.0,
+        4.4
+      ],
+      "mean": 9.43,
+      "max": 183.0,
+      "frac_over": 0.10353
+    }
+  ],
+  "bg": [
+    {
+      "cell": [
+        0,
+        0
+      ],
+      "mean": 0.04,
+      "frac_over": 0.0
+    },
+    {
+      "cell": [
+        0,
+        3
+      ],
+      "mean": 2.67,
+      "frac_over": 0.02438
+    },
+    {
+      "cell": [
+        3,
+        0
+      ],
+      "mean": 2.08,
+      "frac_over": 0.00036
+    },
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "mean": 2.7,
+      "frac_over": 0.01395
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

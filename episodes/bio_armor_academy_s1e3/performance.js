@@ -40,7 +40,7 @@ const IDLE_L={left:V(-.21,.95,.03),right:V(.21,.95,.03)};
 const IDLE_H={left:V(-.27,1.12,.04),right:V(.27,1.12,.04)};
 // 坐姿静息=垂放腿侧、掌心贴腿（本 rig 手臂短：坐姿肩-腿面距离 > 臂长，腿上平放不可达——
 // 垂放腿侧是唯一有支撑的静息；P14 实测 LAP 悬空 .13–.17m 翻车）
-const LAP_L={left:V(-.19,.73,.02),right:V(.12,.85,.21)};   // 雷晓：左垂放腿侧，右手托盒位
+const LAP_L={left:V(-.19,.73,.02),right:V(.15,.85,.20)};   // 雷晓：左垂放腿侧，右手托盒位
 const LAP_H={left:V(-.15,.88,.22),right:V(.00,.91,.20)};   // 轰刚：左托盒位，右垂放腿侧
 
 // Exit along the doorway normal first; turn only after body + props clear the jamb.
@@ -129,7 +129,7 @@ function specLei(phase,u,dt,t){
       break;
     }
     case 'share_4':{ // 「普通的便当而已！」嘴硬
-      s.sit=1;s.left={...LAP_L.left};s.right=V(.12,.85,.21);
+      s.sit=1;s.left={...LAP_L.left};s.right=V(.15,.85,.20);
       s.headPitch=-.04;s.headYaw=-.55;s.emotion='determined';
       break;
     }
@@ -142,7 +142,7 @@ function specLei(phase,u,dt,t){
       break;
     }
     case 'crack':{ // 接过咬一口，被逗笑破防；笑瞬间右臂微光一闪、左手按住
-      s.sit=1;s.right=V(.12,.85,.21);
+      s.sit=1;s.right=V(.15,.85,.20);
       s.right.z+=settle(t,51.4,.04); // 放下便当盒后右手带跟随衰减收回腿边
       if(dt<2.0){ // 进食弧线：胸前→弧顶抬起→嘴前下方停顿（掌心自然朝上向内）→签尖送入口中→撤回（持签手半捏）
         s.left=key(dt,[[0,V(-.12,1.05,.28)],[.55,V(-.10,1.12,.30)],[.85,V(-.08,1.16,.30)],
@@ -155,7 +155,7 @@ function specLei(phase,u,dt,t){
       }else if(dt<5.4){ // 笑意未收 + 右手把盒子放上右侧矮沿（手随盒沉到台面再释放）
         const q=ease((dt-3.7)/1.7);s.emotion='laugh';s.headPitch=mix(-.14,.02,q);
         s.headRoll=.02*Math.sin(t*3.4);s.left=V(-.15,1.02,.31);s.gL={fist:.5}; // 稍外前让开 lean 前倾的胸廓（P14 手-身嵌入实录）
-        s.right=key(dt,[[3.7,V(.12,.85,.21)],[3.9,V(.28,.72,.08)],[4.4,V(.40,.70,-.07)],
+        s.right=key(dt,[[3.7,V(.15,.85,.20)],[3.9,V(.28,.72,.08)],[4.4,V(.40,.70,-.07)],
           [4.85,V(.40,.70,-.07)],[5.1,V(.30,.76,.04)],[5.4,V(.16,.78,.24)]]);
         s.lean=.12*ease(clamp((dt-3.95)/.3))*ease(clamp((5.15-dt)/.3)); // 微俯身才能够到矮沿（.15→.12，肩窝片兜缝）
       }else{ // 袖口微光：低头看右臂，左手按住（按臂手平贴前臂）

@@ -54,7 +54,6 @@ function fenceTex(){
   });
   t.wrapS=t.wrapT=THREE.MirroredRepeatWrapping;return t;
 }
-
 export class RooftopNoonScene{
   constructor(){this.scene=new THREE.Scene();this.scene.name='RooftopNoonScene';}
   build(){
@@ -95,14 +94,21 @@ export class RooftopNoonScene{
     const parapetMat=new THREE.MeshToonMaterial({color:'#aaa69d',gradientMap:ramp,map:concrete});
     const capMat=toon('#c6c2b9');
     this.parapetN=box(S,'parapet_n',[0,.26,-11.25],[29.6,.52,.30],null,{mat:parapetMat,shadow:true});
-    box(S,'parapet_n_cap',[0,.545,-11.25],[29.6,.05,.36],null,{mat:capMat});
+    box(S,'parapet_n_cap',[0,.547,-11.25],[29.6,.05,.36],null,{mat:capMat}); // cap 底面原与墙顶共面（z-fight 风险）——抬 2mm
     box(S,'parapet_w',[-14.65,.26,-1.9],[.3,.52,19.0],null,{mat:parapetMat});
     box(S,'parapet_e',[14.65,.26,-1.9],[.3,.52,19.0],null,{mat:parapetMat});
     box(S,'parapet_s',[0,.26,7.65],[29.6,.52,.3],null,{mat:parapetMat});
 
     // ── 铁丝网围栏：立柱 + 顶杆 + 透明贴图网面（北墙满铺，西墙一段）──
+    // 双层网面（P18 实录：近景细网/远景粗网按相机距离换层——裸 alphaTest+默认 mipmap
+    // 远距被 mip 吃掉时隐时现，关 mip 又糊成亚像素噪点）：粗层把菱格放大到远距可读
     const fence=fenceTex();fence.repeat.set(140,8); // 网格间距放大，近景摩尔纹减弱
+    fence.generateMipmaps=false;fence.minFilter=THREE.LinearFilter; // 关 mipmap 保细线
     const fenceMat=new THREE.MeshBasicMaterial({map:fence,alphaTest:.45,side:THREE.DoubleSide,color:'#8b96a2'});
+    const fenceCoarse=fenceTex();fenceCoarse.repeat.set(32,2); // 远距粗网：菱格 4 倍大
+    fenceCoarse.generateMipmaps=false;fenceCoarse.minFilter=THREE.LinearFilter;
+    const fenceMatFar=new THREE.MeshBasicMaterial({map:fenceCoarse,alphaTest:.45,side:THREE.DoubleSide,color:'#9aa5b2'});
+    this.fenceMats={fine:fenceMat,far:fenceMatFar};
     const postMat=toon('#5f6874');
     const net=this.net=new THREE.Mesh(new THREE.PlaneGeometry(29.3,1.62),fenceMat);
     net.position.set(0,1.35,-11.37);S.add(net);
@@ -137,7 +143,8 @@ export class RooftopNoonScene{
       ])box(hut,name,p,size,null,{mat:parapetMat,shadow:true});
       box(hut,'hut_roof',[0,2.76,0],[3.0,.14,3.0],null,{mat:capMat,shadow:true});
       // Flush threshold: the shared gait walks on y=0, so no unmodelled 8cm step.
-      box(hut,'hut_step',[0,-.025,1.55],[1.6,.05,.7],null,{mat:capMat});
+      // 但顶面与地面顶面共面会 z-fight（门口白色地垫逐帧闪烁实录）——抬 2mm 保净空
+      box(hut,'hut_step',[0,-.023,1.55],[1.6,.05,.7],null,{mat:capMat});
       // 门框 + 铰链门（门板绕左缘开合）
       box(hut,'door_frame_t',[0,2.06,1.31],[1.15,.1,.1],'#6a6258');
       box(hut,'door_frame_l',[-.55,1.03,1.31],[.1,2.16,.1],'#6a6258');

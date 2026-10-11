@@ -1,0 +1,9 @@
+{
+ "comment": "阈值=实测可读态±余量的回归带：mean 低于 mean_min=内容消失（mip 吃掉），高于 mean_max/frac 超限=闪烁打架",
+ "regions": [
+  {"name": "door_mat", "rect": [435, 405, 50, 24], "window": [2.4, 6.8], "mean_min": 1, "mean_max": 8, "frac_max": 0.025},
+  {"name": "fence_far_west", "rect": [20, 295, 380, 75], "window": [2.4, 6.8], "mean_min": 3, "mean_max": 28, "frac_max": 0.26},
+  {"name": "fence_far_east", "rect": [590, 295, 400, 75], "window": [2.4, 6.8], "mean_min": 3, "mean_max": 28, "frac_max": 0.26}
+ ],
+ "bg_grid": {"pix": 30, "frac_max": 0.045, "cells": [[0, 0], [0, 3], [3, 0], [3, 3]], "comment": "四角粗扫：角部含流云/水塔天线等缓慢内容，容忍度放宽到 .045"}
+}

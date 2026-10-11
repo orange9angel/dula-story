@@ -1,0 +1,76 @@
+{
+  "video": "output\\_before_flicker.mp4",
+  "frames": 138,
+  "regions": [
+    {
+      "name": "door_mat",
+      "window": [
+        0.0,
+        4.4
+      ],
+      "mean": 10.95,
+      "max": 170.0,
+      "frac_over": 0.11529
+    },
+    {
+      "name": "fence_far_west",
+      "window": [
+        0.0,
+        4.4
+      ],
+      "mean": 0.29,
+      "max": 68.0,
+      "frac_over": 0.00193
+    },
+    {
+      "name": "fence_far_east",
+      "window": [
+        0.0,
+        4.4
+      ],
+      "mean": 1.95,
+      "max": 126.0,
+      "frac_over": 0.01239
+    }
+  ],
+  "bg": [
+    {
+      "cell": [
+        0,
+        0
+      ],
+      "mean": 0.04,
+      "frac_over": 0.0
+    },
+    {
+      "cell": [
+        0,
+        3
+      ],
+      "mean": 2.67,
+      "frac_over": 0.02444
+    },
+    {
+      "cell": [
+        3,
+        0
+      ],
+      "mean": 2.08,
+      "frac_over": 0.00038
+    },
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "mean": 2.69,
+      "frac_over": 0.0139
+    }
+  ],
+  "failures": [
+    "flicker @door_mat: mean 10.9 / frac 0.1153 over limit",
+    "flicker @fence_far_west: mean 0.3 below floor 3（内容消失）",
+    "flicker @fence_far_east: mean 2.0 below floor 3（内容消失）"
+  ],
+  "passed": false
+}
