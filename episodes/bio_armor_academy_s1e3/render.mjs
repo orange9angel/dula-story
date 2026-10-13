@@ -6,6 +6,7 @@ import {createRequire} from 'node:module';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {compareNumericState} from 'dula-engine/lib/NumericAudit.js';
+import {auditInputs,episodeSources} from './tools/audit_inputs.mjs';
 
 const here=path.dirname(fileURLToPath(import.meta.url)),root=here,storyRoot=path.resolve(root,'../..');
 const require=createRequire(path.join(storyRoot,'node_modules/dula-engine/package.json')),puppeteer=require('puppeteer');
@@ -36,7 +37,7 @@ const server=http.createServer((req,res)=>{
   res.writeHead(200,{'Content-Type':mime[path.extname(target)]??'application/octet-stream','Cache-Control':'no-store','Content-Length':fs.statSync(target).size});
   fs.createReadStream(target).pipe(res);
 });
-server.listen(serve?4215:0,'127.0.0.1');await once(server,'listening');
+server.listen(serve?Number(opt('--port')??4215):0,'127.0.0.1');await once(server,'listening');
 const url=`http://127.0.0.1:${server.address().port}/viewer.html`;console.log(url);
 if(!serve){
   let browser,encoder;
@@ -63,14 +64,9 @@ if(!serve){
       }
       console.log(`shots complete: ${shots.length} frames -> ${board}`);
     }
-    const sources=['performance.js','viewer.js','render.mjs','scenes/RooftopNoonScene.js','tools/door_probe.js','tools/surface_probe.js','config/timeline.json','config/contact_contract.json'];
+    const sources=episodeSources;
     const {createHash}=await import('node:crypto');
-    const inputPaths=sources.map(p=>path.join(here,p));
-    for(const dir of ['node_modules/dula-assets/lib/craft3d','node_modules/dula-assets/characters/bioarmor'])
-      for(const f of fs.readdirSync(path.join(storyRoot,dir)))if(f.endsWith('.js'))inputPaths.push(path.join(storyRoot,dir,f));
-    inputPaths.push(path.join(storyRoot,'node_modules/dula-engine/lib/MeshCollision.js'));
-    inputPaths.push(path.join(storyRoot,'node_modules/dula-engine/lib/NumericAudit.js'));
-    const build={inputs:inputPaths.map(p=>({path:fs.realpathSync(p),sha256:createHash('sha256').update(fs.readFileSync(p)).digest('hex')}))};
+    const build=auditInputs(here);
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
       args,output,
       sourceSha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(here,p))).digest('hex')]))

@@ -4,14 +4,14 @@
  "surface_clearance": {
   "fps_min": 30,
   "require_build": true,
-  "comment": "P22 严格厚度审计：实际可见臂/袖顶点 vs 同源躯干实体；衣片为有限平面代理。5mm 身体容差、10mm 衣物容差，不沿用旧轴线豁免。逐配对完整采样；未通过不宣称零穿模。",
+  "comment": "P23：臂/袖顶点 vs 同源躯干实体（5mm）；真实衣物开放曲面横向相交计数必须为零，肩缝边界仍为局部 y=-.08。旧衣片平面代理仅记录对照，不判通过。逐配对完整采样；未通过不宣称零穿模。",
   "pairs": [
    {"key":"lei:left:torso","window":[7,68],"max_depth":0.005,"method":"rendered-vertices/closed-mesh"},
    {"key":"lei:right:torso","window":[7,68],"max_depth":0.005,"method":"rendered-vertices/closed-mesh"},
    {"key":"hong:left:torso","window":[14,68],"max_depth":0.005,"method":"rendered-vertices/closed-mesh"},
    {"key":"hong:right:torso","window":[14,68],"max_depth":0.005,"method":"rendered-vertices/closed-mesh"},
-   {"key":"hong:left:cloth","window":[14,68],"max_depth":0.010,"method":"capsule/finite-panel-proxy"},
-   {"key":"hong:right:cloth","window":[14,68],"max_depth":0.010,"method":"capsule/finite-panel-proxy"}
+   {"key":"hong:left:cloth","window":[14,68],"max_depth":0,"max_crossings":0,"method":"rendered-surfaces/triangle-crossing"},
+   {"key":"hong:right:cloth","window":[14,68],"max_depth":0,"max_crossings":0,"method":"rendered-surfaces/triangle-crossing"}
   ]
  },
  "pose_tick_hz": 15,

@@ -563,7 +563,7 @@ function camFor(shot,t,entry){
   }
 }
 
-function draw(t,capture=true){
+function draw(t,capture=true,plan=false){
   const performance=poseAt(lei,hong,entries,t);
   const {entry,i,opts,u,sl,sh}=performance;
   stage.update(t);
@@ -838,6 +838,11 @@ function draw(t,capture=true){
     if(leiBag)state.worn=bentoProbe([leiBag],{lei:lei.mesh},-.02);
   }
   if(surfaceProbe)state.surface=surfaceProbe({lei:performance.pL,hong:performance.pH});
+  if(plan){
+    if(!surfaceProbe)throw new Error('Enable probe-surface to plan corrections');
+    state.correctionPlan=surfaceProbe.plan({lei:performance.pL,hong:performance.pH});
+    state.surfaceAfterPlanning=surfaceProbe({lei:performance.pL,hong:performance.pH});
+  }
   if(!capture)return state;
   renderer.render(stage.scene,camera);
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);
@@ -847,6 +852,7 @@ function draw(t,capture=true){
 }
 function poseBlink(t){return Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);}
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);
+window.planSurfaceAt=t=>draw(t,false,true);
 window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...new Set([...entries.flatMap(e=>[e.startTime+.15,(e.startTime+e.endTime)/2,e.endTime-.10]),
   6.9,7.0,7.3,7.5,7.7,7.9,8.1,8.4,8.8,9.0,9.4,9.8,10.1,10.5,12.7,
