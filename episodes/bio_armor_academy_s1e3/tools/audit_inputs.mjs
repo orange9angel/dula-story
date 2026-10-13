@@ -3,8 +3,8 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 
 export const episodeSources=['performance.js','viewer.js','viewer.html','render.mjs','scenes/RooftopNoonScene.js',
-  'tools/door_probe.js','tools/surface_probe.js','tools/audit_inputs.mjs','tools/plan_clearance.mjs',
-  'config/timeline.json','config/contact_contract.json'];
+  'tools/door_probe.js','tools/surface_probe.js','tools/audit_inputs.mjs','tools/plan_clearance.mjs','tools/check_corrections.mjs',
+  'config/timeline.json','config/contact_contract.json','config/clearance_corrections.json'];
 
 export function auditInputs(episode){
   const story=path.resolve(episode,'../..'),files=episodeSources.map(p=>path.join(episode,p));

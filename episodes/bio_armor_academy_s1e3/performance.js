@@ -2,6 +2,7 @@
 // (t,state) 纯函数，顺序/seek 一致是铁律；twoBone/步态积木取自 dula-assets craft3d。
 import * as THREE from 'three';
 import {twoBone} from 'dula-assets/lib/craft3d/pose.js';
+import {rotateLimbElbow,correctionAngle} from 'dula-engine/lib/ConstrainedLimb.js';
 import {walkingFeet,turningFeet,angleDelta,createLocomotion} from 'dula-assets/lib/craft3d/locomotion.js';
 export const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x);};
 const mix=(a,b,u)=>a+(b-a)*u,V=(x,y,z=0)=>({x,y,z}),blend=(a,b,u)=>V(mix(a.x,b.x,u),mix(a.y,b.y,u),mix(a.z,b.z,u));
@@ -304,6 +305,13 @@ function specHong(phase,u,dt,t){
 }
 
 // ── 公共骨架求解（两角色同契约，移植 S1E2 已验收实现）─────────────
+function applyElbowCorrections(p,s){
+  for(const side of ['left','right']){
+    const angle=s[side+'ElbowDelta']??0;
+    if(Math.abs(angle)>Math.PI/2)throw new Error('Overlapping elbow corrections exceed the angular bound');
+    if(angle)p[side+'Arm']=rotateLimbElbow(p[side+'Arm'],angle);
+  }
+}
 function buildPose(actor,s,t,dims){
   const {hipIdle,shoulderY,shoulderHalf,hipHalf,legA,legB,armA,armB,footY}=dims;
   const sy=s.squash??1,sxz=1/Math.sqrt(sy);actor.body.scale.set(sxz,sy,sxz); // 挤压拉伸：躯干局部 scale，体积守恒
@@ -330,7 +338,7 @@ function buildPose(actor,s,t,dims){
     p[side+'Arm']=[shoulder,twoBone(shoulder,target,pole,armA,armB),target];
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
-  actor.setPose(p);
+  applyElbowCorrections(p,s);actor.setPose(p);
   // Shared characters position the shoes but do not consume FootYaw/FootPitch.
   // Reset locally as well, so seeking from a turn into a seated pose is deterministic.
   for(const foot of Object.values(actor.feet))foot.rotation.set(0,0,0);
@@ -375,7 +383,7 @@ function buildWalkingPose(actor,s,t,d,p){
     p[side+'Arm']=[shoulder,twoBone(shoulder,target,s[side+'Pole']??V(sign*.25,-.65,-.5),d.armA,d.armB),target];
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
-  actor.setPose(p);actor.mesh.visible=s.visible!==false;
+  applyElbowCorrections(p,s);actor.setPose(p);actor.mesh.visible=s.visible!==false;
   for(const side of ['left','right'])actor.feet[side].rotation.set(p[side+'FootPitch']??0,p[side+'FootYaw']??0,0,'YXZ');
   const gRest={fist:.12,open:0,point:s.point??0}; // 行走段同样需要手势（端盒/挥手）
   actor.hands.left.setGesture({...gRest,...(s.gL??{})});
@@ -399,7 +407,7 @@ const HONG_PHASE={card_open:'hidden',establish:'hidden',walk_in:'hidden',hong_ar
   share_1:'share_1h',share_2:'share_2h',share_3:'share_3h',share_4:'share_4h',
   offer:'offer_h',crack:'crack_h',empty_beat:'empty_h',card_close:'card_close'};
 
-export function poseAt(lei,hong,entries,t){
+export function poseAt(lei,hong,entries,t,corrections=[]){
   // 一拍二：姿势/表情量化到 15Hz（floor(t*15)/15）；根位移与腿部落脚另取满帧率防滑步；
   // 相机/口型/光效各层时钟分离（viewer 侧满帧率），条目边界缘插值同量化防混合抖动。
   const tq=Math.floor(t*15)/15;
@@ -447,6 +455,12 @@ export function poseAt(lei,hong,entries,t){
     const tb=Math.max(entry.startTime,tq-.12);
     const ub=clamp((tb-entry.startTime)/(entry.endTime-entry.startTime));
     s.bobLag=(s.bob??0)-(spec(map[opts.move]??dflt,ub,tb-entry.startTime,tb).bob??0);
+  }
+  for(const track of corrections){
+    if(!['lei','hong'].includes(track.actor)||!['left','right'].includes(track.side))throw new Error('Invalid correction target');
+    if(track.beat!==opts.move)continue;
+    const state=track.actor==='lei'?sl:sh,key=track.side+'ElbowDelta';
+    state[key]=(state[key]??0)+correctionAngle(dt,track);
   }
   const pL=buildPose(lei,sl,tq,DIMS_LEI),pH=buildPose(hong,sh,tq,DIMS_HONG);
   return {entry,i,opts,phase:opts.move,dt,u,sl,sh,pL,pH};

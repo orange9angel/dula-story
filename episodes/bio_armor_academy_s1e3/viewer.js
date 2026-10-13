@@ -24,6 +24,12 @@ function ensureFenceProxies(){
 }
 const W=1280,H=720;
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
+const clearanceCorrections=await fetch('./config/clearance_corrections.json').then(r=>{if(!r.ok)throw new Error('Missing clearance corrections');return r.json();});
+if(clearanceCorrections.version!==1||!Array.isArray(clearanceCorrections.tracks))throw new Error('Invalid clearance correction config');
+for(const track of clearanceCorrections.tracks){
+  const beat=TL.segments.find(s=>s.move===track.beat);
+  if(!beat||track.times?.length!==4||track.times[0]<0||track.times[3]>beat.end-beat.start)throw new Error('Correction must fit a known beat');
+}
 window.duration=TL.duration;
 const entries=TL.segments.map(s=>({startTime:s.start,endTime:s.end,character:s.character,
   opts:{move:s.move,shot:s.shot,kind:s.kind,card:s.card}}));
@@ -563,8 +569,8 @@ function camFor(shot,t,entry){
   }
 }
 
-function draw(t,capture=true,plan=false){
-  const performance=poseAt(lei,hong,entries,t);
+function draw(t,capture=true,plan=false,corrections=clearanceCorrections.tracks){
+  const performance=poseAt(lei,hong,entries,t,corrections);
   const {entry,i,opts,u,sl,sh}=performance;
   stage.update(t);
   // 眼神跟随对戏搭档（P1 默认，空拍远望由 headYaw 谱面表达）
@@ -852,6 +858,7 @@ function draw(t,capture=true,plan=false){
 }
 function poseBlink(t){return Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);}
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);
+window.stepWithCorrectionsAt=(t,tracks)=>draw(t,false,false,tracks);
 window.planSurfaceAt=t=>draw(t,false,true);
 window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...new Set([...entries.flatMap(e=>[e.startTime+.15,(e.startTime+e.endTime)/2,e.endTime-.10]),
