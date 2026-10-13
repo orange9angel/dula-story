@@ -9,10 +9,10 @@ def save(p,c):
     (EP/p).write_text(text,encoding='utf-8')
 tl=load('config/timeline.json');segs={s['entry']:s for s in tl['segments']}
 c=load('config/scene_contract.json')
-c['intent']={'premise':'两个站定的学生观察左臂蚀纹；雷晓停止主动催动并答应次日复查','audience':'校园奇幻连载观众','designPriorities':['角色与环境有可计算净空','台词因果与低幅动作同步','不依赖视觉检测']}
+c['intent']={'premise':'两个学生在对话中观察左臂蚀纹；雷晓停止主动催动并答应次日复查','audience':'校园奇幻连载观众','designPriorities':['角色意图通过有效动作和反应呈现','动作域有可计算净空与支撑','不依赖视觉检测']}
 s=c['scenes'][0]
-s['intent']={'location':'青岚学舍生物活动室','timeOfDay':'放学后柔和日光','tone':['安静','克制','纸面色块'],'storyFunction':'引入千堂葵并让雷晓做出停止尝试的选择','visualRules':['角色根位置固定','手臂在各自身侧活动','标本罐与桌子超出触及范围']}
-s['stage']['zones'][0]['purpose']=['固定双人站姿观察']
+s['intent']={'location':'青岚学舍生物活动室','timeOfDay':'放学后柔和日光','tone':['安静','克制','纸面色块'],'storyFunction':'引入千堂葵并让雷晓做出停止尝试的选择','visualRules':['允许换重心和有支撑的转身','手势及听者反应对应剧情转折','标本罐与桌子超出触及范围']}
+s['stage']['zones'][0]['purpose']=['双人对话、观察、指正与叫停']
 s['stage']['anchors']={'leafJar':{'space':'world','relativeTo':'$scene','position':[1.8,1.12,-1.78],'purpose':'留白镜头的叶片标本'}}
 s['lighting']={'mood':'柔和日光','readabilityRules':['脸部正面补光','蚀纹附着于原有手臂表面']}
 s['cameraObstacles']=[{'id':name,'type':'box','space':'world','center':center,'size':size} for name,center,size in [
@@ -20,7 +20,7 @@ s['cameraObstacles']=[{'id':name,'type':'box','space':'world','center':center,'s
 for entity in c['entities']:
     if entity['id']=='LeafJar':entity['binding']='jar'
 c['state']['latestCue']['binding']='scene.latestCue'
-for b in c['blocking']:b['purpose']='保留观察空间，根位置固定，外侧前臂在有限范围内抬起'
+for b in c['blocking']:b['purpose']='保留观察空间，脚底接触锁定而重心可移动；肩、臂、躯干共享腰部变换'
 for shot in c['shotChecks']:shot['purpose']='几何投影及焦点要求；当前数值验收范围以 contact_contract 为准'
 save('config/scene_contract.json',c)
 a=load('config/audio_direction.json');a['sources'][0]['sha256']=hashlib.sha256((EP/'script.story').read_bytes()).hexdigest()
@@ -32,6 +32,6 @@ a['policies']['ambienceMode']='directed'
 a['ambience']=[{'id':'biology_room','startTime':3,'endTime':78,'shotIds':[],'asset':'assets3d/ambience/biology_room.wav',
     'prompt':'生成一段85秒的纯室内环境底声：放学后安静的学校生物活动室，关着窗，极轻的远处通风声。平稳、无阵风、无节律性涌动、音量恒定。没有人声、音乐、脚步、敲击、鸟叫、虫鸣、电流蜂鸣或故事性事件。干净柔和，供低音量对白场景使用。',
     'reason':'维持同一室内空间，让停顿保留空间感'}]
-a['exclusions']=[{'id':'no_etch_whoosh','reason':'附着纹路只改变颜色，没有机械或爆发运动'},{'id':'no_steps_contacts','reason':'站定且不拿取道具，不添加未发生的脚步和碰撞声'},{'id':'no_music','reason':'停手决定由对白和沉默承载'}]
+a['exclusions']=[{'id':'no_etch_whoosh','reason':'附着纹路只改变颜色，没有机械或爆发运动'},{'id':'no_steps_contacts','reason':'开场小幅调整站姿不突出脚步；没有道具接触或撞击，不配置撞击声'},{'id':'no_music','reason':'停手决定由对白和沉默承载'}]
 save('config/audio_direction.json',a)
 print('UTF-8 scene/audio contracts refreshed from script-derived timeline')

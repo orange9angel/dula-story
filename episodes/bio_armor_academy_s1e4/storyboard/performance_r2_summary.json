@@ -1,0 +1,326 @@
+{
+  "episode": "bio_armor_academy_s1e4",
+  "video": "output/craft3d_s1e4_acting_r2.mp4",
+  "bytes": 5057669,
+  "duration": 81,
+  "frames": 2430,
+  "fps": 30,
+  "dimensions": [
+    1280,
+    720
+  ],
+  "videoSha256": "f9cf20fe18f60da3d3afa85a642ca3bb2cb6ddfef8a04e601b039f2dcf4af022",
+  "decodePassed": true,
+  "visualInspections": 0,
+  "artisticAcceptance": "pending user review; R1 rejected",
+  "gatePassed": true,
+  "seekChecks": 54,
+  "sourceFingerprints": 39,
+  "renderMatchesAudit": true,
+  "performance": [
+    {
+      "actor": "lei",
+      "entry": 3,
+      "hand": 1,
+      "excursion": 0.29124731758421407,
+      "minimum": 0.15
+    },
+    {
+      "actor": "lei",
+      "entry": 4,
+      "hand": 0,
+      "excursion": 0.30554687303902883,
+      "minimum": 0.15
+    },
+    {
+      "actor": "lei",
+      "entry": 5,
+      "hand": 1,
+      "excursion": 0.1574876244819498,
+      "minimum": 0.09
+    },
+    {
+      "actor": "lei",
+      "entry": 11,
+      "hand": 0,
+      "excursion": 0.041096875689213365,
+      "minimum": 0.03
+    },
+    {
+      "actor": "lei",
+      "entry": 13,
+      "hand": 0,
+      "excursion": 0.31646221500684313,
+      "minimum": 0.15
+    },
+    {
+      "actor": "lei",
+      "entry": 15,
+      "hand": 1,
+      "excursion": 0.16077935190813517,
+      "minimum": 0.09
+    },
+    {
+      "actor": "aoi",
+      "entry": 4,
+      "hand": 0,
+      "excursion": 0.21195141535372208,
+      "minimum": 0.13
+    },
+    {
+      "actor": "aoi",
+      "entry": 6,
+      "hand": 1,
+      "excursion": 0.18027479025088355,
+      "minimum": 0.12
+    },
+    {
+      "actor": "aoi",
+      "entry": 8,
+      "hand": 0,
+      "excursion": 0.2827967467988273,
+      "minimum": 0.17
+    },
+    {
+      "actor": "aoi",
+      "entry": 11,
+      "hand": 0,
+      "excursion": 0.2858237423906777,
+      "minimum": 0.17
+    },
+    {
+      "actor": "aoi",
+      "entry": 14,
+      "hand": 0,
+      "excursion": 0.14351631981371857,
+      "minimum": 0.08
+    },
+    {
+      "actor": "aoi",
+      "entry": 16,
+      "hand": 1,
+      "excursion": 0.12452342966786839,
+      "minimum": 0.07
+    }
+  ],
+  "frozenListenerNegative": "aoi entry 4: frozen/weak wrist beat 0.000 < 0.13",
+  "stats": {
+    "actorGap": {
+      "min": 0.8542997984753633,
+      "max": 1.143665488509634
+    },
+    "cameraEnvironmentGap": {
+      "min": 3.7415446341953844,
+      "max": 7.19030596100923
+    },
+    "lei:vertices": {
+      "min": 52935,
+      "max": 52935
+    },
+    "lei:boneError": {
+      "min": 5.551115123125783e-17,
+      "max": 6.106226635438361e-16
+    },
+    "lei:minEnvironmentGap": {
+      "min": 1.4146598392475562,
+      "max": 1.4642228328794655
+    },
+    "lei:cameraDistance": {
+      "min": 3.1273534102355187,
+      "max": 5.608723414896892
+    },
+    "lei:maxArmAngle": {
+      "min": 46.679301376679305,
+      "max": 73.86420378547392
+    },
+    "lei:headTurn": {
+      "min": 0,
+      "max": 0.26
+    },
+    "lei:self:arms": {
+      "min": 0.16542761174604603,
+      "max": 0.20167863755857218
+    },
+    "lei:self:leftHead": {
+      "min": 0.006040638612459848,
+      "max": 0.10106907297870027
+    },
+    "lei:self:rightHead": {
+      "min": 0.006026804156884946,
+      "max": 0.09570510661147713
+    },
+    "lei:self:leftLegs": {
+      "min": 0.07877158465619971,
+      "max": 0.34173488636474003
+    },
+    "lei:self:rightLegs": {
+      "min": 0.08507453449130653,
+      "max": 0.33317112922668457
+    },
+    "lei:sole:left": {
+      "min": -3.099441710230355e-11,
+      "max": 0.03499999996900559
+    },
+    "lei:sole:right": {
+      "min": -3.099441710230355e-11,
+      "max": -3.099441710230355e-11
+    },
+    "aoi:vertices": {
+      "min": 46137,
+      "max": 46137
+    },
+    "aoi:boneError": {
+      "min": 8.326672684688674e-17,
+      "max": 7.771561172376096e-16
+    },
+    "aoi:minEnvironmentGap": {
+      "min": 1.4141627725713017,
+      "max": 1.4503552319869368
+    },
+    "aoi:cameraDistance": {
+      "min": 3.1187418890870466,
+      "max": 5.594826897939219
+    },
+    "aoi:maxArmAngle": {
+      "min": 46.69542358772936,
+      "max": 80.31993671284673
+    },
+    "aoi:headTurn": {
+      "min": 0.06,
+      "max": 0.29000000000000004
+    },
+    "aoi:self:arms": {
+      "min": 0.1306373808608009,
+      "max": 0.16968998540499824
+    },
+    "aoi:self:leftHead": {
+      "min": 0.006140538608341739,
+      "max": 0.0683784091763111
+    },
+    "aoi:self:rightHead": {
+      "min": 0.006199427710517957,
+      "max": 0.06375968901798978
+    },
+    "aoi:self:leftLegs": {
+      "min": 0.028509303911033124,
+      "max": 0.2705461382865906
+    },
+    "aoi:self:rightLegs": {
+      "min": 0.028509303911033124,
+      "max": 0.20820377614514185
+    },
+    "aoi:sole:left": {
+      "min": -3.099441710230355e-11,
+      "max": -3.099441710230355e-11
+    },
+    "aoi:sole:right": {
+      "min": -3.099441710230355e-11,
+      "max": 0.03499999996900559
+    },
+    "lei:footSlip:left": {
+      "min": 0.0,
+      "max": 2.42861286636753e-17
+    },
+    "lei:footTurn:left": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "lei:footSlip:right": {
+      "min": 0.0,
+      "max": 1.1102230246251565e-16
+    },
+    "lei:footTurn:right": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "lei:rootStep": {
+      "min": 0.0,
+      "max": 0.00885847420032137
+    },
+    "lei:wristStep": {
+      "min": 0.0,
+      "max": 0.023085992182557
+    },
+    "aoi:footSlip:left": {
+      "min": 0.0,
+      "max": 1.3877787807814457e-17
+    },
+    "aoi:footTurn:left": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "aoi:footSlip:right": {
+      "min": 0.0,
+      "max": 2.0816681711721685e-17
+    },
+    "aoi:footTurn:right": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "aoi:rootStep": {
+      "min": 0.0,
+      "max": 0.004702435555555828
+    },
+    "aoi:wristStep": {
+      "min": 0.0,
+      "max": 0.05602639688560538
+    },
+    "lei:screenX": {
+      "min": 0.0020567893099763352,
+      "max": 0.2897689488191396
+    },
+    "lei:screenY": {
+      "min": 0.1655427278180822,
+      "max": 0.26139502765845435
+    },
+    "lei:clipZ": {
+      "min": 0.968952152900961,
+      "max": 0.9828811820698624
+    },
+    "aoi:screenX": {
+      "min": 2.868103803748205e-05,
+      "max": 0.274848673770623
+    },
+    "aoi:screenY": {
+      "min": 0.08226624831078981,
+      "max": 0.21391855730925968
+    },
+    "aoi:clipZ": {
+      "min": 0.9688967705998252,
+      "max": 0.9828726557365198
+    },
+    "arm:screenX": {
+      "min": 0.012665542178404975,
+      "max": 0.032453122303893515
+    },
+    "arm:screenY": {
+      "min": 3.447134011607679e-05,
+      "max": 0.008796473102210696
+    },
+    "arm:clipZ": {
+      "min": 0.969608250913184,
+      "max": 0.9696542677675928
+    },
+    "arm:pixels": {
+      "min": 119.19962084288944,
+      "max": 119.69520536959574
+    },
+    "jar:screenX": {
+      "min": 4.878742012012154e-16,
+      "max": 4.878742012012154e-16
+    },
+    "jar:screenY": {
+      "min": 0.07744372828899461,
+      "max": 0.07744372828899461
+    },
+    "jar:clipZ": {
+      "min": 0.9804627663060169,
+      "max": 0.9804627663060169
+    },
+    "jar:pixels": {
+      "min": 222.80123801418787,
+      "max": 222.80123801418787
+    }
+  },
+  "collisionLibraryStatus": "official documentation evaluated; none installed; prioritize accepted animation output over geometric perfection"
+}

@@ -3,6 +3,7 @@ import {LeiXiaoCraft} from 'dula-assets/characters/bioarmor/characters.js';
 import {QianTangKuiCraft} from 'dula-assets/characters/bioarmor/QianTangKuiCraft.js';
 import {BiologyRoomScene} from './scenes/BiologyRoomScene.js';
 import {posesAt} from './performance.js';
+import {applySupportedPerformance} from 'dula-assets/lib/craft3d/supported-performance.js';
 import {createNumericProbe} from './tools/numeric_probe.js';
 const W=1280,H=720,q=new URLSearchParams(location.search),numeric=q.has('probe-surface');
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
@@ -43,15 +44,17 @@ function bubble(text,key){
   ctx.fillStyle='#263f37';ctx.textAlign='left';rows.forEach((r,i)=>ctx.fillText(r,x+28,y+42+i*41));
 }
 function draw(t,capture=true){
-  const seg=TL.segments.findLast(s=>s.start<=t)??TL.segments[0],cues=stage.sample(t,TL),p=posesAt(t,cues);
+  const seg=TL.segments.findLast(s=>s.start<=t)??TL.segments[0],cues=stage.sample(t,TL),p=posesAt(t,cues,TL);
   for(const [key,a] of Object.entries(actors)){
-    a.setPose(p[key]);a.setEmotion(p[key].emotion,p[key].blink);
-    a.hands.left.setGesture({fist:p[key].leftFist});
-    a.face.setActing({fear:key==='lei'?.18*(1-p.phase.release):0,focus:key==='aoi'?.2:0});
+    applySupportedPerformance(a,p[key]);a.setEmotion(p[key].emotion,p[key].blink);
+    a.face.setActing(p[key].acting);
   }
   actors.lei.setArmorState(0,0);actors.lei.setEtch(0);actors.lei.updateWeaponFX(t,0,0);const markVertices=applyMark(p.mark);
   for(const [key,a] of Object.entries(actors)){
-    a.face.lookAtWorld(actors[key==='lei'?'aoi':'lei'].face.head.getWorldPosition(new THREE.Vector3()));
+    const target=p[key].gaze==='mark'?actors.lei.mesh.localToWorld(new THREE.Vector3().copy(p.lei.leftArm[2])):
+      p[key].gaze==='jar'?stage.jar.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0,.2,0)):
+      actors[key==='lei'?'aoi':'lei'].face.head.getWorldPosition(new THREE.Vector3());
+    a.face.lookAtWorld(target);
     a.mouth.apply({jaw:speech(t,key),width:1});
   }
   const c=seg.camera.options;
@@ -59,6 +62,8 @@ function draw(t,capture=true){
   if(window.freeCamera){camera.position.set(...window.freeCamera.pos);camera.lookAt(...window.freeCamera.look);camera.fov=window.freeCamera.fov??36;}
   camera.updateProjectionMatrix();camera.updateMatrixWorld(true);scene.updateMatrixWorld(true);
   const state={entry:seg.entry,phase:seg.id,mark:p.mark,markVertices,acting:p.phase,cues,
+    performance:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,{head:[p[key].headPitch,p[key].headYaw,p[key].headRoll],
+      torso:p[key].torso,root:[p[key].rootX,p[key].rootZ,p[key].yaw],gestures:p[key].gestures,gaze:p[key].gaze}])),
     arms:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,[p[key].leftArm,p[key].rightArm]])),
     ...(numeric?probe(p,camera):{})};
   if(!capture)return state;

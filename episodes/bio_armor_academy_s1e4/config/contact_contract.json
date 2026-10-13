@@ -1,6 +1,6 @@
 {
   "fps_min": 30,
-  "scope": "bounded standing episode: torso vertices, hands, disjoint world AABBs, floor support and camera projection; no visual review",
+  "scope": "authored gestures, torso turns and finite settling steps: rendered surfaces, stance contacts, world AABBs and framing; no visual review",
   "surface_clearance": {
     "fps_min": 30,
     "require_build": true,
@@ -96,11 +96,12 @@
       -0.003,
       0.012
     ],
-    "max_wrist_step": 0.028,
-    "max_root_step": 1e-06,
+    "max_wrist_step": 0.065,
+    "max_root_step": 0.012,
     "min_camera_distance": 2.7,
-    "max_arm_angle": 61,
-    "max_head_turn": 0.24,
+    "max_arm_angle": 100,
+    "max_head_turn": 0.5,
+    "support": {"max_swing_height": 0.05, "max_slip": 0.001, "max_turn_delta": 0.001, "min_stance_feet": 1},
     "framing": [
       {
         "entries": [

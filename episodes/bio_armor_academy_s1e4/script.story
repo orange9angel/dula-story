@@ -28,7 +28,7 @@
 
 7
 00:00:26,000 --> 00:00:29,800
-{Camera:Static|position=-1.35,1.15,3.05|lookAt=-1.18,1.15,0.14|fov=18}
+{Camera:Static|position=-3.85,1.4,2.0|lookAt=-1.17,1.27,0.27|fov=18}
 [LeiXiao]我一想收回去，它怎么更长了？
 
 8
@@ -38,7 +38,7 @@
 
 9
 00:00:33,000 --> 00:00:37,000
-{Event:ObserveMark}{Camera:Static|position=-1.35,1.15,3.05|lookAt=-1.18,1.15,0.14|fov=18}
+{Event:ObserveMark}{Camera:Static|position=-3.85,1.4,2.0|lookAt=-1.17,1.27,0.27|fov=18}
 
 10
 00:00:37,000 --> 00:00:40,800

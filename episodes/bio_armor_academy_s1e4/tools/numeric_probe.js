@@ -12,6 +12,28 @@ function renderedBounds(root){
   if(!count)throw new Error('Empty rendered actor geometry');return {box,count};
 }
 function gap(a,b){return Math.hypot(...['x','y','z'].map(k=>Math.max(0,a.min[k]-b.max[k],b.min[k]-a.max[k])));}
+function cloud(roots){
+  const points=[];for(const root of roots)root.traverseVisible(o=>{
+    if(!o.isMesh||o.material.side===THREE.BackSide)return;if(o.isSkinnedMesh)o.skeleton.update();
+    for(const i of visibleVertexIndices(o))points.push(o.getVertexPosition(i,new THREE.Vector3()).applyMatrix4(o.matrixWorld));
+  });return points;
+}
+// A separating projection is a conservative solid-separation certificate.
+// Unlike a world AABB it can prove diagonal clearance during a body/head turn.
+// Failure to find a plane still fails; no collision tolerance is relaxed.
+export function diagonalGap(a,b){
+  if(!a.length||!b.length||[...a,...b].some(p=>!Number.isFinite(p.x+p.y+p.z)))throw new Error('Invalid projection cloud');
+  let best=0;
+  for(let x=-2;x<=2;x++)for(let y=-2;y<=2;y++)for(let z=-2;z<=2;z++){
+    if(!x&&!y&&!z)continue;if(x<0||(!x&&y<0)||(!x&&!y&&z<0))continue;
+    const n=new THREE.Vector3(x,y,z).normalize();
+    let alo=Infinity,ahi=-Infinity,blo=Infinity,bhi=-Infinity;
+    for(const p of a){const q=p.dot(n);alo=Math.min(alo,q);ahi=Math.max(ahi,q);}
+    for(const p of b){const q=p.dot(n);blo=Math.min(blo,q);bhi=Math.max(bhi,q);}
+    best=Math.max(best,alo-bhi,blo-ahi);
+  }
+  return best;
+}
 export function createNumericProbe(actors,stage){
   const body=createBodyAudit(actors);
   return (poses,camera)=>{
@@ -33,10 +55,20 @@ export function createNumericProbe(actors,stage){
       for(const side of ['left','right'])legBox.union(renderedBounds(a.limbs[side+'Leg'].mesh).box);
       const selfGaps={arms:gap(armBoxes.left,armBoxes.right)};
       for(const side of ['left','right']){selfGaps[side+'Head']=gap(armBoxes[side],headBox);selfGaps[side+'Legs']=gap(armBoxes[side],legBox);}
+      const headPoints=['left','right'].some(side=>selfGaps[side+'Head']<.006)?cloud([a.face.head]):null;
+      for(const side of ['left','right'])if(selfGaps[side+'Head']<.006){
+        const points=cloud([a.limbs[side+'Arm'].mesh,a.sleeves[side].mesh,a.sleeves[side+'Roll'].mesh,a.hands[side]]);
+        selfGaps[side+'Head']=Math.max(selfGaps[side+'Head'],diagonalGap(points,headPoints));
+      }
       let envGap=Infinity;
       for(const obj of stage.solids){if(obj.name==='floor')continue;envGap=Math.min(envGap,gap(b.box,new THREE.Box3().setFromObject(obj)));}
       const head=a.face.head.localToWorld(new THREE.Vector3(0,.06,.08)),projected=head.clone().project(camera);
       metrics[key]={boneError,soleY:soles,minEnvironmentGap:envGap,selfGaps,vertices:b.count,bounds:[b.box.min.toArray(),b.box.max.toArray()],
+        headWorld:a.face.head.getWorldPosition(new THREE.Vector3()).toArray(),
+        headQuaternion:a.face.head.getWorldQuaternion(new THREE.Quaternion()).toArray(),
+        feet:Object.fromEntries(['left','right'].map(side=>[side,{...p.feet[side],
+          position:a.feet[side].getWorldPosition(new THREE.Vector3()).toArray(),
+          forward:new THREE.Vector3(0,0,1).transformDirection(a.feet[side].matrixWorld).toArray()}])),
         maxArmAngle:Math.max(...['left','right'].map(s=>{const arm=p[s+'Arm'];return Math.acos((arm[0].y-arm[1].y)/.19)*180/Math.PI;})),
         headTurn:Math.abs(p.headYaw),
         root:a.mesh.position.toArray(),headProjection:projected.toArray(),wrists:[p.leftArm[2],p.rightArm[2]].map(w=>a.mesh.localToWorld(v(w)).toArray()),

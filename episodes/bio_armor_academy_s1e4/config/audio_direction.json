@@ -4,7 +4,7 @@
   "sources": [
     {
       "path": "script.story",
-      "sha256": "141632648e45e38a4c03da05699b5ffaeff04d53ed8073c1ea4a0a54933cc879"
+      "sha256": "33e3ea24f2e9bf4d8576b0cd1748c28ccae34db25543282d2c75875f5ff96507"
     }
   ],
   "policies": {
@@ -384,7 +384,7 @@
     },
     {
       "id": "no_steps_contacts",
-      "reason": "站定且不拿取道具，不添加未发生的脚步和碰撞声"
+      "reason": "开场小幅调整站姿不突出脚步；没有道具接触或撞击，不配置撞击声"
     },
     {
       "id": "no_music",
