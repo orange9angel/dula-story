@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "before": {
+    "rmsMaxMean": 1.7327683411792418,
+    "periodicAutocorrelation": 0.23847671151514285,
+    "envelopeRelativeStd": 0.315869457027407,
+    "hissFraction": 0.010722345222211166
+  },
+  "after": {
+    "rmsMaxMean": 1.1230486416470324,
+    "periodicAutocorrelation": 0.12735057438880495,
+    "envelopeRelativeStd": 0.15123641700129803,
+    "hissFraction": 0.008570201902402123
+  },
+  "source_sha256": "b4747c855f6e1499646984ded4bce67667612d0ae3f53d57a1b796800dae5ebb",
+  "prepared_sha256": "94cf0c3b3759a538f3a9f897e95bf00c311de2ed297dc8023bc712c7ac429836",
+  "duration": 75.0,
+  "origin": "Seed-Audio 1.0; generated isolated ambience",
+  "rmsDbfs": -53
+}

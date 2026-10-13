@@ -1,0 +1,319 @@
+{
+  "episode": "bio_armor_academy_s1e4",
+  "video": "output/craft3d_s1e4_numeric_r1.mp4",
+  "video_sha256": "74aedff95b8ffe9c173fe2a2c58b6b64e7b2df988bbe51876e3426b4585542e1",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "81.000000",
+        "nb_frames": "2430",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0",
+        "duration": "81.000000",
+        "nb_frames": "3798"
+      }
+    ],
+    "format": {
+      "duration": "81.000000",
+      "size": "3702591"
+    }
+  },
+  "decodePassed": true,
+  "visualInspections": 0,
+  "inspectionImages": 0,
+  "numericPassed": true,
+  "frames": 2430,
+  "seekChecks": 54,
+  "sourceFingerprints": 38,
+  "renderStateMatchesAudit": true,
+  "surface": {
+    "lei:left:torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.005
+    },
+    "lei:right:torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.005
+    },
+    "aoi:left:torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.005
+    },
+    "aoi:right:torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.005
+    },
+    "lei:left:hand_torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.002
+    },
+    "lei:right:hand_torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.002
+    },
+    "aoi:left:hand_torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.002
+    },
+    "aoi:right:hand_torso": {
+      "frames": 2430,
+      "worst_depth": 0,
+      "worst_crossings": 0,
+      "worst_t": null,
+      "max_depth": 0.002
+    }
+  },
+  "bounded": {
+    "actorGap": {
+      "min": 1.0482756583038046,
+      "max": 1.0888276274980357
+    },
+    "cameraEnvironmentGap": {
+      "min": 4.623905262781172,
+      "max": 7.19030596100923
+    },
+    "lei:vertices": {
+      "min": 52935,
+      "max": 52935
+    },
+    "lei:boneError": {
+      "min": 5.551115123125783e-17,
+      "max": 2.220446049250313e-16
+    },
+    "lei:minEnvironmentGap": {
+      "min": 1.43403179358651,
+      "max": 1.4365950403787293
+    },
+    "lei:cameraDistance": {
+      "min": 3.0342638909614625,
+      "max": 5.5898972051406295
+    },
+    "lei:maxArmAngle": {
+      "min": 46.43570202769411,
+      "max": 59.886352762978476
+    },
+    "lei:headTurn": {
+      "min": 0.14,
+      "max": 0.14
+    },
+    "lei:self:arms": {
+      "min": 0.17552555326685837,
+      "max": 0.19055150125256648
+    },
+    "lei:self:leftHead": {
+      "min": 0.008525998474667507,
+      "max": 0.01587622054621285
+    },
+    "lei:self:rightHead": {
+      "min": 0.007111119113412556,
+      "max": 0.017554042792976787
+    },
+    "lei:self:leftLegs": {
+      "min": 0.09244002584673483,
+      "max": 0.21497406826686727
+    },
+    "lei:self:rightLegs": {
+      "min": 0.09244002584673505,
+      "max": 0.196888340990379
+    },
+    "lei:sole:left": {
+      "min": -3.099441710230355e-11,
+      "max": -3.099441710230355e-11
+    },
+    "lei:sole:right": {
+      "min": -3.099441710230355e-11,
+      "max": -3.099441710230355e-11
+    },
+    "aoi:vertices": {
+      "min": 46137,
+      "max": 46137
+    },
+    "aoi:boneError": {
+      "min": 5.551115123125783e-17,
+      "max": 5.551115123125783e-17
+    },
+    "aoi:minEnvironmentGap": {
+      "min": 1.4283779982413318,
+      "max": 1.4283779982413318
+    },
+    "aoi:cameraDistance": {
+      "min": 3.1281518665585373,
+      "max": 5.5928439442925875
+    },
+    "aoi:maxArmAngle": {
+      "min": 46.43570202769411,
+      "max": 46.43570202769411
+    },
+    "aoi:headTurn": {
+      "min": 0.14,
+      "max": 0.14
+    },
+    "aoi:self:arms": {
+      "min": 0.17552555326685837,
+      "max": 0.17552555326685837
+    },
+    "aoi:self:leftHead": {
+      "min": 0.01694618412901372,
+      "max": 0.01694618412901372
+    },
+    "aoi:self:rightHead": {
+      "min": 0.01694618412901372,
+      "max": 0.01694618412901372
+    },
+    "aoi:self:leftLegs": {
+      "min": 0.09345068220354658,
+      "max": 0.09345068220354658
+    },
+    "aoi:self:rightLegs": {
+      "min": 0.09345068220354635,
+      "max": 0.09345068220354635
+    },
+    "aoi:sole:left": {
+      "min": -3.099441710230355e-11,
+      "max": -3.099441710230355e-11
+    },
+    "aoi:sole:right": {
+      "min": -3.099441710230355e-11,
+      "max": -3.099441710230355e-11
+    },
+    "lei:rootStep": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "lei:wristStep": {
+      "min": 0.0,
+      "max": 0.014763764725702438
+    },
+    "aoi:rootStep": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "aoi:wristStep": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "lei:screenX": {
+      "min": 0.00945946582526669,
+      "max": 0.27628360498061205
+    },
+    "lei:screenY": {
+      "min": 0.17749366089490592,
+      "max": 0.257391615092292
+    },
+    "lei:clipZ": {
+      "min": 0.9689162624813983,
+      "max": 0.9828218817347476
+    },
+    "aoi:screenX": {
+      "min": 0.009358846590678125,
+      "max": 0.2762521375900658
+    },
+    "aoi:screenY": {
+      "min": 0.18389910786576336,
+      "max": 0.2596308782973685
+    },
+    "aoi:clipZ": {
+      "min": 0.9689592386590146,
+      "max": 0.9828353928360128
+    },
+    "arm:screenX": {
+      "min": 0.0318226791144155,
+      "max": 0.0318226791144155
+    },
+    "arm:screenY": {
+      "min": 0.129619798764112,
+      "max": 0.129619798764112
+    },
+    "arm:clipZ": {
+      "min": 0.9662814231601838,
+      "max": 0.9662814231601838
+    },
+    "arm:pixels": {
+      "min": 91.27007459401347,
+      "max": 91.27007459401347
+    },
+    "jar:screenX": {
+      "min": 4.878742012012154e-16,
+      "max": 4.878742012012154e-16
+    },
+    "jar:screenY": {
+      "min": 0.07744372828899461,
+      "max": 0.07744372828899461
+    },
+    "jar:clipZ": {
+      "min": 0.9804627663060169,
+      "max": 0.9804627663060169
+    },
+    "jar:pixels": {
+      "min": 222.80123801418787,
+      "max": 222.80123801418787
+    }
+  },
+  "storyMotion": {
+    "passed": true,
+    "events": {
+      "ShowRight": 5.8,
+      "ShowLeft": 12,
+      "TestMark": 21,
+      "ObserveMark": 33,
+      "TryAgain": 37,
+      "StopTrying": 41,
+      "QuietLeaf": 48,
+      "ReleaseHand": 51
+    },
+    "markVerticesBefore": 32,
+    "markVerticesAfter": 48,
+    "checks": [
+      "first attempt",
+      "lasting attached marking",
+      "distinct second attempt",
+      "interruption",
+      "release without resetting mark"
+    ]
+  },
+  "dialogueQc": {
+    "lines": 12,
+    "passed": 12,
+    "warnings": 0,
+    "failed": 0
+  },
+  "scope": "sampled bounded episode; no visual/artistic review, full hair/finger topology proof, shader-outline proof or continuous collision guarantee",
+  "assetCommit": "a797b40",
+  "skillCommit": "5966a68"
+}

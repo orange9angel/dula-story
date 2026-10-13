@@ -1,0 +1,168 @@
+{
+  "fps_min": 30,
+  "scope": "bounded standing episode: torso vertices, hands, disjoint world AABBs, floor support and camera projection; no visual review",
+  "surface_clearance": {
+    "fps_min": 30,
+    "require_build": true,
+    "pairs": [
+      {
+        "key": "lei:left:torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.005,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "lei:right:torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.005,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "aoi:left:torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.005,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "aoi:right:torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.005,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "lei:left:hand_torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.002,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "lei:right:hand_torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.002,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "aoi:left:hand_torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.002,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "aoi:right:hand_torso",
+        "window": [
+          0,
+          81
+        ],
+        "max_depth": 0.002,
+        "method": "rendered-vertices/closed-mesh"
+      }
+    ]
+  },
+  "bounded_staging": {
+    "actors": [
+      "lei",
+      "aoi"
+    ],
+    "window": [
+      0,
+      81
+    ],
+    "min_actor_gap": 0.7,
+    "min_environment_gap": 0.12,
+    "min_camera_gap": 0.15,
+    "max_bone_error": 1e-06,
+    "sole_y": [
+      -0.003,
+      0.012
+    ],
+    "max_wrist_step": 0.028,
+    "max_root_step": 1e-06,
+    "min_camera_distance": 2.7,
+    "max_arm_angle": 61,
+    "max_head_turn": 0.24,
+    "framing": [
+      {
+        "entries": [
+          2,
+          11,
+          17
+        ],
+        "target": "lei"
+      },
+      {
+        "entries": [
+          2,
+          11,
+          17
+        ],
+        "target": "aoi"
+      },
+      {
+        "entries": [
+          3,
+          5,
+          10,
+          13,
+          15
+        ],
+        "target": "lei"
+      },
+      {
+        "entries": [
+          4,
+          6,
+          8,
+          14,
+          16
+        ],
+        "target": "aoi"
+      },
+      {
+        "entries": [
+          7,
+          9
+        ],
+        "target": "arm",
+        "min_pixels": 90,
+        "require_unblocked": true
+      },
+      {
+        "entries": [
+          12
+        ],
+        "target": "jar",
+        "min_pixels": 180,
+        "require_unblocked": true
+      }
+    ],
+    "min_self_gap": 0.006,
+    "self_pairs": [
+      "arms",
+      "leftHead",
+      "rightHead",
+      "leftLegs",
+      "rightLegs"
+    ]
+  }
+}

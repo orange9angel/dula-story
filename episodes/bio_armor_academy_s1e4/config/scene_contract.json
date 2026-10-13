@@ -1,0 +1,530 @@
+{
+  "$schema": "../../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "bio_armor_academy_s1e4",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "两个站定的学生观察左臂蚀纹；雷晓停止主动催动并答应次日复查",
+    "audience": "校园奇幻连载观众",
+    "designPriorities": [
+      "角色与环境有可计算净空",
+      "台词因果与低幅动作同步",
+      "不依赖视觉检测"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "BiologyRoomScene"
+    ],
+    "characters": [
+      "LeiXiao",
+      "QianTangKui"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "BiologyRoomScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "BiologyRoomScene",
+        "module": "scenes/BiologyRoomScene.js",
+        "export": "BiologyRoomScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "synchronous"
+      },
+      "intent": {
+        "location": "青岚学舍生物活动室",
+        "timeOfDay": "放学后柔和日光",
+        "tone": [
+          "安静",
+          "克制",
+          "纸面色块"
+        ],
+        "storyFunction": "引入千堂葵并让雷晓做出停止尝试的选择",
+        "visualRules": [
+          "角色根位置固定",
+          "手臂在各自身侧活动",
+          "标本罐与桌子超出触及范围"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0.0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -4.5,
+            0,
+            -4
+          ],
+          "max": [
+            4.5,
+            3.4,
+            4
+          ]
+        },
+        "zones": [
+          {
+            "id": "mainStage",
+            "bounds": {
+              "min": [
+                -1.5,
+                0,
+                -0.4
+              ],
+              "max": [
+                1.5,
+                2,
+                0.5
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "固定双人站姿观察"
+            ]
+          }
+        ],
+        "anchors": {
+          "leafJar": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              1.8,
+              1.12,
+              -1.78
+            ],
+            "purpose": "留白镜头的叶片标本"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "柔和日光",
+        "readabilityRules": [
+          "脸部正面补光",
+          "蚀纹附着于原有手臂表面"
+        ]
+      },
+      "cameraObstacles": [
+        {
+          "id": "rear_wall",
+          "type": "box",
+          "space": "world",
+          "center": [
+            0,
+            1.7,
+            -2.8
+          ],
+          "size": [
+            9,
+            3.4,
+            0.16
+          ]
+        },
+        {
+          "id": "counter_top",
+          "type": "box",
+          "space": "world",
+          "center": [
+            0,
+            0.92,
+            -1.9
+          ],
+          "size": [
+            5.6,
+            0.08,
+            0.66
+          ]
+        },
+        {
+          "id": "cabinet",
+          "type": "box",
+          "space": "world",
+          "center": [
+            -3.65,
+            1.02,
+            -2.1
+          ],
+          "size": [
+            1.1,
+            2.04,
+            0.62
+          ]
+        }
+      ],
+      "audioAnchors": [],
+      "dependencies": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "LeiXiao",
+      "scene": "BiologyRoomScene",
+      "kind": "character",
+      "runtimeName": "LeiXiao",
+      "binding": "character:LeiXiao",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "face": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.9,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "QianTangKui",
+      "scene": "BiologyRoomScene",
+      "kind": "character",
+      "runtimeName": "QianTangKui",
+      "binding": "character:QianTangKui",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "face": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0.9,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "LeafJar",
+      "scene": "BiologyRoomScene",
+      "kind": "prop",
+      "objectName": "leaf_jar",
+      "binding": "jar",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            1.8,
+            0.96,
+            -1.78
+          ]
+        }
+      }
+    }
+  ],
+  "state": {
+    "latestCue": {
+      "type": "string",
+      "initial": "none",
+      "binding": "scene.latestCue"
+    }
+  },
+  "events": [
+    {
+      "tag": "ShowRight",
+      "scene": "BiologyRoomScene",
+      "handler": "showRight",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "ShowRight"
+        }
+      ]
+    },
+    {
+      "tag": "ShowLeft",
+      "scene": "BiologyRoomScene",
+      "handler": "showLeft",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "ShowLeft"
+        }
+      ]
+    },
+    {
+      "tag": "TestMark",
+      "scene": "BiologyRoomScene",
+      "handler": "testMark",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "TestMark"
+        }
+      ]
+    },
+    {
+      "tag": "ObserveMark",
+      "scene": "BiologyRoomScene",
+      "handler": "observeMark",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "ObserveMark"
+        }
+      ]
+    },
+    {
+      "tag": "TryAgain",
+      "scene": "BiologyRoomScene",
+      "handler": "tryAgain",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "TryAgain"
+        }
+      ]
+    },
+    {
+      "tag": "StopTrying",
+      "scene": "BiologyRoomScene",
+      "handler": "stopTrying",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "StopTrying"
+        }
+      ]
+    },
+    {
+      "tag": "QuietLeaf",
+      "scene": "BiologyRoomScene",
+      "handler": "quietLeaf",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "QuietLeaf"
+        }
+      ]
+    },
+    {
+      "tag": "ReleaseHand",
+      "scene": "BiologyRoomScene",
+      "handler": "releaseHand",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "ReleaseHand"
+        }
+      ]
+    }
+  ],
+  "blocking": [
+    {
+      "id": "block1",
+      "scene": "BiologyRoomScene",
+      "character": "LeiXiao",
+      "entry": 1,
+      "from": [
+        -0.9,
+        0.0,
+        0.0
+      ],
+      "to": [
+        -0.9,
+        0.0,
+        0.0
+      ],
+      "zone": "mainStage",
+      "clearance": 0.25,
+      "purpose": "保留观察空间，根位置固定，外侧前臂在有限范围内抬起"
+    },
+    {
+      "id": "block2",
+      "scene": "BiologyRoomScene",
+      "character": "QianTangKui",
+      "entry": 1,
+      "from": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "to": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "zone": "mainStage",
+      "clearance": 0.25,
+      "purpose": "保留观察空间，根位置固定，外侧前臂在有限范围内抬起"
+    }
+  ],
+  "shotChecks": [
+    {
+      "id": "shot2",
+      "scene": "BiologyRoomScene",
+      "entry": 2,
+      "offsetSeconds": 0.5,
+      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "mustSee": [
+        {
+          "entity": "LeiXiao",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.08,
+          "focus": "face"
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot3",
+      "scene": "BiologyRoomScene",
+      "entry": 3,
+      "offsetSeconds": 0.5,
+      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "mustSee": [
+        {
+          "entity": "LeiXiao",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.08,
+          "focus": "face"
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot4",
+      "scene": "BiologyRoomScene",
+      "entry": 4,
+      "offsetSeconds": 0.5,
+      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "mustSee": [
+        {
+          "entity": "QianTangKui",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.08,
+          "focus": "face"
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot12",
+      "scene": "BiologyRoomScene",
+      "entry": 12,
+      "offsetSeconds": 0.5,
+      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "mustSee": [
+        {
+          "entity": "LeafJar",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.08
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot13",
+      "scene": "BiologyRoomScene",
+      "entry": 13,
+      "offsetSeconds": 0.5,
+      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "mustSee": [
+        {
+          "entity": "LeiXiao",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.08,
+          "focus": "face"
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "dense-numeric-surface-probe",
+      "bounded-staging-audit",
+      "numeric-seek",
+      "final-stem-audio-sync",
+      "ffmpeg-decode"
+    ]
+  }
+}

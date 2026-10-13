@@ -1,0 +1,600 @@
+{
+  "duration": 81,
+  "source": {
+    "path": "script.story",
+    "sha256": "141632648e45e38a4c03da05699b5ffaeff04d53ed8073c1ea4a0a54933cc879"
+  },
+  "segments": [
+    {
+      "id": "entry_1",
+      "entry": 1,
+      "start": 0,
+      "end": 3,
+      "character": null,
+      "kind": "action",
+      "text": "",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0,
+            1.5,
+            5.6
+          ],
+          "lookAt": [
+            0,
+            1.1,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_2",
+      "entry": 2,
+      "start": 3,
+      "end": 5.8,
+      "character": null,
+      "kind": "action",
+      "text": "",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0,
+            1.5,
+            5.6
+          ],
+          "lookAt": [
+            0,
+            1.1,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_3",
+      "entry": 3,
+      "start": 5.8,
+      "end": 11.8,
+      "character": "LeiXiao",
+      "kind": "dialogue",
+      "text": "我就问一下，这道印子……明天能消吗？",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            -0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            -0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "ShowRight",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_4",
+      "entry": 4,
+      "start": 12,
+      "end": 16.4,
+      "character": "QianTangKui",
+      "kind": "dialogue",
+      "text": "左手。右手那层，骗不了我。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "ShowLeft",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_5",
+      "entry": 5,
+      "start": 16.6,
+      "end": 20.8,
+      "character": "LeiXiao",
+      "kind": "dialogue",
+      "text": "你先保证，不把我泡进罐子里。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0,
+            1.5,
+            5.6
+          ],
+          "lookAt": [
+            0,
+            1.1,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_6",
+      "entry": 6,
+      "start": 21,
+      "end": 25.8,
+      "character": "QianTangKui",
+      "kind": "dialogue",
+      "text": "罐子是装叶子的。你先别动。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "TestMark",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_7",
+      "entry": 7,
+      "start": 26,
+      "end": 29.8,
+      "character": "LeiXiao",
+      "kind": "dialogue",
+      "text": "我一想收回去，它怎么更长了？",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            -1.35,
+            1.15,
+            3.05
+          ],
+          "lookAt": [
+            -1.18,
+            1.15,
+            0.14
+          ],
+          "fov": 18
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_8",
+      "entry": 8,
+      "start": 30,
+      "end": 32.8,
+      "character": "QianTangKui",
+      "kind": "dialogue",
+      "text": "别再催它。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_9",
+      "entry": 9,
+      "start": 33,
+      "end": 37,
+      "character": null,
+      "kind": "action",
+      "text": "",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            -1.35,
+            1.15,
+            3.05
+          ],
+          "lookAt": [
+            -1.18,
+            1.15,
+            0.14
+          ],
+          "fov": 18
+        }
+      },
+      "events": [
+        {
+          "type": "ObserveMark",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_10",
+      "entry": 10,
+      "start": 37,
+      "end": 40.8,
+      "character": "LeiXiao",
+      "kind": "dialogue",
+      "text": "那我慢一点，就一下。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            -0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            -0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "TryAgain",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_11",
+      "entry": 11,
+      "start": 41,
+      "end": 47.8,
+      "character": "QianTangKui",
+      "kind": "dialogue",
+      "text": "停。你刚才催的那截，留下了。这叫蚀。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0,
+            1.5,
+            5.6
+          ],
+          "lookAt": [
+            0,
+            1.15,
+            0
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "StopTrying",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_12",
+      "entry": 12,
+      "start": 48,
+      "end": 51,
+      "character": null,
+      "kind": "action",
+      "text": "",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            2.45,
+            1.8,
+            3
+          ],
+          "lookAt": [
+            1.8,
+            1.16,
+            -1.78
+          ],
+          "fov": 12
+        }
+      },
+      "events": [
+        {
+          "type": "QuietLeaf",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_13",
+      "entry": 13,
+      "start": 51,
+      "end": 56.8,
+      "character": "LeiXiao",
+      "kind": "dialogue",
+      "text": "……明天看得见就看得见。今天不试了。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            -0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            -0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": [
+        {
+          "type": "ReleaseHand",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "id": "entry_14",
+      "entry": 14,
+      "start": 57,
+      "end": 63.8,
+      "character": "QianTangKui",
+      "kind": "dialogue",
+      "text": "明天放学，还站这儿。让我看看它有没有变。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_15",
+      "entry": 15,
+      "start": 64,
+      "end": 68.8,
+      "character": "LeiXiao",
+      "kind": "dialogue",
+      "text": "先说好，罐子得一直装叶子。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            -0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            -0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_16",
+      "entry": 16,
+      "start": 69,
+      "end": 73.8,
+      "character": "QianTangKui",
+      "kind": "dialogue",
+      "text": "放心。你比叶子难养。",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0.7,
+            1.55,
+            3.2
+          ],
+          "lookAt": [
+            0.9,
+            1.38,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_17",
+      "entry": 17,
+      "start": 74,
+      "end": 78,
+      "character": null,
+      "kind": "action",
+      "text": "",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0,
+            1.5,
+            5.6
+          ],
+          "lookAt": [
+            0,
+            1.1,
+            0
+          ]
+        }
+      },
+      "events": []
+    },
+    {
+      "id": "entry_18",
+      "entry": 18,
+      "start": 78,
+      "end": 81,
+      "character": null,
+      "kind": "action",
+      "text": "",
+      "camera": {
+        "name": "Static",
+        "options": {
+          "position": [
+            0,
+            1.5,
+            5.6
+          ],
+          "lookAt": [
+            0,
+            1.1,
+            0
+          ]
+        }
+      },
+      "events": []
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "entry_3",
+      "entry": 3,
+      "character": "LeiXiao",
+      "text": "我就问一下，这道印子……明天能消吗？",
+      "start": 6,
+      "end": 11.5
+    },
+    {
+      "id": "entry_4",
+      "entry": 4,
+      "character": "QianTangKui",
+      "text": "左手。右手那层，骗不了我。",
+      "start": 12.2,
+      "end": 16.099999999999998
+    },
+    {
+      "id": "entry_5",
+      "entry": 5,
+      "character": "LeiXiao",
+      "text": "你先保证，不把我泡进罐子里。",
+      "start": 16.8,
+      "end": 20.5
+    },
+    {
+      "id": "entry_6",
+      "entry": 6,
+      "character": "QianTangKui",
+      "text": "罐子是装叶子的。你先别动。",
+      "start": 21.2,
+      "end": 25.5
+    },
+    {
+      "id": "entry_7",
+      "entry": 7,
+      "character": "LeiXiao",
+      "text": "我一想收回去，它怎么更长了？",
+      "start": 26.2,
+      "end": 29.5
+    },
+    {
+      "id": "entry_8",
+      "entry": 8,
+      "character": "QianTangKui",
+      "text": "别再催它。",
+      "start": 30.2,
+      "end": 32.5
+    },
+    {
+      "id": "entry_10",
+      "entry": 10,
+      "character": "LeiXiao",
+      "text": "那我慢一点，就一下。",
+      "start": 37.2,
+      "end": 40.5
+    },
+    {
+      "id": "entry_11",
+      "entry": 11,
+      "character": "QianTangKui",
+      "text": "停。你刚才催的那截，留下了。这叫蚀。",
+      "start": 41.2,
+      "end": 47.5
+    },
+    {
+      "id": "entry_13",
+      "entry": 13,
+      "character": "LeiXiao",
+      "text": "……明天看得见就看得见。今天不试了。",
+      "start": 51.2,
+      "end": 56.5
+    },
+    {
+      "id": "entry_14",
+      "entry": 14,
+      "character": "QianTangKui",
+      "text": "明天放学，还站这儿。让我看看它有没有变。",
+      "start": 57.2,
+      "end": 63.5
+    },
+    {
+      "id": "entry_15",
+      "entry": 15,
+      "character": "LeiXiao",
+      "text": "先说好，罐子得一直装叶子。",
+      "start": 64.2,
+      "end": 68.5
+    },
+    {
+      "id": "entry_16",
+      "entry": 16,
+      "character": "QianTangKui",
+      "text": "放心。你比叶子难养。",
+      "start": 69.2,
+      "end": 73.5
+    }
+  ]
+}
