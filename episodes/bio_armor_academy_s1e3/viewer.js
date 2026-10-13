@@ -11,6 +11,8 @@ const doorProbe=new URLSearchParams(location.search).has('probe-door')
   ?(await import('./tools/door_probe.js')).probeDoorway:null;
 const bentoProbe=new URLSearchParams(location.search).has('probe-bento')
   ?(await import('./tools/door_probe.js')).probeBoxMeshes:null;
+const surfaceModule=(bentoProbe||new URLSearchParams(location.search).has('probe-surface'))
+  ?await import('./tools/surface_probe.js'):null;
 // 铁丝网面片的薄板代理（道具/身体 vs 环境的净空探针用，不进画面）
 let fenceProxies=null;
 function ensureFenceProxies(){
@@ -143,6 +145,7 @@ for(const flap of hongFlaps){flap.geometry.translate(0,-1.52,0);flap.position.y=
   flap.userData.probeExclude=1;} // 襟片是软布：不进三角相交探针的被检主体（襟-臂穿透走专用解析探针；
                                  // 襟搭在盒盖/臂上是合法 drapery，三角相交分不清贴靠与穿透——P21 臂推入盖实录）
 const leiTufts=[];lei.headGroup.traverse(o=>{if(o.isMesh&&o.geometry.type==='TubeGeometry'&&o.material.side!==THREE.BackSide)leiTufts.push(o);});
+const surfaceProbe=surfaceModule?.createSurfaceProbe({lei,hong},hongFlaps);
 // 阵风包络（解析微风正弦，(t,state) 纯函数）：空拍段加强
 // 18.2s 阵风脉冲：把轰刚没关严的门带上（门迁移的可见环境触发——状态/声音/动因一致）
 const gustAt=t=>Math.exp(-(((t-18.2)/.35)**2));
@@ -441,7 +444,12 @@ function props(t,sl,sh,pL,pH){
     }
     hongBoxB.lid.rotation.x=-1.62*ease(clamp((t-21.55)/.5)); // 右手抓握搬运期间开盖（手在盒上）
   }
-  for(const b of [leiBento,hongBoxA,hongBoxB])for(const f of b.foods)f.visible=b.lid.rotation.x<-.3;
+  for(const b of [leiBento,hongBoxA,hongBoxB]){
+    // Hidden objects also need a canonical state: otherwise backward seek
+    // leaks the last held position into the numerical contact trace.
+    if(!b.visible){b.position.set(0,0,0);b.quaternion.identity();b.lid.rotation.x=0;}
+    for(const f of b.foods)f.visible=b.lid.rotation.x<-.3;
+  }
   // 竹签炸鸡：轰刚右手递出 → 雷晓左手接过（捏持锚点=拇指腹与食/中指第一节之间）
   skewer.visible=sl.visible!==false&&hongOut&&t>=PICK_T;
   if(skewer.visible){
@@ -829,6 +837,7 @@ function draw(t,capture=true){
     // （挂点 x=-.25/外倾 -.16 由 wornScan 扫描实证：全程零命中且留 ~2cm 余量）
     if(leiBag)state.worn=bentoProbe([leiBag],{lei:lei.mesh},-.02);
   }
+  if(surfaceProbe)state.surface=surfaceProbe({lei:performance.pL,hong:performance.pH});
   if(!capture)return state;
   renderer.render(stage.scene,camera);
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);

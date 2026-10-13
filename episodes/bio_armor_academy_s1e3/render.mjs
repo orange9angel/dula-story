@@ -5,21 +5,23 @@ import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
+import {compareNumericState} from 'dula-engine/lib/NumericAudit.js';
 
 const here=path.dirname(fileURLToPath(import.meta.url)),root=here,storyRoot=path.resolve(root,'../..');
 const require=createRequire(path.join(storyRoot,'node_modules/dula-engine/package.json')),puppeteer=require('puppeteer');
-const args=process.argv.slice(2),check=args.includes('--check'),serve=args.includes('--serve');
+const args=process.argv.slice(2),physicsOnly=args.includes('--physics-only'),check=args.includes('--check')||physicsOnly,serve=args.includes('--serve');
 const opt=(name)=>{const i=args.indexOf(name);return i>=0?args[i+1]:null;};
 const cameraArg=opt('--camera'); // "px,py,pz,lx,ly,lz[,fov]" — locks a free camera for the whole run
 const rangeArg=opt('--range');   // "start,end" in seconds
 const outArg=opt('--out');       // filename under output/
-const traceArg=opt('--trace');   // 逐帧 {t,state} 落盘（步态检测用），如 output/gait_trace.json
+const traceArg=opt('--trace')??(physicsOnly?`${opt('--board')??'storyboard/physics'}/trace.json`:null);
 const shotsArg=opt('--shots');   // JSON：[{name,t,camera:[px,py,pz,lx,ly,lz,fov?]}] 逐拍近景审片板（逐镜点名，不走 checkTimes）
-const extraQuery=opt('--q')??''; // 追加 viewer URL 查询串（探针用），如 --q "&debug-sweat=1"
-const board=path.join(here,opt('--board')??'storyboard/r1/check');
+const extraQuery=(opt('--q')??'')+(physicsOnly?'&probe-door=1&probe-bento=1&probe-surface=1':'');
+const board=path.join(here,opt('--board')??(physicsOnly?'storyboard/physics':'storyboard/r1/check'));
 const output=path.join(here,'output',outArg??'craft3d_r1.mp4');
 const audioFile=path.join(here,'assets3d/mixed.wav'); // P3 起接混音总线（缺失则静默 -an）
 const fps=Number(opt('--fps')??30); // 60Hz collision audit; final output defaults to 30fps.
+if(physicsOnly&&(serve||shotsArg))throw new Error('--physics-only cannot be combined with --serve or --shots');
 if(!Number.isInteger(fps)||fps<1||fps>120)throw new Error('Bad --fps (expected integer 1..120)');
 fs.mkdirSync(board,{recursive:true});fs.mkdirSync(path.dirname(output),{recursive:true});
 const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json','.wav':'audio/wav','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png'};
@@ -61,8 +63,14 @@ if(!serve){
       }
       console.log(`shots complete: ${shots.length} frames -> ${board}`);
     }
-    const sources=['performance.js','viewer.js','render.mjs','scenes/RooftopNoonScene.js','tools/door_probe.js','config/timeline.json'];
+    const sources=['performance.js','viewer.js','render.mjs','scenes/RooftopNoonScene.js','tools/door_probe.js','tools/surface_probe.js','config/timeline.json','config/contact_contract.json'];
     const {createHash}=await import('node:crypto');
+    const inputPaths=sources.map(p=>path.join(here,p));
+    for(const dir of ['node_modules/dula-assets/lib/craft3d','node_modules/dula-assets/characters/bioarmor'])
+      for(const f of fs.readdirSync(path.join(storyRoot,dir)))if(f.endsWith('.js'))inputPaths.push(path.join(storyRoot,dir,f));
+    inputPaths.push(path.join(storyRoot,'node_modules/dula-engine/lib/MeshCollision.js'));
+    inputPaths.push(path.join(storyRoot,'node_modules/dula-engine/lib/NumericAudit.js'));
+    const build={inputs:inputPaths.map(p=>({path:fs.realpathSync(p),sha256:createHash('sha256').update(fs.readFileSync(p)).digest('hex')}))};
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
       args,output,
       sourceSha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(here,p))).digest('hex')]))
@@ -80,7 +88,7 @@ if(!serve){
     }
     for(let i=startFrame;i<endFrame;i++){
       const t=i/fps;
-      const capture=!check||(ci<checks.length&&t>=checks[ci]);
+      const capture=!physicsOnly&&(!check||(ci<checks.length&&t>=checks[ci]));
       const result=await page.evaluate((t,capture)=>capture?window.renderAt(t):window.stepAt(t),t,capture);
       if(traceArg)gaitTrace.push({t:Math.round(t*1000)/1000,...(result.state??result)});
       if(capture){
@@ -96,9 +104,22 @@ if(!serve){
     }
     if(encoder){encoder.stdin.end();const [code]=await once(encoder,'close');if(code!==0)throw new Error(`ffmpeg failed: ${code}`);}
     if(traceArg){const tp=path.isAbsolute(traceArg)?traceArg:path.join(here,traceArg);fs.mkdirSync(path.dirname(tp),{recursive:true});
-      fs.writeFileSync(tp,JSON.stringify({fps,frames:gaitTrace},null,1));console.log(`gait trace: ${tp} (${gaitTrace.length} frames)`);}
+      fs.writeFileSync(tp,JSON.stringify({fps,duration,build,mode:physicsOnly?'physics-only':'render',frames:gaitTrace},null,1));console.log(`gait trace: ${tp} (${gaitTrace.length} frames)`);}
     if(errors.length)throw new Error(errors.join('\n'));
-    if(check&&!shots){
+    if(physicsOnly){
+      const seek=[];
+      for(const t of [...checks].reverse()){
+        const frame=Math.ceil((t-1e-9)*fps),reference=gaitTrace[frame-startFrame];
+        if(!reference)continue;
+        const state=await page.evaluate(t=>window.stepAt(t),frame/fps);
+        const {t:ignored,...expected}=reference;
+        seek.push({t:frame/fps,...compareNumericState(expected,state)});
+      }
+      const passed=seek.every(s=>s.equal);
+      fs.writeFileSync(path.join(board,'seek_check.json'),JSON.stringify({mode:'numeric',checks:seek,passed},null,2));
+      if(!passed)throw new Error('Sequential/direct seek numeric mismatch');
+    }
+    if(check&&!shots&&!physicsOnly){
       const seek=[];
       for(const shot of [...trace].reverse()){
         // 像素容差比较：JPEG 编码器在复杂边缘偶有单个 8×8 块的字节级非确定性，
@@ -127,6 +148,6 @@ if(!serve){
       fs.writeFileSync(path.join(board,'craft3d_trace.json'),JSON.stringify({duration,fps,errors,shots:trace},null,2));
       if(seek.some(s=>!s.equal))throw new Error('Sequential/direct seek image mismatch');
     }
-    console.log(check?`check complete: ${ci} frames`:`video complete: ${output}`);
+    console.log(physicsOnly?`physics complete: ${gaitTrace.length} frames; no images encoded`:check?`check complete: ${ci} frames`:`video complete: ${output}`);
   }finally{if(encoder&&!encoder.killed)encoder.kill();if(browser)await browser.close();server.close();}
 }
