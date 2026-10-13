@@ -1,0 +1,66 @@
+{
+  "music": [
+    {
+      "id": "leaf_theme",
+      "source": "assets3d/music/leaf_theme_r3.wav",
+      "sha256": "8cd2b1ce2fa822b5c070f13e67a6a98012361c66ab95da857f530b604962c100",
+      "targetRmsDb": -30,
+      "silence": [
+        44.5,
+        53.2
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "id": "step",
+      "source": "assets3d/sfx/soft_step.wav",
+      "sha256": "33342d49e1c3be9a3c366a1cf2c678003058b05495a725925cafe2f9452eb446",
+      "times": [
+        2.97,
+        3.303333,
+        3.636667,
+        3.97,
+        4.336667,
+        4.67,
+        4.97,
+        5.603333,
+        6.036667,
+        36.703333,
+        37.336667,
+        62.036667,
+        62.736667,
+        63.136667,
+        63.436667,
+        63.736667,
+        63.936667
+      ],
+      "sourceTrimStart": 1.6,
+      "duration": 0.3
+    },
+    {
+      "id": "glass_slide",
+      "source": "assets3d/sfx/glass_slide.wav",
+      "sha256": "c02a9c3d37abeeff1c636396233103b43110b9a24e7b0c6e4d990cac1893e3d3",
+      "times": [
+        60
+      ],
+      "sourceTrimStart": 2.41,
+      "duration": 0.59
+    },
+    {
+      "id": "cloth",
+      "source": "assets3d/sfx/cloth_sleeve.wav",
+      "sha256": "4c08dff95ca29b6861f181aff90bbd5ea49771b6b74eca617df17590f08ae2a5",
+      "times": [
+        12.4,
+        25.6,
+        32.7,
+        54.4,
+        65.4
+      ],
+      "sourceTrimStart": 1.85,
+      "duration": 0.45
+    }
+  ]
+}

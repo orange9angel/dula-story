@@ -1,0 +1,15 @@
+import * as THREE from 'three';
+import {ImportedPerformer} from 'dula-assets/lib/craft3d/imported-performer.js';
+import {RetargetedMotion} from 'dula-assets/lib/craft3d/retargeted-motion.js';
+import {createProjectedFace} from 'dula-assets/lib/craft3d/projected-face.js';
+import {TRIPO_LOOK} from 'dula-assets/characters/bioarmor/tripo-look.js';
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(1280,720);r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;document.body.append(r.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#e7e4db');scene.add(new THREE.HemisphereLight('#f5f7ff','#b8afa0',2));
+const key=new THREE.DirectionalLight('#fff1df',2.5);key.position.set(2.8,5,4);scene.add(key);const fill=new THREE.DirectionalLight('#d7e6ff',1.1);fill.position.set(-4,2,2);scene.add(fill);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(100,100),new THREE.MeshStandardMaterial({color:'#c7c6bb',roughness:1}));floor.rotation.x=-Math.PI/2;scene.add(floor);
+const camera=new THREE.PerspectiveCamera(31,1280/720,.02,50);camera.position.set(0,1.12,3.8);camera.lookAt(0,.94,0);
+const a=await ImportedPerformer.load('./assets3d/tripo_lei_trial/lei_h31_lod160k_v2.glb',1.78);
+const face=createProjectedFace(a,r,TRIPO_LOOK.lei);scene.add(a.mesh);
+const motion=await RetargetedMotion.load(a,'./assets3d/tripo_lei_trial/lei_text_rub_v1.glb');
+window.duration=motion.duration;window.actor=a;window.motion=motion;
+window.renderAt=t=>{a.reset();motion.apply(t);face.apply({fear:.3});scene.updateMatrixWorld(true);r.render(scene,camera);return {t,left:a.hands.left.getWorldPosition(new THREE.Vector3()).toArray(),right:a.hands.right.getWorldPosition(new THREE.Vector3()).toArray()};};window.renderAt(0);window.ready=true;

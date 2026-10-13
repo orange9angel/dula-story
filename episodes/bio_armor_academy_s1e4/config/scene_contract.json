@@ -4,12 +4,12 @@
   "episode": "bio_armor_academy_s1e4",
   "sourceStory": "script.story",
   "intent": {
-    "premise": "两个学生在对话中观察左臂蚀纹；雷晓停止主动催动并答应次日复查",
+    "premise": "雷晓强行收回蚀纹反使其扩大，主动停手后，用同一只手帮同学拿标本罐",
     "audience": "校园奇幻连载观众",
     "designPriorities": [
-      "角色意图通过有效动作和反应呈现",
-      "动作域有可计算净空与支撑",
-      "不依赖视觉检测"
+      "继承第三集画面与声音基线",
+      "真实走动和道具交互",
+      "算法预筛后按风险做视觉与听觉检查"
     ]
   },
   "registrations": {
@@ -28,10 +28,10 @@
       "implementation": {
         "kind": "episode-local",
         "name": "BiologyRoomScene",
-        "module": "scenes/BiologyRoomScene.js",
+        "module": "scenes/BiologyRoomRemakeScene.js",
         "export": "BiologyRoomScene",
         "bootstrap": "bootstrap.js",
-        "readiness": "synchronous"
+        "readiness": "readyPromise"
       },
       "intent": {
         "location": "青岚学舍生物活动室",
@@ -43,9 +43,9 @@
         ],
         "storyFunction": "引入千堂葵并让雷晓做出停止尝试的选择",
         "visualRules": [
-          "允许换重心和有支撑的转身",
-          "手势及听者反应对应剧情转折",
-          "标本罐与桌子超出触及范围"
+          "文生图墙面与程序几何统一透视和光线",
+          "真实桌面接触、持物约束和脚底支撑",
+          "底部描边分色字幕，无气泡"
         ]
       },
       "coordinates": {
@@ -60,13 +60,13 @@
       "stage": {
         "bounds": {
           "min": [
-            -4.5,
+            -3.2,
             0,
-            -4
+            -1.5
           ],
           "max": [
-            4.5,
-            3.4,
+            3.2,
+            4.3,
             4
           ]
         },
@@ -75,19 +75,19 @@
             "id": "mainStage",
             "bounds": {
               "min": [
-                -1.5,
+                -2.1,
                 0,
-                -0.4
+                -0.9
               ],
               "max": [
-                1.5,
+                1.3,
                 2,
-                0.5
+                0.2
               ]
             },
             "walkable": true,
             "purpose": [
-              "双人对话、观察、指正与叫停"
+              "走入、有限落脚转身、观察蚀纹、递罐与接纳"
             ]
           }
         ],
@@ -96,9 +96,9 @@
             "space": "world",
             "relativeTo": "$scene",
             "position": [
-              1.8,
-              1.12,
-              -1.78
+              0.4,
+              1.005,
+              0.3
             ],
             "purpose": "留白镜头的叶片标本"
           }
@@ -118,48 +118,115 @@
           "space": "world",
           "center": [
             0,
+            2.13,
+            -1.56
+          ],
+          "size": [
+            6.4,
+            4.26,
+            0.1
+          ]
+        },
+        {
+          "id": "left_wall",
+          "type": "box",
+          "space": "world",
+          "center": [
+            -3.25,
             1.7,
-            -2.8
+            0.3
           ],
           "size": [
-            9,
+            0.1,
             3.4,
-            0.16
+            4
           ]
         },
         {
-          "id": "counter_top",
+          "id": "right_wall",
           "type": "box",
           "space": "world",
           "center": [
-            0,
-            0.92,
-            -1.9
+            3.25,
+            1.7,
+            0.3
           ],
           "size": [
-            5.6,
-            0.08,
+            0.1,
+            3.4,
+            4
+          ]
+        },
+        {
+          "id": "work_table_leg_0",
+          "type": "box",
+          "space": "world",
+          "center": [
+            -1.06,
+            0.47,
+            0.3
+          ],
+          "size": [
+            0.055,
+            0.94,
+            0.055
+          ]
+        },
+        {
+          "id": "work_table_leg_1",
+          "type": "box",
+          "space": "world",
+          "center": [
+            -1.06,
+            0.47,
             0.66
+          ],
+          "size": [
+            0.055,
+            0.94,
+            0.055
           ]
         },
         {
-          "id": "cabinet",
+          "id": "work_table_leg_2",
           "type": "box",
           "space": "world",
           "center": [
-            -3.65,
-            1.02,
-            -2.1
+            1.06,
+            0.47,
+            0.3
           ],
           "size": [
-            1.1,
-            2.04,
-            0.62
+            0.055,
+            0.94,
+            0.055
+          ]
+        },
+        {
+          "id": "work_table_leg_3",
+          "type": "box",
+          "space": "world",
+          "center": [
+            1.06,
+            0.47,
+            0.66
+          ],
+          "size": [
+            0.055,
+            0.94,
+            0.055
           ]
         }
       ],
       "audioAnchors": [],
-      "dependencies": []
+      "dependencies": [
+        {
+          "id": "biology_wall_r3",
+          "type": "texture",
+          "path": "assets3d/textures/biology_wall_r3.png",
+          "required": true
+        }
+      ]
     }
   ],
   "entities": [
@@ -190,9 +257,9 @@
           "space": "world",
           "relativeTo": "$scene",
           "position": [
-            -0.9,
-            0.0,
-            0.0
+            -1.7,
+            0,
+            -0.55
           ]
         }
       }
@@ -224,9 +291,9 @@
           "space": "world",
           "relativeTo": "$scene",
           "position": [
-            0.9,
-            0.0,
-            0.0
+            0.6,
+            0,
+            0
           ]
         }
       }
@@ -245,9 +312,9 @@
           "space": "world",
           "relativeTo": "$scene",
           "position": [
-            1.8,
-            0.96,
-            -1.78
+            0.4,
+            1.005,
+            0.3
           ]
         }
       }
@@ -262,17 +329,32 @@
   },
   "events": [
     {
-      "tag": "ShowRight",
+      "tag": "EnterRoom",
       "scene": "BiologyRoomScene",
-      "handler": "showRight",
+      "handler": "enterRoom",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
           "op": "setState",
           "state": "latestCue",
-          "value": "ShowRight"
+          "value": "EnterRoom"
+        }
+      ]
+    },
+    {
+      "tag": "HideMark",
+      "scene": "BiologyRoomScene",
+      "handler": "hideMark",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "HideMark"
         }
       ]
     },
@@ -281,7 +363,7 @@
       "scene": "BiologyRoomScene",
       "handler": "showLeft",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
@@ -292,47 +374,47 @@
       ]
     },
     {
-      "tag": "TestMark",
+      "tag": "PressMark",
       "scene": "BiologyRoomScene",
-      "handler": "testMark",
+      "handler": "pressMark",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
           "op": "setState",
           "state": "latestCue",
-          "value": "TestMark"
+          "value": "PressMark"
         }
       ]
     },
     {
-      "tag": "ObserveMark",
+      "tag": "Warning",
       "scene": "BiologyRoomScene",
-      "handler": "observeMark",
+      "handler": "warning",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
           "op": "setState",
           "state": "latestCue",
-          "value": "ObserveMark"
+          "value": "Warning"
         }
       ]
     },
     {
-      "tag": "TryAgain",
+      "tag": "ForceRetract",
       "scene": "BiologyRoomScene",
-      "handler": "tryAgain",
+      "handler": "forceRetract",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
           "op": "setState",
           "state": "latestCue",
-          "value": "TryAgain"
+          "value": "ForceRetract"
         }
       ]
     },
@@ -341,7 +423,7 @@
       "scene": "BiologyRoomScene",
       "handler": "stopTrying",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
@@ -356,7 +438,7 @@
       "scene": "BiologyRoomScene",
       "handler": "quietLeaf",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
@@ -367,17 +449,77 @@
       ]
     },
     {
-      "tag": "ReleaseHand",
+      "tag": "UnclenchAndShowMark",
       "scene": "BiologyRoomScene",
-      "handler": "releaseHand",
+      "handler": "unclenchAndShowMark",
       "argumentMode": "none",
-      "durationSeconds": 0.0,
+      "durationSeconds": 0,
       "requires": [],
       "effects": [
         {
           "op": "setState",
           "state": "latestCue",
-          "value": "ReleaseHand"
+          "value": "UnclenchAndShowMark"
+        }
+      ]
+    },
+    {
+      "tag": "OfferJar",
+      "scene": "BiologyRoomScene",
+      "handler": "offerJar",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "OfferJar"
+        }
+      ]
+    },
+    {
+      "tag": "TakeJarWithMarkedHand",
+      "scene": "BiologyRoomScene",
+      "handler": "takeJarWithMarkedHand",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "TakeJarWithMarkedHand"
+        }
+      ]
+    },
+    {
+      "tag": "Reassure",
+      "scene": "BiologyRoomScene",
+      "handler": "reassure",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "Reassure"
+        }
+      ]
+    },
+    {
+      "tag": "StudyLeafTogether",
+      "scene": "BiologyRoomScene",
+      "handler": "studyLeafTogether",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "latestCue",
+          "value": "StudyLeafTogether"
         }
       ]
     }
@@ -389,18 +531,18 @@
       "character": "LeiXiao",
       "entry": 1,
       "from": [
-        -0.9,
-        0.0,
-        0.0
+        -1.7,
+        0,
+        -0.55
       ],
       "to": [
-        -0.9,
-        0.0,
-        0.0
+        -1.7,
+        0,
+        -0.55
       ],
       "zone": "mainStage",
-      "clearance": 0.25,
-      "purpose": "保留观察空间，脚底接触锁定而重心可移动；肩、臂、躯干共享腰部变换"
+      "clearance": 0.05,
+      "purpose": "门侧起位"
     },
     {
       "id": "block2",
@@ -408,51 +550,109 @@
       "character": "QianTangKui",
       "entry": 1,
       "from": [
-        0.9,
-        0.0,
-        0.0
+        0.6,
+        0,
+        0
       ],
       "to": [
-        0.9,
-        0.0,
-        0.0
+        0.6,
+        0,
+        0
       ],
       "zone": "mainStage",
-      "clearance": 0.25,
-      "purpose": "保留观察空间，脚底接触锁定而重心可移动；肩、臂、躯干共享腰部变换"
+      "clearance": 0.05,
+      "purpose": "整理植物笔记"
+    },
+    {
+      "id": "block3",
+      "scene": "BiologyRoomScene",
+      "character": "LeiXiao",
+      "entry": 2,
+      "from": [
+        -1.7,
+        0,
+        -0.55
+      ],
+      "to": [
+        -0.68,
+        0,
+        -0.1
+      ],
+      "zone": "mainStage",
+      "clearance": 0.05,
+      "purpose": "走近后转向同学"
+    },
+    {
+      "id": "block4",
+      "scene": "BiologyRoomScene",
+      "character": "QianTangKui",
+      "entry": 10,
+      "from": [
+        0.6,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0.09
+      ],
+      "zone": "mainStage",
+      "clearance": 0.05,
+      "purpose": "向前一步叫停"
+    },
+    {
+      "id": "block5",
+      "scene": "BiologyRoomScene",
+      "character": "LeiXiao",
+      "entry": 15,
+      "from": [
+        -0.68,
+        0,
+        -0.1
+      ],
+      "to": [
+        -0.14,
+        0,
+        0.025
+      ],
+      "zone": "mainStage",
+      "clearance": 0.05,
+      "purpose": "走近以左手接罐"
+    },
+    {
+      "id": "block6",
+      "scene": "BiologyRoomScene",
+      "character": "QianTangKui",
+      "entry": 15,
+      "from": [
+        0.5,
+        0,
+        0.09
+      ],
+      "to": [
+        0.64,
+        0,
+        0.02
+      ],
+      "zone": "mainStage",
+      "clearance": 0.05,
+      "purpose": "递罐后让出空间"
     }
   ],
   "shotChecks": [
     {
-      "id": "shot2",
-      "scene": "BiologyRoomScene",
-      "entry": 2,
-      "offsetSeconds": 0.5,
-      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
-      "mustSee": [
-        {
-          "entity": "LeiXiao",
-          "minFrameArea": 0.001,
-          "maxOcclusion": 0.05,
-          "safeMargin": 0.08,
-          "focus": "face"
-        }
-      ],
-      "mustHavePresence": [],
-      "mustShowTogether": []
-    },
-    {
       "id": "shot3",
       "scene": "BiologyRoomScene",
       "entry": 3,
-      "offsetSeconds": 0.5,
-      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "offsetSeconds": 1.7,
+      "purpose": "遮掩与担心",
       "mustSee": [
         {
           "entity": "LeiXiao",
           "minFrameArea": 0.001,
           "maxOcclusion": 0.05,
-          "safeMargin": 0.08,
+          "safeMargin": 0.05,
           "focus": "face"
         }
       ],
@@ -463,14 +663,49 @@
       "id": "shot4",
       "scene": "BiologyRoomScene",
       "entry": 4,
-      "offsetSeconds": 0.5,
-      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "offsetSeconds": 1.5,
+      "purpose": "观察者明确回应",
       "mustSee": [
         {
           "entity": "QianTangKui",
           "minFrameArea": 0.001,
           "maxOcclusion": 0.05,
-          "safeMargin": 0.08,
+          "safeMargin": 0.05,
+          "focus": "face"
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot8",
+      "scene": "BiologyRoomScene",
+      "entry": 8,
+      "offsetSeconds": 1,
+      "purpose": "左臂蚀纹特写",
+      "mustSee": [
+        {
+          "entity": "LeiXiao",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot9",
+      "scene": "BiologyRoomScene",
+      "entry": 9,
+      "offsetSeconds": 2,
+      "purpose": "强收失败的反应",
+      "mustSee": [
+        {
+          "entity": "LeiXiao",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05,
           "focus": "face"
         }
       ],
@@ -481,31 +716,65 @@
       "id": "shot12",
       "scene": "BiologyRoomScene",
       "entry": 12,
-      "offsetSeconds": 0.5,
-      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "offsetSeconds": 1.5,
+      "purpose": "叶片留白",
       "mustSee": [
         {
           "entity": "LeafJar",
           "minFrameArea": 0.001,
           "maxOcclusion": 0.05,
-          "safeMargin": 0.08
+          "safeMargin": 0.05
         }
       ],
       "mustHavePresence": [],
       "mustShowTogether": []
     },
     {
-      "id": "shot13",
+      "id": "shot15",
       "scene": "BiologyRoomScene",
-      "entry": 13,
-      "offsetSeconds": 0.5,
-      "purpose": "几何投影及焦点要求；当前数值验收范围以 contact_contract 为准",
+      "entry": 15,
+      "offsetSeconds": 3.3,
+      "purpose": "玻璃罐沿桌滑向同学",
       "mustSee": [
         {
-          "entity": "LeiXiao",
+          "entity": "LeafJar",
           "minFrameArea": 0.001,
           "maxOcclusion": 0.05,
-          "safeMargin": 0.08,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot16",
+      "scene": "BiologyRoomScene",
+      "entry": 16,
+      "offsetSeconds": 2.3,
+      "purpose": "受蚀的左手接住标本罐",
+      "mustSee": [
+        {
+          "entity": "LeafJar",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "shot17",
+      "scene": "BiologyRoomScene",
+      "entry": 17,
+      "offsetSeconds": 2,
+      "purpose": "回应次日约定",
+      "mustSee": [
+        {
+          "entity": "QianTangKui",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.05,
+          "safeMargin": 0.05,
           "focus": "face"
         }
       ],

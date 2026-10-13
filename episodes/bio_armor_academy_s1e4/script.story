@@ -1,83 +1,89 @@
 1
-00:00:00,000 --> 00:00:03,000
-@BiologyRoomScene{Position:LeiXiao|x=-0.9|y=0|z=0}{Position:QianTangKui|x=0.9|y=0|z=0}{Camera:Static|position=0,1.5,5.6|lookAt=0,1.1,0}
+00:00:00,000 --> 00:00:02,400
+@BiologyRoomScene{Position:LeiXiao|x=-1.7|y=0|z=-0.55}{Position:QianTangKui|x=0.60|y=0|z=0}{Camera:Static|position=0.1,1.65,4.7|lookAt=0,1.2,0|fov=35}
 
 2
-00:00:03,000 --> 00:00:05,800
-{Camera:Static|position=0,1.5,5.6|lookAt=0,1.1,0}
+00:00:02,400 --> 00:00:06,500
+{Event:EnterRoom}{Camera:Static|position=0.1,1.65,4.7|lookAt=0,1.2,0|fov=35}
 
 3
-00:00:05,800 --> 00:00:11,800
-{Event:ShowRight}{Camera:Static|position=-0.7,1.55,3.2|lookAt=-0.9,1.38,0}
-[LeiXiao]我就问一下，这道印子……明天能消吗？
+00:00:06,500 --> 00:00:11,500
+{Event:HideMark}{Camera:Static|position=-1.35,1.56,2.7|lookAt=-0.68,1.34,0|fov=31}
+[LeiXiao]这道印子……你能让它消失吗？
 
 4
-00:00:12,000 --> 00:00:16,400
-{Event:ShowLeft}{Camera:Static|position=0.7,1.55,3.2|lookAt=0.9,1.38,0}
-[QianTangKui]左手。右手那层，骗不了我。
+00:00:11,700 --> 00:00:14,800
+{Event:ShowLeft}{Camera:Static|position=1.45,1.54,2.65|lookAt=0.66,1.35,0|fov=31}
+[QianTangKui]先给我看。藏着那只。
 
 5
-00:00:16,600 --> 00:00:20,800
-{Camera:Static|position=0,1.5,5.6|lookAt=0,1.1,0}
+00:00:15,000 --> 00:00:20,000
+{Camera:Static|position=0,1.52,3.05|lookAt=0,1.22,0|fov=34}
 [LeiXiao]你先保证，不把我泡进罐子里。
 
 6
-00:00:21,000 --> 00:00:25,800
-{Event:TestMark}{Camera:Static|position=0.7,1.55,3.2|lookAt=0.9,1.38,0}
-[QianTangKui]罐子是装叶子的。你先别动。
+00:00:20,200 --> 00:00:24,300
+{Camera:Static|position=1.45,1.54,2.65|lookAt=0.66,1.35,0|fov=31}
+[QianTangKui]装叶子的。你这么大，放不下。
 
 7
-00:00:26,000 --> 00:00:29,800
-{Camera:Static|position=-3.85,1.4,2.0|lookAt=-1.17,1.27,0.27|fov=18}
-[LeiXiao]我一想收回去，它怎么更长了？
+00:00:24,500 --> 00:00:29,000
+{Event:PressMark}{Camera:Static|position=-1.05,1.57,2.3|lookAt=-0.52,1.3,0.14|fov=30}
+[LeiXiao]擦不掉……那我把它收回去呢？
 
 8
-00:00:30,000 --> 00:00:32,800
-{Camera:Static|position=0.7,1.55,3.2|lookAt=0.9,1.38,0}
-[QianTangKui]别再催它。
+00:00:29,000 --> 00:00:31,800
+{Event:Warning}{Camera:Static|position=-1.8,1.35,1.85|lookAt=-0.87,1.18,0.23|fov=18}
+[QianTangKui]先松手，别用力。
 
 9
-00:00:33,000 --> 00:00:37,000
-{Event:ObserveMark}{Camera:Static|position=-3.85,1.4,2.0|lookAt=-1.17,1.27,0.27|fov=18}
+00:00:32,000 --> 00:00:35,800
+{Event:ForceRetract}{Camera:Static|position=-1.18,1.6,2.7|lookAt=-0.7,1.35,0|fov=29}
+[LeiXiao]就一下——怎么还长了？
 
 10
-00:00:37,000 --> 00:00:40,800
-{Event:TryAgain}{Camera:Static|position=-0.7,1.55,3.2|lookAt=-0.9,1.38,0}
-[LeiXiao]那我慢一点，就一下。
+00:00:36,000 --> 00:00:41,000
+{Event:StopTrying}{Camera:Static|position=0,1.48,2.9|lookAt=0,1.26,0.08|fov=33}
+[QianTangKui]停。新长的那截，留下了。
 
 11
-00:00:41,000 --> 00:00:47,800
-{Event:StopTrying}{Camera:Static|position=0,1.5,5.6|lookAt=0,1.15,0}
-[QianTangKui]停。你刚才催的那截，留下了。这叫蚀。
+00:00:41,200 --> 00:00:44,500
+{Camera:Static|position=-1.15,1.56,2.5|lookAt=-0.7,1.39,0|fov=28}
+[LeiXiao]那我一直这样？
 
 12
-00:00:48,000 --> 00:00:51,000
-{Event:QuietLeaf}{Camera:Static|position=2.45,1.8,3.0|lookAt=1.8,1.16,-1.78|fov=12}
+00:00:44,500 --> 00:00:48,000
+{Event:QuietLeaf}{Camera:Static|position=1.65,1.43,1.4|lookAt=0.42,1.16,0.3|fov=19}
 
 13
-00:00:51,000 --> 00:00:56,800
-{Event:ReleaseHand}{Camera:Static|position=-0.7,1.55,3.2|lookAt=-0.9,1.38,0}
-[LeiXiao]……明天看得见就看得见。今天不试了。
+00:00:48,000 --> 00:00:53,500
+{Camera:Static|position=1.4,1.52,2.5|lookAt=0.58,1.34,0|fov=30}
+[QianTangKui]这叫蚀。我现在没办法让它消失。
 
 14
-00:00:57,000 --> 00:01:03,800
-{Camera:Static|position=0.7,1.55,3.2|lookAt=0.9,1.38,0}
-[QianTangKui]明天放学，还站这儿。让我看看它有没有变。
+00:00:53,700 --> 00:00:58,000
+{Event:UnclenchAndShowMark}{Camera:Static|position=-1.15,1.56,2.5|lookAt=-0.7,1.33,0|fov=30}
+[LeiXiao]……那明天再看。今天不试了。
 
 15
-00:01:04,000 --> 00:01:08,800
-{Camera:Static|position=-0.7,1.55,3.2|lookAt=-0.9,1.38,0}
-[LeiXiao]先说好，罐子得一直装叶子。
+00:00:58,200 --> 00:01:04,000
+{Event:OfferJar}{Camera:Static|position=0,1.55,2.7|lookAt=0,1.23,0.15|fov=34}
+[QianTangKui]帮我拿一下。这片叶子还没登记。
 
 16
-00:01:09,000 --> 00:01:13,800
-{Camera:Static|position=0.7,1.55,3.2|lookAt=0.9,1.38,0}
-[QianTangKui]放心。你比叶子难养。
+00:01:04,200 --> 00:01:09,200
+{Event:TakeJarWithMarkedHand}{Camera:Static|position=-1.28,1.51,2.35|lookAt=-0.35,1.32,0.18|fov=32}
+[LeiXiao]我也得……贴个标签？
 
 17
-00:01:14,000 --> 00:01:18,000
-{Camera:Static|position=0,1.5,5.6|lookAt=0,1.1,0}
+00:01:09,400 --> 00:01:14,400
+{Event:Reassure}{Camera:Static|position=1.3,1.52,2.55|lookAt=0.58,1.36,0|fov=30}
+[QianTangKui]你不用。明天放学，自己来。
 
 18
-00:01:18,000 --> 00:01:21,000
-{Camera:Static|position=0,1.5,5.6|lookAt=0,1.1,0}
+00:01:14,400 --> 00:01:19,000
+{Event:StudyLeafTogether}{Camera:Static|position=0,1.52,2.8|lookAt=0.12,1.25,0.1|fov=34}
+
+19
+00:01:19,000 --> 00:01:22,000
+{Camera:Static|position=0,1.52,3.05|lookAt=0,1.24,0.1|fov=34}

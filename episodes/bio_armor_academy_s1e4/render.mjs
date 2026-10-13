@@ -22,6 +22,7 @@ const board=path.join(here,opt('--board')??(physicsOnly?'storyboard/physics':'st
 const output=path.join(here,'output',outArg??'craft3d_r1.mp4');
 const audioFile=path.join(here,'assets3d/mixed.wav'); // P3 起接混音总线（缺失则静默 -an）
 const fps=Number(opt('--fps')??30); // 60Hz collision audit; final output defaults to 30fps.
+if(args.includes('--start')||args.includes('--end'))throw new Error('Use --range start,end; --start/--end are not supported');
 if(physicsOnly&&(serve||shotsArg))throw new Error('--physics-only cannot be combined with --serve or --shots');
 if(!Number.isInteger(fps)||fps<1||fps>120)throw new Error('Bad --fps (expected integer 1..120)');
 fs.mkdirSync(board,{recursive:true});fs.mkdirSync(path.dirname(output),{recursive:true});
@@ -144,6 +145,6 @@ if(!serve){
       fs.writeFileSync(path.join(board,'craft3d_trace.json'),JSON.stringify({duration,fps,errors,shots:trace},null,2));
       if(seek.some(s=>!s.equal))throw new Error('Sequential/direct seek image mismatch');
     }
-    console.log(physicsOnly?`physics complete: ${gaitTrace.length} frames; no images encoded`:check?`check complete: ${ci} frames`:`video complete: ${output}`);
+    if(!shots)console.log(physicsOnly?`physics complete: ${gaitTrace.length} frames; no images encoded`:check?`check complete: ${ci} frames`:`video complete: ${output}`);
   }finally{if(encoder&&!encoder.killed)encoder.kill();if(browser)await browser.close();server.close();}
 }

@@ -1,0 +1,17 @@
+import * as THREE from 'three';
+import {ImportedPerformer} from 'dula-assets/lib/craft3d/imported-performer.js';
+import {createProjectedFace} from 'dula-assets/lib/craft3d/projected-face.js';
+import {TRIPO_LOOK} from 'dula-assets/characters/bioarmor/tripo-look.js';
+const q=new URLSearchParams(location.search),id=q.get('actor')??'aoi';
+const a=await ImportedPerformer.load(`./assets3d/tripo_${id}_trial/${id}_h31_lod160k_v2.glb`,id==='aoi'?1.65:1.78);
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(900,900);r.outputColorSpace=THREE.SRGBColorSpace;document.body.append(r.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#d6d9d7');scene.add(a.mesh);
+scene.add(new THREE.HemisphereLight('#f5f7ff','#b8afa0',2));
+const light=new THREE.DirectionalLight('#fff1df',2.5);light.position.set(2.8,5,4);scene.add(light);
+const fill=new THREE.DirectionalLight('#d7e6ff',1.1);fill.position.set(-4,2,2);scene.add(fill);
+r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.05;
+const cy=id==='aoi'?1.46:1.61,range=.19;
+const camera=new THREE.OrthographicCamera(-range,range,range,-range,.01,10);camera.position.set(0,cy,2);camera.lookAt(0,cy,0);
+const face=createProjectedFace(a,r,TRIPO_LOOK[id]);scene.add(a.mesh);window.face=face;
+window.actor=a;window.renderer=r;window.scene=scene;window.camera=camera;
+window.renderAt=(state={})=>{face.apply(state);a.reset();a.bones.head.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0,state.turn??0,0)));scene.updateMatrixWorld(true);r.render(scene,camera);return a.info();};window.renderAt();window.ready=true;

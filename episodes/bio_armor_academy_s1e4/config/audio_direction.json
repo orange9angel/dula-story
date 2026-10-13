@@ -4,7 +4,7 @@
   "sources": [
     {
       "path": "script.story",
-      "sha256": "33e3ea24f2e9bf4d8576b0cd1748c28ccae34db25543282d2c75875f5ff96507"
+      "sha256": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4"
     }
   ],
   "policies": {
@@ -14,13 +14,13 @@
       "ambience",
       "music"
     ],
-    "musicMode": "none",
+    "musicMode": "directed",
     "ambienceMode": "directed",
     "breath": "natural-tts-pauses-no-layered-breath"
   },
   "mix": {
     "dialogueVolume": 1,
-    "bgmVolume": 0,
+    "bgmVolume": 0.16,
     "sfxVolume": 0.8,
     "useDucking": true,
     "duckDepth": 0.3
@@ -32,7 +32,7 @@
       "identityPolicy": "preserve-native-voice"
     },
     "QianTangKui": {
-      "voice": "zh_female_linxiao_uranus_bigtts",
+      "voice": "ICL_uranus_zh_female_tianmeihuopo_tob",
       "locale": "zh-CN",
       "identityPolicy": "preserve-native-voice",
       "castingStatus": "provisional-for-episode-preview"
@@ -42,353 +42,570 @@
     {
       "entry": 3,
       "character": "LeiXiao",
-      "text": "我就问一下，这道印子……明天能消吗？",
-      "startTime": 5.8,
-      "endTime": 11.8,
+      "text": "这道印子……你能让它消失吗？",
+      "startTime": 6.5,
+      "endTime": 11.5,
+      "speechWindow": [
+        6.7,
+        11.2
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_3"
+      ],
       "previousEntry": null,
       "nextEntry": 4,
-      "intent": "试探印子能否消失",
-      "subtext": "别让她看出我害怕",
+      "intent": "试探能否恢复正常",
+      "subtext": "害怕被当成标本",
       "delivery": {
-        "tone": "neutral",
+        "tone": "calm",
+        "nativeEmotion": "calm",
+        "nativeEmotionScale": 2,
         "energy": 0.38,
-        "pace": 1.05,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "pace": 1.03,
+        "volume": 0.9,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": "calm"
+        "breath": "natural"
       }
     },
     {
       "entry": 4,
       "character": "QianTangKui",
-      "text": "左手。右手那层，骗不了我。",
-      "startTime": 12,
-      "endTime": 16.4,
+      "text": "先给我看。藏着那只。",
+      "startTime": 11.7,
+      "endTime": 14.8,
+      "speechWindow": [
+        11.899999999999999,
+        14.5
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_4"
+      ],
       "previousEntry": 3,
       "nextEntry": 5,
-      "intent": "指出真正受伤的是左手",
-      "subtext": "我看出来了，但不审问你",
+      "intent": "让他坦白展示受伤的手",
+      "subtext": "已经注意到你的遮掩",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.4,
-        "pace": 1.02,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "happy",
+        "nativeEmotion": "happy",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 1.06,
+        "volume": 0.9,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": null
+        "breath": "natural"
       }
     },
     {
       "entry": 5,
       "character": "LeiXiao",
       "text": "你先保证，不把我泡进罐子里。",
-      "startTime": 16.6,
-      "endTime": 20.8,
+      "startTime": 15,
+      "endTime": 20,
+      "speechWindow": [
+        15.2,
+        19.7
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_5"
+      ],
       "previousEntry": 4,
       "nextEntry": 6,
-      "intent": "用罐子笑话挡开检查",
-      "subtext": "我不想变成实验材料",
+      "intent": "用玩笑保护自己",
+      "subtext": "先确认你把我当同学",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.45,
-        "pace": 1.05,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "happy",
+        "nativeEmotion": "happy",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 1.02,
+        "volume": 0.92,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": "calm"
+        "breath": "natural"
       }
     },
     {
       "entry": 6,
       "character": "QianTangKui",
-      "text": "罐子是装叶子的。你先别动。",
-      "startTime": 21,
-      "endTime": 25.8,
+      "text": "装叶子的。你这么大，放不下。",
+      "startTime": 20.2,
+      "endTime": 24.3,
+      "speechWindow": [
+        20.4,
+        24
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_6"
+      ],
       "previousEntry": 5,
       "nextEntry": 7,
-      "intent": "接住玩笑，让他停下",
-      "subtext": "你还没被当成标本",
+      "intent": "用具体事实接住玩笑",
+      "subtext": "可以放松一点",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.35,
-        "pace": 1.0,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "happy",
+        "nativeEmotion": "happy",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 1.05,
+        "volume": 0.9,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": null
+        "breath": "natural"
       }
     },
     {
       "entry": 7,
       "character": "LeiXiao",
-      "text": "我一想收回去，它怎么更长了？",
-      "startTime": 26,
-      "endTime": 29.8,
+      "text": "擦不掉……那我把它收回去呢？",
+      "startTime": 24.5,
+      "endTime": 29,
+      "speechWindow": [
+        24.7,
+        28.7
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_7"
+      ],
       "previousEntry": 6,
       "nextEntry": 8,
-      "intent": "发现尝试适得其反",
-      "subtext": "为什么不听我的",
+      "intent": "擦不掉就想催回去",
+      "subtext": "我还想自己解决",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.56,
-        "pace": 1.05,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "calm",
+        "nativeEmotion": "calm",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 1.08,
+        "volume": 0.95,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": "calm"
+        "breath": "natural"
       }
     },
     {
       "entry": 8,
       "character": "QianTangKui",
-      "text": "别再催它。",
-      "startTime": 30,
-      "endTime": 32.8,
+      "text": "先松手，别用力。",
+      "startTime": 29,
+      "endTime": 31.8,
+      "speechWindow": [
+        29.2,
+        31.5
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_8"
+      ],
       "previousEntry": 7,
-      "nextEntry": 10,
-      "intent": "及时制止",
-      "subtext": "再试可能更糟",
+      "nextEntry": 9,
+      "intent": "发现危险及时提醒",
+      "subtext": "不要再强迫身体",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.44,
-        "pace": 1.0,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "surprised",
+        "nativeEmotion": "surprised",
+        "nativeEmotionScale": 2,
+        "energy": 0.55,
+        "pace": 1.08,
+        "volume": 0.98,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": null
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 9,
+      "character": "LeiXiao",
+      "text": "就一下——怎么还长了？",
+      "startTime": 32,
+      "endTime": 35.8,
+      "speechWindow": [
+        32.2,
+        35.5
+      ],
+      "scene": "BiologyRoomScene",
+      "shotIds": [
+        "entry_9"
+      ],
+      "previousEntry": 8,
+      "nextEntry": 10,
+      "intent": "试过后惊慌",
+      "subtext": "身体不听使唤",
+      "delivery": {
+        "tone": "surprised",
+        "nativeEmotion": "surprised",
+        "nativeEmotionScale": 2,
+        "energy": 0.55,
+        "pace": 1.08,
+        "volume": 1.0,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "quiet biology room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
       }
     },
     {
       "entry": 10,
-      "character": "LeiXiao",
-      "text": "那我慢一点，就一下。",
-      "startTime": 37,
-      "endTime": 40.8,
+      "character": "QianTangKui",
+      "text": "停。新长的那截，留下了。",
+      "startTime": 36,
+      "endTime": 41,
+      "speechWindow": [
+        36.2,
+        40.7
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
-      "previousEntry": 8,
+      "shotIds": [
+        "entry_10"
+      ],
+      "previousEntry": 9,
       "nextEntry": 11,
-      "intent": "还想控制结果",
-      "subtext": "只要更小心就可以",
+      "intent": "叫停并指出代价",
+      "subtext": "这回必须听我的",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.41,
-        "pace": 1.04,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "angry",
+        "nativeEmotion": "angry",
+        "nativeEmotionScale": 2,
+        "energy": 0.55,
+        "pace": 1.03,
+        "volume": 0.97,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": "calm"
+        "breath": "natural"
       }
     },
     {
       "entry": 11,
-      "character": "QianTangKui",
-      "text": "停。你刚才催的那截，留下了。这叫蚀。",
-      "startTime": 41,
-      "endTime": 47.8,
+      "character": "LeiXiao",
+      "text": "那我一直这样？",
+      "startTime": 41.2,
+      "endTime": 44.5,
+      "speechWindow": [
+        41.400000000000006,
+        44.2
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_11"
+      ],
       "previousEntry": 10,
       "nextEntry": 13,
-      "intent": "叫停并命名观察到的现象",
-      "subtext": "留下的已经不会自己消掉",
+      "intent": "追问未来",
+      "subtext": "玩笑撑不住了",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.46,
-        "pace": 1.02,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "sad",
+        "nativeEmotion": "sad",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 1.01,
+        "volume": 0.87,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": null
+        "breath": "natural"
       }
     },
     {
       "entry": 13,
-      "character": "LeiXiao",
-      "text": "……明天看得见就看得见。今天不试了。",
-      "startTime": 51,
-      "endTime": 56.8,
+      "character": "QianTangKui",
+      "text": "这叫蚀。我现在没办法让它消失。",
+      "startTime": 48,
+      "endTime": 53.5,
+      "speechWindow": [
+        48.2,
+        53.2
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_13"
+      ],
       "previousEntry": 11,
       "nextEntry": 14,
-      "intent": "接受今天没有办法",
-      "subtext": "宁可暂时丢脸也不再冒险",
+      "intent": "诚实交代能力边界",
+      "subtext": "不会骗你说能治好",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.3,
-        "pace": 1.0,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "sad",
+        "nativeEmotion": "sad",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 0.96,
+        "volume": 0.9,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": "calm"
+        "breath": "natural"
       }
     },
     {
       "entry": 14,
-      "character": "QianTangKui",
-      "text": "明天放学，还站这儿。让我看看它有没有变。",
-      "startTime": 57,
-      "endTime": 63.8,
+      "character": "LeiXiao",
+      "text": "……那明天再看。今天不试了。",
+      "startTime": 53.7,
+      "endTime": 58,
+      "speechWindow": [
+        53.900000000000006,
+        57.7
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_14"
+      ],
       "previousEntry": 13,
       "nextEntry": 15,
-      "intent": "约定次日观察",
-      "subtext": "没有办法保证，但会跟进",
+      "intent": "主动停止尝试",
+      "subtext": "先接受今天这样",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.34,
-        "pace": 1.0,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "calm",
+        "nativeEmotion": "calm",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 1.02,
+        "volume": 0.88,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": null
+        "breath": "natural"
       }
     },
     {
       "entry": 15,
-      "character": "LeiXiao",
-      "text": "先说好，罐子得一直装叶子。",
-      "startTime": 64,
-      "endTime": 68.8,
+      "character": "QianTangKui",
+      "text": "帮我拿一下。这片叶子还没登记。",
+      "startTime": 58.2,
+      "endTime": 64,
+      "speechWindow": [
+        58.400000000000006,
+        63.7
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_15"
+      ],
       "previousEntry": 14,
       "nextEntry": 16,
-      "intent": "重新开个小玩笑",
-      "subtext": "我会再来",
+      "intent": "让他参与日常工作",
+      "subtext": "你是能帮忙的同学",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.4,
-        "pace": 1.05,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "tone": "happy",
+        "nativeEmotion": "happy",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 1.02,
+        "volume": 0.92,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": "calm"
+        "breath": "natural"
       }
     },
     {
       "entry": 16,
-      "character": "QianTangKui",
-      "text": "放心。你比叶子难养。",
-      "startTime": 69,
-      "endTime": 73.8,
+      "character": "LeiXiao",
+      "text": "我也得……贴个标签？",
+      "startTime": 64.2,
+      "endTime": 69.2,
+      "speechWindow": [
+        64.4,
+        68.9
+      ],
       "scene": "BiologyRoomScene",
-      "shotIds": [],
+      "shotIds": [
+        "entry_16"
+      ],
       "previousEntry": 15,
-      "nextEntry": null,
-      "intent": "回应他的信任",
-      "subtext": "不用装得什么都不在乎",
+      "nextEntry": 17,
+      "intent": "试探自己仍被平等看待",
+      "subtext": "这次笑话有了底气",
       "delivery": {
-        "tone": "neutral",
-        "energy": 0.34,
+        "tone": "happy",
+        "nativeEmotion": "happy",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
         "pace": 1.0,
-        "volume": 1.0,
-        "pitchSemitones": 0.0,
+        "volume": 0.9,
+        "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural",
-        "nativeEmotion": null
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 17,
+      "character": "QianTangKui",
+      "text": "你不用。明天放学，自己来。",
+      "startTime": 69.4,
+      "endTime": 74.4,
+      "speechWindow": [
+        69.60000000000001,
+        74.10000000000001
+      ],
+      "scene": "BiologyRoomScene",
+      "shotIds": [
+        "entry_17"
+      ],
+      "previousEntry": 16,
+      "nextEntry": null,
+      "intent": "给出具体约定",
+      "subtext": "愿意继续陪你观察",
+      "delivery": {
+        "tone": "happy",
+        "nativeEmotion": "happy",
+        "nativeEmotionScale": 2,
+        "energy": 0.38,
+        "pace": 0.98,
+        "volume": 0.91,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "quiet biology room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
       }
     }
   ],
   "ambience": [
     {
       "id": "biology_room",
-      "startTime": 3,
-      "endTime": 78,
+      "startTime": 2.4,
+      "endTime": 79,
       "shotIds": [],
       "asset": "assets3d/ambience/biology_room.wav",
       "prompt": "生成一段85秒的纯室内环境底声：放学后安静的学校生物活动室，关着窗，极轻的远处通风声。平稳、无阵风、无节律性涌动、音量恒定。没有人声、音乐、脚步、敲击、鸟叫、虫鸣、电流蜂鸣或故事性事件。干净柔和，供低音量对白场景使用。",
       "reason": "维持同一室内空间，让停顿保留空间感"
     }
   ],
-  "sfx": [],
-  "music": [],
+  "sfx": [
+    {
+      "id": "step",
+      "asset": "assets3d/sfx/soft_step.wav",
+      "prompt": "生成3秒单个音效：一个穿软底帆布鞋的学生在木地板上轻轻落下一步，单次短促干燥的鞋底接触声。只一步，近距离，安静室内，无混响拖尾，无走路循环，无人声，无音乐，无其他声响。",
+      "times": [
+        2.97,
+        3.303333,
+        3.636667,
+        3.97,
+        4.336667,
+        4.67,
+        4.97,
+        5.603333,
+        6.036667,
+        36.703333,
+        37.336667,
+        62.036667,
+        62.736667,
+        63.136667,
+        63.436667,
+        63.736667,
+        63.936667
+      ],
+      "gain": 0.12,
+      "trimSeconds": 0.3,
+      "startTime": 2.97,
+      "endTime": 64.236667,
+      "role": "event",
+      "priority": "storySfx"
+    },
+    {
+      "id": "glass_slide",
+      "asset": "assets3d/sfx/glass_slide.wav",
+      "prompt": "生成3秒单个音效：一个小玻璃标本罐在木桌面上缓慢滑动约一秒，轻柔细腻的玻璃底摩擦木头声，末尾轻轻停稳。无碎裂，无敲打，无尖啸，无人声，无音乐，无其他声音。",
+      "times": [
+        60
+      ],
+      "gain": 0.12,
+      "trimSeconds": 1.4,
+      "startTime": 60,
+      "endTime": 61.4,
+      "role": "event",
+      "priority": "storySfx"
+    },
+    {
+      "id": "cloth",
+      "asset": "assets3d/sfx/cloth_sleeve.wav",
+      "prompt": "生成3秒单个音效：棉质校服短袖和手臂轻轻摩擦，短而细的衣料窸窣声约半秒，近距离干声，无人声，无呼吸，无音乐，无冲击声。",
+      "times": [
+        12.4,
+        25.6,
+        32.7,
+        54.4,
+        65.4
+      ],
+      "gain": 0.08,
+      "trimSeconds": 0.45,
+      "startTime": 12.4,
+      "endTime": 65.85000000000001,
+      "role": "event",
+      "priority": "storySfx"
+    }
+  ],
+  "music": [
+    {
+      "id": "leaf_theme",
+      "startTime": 0,
+      "endTime": 82,
+      "asset": "assets3d/music/leaf_theme_r3.wav",
+      "prompt": "生成一段82秒的原创校园奇幻动画纯器乐配乐。放学后生物活动室，两个少年从担忧走向有限但真实的信任。0到22秒：柔和钢琴呈现四音短动机，木质拨弦轻轻回答，稀疏而有记忆点。22到36秒：和声短暂转小调，低音大提琴轻奏不安，不能出现惊吓爆音。36到44秒：乐器逐一退出，悬而未决。44到53秒：极疏钢琴尾音，留下大段安静空间。53到73秒：四音动机温暖再现，长笛轻轻应答，钢琴和弦展开，像重新开始一件普通的小事。73到82秒：回到钢琴独奏，以安静完整终止式收束。约76BPM，自由呼吸，无鼓组，无人声，无吟唱，无环境音，无音效，无电音，无宏大高潮。旋律每句有停顿；从pp到mp再回pp，对白场景配乐，不要写成广告音乐。",
+      "reason": "四音动机连接遮掩与接纳；44.5至53.2秒混音明确留白",
+      "targetRmsDb": -30
+    }
+  ],
   "exclusions": [
     {
-      "id": "no_etch_whoosh",
-      "reason": "附着纹路只改变颜色，没有机械或爆发运动"
-    },
-    {
-      "id": "no_steps_contacts",
-      "reason": "开场小幅调整站姿不突出脚步；没有道具接触或撞击，不配置撞击声"
-    },
-    {
-      "id": "no_music",
-      "reason": "停手决定由对白和沉默承载"
+      "id": "no_magic_whoosh",
+      "reason": "蚀纹附着皮肤缓慢扩大，不制造电击或能量爆发错觉"
     }
   ]
 }

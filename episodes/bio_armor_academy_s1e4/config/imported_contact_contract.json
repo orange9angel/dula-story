@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "duration": 82,
+  "minimum_fps": 30,
+  "max_surface_penetration_m": 0.002,
+  "max_foot_floor_penetration_m": 0.003,
+  "max_held_jar_surface_gap_m": 0.015,
+  "max_jar_step_speed_mps": 0.8,
+  "actors": ["lei", "aoi"],
+  "required_parts": ["leftHand", "rightHand", "leftArm", "rightArm", "leftFoot", "rightFoot"],
+  "grip_hands": {"lei": "leftHand", "aoi": "rightHand"},
+  "coverage": "Representative rendered skinned vertices against solid tabletop and jar interior; feet against floor; held jar nearest sampled hand-surface gap; complete timeline and deterministic seek.",
+  "not_covered": ["complete body self-collision", "full triangle-triangle intersections", "continuous collision between sampled times", "all clothing and hair against body", "artistic quality", "auditory review"]
+}

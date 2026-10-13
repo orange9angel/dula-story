@@ -1,0 +1,176 @@
+{
+  "status": "sampled-contact-pass",
+  "trace": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\storyboard\\remake_r3\\tripo_validation\\trace.json",
+  "frames": 4920,
+  "fps": 60,
+  "coverage": "Representative rendered skinned vertices against solid tabletop and jar interior; feet against floor; held jar nearest sampled hand-surface gap; complete timeline and deterministic seek.",
+  "not_covered": [
+    "complete body self-collision",
+    "full triangle-triangle intersections",
+    "continuous collision between sampled times",
+    "all clothing and hair against body",
+    "artistic quality",
+    "auditory review"
+  ],
+  "maxima": {
+    "lei.leftHand.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftHand.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightHand.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightHand.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftFoot.floorDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.003
+    },
+    "lei.rightFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightFoot.floorDepth": {
+      "value": 1.8887163701079748e-07,
+      "time": 62.5,
+      "limit": 0.003
+    },
+    "aoi.leftHand.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftHand.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightHand.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightHand.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftFoot.floorDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.003
+    },
+    "aoi.rightFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightFoot.floorDepth": {
+      "value": 0.0003887108271828984,
+      "time": 36.7,
+      "limit": 0.003
+    },
+    "jarSpeed": {
+      "value": 0.2856902977053125,
+      "time": 61.05,
+      "limit": 0.8
+    },
+    "aoi.heldJarGap": {
+      "value": 0.004185196396604474,
+      "time": 60.9,
+      "limit": 0.015
+    },
+    "lei.heldJarGap": {
+      "value": 0.006936826227277149,
+      "time": 65.45,
+      "limit": 0.015
+    }
+  },
+  "errors": [],
+  "error_count": 0,
+  "trace_sha256": "79f52456889918e5464b9535c257dbf4ec69f2677b43e3e4601e3d4c715ea6f6",
+  "contract_sha256": "f9fbf2fc356202c72588574fdc3fe27927873bde98c4ab73ead494082ca0d2e7"
+}

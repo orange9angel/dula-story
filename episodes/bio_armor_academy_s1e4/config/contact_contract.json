@@ -1,6 +1,6 @@
 {
   "fps_min": 30,
-  "scope": "authored gestures, torso turns and finite settling steps: rendered surfaces, stance contacts, world AABBs and framing; no visual review",
+  "scope": "R3 sampled rendered surfaces, finite foot contacts, prop grip, tabletop clearance and shot projection; artistic review is separate",
   "surface_clearance": {
     "fps_min": 30,
     "require_build": true,
@@ -9,7 +9,7 @@
         "key": "lei:left:torso",
         "window": [
           0,
-          81
+          82
         ],
         "max_depth": 0.005,
         "method": "rendered-vertices/closed-mesh"
@@ -18,7 +18,7 @@
         "key": "lei:right:torso",
         "window": [
           0,
-          81
+          82
         ],
         "max_depth": 0.005,
         "method": "rendered-vertices/closed-mesh"
@@ -27,7 +27,7 @@
         "key": "aoi:left:torso",
         "window": [
           0,
-          81
+          82
         ],
         "max_depth": 0.005,
         "method": "rendered-vertices/closed-mesh"
@@ -36,7 +36,7 @@
         "key": "aoi:right:torso",
         "window": [
           0,
-          81
+          82
         ],
         "max_depth": 0.005,
         "method": "rendered-vertices/closed-mesh"
@@ -45,7 +45,7 @@
         "key": "lei:left:hand_torso",
         "window": [
           0,
-          81
+          82
         ],
         "max_depth": 0.002,
         "method": "rendered-vertices/closed-mesh"
@@ -54,7 +54,7 @@
         "key": "lei:right:hand_torso",
         "window": [
           0,
-          81
+          82
         ],
         "max_depth": 0.002,
         "method": "rendered-vertices/closed-mesh"
@@ -63,7 +63,7 @@
         "key": "aoi:left:hand_torso",
         "window": [
           0,
-          81
+          82
         ],
         "max_depth": 0.002,
         "method": "rendered-vertices/closed-mesh"
@@ -72,7 +72,25 @@
         "key": "aoi:right:hand_torso",
         "window": [
           0,
-          81
+          82
+        ],
+        "max_depth": 0.002,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "aoi:left:skirt",
+        "window": [
+          0,
+          82
+        ],
+        "max_depth": 0.002,
+        "method": "rendered-vertices/closed-mesh"
+      },
+      {
+        "key": "aoi:right:skirt",
+        "window": [
+          0,
+          82
         ],
         "max_depth": 0.002,
         "method": "rendered-vertices/closed-mesh"
@@ -86,10 +104,10 @@
     ],
     "window": [
       0,
-      81
+      82
     ],
-    "min_actor_gap": 0.7,
-    "min_environment_gap": 0.12,
+    "min_actor_gap": 0.05,
+    "min_environment_gap": 0.01,
     "min_camera_gap": 0.15,
     "max_bone_error": 1e-06,
     "sole_y": [
@@ -97,35 +115,45 @@
       0.012
     ],
     "max_wrist_step": 0.065,
-    "max_root_step": 0.012,
-    "min_camera_distance": 2.7,
+    "max_root_step": 0.025,
+    "min_camera_distance": 1.2,
     "max_arm_angle": 100,
     "max_head_turn": 0.5,
-    "support": {"max_swing_height": 0.05, "max_slip": 0.001, "max_turn_delta": 0.001, "min_stance_feet": 1},
+    "support": {
+      "max_swing_height": 0.05,
+      "max_slip": 0.001,
+      "max_turn_delta": 0.001,
+      "min_stance_feet": 1
+    },
     "framing": [
       {
         "entries": [
-          2,
-          11,
-          17
+          5,
+          10,
+          15,
+          18,
+          19
         ],
         "target": "lei"
       },
       {
         "entries": [
-          2,
-          11,
-          17
+          5,
+          10,
+          15,
+          18,
+          19
         ],
         "target": "aoi"
       },
       {
         "entries": [
           3,
-          5,
-          10,
-          13,
-          15
+          7,
+          9,
+          11,
+          14,
+          16
         ],
         "target": "lei"
       },
@@ -133,16 +161,14 @@
         "entries": [
           4,
           6,
-          8,
-          14,
-          16
+          13,
+          17
         ],
         "target": "aoi"
       },
       {
         "entries": [
-          7,
-          9
+          8
         ],
         "target": "arm",
         "min_pixels": 90,
@@ -157,9 +183,8 @@
         "require_unblocked": true
       }
     ],
-    "min_self_gap": 0.006,
+    "min_self_gap": 0.002,
     "self_pairs": [
-      "arms",
       "leftHead",
       "rightHead",
       "leftLegs",

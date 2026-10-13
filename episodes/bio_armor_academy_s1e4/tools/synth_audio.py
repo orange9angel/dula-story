@@ -31,7 +31,11 @@ def cached(out, request, call):
     meta.write_text(json.dumps({'request':request,'input_sha256':key,'audio_sha256':hashlib.sha256(out.read_bytes()).hexdigest()},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('generated',out.name,flush=True)
 
-if '--ambience' in sys.argv:
+if '--score-foley' in sys.argv:
+    for cue in plan['music']+plan['sfx']:
+        out=EP/cue['asset']
+        cached(out,{'provider':'seed-audio-1.0','prompt':cue['prompt']},lambda:generate(cue['prompt'],out))
+elif '--ambience' in sys.argv:
     cue=plan['ambience'][0];out=EP/cue['asset']
     cached(out,{'provider':'seed-audio-1.0','prompt':cue['prompt']},lambda:generate(cue['prompt'],out))
 else:
@@ -39,5 +43,5 @@ else:
         speaker=plan['characters'][line['character']]['voice']
         emotion=line['delivery'].get('nativeEmotion')
         request={'text':line['text'],'speaker':speaker,'emotion':emotion,'emotion_scale':2 if emotion else None,'provider':'seed-tts-2.0'}
-        out=EP/f"assets3d/dialogue/entry_{line['entry']}.mp3"
+        out=EP/f"assets3d/dialogue_r3/entry_{line['entry']}.mp3"
         cached(out,request,lambda:synthesize(line['text'],speaker,out,emotion=emotion,emotion_scale=2 if emotion else None))

@@ -10,7 +10,9 @@ b=subprocess.run(['ffmpeg','-v','error','-i',str(source),'-f','f32le','-ac','2',
 y=np.frombuffer(b,dtype='<f4').reshape(-1,2).astype(float)
 assert len(y)>=81*sr
 # Use the interior 75 seconds; avoid the generator's entrance/exit fade.
-y=y[5*sr:80*sr]
+plan=json.loads((EP/'config/audio_direction.json').read_text(encoding='utf-8'))
+cue=plan['ambience'][0]
+y=y[4*sr:4*sr+round((cue['endTime']-cue['startTime'])*sr)]
 def measures(z):
     mono=z.mean(axis=1);n=len(mono)//4800;env=np.sqrt(np.mean(mono[:n*4800].reshape(-1,4800)**2,axis=1))
     sec=np.sqrt(np.mean(mono[:(len(mono)//sr)*sr].reshape(-1,sr)**2,axis=1))
@@ -27,7 +29,7 @@ after=measures(y)
 if after['rmsMaxMean']>=1.4 or after['periodicAutocorrelation']>=.15 or after['hissFraction']>=.2:
     raise ValueError('Ambience envelope/spectrum not acceptable: '+json.dumps(after))
 # -53 dBFS RMS: audible only as very quiet space between the voices.
-y*=10**(-53/20)/np.sqrt(np.mean(y*y));dest=source.with_name('biology_room_prepared.wav')
+y*=10**(-43/20)/np.sqrt(np.mean(y*y));dest=source.with_name('biology_room_prepared.wav')
 wavfile.write(dest,sr,(np.clip(y,-.95,.95)*32767).astype(np.int16))
-r={'passed':True,'before':before,'after':after,'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'prepared_sha256':hashlib.sha256(dest.read_bytes()).hexdigest(),'duration':len(y)/sr,'origin':'Seed-Audio 1.0; generated isolated ambience','rmsDbfs':-53}
+r={'passed':True,'before':before,'after':after,'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'prepared_sha256':hashlib.sha256(dest.read_bytes()).hexdigest(),'duration':len(y)/sr,'origin':'Seed-Audio 1.0; generated isolated ambience','rmsDbfs':-43}
 (EP/'storyboard/ambience_qc.json').write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8');print(json.dumps(r))

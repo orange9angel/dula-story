@@ -1,8 +1,15 @@
 {
   "passed": true,
-  "lines": 12,
-  "duration": 81.0,
+  "lines": 14,
+  "duration": 82.0,
   "stems": 2,
-  "mouth": "10 ms final-stem energy; silence gated; no phoneme/artistic claim",
-  "mixPeak": 0.451324462890625
+  "mouth": "Known-text character DTW, pinyin V17 visemes, exact 10 ms final-PCM gate",
+  "footsteps": 17,
+  "musicSilence": [
+    44.5,
+    53.2
+  ],
+  "mixPeak": 0.462371826171875,
+  "minSpeechWindowSpare": 0.1206041666666664,
+  "limits": "Numerical/ASR verification only; subjective sound and emotional performance not auditioned by this agent."
 }

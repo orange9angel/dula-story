@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-14",
+  "status": "complete-integration-preview-awaiting-aesthetic-review",
+  "rejected_baseline": "output/tripo_dialogue_preview_v1.mp4: user reported lifeless eyes and puppet-like acting",
+  "artifacts": [
+    {
+      "path": "output/tripo_episode_preview_v1.mp4",
+      "sha256": "f7a6190a60a9c31cff0e0c329010d7236972a19e8c476a37199902c76926f41c",
+      "bytes": 15637086,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "duration": "82.000000",
+            "nb_frames": "2460",
+            "side_data_list": [
+              {}
+            ]
+          },
+          {
+            "codec_name": "aac",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "duration": "82.000000",
+            "nb_frames": "3845"
+          }
+        ]
+      }
+    },
+    {
+      "path": "output/tripo_dialogue_preview_v2.mp4",
+      "sha256": "f9b0a0ed44ee6cf8110d1ec9157938144adfa66cbd0d0b38c7dbd831b690363d",
+      "bytes": 2733271,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "duration": "13.000000",
+            "nb_frames": "390",
+            "side_data_list": [
+              {}
+            ]
+          },
+          {
+            "codec_name": "aac",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "duration": "13.000000",
+            "nb_frames": "611"
+          }
+        ]
+      }
+    },
+    {
+      "path": "output/tripo_text_motion_trial_v1.mp4",
+      "sha256": "94de4b072b9825f26063563bda2ef3e7bb28d06217bbc2ca3977756b9a521770",
+      "bytes": 455517,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1",
+            "duration": "4.933333",
+            "nb_frames": "148",
+            "side_data_list": [
+              {}
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "contact_report": "storyboard/remake_r3/tripo_validation/imported_contact_report.json",
+  "contact_report_sha256": "94f3658fc47de1fa15674e4760f948462e80c59885a9fd8aa67cbc092ecf9e7c",
+  "numeric_review": {
+    "frames": 4920,
+    "fps": 60,
+    "result": "sampled-contact-pass",
+    "sequential_seek": "pass",
+    "rendered_hand_arm_table_and_jar_sample_penetration_m": 0,
+    "max_held_jar_sample_gap_m": {
+      "lei": 0.006936826227277149,
+      "aoi": 0.004185196396604474
+    }
+  },
+  "media_validation": "ffprobe confirms 82s 1920x1080 30fps 2460 frames plus 82s AAC 48k stereo; full ffmpeg decode returned 0",
+  "visual_review": {
+    "source": "rendered risk poses, face lab, and actual output video extracted frames",
+    "final_video_times": [
+      26,
+      37.1,
+      65.7
+    ],
+    "dialogue_v2_times_relative": [
+      4.85,
+      7.3
+    ],
+    "normal_speed_full_video_subjective_review": false
+  },
+  "audio": {
+    "source": "assets3d/mixed.wav",
+    "sha256": "54ef95a7828fdc1b6126b1602baea6a1e5335c0e3fb20ff4e1daff7c4e5150e7",
+    "changed_this_integration": false,
+    "new_subjective_listening": false,
+    "sources": "Existing R3 Fire/Volc dialogue, Seed-Audio music, ambience and Foley; no new Suno generation"
+  },
+  "motion_receipt": "storyboard/remake_r3/tripo_motion_receipt.json",
+  "additional_tripo_credits": 20,
+  "last_observed_balance": 2960,
+  "face": "Local graphic rig with eight conservative morphs, eyelid-pinned gaze warp and final-voice-gated viseme controls; not a Tripo facial foundation model",
+  "hair": "Aoi head-weighted ponytail bends driven by deterministic 0.18s pose lag; limited local secondary motion",
+  "limits": [
+    "Face emotion range remains limited; user aesthetic acceptance pending",
+    "No complete triangle/self-collision or continuous-time guarantee",
+    "Hair/cloth/body contact not comprehensively covered",
+    "No claim of generated-video-equivalent acting",
+    "One story validation warning: adjacent spoken entries 7/8 lack an authored reaction gap"
+  ],
+  "commits": {
+    "assets": "679bd3c",
+    "skills": "00dbef6"
+  }
+}
