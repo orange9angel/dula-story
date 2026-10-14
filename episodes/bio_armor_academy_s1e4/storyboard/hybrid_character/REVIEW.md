@@ -318,3 +318,58 @@ node tools/render_character_profile_turn.mjs
 node render.mjs --range 11.5,15.1 --camera '0.60,1.48,1.35,0.60,1.46,0,35' --q '&cel=direct' --out aoi_profile_dialogue_v3.mp4 --board storyboard/hybrid_character/profile_polish_v3/dialogue
 python tools/build_profile_polish_review.py
 ```
+
+## 2026-10-15：自主侧面迭代 V4（待用户复看）
+
+用户授权休息期间继续自查和迭代。当前候选保留 R2 的正面绘画，重点减少
+45°/65° 横飞的鬓发，补后脑到耳后/后颈的体积，分开马尾与后脑，重画简化耳纹，
+修整颈部宽度与颈领误分色，并清除眼睛清底取样里的耳缘线。没有更换剧情、音频
+或手部动作；原来认可的 R2 文件仍完整保留。
+
+采用的是固定在头骨上的曲面绘画层与闭合发束体积。后脑采用静态侧向纹理，
+马尾的细节和 alpha 随观察方向调整；脸、眼、耳仍是有纵深的曲面与原表演接口。
+不是把整个头像换成朝向相机的图片，也不是已经恢复了任意视角的物理发型。
+
+试过整张侧面曲面、alpha 体素/距离场、导入后发、方向投影体积和多视图变形。
+其中出现断层、重影或脸面穿插的候选均未保留为运行模式。失败证据在
+`profile_polish_v4/r12`、`r14`、`r15`、`r17`、`atlas_r1`、`morph_r2`、
+`morph_r3`，实现快照见 `rejected_variants.zip`。最终保留局部有效的纵深修型、
+独立发束及图表整理；经验写回现有 character-modeler，不另建重复 skill。
+
+先看这些实际输出：
+
+- [前后对照](profile_polish_v4/before_after.jpg)、[六角度](profile_polish_v4/turns.jpg)、
+  [生成图与实际模型](profile_polish_v4/reference_comparison.jpg)、
+  [认可正脸对照](profile_polish_v4/front_preservation.jpg)。
+- [6 秒无声转头](../../output/aoi_profile_polish_v4.mp4)：900×900、24fps、144 帧。
+  [原对白近景](../../output/aoi_profile_dialogue_v4.mp4)：原 11.5–15.1 秒，
+  1280×720、30fps、108 帧，保留原混音。
+- `final/report.json` 的 25 个角度/结构状态，`expression_r13/report.json` 的
+  15 个头部/表情与 5 个场景状态均逆序一致，无浏览器/着色器错误。
+  `default_regression` 的两人 30 张脸与 5 张场景截图哈希与 V3 一致。
+- 两个 MP4 完整解码成功；检查了十张转头解码帧与两张原对白解码帧，见
+  `decoded_turn.jpg`、`decoded_dialogue.jpg`。这不是完整实时主观审片声明。
+- 新生成资产仅为从既有九视图提取的透明头发 atlas。原始九视图未更换；提示词、
+  生成标识、素材/源码/证据哈希、视频参数与尚存问题都在 V4 `manifest.json`。
+
+自评：鬓发收拢、后脑填充、耳纹及颈形较 V3 更清楚；但 45°/65° 主刘海仍有
+扫向一侧的块感，近侧马尾偏厚，转动时绘画层与体积的交接仍能察觉。俯视发顶、
+后颈下沿与颈领小碎片也未达到生成图水平。**V4 是可比较的新候选，不宣布侧脸
+已达到正面的完成度。** 本轮也不构成手腕、握物或马尾次级摆动的验收。
+
+复现（单集目录，静帧工具需要 4215 服务）：
+
+```powershell
+node tools/review_character_profile.mjs --angles '15,25,35,55,75,-15,-25,-35,-45,-55,-75' --out storyboard/hybrid_character/profile_polish_v4/final
+node tools/review_drawn_characters.mjs --mode direct --actors aoi --out storyboard/hybrid_character/profile_polish_v4/expression_r13
+node tools/review_drawn_characters.mjs --out storyboard/hybrid_character/profile_polish_v4/default_regression
+node tools/render_character_profile_turn.mjs --revision v4
+node render.mjs --range 11.5,15.1 --camera '0.60,1.48,1.35,0.60,1.46,0,35' --q '&cel=direct' --out aoi_profile_dialogue_v4.mp4 --board storyboard/hybrid_character/profile_polish_v4/dialogue
+python tools/build_profile_polish_v4_review.py
+```
+
+`face_lab.html?actor=aoi&cel=direct&hair=legacy` 可对照旧头发结构（脸/颈仍为
+当前 V4）；完整旧版以 V3 提交与已保存输出为准。
+
+对应提交：资产 `376498f`；skill `531b101`、`12af102`。工作区其他任务的未提交
+修改未纳入本轮提交；具体渲染输入仍以报告中的逐文件哈希为准。

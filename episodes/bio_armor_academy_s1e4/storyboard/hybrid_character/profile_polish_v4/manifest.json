@@ -1,0 +1,65 @@
+{
+  "status": "V4 candidate, awaiting user visual review",
+  "reference": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png",
+    "sha256": "3bb5f43c489448ca9c265f6a01d861cb3ca1e0f81345ba43c1fb2c63fff80617",
+    "original_reference_unchanged": true
+  },
+  "generated_asset": {
+    "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-profile-hair-atlas-v1.png",
+    "sha256": "3746063acf5fd392d77465433aca89c948635e69f2686e180cfe976232053383",
+    "purpose": "transparent hair-only extraction from existing nine-view reference",
+    "provider": "image_gen",
+    "prompt": "hair_generation_prompt.txt",
+    "generation_id": "01a13a20-dfd0-7b11-9650-1b3341952284"
+  },
+  "representation": "fixed bone-bound curved surfaces and closed ponytail volumes; static scalp projection; directional tail color/alpha correction; not camera-facing face cards or a recovered physical hairstyle",
+  "validation": {
+    "profile_views": 25,
+    "expression_views": 15,
+    "direct_scene_frames": 5,
+    "default_faces": 30,
+    "default_faces_identical_to_v3": true,
+    "default_scene_frames_identical_to_v3": true,
+    "reverse_seek_identical": true,
+    "videos_fully_decode": true
+  },
+  "front_difference": {
+    "roi": [
+      320,
+      350,
+      575,
+      550
+    ],
+    "mean_abs_rgb_0_255": [
+      0.42511764705882354,
+      0.42649019607843136,
+      0.3675294117647059
+    ],
+    "meaning": "pixel drift diagnostic, not beauty or likeness score"
+  },
+  "limits": [
+    "45/65 hair still has a swept sculptural fringe and imperfect layer join",
+    "near-side ponytail thickness, crown texture under pitch, and rear nape remain below the painting target",
+    "small neck/collar fragments remain",
+    "angle-weighted alpha may expose silhouette transition; do not claim arbitrary-camera hair reconstruction",
+    "hands, contact and secondary hair motion were not improved in this revision"
+  ],
+  "evidence_sha256": {
+    "turns.jpg": "51f53c858e5b35cb1482c5a5fa8478067648b7c6c18ce0d99678dc82ded65f6a",
+    "before_after.jpg": "48b6d6e8a7a175ebaa598f5fa8ff5e6187aecc06271ad8694c6c356ac519189b",
+    "reference_comparison.jpg": "387d892870726867c6cfe5d178671e39848426c21d611583f982ae66ef772e81",
+    "front_preservation.jpg": "38bd36a261320b7b96d342dc3ad077b54d8b692385efd7317481b3421cf25439",
+    "decoded_turn.jpg": "8bfcf32bba25f51347f0a80bacd6cdd2f08cf724917aa8e5fbda02d1d4d1c2a8",
+    "decoded_dialogue.jpg": "8e93dc058d157e7c6f82cf361962b4965437263d877f832211553f39f2c26cca",
+    "final/report.json": "117803375300f2e7b0f523b98fa6260cbe600cb4d4f67efa5d50d46dd133a5ae",
+    "expression_r13/report.json": "b1452e64e89b1d278bd8edc46742a469d95a3457ffeb2d0db625ad99ad0884d5",
+    "default_regression/report.json": "b1167171b2e2f8f26efdc581449f076d1c071839b8135ec6b769384ed4be0f89",
+    "turn_video_build.json": "0fa1ae122db8fd8b65c8f322a375f3564f0374fdda80f79907467f2fa01780eb",
+    "dialogue/render_build.json": "ffd63ee0580e7cd7d55e40097ab90751148529874a90163cdea5f62135c44508",
+    "rejected_variants.zip": "4584e263667b538aa8b6d4ca518d568991d850667230a4a9dce89a505c2b4029",
+    "hair_generation_prompt.txt": "a7e3c9e32cd9051cac44284ca8b089a73f32861341e5b8d920644e68665e7509"
+  },
+  "video_sha256": "071736aafefa7cc70c0219fbe58a62f60e445130a98705cf9e4309735c008b54",
+  "dialogue_sha256": "640c405a7717ac83ad1895ac06860ffabcce6c0d543e1a7dad5b0623d250a0f2"
+}

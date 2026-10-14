@@ -7,8 +7,11 @@ import {auditInputs} from './audit_inputs.mjs';
 
 const ep=path.resolve(import.meta.dirname,'..');
 const req=createRequire(path.join(ep,'../../node_modules/dula-engine/package.json'));
-const out=path.join(ep,'output/aoi_profile_polish_v3.mp4');
-const board=path.join(ep,'storyboard/hybrid_character/profile_polish_v3');
+const option=n=>{const i=process.argv.indexOf(n);return i<0?null:process.argv[i+1];};
+const revision=option('--revision')??'v3';
+if(!/^v[0-9]+$/.test(revision))throw new Error('Invalid revision');
+const out=path.join(ep,`output/aoi_profile_polish_${revision}.mp4`);
+const board=path.join(ep,`storyboard/hybrid_character/profile_polish_${revision}`);
 fs.mkdirSync(path.dirname(out),{recursive:true});fs.mkdirSync(board,{recursive:true});
 const fps=24,duration=6,keys=[[0,0],[.5,0],[1.6,75],[2.2,90],[3.2,0],[4.4,-75],[5,-90],[6,0]];
 const report={build:auditInputs(ep),kind:'silent head-turn geometry review; not a dialogue shot',fps,duration,frames:fps*duration,keys,errors:[]};

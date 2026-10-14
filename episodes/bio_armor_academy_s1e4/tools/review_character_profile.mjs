@@ -9,13 +9,18 @@ const req=createRequire(path.join(ep,'../../node_modules/dula-engine/package.jso
 const option=n=>{const i=process.argv.indexOf(n);return i<0?null:process.argv[i+1];};
 const out=path.resolve(ep,option('--out')??'storyboard/hybrid_character/profile_polish_v3/final');
 fs.mkdirSync(out,{recursive:true});
-const specs=[['front',0],['turn_45',45],['turn_65',65],['turn_80',80],['turn_90',90],['turn_minus65',-65],['turn_minus90',-90],['orbit_90',90,'orbit'],['orbit_minus90',-90,'orbit'],['structure_90',90,'bare'],['structure_minus90',-90,'bare'],['side_listen',65,null,{gaze:[-.8,.1],smile:.25}],['side_talk',65,null,{jaw:.65,gaze:[-.6,0]}],['side_blink',90,null,{blink:.5}]];
-const report={build:auditInputs(ep),specs,errors:[],frames:{}};
+const selected=option('--views')?.split(',');
+const query=option('--query')??'';
+const extraAngles=(option('--angles')??'').split(',').filter(Boolean).map(Number);
+if(extraAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Invalid review angle');
+const specs=[['front',0],['turn_45',45],['turn_65',65],['turn_80',80],['turn_90',90],['turn_minus65',-65],['turn_minus90',-90],['orbit_90',90,'orbit'],['orbit_minus90',-90,'orbit'],['structure_90',90,'bare'],['structure_minus90',-90,'bare'],['side_listen',65,null,{gaze:[-.8,.1],smile:.25}],['side_talk',65,null,{jaw:.65,gaze:[-.6,0]}],['side_blink',90,null,{blink:.5}],...extraAngles.map(a=>['angle_'+a,a])].filter(s=>!selected||selected.includes(s[0]));
+if(!specs.length)throw new Error('No matching profile views');
+const report={build:auditInputs(ep),query,specs,errors:[],frames:{}};
 const browser=await req('puppeteer').launch({headless:true});
 try{
   const page=await browser.newPage();await page.setViewport({width:900,height:900});
   page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});
-  await page.goto('http://127.0.0.1:4215/face_lab.html?actor=aoi&cel=direct',{timeout:120000});await page.waitForFunction('window.ready',{timeout:90000});
+  await page.goto('http://127.0.0.1:4215/face_lab.html?actor=aoi&cel=direct'+query,{timeout:120000});await page.waitForFunction('window.ready',{timeout:90000});
   report.geometry=await page.evaluate(()=>{
     const p=face.root.children[0].geometry.attributes.position;
     const rows=new Set(Array.from({length:p.count},(_,i)=>p.getY(i))).size,half=p.count/2,columns=half/rows;

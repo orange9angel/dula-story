@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
-export const episodeSources=['script.story','bootstrap.js','viewer.js','viewer.html','render.mjs',
+export const episodeSources=['script.story','bootstrap.js','viewer.js','viewer.html','render.mjs','face_lab.js','face_lab.html',
   'performance_remake.js','performance_tripo.js','tools/imported_probe.js','tools/check_imported_contact.py','config/imported_contact_contract.json','scenes/BiologyRoomRemakeScene.js',
   'tools/audit_inputs.mjs','tools/compile_story.mjs','tools/numeric_probe.js',
   'config/timeline.json','config/contact_contract.json','config/scene_contract.json','config/audio_direction.json',
@@ -19,7 +19,7 @@ export function auditInputs(ep){
   for(const name of ['contact_probe.py','surface_audit.py','bounded_staging_audit.py'])files.push(path.join(story,'../dula-skills/direct-animation-craft/scripts',name));
   for(const name of ['config/voice_features.json','assets3d/mixed.wav'])if(fs.existsSync(path.join(ep,name)))files.push(path.join(ep,name));
   for(const id of ['lei','aoi'])files.push(path.join(ep,`assets3d/tripo_${id}_trial/${id}_h31_lod160k_v2.glb`));
-  for(const name of ['drawn-face-reference.png','aoi-painted-face-v1.png','aoi-painted-hair-v1.png','aoi-painted-back-v1.png'])files.push(path.join(story,'node_modules/dula-assets/characters/bioarmor/textures',name));
+  for(const name of ['drawn-face-reference.png','aoi-painted-face-v1.png','aoi-painted-hair-v1.png','aoi-painted-back-v1.png','aoi-profile-hair-atlas-v1.png'])files.push(path.join(story,'node_modules/dula-assets/characters/bioarmor/textures',name));
   files.push(path.join(ep,'assets3d/tripo_lei_trial/lei_text_rub_v1.glb'));
   return {inputs:files.map(p=>({path:fs.realpathSync(p),sha256:createHash('sha256').update(fs.readFileSync(p)).digest('hex')}))};
 }
