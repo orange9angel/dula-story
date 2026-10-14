@@ -219,3 +219,53 @@ python tools/build_direct_paint_review.py
 `character-aesthetics.md` 记录“为什么好看、差在哪、何时改过头”，
 `generated-character-paint.md` 记录直接绘画方法、验证范围及失败机制。
 判断先于参数，用户认可原画与认可最终模型分别登记。
+
+## 2026-10-14：R2 正面获认可，V2 修订留作对照
+
+用户先指出 V1 R1 正面“头发弄顺滑就很美了”，随后看到
+`direct_paint_v1/render_r2/aoi_neutral.png` 说“这张就很不错了”，并认可同目录的
+`aoi_talk.png`、`aoi_firm.png`。这三张实际模型截图现作为正面保留基准。
+认可的是展示出来的正面造型与表情，不扩展到侧后方、全身动作或后续 V2。
+
+V2 对应此前的内眼角、脸颊/下颌、毛糙头发与衣服串色反馈：
+
+- 保留生成绘画的刘海、睫线和虹膜，动态眼白内端改为圆弧；下颌后方补体积，
+  正面仅小幅丰满，避免下巴前顶或整张脸变宽。较宽的中间候选已收回。
+- 前发细节用薄曲面保留；马尾侧后用闭合曲线束补体积。后脑 UV 连续展开，
+  减少拉条。补体积曾撑厚正面轮廓，按用户认可图缩回；极侧面的接缝仍可见。
+- 衣服分区结合骨骼影响、静止骨轴距离和实际袖口。修正肩袖的肤色误判、领结
+  红色上串，以及调试中产生的裙侧肤色和前臂绿色块；袖口保留暖白与冷色阴影。
+
+当前 `cel=direct` 仍只为葵启用生成绘画头发/脸；默认 `cel=anime` 保持程序绘制
+路线。两者共用的葵衣服分区同时获得修正。雷晓没有改用本次生成绘画。
+
+证据位于 `direct_paint_v2/`：
+
+- `front_target_comparison.jpg`：用户认可的 R2 与后续候选的正面 neutral/talk 同机位
+  对照；`comparison.jpg`、`hair_comparison.jpg`、`clothing_comparison.jpg` 对照 V1
+  最后版本与本次修订，`views.jpg` 展示多角度和眨眼。
+- `final/report.json`：15 个脸部状态与 5 个场景时刻逆序结果一致，无浏览器或
+  着色器错误。`default_regression/report.json`：默认路线两人共 30 个状态与 5 个
+  场景时刻也通过。技术检查不等于美术通过。
+- `output/direct_paint_aoi_v2.mp4`（相对单集根）：原 11.5–15.1 秒对白，3.6 秒、
+  108 帧、1280×720、30fps，含原混音。已检查 `decoded_clip.jpg` 的四个解码帧；
+  未声明正常速度完整主观审片。输入清单在 `video/render_build.json`，流参数在
+  `video_probe.json`。
+- `manifest.json`：记录 R2 认可范围、三张基准图及本次证据哈希，V2 状态仍为
+  后续候选。R2 原图保留，未被新渲染覆盖。
+
+仍存在侧后发层与后脑接缝、后发细节弱于正面、颈领小碎片。180° 仅用于暴露
+头部后侧几何，并非人物可表演的生理转头。马尾次级摆动、腕部扭曲与接触动作
+未在本轮解决，不能由本轮静帧或确定性检查推定通过。
+
+复现（单集目录，静态检查使用 4215 服务）：
+
+```powershell
+node tools/review_drawn_characters.mjs --mode direct --actors aoi --out storyboard/hybrid_character/direct_paint_v2/final
+node tools/review_drawn_characters.mjs --out storyboard/hybrid_character/direct_paint_v2/default_regression
+node render.mjs --range 11.5,15.1 --camera '0.60,1.48,1.35,0.60,1.46,0,35' --q '&cel=direct' --out direct_paint_aoi_v2.mp4 --board storyboard/hybrid_character/direct_paint_v2/video
+python tools/build_character_polish_review.py
+```
+
+审美上的“认可后要保留”与上述失败机制已写回现有 `character-modeler` 的
+`character-aesthetics.md`、`generated-character-paint.md`。

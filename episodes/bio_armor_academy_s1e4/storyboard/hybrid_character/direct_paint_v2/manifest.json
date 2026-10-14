@@ -1,0 +1,41 @@
+{
+  "status": "revision_candidate_not_user_approved",
+  "source_art": "../direct_paint_v1/manifest.json",
+  "approved_baseline": {
+    "path": "../direct_paint_v1/render_r2",
+    "scope": "front appearance and displayed neutral/talk/firm expressions",
+    "user_feedback": [
+      "这张就很不错了",
+      "哇，你越做越好了"
+    ],
+    "sha256": {
+      "aoi_neutral.png": "f28b56920e2a9c13986a9c92c6e212b9bf82093e09fb9670b3da243db76b8fdb",
+      "aoi_talk.png": "46749e31dcf84668186254bb1d88ffa29429d66474190e957dd5986b225f0ceb",
+      "aoi_firm.png": "1f210a57555b497def5456409e0c9e3be84c941659d527739a14c0b5e1902c97"
+    }
+  },
+  "changes": [
+    "rounder nasal eye aperture in neutral and gaze states",
+    "fuller cheeks and posterior jaw with coordinated UV",
+    "thin painted hair surfaces over closed ponytail locks",
+    "anatomical clothing constraints for sleeves and neckline"
+  ],
+  "known_limits": [
+    "frontal hair/posterior-cap seams remain at extreme yaw",
+    "posterior strands are less detailed than the frontal painting",
+    "small neck/collar fragments remain",
+    "no new wrist or contact repair"
+  ],
+  "sha256": {
+    "front_target_comparison.jpg": "2c4a74497e586bd76c3cd270df77e101f4a9ff9c7da3c3732db1ae4bf9be497e",
+    "comparison.jpg": "7d56356b24b795970b1ee1d8c2553bbb7537c95712b1825363e026879db010fc",
+    "hair_comparison.jpg": "cc3553600988d2c0c4208648e7d23e632218e5d43ca7fa98739f9530ceaed63b",
+    "clothing_comparison.jpg": "c9ea7782b57655cc9dcc0c9016f8997f7b12af15a54a5e2b7862279b23f462d2",
+    "views.jpg": "aaf374d176dfd9404c6e9b8ab4423286dc2595f7d9b22e23869f90a192fe4b63",
+    "decoded_clip.jpg": "fc3e92d631585bdd19e7018498cc708510b221c6909e757d4beb45fab4101f78",
+    "final/report.json": "017c039ad065750b7325478a57b51186f4ee81a5a6421f4fc9793bffbc8a1a95",
+    "video/render_build.json": "54effe60c115c92cf90c6196ee8d86efc2605ae0575bc7f3e819428dbb6a9973"
+  },
+  "video_sha256": "e87c9cbb28ffff7d7bff8ec270f2b47644976cf9df21aef9caab829b44655b64",
+  "review": "screenshots and decoded dialogue frames inspected; not a claimed full real-time subjective review"
+}
