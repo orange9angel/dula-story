@@ -8,6 +8,8 @@ import {createTableHandClearance} from 'dula-assets/lib/craft3d/table-hand-clear
 import {addSecondaryHair} from 'dula-assets/lib/craft3d/secondary-hair.js';
 import {applyImportedCelLook} from 'dula-assets/lib/craft3d/imported-cel-look.js';
 import {addAoiGraphicHair} from 'dula-assets/characters/bioarmor/aoi-graphic-hair.js';
+import {applyTripoDrawnLook} from 'dula-assets/characters/bioarmor/tripo-drawn-look.js';
+import {addLeiGraphicHair} from 'dula-assets/characters/bioarmor/lei-graphic-hair.js';
 import {BiologyRoomScene} from './scenes/BiologyRoomRemakeScene.js';
 import {posesAt} from './performance_remake.js';
 import {preparePerformer,applyTripoPose,settleImportedWrists} from './performance_tripo.js';
@@ -38,12 +40,18 @@ renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.
 for(const key of ['lei','aoi']){
   const a=await ImportedPerformer.load(`./assets3d/tripo_${key}_trial/${key}_h31_lod160k_v2.glb`,TRIPO_LOOK[key].height);
   if(key==='aoi')a.garmentRepair=a.restrictInfluences({min:[-.30,.53,-.22],max:[.30,.99,.23],maxAlbedoLuma:.42,allow:n=>n==='hips'||/leg|foot|toe/.test(n)});
-  preparePerformer(a,key);a.correctWrists=q.has('wristfix');a.face=createProjectedFace(a,renderer,TRIPO_LOOK[key]);scene.add(a.mesh);actors[key]=a;
-  if(q.has('cel')&&key==='aoi')a.celLook=applyImportedCelLook(a,{mode:q.get('cel')==='graphic'?'painted':q.get('cel'),face:TRIPO_LOOK[key],hairMinY:key==='aoi'?1.10:1.56,headMinY:key==='aoi'?1.42:1.57,
+  preparePerformer(a,key);a.correctWrists=q.has('wristfix');
+  if(q.get('cel')!=='anime')a.face=createProjectedFace(a,renderer,TRIPO_LOOK[key]);scene.add(a.mesh);actors[key]=a;
+  if(q.has('cel')&&(key==='aoi'||q.get('cel')==='anime'))a.celLook=applyImportedCelLook(a,{mode:['graphic','anime'].includes(q.get('cel'))?'painted':q.get('cel'),face:TRIPO_LOOK[key],hairMinY:key==='aoi'?1.10:1.56,headMinY:key==='aoi'?1.42:1.57,
     palette:{hair:key==='aoi'?'#244444':'#54382d',hairLight:key==='aoi'?'#628680':'#9b6f4d',skin:'#eec9a9'}});
   if(q.get('cel')==='graphic'&&key==='aoi'){
     a.graphicHair=addAoiGraphicHair(a);a.celLook.geometry='head-weighted hair triangles removed; procedural broad-lock candidate';
     a.celLook.limitations=['hairline fragments','clip missing','secondary motion not connected','not accepted'];
+  }
+  if(q.get('cel')==='anime'){
+    const look=applyTripoDrawnLook(a,key);a.face=look.face;a.celLook={mode:'anime',body:look.body,face:'authored curved head and live drawing'};
+    if(key==='aoi')a.graphicHair=addAoiGraphicHair(a,{refined:true});
+    else a.graphicHair=addLeiGraphicHair(a);
   }
 }
 const canvas=document.createElement('canvas');canvas.width=W*resolution;canvas.height=H*resolution;canvas.style.width=W+'px';canvas.style.height=H+'px';document.body.append(canvas);
@@ -52,7 +60,7 @@ ctx.scale(resolution,resolution);
 const applyMark=addForearmMark(actors.lei,'left');
 const rubMotion=await RetargetedMotion.load(actors.lei,'./assets3d/tripo_lei_trial/lei_text_rub_v1.glb');
 const clearLeiHands=createTableHandClearance(actors.lei,stage.table);
-const aoiHair=addSecondaryHair(actors.aoi);
+const aoiHair=q.get('cel')==='anime'?{selectedVertices:0,maxDisplacement:0,apply:(yaw,pitch)=>({yaw,pitch})}:addSecondaryHair(actors.aoi);
 const importedProbe=numeric?createImportedProbe(actors,stage):null;
 function speech(t,key){
   const id=key==='lei'?'LeiXiao':'QianTangKui';if(!voice)return 0;
@@ -81,6 +89,9 @@ function draw(t,capture=true){
   const lagTime=Math.max(0,t-.18),lagPose=posesAt(lagTime,cues,TL).aoi;
   const hairMotion=aoiHair.apply((lagPose.headYaw+lagPose.yaw-p.aoi.headYaw-p.aoi.yaw)*.7+(lagPose.headRoll-p.aoi.headRoll)*.8,
     (lagPose.headPitch-p.aoi.headPitch)*.8+(lagPose.rootX-p.aoi.rootX)*.12);
+  if(q.get('cel')==='anime')actors.aoi.graphicHair.userData.applyLag(
+    (lagPose.headYaw+lagPose.yaw-p.aoi.headYaw-p.aoi.yaw)*.7+(lagPose.headRoll-p.aoi.headRoll)*.8,
+    (lagPose.headPitch-p.aoi.headPitch)*.8+(lagPose.rootX-p.aoi.rootX)*.12);
   stage.jar.position.set(p.jar.x,p.jar.y,p.jar.z);
   if(p.jarOwner!=='table'){
     const a=actors[p.jarOwner];
@@ -97,6 +108,7 @@ function draw(t,capture=true){
     const local=target.clone().sub(a.bones.head.getWorldPosition(new THREE.Vector3())).applyQuaternion(delta.invert());
     const gaze=[THREE.MathUtils.clamp(Math.atan2(local.x,Math.max(.1,local.z))/.65,-1,1),THREE.MathUtils.clamp(Math.atan2(local.y,Math.hypot(local.x,local.z))/.40,-1,1)];
     a.face.apply({...p[key].acting,...mouthAt(t,key),blink:p[key].blink,gaze});
+    a.face.updateGeometry?.();
   }
   const c=seg.camera.options;
   camera.position.set(...c.position);camera.lookAt(...c.lookAt);camera.fov=c.fov??36;

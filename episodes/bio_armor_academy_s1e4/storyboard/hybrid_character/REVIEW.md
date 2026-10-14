@@ -66,3 +66,49 @@ node render.mjs --physics-only --fps 30 --q '&wristfix=1' --board storyboard/hyb
 ```
 
 原始视频与原始 GLB 保留；未运行整集重渲染。修改源码后重新生成对应检查，旧哈希不作新验收。
+
+## 2026-10-14：五官、发束与衣裤的绘制融合候选
+
+用户确认上一版宽发束“比原来更像动漫”，同时认为仍弱于动画片，随后要求五官
+参考小雪的绘制工艺、衣裤也向漫画方向调整。此反馈确认方向，并非整套模型验收。
+
+`cel=anime` 为本轮独立候选，两人均使用新曲面头型、可绘制五官和简化发束；
+身体、手脚和服装仍来自原 Tripo 蒙皮网格。葵保留侧马尾、叶形发饰、绿色背心、
+领结、深绿裙、深色袜与棕鞋；雷晓保留棕色短发、浅衬衣、深裤与棕鞋。
+两人的眼形、眉粗与下颌参数不同，不直接复制小雪的脸。
+
+眼睛支持独立视线、眼睑裁剪和高光，眉与嘴角读取原表演情绪；发音开合继续使用
+原对白视素。新颈部连接原颈根与头骨，葵的马尾读取确定性转头延迟。衣料换为
+作者色板及一档阴影，平滑细碎表面法线，原几何主褶保留。
+
+证据与验证：
+
+- `anime_character_comparison.jpg`：两人同机位中性脸、全身对照。
+- `anime_review/aoi_sheet.jpg`、`lei_sheet.jpg`：表情、左右转、侧后、抬低头。
+- `anime_review/report.json`：26 个状态，逆序重绘 PNG 字节一致，无浏览器/着色器错误；
+  含共享资产与输入文件哈希。
+- `anime_review/default_regression.json`：四张原版同机位 JPG 解码后完全一致。
+- `output/anime_character_dialogue_v2.mp4`：11.5–19.8 秒原对白，8.3 秒、249 帧、1280×720。
+- `output/anime_character_ab_v2.mp4`：上述片段与原成片并排，1920×574，保留原对白。
+- `output/anime_character_closeups_v2.mp4`：同一 8.3 秒对白的双人近景，前 3.6 秒看葵、
+  后 4.7 秒看雷晓；1280×720、249 帧，音轨直接取原混音 11.5–19.8 秒。
+  各段机位保存在 `anime_close_aoi/render_build.json` 与 `anime_close_lei/render_build.json`，
+  成片抽帧为 `anime_motion/decoded_closeups.jpg`。
+- `anime_motion/decoded_contact_sheet.jpg`：最终对照 MP4 的四个解码帧；
+  `anime_motion/trace.json` 保存实际表情/视线/口型和构建输入。已检查代表帧与控制范围，
+  未声称完成正常速度主观审听或全片接触复验。
+
+已修正试制中暴露的指尖染成裤色、袜子误作皮肤、裙腰碎斑，以及旧下颌/残发碎片。
+仍有领口与袖根的分区边界不够整洁、侧面发束附着偏生硬、脸部设计细节较简化等
+美术问题。此版是风格候选；原 82 秒成片未替换。腕部/握物问题沿用上文已知状态。
+
+复现（本集目录，已有 4215 服务）：
+
+```powershell
+node tools/review_drawn_characters.mjs
+node tools/capture_hybrid_look.mjs --modes anime,original --out storyboard/hybrid_character/anime_final
+python tools/build_drawn_review.py
+node render.mjs --range 11.5,19.8 --q '&cel=anime' --out anime_character_dialogue_v2.mp4 --board storyboard/hybrid_character/anime_motion --trace storyboard/hybrid_character/anime_motion/trace.json
+```
+
+工艺与翻车记录已回写 `character-modeler/references/craft3d-drawn-characters.md` 与 `cel-look`。

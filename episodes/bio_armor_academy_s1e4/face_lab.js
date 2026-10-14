@@ -2,6 +2,10 @@ import * as THREE from 'three';
 import {ImportedPerformer} from 'dula-assets/lib/craft3d/imported-performer.js';
 import {createProjectedFace} from 'dula-assets/lib/craft3d/projected-face.js';
 import {TRIPO_LOOK} from 'dula-assets/characters/bioarmor/tripo-look.js';
+import {applyImportedCelLook} from 'dula-assets/lib/craft3d/imported-cel-look.js';
+import {applyTripoDrawnLook} from 'dula-assets/characters/bioarmor/tripo-drawn-look.js';
+import {addAoiGraphicHair} from 'dula-assets/characters/bioarmor/aoi-graphic-hair.js';
+import {addLeiGraphicHair} from 'dula-assets/characters/bioarmor/lei-graphic-hair.js';
 const q=new URLSearchParams(location.search),id=q.get('actor')??'aoi';
 const a=await ImportedPerformer.load(`./assets3d/tripo_${id}_trial/${id}_h31_lod160k_v2.glb`,id==='aoi'?1.65:1.78);
 const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(900,900);r.outputColorSpace=THREE.SRGBColorSpace;document.body.append(r.domElement);
@@ -12,6 +16,13 @@ const fill=new THREE.DirectionalLight('#d7e6ff',1.1);fill.position.set(-4,2,2);s
 r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.05;
 const cy=id==='aoi'?1.46:1.61,range=.19;
 const camera=new THREE.OrthographicCamera(-range,range,range,-range,.01,10);camera.position.set(0,cy,2);camera.lookAt(0,cy,0);
-const face=createProjectedFace(a,r,TRIPO_LOOK[id]);scene.add(a.mesh);window.face=face;
+let face;
+if(q.get('cel')==='anime'){
+  applyImportedCelLook(a,{mode:'toon',face:TRIPO_LOOK[id],hairMinY:id==='aoi'?1.10:1.56,headMinY:id==='aoi'?1.42:1.57,palette:{hair:'#244444',hairLight:'#628680',skin:'#efcbae'}});
+  face=applyTripoDrawnLook(a,id).face;
+  if(id==='aoi')addAoiGraphicHair(a,{refined:true});else addLeiGraphicHair(a);
+  camera.left=-.27;camera.right=.27;camera.top=.27;camera.bottom=-.27;camera.updateProjectionMatrix();
+}else face=createProjectedFace(a,r,TRIPO_LOOK[id]);
+scene.add(a.mesh);window.face=face;
 window.actor=a;window.renderer=r;window.scene=scene;window.camera=camera;
-window.renderAt=(state={})=>{face.apply(state);a.reset();a.bones.head.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0,state.turn??0,0)));scene.updateMatrixWorld(true);r.render(scene,camera);return a.info();};window.renderAt();window.ready=true;
+window.renderAt=(state={})=>{face.apply(state);a.reset();a.rotateLocalFrame(a.bones.head,[state.pitch??0,state.turn??0,state.roll??0]);face.updateGeometry?.();scene.updateMatrixWorld(true);r.render(scene,camera);return a.info();};window.renderAt();window.ready=true;
