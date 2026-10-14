@@ -1,0 +1,45 @@
+{
+  "kind": "2D character face design candidate",
+  "date": "2026-10-14",
+  "generator": "built-in image_gen",
+  "output": "face_target.png",
+  "status": "Generated and visually inspected; user has not approved final design. Not a model render or an animation-ready face texture.",
+  "inputs": [
+    {
+      "path": "episodes/cat_leads_e07_river_willow/storyboard/check_shot_13.jpg",
+      "role": "user supplied drawing quality and style reference"
+    },
+    {
+      "path": "episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/anime_v3/aoi_anime_front.png",
+      "role": "girl identity and wardrobe input"
+    },
+    {
+      "path": "episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/anime_v3/lei_anime_front.png",
+      "role": "boy identity and wardrobe input"
+    }
+  ],
+  "olderTripoReferencesReviewed": [
+    "assets3d/tripo_aoi_trial/aoi_reference_v1.png",
+    "assets3d/tripo_lei_trial/lei_reference_v1.png"
+  ],
+  "latestDirection": "User notes the original Tripo input images themselves have 3D shading, and prefers newly generated 2D-looking character artwork.",
+  "visualReview": {
+    "preserved": [
+      "teal side ponytail and pale green leaf ornament",
+      "amber eyes, forest green vest, red bow",
+      "brown short hair and cream shirt"
+    ],
+    "improved": [
+      "shaped eyelids and tapered lashes",
+      "iris shading and highlights",
+      "shorter lower-face proportions and drawn mouths",
+      "flowing hair locks and variable ink weight"
+    ],
+    "limitations": [
+      "single static illustration",
+      "boy's top hair wisp touches/crosses frame edge",
+      "eye expression is not yet driven by scene acting",
+      "not suitable for direct wrapping over a 3D face without clean frontal assets and feature separation"
+    ]
+  }
+}

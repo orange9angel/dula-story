@@ -151,3 +151,20 @@ python tools/build_drawn_review.py --source storyboard/hybrid_character/anime_v3
 ```
 
 通用方法与本轮失败尝试已回写现有 `character-modeler` / `cel-look`，未新增平行 skill。
+
+## 2026-10-14：以二维绘制样稿重新确定五官目标
+
+用户提供 `cat_leads_e07_river_willow/storyboard/check_shot_13.jpg` 作为五官绘制
+质量参考，随后明确指出之前给 Tripo 的二维文件本身有三维质感，应重新生成
+二维质感的人物图。已复看 `assets3d/tripo_aoi_trial/aoi_reference_v1.png` 和
+`assets3d/tripo_lei_trial/lei_reference_v1.png`：鼻梁/皮肤渐变、发束和衣料都偏
+立体动画渲染。它们可用于身份与服装核对，不直接充当二维线条与上色样板。
+
+使用内置 image_gen 生成 `face_design_v1/face_target.png`，以用户图片为绘制质量
+参考，以现有两人截图保留发色、侧马尾/短发、叶形发饰和服装。实际提示词与
+输入角色分别记录于 `prompt.txt`、`manifest.json`。已检查五官线条、虹膜层次、
+嘴形、脸部比例和发束流向；男主最顶发梢触及画框。此图是单张二维造型候选，
+用户尚未确认最终人设，不是现有 3D 模型渲染，也不是已经拆层的动态脸贴图。
+
+后续接入应从正面与转面设计、眉眼/虹膜/口型拆层及头部轮廓开始；不要把含刘海、
+三分之四透视与固定表情的整张插画直接包到头上。当前 `cel=anime` 仍为 V3。
