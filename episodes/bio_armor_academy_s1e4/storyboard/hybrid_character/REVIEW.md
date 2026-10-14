@@ -269,3 +269,52 @@ python tools/build_character_polish_review.py
 
 审美上的“认可后要保留”与上述失败机制已写回现有 `character-modeler` 的
 `character-aesthetics.md`、`generated-character-paint.md`。
+
+## 2026-10-14：按生成侧面参考修订侧脸 V3
+
+用户继续认可正面的接近原画程度，同时指出侧脸不够柔和。此轮复看既有
+`face_design_turnaround_v1/aoi_nine_views.png` 的侧面与三分之四；没有重新生成
+简化参考，也没有将生成图当作模型截图。R2 正面认可范围保持不变。
+
+当前侧面的主要差异包括：鬓发在脸前遮住眼神、额鼻唇颌起伏偏硬、耳朵偏前、
+下颌与颈的衔接像楔形。先保留模型正面宽度与绘制 UV，改纵深与曲率，再检查
+正面漂移。鼻唇起伏限定在面中部，下巴略收；鬓发绕回太阳穴；耳朵向后调整，
+并使用已有生成脸图里的独立耳区绘画。
+
+中间候选增大整张脸的曲率后，侧面虹膜仍偏圆、三分之四近眼变宽，因此单独
+调整承载虹膜的小范围曲面。侧视虹膜现在会收窄，未把整只眼睛缩小或换成朝向
+相机的贴片。眼睛偏视、半眨、说话仍使用原有表演接口。
+
+修复的实现问题还包括：眼睛局部清底重新把耳纹带回脸上、耳贴图乘肤色变橙、
+前后面区位移不连续，以及极窄下巴截面造成交叉描线。失败机制已写回现有
+`character-modeler` 两份参考文档；共享实现仍在 `dula-assets/lib/craft3d/`。
+
+证据在 `profile_polish_v3/`：
+
+- `profile_comparison.jpg`：生成侧面参考、修前模型、修后模型。生成图不是严格
+  正交测量；模型前后为同机位。`front_preservation.jpg` 同时保留认可 R2、修前、
+  修后正面；`turns.jpg` 展示两侧与中间角度。
+- `final/report.json`：14 个侧面、绕行、裸头诊断及侧面表情状态逆序一致；头部
+  顶点有限、前后面区接缝连续，无浏览器错误。`expressions/report.json` 的
+  15 个表情/头部状态和 5 个实际场景时刻通过。
+- `default_regression/report.json`：默认路线两人 30 个状态和 5 个场景时刻通过。
+  `manifest.json` 另比较其 30 张脸部图与 V2 的哈希，确认默认脸部结果一致。
+- `output/aoi_profile_polish_v3.mp4`（相对单集根）：6 秒、144 帧、900×900、24fps
+  无声转头检查。`output/aoi_profile_dialogue_v3.mp4` 是原 11.5–15.1 秒对白近景，
+  3.6 秒、108 帧、1280×720、30fps，保留原混音。检查了静帧、侧面表情和两个
+  最终 MP4 的解码帧；未声明完整实时主观审片。
+
+正面中心五官区域的像素差保存在 `manifest.json`；它用于发现漂移，不是审美
+相似度评分。V3 侧脸仍为用户待复看的修订。后脑/马尾接缝、大幅转头的颈领碎片、
+较大侧面表情仍有局限；本轮不构成腕部和接触动作验收。
+
+复现（单集目录，4215 服务开启）：
+
+```powershell
+node tools/review_character_profile.mjs --out storyboard/hybrid_character/profile_polish_v3/final
+node tools/review_drawn_characters.mjs --mode direct --actors aoi --out storyboard/hybrid_character/profile_polish_v3/expressions
+node tools/review_drawn_characters.mjs --out storyboard/hybrid_character/profile_polish_v3/default_regression
+node tools/render_character_profile_turn.mjs
+node render.mjs --range 11.5,15.1 --camera '0.60,1.48,1.35,0.60,1.46,0,35' --q '&cel=direct' --out aoi_profile_dialogue_v3.mp4 --board storyboard/hybrid_character/profile_polish_v3/dialogue
+python tools/build_profile_polish_review.py
+```

@@ -1,0 +1,50 @@
+{
+  "status": "profile_revision_candidate_not_user_approved",
+  "reference": {
+    "file": "../face_design_turnaround_v1/aoi_nine_views.png",
+    "sha256": "3bb5f43c489448ca9c265f6a01d861cb3ca1e0f81345ba43c1fb2c63fff80617",
+    "new_generation_this_revision": false
+  },
+  "changes": [
+    "soft median forehead-nose-lip-chin contour with restrained chin projection",
+    "curved cheek and flatter iris-bearing surface while preserving frontal UV coordinates",
+    "temple locks wrap back to reveal the profile eye",
+    "ear placement and independent generated-art UV",
+    "continuous head chart seams and face-boundary clipping for live edits"
+  ],
+  "front_pixel_check": {
+    "roi": [
+      310,
+      340,
+      580,
+      560
+    ],
+    "mean_abs_rgb_difference_0_255": [
+      0.37905723905723904,
+      0.3497138047138047,
+      0.26552188552188555
+    ],
+    "meaning": "same-camera inner-face pixel difference, not an aesthetic score or proof of likeness"
+  },
+  "default_30_face_images_identical_to_v2": true,
+  "limits": [
+    "posterior hair cap and ponytail seams remain",
+    "neck/collar fragments remain at large relative head turns",
+    "single frontal painting still limits large profile expressions",
+    "turn video is a silent geometry review; dialogue excerpt is separately preserved; no new contact acceptance"
+  ],
+  "sha256": {
+    "profile_comparison.jpg": "a2935a563ed37e7ec8d94fffc16c8496a4b8f5006ef918c3bb45f478aa66fdfb",
+    "front_preservation.jpg": "db6cb67531ad780ce2ca7a8ddcb93f6976704c0bd97ab02be853095575c05f3b",
+    "turns.jpg": "c5e203c668148ecd092948b3cf6957fa1803cd834b9f95342a17be5e0c020503",
+    "decoded_turn.jpg": "1c6d5a7d6a9a812c16b03068841798480686beb89e44a797c2fabb5c03d5cb6c",
+    "decoded_dialogue.jpg": "a1d1f3f321b4baf6f577e27fd9b91ad1adf2561d6c63b9b4960f1159a2b9f572",
+    "final/report.json": "29b4dc5647bdf38bf31823627202272dc9e600957f2b26601a53e9a3b04e5b17",
+    "expressions/report.json": "7d956e5e48e074797ad853fecfeebeb80e2f4c16e706a0bbdeec6a4161e1edbf",
+    "default_regression/report.json": "ff17fef7f2084676d13f081b7d13a3266732ddb307af1b39f443a8ab9748318b",
+    "turn_video_build.json": "f50fb67a2882ba768d74fc90f2ad74826231a8588050530eabc6e00024f91e21",
+    "dialogue/render_build.json": "f6dfd93473bbbb3a0bc880b2f83f95a1e7eaa1f9482dbe96d88beb20f1592559"
+  },
+  "video_sha256": "f7489377becb6822b397b67b7df36c94e74a00ff4c214a29e737a12381910f40",
+  "dialogue_sha256": "69f3ca62cdc5519f0294f98482eb20407e1058e9d72a7672d006337759b940f2"
+}
