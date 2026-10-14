@@ -1,5 +1,44 @@
 # R3 续作记录 · 2026-10-14
 
+## 离开前交接：晚上继续面部与动作
+
+用户最新安排：先同步文档和 skill，去上班，晚上继续完善面部与动作。
+本轮在保存交接后停止制作；这不是自动定时任务。再次收到“继续”时从本节恢复。
+当前整集预览已交付，但用户没有认可新版面部质量，不得把“接入完成”当作“制作定稿”。
+
+### 晚上从这里开始
+
+1. 保留 `output/tripo_episode_preview_v1.mp4`（82 秒）和 `tripo_dialogue_preview_v2.mp4`
+   （10–23 秒原片区间）作为 A/B 基线。先读用户看片反馈，再做 10–23 秒的面部短片；
+   下一版另存，不覆盖目前可比较的文件。
+2. 面部优先：视线目标和眼头配合、眉眼嘴角的情绪一致性、听者反应、说话与静默的区别。
+   当前是纹理局部形变 + 8 个小型位置 morph，无独立眼球和完整口腔；先判断僵硬来自
+   表演时序还是几何/绑定限制。不要只增加随机眨眼/摆头或把所有表情幅度一并放大。
+3. 动作随后：24.5–29 秒擦臂的接触与衔接，32–41 秒强收/叫停的力度和反应，
+   58.2–69.2 秒递罐/握罐的腕型、屈指、预备与收势。保留已修好的路径和动作意图；
+   本地难以做好的一段继续按已有授权使用 Tripo，提交前先查已有动作，避免重复扣点。
+4. 女主马尾已是小幅跟随，后续随转头复看发根、肩颈和领口；不能把加大发摆当成灵动。
+5. 先输出代表性短片，对新脸部和关键接触做必要视听复核。改动稳定后再重跑 60Hz
+   全片声明范围检查并出整集。具体命令见 `NOTES.md`；旧 trace 不替代新输入的验收。
+
+### 续作文件定位（相对工作区 D:/opensource/movie）
+
+| 用途 | 文件 |
+|---|---|
+| 时间轴权威与表演谱 | `dula-story/episodes/bio_armor_academy_s1e4/script.story`、`performance_remake.js` |
+| 导入角色调度与接触 | 同集 `viewer.js`、`performance_tripo.js` |
+| 面部控制与标定 | `dula-assets/lib/craft3d/projected-face.js`、`facial-deform.js`；`dula-assets/characters/bioarmor/tripo-look.js` |
+| 身体动作与马尾 | `dula-assets/lib/craft3d/retargeted-motion.js`、`table-hand-clearance.js`、`secondary-hair.js` |
+| 小样与检查 | 同集 `face_lab.html/js`、`tools/check_imported_face.mjs`、`config/tripo_review_shots.json` |
+| 当前技术证据 | 本目录 `tripo_integration_report.json`、`tripo_validation/imported_contact_report.json` |
+| 共用工艺 | `dula-skills/character-modeler/references/imported-face-performance.md`、`dula-skills/direct-animation-craft/references/hybrid-motion.md` |
+
+代码基线：dula-story `c09776d`；dula-assets `679bd3c`（导入角色）、`5ab98b7`（口型工具）；
+dula-skills `00dbef6`（已验证混合动作）。本次交接文档提交在这些基线上追加。
+工作区还有其他剧集及较早实验的未提交改动，不能全仓清理或一并提交。
+启动本地服务时先查 4215 是否仍在运行；`tools/check_imported_face.mjs` 当前依赖此端口，
+需要时在单集目录运行 `node render.mjs --serve`。不要假定重启后进程和浏览器登录仍有效。
+
 ## 当前接入状态（优先于以下所有旧记录）
 
 - 用户已授权两名 Tripo 主角接入正片，并明确采用程序动作与 Tripo 生成动作混合。
@@ -27,7 +66,7 @@
   详细输出哈希/验证见 `tripo_integration_report.json`。当前重点仍是减少人偶感。
 - 已提交共用实现 dula-assets `679bd3c`、技能经验 dula-skills `00dbef6`；浏览器未新增收费任务。
 
-## 最新覆盖记录（05:00 前，优先于下方较早记录）
+## 历史记录：05:00 前（已被上方交接与接入状态覆盖）
 
 - 用户同意后续改真正无头；当前不打断可用 Chrome 流程来强行切换。操作时用户可用
   其他标签/应用，若用户说暂停网页须停浏览器操作。
