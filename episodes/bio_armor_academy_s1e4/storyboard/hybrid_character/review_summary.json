@@ -1,0 +1,131 @@
+{
+  "status": "experimental-not-promoted",
+  "default_frame_regression": {
+    "t17.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t22.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t26.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t33.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t37.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t59.2.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t65.067.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t67.2.jpg": {
+      "pixel_identical": true,
+      "pixels_over_16": 0,
+      "max_difference": 0,
+      "within_existing_jpeg_tolerance": true
+    },
+    "t71.5.jpg": {
+      "pixel_identical": false,
+      "pixels_over_16": 0,
+      "max_difference": 2,
+      "within_existing_jpeg_tolerance": true
+    }
+  },
+  "wrist_degrees": {
+    "lei_left": {
+      "maxBend": {
+        "before": 169.59894164713558,
+        "candidate": 44.25617035106391,
+        "default": 169.59894164713558
+      },
+      "maxLocalRotation": {
+        "before": 179.82339614836343,
+        "candidate": 48.48524818071371,
+        "default": 179.82339614836343
+      },
+      "maxStep": {
+        "before": 104.43922465819534,
+        "candidate": 12.382106570472494,
+        "default": 104.43922465819534
+      }
+    },
+    "lei_right": {
+      "maxBend": {
+        "before": 124.8252323057986,
+        "candidate": 47.982937381603215,
+        "default": 124.8252323057986
+      },
+      "maxLocalRotation": {
+        "before": 156.55846486676774,
+        "candidate": 47.19305006211028,
+        "default": 156.55846486676774
+      },
+      "maxStep": {
+        "before": 21.75555332768202,
+        "candidate": 7.622608987518956,
+        "default": 21.75555332768202
+      }
+    },
+    "aoi_left": {
+      "maxBend": {
+        "before": 87.36607089092617,
+        "candidate": 6.1312233170416315,
+        "default": 87.36607089092617
+      },
+      "maxLocalRotation": {
+        "before": 129.21065382448106,
+        "candidate": 0.0007122539802567313,
+        "default": 129.21065382448106
+      },
+      "maxStep": {
+        "before": 0.31560613944172333,
+        "candidate": 0.0008723277382215946,
+        "default": 0.31560613944172333
+      }
+    },
+    "aoi_right": {
+      "maxBend": {
+        "before": 164.20302922709504,
+        "candidate": 8.166883876994758,
+        "default": 164.20302922709504
+      },
+      "maxLocalRotation": {
+        "before": 178.11674192413042,
+        "candidate": 0,
+        "default": 178.11674192413042
+      },
+      "maxStep": {
+        "before": 119.46728565089087,
+        "candidate": 0,
+        "default": 119.46728565089087
+      }
+    }
+  },
+  "motion_coverage": "82 seconds at 30Hz; angle diagnosis is not collision or artistic acceptance",
+  "look_coverage": "front/three-quarter/half-body/scene static views; graphic hair still has visible defects"
+}

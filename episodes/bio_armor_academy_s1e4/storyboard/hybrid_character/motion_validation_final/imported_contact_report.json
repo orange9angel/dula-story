@@ -1,0 +1,182 @@
+{
+  "status": "fail",
+  "trace": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\storyboard\\hybrid_character\\motion_validation_final\\trace.json",
+  "frames": 2460,
+  "fps": 30,
+  "coverage": "Representative rendered skinned vertices against solid tabletop and jar interior; feet against floor; held jar nearest sampled hand-surface gap; complete timeline and deterministic seek.",
+  "not_covered": [
+    "complete body self-collision",
+    "full triangle-triangle intersections",
+    "continuous collision between sampled times",
+    "all clothing and hair against body",
+    "artistic quality",
+    "auditory review"
+  ],
+  "maxima": {
+    "lei.leftHand.tableDepth": {
+      "value": 0.009596445587652935,
+      "time": 27.667,
+      "limit": 0.002
+    },
+    "lei.leftHand.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightHand.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightHand.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.leftFoot.floorDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.003
+    },
+    "lei.rightFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "lei.rightFoot.floorDepth": {
+      "value": 1.8887163701079748e-07,
+      "time": 62.5,
+      "limit": 0.003
+    },
+    "aoi.leftHand.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftHand.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightHand.tableDepth": {
+      "value": 0.018580286590810235,
+      "time": 38.833,
+      "limit": 0.002
+    },
+    "aoi.rightHand.jarDepth": {
+      "value": 0.02550862423687142,
+      "time": 62.2,
+      "limit": 0.002
+    },
+    "aoi.leftArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightArm.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightArm.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.leftFoot.floorDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.003
+    },
+    "aoi.rightFoot.tableDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightFoot.jarDepth": {
+      "value": 0,
+      "time": 0,
+      "limit": 0.002
+    },
+    "aoi.rightFoot.floorDepth": {
+      "value": 0.0003887108271828984,
+      "time": 36.7,
+      "limit": 0.003
+    },
+    "jarSpeed": {
+      "value": 0.28569034295030576,
+      "time": 61.067,
+      "limit": 0.8
+    },
+    "aoi.heldJarGap": {
+      "value": 0.03924779837462561,
+      "time": 60.567,
+      "limit": 0.015
+    },
+    "lei.heldJarGap": {
+      "value": 0.062149998801937015,
+      "time": 65.467,
+      "limit": 0.015
+    }
+  },
+  "errors": [
+    "lei.leftHand.tableDepth: 0.009596 at 27.667",
+    "aoi.rightHand.tableDepth: 0.018580 at 38.833",
+    "aoi.rightHand.jarDepth: 0.025509 at 62.2",
+    "aoi.heldJarGap: 0.039248 at 60.567",
+    "lei.heldJarGap: 0.062150 at 65.467"
+  ],
+  "error_count": 5,
+  "trace_sha256": "085c86573902b6d5804b4de49be2c7b370d40b1e841fd51c171dbbc60d87e598",
+  "contract_sha256": "f9fbf2fc356202c72588574fdc3fe27927873bde98c4ab73ead494082ca0d2e7"
+}

@@ -6,9 +6,11 @@ import {addForearmMark} from 'dula-assets/lib/craft3d/skin-mark.js';
 import {RetargetedMotion} from 'dula-assets/lib/craft3d/retargeted-motion.js';
 import {createTableHandClearance} from 'dula-assets/lib/craft3d/table-hand-clearance.js';
 import {addSecondaryHair} from 'dula-assets/lib/craft3d/secondary-hair.js';
+import {applyImportedCelLook} from 'dula-assets/lib/craft3d/imported-cel-look.js';
+import {addAoiGraphicHair} from 'dula-assets/characters/bioarmor/aoi-graphic-hair.js';
 import {BiologyRoomScene} from './scenes/BiologyRoomRemakeScene.js';
 import {posesAt} from './performance_remake.js';
-import {preparePerformer,applyTripoPose} from './performance_tripo.js';
+import {preparePerformer,applyTripoPose,settleImportedWrists} from './performance_tripo.js';
 import {createImportedProbe} from './tools/imported_probe.js';
 const W=1280,H=720,q=new URLSearchParams(location.search),numeric=q.has('probe-surface'),resolution=q.has('hd')?1.5:1;
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
@@ -36,7 +38,13 @@ renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.
 for(const key of ['lei','aoi']){
   const a=await ImportedPerformer.load(`./assets3d/tripo_${key}_trial/${key}_h31_lod160k_v2.glb`,TRIPO_LOOK[key].height);
   if(key==='aoi')a.garmentRepair=a.restrictInfluences({min:[-.30,.53,-.22],max:[.30,.99,.23],maxAlbedoLuma:.42,allow:n=>n==='hips'||/leg|foot|toe/.test(n)});
-  preparePerformer(a,key);a.face=createProjectedFace(a,renderer,TRIPO_LOOK[key]);scene.add(a.mesh);actors[key]=a;
+  preparePerformer(a,key);a.correctWrists=q.has('wristfix');a.face=createProjectedFace(a,renderer,TRIPO_LOOK[key]);scene.add(a.mesh);actors[key]=a;
+  if(q.has('cel')&&key==='aoi')a.celLook=applyImportedCelLook(a,{mode:q.get('cel')==='graphic'?'painted':q.get('cel'),face:TRIPO_LOOK[key],hairMinY:key==='aoi'?1.10:1.56,headMinY:key==='aoi'?1.42:1.57,
+    palette:{hair:key==='aoi'?'#244444':'#54382d',hairLight:key==='aoi'?'#628680':'#9b6f4d',skin:'#eec9a9'}});
+  if(q.get('cel')==='graphic'&&key==='aoi'){
+    a.graphicHair=addAoiGraphicHair(a);a.celLook.geometry='head-weighted hair triangles removed; procedural broad-lock candidate';
+    a.celLook.limitations=['hairline fragments','clip missing','secondary motion not connected','not accepted'];
+  }
 }
 const canvas=document.createElement('canvas');canvas.width=W*resolution;canvas.height=H*resolution;canvas.style.width=W+'px';canvas.style.height=H+'px';document.body.append(canvas);
 const ctx=canvas.getContext('2d'),camera=new THREE.PerspectiveCamera(36,W/H,.05,100);
@@ -69,6 +77,7 @@ function draw(t,capture=true){
     rubMotion.apply(l[1]+u*(r[1]-l[1]),ease(rubElapsed/.45)*(1-ease((rubElapsed-3.8)/.7)),{include:n=>/spine|shoulder|arm|hand|neck|head/.test(n),rootMotion:false});
   }
   const tableCorrection=clearLeiHands(p.phase.leiHold>0?['right']:['left','right']);
+  for(const a of Object.values(actors))settleImportedWrists(a);
   const lagTime=Math.max(0,t-.18),lagPose=posesAt(lagTime,cues,TL).aoi;
   const hairMotion=aoiHair.apply((lagPose.headYaw+lagPose.yaw-p.aoi.headYaw-p.aoi.yaw)*.7+(lagPose.headRoll-p.aoi.headRoll)*.8,
     (lagPose.headPitch-p.aoi.headPitch)*.8+(lagPose.rootX-p.aoi.rootX)*.12);

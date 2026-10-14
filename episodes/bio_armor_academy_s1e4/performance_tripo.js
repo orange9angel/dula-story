@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {calibrateHands,distributeWristTwist,orientHandWithForearm} from 'dula-assets/lib/craft3d/anatomical-hand.js';
 const V=p=>new THREE.Vector3(p.x,p.y,p.z??0),Q=()=>new THREE.Quaternion();
 const clamp=THREE.MathUtils.clamp;
 
@@ -16,6 +17,7 @@ export function preparePerformer(a,id){
     a.footRest[side]=b[side+'foot'].getWorldQuaternion(Q());
   }
   a.contactHand=id==='lei'?'left':'right';a.notebookHand='left';
+  a.anatomicalHands=calibrateHands(a);
 }
 function handFacing(a,side,normal,direction,amount=1){
   const y=direction.clone().normalize(),z=normal.clone().normalize(),x=y.clone().cross(z).normalize();z.copy(x).cross(y).normalize();
@@ -44,6 +46,12 @@ export function applyTripoPose(a,p,all){
     const restY=(lei?1.375:1.295)-(oldSide==='left'?.345:.354);
     const activity=Math.max(clamp((w.y-restY)/.15,0,1),p.gestures[oldSide].open??0);
     if(!(a.id==='aoi'&&oldSide==='right'))target.y-=.115*(1-clamp(activity,0,1));
+    if(a.correctWrists&&a.id==='aoi'&&oldSide==='left'){
+      // The old short-arm warning target was waist-high; a vertical palm then
+      // required a nearly folded-back wrist. Raise the whole forearm instead.
+      const warning=clamp((p.gestures[oldSide].open??0)/.7,0,1);
+      target.lerp(new THREE.Vector3(-.30,1.34,.20),warning);
+    }
     target=a.mesh.localToWorld(target);
     const hold=side===a.contactHand?(lei?all.phase.leiHold:all.phase.aoiHold):0;
     if(hold>0){
@@ -59,13 +67,28 @@ export function applyTripoPose(a,p,all){
     if(rub>0){const contact=b.leftforearm.getWorldPosition(new THREE.Vector3()).lerp(b.lefthand.getWorldPosition(new THREE.Vector3()),.64);
       target.lerp(contact.add(new THREE.Vector3(-.105,.01,.065)),rub);}
     const clearance=lei?hold:0;
-    const pole=new THREE.Vector3(sign*(.8+2*clearance),-.8+.5*clearance,.35*(1-clearance)).applyAxisAngle(new THREE.Vector3(0,1,0),p.yaw);
+    const pole=(a.correctWrists?new THREE.Vector3(sign*.65,-.3,-.6):new THREE.Vector3(sign*(.8+2*clearance),-.8+.5*clearance,.35*(1-clearance))).applyAxisAngle(new THREE.Vector3(0,1,0),p.yaw);
     diagnostics[side]=a.solve([side+'arm',side+'forearm',side+'hand'],target,pole);
-    if(hold>0)handFacing(a,side,new THREE.Vector3(-1,0,0),new THREE.Vector3(0,0,lei?-1:1),Math.min(1,hold*2.5));
-    if(rub>0)handFacing(a,side,new THREE.Vector3(0,0,-1),new THREE.Vector3(1,0,0),rub);
+    if(!a.correctWrists&&hold>0){
+      handFacing(a,side,new THREE.Vector3(-1,0,0),new THREE.Vector3(0,0,lei?-1:1),Math.min(1,hold*2.5));
+    }
+    if(!a.correctWrists&&rub>0)handFacing(a,side,new THREE.Vector3(0,0,-1),new THREE.Vector3(1,0,0),rub);
     const gesture=p.gestures[oldSide].open??0;
-    if(!hold&&!rub&&gesture>.05)handFacing(a,side,lei?new THREE.Vector3(0,1,0):new THREE.Vector3(0,0,1),lei?new THREE.Vector3(-1,0,.25):new THREE.Vector3(0,1,0),Math.min(1,gesture*1.8));
-    if(a.id==='aoi'&&oldSide==='right')handFacing(a,side,new THREE.Vector3(0,1,0),new THREE.Vector3(.8,0,.6),1);
+    if(a.correctWrists){
+      let normal=new THREE.Vector3(-sign,.12,.08).normalize();
+      const turnNormal=(to,amount)=>{const rot=Q().setFromUnitVectors(normal,to.clone().normalize());normal.applyQuaternion(Q().slerp(rot,clamp(amount,0,1)));};
+      turnNormal(lei?new THREE.Vector3(0,1,.12):new THREE.Vector3(.65,.2,1),Math.min(1,gesture*1.6));
+      // A nonzero upward component disambiguates the 180-degree inward grip.
+      if(hold>0)turnNormal(new THREE.Vector3(-1,.35,.10),hold);
+      if(rub>0)turnNormal(new THREE.Vector3(0,.1,-1),rub);
+      if(a.id==='aoi'&&oldSide==='right')normal.set(.05,1,.15).normalize();
+      normal.applyAxisAngle(new THREE.Vector3(0,1,0),p.yaw);
+      a.handIntents??={};a.handIntents[side]=normal.toArray();
+      orientHandWithForearm(a,side,normal);
+    }else if(!hold&&!rub&&gesture>.05)handFacing(a,side,lei?new THREE.Vector3(0,1,0):new THREE.Vector3(0,0,1),lei?new THREE.Vector3(-1,0,.25):new THREE.Vector3(0,1,0),Math.min(1,gesture*1.8));
+    if(!a.correctWrists&&a.id==='aoi'&&oldSide==='right'){
+      handFacing(a,side,new THREE.Vector3(0,1,0),new THREE.Vector3(.8,0,.6),1);
+    }
     // Curve the phalanges into a relaxed hand or grip, around each finger's
     // actual anatomical width axis. Bone suffixes must retain their digits.
     const curl=.12+(p.gestures[oldSide].fist??0)*.45+hold*(lei?.65:.24);
@@ -74,8 +97,12 @@ export function applyTripoPose(a,p,all){
       const change=b[side+'hand'].getWorldQuaternion(Q()).multiply(a.handFrames[side].bone.clone().invert());
       const axis=new THREE.Vector3(1,0,0).applyQuaternion(a.handFrames[side].basis).applyQuaternion(change);
       const inv=bone.getWorldQuaternion(Q()).invert(),local=axis.applyQuaternion(inv).normalize();
-      bone.quaternion.multiply(Q().setFromAxisAngle(local,curl*(j===1?.65:1)));a.mesh.updateMatrixWorld(true);
+      bone.quaternion.multiply(Q().setFromAxisAngle(local,curl*(j===1?.65:1)*(a.correctWrists&&side==='left'?-1:1)));a.mesh.updateMatrixWorld(true);
     }
   }
   a.mesh.updateMatrixWorld(true);return diagnostics;
+}
+
+export function settleImportedWrists(a){
+  if(a.correctWrists)for(const side of ['left','right'])distributeWristTwist(a,side,{share:0});
 }
