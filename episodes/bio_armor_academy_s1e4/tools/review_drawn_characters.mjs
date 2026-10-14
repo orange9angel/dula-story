@@ -1,7 +1,8 @@
 import fs from 'node:fs';import path from 'node:path';import {createRequire} from 'node:module';import {createHash} from 'node:crypto';
 import {auditInputs} from './audit_inputs.mjs';
 const ep=path.resolve(import.meta.dirname,'..'),req=createRequire(path.join(ep,'../../node_modules/dula-engine/package.json'));
-const out=path.join(ep,'storyboard/hybrid_character/anime_review');fs.mkdirSync(out,{recursive:true});
+const oi=process.argv.indexOf('--out');
+const out=path.resolve(ep,oi<0?'storyboard/hybrid_character/anime_review':process.argv[oi+1]);fs.mkdirSync(out,{recursive:true});
 const browser=await req('puppeteer').launch({headless:true});
 const specs=[['neutral',{}],['listen',{gaze:[-.8,.1],smile:.25}],['concern',{gaze:[.7,-.2],fear:.8}],['firm',{focus:.9,gaze:[-.6,0]}],['talk',{jaw:.65,smile:.5,gaze:[-.6,0]}],['half_blink',{blink:.5}],['closed',{blink:1}],['left',{turn:-.75}],['right',{turn:.75}],['profile',{turn:1.45}],['back',{turn:Math.PI}],['down',{pitch:.32}],['up',{pitch:-.28}]];
 const report={build:auditInputs(ep),errors:[],actors:{}};

@@ -112,3 +112,42 @@ node render.mjs --range 11.5,19.8 --q '&cel=anime' --out anime_character_dialogu
 ```
 
 工艺与翻车记录已回写 `character-modeler/references/craft3d-drawn-characters.md` 与 `cel-look`。
+
+## 2026-10-14 V3：眼睛、发型与服装配色
+
+用户认为方向正确，但要求眼睛、头发更好看，衣服摆脱褪色感，并学习日式动画
+少年少女主角的造型方法。本轮保留两人的身份与 Tripo 身体，进一步修改绘制层。
+
+葵使用有弧度的眼型、渐细上睫线和明亮金色虹膜；雷晓使用较收敛的眼型、眉形
+及短发尖束。虹膜增加上下明暗与少量高光，短而浅的眼睑褶线避免双眉感。
+前发束改用贴合头壳的局部框架，发梢独立弯曲；亮面沿发束，马尾根与发饰挂点
+一并调整。早期试制的水平亮带和圆拱短发束未采用。
+
+上一版的褪色主要来自偏灰的作者色板及较弱的显示明暗差。本轮采用奶白衬衣、
+深绿背心/裙、莓红领结、蓝灰长裤，分别给定底色与阴影色；增加衣物轮廓对比。
+仍有领口/袖根分区毛边和局部袖面误染肤色，侧发根也偏生硬；这些是明确保留
+的待修问题，不能因颜色改善而认定服装或发型已经完成。腕部/握物状态沿用前文。
+
+证据：
+
+- `anime_character_polish_v3.jpg`：V2 / V3 同机位正脸与全身对照，四列。
+- `anime_v2_baseline/`：精修前快照；旧 V2 图和短片继续保留。
+- `anime_v3/aoi_sheet.jpg`、`lei_sheet.jpg`：表情和转头检查。
+- `anime_v3/report.json`：26 个状态，逆序 PNG 字节一致，无浏览器/着色器错误。
+- `anime_v3/default_regression.json`：四个原版机位解码像素零差异。
+- `output/anime_character_closeups_v3.mp4`：原 11.5–19.8 秒对白近景，8.3 秒、
+  249 帧、1280×720，含原混音截段；前 3.6 秒葵，后 4.7 秒雷晓。
+- `anime_v3/close_aoi/render_build.json` 与 `close_lei/render_build.json` 保存各自
+  实际构建输入；女主片段生成后仅再调整男主顶发，男主片段随之重渲染。
+- `anime_v3/decoded_closeups.jpg` 是最终 MP4 的四个解码帧；`video_probe.json`
+  保存流参数。已检查静帧、转头图与成片抽帧，未声明正常速度全片主观审片。
+
+复现对照（本集目录，4215 服务启动后）：
+
+```powershell
+node tools/review_drawn_characters.mjs --out storyboard/hybrid_character/anime_v3
+node tools/capture_hybrid_look.mjs --modes original,anime --out storyboard/hybrid_character/anime_v3/scene
+python tools/build_drawn_review.py --source storyboard/hybrid_character/anime_v3 --before storyboard/hybrid_character/anime_v2_baseline --output storyboard/hybrid_character/anime_character_polish_v3.jpg --scene-source storyboard/hybrid_character/anime_v3/scene
+```
+
+通用方法与本轮失败尝试已回写现有 `character-modeler` / `cel-look`，未新增平行 skill。
