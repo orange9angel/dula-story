@@ -30,14 +30,23 @@ args.output.parent.mkdir(parents=True, exist_ok=True)
 sheet.save(args.output, quality=94)
 names = ['neutral', 'listen', 'concern', 'firm', 'half_blink', 'closed', 'left', 'right', 'profile', 'back', 'down', 'up']
 for actor in ['aoi', 'lei']:
-    c = Image.new('RGB', (1440, 1120), '#e7e1d6')
+    c = Image.new('RGB', (1440, 1155), '#e7e1d6')
     d = ImageDraw.Draw(c)
     for i, name in enumerate(names):
-        im = Image.open(src / f'{actor}_{name}.png').resize((360, 340))
-        x, y = i % 4 * 360, i // 4 * 365
+        im = Image.open(src / f'{actor}_{name}.png').resize((360, 360))
+        x, y = i % 4 * 360, i // 4 * 385
         c.paste(im, (x, y + 25))
         d.text((x + 10, y), name, font=font(18), fill='#283c36')
     c.save(src / f'{actor}_sheet.jpg', quality=93)
+    angles = ['profile_left', 'left', 'neutral', 'right', 'profile', 'back_right', 'down', 'up', 'back']
+    if all((src / f'{actor}_{name}.png').exists() for name in angles):
+        grid = Image.new('RGB', (1200, 1275), '#e7e1d6')
+        labels = ImageDraw.Draw(grid)
+        for i, name in enumerate(angles):
+            x, y = i % 3 * 400, i // 3 * 425
+            grid.paste(Image.open(src / f'{actor}_{name}.png').resize((400, 400)), (x, y + 25))
+            labels.text((x + 12, y), name, font=font(18), fill='#283c36')
+        grid.save(src / f'{actor}_nine_views.jpg', quality=94)
 regression = {}
 for name in ['front', 'threequarter', 'half', 'scene']:
     before = Image.open(root / 'look' / f'original_{name}.jpg').convert('RGB')

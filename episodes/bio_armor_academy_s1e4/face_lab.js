@@ -6,7 +6,9 @@ import {applyImportedCelLook} from 'dula-assets/lib/craft3d/imported-cel-look.js
 import {applyTripoDrawnLook} from 'dula-assets/characters/bioarmor/tripo-drawn-look.js';
 import {addAoiGraphicHair} from 'dula-assets/characters/bioarmor/aoi-graphic-hair.js';
 import {addLeiGraphicHair} from 'dula-assets/characters/bioarmor/lei-graphic-hair.js';
+import {addAoiGeneratedHair} from 'dula-assets/characters/bioarmor/aoi-generated-paint.js';
 const q=new URLSearchParams(location.search),id=q.get('actor')??'aoi';
+if(!q.has('cel'))q.set('cel','anime');
 const a=await ImportedPerformer.load(`./assets3d/tripo_${id}_trial/${id}_h31_lod160k_v2.glb`,id==='aoi'?1.65:1.78);
 const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(900,900);r.outputColorSpace=THREE.SRGBColorSpace;document.body.append(r.domElement);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#d6d9d7');scene.add(a.mesh);
@@ -17,10 +19,11 @@ r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.05;
 const cy=id==='aoi'?1.46:1.61,range=.19;
 const camera=new THREE.OrthographicCamera(-range,range,range,-range,.01,10);camera.position.set(0,cy,2);camera.lookAt(0,cy,0);
 let face;
-if(q.get('cel')==='anime'){
+if(['anime','direct'].includes(q.get('cel'))){
   applyImportedCelLook(a,{mode:'toon',face:TRIPO_LOOK[id],hairMinY:id==='aoi'?1.10:1.56,headMinY:id==='aoi'?1.42:1.57,palette:{hair:'#244444',hairLight:'#628680',skin:'#efcbae'}});
-  face=applyTripoDrawnLook(a,id).face;
-  if(id==='aoi')addAoiGraphicHair(a,{refined:true});else addLeiGraphicHair(a);
+  face=applyTripoDrawnLook(a,id,{directPaint:q.get('cel')==='direct'}).face;await face.ready;
+  if(id==='aoi'&&q.get('cel')==='direct')await addAoiGeneratedHair(a);
+  else if(id==='aoi')addAoiGraphicHair(a,{refined:true});else addLeiGraphicHair(a);
   camera.left=-.27;camera.right=.27;camera.top=.27;camera.bottom=-.27;camera.updateProjectionMatrix();
 }else face=createProjectedFace(a,r,TRIPO_LOOK[id]);
 scene.add(a.mesh);window.face=face;

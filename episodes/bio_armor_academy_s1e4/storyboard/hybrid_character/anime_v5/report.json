@@ -1,0 +1,855 @@
+{
+  "build": {
+    "inputs": [
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\script.story",
+        "sha256": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\bootstrap.js",
+        "sha256": "ddd4f3ef17639bdf1cd91806459db4e925327aded6b74c64afd7750843144357"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.js",
+        "sha256": "7d631cd57fd46f5901a0f8625ba5d43fecb0c5671066e38aef9119eba2296845"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.html",
+        "sha256": "f91b7fabd84965d9b9e37fc85acabff022506e9a912ba436e001be92306df225"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\render.mjs",
+        "sha256": "66f3040a19c580cae60eaf0f36dd61e5ccd53b1391c3e92010af990b527fb855"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_remake.js",
+        "sha256": "9871cf85d48eb552d5db04901a6bf5493f0c2f4c107c1b05629e45dad3dcf362"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_tripo.js",
+        "sha256": "49b060f923e33f58f434cf3a5bda0fc0f3f297d6071103d9d775ae49b61373fe"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\imported_probe.js",
+        "sha256": "d759867f682de7e98eca54df861670eccf23fad2e258877804894374fd4db9d4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_imported_contact.py",
+        "sha256": "31d2e47f07ab0acec64e383b0b00e2489bcdb9089f63d76c5d4960df4a510c41"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\imported_contact_contract.json",
+        "sha256": "f9fbf2fc356202c72588574fdc3fe27927873bde98c4ab73ead494082ca0d2e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\scenes\\BiologyRoomRemakeScene.js",
+        "sha256": "e91882c5e128e2cc6d10bf68b4a65f068fd4f917ff051b742c5c4b5e58a4346c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\audit_inputs.mjs",
+        "sha256": "1d86a3499918f67b36265a2ac3b191f6185e4b0be68c223b2f43b590fb723f3c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\compile_story.mjs",
+        "sha256": "70f15d3212b39f42a538b3fbaa5bc5f6840bb99d844976f3aef87b58c1667ac9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\numeric_probe.js",
+        "sha256": "9717d3dad23c0dc7f14fee9d4e85997463e1f672dc04e177aea5fe0656123a36"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\timeline.json",
+        "sha256": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\contact_contract.json",
+        "sha256": "19760091de6c05fd7a7c7732d762e1e0576a552951bd0ef5898aa8cad5afa921"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\scene_contract.json",
+        "sha256": "ffbee245d40c81db0ea686a48a13d57640bd97a9e499d9db80d1f3ffc2f9e660"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_direction.json",
+        "sha256": "4288b9c558b1db277e1f5fba118179cf79285f7ae9c86c865a2019dbd721cf05"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_timing.json",
+        "sha256": "0b59d61e8786222b7d8cc71f883524263ec035abe760376a8b8c76de19121be6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_audio.py",
+        "sha256": "b07be86e4495a97aab0aff923a953d00b9fdf8d87da7b06444a759642a212798"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_audio_sync.py",
+        "sha256": "65359aff9c0d77570227879941e9a9124a962afec2d89c364baf95c475c1f52b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_contact.py",
+        "sha256": "2e03f48b637c03ec24a718b136c6409ea9c285e8d1d720dca8a788cef6e7b5f9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_story_motion.py",
+        "sha256": "9cc148450116638ec44dc86eb8b69e927e110494c5702d1646338caf7ea193ed"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\prepare_ambience.py",
+        "sha256": "621c8a112d9d64b0253d0d322b7350e09460bccbe4007c84a56255503a85c82e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_visemes.py",
+        "sha256": "143417c5eaa4aa58189a65fb620f84ed5c0d27b674f57a56002d07a4aa7ebe30"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_leixiao.json",
+        "sha256": "ace4d03e407cf864a90a7de916c424b33ce017e5c908d976a4667e60b8af314c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_qiantangkui.json",
+        "sha256": "6e0e175ff2d40096904eb4e0fcde8bdeb6cd1802d75c989fa715cad0758a638f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\dialogue_alignment.json",
+        "sha256": "6f94c17a44ac60e26c4bdc6739d91337469b83fcc6ad6ba71325367ed2038820"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\sound_cues.json",
+        "sha256": "51f547b0d9c628be7ab11fe0dbfbd63d7fc88fe8aa2792c38d1e494128c1885e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\foley_anchors.json",
+        "sha256": "39ec8dca33c1bf43fbc742e15085e8956bb08732910e4bb041fcbe4a777001fc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_foley_anchors.mjs",
+        "sha256": "3cdcf30dea7bdceecdc71d4ecd1a74647f29c30f4a521c0cfb3b0b9485ba408d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_episode.py",
+        "sha256": "04f79fa91df1fd89e4f5e7887434b3e3c350f16e8faa8fd2f5bf618cd1aa7622"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_contracts.py",
+        "sha256": "9146c1387995b475728740c8bca236e07357f8637fa75c31bc85693685b66e62"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\textures\\biology_wall_r3.png",
+        "sha256": "218a49be801aecdeb386f2bb4ce1bb9eb9a9d45b8b4546e4419c018fb0d960cc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\anatomical-hand.js",
+        "sha256": "b0771a7b55a7892e7278dd38ecfd9791e5d53f233158b3b97890194e2c24e7ca"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\body-audit.js",
+        "sha256": "999342f7594229be1886607fcbe734d32f561e59ad0b91dda49c74e72f5665b8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-face.js",
+        "sha256": "8eb655762eba40076e7f39a80b2a0badfbc407644c2a569fe22698c4979f2810"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-head.js",
+        "sha256": "9d1b60a1d19426e6c841f484c37bd1f6a878354f5c4bb396afea0ccd1dc09bd6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\facial-deform.js",
+        "sha256": "b67546d71db9b4ee932f5733af9ef29aae38db6e109294aaec8f198211cf590f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\garment-clearance.js",
+        "sha256": "92a673945b93f6c86e728b88f9f5c1524e31211d39a48c44b90f5f048aebf557"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\graphic-hair.js",
+        "sha256": "1e8947a5587693a6ed83eee9b3eb504e1c821d953b9c2d1fd8203bd1a666aff5"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\hand.js",
+        "sha256": "91f3289e3daad4ad13a2711554a69d45b29fd5fc4d99ef902ec678911cc571d7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\illustrated-import.js",
+        "sha256": "1968f3a1ac27616d2d3c3ca47577c8404c73b9d2d2c0ee9ae8ba6aa25dadd34d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-cel-look.js",
+        "sha256": "548120ed2c4e549688c94982e0e86783e02aee453a1991a838ee03b47ac3ec40"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-performer.js",
+        "sha256": "3faa969cbd9d966b6879dcd828028b04d3c5ac492278154699d713cc690d163c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\locomotion.js",
+        "sha256": "52f5f9091a25e11c51ac0f7b61340d5580aece42d4d22c45453dda8106c14952"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\look.js",
+        "sha256": "e5634e29af63dd58b9e31a8b5b123efbad208d721304d483d5021635c70f467c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\pose.js",
+        "sha256": "669eda04a0bf251315f2518f24140d8948149838bfd93863056024c2e80c9536"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\projected-face.js",
+        "sha256": "eea47c0ef978e1cdc3d5d24893c383231e16437fc53f2f2b6b80619bd781807b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\retargeted-motion.js",
+        "sha256": "8211ae275786bfe1c29415a4d8cf321f2eb110d3a6b21c5035ed14f168b58bad"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\secondary-hair.js",
+        "sha256": "371479582de72235edc90b4454b7a21fc36f47deb5f2944abd6f2afaa3331dd8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skin-mark.js",
+        "sha256": "0920ae300b097fbe8237d6dc003ef550eadd256d41a048f0f717601e2838f101"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skinned-samples.js",
+        "sha256": "ae5629b26dccb4ed4dd0b4305eb6e0840dc21c76e6c662de79e03b3558b52261"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\supported-performance.js",
+        "sha256": "12ca0399fab8433267b921b39dd51b0c036c9972644b60abeaba8e526b6694fc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\surface.js",
+        "sha256": "694a05d2a95b8c3c0ce4e16264edcaec6263db576e8b880eea28758463b20cfb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\table-hand-clearance.js",
+        "sha256": "b2a682681cba51c8a0746b84422ad59e526b2de7f49d64f1fd7dd8fd254ca265"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-graphic-hair.js",
+        "sha256": "8c792fc07e82e744b8a67e3a269afbe894057f9cb85f8ba040a7ab2a03abbda1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\characters.js",
+        "sha256": "ce10e0a5e3f3f230991e318ec118572944b6e164501ee25f15bb6d5b10dcab1f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_details.js",
+        "sha256": "0c7196c4781809d4c68fb1f4bf12a085011ef21f557ed4f9a7d6099deb14e3f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_finish.js",
+        "sha256": "9418513953a12fd36466f217ec1148ca7bdb4dfb75ae1bdb1baa67dadb17b4b1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_look.js",
+        "sha256": "4d078b05c8f98729f293ae701c03a32bea1dbeafd2234f603f7dee48666d7d83"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-graphic-hair.js",
+        "sha256": "211db2c78f1db382896929821e2124499cbae769df4ad82f1ced654a058ce122"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\QianTangKuiCraft.js",
+        "sha256": "9093163ed72dae120b9b3fe671cc233df4238f99b44d21d6af39c1abc21d0e4a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js",
+        "sha256": "14f891e39648ffbc27ef09024b9fb828384bfde266f13d65269fb44241873868"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-look.js",
+        "sha256": "6c818ca069e081bc7910b243fd3da5d7d2b1fa61a35fdfbdd2e4727b1defa53a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-engine\\lib\\MeshCollision.js",
+        "sha256": "b7d4c97d4a19d5e20df3846c3052458d2efb8eb5d126e2db143dc3acabcbe7a9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-engine\\lib\\NumericAudit.js",
+        "sha256": "8851381d4d542911162afd595152c96b7b15a3d5223ba95ea43c89274298330c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\known_text_alignment.py",
+        "sha256": "98dae18b3694d2ce1f031af35d5036fe7005d7c3b8630038cd19384647d0bbe7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\viseme_core.py",
+        "sha256": "dbbf90dce208c85eb9b7cce9b258478aaa7bfda368eeebcfc09cdc0cd90547c1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\contact_probe.py",
+        "sha256": "242bd65e748b2797aaa026813769d53da0e1a9919b35caf088b7766e676d2807"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\surface_audit.py",
+        "sha256": "8e47c88d209b1373d7ccf6ac1f596b1b5f596b9f7f8927e99aa6d65d634de86e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\bounded_staging_audit.py",
+        "sha256": "060b1ad0001ef0b5b895435a718461ae93002942c18672999fafbb59799bf9d2"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\voice_features.json",
+        "sha256": "d126bc73feffca41b4a37398e443b5cab56c10d6b74c93d2d1ff8848fb107e03"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\mixed.wav",
+        "sha256": "54ef95a7828fdc1b6126b1602baea6a1e5335c0e3fb20ff4e1daff7c4e5150e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_h31_lod160k_v2.glb",
+        "sha256": "404fe816e8b555b487f8879a31d8c8401a6c6e73c6f2adf65978a3db18491011"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_aoi_trial\\aoi_h31_lod160k_v2.glb",
+        "sha256": "3ad5d4099d4a0c126a3aed76eb3530309dd942a37de148006683020d233b10bd"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\drawn-face-reference.png",
+        "sha256": "aec1e146d8d4f9f95b9dc10930b7d9336ac7c79cf8e9fa3cbe279ae0dfb4747c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_text_rub_v1.glb",
+        "sha256": "6357cec5d7ffa5d0cb62f4a56548f48799f44c599abea74483649010ec36f8f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.js",
+        "sha256": "455154e43e7ae578aaa9778811703c14b49c3744987321cdeea5e545b82ecb8d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.html",
+        "sha256": "2266741c33c368601cd9b5b5db3abafca9f237e29b016885cddd58caac17ff03"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\review_drawn_characters.mjs",
+        "sha256": "92d229122ac3b628ba814f8a70850c1c02b56827a100e050df0518c82c021058"
+      }
+    ]
+  },
+  "errors": [],
+  "actors": {
+    "aoi": {
+      "neutral": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "96a83786e1228239a54dd97c15e217394f2b4a0f882c1c78639637f4ba37744d",
+        "seekEqual": true
+      },
+      "listen": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0.25,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            -0.8,
+            0.1
+          ]
+        },
+        "sha256": "13b39f9afd54d64de201df6985c5adda47772202cd62c52cd4b27c425d81e99a",
+        "seekEqual": true
+      },
+      "concern": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0.8,
+          "focus": 0,
+          "gaze": [
+            0.7,
+            -0.2
+          ]
+        },
+        "sha256": "1ab990f1a5865b2ab3d404a94913119e0ae9284aa749caf8f98b660b813d3c07",
+        "seekEqual": true
+      },
+      "firm": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0.9,
+          "gaze": [
+            -0.6,
+            0
+          ]
+        },
+        "sha256": "76e43d98d8a34e25b82a0b39e8b50d63a6422e2ce16201f55480ed95aa1434f1",
+        "seekEqual": true
+      },
+      "talk": {
+        "state": {
+          "blink": 0,
+          "jaw": 0.65,
+          "width": 1,
+          "smile": 0.5,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            -0.6,
+            0
+          ]
+        },
+        "sha256": "a4927ff6429abc7b2347c873d76b0a5990a34816256bd8d7130b072c8ef4e738",
+        "seekEqual": true
+      },
+      "half_blink": {
+        "state": {
+          "blink": 0.5,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "d470a9acfffd1d69e15d1e6a3da78c78269e43be02b8c97c112eac9e20c25d81",
+        "seekEqual": true
+      },
+      "closed": {
+        "state": {
+          "blink": 1,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "6620dd479f7540273f71092b607bfb7ae3b236381abfea01dbbdfff2b7408a5c",
+        "seekEqual": true
+      },
+      "left": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "299551f3fd1dafe87ef47ac2669e699cd337743479861af355aafebc421fd32f",
+        "seekEqual": true
+      },
+      "right": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "93a50429645032b0595deb55a92241283dd04f93cfe1bf178dbd6833664d8f3d",
+        "seekEqual": true
+      },
+      "profile": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "e65e3ad659f31ef9d9c18222b5aa8e0043e22c4767d5f2d5a4ef3c8ae1867f2b",
+        "seekEqual": true
+      },
+      "profile_left": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "bd97ebfb0a825fcae73a6f49840625df8762c53cb257ed52047eb8a69bdba18e",
+        "seekEqual": true
+      },
+      "back_right": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "e2680e3efb66eaf897d2dda4db431f04168aa339d38578703be103457e3aac1e",
+        "seekEqual": true
+      },
+      "back": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "529aa7d1a9a7e94ea2712b1f1e7c4aa7b59a3841a090c1b3c45101474a2cc87f",
+        "seekEqual": true
+      },
+      "down": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "bc92335c80ee299285d6f311e7a23becca44630bfcac79b2be01076e0c7ef20a",
+        "seekEqual": true
+      },
+      "up": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "cb2be654e73f5cd1736422e18c11d7b1bf15c43a644a29b9f4d1aaaefa6bf0ba",
+        "seekEqual": true
+      }
+    },
+    "lei": {
+      "neutral": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "183bd2bb87923a9359413bc2f96c662c5402d0f05733786e83c5474704438750",
+        "seekEqual": true
+      },
+      "listen": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0.25,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            -0.8,
+            0.1
+          ]
+        },
+        "sha256": "e386624015b6fafafdf852bda709ac73b26a3c06f42c930370a36147c48362aa",
+        "seekEqual": true
+      },
+      "concern": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0.8,
+          "focus": 0,
+          "gaze": [
+            0.7,
+            -0.2
+          ]
+        },
+        "sha256": "d0f1051f80e28b7f09a43e1ee2d886e4b0c3ebc92ea9004ee5a6b1c7f049a24b",
+        "seekEqual": true
+      },
+      "firm": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0.9,
+          "gaze": [
+            -0.6,
+            0
+          ]
+        },
+        "sha256": "88e0d4241dc29a35a6f8083da6d699499ec21fa89a7ca7af38b8242d8c107c94",
+        "seekEqual": true
+      },
+      "talk": {
+        "state": {
+          "blink": 0,
+          "jaw": 0.65,
+          "width": 1,
+          "smile": 0.5,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            -0.6,
+            0
+          ]
+        },
+        "sha256": "8c6c8be3fa94a28a13c52d7d930e81c4d4916ff21239d7fb39d9487feb03c721",
+        "seekEqual": true
+      },
+      "half_blink": {
+        "state": {
+          "blink": 0.5,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "9faae4df8a1519ffbe7dc5113711eda9a793ad1cfcd65c1e9129d78c2bb3b7bd",
+        "seekEqual": true
+      },
+      "closed": {
+        "state": {
+          "blink": 1,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "817eb3b3395f492d22bab0e610ae5dff5632cff96e371a324160c4f3f09ebdab",
+        "seekEqual": true
+      },
+      "left": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "d6366278dde9de6c9f200498702d0cc7a790de49fa34b9654890aab0406e7af0",
+        "seekEqual": true
+      },
+      "right": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "83ffab0f18dbd71c6504642f4a3c000ddd0edc918db2dabf7b8c66f2f48c7e73",
+        "seekEqual": true
+      },
+      "profile": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "b72d010e3ed1f196f7e275b246a03daee5f1c25fd598008ce5bf70c13119541d",
+        "seekEqual": true
+      },
+      "profile_left": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "8687479ec7c49ac18d7a04800e9333364439828ea7c34a16068d0fa7835d16e7",
+        "seekEqual": true
+      },
+      "back_right": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "2d65e823286ee75856959204421c37d69723be570b3c61acf384e0f8a9bcdca6",
+        "seekEqual": true
+      },
+      "back": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "9cae7a7ebc4bbc9f54fa2cd38a780cf3aab931d4efb0c59e68b444287d681505",
+        "seekEqual": true
+      },
+      "down": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "f2112c8412c238dcaa3e2e54c228d224ab51d986d68e13b9e7ec0ec4b17c9c15",
+        "seekEqual": true
+      },
+      "up": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "e1cc46e1615642e94ede03e07b9bab0ce30b367004f613dff7944f551d8a9e03",
+        "seekEqual": true
+      }
+    }
+  },
+  "scene": {
+    "modes": {
+      "lei": "anime",
+      "aoi": "anime"
+    },
+    "frames": {
+      "25": {
+        "sha256": "40090bc63d3a500aaa660785e306912e13bf6887b656a35dc800c137e616beb6",
+        "stateSha256": "acc4b768d3fc79145c4d5dd12e37701baef08db4185047f693aabf0c518cac6f",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "12.8": {
+        "sha256": "d8e59b6637c727ebf49ac640923ac777c1b743463bd5ba682ad5a9d69b4a5ba8",
+        "stateSha256": "c49156f4ab065431c2ae3aa45f6a0b88fd8437a568ce8ba7f05d3ac2820d5f92",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "16.2": {
+        "sha256": "edad82c4a663e06b1c9f31bc438824fb416643727b71a7618e7966949f370475",
+        "stateSha256": "d4e5a4ce7aa98504cf5328db4a824bd70d5d80d2e63895d9a502fae2615107ba",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "41.3": {
+        "sha256": "7e659aafefc72976acd3d57bac7159f3c659b6c6eb945a10dbd521c0fba6cd3e",
+        "stateSha256": "b7a25780b7394f5dae0eba7764ef76c6be9aeeae94937b019f5838ce36f39c76",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "65.4": {
+        "sha256": "19df77cda21d710535ba6d19ac59db63cb54fef4bd9b754069cf64b955afe464",
+        "stateSha256": "13ea81ab8c8b4998c284b829b859aca379ba7b2a3ab08588f27e6187d68716e5",
+        "seekEqual": true,
+        "stateEqual": true
+      }
+    }
+  }
+}

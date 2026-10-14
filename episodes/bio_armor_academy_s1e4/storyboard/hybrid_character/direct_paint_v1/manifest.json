@@ -1,0 +1,127 @@
+{
+  "status": "working_direct_texture_trial_not_final_art_approval",
+  "provider": "built-in image_gen",
+  "master": {
+    "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/face_design_v1/face_target.png",
+    "role": "user-approved identity and drawing target",
+    "sha256": "aec1e146d8d4f9f95b9dc10930b7d9336ac7c79cf8e9fa3cbe279ae0dfb4747c",
+    "size": [
+      1672,
+      941
+    ],
+    "mode": "RGB"
+  },
+  "assets": [
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/aoi_production_front.png",
+      "role": "generated frontal production master; not a simplified redraw",
+      "sha256": "011e417ffced0ec0950257c4730a54893ac63de176f9620dbea320287359e27b",
+      "parent": "approved master",
+      "generated_file": "exec-0fc6ab01-386e-4010-b9b8-52e4f62a9547.png",
+      "size": [
+        1331,
+        1181
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/textures/aoi-painted-face-v1.png",
+      "role": "runtime curved-face base colour",
+      "sha256": "fb7f8d5062a27bccc5b68b6e9279226fcd3cf61d8cad441c0bedab6cc4b50e08",
+      "parent": "aoi_production_front.png",
+      "generated_file": "exec-42bd8a0e-0935-47a7-a685-ce753284aa94.png",
+      "size": [
+        1331,
+        1181
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/textures/aoi-painted-hair-v1.png",
+      "role": "runtime front hair curved shell colour and alpha",
+      "sha256": "3fed7263f55ceaac22dbebd543d8266edeaa52cac0ceb975b1083abbde40b04c",
+      "parent": "aoi_production_front.png",
+      "generated_file": "exec-f90117b0-2f71-48dc-b835-407878c7ff67.png",
+      "size": [
+        1331,
+        1181
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/textures/aoi-painted-back-v1.png",
+      "role": "runtime posterior hair colour",
+      "sha256": "aa9991f581823d951bf2e3907d11558198856daab05449184cff6182c8c3bb94",
+      "parent": "aoi_production_front.png",
+      "generated_file": "exec-be93949b-7178-4312-a6f4-796ecec2a176.png",
+      "size": [
+        1331,
+        1181
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "prompts": [
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/production_prompt.txt",
+      "role": "actual generation prompt",
+      "sha256": "42d449535b5f16ee0689d700941e934ec5677083488edd172a1e21438fb64453"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/layer_prompts.txt",
+      "role": "actual generation prompt",
+      "sha256": "64ce06bd4cfd8aad0943f8153bdac35fbf078919ce70806cae99acb4cdde3421"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/back_prompt.txt",
+      "role": "actual generation prompt",
+      "sha256": "c66d537beeea29a65a87169e02ba4d8920912b6f131abac3e2a7433787c94b23"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/comparison.jpg",
+      "role": "review evidence",
+      "sha256": "d58470033b6495ccc0003b1991895d7110b57f3b356cb02a05be654104c76eae"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/aoi_views.jpg",
+      "role": "review evidence",
+      "sha256": "42909f04b3ab94973469ed33d4adc79c9f634652f8a4c33a63d4efb72ad6c6d9"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/expressions.jpg",
+      "role": "review evidence",
+      "sha256": "cf859ad7bb86f7734b3dfbb501e91a2e5b2bcf6c59cf5a4cfd598a5b4e684fc8"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/decoded_clip.jpg",
+      "role": "review evidence",
+      "sha256": "87c63c9f1e54df506598e286c1460e5b6ddf3d0f2835e23777392149fbafa496"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/render_final/report.json",
+      "role": "review evidence",
+      "sha256": "31e0b9f1a3f3414217f794165eabaf8cd3c760eb46451445da6be257269cbed0"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/direct_paint_v1/video/render_build.json",
+      "role": "review evidence",
+      "sha256": "1d21a3162043a05e9f4d690bdd9a0b2b82799defd8f274e5147607688d5f93b0"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/output/direct_paint_aoi_v1.mp4",
+      "role": "3.6s original dialogue close-up",
+      "sha256": "f49659c65262a5447ea27d5bc6a767215ecd09f2502a85f1b3e8ed9e74529252"
+    }
+  ],
+  "known_limits": [
+    "Generated extraction requested pixel locking but changed feature positions; front layers need separate alignment.",
+    "No assistant-redrawn intermediate design. The optional nine-view reference is not a runtime texture.",
+    "Original master is three-quarter, production master is frontal: the illustration comparison is not same-camera.",
+    "Front drawing detail is retained; profile shells, crown joins and posterior mapping are not production approved.",
+    "Hair follows the head rigidly; independent tail lag is not yet implemented in this trial.",
+    "Tripo collar segmentation and wrist/contact problems are outside this face/hair trial.",
+    "Video inspected through decoded frames, not a claimed full real-time perceptual review."
+  ]
+}

@@ -48,7 +48,7 @@ if(!serve){
     page.on('console',m=>{if(m.type()==='error')console.error(m.text());});
     page.on('response',r=>{if(r.status()>=400)console.error(`HTTP ${r.status()} ${r.url()}`);});
     await page.setViewport({width:1280,height:720,deviceScaleFactor:1});
-    await page.goto(url+'?capture=1'+extraQuery,{waitUntil:'networkidle0'});
+    await page.goto(url+'?capture=1'+extraQuery,{waitUntil:'networkidle0',timeout:120000});
     await page.waitForFunction('window.ready===true',{timeout:120000});
     if(cameraArg){
       const n=cameraArg.split(',').map(Number);
@@ -69,7 +69,7 @@ if(!serve){
     const {createHash}=await import('node:crypto');
     const build=auditInputs(here);
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
-      args,output,
+      args,output,build,
       sourceSha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(here,p))).digest('hex')]))
     },null,2));
     let checks=await page.evaluate(()=>window.checkTimes);

@@ -1,0 +1,36 @@
+﻿{
+    "status":  "construction_reference_candidate_not_runtime_approval",
+    "provider":  "built-in image_gen",
+    "input":  "../face_design_v1/face_target.png",
+    "inputRole":  "user-approved identity and 2D style",
+    "promptFile":  "prompts.txt",
+    "layout":  [
+                   "left_profile",
+                   "left_threequarter",
+                   "front",
+                   "right_threequarter",
+                   "right_profile",
+                   "rear_threequarter",
+                   "above_front",
+                   "below_front",
+                   "back"
+               ],
+    "outputs":  [
+                    {
+                        "sha256":  "3bb5f43c489448ca9c265f6a01d861cb3ca1e0f81345ba43c1fb2c63fff80617",
+                        "file":  "aoi_nine_views.png"
+                    },
+                    {
+                        "sha256":  "96c49120c7f2f9dcb0fd9193d4a2056bbe97c38caf263649e82c6086af044f71",
+                        "file":  "lei_nine_views.png"
+                    }
+                ],
+    "reviewed":  [
+                     "same costume and hair palette",
+                     "profile forehead-nose-lips-chin rhythm",
+                     "anatomical side of ponytail and ornament",
+                     "generated views are qualitative and not metrically exact orthographic drawings"
+                 ],
+    "runtime":  "../../../viewer.html?cel=anime",
+    "limitations":  "Reference hair detail and subtle face shading exceed the current procedural model."
+}

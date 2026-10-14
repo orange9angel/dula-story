@@ -10,11 +10,14 @@ import {applyImportedCelLook} from 'dula-assets/lib/craft3d/imported-cel-look.js
 import {addAoiGraphicHair} from 'dula-assets/characters/bioarmor/aoi-graphic-hair.js';
 import {applyTripoDrawnLook} from 'dula-assets/characters/bioarmor/tripo-drawn-look.js';
 import {addLeiGraphicHair} from 'dula-assets/characters/bioarmor/lei-graphic-hair.js';
+import {addAoiGeneratedHair} from 'dula-assets/characters/bioarmor/aoi-generated-paint.js';
 import {BiologyRoomScene} from './scenes/BiologyRoomRemakeScene.js';
 import {posesAt} from './performance_remake.js';
 import {preparePerformer,applyTripoPose,settleImportedWrists} from './performance_tripo.js';
 import {createImportedProbe} from './tools/imported_probe.js';
 const W=1280,H=720,q=new URLSearchParams(location.search),numeric=q.has('probe-surface'),resolution=q.has('hd')?1.5:1;
+if(!q.has('cel'))q.set('cel','anime');
+const drawnMode=['anime','direct'].includes(q.get('cel'));
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
 let voice=null;try{const r=await fetch('./config/voice_features.json');if(r.ok)voice=await r.json();}catch{}
 const lips={};
@@ -41,16 +44,18 @@ for(const key of ['lei','aoi']){
   const a=await ImportedPerformer.load(`./assets3d/tripo_${key}_trial/${key}_h31_lod160k_v2.glb`,TRIPO_LOOK[key].height);
   if(key==='aoi')a.garmentRepair=a.restrictInfluences({min:[-.30,.53,-.22],max:[.30,.99,.23],maxAlbedoLuma:.42,allow:n=>n==='hips'||/leg|foot|toe/.test(n)});
   preparePerformer(a,key);a.correctWrists=q.has('wristfix');
-  if(q.get('cel')!=='anime')a.face=createProjectedFace(a,renderer,TRIPO_LOOK[key]);scene.add(a.mesh);actors[key]=a;
-  if(q.has('cel')&&(key==='aoi'||q.get('cel')==='anime'))a.celLook=applyImportedCelLook(a,{mode:['graphic','anime'].includes(q.get('cel'))?'painted':q.get('cel'),face:TRIPO_LOOK[key],hairMinY:key==='aoi'?1.10:1.56,headMinY:key==='aoi'?1.42:1.57,
+  if(!drawnMode)a.face=createProjectedFace(a,renderer,TRIPO_LOOK[key]);scene.add(a.mesh);actors[key]=a;
+  if(q.get('cel')!=='original'&&(key==='aoi'||drawnMode))a.celLook=applyImportedCelLook(a,{mode:drawnMode||q.get('cel')==='graphic'?'painted':q.get('cel'),face:TRIPO_LOOK[key],hairMinY:key==='aoi'?1.10:1.56,headMinY:key==='aoi'?1.42:1.57,
     palette:{hair:key==='aoi'?'#244444':'#54382d',hairLight:key==='aoi'?'#628680':'#9b6f4d',skin:'#eec9a9'}});
   if(q.get('cel')==='graphic'&&key==='aoi'){
     a.graphicHair=addAoiGraphicHair(a);a.celLook.geometry='head-weighted hair triangles removed; procedural broad-lock candidate';
     a.celLook.limitations=['hairline fragments','clip missing','secondary motion not connected','not accepted'];
   }
-  if(q.get('cel')==='anime'){
-    const look=applyTripoDrawnLook(a,key);a.face=look.face;a.celLook={mode:'anime',body:look.body,face:'authored curved head and live drawing'};
-    if(key==='aoi')a.graphicHair=addAoiGraphicHair(a,{refined:true});
+  if(drawnMode){
+    const directPaint=q.get('cel')==='direct'&&key==='aoi';
+    const look=applyTripoDrawnLook(a,key,{directPaint});a.face=look.face;await a.face.ready;a.celLook={mode:directPaint?'direct':'anime',body:look.body,face:directPaint?'generated face paint and curved textured hair shells':'approved design proportions, painted irises and live face drawing'};
+    if(directPaint)a.graphicHair=await addAoiGeneratedHair(a);
+    else if(key==='aoi')a.graphicHair=addAoiGraphicHair(a,{refined:true});
     else a.graphicHair=addLeiGraphicHair(a);
   }
 }
@@ -60,7 +65,7 @@ ctx.scale(resolution,resolution);
 const applyMark=addForearmMark(actors.lei,'left');
 const rubMotion=await RetargetedMotion.load(actors.lei,'./assets3d/tripo_lei_trial/lei_text_rub_v1.glb');
 const clearLeiHands=createTableHandClearance(actors.lei,stage.table);
-const aoiHair=q.get('cel')==='anime'?{selectedVertices:0,maxDisplacement:0,apply:(yaw,pitch)=>({yaw,pitch})}:addSecondaryHair(actors.aoi);
+const aoiHair=drawnMode?{selectedVertices:0,maxDisplacement:0,apply:(yaw,pitch)=>({yaw,pitch})}:addSecondaryHair(actors.aoi);
 const importedProbe=numeric?createImportedProbe(actors,stage):null;
 function speech(t,key){
   const id=key==='lei'?'LeiXiao':'QianTangKui';if(!voice)return 0;

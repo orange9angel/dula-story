@@ -164,7 +164,58 @@ python tools/build_drawn_review.py --source storyboard/hybrid_character/anime_v3
 参考，以现有两人截图保留发色、侧马尾/短发、叶形发饰和服装。实际提示词与
 输入角色分别记录于 `prompt.txt`、`manifest.json`。已检查五官线条、虹膜层次、
 嘴形、脸部比例和发束流向；男主最顶发梢触及画框。此图是单张二维造型候选，
-用户尚未确认最终人设，不是现有 3D 模型渲染，也不是已经拆层的动态脸贴图。
+当时尚未确认；用户随后以“这个可以，用这个改吧”确认其美术方向，状态已更新到
+manifest。它不是现有 3D 模型渲染，也不是已经拆层的动态脸贴图。
 
 后续接入应从正面与转面设计、眉眼/虹膜/口型拆层及头部轮廓开始；不要把含刘海、
-三分之四透视与固定表情的整张插画直接包到头上。当前 `cel=anime` 仍为 V3。
+三分之四透视与固定表情的整张插画直接包到头上。该次记录时 `cel=anime` 为 V3。
+
+## 2026-10-14 V4–V5 与生成绘画直接接入试验
+
+用户进一步指出内眼角不应收尖、侧额头后缩、下巴缺失，并提醒补下巴也不能前顶。
+V4–V5 调整了眼白轮廓、眼睑、额头/鼻/下颌剖面、发束流向和配件贴合；服装暖白
+区域的肤色误判有所减少。`anime_v5/report.json` 记录当时 30 个头部/表情状态、
+5 个场景时刻逆序一致。默认 `cel=anime` 为此路线，仍不是用户已认可的成片人物。
+接入直接纹理分支后又用当前源码复查，`anime_v5_current/report.json` 的 30 个
+头部/表情状态和 5 个默认场景时刻同样通过。
+
+随后按用户要求尝试省掉“照原图重画一张简化参考”的步骤。`cel=direct` 为葵启用
+实际生成的脸面和前后头发生产纹理：脸图映射到有额鼻唇颌起伏的头部，发图映射
+到有厚度的曲面并配后脑壳，均随头骨转动。雷晓仍沿用 V5。没有把完整头像卡片
+固定朝向相机，也没有把九宫格参考冒充最终角色；九宫格仅作为可选结构资料保存。
+
+直接试验的正面眼线、虹膜、发丝比程序重画更接近生成图。生产图本身也有脸型/
+年龄感漂移，拆层生成没有完全保持像素位置，脸和头发分别做了对齐。这意味着
+“原画 → 生产图”和“生产图 → 模型”两段都要比较，不能声称完全还原了原画。
+
+实际复查看到并修正了耳纹拉到太阳穴、发帽内侧黑板、部分横向拉伸和粗边墙。
+**正侧面仍有发层薄壳、顶部接缝，后发的纹理与束体也不完全对应。** 颈领分区
+仍有碎边，马尾暂随头部刚性运动；腕部扭曲和握物接触不属于本次改善的验收范围。
+当前结论是可运行的直接绘画试验，不能称为全角度成熟角色能力。
+
+本次证据在 `direct_paint_v1/`：
+
+- `comparison.jpg`：已确认原图、实际生产图、V5 与直接纹理模型。原画为斜角，
+  生产图为正面；两版模型是同机位对照。
+- `aoi_views.jpg`、`expressions.jpg`：真实模型的转面、俯仰、眨眼与口型，包含缺陷。
+- `render_final/report.json`：15 个脸部状态、5 个场景时刻逆序一致，无浏览器/
+  着色器错误。它验证接入与确定性，不验证审美通过。
+- `output/direct_paint_aoi_v1.mp4`（相对单集根）：原 11.5–15.1 秒对白近景，
+  3.6 秒、108 帧、1280×720、30fps，含原混音截段。`decoded_clip.jpg` 为解码帧；
+  `video_probe.json` 和 `video/render_build.json` 保存流信息与构建输入。已检查抽帧，
+  未声明正常速度完整主观审片。
+- `manifest.json`、三个 prompt 文件：真实生成输入输出关系、纹理和证据哈希、
+  已知缺陷；实际纹理归 `dula-assets/characters/bioarmor/textures/`。
+
+复现（单集目录，静态审查先启动 `node render.mjs --serve`）：
+
+```powershell
+node tools/review_drawn_characters.mjs --mode direct --actors aoi --out storyboard/hybrid_character/direct_paint_v1/render_final
+node render.mjs --range 11.5,15.1 --camera '0.60,1.48,1.35,0.60,1.46,0,35' --q '&cel=direct' --out direct_paint_aoi_v1.mp4 --board storyboard/hybrid_character/direct_paint_v1/video
+python tools/build_direct_paint_review.py
+```
+
+用户强调 skill 应积累审美判断。本次写回现有 `character-modeler`：
+`character-aesthetics.md` 记录“为什么好看、差在哪、何时改过头”，
+`generated-character-paint.md` 记录直接绘画方法、验证范围及失败机制。
+判断先于参数，用户认可原画与认可最终模型分别登记。
