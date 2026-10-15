@@ -1,0 +1,619 @@
+{
+  "change": "eyeSurface.recess: .014 -> 0, slope .36 unchanged; shared character source updated",
+  "before_snapshot_sha256": "0951fa09be92cd08d06ebd5c8f8d4bf5f3bfed0b2434613eaed438123e661801",
+  "after_snapshot_sha256": "16b16a73f69f44b6f004838e8245e3c7742ed60008e1b886bcbc4f9b50c97577",
+  "assertions": {
+    "front_pixels_equal": true,
+    "applied_matches_trial_all_16_frames": true,
+    "previous_comparison_reproduced": true,
+    "body_yaw_matches_head": true,
+    "finite_error_free_deterministic": true,
+    "source_snapshot_matches_live": true
+  },
+  "previous_angle_audit": {
+    "turn_45": {
+      "actual_head_yaw": 44.999997845554894,
+      "actual_body_yaw": 0,
+      "matches_previous_image": true
+    },
+    "turn_60": {
+      "actual_head_yaw": 59.99999832675356,
+      "actual_body_yaw": 0,
+      "matches_previous_image": true
+    },
+    "turn_minus45": {
+      "actual_head_yaw": -44.99999940959072,
+      "actual_body_yaw": 0,
+      "matches_previous_image": true
+    },
+    "turn_minus60": {
+      "actual_head_yaw": -59.99999988461731,
+      "actual_body_yaw": 0,
+      "matches_previous_image": true
+    }
+  },
+  "eye_depth_samples": {
+    "turn_45": {
+      "baseline": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.0699576834637835
+          ],
+          "centrePixel": [
+            481.73424108357494,
+            428.3333346772566
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06984859232303905
+          ],
+          "centrePixel": [
+            583.3861970183453,
+            428.33333784512297
+          ]
+        }
+      },
+      "depth_only": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08395768207948094
+          ],
+          "centrePixel": [
+            498.23339737323874,
+            428.33333521267275
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08384859089759802
+          ],
+          "centrePixel": [
+            599.8853532595272,
+            428.33333838053915
+          ]
+        }
+      },
+      "slope_only": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.06995040839816033
+          ],
+          "centrePixel": [
+            481.72566733667475,
+            428.3333346769783
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06976858981654009
+          ],
+          "centrePixel": [
+            583.291913162002,
+            428.33333784206354
+          ]
+        }
+      },
+      "orbit_01": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08195040877301563
+          ],
+          "centrePixel": [
+            495.86780313937163,
+            428.3333351359064
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08176859099099949
+          ],
+          "centrePixel": [
+            597.4340499070413,
+            428.33333830099167
+          ]
+        }
+      },
+      "natural_curve": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08393491191117713
+          ],
+          "centrePixel": [
+            498.2065624730435,
+            428.333335211802
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08371894558307176
+          ],
+          "centrePixel": [
+            599.7325647939488,
+            428.33333837558087
+          ]
+        }
+      }
+    },
+    "turn_60": {
+      "baseline": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.0699576834637835
+          ],
+          "centrePixel": [
+            515.1166313595676,
+            428.3333346772544
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06984859232303905
+          ],
+          "centrePixel": [
+            586.9288685250276,
+            428.3333378451244
+          ]
+        }
+      },
+      "depth_only": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08395768207948094
+          ],
+          "centrePixel": [
+            535.32388852511,
+            428.3333352126706
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08384859089759802
+          ],
+          "centrePixel": [
+            607.1361256311919,
+            428.33333838054057
+          ]
+        }
+      },
+      "slope_only": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.06995040839816033
+          ],
+          "centrePixel": [
+            515.1061307069618,
+            428.3333346769761
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06976858981654009
+          ],
+          "centrePixel": [
+            586.8133948548447,
+            428.333337842065
+          ]
+        }
+      },
+      "orbit_01": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08195040877301563
+          ],
+          "centrePixel": [
+            532.4266391025426,
+            428.3333351359042
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08176859099099949
+          ],
+          "centrePixel": [
+            604.1339044045545,
+            428.3333383009931
+          ]
+        }
+      },
+      "natural_curve": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08393491191117713
+          ],
+          "centrePixel": [
+            535.2910226185304,
+            428.33333521179975
+          ]
+        },
+        "right": {
+          "visibleSamples": 3,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08371894558307176
+          ],
+          "centrePixel": [
+            606.9489987404789,
+            428.3333383755827
+          ]
+        }
+      }
+    },
+    "turn_90": {
+      "baseline": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.0699576834637835
+          ],
+          "centrePixel": [
+            566.5960992114502,
+            428.3333346772522
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06984859232303905
+          ],
+          "centrePixel": [
+            566.4142806922858,
+            428.33333784512854
+          ]
+        }
+      },
+      "depth_only": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08395768207948094
+          ],
+          "centrePixel": [
+            589.9294301249898,
+            428.3333352126687
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08384859089759802
+          ],
+          "centrePixel": [
+            589.7476115372615,
+            428.33333838054466
+          ]
+        }
+      },
+      "slope_only": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.06995040839816033
+          ],
+          "centrePixel": [
+            566.5839741021367,
+            428.3333346769739
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06976858981654009
+          ],
+          "centrePixel": [
+            566.2809431820978,
+            428.3333378420688
+          ]
+        }
+      },
+      "orbit_01": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08195040877301563
+          ],
+          "centrePixel": [
+            586.5839746303618,
+            428.3333351359023
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08176859099099949
+          ],
+          "centrePixel": [
+            586.2809450429963,
+            428.3333383009972
+          ]
+        }
+      },
+      "natural_curve": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08393491191117713
+          ],
+          "centrePixel": [
+            589.8914798446667,
+            428.3333352117976
+          ]
+        },
+        "right": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08371894558307176
+          ],
+          "centrePixel": [
+            589.531536014094,
+            428.3333383755864
+          ]
+        }
+      }
+    },
+    "turn_minus60": {
+      "baseline": {
+        "left": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.0699576834637835
+          ],
+          "centrePixel": [
+            313.1662635609999,
+            428.3333346772492
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06984859232303905
+          ],
+          "centrePixel": [
+            385.29341963940954,
+            428.3333378451311
+          ]
+        }
+      },
+      "depth_only": {
+        "left": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08395768207948094
+          ],
+          "centrePixel": [
+            292.9590060744748,
+            428.33333521266536
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08384859089759802
+          ],
+          "centrePixel": [
+            365.08616221226276,
+            428.3333383805476
+          ]
+        }
+      },
+      "slope_only": {
+        "left": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.06995040839816033
+          ],
+          "centrePixel": [
+            313.1767642137724,
+            428.33333467697094
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.06976858981654009
+          ],
+          "centrePixel": [
+            385.4088933114268,
+            428.33333784207133
+          ]
+        }
+      },
+      "orbit_01": {
+        "left": {
+          "visibleSamples": 0,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08195040877301563
+          ],
+          "centrePixel": [
+            295.8562555430636,
+            428.33333513589935
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08176859099099949
+          ],
+          "centrePixel": [
+            368.08838348658895,
+            428.33333830099974
+          ]
+        }
+      },
+      "natural_curve": {
+        "left": {
+          "visibleSamples": 4,
+          "totalSamples": 25,
+          "centreLocal": [
+            -0.04303030303030303,
+            1.473,
+            0.08393491191117713
+          ],
+          "centrePixel": [
+            292.9918719815764,
+            428.33333521179463
+          ]
+        },
+        "right": {
+          "visibleSamples": 25,
+          "totalSamples": 25,
+          "centreLocal": [
+            0.043333333333333335,
+            1.473,
+            0.08371894558307176
+          ],
+          "centrePixel": [
+            365.273289105948,
+            428.3333383755894
+          ]
+        }
+      }
+    }
+  },
+  "sampling_limit": "Face-only depth test on 25 iris-region points. Not visible pixel area; excludes hair alpha and eyelid painting.",
+  "whole_frame_review": {
+    "bangs_crown": "unchanged; raised thick front lock remains",
+    "rear_scalp_ears": "unchanged; stretched texture and exposed triangular side region remain",
+    "ponytail": "unchanged; strong left/right visibility difference and tubular tips remain",
+    "nose_mouth_chin": "unchanged; earlier nose-underlip fitting was not applied to shared source",
+    "eyes_ornament": "eye region moved forward; far iris visible at 60, face-only near samples remain visible at 90; frontal pixels unchanged",
+    "neck_collar": "body turn now matches head; jagged collar/color borders still visible"
+  },
+  "not_validated": [
+    "continuous animation",
+    "final likeness",
+    "hair repair"
+  ]
+}

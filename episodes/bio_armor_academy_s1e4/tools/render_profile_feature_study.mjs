@@ -13,11 +13,15 @@ const study=path.join(ep,'storyboard/hybrid_character/profile_feature_study_v1')
 const out=arg('--out')?path.resolve(ep,arg('--out')):study;
 const additionalAngles=(arg('--additional-angles')??'').split(',').filter(Boolean).map(Number);
 if(additionalAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Angles must be finite and within [-180,180]');
-const sourcePath=path.resolve(ep,'../../../dula-assets/characters/bioarmor/aoi-generated-paint.js');
+const sourcePath=arg('--source')?path.resolve(ep,arg('--source')):path.resolve(ep,'../../../dula-assets/characters/bioarmor/aoi-generated-paint.js');
 const source=fs.readFileSync(sourcePath,'utf8');
 const configs={baseline:{},eye_relief:{recess:.007}};
 const fit=path.join(study,'fit_candidate.json');
 if(fs.existsSync(fit))configs.contour_fit=JSON.parse(fs.readFileSync(fit,'utf8'));
+if(arg('--experiments'))Object.assign(configs,JSON.parse(fs.readFileSync(path.resolve(ep,arg('--experiments')),'utf8')));
+const turnMode=arg('--turn-mode')??'head';
+if(!['head','body'].includes(turnMode))throw new Error('--turn-mode must be head or body');
+const diagnostics=process.argv.includes('--eye-diagnostics');
 const names=(arg('--variants')??'baseline,eye_relief').split(',');
 const browser=await req('puppeteer').launch({headless:true});
 try{
@@ -26,7 +30,8 @@ try{
     const overrides=configs[name],dest=path.join(out,name);fs.mkdirSync(dest,{recursive:true});
     if(overrides.baseline_source_sha256&&overrides.baseline_source_sha256!==sha(source))throw new Error('Candidate was fitted against a different source revision');
     let text=source;
-    if(overrides.recess!=null)text=text.replace('recess:.014',`recess:${overrides.recess}`);
+    if(overrides.recess!=null)text=text.replace(/(eyeSurface:\{[^}\n]*\brecess:)[^,}]+/,(_,prefix)=>prefix+overrides.recess);
+    if(Object.hasOwn(overrides,'eyeSurface'))text=text.replace(/^    eyeSurface:.*,$/m,`    eyeSurface:${JSON.stringify(overrides.eyeSurface)},`);
     if(overrides.profileContour)text=text.replace(/^    profileContour:\[.*\],$/m,`    profileContour:${JSON.stringify(overrides.profileContour)},`);
     if(name!=='baseline'&&text===source)throw new Error('Experiment override did not apply');
     const page=await browser.newPage(),errors=[];
@@ -45,12 +50,13 @@ try{
     for(const angle of additionalAngles){
       if(!specs.some(s=>s[1]===angle&&!s[2]&&!s[3]))specs.push([`turn_${angle<0?'minus':''}${Math.abs(angle)}`,angle]);
     }
-    const report={variant:name,sourcePath,originalSha256:sha(source),experimentSha256:sha(text),overrides,frames:{},errors};
+    const report={variant:name,turnMode,sourcePath,originalSha256:sha(source),experimentSha256:sha(text),overrides,frames:{},errors};
     async function capture([id,angle,bare=false,state={}]){
-      const result=await page.evaluate(async({angle,bare,state})=>{
+      const result=await page.evaluate(async({angle,bare,state,turnMode,diagnostics})=>{
         const THREE=await import('three');
         actor.mesh.traverse(o=>{if(o.userData.kind==='painted curved hair shell with thickness')o.visible=!bare;});
-        renderAt({...state,turn:angle*Math.PI/180});
+        actor.mesh.rotation.y=turnMode==='body'?angle*Math.PI/180:0;
+        renderAt({...state,turn:turnMode==='head'?angle*Math.PI/180:0});
         const mesh=face.root.children[0],p=mesh.geometry.attributes.position;
         const half=p.count/2,columns=97,rows=half/columns;
         const median=[];
@@ -70,15 +76,45 @@ try{
         const nose=median.filter(v=>v.local[1]>1.43&&v.local[1]<1.46).sort((a,b)=>b.local[2]-a.local[2])[0];
         facePoints.nose=new THREE.Vector3(...nose.local);facePoints.chin=new THREE.Vector3(...median[0].local);
         const projectedFeatures=Object.fromEntries(Object.entries(facePoints).map(([k,v])=>[k,project(v)]));
-        return {png:renderer.domElement.toDataURL('image/png').split(',')[1],median,projectedFeatures,finite:Array.from(p.array).every(Number.isFinite)};
-      },{angle,bare,state});
+        const forward=new THREE.Vector3(0,0,1).transformDirection(mesh.matrixWorld);
+        const bodyForward=new THREE.Vector3(0,0,1).transformDirection(actor.mesh.matrixWorld);
+        const actualYaw=Math.atan2(forward.x,forward.z)*180/Math.PI;
+        const actualBodyYaw=Math.atan2(bodyForward.x,bodyForward.z)*180/Math.PI;
+        let eyeDiagnostics;
+        if(diagnostics){
+          // Horizontal section: the eye plane should join the forehead/temple
+          // without hiding the far iris behind an artificial depression.
+          // This ray test includes the face mesh only, not hair alpha/eyelids.
+          const eyeY=1.473,section=[];
+          for(let c=0;c<columns;c++){
+            let row=0;while(row<rows-2&&p.getY((row+1)*columns)<eyeY)row++;
+            const i=row*columns+c,j=i+columns,t=(eyeY-p.getY(i))/(p.getY(j)-p.getY(i));
+            const v=new THREE.Vector3().fromBufferAttribute(p,i).lerp(new THREE.Vector3().fromBufferAttribute(p,j),t);
+            section.push(v.toArray());
+          }
+          const eyeVisibility={};
+          const ray=new THREE.Raycaster();
+          for(const [id,ex] of [['left',-142/3300],['right',143/3300]]){
+            let visible=0,total=0;const centre=at(ex,eyeY);
+            for(let xi=-2;xi<=2;xi++)for(let yi=-2;yi<=2;yi++){
+              const point=at(ex+xi*.004,eyeY+yi*.005).applyMatrix4(mesh.matrixWorld);
+              const projected=point.clone().project(camera);ray.setFromCamera(new THREE.Vector2(projected.x,projected.y),camera);
+              const hit=ray.intersectObject(mesh,false)[0];total++;
+              if(hit&&hit.point.distanceTo(point)<.0008)visible++;
+            }
+            eyeVisibility[id]={visibleSamples:visible,totalSamples:total,centreLocal:centre.toArray(),centrePixel:project(centre)};
+          }
+          eyeDiagnostics={sectionEyeY:eyeY,section,eyeVisibility,method:'25 small iris-region samples per eye; front face depth only; excludes hair and drawn eyelids'};
+        }
+        return {png:renderer.domElement.toDataURL('image/png').split(',')[1],median,projectedFeatures,actualYaw,actualBodyYaw,eyeDiagnostics,finite:Array.from(p.array).every(Number.isFinite)};
+      },{angle,bare,state,turnMode,diagnostics});
       const buffer=Buffer.from(result.png,'base64');
-      return {buffer,median:result.median,projectedFeatures:result.projectedFeatures,finite:result.finite};
+      return {...result,png:undefined,buffer};
     }
     for(const spec of specs){
       const result=await capture(spec);
       fs.writeFileSync(path.join(dest,spec[0]+'.png'),result.buffer);
-      report.frames[spec[0]]={sha256:sha(result.buffer),angle:spec[1],projectedFeatures:result.projectedFeatures,finite:result.finite};
+      report.frames[spec[0]]={sha256:sha(result.buffer),angle:spec[1],actualYaw:result.actualYaw,actualBodyYaw:result.actualBodyYaw,projectedFeatures:result.projectedFeatures,eyeDiagnostics:result.eyeDiagnostics,finite:result.finite};
       if(spec[0]==='turn_90')report.median90=result.median;
     }
     for(const spec of [specs[3],specs[0]]){

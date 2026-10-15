@@ -452,3 +452,37 @@ python tools/build_oblique_feature_review.py
 通用教训写回 `character-modeler/references/character-aesthetics.md` 的“全图复查”
 章节：先全图、再逐区和连接、最后再全图；每个可见区域必须有观察记录，不能
 依赖用户逐个提醒。
+
+## 2026-10-15：眼周向前恢复，纠正转身对照
+
+用户指出侧面眼眶被压扁、45°/60°远侧眼显露不足，并要求先直接把眼眶拉出来。
+现已将共享 `aoi-generated-paint.js` 中眼周后压由14mm取消，眼面斜率`.36`、
+宽高及正面绘画保持。眼区中心向前恢复14mm，±60°重新看见远侧虹膜；正面
+逐像素相同。这是运行角色的实际修改，旧鼻下剖面拟合没有混入此次修改。
+
+- [右向45°/60°/90°前后对照](eye_orbit_study_v1/before_after_right.jpg)、
+  [左向对照](eye_orbit_study_v1/before_after_left.jpg)：所有图头和身体一起转。
+- [参考与修订全图](eye_orbit_study_v1/reference_and_fix.jpg)：45°目标绘画、旧模型、
+  修订模型并排。新图改善远眼显露，仍有后发、耳后三角区、刘海上拱、鼻下凹口
+  和领口碎片；不能称已经与原画一致。
+- 旧60°截图重新复现且哈希一致，实际头部yaw为59.999998°，身体0°；并非错放
+  90°文件。旧模型远眼被脸面过早遮挡，造成近纯侧观感。之前将独立转头测试
+  配转身人设图是对照方式错误；现分为`--turn-mode head`和`body`，记录两者朝向。
+- 五组控制变量各16帧。只改斜率没有解决，斜率`.60`加减后压也未恢复60°远眼；
+  取消后压、保留`.36`斜率有效。实际源码重拍16帧与采用试验逐帧一致；新旧正面
+  逐像素一致；顶点有限，无浏览器错误，正面及90°逆序一致。没有连续动画验收。
+- 25点面部射线测试记录虹膜附近被脸面遮挡的变化，不包括头发alpha和眼睑，
+  不等同可见像素比例。不能把此前“鼻下外轮廓不变”推广成眼眶没有问题。
+
+数据和源码快照位于`eye_orbit_study_v1/`。历史实验复现时使用快照，避免新源码
+覆盖旧证据；当前运行源码直接渲染采用`--variants baseline`：
+
+```powershell
+node tools/render_profile_feature_study.mjs --source storyboard/hybrid_character/eye_orbit_study_v1/source_before.js --experiments config/eye_orbit_experiments.json --variants baseline,depth_only,slope_only,orbit_01,natural_curve --out storyboard/hybrid_character/eye_orbit_study_v1 --additional-angles 60,-60 --turn-mode body --eye-diagnostics
+node tools/render_profile_feature_study.mjs --variants baseline --out storyboard/hybrid_character/eye_orbit_study_v1/applied_body --additional-angles 60,-60 --turn-mode body --eye-diagnostics
+node tools/render_profile_feature_study.mjs --source storyboard/hybrid_character/eye_orbit_study_v1/source_before.js --variants baseline --out storyboard/hybrid_character/eye_orbit_study_v1/angle_audit --additional-angles 60,-60 --turn-mode head
+node tools/render_profile_feature_study.mjs --variants baseline --out storyboard/hybrid_character/eye_orbit_study_v1/applied_head --additional-angles 60,-60 --turn-mode head
+python tools/build_eye_orbit_review.py
+```
+
+复盘已写回`character-modeler/references/multiview-character-fit.md`。
