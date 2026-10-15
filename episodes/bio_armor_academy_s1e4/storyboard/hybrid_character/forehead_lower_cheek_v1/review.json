@@ -1,0 +1,90 @@
+{
+  "status": "adopted_candidate_pending_user_review",
+  "basis": "User screenshot gNQunh matched flat_under_eye_soft. User selected that face and asked for a little smooth lower cheek, no cheekbone bump.",
+  "selected_reference": "selected_reference/no_hair_60.png",
+  "changes_after_selection": [
+    "Only far lower cheek projection curve at oblique angles.",
+    "No skull, eye-spacing or hair changes after selection."
+  ],
+  "earlier_changes_retained_in_selected_base": [
+    "Eye inset 18, brow inset 30; connected lower ear drawing.",
+    "Rounded cranial width and temple transition."
+  ],
+  "rejected": [
+    "Broad deepFaceSupport expanded eye and forehead into a deformed face. Removed.",
+    "Isolated cheek additions created a separate low bump. Replaced by continuous bounded curve.",
+    "Fringe lifting/offset and independent forehead bulges were not adopted."
+  ],
+  "remaining": [
+    "Far eyebrow more covered than reference.",
+    "Jaw-to-ear and neck shadow still simplified.",
+    "Hair volume and flow, collar boundary differ from reference.",
+    "Posterior peak up and crown down request not adopted: selected head was kept after rejected combined trial."
+  ],
+  "render_report": "final_candidate/baseline/report.json",
+  "comparison": "selected_comparison/01_reference_cheek.jpg",
+  "validation": {
+    "front": {
+      "changed_pixels": 0,
+      "bbox": null
+    },
+    "turn_32.1631935647518": {
+      "changed_pixels": 0,
+      "bbox": null
+    },
+    "turn_45": {
+      "changed_pixels": 1639,
+      "bbox": [
+        589,
+        453,
+        630,
+        540
+      ]
+    },
+    "turn_minus45": {
+      "changed_pixels": 1588,
+      "bbox": [
+        270,
+        453,
+        311,
+        541
+      ]
+    },
+    "turn_60": {
+      "changed_pixels": 505,
+      "bbox": [
+        606,
+        453,
+        626,
+        539
+      ]
+    },
+    "turn_minus60": {
+      "changed_pixels": 506,
+      "bbox": [
+        274,
+        443,
+        294,
+        540
+      ]
+    },
+    "turn_90": {
+      "changed_pixels": 0,
+      "bbox": null
+    },
+    "turn_minus90": {
+      "changed_pixels": 0,
+      "bbox": null
+    },
+    "forehead_and_eyes_60_equal": false,
+    "upper_face_difference_note": "9 pixels in rows 453-455, maximum channel delta 1, at the far lower eyelid; rows 0-452 are identical. Do not call the complete eye crop pixel-identical."
+  },
+  "video": "final_video/turn_video_build.json",
+  "source_sha256": {
+    "characters/bioarmor/aoi-generated-paint.js": "cee7aaddd5eb3f5d053e6ff636e43df811376b660b5397af2d1e354704268db7",
+    "lib/craft3d/drawn-head.js": "5817020e4e0d62e1408a3410f1e9a9c5c3fad943082cf80b39b3711d3bbcfeb8",
+    "lib/craft3d/oblique-face-support.js": "b51162431e95a70c0939db33e33bc9c592d4e99b18ed65e013c1515b8933b65c",
+    "lib/craft3d/drawn-ear.js": "b8de893779d70c02db1c0772451479f916d59189829d39d22c300aedac7bad7c",
+    "lib/craft3d/generated-face-paint.js": "98a3cb5cea2343fc42e047a47073af5bbadff23124b1ae6f318dbe16a7f0bdd5"
+  }
+}

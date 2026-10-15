@@ -1,0 +1,56 @@
+{
+  "front": {
+    "changed_pixels": 0,
+    "bbox": null
+  },
+  "turn_32.1631935647518": {
+    "changed_pixels": 0,
+    "bbox": null
+  },
+  "turn_45": {
+    "changed_pixels": 1639,
+    "bbox": [
+      589,
+      453,
+      630,
+      540
+    ]
+  },
+  "turn_minus45": {
+    "changed_pixels": 1588,
+    "bbox": [
+      270,
+      453,
+      311,
+      541
+    ]
+  },
+  "turn_60": {
+    "changed_pixels": 505,
+    "bbox": [
+      606,
+      453,
+      626,
+      539
+    ]
+  },
+  "turn_minus60": {
+    "changed_pixels": 506,
+    "bbox": [
+      274,
+      443,
+      294,
+      540
+    ]
+  },
+  "turn_90": {
+    "changed_pixels": 0,
+    "bbox": null
+  },
+  "turn_minus90": {
+    "changed_pixels": 0,
+    "bbox": null
+  },
+  "forehead_and_eyes_60_equal": false,
+  "upper_face_difference_note": "9 pixels in rows 453-455, maximum channel delta 1, at the far lower eyelid; rows 0-452 are identical. Do not call the complete eye crop pixel-identical."
+}

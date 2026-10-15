@@ -36,6 +36,7 @@ try{
     report.poses.push({frame,time:t,yawDegrees:turn*180/Math.PI,blink});
     const encoded=await page.evaluate(({turn,blink,turnMode})=>{
       actor.mesh.rotation.y=turnMode==='body'?turn:0;
+      actor.mesh.updateMatrixWorld(true);
       renderAt({turn:turnMode==='head'?turn:0,blink});
       return renderer.domElement.toDataURL('image/png').split(',')[1];
     },{turn,blink,turnMode});

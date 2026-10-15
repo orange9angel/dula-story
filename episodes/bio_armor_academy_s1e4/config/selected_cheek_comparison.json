@@ -1,0 +1,64 @@
+{
+  "before": "storyboard/hybrid_character/forehead_lower_cheek_v1/selected_baseline/user_selected_base",
+  "after": "storyboard/hybrid_character/forehead_lower_cheek_v1/final_candidate/baseline",
+  "out": "storyboard/hybrid_character/forehead_lower_cheek_v1/selected_comparison",
+  "reference": "storyboard/hybrid_character/oblique_feature_study_v2/references/draft_03_oblique.png",
+  "whole_frames": true,
+  "whole_frame_note": "以用户选中的脸为基准，只小幅调整低位脸颊；参考绘画角度未标定。",
+  "boards": [
+    {
+      "id": "01_reference_cheek",
+      "title": "文生图对照：眼下平顺，低位脸颊缓缓饱满，再收向下巴",
+      "rows": [
+        {
+          "label": "脸部关系：远眉、远眼、脸颊与下颌一起看",
+          "frame": "turn_60",
+          "reference_crop": [
+            545,
+            230,
+            795,
+            545
+          ],
+          "model_crop": [
+            460,
+            320,
+            675,
+            595
+          ]
+        },
+        {
+          "label": "去发核对轮廓：不靠刘海遮住折点",
+          "frame": "no_hair_60",
+          "reference_crop": [
+            545,
+            230,
+            795,
+            545
+          ],
+          "model_crop": [
+            460,
+            320,
+            675,
+            595
+          ]
+        },
+        {
+          "label": "完整画面：恢复头发后的五官、耳根和颈部",
+          "frame": "turn_60",
+          "reference_crop": [
+            100,
+            15,
+            900,
+            755
+          ],
+          "model_crop": [
+            170,
+            100,
+            750,
+            750
+          ]
+        }
+      ]
+    }
+  ]
+}

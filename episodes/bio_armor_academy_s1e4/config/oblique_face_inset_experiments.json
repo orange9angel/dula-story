@@ -1,0 +1,799 @@
+{
+  "eye_inset": {
+    "eyeInset": 18
+  },
+  "broad_face": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.012,
+      "deepCheek": 0.009,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.422,
+      "cheekSpread": 0.04,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0.016,
+        0.01
+      ]
+    }
+  },
+  "brow_window": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.012,
+      "deepCheek": 0.009,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.422,
+      "cheekSpread": 0.04,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0.016,
+        0.01
+      ],
+      "farFringeOffset": 0.02
+    }
+  },
+  "brow_clear": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.012,
+      "deepCheek": 0.009,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.422,
+      "cheekSpread": 0.04,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0.006,
+        0.004
+      ],
+      "farFringeOffset": -0.03
+    }
+  },
+  "fringe_only": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.012,
+      "deepCheek": 0.009,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.422,
+      "cheekSpread": 0.04,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": -0.04
+    }
+  },
+  "low_cheek_round_forehead": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.014,
+      "deepCheek": 0.008,
+      "cheekSupport": 0.3,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.028,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.43,
+        1.45
+      ],
+      "farFringeLift": 0.038
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    }
+  },
+  "fringe_lift": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.014,
+      "deepCheek": 0.008,
+      "cheekSupport": 0.3,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.028,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.43,
+        1.45
+      ],
+      "farFringeLift": 0.06
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    }
+  },
+  "flat_under_eye": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.01,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "farFringeLift": 0,
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "flat_under_eye_soft": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.016,
+      "lowerCheek": 0.01,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "farFringeLift": 0,
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "skull_balance": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.01,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "farFringeLift": 0,
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.428,
+      "backFullY": 1.505,
+      "centerY": 1.516,
+      "topY": 1.614,
+      "width": 0.102,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "continuous_far_face": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.008,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.418,
+      "cheekSpread": 0.03,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "farFringeLift": 0,
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ],
+      "deepFaceSupport": [
+        0.01,
+        0.012
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.428,
+      "backFullY": 1.505,
+      "centerY": 1.516,
+      "topY": 1.614,
+      "width": 0.102,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "continuous_far_face_full": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.008,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.418,
+      "cheekSpread": 0.03,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "farFringeLift": 0,
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ],
+      "deepFaceSupport": [
+        0.016,
+        0.016
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.428,
+      "backFullY": 1.505,
+      "centerY": 1.516,
+      "topY": 1.614,
+      "width": 0.102,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "restore_eye_spacing": {
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.108,
+      "back": -0.11,
+      "templeStartY": 1.465,
+      "templeFullY": 1.525,
+      "templePower": 0.9,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "obliqueFaceSupport": {
+      "width": 0.015,
+      "depth": 0.022,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.012,
+      "deepCheek": 0.001,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.417,
+      "cheekSpread": 0.033,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ]
+    },
+    "eyeInset": 18,
+    "browInset": 12,
+    "earRootDefinition": true
+  },
+  "nose_separation": {
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.108,
+      "back": -0.11,
+      "templeStartY": 1.465,
+      "templeFullY": 1.525,
+      "templePower": 0.9,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "obliqueFaceSupport": {
+      "width": 0.015,
+      "depth": 0.022,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.012,
+      "deepCheek": 0.001,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.417,
+      "cheekSpread": 0.033,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "obliqueNoseRecess": 0.008
+    },
+    "eyeInset": 18,
+    "browInset": 12,
+    "earRootDefinition": true
+  },
+  "restrained_contour": {
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.512,
+      "topY": 1.616,
+      "width": 0.1,
+      "front": 0.108,
+      "back": -0.11,
+      "templeStartY": 1.465,
+      "templeFullY": 1.525,
+      "templePower": 0.9,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "obliqueFaceSupport": {
+      "width": 0.015,
+      "depth": 0.022,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.012,
+      "deepCheek": 0.001,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "obliqueNoseRecess": 0.008
+    },
+    "eyeInset": 18,
+    "browInset": 12,
+    "earRootDefinition": true,
+    "eyeSurface": {
+      "centerX": 0.039,
+      "slope": 0.36,
+      "recess": 0,
+      "width": 0.03,
+      "height": 0.027
+    }
+  },
+  "user_selected_base": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.016,
+      "lowerCheek": 0.01,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "soft_lower_cheek": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.016,
+      "lowerCheek": 0.013,
+      "deepCheek": 0.008,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.415,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "cheekTop": [
+        1.435,
+        1.449
+      ],
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "soft_lower_cheek_relief": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.016,
+      "lowerCheek": 0.013,
+      "deepCheek": 0.008,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.415,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "cheekTop": [
+        1.435,
+        1.449
+      ],
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ],
+      "obliqueNoseRecess": 0.004
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "continuous_cheek_edge": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.016,
+      "lowerCheek": 0.01,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ],
+      "farCheekCurve": {
+        "topY": 1.46,
+        "top": 0.1056,
+        "slope": 0.035,
+        "quadratic": 0.8,
+        "cubic": 14
+      }
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.418,
+      "backFullY": 1.495,
+      "centerY": 1.505,
+      "topY": 1.62,
+      "width": 0.1,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  }
+}

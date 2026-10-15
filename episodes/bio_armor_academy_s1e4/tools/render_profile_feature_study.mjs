@@ -30,11 +30,12 @@ try{
   for(const name of names){
     if(!configs[name])throw new Error(`Missing variant ${name}`);
     const overrides=configs[name],dest=path.join(out,name);fs.mkdirSync(dest,{recursive:true});
+    if(['deepForehead','deepFaceSupport','farFringeOffset','farFringeLift','foreheadSupport','supportTop','obliqueNoseRecess'].some(k=>Object.hasOwn(overrides.obliqueFaceSupport??{},k))||overrides.eyeSurface?.centerX!=null)throw new Error('Rejected archived sculpt: implementation removed; select a retained candidate');
     if(overrides.baseline_source_sha256&&overrides.baseline_source_sha256!==sha(source))throw new Error('Candidate was fitted against a different source revision');
     let text=source;
     if(Object.hasOwn(overrides,'obliqueFaceSupport'))text=text.replace(/^const AOI_OBLIQUE_FACE_SUPPORT=.*;$/m,`const AOI_OBLIQUE_FACE_SUPPORT=${JSON.stringify(overrides.obliqueFaceSupport)};`);
     if(overrides.recess!=null)text=text.replace(/(eyeSurface:\{[^}\n]*\brecess:)[^,}]+/,(_,prefix)=>prefix+overrides.recess);
-    for(const field of ['earZ','earY','eyeInset','temporalLashScale','nasalLashLength']){
+    for(const field of ['earZ','earY','eyeInset','browInset','temporalLashScale','nasalLashLength']){
       if(overrides[field]==null)continue;
       if(!Number.isFinite(overrides[field]))throw new Error(`${field} must be finite`);
       const re=new RegExp(`(${field}:)[-\\d.]+`);
@@ -43,6 +44,8 @@ try{
     }
     if(Object.hasOwn(overrides,'eyeSurface'))text=text.replace(/^    eyeSurface:.*,$/m,`    eyeSurface:${JSON.stringify(overrides.eyeSurface)},`);
     if(Object.hasOwn(overrides,'jawDefinition'))text=text.replace(/^    jawDefinition:.*,$/m,`    jawDefinition:${JSON.stringify(overrides.jawDefinition)},`);
+    if(Object.hasOwn(overrides,'cranium'))text=text.replace(/^    cranium:.*,$/m,`    cranium:${JSON.stringify(overrides.cranium)},`);
+    if(Object.hasOwn(overrides,'earRootDefinition'))text=text.replace(/drawnEar:true,(?:earRootDefinition:\w+,)?/,`drawnEar:true,earRootDefinition:${!!overrides.earRootDefinition},`);
     if(overrides.faceRoundness!=null){
       if(!Number.isFinite(overrides.faceRoundness)||overrides.faceRoundness<=0)throw new Error('faceRoundness must be positive');
       text=text.replace(/faceRoundness:[\d.]+/,`faceRoundness:${overrides.faceRoundness}`);
@@ -68,12 +71,26 @@ try{
     });
     await page.goto('http://127.0.0.1:4215/face_lab.html?actor=aoi&cel=direct',{timeout:90000});
     await page.waitForFunction('window.ready===true',{timeout:90000});
-    const specs=[['front',0],['turn_45',45],['turn_65',65],['turn_90',90],['turn_minus45',-45],['turn_minus65',-65],['turn_minus90',-90],['structure_90',90,true],['half_blink',45,false,{blink:.5}],['talk',65,false,{jaw:.6,gaze:[-.5,0]}],...([15,25,35,55].map(a=>['turn_'+a,a]))];
+    if(process.argv.includes('--surface-coordinates'))await page.evaluate(()=>{
+      const m=face.root.children[0].material,previous=m.onBeforeCompile,key=m.customProgramCacheKey();
+      m.onBeforeCompile=function(s,r){previous.call(this,s,r);
+        s.vertexShader='varying vec3 surfaceCoordinate;\n'+s.vertexShader;
+        s.vertexShader=s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nsurfaceCoordinate=position;');
+        s.fragmentShader='varying vec3 surfaceCoordinate;\n'+s.fragmentShader;
+        s.fragmentShader=s.fragmentShader.replace('#include <opaque_fragment>','#include <opaque_fragment>\ngl_FragColor=vec4(surfaceCoordinate.x*4.0+.5,(surfaceCoordinate.y-1.35)*3.0,surfaceCoordinate.z*4.0+.5,1.0);');
+      };m.customProgramCacheKey=()=>key+'|surface-coordinate-diagnostic';m.needsUpdate=true;
+    });
+    let specs=[['front',0],['turn_45',45],['turn_65',65],['turn_90',90],['turn_minus45',-45],['turn_minus65',-65],['turn_minus90',-90],['structure_90',90,true],['half_blink',45,false,{blink:.5}],['talk',65,false,{jaw:.6,gaze:[-.5,0]}],...([15,25,35,55].map(a=>['turn_'+a,a]))];
     for(const angle of additionalAngles){
       if(!specs.some(s=>s[1]===angle&&!s[2]&&!s[3]))specs.push([`turn_${angle<0?'minus':''}${Math.abs(angle)}`,angle]);
     }
     if(process.argv.includes('--ear-layers'))for(const angle of layerAngles){
       for(const layer of ['no_ears','no_hair','no_face_paint'])specs.push([`${layer}_${angle}`,angle,false,{},layer]);
+    }
+    if(arg('--only-frames')){
+      const selected=new Set(arg('--only-frames').split(','));
+      for(const id of selected)if(!specs.some(s=>s[0]===id))throw new Error(`Unknown requested frame: ${id}`);
+      specs=specs.filter(s=>selected.has(s[0]));
     }
     const report={variant:name,turnMode,sourcePath,originalSha256:sha(source),experimentSha256:sha(text),overrides,
       viewDeformation,profileReferenceActive:text.includes('profileReference:'),jawSculptActive:text.includes('jawDefinition:'),cranialScalpActive:text.includes('cranium:'),paintEyeInset,
@@ -93,6 +110,7 @@ try{
         }
         skinMaterial.map=layer==='no_face_paint'?window.flatFaceMap:window.originalFaceMap;
         actor.mesh.rotation.y=turnMode==='body'?angle*Math.PI/180:0;
+        actor.mesh.updateMatrixWorld(true);
         renderAt({...state,turn:turnMode==='head'?angle*Math.PI/180:0});
         const mesh=face.root.children[0],p=mesh.geometry.attributes.position;
         const half=p.count/2,columns=97,rows=half/columns;
@@ -157,13 +175,13 @@ try{
       report.frames[spec[0]]={sha256:sha(result.buffer),angle:spec[1],actualYaw:result.actualYaw,actualBodyYaw:result.actualBodyYaw,projectedFeatures:result.projectedFeatures,projectedEars:result.projectedEars,eyeDiagnostics:result.eyeDiagnostics,finite:result.finite};
       if(spec[0]==='turn_90')report.median90=result.median;
     }
-    for(const spec of [specs[3],...specs.filter(s=>Math.abs(s[1])===45||Math.abs(s[1])===60),specs[0]]){
+    for(const spec of [...new Map([specs[3],...specs.filter(s=>Math.abs(s[1])===45||Math.abs(s[1])===60),specs[0]].filter(Boolean).map(s=>[s[0],s])).values()]){
       const r=await capture(spec);report.frames[spec[0]].reverseSeekEqual=sha(r.buffer)===report.frames[spec[0]].sha256;
       if(!report.frames[spec[0]].reverseSeekEqual)fs.writeFileSync(path.join(dest,spec[0]+'_reverse_mismatch.png'),r.buffer);
     }
     fs.writeFileSync(path.join(dest,'report.json'),JSON.stringify(report,null,2));
     await page.close();
     if(errors.length||Object.values(report.frames).some(f=>!f.finite||f.reverseSeekEqual===false))throw new Error(JSON.stringify(report.errors));
-    console.log(`${name}: ${specs.length} views, deterministic front/profile, no browser errors`);
+    console.log(`${name}: ${specs.length} views, sampled reverse seeks agree, no browser errors`);
   }
 }finally{await browser.close();}

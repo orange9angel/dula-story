@@ -270,6 +270,7 @@ def configured_comparison(config_path):
     reports = [json.loads((folder/'report.json').read_text()) for folder in [old,new]]
     for group, frames in [('04_whole_frame',['front','turn_45','turn_minus45','turn_minus60']),
                           ('05_profiles',['turn_60','turn_90','turn_minus90'])]:
+        if not cfg.get('whole_frames', True): continue
         fig,axes=plt.subplots(2,len(frames),figsize=(4*len(frames),8.8),squeeze=False)
         for r,folder in enumerate([old,new]):
             for c,frame in enumerate(frames):
@@ -285,6 +286,7 @@ def configured_comparison(config_path):
             'reverse_seeks_equal':all(v.get('reverseSeekEqual',True) for v in reports[1]['frames'].values())}
     changes={}
     for frame in ['front','turn_45','turn_minus45','turn_60','turn_minus60','turn_90','turn_minus90']:
+        if any(frame not in r['frames'] for r in reports): continue
         a=np.array(Image.open(old/(frame+'.png')).convert('RGB'));b=np.array(Image.open(new/(frame+'.png')).convert('RGB'))
         yy,xx=np.nonzero(np.any(a!=b,axis=2))
         changes[frame]={'changed_pixels':len(xx),'bbox':None if not len(xx) else [int(xx.min()),int(yy.min()),int(xx.max())+1,int(yy.max())+1],

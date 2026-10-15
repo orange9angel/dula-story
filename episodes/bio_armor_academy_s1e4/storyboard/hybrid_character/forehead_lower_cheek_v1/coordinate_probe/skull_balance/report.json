@@ -1,0 +1,155 @@
+{
+  "variant": "skull_balance",
+  "turnMode": "body",
+  "sourcePath": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-generated-paint.js",
+  "originalSha256": "b0b249561a5a2a29bfe6d0ecfbd3d0ed705e76551aab2a5e3214c3df1672b6be",
+  "experimentSha256": "50a0052da4446844bd8f1e97f79d28040d590d34000184265090c0fbe9fb6f9d",
+  "overrides": {
+    "eyeInset": 18,
+    "obliqueFaceSupport": {
+      "width": 0.01,
+      "depth": 0.018,
+      "outerEyeFold": 0.026,
+      "lowerCheek": 0.01,
+      "deepCheek": 0.006,
+      "cheekSupport": 0.55,
+      "eyeClip": true,
+      "farEyeRelax": 0.28,
+      "profileStart": 45,
+      "cheekCenter": 1.41,
+      "cheekSpread": 0.032,
+      "cheekUpperIndent": 0,
+      "eyeFoldTop": [
+        1.485,
+        1.55
+      ],
+      "deepForehead": [
+        0,
+        0
+      ],
+      "farFringeOffset": 0,
+      "cheekTop": [
+        1.44,
+        1.46
+      ],
+      "farFringeLift": 0,
+      "eyeFoldBottom": [
+        1.45,
+        1.475
+      ]
+    },
+    "earRootDefinition": true,
+    "cranium": {
+      "startY": 1.495,
+      "fullY": 1.55,
+      "backStartY": 1.428,
+      "backFullY": 1.505,
+      "centerY": 1.516,
+      "topY": 1.614,
+      "width": 0.102,
+      "front": 0.115,
+      "back": -0.11,
+      "templeStartY": 1.46,
+      "templeFullY": 1.53,
+      "templePower": 0.65,
+      "widthStartY": 1.44,
+      "widthFullY": 1.49
+    },
+    "browInset": 30
+  },
+  "viewDeformation": {
+    "width": 0.01,
+    "depth": 0.018,
+    "outerEyeFold": 0.026,
+    "lowerCheek": 0.01,
+    "deepCheek": 0.006,
+    "cheekSupport": 0.55,
+    "eyeClip": true,
+    "farEyeRelax": 0.28,
+    "profileStart": 45,
+    "cheekCenter": 1.41,
+    "cheekSpread": 0.032,
+    "cheekUpperIndent": 0,
+    "eyeFoldTop": [
+      1.485,
+      1.55
+    ],
+    "deepForehead": [
+      0,
+      0
+    ],
+    "farFringeOffset": 0,
+    "cheekTop": [
+      1.44,
+      1.46
+    ],
+    "farFringeLift": 0,
+    "eyeFoldBottom": [
+      1.45,
+      1.475
+    ]
+  },
+  "profileReferenceActive": true,
+  "jawSculptActive": true,
+  "cranialScalpActive": true,
+  "paintEyeInset": 18,
+  "projectedFeatureSpace": "CPU before GPU view/profile/jaw deformation; not rendered eye visibility",
+  "layerNotes": "no_face_paint swaps only the main map; geometry, jaw shader and skin underpaint remain. no_hair/no_ears toggle named layers.",
+  "frames": {
+    "no_hair_60": {
+      "sha256": "3ed0e905539dec9b53e392a448f298a8c5bd37e5ed6058c2eafb2dea605fc3fe",
+      "angle": 60,
+      "actualYaw": 59.99999921181466,
+      "actualBodyYaw": 59.99999999999999,
+      "projectedFeatures": {
+        "eye": [
+          543.3560550832236,
+          427.3232344953966
+        ],
+        "far_eye": [
+          606.2132041785845,
+          426.8181867611868
+        ],
+        "mouth": [
+          592.4882903370811,
+          526.3131353230751
+        ],
+        "nose": [
+          618.8670884317565,
+          481.8518685789137
+        ],
+        "chin": [
+          564.0266818681711,
+          589.999925370398
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            376.993587515451,
+            449.99999687674944
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            540.3269201507853,
+            450.00000407561544
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    }
+  },
+  "errors": []
+}
