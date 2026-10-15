@@ -373,3 +373,46 @@ python tools/build_profile_polish_v4_review.py
 
 对应提交：资产 `376498f`；skill `531b101`、`12af102`。工作区其他任务的未提交
 修改未纳入本轮提交；具体渲染输入仍以报告中的逐文件哈希为准。
+
+## 2026-10-15：侧脸轮廓与多维特征实测
+
+用户指出侧脸内陷，要求提取文生图和模型特征以提高拟合质量。本轮建立可复跑
+测量及控制变量试验，共享角色源文件未修改；局部拟合是待复看的实验候选。
+
+- [边界提取与人工标点](profile_feature_study_v1/01_extraction.png)：参考两侧与模型
+  两侧，边界叠回原图检查。原画鼻根被刘海遮挡，未推断其完整曲线。
+- [同尺度叠加](profile_feature_study_v1/02_contour_overlay.png)与
+  [去除倾斜后的对照](profile_feature_study_v1/04_pose_neutral_contours.png)：平移、
+  等比缩放及刚性旋转分开显示，不采用横纵拉伸或非刚性变形来隐藏误差。
+- [多维特征](profile_feature_study_v1/03_feature_metrics.png)：外轮廓、嘴位、眼高、
+  眼耳间距分开记录。人工点约±3像素，数值不是美术评分。
+- [真实渲染控制变量](profile_feature_study_v1/05_controlled_experiments.jpg)：V4、
+  眼面后压减半、参考轮廓拟合三组各14个角度/表情状态；前脸和侧脸逆序取帧一致，
+  无浏览器错误或非有限顶点。只检查静态表情，不冒充连续对白验收。
+- [拟合后的曲线](profile_feature_study_v1/06_fitted_contour.png)：右向鼻下凹入相对
+  鼻尖—下巴距离 D，原画约0–0.008D，V4约0.101D，局部候选约0.012D。
+  保留鼻尖、下巴端点和眼面，修正鼻下—唇部剖面；正面与基线逐像素相同。
+  只减小眼面后压时，眼心前移约11.7像素，外轮廓提取变化为0像素，因此不能
+  把该参数直接认作此次外轮廓内陷的根因。
+- [斜面姿态检查](profile_feature_study_v1/07_oblique_pose_check.png)：原画未标定
+  yaw/俯仰，不能直接叫45°。两眼连线归一化只是姿态敏感性演示，未反推出真实
+  相机；原画鼻部笔画和模型几何鼻尖不是严格同名点。
+
+数据与标注：`config/profile_feature_annotations.json`、该输出目录的
+`measurements.json`、`experiment_metrics.json`、`oblique_features.json`。
+`fit_candidate.json` 保存拟合方法与具体剖面变更；三组 `report.json` 保存源文件
+哈希、浏览器实验源码哈希和各帧哈希。人工点/边界扰动仅作敏感性检查，不是统计
+置信区间。最终画面仍存在眼耳关系、面长和发型差异，不能称已与文生图一致。
+
+在本集目录重跑（沿用 `node render.mjs --serve --port 4215` 的本地服务）：
+
+```powershell
+python tools/analyze_profile_features.py --phase measure
+node tools/render_profile_feature_study.mjs --variants baseline,eye_relief
+python tools/analyze_profile_features.py --phase fit
+node tools/render_profile_feature_study.mjs --variants contour_fit
+python tools/analyze_profile_features.py --phase review
+```
+
+通用诊断教训已写回
+`dula-skills/character-modeler/references/multiview-character-fit.md` 的侧脸特征测量章节。

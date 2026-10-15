@@ -1,0 +1,88 @@
+{
+  "baseline": {
+    "profile_metrics": {
+      "lip_recession_H": 0.23893805309734514,
+      "chin_recession_H": 0.5309734513274337,
+      "mouth_height_H": 0.4247787610619469,
+      "nose_to_lip_inward_chord_D": 0.10080029323721673,
+      "lip_forward_of_chord_D": -0.04343576272221886
+    },
+    "front_full_image_mean_abs_rgb": 0.0,
+    "front_pixel_identical": true,
+    "other_side_profile_metrics": {
+      "lip_recession_H": 0.22807017543859648,
+      "chin_recession_H": 0.5350877192982456,
+      "mouth_height_H": 0.42105263157894735,
+      "nose_to_lip_inward_chord_D": 0.0955913142310223,
+      "lip_forward_of_chord_D": -0.02404737692169648
+    }
+  },
+  "eye_relief": {
+    "profile_metrics": {
+      "lip_recession_H": 0.23893805309734514,
+      "chin_recession_H": 0.5309734513274337,
+      "mouth_height_H": 0.4247787610619469,
+      "nose_to_lip_inward_chord_D": 0.10080029323721673,
+      "lip_forward_of_chord_D": -0.04343576272221886
+    },
+    "front_full_image_mean_abs_rgb": 0.0,
+    "front_pixel_identical": true,
+    "other_side_profile_metrics": {
+      "lip_recession_H": 0.22807017543859648,
+      "chin_recession_H": 0.5350877192982456,
+      "mouth_height_H": 0.42105263157894735,
+      "nose_to_lip_inward_chord_D": 0.0955913142310223,
+      "lip_forward_of_chord_D": -0.02404737692169648
+    },
+    "profile_max_boundary_change_px": 0.0,
+    "projected_eye_shift_px": [
+      11.666664761511129,
+      8.648478910799895e-07
+    ]
+  },
+  "contour_fit": {
+    "profile_metrics": {
+      "lip_recession_H": 0.1504424778761062,
+      "chin_recession_H": 0.5309734513274337,
+      "mouth_height_H": 0.4247787610619469,
+      "nose_to_lip_inward_chord_D": 0.011912761928034723,
+      "lip_forward_of_chord_D": 0.021931700164945916
+    },
+    "front_full_image_mean_abs_rgb": 0.0,
+    "front_pixel_identical": true,
+    "other_side_profile_metrics": {
+      "lip_recession_H": 0.14912280701754385,
+      "chin_recession_H": 0.5350877192982456,
+      "mouth_height_H": 0.42105263157894735,
+      "nose_to_lip_inward_chord_D": 0.010588024167015608,
+      "lip_forward_of_chord_D": 0.022731351319016588
+    },
+    "profile_max_boundary_change_px": 13.0,
+    "projected_eye_shift_px": [
+      0.0,
+      0.0
+    ]
+  },
+  "uncertainty_inward_chord_D": {
+    "reference_right": [
+      0.0,
+      0.018516011323360407,
+      0.04730491555703478
+    ],
+    "reference_left": [
+      0.0,
+      0.010204631288892197,
+      0.037281334881471874
+    ],
+    "model_right": [
+      0.08625581928753957,
+      0.10666564626723321,
+      0.13029047814728156
+    ],
+    "contour_fit": [
+      0.000410299910949632,
+      0.020919669768256682,
+      0.0418369303235892
+    ]
+  }
+}

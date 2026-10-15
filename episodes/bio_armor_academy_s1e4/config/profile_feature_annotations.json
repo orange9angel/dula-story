@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "purpose": "Reviewable measurements, not beauty scores or calibrated 3D reconstruction",
+  "coordinates": "Pixels in the crops defined in analyze_profile_features.py; left profiles mirrored to face right",
+  "alignment": "Uniform scale by nose-tip-to-chin vertical distance, translated at nose tip. No anisotropic warp or fitted yaw.",
+  "annotation_uncertainty_px": 3,
+  "views": {
+    "reference_right": {
+      "label": "原画·右向侧脸",
+      "trace_roi": [315, 188, 385, 292],
+      "nose_rows": [200, 220], "root_rows": [188, 201], "lip_rows": [240, 253],
+      "landmarks": {"eye": [318, 183], "eye_top": [318, 163], "eye_bottom": [318, 197], "eye_back": [291, 174], "eye_front": [330, 169], "mouth": [345, 247], "chin": [330, 291], "ear": [219, 208]}
+    },
+    "reference_left": {
+      "label": "原画·左向侧脸（镜像）",
+      "trace_roi": [300, 192, 375, 299],
+      "nose_rows": [206, 226], "root_rows": [192, 205], "lip_rows": [247, 263],
+      "landmarks": {"eye": [303, 187], "eye_top": [303, 167], "eye_bottom": [303, 203], "eye_back": [275, 177], "eye_front": [315, 174], "mouth": [330, 256], "chin": [316, 296], "ear": [193, 210]}
+    },
+    "model_right": {
+      "label": "V4模型·右向90°",
+      "trace_roi": [320, 145, 425, 340],
+      "nose_rows": [215, 241], "root_rows": [155, 204], "lip_rows": [260, 280],
+      "landmarks": {"eye": [324, 178], "eye_top": [325, 145], "eye_bottom": [324, 204], "eye_back": [299, 165], "eye_front": [336, 163], "mouth": [372, 274], "chin": [341, 339], "ear": [137, 196]}
+    },
+    "model_left": {
+      "label": "V4模型·左向90°（镜像）",
+      "trace_roi": [275, 118, 365, 341],
+      "nose_rows": [215, 241], "root_rows": [155, 204], "lip_rows": [260, 280],
+      "landmarks": {"eye": [263, 178], "eye_top": [263, 145], "eye_bottom": [264, 204], "eye_back": [241, 165], "eye_front": [277, 163], "mouth": [312, 274], "chin": [279, 340], "ear": [74, 196]}
+    },
+    "reference_oblique": {
+      "label": "原画·斜面（角度未标定）",
+      "landmarks": {"eye": [211, 212], "far_eye": [299, 185], "nose": [278, 231], "mouth": [269, 263], "chin": [269, 302], "ear": [127, 233]}
+    },
+    "model_oblique": {
+      "label": "V4模型·45°",
+      "landmarks": {"eye": [248, 178], "far_eye": [354, 181], "nose": [367, 222], "mouth": [333, 276], "chin": [307, 338], "ear": [40, 198]}
+    }
+  }
+}
