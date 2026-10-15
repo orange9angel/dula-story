@@ -486,3 +486,42 @@ python tools/build_eye_orbit_review.py
 ```
 
 复盘已写回`character-modeler/references/multiview-character-fit.md`。
+
+## 2026-10-15：远侧脸、眼角与耳朵试修；按部位拆分混合对照
+
+用户连续指出远侧额头/脸颊支撑不足、外眼角过露、耳朵偏后及双耳感、鼻侧眼白
+过多与短睫毛缺失，并要求把由大到小、多维度的大模型观察与算法证据结合，
+写入skill后实际运用。当前是修订候选，不是整体造型通过。
+
+- [近远眼对照](face_support_study_v1/parts/01_eyes.jpg)：用户提供的眼部局部图、
+  本轮前模型、当前模型。鼻侧眼眶收紧至虹膜附近，补短鼻侧睫毛；近眼虹膜仍
+  偏圆、外侧睫毛偏厚，远眼遮挡与绘画仍有差异。
+- [脸部关系对照](face_support_study_v1/parts/02_face_relations.jpg)：额头眉眼、
+  眼下腮部下巴、鼻口下巴；[耳发对照](face_support_study_v1/parts/03_ear_hair.jpg)
+  包含耳根、太阳穴、鬓发、后脑与马尾根。参考和模型独立等比放大，未作形变。
+- [裁切索引](face_support_study_v1/parts/00_region_map.jpg)与
+  [完整头肩回查](face_support_study_v1/parts/04_whole_frame.jpg)保留局部的来源
+  和整体关系。原画角度未标定；没有借局部排图宣称45°精确匹配。
+- 实际资产加入Aoi局部视角修型：增加远侧皮肤支撑、外眼角往后绕转、较低的
+  腮部轻微补量；头发使用较宽的过渡以免弯出眼区波浪。UV平移等失败分支已从
+  共享实现去掉，实验参数和截图保留为失败证据。此项是GPU绘制时修型，非刚性
+  同一头网格的纯透视，也不进入CPU射线测试；工具阻止用旧探针给它背书。
+- 耳中心z由-.043改为-.015、y由1.460改为1.467；耳外形改为上宽下收、前缘内收，
+  耳内阴影由分离图形合为连续耳腔。耳根连接较前版改善，内部形状仍偏简化。
+- 渲染20个姿态/表情样本，含正面、左右45/60/65/90、40/50相邻角与半眨/说话。
+  头身yaw一致，无浏览器错误，顶点有限；正面、90°和左右45/60逆序重拍一致。
+  正面并非像素不变：本轮眼形和耳朵也有修改。完整动态、头发修复仍未通过。
+- 混合审查记录见`parts/review.json`：算法只核验姿态、差分范围、确定性；观察
+  结论由模型填写，区分用户指出与本轮自主发现。此次仍由用户补出鼻侧眼白、
+  内侧睫毛和双耳感，不把新skill的格式校验或这次带提示实践当能力提升证明。
+
+复现（单集目录、4215服务）：
+
+```powershell
+node tools/render_profile_feature_study.mjs --variants baseline --out storyboard/hybrid_character/face_support_study_v1/applied --additional-angles 60,-60,40,50,-40,-50 --turn-mode body
+python tools/build_oblique_feature_review.py --parts
+```
+
+`face_support_study_v1/source_after.js`及共享辅助代码快照保留本轮实现；部分归档
+失败参数依赖旧试验代码，当前工具遇到已删除的分支会明确报错，不假装成功套用。
+后发/马尾纹理与造型、鼻下轮廓、颈领碎边仍未由这轮解决。

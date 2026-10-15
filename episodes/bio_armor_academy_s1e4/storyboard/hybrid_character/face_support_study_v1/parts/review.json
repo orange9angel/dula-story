@@ -1,0 +1,261 @@
+{
+  "status": "mixed_review_candidate_not_user_accepted",
+  "crops": [
+    {
+      "region": "近侧眼：鼻侧留白、内外睫毛",
+      "reference": "storyboard\\hybrid_character\\face_support_study_v1\\user_eye_reference.png",
+      "reference_crop_xyxy": [
+        0,
+        20,
+        257,
+        214
+      ],
+      "frame": "turn_45",
+      "model_crop_xyxy": [
+        415,
+        371,
+        548,
+        477
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    },
+    {
+      "region": "远侧眼：内侧弧线与外角遮挡",
+      "reference": "storyboard\\hybrid_character\\face_support_study_v1\\user_eye_reference.png",
+      "reference_crop_xyxy": [
+        333,
+        18,
+        447,
+        206
+      ],
+      "frame": "turn_45",
+      "model_crop_xyxy": [
+        584,
+        369,
+        665,
+        477
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    },
+    {
+      "region": "额头—眉眼：保留上方皮肤与刘海边界",
+      "reference": "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png",
+      "reference_crop_xyxy": [
+        497,
+        79,
+        671,
+        203
+      ],
+      "frame": "turn_minus45",
+      "model_crop_xyxy": [
+        238,
+        277,
+        483,
+        448
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    },
+    {
+      "region": "眼下—腮部—下巴：平顺段与低位饱满",
+      "reference": "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png",
+      "reference_crop_xyxy": [
+        511,
+        196,
+        693,
+        312
+      ],
+      "frame": "turn_minus45",
+      "model_crop_xyxy": [
+        252,
+        423,
+        528,
+        608
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    },
+    {
+      "region": "鼻—嘴—下巴：连续关系",
+      "reference": "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png",
+      "reference_crop_xyxy": [
+        519,
+        204,
+        614,
+        308
+      ],
+      "frame": "turn_minus45",
+      "model_crop_xyxy": [
+        263,
+        455,
+        386,
+        602
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    },
+    {
+      "region": "耳朵＋太阳穴＋下颌：位置与单一耳廓",
+      "reference": "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png",
+      "reference_crop_xyxy": [
+        646,
+        143,
+        748,
+        276
+      ],
+      "frame": "turn_minus45",
+      "model_crop_xyxy": [
+        499,
+        360,
+        650,
+        553
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    },
+    {
+      "region": "刘海＋额头：发束转折与遮挡",
+      "reference": "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png",
+      "reference_crop_xyxy": [
+        463,
+        24,
+        690,
+        215
+      ],
+      "frame": "turn_minus45",
+      "model_crop_xyxy": [
+        204,
+        171,
+        503,
+        445
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    },
+    {
+      "region": "后脑＋马尾根：体积与连接",
+      "reference": "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png",
+      "reference_crop_xyxy": [
+        644,
+        7,
+        863,
+        332
+      ],
+      "frame": "turn_minus45",
+      "model_crop_xyxy": [
+        482,
+        128,
+        855,
+        648
+      ],
+      "crop_method": "manual semantic regions; aspect ratio preserved"
+    }
+  ],
+  "algorithm_evidence": {
+    "render_checks": {
+      "head_and_body_yaw_match": true,
+      "no_browser_errors": true,
+      "finite_vertices": true,
+      "all_requested_reverse_seeks_match": true
+    },
+    "pixel_changes": {
+      "front": {
+        "changed_pixels": 2237,
+        "changed_bbox_xyxy": [
+          266,
+          399,
+          634,
+          489
+        ]
+      },
+      "turn_45": {
+        "changed_pixels": 16333,
+        "changed_bbox_xyxy": [
+          262,
+          266,
+          681,
+          601
+        ]
+      },
+      "turn_60": {
+        "changed_pixels": 9852,
+        "changed_bbox_xyxy": [
+          283,
+          266,
+          668,
+          597
+        ]
+      },
+      "turn_minus45": {
+        "changed_pixels": 26691,
+        "changed_bbox_xyxy": [
+          195,
+          267,
+          638,
+          607
+        ]
+      },
+      "turn_minus60": {
+        "changed_pixels": 13094,
+        "changed_bbox_xyxy": [
+          225,
+          268,
+          617,
+          607
+        ]
+      },
+      "turn_90": {
+        "changed_pixels": 5132,
+        "changed_bbox_xyxy": [
+          354,
+          399,
+          619,
+          482
+        ]
+      },
+      "turn_minus90": {
+        "changed_pixels": 5141,
+        "changed_bbox_xyxy": [
+          283,
+          399,
+          546,
+          481
+        ]
+      }
+    },
+    "note": "Differences locate changes, not quality. CPU landmarks exclude GPU sculpt; no visibility or similarity score."
+  },
+  "reviewer_observations": {
+    "user_reported": [
+      "far forehead/cheek missing",
+      "far outer corner protrudes",
+      "ear too far back and double-ear reading",
+      "nasal white too broad, inner arc too large",
+      "nasal lashes missing",
+      "fullness belongs below the flat upper cheek"
+    ],
+    "agent_detected_during_revision": [
+      "early corner fold hid far iris again at60",
+      "narrow fold bent bangs into waves",
+      "10mm lower-cheek trial created a conspicuous bulge",
+      "CPU visibility samples did not include shader sculpt"
+    ],
+    "current_changes": [
+      "nasal eye edge close to iris; short nasal lashes",
+      "lower-cheek shift reduced to3.5mm coefficient",
+      "ear centre forward28mm and up7mm; connected concha",
+      "broader hair transition avoids local eye-band kink"
+    ],
+    "remaining": [
+      "far face support still differs from target",
+      "rear hair and ponytail texture/shape",
+      "nose-underlip profile",
+      "near iris rounder than reference; temporal lashes form a thick color wedge",
+      "ear inner folds still simplified",
+      "neck/collar broken color boundaries",
+      "full dynamic performance not reviewed"
+    ],
+    "skill_evaluation": "Guided iteration, not blind testing. User still found missed nasal-eye and ear-shape issues; no claim of stable independent detection."
+  },
+  "hashes": {
+    "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png": "3bb5f43c489448ca9c265f6a01d861cb3ca1e0f81345ba43c1fb2c63fff80617",
+    "storyboard\\hybrid_character\\face_support_study_v1\\user_eye_reference.png": "fc89f75c222a432948d13f6f5e03a3459334cd2f5ed7630571f53aac004eb761",
+    "storyboard\\hybrid_character\\face_support_study_v1\\user_eye_before.png": "4fd0be667d3b22154434c127137541d2e328f1075751a78041db6b569d46e3f8",
+    "storyboard\\hybrid_character\\face_support_study_v1\\applied\\baseline\\report.json": "4adda97a35f00aef0c23c17f3006ff8eb8387272c8a2e8a74e2dc7bf681c5e59"
+  }
+}

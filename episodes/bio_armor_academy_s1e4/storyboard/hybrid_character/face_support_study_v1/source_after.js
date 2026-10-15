@@ -1,0 +1,40 @@
+import {paintGeneratedFace} from '../../lib/craft3d/generated-face-paint.js';
+import {addPaintedHairShell} from '../../lib/craft3d/painted-hair-shell.js';
+// Authored oblique correction in Aoi's metre frame, shared with overlying hair.
+const AOI_OBLIQUE_FACE_SUPPORT={"width":0.018,"depth":0.024,"outerEyeFold":0.020,"lowerCheek":0.0035};
+
+export function aoiGeneratedFace(base){
+  return {...base,textureSize:2048,skin:'#ffddbf',paintFace:paintGeneratedFace,
+    irisArt:new URL('./textures/aoi-painted-face-v1.png',import.meta.url).href,
+    paint:{originX:642,originY:658,anchorY:1.473,pixelsPerMetre:3300,
+      eyes:[[500,656,458,600,85,111],[785,655,743,599,85,111]],mouth:[641,852]},
+    cheekFullness:.045,neckZ:.012,neckTopZ:.008,neckRadius:.034,earZ:-.015,earY:1.467,
+    neckProfile:[[1.300,.034,.041,-.030],[1.335,.032,.041,-.028],[1.375,.032,.036,-.036],[1.415,.037,.032,-.050],[1.452,.046,.024,-.063]],
+    drawnEar:true,obliqueFaceSupport:AOI_OBLIQUE_FACE_SUPPORT,
+    faceRoundness:1.45,noseDepth:0,
+    // Keep the profile iris compression without pushing the eye region into
+    // the face: the old 14 mm recess hid the far eye on oblique views.
+    eyeSurface:{slope:.36,recess:0,width:.030,height:.027},
+    earPaint:[[290,620,115,182],[872,620,114,182]],
+    profileContour:[[1.376,.079],[1.380,.086],[1.391,.091],[1.403,.094],[1.413,.098],[1.419,.100],[1.426,.099],[1.431,.103],[1.436,.111],[1.441,.117],[1.446,.116],[1.453,.108],[1.462,.099],[1.473,.097],[1.483,.100],[1.510,.104],[1.537,.100],[1.574,.065],[1.605,.012],[1.612,-.028]],
+    jawContour:[[1.376,.076],[1.380,.056],[1.389,.011],[1.406,-.033],[1.418,-.052],[1.438,-.073],[1.464,-.088],[1.505,-.105],[1.537,-.110],[1.574,-.099],[1.605,-.060],[1.612,-.029]],
+    profiles:[[1.376,.001,.087,.080],[1.382,.019,.092,.062],[1.394,.042,.096,.016],[1.406,.056,.098,-.016],[1.418,.067,.100,-.042],[1.438,.079,.099,-.067],[1.464,.091,.099,-.088],[1.505,.093,.103,-.105],[1.537,.087,.099,-.110],[1.574,.065,.065,-.099],[1.605,.018,.012,-.060],[1.612,.001,-.028,-.029]]};
+}
+export function addAoiGeneratedHair(actor,{profileFit=true}={}){
+  return addPaintedHairShell(actor,{
+    obliqueFaceSupport:AOI_OBLIQUE_FACE_SUPPORT,
+    url:new URL('./textures/aoi-painted-hair-v1.png',import.meta.url).href,
+    backUrl:new URL('./textures/aoi-painted-back-v1.png',import.meta.url).href,
+    originX:615,originY:654,anchorY:1.473,pixelsPerMetre:3186,
+    projectionRadii:[.166,.163,.142],templeWrap:.065,profileFit,
+    ...(profileFit?{
+      tailDepth:-.060,
+      sidePaint:{url:new URL('./textures/aoi-profile-hair-atlas-v1.png',import.meta.url).href,
+        scale:1030,right:[690,590],left:[201,182],anchorY:1.473},
+      cap:{center:[0,1.523,-.016],radii:[.106,.128,.113],
+        hem:[[-180,1.397],[-145,1.407],[-110,1.438],[-80,1.476],[-45,1.550],[0,1.575],[45,1.550],[80,1.476],[110,1.438],[145,1.407],[180,1.397]]}
+    }:{cap:{center:[0,1.514,-.027],radii:[.112,.140,.121],
+      hem:[[-180,1.400],[-145,1.407],[-110,1.430],[-80,1.470],[-45,1.550],[0,1.575],[45,1.550],[80,1.470],[110,1.430],[145,1.407],[180,1.400]]}}),
+    capCrop:[295,140,240,330]
+  });
+}

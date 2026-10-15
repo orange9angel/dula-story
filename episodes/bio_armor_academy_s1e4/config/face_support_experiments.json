@@ -1,0 +1,243 @@
+{
+  "support_09": {
+    "faceRoundness": 0.9
+  },
+  "support_07": {
+    "faceRoundness": 0.7
+  },
+  "support_05": {
+    "faceRoundness": 0.5
+  },
+  "band_half": {
+    "sideFaceSupport": {
+      "innerStart": 0.008,
+      "innerFull": 0.025,
+      "outerFull": 0.045,
+      "outerEnd": 0.065,
+      "depths": [
+        [
+          1.405,
+          0
+        ],
+        [
+          1.43,
+          0.0075
+        ],
+        [
+          1.45,
+          0.011
+        ],
+        [
+          1.475,
+          0.007
+        ],
+        [
+          1.51,
+          0.01
+        ],
+        [
+          1.54,
+          0
+        ]
+      ]
+    }
+  },
+  "band_full": {
+    "sideFaceSupport": {
+      "innerStart": 0.008,
+      "innerFull": 0.025,
+      "outerFull": 0.045,
+      "outerEnd": 0.065,
+      "depths": [
+        [
+          1.405,
+          0
+        ],
+        [
+          1.43,
+          0.015
+        ],
+        [
+          1.45,
+          0.022
+        ],
+        [
+          1.475,
+          0.014
+        ],
+        [
+          1.51,
+          0.02
+        ],
+        [
+          1.54,
+          0
+        ]
+      ]
+    }
+  },
+  "facade_025": {
+    "frontFaceSupport": {
+      "bottom": 1.41,
+      "bottomFull": 1.445,
+      "topFull": 1.525,
+      "top": 1.56,
+      "outerFull": 0.05,
+      "outerEnd": 0.08,
+      "slope": 0.25
+    }
+  },
+  "facade_012": {
+    "frontFaceSupport": {
+      "bottom": 1.41,
+      "bottomFull": 1.445,
+      "topFull": 1.525,
+      "top": 1.56,
+      "outerFull": 0.05,
+      "outerEnd": 0.08,
+      "slope": 0.12
+    }
+  },
+  "facade_wide": {
+    "frontFaceSupport": {
+      "bottom": 1.41,
+      "bottomFull": 1.445,
+      "topFull": 1.525,
+      "top": 1.56,
+      "outerFull": 0.065,
+      "outerEnd": 0.09,
+      "slope": 0.12
+    }
+  },
+  "facade_smooth": {
+    "frontFaceSupport": {
+      "bottom": 1.378,
+      "bottomFull": 1.42,
+      "topFull": 1.515,
+      "top": 1.55,
+      "outerFull": 0.052,
+      "outerEnd": 0.075,
+      "slope": 0.18
+    }
+  },
+  "facade_smooth_wide": {
+    "frontFaceSupport": {
+      "bottom": 1.378,
+      "bottomFull": 1.42,
+      "topFull": 1.515,
+      "top": 1.55,
+      "outerFull": 0.06,
+      "outerEnd": 0.082,
+      "slope": 0.18
+    }
+  },
+  "oblique_12": {
+    "obliqueFaceSupport": {
+      "width": 0.012,
+      "depth": 0.02
+    }
+  },
+  "oblique_20": {
+    "obliqueFaceSupport": {
+      "width": 0.02,
+      "depth": 0.026
+    }
+  },
+  "fold_16": {
+    "obliqueFaceSupport": {
+      "width": 0.012,
+      "depth": 0.02,
+      "outerEyeFold": 0.016
+    }
+  },
+  "fold_24": {
+    "obliqueFaceSupport": {
+      "width": 0.012,
+      "depth": 0.02,
+      "outerEyeFold": 0.024
+    }
+  },
+  "fold_32": {
+    "obliqueFaceSupport": {
+      "width": 0.012,
+      "depth": 0.02,
+      "outerEyeFold": 0.032
+    }
+  },
+  "wide_fold": {
+    "obliqueFaceSupport": {
+      "width": 0.02,
+      "depth": 0.026,
+      "outerEyeFold": 0.016
+    }
+  },
+  "mid_fold": {
+    "obliqueFaceSupport": {
+      "width": 0.016,
+      "depth": 0.023,
+      "outerEyeFold": 0.012
+    }
+  },
+  "paint_8": {
+    "obliqueFaceSupport": {
+      "width": 0.02,
+      "depth": 0.026,
+      "outerEyeFold": 0,
+      "eyePaintShift": 0.008
+    }
+  },
+  "paint_12": {
+    "obliqueFaceSupport": {
+      "width": 0.02,
+      "depth": 0.026,
+      "outerEyeFold": 0,
+      "eyePaintShift": 0.012
+    }
+  },
+  "paint_16": {
+    "obliqueFaceSupport": {
+      "width": 0.02,
+      "depth": 0.026,
+      "outerEyeFold": 0,
+      "eyePaintShift": 0.016
+    }
+  },
+  "late_20": {
+    "obliqueFaceSupport": {
+      "width": 0.018,
+      "depth": 0.024,
+      "outerEyeFold": 0.02
+    }
+  },
+  "late_32": {
+    "obliqueFaceSupport": {
+      "width": 0.018,
+      "depth": 0.024,
+      "outerEyeFold": 0.032
+    }
+  },
+  "cheek_6": {
+    "obliqueFaceSupport": {
+      "width": 0.018,
+      "depth": 0.024,
+      "outerEyeFold": 0.02,
+      "lowerCheek": 0.006
+    }
+  },
+  "cheek_10": {
+    "obliqueFaceSupport": {
+      "width": 0.018,
+      "depth": 0.024,
+      "outerEyeFold": 0.02,
+      "lowerCheek": 0.01
+    }
+  },
+  "refined": {
+    "obliqueFaceSupport": {
+      "width": 0.018,
+      "depth": 0.024,
+      "outerEyeFold": 0.02,
+      "lowerCheek": 0.0035
+    }
+  }
+}
