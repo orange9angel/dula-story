@@ -416,3 +416,39 @@ python tools/analyze_profile_features.py --phase review
 
 通用诊断教训已写回
 `dula-skills/character-modeler/references/multiview-character-fit.md` 的侧脸特征测量章节。
+
+## 2026-10-15：补斜面参考与整图漏检复查
+
+用户指出后脑头发已坏，重点要求45°/60°参考，并提醒检查注意力局限于脸部。
+本轮补绘画参考、重拍模型同名角度、记录整图问题；没有把头发修好，也没有替换
+共享角色。旧鼻下拟合的局部有效性不能视为整个人物完成。
+
+- [整图问题标注](oblique_feature_study_v2/whole_frame_review.jpg)：全幅模型上六区
+  人工定位，覆盖刘海/发顶、后脑/耳后、马尾/发根、鼻口/下巴、眼眉/叶饰、
+  头颈/领口。右转马尾只露颈后短束，左转马尾根部硬接、末端管状；后脑纹理
+  拉伸、耳后三角裸露、刘海上拱和领口碎片仍未解决。遮挡原因与具体改法尚须
+  对几何和图层分别验证，不能仅凭截图声称发束丢失或确诊某个参数。
+- [45°全图对照](oblique_feature_study_v2/comparison_45.jpg)、
+  [60°模型与斜面绘画对照](oblique_feature_study_v2/comparison_60.jpg)：依次显示
+  新绘画、原V4、仅鼻下拟合。模型沿用实际头部旋转输入，身体朝前；绘画半身
+  随头转。未扭曲图像对齐，服装仅作边界检查，不据此计算整体形状误差。
+- 原九视图仍是身份母图。内置 image_gen 共返回三张单图，原始输出均保留，
+  提示见 `oblique_feature_study_v2/references/prompts.json`。首张左右方向重复；
+  第二张方向与非对称发型正确，45°格可作绘画候选，60°格偏纯侧；第三张
+  纠正为双眼可见斜面，但角度仍偏浅。**没有获得可作测量基准的精确60°参考。**
+  图中45/60标签是生成目标，不能当实测yaw；不从这些图计算同角度拟合分数。
+- 两组各16个角度/表情状态，无浏览器错误，顶点有限，正面/90°逆序一致。
+  正面逐像素无变化；±45°/±60°拟合变化仅落于下半脸局部。没有连续动画验收，
+  没有因技术检查通过而判定造型合格。
+
+复现（单集目录，4215本地服务）：
+
+```powershell
+node tools/render_profile_feature_study.mjs --variants baseline,contour_fit --out storyboard/hybrid_character/oblique_feature_study_v2 --additional-angles 60,-60
+python tools/build_oblique_feature_review.py
+```
+
+`review.json` 保存参考选择/裁切、生成失败状态、人工观察、像素变化和截图哈希。
+通用教训写回 `character-modeler/references/character-aesthetics.md` 的“全图复查”
+章节：先全图、再逐区和连接、最后再全图；每个可见区域必须有观察记录，不能
+依赖用户逐个提醒。

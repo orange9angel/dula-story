@@ -9,11 +9,14 @@ const ep=path.resolve(import.meta.dirname,'..');
 const req=createRequire(path.join(ep,'../../node_modules/dula-engine/package.json'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const arg=n=>{const i=process.argv.indexOf(n);return i<0?null:process.argv[i+1];};
-const out=path.join(ep,'storyboard/hybrid_character/profile_feature_study_v1');
+const study=path.join(ep,'storyboard/hybrid_character/profile_feature_study_v1');
+const out=arg('--out')?path.resolve(ep,arg('--out')):study;
+const additionalAngles=(arg('--additional-angles')??'').split(',').filter(Boolean).map(Number);
+if(additionalAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Angles must be finite and within [-180,180]');
 const sourcePath=path.resolve(ep,'../../../dula-assets/characters/bioarmor/aoi-generated-paint.js');
 const source=fs.readFileSync(sourcePath,'utf8');
 const configs={baseline:{},eye_relief:{recess:.007}};
-const fit=path.join(out,'fit_candidate.json');
+const fit=path.join(study,'fit_candidate.json');
 if(fs.existsSync(fit))configs.contour_fit=JSON.parse(fs.readFileSync(fit,'utf8'));
 const names=(arg('--variants')??'baseline,eye_relief').split(',');
 const browser=await req('puppeteer').launch({headless:true});
@@ -39,6 +42,9 @@ try{
     await page.goto('http://127.0.0.1:4215/face_lab.html?actor=aoi&cel=direct',{timeout:90000});
     await page.waitForFunction('window.ready===true',{timeout:90000});
     const specs=[['front',0],['turn_45',45],['turn_65',65],['turn_90',90],['turn_minus45',-45],['turn_minus65',-65],['turn_minus90',-90],['structure_90',90,true],['half_blink',45,false,{blink:.5}],['talk',65,false,{jaw:.6,gaze:[-.5,0]}],...([15,25,35,55].map(a=>['turn_'+a,a]))];
+    for(const angle of additionalAngles){
+      if(!specs.some(s=>s[1]===angle&&!s[2]&&!s[3]))specs.push([`turn_${angle<0?'minus':''}${Math.abs(angle)}`,angle]);
+    }
     const report={variant:name,sourcePath,originalSha256:sha(source),experimentSha256:sha(text),overrides,frames:{},errors};
     async function capture([id,angle,bare=false,state={}]){
       const result=await page.evaluate(async({angle,bare,state})=>{

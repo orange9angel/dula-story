@@ -1,0 +1,258 @@
+{
+  "status": "diagnostic_only_not_accepted_character",
+  "canonical_reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+  "generator": "built-in image_gen; 3 sequential single-image requests",
+  "requested_artifacts": 3,
+  "returned_artifacts": 3,
+  "reference_reviews": {
+    "draft_01_rejected.png": "Rejected: both rows face left; labels wrong; 60 targets near profile.",
+    "draft_02.png": "Screen directions and anatomical hairstyle side corrected. 45 cells usable as drawing candidates; 60 cells rejected for near-profile pose.",
+    "draft_03_oblique.png": "Both eyes and correct screen directions visible. Visually too shallow to establish 60 degrees. Uncalibrated oblique art candidate only."
+  },
+  "panel_selection": [
+    {
+      "id": "right45",
+      "frame": "turn_45",
+      "angle": 45,
+      "label": "右向 45°",
+      "file": "draft_02.png",
+      "crop": [
+        0,
+        0,
+        655,
+        505
+      ],
+      "target": 45
+    },
+    {
+      "id": "left45",
+      "frame": "turn_minus45",
+      "angle": -45,
+      "label": "左向 45°",
+      "file": "draft_02.png",
+      "crop": [
+        0,
+        584,
+        655,
+        1088
+      ],
+      "target": -45
+    },
+    {
+      "id": "right60",
+      "frame": "turn_60",
+      "angle": 60,
+      "label": "右向 60°",
+      "file": "draft_03_oblique.png",
+      "crop": [
+        0,
+        0,
+        925,
+        755
+      ],
+      "target": 60
+    },
+    {
+      "id": "left60",
+      "frame": "turn_minus60",
+      "angle": -60,
+      "label": "左向 60°",
+      "file": "draft_03_oblique.png",
+      "crop": [
+        925,
+        0,
+        1851,
+        755
+      ],
+      "target": -60
+    }
+  ],
+  "reference_geometry_use": "No measured yaw or cross-view correspondence; no exact-yaw fitting target or similarity score.",
+  "regions": [
+    {
+      "id": 1,
+      "name": "刘海 / 颅顶",
+      "status": "未解决",
+      "observation": "刘海向上拱起、聚成厚束；目标图是向额前自然垂落的分束。",
+      "right": [
+        433,
+        225
+      ],
+      "left": [
+        440,
+        170
+      ]
+    },
+    {
+      "id": 2,
+      "name": "后脑 / 耳后",
+      "status": "未解决",
+      "observation": "后脑大块纹理拉伸；耳后出现三角形裸露区，发缘收口生硬。",
+      "right": [
+        315,
+        480
+      ],
+      "left": [
+        584,
+        464
+      ]
+    },
+    {
+      "id": 3,
+      "name": "马尾 / 发根",
+      "status": "未解决",
+      "observation": "右转时只露颈后短束；左转能见马尾，但根部硬接、发梢卷成管状。",
+      "right": [
+        339,
+        595
+      ],
+      "left": [
+        700,
+        221
+      ]
+    },
+    {
+      "id": 4,
+      "name": "鼻口 / 下巴",
+      "status": "仅局部拟合",
+      "observation": "鼻下候选只改一个局部；斜面面长、颊面和整体神态仍未匹配。",
+      "right": [
+        557,
+        527
+      ],
+      "left": [
+        342,
+        520
+      ]
+    },
+    {
+      "id": 5,
+      "name": "眼眉 / 叶饰",
+      "status": "继续核对",
+      "observation": "保持琥珀眼与叶饰身份；没有独立眼球前凸的诊断证据。",
+      "right": [
+        476,
+        431
+      ],
+      "left": [
+        429,
+        426
+      ]
+    },
+    {
+      "id": 6,
+      "name": "头颈 / 领口",
+      "status": "未解决",
+      "observation": "颈部色块转折硬，白色领片及灰色边界仍有缺口与碎片。",
+      "right": [
+        499,
+        647
+      ],
+      "left": [
+        500,
+        646
+      ]
+    }
+  ],
+  "review_scope": "Full head, all hair, face, neck and visible clothing; not full-body or animation approval.",
+  "current_hair_fixed": false,
+  "pixel_change": {
+    "front": {
+      "changed_pixels": 0,
+      "bbox_xyxy": null
+    },
+    "turn_45": {
+      "changed_pixels": 5322,
+      "bbox_xyxy": [
+        386,
+        480,
+        565,
+        582
+      ]
+    },
+    "turn_minus45": {
+      "changed_pixels": 5209,
+      "bbox_xyxy": [
+        338,
+        481,
+        524,
+        577
+      ]
+    },
+    "turn_60": {
+      "changed_pixels": 4575,
+      "bbox_xyxy": [
+        406,
+        481,
+        584,
+        578
+      ]
+    },
+    "turn_minus60": {
+      "changed_pixels": 4457,
+      "bbox_xyxy": [
+        321,
+        481,
+        496,
+        581
+      ]
+    }
+  },
+  "render_validation": {
+    "baseline": {
+      "frames": 16,
+      "browser_errors": [],
+      "all_finite": true,
+      "reverse_seek": {
+        "front": true,
+        "turn_90": true
+      }
+    },
+    "contour_fit": {
+      "frames": 16,
+      "browser_errors": [],
+      "all_finite": true,
+      "reverse_seek": {
+        "front": true,
+        "turn_90": true
+      }
+    }
+  },
+  "hashes": {
+    "baseline\\front.png": "3c5fdf306dbd3f551b99ea95f48fab2d5d9005ef1c70ffb3e0c404015420a638",
+    "baseline\\half_blink.png": "660a5997209b46399284af60d3f83e51e6a7f7950b27479cf92e6bcc0d07146e",
+    "baseline\\structure_90.png": "14ab0dbb362a822d186a2c0fc9b3270b06d4f229ae235413eb764703756b0906",
+    "baseline\\talk.png": "4d842c06fba3f7ab0612572cc7d7dc764cf729b673d6f710125760a047771340",
+    "baseline\\turn_15.png": "fa4c6456836e841a111b6cd7e6ed0ae4ff59eb4b7f5e4112162a4b727f8bb390",
+    "baseline\\turn_25.png": "d40f40258d10d213c30da1c1ad812778ba71ab5199e3b0dc8a2fbb638937c118",
+    "baseline\\turn_35.png": "c64c62a52be6b10cc2e07593ffdd07fe4a14df1fb5afb787d3f6dc330f405249",
+    "baseline\\turn_45.png": "ec940c9f6be7889909ef7181924ea2fac6bf5757cf3e865170c8ecc38731bb4c",
+    "baseline\\turn_55.png": "d7f4272c4c6fa308834817f9a649dfce8a84e0c00ccdb91fbdec0ea61533df56",
+    "baseline\\turn_60.png": "8b83adecda675fbed978b64601f490541e93742546130fd266f88032cfd1dd0a",
+    "baseline\\turn_65.png": "c2f661486a8efc399e462efaa7126a2347e840d847e3efde71087befd0c014c5",
+    "baseline\\turn_90.png": "92c7f394f66ed85a59feba3f1acf6b00aff763b796ba83556e174fec1f93e4a6",
+    "baseline\\turn_minus45.png": "86947419c0aaa6b291aba2ff8c378ee9406b3a41900a9b707d3317a2f4e8c882",
+    "baseline\\turn_minus60.png": "2f59a55a4693d8de6fd894d8dda870db651b7a1db576411706bcd4d2c3448cff",
+    "baseline\\turn_minus65.png": "8aa496e058556e5706cdc7302490f16e5a865fa42d80e3e8c1b781b5430d2a1a",
+    "baseline\\turn_minus90.png": "6aa39b9c885cd2b339c8bdf3cd44bb103c13953e3431b1c0bb226dc11e24c691",
+    "contour_fit\\front.png": "3c5fdf306dbd3f551b99ea95f48fab2d5d9005ef1c70ffb3e0c404015420a638",
+    "contour_fit\\half_blink.png": "f71a0f94407a17b950ed6150ea3c3283427262a0750f0c6e7f8bc283c05cb094",
+    "contour_fit\\structure_90.png": "1309064119942f3c3faeb6ba12069e241461d7c0c61aab49143b7d659238fcc9",
+    "contour_fit\\talk.png": "fa45c534354d297f52dd6fe3caf9fcf0ddd8c4ba60888454ced4d079af229f43",
+    "contour_fit\\turn_15.png": "df6def96d5f6ae94ea650a4b05664b7c87be2d46f320dd6063f10e584cc1917e",
+    "contour_fit\\turn_25.png": "f4ae2cbaeff316830597336ce8fa715a195152f70dd18504af74a22f4fce4c29",
+    "contour_fit\\turn_35.png": "97c87e0d6e5685058173bb6f64a0164e7f4970cb83d5f57d7ba9d8f286d0c590",
+    "contour_fit\\turn_45.png": "99cfb49fa0add83080050b3049f2f09b18bb751bff8a17645467ed2245c2b2ad",
+    "contour_fit\\turn_55.png": "87f231c3f90ed112d486ff746835cd8e59cfd3e41b661fe6a6c07cc90c48efe5",
+    "contour_fit\\turn_60.png": "704267ede8b4ce603ddfb4bea875a0dd10c8f096e202649b6461797bf3a98578",
+    "contour_fit\\turn_65.png": "1ffbc553fae80447e793ee77f46ee6a4531263511f2efc5f3af811a7307af5a9",
+    "contour_fit\\turn_90.png": "14ac7533e29df41b103cd33f2cec3dc3945379076f4ca0dc2a89ac678cafcb0c",
+    "contour_fit\\turn_minus45.png": "090fef9c3c4fb491c0ac873990310070e8e69663edd3aaacce90b4a7c2c3fdb4",
+    "contour_fit\\turn_minus60.png": "088fc6f3c96973c88b66a30afc0cc8bb16ce975aab12f0138bc71167db494cc6",
+    "contour_fit\\turn_minus65.png": "f5ca9baf28c311841818f6b3a3f7ea92ae510d3c71fb2366d7e9b5f601d50f2e",
+    "contour_fit\\turn_minus90.png": "26ee76ce57ee9bb12b27b3da43b4f173a4163c27cabc05c9c71d43f816532633",
+    "references\\draft_01_rejected.png": "41a9372420f38b7fde545de05270e33d63a6a91256364d0f261cfd3cbec745dc",
+    "references\\draft_02.png": "6dda8b756b621c1b1e5581c9fd6cff8385dad1d266d8c1262e041b51750aaee3",
+    "references\\draft_03_oblique.png": "ccbe05af7c71155b6915fc02d90fda5233b99a529762a7f384bb735bf95c308f"
+  }
+}
