@@ -10,7 +10,7 @@ import {addAoiGeneratedHair} from 'dula-assets/characters/bioarmor/aoi-generated
 const q=new URLSearchParams(location.search),id=q.get('actor')??'aoi';
 if(!q.has('cel'))q.set('cel','anime');
 const a=await ImportedPerformer.load(`./assets3d/tripo_${id}_trial/${id}_h31_lod160k_v2.glb`,id==='aoi'?1.65:1.78);
-const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(900,900);r.outputColorSpace=THREE.SRGBColorSpace;document.body.append(r.domElement);
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true,stencil:true});r.setSize(900,900);r.outputColorSpace=THREE.SRGBColorSpace;document.body.append(r.domElement);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#d6d9d7');scene.add(a.mesh);
 scene.add(new THREE.HemisphereLight('#f5f7ff','#b8afa0',2));
 const light=new THREE.DirectionalLight('#fff1df',2.5);light.position.set(2.8,5,4);scene.add(light);

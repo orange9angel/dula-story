@@ -35,7 +35,7 @@ function mouthAt(t,key){
 }
 const stage=new BiologyRoomScene(),scene=stage.build(),actors={};
 await stage.readyPromise;
-const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(W*resolution,H*resolution);
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true,stencil:true});renderer.setSize(W*resolution,H*resolution);
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor('#dce8dd');
 scene.traverse(o=>{if(o.isMesh)o.material.toneMapped=false;});

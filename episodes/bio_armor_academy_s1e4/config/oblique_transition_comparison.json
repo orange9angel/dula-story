@@ -1,0 +1,385 @@
+{
+  "before": "storyboard/hybrid_character/oblique_transition_v1/before",
+  "after": "storyboard/hybrid_character/oblique_transition_v1/release_final/baseline",
+  "out": "storyboard/hybrid_character/oblique_transition_v1/comparison",
+  "reference": "storyboard/hybrid_character/oblique_feature_study_v2/references/draft_03_oblique.png",
+  "whole_frames": true,
+  "whole_frame_note": "本轮调整眼下至下颌过渡、斜面鼻部、贴脸发束、睫线与耳垂；参考角度未标定。",
+  "boards": [
+    {
+      "id": "01_cheek_nose",
+      "title": "远侧脸：连续的眼下—低位脸颊—下颌，以及鼻部遮挡",
+      "rows": [
+        {
+          "label": "模型 32.16°：眼下的收窄是否突然",
+          "frame": "no_hair_32.1631935647518",
+          "reference_crop": [
+            555,
+            285,
+            785,
+            535
+          ],
+          "model_crop": [
+            440,
+            365,
+            655,
+            595
+          ]
+        },
+        {
+          "label": "模型 60°：鼻部留在脸内，脸颊缓缓收向下巴",
+          "frame": "no_hair_60",
+          "reference_crop": [
+            555,
+            285,
+            785,
+            535
+          ],
+          "model_crop": [
+            460,
+            365,
+            675,
+            595
+          ]
+        },
+        {
+          "label": "模型 45°：恢复头发后的完整关系",
+          "frame": "turn_45",
+          "reference_crop": [
+            395,
+            215,
+            805,
+            575
+          ],
+          "model_crop": [
+            315,
+            305,
+            680,
+            620
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02_eyes_ears",
+      "title": "局部复查：近远眼睫线、鼻侧留白与短耳垂",
+      "rows": [
+        {
+          "label": "模型 32.16°：只小幅收眼距，鼻侧睫线接\n入上睑",
+          "frame": "no_hair_32.1631935647518",
+          "reference_crop": [
+            555,
+            285,
+            785,
+            380
+          ],
+          "model_crop": [
+            410,
+            380,
+            640,
+            465
+          ]
+        },
+        {
+          "label": "模型 60°：远眼上睫线与遮挡",
+          "frame": "no_hair_60",
+          "reference_crop": [
+            555,
+            285,
+            785,
+            380
+          ],
+          "model_crop": [
+            490,
+            380,
+            645,
+            465
+          ]
+        },
+        {
+          "label": "模型 60°：耳根、耳垂、下颌连接仍需一起判\n断",
+          "frame": "no_hair_60",
+          "reference_crop": [
+            410,
+            315,
+            575,
+            495
+          ],
+          "model_crop": [
+            335,
+            400,
+            455,
+            550
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03_hair",
+      "title": "贴脸发束：发根连接、曲线走向、收尖与留白",
+      "rows": [
+        {
+          "label": "模型 32.16°",
+          "frame": "turn_32.1631935647518",
+          "reference_crop": [
+            550,
+            230,
+            810,
+            570
+          ],
+          "model_crop": [
+            440,
+            300,
+            710,
+            640
+          ]
+        },
+        {
+          "label": "模型 60°",
+          "frame": "turn_60",
+          "reference_crop": [
+            550,
+            230,
+            810,
+            570
+          ],
+          "model_crop": [
+            440,
+            300,
+            710,
+            640
+          ]
+        },
+        {
+          "label": "另一侧模型 −60°",
+          "frame": "turn_minus60",
+          "reference_crop": [
+            1040,
+            230,
+            1310,
+            570
+          ],
+          "model_crop": [
+            190,
+            300,
+            460,
+            640
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06_eye_angles",
+      "title": "眼白随转向的组织：近眼保留侧白，远眼贴虹膜收口",
+      "rows": [
+        {
+          "label": "正面：外侧白区较宽，鼻侧短小；上下眼睑包住虹\n膜",
+          "frame": "front",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            965,
+            155,
+            1140,
+            235
+          ],
+          "model_crop": [
+            345,
+            365,
+            570,
+            470
+          ]
+        },
+        {
+          "label": "浅斜面（参考含仰头）：近眼仍留侧白，远眼的外\n角开始遮挡",
+          "frame": "turn_32.1631935647518",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            160,
+            550,
+            330,
+            645
+          ],
+          "model_crop": [
+            410,
+            365,
+            640,
+            470
+          ]
+        },
+        {
+          "label": "较深斜面：远眼外侧、下方只留窄白边，避免三角\n白片",
+          "frame": "turn_60",
+          "reference_crop": [
+            565,
+            290,
+            775,
+            385
+          ],
+          "model_crop": [
+            490,
+            365,
+            645,
+            470
+          ]
+        },
+        {
+          "label": "纯侧面：近眼的白区在虹膜后方；远眼消失",
+          "frame": "turn_90",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            715,
+            548,
+            780,
+            608
+          ],
+          "model_crop": [
+            560,
+            365,
+            665,
+            470
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07_eye_cheek_join",
+      "title": "最后一轮纠正：眼缘到脸颊接顺，远眼白区跟随虹膜收口",
+      "rows": [
+        {
+          "label": "32.16°：回收远眼下方伸出的白角",
+          "before": "storyboard/hybrid_character/oblique_transition_v1/adopted/baseline",
+          "frame": "turn_32.1631935647518",
+          "reference_crop": [
+            710,
+            290,
+            795,
+            515
+          ],
+          "model_crop": [
+            570,
+            365,
+            660,
+            560
+          ]
+        },
+        {
+          "label": "45°：去掉贴着下眼睑的小包，较低脸颊保留",
+          "before": "storyboard/hybrid_character/oblique_transition_v1/adopted/baseline",
+          "frame": "turn_45",
+          "reference_crop": [
+            710,
+            290,
+            795,
+            515
+          ],
+          "model_crop": [
+            585,
+            365,
+            660,
+            560
+          ]
+        },
+        {
+          "label": "60°：眼下不再先凹后凸；下脸仍有厚度",
+          "before": "storyboard/hybrid_character/oblique_transition_v1/adopted/baseline",
+          "frame": "turn_60",
+          "reference_crop": [
+            710,
+            290,
+            795,
+            515
+          ],
+          "model_crop": [
+            590,
+            365,
+            660,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08_overall_reference",
+      "title": "回到完整头像判断：角色气质、脸型与发型的关系",
+      "rows": [
+        {
+          "label": "正面：保留角色身份；眼距与睫线为本阶段的小幅\n调整",
+          "frame": "front",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            870,
+            0,
+            1310,
+            400
+          ],
+          "model_crop": [
+            220,
+            100,
+            710,
+            700
+          ]
+        },
+        {
+          "label": "斜面：轮廓更连贯；发束、虹膜比例仍有绘画差距",
+          "frame": "turn_45",
+          "reference_crop": [
+            80,
+            0,
+            900,
+            755
+          ],
+          "model_crop": [
+            215,
+            100,
+            710,
+            750
+          ]
+        },
+        {
+          "label": "另一侧：也检查耳根、马尾与颈肩，不能只看局部\n线条",
+          "frame": "turn_minus60",
+          "reference_crop": [
+            960,
+            0,
+            1820,
+            755
+          ],
+          "model_crop": [
+            190,
+            100,
+            760,
+            760
+          ]
+        }
+      ]
+    }
+  ],
+  "turn_sequence": {
+    "before": "storyboard/hybrid_character/oblique_transition_v1/identity_before/baseline",
+    "angles": [
+      60,
+      65,
+      70,
+      75,
+      80,
+      85,
+      90
+    ],
+    "crop": [
+      120,
+      90,
+      820,
+      770
+    ]
+  },
+  "preserve": {
+    "before": "storyboard/hybrid_character/oblique_transition_v1/release/baseline",
+    "frames": [
+      "front",
+      "turn_45",
+      "turn_minus45",
+      "turn_60",
+      "turn_minus60"
+    ]
+  }
+}

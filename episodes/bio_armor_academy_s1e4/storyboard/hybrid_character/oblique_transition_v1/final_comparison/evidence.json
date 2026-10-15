@@ -1,0 +1,819 @@
+{
+  "config": {
+    "before": "storyboard/hybrid_character/oblique_transition_v1/release_final/baseline",
+    "after": "storyboard/hybrid_character/oblique_transition_v1/final_delivery/baseline",
+    "out": "storyboard/hybrid_character/oblique_transition_v1/final_comparison",
+    "reference": "storyboard/hybrid_character/oblique_feature_study_v2/references/draft_03_oblique.png",
+    "whole_frames": true,
+    "whole_frame_note": "本轮耳发修改保留脸部参数；头发遮挡会改变部分脸缘像素。参考角度未标定，仍有发壳与颈领差距。",
+    "boards": [
+      {
+        "id": "10_ear_hair",
+        "title": "用户指出的三处：耳内结构、鬓发、后脑与马尾",
+        "rows": [
+          {
+            "label": "耳朵：减少重复环线，保留单一相连的耳腔；耳根\n仍较简化",
+            "frame": "turn_minus60",
+            "reference": "storyboard/hybrid_character/oblique_transition_v1/sources/user_ear_target.png",
+            "reference_crop": [
+              0,
+              0,
+              78,
+              108
+            ],
+            "model_crop": [
+              483,
+              392,
+              568,
+              510
+            ]
+          },
+          {
+            "label": "鬓发：从粗钩改为渐细分束；曲线和贴图还没有原\n画细腻",
+            "frame": "turn_minus60",
+            "reference": "storyboard/hybrid_character/oblique_transition_v1/sources/user_temple_target.png",
+            "reference_crop": [
+              0,
+              0,
+              91,
+              279
+            ],
+            "model_crop": [
+              414,
+              295,
+              508,
+              620
+            ]
+          },
+          {
+            "label": "后发：缩短后颈长尖片，侧面马尾根略抬高、靠拢\n；发壳感仍在",
+            "frame": "turn_minus60",
+            "reference": "storyboard/hybrid_character/oblique_transition_v1/sources/user_rear_target.png",
+            "reference_crop": [
+              0,
+              0,
+              265,
+              463
+            ],
+            "model_crop": [
+              480,
+              115,
+              840,
+              745
+            ]
+          }
+        ]
+      },
+      {
+        "id": "01_cheek_nose",
+        "title": "远侧脸：连续的眼下—低位脸颊—下颌，以及鼻部遮挡",
+        "rows": [
+          {
+            "label": "模型 32.16°：眼下的收窄是否突然",
+            "frame": "no_hair_32.1631935647518",
+            "reference_crop": [
+              555,
+              285,
+              785,
+              535
+            ],
+            "model_crop": [
+              440,
+              365,
+              655,
+              595
+            ]
+          },
+          {
+            "label": "模型 60°：鼻部留在脸内，脸颊缓缓收向下巴",
+            "frame": "no_hair_60",
+            "reference_crop": [
+              555,
+              285,
+              785,
+              535
+            ],
+            "model_crop": [
+              460,
+              365,
+              675,
+              595
+            ]
+          },
+          {
+            "label": "模型 45°：恢复头发后的完整关系",
+            "frame": "turn_45",
+            "reference_crop": [
+              395,
+              215,
+              805,
+              575
+            ],
+            "model_crop": [
+              315,
+              305,
+              680,
+              620
+            ]
+          }
+        ]
+      },
+      {
+        "id": "03_hair",
+        "title": "贴脸发束：发根连接、曲线走向、收尖与留白",
+        "rows": [
+          {
+            "label": "模型 32.16°",
+            "frame": "turn_32.1631935647518",
+            "reference_crop": [
+              550,
+              230,
+              810,
+              570
+            ],
+            "model_crop": [
+              440,
+              300,
+              710,
+              640
+            ]
+          },
+          {
+            "label": "模型 60°",
+            "frame": "turn_60",
+            "reference_crop": [
+              550,
+              230,
+              810,
+              570
+            ],
+            "model_crop": [
+              440,
+              300,
+              710,
+              640
+            ]
+          },
+          {
+            "label": "另一侧模型 −60°",
+            "frame": "turn_minus60",
+            "reference_crop": [
+              1040,
+              230,
+              1310,
+              570
+            ],
+            "model_crop": [
+              190,
+              300,
+              460,
+              640
+            ]
+          }
+        ]
+      },
+      {
+        "id": "06_eye_angles",
+        "title": "眼白随转向的组织：近眼保留侧白，远眼贴虹膜收口",
+        "rows": [
+          {
+            "label": "正面：外侧白区较宽，鼻侧短小；上下眼睑包住虹\n膜",
+            "frame": "front",
+            "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+            "reference_crop": [
+              965,
+              155,
+              1140,
+              235
+            ],
+            "model_crop": [
+              345,
+              365,
+              570,
+              470
+            ]
+          },
+          {
+            "label": "浅斜面（参考含仰头）：近眼仍留侧白，远眼的外\n角开始遮挡",
+            "frame": "turn_32.1631935647518",
+            "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+            "reference_crop": [
+              160,
+              550,
+              330,
+              645
+            ],
+            "model_crop": [
+              410,
+              365,
+              640,
+              470
+            ]
+          },
+          {
+            "label": "较深斜面：远眼外侧、下方只留窄白边，避免三角\n白片",
+            "frame": "turn_60",
+            "reference_crop": [
+              565,
+              290,
+              775,
+              385
+            ],
+            "model_crop": [
+              490,
+              365,
+              645,
+              470
+            ]
+          },
+          {
+            "label": "纯侧面：近眼的白区在虹膜后方；远眼消失",
+            "frame": "turn_90",
+            "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+            "reference_crop": [
+              715,
+              548,
+              780,
+              608
+            ],
+            "model_crop": [
+              560,
+              365,
+              665,
+              470
+            ]
+          }
+        ]
+      },
+      {
+        "id": "08_overall_reference",
+        "title": "回到完整头像判断：角色气质、脸型与发型的关系",
+        "rows": [
+          {
+            "label": "正面：脸部参数保留，复查发束遮挡与整体观感",
+            "frame": "front",
+            "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+            "reference_crop": [
+              870,
+              0,
+              1310,
+              400
+            ],
+            "model_crop": [
+              220,
+              100,
+              710,
+              700
+            ]
+          },
+          {
+            "label": "斜面：轮廓更连贯；发束、虹膜比例仍有绘画差距",
+            "frame": "turn_45",
+            "reference_crop": [
+              80,
+              0,
+              900,
+              755
+            ],
+            "model_crop": [
+              215,
+              100,
+              710,
+              750
+            ]
+          },
+          {
+            "label": "另一侧：也检查耳根、马尾与颈肩，不能只看局部\n线条",
+            "frame": "turn_minus60",
+            "reference_crop": [
+              960,
+              0,
+              1820,
+              755
+            ],
+            "model_crop": [
+              190,
+              100,
+              760,
+              760
+            ]
+          }
+        ]
+      }
+    ],
+    "turn_sequence": {
+      "before": "storyboard/hybrid_character/oblique_transition_v1/identity_before/baseline",
+      "angles": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "crop": [
+        120,
+        90,
+        820,
+        770
+      ]
+    },
+    "preserve": {
+      "before": "storyboard/hybrid_character/oblique_transition_v1/release_final/baseline",
+      "frames": [
+        "no_hair_45",
+        "no_hair_-45",
+        "no_hair_60",
+        "no_hair_-60"
+      ],
+      "crops": {
+        "no_hair_45": [
+          420,
+          340,
+          665,
+          595
+        ],
+        "no_hair_-45": [
+          235,
+          340,
+          480,
+          595
+        ],
+        "no_hair_60": [
+          480,
+          340,
+          665,
+          595
+        ],
+        "no_hair_-60": [
+          235,
+          340,
+          420,
+          595
+        ]
+      },
+      "scope": "裸头脸部区域，不含耳朵；正面与各角度脸部配置另作源码哈希核对。完整头像另看发束遮挡变化。"
+    }
+  },
+  "status": "candidate_pending_user_review",
+  "render_checks": {
+    "head_body_angles_match": true,
+    "no_browser_errors": true,
+    "finite_vertices": true,
+    "reverse_seeks_equal": true
+  },
+  "change_locations": {
+    "front": {
+      "changed_pixels": 6319,
+      "bbox": [
+        268,
+        136,
+        632,
+        593
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            286.66673461587516,
+            449.9999968767709
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            613.3333996983749,
+            450.00000407559617
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            286.66673461587516,
+            449.9999968767709
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            613.3333996983749,
+            450.00000407559617
+          ]
+        }
+      ]
+    },
+    "turn_45": {
+      "changed_pixels": 29876,
+      "bbox": [
+        248,
+        131,
+        648,
+        695
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            341.57698064305805,
+            449.99999687675387
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            572.5651947873117,
+            450.00000407561174
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            341.57698064305805,
+            449.99999687675387
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            572.5651947873117,
+            450.00000407561174
+          ]
+        }
+      ]
+    },
+    "turn_minus45": {
+      "changed_pixels": 88358,
+      "bbox": [
+        252,
+        131,
+        855,
+        717
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            327.43490026402685,
+            449.99999687673056
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            558.423114254655,
+            450.00000407563135
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            327.43490026402685,
+            449.99999687673056
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            558.423114254655,
+            450.00000407563135
+          ]
+        }
+      ]
+    },
+    "turn_60": {
+      "changed_pixels": 50459,
+      "bbox": [
+        220,
+        132,
+        649,
+        729
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            376.993587515451,
+            449.99999687674944
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            540.3269201507853,
+            450.00000407561544
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            376.993587515451,
+            449.99999687674944
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            540.3269201507853,
+            450.00000407561544
+          ]
+        }
+      ]
+    },
+    "turn_minus60": {
+      "changed_pixels": 102361,
+      "bbox": [
+        251,
+        131,
+        841,
+        735
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            359.67314710042183,
+            449.99999687673466
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            523.0064795476042,
+            450.00000407562794
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            359.67314710042183,
+            449.99999687673466
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            523.0064795476042,
+            450.00000407562794
+          ]
+        }
+      ]
+    },
+    "turn_90": {
+      "changed_pixels": 73409,
+      "bbox": [
+        163,
+        131,
+        530,
+        752
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996093610093,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996104473047,
+            450.0000040756224
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996093610093,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996104473047,
+            450.0000040756224
+          ]
+        }
+      ]
+    },
+    "turn_minus90": {
+      "changed_pixels": 94751,
+      "bbox": [
+        370,
+        131,
+        739,
+        754
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003906389895,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003895526953,
+            450.0000040756224
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003906389895,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003895526953,
+            450.0000040756224
+          ]
+        }
+      ]
+    }
+  },
+  "preserved_view_changed_pixels": {
+    "no_hair_45": 0,
+    "no_hair_-45": 0,
+    "no_hair_60": 0,
+    "no_hair_-60": 0
+  },
+  "limitations": "Pixel changes and rigid ear centres locate edits, not aesthetic quality. CPU eye probes exclude GPU sculpt; no beauty/visibility score.",
+  "source_hashes": {
+    "storyboard\\hybrid_character\\face_design_turnaround_v1\\aoi_nine_views.png": "3bb5f43c489448ca9c265f6a01d861cb3ca1e0f81345ba43c1fb2c63fff80617",
+    "storyboard\\hybrid_character\\oblique_feature_study_v2\\references\\draft_03_oblique.png": "ccbe05af7c71155b6915fc02d90fda5233b99a529762a7f384bb735bf95c308f",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\front.png": "4430577e48f0d11a034962cc10fb64877114a27a2d3563de16eb86b126d70ac0",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\no_hair_-45.png": "7ce953011ae7bf9029abe4afde100a2af717c8c4bfc8069c4a14691b5228e74c",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\no_hair_-60.png": "cb3cc1ff5dc6182c45b5b3fd4847de3e3d3382a6c29de348f45d3aed4efe8676",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\no_hair_32.1631935647518.png": "ee47c41025a327b5b201ce862b65ee5e4d61737c5e5daccf54c0054871eb7194",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\no_hair_45.png": "a1c00687cfa16d6508b2b37052565eb87dde2bc34c50b1d3384a958ea0a733fd",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\no_hair_60.png": "c7ce9d7ff4ab2818eb9fb3c370a05f03c0e502012220ca982dafb21ff55679b0",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_32.1631935647518.png": "08754b085e3e9e823837037000b4045f313ec21c2a022c6106d7fd6b36f4b1c3",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_45.png": "8fbdccb62a164fa9d7d0f79be496800c689a941c527df62dd631c7f3cee6e3af",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_60.png": "3b3eba3f5bd9c1430964d2e8b2622661945cb496493c0f9e29c26a0a7f14a21a",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_65.png": "29eeab394ef93adf898a9a140fb15271514da817455f2e6a8b5cd0d1025e4ff1",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_70.png": "a2ae53d3baa51c963c2c66b7045dadc0f44d3ab86f81073df688b7ae5987ff31",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_75.png": "cf448507ff31724c5944e96b999e8db04c8b90d8c1f8f61e3154c9b8c8cf6571",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_80.png": "513323129cd731217ef47c79222c5c494a737085ea94941ed8a7dfb240c3e9c1",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_85.png": "adc284283478e7d835968b11dd3b891c668b0b14b93790a2de53dfe38300f8c2",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_90.png": "27169c4ed45e23eb97e1ae42339a696818e1af291278338416dc64e71840a1a0",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_minus45.png": "39ac77cea7055a392b0e705d202878a77c1778065e74e7f008f7a42c947a5ad8",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_minus60.png": "0e42fd1b9437fa1e7199b4bdb03c8567a520e81dce36a74685d9fa586bf872e6",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\final_delivery\\baseline\\turn_minus90.png": "086012fbd04041bfeb3298f73befcb44289ac7b6e24016dcb909425ee5592598",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\identity_before\\baseline\\turn_60.png": "2ad0d23a3a94b5781735dbff2e874a073ae9a49d8e84335cc4157ad91d149fd7",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\identity_before\\baseline\\turn_65.png": "1dd79b1dc8c0a563f33c89675ad7f5fe9b83e5ffcac255c6c34d8a899ae50db7",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\identity_before\\baseline\\turn_70.png": "c15449fea4efd1e9e2a143c51af265457aa8be007a4e80493c48a64704a4dd98",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\identity_before\\baseline\\turn_75.png": "a5b687e8a9def4e007bbc89145ed112b9f8b238f52ec843beb2e757a7575316b",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\identity_before\\baseline\\turn_80.png": "ecb557c70249e6e7fb46593a1b111accf92f0a9878be198b9cec210b5fda564b",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\identity_before\\baseline\\turn_85.png": "7855255003ea6e811d83ac4585bbd29ba1ce08518f7e9251abb6d62a4d332d32",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\identity_before\\baseline\\turn_90.png": "ddf3c5b4303fb798db89b77e700e58890b032e6bb9de58dcd6f90a38adeaa3a4",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\front.png": "b8a93e17b52bfc06e157d915016621ccad2b77197d6902a64a0a7bc136c6292e",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\no_hair_-45.png": "a660374553b95bb81ad47cfc3c4ad787a6d411c66c1243b621c1cb13539d4ba1",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\no_hair_-60.png": "e3e7e91b03144246827f819b93bdca3df3abfeb5b5b3d4a196c343dea5cd14c1",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\no_hair_32.1631935647518.png": "d16b910c8cdabea88d26b641f9516a3f4934b002ff4b5ea6f97110fedfef1a23",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\no_hair_45.png": "d219fcd39d7668977d95e79a21de6777195b8ef622f390baa9041d054dcc49f2",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\no_hair_60.png": "7db7a654cd6efd0e8184d719903295c18f47741998a9c7fcc2400ea762e7b595",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\turn_32.1631935647518.png": "2fa441257cd4ad64280eb787233e6e405be33da21755e02492aac9a86961ba36",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\turn_45.png": "970bd51f9f71d945943d8c05724e95aa8dad8d6fb7cd8c98556be2d880dd8f39",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\turn_60.png": "2ad0d23a3a94b5781735dbff2e874a073ae9a49d8e84335cc4157ad91d149fd7",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\turn_90.png": "4d5f5f6df54ab6ca8d9b7866f8f4bb654aabd38d4a2d68b6ff6b2f84b894f4d7",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\turn_minus45.png": "2b81268b2334d89492dcf25362540535c420c2980e6afad68fc70cddf6ec54d6",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\turn_minus60.png": "dd565f8ff6914a1cfb75323f46e81ff4a3a97f0bedba6d90bd14f5f57d96be16",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\release_final\\baseline\\turn_minus90.png": "ba92b780518a86bf5b7dc2dbc1daf1e216434980606e4f57fb1cd90cbbc27b30",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\sources\\user_ear_target.png": "b6626ae6fb340d699f965692ed9df08a671f42a79d4c9f92314ddc0926fe1e6d",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\sources\\user_rear_target.png": "95dc6f33c56298508ca3ed3a7100851d01e0886d2e2cd82521b465ec04e3234b",
+    "storyboard\\hybrid_character\\oblique_transition_v1\\sources\\user_temple_target.png": "51f088db78ef3d631481af217af18262efc2b30a12d8a9777f57ae1730004c45"
+  }
+}

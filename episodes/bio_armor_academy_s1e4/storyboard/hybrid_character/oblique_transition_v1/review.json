@@ -1,0 +1,27 @@
+{
+  "status": "candidate_pending_user_review",
+  "revision": "v8",
+  "user_accepted_scope": "本轮连续性修订之前的正面、45°、60°脸型已得到用户肯定；新70–90°和耳发尚未获得用户验收。",
+  "review_method": "完整头像与连续角度先判断人物身份；再检查相邻结构与遮挡、局部线条；最后返回完整头像。算法用于差异定位、源码版本、姿态和取帧一致性，不计算审美分数。",
+  "user_reported": ["远眼白区越界和眼下鼓包", "带发额头凹陷", "70°脸内收、70–90°长相变化过大", "耳朵形状、鬓发与后脑马尾明显不如参考"],
+  "agent_detected_and_rejected": ["眼角整片淡出留下幽灵睫毛", "单独平滑多项修正仍叠加出眼下凸块", "内部描边壳留下鼻颊长折线", "onBeforeRender切换visible使逆序取帧滞后一帧", "整体压缩纯侧轮廓影响已认可60°", "马尾整体加粗损害正面并切断发梢", "取消末端透明裁切露出粗管状尖头", "后颈增加几根尖片读成锯齿"],
+  "current_changes": ["眼眶到低位脸颊采用合成轮廓约束，远眼白区随虹膜及遮挡收口", "60°之后的低位脸颊支撑与鼻部内收连续过渡", "保留外轮廓、渐隐深斜面脸内多余描边", "耳内减少重复环线；鬓发渐细并使用不等长分叉", "缩短后颈长尖片，侧面马尾根略抬高并靠近后脑"],
+  "whole_image_observations": {
+    "identity": "70°附近的收瘪与脸内折线减轻；90°仍是更长、更尖的纯侧轮廓。当前是改善连续性的候选，不宣称所有角度完全同貌。",
+    "eyes": "静态远眼白角更收敛；左右70°眨眼及注视图未见眼白脱离脸缘。半闭眼的弧度仍偏简单。",
+    "ear": "新耳腔比旧双环线更集中，但耳根、耳垂和内部转折仍不如参考清楚自然。",
+    "temple_hair": "粗钩状发尾变细，分叉长短不同；发根上方的大卷束与参考仍有差别。",
+    "rear_hair": "后颈长鳍缩短、马尾根间隙减少；后脑仍像整片发壳，马尾分束、轻盈度和纹理方向未达到参考。",
+    "neck_clothes": "颈领碎边、色块与肩部造型仍有旧问题，本轮未修。"
+  },
+  "evidence": {
+    "identity_stage_preservation": "identity_preservation.json；修耳发之前，正面与左右45°、60°全图0像素变化",
+    "ear_hair_stage_preservation": "final_comparison/evidence.json；左右45°、60°裸头脸区0像素变化，完整有发图存在有意的耳发改变",
+    "stills": "final_delivery/baseline/report.json；118张，头身同转、几何有限、抽样逆序一致，无浏览器错误",
+    "video": "video_delivery/turn_video_build.json；6秒、24fps、144帧，无渲染期间输入变化",
+    "video_visual_review": "video_delivery/motion_identity.jpg及decode_review.json；实际MP4的16个解码样本，不能称为实时播放审片",
+    "expressions": "expressions_delivery.jpg；左右70°的半闭眼、闭眼与四个注视方向",
+    "source_and_delivery_hashes": "final_manifest.json"
+  },
+  "limitations": ["绘画参考角度未做相机标定，不计算同角度像素相似度", "没有连续文生图真值；生成新的角度也不能自动作为身份正确的证据", "主要问题由用户先指出，此轮不是审美自主发现能力的盲测", "转面与有限表情验证不代表完整对白或全身动画验收"]
+}

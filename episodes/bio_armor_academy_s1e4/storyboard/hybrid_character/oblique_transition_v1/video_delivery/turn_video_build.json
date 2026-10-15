@@ -1,0 +1,1291 @@
+{
+  "startedAt": "2026-10-15T18:45:35.059Z",
+  "build": {
+    "inputs": [
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\script.story",
+        "sha256": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\bootstrap.js",
+        "sha256": "ddd4f3ef17639bdf1cd91806459db4e925327aded6b74c64afd7750843144357"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.js",
+        "sha256": "ca0e5c69e79e40c4da9277fad09ed02a6793ace6ddea9855e81d5856d8956ffb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.html",
+        "sha256": "f91b7fabd84965d9b9e37fc85acabff022506e9a912ba436e001be92306df225"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\render.mjs",
+        "sha256": "664a06e9c954d8ecb095bbb08042961865b07992c6f48398fd72c586f618e593"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.js",
+        "sha256": "fbaae8a6a515074689e79019a85538f31af6348cec45c876b99086d320d3f154"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.html",
+        "sha256": "2266741c33c368601cd9b5b5db3abafca9f237e29b016885cddd58caac17ff03"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_remake.js",
+        "sha256": "9871cf85d48eb552d5db04901a6bf5493f0c2f4c107c1b05629e45dad3dcf362"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_tripo.js",
+        "sha256": "49b060f923e33f58f434cf3a5bda0fc0f3f297d6071103d9d775ae49b61373fe"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\imported_probe.js",
+        "sha256": "d759867f682de7e98eca54df861670eccf23fad2e258877804894374fd4db9d4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_imported_contact.py",
+        "sha256": "31d2e47f07ab0acec64e383b0b00e2489bcdb9089f63d76c5d4960df4a510c41"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\imported_contact_contract.json",
+        "sha256": "f9fbf2fc356202c72588574fdc3fe27927873bde98c4ab73ead494082ca0d2e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\scenes\\BiologyRoomRemakeScene.js",
+        "sha256": "e91882c5e128e2cc6d10bf68b4a65f068fd4f917ff051b742c5c4b5e58a4346c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\audit_inputs.mjs",
+        "sha256": "91f7ed1e0627022c8f62a1da52b1a1a7d44e248eb4c9d1e57e6b070b571712dd"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\compile_story.mjs",
+        "sha256": "70f15d3212b39f42a538b3fbaa5bc5f6840bb99d844976f3aef87b58c1667ac9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\numeric_probe.js",
+        "sha256": "9717d3dad23c0dc7f14fee9d4e85997463e1f672dc04e177aea5fe0656123a36"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\timeline.json",
+        "sha256": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\contact_contract.json",
+        "sha256": "19760091de6c05fd7a7c7732d762e1e0576a552951bd0ef5898aa8cad5afa921"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\scene_contract.json",
+        "sha256": "ffbee245d40c81db0ea686a48a13d57640bd97a9e499d9db80d1f3ffc2f9e660"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_direction.json",
+        "sha256": "4288b9c558b1db277e1f5fba118179cf79285f7ae9c86c865a2019dbd721cf05"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_timing.json",
+        "sha256": "0b59d61e8786222b7d8cc71f883524263ec035abe760376a8b8c76de19121be6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_audio.py",
+        "sha256": "b07be86e4495a97aab0aff923a953d00b9fdf8d87da7b06444a759642a212798"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_audio_sync.py",
+        "sha256": "65359aff9c0d77570227879941e9a9124a962afec2d89c364baf95c475c1f52b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_contact.py",
+        "sha256": "2e03f48b637c03ec24a718b136c6409ea9c285e8d1d720dca8a788cef6e7b5f9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_story_motion.py",
+        "sha256": "9cc148450116638ec44dc86eb8b69e927e110494c5702d1646338caf7ea193ed"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\prepare_ambience.py",
+        "sha256": "621c8a112d9d64b0253d0d322b7350e09460bccbe4007c84a56255503a85c82e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_visemes.py",
+        "sha256": "143417c5eaa4aa58189a65fb620f84ed5c0d27b674f57a56002d07a4aa7ebe30"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_leixiao.json",
+        "sha256": "ace4d03e407cf864a90a7de916c424b33ce017e5c908d976a4667e60b8af314c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_qiantangkui.json",
+        "sha256": "6e0e175ff2d40096904eb4e0fcde8bdeb6cd1802d75c989fa715cad0758a638f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\dialogue_alignment.json",
+        "sha256": "6f94c17a44ac60e26c4bdc6739d91337469b83fcc6ad6ba71325367ed2038820"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\sound_cues.json",
+        "sha256": "51f547b0d9c628be7ab11fe0dbfbd63d7fc88fe8aa2792c38d1e494128c1885e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\foley_anchors.json",
+        "sha256": "39ec8dca33c1bf43fbc742e15085e8956bb08732910e4bb041fcbe4a777001fc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_foley_anchors.mjs",
+        "sha256": "3cdcf30dea7bdceecdc71d4ecd1a74647f29c30f4a521c0cfb3b0b9485ba408d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_episode.py",
+        "sha256": "04f79fa91df1fd89e4f5e7887434b3e3c350f16e8faa8fd2f5bf618cd1aa7622"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_contracts.py",
+        "sha256": "9146c1387995b475728740c8bca236e07357f8637fa75c31bc85693685b66e62"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\textures\\biology_wall_r3.png",
+        "sha256": "218a49be801aecdeb386f2bb4ce1bb9eb9a9d45b8b4546e4419c018fb0d960cc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\anatomical-hand.js",
+        "sha256": "b0771a7b55a7892e7278dd38ecfd9791e5d53f233158b3b97890194e2c24e7ca"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\body-audit.js",
+        "sha256": "999342f7594229be1886607fcbe734d32f561e59ad0b91dda49c74e72f5665b8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-ear.js",
+        "sha256": "8ef8531399e9cd83a056d28489fc8216acd95cd04fd0e4ba170366e94b882151"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-face.js",
+        "sha256": "8eb655762eba40076e7f39a80b2a0badfbc407644c2a569fe22698c4979f2810"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-head.js",
+        "sha256": "c1831b6d7a6b589f86b612efe22d63dfffb170ce5f391e30c9d576b201d5364b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\facial-deform.js",
+        "sha256": "b67546d71db9b4ee932f5733af9ef29aae38db6e109294aaec8f198211cf590f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\garment-clearance.js",
+        "sha256": "92a673945b93f6c86e728b88f9f5c1524e31211d39a48c44b90f5f048aebf557"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\generated-face-paint.js",
+        "sha256": "ea55f2c52d82bcd64387dc8decd2fcf3ec07e6bec13d7d06c390fcfec6e901b8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\graphic-hair.js",
+        "sha256": "1e8947a5587693a6ed83eee9b3eb504e1c821d953b9c2d1fd8203bd1a666aff5"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\hand.js",
+        "sha256": "91f3289e3daad4ad13a2711554a69d45b29fd5fc4d99ef902ec678911cc571d7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\illustrated-import.js",
+        "sha256": "8ae94c221c2712ad0cdcedffa1fdca92cc06a60144d1d09487a924fcf51f3b29"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-cel-look.js",
+        "sha256": "548120ed2c4e549688c94982e0e86783e02aee453a1991a838ee03b47ac3ec40"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-performer.js",
+        "sha256": "3faa969cbd9d966b6879dcd828028b04d3c5ac492278154699d713cc690d163c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\locomotion.js",
+        "sha256": "52f5f9091a25e11c51ac0f7b61340d5580aece42d4d22c45453dda8106c14952"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\look.js",
+        "sha256": "e5634e29af63dd58b9e31a8b5b123efbad208d721304d483d5021635c70f467c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\oblique-face-support.js",
+        "sha256": "7f7ade79cfb9a17962712268ac0f533616ee729c229457837cf5948424d418f6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\painted-hair-shell.js",
+        "sha256": "93c2b1fd18809c6c77e8ed7c7bd38cd69ee9312d09f59f6f205d0fd651747991"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\pose.js",
+        "sha256": "669eda04a0bf251315f2518f24140d8948149838bfd93863056024c2e80c9536"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\profile-hair-paint.js",
+        "sha256": "e4c28dc26f48ee3c4bfc6ca2a8e90d1e1bdf3302299287fd5070136fc90732a1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\projected-face.js",
+        "sha256": "eea47c0ef978e1cdc3d5d24893c383231e16437fc53f2f2b6b80619bd781807b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\retargeted-motion.js",
+        "sha256": "8211ae275786bfe1c29415a4d8cf321f2eb110d3a6b21c5035ed14f168b58bad"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\secondary-hair.js",
+        "sha256": "371479582de72235edc90b4454b7a21fc36f47deb5f2944abd6f2afaa3331dd8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skin-mark.js",
+        "sha256": "0920ae300b097fbe8237d6dc003ef550eadd256d41a048f0f717601e2838f101"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skinned-samples.js",
+        "sha256": "ae5629b26dccb4ed4dd0b4305eb6e0840dc21c76e6c662de79e03b3558b52261"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\supported-performance.js",
+        "sha256": "12ca0399fab8433267b921b39dd51b0c036c9972644b60abeaba8e526b6694fc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\surface.js",
+        "sha256": "694a05d2a95b8c3c0ce4e16264edcaec6263db576e8b880eea28758463b20cfb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\table-hand-clearance.js",
+        "sha256": "b2a682681cba51c8a0746b84422ad59e526b2de7f49d64f1fd7dd8fd254ca265"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-generated-paint.js",
+        "sha256": "c0ed405b871356a9354d4b94434e65d1802a7a7fe167d296d4a65f0454452138"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-graphic-hair.js",
+        "sha256": "3972a7d4776b832fabe084b16429f4caafa04ac32fdcb240951449b079c170a6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\characters.js",
+        "sha256": "ce10e0a5e3f3f230991e318ec118572944b6e164501ee25f15bb6d5b10dcab1f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_details.js",
+        "sha256": "0c7196c4781809d4c68fb1f4bf12a085011ef21f557ed4f9a7d6099deb14e3f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_finish.js",
+        "sha256": "9418513953a12fd36466f217ec1148ca7bdb4dfb75ae1bdb1baa67dadb17b4b1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_look.js",
+        "sha256": "4d078b05c8f98729f293ae701c03a32bea1dbeafd2234f603f7dee48666d7d83"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-graphic-hair.js",
+        "sha256": "211db2c78f1db382896929821e2124499cbae769df4ad82f1ced654a058ce122"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\QianTangKuiCraft.js",
+        "sha256": "9093163ed72dae120b9b3fe671cc233df4238f99b44d21d6af39c1abc21d0e4a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js",
+        "sha256": "71db7fb4421181217e2f2b4cb15eb4541bce2f574261c440b1f6a9b08318f809"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-look.js",
+        "sha256": "6c818ca069e081bc7910b243fd3da5d7d2b1fa61a35fdfbdd2e4727b1defa53a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-engine\\lib\\MeshCollision.js",
+        "sha256": "b7d4c97d4a19d5e20df3846c3052458d2efb8eb5d126e2db143dc3acabcbe7a9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-engine\\lib\\NumericAudit.js",
+        "sha256": "8851381d4d542911162afd595152c96b7b15a3d5223ba95ea43c89274298330c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\known_text_alignment.py",
+        "sha256": "98dae18b3694d2ce1f031af35d5036fe7005d7c3b8630038cd19384647d0bbe7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\viseme_core.py",
+        "sha256": "dbbf90dce208c85eb9b7cce9b258478aaa7bfda368eeebcfc09cdc0cd90547c1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\contact_probe.py",
+        "sha256": "242bd65e748b2797aaa026813769d53da0e1a9919b35caf088b7766e676d2807"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\surface_audit.py",
+        "sha256": "8e47c88d209b1373d7ccf6ac1f596b1b5f596b9f7f8927e99aa6d65d634de86e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\bounded_staging_audit.py",
+        "sha256": "060b1ad0001ef0b5b895435a718461ae93002942c18672999fafbb59799bf9d2"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\voice_features.json",
+        "sha256": "d126bc73feffca41b4a37398e443b5cab56c10d6b74c93d2d1ff8848fb107e03"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\mixed.wav",
+        "sha256": "54ef95a7828fdc1b6126b1602baea6a1e5335c0e3fb20ff4e1daff7c4e5150e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_h31_lod160k_v2.glb",
+        "sha256": "404fe816e8b555b487f8879a31d8c8401a6c6e73c6f2adf65978a3db18491011"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_aoi_trial\\aoi_h31_lod160k_v2.glb",
+        "sha256": "3ad5d4099d4a0c126a3aed76eb3530309dd942a37de148006683020d233b10bd"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\drawn-face-reference.png",
+        "sha256": "aec1e146d8d4f9f95b9dc10930b7d9336ac7c79cf8e9fa3cbe279ae0dfb4747c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-face-v1.png",
+        "sha256": "fb7f8d5062a27bccc5b68b6e9279226fcd3cf61d8cad441c0bedab6cc4b50e08"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-hair-v1.png",
+        "sha256": "3fed7263f55ceaac22dbebd543d8266edeaa52cac0ceb975b1083abbde40b04c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-back-v1.png",
+        "sha256": "aa9991f581823d951bf2e3907d11558198856daab05449184cff6182c8c3bb94"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-profile-hair-atlas-v1.png",
+        "sha256": "3746063acf5fd392d77465433aca89c948635e69f2686e180cfe976232053383"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_text_rub_v1.glb",
+        "sha256": "6357cec5d7ffa5d0cb62f4a56548f48799f44c599abea74483649010ec36f8f0"
+      }
+    ]
+  },
+  "renderer": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\render_character_profile_turn.mjs",
+    "sha256": "1f97a220e2ea896b980adfe9d8d4af5f04220dca761eb37dce193364e876ba60"
+  },
+  "kind": "silent body turn geometry review; not a dialogue shot",
+  "turnMode": "body",
+  "fps": 24,
+  "duration": 6,
+  "frames": 144,
+  "keys": [
+    [
+      0,
+      0
+    ],
+    [
+      0.5,
+      0
+    ],
+    [
+      1.6,
+      75
+    ],
+    [
+      2.2,
+      90
+    ],
+    [
+      3.2,
+      0
+    ],
+    [
+      4.4,
+      -75
+    ],
+    [
+      5,
+      -90
+    ],
+    [
+      6,
+      0
+    ]
+  ],
+  "poses": [
+    {
+      "frame": 0,
+      "time": 0,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 1,
+      "time": 0.041666666666666664,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 2,
+      "time": 0.08333333333333333,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 3,
+      "time": 0.125,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 4,
+      "time": 0.16666666666666666,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 5,
+      "time": 0.20833333333333334,
+      "yawDegrees": 0,
+      "blink": 0.08333333333333359
+    },
+    {
+      "frame": 6,
+      "time": 0.25,
+      "yawDegrees": 0,
+      "blink": 0.5000000000000001
+    },
+    {
+      "frame": 7,
+      "time": 0.2916666666666667,
+      "yawDegrees": 0,
+      "blink": 0.916666666666667
+    },
+    {
+      "frame": 8,
+      "time": 0.3333333333333333,
+      "yawDegrees": 0,
+      "blink": 0.6666666666666667
+    },
+    {
+      "frame": 9,
+      "time": 0.375,
+      "yawDegrees": 0,
+      "blink": 0.2499999999999999
+    },
+    {
+      "frame": 10,
+      "time": 0.4166666666666667,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 11,
+      "time": 0.4583333333333333,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 12,
+      "time": 0.5,
+      "yawDegrees": 0,
+      "blink": 0
+    },
+    {
+      "frame": 13,
+      "time": 0.5416666666666666,
+      "yawDegrees": 0.26520432475168887,
+      "blink": 0
+    },
+    {
+      "frame": 14,
+      "time": 0.5833333333333334,
+      "yawDegrees": 1.057066187867188,
+      "blink": 0
+    },
+    {
+      "frame": 15,
+      "time": 0.625,
+      "yawDegrees": 2.364385312508936,
+      "blink": 0
+    },
+    {
+      "frame": 16,
+      "time": 0.6666666666666666,
+      "yawDegrees": 4.1686706754403655,
+      "blink": 0
+    },
+    {
+      "frame": 17,
+      "time": 0.7083333333333334,
+      "yawDegrees": 6.444402048323596,
+      "blink": 0
+    },
+    {
+      "frame": 18,
+      "time": 0.75,
+      "yawDegrees": 9.159390961715308,
+      "blink": 0
+    },
+    {
+      "frame": 19,
+      "time": 0.7916666666666666,
+      "yawDegrees": 12.275235986203025,
+      "blink": 0
+    },
+    {
+      "frame": 20,
+      "time": 0.8333333333333334,
+      "yawDegrees": 15.74786589108007,
+      "blink": 0
+    },
+    {
+      "frame": 21,
+      "time": 0.875,
+      "yawDegrees": 19.528162997997864,
+      "blink": 0
+    },
+    {
+      "frame": 22,
+      "time": 0.9166666666666666,
+      "yawDegrees": 23.562657912737713,
+      "blink": 0
+    },
+    {
+      "frame": 23,
+      "time": 0.9583333333333334,
+      "yawDegrees": 27.794285808655474,
+      "blink": 0
+    },
+    {
+      "frame": 24,
+      "time": 1,
+      "yawDegrees": 32.1631935647518,
+      "blink": 0
+    },
+    {
+      "frame": 25,
+      "time": 1.0416666666666667,
+      "yawDegrees": 36.607586342020966,
+      "blink": 0
+    },
+    {
+      "frame": 26,
+      "time": 1.0833333333333333,
+      "yawDegrees": 41.06460162390683,
+      "blink": 0
+    },
+    {
+      "frame": 27,
+      "time": 1.125,
+      "yawDegrees": 45.47119835823661,
+      "blink": 0
+    },
+    {
+      "frame": 28,
+      "time": 1.1666666666666667,
+      "yawDegrees": 49.76504862440331,
+      "blink": 0
+    },
+    {
+      "frame": 29,
+      "time": 1.2083333333333333,
+      "yawDegrees": 53.88541921385096,
+      "blink": 0
+    },
+    {
+      "frame": 30,
+      "time": 1.25,
+      "yawDegrees": 57.7740306545849,
+      "blink": 0
+    },
+    {
+      "frame": 31,
+      "time": 1.2916666666666667,
+      "yawDegrees": 61.37588152946581,
+      "blink": 0
+    },
+    {
+      "frame": 32,
+      "time": 1.3333333333333333,
+      "yawDegrees": 64.64002642894012,
+      "blink": 0
+    },
+    {
+      "frame": 33,
+      "time": 1.375,
+      "yawDegrees": 67.52029653466352,
+      "blink": 0
+    },
+    {
+      "frame": 34,
+      "time": 1.4166666666666667,
+      "yawDegrees": 69.97595264191645,
+      "blink": 0
+    },
+    {
+      "frame": 35,
+      "time": 1.4583333333333333,
+      "yawDegrees": 71.97226138431245,
+      "blink": 0
+    },
+    {
+      "frame": 36,
+      "time": 1.5,
+      "yawDegrees": 73.48098651054364,
+      "blink": 0
+    },
+    {
+      "frame": 37,
+      "time": 1.5416666666666667,
+      "yawDegrees": 74.48078826443198,
+      "blink": 0
+    },
+    {
+      "frame": 38,
+      "time": 1.5833333333333333,
+      "yawDegrees": 74.95752521936281,
+      "blink": 0
+    },
+    {
+      "frame": 39,
+      "time": 1.625,
+      "yawDegrees": 75.06416353969641,
+      "blink": 0
+    },
+    {
+      "frame": 40,
+      "time": 1.6666666666666667,
+      "yawDegrees": 75.45230534410568,
+      "blink": 0
+    },
+    {
+      "frame": 41,
+      "time": 1.7083333333333333,
+      "yawDegrees": 76.17456415640335,
+      "blink": 0
+    },
+    {
+      "frame": 42,
+      "time": 1.75,
+      "yawDegrees": 77.1966991411009,
+      "blink": 0
+    },
+    {
+      "frame": 43,
+      "time": 1.7916666666666667,
+      "yawDegrees": 78.47025293739881,
+      "blink": 0
+    },
+    {
+      "frame": 44,
+      "time": 1.8333333333333333,
+      "yawDegrees": 79.9348489250575,
+      "blink": 0
+    },
+    {
+      "frame": 45,
+      "time": 1.875,
+      "yawDegrees": 81.52105355834964,
+      "blink": 0
+    },
+    {
+      "frame": 46,
+      "time": 1.9166666666666667,
+      "yawDegrees": 83.15366807060744,
+      "blink": 0
+    },
+    {
+      "frame": 47,
+      "time": 1.9583333333333333,
+      "yawDegrees": 84.75529349628204,
+      "blink": 0
+    },
+    {
+      "frame": 48,
+      "time": 2,
+      "yawDegrees": 86.25,
+      "blink": 0
+    },
+    {
+      "frame": 49,
+      "time": 2.0416666666666665,
+      "yawDegrees": 87.56692655711744,
+      "blink": 0
+    },
+    {
+      "frame": 50,
+      "time": 2.0833333333333335,
+      "yawDegrees": 88.64364033216744,
+      "blink": 0
+    },
+    {
+      "frame": 51,
+      "time": 2.125,
+      "yawDegrees": 89.42909649383465,
+      "blink": 0
+    },
+    {
+      "frame": 52,
+      "time": 2.1666666666666665,
+      "yawDegrees": 89.88605814759156,
+      "blink": 0
+    },
+    {
+      "frame": 53,
+      "time": 2.2083333333333335,
+      "yawDegrees": 89.98457962390007,
+      "blink": 0
+    },
+    {
+      "frame": 54,
+      "time": 2.25,
+      "yawDegrees": 89.4459753267812,
+      "blink": 0
+    },
+    {
+      "frame": 55,
+      "time": 2.2916666666666665,
+      "yawDegrees": 88.14688806906871,
+      "blink": 0
+    },
+    {
+      "frame": 56,
+      "time": 2.3333333333333335,
+      "yawDegrees": 86.10954559391703,
+      "blink": 0
+    },
+    {
+      "frame": 57,
+      "time": 2.375,
+      "yawDegrees": 83.36880739593417,
+      "blink": 0
+    },
+    {
+      "frame": 58,
+      "time": 2.4166666666666665,
+      "yawDegrees": 79.97156826556372,
+      "blink": 0
+    },
+    {
+      "frame": 59,
+      "time": 2.4583333333333335,
+      "yawDegrees": 75.97595590621891,
+      "blink": 0
+    },
+    {
+      "frame": 60,
+      "time": 2.5,
+      "yawDegrees": 71.4503363531613,
+      "blink": 0
+    },
+    {
+      "frame": 61,
+      "time": 2.5416666666666665,
+      "yawDegrees": 66.47214421168242,
+      "blink": 0
+    },
+    {
+      "frame": 62,
+      "time": 2.5833333333333335,
+      "yawDegrees": 61.12655772953852,
+      "blink": 0
+    },
+    {
+      "frame": 63,
+      "time": 2.625,
+      "yawDegrees": 55.505041373515766,
+      "blink": 0
+    },
+    {
+      "frame": 64,
+      "time": 2.6666666666666665,
+      "yawDegrees": 49.703780847044456,
+      "blink": 0
+    },
+    {
+      "frame": 65,
+      "time": 2.7083333333333335,
+      "yawDegrees": 43.82203732614572,
+      "blink": 0
+    },
+    {
+      "frame": 66,
+      "time": 2.75,
+      "yawDegrees": 37.96044907318965,
+      "blink": 0
+    },
+    {
+      "frame": 67,
+      "time": 2.7916666666666665,
+      "yawDegrees": 32.21930948832353,
+      "blink": 0
+    },
+    {
+      "frame": 68,
+      "time": 2.8333333333333335,
+      "yawDegrees": 26.696851061588994,
+      "blink": 0
+    },
+    {
+      "frame": 69,
+      "time": 2.875,
+      "yawDegrees": 21.487564587782323,
+      "blink": 0
+    },
+    {
+      "frame": 70,
+      "time": 2.9166666666666665,
+      "yawDegrees": 16.680582402757352,
+      "blink": 0.1666666666666652
+    },
+    {
+      "frame": 71,
+      "time": 2.9583333333333335,
+      "yawDegrees": 12.358153304447061,
+      "blink": 0.5833333333333348
+    },
+    {
+      "frame": 72,
+      "time": 3,
+      "yawDegrees": 8.594235253127385,
+      "blink": 1
+    },
+    {
+      "frame": 73,
+      "time": 3.0416666666666665,
+      "yawDegrees": 5.453229930211583,
+      "blink": 0.5833333333333348
+    },
+    {
+      "frame": 74,
+      "time": 3.0833333333333335,
+      "yawDegrees": 2.9888808076259266,
+      "blink": 0.1666666666666652
+    },
+    {
+      "frame": 75,
+      "time": 3.125,
+      "yawDegrees": 1.243353582104565,
+      "blink": 0
+    },
+    {
+      "frame": 76,
+      "time": 3.1666666666666665,
+      "yawDegrees": 0.24651470842771195,
+      "blink": 0
+    },
+    {
+      "frame": 77,
+      "time": 3.2083333333333335,
+      "yawDegrees": -0.008923984503407534,
+      "blink": 0
+    },
+    {
+      "frame": 78,
+      "time": 3.25,
+      "yawDegrees": -0.3208176984821065,
+      "blink": 0
+    },
+    {
+      "frame": 79,
+      "time": 3.2916666666666665,
+      "yawDegrees": -1.0746723820026878,
+      "blink": 0
+    },
+    {
+      "frame": 80,
+      "time": 3.3333333333333335,
+      "yawDegrees": -2.2615267205284346,
+      "blink": 0
+    },
+    {
+      "frame": 81,
+      "time": 3.375,
+      "yawDegrees": -3.8672721925241778,
+      "blink": 0
+    },
+    {
+      "frame": 82,
+      "time": 3.4166666666666665,
+      "yawDegrees": -5.872820782016765,
+      "blink": 0
+    },
+    {
+      "frame": 83,
+      "time": 3.4583333333333335,
+      "yawDegrees": -8.254331884016928,
+      "blink": 0
+    },
+    {
+      "frame": 84,
+      "time": 3.5,
+      "yawDegrees": -10.983495705504453,
+      "blink": 0
+    },
+    {
+      "frame": 85,
+      "time": 3.5416666666666665,
+      "yawDegrees": -14.027869793097759,
+      "blink": 0
+    },
+    {
+      "frame": 86,
+      "time": 3.5833333333333335,
+      "yawDegrees": -17.351264686994096,
+      "blink": 0
+    },
+    {
+      "frame": 87,
+      "time": 3.625,
+      "yawDegrees": -20.91417411678743,
+      "blink": 0
+    },
+    {
+      "frame": 88,
+      "time": 3.6666666666666665,
+      "yawDegrees": -24.674244625287386,
+      "blink": 0
+    },
+    {
+      "frame": 89,
+      "time": 3.7083333333333335,
+      "yawDegrees": -28.5867790377685,
+      "blink": 0
+    },
+    {
+      "frame": 90,
+      "time": 3.75,
+      "yawDegrees": -32.605267791748034,
+      "blink": 0
+    },
+    {
+      "frame": 91,
+      "time": 3.7916666666666665,
+      "yawDegrees": -36.68194181120391,
+      "blink": 0
+    },
+    {
+      "frame": 92,
+      "time": 3.8333333333333335,
+      "yawDegrees": -40.76834035303716,
+      "blink": 0
+    },
+    {
+      "frame": 93,
+      "time": 3.875,
+      "yawDegrees": -44.81588707560478,
+      "blink": 0
+    },
+    {
+      "frame": 94,
+      "time": 3.9166666666666665,
+      "yawDegrees": -48.77646748141021,
+      "blink": 0
+    },
+    {
+      "frame": 95,
+      "time": 3.9583333333333335,
+      "yawDegrees": -52.603000869702626,
+      "blink": 0
+    },
+    {
+      "frame": 96,
+      "time": 4,
+      "yawDegrees": -56.24999999999999,
+      "blink": 0
+    },
+    {
+      "frame": 97,
+      "time": 4.041666666666667,
+      "yawDegrees": -59.67411181363433,
+      "blink": 0
+    },
+    {
+      "frame": 98,
+      "time": 4.083333333333333,
+      "yawDegrees": -62.83463278558721,
+      "blink": 0
+    },
+    {
+      "frame": 99,
+      "time": 4.125,
+      "yawDegrees": -65.69399278046163,
+      "blink": 0
+    },
+    {
+      "frame": 100,
+      "time": 4.166666666666667,
+      "yawDegrees": -68.2182016608372,
+      "blink": 0
+    },
+    {
+      "frame": 101,
+      "time": 4.208333333333333,
+      "yawDegrees": -70.37725333903153,
+      "blink": 0
+    },
+    {
+      "frame": 102,
+      "time": 4.25,
+      "yawDegrees": -72.14548246917325,
+      "blink": 0
+    },
+    {
+      "frame": 103,
+      "time": 4.291666666666667,
+      "yawDegrees": -73.50186953947232,
+      "blink": 0
+    },
+    {
+      "frame": 104,
+      "time": 4.333333333333333,
+      "yawDegrees": -74.43029073795778,
+      "blink": 0
+    },
+    {
+      "frame": 105,
+      "time": 4.375,
+      "yawDegrees": -74.91970962144764,
+      "blink": 0
+    },
+    {
+      "frame": 106,
+      "time": 4.416666666666667,
+      "yawDegrees": -75.0285397643119,
+      "blink": 0
+    },
+    {
+      "frame": 107,
+      "time": 4.458333333333333,
+      "yawDegrees": -75.3471228693883,
+      "blink": 0
+    },
+    {
+      "frame": 108,
+      "time": 4.5,
+      "yawDegrees": -76.00480947161671,
+      "blink": 0
+    },
+    {
+      "frame": 109,
+      "time": 4.541666666666667,
+      "yawDegrees": -76.97041997392408,
+      "blink": 0
+    },
+    {
+      "frame": 110,
+      "time": 4.583333333333333,
+      "yawDegrees": -78.19817672736713,
+      "blink": 0
+    },
+    {
+      "frame": 111,
+      "time": 4.625,
+      "yawDegrees": -79.62987425726182,
+      "blink": 0
+    },
+    {
+      "frame": 112,
+      "time": 4.666666666666667,
+      "yawDegrees": -81.19763866749803,
+      "blink": 0
+    },
+    {
+      "frame": 113,
+      "time": 4.708333333333333,
+      "yawDegrees": -82.82714540524,
+      "blink": 0
+    },
+    {
+      "frame": 114,
+      "time": 4.75,
+      "yawDegrees": -84.4411428382689,
+      "blink": 0
+    },
+    {
+      "frame": 115,
+      "time": 4.791666666666667,
+      "yawDegrees": -85.96311459926275,
+      "blink": 0
+    },
+    {
+      "frame": 116,
+      "time": 4.833333333333333,
+      "yawDegrees": -87.32090707264902,
+      "blink": 0
+    },
+    {
+      "frame": 117,
+      "time": 4.875,
+      "yawDegrees": -88.45015005218427,
+      "blink": 0
+    },
+    {
+      "frame": 118,
+      "time": 4.916666666666667,
+      "yawDegrees": -89.29730840277487,
+      "blink": 0
+    },
+    {
+      "frame": 119,
+      "time": 4.958333333333333,
+      "yawDegrees": -89.82222005339949,
+      "blink": 0
+    },
+    {
+      "frame": 120,
+      "time": 5,
+      "yawDegrees": -90,
+      "blink": 0
+    },
+    {
+      "frame": 121,
+      "time": 5.041666666666667,
+      "yawDegrees": -89.61501876182146,
+      "blink": 0
+    },
+    {
+      "frame": 122,
+      "time": 5.083333333333333,
+      "yawDegrees": -88.46666218300808,
+      "blink": 0
+    },
+    {
+      "frame": 123,
+      "time": 5.125,
+      "yawDegrees": -86.57457896300791,
+      "blink": 0
+    },
+    {
+      "frame": 124,
+      "time": 5.166666666666667,
+      "yawDegrees": -83.97114317029971,
+      "blink": 0
+    },
+    {
+      "frame": 125,
+      "time": 5.208333333333333,
+      "yawDegrees": -80.70090031310559,
+      "blink": 0
+    },
+    {
+      "frame": 126,
+      "time": 5.25,
+      "yawDegrees": -76.81980515339464,
+      "blink": 0
+    },
+    {
+      "frame": 127,
+      "time": 5.291666666666667,
+      "yawDegrees": -72.3942643053924,
+      "blink": 0
+    },
+    {
+      "frame": 128,
+      "time": 5.333333333333333,
+      "yawDegrees": -67.50000000000004,
+      "blink": 0
+    },
+    {
+      "frame": 129,
+      "time": 5.375,
+      "yawDegrees": -62.22075445642904,
+      "blink": 0
+    },
+    {
+      "frame": 130,
+      "time": 5.416666666666667,
+      "yawDegrees": -56.64685702961339,
+      "blink": 0
+    },
+    {
+      "frame": 131,
+      "time": 5.458333333333333,
+      "yawDegrees": -50.87367864990236,
+      "blink": 0
+    },
+    {
+      "frame": 132,
+      "time": 5.5,
+      "yawDegrees": -45,
+      "blink": 0
+    },
+    {
+      "frame": 133,
+      "time": 5.541666666666667,
+      "yawDegrees": -39.12632135009764,
+      "blink": 0
+    },
+    {
+      "frame": 134,
+      "time": 5.583333333333333,
+      "yawDegrees": -33.3531429703866,
+      "blink": 0
+    },
+    {
+      "frame": 135,
+      "time": 5.625,
+      "yawDegrees": -27.779245543570966,
+      "blink": 0.24999999999999822
+    },
+    {
+      "frame": 136,
+      "time": 5.666666666666667,
+      "yawDegrees": -22.49999999999998,
+      "blink": 0.6666666666666679
+    },
+    {
+      "frame": 137,
+      "time": 5.708333333333333,
+      "yawDegrees": -17.605735694607596,
+      "blink": 0.9166666666666714
+    },
+    {
+      "frame": 138,
+      "time": 5.75,
+      "yawDegrees": -13.180194846605364,
+      "blink": 0.5000000000000018
+    },
+    {
+      "frame": 139,
+      "time": 5.791666666666667,
+      "yawDegrees": -9.2990996868944,
+      "blink": 0.08333333333333215
+    },
+    {
+      "frame": 140,
+      "time": 5.833333333333333,
+      "yawDegrees": -6.028856829700273,
+      "blink": 0
+    },
+    {
+      "frame": 141,
+      "time": 5.875,
+      "yawDegrees": -3.4254210369920965,
+      "blink": 0
+    },
+    {
+      "frame": 142,
+      "time": 5.916666666666667,
+      "yawDegrees": -1.533337816991921,
+      "blink": 0
+    },
+    {
+      "frame": 143,
+      "time": 5.958333333333333,
+      "yawDegrees": -0.3849812381785378,
+      "blink": 0
+    }
+  ],
+  "errors": [],
+  "changedInputs": [],
+  "video": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\aoi_oblique_transition_v8.mp4",
+    "sha256": "b487df3abd97647896c37853acc343ca5d963af9e16204fb1429f2fe5292a9cb",
+    "bytes": 2267950
+  },
+  "contact": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\storyboard\\hybrid_character\\oblique_transition_v1\\video_delivery\\turn_contact.jpg",
+    "sha256": "69fb41b4d24dec1acc5155a3c0914e53ad5a094e9ed86cc47ec1f4ca9e6c474b",
+    "sourceVideoSha256": "b487df3abd97647896c37853acc343ca5d963af9e16204fb1429f2fe5292a9cb",
+    "filter": "fps=2,scale=300:300,tile=4x3"
+  },
+  "completedAt": "2026-10-15T18:45:45.696Z",
+  "status": "rendered"
+}

@@ -1,0 +1,357 @@
+{
+  "before": "storyboard/hybrid_character/oblique_transition_v1/release_final/baseline",
+  "after": "storyboard/hybrid_character/oblique_transition_v1/final_delivery/baseline",
+  "out": "storyboard/hybrid_character/oblique_transition_v1/final_comparison",
+  "reference": "storyboard/hybrid_character/oblique_feature_study_v2/references/draft_03_oblique.png",
+  "whole_frames": true,
+  "whole_frame_note": "本轮耳发修改保留脸部参数；头发遮挡会改变部分脸缘像素。参考角度未标定，仍有发壳与颈领差距。",
+  "boards": [
+    {
+      "id": "10_ear_hair",
+      "title": "用户指出的三处：耳内结构、鬓发、后脑与马尾",
+      "rows": [
+        {
+          "label": "耳朵：减少重复环线，保留单一相连的耳腔；耳根\n仍较简化",
+          "frame": "turn_minus60",
+          "reference": "storyboard/hybrid_character/oblique_transition_v1/sources/user_ear_target.png",
+          "reference_crop": [
+            0,
+            0,
+            78,
+            108
+          ],
+          "model_crop": [
+            483,
+            392,
+            568,
+            510
+          ]
+        },
+        {
+          "label": "鬓发：从粗钩改为渐细分束；曲线和贴图还没有原\n画细腻",
+          "frame": "turn_minus60",
+          "reference": "storyboard/hybrid_character/oblique_transition_v1/sources/user_temple_target.png",
+          "reference_crop": [
+            0,
+            0,
+            91,
+            279
+          ],
+          "model_crop": [
+            414,
+            295,
+            508,
+            620
+          ]
+        },
+        {
+          "label": "后发：缩短后颈长尖片，侧面马尾根略抬高、靠拢\n；发壳感仍在",
+          "frame": "turn_minus60",
+          "reference": "storyboard/hybrid_character/oblique_transition_v1/sources/user_rear_target.png",
+          "reference_crop": [
+            0,
+            0,
+            265,
+            463
+          ],
+          "model_crop": [
+            480,
+            115,
+            840,
+            745
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01_cheek_nose",
+      "title": "远侧脸：连续的眼下—低位脸颊—下颌，以及鼻部遮挡",
+      "rows": [
+        {
+          "label": "模型 32.16°：眼下的收窄是否突然",
+          "frame": "no_hair_32.1631935647518",
+          "reference_crop": [
+            555,
+            285,
+            785,
+            535
+          ],
+          "model_crop": [
+            440,
+            365,
+            655,
+            595
+          ]
+        },
+        {
+          "label": "模型 60°：鼻部留在脸内，脸颊缓缓收向下巴",
+          "frame": "no_hair_60",
+          "reference_crop": [
+            555,
+            285,
+            785,
+            535
+          ],
+          "model_crop": [
+            460,
+            365,
+            675,
+            595
+          ]
+        },
+        {
+          "label": "模型 45°：恢复头发后的完整关系",
+          "frame": "turn_45",
+          "reference_crop": [
+            395,
+            215,
+            805,
+            575
+          ],
+          "model_crop": [
+            315,
+            305,
+            680,
+            620
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03_hair",
+      "title": "贴脸发束：发根连接、曲线走向、收尖与留白",
+      "rows": [
+        {
+          "label": "模型 32.16°",
+          "frame": "turn_32.1631935647518",
+          "reference_crop": [
+            550,
+            230,
+            810,
+            570
+          ],
+          "model_crop": [
+            440,
+            300,
+            710,
+            640
+          ]
+        },
+        {
+          "label": "模型 60°",
+          "frame": "turn_60",
+          "reference_crop": [
+            550,
+            230,
+            810,
+            570
+          ],
+          "model_crop": [
+            440,
+            300,
+            710,
+            640
+          ]
+        },
+        {
+          "label": "另一侧模型 −60°",
+          "frame": "turn_minus60",
+          "reference_crop": [
+            1040,
+            230,
+            1310,
+            570
+          ],
+          "model_crop": [
+            190,
+            300,
+            460,
+            640
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06_eye_angles",
+      "title": "眼白随转向的组织：近眼保留侧白，远眼贴虹膜收口",
+      "rows": [
+        {
+          "label": "正面：外侧白区较宽，鼻侧短小；上下眼睑包住虹\n膜",
+          "frame": "front",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            965,
+            155,
+            1140,
+            235
+          ],
+          "model_crop": [
+            345,
+            365,
+            570,
+            470
+          ]
+        },
+        {
+          "label": "浅斜面（参考含仰头）：近眼仍留侧白，远眼的外\n角开始遮挡",
+          "frame": "turn_32.1631935647518",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            160,
+            550,
+            330,
+            645
+          ],
+          "model_crop": [
+            410,
+            365,
+            640,
+            470
+          ]
+        },
+        {
+          "label": "较深斜面：远眼外侧、下方只留窄白边，避免三角\n白片",
+          "frame": "turn_60",
+          "reference_crop": [
+            565,
+            290,
+            775,
+            385
+          ],
+          "model_crop": [
+            490,
+            365,
+            645,
+            470
+          ]
+        },
+        {
+          "label": "纯侧面：近眼的白区在虹膜后方；远眼消失",
+          "frame": "turn_90",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            715,
+            548,
+            780,
+            608
+          ],
+          "model_crop": [
+            560,
+            365,
+            665,
+            470
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08_overall_reference",
+      "title": "回到完整头像判断：角色气质、脸型与发型的关系",
+      "rows": [
+        {
+          "label": "正面：脸部参数保留，复查发束遮挡与整体观感",
+          "frame": "front",
+          "reference": "storyboard/hybrid_character/face_design_turnaround_v1/aoi_nine_views.png",
+          "reference_crop": [
+            870,
+            0,
+            1310,
+            400
+          ],
+          "model_crop": [
+            220,
+            100,
+            710,
+            700
+          ]
+        },
+        {
+          "label": "斜面：轮廓更连贯；发束、虹膜比例仍有绘画差距",
+          "frame": "turn_45",
+          "reference_crop": [
+            80,
+            0,
+            900,
+            755
+          ],
+          "model_crop": [
+            215,
+            100,
+            710,
+            750
+          ]
+        },
+        {
+          "label": "另一侧：也检查耳根、马尾与颈肩，不能只看局部\n线条",
+          "frame": "turn_minus60",
+          "reference_crop": [
+            960,
+            0,
+            1820,
+            755
+          ],
+          "model_crop": [
+            190,
+            100,
+            760,
+            760
+          ]
+        }
+      ]
+    }
+  ],
+  "turn_sequence": {
+    "before": "storyboard/hybrid_character/oblique_transition_v1/identity_before/baseline",
+    "angles": [
+      60,
+      65,
+      70,
+      75,
+      80,
+      85,
+      90
+    ],
+    "crop": [
+      120,
+      90,
+      820,
+      770
+    ]
+  },
+  "preserve": {
+    "before": "storyboard/hybrid_character/oblique_transition_v1/release_final/baseline",
+    "frames": [
+      "no_hair_45",
+      "no_hair_-45",
+      "no_hair_60",
+      "no_hair_-60"
+    ],
+    "crops": {
+      "no_hair_45": [
+        420,
+        340,
+        665,
+        595
+      ],
+      "no_hair_-45": [
+        235,
+        340,
+        480,
+        595
+      ],
+      "no_hair_60": [
+        480,
+        340,
+        665,
+        595
+      ],
+      "no_hair_-60": [
+        235,
+        340,
+        420,
+        595
+      ]
+    },
+    "scope": "裸头脸部区域，不含耳朵；正面与各角度脸部配置另作源码哈希核对。完整头像另看发束遮挡变化。"
+  }
+}

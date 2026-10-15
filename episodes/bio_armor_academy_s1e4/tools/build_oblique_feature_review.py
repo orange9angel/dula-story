@@ -280,6 +280,26 @@ def configured_comparison(config_path):
         fig.text(.5,.01,cfg['whole_frame_note'],ha='center',fontsize=10)
         fig.subplots_adjust(left=.01,right=.99,top=.92,bottom=.05,wspace=.025,hspace=.12)
         fig.savefig(dest/(group+'.jpg'),dpi=125,pil_kwargs={'quality':94});plt.close(fig)
+    if cfg.get('turn_sequence'):
+        seq=cfg['turn_sequence'];angles=seq['angles'];prior=EP/seq['before']
+        fig,axes=plt.subplots(2,len(angles),figsize=(2.7*len(angles),7),squeeze=False)
+        for r,folder in enumerate([prior,new]):
+            for c,angle in enumerate(angles):
+                p=folder/f'turn_{angle}.png';sources.add(p)
+                show(axes[r,c],Image.open(p).crop(seq['crop']),('修改前' if r==0 else '修改后')+f' · {angle}°')
+        fig.suptitle('连续转面：检查整脸身份与鼻—嘴—下巴关系',fontsize=19)
+        fig.subplots_adjust(left=.01,right=.99,top=.9,bottom=.02,wspace=.025,hspace=.10)
+        fig.savefig(dest/'09_turn_identity.jpg',dpi=140,pil_kwargs={'quality':95});plt.close(fig)
+    preservation={}
+    if cfg.get('preserve'):
+        keep=cfg['preserve'];prior=EP/keep['before']
+        for frame in keep['frames']:
+            p=prior/(frame+'.png');q=new/(frame+'.png');sources.update([p,q])
+            a=np.array(Image.open(p).convert('RGB'));b=np.array(Image.open(q).convert('RGB'))
+            if frame in keep.get('crops', {}):
+                x0,y0,x1,y1=keep['crops'][frame]
+                a=a[y0:y1,x0:x1];b=b[y0:y1,x0:x1]
+            preservation[frame]=int(np.any(a!=b,axis=2).sum())
     checks={'head_body_angles_match':all(abs(v['actualYaw']-v['actualBodyYaw'])<1e-4 for v in reports[1]['frames'].values()),
             'no_browser_errors':not reports[1]['errors'],
             'finite_vertices':all(v['finite'] for v in reports[1]['frames'].values()),
@@ -292,12 +312,12 @@ def configured_comparison(config_path):
         changes[frame]={'changed_pixels':len(xx),'bbox':None if not len(xx) else [int(xx.min()),int(yy.min()),int(xx.max())+1,int(yy.max())+1],
             'ear_centres_before':reports[0]['frames'][frame]['projectedEars'],
             'ear_centres_after':reports[1]['frames'][frame]['projectedEars']}
-    result={'config':cfg,'status':'candidate_pending_user_review','render_checks':checks,'change_locations':changes,
+    result={'config':cfg,'status':'candidate_pending_user_review','render_checks':checks,'change_locations':changes,'preserved_view_changed_pixels':preservation,
             'limitations':'Pixel changes and rigid ear centres locate edits, not aesthetic quality. CPU eye probes exclude GPU sculpt; no beauty/visibility score.',
             'source_hashes':{str(p.relative_to(EP)):sha(p) for p in sorted(sources)}}
     (dest/'evidence.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
-    if not all(checks.values()):raise RuntimeError(checks)
-    print(json.dumps({'boards':len(cfg['boards'])+2,'checks':checks},ensure_ascii=False))
+    if not all(checks.values()) or any(preservation.values()):raise RuntimeError({'checks':checks,'preservation':preservation})
+    print(json.dumps({'boards':len(cfg['boards'])+2+bool(cfg.get('turn_sequence')),'checks':checks,'preservation':preservation},ensure_ascii=False))
 
 
 if __name__ == '__main__':

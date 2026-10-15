@@ -71,6 +71,10 @@ try{
     });
     await page.goto('http://127.0.0.1:4215/face_lab.html?actor=aoi&cel=direct',{timeout:90000});
     await page.waitForFunction('window.ready===true',{timeout:90000});
+    if(process.argv.includes('--no-shell-outline'))await page.evaluate(()=>{
+      face.root.children[1].visible=false;
+      const inner=face.root.getObjectByName('drawn-head-interior-outline');if(inner)inner.visible=false;
+    });
     if(process.argv.includes('--surface-coordinates'))await page.evaluate(()=>{
       const m=face.root.children[0].material,previous=m.onBeforeCompile,key=m.customProgramCacheKey();
       m.onBeforeCompile=function(s,r){previous.call(this,s,r);
@@ -87,12 +91,17 @@ try{
     if(process.argv.includes('--ear-layers'))for(const angle of layerAngles){
       for(const layer of ['no_ears','no_hair','no_face_paint'])specs.push([`${layer}_${angle}`,angle,false,{},layer]);
     }
+    if(arg('--expression-angles'))for(const angle of arg('--expression-angles').split(',').map(Number)){
+      if(!Number.isFinite(angle)||Math.abs(angle)>180)throw new Error('Invalid expression angle');
+      for(const [name,state] of Object.entries({blink_half:{blink:.5},blink_closed:{blink:1},gaze_left:{gaze:[-1,0]},gaze_right:{gaze:[1,0]},gaze_up:{gaze:[0,1]},gaze_down:{gaze:[0,-1]}}))
+        specs.push([`${name}_${angle}`,angle,false,state]);
+    }
     if(arg('--only-frames')){
       const selected=new Set(arg('--only-frames').split(','));
       for(const id of selected)if(!specs.some(s=>s[0]===id))throw new Error(`Unknown requested frame: ${id}`);
       specs=specs.filter(s=>selected.has(s[0]));
     }
-    const report={variant:name,turnMode,sourcePath,originalSha256:sha(source),experimentSha256:sha(text),overrides,
+    const report={variant:name,turnMode,shellOutline:!process.argv.includes('--no-shell-outline'),sourcePath,originalSha256:sha(source),experimentSha256:sha(text),overrides,
       viewDeformation,profileReferenceActive:text.includes('profileReference:'),jawSculptActive:text.includes('jawDefinition:'),cranialScalpActive:text.includes('cranium:'),paintEyeInset,
       projectedFeatureSpace:viewDeformation?'CPU before GPU view/profile/jaw deformation; not rendered eye visibility':'undeformed mesh projected to camera',
       layerNotes:'no_face_paint swaps only the main map; geometry, jaw shader and skin underpaint remain. no_hair/no_ears toggle named layers.',frames:{},errors};

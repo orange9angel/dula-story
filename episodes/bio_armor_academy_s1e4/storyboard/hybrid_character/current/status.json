@@ -1,68 +1,42 @@
 {
-  "status": "candidate_pending_visual_review",
-  "basis": "user-selected flat_under_eye_soft; only bounded lower cheek curve added after selection",
-  "source_video": "output\\aoi_selected_cheek_v5.mp4",
-  "source_video_sha256": "8b295313a8e367bd153df98bd26fa7a620005104d065da582f392097ec57c5fd",
-  "comparison": "storyboard\\hybrid_character\\forehead_lower_cheek_v1\\selected_comparison\\01_reference_cheek.jpg",
-  "validation": {
-    "front": {
-      "changed_pixels": 0,
-      "bbox": null
-    },
-    "turn_32.1631935647518": {
-      "changed_pixels": 0,
-      "bbox": null
-    },
-    "turn_45": {
-      "changed_pixels": 1639,
-      "bbox": [
-        589,
-        453,
-        630,
-        540
-      ]
-    },
-    "turn_minus45": {
-      "changed_pixels": 1588,
-      "bbox": [
-        270,
-        453,
-        311,
-        541
-      ]
-    },
-    "turn_60": {
-      "changed_pixels": 505,
-      "bbox": [
-        606,
-        453,
-        626,
-        539
-      ]
-    },
-    "turn_minus60": {
-      "changed_pixels": 506,
-      "bbox": [
-        274,
-        443,
-        294,
-        540
-      ]
-    },
-    "turn_90": {
-      "changed_pixels": 0,
-      "bbox": null
-    },
-    "turn_minus90": {
-      "changed_pixels": 0,
-      "bbox": null
-    },
-    "forehead_and_eyes_60_equal": false,
-    "upper_face_difference_note": "9 pixels in rows 453-455, maximum channel delta 1, at the far lower eyelid; rows 0-452 are identical. Do not call the complete eye crop pixel-identical."
-  },
+  "status": "candidate_pending_user_review",
+  "revision": "v8",
+  "updated_utc": "2026-10-15T18:51:34.579038+00:00",
+  "source_video": "output\\aoi_oblique_transition_v8.mp4",
+  "source_video_sha256": "b487df3abd97647896c37853acc343ca5d963af9e16204fb1429f2fe5292a9cb",
+  "study": "storyboard\\hybrid_character\\oblique_transition_v1",
+  "rendered_frames": 118,
+  "video_frames": 144,
+  "entry_points": [
+    "overview.jpg",
+    "turn_70_90.jpg",
+    "ear_hair.jpg",
+    "turn.mp4"
+  ],
+  "review": "storyboard\\hybrid_character\\oblique_transition_v1\\review.json",
   "limitations": [
-    "Reference yaw is uncalibrated.",
-    "Far brow remains more covered than target; hair and ear/jaw shading still differ.",
-    "Top/back reposition trial rejected together with broad face expansion; selected skull kept."
-  ]
+    "Rear scalp still reads as a broad shell; ponytail strands differ from reference.",
+    "Ear attachment remains simplified.",
+    "Reference yaw uncalibrated; new side views not user accepted.",
+    "Existing neck and collar artifacts remain."
+  ],
+  "files": {
+    "front.png": "4430577e48f0d11a034962cc10fb64877114a27a2d3563de16eb86b126d70ac0",
+    "face_45.png": "8fbdccb62a164fa9d7d0f79be496800c689a941c527df62dd631c7f3cee6e3af",
+    "face_60.png": "3b3eba3f5bd9c1430964d2e8b2622661945cb496493c0f9e29c26a0a7f14a21a",
+    "face_32.png": "08754b085e3e9e823837037000b4045f313ec21c2a022c6106d7fd6b36f4b1c3",
+    "no_hair_60.png": "c7ce9d7ff4ab2818eb9fb3c370a05f03c0e502012220ca982dafb21ff55679b0",
+    "no_hair_32.png": "ee47c41025a327b5b201ce862b65ee5e4d61737c5e5daccf54c0054871eb7194",
+    "comparison.jpg": "b6f5b8bc17304dbb396c90dbf62f15c57c6779874e78b2076f1aaf5b091242e7",
+    "hair_comparison.jpg": "959c223890abfeff188b66c0f4a9e93c8adaa19b5862b70ff8ec74c87b4a78a8",
+    "eyes_ears.jpg": "dbdbe102802f3de0932e6d1421f339249219b6065b339658f7b7acf8b933fef2",
+    "ear_hair.jpg": "dbdbe102802f3de0932e6d1421f339249219b6065b339658f7b7acf8b933fef2",
+    "eye_angles.jpg": "4e060b715a0fb7eba41624f7bfa4c63ba6d30bade13ae81fe95f1bdf8cd732d1",
+    "overview.jpg": "2c4c42a0fa45d5c41a7fdb738733c5b2d92fe644ff722a12b089c96400d7744e",
+    "turn_70_90.jpg": "e18706b4ec55d35b95cdad1f8d04062e3c268a57063962a717306c22237d7ec5",
+    "turn_contact.jpg": "69fb41b4d24dec1acc5155a3c0914e53ad5a094e9ed86cc47ec1f4ca9e6c474b",
+    "motion_identity.jpg": "98e09bb95b4e92c943c869244ac002d546a60c4ab566f7eedc8bc38882460cf9",
+    "decoded_024.png": "5efe3521dbb9481fe7ecb429e9d7794ca2f096cf15bc05df70f56717b05e5674",
+    "turn.mp4": "b487df3abd97647896c37853acc343ca5d963af9e16204fb1429f2fe5292a9cb"
+  }
 }
