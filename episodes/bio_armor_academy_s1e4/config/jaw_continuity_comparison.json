@@ -1,0 +1,85 @@
+{
+  "before": "storyboard/hybrid_character/face_balance_study_v2/cranial_review/baseline",
+  "after": "storyboard/hybrid_character/jaw_continuity_v3/verified/baseline",
+  "out": "storyboard/hybrid_character/jaw_continuity_v3/comparison",
+  "reference": "storyboard/hybrid_character/oblique_feature_study_v2/references/draft_03_oblique.png",
+  "whole_frame_note": "仅修斜面下颌曲线；额头、眼睛和发型未改。参考角度未标定；耳根阴影、垂发及领口仍有差异。",
+  "boards": [
+    {
+      "id": "01_jaw_60",
+      "title": "60°下颌：耳根、颌缘、下巴与颈前连接",
+      "rows": [
+        {
+          "label": "右向60°：参考为未标定斜面绘画",
+          "reference_crop": [
+            409,
+            325,
+            760,
+            659
+          ],
+          "frame": "turn_60",
+          "model_crop": [
+            341,
+            399,
+            652,
+            701
+          ]
+        },
+        {
+          "label": "左向60°：参考为未标定斜面绘画",
+          "reference_crop": [
+            1100,
+            319,
+            1460,
+            665
+          ],
+          "frame": "turn_minus60",
+          "model_crop": [
+            242,
+            399,
+            559,
+            701
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02_complete_60",
+      "title": "回看整体：下颌改善与尚存的差异分别判断",
+      "rows": [
+        {
+          "label": "右向60°，头身同转",
+          "reference_crop": [
+            50,
+            10,
+            895,
+            750
+          ],
+          "frame": "turn_60",
+          "model_crop": [
+            190,
+            110,
+            745,
+            855
+          ]
+        },
+        {
+          "label": "左向60°，头身同转",
+          "reference_crop": [
+            955,
+            10,
+            1810,
+            750
+          ],
+          "frame": "turn_minus60",
+          "model_crop": [
+            175,
+            110,
+            870,
+            855
+          ]
+        }
+      ]
+    }
+  ]
+}

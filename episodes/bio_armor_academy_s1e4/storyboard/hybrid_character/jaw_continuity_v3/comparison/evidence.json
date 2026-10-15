@@ -1,0 +1,498 @@
+{
+  "config": {
+    "before": "storyboard/hybrid_character/face_balance_study_v2/cranial_review/baseline",
+    "after": "storyboard/hybrid_character/jaw_continuity_v3/verified/baseline",
+    "out": "storyboard/hybrid_character/jaw_continuity_v3/comparison",
+    "reference": "storyboard/hybrid_character/oblique_feature_study_v2/references/draft_03_oblique.png",
+    "whole_frame_note": "仅修斜面下颌曲线；额头、眼睛和发型未改。参考角度未标定；耳根阴影、垂发及领口仍有差异。",
+    "boards": [
+      {
+        "id": "01_jaw_60",
+        "title": "60°下颌：耳根、颌缘、下巴与颈前连接",
+        "rows": [
+          {
+            "label": "右向60°：参考为未标定斜面绘画",
+            "reference_crop": [
+              409,
+              325,
+              760,
+              659
+            ],
+            "frame": "turn_60",
+            "model_crop": [
+              341,
+              399,
+              652,
+              701
+            ]
+          },
+          {
+            "label": "左向60°：参考为未标定斜面绘画",
+            "reference_crop": [
+              1100,
+              319,
+              1460,
+              665
+            ],
+            "frame": "turn_minus60",
+            "model_crop": [
+              242,
+              399,
+              559,
+              701
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02_complete_60",
+        "title": "回看整体：下颌改善与尚存的差异分别判断",
+        "rows": [
+          {
+            "label": "右向60°，头身同转",
+            "reference_crop": [
+              50,
+              10,
+              895,
+              750
+            ],
+            "frame": "turn_60",
+            "model_crop": [
+              190,
+              110,
+              745,
+              855
+            ]
+          },
+          {
+            "label": "左向60°，头身同转",
+            "reference_crop": [
+              955,
+              10,
+              1810,
+              750
+            ],
+            "frame": "turn_minus60",
+            "model_crop": [
+              175,
+              110,
+              870,
+              855
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "status": "candidate_pending_user_review",
+  "render_checks": {
+    "head_body_angles_match": true,
+    "no_browser_errors": true,
+    "finite_vertices": true,
+    "reverse_seeks_equal": true
+  },
+  "change_locations": {
+    "front": {
+      "changed_pixels": 0,
+      "bbox": null,
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            286.66673461587516,
+            449.9999968767709
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            613.3333996983749,
+            450.00000407559617
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            286.66673461587516,
+            449.9999968767709
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            613.3333996983749,
+            450.00000407559617
+          ]
+        }
+      ]
+    },
+    "turn_45": {
+      "changed_pixels": 450,
+      "bbox": [
+        320,
+        475,
+        538,
+        590
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            341.57698064305805,
+            449.99999687675387
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            572.5651947873117,
+            450.00000407561174
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            341.57698064305805,
+            449.99999687675387
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            572.5651947873117,
+            450.00000407561174
+          ]
+        }
+      ]
+    },
+    "turn_minus45": {
+      "changed_pixels": 502,
+      "bbox": [
+        363,
+        474,
+        580,
+        590
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            327.43490026402685,
+            449.99999687673056
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            558.423114254655,
+            450.00000407563135
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            327.43490026402685,
+            449.99999687673056
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            558.423114254655,
+            450.00000407563135
+          ]
+        }
+      ]
+    },
+    "turn_60": {
+      "changed_pixels": 999,
+      "bbox": [
+        352,
+        486,
+        567,
+        590
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            376.993587515451,
+            449.99999687674944
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            540.3269201507853,
+            450.00000407561544
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            376.993587515451,
+            449.99999687674944
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            540.3269201507853,
+            450.00000407561544
+          ]
+        }
+      ]
+    },
+    "turn_minus60": {
+      "changed_pixels": 1105,
+      "bbox": [
+        333,
+        480,
+        556,
+        590
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            359.67314710042183,
+            449.99999687673466
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            523.0064795476042,
+            450.00000407562794
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            359.67314710042183,
+            449.99999687673466
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            523.0064795476042,
+            450.00000407562794
+          ]
+        }
+      ]
+    },
+    "turn_90": {
+      "changed_pixels": 0,
+      "bbox": null,
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996093610093,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996104473047,
+            450.0000040756224
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996093610093,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            459.99996104473047,
+            450.0000040756224
+          ]
+        }
+      ]
+    },
+    "turn_minus90": {
+      "changed_pixels": 0,
+      "bbox": null,
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003906389895,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003895526953,
+            450.0000040756224
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003906389895,
+            449.9999968767424
+          ]
+        },
+        {
+          "local": [
+            0.098,
+            1.46,
+            0.006
+          ],
+          "pixel": [
+            440.00003895526953,
+            450.0000040756224
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": "Pixel changes and rigid ear centres locate edits, not aesthetic quality. CPU eye probes exclude GPU sculpt; no beauty/visibility score.",
+  "source_hashes": {
+    "storyboard\\hybrid_character\\face_balance_study_v2\\cranial_review\\baseline\\front.png": "668309d6cde9f1327017c3ce6894614fb005ab85a665d3b1b6288db1d4d0a113",
+    "storyboard\\hybrid_character\\face_balance_study_v2\\cranial_review\\baseline\\turn_45.png": "7bf51b9dc1f34f9f1b02d840caf4cff872832dc38ca4da06b4888a6ff09ff337",
+    "storyboard\\hybrid_character\\face_balance_study_v2\\cranial_review\\baseline\\turn_60.png": "ffca32fee8f06b257a215b865e8cb3c857e56ed7a6d7d30f7367bd6b039ae361",
+    "storyboard\\hybrid_character\\face_balance_study_v2\\cranial_review\\baseline\\turn_90.png": "b57062f7fb40118a962d6979aee5ebcaf5c9e995a00e6eac988c671d5ad449c2",
+    "storyboard\\hybrid_character\\face_balance_study_v2\\cranial_review\\baseline\\turn_minus45.png": "1d3634bd906ff4ac965b512b60c1d86aaa89b4866a87b5de9d0badb7904667bb",
+    "storyboard\\hybrid_character\\face_balance_study_v2\\cranial_review\\baseline\\turn_minus60.png": "edf43c1c675cf9398847e21d983a45d587c8060b651f7a1c39b19dbd75352df8",
+    "storyboard\\hybrid_character\\face_balance_study_v2\\cranial_review\\baseline\\turn_minus90.png": "d9837dbeefe5354285bceec767fcf056f3651efd3a98ea787818ea3ca6213216",
+    "storyboard\\hybrid_character\\jaw_continuity_v3\\verified\\baseline\\front.png": "668309d6cde9f1327017c3ce6894614fb005ab85a665d3b1b6288db1d4d0a113",
+    "storyboard\\hybrid_character\\jaw_continuity_v3\\verified\\baseline\\turn_45.png": "7369d056d80e3e5fda984ffc9328360cf611306063d707573f5a004af6d81374",
+    "storyboard\\hybrid_character\\jaw_continuity_v3\\verified\\baseline\\turn_60.png": "0a4916df56ca36ee12f4504116594ddf96822ed0e5da9eda3d40be01764302dd",
+    "storyboard\\hybrid_character\\jaw_continuity_v3\\verified\\baseline\\turn_90.png": "b57062f7fb40118a962d6979aee5ebcaf5c9e995a00e6eac988c671d5ad449c2",
+    "storyboard\\hybrid_character\\jaw_continuity_v3\\verified\\baseline\\turn_minus45.png": "b0b37881e8a88e5bdb096782e89c1918f1b319a0e13a2413ca369449aa9774bb",
+    "storyboard\\hybrid_character\\jaw_continuity_v3\\verified\\baseline\\turn_minus60.png": "aa325429449dd43ce0d8c02d1a5e4964449d64f7489a98259e1f5fd3c9d6355f",
+    "storyboard\\hybrid_character\\jaw_continuity_v3\\verified\\baseline\\turn_minus90.png": "d9837dbeefe5354285bceec767fcf056f3651efd3a98ea787818ea3ca6213216",
+    "storyboard\\hybrid_character\\oblique_feature_study_v2\\references\\draft_03_oblique.png": "ccbe05af7c71155b6915fc02d90fda5233b99a529762a7f384bb735bf95c308f"
+  }
+}

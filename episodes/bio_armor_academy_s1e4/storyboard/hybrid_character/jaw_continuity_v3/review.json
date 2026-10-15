@@ -1,0 +1,60 @@
+{
+  "updated_at": "2026-10-15T23:59:59.007287+08:00",
+  "status": "adopted_candidate_not_art_approved",
+  "trigger": "????60????????????????????????????????????",
+  "changes": [
+    "????????????????obliquePower=1.8?obliqueRootY=1.435?",
+    "25?55????70?90??????????????????"
+  ],
+  "rejected_trial": "???????????90?????????????????",
+  "visual_findings": [
+    "60???????????????????????",
+    "???????????????????",
+    "???????????????????????????"
+  ],
+  "source_sha256": {
+    "characters/bioarmor/aoi-generated-paint.js": "f7a4e2fbf81a37bf463aebd20d431965dd65408b7c9ff49ee489ce08e75f8994",
+    "lib/craft3d/drawn-head.js": "29fe63c93d9336c747fc9c5a53e44dcc4d62d8d7a7fa514ed1998c2873ff49c7",
+    "lib/craft3d/oblique-face-support.js": "d80f0e67cb5e7fa2e057f6ed955f86d45ffd0911a06385eaa8b87d15939d2f72"
+  },
+  "render_checks": {
+    "head_body_angles_match": true,
+    "no_browser_errors": true,
+    "finite_vertices": true,
+    "reverse_seeks_equal": true
+  },
+  "still_frame_count": 33,
+  "changed_pixels": {
+    "front": 0,
+    "turn_45": 450,
+    "turn_minus45": 502,
+    "turn_60": 999,
+    "turn_minus60": 1105,
+    "turn_90": 0,
+    "turn_minus90": 0
+  },
+  "video": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\aoi_jaw_continuity_v3.mp4",
+    "sha256": "a79fbc89f4bc66362e00bb3b13e0b9be69316d8bfdb1112b5d7d217db9b6bd4c",
+    "bytes": 2261524
+  },
+  "video_contact": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\storyboard\\hybrid_character\\jaw_continuity_v3\\video\\turn_contact.jpg",
+    "sha256": "e4ae0fadf5f49a63d1d8829348d788a5267e7faa86d05bf622de9d35fc109902",
+    "sourceVideoSha256": "a79fbc89f4bc66362e00bb3b13e0b9be69316d8bfdb1112b5d7d217db9b6bd4c",
+    "filter": "fps=2,scale=300:300,tile=4x3"
+  },
+  "video_inputs_unchanged": true,
+  "reviewed_video_frames": [
+    24,
+    62,
+    97
+  ],
+  "video_review_limit": "?????????????????????????",
+  "old_video_discrepancy": "??????MP4??????????????????????????????????????????????????",
+  "reproduce": [
+    "node episodes/bio_armor_academy_s1e4/tools/render_profile_feature_study.mjs --variants baseline --turn-mode body --additional-angles 30,40,50,60,-60,70,80 --ear-layers --layer-angles 45,60,-60,90 --out storyboard/hybrid_character/jaw_continuity_v3/verified",
+    "python episodes/bio_armor_academy_s1e4/tools/build_oblique_feature_review.py --comparison episodes/bio_armor_academy_s1e4/config/jaw_continuity_comparison.json",
+    "node episodes/bio_armor_academy_s1e4/tools/render_character_profile_turn.mjs --revision v3 --turn-mode body --out output/aoi_jaw_continuity_v3.mp4 --board storyboard/hybrid_character/jaw_continuity_v3/video"
+  ]
+}

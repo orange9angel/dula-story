@@ -239,5 +239,67 @@ def parts_review():
     print(json.dumps({'parts':len(crops),'render_checks':checks,'changes':changes},ensure_ascii=False))
 
 
+def configured_comparison(config_path):
+    """Reuse semantic crops for later revisions without relabelling old evidence."""
+    import numpy as np
+    cfg = json.loads(Path(config_path).read_text(encoding='utf-8'))
+    old, new, dest = [EP / cfg[k] for k in ['before', 'after', 'out']]
+    dest.mkdir(parents=True, exist_ok=True)
+    sources = set()
+    for board in cfg['boards']:
+        rows = board['rows']
+        fig, axes = plt.subplots(len(rows), 3, figsize=(13.5, 3.7*len(rows)), squeeze=False)
+        for r, row in enumerate(rows):
+            ref = EP / row.get('reference', cfg['reference'])
+            before = EP / row.get('before', cfg['before'])
+            items = [(ref, row['reference_crop'], '参考绘画（斜面角度未标定）'),
+                     (before/(row['frame']+'.png'), row['model_crop'], '修改前 / 指定阶段'),
+                     (new/(row['frame']+'.png'), row['model_crop'], '本轮修改后')]
+            for c, (path, crop, label) in enumerate(items):
+                sources.add(path)
+                show(axes[r,c], Image.open(path).crop(crop), label+'\n'+row['label'])
+                # Reviewer-authored visible landmarks, never automatic detections.
+                for mark in row.get('markers', {}).get(['reference','before','after'][c], []):
+                    name, x, y = mark
+                    axes[r,c].plot(x-crop[0], y-crop[1], 'o', ms=3, color='#008f9c')
+                    axes[r,c].annotate(name, (x-crop[0],y-crop[1]), xytext=(4,4), textcoords='offset points', fontsize=8, color='#006a75')
+        fig.suptitle(board['title'], fontsize=19, y=.99)
+        fig.text(.5,.012,'参考与模型独立等比显示；裁切仅供分析，不改变原图或实际渲染。',ha='center',fontsize=10)
+        fig.subplots_adjust(left=.025,right=.975,top=.86,bottom=.055,wspace=.08,hspace=.29)
+        fig.savefig(dest/(board['id']+'.jpg'), dpi=135, pil_kwargs={'quality':95}); plt.close(fig)
+    reports = [json.loads((folder/'report.json').read_text()) for folder in [old,new]]
+    for group, frames in [('04_whole_frame',['front','turn_45','turn_minus45','turn_minus60']),
+                          ('05_profiles',['turn_60','turn_90','turn_minus90'])]:
+        fig,axes=plt.subplots(2,len(frames),figsize=(4*len(frames),8.8),squeeze=False)
+        for r,folder in enumerate([old,new]):
+            for c,frame in enumerate(frames):
+                f=reports[r]['frames'][frame];p=folder/(frame+'.png');sources.add(p)
+                show(axes[r,c],Image.open(p),('修改前' if r==0 else '修改后')+f" · 头{f['actualYaw']:.0f}° / 身{f['actualBodyYaw']:.0f}°")
+        fig.suptitle('完整画面回查：五官、脸缘、耳发连接、颈肩',fontsize=19,y=.99)
+        fig.text(.5,.01,cfg['whole_frame_note'],ha='center',fontsize=10)
+        fig.subplots_adjust(left=.01,right=.99,top=.92,bottom=.05,wspace=.025,hspace=.12)
+        fig.savefig(dest/(group+'.jpg'),dpi=125,pil_kwargs={'quality':94});plt.close(fig)
+    checks={'head_body_angles_match':all(abs(v['actualYaw']-v['actualBodyYaw'])<1e-4 for v in reports[1]['frames'].values()),
+            'no_browser_errors':not reports[1]['errors'],
+            'finite_vertices':all(v['finite'] for v in reports[1]['frames'].values()),
+            'reverse_seeks_equal':all(v.get('reverseSeekEqual',True) for v in reports[1]['frames'].values())}
+    changes={}
+    for frame in ['front','turn_45','turn_minus45','turn_60','turn_minus60','turn_90','turn_minus90']:
+        a=np.array(Image.open(old/(frame+'.png')).convert('RGB'));b=np.array(Image.open(new/(frame+'.png')).convert('RGB'))
+        yy,xx=np.nonzero(np.any(a!=b,axis=2))
+        changes[frame]={'changed_pixels':len(xx),'bbox':None if not len(xx) else [int(xx.min()),int(yy.min()),int(xx.max())+1,int(yy.max())+1],
+            'ear_centres_before':reports[0]['frames'][frame]['projectedEars'],
+            'ear_centres_after':reports[1]['frames'][frame]['projectedEars']}
+    result={'config':cfg,'status':'candidate_pending_user_review','render_checks':checks,'change_locations':changes,
+            'limitations':'Pixel changes and rigid ear centres locate edits, not aesthetic quality. CPU eye probes exclude GPU sculpt; no beauty/visibility score.',
+            'source_hashes':{str(p.relative_to(EP)):sha(p) for p in sorted(sources)}}
+    (dest/'evidence.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+    if not all(checks.values()):raise RuntimeError(checks)
+    print(json.dumps({'boards':len(cfg['boards'])+2,'checks':checks},ensure_ascii=False))
+
+
 if __name__ == '__main__':
-    parts_review() if '--parts' in sys.argv else main()
+    if '--comparison' in sys.argv:
+        configured_comparison(sys.argv[sys.argv.index('--comparison')+1])
+    else:
+        parts_review() if '--parts' in sys.argv else main()

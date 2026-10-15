@@ -12,6 +12,8 @@ const arg=n=>{const i=process.argv.indexOf(n);return i<0?null:process.argv[i+1];
 const study=path.join(ep,'storyboard/hybrid_character/profile_feature_study_v1');
 const out=arg('--out')?path.resolve(ep,arg('--out')):study;
 const additionalAngles=(arg('--additional-angles')??'').split(',').filter(Boolean).map(Number);
+const layerAngles=(arg('--layer-angles')??'45,-45,60,-60,90,-90').split(',').filter(Boolean).map(Number);
+if(layerAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Layer angles must be finite and within [-180,180]');
 if(additionalAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Angles must be finite and within [-180,180]');
 const sourcePath=arg('--source')?path.resolve(ep,arg('--source')):path.resolve(ep,'../../../dula-assets/characters/bioarmor/aoi-generated-paint.js');
 const source=fs.readFileSync(sourcePath,'utf8');
@@ -32,7 +34,15 @@ try{
     let text=source;
     if(Object.hasOwn(overrides,'obliqueFaceSupport'))text=text.replace(/^const AOI_OBLIQUE_FACE_SUPPORT=.*;$/m,`const AOI_OBLIQUE_FACE_SUPPORT=${JSON.stringify(overrides.obliqueFaceSupport)};`);
     if(overrides.recess!=null)text=text.replace(/(eyeSurface:\{[^}\n]*\brecess:)[^,}]+/,(_,prefix)=>prefix+overrides.recess);
+    for(const field of ['earZ','earY','eyeInset','temporalLashScale','nasalLashLength']){
+      if(overrides[field]==null)continue;
+      if(!Number.isFinite(overrides[field]))throw new Error(`${field} must be finite`);
+      const re=new RegExp(`(${field}:)[-\\d.]+`);
+      if(!re.test(text))throw new Error(`Missing override anchor: ${field}`);
+      text=text.replace(re,(_,prefix)=>prefix+overrides[field]);
+    }
     if(Object.hasOwn(overrides,'eyeSurface'))text=text.replace(/^    eyeSurface:.*,$/m,`    eyeSurface:${JSON.stringify(overrides.eyeSurface)},`);
+    if(Object.hasOwn(overrides,'jawDefinition'))text=text.replace(/^    jawDefinition:.*,$/m,`    jawDefinition:${JSON.stringify(overrides.jawDefinition)},`);
     if(overrides.faceRoundness!=null){
       if(!Number.isFinite(overrides.faceRoundness)||overrides.faceRoundness<=0)throw new Error('faceRoundness must be positive');
       text=text.replace(/faceRoundness:[\d.]+/,`faceRoundness:${overrides.faceRoundness}`);
@@ -40,9 +50,11 @@ try{
     if(overrides.sideFaceSupport||overrides.frontFaceSupport||overrides.obliqueFaceSupport?.eyePaintShift)
       throw new Error('Archived rejected experiment: its mesh/UV trial code is not present in the live assets');
     if(overrides.profileContour)text=text.replace(/^    profileContour:\[.*\],$/m,`    profileContour:${JSON.stringify(overrides.profileContour)},`);
+    if(overrides.jawContour)text=text.replace(/^    jawContour:\[.*\],$/m,`    jawContour:${JSON.stringify(overrides.jawContour)},`);
     if(name!=='baseline'&&text===source)throw new Error('Experiment override did not apply');
     const supportDeclaration=text.match(/^const AOI_OBLIQUE_FACE_SUPPORT=(.*);$/m);
     const viewDeformation=supportDeclaration?JSON.parse(supportDeclaration[1]):null;
+    const paintEyeInset=Number(text.match(/\beyeInset:([-\d.]+)/)?.[1]??0);
     if(diagnostics&&viewDeformation)throw new Error('CPU eye visibility excludes the active GPU view deformation; use rendered evidence instead');
     const page=await browser.newPage(),errors=[];
     await page.setViewport({width:900,height:900});
@@ -60,12 +72,26 @@ try{
     for(const angle of additionalAngles){
       if(!specs.some(s=>s[1]===angle&&!s[2]&&!s[3]))specs.push([`turn_${angle<0?'minus':''}${Math.abs(angle)}`,angle]);
     }
+    if(process.argv.includes('--ear-layers'))for(const angle of layerAngles){
+      for(const layer of ['no_ears','no_hair','no_face_paint'])specs.push([`${layer}_${angle}`,angle,false,{},layer]);
+    }
     const report={variant:name,turnMode,sourcePath,originalSha256:sha(source),experimentSha256:sha(text),overrides,
-      viewDeformation,projectedFeatureSpace:viewDeformation?'CPU before GPU view deformation; not rendered eye visibility':'undeformed mesh projected to camera',frames:{},errors};
-    async function capture([id,angle,bare=false,state={}]){
-      const result=await page.evaluate(async({angle,bare,state,turnMode,diagnostics})=>{
+      viewDeformation,profileReferenceActive:text.includes('profileReference:'),jawSculptActive:text.includes('jawDefinition:'),cranialScalpActive:text.includes('cranium:'),paintEyeInset,
+      projectedFeatureSpace:viewDeformation?'CPU before GPU view/profile/jaw deformation; not rendered eye visibility':'undeformed mesh projected to camera',
+      layerNotes:'no_face_paint swaps only the main map; geometry, jaw shader and skin underpaint remain. no_hair/no_ears toggle named layers.',frames:{},errors};
+    async function capture([id,angle,bare=false,state={},layer='']){
+      const result=await page.evaluate(async({angle,bare,state,turnMode,diagnostics,paintEyeInset,layer})=>{
         const THREE=await import('three');
-        actor.mesh.traverse(o=>{if(o.userData.kind==='painted curved hair shell with thickness')o.visible=!bare;});
+        actor.mesh.traverse(o=>{if(o.userData.kind==='painted curved hair shell with thickness')o.visible=!bare&&layer!=='no_hair';});
+        for(const i of [2,4])face.root.children[i].visible=layer!=='no_ears';
+        const skinMaterial=face.root.children[0].material;
+        if(!window.originalFaceMap)window.originalFaceMap=skinMaterial.map;
+        if(!window.flatFaceMap){
+          const c=document.createElement('canvas');c.width=c.height=2;
+          const ctx=c.getContext('2d');ctx.fillStyle='#ffddbf';ctx.fillRect(0,0,2,2);
+          window.flatFaceMap=new THREE.CanvasTexture(c);window.flatFaceMap.colorSpace=THREE.SRGBColorSpace;
+        }
+        skinMaterial.map=layer==='no_face_paint'?window.flatFaceMap:window.originalFaceMap;
         actor.mesh.rotation.y=turnMode==='body'?angle*Math.PI/180:0;
         renderAt({...state,turn:turnMode==='head'?angle*Math.PI/180:0});
         const mesh=face.root.children[0],p=mesh.geometry.attributes.position;
@@ -83,7 +109,7 @@ try{
           const y0=p.getY(row*columns),y1=p.getY((row+1)*columns);
           return new THREE.Vector3(x,y,THREE.MathUtils.lerp(rowZ(row),rowZ(row+1),(y-y0)/(y1-y0)));
         };
-        const facePoints={eye:at((500-642)/3300,1.473+(658-656)/3300),far_eye:at((785-642)/3300,1.473+(658-655)/3300),mouth:at((641-642)/3300,1.473+(658-852)/3300)};
+        const facePoints={eye:at((500+paintEyeInset-642)/3300,1.473+(658-656)/3300),far_eye:at((785-paintEyeInset-642)/3300,1.473+(658-655)/3300),mouth:at((641-642)/3300,1.473+(658-852)/3300)};
         const nose=median.filter(v=>v.local[1]>1.43&&v.local[1]<1.46).sort((a,b)=>b.local[2]-a.local[2])[0];
         facePoints.nose=new THREE.Vector3(...nose.local);facePoints.chin=new THREE.Vector3(...median[0].local);
         const projectedFeatures=Object.fromEntries(Object.entries(facePoints).map(([k,v])=>[k,project(v)]));
@@ -121,7 +147,7 @@ try{
           eyeDiagnostics={sectionEyeY:eyeY,section,eyeVisibility,method:'25 small iris-region samples per eye; front face depth only; excludes hair and drawn eyelids'};
         }
         return {png:renderer.domElement.toDataURL('image/png').split(',')[1],median,projectedFeatures,projectedEars,actualYaw,actualBodyYaw,eyeDiagnostics,finite:Array.from(p.array).every(Number.isFinite)};
-      },{angle,bare,state,turnMode,diagnostics});
+      },{angle,bare,state,turnMode,diagnostics,paintEyeInset,layer});
       const buffer=Buffer.from(result.png,'base64');
       return {...result,png:undefined,buffer};
     }
@@ -133,6 +159,7 @@ try{
     }
     for(const spec of [specs[3],...specs.filter(s=>Math.abs(s[1])===45||Math.abs(s[1])===60),specs[0]]){
       const r=await capture(spec);report.frames[spec[0]].reverseSeekEqual=sha(r.buffer)===report.frames[spec[0]].sha256;
+      if(!report.frames[spec[0]].reverseSeekEqual)fs.writeFileSync(path.join(dest,spec[0]+'_reverse_mismatch.png'),r.buffer);
     }
     fs.writeFileSync(path.join(dest,'report.json'),JSON.stringify(report,null,2));
     await page.close();
