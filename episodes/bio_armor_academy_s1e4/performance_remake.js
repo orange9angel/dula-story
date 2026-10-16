@@ -28,12 +28,12 @@ export function posesAt(t,cues,tl){
   const b=(n,d,r,h,f)=>pulse(t,e(n)+d,r,h,f);
   const release=ease((t-e(14)-.3)/1.5),show=ease((t-e(4)-.25)/1.4)*(1-release);
   const hide=b(3,0,.5,2.6,.9),joke=b(5,.2,.65,1.8,1),answer=b(16,.2,.65,1.6,1);
-  const rub=b(7,.1,.55,1.3,.6),tryHard=b(9,.2,.45,1.4,.8),recoil=b(9,1.85,.23,.4,1.2);
-  const warn=b(8,0,.25,1.1,.5),stop=b(10,0,.30,2.0,.85),tease=b(6,.15,.7,1.6,.9),reassure=b(17,.2,.8,2.1,1);
+  const rub=b(7,.1,.7,1.3,.6),tryHard=b(9,.2,.45,1.4,.8),recoil=b(9,1.85,.23,.4,1.2);
+  const warn=b(8,0,.55,1.1,.65),stop=b(10,0,.55,2.0,.85),tease=b(6,.15,.7,1.6,.9),reassure=b(17,.2,.8,2.1,1);
   const inspect=b(7,0,.7,2.3,.7)+b(8,0,.6,1.1,.6);
   const offer=e(15),take=e(16),slide=ease((t-offer-1.8)/2.1),lift=ease((t-take-1.5)/1.7);
   const jar=V(.4*(1-slide)-.14*lift,1.005+.085*lift,.30);
-  const aoiHold=ease((t-offer-.05)/1.35)*(1-ease((t-offer-4.0)/.7));
+  const aoiHold=ease((t-offer-.05)/1.35)*(1-ease((t-offer-4.0)/1.05));
   const leiHold=ease((t-take-.1)/1.15);
   const result={jar,jarOwner:t>=take+1.25?'lei':t>=offer+1.4&&t<offer+4.0?'aoi':'table'};
   const doubt=b(11,.25,.6,1.3,.8),decision=b(14,.3,.8,1.5,1),listen=b(13,.8,.7,2.0,.9);

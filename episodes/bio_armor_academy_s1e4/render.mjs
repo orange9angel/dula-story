@@ -18,9 +18,11 @@ const outArg=opt('--out');       // filename under output/
 const traceArg=opt('--trace')??(physicsOnly?`${opt('--board')??'storyboard/physics'}/trace.json`:null);
 const shotsArg=opt('--shots');   // JSON：[{name,t,camera:[px,py,pz,lx,ly,lz,fov?]}] 逐拍近景审片板（逐镜点名，不走 checkTimes）
 const extraQuery=(opt('--q')??'')+(physicsOnly?'&probe-door=1&probe-bento=1&probe-surface=1':'');
-const board=path.join(here,opt('--board')??(physicsOnly?'storyboard/physics':'storyboard/r1/check'));
-const output=path.join(here,'output',outArg??'craft3d_r1.mp4');
-const audioFile=path.join(here,'assets3d/mixed.wav'); // P3 起接混音总线（缺失则静默 -an）
+const board=path.join(here,opt('--board')??(physicsOnly?'storyboard/physics':'storyboard/episode_current'));
+const output=path.join(here,'output',outArg??'current.mp4');
+const audioFrom=opt('--audio-from');
+const audioFile=path.resolve(here,audioFrom??'assets3d/mixed.wav');
+if(audioFrom&&!fs.existsSync(audioFile))throw new Error('Missing original audio source: '+audioFile);
 const fps=Number(opt('--fps')??30); // 60Hz collision audit; final output defaults to 30fps.
 if(args.includes('--start')||args.includes('--end'))throw new Error('Use --range start,end; --start/--end are not supported');
 if(physicsOnly&&(serve||shotsArg))throw new Error('--physics-only cannot be combined with --serve or --shots');
@@ -68,8 +70,9 @@ if(!serve){
     const sources=episodeSources;
     const {createHash}=await import('node:crypto');
     const build=auditInputs(here);
+    if(audioFrom)build.inputs.push({path:fs.realpathSync(audioFile),sha256:createHash('sha256').update(fs.readFileSync(audioFile)).digest('hex')});
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
-      args,output,build,
+      args,output,build,runtimeProfile:await page.evaluate(()=>window.renderProfile??null),
       sourceSha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(here,p))).digest('hex')]))
     },null,2));
     let checks=await page.evaluate(()=>window.checkTimes);
@@ -80,7 +83,8 @@ if(!serve){
     let ci=0;const trace=[],gaitTrace=[];
     if(!check&&!shots){
       const audioArgs=range?['-ss',String(range[0]),'-t',String(range[1]-range[0])]:[];
-      const sound=fs.existsSync(audioFile)?[...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0','-c:a','aac','-ar','48000','-ac','2','-b:a','192k']:['-an'];
+      const audioCodec=audioFrom?['-c:a','copy']:['-c:a','aac','-ar','48000','-ac','2','-b:a','192k'];
+      const sound=fs.existsSync(audioFile)?[...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0',...audioCodec]:['-an'];
       encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',...sound,'-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
     }
     for(let i=startFrame;i<endFrame;i++){
@@ -103,7 +107,7 @@ if(!serve){
     if(traceArg){const tp=path.isAbsolute(traceArg)?traceArg:path.join(here,traceArg);fs.mkdirSync(path.dirname(tp),{recursive:true});
       fs.writeFileSync(tp,JSON.stringify({fps,duration,build,mode:physicsOnly?'physics-only':'render',frames:gaitTrace},null,1));console.log(`gait trace: ${tp} (${gaitTrace.length} frames)`);}
     if(errors.length)throw new Error(errors.join('\n'));
-    if(physicsOnly){
+    if(traceArg){
       const seek=[];
       for(const t of [...checks].reverse()){
         const frame=Math.ceil((t-1e-9)*fps),reference=gaitTrace[frame-startFrame];

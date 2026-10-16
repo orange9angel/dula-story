@@ -1,0 +1,176 @@
+{
+  "status": "sampled-motion-pass",
+  "fps": 30,
+  "frames": 2460,
+  "coverage": "Final rendered wrist/elbow/knee/ankle transforms, bone lengths, and support contacts at output frame rate",
+  "not_covered": [
+    "elbow skin volume",
+    "complete self-collision",
+    "unsampled time",
+    "artistic acting quality"
+  ],
+  "maxima": {
+    "lei.left.wristBendDegrees": {
+      "value": 47.222255231627,
+      "time": 26.933,
+      "limit": 60
+    },
+    "lei.left.backwardKneeM": {
+      "value": 0,
+      "time": 0,
+      "limit": 1e-05
+    },
+    "lei.left.boneLengthChangeM": {
+      "value": 1.5549951642990223e-07,
+      "time": 5.8,
+      "limit": 1e-05
+    },
+    "lei.left.stanceDriftM": {
+      "value": 0.0014398808930117786,
+      "time": 3.7,
+      "limit": 0.002
+    },
+    "lei.left.stanceRotationDegrees": {
+      "value": 6.222598476639267e-05,
+      "time": 5.633,
+      "limit": 0.5
+    },
+    "lei.right.wristBendDegrees": {
+      "value": 47.7425535355415,
+      "time": 64.967,
+      "limit": 60
+    },
+    "lei.right.backwardKneeM": {
+      "value": 0,
+      "time": 0,
+      "limit": 1e-05
+    },
+    "lei.right.boneLengthChangeM": {
+      "value": 1.5046589979528235e-07,
+      "time": 61.9,
+      "limit": 1e-05
+    },
+    "lei.right.stanceDriftM": {
+      "value": 0.001280586100481732,
+      "time": 4.033,
+      "limit": 0.002
+    },
+    "lei.right.stanceRotationDegrees": {
+      "value": 5.949522128665402e-05,
+      "time": 6.133,
+      "limit": 0.5
+    },
+    "aoi.left.wristBendDegrees": {
+      "value": 45.999939712626855,
+      "time": 36.867,
+      "limit": 60
+    },
+    "aoi.left.backwardKneeM": {
+      "value": 0,
+      "time": 0,
+      "limit": 1e-05
+    },
+    "aoi.left.boneLengthChangeM": {
+      "value": 5.6154745464720435e-08,
+      "time": 37.067,
+      "limit": 1e-05
+    },
+    "aoi.left.stanceDriftM": {
+      "value": 3.2862154577598936e-08,
+      "time": 39.4,
+      "limit": 0.002
+    },
+    "aoi.left.stanceRotationDegrees": {
+      "value": 3.4150945850063755e-06,
+      "time": 39.1,
+      "limit": 0.5
+    },
+    "aoi.right.wristBendDegrees": {
+      "value": 29.3701699052501,
+      "time": 59.6,
+      "limit": 60
+    },
+    "aoi.right.backwardKneeM": {
+      "value": 0,
+      "time": 0,
+      "limit": 1e-05
+    },
+    "aoi.right.boneLengthChangeM": {
+      "value": 9.653000426768088e-08,
+      "time": 36.433,
+      "limit": 1e-05
+    },
+    "aoi.right.stanceDriftM": {
+      "value": 0.0002827604846102453,
+      "time": 63.9,
+      "limit": 0.002
+    },
+    "aoi.right.stanceRotationDegrees": {
+      "value": 5.399738656763832e-06,
+      "time": 39.333,
+      "limit": 0.5
+    },
+    "lei.left.elbowSpeedMps": {
+      "value": 1.4946834164018363,
+      "time": 64.333,
+      "limit": 1.95
+    },
+    "lei.left.wristSpeedMps": {
+      "value": 1.4856311026876374,
+      "time": 27.733,
+      "limit": 1.95
+    },
+    "lei.left.wristDegreesPerSecond": {
+      "value": 351.3377389287291,
+      "time": 64.333,
+      "limit": 720
+    },
+    "lei.right.elbowSpeedMps": {
+      "value": 1.2691662487602167,
+      "time": 15.7,
+      "limit": 1.95
+    },
+    "lei.right.wristSpeedMps": {
+      "value": 1.9399083771808607,
+      "time": 15.7,
+      "limit": 1.95
+    },
+    "lei.right.wristDegreesPerSecond": {
+      "value": 459.4346216871088,
+      "time": 24.7,
+      "limit": 720
+    },
+    "aoi.left.elbowSpeedMps": {
+      "value": 0.1638261727475674,
+      "time": 63.067,
+      "limit": 1.95
+    },
+    "aoi.left.wristSpeedMps": {
+      "value": 0.12415898531392923,
+      "time": 63,
+      "limit": 1.95
+    },
+    "aoi.left.wristDegreesPerSecond": {
+      "value": 32.60668577771383,
+      "time": 36.933,
+      "limit": 720
+    },
+    "aoi.right.elbowSpeedMps": {
+      "value": 1.7471588720094822,
+      "time": 36.367,
+      "limit": 1.95
+    },
+    "aoi.right.wristSpeedMps": {
+      "value": 1.6543370651195473,
+      "time": 36.2,
+      "limit": 1.95
+    },
+    "aoi.right.wristDegreesPerSecond": {
+      "value": 582.1464881126305,
+      "time": 36.3,
+      "limit": 720
+    }
+  },
+  "errors": [],
+  "error_count": 0
+}

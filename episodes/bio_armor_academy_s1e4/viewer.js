@@ -13,10 +13,11 @@ import {addLeiGraphicHair} from 'dula-assets/characters/bioarmor/lei-graphic-hai
 import {addAoiGeneratedHair} from 'dula-assets/characters/bioarmor/aoi-generated-paint.js';
 import {BiologyRoomScene} from './scenes/BiologyRoomRemakeScene.js';
 import {posesAt} from './performance_remake.js';
-import {preparePerformer,applyTripoPose,settleImportedWrists} from './performance_tripo.js';
+import {preparePerformer,applyTripoPose,settleImportedWrists,placeImportedNotebook,settleImportedJarGrip} from './performance_tripo.js';
 import {createImportedProbe} from './tools/imported_probe.js';
 const W=1280,H=720,q=new URLSearchParams(location.search),numeric=q.has('probe-surface'),resolution=q.has('hd')?1.5:1;
-if(!q.has('cel'))q.set('cel','anime');
+if(!q.has('cel'))q.set('cel','direct');
+if(!q.has('motion'))q.set('motion','anatomical');
 const drawnMode=['anime','direct'].includes(q.get('cel'));
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
 let voice=null;try{const r=await fetch('./config/voice_features.json');if(r.ok)voice=await r.json();}catch{}
@@ -43,7 +44,7 @@ renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.
 for(const key of ['lei','aoi']){
   const a=await ImportedPerformer.load(`./assets3d/tripo_${key}_trial/${key}_h31_lod160k_v2.glb`,TRIPO_LOOK[key].height);
   if(key==='aoi')a.garmentRepair=a.restrictInfluences({min:[-.30,.53,-.22],max:[.30,.99,.23],maxAlbedoLuma:.42,allow:n=>n==='hips'||/leg|foot|toe/.test(n)});
-  preparePerformer(a,key);a.correctWrists=q.has('wristfix');
+  preparePerformer(a,key);a.motionFix=q.get('motion')==='anatomical';a.correctWrists=q.has('wristfix')||a.motionFix;
   if(!drawnMode)a.face=createProjectedFace(a,renderer,TRIPO_LOOK[key]);scene.add(a.mesh);actors[key]=a;
   if(q.get('cel')!=='original'&&(key==='aoi'||drawnMode))a.celLook=applyImportedCelLook(a,{mode:drawnMode||q.get('cel')==='graphic'?'painted':q.get('cel'),face:TRIPO_LOOK[key],hairMinY:key==='aoi'?1.10:1.56,headMinY:key==='aoi'?1.42:1.57,
     palette:{hair:key==='aoi'?'#244444':'#54382d',hairLight:key==='aoi'?'#628680':'#9b6f4d',skin:'#eec9a9'}});
@@ -66,6 +67,7 @@ ctx.scale(resolution,resolution);
 const applyMark=addForearmMark(actors.lei,'left');
 const rubMotion=await RetargetedMotion.load(actors.lei,'./assets3d/tripo_lei_trial/lei_text_rub_v1.glb');
 const clearLeiHands=createTableHandClearance(actors.lei,stage.table);
+const clearAoiHands=createTableHandClearance(actors.aoi,stage.table);
 const aoiHair=drawnMode?{selectedVertices:0,maxDisplacement:0,apply:(yaw,pitch)=>({yaw,pitch})}:addSecondaryHair(actors.aoi);
 const importedProbe=numeric?createImportedProbe(actors,stage):null;
 function speech(t,key){
@@ -88,10 +90,19 @@ function draw(t,capture=true){
     const ease=x=>{x=THREE.MathUtils.clamp(x,0,1);return x*x*(3-2*x);};
     const knots=[[0,.55],[.65,.65],[2.3,1.35],[3.1,2.1],[4.5,4.95]];
     const n=knots.findIndex(k=>k[0]>rubElapsed),l=knots[n-1],r=knots[n],u=(rubElapsed-l[0])/(r[0]-l[0]);
-    rubMotion.apply(l[1]+u*(r[1]-l[1]),ease(rubElapsed/.45)*(1-ease((rubElapsed-3.8)/.7)),{include:n=>/spine|shoulder|arm|hand|neck|head/.test(n),rootMotion:false});
+    rubMotion.apply(l[1]+u*(r[1]-l[1]),ease(rubElapsed/(actors.lei.motionFix?.8:.45))*(1-ease((rubElapsed-3.8)/.7)),{include:n=>/spine|shoulder|arm|hand|neck|head/.test(n),rootMotion:false});
   }
   const tableCorrection=clearLeiHands(p.phase.leiHold>0?['right']:['left','right']);
   for(const a of Object.values(actors))settleImportedWrists(a);
+  if(actors.lei.motionFix){
+    // Wrist correction changes the skin after the first clearance pass. Recheck
+    // the final orientation, including Aoi's warning/retraction hand.
+    for(let pass=0;pass<4;pass++){
+      clearLeiHands(p.phase.leiHold>0?['right']:['left','right']);
+      clearAoiHands(p.phase.aoiHold>0?['left']:['left','right']);
+      for(const a of Object.values(actors))settleImportedWrists(a);
+    }
+  }
   const lagTime=Math.max(0,t-.18),lagPose=posesAt(lagTime,cues,TL).aoi;
   const hairMotion=aoiHair.apply((lagPose.headYaw+lagPose.yaw-p.aoi.headYaw-p.aoi.yaw)*.7+(lagPose.headRoll-p.aoi.headRoll)*.8,
     (lagPose.headPitch-p.aoi.headPitch)*.8+(lagPose.rootX-p.aoi.rootX)*.12);
@@ -99,12 +110,14 @@ function draw(t,capture=true){
     (lagPose.headYaw+lagPose.yaw-p.aoi.headYaw-p.aoi.yaw)*.7+(lagPose.headRoll-p.aoi.headRoll)*.8,
     (lagPose.headPitch-p.aoi.headPitch)*.8+(lagPose.rootX-p.aoi.rootX)*.12);
   stage.jar.position.set(p.jar.x,p.jar.y,p.jar.z);
-  if(p.jarOwner!=='table'){
+  const gripCorrection=Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,settleImportedJarGrip(a,p.jar,key==='lei'?p.phase.leiHold:p.phase.aoiHold)]));
+  if(p.jarOwner!=='table'&&!actors.lei.motionFix){
     const a=actors[p.jarOwner];
     stage.jar.position.copy(a.hands[a.contactHand].getWorldPosition(new THREE.Vector3())).add(new THREE.Vector3(p.jarOwner==='lei'?-.12:-.115,p.jarOwner==='lei'?-.16:-.12,p.jarOwner==='lei'?-.075:.085));
   }
   stage.notebook.position.copy(actors.aoi.hands.left.getWorldPosition(new THREE.Vector3())).add(new THREE.Vector3(.05,.025,.035));
   stage.notebook.rotation.set(.08,-.20,.04);
+  if(actors.aoi.motionFix)placeImportedNotebook(actors.aoi,stage.notebook);
   applyMark(p.mark);const markVertices=null;
   for(const [key,a] of Object.entries(actors)){
     const target=p[key].gaze==='mark'?actors.lei.bones.leftforearm.getWorldPosition(new THREE.Vector3()):
@@ -124,7 +137,7 @@ function draw(t,capture=true){
     performance:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,{head:[p[key].headPitch,p[key].headYaw,p[key].headRoll],
       torso:p[key].torso,root:[p[key].rootX,p[key].rootZ,p[key].yaw],gestures:p[key].gestures,gaze:p[key].gaze}])),
     arms:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,[p[key].leftArm,p[key].rightArm]])),
-    ik,tableCorrection,hair:{aoi:hairMotion,vertices:aoiHair.selectedVertices,maxBindDisplacement:aoiHair.maxDisplacement},faces:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,{...a.face.state}])),...(importedProbe?importedProbe(p,camera):{})};
+    ik,tableCorrection,gripCorrection,hair:{aoi:hairMotion,vertices:aoiHair.selectedVertices,maxBindDisplacement:aoiHair.maxDisplacement},faces:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,{...a.face.state}])),...(importedProbe?importedProbe(p,camera):{})};
   if(!capture)return state;
   renderer.render(scene,camera);ctx.drawImage(renderer.domElement,0,0,W,H);
   if(seg.entry===1||seg.entry===19){
@@ -142,4 +155,5 @@ window.duration=TL.duration;window.checkTimes=TL.segments.flatMap(s=>[s.start+.1
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);window.setFreeCamera=c=>window.freeCamera=c;
 window.ready=true;
 window.actors=actors;window.stage=stage;window.scene=scene;
+window.renderProfile={cel:q.get('cel'),motion:q.get('motion'),wristfix:actors.lei.correctWrists};
 if(!q.has('capture')){const start=performance.now();function tick(){draw(((performance.now()-start)/1000)%TL.duration);requestAnimationFrame(tick);}tick();}

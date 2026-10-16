@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 export const episodeSources=['script.story','bootstrap.js','viewer.js','viewer.html','render.mjs','face_lab.js','face_lab.html',
-  'performance_remake.js','performance_tripo.js','tools/imported_probe.js','tools/check_imported_contact.py','config/imported_contact_contract.json','scenes/BiologyRoomRemakeScene.js',
+  'performance_remake.js','performance_tripo.js','tools/imported_probe.js','tools/check_imported_contact.py','tools/check_imported_motion.py','config/episode_motion_review.json','config/imported_contact_contract.json','scenes/BiologyRoomRemakeScene.js',
   'tools/audit_inputs.mjs','tools/compile_story.mjs','tools/numeric_probe.js',
   'config/timeline.json','config/contact_contract.json','config/scene_contract.json','config/audio_direction.json',
   'config/audio_timing.json','tools/build_audio.py','tools/check_audio_sync.py','tools/check_contact.py',

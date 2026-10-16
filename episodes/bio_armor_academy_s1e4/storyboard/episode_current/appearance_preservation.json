@@ -1,0 +1,381 @@
+{
+  "acceptedManifest": "storyboard/hybrid_character/lei/archive/accepted_v1/manifest.json",
+  "allAcceptedFilesUnchanged": false,
+  "appearancePayloadUnchanged": true,
+  "originalViewerMatchedAccepted": true,
+  "runtimeChange": "viewer.js now uses direct paint + anatomical motion by default and integrates the motion corrections; no head/hair geometry or texture edits",
+  "assetInputFilesUnchanged": true,
+  "files": [
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/face_lab.js",
+      "sha256": "e421050f31283c567bc18b7adeade5bf0cc39ad58d2ea5258def669be338c2eb",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/tripo-drawn-look.js",
+      "sha256": "ba41aeaef5c233cfb1a83924f0be59e33a2a7925bcfe2ca1968c05f009ab1aad",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/lei-generated-paint.js",
+      "sha256": "3a0623185701e4b09b48ddcc70b2cbc7bd869c86d3e087359e9a9d65245f0801",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/lei-generated-hair.js",
+      "sha256": "46c74531bafbf963eaf74d8162a5da106270c152b18ebbb2eb72a501123e0ffd",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/lib/craft3d/painted-hair-shell.js",
+      "sha256": "b9ba9fc45ca556196934caf73a5b986b80864b1092d75d71f95095c33847aeaa",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/lib/craft3d/generated-portrait-paint.js",
+      "sha256": "55b2e1a6a1542fc63f93928edf956c2a891e94d1f8739969795106a602fa14d2",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/lib/craft3d/drawn-head.js",
+      "sha256": "d8807fd48cab9ba918c79f543fcf79a76398292076d827e81a744a6614437325",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/viewer.js",
+      "sha256": "124733935b4942b3231fd8cddc3e9b6edf21f855a9e47e4f65f0e6989c10fb1a",
+      "matchesAccepted": false,
+      "role": "updated episode runtime entry"
+    },
+    {
+      "path": "dula-assets/lib/craft3d/illustrated-import.js",
+      "sha256": "8d4f9127c2533fb77bd43cc61ebbe2e0237c474983c2187cfc319d5d586b827e",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/lei-geometry-config.js",
+      "sha256": "e7c5dc9e640545d1c726119e6464ff59f49c5e4f7a1543acb5eb0a484162fa62",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/textures/lei-painted-face-v1.png",
+      "sha256": "e87c72b10d5805e6b813a50cd725cb19b630615db8000672e2aede19b9bde4ee",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/textures/lei-painted-hair-v1.png",
+      "sha256": "93a70077249d8394ff035b5d5fa949642afe8208ecc2250535c1ecfc4106f053",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-assets/characters/bioarmor/textures/lei-painted-back-v1.png",
+      "sha256": "8845cc50050e73bd7e35c83ea9a3710c88001165497119b3fb8e4c6c270cde34",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/lei/current/overview.jpg",
+      "sha256": "0db4ab827c313e69d0a1da30d68359c634f040661b8ca09dc239ceb7782b7a80",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/lei/current/parts.jpg",
+      "sha256": "47caf9f0bf40a18fc7f44d33ca1207332c434f4a78cc37b54b2b5caa93e64f54",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/lei/current/reference_comparison.jpg",
+      "sha256": "926c99d989ad80b603a2d69c41bb4cc851e349b03c10f82e0ab50eac44012109",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/lei/current/review.json",
+      "sha256": "8990e332c63a113c2b6ad2095316e8bf0932f9509a2d534a2de06f46270a7d3c",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/lei/current/STATUS.md",
+      "sha256": "5b9aca3c48a98707d8e7899c6fed2c030cc55a211e138656c2e18bbdf2a7de5d",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    },
+    {
+      "path": "dula-story/episodes/bio_armor_academy_s1e4/storyboard/hybrid_character/lei/current/turn.mp4",
+      "sha256": "cc8b7fddcc262a058addf7d5d01da75746266a1a7c7b5e1771fc5e2e0950e8be",
+      "matchesAccepted": true,
+      "role": "preserved appearance payload"
+    }
+  ],
+  "assets": [
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\anatomical-hand.js",
+      "sha256": "b0771a7b55a7892e7278dd38ecfd9791e5d53f233158b3b97890194e2c24e7ca",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\body-audit.js",
+      "sha256": "999342f7594229be1886607fcbe734d32f561e59ad0b91dda49c74e72f5665b8",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-ear.js",
+      "sha256": "8ef8531399e9cd83a056d28489fc8216acd95cd04fd0e4ba170366e94b882151",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-face.js",
+      "sha256": "8eb655762eba40076e7f39a80b2a0badfbc407644c2a569fe22698c4979f2810",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-head.js",
+      "sha256": "d8807fd48cab9ba918c79f543fcf79a76398292076d827e81a744a6614437325",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\facial-deform.js",
+      "sha256": "b67546d71db9b4ee932f5733af9ef29aae38db6e109294aaec8f198211cf590f",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\garment-clearance.js",
+      "sha256": "92a673945b93f6c86e728b88f9f5c1524e31211d39a48c44b90f5f048aebf557",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\generated-face-paint.js",
+      "sha256": "ea55f2c52d82bcd64387dc8decd2fcf3ec07e6bec13d7d06c390fcfec6e901b8",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\generated-portrait-paint.js",
+      "sha256": "55b2e1a6a1542fc63f93928edf956c2a891e94d1f8739969795106a602fa14d2",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\graphic-hair.js",
+      "sha256": "1e8947a5587693a6ed83eee9b3eb504e1c821d953b9c2d1fd8203bd1a666aff5",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\hand.js",
+      "sha256": "91f3289e3daad4ad13a2711554a69d45b29fd5fc4d99ef902ec678911cc571d7",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\illustrated-import.js",
+      "sha256": "8d4f9127c2533fb77bd43cc61ebbe2e0237c474983c2187cfc319d5d586b827e",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-cel-look.js",
+      "sha256": "548120ed2c4e549688c94982e0e86783e02aee453a1991a838ee03b47ac3ec40",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-performer.js",
+      "sha256": "3faa969cbd9d966b6879dcd828028b04d3c5ac492278154699d713cc690d163c",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\locomotion.js",
+      "sha256": "52f5f9091a25e11c51ac0f7b61340d5580aece42d4d22c45453dda8106c14952",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\look.js",
+      "sha256": "e5634e29af63dd58b9e31a8b5b123efbad208d721304d483d5021635c70f467c",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\oblique-face-support.js",
+      "sha256": "190edb9f576c00e82e56e4293fece8dd2c3009a1634d31ee63a3bed978214426",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\painted-hair-shell.js",
+      "sha256": "b9ba9fc45ca556196934caf73a5b986b80864b1092d75d71f95095c33847aeaa",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\pose.js",
+      "sha256": "669eda04a0bf251315f2518f24140d8948149838bfd93863056024c2e80c9536",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\profile-hair-paint.js",
+      "sha256": "ea1b4ada2064caaaa3e28baebdfb64b910c97a218802a88b38307f357edb953e",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\projected-face.js",
+      "sha256": "eea47c0ef978e1cdc3d5d24893c383231e16437fc53f2f2b6b80619bd781807b",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\retargeted-motion.js",
+      "sha256": "8211ae275786bfe1c29415a4d8cf321f2eb110d3a6b21c5035ed14f168b58bad",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\secondary-hair.js",
+      "sha256": "371479582de72235edc90b4454b7a21fc36f47deb5f2944abd6f2afaa3331dd8",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skin-mark.js",
+      "sha256": "0920ae300b097fbe8237d6dc003ef550eadd256d41a048f0f717601e2838f101",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skinned-samples.js",
+      "sha256": "ae5629b26dccb4ed4dd0b4305eb6e0840dc21c76e6c662de79e03b3558b52261",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\supported-performance.js",
+      "sha256": "12ca0399fab8433267b921b39dd51b0c036c9972644b60abeaba8e526b6694fc",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\surface.js",
+      "sha256": "694a05d2a95b8c3c0ce4e16264edcaec6263db576e8b880eea28758463b20cfb",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\table-hand-clearance.js",
+      "sha256": "b2a682681cba51c8a0746b84422ad59e526b2de7f49d64f1fd7dd8fd254ca265",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-generated-paint.js",
+      "sha256": "dff4cdfeafccb54efc7e07b738c80873e692df18e0acf1da6e8b7b6286f4078c",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-graphic-hair.js",
+      "sha256": "3972a7d4776b832fabe084b16429f4caafa04ac32fdcb240951449b079c170a6",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\characters.js",
+      "sha256": "ce10e0a5e3f3f230991e318ec118572944b6e164501ee25f15bb6d5b10dcab1f",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_details.js",
+      "sha256": "0c7196c4781809d4c68fb1f4bf12a085011ef21f557ed4f9a7d6099deb14e3f0",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_finish.js",
+      "sha256": "9418513953a12fd36466f217ec1148ca7bdb4dfb75ae1bdb1baa67dadb17b4b1",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_look.js",
+      "sha256": "4d078b05c8f98729f293ae701c03a32bea1dbeafd2234f603f7dee48666d7d83",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-generated-hair.js",
+      "sha256": "46c74531bafbf963eaf74d8162a5da106270c152b18ebbb2eb72a501123e0ffd",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-generated-paint.js",
+      "sha256": "3a0623185701e4b09b48ddcc70b2cbc7bd869c86d3e087359e9a9d65245f0801",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-geometry-config.js",
+      "sha256": "e7c5dc9e640545d1c726119e6464ff59f49c5e4f7a1543acb5eb0a484162fa62",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-graphic-hair.js",
+      "sha256": "211db2c78f1db382896929821e2124499cbae769df4ad82f1ced654a058ce122",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\QianTangKuiCraft.js",
+      "sha256": "9093163ed72dae120b9b3fe671cc233df4238f99b44d21d6af39c1abc21d0e4a",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js",
+      "sha256": "ba41aeaef5c233cfb1a83924f0be59e33a2a7925bcfe2ca1968c05f009ab1aad",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-look.js",
+      "sha256": "6c818ca069e081bc7910b243fd3da5d7d2b1fa61a35fdfbdd2e4727b1defa53a",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\known_text_alignment.py",
+      "sha256": "98dae18b3694d2ce1f031af35d5036fe7005d7c3b8630038cd19384647d0bbe7",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\viseme_core.py",
+      "sha256": "dbbf90dce208c85eb9b7cce9b258478aaa7bfda368eeebcfc09cdc0cd90547c1",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\drawn-face-reference.png",
+      "sha256": "aec1e146d8d4f9f95b9dc10930b7d9336ac7c79cf8e9fa3cbe279ae0dfb4747c",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-face-v1.png",
+      "sha256": "fb7f8d5062a27bccc5b68b6e9279226fcd3cf61d8cad441c0bedab6cc4b50e08",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-hair-v1.png",
+      "sha256": "3fed7263f55ceaac22dbebd543d8266edeaa52cac0ceb975b1083abbde40b04c",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-back-v1.png",
+      "sha256": "aa9991f581823d951bf2e3907d11558198856daab05449184cff6182c8c3bb94",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-profile-hair-atlas-v1.png",
+      "sha256": "3746063acf5fd392d77465433aca89c948635e69f2686e180cfe976232053383",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\lei-painted-face-v1.png",
+      "sha256": "e87c72b10d5805e6b813a50cd725cb19b630615db8000672e2aede19b9bde4ee",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\lei-painted-hair-v1.png",
+      "sha256": "93a70077249d8394ff035b5d5fa949642afe8208ecc2250535c1ecfc4106f053",
+      "unchangedSinceMotionWork": true
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\lei-painted-back-v1.png",
+      "sha256": "8845cc50050e73bd7e35c83ea9a3710c88001165497119b3fb8e4c6c270cde34",
+      "unchangedSinceMotionWork": true
+    }
+  ]
+}

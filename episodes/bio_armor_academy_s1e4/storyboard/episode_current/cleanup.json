@@ -1,0 +1,16 @@
+{
+  "status": "blocked_by_automatic_approval_review",
+  "target": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\episode_motion",
+  "files": 182,
+  "bytes": 202260147,
+  "reparsePoints": 0,
+  "absoluteTargetVerified": true,
+  "targetRemoved": false,
+  "reason": "blocked by policy; no more specific reason returned",
+  "attempts": [
+    "PowerShell with path containment checks",
+    "PowerShell Remove-Item with verified literal absolute path"
+  ],
+  "evidence": "storyboard/episode_current",
+  "video": "output/current.mp4"
+}

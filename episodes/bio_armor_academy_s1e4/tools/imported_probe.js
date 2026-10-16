@@ -18,6 +18,22 @@ export function createImportedProbe(actors,stage){
       }
       const head=a.bones.head.getWorldPosition(new THREE.Vector3());metrics.headProjection=head.clone().project(camera).toArray();
       metrics.wrists=Object.fromEntries(['left','right'].map(side=>[side,a.hands[side].getWorldPosition(new THREE.Vector3()).toArray()]));
+      metrics.joints={};
+      for(const side of ['left','right']){
+        const point=n=>a.bones[side+n].getWorldPosition(new THREE.Vector3());
+        const shoulder=point('arm'),elbow=point('forearm'),wrist=point('hand'),palm=point('handmiddle1');
+        const hip=point('upleg'),knee=point('leg'),ankle=point('foot'),axis=ankle.clone().sub(hip).normalize();
+        const bend=knee.clone().sub(hip);bend.addScaledVector(axis,-bend.dot(axis));
+        const forward=new THREE.Vector3(0,0,1).applyQuaternion(a.mesh.quaternion);
+        const old=side==='left'?'right':'left',foot=p[key].feet[old];
+        metrics.joints[side]={shoulder:shoulder.toArray(),elbow:elbow.toArray(),wrist:wrist.toArray(),
+          wristBend:elbow.clone().sub(wrist).negate().angleTo(palm.sub(wrist))*180/Math.PI,
+          wristQuaternion:a.hands[side].getWorldQuaternion(new THREE.Quaternion()).toArray(),
+          hip:hip.toArray(),knee:knee.toArray(),ankle:ankle.toArray(),kneeForward:bend.dot(forward),
+          footQuaternion:a.bones[side+'foot'].getWorldQuaternion(new THREE.Quaternion()).toArray(),
+          stance:foot.stance,contact:foot.contact,
+          lengths:[shoulder.distanceTo(elbow),elbow.distanceTo(wrist),hip.distanceTo(knee),knee.distanceTo(ankle)]};
+      }
       result[key]=metrics;
     }
     return {importedSurface:{method:'9mm bind-space grid of rendered skinned vertices; table solid and jar interior',coverage:'hands/arms/feet; no complete self-collision or continuous sweep guarantee',actors:result}};
