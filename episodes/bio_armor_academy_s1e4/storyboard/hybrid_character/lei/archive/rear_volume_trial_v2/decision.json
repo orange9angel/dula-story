@@ -1,0 +1,87 @@
+{
+  "status": "not_adopted_static_regression",
+  "baselineUnchanged": true,
+  "scope": "head-only; existing front and face retained",
+  "generatedAsset": "rear-clumps.png",
+  "generationMode": "built-in image_gen, transparent background",
+  "files": [
+    {
+      "file": "candidate/lei-generated-hair.js",
+      "sha256": "990715fc18168066591285894bbb3843c64f1d2bd355c536e86944ad17bb2bd4",
+      "bytes": 1513
+    },
+    {
+      "file": "candidate/painted-hair-shell.js",
+      "sha256": "376a1a90b6fae86b5d8494bfaca22bb603aa83342506600d383ed461f461d9a8",
+      "bytes": 29061
+    },
+    {
+      "file": "rear-clumps.png",
+      "sha256": "549d7b40d8e78acc3308cc79a8890f058e133d9be16f9d116257bccc531f1fee",
+      "bytes": 1791762
+    }
+  ],
+  "reviewedBoards": [
+    "parts.jpg",
+    "front_oblique.jpg",
+    "both_profiles.jpg",
+    "posterior.jpg"
+  ],
+  "currentMainIssue": "Posterior hair reads as a wrapped smooth cap rather than the original loose overlapping clumps. User identified the priority; prior agent failed to elevate it.",
+  "candidateIssue": "Visible posterior change, but repeated bright roots, floating narrow tips and disjoint clump flow regress the whole hairstyle.",
+  "validation": {
+    "baselineRestoreDryRun": "19 files verified, 0 current differences",
+    "pitch": "not run for final candidate",
+    "continuousVideo": "not run: candidate rejected on static appearance",
+    "browserErrors": 0,
+    "reverseSeeks": true,
+    "states": 8
+  },
+  "experiments": [
+    {
+      "method": "11 closed curved locks using whole rear paint",
+      "result": "leaf-like joints and detached tips",
+      "id": "r1"
+    },
+    {
+      "method": "stronger outward clump curves",
+      "result": "more visible but stiff leaf appendages",
+      "id": "r2"
+    },
+    {
+      "method": "continuous cap volume ridges",
+      "result": "wavy cap and bent paint, not loose clumps",
+      "id": "r3"
+    },
+    {
+      "method": "three curved whole rear paintings",
+      "result": "duplicated whorls and paint",
+      "id": "r4"
+    },
+    {
+      "method": "six generated paint types on 16 root-to-tip curved patches",
+      "result": "repeated bright roots, fragmented flow; reject",
+      "id": "r5"
+    }
+  ],
+  "reviewMechanism": {
+    "posteriorGroupsRequired": true,
+    "beautyIsNotAutomated": true,
+    "explicitRegionCoverage": true,
+    "missingViewRejected": true,
+    "dimensionsFirst": true,
+    "missingRegionRejected": true
+  },
+  "reportPaths": "Historical reports retain original temporary paths and hashes; raw rejected images are deleted after retaining these boards.",
+  "changedPixels": {
+    "front": 73,
+    "turn_135": 52361,
+    "turn_180": 51762,
+    "turn_45": 13495,
+    "turn_90": 39300,
+    "turn_minus135": 50625,
+    "turn_minus45": 15925,
+    "turn_minus90": 38128
+  },
+  "assetRelocationPixelIdentical": true
+}

@@ -244,6 +244,24 @@ def configured_comparison(config_path):
     """Reuse semantic crops for later revisions without relabelling old evidence."""
     import numpy as np
     cfg = json.loads(Path(config_path).read_text(encoding='utf-8'))
+    default_groups = {'04_whole_frame':['front','turn_45','turn_minus45','turn_minus60'],
+                      '05_profiles':['turn_60','turn_90','turn_minus90']}
+    whole_groups = cfg.get('whole_frame_groups', default_groups)
+    covered_regions = {row.get('region') for board in cfg['boards'] for row in board['rows']}
+    required_regions = set(cfg.get('required_regions', []))
+    required_frames = set()
+    if cfg.get('review_scope') == 'whole_head':
+        required_regions.update(['fringe_crown','posterior_side','posterior_oblique',
+                                 'posterior_back','ear_hair','nape','face_neck'])
+        required_frames.update(['front','turn_45','turn_minus45','turn_90','turn_minus90',
+                                'turn_135','turn_minus135','turn_180'])
+        if not cfg.get('discovery_review', {}).get('issues'):
+            raise ValueError('Whole-head review requires observed issues before candidate comparison')
+    included_frames = {frame for frames in whole_groups.values() for frame in frames} if cfg.get('whole_frames', True) else set()
+    missing_regions = sorted(required_regions-covered_regions)
+    missing_frames = sorted(required_frames-included_frames)
+    if missing_regions or missing_frames:
+        raise ValueError({'incomplete_review_coverage': {'regions':missing_regions,'frames':missing_frames}})
     old, new, dest = [EP / cfg[k] for k in ['before', 'after', 'out']]
     dest.mkdir(parents=True, exist_ok=True)
     sources = set()
@@ -270,15 +288,14 @@ def configured_comparison(config_path):
         fig.subplots_adjust(left=.025,right=.975,top=.94 if len(rows)>3 else .86,bottom=.04,wspace=.08,hspace=.29)
         fig.savefig(dest/(board['id']+'.jpg'), dpi=135, pil_kwargs={'quality':95}); plt.close(fig)
     reports = [json.loads((folder/'report.json').read_text()) for folder in [old,new]]
-    for group, frames in [('04_whole_frame',['front','turn_45','turn_minus45','turn_minus60']),
-                          ('05_profiles',['turn_60','turn_90','turn_minus90'])]:
+    for group, frames in whole_groups.items():
         if not cfg.get('whole_frames', True): continue
         fig,axes=plt.subplots(2,len(frames),figsize=(4*len(frames),8.8),squeeze=False)
         for r,folder in enumerate([old,new]):
             for c,frame in enumerate(frames):
                 f=reports[r]['frames'][frame];p=folder/(frame+'.png');sources.add(p)
                 show(axes[r,c],Image.open(p),('修改前' if r==0 else '修改后')+f" · 头{f['actualYaw']:.0f}° / 身{f['actualBodyYaw']:.0f}°")
-        fig.suptitle('完整画面回查：五官、脸缘、耳发连接、颈肩',fontsize=19,y=.99)
+        fig.suptitle('完整画面回查：头脸、前后发、耳颈及肩部',fontsize=19,y=.99)
         fig.text(.5,.01,cfg['whole_frame_note'],ha='center',fontsize=10)
         fig.subplots_adjust(left=.01,right=.99,top=.92,bottom=.05,wspace=.025,hspace=.12)
         fig.savefig(dest/(group+'.jpg'),dpi=125,pil_kwargs={'quality':94});plt.close(fig)
@@ -314,12 +331,14 @@ def configured_comparison(config_path):
         changes[frame]={'changed_pixels':len(xx),'bbox':None if not len(xx) else [int(xx.min()),int(yy.min()),int(xx.max())+1,int(yy.max())+1],
             'ear_centres_before':reports[0]['frames'][frame]['projectedEars'],
             'ear_centres_after':reports[1]['frames'][frame]['projectedEars']}
-    result={'config':cfg,'status':'candidate_pending_user_review','render_checks':checks,'change_locations':changes,'preserved_view_changed_pixels':preservation,
+    result={'config':cfg,'status':'candidate_pending_visual_judgment','render_checks':checks,'change_locations':changes,'preserved_view_changed_pixels':preservation,
+            'review_coverage':{'scope':cfg.get('review_scope','local'), 'regions':sorted(r for r in covered_regions if r),
+                               'whole_frames':sorted(included_frames),'meaning':'Declared evidence coverage only; not a beauty or completeness score.'},
             'limitations':'Pixel changes and rigid ear centres locate edits, not aesthetic quality. CPU eye probes exclude GPU sculpt; no beauty/visibility score.',
             'source_hashes':{str(p.relative_to(EP)):sha(p) for p in sorted(sources)}}
     (dest/'evidence.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     if not all(checks.values()) or any(preservation.values()):raise RuntimeError({'checks':checks,'preservation':preservation})
-    print(json.dumps({'boards':len(cfg['boards'])+(2 if cfg.get('whole_frames',True) else 0)+bool(cfg.get('turn_sequence')),'checks':checks,'preservation':preservation},ensure_ascii=False))
+    print(json.dumps({'boards':len(cfg['boards'])+(len(whole_groups) if cfg.get('whole_frames',True) else 0)+bool(cfg.get('turn_sequence')),'checks':checks,'preservation':preservation},ensure_ascii=False))
 
 
 if __name__ == '__main__':

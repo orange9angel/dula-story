@@ -7,6 +7,8 @@
   整体没有明确改善就保留当前版，不覆盖已认可效果。
 - 头发分层三轮小试已结束，未采用：[左右对比](lei/archive/hair_layers_trial_v1/comparison.mp4)
   （左当前、右试验）。当前效果不变，原因与证据见该归档的 `REVIEW.md`。
+- 后脑蓬松度已列为雷晓首要差距；[多维度问题发现与后发束试验](lei/archive/rear_volume_trial_v2/REVIEW.md)
+  已补齐后侧/背面证据，候选静态有退步，未替换当前版。
 
 # Aoi 转面修订 v10 · 2026-10-16
 
