@@ -16,10 +16,32 @@ import {posesAt} from './performance_remake.js';
 import {preparePerformer,applyTripoPose,settleImportedWrists,placeImportedNotebook,settleImportedJarGrip} from './performance_tripo.js';
 import {createImportedProbe} from './tools/imported_probe.js';
 const W=1280,H=720,q=new URLSearchParams(location.search),numeric=q.has('probe-surface'),resolution=q.has('hd')?1.5:1;
+const edgeQuality=q.get('aa')??'stable';
+if(!['legacy','stable','coverage'].includes(edgeQuality))throw new Error('Unsupported edge quality');
+const sampling=Number(q.get('ssaa')??(edgeQuality==='stable'?2:1));
+if(!Number.isFinite(sampling)||sampling<1||sampling>4)throw new Error('ssaa must be between 1 and 4');
+const imageFormat=q.get('capture-format')??(edgeQuality==='stable'?'png':'jpeg');
+if(!['png','jpeg'].includes(imageFormat))throw new Error('Unsupported capture format');
 if(!q.has('cel'))q.set('cel','direct');
 if(!q.has('motion'))q.set('motion','anatomical');
 const drawnMode=['anime','direct'].includes(q.get('cel'));
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
+// Load the series card frames explicitly. Missing artwork must fail a build,
+// rather than silently replacing the established animation with placeholder text.
+const cards=new Map();
+if(q.get('cards')!=='legacy'){
+  const r=await fetch('./config/cards.json');if(!r.ok)throw new Error('Missing series title-card manifest');
+  const meta=await r.json();
+  for(const c of meta.cards){
+    const seg=TL.segments.find(s=>s.entry===c.entry);
+    if(!seg||seg.start!==c.start||seg.end!==c.end||c.frames.length!==Math.round((seg.end-seg.start)*c.fps))throw new Error('Title-card timeline mismatch: '+c.id);
+    const frames=await Promise.all(c.frames.map(src=>new Promise((resolve,reject)=>{
+      const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('Missing title-card frame: '+src));im.src=src;
+    })));
+    cards.set(c.entry,{...c,frames});
+  }
+  if(!cards.has(1)||!cards.has(19))throw new Error('Both series title cards are required');
+}
 let voice=null;try{const r=await fetch('./config/voice_features.json');if(r.ok)voice=await r.json();}catch{}
 const lips={};
 for(const [key,id] of [['lei','leixiao'],['aoi','qiantangkui']]){
@@ -36,7 +58,7 @@ function mouthAt(t,key){
 }
 const stage=new BiologyRoomScene(),scene=stage.build(),actors={};
 await stage.readyPromise;
-const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true,stencil:true});renderer.setSize(W*resolution,H*resolution);
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true,stencil:true});renderer.setSize(W*resolution*sampling,H*resolution*sampling);
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor('#dce8dd');
 scene.traverse(o=>{if(o.isMesh)o.material.toneMapped=false;});
@@ -61,8 +83,14 @@ for(const key of ['lei','aoi']){
     else a.graphicHair=addLeiGraphicHair(a);
   }
 }
+if(edgeQuality==='coverage')scene.traverse(o=>{
+  for(const m of (Array.isArray(o.material)?o.material:[o.material]))if(m?.alphaTest>0){
+    m.alphaToCoverage=true;m.needsUpdate=true;
+  }
+});
 const canvas=document.createElement('canvas');canvas.width=W*resolution;canvas.height=H*resolution;canvas.style.width=W+'px';canvas.style.height=H+'px';document.body.append(canvas);
 const ctx=canvas.getContext('2d'),camera=new THREE.PerspectiveCamera(36,W/H,.05,100);
+ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
 ctx.scale(resolution,resolution);
 const applyMark=addForearmMark(actors.lei,'left');
 const rubMotion=await RetargetedMotion.load(actors.lei,'./assets3d/tripo_lei_trial/lei_text_rub_v1.glb');
@@ -141,19 +169,27 @@ function draw(t,capture=true){
   if(!capture)return state;
   renderer.render(scene,camera);ctx.drawImage(renderer.domElement,0,0,W,H);
   if(seg.entry===1||seg.entry===19){
+    const card=cards.get(seg.entry);
+    if(card){
+      const frame=Math.min(card.frames.length-1,Math.max(0,Math.floor((t-card.start)*card.fps+1e-7)));
+      ctx.drawImage(card.frames[frame],0,0,W,H);
+    }else{
     ctx.fillStyle='rgba(22,39,33,.68)';ctx.fillRect(0,0,W,H);ctx.fillStyle='#eee6cc';ctx.textAlign='center';
     ctx.font='bold 76px "Microsoft YaHei"';ctx.fillText('9 章',W/2,260);
     ctx.font='36px "Microsoft YaHei"';ctx.fillText(seg.entry===1?'残卷 · 其四  /  别再试了':'其四 · 终',W/2,367);
     ctx.font='21px "Microsoft YaHei"';ctx.fillText('青岚学舍',W/2,432);
+    }
   }else{
     const line=TL.dialogue.find(d=>t>=d.start&&t<d.end);if(line)subtitles(line.text,line.character==='LeiXiao'?'lei':'aoi');
     if(seg.entry===4){ctx.save();ctx.strokeStyle='#263e33';ctx.lineWidth=4;ctx.fillStyle='#e9edd3';ctx.textAlign='right';ctx.font='20px "Microsoft YaHei"';ctx.strokeText('千堂葵  /  生物部',W-48,62);ctx.fillText('千堂葵  /  生物部',W-48,62);ctx.restore();}
   }
-  return {state,image:canvas.toDataURL('image/jpeg',.94).split(',')[1]};
+  return {state,image:canvas.toDataURL('image/'+imageFormat,.94).split(',')[1]};
 }
 window.duration=TL.duration;window.checkTimes=TL.segments.flatMap(s=>[s.start+.1,(s.start+s.end)/2,s.end-.1]);
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);window.setFreeCamera=c=>window.freeCamera=c;
 window.ready=true;
-window.actors=actors;window.stage=stage;window.scene=scene;
-window.renderProfile={cel:q.get('cel'),motion:q.get('motion'),wristfix:actors.lei.correctWrists};
+window.actors=actors;window.stage=stage;window.scene=scene;window.renderer=renderer;
+window.renderProfile={cel:q.get('cel'),motion:q.get('motion'),wristfix:actors.lei.correctWrists,
+  edgeQuality,sampling,imageFormat,titleCards:cards.size?'series-ink':'legacy-static',alphaToCoverage:edgeQuality==='coverage',msaaSamples:renderer.getContext().getParameter(renderer.getContext().SAMPLES),
+  renderSize:[renderer.domElement.width,renderer.domElement.height],outputSize:[canvas.width,canvas.height]};
 if(!q.has('capture')){const start=performance.now();function tick(){draw(((performance.now()-start)/1000)%TL.duration);requestAnimationFrame(tick);}tick();}

@@ -1,8 +1,8 @@
 {
-  "status": "technical-checks-passed; voice aesthetics awaiting user review",
+  "status": "technical-checks-passed; visual refinement awaits user review",
   "video": "output/current.mp4",
-  "renderedCandidate": "output/romance_candidate.mp4",
-  "videoSha256": "ebed97318cb65137cdaf00deae5b93825a7479149e36225da61bbb1067f28180",
+  "renderedCandidate": "output/edge_candidate.mp4",
+  "videoSha256": "38f4d64520aeecf4747006fcd6c654d3b777a4732acd0cbb654aa1f83148ec5e",
   "probe": {
     "programs": [],
     "stream_groups": [],
@@ -15,10 +15,7 @@
         "avg_frame_rate": "30/1",
         "start_time": "0.000000",
         "duration": "82.000000",
-        "nb_frames": "2460",
-        "side_data_list": [
-          {}
-        ]
+        "nb_frames": "2460"
       },
       {
         "codec_name": "aac",
@@ -31,104 +28,162 @@
     ],
     "format": {
       "duration": "82.000000",
-      "size": "10497343"
+      "size": "9031022"
     }
   },
   "fullDecode": "passed",
   "rollback": {
-    "archive": "output/archive/before_romance_audio.zip",
-    "previousVideoSha256": "012f197b53b5dc0a7289a2bb45741b4cb1390377510a89c8c23f364a1a96efad"
+    "archive": "output/archive/before_edge_stability.zip",
+    "video": "output/archive/before_edge_stability.mp4",
+    "videoSha256": "ebed97318cb65137cdaf00deae5b93825a7479149e36225da61bbb1067f28180"
   },
-  "audioSource": "assets3d/mixed.wav",
-  "audioSourceSha256": "49264925a0d53941a46cda98bc5649b1ed5a5ab8e200cb45757510057bd3765e",
-  "decodedAudioCorrelation": 0.9996540608148773,
-  "maleLinesRegenerated": [
-    "assets3d/dialogue_r3/entry_3.mp3",
-    "assets3d/dialogue_r3/entry_5.mp3",
-    "assets3d/dialogue_r3/entry_7.mp3",
-    "assets3d/dialogue_r3/entry_9.mp3",
-    "assets3d/dialogue_r3/entry_11.mp3",
-    "assets3d/dialogue_r3/entry_14.mp3",
-    "assets3d/dialogue_r3/entry_16.mp3"
-  ],
-  "preservedAudio": [
-    "assets3d/dialogue_r3/entry_4.mp3",
-    "assets3d/dialogue_r3/entry_6.mp3",
-    "assets3d/dialogue_r3/entry_8.mp3",
-    "assets3d/dialogue_r3/entry_10.mp3",
-    "assets3d/dialogue_r3/entry_13.mp3",
-    "assets3d/dialogue_r3/entry_15.mp3",
-    "assets3d/dialogue_r3/entry_17.mp3",
-    "assets3d/QianTangKui_stem.wav",
-    "config/viseme_qiantangkui.json"
-  ],
-  "maleSpeaker": "ICL_uranus_zh_male_chanruoshaoye_tob",
-  "footsteps": 0,
-  "audioSync": {
-    "passed": true,
-    "lines": 14,
-    "duration": 82.0,
-    "stems": 2,
-    "mouth": "Known-text character DTW, pinyin V17 visemes, exact 10 ms final-PCM gate",
-    "footsteps": 0,
-    "intentionalSilentWalk": true,
-    "musicSilence": [
-      44.5,
-      53.2
+  "runtimeProfile": {
+    "cel": "direct",
+    "motion": "anatomical",
+    "wristfix": true,
+    "edgeQuality": "stable",
+    "sampling": 2,
+    "imageFormat": "png",
+    "titleCards": "series-ink",
+    "alphaToCoverage": false,
+    "msaaSamples": 4,
+    "renderSize": [
+      2560,
+      1440
     ],
-    "mixPeak": 0.460784912109375,
-    "minSpeechWindowSpare": 0.004916666666666458,
-    "limits": "Numerical/ASR verification only; subjective sound and emotional performance not auditioned by this agent."
-  },
-  "contentQC": {
-    "malePinyinMatch": "7 of 7: 100%",
-    "errors": 0,
-    "timingWarnings": [
-      9,
-      14
-    ],
-    "warningResolution": "Both fit their original speech windows without truncation; retain 0.3s to entry end. No window expansion."
+    "outputSize": [
+      1280,
+      720
+    ]
   },
   "motion": "sampled-motion-pass",
   "contact": "sampled-contact-pass",
   "seekPassed": true,
   "seekCount": 57,
   "renderedFrames": 2460,
-  "traceSha256": "e9f2de0f4acb0f025aadc1716f11e39ce2eb7025967973c61cacab0d59012da1",
-  "runtimeProfile": {
-    "cel": "direct",
-    "motion": "anatomical",
-    "wristfix": true
-  },
+  "traceSha256": "1118925938a998bb35d89ff8dd21ac3ec24f7ac7f61f6d380d85c299aab7dca9",
+  "preservedInputCount": 96,
   "preservedAssetInputs": 51,
   "preservedRuntime": [
-    "viewer.js",
+    "script.story",
     "performance_remake.js",
     "performance_tripo.js",
     "scenes/BiologyRoomRemakeScene.js"
   ],
-  "visualEvidence": {
-    "frames": "storyboard/audio_romance/frames.jpg",
+  "audio": {
+    "source": "output\\archive\\before_edge_stability.mp4",
+    "packetPayloadsAndTimestampsIdentical": true,
+    "packets": 3845,
+    "maleSpeaker": "ICL_uranus_zh_male_chanruoshaoye_tob",
+    "footsteps": 0,
+    "mixSha256": "49264925a0d53941a46cda98bc5649b1ed5a5ab8e200cb45757510057bd3765e"
+  },
+  "titleCards": {
+    "source": "config/cards.json",
+    "frameCheckCount": 12,
+    "missingFrameRejected": true,
+    "generator": "title-card"
+  },
+  "rasterReview": {
     "times": [
-      7.5,
-      16,
-      26,
-      33.5,
-      42,
-      55,
-      65,
-      72
+      20.8,
+      21.766666666666666
     ],
-    "wholeNormalSpeedViewingByModel": false
+    "frames": 30,
+    "outputSize": [
+      1280,
+      720
+    ],
+    "reference": "4x spatial rendering, PNG; same motion/camera, not aesthetic ground truth",
+    "metric": "Edge RGB error and first temporal difference of error relative to 4x reference",
+    "identicalMotionStates": true,
+    "results": {
+      "male_hair": {
+        "legacy": {
+          "edgeMAE_0_255": 8.374616622924805,
+          "temporalResidualRMSE_0_255": 0.03098910115659237
+        },
+        "lossless": {
+          "edgeMAE_0_255": 6.227330684661865,
+          "temporalResidualRMSE_0_255": 0.003975903615355492
+        },
+        "supersample": {
+          "edgeMAE_0_255": 4.492260456085205,
+          "temporalResidualRMSE_0_255": 0.003443233435973525
+        },
+        "stable": {
+          "edgeMAE_0_255": 4.492260456085205,
+          "temporalResidualRMSE_0_255": 0.003443233435973525
+        }
+      },
+      "female_hair": {
+        "legacy": {
+          "edgeMAE_0_255": 8.922536849975586,
+          "temporalResidualRMSE_0_255": 6.4080634117126465
+        },
+        "lossless": {
+          "edgeMAE_0_255": 5.608277797698975,
+          "temporalResidualRMSE_0_255": 6.134024143218994
+        },
+        "supersample": {
+          "edgeMAE_0_255": 4.506740570068359,
+          "temporalResidualRMSE_0_255": 4.506509304046631
+        },
+        "stable": {
+          "edgeMAE_0_255": 4.506739616394043,
+          "temporalResidualRMSE_0_255": 4.506509304046631
+        }
+      },
+      "male_shirt": {
+        "legacy": {
+          "edgeMAE_0_255": 9.105267524719238,
+          "temporalResidualRMSE_0_255": 0.0
+        },
+        "lossless": {
+          "edgeMAE_0_255": 5.793943881988525,
+          "temporalResidualRMSE_0_255": 0.0
+        },
+        "supersample": {
+          "edgeMAE_0_255": 5.144687175750732,
+          "temporalResidualRMSE_0_255": 0.0
+        },
+        "stable": {
+          "edgeMAE_0_255": 5.144687175750732,
+          "temporalResidualRMSE_0_255": 0.0
+        }
+      },
+      "female_sleeve": {
+        "legacy": {
+          "edgeMAE_0_255": 8.347275733947754,
+          "temporalResidualRMSE_0_255": 6.780839443206787
+        },
+        "lossless": {
+          "edgeMAE_0_255": 5.249695777893066,
+          "temporalResidualRMSE_0_255": 6.54336404800415
+        },
+        "supersample": {
+          "edgeMAE_0_255": 4.434829235076904,
+          "temporalResidualRMSE_0_255": 3.9515721797943115
+        },
+        "stable": {
+          "edgeMAE_0_255": 4.434829235076904,
+          "temporalResidualRMSE_0_255": 3.9515721797943115
+        }
+      }
+    },
+    "fixedTimeRepeat": {
+      "legacy": true,
+      "lossless": true,
+      "supersample": true,
+      "stable": true,
+      "reference": true
+    }
   },
-  "listening": {
-    "review": "storyboard/audio_romance/final_listening_review.json",
-    "type": "model-audio-observation",
-    "decision": "Keep the original actor with newly applied native acting directions; alternative voice not adopted.",
-    "limits": "Whole-scene and isolated model descriptions disagree on age/timbre. Low-confidence pitch tracking of entry 9 is not a valid gender/identity verdict. No claim of human listening or aesthetic acceptance."
-  },
-  "generatorInputs": {
-    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\synth_audio.py": "8710cb5de3b98942b5ea4ec181931f7be4f8d2a869b2fb28c40f1f44d9dfa253",
-    "D:\\opensource\\movie\\dula-skills\\volc-voice-casting\\scripts\\seedtts_say.py": "3f65be0c2942d979389179b0384d86629872e902d016d52fe96135a007427ba8"
+  "visualEvidence": {
+    "edgeComparison": "storyboard/episode_current/edge_comparison.png",
+    "clip": "storyboard/episode_current/edge_comparison.mp4",
+    "cards": "storyboard/episode_current/title_cards.png",
+    "normalSpeedWholeEpisodeViewedByModel": false,
+    "limits": "Raster sampling improved in matched crops. Static male regions in the short diagnostic window do not establish temporal quality. Numeric residuals are not perceived-flicker scores; no claim of eliminating every edge artifact."
   }
 }

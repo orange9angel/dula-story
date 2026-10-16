@@ -1,6 +1,30 @@
 # S1E4 新角色整集预览
 
 播放入口：[output/current.mp4](../../output/current.mp4)。
+
+## 2026-10-17 边沿稳定与系列字卡恢复
+
+- 修复发梢、衣袖细边：默认以 2560×1440 渲染、缩回 1280×720，通过 PNG 中间帧
+  导出。人物模型、姿势、口型、机位和音轨不变。实际成片局部对照见
+  [edge_comparison.png](edge_comparison.png)，同时间连续片段见
+  [edge_comparison.mp4](edge_comparison.mp4)（左旧右新）。
+- 重做 S1E4 时遗漏了前集的动态字卡接入，实际导出只有静态微软雅黑标题。
+  已沿用 `title-card` 原有楷体墨迹、光扫、光斑配方，换成本集背景和文字；
+  片头 0–2.4s、片尾 79–82s 保持原窗。实际成片见 [title_cards.png](title_cards.png)。
+- 字卡原生 30fps，显式清单与逐帧哈希接入构建；12 个关键帧与素材逐像素一致。
+  缺帧会阻止构建，不会静默退回静态标题。完整导出后再次检查实际编码抽帧。
+- 82 秒、2460 帧全部解码；动作/接触数值与 57 个逆序跳转检查通过。
+  96 项原有输入保持原字节，包含 51 项共享资产；原 AAC 的 3845 包数据和时戳一致。
+- 栅格小样固定时间重复稳定，同姿态状态一致。透明覆盖候选在本机重复测试有差异，
+  未采用。4 倍采样残差只用于定位采样差异，不代表审美基准；男主在该短窗基本静止，
+  不据此声称男主所有动作都无闪烁。实际成片的发梢和袖口碎边减轻，未宣称彻底消除
+  全片每种细线问题，也未声称模型按正常速度看完整片。整体观感待用户复看。
+- 本轮回退视频：`output/archive/before_edge_stability.mp4`；代码与旧证据：
+  `output/archive/before_edge_stability.zip`。两者都是已完成温柔男声/无室内脚步的版本。
+  最新构建、音轨保留、视频 SHA 和检查范围以 `verification.json` 为准。
+
+以下是声音及动作的历史改动记录。
+
 本轮声音修改前的完整版本（含已修复的动作）保存在
 `output/archive/before_romance_audio.zip`，里面的 `output/current.mp4` 可直接解压播放。
 
@@ -56,20 +80,24 @@ trace 的动作/采样接触检查通过，57 个逆序 seek 时点通过。最�
 采样帧之间的连续扫掠。手和袖口仍沿用导入网格，精细造型与整体戏感待用户复看。
 技术检查通过不等于艺术质量已获认可。
 
-## 复现
+## 当前版本复现
 
 在本 episode 目录执行：
 
 ```powershell
-..\..\.venv\Scripts\python.exe tools/synth_audio.py --character LeiXiao
-..\..\.venv\Scripts\python.exe tools/build_audio.py
-..\..\.venv\Scripts\python.exe tools/build_visemes.py
-node tools/build_foley_anchors.mjs
-..\..\.venv\Scripts\python.exe tools/check_audio_sync.py
-node render.mjs --q '&cel=direct&motion=anatomical&probe-surface=1' --out current.mp4 --board storyboard/episode_current --trace storyboard/episode_current/trace.json
+node render.mjs --q '&probe-surface=1' --audio-from output/archive/before_edge_stability.mp4 --out current.mp4 --board storyboard/episode_current --trace storyboard/episode_current/trace.json
 ..\..\.venv\Scripts\python.exe tools/check_imported_motion.py storyboard/episode_current/trace.json
 ..\..\.venv\Scripts\python.exe tools/check_imported_contact.py storyboard/episode_current/trace.json
 ```
+
+默认配置即 `cel=direct&motion=anatomical&aa=stable`，2 倍采样、PNG 中间帧和系列
+动态字卡已接入。只重渲染画面时不重新生成声音。字卡素材随本集保存；重建时使用
+`tools/build_series_cards.py`，底图重拍工具为 `tools/capture_card_backgrounds.mjs`
+（先另开 `node render.mjs --serve`）。诊断工具 `tools/check_series_cards.mjs` 验证
+时间窗/帧像素与缺帧失败；`tools/check_edge_stability.mjs` 生成同状态采样对照。
+
+只有另行修订声音时才按 `synth_audio.py` → `build_audio.py` → `build_visemes.py` →
+`build_foley_anchors.mjs` → `check_audio_sync.py` 重建，并去掉旧视频 `--audio-from`。
 
 自由机位清单：`config/episode_motion_review.json`，由 `render.mjs --shots` 复现。
 逐帧大 trace 可在生成摘要与输入哈希后清理，不作为 Git 中的常驻资产。

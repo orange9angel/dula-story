@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 export const episodeSources=['script.story','bootstrap.js','viewer.js','viewer.html','render.mjs','face_lab.js','face_lab.html',
   'performance_remake.js','performance_tripo.js','tools/imported_probe.js','tools/check_imported_contact.py','tools/check_imported_motion.py','config/episode_motion_review.json','config/imported_contact_contract.json','scenes/BiologyRoomRemakeScene.js',
   'tools/audit_inputs.mjs','tools/compile_story.mjs','tools/numeric_probe.js',
-  'config/timeline.json','config/contact_contract.json','config/scene_contract.json','config/audio_direction.json',
+  'config/timeline.json','config/cards.json','tools/build_series_cards.py','tools/capture_card_backgrounds.mjs','config/contact_contract.json','config/scene_contract.json','config/audio_direction.json',
   'config/audio_timing.json','tools/build_audio.py','tools/check_audio_sync.py','tools/check_contact.py',
   'tools/check_story_motion.py','tools/prepare_ambience.py','tools/build_visemes.py',
   'config/viseme_leixiao.json','config/viseme_qiantangkui.json','config/dialogue_alignment.json',
@@ -12,6 +12,16 @@ export const episodeSources=['script.story','bootstrap.js','viewer.js','viewer.h
   'tools/configure_episode.py','tools/configure_contracts.py','assets3d/textures/biology_wall_r3.png'];
 export function auditInputs(ep){
   const story=path.resolve(ep,'../..'),files=episodeSources.map(p=>path.join(ep,p));
+  const cards=JSON.parse(fs.readFileSync(path.join(ep,'config/cards.json'),'utf8'));
+  for(const c of cards.cards){
+    files.push(path.join(ep,c.background));
+    for(const [i,frame] of c.frames.entries()){
+      const p=path.join(ep,frame);
+      if(createHash('sha256').update(fs.readFileSync(p)).digest('hex')!==c.frameSha256[i])throw new Error('Title-card frame changed: '+frame);
+      files.push(p);
+    }
+  }
+  files.push(path.resolve(ep,cards.generator));
   for(const dir of ['node_modules/dula-assets/lib/craft3d','node_modules/dula-assets/characters/bioarmor'])
     for(const name of fs.readdirSync(path.join(story,dir)))if(name.endsWith('.js'))files.push(path.join(story,dir,name));
   for(const name of ['MeshCollision.js','NumericAudit.js'])files.push(path.join(story,'node_modules/dula-engine/lib',name));

@@ -58,12 +58,13 @@ if(!serve){
       await page.evaluate(cfg=>window.setFreeCamera(cfg),{pos:n.slice(0,3),lookAt:n.slice(3,6),fov:n[6]});
     }
     const duration=await page.evaluate(()=>window.duration);
+    const captureFormat=await page.evaluate(()=>window.renderProfile?.imageFormat??'jpeg');
     const shots=shotsArg?JSON.parse(fs.readFileSync(path.resolve(here,shotsArg),'utf8')):null;
     if(shots){ // 逐拍近景审片：逐镜 setFreeCamera+renderAt，落 <name>.jpg；跳帧循环与 seek
       for(const s of shots){
         if(s.camera)await page.evaluate(cfg=>window.setFreeCamera(cfg),{pos:s.camera.slice(0,3),lookAt:s.camera.slice(3,6),fov:s.camera[6]});
         const r=await page.evaluate(t=>window.renderAt(t),s.t);
-        fs.writeFileSync(path.join(board,`${s.name}.jpg`),Buffer.from(r.image,'base64'));
+        fs.writeFileSync(path.join(board,`${s.name}.${captureFormat==='png'?'png':'jpg'}`),Buffer.from(r.image,'base64'));
       }
       console.log(`shots complete: ${shots.length} frames -> ${board}`);
     }
@@ -85,7 +86,7 @@ if(!serve){
       const audioArgs=range?['-ss',String(range[0]),'-t',String(range[1]-range[0])]:[];
       const audioCodec=audioFrom?['-c:a','copy']:['-c:a','aac','-ar','48000','-ac','2','-b:a','192k'];
       const sound=fs.existsSync(audioFile)?[...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0',...audioCodec]:['-an'];
-      encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',...sound,'-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
+      encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec',captureFormat==='png'?'png':'mjpeg','-i','pipe:0',...sound,'-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
     }
     for(let i=startFrame;i<endFrame;i++){
       const t=i/fps;
@@ -96,7 +97,7 @@ if(!serve){
         const buffer=Buffer.from(result.image,'base64');
         if(!check&&!encoder.stdin.write(buffer))await once(encoder.stdin,'drain');
         if(check&&ci<checks.length&&t>=checks[ci]){
-          const filename=`shot_${String(ci+1).padStart(2,'0')}.jpg`;
+          const filename=`shot_${String(ci+1).padStart(2,'0')}.${captureFormat==='png'?'png':'jpg'}`;
           fs.writeFileSync(path.join(board,filename),buffer);
           trace.push({t,filename,...result.state});ci++;
         }
@@ -126,9 +127,9 @@ if(!serve){
         // 像素容差比较：JPEG 编码器在复杂边缘偶有单个 8×8 块的字节级非确定性，
         // 字节相等会把"同一画面不同编码"误判为状态漂移（S1E2 2026-10-08 实测）。
         const refB64=fs.readFileSync(path.join(board,shot.filename)).toString('base64');
-        const stats=await page.evaluate(async(t,ref)=>{
+        const stats=await page.evaluate(async(t,ref,format)=>{
           const r=window.renderAt(t);
-          const load=b=>new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.src='data:image/jpeg;base64,'+b;});
+          const load=b=>new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.src='data:image/'+format+';base64,'+b;});
           const [a,b]=await Promise.all([load(r.image),load(ref)]);
           const W=a.width,H=a.height,c=document.createElement('canvas');c.width=W;c.height=H;
           const g=c.getContext('2d',{willReadFrequently:true});
@@ -140,9 +141,9 @@ if(!serve){
             if(d>max)max=d;if(d>16)bad++;
           }
           return{bad,max,image:r.image};
-        },shot.t,refB64);
+        },shot.t,refB64,captureFormat);
         const equal=stats.bad<=64; // 至多约两个 8×8 编码块的噪声
-        if(!equal)fs.writeFileSync(path.join(board,shot.filename.replace('.jpg','_seek.jpg')),Buffer.from(stats.image,'base64'));
+        if(!equal)fs.writeFileSync(path.join(board,shot.filename.replace(/\.(jpg|png)$/,'_seek.$1')),Buffer.from(stats.image,'base64'));
         seek.push({t:shot.t,equal,bad:stats.bad,max:stats.max});
       }
       fs.writeFileSync(path.join(board,'seek_check.json'),JSON.stringify({checks:seek,passed:seek.every(s=>s.equal)},null,2));

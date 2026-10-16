@@ -1,0 +1,95 @@
+{
+  "times": [
+    20.8,
+    21.766666666666666
+  ],
+  "frames": 30,
+  "outputSize": [
+    1280,
+    720
+  ],
+  "reference": "4x spatial rendering, PNG; same motion/camera, not aesthetic ground truth",
+  "metric": "Edge RGB error and first temporal difference of error relative to 4x reference",
+  "identicalMotionStates": true,
+  "results": {
+    "male_hair": {
+      "legacy": {
+        "edgeMAE_0_255": 8.374616622924805,
+        "temporalResidualRMSE_0_255": 0.03098910115659237
+      },
+      "lossless": {
+        "edgeMAE_0_255": 6.227330684661865,
+        "temporalResidualRMSE_0_255": 0.003975903615355492
+      },
+      "supersample": {
+        "edgeMAE_0_255": 4.492260456085205,
+        "temporalResidualRMSE_0_255": 0.003443233435973525
+      },
+      "stable": {
+        "edgeMAE_0_255": 4.492260456085205,
+        "temporalResidualRMSE_0_255": 0.003443233435973525
+      }
+    },
+    "female_hair": {
+      "legacy": {
+        "edgeMAE_0_255": 8.922536849975586,
+        "temporalResidualRMSE_0_255": 6.4080634117126465
+      },
+      "lossless": {
+        "edgeMAE_0_255": 5.608277797698975,
+        "temporalResidualRMSE_0_255": 6.134024143218994
+      },
+      "supersample": {
+        "edgeMAE_0_255": 4.506740570068359,
+        "temporalResidualRMSE_0_255": 4.506509304046631
+      },
+      "stable": {
+        "edgeMAE_0_255": 4.506739616394043,
+        "temporalResidualRMSE_0_255": 4.506509304046631
+      }
+    },
+    "male_shirt": {
+      "legacy": {
+        "edgeMAE_0_255": 9.105267524719238,
+        "temporalResidualRMSE_0_255": 0.0
+      },
+      "lossless": {
+        "edgeMAE_0_255": 5.793943881988525,
+        "temporalResidualRMSE_0_255": 0.0
+      },
+      "supersample": {
+        "edgeMAE_0_255": 5.144687175750732,
+        "temporalResidualRMSE_0_255": 0.0
+      },
+      "stable": {
+        "edgeMAE_0_255": 5.144687175750732,
+        "temporalResidualRMSE_0_255": 0.0
+      }
+    },
+    "female_sleeve": {
+      "legacy": {
+        "edgeMAE_0_255": 8.347275733947754,
+        "temporalResidualRMSE_0_255": 6.780839443206787
+      },
+      "lossless": {
+        "edgeMAE_0_255": 5.249695777893066,
+        "temporalResidualRMSE_0_255": 6.54336404800415
+      },
+      "supersample": {
+        "edgeMAE_0_255": 4.434829235076904,
+        "temporalResidualRMSE_0_255": 3.9515721797943115
+      },
+      "stable": {
+        "edgeMAE_0_255": 4.434829235076904,
+        "temporalResidualRMSE_0_255": 3.9515721797943115
+      }
+    }
+  },
+  "fixedTimeRepeat": {
+    "legacy": true,
+    "lossless": true,
+    "supersample": true,
+    "stable": true,
+    "reference": true
+  }
+}

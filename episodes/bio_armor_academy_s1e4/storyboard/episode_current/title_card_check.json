@@ -1,0 +1,98 @@
+{
+  "profile": {
+    "cel": "direct",
+    "motion": "anatomical",
+    "wristfix": true,
+    "edgeQuality": "stable",
+    "sampling": 2,
+    "imageFormat": "png",
+    "titleCards": "series-ink",
+    "alphaToCoverage": false,
+    "msaaSamples": 4,
+    "renderSize": [
+      2560,
+      1440
+    ],
+    "outputSize": [
+      1280,
+      720
+    ]
+  },
+  "checks": [
+    {
+      "card": "open",
+      "frame": 0,
+      "t": 0,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "open",
+      "frame": 5,
+      "t": 0.16666666666666666,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "open",
+      "frame": 18,
+      "t": 0.6,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "open",
+      "frame": 36,
+      "t": 1.2,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "open",
+      "frame": 63,
+      "t": 2.1,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "open",
+      "frame": 71,
+      "t": 2.3666666666666667,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "close",
+      "frame": 0,
+      "t": 79,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "close",
+      "frame": 5,
+      "t": 79.16666666666667,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "close",
+      "frame": 18,
+      "t": 79.6,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "close",
+      "frame": 36,
+      "t": 80.2,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "close",
+      "frame": 81,
+      "t": 81.7,
+      "maxPixelDifference": 0
+    },
+    {
+      "card": "close",
+      "frame": 89,
+      "t": 81.96666666666667,
+      "maxPixelDifference": 0
+    }
+  ],
+  "errors": [],
+  "missingRejected": true,
+  "passed": true
+}

@@ -1,15 +1,17 @@
 {
   "args": [
     "--q",
-    "&cel=direct&motion=anatomical&probe-surface=1",
+    "&probe-surface=1",
     "--out",
-    "romance_candidate.mp4",
+    "edge_candidate.mp4",
+    "--audio-from",
+    "output/archive/before_edge_stability.mp4",
     "--board",
-    "tmp/audio_romance/render",
+    "tmp/edge_stability/final",
     "--trace",
-    "tmp/audio_romance/render/trace.json"
+    "tmp/edge_stability/final/trace.json"
   ],
-  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\romance_candidate.mp4",
+  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\edge_candidate.mp4",
   "build": {
     "inputs": [
       {
@@ -22,7 +24,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.js",
-        "sha256": "124733935b4942b3231fd8cddc3e9b6edf21f855a9e47e4f65f0e6989c10fb1a"
+        "sha256": "847e9b52165c45a6bc656e0e3d96f979368b20b461f0505af31ca5ba350582bf"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.html",
@@ -30,7 +32,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\render.mjs",
-        "sha256": "ef5d6b30dbbf54539c0edb7137e2c07b456a10a9b4e9976e2d196e7d3adfc233"
+        "sha256": "939d75ff0dfca295588c0e7a82e73301a08f8b90e99866c5eeebb181113da529"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.js",
@@ -74,7 +76,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\audit_inputs.mjs",
-        "sha256": "76832424b78c13d2917153947179235bcaf4e34d4b3cc91833430ce18c9f4cce"
+        "sha256": "bb7ddfbfd167cc9df7801b2a1451b56882bee32e659711805d758156f78b3b58"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\compile_story.mjs",
@@ -87,6 +89,18 @@
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\timeline.json",
         "sha256": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\cards.json",
+        "sha256": "8bdc9c2e6a7224a242fec9c79dc47291409db5267d5928dc27dca6b2fdf4b5c0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_series_cards.py",
+        "sha256": "49ba0a319fd520d194221dc725f76bcfdbc88aa4c3c82918d586d5190a1f8a1d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\capture_card_backgrounds.mjs",
+        "sha256": "3331a0fac3059484d4b8b1b858609e281aafc30722560e59e40e542f62d9ab34"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\contact_contract.json",
@@ -163,6 +177,666 @@
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\textures\\biology_wall_r3.png",
         "sha256": "218a49be801aecdeb386f2bb4ce1bb9eb9a9d45b8b4546e4419c018fb0d960cc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open_background.png",
+        "sha256": "b77f9a6d098859157f2ce4788715effdccca0cbfc257808958457b32d271e63f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_000.png",
+        "sha256": "45c5022dcaa72fc60285893485fbf2f42df16f886d6261dcd4cef17f74e00e90"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_001.png",
+        "sha256": "a1c0f3b9c920e990465a5d0c304fdd8621f8a2361b89a325f0c38d12027d2d0c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_002.png",
+        "sha256": "a7e0e560d9430eea22d6ba3058be5e1178ddf7b426e351fd36669405e61c13d0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_003.png",
+        "sha256": "1aef6657005b6dbd137bda2949e2de756acf8686db00c8919acc42243eeb58e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_004.png",
+        "sha256": "d23335b042e7cbcccd547c332ece37daeb1e5a388566b0085906b915c402455b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_005.png",
+        "sha256": "ceff76ee58de677984b7fab964c4aad67156797aecd75e317b5326d6f91ba568"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_006.png",
+        "sha256": "76802fd3fd3a0bdeb4aaee4493ae0267f393b7574b6d888e6e957a3f2133c9a5"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_007.png",
+        "sha256": "f0930ffde8c1c0ca14e5e9dd352c8ea0d75a4349858e1f2ff69d832a3765da52"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_008.png",
+        "sha256": "3415f06e3f4f7ddf6e916b8e596fab377ae2ec2db0e09b4254e8918dcfd6f368"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_009.png",
+        "sha256": "df1444f2647ee82e8b586a68d8ef6652ac6825580cd04c29a9751bc835bb4807"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_010.png",
+        "sha256": "24e8c79b7b5103e7df83af70ead58a59e8a25e75bd16ba7df4eac792f0c39700"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_011.png",
+        "sha256": "75ce5cf9b8a78f4984bee50243e5accb2389356282e660b454ae5e95700d9a5c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_012.png",
+        "sha256": "4de712b2419bbda33bf143bb7cc1a382915c5e4f6b24ec68740bb56e79c57f32"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_013.png",
+        "sha256": "b7a9f65b995b96e72faed16e8e46188138189838fc34895e95993bbf0a6ba140"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_014.png",
+        "sha256": "7d85d0849ff68736d8749294269a54a5fb2138c1af50415959e418f9adc9c8e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_015.png",
+        "sha256": "a369fbee14e82cd596f6d953edce849fa08a492845ec90a97edd7308087154ad"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_016.png",
+        "sha256": "5b51bb44688b5bd2298802e8ce5e85af3bb0fb7381822a67acbbf5b593d123d7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_017.png",
+        "sha256": "d6fd10b24cb9d09bfafdf8da9c25d5199f74fd5b9bdc1e53a3f5ecd06092e47f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_018.png",
+        "sha256": "70d106dfcdea056a46ee8d3c3f7e7555b78bb6aa7beddd436244aa54aff5cdc5"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_019.png",
+        "sha256": "9f24504da0a83179083e3c6e9a20b6ee3cf8aa75d6ea52ebb161b5b5bc3b5ea9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_020.png",
+        "sha256": "c99ba6d0f1c8fdfe3aa4270bd92ac2bccc6e4af666c566ba7ea98cc9726e4e4f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_021.png",
+        "sha256": "60fda94472eee23ce9eab370b61943c3b59d49cbd7065b44a72b26d567dc9656"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_022.png",
+        "sha256": "838b101d3ecccd6daa9b8fa0f3d53c5def94c1b4e6c66921cde3491ef50f0303"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_023.png",
+        "sha256": "7a9ee4b904d79cad7caeeb827f1c94bd35ca175baa0f64b2cfd8182c278ea305"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_024.png",
+        "sha256": "f6fed6a4eb4ef658eba434744554cd06de89494bd31cdd6db0cafc5716be7895"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_025.png",
+        "sha256": "5aa234d81edaa0dc6a84d4cbb58a0fc04d1518d75aa279d3f62363c1f8d03839"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_026.png",
+        "sha256": "7797001762ae10ecc9a3c538bee7e5d1188986ecba4ebe3735249fc8658c3c22"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_027.png",
+        "sha256": "2bf4c4809e67ff8dc698f9542a60317243c8f1ddfb0be3b51e70f64e02712186"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_028.png",
+        "sha256": "3d2f9da1638be76522c83fefd15a8ec6aeb0baac4b6493d5ff52f85e2ab9733b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_029.png",
+        "sha256": "dd76db8471df30b158b29258487cf146702d7412a5ce15ab0ed19c7c25a5a5ae"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_030.png",
+        "sha256": "25021860b8619103621a99ab6072adcca65c3ef57d216128fd2afd585f33b296"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_031.png",
+        "sha256": "a24e7c0f748f616dd0c69bf9eb62e66c824b0a4a8b2dec03a50d9a523571ef51"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_032.png",
+        "sha256": "303a7c75ee6a38d62bd121c908e819d714404cf4522de478b19e3183981d04b3"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_033.png",
+        "sha256": "68e59f044f78b248fa166ccdcf8e2dd1b6103db9298fc4b674a762a2e8965324"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_034.png",
+        "sha256": "a5fc2edd22a1b94fae5464901a3358bfccaf2f28882599efbd2360f896614b26"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_035.png",
+        "sha256": "6d629e0a27abd8c663049b82d66d2ea7172c6b1c19d7ed26895e8cad28cadeec"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_036.png",
+        "sha256": "c5fbde696bf6269f7e06c6a5f08cb308a08e64bd87c2b0426fb2101e9eeb5fb3"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_037.png",
+        "sha256": "d312105a7efbbb6707ff800d7384be05433072be9688b9bc0e15ae3f0899768a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_038.png",
+        "sha256": "9b1881b76cabe54a2bb9cd3f5edf18f77e027d1f2e9df531fd62f57e234a322d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_039.png",
+        "sha256": "e1cf7fa57642fefcaf27b378bad5b85205e33ba988d5fe99cddba2fb51c7722d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_040.png",
+        "sha256": "d08527a35f6696c29b89fb722ac2a69639509e673f8a133abd54e55d7af5cb7d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_041.png",
+        "sha256": "8869a8fa4f3b81452c639eacd3ee140b3827643795369ef1debc794c512b8b45"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_042.png",
+        "sha256": "c533c180207932d5aed2c870755506c8c213f48c83646e59948e11be17c87205"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_043.png",
+        "sha256": "a45eec5fa5f2e9c35b9d76b3084a3e255b191cfa1b22f68623655ba9175ed22b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_044.png",
+        "sha256": "1426227638ad16b88b1fdcdb8baf7e9ff9cd9edbc095759be5b25b2af61633aa"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_045.png",
+        "sha256": "eb3c77836c05294911b9eca19ae277c1e8bbab18c9e6b02bfef20cd965257abc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_046.png",
+        "sha256": "a84411ac0377f41192361d39d5a886a1da827af4ff718fa7eb3612aa5dde2d6e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_047.png",
+        "sha256": "8afa6b4510bd344a9b64f9133f4734c6344ba2364f548b6c11f1c929cf8d21fe"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_048.png",
+        "sha256": "69c63b07dad5515fd317f0e0006a0a1ad2abfd7cf24f54629f2e3f16d2ba5414"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_049.png",
+        "sha256": "3b26dc4b72f56d8bbafa8fa6c2295c5b11e4ab2baa69f247e415d4432f258f47"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_050.png",
+        "sha256": "f29e02e42f5431293ee29d1bb87ed6f1dc9a78940b674644794fcadefc96207d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_051.png",
+        "sha256": "6d60fd2fc6e5bbfb6fe2f1a77d0c2770a16040355360052586b8fc5b6f9f917f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_052.png",
+        "sha256": "cecc90fb0fab64d08a629372a7280381ca16bcec7a8267fb896a1c0de97d1831"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_053.png",
+        "sha256": "7267733c75353787ca1a742f9e045e13d33e06a6cf57a3728db64c199e9bf03b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_054.png",
+        "sha256": "51d1439a0c4bcf6cd79afdecb5b1c8b8cd5c65c233f86ea84e4c1a57790d4f26"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_055.png",
+        "sha256": "03ab958d7369f18a92ffcbf86961051324c0ee7ee8700572e1e9b9d8e7036967"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_056.png",
+        "sha256": "38a92de550896c4b40048d48712bc4c37aa60e0588168a0e050e2ceca4594599"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_057.png",
+        "sha256": "02c18f875b94e7b97477ec3bfb224bfc9e575f64722f403b943b26f081f08e83"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_058.png",
+        "sha256": "34d0387f3e7cb900ef7e772985ea3854cbd0bc06006ae9a7ecd12e16f1ee961f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_059.png",
+        "sha256": "21cd6c208b3bd6069f3468f7766dfb43aa822388ffd4ee9022c9a3121365aa47"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_060.png",
+        "sha256": "53205b94411f97509f06080d185efb4c7d0e4dbbd304c7f62a679e810e2d7850"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_061.png",
+        "sha256": "08de0b379d6606ca7703c196efabe4e6b2f7c5298c5cf2984d1f5c4bccf672d3"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_062.png",
+        "sha256": "9050beffebec66fde70c3ce2c0655d751e3fa37a115beafd6b2c925e24d118f3"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_063.png",
+        "sha256": "d00f2f9bac3f83a3f9f9f098d6fce4b1aed9b2bd97fdf56bf156d7bee5d45f04"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_064.png",
+        "sha256": "24a9571b06b21797fa09877b359247633666d11bcb43fc86582dc53d2e2a5a51"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_065.png",
+        "sha256": "87df7da3833bdee5cc7d39fcc856d6f3775a6a9a47294269299ebfca08ca5c06"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_066.png",
+        "sha256": "8ca78d394364b64f437c4c079dc71870442e7dceb00455ecbc513deafef8be31"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_067.png",
+        "sha256": "521ee08885891b83ffa711c9cfd28939a71891976f28921576f0aa58f689741d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_068.png",
+        "sha256": "fbfcbfe9b628dcf15bd555081e504ef1b9be4b58dde10a2c84b98b84e83b2889"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_069.png",
+        "sha256": "c05dea856fa02bcba39f52e2f2f2f77cf21d1fc15aecf51a3f45ff23e8e1596a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_070.png",
+        "sha256": "74c2877df9829d366155609c581f3ce1bb629347551e51e73af058836cabad90"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open\\f_071.png",
+        "sha256": "74071c78675e368028015a04cef54b1412db5f07f46bb85d11aae2faacae0e10"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close_background.png",
+        "sha256": "7132f58f12c4d23b07e78fe96ba0c4989448c91a8e0782c252f244ae34ad7a2a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_000.png",
+        "sha256": "45c5022dcaa72fc60285893485fbf2f42df16f886d6261dcd4cef17f74e00e90"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_001.png",
+        "sha256": "31648f6100823809e726db1d4c728da4fc81930298e4c51fa6041092e0f367e8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_002.png",
+        "sha256": "c3abab32f981b3077ef3b6d3fbb3296b4af08ca53b43aefd22991d183184c7f7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_003.png",
+        "sha256": "95898d8ed5be15e9cbdbb5a2c8174065ff577315532c43f1327ccd1758c243d7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_004.png",
+        "sha256": "c2778994cb2c3ecf1810daf085c8d96bc54b159d2d3f03bd75fb48a51c8ccef1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_005.png",
+        "sha256": "80659314dd2045131fcb8603b62459174d4f3185ad2c397d643097aa830703b3"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_006.png",
+        "sha256": "67af0b96c15cdf102f0a0bf35cb7eb6d871f292fd0c2664cd1949514927819bf"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_007.png",
+        "sha256": "7cc2f3ef276544b2c104d223eedcf8efc2b6038e38bf98d31036309dbc0618ff"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_008.png",
+        "sha256": "26f014e1ac1d54dbbc6514d8279b1374e76e68f94504b35b5182fa512b585468"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_009.png",
+        "sha256": "666aec35fbe68f49f9b5dd1c6c07a10f6cfe361c0ae1bf6b8d0078e36c29e8fb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_010.png",
+        "sha256": "6492caebe505a28850024919a9acfcd3309ac7b0e6484d80e4afca88b80e3599"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_011.png",
+        "sha256": "031cf360e05965ca018d7aabe2a89e05790809eeda3b80b1617a394003b32aee"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_012.png",
+        "sha256": "cc958f25d20861ab12aaf3cb723c234034653ee881a9a974349605556d15fb38"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_013.png",
+        "sha256": "58bb2508f6fe7d345ce1d7679019ab2027f5b6001bedfa5b97ec3b1d6a150192"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_014.png",
+        "sha256": "b703e721f936ab5b13b8296de219f7d726ee72875678a0774cfab3c6ef58e3aa"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_015.png",
+        "sha256": "f6e4aa88112bf663c6ff7601267a8b14279004df7bfd80fb4bd10afcb96eed72"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_016.png",
+        "sha256": "90e652731a94f3c612cb923f0dabcd6833c250a6e4baa19d8ef918b91c4d7bea"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_017.png",
+        "sha256": "43dcc4c1bd5908c9d04e46c10c518a31ef7cd9c4f5fed042f53ddc222d8f027f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_018.png",
+        "sha256": "04b0943118bcc0e04421737b001372001337f5c9932342fb4a571c845a30195b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_019.png",
+        "sha256": "b9726b2a5cb125544036765f4bfdd7322294209162e7af8a7681ce03b48b62f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_020.png",
+        "sha256": "e6bd81e1b85e05df23de73692e29cd185fdf0db2abd958387643c28e7abf3855"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_021.png",
+        "sha256": "f8632ac849ec5d3322c8a5b71a11495f8326bc2d887f871f93941bb08d91101b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_022.png",
+        "sha256": "da5c67d9cd5e65715ec629569a382c113136a9323851b07ab9569e67b091e1d1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_023.png",
+        "sha256": "ee84fe6540469f8f567eff3c97548e70e19d44caac0540fa41bca72db255cbef"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_024.png",
+        "sha256": "2ee962e7f83359130e968bb0e2eba499ecb59e5526bf9a6aab3c6b10433877c3"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_025.png",
+        "sha256": "00ad595ddf3595548201d59ff3b352f8f8923505b01035901288b78663783225"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_026.png",
+        "sha256": "d87dadb92f2b0b5db3d532229dc1662cce25ab3a5dbddc76c592596ad8db713d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_027.png",
+        "sha256": "c727a73d216c1baa4f87bde45bd3905c9d9bb2110c66e5bfe79953fad12d21ff"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_028.png",
+        "sha256": "10ad1f1c195963554bc93e6ce13fe3174cac2bdaa5928431da0ee71c07d02ad9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_029.png",
+        "sha256": "4e54f0dcfb8b9ed7f627d2fa26d8c4bd1f3e891f2e5c71133b4cfa1a0366da3f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_030.png",
+        "sha256": "f4140018338de396faf169d03b6d48b9375d6c2cb65246e930a6c4a5a18f0857"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_031.png",
+        "sha256": "0dd2410b1b0d2cb228e5212196f86da64b006caacb271e0809b69eaba11e0163"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_032.png",
+        "sha256": "92107306242f214b8eecec6ea04fc81354632c426680a378780bb13ba12a623b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_033.png",
+        "sha256": "b16aed0a327ac1545b15406fab942a769dcdafddc04b6d8dc47c1255eac7e8f1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_034.png",
+        "sha256": "20754e239df2f7d35067295505a7fb75810c0fedc413451aa9244e08a332e551"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_035.png",
+        "sha256": "c5cb6c63617e9d4bab36eaf868829f827d802aa714ead5c922899f2408beb57c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_036.png",
+        "sha256": "3223bbd44d2e50d714e3ac42b84ffad17f8c6df64f30dc869edea97ac47b1c1e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_037.png",
+        "sha256": "3eb7b6ed81f35f30495c56a43cb389c9f95c732484ad707d213d65157608c1f9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_038.png",
+        "sha256": "01454ffee21e7b23415252c336bd67a1f86a974912f88a658921a3b47630adfd"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_039.png",
+        "sha256": "0390b01f1d7984edd01c363ee0b36ce2136c5225093bf6daaf17818f3a6ee808"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_040.png",
+        "sha256": "a48ea794d695c8f20e9bd17d70fff8b61811b076ed0cb4a964b431a355cf355f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_041.png",
+        "sha256": "2527a565ccb7ca6b0a0de560856c9d9325eaaf39e86e200a7f87452ea89c72ef"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_042.png",
+        "sha256": "67964e101a2497c11805c910d4d4caaec4fab719164b2a4abb9662c8abc506a8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_043.png",
+        "sha256": "798a6db931a1ccb5920d1e49db9349a52afb1b1dfc881ef3b797eea39f9074a1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_044.png",
+        "sha256": "37bf6fea48e3d808a2db0503123b3e3ab0123d8dcc22f85941c4b9124ed89f7c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_045.png",
+        "sha256": "7d896f953b72a0d36ee1184e19136d088d49b43134bccd57600ce53294a87ab2"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_046.png",
+        "sha256": "e3cd19043f3953fe85fcb4f9704b7221de2e534116c4fc94f96de06dec339689"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_047.png",
+        "sha256": "a86ea2a097084c31a066d5eb0d5b3926271afd1f559a40d6734fd553127268bb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_048.png",
+        "sha256": "cf859cab622dcbb1433ff410b18805da97fe2518575a840cc4e3f629045139ee"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_049.png",
+        "sha256": "89b7fb85d3cf5b7d9c54ddd955be80081dcb6ae973198cb4212dbdd7a104d95c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_050.png",
+        "sha256": "62e75f3396cba54090d4a2df194739f133706812ae75fcce69bed5fc9851f23d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_051.png",
+        "sha256": "70f2b8031552bc3915ce7cd4810704a8725c95a7e5bca2deed87a741cca4c083"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_052.png",
+        "sha256": "ed908d6b91c75438f01d086c1c42dd266d51289ec4b626b5bf9f6badfee02648"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_053.png",
+        "sha256": "5c9eecc3c9b73bf202bc7fb16021643ef69d8ff3940ee3980d19e76829c22cad"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_054.png",
+        "sha256": "e22e2494517ce06f7af1f71fddb3d3ae28528c8839d1972119d25c95de96abde"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_055.png",
+        "sha256": "5dc29133462f167aa8aba5290bc4dff076a308bdfa417ca718e4cf8358e555fb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_056.png",
+        "sha256": "0943b905581a03fcd2cf5676e308dc346adf3a998ec8fd610f9c8573515402bf"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_057.png",
+        "sha256": "8a9aa6c044b48c654adec0e0fdb486c9f39e3449a28e6f77e2186c3bb8b9c62b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_058.png",
+        "sha256": "ed4aa4e41de7bf493aa7d4671ce7a65f6c19f24022290e1a18213dd67b94b906"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_059.png",
+        "sha256": "bb882057e9d9001fa02fde9563ef01a98db4357e2073cd12d650e2c559a2973c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_060.png",
+        "sha256": "fe6fb6e997e56af1932018c455bea27e98349c0086f4693e29d2e96a7896686c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_061.png",
+        "sha256": "baf2a85e29663b9008e14b057d71e4dd35f43d77cdfcae6f8286bf65c44b6b5e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_062.png",
+        "sha256": "045cf036d9eac478f94e88c6d6191dc72df5e4636136eb33a6ecc89bd43dc3a6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_063.png",
+        "sha256": "2b28cbf2176c61d6ad57ddd60cec7a38f1b8067b704da97a4ca7c5c444db843b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_064.png",
+        "sha256": "322aa570ebdf40e45ead3364f68394360944bf4ab4ad3f30af3bbc9a9513acd7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_065.png",
+        "sha256": "00e62dac6275fc4f63860a9ba048753822f0b09dce246a4372701a04c508995f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_066.png",
+        "sha256": "71c4270ccee854a08c221b795563c6119bae0aaf6a831a6a22ec0cd532615bc5"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_067.png",
+        "sha256": "bfa3506b21057112f738afaf1148509adcf041937a3b0753db117ba67ba70f1a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_068.png",
+        "sha256": "37f6c1b145dd76296751db5afccb685562a0058e069a97809b6d6e48606c82ed"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_069.png",
+        "sha256": "7578dd6baad219ccccbdb820710de3980b90ea6ae9550bf36efd85f008924e0f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_070.png",
+        "sha256": "71861fefeca4421c9c32895f63b2f4d0b7062cb811b312713f23f34ac741f674"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_071.png",
+        "sha256": "2fdf53e0ad2174d98a32adbe6d3ff3b899e59e876aa4484ee005e5ad142b113c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_072.png",
+        "sha256": "27b3993b5191de7ea61c586b4d40d24fc8d44027def58ced24f2e044b0bafddc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_073.png",
+        "sha256": "9e78d54b951d3376cc41cebeeec47abe52c5253c8efbb22d2dd3ae699a3abff1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_074.png",
+        "sha256": "3df1c4b6a26d931ccab3d6d6f74777bbbc1c9824ac7d16bfda636311df5eee68"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_075.png",
+        "sha256": "cb342bf3c8d6edda2e11443a978952b6cb7d5303368a06f932810a6f4f00ade4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_076.png",
+        "sha256": "6c65af87d99c333c8a560d4d82ce50ad0ed4c8bcf8c83569214e076c4ad6a874"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_077.png",
+        "sha256": "68a3c9e197d524d1ecacbcd348a650c89f5d8628fe55b7b81a3d744a6c5aac16"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_078.png",
+        "sha256": "3620879ce5fa4fd5005658d1d531dba009fecfa609f60938446c8f83f7ee1c3d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_079.png",
+        "sha256": "e4ae80b9ca17b63ded3111d3ca11ed23b2644ec5f16e107dce16031f31e0927b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_080.png",
+        "sha256": "eaef29fb509ce2623e76435afb80dd5272905e5f0cd79ee0b37230e5cc0314b4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_081.png",
+        "sha256": "a9bad871565e192fc1f8be6e2ba235ca883052e19d84d1324f9860566793e052"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_082.png",
+        "sha256": "bca690927c6e3653d8b1f31156f3974be7884e2d2059eb2e112914e2bd44ed63"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_083.png",
+        "sha256": "6408a173d04cb72965fcc1c93f65b093fa85c62a122417d182fc290bfc061635"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_084.png",
+        "sha256": "1234a9a5b86d97fc0425011b176d9efa18307f63bb9baac0f4095bb556daf651"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_085.png",
+        "sha256": "b0c5ffbc9897c46272b163dcd121723ffda5cd64c49e065b15d279d3b08835f6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_086.png",
+        "sha256": "aae664bf4eed356819a9b414091c555f61c24ca2c9d83e8dc8fb804e051c3bb1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_087.png",
+        "sha256": "a9c4ef3323a5d7c7f785ef8d8408b9e3be0457a5b8f14080005a0b694e3c7372"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_088.png",
+        "sha256": "e79400fae4f3900fc0c91d1066fe6448ba9edad83dbc6c83ff8a02979586a7f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\close\\f_089.png",
+        "sha256": "ff272a7a04b5bfa83556d6da34211749e085a4d960e693386d4fa45ee7eb1286"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\title-card\\scripts\\make_title_card.py",
+        "sha256": "76a9c26d895a770f3ac2b001ef194406e59350766573ef9de1dc0162d1510b99"
       },
       {
         "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\anatomical-hand.js",
@@ -407,20 +1081,38 @@
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_text_rub_v1.glb",
         "sha256": "6357cec5d7ffa5d0cb62f4a56548f48799f44c599abea74483649010ec36f8f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\archive\\before_edge_stability.mp4",
+        "sha256": "ebed97318cb65137cdaf00deae5b93825a7479149e36225da61bbb1067f28180"
       }
     ]
   },
   "runtimeProfile": {
     "cel": "direct",
     "motion": "anatomical",
-    "wristfix": true
+    "wristfix": true,
+    "edgeQuality": "stable",
+    "sampling": 2,
+    "imageFormat": "png",
+    "titleCards": "series-ink",
+    "alphaToCoverage": false,
+    "msaaSamples": 4,
+    "renderSize": [
+      2560,
+      1440
+    ],
+    "outputSize": [
+      1280,
+      720
+    ]
   },
   "sourceSha256": {
     "script.story": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4",
     "bootstrap.js": "ddd4f3ef17639bdf1cd91806459db4e925327aded6b74c64afd7750843144357",
-    "viewer.js": "124733935b4942b3231fd8cddc3e9b6edf21f855a9e47e4f65f0e6989c10fb1a",
+    "viewer.js": "847e9b52165c45a6bc656e0e3d96f979368b20b461f0505af31ca5ba350582bf",
     "viewer.html": "f91b7fabd84965d9b9e37fc85acabff022506e9a912ba436e001be92306df225",
-    "render.mjs": "ef5d6b30dbbf54539c0edb7137e2c07b456a10a9b4e9976e2d196e7d3adfc233",
+    "render.mjs": "939d75ff0dfca295588c0e7a82e73301a08f8b90e99866c5eeebb181113da529",
     "face_lab.js": "e421050f31283c567bc18b7adeade5bf0cc39ad58d2ea5258def669be338c2eb",
     "face_lab.html": "2266741c33c368601cd9b5b5db3abafca9f237e29b016885cddd58caac17ff03",
     "performance_remake.js": "7a26a2f745d2a265460d8914359770ff03b96a220ddffe75b239d5ad24bde0c5",
@@ -431,10 +1123,13 @@
     "config/episode_motion_review.json": "89c43d3bceee0ce02a6ead1233cbdea5b635a55c322a154e16eee78861a57a42",
     "config/imported_contact_contract.json": "f9fbf2fc356202c72588574fdc3fe27927873bde98c4ab73ead494082ca0d2e7",
     "scenes/BiologyRoomRemakeScene.js": "e91882c5e128e2cc6d10bf68b4a65f068fd4f917ff051b742c5c4b5e58a4346c",
-    "tools/audit_inputs.mjs": "76832424b78c13d2917153947179235bcaf4e34d4b3cc91833430ce18c9f4cce",
+    "tools/audit_inputs.mjs": "bb7ddfbfd167cc9df7801b2a1451b56882bee32e659711805d758156f78b3b58",
     "tools/compile_story.mjs": "70f15d3212b39f42a538b3fbaa5bc5f6840bb99d844976f3aef87b58c1667ac9",
     "tools/numeric_probe.js": "9717d3dad23c0dc7f14fee9d4e85997463e1f672dc04e177aea5fe0656123a36",
     "config/timeline.json": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8",
+    "config/cards.json": "8bdc9c2e6a7224a242fec9c79dc47291409db5267d5928dc27dca6b2fdf4b5c0",
+    "tools/build_series_cards.py": "49ba0a319fd520d194221dc725f76bcfdbc88aa4c3c82918d586d5190a1f8a1d",
+    "tools/capture_card_backgrounds.mjs": "3331a0fac3059484d4b8b1b858609e281aafc30722560e59e40e542f62d9ab34",
     "config/contact_contract.json": "19760091de6c05fd7a7c7732d762e1e0576a552951bd0ef5898aa8cad5afa921",
     "config/scene_contract.json": "ffbee245d40c81db0ea686a48a13d57640bd97a9e499d9db80d1f3ffc2f9e660",
     "config/audio_direction.json": "be7af60b8dc9b9ca54c64fb1fa2abc4b7ecc9609667131df98ce0745b828a69c",
