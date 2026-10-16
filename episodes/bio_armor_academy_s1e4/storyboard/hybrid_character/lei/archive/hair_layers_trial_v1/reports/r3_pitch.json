@@ -1,0 +1,603 @@
+{
+  "actor": "lei",
+  "variant": "baseline",
+  "turnMode": "body",
+  "shellOutline": true,
+  "sourcePath": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js",
+  "sourceSuffix": "/characters/bioarmor/tripo-drawn-look.js",
+  "originalSha256": "ba41aeaef5c233cfb1a83924f0be59e33a2a7925bcfe2ca1968c05f009ab1aad",
+  "experimentSha256": "ba41aeaef5c233cfb1a83924f0be59e33a2a7925bcfe2ca1968c05f009ab1aad",
+  "overrides": {},
+  "moduleOverrides": [
+    {
+      "suffix": "/characters/bioarmor/lei-generated-hair.js",
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_hair_layers_v1\\lei-generated-hair.js",
+      "sha256": "3bc355437ee55c5a8bc035e9ca61c2c1a5807679566fb041cecd125863a4cdef"
+    },
+    {
+      "suffix": "/lib/craft3d/painted-hair-shell.js",
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_hair_layers_v1\\painted-hair-shell.js",
+      "sha256": "aa6d572f4070f0997c4120b1db1a0fdacb10c7ceadaba6413285bf70de1b0bca"
+    }
+  ],
+  "viewDeformation": null,
+  "profileReferenceActive": false,
+  "jawSculptActive": false,
+  "cranialScalpActive": false,
+  "paintEyeInset": 0,
+  "projectedFeatureSpace": "undeformed mesh projected to camera",
+  "layerNotes": "no_face_paint swaps only the main map; geometry, jaw shader and skin underpaint remain. no_hair/no_ears toggle named layers.",
+  "frames": {
+    "pitch_-15_0": {
+      "sha256": "04806680d8a153003f4e1689eb4542b1e0134f879a32e58f7efc54f0ff6dc2e0",
+      "angle": 0,
+      "state": {
+        "pitch": -0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        0.03585834600842647,
+        1.6461124026584742e-7,
+        0.12550390423367483,
+        0.9914448865795922
+      ],
+      "headWorldQuaternion": [
+        0.004968202050821447,
+        -0.7983215142653458,
+        -0.006586477720596783,
+        0.6021749706038928
+      ],
+      "actualYaw": 1.1651228576056829e-7,
+      "actualBodyYaw": 0,
+      "projectedFeatures": {
+        "nose": [
+          429.99998396945,
+          472.0318831553449
+        ],
+        "chin": [
+          429.9999846963445,
+          606.2341993648427
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            269.99998327378114,
+            503.30330093407593
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            589.9999837511062,
+            503.30329351380374
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_-15_45": {
+      "sha256": "e66540d28f93b7b40bd669824bc2af22446b2b5dd3f19241c7b6c06b63cc19ce",
+      "angle": 45,
+      "state": {
+        "pitch": -0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        0.035858345430204906,
+        1.6200988160118253e-7,
+        0.12550390364699693,
+        0.9914448810881926
+      ],
+      "headWorldQuaternion": [
+        0.002069483383262629,
+        -0.5071105249294376,
+        -0.007986359228598175,
+        0.8618415462535616
+      ],
+      "actualYaw": 44.999999852016934,
+      "actualBodyYaw": 45.00000000000001,
+      "projectedFeatures": {
+        "nose": [
+          574.0903234535814,
+          472.03188377118636
+        ],
+        "chin": [
+          558.0608524994441,
+          606.2341998650345
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            302.1930356669171,
+            503.30330064717134
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            528.4672020099958,
+            503.3032937213462
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_-15_-45": {
+      "sha256": "c4a1139fcc92c4b790570e24cb2ffd88caf18ac16da2baa3ca24e5a66af0473c",
+      "angle": -45,
+      "state": {
+        "pitch": -0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        0.03585834495551738,
+        1.590197188368163e-7,
+        0.1255039036374891,
+        0.9914448800282041
+      ],
+      "headWorldQuaternion": [
+        -0.007110551493659113,
+        0.9679952933791229,
+        0.004183861982179309,
+        -0.25083270786602335
+      ],
+      "actualYaw": -45.00000045201016,
+      "actualBodyYaw": -45.00000000000001,
+      "projectedFeatures": {
+        "nose": [
+          297.6253807370298,
+          472.03188385179
+        ],
+        "chin": [
+          313.65485256265555,
+          606.2341999233145
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            343.24850062263033,
+            503.30330031706717
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            569.5226736056242,
+            503.30329395959194
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_-15_90": {
+      "sha256": "a5e0f25e97330e3b3f3297c46965227e84b8950807d4af4a97bb42b54f8651c7",
+      "angle": 90,
+      "state": {
+        "pitch": -0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        0.03585834515378203,
+        1.604280662408184e-7,
+        0.12550390355338045,
+        0.9914448798276427
+      ],
+      "headWorldQuaternion": [
+        -0.0011442941412973678,
+        -0.13869655514818807,
+        -0.008170389332972046,
+        0.9903005609050697
+      ],
+      "actualYaw": 89.9999996911846,
+      "actualBodyYaw": 89.99999999999999,
+      "projectedFeatures": {
+        "nose": [
+          645.4902352810782,
+          472.0318838974069
+        ],
+        "chin": [
+          622.8211393401467,
+          606.2341999647076
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            420.969402444753,
+            503.3033004725869
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            420.96939780329456,
+            503.3032938474221
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_-15_-90": {
+      "sha256": "cc081df0861a052c443c1b0b15783093be5bf11eb6b39ad6e3fb2755b6d42d62",
+      "angle": -90,
+      "state": {
+        "pitch": -0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        0.03585834515378204,
+        1.604280662955164e-7,
+        0.1255039035533805,
+        0.9914448798276428
+      ],
+      "headWorldQuaternion": [
+        -0.008170389332971975,
+        0.9903005609050697,
+        0.0011442941412973485,
+        0.1386965551481878
+      ],
+      "actualYaw": -90.00000030881537,
+      "actualBodyYaw": -89.99999999999999,
+      "projectedFeatures": {
+        "nose": [
+          254.50976471892176,
+          472.0318838974065
+        ],
+        "chin": [
+          277.17886065985317,
+          606.2341999647074
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            479.03059755524674,
+            503.3033004725865
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            479.03060219670533,
+            503.3032938474217
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_15_0": {
+      "sha256": "4eb7c6b245b727b75bc9420d2acf8421ade3b06da5f1dc9011a7bf85bde3d3a1",
+      "angle": 0,
+      "state": {
+        "pitch": 0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        -0.03585833516438598,
+        1.6301554289430142e-7,
+        -0.12550419528311363,
+        0.9914448501287165
+      ],
+      "headWorldQuaternion": [
+        0.16065328189892802,
+        -0.7694146863764001,
+        -0.2129828462256159,
+        0.5803704785241435
+      ],
+      "actualYaw": -0.0000010471701140297602,
+      "actualBodyYaw": 0,
+      "projectedFeatures": {
+        "nose": [
+          429.9999792140554,
+          594.7604996564066
+        ],
+        "chin": [
+          429.99998125529066,
+          699.648567392513
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            269.9999828858913,
+            509.5819347763186
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            589.9999833632163,
+            509.58193078332226
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_15_45": {
+      "sha256": "397cdc100fb5854a77626857a8c9966d4112d5a41d6a1affd436d1b1e1b092c3",
+      "angle": 45,
+      "state": {
+        "pitch": 0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        -0.03585833458618283,
+        1.6561691084174268e-7,
+        -0.12550419469642657,
+        0.9914448446373164
+      ],
+      "headWorldQuaternion": [
+        0.06691925782671511,
+        -0.48874829893930405,
+        -0.2582498444199167,
+        0.8306346579998356
+      ],
+      "actualYaw": 44.9999992512153,
+      "actualBodyYaw": 45.00000000000001,
+      "projectedFeatures": {
+        "nose": [
+          597.2765649416884,
+          594.760499025092
+        ],
+        "chin": [
+          535.9469472161011,
+          699.6485669702794
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            335.5929959110881,
+            509.58193522657035
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            561.8671647893533,
+            509.58193033936186
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_15_-45": {
+      "sha256": "4ba72a44381665ed00392b7d347c6cabf5eb1014a92c4b0613d1026cce69c3d3",
+      "angle": -45,
+      "state": {
+        "pitch": 0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        -0.03585833411152187,
+        1.6860708634477972e-7,
+        -0.12550419468690818,
+        0.9914448435773271
+      ],
+      "headWorldQuaternion": [
+        -0.2299292708310687,
+        0.9329446306005709,
+        0.13529117113258826,
+        -0.2417501760524858
+      ],
+      "actualYaw": -45.00000040580167,
+      "actualBodyYaw": -45.00000000000001,
+      "projectedFeatures": {
+        "nose": [
+          274.4391367719054,
+          594.7604989724431
+        ],
+        "chin": [
+          335.7687571301679,
+          699.6485669579884
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            309.8485378419858,
+            509.5819358103204
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            536.1227107579219,
+            509.58192989524974
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_15_90": {
+      "sha256": "e232a4dd99df0243272d2a626d4a8c75796f144c305a299f66aee9c22dc8631f",
+      "angle": 90,
+      "state": {
+        "pitch": 0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        -0.035858334309773254,
+        1.6719873248936812e-7,
+        -0.12550419460280457,
+        0.9914448433767662
+      ],
+      "headWorldQuaternion": [
+        -0.03700261323045249,
+        -0.13367442032488497,
+        -0.2642006364047123,
+        0.9544422351103615
+      ],
+      "actualYaw": 89.99999943265546,
+      "actualBodyYaw": 89.99999999999999,
+      "projectedFeatures": {
+        "nose": [
+          678.2805353004823,
+          594.7604989075656
+        ],
+        "chin": [
+          591.5473562667571,
+          699.6485669007471
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            468.20408082611146,
+            509.58193552655695
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            468.204077923472,
+            509.5819300956028
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    },
+    "pitch_15_-90": {
+      "sha256": "7ae39810c3e4259e915bdf2a1b7e87ecb30facb87e044882e6e243174d961277",
+      "angle": -90,
+      "state": {
+        "pitch": 0.2617993877991494
+      },
+      "headLocalQuaternion": [
+        -0.03585833430977328,
+        1.6719873254314455e-7,
+        -0.12550419460280454,
+        0.9914448433767663
+      ],
+      "headWorldQuaternion": [
+        -0.26420063640471225,
+        0.9544422351103615,
+        0.03700261323045258,
+        0.13367442032488472
+      ],
+      "actualYaw": -90.00000056734451,
+      "actualBodyYaw": -89.99999999999999,
+      "projectedFeatures": {
+        "nose": [
+          221.71946469951772,
+          594.7604989075654
+        ],
+        "chin": [
+          308.45264373324295,
+          699.6485669007471
+        ]
+      },
+      "projectedEars": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            431.7959191738884,
+            509.58193552655666
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            431.7959220765281,
+            509.5819300956024
+          ]
+        }
+      ],
+      "finite": true,
+      "reverseSeekEqual": true
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,235 @@
+{
+    "status":  "frozen_not_recommended_for_promotion",
+    "selectedCandidate":  "r3",
+    "baseline":  "../accepted_v1/files/ contains the exact accepted modules and assets; live/current unchanged.",
+    "files":  {
+                  "lei-generated-hair.js":  {
+                                                "candidateSha256":  "3bc355437ee55c5a8bc035e9ca61c2c1a5807679566fb041cecd125863a4cdef",
+                                                "baselineSha256":  "46c74531bafbf963eaf74d8162a5da106270c152b18ebbb2eb72a501123e0ffd"
+                                            },
+                  "painted-hair-shell.js":  {
+                                                "candidateSha256":  "aa6d572f4070f0997c4120b1db1a0fdacb10c7ceadaba6413285bf70de1b0bca",
+                                                "baselineSha256":  "b9ba9fc45ca556196934caf73a5b986b80864b1092d75d71f95095c33847aeaa"
+                                            },
+                  "lei-painted-hair-v1.png":  {
+                                                  "sha256":  "93a70077249d8394ff035b5d5fa949642afe8208ecc2250535c1ecfc4106f053",
+                                                  "unchangedAsset":  true
+                                              },
+                  "lei-painted-back-v1.png":  {
+                                                  "sha256":  "8845cc50050e73bd7e35c83ea9a3710c88001165497119b3fb8e4c6c270cde34",
+                                                  "unchangedAsset":  true
+                                              }
+              },
+    "scope":  "Same existing PNG/UV and frontal XY. Separate static frontal and bilateral temple domains; only temple-domain Z changes. Rear cap remains unchanged.",
+    "validation":  {
+                       "accepted":  {
+                                        "report":  "reports/accepted.json",
+                                        "states":  10,
+                                        "errors":  [
+
+                                                   ],
+                                        "allFinite":  true,
+                                        "allReverseEqual":  true
+                                    },
+                       "r1":  {
+                                  "report":  "reports/r1.json",
+                                  "states":  10,
+                                  "errors":  [
+
+                                             ],
+                                  "allFinite":  true,
+                                  "allReverseEqual":  true
+                              },
+                       "r2":  {
+                                  "report":  "reports/r2.json",
+                                  "states":  10,
+                                  "errors":  [
+
+                                             ],
+                                  "allFinite":  true,
+                                  "allReverseEqual":  true
+                              },
+                       "r3":  {
+                                  "report":  "reports/r3.json",
+                                  "states":  10,
+                                  "errors":  [
+
+                                             ],
+                                  "allFinite":  true,
+                                  "allReverseEqual":  true
+                              },
+                       "accepted_pitch":  {
+                                              "report":  "reports/accepted_pitch.json",
+                                              "states":  10,
+                                              "errors":  [
+
+                                                         ],
+                                              "allFinite":  true,
+                                              "allReverseEqual":  true
+                                          },
+                       "r3_pitch":  {
+                                        "report":  "reports/r3_pitch.json",
+                                        "states":  10,
+                                        "errors":  [
+
+                                                   ],
+                                        "allFinite":  true,
+                                        "allReverseEqual":  true
+                                    }
+                   },
+    "pixelComparison":  {
+                            "front":  {
+                                          "changedPixels":  153,
+                                          "maxChannelDelta":  130,
+                                          "boundsYX":  [
+                                                           [
+                                                               393,
+                                                               256
+                                                           ],
+                                                           [
+                                                               436,
+                                                               603
+                                                           ]
+                                                       ]
+                                      },
+                            "turn_45":  {
+                                            "changedPixels":  13159,
+                                            "maxChannelDelta":  240,
+                                            "boundsYX":  [
+                                                             [
+                                                                 333,
+                                                                 247
+                                                             ],
+                                                             [
+                                                                 517,
+                                                                 644
+                                                             ]
+                                                         ]
+                                        },
+                            "turn_minus45":  {
+                                                 "changedPixels":  12688,
+                                                 "maxChannelDelta":  244,
+                                                 "boundsYX":  [
+                                                                  [
+                                                                      360,
+                                                                      212
+                                                                  ],
+                                                                  [
+                                                                      517,
+                                                                      604
+                                                                  ]
+                                                              ]
+                                             },
+                            "turn_60":  {
+                                            "changedPixels":  12675,
+                                            "maxChannelDelta":  247,
+                                            "boundsYX":  [
+                                                             [
+                                                                 333,
+                                                                 308
+                                                             ],
+                                                             [
+                                                                 517,
+                                                                 650
+                                                             ]
+                                                         ]
+                                        },
+                            "turn_minus60":  {
+                                                 "changedPixels":  11469,
+                                                 "maxChannelDelta":  244,
+                                                 "boundsYX":  [
+                                                                  [
+                                                                      379,
+                                                                      229
+                                                                  ],
+                                                                  [
+                                                                      517,
+                                                                      535
+                                                                  ]
+                                                              ]
+                                             },
+                            "turn_90":  {
+                                            "changedPixels":  7385,
+                                            "maxChannelDelta":  240,
+                                            "boundsYX":  [
+                                                             [
+                                                                 334,
+                                                                 454
+                                                             ],
+                                                             [
+                                                                 517,
+                                                                 630
+                                                             ]
+                                                         ]
+                                        },
+                            "turn_minus90":  {
+                                                 "changedPixels":  8630,
+                                                 "maxChannelDelta":  243,
+                                                 "boundsYX":  [
+                                                                  [
+                                                                      360,
+                                                                      268
+                                                                  ],
+                                                                  [
+                                                                      517,
+                                                                      431
+                                                                  ]
+                                                              ]
+                                             },
+                            "turn_135":  {
+                                             "changedPixels":  7108,
+                                             "maxChannelDelta":  238,
+                                             "boundsYX":  [
+                                                              [
+                                                                  333,
+                                                                  603
+                                                              ],
+                                                              [
+                                                                  517,
+                                                                  687
+                                                              ]
+                                                          ]
+                                         },
+                            "turn_minus135":  {
+                                                  "changedPixels":  6983,
+                                                  "maxChannelDelta":  241,
+                                                  "boundsYX":  [
+                                                                   [
+                                                                       360,
+                                                                       255
+                                                                   ],
+                                                                   [
+                                                                       517,
+                                                                       324
+                                                                   ]
+                                                               ]
+                                              },
+                            "turn_180":  {
+                                             "changedPixels":  0,
+                                             "maxChannelDelta":  0,
+                                             "boundsYX":  null
+                                         }
+                        },
+    "review":  {
+                   "front":  "153 changed pixels limited to ear/temple occlusion and boundaries; face and overall silhouette are stable but not fully pixel-identical.",
+                   "r1":  "Strong retreat reduces under-eye reach but compresses the side lock into a blunt block and bends the upper junction. Rejected.",
+                   "r2":  "Bounded 25 mm retreat still leaves blunt side tips and a fold at the layer root. Rejected.",
+                   "r3":  "8 mm retreat retains the current look better. No clear whole-character gain; thin profile edge and root fold persist.",
+                   "pitch":  "Real head-bone pitch +/-15 degrees with body yaw 0, +/-45, +/-90 rendered for both baseline and R3. No new gross hole or detachment observed, but no decisive aesthetic improvement.",
+                   "neighbors":  "Both +/-60, +/-135 and rear checked; posterior cap is retained. Back image has zero changed pixels.",
+                   "decision":  "Do not promote. Parts, whole heads, neighbors, real pitch and decoded side-by-side MP4 reviewed; insufficient net visual gain."
+               },
+    "diagnosis":  [
+                      "Semantic image-domain splitting plus Z remapping is not the same as designing independent root-to-tip 3D locks.",
+                      "The fixed front XY and current skin surface constrain lower side hair; valid retreat primarily affects source pixels outside the head silhouette.",
+                      "Uniform clearance cannot be removed without exposing skin holes; keeping it limits actual main-lock direction change.",
+                      "Increasing retreat creates profile compression and domain-root folds. A future structural trial needs authored 3D lock trajectories and cross-sections with matching paint charts.",
+                      "This bounded trial does not invalidate semantic layering in general; it did not produce enough net benefit under the preservation constraint."
+                  ],
+    "futureConstraints":  [
+                              "Keep independent exact accepted baseline and restore bundle.",
+                              "Do not regenerate hair identity just to simplify UV.",
+                              "Model and validate root-to-tip spatial correspondence before mapping a complete painted region.",
+                              "Judge both side roots, temple tips, ear gaps, and front mask together; do not trade current silhouette for an isolated profile improvement."
+                          ]
+}

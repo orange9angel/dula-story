@@ -1,0 +1,82 @@
+--- a/lei-generated-hair.js
++++ b/lei-generated-hair.js
+@@ -13,7 +13,10 @@
+     surface:{fringeY:[1.635,1.745],fringeX:[.100,.155],fringeDepth:.116,fringeSlope:.18,
+       templeX:[.065,.108],templeY:[1.630,1.720],templeDepth:.021,
+       frontMask:{x:[0,.00001],y:[1.567,1.572]},
+-      offset:.004,headClearance:.005,thickness:.0007},
++      offset:.004,headClearance:.005,thickness:.0007,
++      templeChart:{boundary:[[1.55,.038],[1.60,.052],[1.64,.095],[1.66,.155],[1.76,.190]],
++        depth:[[1.55,-.004],[1.58,.006],[1.61,.018],[1.65,.040],[1.70,.050],[1.76,.000]],
++        blendWidth:.035,clearance:.005,maxRetreat:.008,thickness:.0007}},
+     cap:{center:[-.012,1.652,-.008],radii:[.109,.124,.117],
+       hem:[[-180,1.540],[-145,1.548],[-115,1.565],[-95,1.595],[-75,1.605],[-45,1.640],[0,1.680],
+         [45,1.640],[75,1.605],[95,1.595],[115,1.565],[145,1.548],[180,1.540]]},
+--- a/painted-hair-shell.js
++++ b/painted-hair-shell.js
+@@ -189,6 +189,46 @@
+     mesh.material.alphaTest=.35;
+     mesh.material.customProgramCacheKey=()=>key+'|front-nape-mask|'+JSON.stringify(mask);
+   };
++  const sampleChart=(knots,y)=>{
++    if(y<=knots[0][0])return knots[0][1];
++    for(let i=1;i<knots.length;i++)if(y<=knots[i][0])return THREE.MathUtils.lerp(knots[i-1][1],knots[i][1],THREE.MathUtils.smoothstep(y,knots[i-1][0],knots[i][0]));
++    return knots.at(-1)[1];
++  };
++  const addSemanticPaintMesh=original=>{
++    const chart=config.surface?.templeChart;
++    if(!chart){root.add(original);return;}
++    const boundaryCode=chart.boundary.slice(1).map((p,i)=>`if(y<=${p[0].toFixed(6)})return mix(${chart.boundary[i][1].toFixed(6)},${p[1].toFixed(6)},smoothstep(${chart.boundary[i][0].toFixed(6)},${p[0].toFixed(6)},y));`).join('\n');
++    for(const temple of [false,true]){
++      const g=original.geometry.clone(),m=original.material.clone();
++      m.onBeforeCompile=original.material.onBeforeCompile;
++      m.customProgramCacheKey=original.material.customProgramCacheKey;
++      if(temple){
++        const p=g.attributes.position;
++        for(let i=0;i<p.count;i++){
++          const x=p.getX(i),y=p.getY(i),frontZ=depth(x,y)[0],sideOffset=p.getZ(i)-frontZ;
++          const w=THREE.MathUtils.smoothstep(Math.abs(x-config.cap.center[0])-sampleChart(chart.boundary,y),0,chart.blendWidth);
++          // This chart alone follows the temporal surface. The original
++          // frontal painting and the rear cap retain their independent maps.
++          const target=Math.max(sampleChart(chart.depth,y),surfaceZ(x,y)+chart.clearance,frontZ-chart.maxRetreat);
++          p.setZ(i,THREE.MathUtils.lerp(frontZ,target,w)+sideOffset);
++        }
++        p.needsUpdate=true;g.computeVertexNormals();
++      }
++      const previous=m.onBeforeCompile,key=m.customProgramCacheKey();
++      m.onBeforeCompile=function(shader,renderer){
++        previous.call(this,shader,renderer);
++        shader.vertexShader='varying vec2 hairDomainRest;\n'+shader.vertexShader;
++        shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nhairDomainRest=position.xy;');
++        shader.fragmentShader=`varying vec2 hairDomainRest;\nfloat hairDomainBoundary(float y){\n${boundaryCode}\nreturn ${chart.boundary.at(-1)[1].toFixed(6)};\n}\n`+shader.fragmentShader;
++        shader.fragmentShader=shader.fragmentShader.replace('#include <alphatest_fragment>',`
++          float templeDomain=abs(hairDomainRest.x-(${config.cap.center[0].toFixed(6)}))-hairDomainBoundary(hairDomainRest.y);
++          if(templeDomain${temple?'<':'>'}0.0)discard;
++          #include <alphatest_fragment>`);
++      };
++      m.customProgramCacheKey=()=>key+'|static-hair-domain|'+temple+'|'+JSON.stringify(chart);
++      const mesh=new THREE.Mesh(g,m);mesh.name=temple?'painted-temple-domain':'painted-fringe-domain';root.add(mesh);
++    }
++  };
+   for(const [side,points] of [front,back].entries()){
+     const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(points,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(index);g.computeVertexNormals();
+     let paint=material;
+@@ -203,14 +243,16 @@
+       paint=new THREE.MeshBasicMaterial({map:rearTexture,alphaMap:alphaTexture,alphaTest:.35,side:THREE.FrontSide,toneMapped:false});
+     }
+     if(side===1&&config.rearOnFrontBack===false)paint=material.clone(),paint.side=THREE.BackSide;
+-    const mesh=new THREE.Mesh(g,paint.clone());root.add(mesh);
++    const mesh=new THREE.Mesh(g,paint.clone());
+     clipFrontNape(mesh);
+     if(config.profileFit)fadeTailPainting(mesh,{temple:!!config.templeCurve,naturalTempleLocks:!!config.naturalTempleLocks});
++    addSemanticPaintMesh(mesh);
+   }
+   const edges=new THREE.BufferGeometry();edges.setAttribute('position',new THREE.Float32BufferAttribute(edgePos,3));edges.setAttribute('color',new THREE.Float32BufferAttribute(edgeColor,3));edges.computeVertexNormals();
+-  const edgeMesh=new THREE.Mesh(edges,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.DoubleSide,toneMapped:false}));root.add(edgeMesh);
++  const edgeMesh=new THREE.Mesh(edges,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.DoubleSide,toneMapped:false}));
+   clipFrontNape(edgeMesh);
+   if(config.profileFit)fadeTailPainting(edgeMesh,{temple:!!config.templeCurve,naturalTempleLocks:!!config.naturalTempleLocks});
++  addSemanticPaintMesh(edgeMesh);
+   const coreCanvas=document.createElement('canvas');coreCanvas.width=canvas.width;coreCanvas.height=canvas.height;
+   const coreContext=coreCanvas.getContext('2d');coreContext.fillStyle=baseColor;coreContext.fillRect(0,0,canvas.width,canvas.height);coreContext.drawImage(rear??source,0,0,canvas.width,canvas.height);
+   const coreTexture=new THREE.CanvasTexture(coreCanvas);coreTexture.colorSpace=THREE.SRGBColorSpace;coreTexture.anisotropy=8;

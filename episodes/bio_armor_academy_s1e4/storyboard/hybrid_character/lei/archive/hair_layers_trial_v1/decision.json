@@ -1,0 +1,47 @@
+{
+    "status":  "not_adopted",
+    "date":  "2026-10-16",
+    "active":  "../../current/turn.mp4",
+    "comparison":  "comparison.mp4",
+    "layout":  {
+                   "left":  "accepted current",
+                   "right":  "isolated r3 candidate"
+               },
+    "acceptedVideoSha256":  "cc8b7fddcc262a058addf7d5d01da75746266a1a7c7b5e1771fc5e2e0950e8be",
+    "trialSourceVideoSha256":  "ba184b9c192ac2b11dd490d4bbb8deb0de3897b07edc3669d25e88a540db7bb8",
+    "comparisonSha256":  "a6f1134a596d405f1848395f3a53d2627790fb3c793788cfc7875f16e46ce7e6",
+    "videoProbe":  {
+                       "programs":  [
+
+                                    ],
+                       "stream_groups":  [
+
+                                         ],
+                       "streams":  [
+                                       {
+                                           "codec_name":  "h264",
+                                           "width":  1200,
+                                           "height":  600,
+                                           "avg_frame_rate":  "24/1",
+                                           "nb_frames":  "144"
+                                       }
+                                   ],
+                       "format":  {
+                                      "duration":  "6.000000",
+                                      "size":  "1517055"
+                                  }
+                   },
+    "restoreDryRun":  "Snapshot verified: 19 files. Current differences: 0. No files changed. Use -Apply to restore.",
+    "reviewOrder":  [
+                        "parts_comparison.jpg",
+                        "whole_comparison.jpg",
+                        "neighbor_comparison.jpg",
+                        "pitch_comparison.jpg",
+                        "decoded_comparison.jpg"
+                    ],
+    "reason":  "Temple retreat has no clear overall gain; new layer-root fold and blunt tips outweigh small profile change. Accepted current remains unchanged.",
+    "scope":  "Static semantic domains and limited depth remapping; not independent root-to-tip 3D locks.",
+    "cleanup":  "Keep this bounded archive and accepted_v1; remove trial raw frames, intermediate standalone videos and temporary source copies.",
+    "historicalReportPaths":  "Reports preserve original temporary input/output paths as provenance; only summary report paths and overrides.json are relocated.",
+    "comparisonFullDecode":  "ffmpeg complete 144-frame decode passed with no errors"
+}

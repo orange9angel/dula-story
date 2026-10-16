@@ -5,6 +5,8 @@
   [分解对照](lei/current/parts.jpg)与[整脸参考](lei/current/reference_comparison.jpg)。
 - 男主可恢复基准：`lei/archive/accepted_v1/`。后续头发分层只在独立候选中测试；
   整体没有明确改善就保留当前版，不覆盖已认可效果。
+- 头发分层三轮小试已结束，未采用：[左右对比](lei/archive/hair_layers_trial_v1/comparison.mp4)
+  （左当前、右试验）。当前效果不变，原因与证据见该归档的 `REVIEW.md`。
 
 # Aoi 转面修订 v10 · 2026-10-16
 
