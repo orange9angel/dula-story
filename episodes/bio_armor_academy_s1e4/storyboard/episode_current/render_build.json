@@ -2,16 +2,14 @@
   "args": [
     "--q",
     "&cel=direct&motion=anatomical&probe-surface=1",
-    "--audio-from",
-    "output/tripo_episode_preview_v1.mp4",
     "--out",
-    "current.mp4",
+    "romance_candidate.mp4",
     "--board",
-    "storyboard/episode_current",
+    "tmp/audio_romance/render",
     "--trace",
-    "tmp/episode_motion/final/trace.json"
+    "tmp/audio_romance/render/trace.json"
   ],
-  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\current.mp4",
+  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\romance_candidate.mp4",
   "build": {
     "inputs": [
       {
@@ -100,11 +98,11 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_direction.json",
-        "sha256": "4288b9c558b1db277e1f5fba118179cf79285f7ae9c86c865a2019dbd721cf05"
+        "sha256": "be7af60b8dc9b9ca54c64fb1fa2abc4b7ecc9609667131df98ce0745b828a69c"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_timing.json",
-        "sha256": "0b59d61e8786222b7d8cc71f883524263ec035abe760376a8b8c76de19121be6"
+        "sha256": "6f3164082d778baa6acb433343ebb9d0e8f8d41923205881253f880c035fdb7e"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_audio.py",
@@ -112,7 +110,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_audio_sync.py",
-        "sha256": "65359aff9c0d77570227879941e9a9124a962afec2d89c364baf95c475c1f52b"
+        "sha256": "0c437f63f8aab9fdc7a7b313abf8d16021dd143da405d841e801e2548bc5999e"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_contact.py",
@@ -132,7 +130,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_leixiao.json",
-        "sha256": "ace4d03e407cf864a90a7de916c424b33ce017e5c908d976a4667e60b8af314c"
+        "sha256": "7e3bf73c4e27df7b9dcceacd6918300eb302d2246528b42365a3b3a8b0a118d6"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_qiantangkui.json",
@@ -140,15 +138,15 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\dialogue_alignment.json",
-        "sha256": "6f94c17a44ac60e26c4bdc6739d91337469b83fcc6ad6ba71325367ed2038820"
+        "sha256": "3d6eeaa25ee6cb2c2e19cb7391fb931e881253cbffd8c711dff98e72f4732092"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\sound_cues.json",
-        "sha256": "51f547b0d9c628be7ab11fe0dbfbd63d7fc88fe8aa2792c38d1e494128c1885e"
+        "sha256": "9488957bdb8807f44d1713b46e8184b4498af30dd630e4afcd55b2d4b0cd46c7"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\foley_anchors.json",
-        "sha256": "39ec8dca33c1bf43fbc742e15085e8956bb08732910e4bb041fcbe4a777001fc"
+        "sha256": "0b6065cd8be3c820929ffadf4cf34637c5bbff67b91a38e1086469bf26eb9170"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_foley_anchors.mjs",
@@ -156,7 +154,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_episode.py",
-        "sha256": "04f79fa91df1fd89e4f5e7887434b3e3c350f16e8faa8fd2f5bf618cd1aa7622"
+        "sha256": "cd680a7c8d634286f601efeff77c53b54d3889427c4edca88bf6e2ff430b8b20"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_contracts.py",
@@ -360,11 +358,11 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\voice_features.json",
-        "sha256": "d126bc73feffca41b4a37398e443b5cab56c10d6b74c93d2d1ff8848fb107e03"
+        "sha256": "f7e6b17c4ade3bd286919625f70036ca7af96976deffd63b86079c43dd37b990"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\mixed.wav",
-        "sha256": "54ef95a7828fdc1b6126b1602baea6a1e5335c0e3fb20ff4e1daff7c4e5150e7"
+        "sha256": "49264925a0d53941a46cda98bc5649b1ed5a5ab8e200cb45757510057bd3765e"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_h31_lod160k_v2.glb",
@@ -409,10 +407,6 @@
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_text_rub_v1.glb",
         "sha256": "6357cec5d7ffa5d0cb62f4a56548f48799f44c599abea74483649010ec36f8f0"
-      },
-      {
-        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\tripo_episode_preview_v1.mp4",
-        "sha256": "f7a6190a60a9c31cff0e0c329010d7236972a19e8c476a37199902c76926f41c"
       }
     ]
   },
@@ -443,21 +437,21 @@
     "config/timeline.json": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8",
     "config/contact_contract.json": "19760091de6c05fd7a7c7732d762e1e0576a552951bd0ef5898aa8cad5afa921",
     "config/scene_contract.json": "ffbee245d40c81db0ea686a48a13d57640bd97a9e499d9db80d1f3ffc2f9e660",
-    "config/audio_direction.json": "4288b9c558b1db277e1f5fba118179cf79285f7ae9c86c865a2019dbd721cf05",
-    "config/audio_timing.json": "0b59d61e8786222b7d8cc71f883524263ec035abe760376a8b8c76de19121be6",
+    "config/audio_direction.json": "be7af60b8dc9b9ca54c64fb1fa2abc4b7ecc9609667131df98ce0745b828a69c",
+    "config/audio_timing.json": "6f3164082d778baa6acb433343ebb9d0e8f8d41923205881253f880c035fdb7e",
     "tools/build_audio.py": "b07be86e4495a97aab0aff923a953d00b9fdf8d87da7b06444a759642a212798",
-    "tools/check_audio_sync.py": "65359aff9c0d77570227879941e9a9124a962afec2d89c364baf95c475c1f52b",
+    "tools/check_audio_sync.py": "0c437f63f8aab9fdc7a7b313abf8d16021dd143da405d841e801e2548bc5999e",
     "tools/check_contact.py": "2e03f48b637c03ec24a718b136c6409ea9c285e8d1d720dca8a788cef6e7b5f9",
     "tools/check_story_motion.py": "9cc148450116638ec44dc86eb8b69e927e110494c5702d1646338caf7ea193ed",
     "tools/prepare_ambience.py": "621c8a112d9d64b0253d0d322b7350e09460bccbe4007c84a56255503a85c82e",
     "tools/build_visemes.py": "143417c5eaa4aa58189a65fb620f84ed5c0d27b674f57a56002d07a4aa7ebe30",
-    "config/viseme_leixiao.json": "ace4d03e407cf864a90a7de916c424b33ce017e5c908d976a4667e60b8af314c",
+    "config/viseme_leixiao.json": "7e3bf73c4e27df7b9dcceacd6918300eb302d2246528b42365a3b3a8b0a118d6",
     "config/viseme_qiantangkui.json": "6e0e175ff2d40096904eb4e0fcde8bdeb6cd1802d75c989fa715cad0758a638f",
-    "config/dialogue_alignment.json": "6f94c17a44ac60e26c4bdc6739d91337469b83fcc6ad6ba71325367ed2038820",
-    "config/sound_cues.json": "51f547b0d9c628be7ab11fe0dbfbd63d7fc88fe8aa2792c38d1e494128c1885e",
-    "config/foley_anchors.json": "39ec8dca33c1bf43fbc742e15085e8956bb08732910e4bb041fcbe4a777001fc",
+    "config/dialogue_alignment.json": "3d6eeaa25ee6cb2c2e19cb7391fb931e881253cbffd8c711dff98e72f4732092",
+    "config/sound_cues.json": "9488957bdb8807f44d1713b46e8184b4498af30dd630e4afcd55b2d4b0cd46c7",
+    "config/foley_anchors.json": "0b6065cd8be3c820929ffadf4cf34637c5bbff67b91a38e1086469bf26eb9170",
     "tools/build_foley_anchors.mjs": "3cdcf30dea7bdceecdc71d4ecd1a74647f29c30f4a521c0cfb3b0b9485ba408d",
-    "tools/configure_episode.py": "04f79fa91df1fd89e4f5e7887434b3e3c350f16e8faa8fd2f5bf618cd1aa7622",
+    "tools/configure_episode.py": "cd680a7c8d634286f601efeff77c53b54d3889427c4edca88bf6e2ff430b8b20",
     "tools/configure_contracts.py": "9146c1387995b475728740c8bca236e07357f8637fa75c31bc85693685b66e62",
     "assets3d/textures/biology_wall_r3.png": "218a49be801aecdeb386f2bb4ce1bb9eb9a9d45b8b4546e4419c018fb0d960cc"
   }

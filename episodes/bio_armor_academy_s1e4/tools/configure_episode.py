@@ -1,10 +1,12 @@
 """R3 direction. All dialogue windows derive from script.story."""
 from pathlib import Path
-import json,hashlib
+import json,hashlib,sys
 EP=Path(__file__).resolve().parents[1]
 def load(p):return json.loads((EP/p).read_text(encoding='utf-8'))
 def save(p,x):(EP/p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 tl=load('config/timeline.json');a=load('config/audio_direction.json')
+if a.get('status')=='reviewed' and '--reset-audio-direction' not in sys.argv:
+    raise SystemExit('Reviewed audio direction preserved. Edit the plan directly; --reset-audio-direction explicitly restores historical R3 defaults.')
 a['status']='reviewed';a['sources'][0]['sha256']=hashlib.sha256((EP/'script.story').read_bytes()).hexdigest()
 a['policies']['musicMode']='directed';a['mix']['bgmVolume']=.16
 a['characters']['QianTangKui']['voice']='ICL_uranus_zh_female_tianmeihuopo_tob'

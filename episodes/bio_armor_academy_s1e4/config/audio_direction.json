@@ -16,7 +16,8 @@
     ],
     "musicMode": "directed",
     "ambienceMode": "directed",
-    "breath": "natural-tts-pauses-no-layered-breath"
+    "breath": "natural-tts-pauses-no-layered-breath",
+    "relationshipDirection": "青春恋爱场景：温暖、主动、信任、带笑意；蚀纹的短暂担心不压倒亲近感。"
   },
   "mix": {
     "dialogueVolume": 1,
@@ -55,22 +56,26 @@
       ],
       "previousEntry": null,
       "nextEntry": 4,
-      "intent": "试探能否恢复正常",
-      "subtext": "害怕被当成标本",
+      "intent": "带着信任向她求助",
+      "subtext": "想靠近她，也相信她有办法",
       "delivery": {
-        "tone": "calm",
-        "nativeEmotion": "calm",
-        "nativeEmotionScale": 2,
-        "energy": 0.38,
-        "pace": 1.03,
-        "volume": 0.9,
+        "tone": "warm_engaged",
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
+        "energy": 0.53,
+        "pace": 1.0,
+        "volume": 0.96,
         "pitchSemitones": 0,
         "emphasis": "normal",
-        "distance": "medium",
+        "distance": "near",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。温柔地问她，尾音带一点期待和好奇。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -123,22 +128,26 @@
       ],
       "previousEntry": 4,
       "nextEntry": 6,
-      "intent": "用玩笑保护自己",
-      "subtext": "先确认你把我当同学",
+      "intent": "逗她笑，接住她的直接",
+      "subtext": "跟她待在一起很自在",
       "delivery": {
-        "tone": "happy",
-        "nativeEmotion": "happy",
-        "nativeEmotionScale": 2,
-        "energy": 0.38,
-        "pace": 1.02,
-        "volume": 0.92,
+        "tone": "warm_teasing",
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
+        "energy": 0.64,
+        "pace": 1.0,
+        "volume": 0.96,
         "pitchSemitones": 0,
         "emphasis": "normal",
-        "distance": "medium",
+        "distance": "near",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。笑着开个小玩笑，亲切俏皮，最后几个字轻轻逗她，不要苦笑。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -191,22 +200,26 @@
       ],
       "previousEntry": 6,
       "nextEntry": 8,
-      "intent": "擦不掉就想催回去",
-      "subtext": "我还想自己解决",
+      "intent": "兴致勃勃地提出一个办法",
+      "subtext": "想和她一起试试",
       "delivery": {
-        "tone": "calm",
-        "nativeEmotion": "calm",
-        "nativeEmotionScale": 2,
-        "energy": 0.38,
-        "pace": 1.08,
-        "volume": 0.95,
+        "tone": "warm_engaged",
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
+        "energy": 0.58,
+        "pace": 1.0,
+        "volume": 0.96,
         "pitchSemitones": 0,
         "emphasis": "normal",
-        "distance": "medium",
+        "distance": "near",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。有精神地商量办法，疑问轻快上扬，前半句只短暂停顿，不要叹息。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -259,22 +272,26 @@
       ],
       "previousEntry": 8,
       "nextEntry": 10,
-      "intent": "试过后惊慌",
-      "subtext": "身体不听使唤",
+      "intent": "尝试后意外地向她求助",
+      "subtext": "愿意让她看见自己出糗",
       "delivery": {
-        "tone": "surprised",
-        "nativeEmotion": "surprised",
-        "nativeEmotionScale": 2,
-        "energy": 0.55,
-        "pace": 1.08,
-        "volume": 1.0,
+        "tone": "warm_engaged",
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
+        "energy": 0.65,
+        "pace": 1.0,
+        "volume": 0.96,
         "pitchSemitones": 0,
         "emphasis": "normal",
-        "distance": "medium",
+        "distance": "near",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。前半句有点顽皮，后半句自然惊讶，像被同桌逮住的小失误，不喊叫不恐惧。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -327,22 +344,26 @@
       ],
       "previousEntry": 10,
       "nextEntry": 13,
-      "intent": "追问未来",
-      "subtext": "玩笑撑不住了",
+      "intent": "认真询问，等待她回应",
+      "subtext": "我相信你，不急着把担心说重",
       "delivery": {
-        "tone": "sad",
-        "nativeEmotion": "sad",
-        "nativeEmotionScale": 2,
-        "energy": 0.38,
-        "pace": 1.01,
-        "volume": 0.87,
+        "tone": "warm_engaged",
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
+        "energy": 0.5,
+        "pace": 1.0,
+        "volume": 0.96,
         "pitchSemitones": 0,
         "emphasis": "normal",
-        "distance": "medium",
+        "distance": "near",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。温和、真诚地追问，稍带担心和期待，声音有支撑，尾音上扬，不悲伤不沮丧。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -395,22 +416,26 @@
       ],
       "previousEntry": 13,
       "nextEntry": 15,
-      "intent": "主动停止尝试",
-      "subtext": "先接受今天这样",
+      "intent": "听她的话，顺势约明天再见",
+      "subtext": "那我们明天还能见面",
       "delivery": {
-        "tone": "calm",
-        "nativeEmotion": "calm",
-        "nativeEmotionScale": 2,
-        "energy": 0.38,
-        "pace": 1.02,
-        "volume": 0.88,
+        "tone": "warm_engaged",
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
+        "energy": 0.58,
+        "pace": 1.0,
+        "volume": 0.96,
         "pitchSemitones": 0,
         "emphasis": "normal",
-        "distance": "medium",
+        "distance": "near",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。轻轻释然地笑着说，明天再看带着期待，今天不试了是温柔的配合，不是认输。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -463,22 +488,26 @@
       ],
       "previousEntry": 15,
       "nextEntry": 17,
-      "intent": "试探自己仍被平等看待",
-      "subtext": "这次笑话有了底气",
+      "intent": "用玩笑拉近两个人的距离",
+      "subtext": "想听到她说我和标本不一样",
       "delivery": {
-        "tone": "happy",
-        "nativeEmotion": "happy",
-        "nativeEmotionScale": 2,
-        "energy": 0.38,
+        "tone": "warm_teasing",
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
+        "energy": 0.65,
         "pace": 1.0,
-        "volume": 0.9,
+        "volume": 0.96,
         "pitchSemitones": 0,
         "emphasis": "normal",
-        "distance": "medium",
+        "distance": "near",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。带笑意、温柔俏皮地逗她，贴个标签轻轻上扬，自信又有一点害羞，不刻意拖长。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -529,36 +558,6 @@
   ],
   "sfx": [
     {
-      "id": "step",
-      "asset": "assets3d/sfx/soft_step.wav",
-      "prompt": "生成3秒单个音效：一个穿软底帆布鞋的学生在木地板上轻轻落下一步，单次短促干燥的鞋底接触声。只一步，近距离，安静室内，无混响拖尾，无走路循环，无人声，无音乐，无其他声响。",
-      "times": [
-        2.97,
-        3.303333,
-        3.636667,
-        3.97,
-        4.336667,
-        4.67,
-        4.97,
-        5.603333,
-        6.036667,
-        36.703333,
-        37.336667,
-        62.036667,
-        62.736667,
-        63.136667,
-        63.436667,
-        63.736667,
-        63.936667
-      ],
-      "gain": 0.12,
-      "trimSeconds": 0.3,
-      "startTime": 2.97,
-      "endTime": 64.236667,
-      "role": "event",
-      "priority": "storySfx"
-    },
-    {
       "id": "glass_slide",
       "asset": "assets3d/sfx/glass_slide.wav",
       "prompt": "生成3秒单个音效：一个小玻璃标本罐在木桌面上缓慢滑动约一秒，轻柔细腻的玻璃底摩擦木头声，末尾轻轻停稳。无碎裂，无敲打，无尖啸，无人声，无音乐，无其他声音。",
@@ -606,6 +605,12 @@
     {
       "id": "no_magic_whoosh",
       "reason": "蚀纹附着皮肤缓慢扩大，不制造电击或能量爆发错觉"
+    },
+    {
+      "id": "no_indoor_footsteps",
+      "scope": "BiologyRoomScene, entire episode",
+      "sound": "step",
+      "reason": "用户要求这场室内走路不加声音；取消随落脚反复触发的沙沙拟音，不用衣料声替代。"
     }
   ]
 }

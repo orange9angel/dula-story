@@ -40,8 +40,14 @@ elif '--ambience' in sys.argv:
     cached(out,{'provider':'seed-audio-1.0','prompt':cue['prompt']},lambda:generate(cue['prompt'],out))
 else:
     for line in plan['dialogue']:
+        if '--character' in sys.argv and line['character'] != sys.argv[sys.argv.index('--character')+1]:
+            continue
         speaker=plan['characters'][line['character']]['voice']
-        emotion=line['delivery'].get('nativeEmotion')
-        request={'text':line['text'],'speaker':speaker,'emotion':emotion,'emotion_scale':2 if emotion else None,'provider':'seed-tts-2.0'}
+        delivery=line['delivery'];emotion=delivery.get('nativeEmotion')
+        scale=delivery.get('nativeEmotionScale',2) if emotion else None
+        context=delivery.get('nativeContextTexts');rate=delivery.get('nativeSpeechRate')
+        request={'text':line['text'],'speaker':speaker,'emotion':emotion,'emotion_scale':scale,'provider':'seed-tts-2.0'}
+        # Cache the actual wire contract and acting inputs, not only semantic labels.
+        request.update(wireVersion=2,context_texts=context,speech_rate=rate)
         out=EP/f"assets3d/dialogue_r3/entry_{line['entry']}.mp3"
-        cached(out,request,lambda:synthesize(line['text'],speaker,out,emotion=emotion,emotion_scale=2 if emotion else None))
+        cached(out,request,lambda:synthesize(line['text'],speaker,out,emotion=emotion,emotion_scale=scale,context_texts=context,speech_rate=rate))

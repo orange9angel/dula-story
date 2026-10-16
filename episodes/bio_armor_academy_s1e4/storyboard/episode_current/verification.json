@@ -1,7 +1,8 @@
 {
-  "status": "technical-checks-passed; awaiting user visual review",
+  "status": "technical-checks-passed; voice aesthetics awaiting user review",
   "video": "output/current.mp4",
-  "videoSha256": "012f197b53b5dc0a7289a2bb45741b4cb1390377510a89c8c23f364a1a96efad",
+  "renderedCandidate": "output/romance_candidate.mp4",
+  "videoSha256": "ebed97318cb65137cdaf00deae5b93825a7479149e36225da61bbb1067f28180",
   "probe": {
     "programs": [],
     "stream_groups": [],
@@ -30,74 +31,104 @@
     ],
     "format": {
       "duration": "82.000000",
-      "size": "10500911"
+      "size": "10497343"
     }
   },
   "fullDecode": "passed",
-  "renderedFrames": 2460,
+  "rollback": {
+    "archive": "output/archive/before_romance_audio.zip",
+    "previousVideoSha256": "012f197b53b5dc0a7289a2bb45741b4cb1390377510a89c8c23f364a1a96efad"
+  },
+  "audioSource": "assets3d/mixed.wav",
+  "audioSourceSha256": "49264925a0d53941a46cda98bc5649b1ed5a5ab8e200cb45757510057bd3765e",
+  "decodedAudioCorrelation": 0.9996540608148773,
+  "maleLinesRegenerated": [
+    "assets3d/dialogue_r3/entry_3.mp3",
+    "assets3d/dialogue_r3/entry_5.mp3",
+    "assets3d/dialogue_r3/entry_7.mp3",
+    "assets3d/dialogue_r3/entry_9.mp3",
+    "assets3d/dialogue_r3/entry_11.mp3",
+    "assets3d/dialogue_r3/entry_14.mp3",
+    "assets3d/dialogue_r3/entry_16.mp3"
+  ],
+  "preservedAudio": [
+    "assets3d/dialogue_r3/entry_4.mp3",
+    "assets3d/dialogue_r3/entry_6.mp3",
+    "assets3d/dialogue_r3/entry_8.mp3",
+    "assets3d/dialogue_r3/entry_10.mp3",
+    "assets3d/dialogue_r3/entry_13.mp3",
+    "assets3d/dialogue_r3/entry_15.mp3",
+    "assets3d/dialogue_r3/entry_17.mp3",
+    "assets3d/QianTangKui_stem.wav",
+    "config/viseme_qiantangkui.json"
+  ],
+  "maleSpeaker": "ICL_uranus_zh_male_chanruoshaoye_tob",
+  "footsteps": 0,
+  "audioSync": {
+    "passed": true,
+    "lines": 14,
+    "duration": 82.0,
+    "stems": 2,
+    "mouth": "Known-text character DTW, pinyin V17 visemes, exact 10 ms final-PCM gate",
+    "footsteps": 0,
+    "intentionalSilentWalk": true,
+    "musicSilence": [
+      44.5,
+      53.2
+    ],
+    "mixPeak": 0.460784912109375,
+    "minSpeechWindowSpare": 0.004916666666666458,
+    "limits": "Numerical/ASR verification only; subjective sound and emotional performance not auditioned by this agent."
+  },
+  "contentQC": {
+    "malePinyinMatch": "7 of 7: 100%",
+    "errors": 0,
+    "timingWarnings": [
+      9,
+      14
+    ],
+    "warningResolution": "Both fit their original speech windows without truncation; retain 0.3s to entry end. No window expansion."
+  },
   "motion": "sampled-motion-pass",
   "contact": "sampled-contact-pass",
   "seekPassed": true,
   "seekCount": 57,
-  "audioSource": "output/tripo_episode_preview_v1.mp4",
-  "audioOriginal": {
-    "payloadSha256": "fe5e56b14f29958f705a439dec7c5c9f2084175b5fa38674b6513a0b5e5eef5d",
-    "packetCount": 3845,
-    "packetTimingSha256": "986f354f55097af6df93f72ba037f6a6af960150bfa856aa5970ea0b2dbeefa1"
-  },
-  "audioCurrent": {
-    "payloadSha256": "fe5e56b14f29958f705a439dec7c5c9f2084175b5fa38674b6513a0b5e5eef5d",
-    "packetCount": 3845,
-    "packetTimingSha256": "986f354f55097af6df93f72ba037f6a6af960150bfa856aa5970ea0b2dbeefa1"
-  },
-  "audioIdentical": true,
-  "visualEvidence": {
-    "actualVideoFrames": [
-      3.5,
-      5.6,
-      17,
-      26.3,
-      27.7,
-      29.7,
-      37.0,
-      39.3,
-      59.0,
-      61.5,
-      62.6,
-      65.6,
-      67.2,
-      76.8
-    ],
-    "contactClip": "58-70s, 30fps; decoded at 2fps for visual inspection",
-    "diagnosticCameras": "config/episode_motion_review.json, last four shots",
-    "wholeNormalSpeedViewingByModel": false
-  },
-  "traceSha256": "347074481b39d0839abc7078da6f7bbe50af4cfb8ef6bab4306d0e5c2f27afb1",
+  "renderedFrames": 2460,
+  "traceSha256": "e9f2de0f4acb0f025aadc1716f11e39ce2eb7025967973c61cacab0d59012da1",
   "runtimeProfile": {
     "cel": "direct",
     "motion": "anatomical",
     "wristfix": true
   },
-  "peakMetrics": {
-    "wristBendDegrees": {
-      "key": "lei.right.wristBendDegrees",
-      "value": 47.7425535355415,
-      "time": 64.967,
-      "limit": 60
-    },
-    "stanceDriftM": {
-      "key": "lei.left.stanceDriftM",
-      "value": 0.0014398808930117786,
-      "time": 3.7,
-      "limit": 0.002
-    },
-    "backwardKneeM": {
-      "key": "lei.left.backwardKneeM",
-      "value": 0,
-      "time": 0,
-      "limit": 1e-05
-    }
+  "preservedAssetInputs": 51,
+  "preservedRuntime": [
+    "viewer.js",
+    "performance_remake.js",
+    "performance_tripo.js",
+    "scenes/BiologyRoomRemakeScene.js"
+  ],
+  "visualEvidence": {
+    "frames": "storyboard/audio_romance/frames.jpg",
+    "times": [
+      7.5,
+      16,
+      26,
+      33.5,
+      42,
+      55,
+      65,
+      72
+    ],
+    "wholeNormalSpeedViewingByModel": false
   },
-  "sourceFingerprintValidation": "passed by check_imported_contact.py against final render inputs",
-  "temporaryTraceRetention": "retained in tmp/episode_motion/final/trace.json: cleanup was rejected twice by automatic approval review with blocked by policy"
+  "listening": {
+    "review": "storyboard/audio_romance/final_listening_review.json",
+    "type": "model-audio-observation",
+    "decision": "Keep the original actor with newly applied native acting directions; alternative voice not adopted.",
+    "limits": "Whole-scene and isolated model descriptions disagree on age/timbre. Low-confidence pitch tracking of entry 9 is not a valid gender/identity verdict. No claim of human listening or aesthetic acceptance."
+  },
+  "generatorInputs": {
+    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\synth_audio.py": "8710cb5de3b98942b5ea4ec181931f7be4f8d2a869b2fb28c40f1f44d9dfa253",
+    "D:\\opensource\\movie\\dula-skills\\volc-voice-casting\\scripts\\seedtts_say.py": "3f65be0c2942d979389179b0384d86629872e902d016d52fe96135a007427ba8"
+  }
 }

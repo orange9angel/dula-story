@@ -34,9 +34,17 @@ for key,desc in features['stems'].items():
         if d['character']==key:mask[int(d['start']*100):int(np.ceil(d['end']*100))+1]=True
     assert not np.any(gate[~mask]>0)
 for cue in cues['music']+cues['sfx']:assert cue['sha256']==digest(EP/cue['source'])
-steps=next(c for c in cues['sfx'] if c['id']=='step')
-assert len(steps['times'])==len(anchors['landings'])
-assert all(abs(t+.03-row['time'])<.001 for t,row in zip(steps['times'],anchors['landings']))
+plan=load('config/audio_direction.json')
+steps=next((c for c in cues['sfx'] if c['id']=='step'),None)
+no_steps=any(e['id']=='no_indoor_footsteps' for e in plan['exclusions'])
+if no_steps:
+    assert steps is None and not any(c['id']=='step' for c in plan['sfx'])
+    sr,fx=wavfile.read(EP/'assets3d/sfx_stem.wav')
+    assert not np.any(fx[:round(6.5*sr)]), 'Entry walk must have no Foley'
+else:
+    assert steps is not None
+    assert len(steps['times'])==len(anchors['landings'])
+    assert all(abs(t+.03-row['time'])<.001 for t,row in zip(steps['times'],anchors['landings']))
 assert next(c for c in cues['sfx'] if c['id']=='glass_slide')['times']==[anchors['slideStart']]
 sr,music=wavfile.read(EP/'assets3d/music_stem.wav')
 assert np.max(np.abs(music[int(44.5*sr):int(53.2*sr)]))==0
@@ -45,7 +53,7 @@ sr,mix=wavfile.read(EP/'assets3d/mixed.wav');assert sr==48000 and len(mix)==roun
 peak=float(np.max(np.abs(mix.astype(float)))/32768);assert .05<peak<.98
 report={'passed':True,'lines':len(timing['lines']),'duration':len(mix)/sr,'stems':len(features['stems']),
  'mouth':'Known-text character DTW, pinyin V17 visemes, exact 10 ms final-PCM gate',
- 'footsteps':len(steps['times']),'musicSilence':[44.5,53.2],'mixPeak':peak,
+ 'footsteps':len(steps['times']) if steps else 0,'intentionalSilentWalk':no_steps,'musicSilence':[44.5,53.2],'mixPeak':peak,
  'minSpeechWindowSpare':min(l['end']-l['audioEnd'] for l in timing['lines']),
  'limits':'Numerical/ASR verification only; subjective sound and emotional performance not auditioned by this agent.'}
 (EP/'storyboard/audio_sync.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps(report))
