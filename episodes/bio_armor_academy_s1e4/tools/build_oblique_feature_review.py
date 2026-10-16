@@ -2,6 +2,7 @@
 import hashlib
 import json
 import sys
+import textwrap
 from pathlib import Path
 
 import matplotlib
@@ -50,7 +51,7 @@ REGIONS = [
 
 def show(ax, im, title):
     ax.imshow(im)
-    ax.set_title(title, fontsize=13, pad=10)
+    ax.set_title('\n'.join(textwrap.fill(line, 24) for line in title.splitlines()), fontsize=11, pad=10)
     ax.axis('off')
 
 
@@ -252,9 +253,10 @@ def configured_comparison(config_path):
         for r, row in enumerate(rows):
             ref = EP / row.get('reference', cfg['reference'])
             before = EP / row.get('before', cfg['before'])
-            items = [(ref, row['reference_crop'], '参考绘画（斜面角度未标定）'),
-                     (before/(row['frame']+'.png'), row['model_crop'], '修改前 / 指定阶段'),
-                     (new/(row['frame']+'.png'), row['model_crop'], '本轮修改后')]
+            labels = cfg.get('column_labels', ['参考绘画（斜面角度未标定）', '修改前 / 指定阶段', '本轮修改后'])
+            items = [(ref, row['reference_crop'], row.get('reference_label', labels[0])),
+                     (before/(row['frame']+'.png'), row['model_crop'], labels[1]),
+                     (new/(row['frame']+'.png'), row['model_crop'], labels[2])]
             for c, (path, crop, label) in enumerate(items):
                 sources.add(path)
                 show(axes[r,c], Image.open(path).crop(crop), label+'\n'+row['label'])
@@ -264,8 +266,8 @@ def configured_comparison(config_path):
                     axes[r,c].plot(x-crop[0], y-crop[1], 'o', ms=3, color='#008f9c')
                     axes[r,c].annotate(name, (x-crop[0],y-crop[1]), xytext=(4,4), textcoords='offset points', fontsize=8, color='#006a75')
         fig.suptitle(board['title'], fontsize=19, y=.99)
-        fig.text(.5,.012,'参考与模型独立等比显示；裁切仅供分析，不改变原图或实际渲染。',ha='center',fontsize=10)
-        fig.subplots_adjust(left=.025,right=.975,top=.86,bottom=.055,wspace=.08,hspace=.29)
+        fig.text(.5,.012,cfg.get('display_note','参考与模型独立等比显示；裁切仅供分析，不改变原图或实际渲染。'),ha='center',fontsize=10)
+        fig.subplots_adjust(left=.025,right=.975,top=.94 if len(rows)>3 else .86,bottom=.04,wspace=.08,hspace=.29)
         fig.savefig(dest/(board['id']+'.jpg'), dpi=135, pil_kwargs={'quality':95}); plt.close(fig)
     reports = [json.loads((folder/'report.json').read_text()) for folder in [old,new]]
     for group, frames in [('04_whole_frame',['front','turn_45','turn_minus45','turn_minus60']),
@@ -317,7 +319,7 @@ def configured_comparison(config_path):
             'source_hashes':{str(p.relative_to(EP)):sha(p) for p in sorted(sources)}}
     (dest/'evidence.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     if not all(checks.values()) or any(preservation.values()):raise RuntimeError({'checks':checks,'preservation':preservation})
-    print(json.dumps({'boards':len(cfg['boards'])+2+bool(cfg.get('turn_sequence')),'checks':checks,'preservation':preservation},ensure_ascii=False))
+    print(json.dumps({'boards':len(cfg['boards'])+(2 if cfg.get('whole_frames',True) else 0)+bool(cfg.get('turn_sequence')),'checks':checks,'preservation':preservation},ensure_ascii=False))
 
 
 if __name__ == '__main__':

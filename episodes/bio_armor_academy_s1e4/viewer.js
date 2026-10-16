@@ -52,9 +52,10 @@ for(const key of ['lei','aoi']){
     a.celLook.limitations=['hairline fragments','clip missing','secondary motion not connected','not accepted'];
   }
   if(drawnMode){
-    const directPaint=q.get('cel')==='direct'&&key==='aoi';
+    const directPaint=q.get('cel')==='direct';
     const look=applyTripoDrawnLook(a,key,{directPaint});a.face=look.face;await a.face.ready;a.celLook={mode:directPaint?'direct':'anime',body:look.body,face:directPaint?'generated face paint and curved textured hair shells':'approved design proportions, painted irises and live face drawing'};
-    if(directPaint)a.graphicHair=await addAoiGeneratedHair(a);
+    if(directPaint&&key==='aoi')a.graphicHair=await addAoiGeneratedHair(a);
+    else if(directPaint&&key==='lei')a.graphicHair=await (await import('dula-assets/characters/bioarmor/lei-generated-hair.js')).addLeiGeneratedHair(a);
     else if(key==='aoi')a.graphicHair=addAoiGraphicHair(a,{refined:true});
     else a.graphicHair=addLeiGraphicHair(a);
   }

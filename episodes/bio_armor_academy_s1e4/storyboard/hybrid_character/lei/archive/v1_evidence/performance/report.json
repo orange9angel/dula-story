@@ -1,0 +1,690 @@
+{
+  "build": {
+    "inputs": [
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\script.story",
+        "sha256": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\bootstrap.js",
+        "sha256": "ddd4f3ef17639bdf1cd91806459db4e925327aded6b74c64afd7750843144357"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.js",
+        "sha256": "8042eff4f85174c079783674d3e3628922363390e8257c4aa5693f51c8c608ae"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.html",
+        "sha256": "f91b7fabd84965d9b9e37fc85acabff022506e9a912ba436e001be92306df225"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\render.mjs",
+        "sha256": "664a06e9c954d8ecb095bbb08042961865b07992c6f48398fd72c586f618e593"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.js",
+        "sha256": "e421050f31283c567bc18b7adeade5bf0cc39ad58d2ea5258def669be338c2eb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.html",
+        "sha256": "2266741c33c368601cd9b5b5db3abafca9f237e29b016885cddd58caac17ff03"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_remake.js",
+        "sha256": "9871cf85d48eb552d5db04901a6bf5493f0c2f4c107c1b05629e45dad3dcf362"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_tripo.js",
+        "sha256": "49b060f923e33f58f434cf3a5bda0fc0f3f297d6071103d9d775ae49b61373fe"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\imported_probe.js",
+        "sha256": "d759867f682de7e98eca54df861670eccf23fad2e258877804894374fd4db9d4"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_imported_contact.py",
+        "sha256": "31d2e47f07ab0acec64e383b0b00e2489bcdb9089f63d76c5d4960df4a510c41"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\imported_contact_contract.json",
+        "sha256": "f9fbf2fc356202c72588574fdc3fe27927873bde98c4ab73ead494082ca0d2e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\scenes\\BiologyRoomRemakeScene.js",
+        "sha256": "e91882c5e128e2cc6d10bf68b4a65f068fd4f917ff051b742c5c4b5e58a4346c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\audit_inputs.mjs",
+        "sha256": "466ea692bbcf14c9be5e79a47ee93b0894be4813c5e3ad54cda402bc39a80356"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\compile_story.mjs",
+        "sha256": "70f15d3212b39f42a538b3fbaa5bc5f6840bb99d844976f3aef87b58c1667ac9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\numeric_probe.js",
+        "sha256": "9717d3dad23c0dc7f14fee9d4e85997463e1f672dc04e177aea5fe0656123a36"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\timeline.json",
+        "sha256": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\contact_contract.json",
+        "sha256": "19760091de6c05fd7a7c7732d762e1e0576a552951bd0ef5898aa8cad5afa921"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\scene_contract.json",
+        "sha256": "ffbee245d40c81db0ea686a48a13d57640bd97a9e499d9db80d1f3ffc2f9e660"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_direction.json",
+        "sha256": "4288b9c558b1db277e1f5fba118179cf79285f7ae9c86c865a2019dbd721cf05"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_timing.json",
+        "sha256": "0b59d61e8786222b7d8cc71f883524263ec035abe760376a8b8c76de19121be6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_audio.py",
+        "sha256": "b07be86e4495a97aab0aff923a953d00b9fdf8d87da7b06444a759642a212798"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_audio_sync.py",
+        "sha256": "65359aff9c0d77570227879941e9a9124a962afec2d89c364baf95c475c1f52b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_contact.py",
+        "sha256": "2e03f48b637c03ec24a718b136c6409ea9c285e8d1d720dca8a788cef6e7b5f9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\check_story_motion.py",
+        "sha256": "9cc148450116638ec44dc86eb8b69e927e110494c5702d1646338caf7ea193ed"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\prepare_ambience.py",
+        "sha256": "621c8a112d9d64b0253d0d322b7350e09460bccbe4007c84a56255503a85c82e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_visemes.py",
+        "sha256": "143417c5eaa4aa58189a65fb620f84ed5c0d27b674f57a56002d07a4aa7ebe30"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_leixiao.json",
+        "sha256": "ace4d03e407cf864a90a7de916c424b33ce017e5c908d976a4667e60b8af314c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_qiantangkui.json",
+        "sha256": "6e0e175ff2d40096904eb4e0fcde8bdeb6cd1802d75c989fa715cad0758a638f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\dialogue_alignment.json",
+        "sha256": "6f94c17a44ac60e26c4bdc6739d91337469b83fcc6ad6ba71325367ed2038820"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\sound_cues.json",
+        "sha256": "51f547b0d9c628be7ab11fe0dbfbd63d7fc88fe8aa2792c38d1e494128c1885e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\foley_anchors.json",
+        "sha256": "39ec8dca33c1bf43fbc742e15085e8956bb08732910e4bb041fcbe4a777001fc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_foley_anchors.mjs",
+        "sha256": "3cdcf30dea7bdceecdc71d4ecd1a74647f29c30f4a521c0cfb3b0b9485ba408d"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_episode.py",
+        "sha256": "04f79fa91df1fd89e4f5e7887434b3e3c350f16e8faa8fd2f5bf618cd1aa7622"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\configure_contracts.py",
+        "sha256": "9146c1387995b475728740c8bca236e07357f8637fa75c31bc85693685b66e62"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\textures\\biology_wall_r3.png",
+        "sha256": "218a49be801aecdeb386f2bb4ce1bb9eb9a9d45b8b4546e4419c018fb0d960cc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\anatomical-hand.js",
+        "sha256": "b0771a7b55a7892e7278dd38ecfd9791e5d53f233158b3b97890194e2c24e7ca"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\body-audit.js",
+        "sha256": "999342f7594229be1886607fcbe734d32f561e59ad0b91dda49c74e72f5665b8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-ear.js",
+        "sha256": "8ef8531399e9cd83a056d28489fc8216acd95cd04fd0e4ba170366e94b882151"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-face.js",
+        "sha256": "8eb655762eba40076e7f39a80b2a0badfbc407644c2a569fe22698c4979f2810"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-head.js",
+        "sha256": "d8807fd48cab9ba918c79f543fcf79a76398292076d827e81a744a6614437325"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\facial-deform.js",
+        "sha256": "b67546d71db9b4ee932f5733af9ef29aae38db6e109294aaec8f198211cf590f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\garment-clearance.js",
+        "sha256": "92a673945b93f6c86e728b88f9f5c1524e31211d39a48c44b90f5f048aebf557"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\generated-face-paint.js",
+        "sha256": "ea55f2c52d82bcd64387dc8decd2fcf3ec07e6bec13d7d06c390fcfec6e901b8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\generated-portrait-paint.js",
+        "sha256": "55b2e1a6a1542fc63f93928edf956c2a891e94d1f8739969795106a602fa14d2"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\graphic-hair.js",
+        "sha256": "1e8947a5587693a6ed83eee9b3eb504e1c821d953b9c2d1fd8203bd1a666aff5"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\hand.js",
+        "sha256": "91f3289e3daad4ad13a2711554a69d45b29fd5fc4d99ef902ec678911cc571d7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\illustrated-import.js",
+        "sha256": "8d4f9127c2533fb77bd43cc61ebbe2e0237c474983c2187cfc319d5d586b827e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-cel-look.js",
+        "sha256": "548120ed2c4e549688c94982e0e86783e02aee453a1991a838ee03b47ac3ec40"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-performer.js",
+        "sha256": "3faa969cbd9d966b6879dcd828028b04d3c5ac492278154699d713cc690d163c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\locomotion.js",
+        "sha256": "52f5f9091a25e11c51ac0f7b61340d5580aece42d4d22c45453dda8106c14952"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\look.js",
+        "sha256": "e5634e29af63dd58b9e31a8b5b123efbad208d721304d483d5021635c70f467c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\oblique-face-support.js",
+        "sha256": "190edb9f576c00e82e56e4293fece8dd2c3009a1634d31ee63a3bed978214426"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\painted-hair-shell.js",
+        "sha256": "8c47d0d4db0f9e42738e79cb1534e84265e8a4938823523944cf8e84cf7c689c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\pose.js",
+        "sha256": "669eda04a0bf251315f2518f24140d8948149838bfd93863056024c2e80c9536"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\profile-hair-paint.js",
+        "sha256": "ea1b4ada2064caaaa3e28baebdfb64b910c97a218802a88b38307f357edb953e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\projected-face.js",
+        "sha256": "eea47c0ef978e1cdc3d5d24893c383231e16437fc53f2f2b6b80619bd781807b"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\retargeted-motion.js",
+        "sha256": "8211ae275786bfe1c29415a4d8cf321f2eb110d3a6b21c5035ed14f168b58bad"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\secondary-hair.js",
+        "sha256": "371479582de72235edc90b4454b7a21fc36f47deb5f2944abd6f2afaa3331dd8"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skin-mark.js",
+        "sha256": "0920ae300b097fbe8237d6dc003ef550eadd256d41a048f0f717601e2838f101"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skinned-samples.js",
+        "sha256": "ae5629b26dccb4ed4dd0b4305eb6e0840dc21c76e6c662de79e03b3558b52261"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\supported-performance.js",
+        "sha256": "12ca0399fab8433267b921b39dd51b0c036c9972644b60abeaba8e526b6694fc"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\surface.js",
+        "sha256": "694a05d2a95b8c3c0ce4e16264edcaec6263db576e8b880eea28758463b20cfb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\table-hand-clearance.js",
+        "sha256": "b2a682681cba51c8a0746b84422ad59e526b2de7f49d64f1fd7dd8fd254ca265"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-generated-paint.js",
+        "sha256": "dff4cdfeafccb54efc7e07b738c80873e692df18e0acf1da6e8b7b6286f4078c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-graphic-hair.js",
+        "sha256": "3972a7d4776b832fabe084b16429f4caafa04ac32fdcb240951449b079c170a6"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\characters.js",
+        "sha256": "ce10e0a5e3f3f230991e318ec118572944b6e164501ee25f15bb6d5b10dcab1f"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_details.js",
+        "sha256": "0c7196c4781809d4c68fb1f4bf12a085011ef21f557ed4f9a7d6099deb14e3f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_finish.js",
+        "sha256": "9418513953a12fd36466f217ec1148ca7bdb4dfb75ae1bdb1baa67dadb17b4b1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_look.js",
+        "sha256": "4d078b05c8f98729f293ae701c03a32bea1dbeafd2234f603f7dee48666d7d83"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-generated-hair.js",
+        "sha256": "46c74531bafbf963eaf74d8162a5da106270c152b18ebbb2eb72a501123e0ffd"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-generated-paint.js",
+        "sha256": "3a0623185701e4b09b48ddcc70b2cbc7bd869c86d3e087359e9a9d65245f0801"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-geometry-config.js",
+        "sha256": "e7c5dc9e640545d1c726119e6464ff59f49c5e4f7a1543acb5eb0a484162fa62"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-graphic-hair.js",
+        "sha256": "211db2c78f1db382896929821e2124499cbae769df4ad82f1ced654a058ce122"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\QianTangKuiCraft.js",
+        "sha256": "9093163ed72dae120b9b3fe671cc233df4238f99b44d21d6af39c1abc21d0e4a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js",
+        "sha256": "ba41aeaef5c233cfb1a83924f0be59e33a2a7925bcfe2ca1968c05f009ab1aad"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-look.js",
+        "sha256": "6c818ca069e081bc7910b243fd3da5d7d2b1fa61a35fdfbdd2e4727b1defa53a"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-engine\\lib\\MeshCollision.js",
+        "sha256": "b7d4c97d4a19d5e20df3846c3052458d2efb8eb5d126e2db143dc3acabcbe7a9"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-engine\\lib\\NumericAudit.js",
+        "sha256": "8851381d4d542911162afd595152c96b7b15a3d5223ba95ea43c89274298330c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\known_text_alignment.py",
+        "sha256": "98dae18b3694d2ce1f031af35d5036fe7005d7c3b8630038cd19384647d0bbe7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\lib\\audio\\viseme_core.py",
+        "sha256": "dbbf90dce208c85eb9b7cce9b258478aaa7bfda368eeebcfc09cdc0cd90547c1"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\contact_probe.py",
+        "sha256": "242bd65e748b2797aaa026813769d53da0e1a9919b35caf088b7766e676d2807"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\surface_audit.py",
+        "sha256": "8e47c88d209b1373d7ccf6ac1f596b1b5f596b9f7f8927e99aa6d65d634de86e"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-skills\\direct-animation-craft\\scripts\\bounded_staging_audit.py",
+        "sha256": "060b1ad0001ef0b5b895435a718461ae93002942c18672999fafbb59799bf9d2"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\voice_features.json",
+        "sha256": "d126bc73feffca41b4a37398e443b5cab56c10d6b74c93d2d1ff8848fb107e03"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\mixed.wav",
+        "sha256": "54ef95a7828fdc1b6126b1602baea6a1e5335c0e3fb20ff4e1daff7c4e5150e7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_h31_lod160k_v2.glb",
+        "sha256": "404fe816e8b555b487f8879a31d8c8401a6c6e73c6f2adf65978a3db18491011"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_aoi_trial\\aoi_h31_lod160k_v2.glb",
+        "sha256": "3ad5d4099d4a0c126a3aed76eb3530309dd942a37de148006683020d233b10bd"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\drawn-face-reference.png",
+        "sha256": "aec1e146d8d4f9f95b9dc10930b7d9336ac7c79cf8e9fa3cbe279ae0dfb4747c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-face-v1.png",
+        "sha256": "fb7f8d5062a27bccc5b68b6e9279226fcd3cf61d8cad441c0bedab6cc4b50e08"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-hair-v1.png",
+        "sha256": "3fed7263f55ceaac22dbebd543d8266edeaa52cac0ceb975b1083abbde40b04c"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-painted-back-v1.png",
+        "sha256": "aa9991f581823d951bf2e3907d11558198856daab05449184cff6182c8c3bb94"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\aoi-profile-hair-atlas-v1.png",
+        "sha256": "3746063acf5fd392d77465433aca89c948635e69f2686e180cfe976232053383"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\lei-painted-face-v1.png",
+        "sha256": "e87c72b10d5805e6b813a50cd725cb19b630615db8000672e2aede19b9bde4ee"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\lei-painted-hair-v1.png",
+        "sha256": "93a70077249d8394ff035b5d5fa949642afe8208ecc2250535c1ecfc4106f053"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\textures\\lei-painted-back-v1.png",
+        "sha256": "8845cc50050e73bd7e35c83ea9a3710c88001165497119b3fb8e4c6c270cde34"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_text_rub_v1.glb",
+        "sha256": "6357cec5d7ffa5d0cb62f4a56548f48799f44c599abea74483649010ec36f8f0"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.js",
+        "sha256": "e421050f31283c567bc18b7adeade5bf0cc39ad58d2ea5258def669be338c2eb"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\face_lab.html",
+        "sha256": "2266741c33c368601cd9b5b5db3abafca9f237e29b016885cddd58caac17ff03"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\review_drawn_characters.mjs",
+        "sha256": "2b368d9b68f304f0eb818f08c7bdd7a6cfcb7f4749e3ae88a6fecea1b1d7f6b5"
+      }
+    ]
+  },
+  "errors": [],
+  "actors": {
+    "lei": {
+      "neutral": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "a35d9a8f2d0fbd6252d52fb47f1e563416e2dcce230233d0f250d39777f9ec94",
+        "seekEqual": true
+      },
+      "listen": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0.25,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            -0.8,
+            0.1
+          ]
+        },
+        "sha256": "51a4f07cd452e93e626f3d27328189accd4a650bbf79556b6c5e7831235499a5",
+        "seekEqual": true
+      },
+      "concern": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0.8,
+          "focus": 0,
+          "gaze": [
+            0.7,
+            -0.2
+          ]
+        },
+        "sha256": "5ab4a476210a307816670c1a35d91fc6af4082a6e4b7e3b207d55b7a0ba82ff1",
+        "seekEqual": true
+      },
+      "firm": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0.9,
+          "gaze": [
+            -0.6,
+            0
+          ]
+        },
+        "sha256": "acf7ba8292e3c3c2c37f5a88e51b1eb21560137ebbb4829aca05e69e405fb0f5",
+        "seekEqual": true
+      },
+      "talk": {
+        "state": {
+          "blink": 0,
+          "jaw": 0.65,
+          "width": 1,
+          "smile": 0.5,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            -0.6,
+            0
+          ]
+        },
+        "sha256": "f3e4433e34d72270d8422f7dbef623f898f6d0856da8e82a201aad6322c7f5b8",
+        "seekEqual": true
+      },
+      "half_blink": {
+        "state": {
+          "blink": 0.5,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "9f9cc2a9625c1e7d17a4d3126216ac0df7109074c913578deba1c8ae6d7641c6",
+        "seekEqual": true
+      },
+      "closed": {
+        "state": {
+          "blink": 1,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "3904d4fa27c18b9af1837b14fe71a7b21a9043dfab3039ef0538df284e7a12eb",
+        "seekEqual": true
+      },
+      "left": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "3f7e884023ef002a5fe1cc9b2dd901a7acd2c5ac18a66d7c0e7c9532f878d1f7",
+        "seekEqual": true
+      },
+      "right": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "a8e2813ccde63b77b54cfb330815c7dc2e698a89c7ef872cb553eb06d21efbe8",
+        "seekEqual": true
+      },
+      "profile": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "ed05bcb54d6382da4016e4a05a7ab0fc4e55cd0a182f7f328ce6ffae211fef3e",
+        "seekEqual": true
+      },
+      "profile_left": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "9776a92f8205b95e3cec8adafefea7dafba4d87c76418e1de29a30b23cd35922",
+        "seekEqual": true
+      },
+      "back_right": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "f315524dd085b7304019ec8521386d8730854d044eed5bc6b6229d0785d62a71",
+        "seekEqual": true
+      },
+      "back": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "b9f232d96708be92368090d71b2d03cd1fb047b441f5d07052d9c062922affa9",
+        "seekEqual": true
+      },
+      "down": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "d5e2ccb7071238ef684243e9f75c311724483082752212937890035a4b065f08",
+        "seekEqual": true
+      },
+      "up": {
+        "state": {
+          "blink": 0,
+          "jaw": 0,
+          "width": 1,
+          "smile": 0,
+          "fear": 0,
+          "focus": 0,
+          "gaze": [
+            0,
+            0
+          ]
+        },
+        "sha256": "b1e8119551b826b17427cf458252f9c3a18464f66a9f9c9b9314758159316fe9",
+        "seekEqual": true
+      }
+    }
+  },
+  "moduleOverrides": [],
+  "scene": {
+    "modes": {
+      "lei": "direct",
+      "aoi": "direct"
+    },
+    "frames": {
+      "25": {
+        "sha256": "c9bd406f1980fcd4f46e1ab4d0228b17361e46a9c7f69e6166fc2d406cbb67d5",
+        "stateSha256": "acc4b768d3fc79145c4d5dd12e37701baef08db4185047f693aabf0c518cac6f",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "12.8": {
+        "sha256": "b90d292ac2131c37496d9053ca963abd2d5aac692d1a3f8374f264bc9fbb3f5a",
+        "stateSha256": "c49156f4ab065431c2ae3aa45f6a0b88fd8437a568ce8ba7f05d3ac2820d5f92",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "16.2": {
+        "sha256": "7408c0c74d0beb9bfe21dc2755395d44eb4e56440443e9f70568de9ffbcbfcf5",
+        "stateSha256": "d4e5a4ce7aa98504cf5328db4a824bd70d5d80d2e63895d9a502fae2615107ba",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "41.3": {
+        "sha256": "b85b9a08c3eaecd98b084d695eae921e308c3bb58b7946d1a934512b3c147e83",
+        "stateSha256": "b7a25780b7394f5dae0eba7764ef76c6be9aeeae94937b019f5838ce36f39c76",
+        "seekEqual": true,
+        "stateEqual": true
+      },
+      "65.4": {
+        "sha256": "201fd4bee8a2235edec7b57b1e307cb83faac9078ea9f7d36fb99bfa28b797a9",
+        "stateSha256": "13ea81ab8c8b4998c284b829b859aca379ba7b2a3ab08588f27e6187d68716e5",
+        "seekEqual": true,
+        "stateEqual": true
+      }
+    }
+  }
+}

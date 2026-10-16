@@ -1,0 +1,185 @@
+{
+  "status": "candidate_frozen_with_known_artistic_limits",
+  "files": {
+    "painted-hair-shell.js": "8c47d0d4db0f9e42738e79cb1534e84265e8a4938823523944cf8e84cf7c689c",
+    "lei-generated-hair.js": "46c74531bafbf963eaf74d8162a5da106270c152b18ebbb2eb72a501123e0ffd"
+  },
+  "registration": {
+    "generated_hair_to_production": {
+      "x": "0.85*x+75",
+      "y": "0.85*y-4"
+    },
+    "world": {
+      "originX": 626,
+      "originY": 727,
+      "originWorldX": -0.012,
+      "anchorY": 1.597,
+      "pixelsPerMetre": 3529
+    }
+  },
+  "runtime": "Head-local static curved front/back alpha shell + textured scalp; no Lei angle-dependent deformation or ponytail.",
+  "validation": {
+    "aoi_frozen_before": {
+      "report": "tmp\\lei_refine_v1\\oblique_45\\aoi_frozen_before\\baseline\\report.json",
+      "errors": [],
+      "reverseMismatch": [
+        "turn_90"
+      ],
+      "reverseDelta": {
+        "changedPixels": 1,
+        "maxChannelDelta": 2,
+        "coordinatesYX": [
+          [
+            436,
+            509
+          ]
+        ]
+      }
+    },
+    "aoi_frozen_after": {
+      "report": "tmp\\lei_refine_v1\\oblique_45\\aoi_frozen_after\\baseline\\report.json",
+      "errors": [],
+      "reverseMismatch": [
+        "turn_90"
+      ],
+      "reverseDelta": {
+        "changedPixels": 1,
+        "maxChannelDelta": 2,
+        "coordinatesYX": [
+          [
+            436,
+            509
+          ]
+        ]
+      }
+    },
+    "aoi_old_vs_new": [
+      {
+        "file": "front.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "file": "turn_45.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "file": "turn_60.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "file": "turn_90.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "file": "turn_90_reverse_mismatch.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "file": "turn_minus45.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "file": "turn_minus60.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "file": "turn_minus90.png",
+        "changedPixels": 0,
+        "maxChannelDelta": 0
+      }
+    ],
+    "lei": {
+      "report": "tmp\\lei_refine_v1\\oblique_45\\frozen\\baseline\\report.json",
+      "views": 14,
+      "allReverseEqual": true,
+      "errors": [],
+      "effectiveModules": [
+        {
+          "suffix": "/face_lab.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\integration\\face_lab.js",
+          "sha256": "e421050f31283c567bc18b7adeade5bf0cc39ad58d2ea5258def669be338c2eb"
+        },
+        {
+          "suffix": "/characters/bioarmor/tripo-drawn-look.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\integration\\tripo-drawn-look.js",
+          "sha256": "ba41aeaef5c233cfb1a83924f0be59e33a2a7925bcfe2ca1968c05f009ab1aad"
+        },
+        {
+          "suffix": "/characters/bioarmor/lei-generated-paint.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\integration\\lei-generated-paint.js",
+          "sha256": "3a0623185701e4b09b48ddcc70b2cbc7bd869c86d3e087359e9a9d65245f0801"
+        },
+        {
+          "suffix": "/characters/bioarmor/lei-geometry-config.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\deep_profile\\lei-geometry-config.js",
+          "sha256": "e7c5dc9e640545d1c726119e6464ff59f49c5e4f7a1543acb5eb0a484162fa62"
+        },
+        {
+          "suffix": "/characters/bioarmor/lei-generated-hair.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\oblique_45\\lei-generated-hair.js",
+          "sha256": "46c74531bafbf963eaf74d8162a5da106270c152b18ebbb2eb72a501123e0ffd"
+        },
+        {
+          "suffix": "/lib/craft3d/painted-hair-shell.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\oblique_45\\painted-hair-shell.js",
+          "sha256": "8c47d0d4db0f9e42738e79cb1534e84265e8a4938823523944cf8e84cf7c689c"
+        },
+        {
+          "suffix": "/lib/craft3d/generated-portrait-paint.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\front_shallow\\generated-portrait-paint.js",
+          "sha256": "55b2e1a6a1542fc63f93928edf956c2a891e94d1f8739969795106a602fa14d2"
+        },
+        {
+          "suffix": "/lib/craft3d/drawn-head.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\integration\\drawn-head.js",
+          "sha256": "d8807fd48cab9ba918c79f543fcf79a76398292076d827e81a744a6614437325"
+        },
+        {
+          "suffix": "/viewer.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\integration\\viewer.js",
+          "sha256": "8042eff4f85174c079783674d3e3628922363390e8257c4aa5693f51c8c608ae"
+        },
+        {
+          "suffix": "/lib/craft3d/illustrated-import.js",
+          "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\integration\\illustrated-import.js",
+          "sha256": "8d4f9127c2533fb77bd43cc61ebbe2e0237c474983c2187cfc319d5d586b827e"
+        }
+      ]
+    }
+  },
+  "observations": {
+    "improvements": [
+      "Retains generated source hair roots, layered highlights, unequal fringe tips and front silhouette.",
+      "Actual generated back painting replaces uniform thick rear slabs.",
+      "14 viewpoints forward/reverse exact; all finite and no browser errors.",
+      "Removed low front nape pixels that caused long black contours across cheeks; filled anterior cap gap visible from 135 degrees."
+    ],
+    "limits": [
+      "Front temple fringe still projects toward the lower eye instead of following the reference back toward ear.",
+      "A thin vertical boundary persists in right profile near the side hair.",
+      "Smooth ellipsoidal posterior silhouette remains more rounded than individual reference clumps.",
+      "Static frontMask trims a little of the lowest temple wisps; it is a layer compromise, not a multi-angle exact reconstruction.",
+      "Reference panels are hand-drawn approximate poses, not calibrated camera matches."
+    ]
+  },
+  "rejected_trials": [
+    "Full nape depth fold creates long paper-like fins.",
+    "High frontMask clipped temple fringe into a horizontal edge.",
+    "Removing headClearance creates visible skin holes through temples.",
+    "Rear UV on the back of the front shell can disagree with source alpha; use source front texture on shell reverse, actual rear image on posterior cap."
+  ],
+  "skill_lessons": [
+    "Register extracted image against production landmarks: identical bitmap dimensions do not imply identical scale.",
+    "Reusable painted shell must permit empty cores and explicit actor coordinates; never inherit default ponytail for short hair.",
+    "Nape silhouette in a frontal image is not forehead paint; separate semantic ownership before wrapping all pixels over front head.",
+    "Check source alpha, reverse material alpha, and boundary walls together; alpha mismatch can leave floating lines.",
+    "Judge left/right oblique, profile, back-oblique, and front before declaring layer mapping accepted."
+  ]
+}

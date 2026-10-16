@@ -1,0 +1,155 @@
+{
+  "status": "frozen_geometry_candidate_for_parent_integration",
+  "source": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\lei_refine_v1\\deep_profile\\lei-geometry-config.js",
+  "sourceSha256": "e7c5dc9e640545d1c726119e6464ff59f49c5e4f7a1543acb5eb0a484162fa62",
+  "notFinalDelivery": "No live files, current output or skill modified by this subagent. Parent owns final combined video and acceptance.",
+  "referenceCaveat": "Original nine-grid is not a calibrated turnaround. Crops preserve aspect ratio; drawing/old-model differences include pose and camera. No residual score is used as aesthetics acceptance.",
+  "fixedAnchors": {
+    "centerX": -0.012,
+    "eyeY": 1.597,
+    "noseY": 1.562,
+    "mouthY": 1.528333,
+    "chinY": 1.487,
+    "frontalMapping": "production origin (607,614), ppm3000 unchanged"
+  },
+  "adopted": [
+    {
+      "region": "eye surface",
+      "change": "slope .24 -> .48, same eye UV mapping",
+      "observation": "Both pure profiles retain readable iris/eye width instead of a thin streak; inspected both 45/60 and neighbor angles for far-eye exposure."
+    },
+    {
+      "region": "nose-lips-chin",
+      "change": "chin depth .103 -> .098; near-chin rows .108 -> .104 and .111 -> .109; nose and lip anchors unchanged",
+      "observation": "Lower chin recedes and rounds more naturally; lower-lip-to-chin line remains simpler than drawing."
+    },
+    {
+      "region": "frontal chin",
+      "change": "Rejected 4.5mm bottom half-width (16px flat bottom); final 1.5mm bottom with two curved rings at Y1.4885/1.491",
+      "observation": "Small rounded end replaces hard wide flat cut while preserving Y1.487."
+    },
+    {
+      "region": "jaw",
+      "change": "rootY1.563->1.549, power2.15->2.8; oblique root1.555->1.545, power1.95->2.3",
+      "observation": "Anterior jaw flatter and posterior change more distinct, closer to original relation; no new sampled neighbor-angle discontinuity."
+    },
+    {
+      "region": "ears",
+      "change": "center(.096,1.578,-.003), scale(.014,.029,.022), lobe inset .016, outward yaw .30",
+      "observation": "Frontal skin-to-ear holes closed; independent side chart visible in front and side. Lobes attach without dangling extension. Inner-ear design remains simplified."
+    },
+    {
+      "region": "neck",
+      "change": "complete upper profile throughY1.573; low-middle rings1.450/1.480/1.505 radius .051; upper1.535/1.573 unchanged",
+      "observation": "Old square separation repaired. The later frontal collar gap was actual background, not shading; low neck broadening covers diagnosed points. Checked real head turn ±45/60/90."
+    }
+  ],
+  "verification": {
+    "body": {
+      "report": "final_body/baseline/report.json",
+      "frames": 20,
+      "strictReverseAll": true,
+      "errors": []
+    },
+    "head": {
+      "report": "r7_head/baseline/report.json",
+      "frames": 7,
+      "strictReverseAll": true,
+      "errors": []
+    },
+    "control": {
+      "report": "final_control/baseline/report.json",
+      "differingModuleSuffixes": [
+        "/characters/bioarmor/lei-geometry-config.js"
+      ],
+      "strictReverseAll": true
+    },
+    "frontEyeRoi": {
+      "xyxy": [
+        300,
+        430,
+        560,
+        515
+      ],
+      "changedPixels": 0,
+      "maxChannelDifference": 0
+    },
+    "diagnosedCollarPixels": {
+      "(510, 675)": {
+        "control": [
+          214,
+          217,
+          215
+        ],
+        "final": [
+          255,
+          221,
+          191
+        ]
+      },
+      "(508, 675)": {
+        "control": [
+          214,
+          217,
+          215
+        ],
+        "final": [
+          255,
+          221,
+          191
+        ]
+      },
+      "(510, 650)": {
+        "control": [
+          214,
+          217,
+          215
+        ],
+        "final": [
+          255,
+          221,
+          191
+        ]
+      },
+      "(514, 655)": {
+        "control": [
+          214,
+          217,
+          215
+        ],
+        "final": [
+          255,
+          221,
+          191
+        ]
+      }
+    }
+  },
+  "visualReview": {
+    "inspected": [
+      "parts_right.jpg",
+      "parts_left.jpg",
+      "front_ear_and_whole.jpg",
+      "whole_angles.jpg",
+      "neighbor_angles.jpg",
+      "r7_head/baseline/turn_90.png",
+      "r7_head/baseline/turn_minus90.png",
+      "r7_head/baseline/turn_60.png"
+    ],
+    "order": "reference and old/new semantic regions -> whole head -> ±60/66/75/81/87/90 sequence -> real head-turn collar check"
+  },
+  "remaining": [
+    "Production eye art is rounder than original male profile; geometry improves visibility but is not an exact drawing match.",
+    "Nose and lower lip transition still simplified relative to original drawing; no broad nose remodeling attempted.",
+    "Jaw-to-neck shadow remains a broad block and male neck is comparatively thick; this is recorded as visual limitation, not accepted as final style.",
+    "Ear interior is a generic drawn chart, not the exact original painted ear.",
+    "No final MP4 generated or inspected by this subagent. Parent must validate combined frozen code and actual video; sample passes do not establish all expressions or all head pitch."
+  ],
+  "skillLessons": [
+    "Ear lower-pole gap cannot be fixed just by increasing sphere X scale: at the lower pole that radius tends to zero. Use explicit lower-lobe attachment and inspect both front and profile, plus outward ear orientation for side-chart readability.",
+    "Pure-profile eye width follows local face depth gradient; changing surface slope has the opposite effect of shrinking frontal eye width. Check front UV preservation and both oblique far-eye occlusions.",
+    "Broadening the bottom ring to round a frontal chin creates a flat cut. Use small bottom radius with nearby curved rings, then inspect front and both profiles.",
+    "Use rays/pixel RGB to classify neck gaps before shading adjustments. A complete upper jaw/neck joint can coexist with a separate low-neck/collar background hole.",
+    "During parallel work, freeze or hash every imported override. Only comparisons with identical non-target modules isolate the target change; regenerate control after other agents finish."
+  ]
+}

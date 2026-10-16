@@ -9,6 +9,8 @@ import {auditInputs} from './audit_inputs.mjs';
 const ep=path.resolve(import.meta.dirname,'..');
 const req=createRequire(path.join(ep,'../../node_modules/dula-engine/package.json'));
 const option=n=>{const i=process.argv.indexOf(n);return i<0?null:process.argv[i+1];};
+const actorId=option('--actor')??'aoi';
+if(!['aoi','lei'].includes(actorId))throw new Error('Unknown actor');
 const revision=option('--revision')??'v3';
 if(!/^v[0-9]+$/.test(revision))throw new Error('Invalid revision');
 const out=path.resolve(ep,option('--out')??`output/aoi_profile_polish_${revision}.mp4`);
@@ -18,14 +20,30 @@ if(!['head','body'].includes(turnMode))throw new Error('Invalid turn mode');
 fs.mkdirSync(path.dirname(out),{recursive:true});fs.mkdirSync(board,{recursive:true});
 const fps=24,duration=6,keys=[[0,0],[.5,0],[1.6,75],[2.2,90],[3.2,0],[4.4,-75],[5,-90],[6,0]];
 const hashFile=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const overrideFiles=option('--module-overrides')?JSON.parse(fs.readFileSync(path.resolve(ep,option('--module-overrides')),'utf8')):{};
+if(option('--source'))overrideFiles[option('--source-suffix')??(actorId==='aoi'?'/characters/bioarmor/aoi-generated-paint.js':'/characters/bioarmor/tripo-drawn-look.js')]=option('--source');
+const moduleOverrides=Object.entries(overrideFiles).map(([suffix,file])=>{
+  if(!suffix.startsWith('/')||!suffix.endsWith('.js'))throw new Error('Module override key must be a JavaScript URL path suffix');
+  const absolute=path.resolve(ep,file);
+  return {suffix,path:absolute,sha256:hashFile(absolute),body:fs.readFileSync(absolute,'utf8')};
+});
 const renderSource=path.join(import.meta.dirname,'render_character_profile_turn.mjs');
-const report={startedAt:new Date().toISOString(),build:auditInputs(ep),renderer:{path:renderSource,sha256:hashFile(renderSource)},kind:`silent ${turnMode} turn geometry review; not a dialogue shot`,turnMode,fps,duration,frames:fps*duration,keys,poses:[],errors:[]};
+const report={actor:actorId,startedAt:new Date().toISOString(),build:auditInputs(ep),renderer:{path:renderSource,sha256:hashFile(renderSource)},kind:`silent ${turnMode} turn geometry review; not a dialogue shot`,turnMode,fps,duration,frames:fps*duration,keys,poses:[],errors:[]};
+report.moduleOverrides=moduleOverrides.map(({body,...metadata})=>metadata);
 const browser=await req('puppeteer').launch({headless:true});
 let encoder;
 try{
   const page=await browser.newPage();await page.setViewport({width:900,height:900});await page.setCacheEnabled(false);
   page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});
-  await page.goto('http://127.0.0.1:4215/face_lab.html?actor=aoi&cel=direct',{timeout:120000});await page.waitForFunction('window.ready',{timeout:90000});
+  if(moduleOverrides.length){
+    await page.setRequestInterception(true);
+    page.on('request',request=>{
+      const pathname=new URL(request.url()).pathname,override=moduleOverrides.find(o=>pathname.endsWith(o.suffix));
+      if(override)request.respond({status:200,contentType:'text/javascript',body:override.body});
+      else request.continue();
+    });
+  }
+  await page.goto(`http://127.0.0.1:4215/face_lab.html?actor=${actorId}&cel=direct`,{timeout:120000});await page.waitForFunction('window.ready',{timeout:90000});
   encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-i','pipe:0','-an','-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',out],{windowsHide:true,stdio:['pipe','ignore','pipe']});
   let log='';encoder.stderr.on('data',b=>{log=(log+b).slice(-4000);});
   const done=new Promise((resolve,reject)=>{encoder.on('error',reject);encoder.on('close',code=>code===0?resolve():reject(new Error('ffmpeg: '+log)));});
@@ -43,7 +61,7 @@ try{
     if(!encoder.stdin.write(Buffer.from(encoded,'base64')))await once(encoder.stdin,'drain');
   }
   encoder.stdin.end();await done;
-  report.changedInputs=[...report.build.inputs,report.renderer].filter(item=>hashFile(item.path)!==item.sha256).map(item=>item.path);
+  report.changedInputs=[...report.build.inputs,...report.moduleOverrides,report.renderer].filter(item=>hashFile(item.path)!==item.sha256).map(item=>item.path);
   if(report.changedInputs.length)report.errors.push('Inputs changed during render: '+report.changedInputs.join(', '));
   report.video={path:out,sha256:hashFile(out),bytes:fs.statSync(out).size};
   // Decode the delivered MP4 itself, so the contact sheet cannot silently

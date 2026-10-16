@@ -1,0 +1,149 @@
+{
+  "actor": "Lei / 雷晓",
+  "revision": "v1",
+  "date": "2026-10-16",
+  "status": "user_accepted_as_working_appearance_baseline_with_known_limits",
+  "user_feedback": "目前的效果虽然比文生图差一点，但是基本算可以接收了",
+  "acceptance_scope": "当前外观可接受；不代表全部视角、严格逐像素确定性或完整对白表演已通过",
+  "workflow": [
+    "原始九宫格与派生生产图",
+    "原画/原模型/候选逐部位对照",
+    "完整头像与两侧邻角",
+    "正式模型MP4解码复查"
+  ],
+  "observations": [
+    {
+      "part": "眉眼",
+      "before": "旧眼线简化、虹膜平，气质偏幼",
+      "after": "采用源绘画眼线和虹膜，保持正面眼位；侧眼恢复可读宽度",
+      "remaining": "侧眼形状仍比原画圆，半闭眼上睑较平"
+    },
+    {
+      "part": "鼻口下颌",
+      "before": "鼻唇轮廓简化，颏部前突且下颌宽",
+      "after": "独立鼻唇曲线、收颏并平顺下缘",
+      "remaining": "鼻唇细节和斜面气质与原画仍有差距"
+    },
+    {
+      "part": "耳",
+      "before": "侧面只有一条内耳色条",
+      "after": "附着耳、耳垂内收、前向露出内耳",
+      "remaining": "内耳绘画仍简化"
+    },
+    {
+      "part": "头发",
+      "before": "厚重宽片、少量硬色块",
+      "after": "生成前后发绘画进入曲面；解决后颈线跨过脸颊",
+      "remaining": "鬓角末端偏向眼下，侧面有细竖边，后脑偏圆，俯视可见前后帽接合"
+    },
+    {
+      "part": "头颈",
+      "before": "侧面矩形断口、正面领口灰洞",
+      "after": "连续颈环接入耳颌与领口，清除旧模型弱头权重残片",
+      "remaining": "颈部阴影块宽；衣领与身体的原有色块粗糙"
+    },
+    {
+      "part": "表情",
+      "after": "支持源图眨眼、有限偏视、小开口",
+      "remaining": "没有完整情绪眉形、大口型和音素图集；不是完整对白验收"
+    }
+  ],
+  "validation": {
+    "static_states": 116,
+    "finite": true,
+    "browser_errors": [],
+    "strict_reverse_failures": [
+      "turn_84"
+    ],
+    "reverse_failure_detail": {
+      "status": "strict_reverse_failure_retained",
+      "frame": "turn_84",
+      "pixels": 1,
+      "max_delta": 36,
+      "samples": [
+        {
+          "xy": [
+            590,
+            651
+          ],
+          "forward": [
+            176,
+            150,
+            137
+          ],
+          "reverse": [
+            152,
+            116,
+            101
+          ]
+        }
+      ]
+    },
+    "performance_states": 15,
+    "scene_times": 5,
+    "performance_reverse_equal": true,
+    "aoi_regression": {
+      "front.png": {
+        "changed_pixels": 0,
+        "max_delta": 0
+      },
+      "turn_45.png": {
+        "changed_pixels": 0,
+        "max_delta": 0
+      },
+      "turn_60.png": {
+        "changed_pixels": 0,
+        "max_delta": 0
+      },
+      "turn_90.png": {
+        "changed_pixels": 1,
+        "max_delta": 2
+      },
+      "turn_minus45.png": {
+        "changed_pixels": 0,
+        "max_delta": 0
+      },
+      "turn_minus60.png": {
+        "changed_pixels": 0,
+        "max_delta": 0
+      },
+      "turn_minus90.png": {
+        "changed_pixels": 0,
+        "max_delta": 0
+      },
+      "live_reverse_failures": [
+        "turn_90"
+      ]
+    },
+    "video": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 900,
+          "r_frame_rate": "24/1",
+          "nb_read_frames": "144"
+        }
+      ],
+      "format": {
+        "duration": "6.000000"
+      }
+    },
+    "video_input_hashes_unchanged": true,
+    "video_from_live_model": true
+  },
+  "video": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\storyboard\\hybrid_character\\lei\\current\\turn.mp4",
+    "sha256": "cc8b7fddcc262a058addf7d5d01da75746266a1a7c7b5e1771fc5e2e0950e8be",
+    "bytes": 1520757
+  },
+  "video_review": "全片解码总览及第一秒、深侧交接序列已查看；未见整脸突然放大缩小。单像素严格逆序失败仍保留。",
+  "evidence": "../archive/v1_evidence",
+  "retention": "只有current作为最新入口；必要证据和可恢复基准在archive，结束的tmp实验实际删除。",
+  "new_trial_policy": "语义头发分层仅在候选目录和请求覆盖中试；整体收益明确且正面/两侧/动态无退步才替换，当前版保留可回退。",
+  "commits": {
+    "assets": "ceed792",
+    "skills": "96ba69e"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "left_eye": {
+    "source_box": [
+      378,
+      550,
+      543,
+      668
+    ],
+    "changed_bbox": [
+      0,
+      50,
+      20,
+      118
+    ],
+    "max_channel_delta": 6,
+    "ink_luma_threshold": 175,
+    "changed_ink_pixels": 0,
+    "max_ink_delta": 0.0
+  },
+  "right_eye": {
+    "source_box": [
+      668,
+      550,
+      837,
+      668
+    ],
+    "changed_bbox": [
+      158,
+      92,
+      169,
+      118
+    ],
+    "max_channel_delta": 3,
+    "ink_luma_threshold": 175,
+    "changed_ink_pixels": 0,
+    "max_ink_delta": 0.0
+  },
+  "left_brow": {
+    "source_box": [
+      375,
+      500,
+      557,
+      539
+    ],
+    "changed_bbox": null,
+    "max_channel_delta": 0
+  },
+  "right_brow": {
+    "source_box": [
+      648,
+      500,
+      846,
+      539
+    ],
+    "changed_bbox": null,
+    "max_channel_delta": 0
+  },
+  "nose": {
+    "source_box": [
+      582,
+      680,
+      626,
+      753
+    ],
+    "changed_bbox": null,
+    "max_channel_delta": 0
+  },
+  "mouth": {
+    "source_box": [
+      555,
+      800,
+      665,
+      850
+    ],
+    "changed_bbox": null,
+    "max_channel_delta": 0
+  }
+}

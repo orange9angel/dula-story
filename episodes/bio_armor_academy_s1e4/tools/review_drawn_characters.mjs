@@ -8,9 +8,19 @@ const out=path.resolve(ep,oi<0?'storyboard/hybrid_character/anime_review':proces
 const browser=await req('puppeteer').launch({headless:true});
 const specs=[['neutral',{}],['listen',{gaze:[-.8,.1],smile:.25}],['concern',{gaze:[.7,-.2],fear:.8}],['firm',{focus:.9,gaze:[-.6,0]}],['talk',{jaw:.65,smile:.5,gaze:[-.6,0]}],['half_blink',{blink:.5}],['closed',{blink:1}],['left',{turn:-.75}],['right',{turn:.75}],['profile',{turn:Math.PI/2}],['profile_left',{turn:-Math.PI/2}],['back_right',{turn:Math.PI*.72}],['back',{turn:Math.PI}],['down',{pitch:.32}],['up',{pitch:-.28}]];
 const report={build:auditInputs(ep),errors:[],actors:{}};
+const moduleOverrides=option('--module-overrides')?Object.entries(JSON.parse(fs.readFileSync(path.resolve(ep,option('--module-overrides')),'utf8'))).map(([suffix,file])=>{
+ if(!suffix.startsWith('/')||!suffix.endsWith('.js'))throw new Error('Invalid module override suffix');
+ const source=path.resolve(ep,file),body=fs.readFileSync(source,'utf8');
+ return {suffix,path:source,sha256:createHash('sha256').update(body).digest('hex'),body};
+}):[];
+report.moduleOverrides=moduleOverrides.map(({body,...metadata})=>metadata);
 for(const file of ['face_lab.js','face_lab.html','tools/review_drawn_characters.mjs'])report.build.inputs.push({path:path.join(ep,file),sha256:createHash('sha256').update(fs.readFileSync(path.join(ep,file))).digest('hex')});
 try{
  const page=await browser.newPage();page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});await page.setViewport({width:900,height:900});
+ if(moduleOverrides.length){await page.setRequestInterception(true);page.on('request',r=>{
+  const pathname=new URL(r.url()).pathname,item=moduleOverrides.find(o=>pathname.endsWith(o.suffix));
+  if(item)r.respond({status:200,contentType:'text/javascript',body:item.body});else r.continue();
+ });}
  for(const actor of actorIds){
   await page.goto(`http://127.0.0.1:4215/face_lab.html?actor=${actor}&cel=${mode}`,{timeout:120000});await page.waitForFunction('window.ready',{timeout:90000});
   const results={};
@@ -43,6 +53,6 @@ try{
  }
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));
  const failures=[...Object.entries(report.actors).flatMap(([a,states])=>Object.entries(states).filter(([,s])=>!s.seekEqual).map(([s])=>a+':'+s)),...Object.entries(report.scene.frames).filter(([,s])=>!s.seekEqual||!s.stateEqual).map(([t])=>'scene:'+t)];
- if(report.errors.length||failures.length||Object.entries(report.scene.modes).some(([id,m])=>m!==(mode==='direct'&&id==='aoi'?'direct':'anime')))throw new Error(JSON.stringify({errors:report.errors,failures,modes:report.scene.modes}));
+ if(report.errors.length||failures.length||Object.entries(report.scene.modes).some(([id,m])=>m!==(mode==='direct'?'direct':'anime')))throw new Error(JSON.stringify({errors:report.errors,failures,modes:report.scene.modes}));
  console.log(`${specs.length*actorIds.length} head/expression states and 5 scene frames; reverse seek identical; no browser or shader errors.`);
 }finally{await browser.close();}

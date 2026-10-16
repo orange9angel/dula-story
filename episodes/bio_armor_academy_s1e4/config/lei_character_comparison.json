@@ -1,0 +1,122 @@
+{
+  "before": "storyboard/hybrid_character/lei/archive/v1_evidence/before",
+  "after": "storyboard/hybrid_character/lei/archive/v1_evidence/after",
+  "out": "tmp/lei_review_rebuild",
+  "reference": "storyboard/hybrid_character/archive/history/face_design_turnaround_v1/lei_nine_views.png",
+  "whole_frames": true,
+  "column_labels": [
+    "原始九宫格（姿态未标定）",
+    "修改前实际模型",
+    "本轮实际模型"
+  ],
+  "display_note": "各区保留长宽比；原画姿态未标定，45°俯仰也有差异，不能据此做拟合打分。",
+  "whole_frame_note": "头身共同旋转；新旧截图直接来自渲染，未重画或修图。",
+  "boards": [
+    {
+      "id": "parts",
+      "title": "雷晓逐部位验证：原画 / 修改前 / 当前",
+      "rows": [
+        {
+          "frame": "front",
+          "label": "① 正面眉眼：眼形、虹膜与眼间距",
+          "reference": "storyboard/hybrid_character/lei/references/lei_production_front.png",
+          "reference_label": "派生正面生产图",
+          "reference_crop": [
+            365,
+            530,
+            840,
+            690
+          ],
+          "model_crop": [
+            290,
+            420,
+            570,
+            505
+          ]
+        },
+        {
+          "frame": "turn_90",
+          "label": "② 侧面近眼：避免虹膜压成细线",
+          "reference_crop": [
+            660,
+            585,
+            740,
+            650
+          ],
+          "model_crop": [
+            565,
+            420,
+            645,
+            505
+          ]
+        },
+        {
+          "frame": "turn_90",
+          "label": "③ 鼻口与下颌：凸度、颌角和下巴",
+          "reference_crop": [
+            600,
+            635,
+            765,
+            762
+          ],
+          "model_crop": [
+            420,
+            505,
+            680,
+            685
+          ]
+        },
+        {
+          "frame": "turn_90",
+          "label": "④ 耳与脸连接：耳根不能悬空",
+          "reference_crop": [
+            555,
+            560,
+            655,
+            695
+          ],
+          "model_crop": [
+            375,
+            420,
+            490,
+            560
+          ]
+        },
+        {
+          "frame": "front",
+          "label": "⑤ 头发：笔触、分束和轮廓",
+          "reference": "storyboard/hybrid_character/lei/references/lei_production_front.png",
+          "reference_label": "派生正面生产图",
+          "reference_crop": [
+            100,
+            0,
+            1160,
+            660
+          ],
+          "model_crop": [
+            150,
+            130,
+            700,
+            465
+          ]
+        },
+        {
+          "frame": "turn_90",
+          "label": "⑥ 头颈连接：断口、阴影及领口",
+          "reference_crop": [
+            585,
+            675,
+            730,
+            810
+          ],
+          "model_crop": [
+            320,
+            525,
+            560,
+            745
+          ]
+        }
+      ]
+    }
+  ]
+}

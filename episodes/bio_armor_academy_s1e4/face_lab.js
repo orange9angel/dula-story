@@ -23,6 +23,7 @@ if(['anime','direct'].includes(q.get('cel'))){
   applyImportedCelLook(a,{mode:'toon',face:TRIPO_LOOK[id],hairMinY:id==='aoi'?1.10:1.56,headMinY:id==='aoi'?1.42:1.57,palette:{hair:'#244444',hairLight:'#628680',skin:'#efcbae'}});
   face=applyTripoDrawnLook(a,id,{directPaint:q.get('cel')==='direct'}).face;await face.ready;
   if(id==='aoi'&&q.get('cel')==='direct')await addAoiGeneratedHair(a,{profileFit:q.get('hair')!=='legacy'});
+  else if(id==='lei'&&q.get('cel')==='direct')await (await import('dula-assets/characters/bioarmor/lei-generated-hair.js')).addLeiGeneratedHair(a);
   else if(id==='aoi')addAoiGraphicHair(a,{refined:true});else addLeiGraphicHair(a);
   camera.left=-.27;camera.right=.27;camera.top=.27;camera.bottom=-.27;camera.updateProjectionMatrix();
 }else face=createProjectedFace(a,r,TRIPO_LOOK[id]);

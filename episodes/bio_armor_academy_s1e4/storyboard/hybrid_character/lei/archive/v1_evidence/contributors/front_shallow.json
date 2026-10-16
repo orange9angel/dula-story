@@ -1,0 +1,79 @@
+{
+  "status": "candidate_frozen_pending_refreshed_3d_and_video_review",
+  "scope": "Lei source-art facial paint callback, blink, restrained gaze, small mouth opening; no geometry/hair/live files modified",
+  "candidate_files": {
+    "generated-portrait-paint.js": "55B2E1A6A1542FC63F93928EDF956C2A891E94D1F8739969795106A602FA14D2",
+    "lei-portrait-paint.json": "09BDDAC6346EAE5E93E8EB2B1800303C963165F8F8D89CAFE16D581F5BAEAE1A"
+  },
+  "source_art": "D:/opensource/movie/dula-assets/characters/bioarmor/textures/lei-painted-face-v1.png",
+  "reviewed_reference": [
+    "storyboard/hybrid_character/archive/history/face_design_turnaround_v1/lei_nine_views.png",
+    "storyboard/hybrid_character/lei/references/lei_production_front.png",
+    "tmp/lei_refine_v1/before/lei_neutral.png",
+    "tmp/lei_refine_v1/before/lei_right.png",
+    "tmp/lei_refine_v1/before/lei_profile.png"
+  ],
+  "integration": {
+    "export": "paintGeneratedPortrait(ctx, config, state, art)",
+    "callback": "createDrawnHead config.paintFace = paintGeneratedPortrait",
+    "recipe": "config.paint = complete parsed lei-portrait-paint.json; parent wrapper must refresh embedded JSON",
+    "source_size": [1254, 1254],
+    "immutability": "Treat config.paint as immutable per head. Replacing it creates a new cached recipe; mutating it in place is unsupported.",
+    "mapping": {
+      "originX": 607,
+      "originY": 614,
+      "originWorldX": -0.012,
+      "anchorY": 1.597,
+      "pixelsPerMetre": 3000,
+      "source_eye_centres": [[478, 614], [736, 614]],
+      "world_eye_centres": [[-0.055, 1.597], [0.031, 1.597]],
+      "noseY": 1.562,
+      "mouthY": 1.52833,
+      "chinY": 1.487
+    },
+    "state": {
+      "blink": "0..1, eyelids occlude original iris; iris is not vertically scaled",
+      "gaze": "[-1..1,-1..1], maximum source warp 6px horizontal / 3.5px vertical, 28px pinned boundary; subtle gaze only",
+      "jaw": "0..0.8, small source-lip opening, maximum depth recipe 25px * jaw",
+      "width": "0.8..1.2 mouth width",
+      "noEyes": "eye-free underpaint, mouth state retained"
+    },
+    "face_domain": "Source-coordinate polygon excludes source ears, jaw outline, neck and clothes. Final mask also covers every animated patch. faceFeatherPixels=18 is inward-only; no source pixels spread outside the polygon.",
+    "caching": "Source RGBA, mask distance transform, clean patches and extracted ink cached. Separate normal/under reusable full-size canvases keyed by normalized expression; repeated state does not rebuild composite. Changed gaze allocates only eye-sized warp canvases."
+  },
+  "validation": {
+    "syntax": "node --check generated-portrait-paint.js passed",
+    "canvas_preview": "preview_portrait.mjs completed 11 states with no page errors; canvas_states.jpg uses uniform aspect ratio",
+    "states": ["neutral", "blink20", "blink50", "blink80", "closed", "left", "right", "up", "down", "talk", "no_eyes"],
+    "neutral_pixels": "Both brow rectangles, nose and mouth equal the source exactly. Both eye rectangles retain every dark ink/iris pixel (source luma <175) exactly. Rectangle corner skin pixels near the face-domain edge differ by at most 6/255 left, 3/255 right; full metrics in neutral_feature_preservation.json.",
+    "warm_canvas_only": {
+      "repeated_neutral_ms_per_call": 0.005,
+      "changing_blink_plus_under_ms_per_pair": 2.11,
+      "new_full_size_canvases_during_30_warm_blink_pairs": 0,
+      "limitation": "Not end-to-end renderer timing or a frame-rate claim."
+    },
+    "latest_candidate_3d": "Not yet rendered by this agent. Parent is refreshing integration; r1 used older embedded recipe and must not count as final candidate approval.",
+    "video": "Not reviewed or approved by this agent."
+  },
+  "r1_3d_observations": [
+    "Viewed front, turn_45, turn_minus45, turn_60, turn_minus90, no_hair_45, no_hair_90, half_blink and talk. Neutral eyes/brows/nose/mouth track production source more closely than the old procedural paint.",
+    "Neutral +/-45 showed no static hard-cropped iris. Source facial identity is retained; apparent youthful round iris originates in production art rather than a replacement painted iris.",
+    "No-hair 45/90 revealed an abrupt orange source-shading band at the temple/forehead face-domain edge. Final frozen candidate adds inward feathering; 3D impact still requires refreshed views. Some source directional shading remains intentionally preserved.",
+    "R1 half-blink upper line appeared comparatively straight/heavy. Current recipe uses shallow closed curves and progressive ink thinning; full closure and live transition still need integrated inspection.",
+    "R1 talk at deep angle is a restrained small slit; no unsupported teeth or wide phoneme behavior is implied. Nose/lip/chin geometry is owned by deep_profile.",
+    "R1 rear side showed hair/floating-line issues outside this paint scope; hair agent/parent own these."
+  ],
+  "rejected_or_revised": [
+    "9px/5px gaze with 10px pin margin created a visible notch near the iris bottom. Reduced to 6px/3.5px and widened pin margin to 28px.",
+    "Deep closed-eye control points made a U-shaped lid and too much ink. Replaced by shallow closed curves and 0.48 final ink scale.",
+    "Narrow cleanup rectangle retained original outer eyelash points during closure. Expanded the cleanup ROI while keeping the source face-domain mask active.",
+    "Cleanup sampleTop across the inner brow shadow produced an orange vertical strip. Restricted clean sample X ranges to skin columns away from that shadow.",
+    "Initial 18px feather on the narrower mask attenuated outer eye ink. Expanded only the source-domain eye-height contour, then verified zero dark eye-pixel differences. World mapping and facial geometry were unchanged."
+  ],
+  "remaining_limits": [
+    "Blinking uses extracted source ink and occlusion; mid-blink lid corners can look more squared and the lid flatter than the original open-eye drawing. Evaluate animation timing at actual output resolution before final acceptance.",
+    "Small gaze is a pinned local image warp, not an independently rendered eyeball. Larger gaze angles require separate iris/white artwork or a stronger deformation model.",
+    "Brows and nose are preserved source art; emotion-specific eyebrow expression and wide phoneme atlas are not implemented.",
+    "Final validation must rerun semantic decomposition then full face across both signs of yaw, inspect continuous turn and expression video, and verify wrapper/source hashes match the frozen candidate."
+  ]
+}
