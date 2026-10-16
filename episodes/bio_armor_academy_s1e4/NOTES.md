@@ -1,5 +1,16 @@
 # 《9章》S1E4《别再试了》
 
+> **2026-10-16 当前工作：Aoi 程序绘制 v8 转面与耳发修订**。
+> 最新只看 [current 总览](storyboard/hybrid_character/current/overview.jpg)、
+> [连续转面](storyboard/hybrid_character/current/turn_70_90.jpg)、
+> [耳发对照](storyboard/hybrid_character/current/ear_hair.jpg)及
+> [同版视频](storyboard/hybrid_character/current/turn.mp4)。
+> 正面、45°、60°脸型是保留基准；用户评价侧面在接近参考，尚未确认全部角度与耳发达标。
+> 本轮继续程序绘制路线，Tripo试验已结束。118张检查图、144帧静音转面及版本证据见
+> [最新交接](storyboard/hybrid_character/REVIEW.md)。这不是整集重渲染或对白表演验收。
+
+以下2026-10-14记录是历史阶段，不代表当前造型入口。
+
 > **2026-10-14 混合角色与手部诊断**：用户反馈塑胶头发、泥塑身体和手部扭曲。
 > 已整理小雪 craft3d 工艺并输出外观/动作对照；候选仍有发际线缺陷和接触回退，
 > 未设为默认。先读 [本轮证据与续作项](storyboard/hybrid_character/REVIEW.md)。

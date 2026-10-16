@@ -1,4 +1,73 @@
-# 混合角色与动作诊断 · 2026-10-14
+# 混合角色制作与对照记录
+
+## 当前交接 · 2026-10-16 · Aoi v8
+
+继续程序绘制方案。用户评价“目前正面差距最小，侧面已经开始追上来”；这表示
+方向上的进步，不是整套多角度、耳发或整集成片已验收。此前得到肯定的正面、
+45°、60°脸型作为保留基准，后续集中改善深斜面一致性和耳发组织。
+
+### 最新入口与版本
+
+| 内容 | 文件 |
+|---|---|
+| 整体与参考对照 | [current/overview.jpg](current/overview.jpg) |
+| 60°—90°连续转面 | [current/turn_70_90.jpg](current/turn_70_90.jpg) |
+| 耳朵、鬓发、后脑与马尾 | [current/ear_hair.jpg](current/ear_hair.jpg) |
+| 6秒静音转面 | [current/turn.mp4](current/turn.mp4) |
+| MP4实际解码样本 | [current/motion_identity.jpg](current/motion_identity.jpg) |
+| 版本与文件哈希 | [current/status.json](current/status.json) |
+
+源视频为`../../output/aoi_oblique_transition_v8.mp4`，SHA-256为
+`b487df3abd97647896c37853acc343ca5d963af9e16204fb1429f2fe5292a9cb`。
+当前资产提交`c6d8934`、图像与证据提交`bbcab7b`、审美复盘提交`9697631`。
+MP4按仓库规则保留在本地输出中；Git保存源码、复现命令、校验图与构建记录。
+
+### 改动、验证与边界
+
+- 眼眶至低位脸颊使用合成轮廓约束，远眼白区随虹膜和遮挡收口；60°之后
+  连续保留少量低位脸颊支撑与鼻部内收，减轻70°收瘪和70°—90°换脸感。
+- 区分脸外轮廓与脸内描边，渐隐深斜面多余折线。消费渲染器需启用`stencil`；
+  `face_lab.js`与`viewer.js`已接入。耳内减少重复环线，鬓发收细并分叉，缩短
+  后颈长尖片，侧面马尾根略抬高并靠近后脑。
+- [最终静图报告](oblique_transition_v1/final_delivery/baseline/report.json)记录118个
+  角度、分层及表情样本：头身同转、顶点有限、无浏览器错误，受检逆序取帧一致。
+  这不是118个样本逐张获得美术认可。
+- 修耳发前，连续性修订保持正面与左右45°、60°完整图像素不变；修耳发后，
+  脸部配置相同，左右45°、60°裸头脸区像素不变，完整有发图有预期遮挡变化。
+  证据分别是`identity_preservation.json`和`final_comparison/evidence.json`，
+  均在`oblique_transition_v1/`内。不能把区域相同写成整图相同。
+- [视频构建记录](oblique_transition_v1/video_delivery/turn_video_build.json)为6秒、
+  24fps、144帧，渲染期间输入未变；检查16个实际MP4解码样本及左右70°的有限
+  眨眼/注视图，不声明完整实时播放审片或对白、全身动作验收。
+- **仍需改进**：后脑像整片发壳、马尾分束与轻盈度不足；耳根/耳垂简化，鬓发
+  根部的大卷束不如原画自然；90°轮廓仍更长更尖。颈领碎边与肩部旧问题未修。
+  绘画角度未标定，不能算同角度拟合分数。完整观察见
+  [review.json](oblique_transition_v1/review.json)。
+
+已按用户授权清理本轮552张失败或被替代的试验图，记录在
+[cleanup.json](oblique_transition_v1/cleanup.json)；保留原参考、选定基准与当前证据。
+历史参数移至`oblique_transition_v1/sources/trial_records/`，不要把下文旧目录当最新。
+
+### 下一轮与复现
+
+先看`current`完整头像及转面，再按耳—鬓发—下颌、后脑—马尾根的关系拆图。
+保留已接近的脸型，优先修后发组织与耳根；每次回查左右侧、邻接角和正面。
+通用方法读`dula-skills/character-modeler/SKILL.md`，尤其
+`references/character-aesthetics.md`与`references/multiview-character-fit.md`。
+主要缺陷仍多由用户先指出，本轮不作为skill自主审美能力的盲测通过证据。
+
+单集目录启动`node render.mjs --serve`（4215）后，在新目录复验，保留v8对照：
+
+```powershell
+node tools/render_profile_feature_study.mjs --out storyboard/hybrid_character/oblique_transition_v1/next_review --variants baseline --turn-mode body --additional-angles 20,22,28,30,32.1631935647518,38,40,60,-60,70,-70,75,-75,80,-80,85,-85 --ear-layers --layer-angles 28,32.1631935647518,38,45,-45,60,-60,70,-70,80,-80,90,-90 --expression-angles 25,45,60,-60,70,-70,90,-90
+node tools/render_character_profile_turn.mjs --out output/aoi_oblique_transition_next.mp4 --board storyboard/hybrid_character/oblique_transition_v1/next_video --revision v9 --turn-mode body
+```
+
+当前对照配置为`../../config/ear_hair_delivery_comparison.json`；下一轮复制后修改
+`before/after/out`，不要把新图写入旧阶段的证据目录。源码快照及哈希在
+`oblique_transition_v1/sources/v8/`与`oblique_transition_v1/final_manifest.json`。
+
+## 历史阶段 · 2026-10-14
 
 用户指出 Tripo 头发像塑胶、身体像泥塑、手部动作扭曲；同意抽象小雪 craft3d 工艺，
 询问生成方向与二维整理成本。当前为诊断和可切换试验，没有替换原片的定稿。
@@ -525,3 +594,28 @@ python tools/build_oblique_feature_review.py --parts
 `face_support_study_v1/source_after.js`及共享辅助代码快照保留本轮实现；部分归档
 失败参数依赖旧试验代码，当前工具遇到已删除的分支会明确报错，不假装成功套用。
 后发/马尾纹理与造型、鼻下轮廓、颈领碎边仍未由这轮解决。
+## 2026-10-15：眼形、耳颌颈、完整去发头型与发束覆盖候选
+
+共享资产提交`5af1e33`，当前证据在`face_balance_study_v2/review.json`，源码快照在
+`source_current/`。`cranial_review/baseline/`包含56个整身转向/分层视图，
+`cranial_head_turn/baseline/`另含16个独立转头状态；浏览器无报错，受检逆序截图一致。
+`current_comparison/`十张局部/全图对照，`skull_comparison/`四张去发与转角对照；
+`output/aoi_cranial_review.mp4`为6秒静音转面，已检查12帧接触表，未作为对白表演验收。
+
+本轮调整鼻侧睫毛、眼间距和远眼外角遮挡；去掉睫线取样带入的第二耳轮残影，补耳垂，
+重做实际下颌收边、颈前连接/阴影、耳前发际线、后颈发缘和远侧垂发/马尾显露。
+用户继续指出25–40°额头鼓包、去发45°/60°缺颅顶以及后颈鼓包；此前已有去发图却只
+围绕耳朵查看，没有覆盖整体。现补连续上半颅截面、让眉上局部修型退出，限制下颌
+抬升不再切平后脑，并平顺后颈。此为用户提示后的修订，不是自主盲测通过。
+
+`skull_reference/`保存两次内置image_gen生成的去发参考及完整提示词。第一版标签
+30/45接近、60近纯侧；第二版沿原斜面人设去发。隐藏头型均为绘画推断，不是解剖
+测量或准确相机标定。当前后发/马尾组织、较厚远侧垂发、耳根与颈影、领口碎边仍有
+差异，不能称为已还原原画。
+
+该历史阶段用户另要求重新用Tripo生成女生并优先无头。`assets3d/tripo_aoi_anime_v2/`保存新的
+二维全身输入和提示词、无头失败截图/回执。真正无头停在Cloudflare验证；用户手动
+验证的专用可见窗口又循环要求勾选，未观察到登录成功。随后直接启动普通Chrome
+专用窗口被工具自动审批以`blocked by policy`拒绝，操作未执行。截至这份记录，
+当时尚未提交新的Tripo三维任务。后续`trial_manifest.json`已记录使用现有登录Chrome
+提交H3.1任务；用户随后反馈仍有泥塑感并决定回到程序绘制。该生成试验不再是当前待办。
