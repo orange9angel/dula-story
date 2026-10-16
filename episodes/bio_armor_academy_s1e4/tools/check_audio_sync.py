@@ -12,7 +12,7 @@ assert features['sourceStory']==timing['sourceStory']==alignment['sourceStory']=
 assert tl['source']['sha256']==digest(EP/'script.story')
 assert anchors['performanceSha256']==digest(EP/'performance_remake.js')
 assert timing['mix_sha256']==digest(EP/'assets3d/mixed.wav')
-assert timing['ambience']['sha256']==digest(EP/timing['ambience']['path'])
+if timing['ambience']:assert timing['ambience']['sha256']==digest(EP/timing['ambience']['path'])
 assert len(timing['lines'])==len(tl['dialogue']) and len(tl['dialogue'])>0
 for line,source in zip(timing['lines'],tl['dialogue']):
     assert all(line[k]==source[k] for k in source)
@@ -41,6 +41,9 @@ if no_steps:
     assert steps is None and not any(c['id']=='step' for c in plan['sfx'])
     sr,fx=wavfile.read(EP/'assets3d/sfx_stem.wav')
     assert not np.any(fx[:round(6.5*sr)]), 'Entry walk must have no Foley'
+    sr,room=wavfile.read(EP/'assets3d/ambience_stem.wav')
+    if any(e['id']=='no_rustling_room_bed' for e in plan['exclusions']):
+        assert not np.any(room), 'Rejected room bed must be absent from the entire episode'
 else:
     assert steps is not None
     assert len(steps['times'])==len(anchors['landings'])

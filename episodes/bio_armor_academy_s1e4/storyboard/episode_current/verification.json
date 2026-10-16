@@ -1,8 +1,9 @@
 {
-  "status": "technical-checks-passed; visual refinement awaits user review",
+  "status": "technical-checks-passed; artistic review pending user",
   "video": "output/current.mp4",
-  "renderedCandidate": "output/edge_candidate.mp4",
-  "videoSha256": "38f4d64520aeecf4747006fcd6c654d3b777a4732acd0cbb654aa1f83148ec5e",
+  "videoSha256": "61448700c033db5046080191a6ab9f9c9cdb6b92b2725a3095cac4323f7302a7",
+  "duration": 82,
+  "frames": 2460,
   "probe": {
     "programs": [],
     "stream_groups": [],
@@ -27,15 +28,8 @@
       }
     ],
     "format": {
-      "duration": "82.000000",
-      "size": "9031022"
+      "duration": "82.000000"
     }
-  },
-  "fullDecode": "passed",
-  "rollback": {
-    "archive": "output/archive/before_edge_stability.zip",
-    "video": "output/archive/before_edge_stability.mp4",
-    "videoSha256": "ebed97318cb65137cdaf00deae5b93825a7479149e36225da61bbb1067f28180"
   },
   "runtimeProfile": {
     "cel": "direct",
@@ -56,134 +50,112 @@
       720
     ]
   },
+  "rollback": {
+    "archive": "output/archive/before_romcom_revision.zip",
+    "videoSha256": "38f4d64520aeecf4747006fcd6c654d3b777a4732acd0cbb654aa1f83148ec5e"
+  },
+  "audio": {
+    "mixSha256": "459c01b60a810ddc1d0dd50dfb8d402090791391b9e32b261a958158f948b744",
+    "decodedAacToNewPcmCorrelation": 0.999567330763599,
+    "maleSpeaker": "zh_male_shaonianzixin_uranus_bigtts",
+    "dialogueLines": 14,
+    "roomBed": false,
+    "footsteps": 0,
+    "music": {
+      "id": "tomorrows_meeting",
+      "provider": "Suno",
+      "asset": "assets3d/music/romcom_suno_episode.wav",
+      "sourceMetadata": "assets3d/music/romcom_suno_episode.source.json",
+      "startTime": 0,
+      "endTime": 82,
+      "targetRmsDb": -27,
+      "dialogueDuck": 0.45,
+      "prompt": "Instrumental romantic comedy anime underscore, 104 BPM, D major with warm added-sixth chords. Playful four-note piano question answered by clarinet and pizzicato strings, soft acoustic guitar and upright bass, tiny bell accents. Opening twenty seconds curious and buoyant, two shy classmates teasing each other after school. Middle thins into a brief minor-key surprise and short suspended pauses; ending returns to the warm motif with a gentle lift, anticipation of meeting tomorrow, soft complete cadence. Lively, intimate, expressive dynamics, melodic call-and-response with generous rests for dialogue. No vocals, humming, whispering, drums, shakers, vinyl hiss, environmental noise or sound effects. Avoid sad ambient pads, ominous drones, battle music or epic climax. Clean dry chamber ensemble, approximately ninety seconds.",
+      "reason": "轻快问答动机；罐子笑话后留反应，承认蚀纹无法消失时留白，结尾回到明天见的期待。",
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          17.5,
+          1
+        ],
+        [
+          18.4,
+          0.38
+        ],
+        [
+          20.2,
+          0.38
+        ],
+        [
+          21.4,
+          1
+        ],
+        [
+          42.6,
+          1
+        ],
+        [
+          44.5,
+          0
+        ],
+        [
+          53.2,
+          0
+        ],
+        [
+          55.2,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          82,
+          0
+        ]
+      ]
+    },
+    "providerReceipt": {
+      "provider": "Suno",
+      "method": "suno-driver via kimi-webbridge existing user browser",
+      "status": "downloaded",
+      "createdAt": "2026-10-16T18:04:59.841Z",
+      "batchId": "e7b1f9a2-2193-4a92-9f9d-309a455ba3f6",
+      "songIds": [
+        "c18019b2-0128-46ca-96d6-cc61ce58ba60",
+        "17a1ce87-aca6-41c7-a990-0636c974bb0a"
+      ],
+      "instrumental": true,
+      "prompt": "Instrumental romantic comedy anime underscore, 104 BPM, D major with warm added-sixth chords. Playful four-note piano question answered by clarinet and pizzicato strings, soft acoustic guitar and upright bass, tiny bell accents. Opening twenty seconds curious and buoyant, two shy classmates teasing each other after school. Middle thins into a brief minor-key surprise and short suspended pauses; ending returns to the warm motif with a gentle lift, anticipation of meeting tomorrow, soft complete cadence. Lively, intimate, expressive dynamics, melodic call-and-response with generous rests for dialogue. No vocals, humming, whispering, drums, shakers, vinyl hiss, environmental noise or sound effects. Avoid sad ambient pads, ominous drones, battle music or epic climax. Clean dry chamber ensemble, approximately ninety seconds.",
+      "selectedSong": "c18019b2-0128-46ca-96d6-cc61ce58ba60",
+      "asset": "assets3d/music/romcom_suno.wav",
+      "sha256": "73e603e2aae3524a338d509d06deccd321826e36ebd03adc8c1274e0bb92b02d"
+    }
+  },
+  "neutralPixelsChanged": {
+    "lei_0_neutral_pixels_changed": 0,
+    "lei_45_neutral_pixels_changed": 0,
+    "lei_70_neutral_pixels_changed": 0,
+    "aoi_0_neutral_pixels_changed": 0,
+    "aoi_45_neutral_pixels_changed": 0,
+    "aoi_70_neutral_pixels_changed": 0
+  },
   "motion": "sampled-motion-pass",
   "contact": "sampled-contact-pass",
   "seekPassed": true,
   "seekCount": 57,
-  "renderedFrames": 2460,
-  "traceSha256": "1118925938a998bb35d89ff8dd21ac3ec24f7ac7f61f6d380d85c299aab7dca9",
-  "preservedInputCount": 96,
-  "preservedAssetInputs": 51,
-  "preservedRuntime": [
-    "script.story",
-    "performance_remake.js",
-    "performance_tripo.js",
-    "scenes/BiologyRoomRemakeScene.js"
-  ],
-  "audio": {
-    "source": "output\\archive\\before_edge_stability.mp4",
-    "packetPayloadsAndTimestampsIdentical": true,
-    "packets": 3845,
-    "maleSpeaker": "ICL_uranus_zh_male_chanruoshaoye_tob",
-    "footsteps": 0,
-    "mixSha256": "49264925a0d53941a46cda98bc5649b1ed5a5ab8e200cb45757510057bd3765e"
+  "physicsSource": "tmp/romcom_revision/final_physics/trace.json",
+  "picturePhysicsEquivalence": {
+    "passed": true,
+    "frames": 2460,
+    "identicalBuildInputs": true,
+    "maxDelta": 0,
+    "failures": []
   },
-  "titleCards": {
-    "source": "config/cards.json",
-    "frameCheckCount": 12,
-    "missingFrameRejected": true,
-    "generator": "title-card"
-  },
-  "rasterReview": {
-    "times": [
-      20.8,
-      21.766666666666666
-    ],
-    "frames": 30,
-    "outputSize": [
-      1280,
-      720
-    ],
-    "reference": "4x spatial rendering, PNG; same motion/camera, not aesthetic ground truth",
-    "metric": "Edge RGB error and first temporal difference of error relative to 4x reference",
-    "identicalMotionStates": true,
-    "results": {
-      "male_hair": {
-        "legacy": {
-          "edgeMAE_0_255": 8.374616622924805,
-          "temporalResidualRMSE_0_255": 0.03098910115659237
-        },
-        "lossless": {
-          "edgeMAE_0_255": 6.227330684661865,
-          "temporalResidualRMSE_0_255": 0.003975903615355492
-        },
-        "supersample": {
-          "edgeMAE_0_255": 4.492260456085205,
-          "temporalResidualRMSE_0_255": 0.003443233435973525
-        },
-        "stable": {
-          "edgeMAE_0_255": 4.492260456085205,
-          "temporalResidualRMSE_0_255": 0.003443233435973525
-        }
-      },
-      "female_hair": {
-        "legacy": {
-          "edgeMAE_0_255": 8.922536849975586,
-          "temporalResidualRMSE_0_255": 6.4080634117126465
-        },
-        "lossless": {
-          "edgeMAE_0_255": 5.608277797698975,
-          "temporalResidualRMSE_0_255": 6.134024143218994
-        },
-        "supersample": {
-          "edgeMAE_0_255": 4.506740570068359,
-          "temporalResidualRMSE_0_255": 4.506509304046631
-        },
-        "stable": {
-          "edgeMAE_0_255": 4.506739616394043,
-          "temporalResidualRMSE_0_255": 4.506509304046631
-        }
-      },
-      "male_shirt": {
-        "legacy": {
-          "edgeMAE_0_255": 9.105267524719238,
-          "temporalResidualRMSE_0_255": 0.0
-        },
-        "lossless": {
-          "edgeMAE_0_255": 5.793943881988525,
-          "temporalResidualRMSE_0_255": 0.0
-        },
-        "supersample": {
-          "edgeMAE_0_255": 5.144687175750732,
-          "temporalResidualRMSE_0_255": 0.0
-        },
-        "stable": {
-          "edgeMAE_0_255": 5.144687175750732,
-          "temporalResidualRMSE_0_255": 0.0
-        }
-      },
-      "female_sleeve": {
-        "legacy": {
-          "edgeMAE_0_255": 8.347275733947754,
-          "temporalResidualRMSE_0_255": 6.780839443206787
-        },
-        "lossless": {
-          "edgeMAE_0_255": 5.249695777893066,
-          "temporalResidualRMSE_0_255": 6.54336404800415
-        },
-        "supersample": {
-          "edgeMAE_0_255": 4.434829235076904,
-          "temporalResidualRMSE_0_255": 3.9515721797943115
-        },
-        "stable": {
-          "edgeMAE_0_255": 4.434829235076904,
-          "temporalResidualRMSE_0_255": 3.9515721797943115
-        }
-      }
-    },
-    "fixedTimeRepeat": {
-      "legacy": true,
-      "lossless": true,
-      "supersample": true,
-      "stable": true,
-      "reference": true
-    }
-  },
-  "visualEvidence": {
-    "edgeComparison": "storyboard/episode_current/edge_comparison.png",
-    "clip": "storyboard/episode_current/edge_comparison.mp4",
-    "cards": "storyboard/episode_current/title_cards.png",
-    "normalSpeedWholeEpisodeViewedByModel": false,
-    "limits": "Raster sampling improved in matched crops. Static male regions in the short diagnostic window do not establish temporal quality. Numeric residuals are not perceived-flicker scores; no claim of eliminating every edge artifact."
-  }
+  "visualReview": "16 isolated expression/angle frames compared; dialogue preview filmstrip and actual encoded keyframes inspected. No claim of watching the whole video at normal speed.",
+  "audioReview": "Complete new mix plus blind native-voice comparisons observed with an audio model; advisory only. Some model timing/ambience claims conflict with actual timeline/stems. No human listening or user acceptance claimed."
 }

@@ -41,14 +41,14 @@ for key,pcm in stems.items():
     jaw=np.where(rms>.004,np.clip(rms/(scale+1e-9),0,1)*.60,0)
     features['characters'][key]=np.round(jaw,4).tolist()+[0]
     features['stems'][key]={'path':str(path.relative_to(EP)).replace('\\','/'),'sha256':digest(path),'rmsGate':.004,'rmsScale':scale}
-ambience=None
+ambience=None;ambience_bus=np.zeros_like(mix)
 if plan['ambience']:
     cue=plan['ambience'][0];ambience=out/'ambience/biology_room_prepared.wav'
     rate,room=wavfile.read(ambience);assert rate==SR and room.ndim==2
     room=room.astype(np.float32)/32768
     expected=round((cue['endTime']-cue['startTime'])*SR);assert len(room)==expected
     fade=round(SR*.8);room[:fade]*=np.linspace(0,1,fade)[:,None];room[-fade:]*=np.linspace(1,0,fade)[:,None]
-    start=round(cue['startTime']*SR);mix[start:start+len(room)]+=room
+    start=round(cue['startTime']*SR);ambience_bus[start:start+len(room)]+=room
     ambience_cue=cue.copy()
 def load_audio(path,channels=2):
     b=subprocess.run(['ffmpeg','-v','error','-i',str(path),'-f','f32le','-ac',str(channels),'-ar',str(SR),'pipe:1'],capture_output=True,check=True).stdout
@@ -66,14 +66,16 @@ for cue in plan['music']:
     y=y[:length];y*=10**(cue['targetRmsDb']/20)/max(float(np.sqrt(np.mean(y*y))),1e-8)
     times=np.arange(len(y))/SR+cue['startTime']
     # An explicit dramatic silence, not a promise to a generative model.
-    mute=np.interp(times,[0,42.6,44.5,53.2,55.2,79,82],[1,1,0,0,1,1,0])
+    envelope=cue.get('envelope',[[0,1],[42.6,1],[44.5,0],[53.2,0],[55.2,1],[79,1],[82,0]])
+    mute=np.interp(times,[p[0] for p in envelope],[p[1] for p in envelope])
     duck=np.ones(len(y),np.float32)
     for row in rows:
-        env=np.interp(times,[row['start']-.16,row['start'],row['audioEnd']+.05,row['audioEnd']+.4],[1,.48,.48,1])
+        depth=cue.get('dialogueDuck',.48)
+        env=np.interp(times,[row['start']-.16,row['start'],row['audioEnd']+.05,row['audioEnd']+.4],[1,depth,depth,1])
         duck=np.minimum(duck,env)
     y=fades(y,.8)*mute[:,None]*duck[:,None]
     start=round(cue['startTime']*SR);music_bus[start:start+len(y)]+=y
-    music_meta.append({'id':cue['id'],'source':cue['asset'],'sha256':digest(source),'targetRmsDb':cue['targetRmsDb'],'silence':[44.5,53.2]})
+    music_meta.append({'id':cue['id'],'source':cue['asset'],'sha256':digest(source),'provider':cue.get('provider'),'targetRmsDb':cue['targetRmsDb'],'silence':[44.5,53.2],'envelope':envelope})
 for cue in plan['sfx']:
     source=EP/cue['asset'];raw=load_audio(source)
     # Place the strongest bounded event, with 30 ms lead. No looped footsteps.
@@ -86,7 +88,8 @@ for cue in plan['sfx']:
     for time in cue['times']:
         start=round(time*SR);sfx_bus[start:start+len(y)]+=y
     sfx_meta.append({'id':cue['id'],'source':cue['asset'],'sha256':digest(source),'times':cue['times'],'sourceTrimStart':begin/SR,'duration':len(y)/SR})
-mix+=music_bus+sfx_bus
+mix+=music_bus+sfx_bus+ambience_bus
+wavfile.write(out/'ambience_stem.wav',SR,(ambience_bus*32767).astype(np.int16))
 wavfile.write(out/'music_stem.wav',SR,(music_bus*32767).astype(np.int16))
 wavfile.write(out/'sfx_stem.wav',SR,(sfx_bus*32767).astype(np.int16))
 (EP/'config/sound_cues.json').write_text(json.dumps({'music':music_meta,'sfx':sfx_meta},ensure_ascii=False,indent=2),encoding='utf-8')

@@ -37,6 +37,10 @@ export function posesAt(t,cues,tl){
   const leiHold=ease((t-take-.1)/1.15);
   const result={jar,jarOwner:t>=take+1.25?'lei':t>=offer+1.4&&t<offer+4.0?'aoi':'table'};
   const doubt=b(11,.25,.6,1.3,.8),decision=b(14,.3,.8,1.5,1),listen=b(13,.8,.7,2.0,.9);
+  // Listener reactions follow the speaker, with deterministic story-time cues.
+  const caught=b(6,1.5,.25,.65,.8),aoiAmused=b(5,2.1,.5,.7,.6),
+    labelReply=b(16,1.8,.55,.9,.7),invitation=b(17,.1,.6,3.3,.7),
+    pleased=b(17,1.6,.5,1.8,1.2),shared=b(18,.6,.8,1.6,1);
   for(const key of ['lei','aoi']){
     const lei=key==='lei',yaw=lei?.26:-.28;
     let route=grounded(lei?-.68:.60,lei?-.10:0,yaw);
@@ -52,12 +56,17 @@ export function posesAt(t,cues,tl){
       if(t>=offer+4.3)route=walk(t,offer+4.3,take-.3,[.50,.09],[.64,.02],yaw);
     }
     const p={...route,bob:0,lean:0,localArms:{},feet:{},gestures:{},fist:.10,
-      headPitch:lei?.025+.18*inspect+.13*tryHard-.065*joke-.045*doubt+.08*decision+.07*lift:.035+.10*show+.08*stop+.045*slide-.04*tease+.045*reassure,
-      headYaw:lei?.27-.22*inspect-.14*lift-.07*joke:-.33+.23*slide+.05*tease,
-      headRoll:lei?-.030-.065*joke+.07*recoil+.05*doubt-.025*answer:.025+.06*tease-.055*stop-.04*reassure,
+      headPitch:lei?.025+.18*inspect+.13*tryHard-.065*joke-.045*doubt+.08*decision+.07*lift-.055*pleased:.035+.10*show+.08*stop+.045*slide-.04*tease-.035*invitation,
+      headYaw:lei?.27-.22*inspect-.14*lift-.07*joke+.10*pleased:-.33+.23*slide+.05*tease-.08*invitation,
+      headRoll:lei?-.030-.065*joke+.07*recoil+.05*doubt-.025*answer+.055*caught:.025+.06*tease-.055*stop-.04*reassure+.025*aoiAmused,
       torso:{pivot:.86,shift:[lei?-.007*(1-release)+.008*listen:.006,route.hipDelta-.010*(lei?tryHard:stop),0],
         rotation:[lei?.025+.045*inspect-.065*recoil-.02*release:.015+.035*stop+.025*aoiHold,0,lei?-.018-.025*joke+.03*decision:.018+.02*tease]},
-      gaze:lei?(inspect>.15||tryHard>.1?'mark':lift>.2?'jar':'partner'):(show>.4&&t<e(11)?'mark':aoiHold>.2||t>e(17)?'jar':'partner')};
+      gaze:lei?(pleased>.1||answer>.1?'partner':inspect>.15||tryHard>.1?'mark':lift>.2?'jar':'partner'):
+        (invitation>.1||aoiAmused>.1||tease>.1||labelReply>.1?'partner':show>.4&&t<e(11)?'mark':aoiHold>.2||t>e(18)?'jar':'partner')};
+    const attend=clamp(lei?Math.max(pleased,answer):Math.max(invitation,aoiAmused,tease,labelReply));
+    const markWeight=clamp(lei?Math.max(inspect,tryHard):show*(1-ease((t-e(11)+.35)/.7)))*(1-attend);
+    const jarWeight=clamp(lei?lift:Math.max(aoiHold,ease((t-e(18))/.6)))*(1-attend)*(1-markWeight);
+    p.gazeWeights={mark:markWeight,jar:jarWeight,partner:1-markWeight-jarWeight};
     const frame=torsoFrame(p.torso);
     for(const [side,s] of [['left',-1],['right',1]]){
       const sy=lei?1.375:1.295,sx=lei?.17:.156,shoulder=V(s*sx,sy,0);
@@ -104,9 +113,15 @@ export function posesAt(t,cues,tl){
       p.feet[side]={...f,yaw:p.yaw+f.yaw};
     }
     p.leftFist=p.gestures.left.fist;
-    p.emotion=lei?(release>.5?'neutral':'worry'):'neutral';
-    p.acting=lei?{fear:.30+.30*tryHard+.28*recoil+.20*doubt-.27*release,focus:.3*inspect,smile:.44*joke+.47*answer+.20*lift,browAsym:.16+.3*joke}:
-      {fear:0,focus:.12+.55*stop,smile:.43*tease+.49*reassure,browAsym:.12+.35*tease};
+    p.emotion='neutral';
+    p.acting=lei?{fear:.12*tryHard+.5*recoil+.28*doubt,focus:.2*inspect,
+      smile:.18*hide+.75*joke+.42*caught+.66*answer+.72*pleased+.32*shared+.12*decision,
+      eyeSmile:.25*joke+.45*pleased+.18*shared,browLift:.15*hide+.4*caught+.35*recoil+.2*pleased,
+      browAsym:.55*joke+.42*answer}:
+      {fear:.12*recoil,focus:.48*stop+.08*inspect,
+      smile:.32*aoiAmused+.55*tease+.32*labelReply+.72*reassure+.35*shared,
+      eyeSmile:.2*tease+.35*reassure+.15*shared,browLift:.16*invitation,
+      browAsym:.5*tease+.28*labelReply};
     const blinks=lei?[5.6,11.65,19.8,24.25,35.5,42.1,48.3,54.8,63.6,69.1,75.7]:[4.2,14.85,21.6,28.7,35.95,44.8,53.3,58.1,64.0,74.3,78.0];
     p.blink=Math.max(...blinks.map(at=>Math.max(0,1-Math.abs(t-at)/.12)));
     result[key]=p;

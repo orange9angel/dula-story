@@ -33,6 +33,8 @@ def cached(out, request, call):
 
 if '--score-foley' in sys.argv:
     for cue in plan['music']+plan['sfx']:
+        if cue in plan['music'] and cue.get('provider')!='seed-audio-1.0':
+            raise ValueError('Score requires its declared provider; use suno-driver for Suno. Do not silently regenerate with Seed-Audio.')
         out=EP/cue['asset']
         cached(out,{'provider':'seed-audio-1.0','prompt':cue['prompt']},lambda:generate(cue['prompt'],out))
 elif '--ambience' in sys.argv:

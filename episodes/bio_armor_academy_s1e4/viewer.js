@@ -148,9 +148,11 @@ function draw(t,capture=true){
   if(actors.aoi.motionFix)placeImportedNotebook(actors.aoi,stage.notebook);
   applyMark(p.mark);const markVertices=null;
   for(const [key,a] of Object.entries(actors)){
-    const target=p[key].gaze==='mark'?actors.lei.bones.leftforearm.getWorldPosition(new THREE.Vector3()):
-      p[key].gaze==='jar'?stage.jar.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0,.2,0)):
-      actors[key==='lei'?'aoi':'lei'].face.head.getWorldPosition(new THREE.Vector3());
+    const targets={mark:actors.lei.bones.leftforearm.getWorldPosition(new THREE.Vector3()),
+      jar:stage.jar.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0,.2,0)),
+      partner:actors[key==='lei'?'aoi':'lei'].face.head.getWorldPosition(new THREE.Vector3())};
+    const target=new THREE.Vector3();
+    for(const [name,weight] of Object.entries(p[key].gazeWeights??{[p[key].gaze]:1}))target.addScaledVector(targets[name],weight);
     const delta=a.bones.head.getWorldQuaternion(new THREE.Quaternion()).multiply(a.neutralQuaternion.head.clone().invert());
     const local=target.clone().sub(a.bones.head.getWorldPosition(new THREE.Vector3())).applyQuaternion(delta.invert());
     const gaze=[THREE.MathUtils.clamp(Math.atan2(local.x,Math.max(.1,local.z))/.65,-1,1),THREE.MathUtils.clamp(Math.atan2(local.y,Math.hypot(local.x,local.z))/.40,-1,1)];

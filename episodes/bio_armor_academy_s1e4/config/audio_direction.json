@@ -17,7 +17,7 @@
     "musicMode": "directed",
     "ambienceMode": "directed",
     "breath": "natural-tts-pauses-no-layered-breath",
-    "relationshipDirection": "青春恋爱场景：温暖、主动、信任、带笑意；蚀纹的短暂担心不压倒亲近感。"
+    "relationshipDirection": "校园恋爱喜剧：男主主动逗趣，女主认真接梗、忍笑；蚀纹扩大时短暂紧张，最后落回明天见的期待。"
   },
   "mix": {
     "dialogueVolume": 1,
@@ -28,9 +28,10 @@
   },
   "characters": {
     "LeiXiao": {
-      "voice": "ICL_uranus_zh_male_chanruoshaoye_tob",
+      "voice": "zh_male_shaonianzixin_uranus_bigtts",
       "locale": "zh-CN",
-      "identityPolicy": "preserve-native-voice"
+      "identityPolicy": "native-voice-no-pitch-manufacture",
+      "castingStatus": "provisional-romcom-native-recast"
     },
     "QianTangKui": {
       "voice": "ICL_uranus_zh_female_tianmeihuopo_tob",
@@ -73,9 +74,9 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。温柔地问她，尾音带一点期待和好奇。"
+          "阳光开朗的少年，正开心地和喜欢的女同学聊天。声音明亮，有明显笑意，语调活泼，亲切自然。有精神地向她求助，带好奇和信任，像终于找到能帮自己的同学。"
         ],
-        "nativeSpeechRate": 0
+        "nativeSpeechRate": 5
       }
     },
     {
@@ -98,18 +99,22 @@
       "subtext": "已经注意到你的遮掩",
       "delivery": {
         "tone": "happy",
-        "nativeEmotion": "happy",
-        "nativeEmotionScale": 2,
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
         "energy": 0.38,
-        "pace": 1.06,
-        "volume": 0.9,
+        "pace": 1.0,
+        "volume": 0.92,
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。看穿他藏手的小动作，亲近地提醒；藏着那只，轻轻点破，有一点笑意。只说台词。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -145,9 +150,9 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。笑着开个小玩笑，亲切俏皮，最后几个字轻轻逗她，不要苦笑。"
+          "阳光开朗的少年，正开心地和喜欢的女同学聊天。声音明亮，有明显笑意，语调活泼，亲切自然。忍着笑开玩笑：“你先保证”轻快认真，“不把我泡进罐子里”是故意逗她，不是真的害怕。"
         ],
-        "nativeSpeechRate": 0
+        "nativeSpeechRate": 5
       }
     },
     {
@@ -170,18 +175,22 @@
       "subtext": "可以放松一点",
       "delivery": {
         "tone": "happy",
-        "nativeEmotion": "happy",
-        "nativeEmotionScale": 2,
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
         "energy": 0.38,
-        "pace": 1.05,
-        "volume": 0.9,
+        "pace": 1.0,
+        "volume": 0.92,
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。一本正经地接他的玩笑。装叶子的，淡定；你这么大，放不下，忍住笑轻轻补刀，不嘲讽。只说台词。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -217,9 +226,9 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。有精神地商量办法，疑问轻快上扬，前半句只短暂停顿，不要叹息。"
+          "阳光开朗的少年，正开心地和喜欢的女同学聊天。声音明亮，有明显笑意，语调活泼，亲切自然。接住女生刚才的玩笑，边观察边提出一个小主意，有好奇心，后半句问得轻快。只说台词。"
         ],
-        "nativeSpeechRate": 0
+        "nativeSpeechRate": 5
       }
     },
     {
@@ -242,18 +251,22 @@
       "subtext": "不要再强迫身体",
       "delivery": {
         "tone": "surprised",
-        "nativeEmotion": "surprised",
-        "nativeEmotionScale": 2,
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
         "energy": 0.55,
-        "pace": 1.08,
-        "volume": 0.98,
+        "pace": 1.0,
+        "volume": 0.92,
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。关心地及时提醒他松手，短而明确，不惊慌。只说台词。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -289,9 +302,9 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。前半句有点顽皮，后半句自然惊讶，像被同桌逮住的小失误，不喊叫不恐惧。"
+          "阳光开朗的少年，正开心地和喜欢的女同学聊天。声音明亮，有明显笑意，语调活泼，亲切自然。就一下，得意地抢着试；怎么还长了，突发意外、反应快，像小小逞强翻车，不哭不哀叹。只说台词。"
         ],
-        "nativeSpeechRate": 0
+        "nativeSpeechRate": 5
       }
     },
     {
@@ -314,18 +327,22 @@
       "subtext": "这回必须听我的",
       "delivery": {
         "tone": "angry",
-        "nativeEmotion": "angry",
-        "nativeEmotionScale": 2,
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
         "energy": 0.55,
-        "pace": 1.03,
-        "volume": 0.97,
+        "pace": 1.0,
+        "volume": 0.92,
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。先清楚说停，再认真观察。语气坚定但不凶，仍在关心这个男生。只说台词。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -361,9 +378,9 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。温和、真诚地追问，稍带担心和期待，声音有支撑，尾音上扬，不悲伤不沮丧。"
+          "阳光开朗的少年，正开心地和喜欢的女同学聊天。声音明亮，有明显笑意，语调活泼，亲切自然。刚刚的小实验翻车了，短暂认真地问她，疑问有支撑、尾音向上，不低沉。只说台词。"
         ],
-        "nativeSpeechRate": 0
+        "nativeSpeechRate": 5
       }
     },
     {
@@ -386,18 +403,22 @@
       "subtext": "不会骗你说能治好",
       "delivery": {
         "tone": "sad",
-        "nativeEmotion": "sad",
-        "nativeEmotionScale": 2,
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
         "energy": 0.38,
-        "pace": 0.96,
-        "volume": 0.9,
+        "pace": 1.0,
+        "volume": 0.92,
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。诚实告诉他现在的限制，真诚平实，有陪他想办法的意愿，不阴沉不煽情。只说台词。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -433,9 +454,9 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。轻轻释然地笑着说，明天再看带着期待，今天不试了是温柔的配合，不是认输。"
+          "阳光开朗的少年，正开心地和喜欢的女同学聊天。声音明亮，有明显笑意，语调活泼，亲切自然。听完解释后主动松下来，笑着决定明天再来找她。今天不试了，干脆轻快，不认命。只说台词。"
         ],
-        "nativeSpeechRate": 0
+        "nativeSpeechRate": 5
       }
     },
     {
@@ -458,10 +479,10 @@
       "subtext": "你是能帮忙的同学",
       "delivery": {
         "tone": "happy",
-        "nativeEmotion": "happy",
-        "nativeEmotionScale": 2,
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
         "energy": 0.38,
-        "pace": 1.02,
+        "pace": 1.0,
         "volume": 0.92,
         "pitchSemitones": 0,
         "emphasis": "normal",
@@ -469,7 +490,11 @@
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。换个轻松话题，请他帮忙，像自然邀请他加入自己的生活，明亮亲近。只说台词。"
+        ],
+        "nativeSpeechRate": 0
       }
     },
     {
@@ -505,9 +530,9 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "在安静教室里与喜欢的女同学近距离交谈。少年声音温暖清亮，精神饱满，带自然的笑意，真诚亲近。语速自然利落，轻声但有气息支撑，不虚弱，不低沉叹气，不用播报腔。只念台词。带笑意、温柔俏皮地逗她，贴个标签轻轻上扬，自信又有一点害羞，不刻意拖长。"
+          "阳光开朗的少年，正开心地和喜欢的女同学聊天。声音明亮，有明显笑意，语调活泼，亲切自然。拿罐子时主动调侃自己。贴个标签，带点坏笑问她，期待她接梗；语调有弹性，不卖惨。只说台词。"
         ],
-        "nativeSpeechRate": 0
+        "nativeSpeechRate": 5
       }
     },
     {
@@ -530,32 +555,26 @@
       "subtext": "愿意继续陪你观察",
       "delivery": {
         "tone": "happy",
-        "nativeEmotion": "happy",
-        "nativeEmotionScale": 2,
+        "nativeEmotion": null,
+        "nativeEmotionScale": null,
         "energy": 0.38,
-        "pace": 0.98,
-        "volume": 0.91,
+        "pace": 1.0,
+        "volume": 0.92,
         "pitchSemitones": 0,
         "emphasis": "normal",
         "distance": "medium",
         "space": "quiet biology room",
         "pauseBeforeMs": 0,
         "pauseAfterMs": 0,
-        "breath": "natural"
+        "breath": "natural",
+        "nativeContextTexts": [
+          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。你不用，温柔接住他的玩笑；明天放学，自己来，带笑意主动约他再见，尾音轻快、稍害羞。只说台词。"
+        ],
+        "nativeSpeechRate": 0
       }
     }
   ],
-  "ambience": [
-    {
-      "id": "biology_room",
-      "startTime": 2.4,
-      "endTime": 79,
-      "shotIds": [],
-      "asset": "assets3d/ambience/biology_room.wav",
-      "prompt": "生成一段85秒的纯室内环境底声：放学后安静的学校生物活动室，关着窗，极轻的远处通风声。平稳、无阵风、无节律性涌动、音量恒定。没有人声、音乐、脚步、敲击、鸟叫、虫鸣、电流蜂鸣或故事性事件。干净柔和，供低音量对白场景使用。",
-      "reason": "维持同一室内空间，让停顿保留空间感"
-    }
-  ],
+  "ambience": [],
   "sfx": [
     {
       "id": "glass_slide",
@@ -592,13 +611,62 @@
   ],
   "music": [
     {
-      "id": "leaf_theme",
+      "id": "tomorrows_meeting",
+      "provider": "Suno",
+      "asset": "assets3d/music/romcom_suno_episode.wav",
+      "sourceMetadata": "assets3d/music/romcom_suno_episode.source.json",
       "startTime": 0,
       "endTime": 82,
-      "asset": "assets3d/music/leaf_theme_r3.wav",
-      "prompt": "生成一段82秒的原创校园奇幻动画纯器乐配乐。放学后生物活动室，两个少年从担忧走向有限但真实的信任。0到22秒：柔和钢琴呈现四音短动机，木质拨弦轻轻回答，稀疏而有记忆点。22到36秒：和声短暂转小调，低音大提琴轻奏不安，不能出现惊吓爆音。36到44秒：乐器逐一退出，悬而未决。44到53秒：极疏钢琴尾音，留下大段安静空间。53到73秒：四音动机温暖再现，长笛轻轻应答，钢琴和弦展开，像重新开始一件普通的小事。73到82秒：回到钢琴独奏，以安静完整终止式收束。约76BPM，自由呼吸，无鼓组，无人声，无吟唱，无环境音，无音效，无电音，无宏大高潮。旋律每句有停顿；从pp到mp再回pp，对白场景配乐，不要写成广告音乐。",
-      "reason": "四音动机连接遮掩与接纳；44.5至53.2秒混音明确留白",
-      "targetRmsDb": -30
+      "targetRmsDb": -27,
+      "dialogueDuck": 0.45,
+      "prompt": "Instrumental romantic comedy anime underscore, 104 BPM, D major with warm added-sixth chords. Playful four-note piano question answered by clarinet and pizzicato strings, soft acoustic guitar and upright bass, tiny bell accents. Opening twenty seconds curious and buoyant, two shy classmates teasing each other after school. Middle thins into a brief minor-key surprise and short suspended pauses; ending returns to the warm motif with a gentle lift, anticipation of meeting tomorrow, soft complete cadence. Lively, intimate, expressive dynamics, melodic call-and-response with generous rests for dialogue. No vocals, humming, whispering, drums, shakers, vinyl hiss, environmental noise or sound effects. Avoid sad ambient pads, ominous drones, battle music or epic climax. Clean dry chamber ensemble, approximately ninety seconds.",
+      "reason": "轻快问答动机；罐子笑话后留反应，承认蚀纹无法消失时留白，结尾回到明天见的期待。",
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          17.5,
+          1
+        ],
+        [
+          18.4,
+          0.38
+        ],
+        [
+          20.2,
+          0.38
+        ],
+        [
+          21.4,
+          1
+        ],
+        [
+          42.6,
+          1
+        ],
+        [
+          44.5,
+          0
+        ],
+        [
+          53.2,
+          0
+        ],
+        [
+          55.2,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          82,
+          0
+        ]
+      ]
     }
   ],
   "exclusions": [
@@ -611,6 +679,11 @@
       "scope": "BiologyRoomScene, entire episode",
       "sound": "step",
       "reason": "用户要求这场室内走路不加声音；取消随落脚反复触发的沙沙拟音，不用衣料声替代。"
+    },
+    {
+      "id": "no_rustling_room_bed",
+      "scope": "BiologyRoomScene, entire episode",
+      "reason": "实际分轨定位到通风底床；这场安静室内无需持续噪声，去掉而不换成衣料或脚步。"
     }
   ]
 }
