@@ -1,0 +1,207 @@
+{
+  "review_scope": "whole_head",
+  "before": "tmp/lei_rear_volume_v3/accepted/baseline",
+  "after": "tmp/lei_rear_volume_v3/frozen/baseline",
+  "out": "storyboard/hybrid_character/lei/archive/rear_volume_trial_v3",
+  "reference": "storyboard/hybrid_character/archive/history/face_design_turnaround_v1/lei_nine_views.png",
+  "whole_frames": true,
+  "whole_frame_groups": {
+    "front_oblique": [
+      "front",
+      "turn_45",
+      "turn_minus45"
+    ],
+    "both_profiles": [
+      "turn_90",
+      "turn_minus90"
+    ],
+    "posterior": [
+      "turn_135",
+      "turn_180",
+      "turn_minus135"
+    ]
+  },
+  "column_labels": [
+    "原画：姿态未标定",
+    "当前认可版",
+    "侧发曲面候选：未采用"
+  ],
+  "display_note": "按结构分区、保留相邻关系；各裁切等比显示。原画姿态未标定，不计算相似度分数。",
+  "whole_frame_note": "正面、双侧、两后侧及背面均展示；范围齐全与技术通过不等于美术通过。",
+  "discovery_review": {
+    "scope": "完整头像；不包含全身、手足及对白表演验收",
+    "issues": [
+      {
+        "priority": 1,
+        "source": "用户指出；此前已记录但主代理未正确排序",
+        "region": "posterior_side",
+        "fact": "原画后脑有错层外翻的发梢，当前模型后缘是连续圆弧，呈包头发帽。",
+        "impact": "正常尺寸可见，影响侧面和后侧的主要发型印象。",
+        "uncertainty": "原画相机未标定，但发束轮廓与圆帽的结构差异不依赖精确角度。",
+        "next_check": "侧面、两后侧和背面同时看分束、根部衔接、负空间及后颈，不只增加后脑尺寸。"
+      },
+      {
+        "priority": 2,
+        "source": "已有观察，保留复核",
+        "region": "ear_hair",
+        "fact": "前发转到侧面仍有朝眼下伸出的大片与细竖边，耳前束走向和原画不同。",
+        "impact": "侧面明显，正面不宜随意改动。",
+        "uncertainty": "同一前向投影无法独立给出所有侧发深度。",
+        "next_check": "同侧发根—耳缘—发尖逐段对照，连同正面身份回归。"
+      },
+      {
+        "priority": 3,
+        "source": "自主复查确认",
+        "region": "fringe_crown",
+        "fact": "深侧面顶部前发与后发之间有细长条纹和交接，原画发流更连续。",
+        "impact": "侧面和俯仰暴露，不能用正面精细纹理抵消。",
+        "uncertainty": "需结合分层渲染区分几何边缘与贴图投影。",
+        "next_check": "前后发连接处及真实头骨俯仰。"
+      }
+    ],
+    "visibility": {
+      "fringe_crown": "已观察：正面逐像素保持；候选顶部多余环状发丝已收回，但原有前后发条带仍在。",
+      "posterior_side": "已观察：两侧90°的原连续圆弧增加外翻发梢，较接近原画；侧发图提供了有效结构依据。",
+      "posterior_oblique": "已观察：135°主轮廓仍圆，侧发与背发流向未统一，有细碎接缝；相对收益不足。",
+      "posterior_back": "已观察：背面仍以旧后帽为主，没有恢复原画向后颈延伸的大束结构。",
+      "ear_hair": "已观察：新增耳后发量，原有耳前帘状发片和竖边尚未修复；不宣称此区域通过。",
+      "nape": "已观察：末端更长，但背面两侧收束仍有凹口和方向不统一；局部修正没有整体通过。",
+      "face_neck": "已观察：中性正面整图与保留版完全相同；脸颈未改。此检查不是完整表演验收。",
+      "motion": "已观察：两版6秒全周转面144帧完整解码，并查看12个实交MP4抽帧；±15°俯仰各8方向。候选73方向逆序35°有1像素差，保留失败。"
+    },
+    "decision": "不采用：侧面局部改善，后侧/背面/后颈结构未整体胜出，并有未解释的严格逆序单像素失败。"
+  },
+  "boards": [
+    {
+      "id": "parts",
+      "title": "后脑结构逐项复核：原画 / 保留版 / 未采用候选",
+      "rows": [
+        {
+          "region": "fringe_crown",
+          "frame": "front",
+          "label": "刘海与颅顶：身份和整体发流",
+          "reference_crop": [
+            865,
+            0,
+            1250,
+            240
+          ],
+          "model_crop": [
+            150,
+            130,
+            710,
+            450
+          ]
+        },
+        {
+          "region": "posterior_side",
+          "frame": "turn_90",
+          "label": "后脑侧面：蓬松体积与外翻发梢",
+          "reference_crop": [
+            455,
+            425,
+            650,
+            720
+          ],
+          "model_crop": [
+            170,
+            155,
+            490,
+            565
+          ]
+        },
+        {
+          "region": "posterior_oblique",
+          "frame": "turn_135",
+          "label": "后侧：根部、重叠、重复纹理",
+          "reference_crop": [
+            855,
+            425,
+            1200,
+            745
+          ],
+          "model_crop": [
+            175,
+            145,
+            665,
+            570
+          ]
+        },
+        {
+          "region": "posterior_back",
+          "frame": "turn_180",
+          "label": "背面：整体发流和左右轮廓",
+          "reference_crop": [
+            860,
+            835,
+            1245,
+            1160
+          ],
+          "model_crop": [
+            180,
+            130,
+            760,
+            565
+          ]
+        },
+        {
+          "region": "ear_hair",
+          "frame": "turn_90",
+          "label": "耳前与耳后：连接和遮挡",
+          "reference_crop": [
+            535,
+            560,
+            675,
+            725
+          ],
+          "model_crop": [
+            300,
+            365,
+            540,
+            565
+          ]
+        },
+        {
+          "region": "nape",
+          "frame": "turn_180",
+          "label": "后颈收束：长短、根梢关系",
+          "reference_crop": [
+            955,
+            1050,
+            1160,
+            1190
+          ],
+          "model_crop": [
+            290,
+            430,
+            660,
+            650
+          ]
+        },
+        {
+          "region": "face_neck",
+          "frame": "front",
+          "label": "回查正面脸颈：保留认可效果",
+          "reference_crop": [
+            895,
+            185,
+            1210,
+            405
+          ],
+          "model_crop": [
+            250,
+            420,
+            620,
+            750
+          ]
+        }
+      ]
+    }
+  ],
+  "preserve": {
+    "before": "tmp/lei_rear_volume_v3/accepted/baseline",
+    "frames": [
+      "front"
+    ]
+  }
+}

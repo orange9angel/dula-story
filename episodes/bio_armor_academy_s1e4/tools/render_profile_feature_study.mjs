@@ -16,6 +16,8 @@ const study=path.join(ep,'storyboard/hybrid_character/profile_feature_study_v1')
 const out=arg('--out')?path.resolve(ep,arg('--out')):study;
 const additionalAngles=(arg('--additional-angles')??'').split(',').filter(Boolean).map(Number);
 const layerAngles=(arg('--layer-angles')??'45,-45,60,-60,90,-90').split(',').filter(Boolean).map(Number);
+const pitchAngles=(arg('--pitch-angles')??'0,45,-45,90,-90').split(',').filter(Boolean).map(Number);
+if(!pitchAngles.length||pitchAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Pitch study yaw angles must be finite and within [-180,180]');
 if(layerAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Layer angles must be finite and within [-180,180]');
 if(additionalAngles.some(a=>!Number.isFinite(a)||Math.abs(a)>180))throw new Error('Angles must be finite and within [-180,180]');
 const sourcePath=arg('--source')?path.resolve(ep,arg('--source')):path.resolve(ep,'../../../dula-assets'+sourceSuffix);
@@ -115,13 +117,14 @@ try{
       for(const [name,state] of Object.entries({blink_half:{blink:.5},blink_closed:{blink:1},gaze_left:{gaze:[-1,0]},gaze_right:{gaze:[1,0]},gaze_up:{gaze:[0,1]},gaze_down:{gaze:[0,-1]}}))
         specs.push([`${name}_${angle}`,angle,false,state]);
     }
+    if(process.argv.includes('--pitch-study'))specs=[-15,15].flatMap(pitch=>pitchAngles.map(angle=>[`pitch_${pitch}_${angle}`,angle,false,{pitch:pitch*Math.PI/180}]));
     if(arg('--only-frames')){
       const selected=new Set(arg('--only-frames').split(','));
       for(const id of selected)if(!specs.some(s=>s[0]===id))throw new Error(`Unknown requested frame: ${id}`);
       specs=specs.filter(s=>selected.has(s[0]));
     }
     const report={actor:actorId,variant:name,turnMode,shellOutline:!process.argv.includes('--no-shell-outline'),sourcePath,sourceSuffix,originalSha256:sha(source),experimentSha256:sha(text),overrides,
-      moduleOverrides:moduleOverrides.map(({body,...metadata})=>metadata),
+      moduleOverrides:moduleOverrides.map(({body,...metadata})=>metadata),finiteCheckScope:'face position buffer only; not every mesh or rendered aesthetic quality',
       viewDeformation,profileReferenceActive:text.includes('profileReference:'),jawSculptActive:text.includes('jawDefinition:'),cranialScalpActive:text.includes('cranium:'),paintEyeInset,
       projectedFeatureSpace:viewDeformation?'CPU before GPU view/profile/jaw deformation; not rendered eye visibility':'undeformed mesh projected to camera',
       layerNotes:'no_face_paint swaps only the main map; geometry, jaw shader and skin underpaint remain. no_hair/no_ears toggle named layers.',frames:{},errors};
@@ -202,7 +205,7 @@ try{
     for(const spec of specs){
       const result=await capture(spec);
       fs.writeFileSync(path.join(dest,spec[0]+'.png'),result.buffer);
-      report.frames[spec[0]]={sha256:sha(result.buffer),angle:spec[1],actualYaw:result.actualYaw,actualBodyYaw:result.actualBodyYaw,projectedFeatures:result.projectedFeatures,projectedEars:result.projectedEars,eyeDiagnostics:result.eyeDiagnostics,finite:result.finite};
+      report.frames[spec[0]]={sha256:sha(result.buffer),angle:spec[1],pose:spec[3]??{},actualYaw:result.actualYaw,actualBodyYaw:result.actualBodyYaw,projectedFeatures:result.projectedFeatures,projectedEars:result.projectedEars,eyeDiagnostics:result.eyeDiagnostics,finite:result.finite};
       if(spec[0]==='turn_90')report.median90=result.median;
     }
     const reverseSpecs=process.argv.includes('--reverse-all')?[...specs].reverse():[specs[3],...specs.filter(s=>Math.abs(s[1])===45||Math.abs(s[1])===60),specs[0]];
@@ -212,7 +215,8 @@ try{
     }
     fs.writeFileSync(path.join(dest,'report.json'),JSON.stringify(report,null,2));
     await page.close();
-    if(errors.length||Object.values(report.frames).some(f=>!f.finite||f.reverseSeekEqual===false))throw new Error(JSON.stringify(report.errors));
+    const failedFrames=Object.entries(report.frames).filter(([,f])=>!f.finite||f.reverseSeekEqual===false).map(([id])=>id);
+    if(errors.length||failedFrames.length)throw new Error(JSON.stringify({browserErrors:errors,failedFrames}));
     console.log(`${name}: ${specs.length} views, sampled reverse seeks agree, no browser errors`);
   }
 }finally{await browser.close();}

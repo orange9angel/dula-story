@@ -1,0 +1,544 @@
+{
+  "config": {
+    "review_scope": "whole_head",
+    "before": "tmp/lei_rear_volume_v3/accepted/baseline",
+    "after": "tmp/lei_rear_volume_v3/frozen/baseline",
+    "out": "storyboard/hybrid_character/lei/archive/rear_volume_trial_v3",
+    "reference": "storyboard/hybrid_character/archive/history/face_design_turnaround_v1/lei_nine_views.png",
+    "whole_frames": true,
+    "whole_frame_groups": {
+      "front_oblique": [
+        "front",
+        "turn_45",
+        "turn_minus45"
+      ],
+      "both_profiles": [
+        "turn_90",
+        "turn_minus90"
+      ],
+      "posterior": [
+        "turn_135",
+        "turn_180",
+        "turn_minus135"
+      ]
+    },
+    "column_labels": [
+      "原画：姿态未标定",
+      "当前认可版",
+      "侧发曲面候选：未采用"
+    ],
+    "display_note": "按结构分区、保留相邻关系；各裁切等比显示。原画姿态未标定，不计算相似度分数。",
+    "whole_frame_note": "正面、双侧、两后侧及背面均展示；范围齐全与技术通过不等于美术通过。",
+    "discovery_review": {
+      "scope": "完整头像；不包含全身、手足及对白表演验收",
+      "issues": [
+        {
+          "priority": 1,
+          "source": "用户指出；此前已记录但主代理未正确排序",
+          "region": "posterior_side",
+          "fact": "原画后脑有错层外翻的发梢，当前模型后缘是连续圆弧，呈包头发帽。",
+          "impact": "正常尺寸可见，影响侧面和后侧的主要发型印象。",
+          "uncertainty": "原画相机未标定，但发束轮廓与圆帽的结构差异不依赖精确角度。",
+          "next_check": "侧面、两后侧和背面同时看分束、根部衔接、负空间及后颈，不只增加后脑尺寸。"
+        },
+        {
+          "priority": 2,
+          "source": "已有观察，保留复核",
+          "region": "ear_hair",
+          "fact": "前发转到侧面仍有朝眼下伸出的大片与细竖边，耳前束走向和原画不同。",
+          "impact": "侧面明显，正面不宜随意改动。",
+          "uncertainty": "同一前向投影无法独立给出所有侧发深度。",
+          "next_check": "同侧发根—耳缘—发尖逐段对照，连同正面身份回归。"
+        },
+        {
+          "priority": 3,
+          "source": "自主复查确认",
+          "region": "fringe_crown",
+          "fact": "深侧面顶部前发与后发之间有细长条纹和交接，原画发流更连续。",
+          "impact": "侧面和俯仰暴露，不能用正面精细纹理抵消。",
+          "uncertainty": "需结合分层渲染区分几何边缘与贴图投影。",
+          "next_check": "前后发连接处及真实头骨俯仰。"
+        }
+      ],
+      "visibility": {
+        "fringe_crown": "已观察：正面逐像素保持；候选顶部多余环状发丝已收回，但原有前后发条带仍在。",
+        "posterior_side": "已观察：两侧90°的原连续圆弧增加外翻发梢，较接近原画；侧发图提供了有效结构依据。",
+        "posterior_oblique": "已观察：135°主轮廓仍圆，侧发与背发流向未统一，有细碎接缝；相对收益不足。",
+        "posterior_back": "已观察：背面仍以旧后帽为主，没有恢复原画向后颈延伸的大束结构。",
+        "ear_hair": "已观察：新增耳后发量，原有耳前帘状发片和竖边尚未修复；不宣称此区域通过。",
+        "nape": "已观察：末端更长，但背面两侧收束仍有凹口和方向不统一；局部修正没有整体通过。",
+        "face_neck": "已观察：中性正面整图与保留版完全相同；脸颈未改。此检查不是完整表演验收。",
+        "motion": "已观察：两版6秒全周转面144帧完整解码，并查看12个实交MP4抽帧；±15°俯仰各8方向。候选73方向逆序35°有1像素差，保留失败。"
+      },
+      "decision": "不采用：侧面局部改善，后侧/背面/后颈结构未整体胜出，并有未解释的严格逆序单像素失败。"
+    },
+    "boards": [
+      {
+        "id": "parts",
+        "title": "后脑结构逐项复核：原画 / 保留版 / 未采用候选",
+        "rows": [
+          {
+            "region": "fringe_crown",
+            "frame": "front",
+            "label": "刘海与颅顶：身份和整体发流",
+            "reference_crop": [
+              865,
+              0,
+              1250,
+              240
+            ],
+            "model_crop": [
+              150,
+              130,
+              710,
+              450
+            ]
+          },
+          {
+            "region": "posterior_side",
+            "frame": "turn_90",
+            "label": "后脑侧面：蓬松体积与外翻发梢",
+            "reference_crop": [
+              455,
+              425,
+              650,
+              720
+            ],
+            "model_crop": [
+              170,
+              155,
+              490,
+              565
+            ]
+          },
+          {
+            "region": "posterior_oblique",
+            "frame": "turn_135",
+            "label": "后侧：根部、重叠、重复纹理",
+            "reference_crop": [
+              855,
+              425,
+              1200,
+              745
+            ],
+            "model_crop": [
+              175,
+              145,
+              665,
+              570
+            ]
+          },
+          {
+            "region": "posterior_back",
+            "frame": "turn_180",
+            "label": "背面：整体发流和左右轮廓",
+            "reference_crop": [
+              860,
+              835,
+              1245,
+              1160
+            ],
+            "model_crop": [
+              180,
+              130,
+              760,
+              565
+            ]
+          },
+          {
+            "region": "ear_hair",
+            "frame": "turn_90",
+            "label": "耳前与耳后：连接和遮挡",
+            "reference_crop": [
+              535,
+              560,
+              675,
+              725
+            ],
+            "model_crop": [
+              300,
+              365,
+              540,
+              565
+            ]
+          },
+          {
+            "region": "nape",
+            "frame": "turn_180",
+            "label": "后颈收束：长短、根梢关系",
+            "reference_crop": [
+              955,
+              1050,
+              1160,
+              1190
+            ],
+            "model_crop": [
+              290,
+              430,
+              660,
+              650
+            ]
+          },
+          {
+            "region": "face_neck",
+            "frame": "front",
+            "label": "回查正面脸颈：保留认可效果",
+            "reference_crop": [
+              895,
+              185,
+              1210,
+              405
+            ],
+            "model_crop": [
+              250,
+              420,
+              620,
+              750
+            ]
+          }
+        ]
+      }
+    ],
+    "preserve": {
+      "before": "tmp/lei_rear_volume_v3/accepted/baseline",
+      "frames": [
+        "front"
+      ]
+    }
+  },
+  "status": "candidate_pending_visual_judgment",
+  "render_checks": {
+    "head_body_angles_match": true,
+    "no_browser_errors": true,
+    "finite_face_vertices": true,
+    "reverse_seeks_equal": true
+  },
+  "change_locations": {
+    "front": {
+      "changed_pixels": 0,
+      "bbox": null,
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            269.9999831963635,
+            503.33333667935386
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            589.9999836736885,
+            503.3333305368248
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            269.9999831963635,
+            503.33333667935386
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            589.9999836736885,
+            503.3333305368248
+          ]
+        }
+      ]
+    },
+    "turn_45": {
+      "changed_pixels": 17627,
+      "bbox": [
+        234,
+        200,
+        384,
+        569
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            319.1852623514161,
+            503.33333667935017
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            545.4594300569779,
+            503.3333305368267
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            319.1852623514161,
+            503.33333667935017
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            545.4594300569779,
+            503.3333305368267
+          ]
+        }
+      ]
+    },
+    "turn_minus45": {
+      "changed_pixels": 20753,
+      "bbox": [
+        480,
+        200,
+        638,
+        569
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            326.2562726574979,
+            503.3333366793454
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            552.5304455863707,
+            503.3333305368296
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            326.2562726574979,
+            503.3333366793454
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            552.5304455863707,
+            503.3333305368296
+          ]
+        }
+      ]
+    },
+    "turn_90": {
+      "changed_pixels": 63572,
+      "bbox": [
+        209,
+        200,
+        472,
+        569
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            445.0000406627307,
+            503.3333366793487
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            445.0000369692922,
+            503.3333305368292
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            445.0000406627307,
+            503.3333366793487
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            445.0000369692922,
+            503.3333305368292
+          ]
+        }
+      ]
+    },
+    "turn_minus90": {
+      "changed_pixels": 64089,
+      "bbox": [
+        377,
+        200,
+        691,
+        569
+      ],
+      "ear_centres_before": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            454.9999593372691,
+            503.3333366793483
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            454.99996303070776,
+            503.3333305368289
+          ]
+        }
+      ],
+      "ear_centres_after": [
+        {
+          "local": [
+            -0.108,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            454.9999593372691,
+            503.3333366793483
+          ]
+        },
+        {
+          "local": [
+            0.084,
+            1.578,
+            -0.003
+          ],
+          "pixel": [
+            454.99996303070776,
+            503.3333305368289
+          ]
+        }
+      ]
+    }
+  },
+  "preserved_view_changed_pixels": {
+    "front": 0
+  },
+  "review_coverage": {
+    "scope": "whole_head",
+    "regions": [
+      "ear_hair",
+      "face_neck",
+      "fringe_crown",
+      "nape",
+      "posterior_back",
+      "posterior_oblique",
+      "posterior_side"
+    ],
+    "whole_frames": [
+      "front",
+      "turn_135",
+      "turn_180",
+      "turn_45",
+      "turn_90",
+      "turn_minus135",
+      "turn_minus45",
+      "turn_minus90"
+    ],
+    "meaning": "Declared evidence coverage only; not a beauty or completeness score."
+  },
+  "limitations": "Pixel changes and rigid ear centres locate edits, not aesthetic quality. CPU eye probes exclude GPU sculpt; no beauty/visibility score.",
+  "source_hashes": {
+    "storyboard\\hybrid_character\\archive\\history\\face_design_turnaround_v1\\lei_nine_views.png": "96c49120c7f2f9dcb0fd9193d4a2056bbe97c38caf263649e82c6086af044f71",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\front.png": "a35d9a8f2d0fbd6252d52fb47f1e563416e2dcce230233d0f250d39777f9ec94",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\turn_135.png": "02706eea019b09334e0057846a8be9f50eb2dd6f01d2082da96905ea912d2a27",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\turn_180.png": "bcce5558c6d2bbd2de06ab64e4e064a684084916e0a6ae8d95a591a28601a059",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\turn_45.png": "02ce6b5295248bb7cf1767f189528b3c9630ecccd5a7d31bfd8989cdf4ee444c",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\turn_90.png": "008ce932e9523f5fbf30bcde613e548ba36655c676f422ecacf4168a1af3c212",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\turn_minus135.png": "e472a63e5cafe4765b8aabddd16d55f151e77d3295dfb837cb146a63faafafbf",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\turn_minus45.png": "aec8c58fe04db27e9555c0cd051521556f43e409ba5c51cc68a392e1ad5c8521",
+    "tmp\\lei_rear_volume_v3\\accepted\\baseline\\turn_minus90.png": "2b62703670cac72b89334bf5e9ad9a2f56162019c88d46b69da07bdd033d0d37",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\front.png": "a35d9a8f2d0fbd6252d52fb47f1e563416e2dcce230233d0f250d39777f9ec94",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\turn_135.png": "9143cd9007adc3de88a167f4a79667660664f0fc8825694f9b9fb640c3319da8",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\turn_180.png": "4604611f3514a7b3230bd5ab9b7eeb575f694d08a6089bdd3522b7b5dd876e0c",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\turn_45.png": "9638970c80018d3228080334cd08a02abac2613b0bdbcf363884f3a8f93fb7e5",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\turn_90.png": "9849dff3d5c0916854909b93a25eed282ceaa76fb8c2091f212e331bde8da8a2",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\turn_minus135.png": "63d2d0684b0bd98777d01bf65b6a778c1b47bb9ab4cf2ac48ac729a5199e28f6",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\turn_minus45.png": "ad0fc7b57c04b4401e665c17e53a14cc2cc6c9c4903e52f3e32076b8c6602663",
+    "tmp\\lei_rear_volume_v3\\frozen\\baseline\\turn_minus90.png": "9d2d7679f5367baa394fefb7c5558bcacebbb657f58e87122417d8e758572b26"
+  }
+}

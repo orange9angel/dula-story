@@ -1,4 +1,4 @@
-# 当前角色入口 · 2026-10-16
+# 当前角色入口 · 2026-10-17
 
 - 女主葵：[current/turn.mp4](current/turn.mp4)，保留 v10。
 - 男主雷晓：[lei/current/turn.mp4](lei/current/turn.mp4)，刘旭认为当前外观基本可接受。
@@ -9,6 +9,9 @@
   （左当前、右试验）。当前效果不变，原因与证据见该归档的 `REVIEW.md`。
 - 后脑蓬松度已列为雷晓首要差距；[多维度问题发现与后发束试验](lei/archive/rear_volume_trial_v2/REVIEW.md)
   已补齐后侧/背面证据，候选静态有退步，未替换当前版。
+- 最新试验：[独立侧发全周对比](lei/archive/rear_volume_trial_v3/comparison.mp4)
+  （左保留版、右未采用候选）。侧面轮廓改善，后侧发流和后颈仍未过关；
+  [逐项结论](lei/archive/rear_volume_trial_v3/REVIEW.md)。正式 current 保持不变。
 
 # Aoi 转面修订 v10 · 2026-10-16
 

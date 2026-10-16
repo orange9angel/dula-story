@@ -218,7 +218,7 @@ def parts_review():
         yy,xx=np.nonzero(np.any(a!=b,axis=2));changes[frame]={'changed_pixels':len(xx),
             'changed_bbox_xyxy':None if not len(xx) else [int(xx.min()),int(yy.min()),int(xx.max())+1,int(yy.max())+1]}
     checks={'head_and_body_yaw_match':all(abs(v['actualYaw']-v['actualBodyYaw'])<1e-4 for v in after['frames'].values()),
-            'no_browser_errors':not after['errors'], 'finite_vertices':all(v['finite'] for v in after['frames'].values()),
+            'no_browser_errors':not after['errors'], 'finite_face_vertices':all(v['finite'] for v in after['frames'].values()),
             'all_requested_reverse_seeks_match':all(v.get('reverseSeekEqual',True) for v in after['frames'].values())}
     result={'status':'mixed_review_candidate_not_user_accepted', 'crops':crops,
             'algorithm_evidence':{'render_checks':checks,'pixel_changes':changes,
@@ -321,7 +321,7 @@ def configured_comparison(config_path):
             preservation[frame]=int(np.any(a!=b,axis=2).sum())
     checks={'head_body_angles_match':all(abs(v['actualYaw']-v['actualBodyYaw'])<1e-4 for v in reports[1]['frames'].values()),
             'no_browser_errors':not reports[1]['errors'],
-            'finite_vertices':all(v['finite'] for v in reports[1]['frames'].values()),
+            'finite_face_vertices':all(v['finite'] for v in reports[1]['frames'].values()),
             'reverse_seeks_equal':all(v.get('reverseSeekEqual',True) for v in reports[1]['frames'].values())}
     changes={}
     for frame in ['front','turn_45','turn_minus45','turn_60','turn_minus60','turn_90','turn_minus90']:

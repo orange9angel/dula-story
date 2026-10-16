@@ -1,0 +1,190 @@
+{
+  "status": "not_adopted",
+  "current": "lei/current remains accepted_v1",
+  "scope": "hair and head; no full episode or dialogue approval",
+  "discovery": {
+    "scope": "完整头像；不包含全身、手足及对白表演验收",
+    "issues": [
+      {
+        "priority": 1,
+        "source": "用户指出；此前已记录但主代理未正确排序",
+        "region": "posterior_side",
+        "fact": "原画后脑有错层外翻的发梢，当前模型后缘是连续圆弧，呈包头发帽。",
+        "impact": "正常尺寸可见，影响侧面和后侧的主要发型印象。",
+        "uncertainty": "原画相机未标定，但发束轮廓与圆帽的结构差异不依赖精确角度。",
+        "next_check": "侧面、两后侧和背面同时看分束、根部衔接、负空间及后颈，不只增加后脑尺寸。"
+      },
+      {
+        "priority": 2,
+        "source": "已有观察，保留复核",
+        "region": "ear_hair",
+        "fact": "前发转到侧面仍有朝眼下伸出的大片与细竖边，耳前束走向和原画不同。",
+        "impact": "侧面明显，正面不宜随意改动。",
+        "uncertainty": "同一前向投影无法独立给出所有侧发深度。",
+        "next_check": "同侧发根—耳缘—发尖逐段对照，连同正面身份回归。"
+      },
+      {
+        "priority": 3,
+        "source": "自主复查确认",
+        "region": "fringe_crown",
+        "fact": "深侧面顶部前发与后发之间有细长条纹和交接，原画发流更连续。",
+        "impact": "侧面和俯仰暴露，不能用正面精细纹理抵消。",
+        "uncertainty": "需结合分层渲染区分几何边缘与贴图投影。",
+        "next_check": "前后发连接处及真实头骨俯仰。"
+      }
+    ],
+    "visibility": {
+      "fringe_crown": "已观察：正面逐像素保持；候选顶部多余环状发丝已收回，但原有前后发条带仍在。",
+      "posterior_side": "已观察：两侧90°的原连续圆弧增加外翻发梢，较接近原画；侧发图提供了有效结构依据。",
+      "posterior_oblique": "已观察：135°主轮廓仍圆，侧发与背发流向未统一，有细碎接缝；相对收益不足。",
+      "posterior_back": "已观察：背面仍以旧后帽为主，没有恢复原画向后颈延伸的大束结构。",
+      "ear_hair": "已观察：新增耳后发量，原有耳前帘状发片和竖边尚未修复；不宣称此区域通过。",
+      "nape": "已观察：末端更长，但背面两侧收束仍有凹口和方向不统一；局部修正没有整体通过。",
+      "face_neck": "已观察：中性正面整图与保留版完全相同；脸颈未改。此检查不是完整表演验收。",
+      "motion": "已观察：两版6秒全周转面144帧完整解码，并查看12个实交MP4抽帧；±15°俯仰各8方向。候选73方向逆序35°有1像素差，保留失败。"
+    },
+    "decision": "不采用：侧面局部改善，后侧/背面/后颈结构未整体胜出，并有未解释的严格逆序单像素失败。"
+  },
+  "observations": {
+    "fringe_crown": "正面逐像素保持；候选顶部多余环状发丝已收回，但原有前后发条带仍在。",
+    "posterior_side": "两侧90°的原连续圆弧增加外翻发梢，较接近原画；侧发图提供了有效结构依据。",
+    "posterior_oblique": "135°主轮廓仍圆，侧发与背发流向未统一，有细碎接缝；相对收益不足。",
+    "posterior_back": "背面仍以旧后帽为主，没有恢复原画向后颈延伸的大束结构。",
+    "ear_hair": "新增耳后发量，原有耳前帘状发片和竖边尚未修复；不宣称此区域通过。",
+    "nape": "末端更长，但背面两侧收束仍有凹口和方向不统一；局部修正没有整体通过。",
+    "face_neck": "中性正面整图与保留版完全相同；脸颈未改。此检查不是完整表演验收。",
+    "motion": "两版6秒全周转面144帧完整解码，并查看12个实交MP4抽帧；±15°俯仰各8方向。候选73方向逆序35°有1像素差，保留失败。"
+  },
+  "frozen_relocation_pixel_differences": {
+    "final/front": 0,
+    "final/turn_135": 0,
+    "final/turn_180": 0,
+    "final/turn_45": 0,
+    "final/turn_90": 0,
+    "final/turn_minus135": 0,
+    "final/turn_minus45": 0,
+    "final/turn_minus90": 0,
+    "pitch_candidate/pitch_-15_-135": 0,
+    "pitch_candidate/pitch_-15_-45": 0,
+    "pitch_candidate/pitch_-15_-90": 0,
+    "pitch_candidate/pitch_-15_0": 0,
+    "pitch_candidate/pitch_-15_135": 0,
+    "pitch_candidate/pitch_-15_180": 0,
+    "pitch_candidate/pitch_-15_45": 0,
+    "pitch_candidate/pitch_-15_90": 0,
+    "pitch_candidate/pitch_15_-135": 0,
+    "pitch_candidate/pitch_15_-45": 0,
+    "pitch_candidate/pitch_15_-90": 0,
+    "pitch_candidate/pitch_15_0": 0,
+    "pitch_candidate/pitch_15_135": 0,
+    "pitch_candidate/pitch_15_180": 0,
+    "pitch_candidate/pitch_15_45": 0,
+    "pitch_candidate/pitch_15_90": 0
+  },
+  "technical": {
+    "accepted_dense": {
+      "frames": 73,
+      "reverse_equal": 73
+    },
+    "candidate_dense": {
+      "frames": 73,
+      "reverse_equal": 72,
+      "failed_frame": "turn_35",
+      "changed_pixels": 1,
+      "max_channel_delta": 36,
+      "pixel_xy": [
+        509,
+        651
+      ],
+      "forward_rgb": [
+        151,
+        115,
+        100
+      ],
+      "reverse_rgb": [
+        175,
+        149,
+        136
+      ],
+      "root_cause": "unconfirmed; retained rather than relaxed or rerun away"
+    },
+    "pitch_each": 16,
+    "frozen_static": 8,
+    "video": {
+      "frames": 144,
+      "duration": 6,
+      "width": 1200,
+      "height": 640,
+      "fps": 24,
+      "full_decode": true,
+      "visual_inspection": "12 actual MP4 decoded samples plus whole-head parts and pitch boards; not a claim of every frame visually judged"
+    },
+    "finite_scope": "face buffer only; not all hair geometry"
+  },
+  "image_generation": {
+    "tool": "built-in imagegen",
+    "prompt": "GENERATION.md",
+    "file": "profile-hair.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  "frozen_sources": {
+    "candidate/lei-generated-hair.js": "69fa869b1dc0be2a5350e2c0645ee4a1fab1c3b6cc33afb288d58f679024269c",
+    "candidate/painted-hair-shell.js": "5068cbcc6229d9d7b8af4130e7590cbafdc0e389814849a415ae4ece241cd620",
+    "profile-hair.png": "bfd634dcbd914aa0bb1a8d18f6d5db0959bd1911f5614a07456775ac29a62fb1"
+  },
+  "video_sha256": "914a747a85c1d6d2d236d2de6cc4795a377de67c638334ab81158047fef1ee01",
+  "accepted_restore_check": {
+    "files": 19,
+    "differences": 0,
+    "applied": false
+  },
+  "iterations": [
+    {
+      "id": "r1",
+      "method": "7 long atlas clumps, whole-root scalp embedding",
+      "finding": "visible band of roots; oversized flowing loops; rejected"
+    },
+    {
+      "id": "r2",
+      "method": "wider rear UV span plus posterior volume",
+      "finding": "revealed alpha tips but removed side scalp coverage; rejected"
+    },
+    {
+      "id": "r3",
+      "method": "independent profile painting on two curved side surfaces",
+      "finding": "90-degree contour improved; rear stripes and top rings; rejected"
+    },
+    {
+      "id": "r4",
+      "method": "static rear-chart blend and crown masking",
+      "finding": "reduced stripes; posterior still round, nape stray marks"
+    },
+    {
+      "id": "r5",
+      "method": "larger side surface depth radius",
+      "finding": "larger rounded head without useful rear fluff; rejected"
+    },
+    {
+      "id": "r6",
+      "method": "row-by-row profile/rear alpha extents constrain cross-sections",
+      "finding": "silhouette high-frequency variations formed ridges and folded paint; rejected"
+    },
+    {
+      "id": "r7",
+      "method": "8 closed semantic clumps sampled from profile image",
+      "finding": "root highlights like extra loops and detached nape tips; rejected"
+    },
+    {
+      "id": "r8_final",
+      "method": "r4 with rear alpha also constraining nape",
+      "finding": "best side-profile result of this trial, but rear flow and nape remain insufficient; not adopted"
+    }
+  ]
+}

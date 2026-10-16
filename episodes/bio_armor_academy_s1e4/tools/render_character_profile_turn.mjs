@@ -17,8 +17,12 @@ const out=path.resolve(ep,option('--out')??`output/aoi_profile_polish_${revision
 const board=path.resolve(ep,option('--board')??`storyboard/hybrid_character/profile_polish_${revision}`);
 const turnMode=option('--turn-mode')??'head';
 if(!['head','body'].includes(turnMode))throw new Error('Invalid turn mode');
+const fullTurn=process.argv.includes('--full-turn');
+if(fullTurn&&turnMode!=='body')throw new Error('--full-turn requires --turn-mode body; do not rotate the neck through 360 degrees');
 fs.mkdirSync(path.dirname(out),{recursive:true});fs.mkdirSync(board,{recursive:true});
-const fps=24,duration=6,keys=[[0,0],[.5,0],[1.6,75],[2.2,90],[3.2,0],[4.4,-75],[5,-90],[6,0]];
+const fps=24,duration=6,keys=fullTurn?
+  [[0,0],[.4,0],[1.65,90],[3,180],[4.35,270],[5.6,360],[6,360]]:
+  [[0,0],[.5,0],[1.6,75],[2.2,90],[3.2,0],[4.4,-75],[5,-90],[6,0]];
 const hashFile=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const overrideFiles=option('--module-overrides')?JSON.parse(fs.readFileSync(path.resolve(ep,option('--module-overrides')),'utf8')):{};
 if(option('--source'))overrideFiles[option('--source-suffix')??(actorId==='aoi'?'/characters/bioarmor/aoi-generated-paint.js':'/characters/bioarmor/tripo-drawn-look.js')]=option('--source');
@@ -27,9 +31,11 @@ const moduleOverrides=Object.entries(overrideFiles).map(([suffix,file])=>{
   const absolute=path.resolve(ep,file);
   return {suffix,path:absolute,sha256:hashFile(absolute),body:fs.readFileSync(absolute,'utf8')};
 });
+const extraInputs=option('--extra-input')?[path.resolve(ep,option('--extra-input'))].map(file=>({path:file,sha256:hashFile(file)})):[];
 const renderSource=path.join(import.meta.dirname,'render_character_profile_turn.mjs');
-const report={actor:actorId,startedAt:new Date().toISOString(),build:auditInputs(ep),renderer:{path:renderSource,sha256:hashFile(renderSource)},kind:`silent ${turnMode} turn geometry review; not a dialogue shot`,turnMode,fps,duration,frames:fps*duration,keys,poses:[],errors:[]};
+const report={actor:actorId,startedAt:new Date().toISOString(),build:auditInputs(ep),renderer:{path:renderSource,sha256:hashFile(renderSource)},kind:`silent ${turnMode} turn geometry review; not a dialogue shot`,turnMode,fullTurn,fps,duration,frames:fps*duration,keys,poses:[],errors:[]};
 report.moduleOverrides=moduleOverrides.map(({body,...metadata})=>metadata);
+report.extraInputs=extraInputs;
 const browser=await req('puppeteer').launch({headless:true});
 let encoder;
 try{
@@ -61,7 +67,7 @@ try{
     if(!encoder.stdin.write(Buffer.from(encoded,'base64')))await once(encoder.stdin,'drain');
   }
   encoder.stdin.end();await done;
-  report.changedInputs=[...report.build.inputs,...report.moduleOverrides,report.renderer].filter(item=>hashFile(item.path)!==item.sha256).map(item=>item.path);
+  report.changedInputs=[...report.build.inputs,...report.moduleOverrides,...extraInputs,report.renderer].filter(item=>hashFile(item.path)!==item.sha256).map(item=>item.path);
   if(report.changedInputs.length)report.errors.push('Inputs changed during render: '+report.changedInputs.join(', '));
   report.video={path:out,sha256:hashFile(out),bytes:fs.statSync(out).size};
   // Decode the delivered MP4 itself, so the contact sheet cannot silently
