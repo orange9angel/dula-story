@@ -13,14 +13,14 @@
         "check 900/1476",
         "check 1200/1476",
         "gait trace: D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_op\\storyboard\\gate\\trace.json (1476 frames)",
-        "check complete: 72 frames"
+        "check complete: 81 frames"
       ],
       "errors": []
     },
     {
       "name": "seek_determinism",
       "passed": true,
-      "note": "72 checks"
+      "note": "81 checks"
     },
     {
       "name": "contact_probe",
@@ -28,11 +28,21 @@
       "returncode": 0,
       "passed": true,
       "tail": [
-        " \"gait_avg_min_dafu\": 0.261,",
-        " \"gait_cadence_min_dafu\": 1.2,",
+        " \"gait_cadence_min_dafu\": 1.6,",
         " \"gait_cadence_max_dafu\": 7.18",
         "}",
-        "contact check: all assertions passed"
+        "contact check: all assertions passed",
+        "clad_fit: 54 entries all in range"
+      ],
+      "errors": []
+    },
+    {
+      "name": "audio_sync",
+      "cmd": "D:\\opensource\\movie\\dula-story\\.venv\\Scripts\\python.exe D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_op\\tools\\check_audio_sync.py",
+      "returncode": 0,
+      "passed": true,
+      "tail": [
+        "audio sync OK: 12 events onset-aligned, bed continuous, peak 0.776"
       ],
       "errors": []
     },
@@ -42,8 +52,8 @@
       "returncode": 0,
       "passed": true,
       "tail": [
-        "http://127.0.0.1:52008/viewer.html",
-        "shots complete: 18 frames -> D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_op\\storyboard\\gate\\shots",
+        "http://127.0.0.1:60651/viewer.html",
+        "shots complete: 25 frames -> D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_op\\storyboard\\gate\\shots",
         "check complete: 0 frames"
       ],
       "errors": []

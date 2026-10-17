@@ -121,10 +121,11 @@ export class StardustShrineScene extends SceneBase{
     S.background=new THREE.Color('#070b18');
     S.fog=new THREE.Fog('#0a1020',26,85);
     // ── 双色光：低环境（冷）+ 灶火暖主光（点光，update 闪烁）+ 冷 rim ──
-    S.add(new THREE.HemisphereLight(0x2a3a5e,0x0c0a12,.55));
-    this.fireLight=new THREE.PointLight(0xffa050,42,46,1.7);
+    // R3：夜景整体偏暗吞纹理，环境/补光上调让 AI 材质读得出
+    S.add(new THREE.HemisphereLight(0x2a3a5e,0x0c0a12,.78));
+    this.fireLight=new THREE.PointLight(0xffa050,46,46,1.7);
     this.fireLight.position.set(0,2.6,-6);S.add(this.fireLight);
-    const faceFill=new THREE.DirectionalLight(0xffc088,.85); // 暖补光保脸（灶火方向）
+    const faceFill=new THREE.DirectionalLight(0xffc088,1.05); // 暖补光保脸（灶火方向）
     faceFill.position.set(0,4,8);S.add(faceFill);
     const rim=new THREE.DirectionalLight(0x6a8acf,.9); // 冷 rim：星夜背光
     rim.position.set(-6,9,-16);rim.castShadow=true;rim.shadow.mapSize.set(2048,2048);
@@ -168,15 +169,21 @@ export class StardustShrineScene extends SceneBase{
 
     // ── 中央灶台式祭坛（0,0,-6）：三层石基 + 石灶 + 环形火焰槽 + 悬浮大锅 ──
     // stoneMeshes：hybrid 石材贴图覆盖清单（贴图必须覆盖到每一个面，漏一个纯色件就破功）
+    // R3 分组：reliefMeshes=祭坛浮雕 / ironMeshes=圣物铸铁 / wallMeshes=石龛内壁 /
+    // fabricMeshes=帷幔旗帜 / rubbleMeshes=地面碎石；texR=每件独立 repeat 提示
     const altar=this.altar=new THREE.Group();altar.position.set(0,0,-6);S.add(altar);
-    this.stoneMeshes=[];
+    this.stoneMeshes=[];this.reliefMeshes=[];this.ironMeshes=[];this.wallMeshes=[];
+    this.fabricMeshes=[];this.drapes=[];
     const stone='#3a3f4c',stoneD='#2c303b';
-    for(const [r,hh,y] of [[3.6,.26,.13],[3.0,.26,.39],[2.4,.26,.65]]){
+    const texR=(m,r)=>{m.userData.texR=r;return m;};
+    for(const [r,hh,y,rp] of [[3.6,.26,.13,6],[3.0,.26,.39,5],[2.4,.26,.65,4]]){
       const tier=new THREE.Mesh(new THREE.CylinderGeometry(r,r+.08,hh,40),toon(stone));
-      tier.position.y=y;tier.castShadow=tier.receiveShadow=true;altar.add(tier);this.stoneMeshes.push(tier);
+      tier.position.y=y;tier.castShadow=tier.receiveShadow=true;altar.add(tier);
+      this.reliefMeshes.push(texR(tier,[rp,1]));
     }
     const stove=new THREE.Mesh(new THREE.CylinderGeometry(1.55,1.85,1.0,32),toon(stoneD));
-    stove.position.y=1.28;stove.castShadow=stove.receiveShadow=true;altar.add(stove);this.stoneMeshes.push(stove);
+    stove.position.y=1.28;stove.castShadow=stove.receiveShadow=true;altar.add(stove);
+    this.reliefMeshes.push(texR(stove,[3,1]));
     // 灶面七星灶眼
     for(let i=0;i<7;i++){
       const a=i/7*TAU,eye=new THREE.Mesh(new THREE.CircleGeometry(.11,14),basic('#0c0a08'));
@@ -198,17 +205,18 @@ export class StardustShrineScene extends SceneBase{
     const pot=this.pot=new THREE.Group();pot.position.set(0,3.55,0);altar.add(pot);
     const potBody=new THREE.Mesh(new THREE.SphereGeometry(.95,32,18,0,TAU,Math.PI*.28,Math.PI*.72),
       toon('#26242c'));
-    potBody.castShadow=true;pot.add(potBody);
+    potBody.castShadow=true;pot.add(potBody);this.ironMeshes.push(texR(potBody,[3,2]));
     // 外翻锅沿：开口向上的喇叭沿 + 沿口圆环（读作"锅"的第一剪影要素）
     const flare=new THREE.Mesh(new THREE.CylinderGeometry(.98,.72,.20,32,1,true),
       new THREE.MeshToonMaterial({color:'#3c3640',side:THREE.DoubleSide}));
-    flare.position.y=.68;pot.add(flare);
+    flare.position.y=.68;pot.add(flare);this.ironMeshes.push(texR(flare,[4,1]));
     const potRim=new THREE.Mesh(new THREE.TorusGeometry(.98,.045,10,40),toon('#463f4a'));
-    potRim.rotation.x=Math.PI/2;potRim.position.y=.78;pot.add(potRim);
+    potRim.rotation.x=Math.PI/2;potRim.position.y=.78;pot.add(potRim);this.ironMeshes.push(texR(potRim,[4,1]));
     // 两侧锅耳（横把圆环）
     for(const sign of [-1,1]){
       const ear=new THREE.Mesh(new THREE.TorusGeometry(.14,.035,8,20),toon('#463f4a'));
       ear.position.set(sign*.92,.42,0);ear.rotation.y=Math.PI/2;pot.add(ear);
+      this.ironMeshes.push(texR(ear,[2,1]));
     }
     // 底部三足（从下方机位读作釜）
     for(let i=0;i<3;i++){
@@ -216,6 +224,7 @@ export class StardustShrineScene extends SceneBase{
       const foot=new THREE.Mesh(new THREE.CylinderGeometry(.05,.09,.34,10),toon('#3c3640'));
       foot.position.set(Math.cos(a)*.52,-.82,Math.sin(a)*.52);
       foot.rotation.set(Math.sin(a)*.3,0,-Math.cos(a)*.3);pot.add(foot);
+      this.ironMeshes.push(texR(foot,[1,1]));
     }
     // 锅口内热：口沿内侧发光盘 + 内壁暖光环（祭坛火槽从下方打亮锅底）
     this.potGlow=new THREE.Mesh(new THREE.CircleGeometry(.88,32),
@@ -240,7 +249,8 @@ export class StardustShrineScene extends SceneBase{
       const lintel=new THREE.Mesh(new THREE.BoxGeometry(2.4,.42,.6),toon(stoneD));
       lintel.position.y=2.9;lintel.castShadow=true;g.add(lintel);this.stoneMeshes.push(lintel);
       const back=new THREE.Mesh(new THREE.BoxGeometry(1.9,2.3,.24),toon(stoneD));
-      back.position.set(0,1.15,-.34);back.receiveShadow=true;g.add(back);this.stoneMeshes.push(back);
+      back.position.set(0,1.15,-.34);back.receiveShadow=true;g.add(back);
+      this.wallMeshes.push(texR(back,[1,1])); // R3：龛内壁专用纹理
       // 发光厨具剪影（龛内悬浮，暖金/冷青轮换）
       const warm=i%2===0;
       const glyph=new THREE.Mesh(new THREE.PlaneGeometry(1.0,1.25),
@@ -253,6 +263,64 @@ export class StardustShrineScene extends SceneBase{
       ledge.position.set(0,.62,.2);ledge.castShadow=ledge.receiveShadow=true;g.add(ledge);
       this.stoneMeshes.push(ledge);
     }
+    // ── R3 环廊楣梁：连起相邻石龛（缺口方向不封，留机位走廊）──
+    const beamY=3.35;
+    for(let i=0;i<11;i++){
+      const am=Math.PI/2+Math.PI/12+i*TAU/12+TAU/24; // 相邻两龛中点方位
+      const beam=new THREE.Mesh(new THREE.BoxGeometry(7.5,.5,.55),toon(stoneD));
+      beam.position.set(Math.cos(am)*15,beamY,-6+Math.sin(am)*15);
+      beam.rotation.y=Math.PI/2-am; // 长轴对齐切线方向（局部+x→切线，+z→径向）
+      beam.castShadow=beam.receiveShadow=true;S.add(beam);
+      this.stoneMeshes.push(texR(beam,[3,1]));
+      // 龛间帷幔/旗帜：挂在楣梁下沿，顶点摆动纯 t（顶边钉住，下摆自由）
+      const hang=(w,h,off,amp,ph)=>{
+        const geo=new THREE.PlaneGeometry(w,h,8,10);
+        const m=new THREE.Mesh(geo,new THREE.MeshToonMaterial({color:'#2c3a68',side:THREE.DoubleSide}));
+        // 沿切线方向（-sin am, cos am）偏移 off，挂在梁下
+        m.position.set(Math.cos(am)*15-Math.sin(am)*off,beamY-.25-h/2,
+          -6+Math.sin(am)*15+Math.cos(am)*off);
+        m.rotation.y=Math.PI/2-am; // 法线朝径向（与楣梁同向）
+        m.userData={base:geo.attributes.position.array.slice(),h,ph,amp};
+        S.add(m);this.fabricMeshes.push(m);this.drapes.push(m);
+      };
+      if(i%2===0)hang(2.6,1.5,0,.12,i*.9);
+      else{hang(.55,1.15,-1.7,.10,i*.9);hang(.55,1.15,1.7,.10,i*.9+2.1);}
+    }
+    // ── R3 祭坛火盆圈（6 座：石座+浮雕铜盆+火舌；发光件）──
+    this.brazierFlames=[];
+    {const fireTex=glowTexture();
+     for(let k=0;k<6;k++){
+      const a=Math.PI/6+k*Math.PI/3,bx=Math.cos(a)*5.4,bz=-6+Math.sin(a)*5.4;
+      const b=new THREE.Group();b.position.set(bx,0,bz);S.add(b);
+      const stand=new THREE.Mesh(new THREE.CylinderGeometry(.10,.17,.85,12),toon(stoneD));
+      stand.position.y=.425;stand.castShadow=true;b.add(stand);
+      this.stoneMeshes.push(texR(stand,[1,1]));
+      const bowl=new THREE.Mesh(new THREE.CylinderGeometry(.38,.20,.28,20),toon(stone));
+      bowl.position.y=.99;bowl.castShadow=true;b.add(bowl);
+      this.reliefMeshes.push(texR(bowl,[2,1]));
+      const brim=new THREE.Mesh(new THREE.TorusGeometry(.36,.032,8,24),toon('#463f4a'));
+      brim.rotation.x=Math.PI/2;brim.position.y=1.13;b.add(brim);
+      this.ironMeshes.push(texR(brim,[2,1]));
+      const ember=new THREE.Mesh(new THREE.CircleGeometry(.30,20),
+        new THREE.MeshBasicMaterial({color:'#ffb35e',transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
+      ember.rotation.x=-Math.PI/2;ember.position.y=1.10;b.add(ember);
+      const fl=new THREE.Sprite(new THREE.SpriteMaterial({map:fireTex,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+      fl.position.y=1.42;b.add(fl);
+      const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:fireTex,transparent:true,opacity:.2,blending:THREE.AdditiveBlending,depthWrite:false}));
+      halo.scale.setScalar(1.5);halo.position.y=1.25;b.add(halo);
+      this.brazierFlames.push({fl,halo,ember,ph:k*1.31,f:6+(k%3)});
+     }}
+    // ── R3 地面碎石（星屑散石：小体量贴石材纹，祭坛环区散布）──
+    {const rr=lcg(57);
+     for(let i=0;i<26;i++){
+      const a=rr()*TAU,r=4.6+rr()*8.6;
+      const m=rr()<.5?new THREE.Mesh(new THREE.TetrahedronGeometry(.08+rr()*.14),toon(stoneD))
+        :(()=>{const s=new THREE.Mesh(new THREE.SphereGeometry(.12+rr()*.12,8,6),toon(stoneD));
+            s.scale.y=.55;return s;})();
+      m.position.set(Math.cos(a)*r,.06,-6+Math.sin(a)*r);
+      m.rotation.set(rr()*3,rr()*3,rr()*3);m.castShadow=true;S.add(m);
+      this.stoneMeshes.push(texR(m,[1,1]));
+     }}
     // 近水平面世界空间顶视投影 UV（走 updateWorldMatrix 后的完整 matrixWorld——
     // R15 教训：CircleGeometry 原始顶点 z=0，只用 Y 旋转+平移会让投影退化）
     this.scene.updateMatrixWorld(true);
@@ -266,10 +334,27 @@ export class StardustShrineScene extends SceneBase{
       t.colorSpace=data?THREE.NoColorSpace:THREE.SRGBColorSpace;t.anisotropy=4;res(t);
     },undefined,()=>res(null)));
     const T={};
-    await Promise.all([['floor'],['floor_normal',1],['stone'],['stone_normal',1],['backdrop']]
+    await Promise.all([['floor'],['floor_normal',1],['stone'],['stone_normal',1],['backdrop'],
+        ['altar_relief'],['altar_relief_normal',1],['niche_wall'],['niche_wall_normal',1],
+        ['fabric'],['fabric_normal',1],['cast_iron'],['cast_iron_normal',1]]
       .map(async ([n,d])=>T[n]=await load(n,!!d)));
     this.hybridApplied=[];
     const tile=t=>{t.wrapS=t.wrapT=THREE.MirroredRepeatWrapping;return t;}; // 免接缝镜像平铺（比例尺在 planarUVWorld）
+    // R3 通用贴皮器：每件 clone 独立 repeat（texR 提示），map×color 压灰防过曝，法线共用 UV/镜像
+    const skin=(meshes,tex,norm,ns,color,defR=[1,1])=>{
+      if(!tex)return false;
+      for(const m of meshes){
+        const [rx,ry]=m.userData.texR??defR;
+        const mp=tex.clone();mp.wrapS=mp.wrapT=THREE.MirroredRepeatWrapping;
+        mp.repeat.set(rx,ry);mp.needsUpdate=true;
+        m.material.map=mp;m.material.color.set(color);
+        if(norm){const nm=norm.clone();nm.wrapS=nm.wrapT=THREE.MirroredRepeatWrapping;
+          nm.repeat.set(rx,ry);nm.needsUpdate=true;
+          m.material.normalMap=nm;m.material.normalScale=new THREE.Vector2(ns,ns);}
+        m.material.needsUpdate=true;
+      }
+      return true;
+    };
     if(T.floor){
       // map×color 压灰防过曝；法线与 albedo 共用同一 UV/镜像
       this.floorMesh.material.map=tile(T.floor);this.floorMesh.material.color.set('#9aa2ae');
@@ -284,9 +369,9 @@ export class StardustShrineScene extends SceneBase{
     }
     if(T.stone){
       for(const m of this.stoneMeshes){
-        // 每件 clone 独立 repeat：圆柱侧壁周长 ~22m 需要横向 6 连，箱件 1:1
+        // 每件 clone 独立 repeat：圆柱侧壁周长 ~22m 需要横向 6 连，箱件 1:1（texR 可逐件覆盖）
         const cyl=m.geometry.type==='CylinderGeometry';
-        const rx=cyl?6:1,ry=cyl?1:1;
+        const [rx,ry]=m.userData.texR??(cyl?[6,1]:[1,1]);
         const mp=T.stone.clone();mp.wrapS=mp.wrapT=THREE.MirroredRepeatWrapping;
         mp.repeat.set(rx,ry);mp.needsUpdate=true;
         m.material.map=mp;m.material.color.set('#93a0b4'); // 夜景压暗（stone.png 偏亮）
@@ -297,6 +382,11 @@ export class StardustShrineScene extends SceneBase{
       }
       this.hybridApplied.push('stone');
     }
+    // R3 新材质组：祭坛浮雕 / 石龛内壁 / 帷幔布料 / 圣物铸铁
+    if(skin(this.reliefMeshes,T.altar_relief,T.altar_relief_normal,1.8,'#8e99ac'))this.hybridApplied.push('altar_relief');
+    if(skin(this.wallMeshes,T.niche_wall,T.niche_wall_normal,1.6,'#8b93a8'))this.hybridApplied.push('niche_wall');
+    if(skin(this.fabricMeshes,T.fabric,T.fabric_normal,1.2,'#a3abc4'))this.hybridApplied.push('fabric');
+    if(skin(this.ironMeshes,T.cast_iron,T.cast_iron_normal,1.4,'#9aa0ab'))this.hybridApplied.push('cast_iron');
     if(T.backdrop){
       // 深夜背景板原图过暗（远近景明度统一）：canvas 提亮预处理（皮肤侧调整，不动灯光）
       const bc=document.createElement('canvas');bc.width=2048;bc.height=768;
@@ -351,5 +441,23 @@ export class StardustShrineScene extends SceneBase{
     // 食位厨具剪影：缓呼吸（暖金/冷青交替相位）
     for(const n of this.nicheGlows)
       n.glyph.material.opacity=.62+.3*Math.sin(t*.9+n.ph);
+    // R3 帷幔/旗帜顶点摆动（顶边钉住，越往下摆幅越大；纯 t 确定函数）
+    for(const d of this.drapes){
+      const u=d.userData,p=d.geometry.attributes.position;
+      for(let i=0;i<p.count;i++){
+        const bx=u.base[i*3],by=u.base[i*3+1];
+        const w=(u.h/2-by)/u.h; // 0=顶边钉住 1=下摆
+        p.setX(i,bx+w*(u.amp*Math.sin(t*1.4+u.ph+by*2.2)+u.amp*.4*Math.sin(t*2.7+u.ph*1.7+bx*3)));
+        p.setZ(i,w*.6*u.amp*Math.sin(t*1.1+u.ph+bx*2.5));
+      }
+      p.needsUpdate=true;
+    }
+    // R3 火盆火舌闪烁（与灶火同族不同相）
+    for(const b of this.brazierFlames){
+      b.fl.scale.set(.36+.08*Math.sin(t*b.f+b.ph),.55+.2*Math.max(0,Math.sin(t*b.f*1.3+b.ph)),1);
+      b.fl.material.opacity=.6+.35*Math.max(0,Math.sin(t*b.f*.9+b.ph*2));
+      b.halo.material.opacity=.16+.08*Math.sin(t*2.2+b.ph);
+      b.ember.material.opacity=.7+.25*Math.sin(t*3.1+b.ph);
+    }
   }
 }

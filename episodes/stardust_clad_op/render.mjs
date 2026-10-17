@@ -59,6 +59,7 @@ if(!serve){
     if(shots){ // 逐拍近景审片：逐镜 setFreeCamera+renderAt，落 <name>.jpg；跳帧循环与 seek
       for(const s of shots){
         if(s.camera)await page.evaluate(cfg=>window.setFreeCamera(cfg),{pos:s.camera.slice(0,3),lookAt:s.camera.slice(3,6),fov:s.camera[6]});
+        await page.evaluate(n=>window.setSolo?.(n),s.solo??null); // 肖像隔离（无 solo 字段=全员）
         const r=await page.evaluate(t=>window.renderAt(t),s.t);
         fs.writeFileSync(path.join(board,`${s.name}.jpg`),Buffer.from(r.image,'base64'));
       }

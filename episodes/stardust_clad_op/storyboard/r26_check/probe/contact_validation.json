@@ -1,0 +1,23 @@
+{
+  "passed": false,
+  "stats": {
+    "bite_min": 99.0,
+    "carry_max_xz": 0.0,
+    "seated_min": 0.16492422502470658,
+    "seated_max": 0.5220153254455275,
+    "limb_elev_max_aoao": 72.69511753804058,
+    "limb_shoulder_axis_max_aoao": 0.14,
+    "limb_elev_max_xiaozao": 75.85409856802698,
+    "limb_shoulder_axis_max_xiaozao": 0.125,
+    "limb_elev_max_dafu": 74.80726922223383,
+    "limb_shoulder_axis_max_dafu": 0.19
+  },
+  "failures": [
+    "food probe missing: skewer window not sampled",
+    "skewer never reaches mouth: min 99.000m",
+    "gait probe missing: aoao never walks",
+    "gait probe missing: xiaozao never walks",
+    "gait probe missing: dafu never walks"
+  ],
+  "scope": "星屑战壳 OP：三角色全身（手-躯干距离）+ 步态 + 交锋接触帧 + 出拳超伸/肩缝（R2.5）+ 女神坐姿（臀-锅沿接触/晃腿弧/杖-手贴合）"
+}

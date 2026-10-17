@@ -15,8 +15,11 @@ from PIL import Image
 EP = Path(__file__).resolve().parents[1]
 TEX = EP / "assets3d/tex"
 
-# (名称, 法线强度) —— 石材 1.6 / 地面 2.0（材质分档参考 hybrid-craft-scene SKILL）
-JOBS = [("floor", 2.0), ("stone", 1.6)]
+# (名称, 法线强度) —— 布料 1.2 / 石材 1.6 / 地面 2.0 / 碎石焦土 2.2（材质分档参考 hybrid-craft-scene SKILL）
+JOBS = [("floor", 2.0), ("stone", 1.6), ("colonnade_ground", 2.0), ("caldera_ground", 2.0),
+        ("altar_relief", 1.8), ("niche_wall", 1.6), ("fabric", 1.2), ("cast_iron", 1.4),
+        ("colonnade_stone", 1.6), ("break_face", 2.0), ("rubble_ground", 2.2),
+        ("basalt_wall", 2.0), ("scorched_ground", 2.2), ("magma", 1.8)]
 
 
 def normal_from_luma(img: Image.Image, strength: float) -> Image.Image:

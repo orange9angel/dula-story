@@ -30,7 +30,9 @@ def load(path):
 def rms(x):
     return float(np.sqrt(np.mean(x * x)))
 
-# SFX 事件总线：[时刻(压拍), 文件, 增益, 低通Hz(可选)]
+# SFX 事件总线：[时刻(压拍), 文件, 增益, 低通Hz(可选)]——R2 起全部音源=
+# assets3d/sfx/ 的 Seed-Audio 生成件（溯源 .source.json）；旧程序合成件留档不进混音。
+SFX_DIR = 'assets3d/sfx'
 EVENTS = [
     (5.317,  'energy_charge', 0.9, None),   # 阿鏊战壳生长（downbeat）
     (8.568,  'energy_charge', 0.9, None),   # 小凿
@@ -43,11 +45,33 @@ EVENTS = [
     (23.034, 'impact_thud',   0.5, None),   # 落地垫底
     (31.045, 'whoosh_fast',   0.8, None),   # 冲锋（downbeat）
     (33.855, 'energy_blast',  0.9, None),   # 合体 gag 顶点
-    (47.020, 'block_impact',  1.0, 1200),   # 「当——」锅盖收尾（低通）
+    (47.020, 'pot_clang',     1.0, None),   # 「当——」锅鸣收尾（Seed-Audio 专用件，替代低通程序音）
 ]
+AMBIENCE = ('ambience_night', 0.22)  # 夜风+星火噼啪底床（全场循环，20s 交叉淡化无缝）
 VOICE_T = 45.0      # 赫斯提亚画外音
 DUCK_DB = -8.0      # 台词下歌曲闪避
 DUCK_SMOOTH = 0.150 # 150ms 平滑
+
+# 环境底床：20s 底循环铺满 n 帧，1s 交叉淡化无缝（摆点零点=谱面零点）
+def build_bed(n):
+    amb = load(EP / SFX_DIR / f'{AMBIENCE[0]}.wav') * AMBIENCE[1]
+    seg = len(amb)
+    xf = int(1.0 * SR)
+    bed = np.zeros((n, 2))
+    pos = 0
+    while pos < n:
+        j = min(n, pos + seg)
+        chunk = amb[:j - pos].copy()
+        k = min(xf, len(chunk))
+        if pos > 0:  # 与前一段交叠区：本段头淡入
+            w = 0.5 - 0.5 * np.cos(np.pi * np.arange(k) / k)
+            chunk[:k] *= w[:, None]
+        if pos + seg < n:  # 后续还有段：本段尾淡出（与下段头互补给等功率交叉）
+            w = 0.5 + 0.5 * np.cos(np.pi * np.arange(k) / k)
+            chunk[-k:] *= w[:, None]
+        bed[pos:j] += chunk
+        pos += seg - xf
+    return bed
 
 def main():
     song = load(EP / 'assets/audio/music/suno/op_song_suno.wav')
@@ -57,19 +81,39 @@ def main():
         song = np.pad(song, ((0, n - len(song)), (0, 0)))
     mix = song.copy()
     placed = []
+    sources = {'song': {'path': 'assets/audio/music/suno/op_song_suno.wav', 'provider': 'suno',
+                        'sha256': hashlib.sha256((EP / 'assets/audio/music/suno/op_song_suno.wav').read_bytes()).hexdigest()}}
+
+    mix += build_bed(n)
+    amb_name, amb_gain = AMBIENCE
+    sources['ambience'] = {'path': f'{SFX_DIR}/{amb_name}.wav', 'provider': 'volcano-seedaudio', 'gain': amb_gain,
+                           'sha256': hashlib.sha256((EP / SFX_DIR / f'{amb_name}.wav').read_bytes()).hexdigest()}
 
     for t0, name, gain, lowpass in EVENTS:
-        sfx = load(EP / f'assets/audio/sfx/{name}.wav') * gain
+        sfx = load(EP / SFX_DIR / f'{name}.wav') * gain
         if lowpass:
             sfx = sosfilt(butter(2, lowpass, fs=SR, btype='low', output='sos'), sfx, axis=0)
         i = int(round(t0 * SR))
         j = min(n, i + len(sfx))
         mix[i:j] += sfx[:j - i]
         placed.append({'t': t0, 'sfx': name, 'gain': gain, 'lowpass': lowpass})
+        key = f'sfx:{name}'
+        if key not in sources:
+            sources[key] = {'path': f'{SFX_DIR}/{name}.wav', 'provider': 'volcano-seedaudio',
+                            'sha256': hashlib.sha256((EP / SFX_DIR / f'{name}.wav').read_bytes()).hexdigest()}
 
     voice = load(EP / 'assets3d/dialogue/hestia_line.wav')
     vi = int(round(VOICE_T * SR))
     vj = min(n, vi + len(voice))
+    # 口型包络轨（能量→jaw，20ms 帧）：供 viewer 女神慵懒口型；与混音同一音源零漂移
+    vmono = voice.mean(axis=1)
+    hop = int(.02 * SR)
+    env = np.sqrt(np.mean(np.pad(vmono, (0, (-len(vmono)) % hop))[:len(vmono) + (-len(vmono)) % hop]
+                          .reshape(-1, hop) ** 2, axis=1))
+    lo, hi = np.percentile(env, 15), max(np.percentile(env, 92), 1e-9)
+    jaw = np.clip((env - lo) / (hi - lo) * 0.85, 0, 0.85)
+    (EP / 'config/hestia_voice_env.json').write_text(json.dumps(
+        {'t0': VOICE_T, 'dt': .02, 'jaw': [round(float(x), 3) for x in jaw]}), encoding='utf-8')
     # duck：台词窗 ±0.3s 内歌曲 -8dB，150ms 余弦平滑进出
     duck = np.ones(n)
     d0, d1 = vi - int(.3 * SR), min(n, vj + int(.3 * SR))
@@ -83,7 +127,7 @@ def main():
     mix[vi:vj] += voice[:vj - vi] * 1.4  # 台词电平补偿（QC 峰值 0.25 偏低）
 
     peak = float(np.abs(mix).max())
-    ceiling = 10 ** (-1.8 / 20)  # -1.8dBFS
+    ceiling = 10 ** (-2.2 / 20)  # -2.2dBFS（AAC 编码有约 1.3% 过冲，留余量保成片 ≤-1.8dBFS）
     limited = False
     if peak > ceiling:
         mix *= ceiling / peak
@@ -91,11 +135,13 @@ def main():
     out = EP / 'assets3d/mixed.wav'
     sf.write(out, mix, SR, subtype='PCM_16')
     report = {
-        'duration': DURATION, 'sr': SR, 'song_sha256': hashlib.sha256(
-            (EP / 'assets/audio/music/suno/op_song_suno.wav').read_bytes()).hexdigest(),
+        'duration': DURATION, 'sr': SR,
         'song_rms': round(rms(song), 4), 'events': placed,
+        'sources': sources,  # 逐文件 provider+sha256（R2：SFX 全换 Seed-Audio，程序合成留档不进混音）
         'voice': {'file': 'assets3d/dialogue/hestia_line.wav', 't': VOICE_T,
-                  'duck_db': DUCK_DB, 'duck_smooth_s': DUCK_SMOOTH, 'voice_gain': 1.4},
+                  'duck_db': DUCK_DB, 'duck_smooth_s': DUCK_SMOOTH, 'voice_gain': 1.4,
+                  'provider': 'volcano-seedtts',
+                  'sha256': hashlib.sha256((EP / 'assets3d/dialogue/hestia_line.wav').read_bytes()).hexdigest()},
         'peak_before': round(peak, 4), 'ceiling': round(ceiling, 4), 'normalized': limited,
         'mix_peak': round(float(np.abs(mix).max()), 4), 'mix_rms': round(rms(mix), 4),
     }

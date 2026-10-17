@@ -1,7 +1,6 @@
 {
  "duration": 49.2,
  "sr": 48000,
- "song_sha256": "c285882b38ccecfc4cda1f83a5aced9b9651b8318332cb09e1c095004cfe4867",
  "song_rms": 0.0984,
  "events": [
   {
@@ -72,21 +71,81 @@
   },
   {
    "t": 47.02,
-   "sfx": "block_impact",
+   "sfx": "pot_clang",
    "gain": 1.0,
-   "lowpass": 1200
+   "lowpass": null
   }
  ],
+ "sources": {
+  "song": {
+   "path": "assets/audio/music/suno/op_song_suno.wav",
+   "provider": "suno",
+   "sha256": "c285882b38ccecfc4cda1f83a5aced9b9651b8318332cb09e1c095004cfe4867"
+  },
+  "ambience": {
+   "path": "assets3d/sfx/ambience_night.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.22,
+   "sha256": "7013f55ceacb416e85b6d98522ffa0a5f8e667995b206c1800dd0ff2b9c4c2e8"
+  },
+  "sfx:energy_charge": {
+   "path": "assets3d/sfx/energy_charge.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "3a714d02143adece92bf75e533f04fe6cb937c16b47bad99c81026f009186549"
+  },
+  "sfx:dash_whoosh": {
+   "path": "assets3d/sfx/dash_whoosh.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "701060bf25545c5de27fd6fa0797621cb5b377307eaebe56c8d8dafdde92f2b8"
+  },
+  "sfx:block_impact": {
+   "path": "assets3d/sfx/block_impact.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "ffbddc1f523a7544917ee8c792ce9e315e57b6f70affa45d5d0938e771f7abc9"
+  },
+  "sfx:punch_heavy": {
+   "path": "assets3d/sfx/punch_heavy.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "2148d900e7f4c1429f2b43d7bcf6465b452d4021c4627d97f4078ae536f45e13"
+  },
+  "sfx:body_drop": {
+   "path": "assets3d/sfx/body_drop.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "403ff4ed749bb18953278e14b3aac9d94e4ba0b0cd2915957c86de1e24b24d09"
+  },
+  "sfx:impact_thud": {
+   "path": "assets3d/sfx/impact_thud.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "b867a3f80f3d5ccd3ca972a1cf51523d91baab9d653ce268b9f00a2d6cf3f186"
+  },
+  "sfx:whoosh_fast": {
+   "path": "assets3d/sfx/whoosh_fast.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "0ec9fafd9d9463a2a1cbf3daaf6063a7b34f39178f5439ad33b46fffb54dd3ed"
+  },
+  "sfx:energy_blast": {
+   "path": "assets3d/sfx/energy_blast.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "32035f85dad01f6154ad22da23bb8960ffe7f939911dd98ac875f829d427ccf7"
+  },
+  "sfx:pot_clang": {
+   "path": "assets3d/sfx/pot_clang.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "40bfdda78aa77f8f756f0568e863f45d86145c169b59dcd47eddc08a1147e662"
+  }
+ },
  "voice": {
   "file": "assets3d/dialogue/hestia_line.wav",
   "t": 45.0,
   "duck_db": -8.0,
   "duck_smooth_s": 0.15,
-  "voice_gain": 1.4
+  "voice_gain": 1.4,
+  "provider": "volcano-seedtts",
+  "sha256": "408c60474ba8bf1970b62699fa15a3bf0fd8e79e13cdc3e8f0ca87803e6eb49d"
  },
- "peak_before": 1.1519,
- "ceiling": 0.8128,
+ "peak_before": 0.9726,
+ "ceiling": 0.7762,
  "normalized": true,
- "mix_peak": 0.8128,
- "mix_rms": 0.0739
+ "mix_peak": 0.7762,
+ "mix_rms": 0.085
 }

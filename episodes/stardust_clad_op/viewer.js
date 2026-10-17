@@ -4,19 +4,43 @@
 // 火花粒子 LCG、白闪 ≤.55、拟声词大字、地面裂缝+碎石。纯 (t,state) 确定函数。
 // window 契约（render.mjs 依赖）：duration / checkTimes / renderAt / stepAt / setFreeCamera / ready。
 import * as THREE from 'three';
-import {AoaoCraft,XiaozaoCraft,DafuCraft} from './characters.js';
+import {AoaoCraft,XiaozaoCraft,DafuCraft,HestiaCraft} from './characters.js';
 import {StardustShrineScene} from './scenes/StardustShrineScene.js';
-import {poseAt,ease,clamp,T,BLOCK_PT,CLASH_PT,LAND_PT} from './performance.js';
+import {StarfallColonnadeScene} from './scenes/StarfallColonnadeScene.js';
+import {EmberCalderaScene} from './scenes/EmberCalderaScene.js';
+import {poseAt,ease,clamp,T,BLOCK_PT,CLASH_PT,LAND_PT,HESTIA_SEAT} from './performance.js';
 
 const W=1280,H=720;
+window.debugFit=new URLSearchParams(location.search).has('debugFit'); // clad_fit 调试探针开关
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
 window.duration=TL.duration;
 const entries=TL.segments.map(s=>({startTime:s.start,endTime:s.end,
-  opts:{move:s.move,shot:s.shot,kind:s.kind}}));
+  opts:{move:s.move,shot:s.shot,kind:s.kind,scene:s.scene}}));
 
-const stage=new StardustShrineScene();stage.build();await stage.applyHybrid();
-const actors={aoao:new AoaoCraft(),xiaozao:new XiaozaoCraft(),dafu:new DafuCraft()};
-for(const a of Object.values(actors))stage.scene.add(a.mesh);
+// R2 多场景：三场景同存，按段 scene 字段硬切（角色世界坐标全局连续，Object3D
+// 单父级——切换即 reparent，无渐隐穿帮）
+const SCENES={shrine:new StardustShrineScene(),colonnade:new StarfallColonnadeScene(),caldera:new EmberCalderaScene()};
+for(const sc of Object.values(SCENES)){sc.build();await sc.applyHybrid();}
+const stage=SCENES.shrine; // 特效件全部挂圣殿（交锋/落地/gag 都在圣殿链上）
+const actors={aoao:new AoaoCraft(),xiaozao:new XiaozaoCraft(),dafu:new DafuCraft(),hestia:new HestiaCraft()};
+SCENES.shrine.scene.add(actors.hestia.mesh);actors.hestia.mesh.visible=false; // 女神只住圣殿（outro 登场）
+// 女神台词口型：能量包络视素轨（build_audio.py 从 hestia_line.wav 生成；缺失静默降级闭嘴）
+let voiceEnv=null;
+try{voiceEnv=await fetch('./config/hestia_voice_env.json').then(r=>r.ok?r.json():null);}catch{}
+const jawAt=t=>{
+  if(!voiceEnv)return 0;
+  const i=Math.floor((t-voiceEnv.t0)/voiceEnv.dt);
+  return i<0||i>=voiceEnv.jaw.length?0:voiceEnv.jaw[i];
+};
+let curScene=null;
+function useScene(name){
+  const sc=SCENES[name]??SCENES.shrine;
+  if(curScene===sc)return sc;
+  curScene=sc;
+  for(const a of Object.values(actors))sc.scene.add(a.mesh);
+  return sc;
+}
+useScene('shrine');
 
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
 renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
@@ -37,11 +61,17 @@ function camFor(shot,t,entry,states){
   switch(shot){
     case 'establish':return{pos:lerp3([0,5.4,17],[0,4.4,14],ease(clamp((t-2.113)/1.2))),look:[0,2.4,-6],fov:50};
     case 'clad_aoao':return track('aoao',.7);
-    case 'clad_xiaozao':{ // 特写：他正面朝镜头，左前臂横抬胸前——打孔阵盘面翻出
-      const s=states.xiaozao;
-      return {pos:[s.rootX-.55,1.32,s.rootZ+3.2],look:[s.rootX+.05,1.10,s.rootZ+.20],fov:34};
+    case 'clad_xiaozao':{ // 柱廊建立帧 → 推近特写（前臂横抬胸前，打孔阵盘面翻出）
+      const s=states.xiaozao,k=ease(clamp(u/.30));
+      const wide={pos:[s.rootX+4.5,3.1,s.rootZ+8.6],look:[s.rootX,1.3,s.rootZ],fov:48};
+      const close={pos:[s.rootX-.55,1.32,s.rootZ+3.2],look:[s.rootX+.05,1.10,s.rootZ+.20],fov:34};
+      return {pos:lerp3(wide.pos,close.pos,k),look:lerp3(wide.look,close.look,k),fov:wide.fov+(close.fov-wide.fov)*k};
     }
-    case 'clad_dafu':return track('dafu',.85);
+    case 'clad_dafu':{ // 火山口建立帧 → 推近
+      const s=states.dafu,k=ease(clamp(u/.30)),tr=track('dafu',.85);
+      const wide={pos:[s.rootX+4.2,3.3,s.rootZ+9.0],look:[s.rootX,1.5,s.rootZ],fov:48};
+      return {pos:lerp3(wide.pos,tr.pos,k),look:lerp3(wide.look,tr.look,k),fov:wide.fov+(tr.fov-wide.fov)*k};
+    }
     case 'f_two':return{pos:[-.4,1.5,5.6],look:[-.45,1.3,1.8],fov:46};
     case 'f_track':return{pos:lerp3([-2.6,1.4,4.6],[0.4,1.35,4.4],u),look:[states.aoao.rootX,1.35,states.aoao.rootZ],fov:40};
     case 'f_block':return{pos:[-.5,1.55,4.3],look:BLOCK_PT,fov:38};
@@ -53,11 +83,21 @@ function camFor(shot,t,entry,states){
     case 'f_wide2':return{pos:[.6,2.4,8.6],look:[-.8,1.2,1.9],fov:44};
     case 'f_prep':return{pos:[-.9,1.5,7.2],look:[-1.1,1.3,1.9],fov:40};
     case 'v2_low':return{pos:[-.9,.55,7.8],look:[-.9,1.75,2.6],fov:50}; // 低机位仰拍冲锋
+    // 三场景各 1 镜低机位冲锋（聚焦各自场景的主角）
+    case 'v2_low_aoao':case 'v2_low_xiaozao':case 'v2_low_dafu':{
+      const name=shot.replace('v2_low_',''),s=states[name];
+      return {pos:[s.rootX+.8,.72,s.rootZ+3.6],look:[s.rootX,1.45,s.rootZ],fov:50};
+    }
     case 'v2_gag':return{pos:[-.5,.95,9.0],look:[-.3,2.1,2.6],fov:48};
     case 'v2_pose':return{pos:lerp3([-.5,1.7,8.8],[-.5,1.55,7.8],u),look:[-.6,1.95,2.8],fov:42};
     case 'v2_hold':return{pos:lerp3([-.5,1.55,7.8],[1.0,1.8,7.6],u),look:[-.6,1.9,2.8],fov:42};
     case 'out_wide':return{pos:[-.5,2.0,9.8],look:[-1.0,1.5,2.2],fov:44};
-    case 'out_pot':return{pos:[0,1.7,8.2],look:[0,3.2,-6],fov:44};
+    case 'out_reveal':{ // 定格群像 → 摇向大锅圣物（女神坐锅沿揭晓）
+      const k=ease(clamp(u/.8));
+      return{pos:lerp3([-.5,2.0,9.8],[1.9,4.4,-.4],k),look:lerp3([-1.0,1.5,2.2],[HESTIA_SEAT.x,4.28,HESTIA_SEAT.z],k),fov:44-6*k};
+    }
+    case 'out_goddess':return{pos:[1.9,4.35,-.7],look:[HESTIA_SEAT.x,4.28,HESTIA_SEAT.z],fov:36}; // 3/4 近景（距 ~3.9m，面朝 ±60° 内）
+    case 'out_pot':return{pos:[0,2.3,7.2],look:[0,3.6,-5.6],fov:46}; // 锅+女神+下方定格群像
     default:return{pos:[0,3,12],look:[0,1.5,-2],fov:48};
   }
 }
@@ -217,7 +257,8 @@ const FIGHT_PHASES=new Set(['f1','f2','f3','f4','f5','f6','f7','f8']);
 function draw(t,capture=true){
   const perf=poseAt(actors,entries,t);
   const {entry,opts,phase,states,poses}=perf;
-  stage.update(t);
+  const scene=useScene(opts.scene); // 段边界硬切场景（压拍）
+  scene.update(t);
 
   let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}
     :camFor(opts.shot??'establish',t,entry,states);
@@ -237,6 +278,14 @@ function draw(t,capture=true){
       }else actor.face.lookAtWorld(camera.position);
     }
   }
+  // 女神：慵懒脸+口型包络轨+光环（visible 由谱面控制）
+  if(actors.hestia.mesh.visible){
+    actors.hestia.setEmotion('neutral',states.hestia.blink??autoBlink(t+2.3));
+    actors.hestia.face.lookAtWorld?.(camera.position);
+    actors.hestia.mouth.apply({jaw:jawAt(t),width:1});
+  }
+  // 肖像 solo 模式（--shots 的 per-shot solo 字段：隐藏其他角色防乱入）
+  if(window.soloName)for(const [n,a] of Object.entries(actors))a.mesh.visible=(n===window.soloName);
 
   // ── 3D 特效（render 之前；锚点全部来自 performance 的真实接触坐标）──
   if(Math.abs(t-T.BLOCK)<.55)ringAt(impactRing,...BLOCK_PT,t,T.BLOCK,'#3DFFC8',2.0);
@@ -255,26 +304,67 @@ function draw(t,capture=true){
   const disc=actors.xiaozao.bracerDiscL.getWorldPosition(new THREE.Vector3());
   dustAt(t,disc);
 
-  // ── trace 探针状态（contact/gait 契约用；世界坐标）──
-  const hands={},wv=new THREE.Vector3();
+  // ── trace 探针状态（contact/gait/reach/limb_attach/女神坐姿 契约用）──
+  const hands={},arms={},limbBody={},torsoAxis={},wv=new THREE.Vector3();
+  const ARM_LEN={aoao:.39,xiaozao:.36,dafu:.45},AXIS={aoao:1.47,xiaozao:1.37,dafu:1.65};
+  const HIP={aoao:.87,xiaozao:.81,dafu:.96};
   for(const name of ['aoao','xiaozao','dafu']){
-    hands[name]={};
-    for(const side of ['left','right'])
+    hands[name]={};arms[name]={};
+    torsoAxis[name]=[[0,HIP[name],0],[0,AXIS[name],0]]; // mesh 空间躯干轴（髋→肩，low 在前=down 轴）
+    for(const side of ['left','right']){
       hands[name][side]=actors[name].hands[side].getWorldPosition(new THREE.Vector3()).toArray();
+      const arm=poses[name]?.[side==='left'?'leftArm':'rightArm'];
+      if(arm){
+        arms[name][side]=[[arm[0].x,arm[0].y,arm[0].z],[arm[1].x,arm[1].y,arm[1].z],[arm[2].x,arm[2].y,arm[2].z]];
+        // reach：腕-肩距/臂长（S1E3 P16 超伸判据；谱面目标点已收 ≤.85 臂长）
+        const d=Math.hypot(arm[2].x-arm[0].x,arm[2].y-arm[0].y,arm[2].z-arm[0].z);
+        limbBody[name+(side==='left'?'L':'R')]={reach:d/ARM_LEN[name]};
+      }
+    }
   }
   const locomotion={};
   for(const name of ['aoao','xiaozao','dafu'])
     if(poses[name]?.locomotion)locomotion[name]=poses[name].locomotion;
-  const state={entry:entries.indexOf(entry)+1,phase,shot:opts.shot,
+  // 女神坐姿探针键（只在 outro 可见段发射）：臀-锅沿接触、脚晃腿弧下限、杖-手贴合
+  const hestiaKeys={};
+  if(actors.hestia.mesh.visible){
+    hestiaKeys.hestiaOn=1;
+    hestiaKeys.hestiaHip=[HESTIA_SEAT.x,HESTIA_SEAT.y+(states.hestia.bob??0),HESTIA_SEAT.z];
+    hestiaKeys.potSeat=[HESTIA_SEAT.x,HESTIA_SEAT.y,HESTIA_SEAT.z+.04]; // 锅沿前点
+    hestiaKeys.hestiaFootY=Math.min(
+      actors.hestia.feet.left.getWorldPosition(new THREE.Vector3()).y,
+      actors.hestia.feet.right.getWorldPosition(new THREE.Vector3()).y);
+    hestiaKeys.staffGrip=actors.hestia.staff.getWorldPosition(new THREE.Vector3()).toArray();
+    hands.hestia={left:actors.hestia.hands.left.getWorldPosition(new THREE.Vector3()).toArray(),
+      right:actors.hestia.hands.right.getWorldPosition(new THREE.Vector3()).toArray()};
+  }
+  // clad_fit 探针量（甲件内面-躯干/大腿间隙，与渲染同源的 mesh 局部系）
+  const metrics={};
+  for(const name of ['aoao','xiaozao','dafu']){
+    const f=actors[name].lastFit;
+    if(f)for(const [k,v] of Object.entries(f))metrics[`${name}.${k}`]=v;
+  }
+  const state={entry:entries.indexOf(entry)+1,phase,shot:opts.shot,scene:opts.scene,
     clad:{aoao:states.aoao.cladT,xiaozao:states.xiaozao.cladT,dafu:states.dafu.cladT},
     aoaoRoot:[states.aoao.rootX,states.aoao.rootZ],
     xiaozaoRoot:[states.xiaozao.rootX,states.xiaozao.rootZ],
     dafuRoot:[states.dafu.rootX,states.dafu.rootZ],
-    contact:{hands,aR:hands.aoao.right,dR:hands.dafu.right,
-      shieldA:actors.aoao.shieldDome.getWorldPosition(wv).toArray(),clashAnchor:CLASH_PT},
+    limbBody,
+    contact:{hands,arms,torsoAxis,aR:hands.aoao.right,dR:hands.dafu.right,
+      shieldA:actors.aoao.shieldDome.getWorldPosition(wv).toArray(),clashAnchor:CLASH_PT,
+      metrics,...hestiaKeys,
+      ...(window.debugFit?{fitDebug:Object.fromEntries(['aoao','xiaozao','dafu'].map(n=>{
+        const a=actors[n],lf=a.fitRefs.leaves[1],leg=poses[n]?.leftLeg;
+        const rec={ref:lf?lf.ref.getWorldPosition(new THREE.Vector3()).toArray():null,
+          leg:leg?[[leg[0].x,leg[0].y,leg[0].z],[leg[1].x,leg[1].y,leg[1].z],[leg[2].x,leg[2].y,leg[2].z]]:null,
+          thR:a.limbs.leftLeg.radius(.12)};
+        return [n,rec];
+      }))}:{})},
     ...(Object.keys(locomotion).length?{locomotion}:{})};
+  if(actors.hestia.mesh.visible)
+    state.hestiaRoot=[HESTIA_SEAT.x,HESTIA_SEAT.z];
   if(!capture)return state;
-  renderer.render(stage.scene,camera);
+  renderer.render(scene.scene,camera);
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);
   // ── 画布叠加层 ──
   if(phase==='establish')drawTitle(t);
@@ -288,6 +378,7 @@ function draw(t,capture=true){
 }
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);
 window.setFreeCamera=c=>window.freeCamera=c;
+window.setSolo=n=>window.soloName=n; // 肖像 solo：只留被拍角色
 // check 抽帧表：条目始/中/末 + 接触帧/gag 顶点/画外音/收尾
 window.checkTimes=[...entries.flatMap(e=>[e.startTime+.15,(e.startTime+e.endTime)/2,e.endTime-.10]),
   2.113,T.BLOCK,T.CLASH,T.HOP,T.KNOCK,T.GAG,T.FREEZE+.2,T.VOICE+.4,T.CLANG+.03]
