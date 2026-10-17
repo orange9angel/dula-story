@@ -1,41 +1,43 @@
-# 自然感隔离试片 · 2026-10-17
+# 自然感隔离试片 · 圆润脸型修订 · 2026-10-17
 
-目标：保留当前接近生成绘画的男女主身份、发型、身体细节和场景，借鉴小雪成片的整体协调与对白自然感。
+目标：保留上一轮改善后的角色细节、对白和节奏，优先解决男主眼睛以下过长、急收成三角形的脸型。小雪仅作为整体比例和自然感的参照，不照搬五官、年龄或简化程度。
 
-- [直接看候选：13 秒](../../output/naturalness_candidate.mp4)
-- [前后对比：每段 A 当前、B 候选](../../output/naturalness_trial.mp4)
-- [男女主脸型对照](face_comparison.jpg)
+- [直接看本轮候选：13 秒](../../output/naturalness_candidate.mp4)
+- [同步对比：左 BEFORE 上一轮，右 AFTER 本轮](../../output/naturalness_trial.mp4)
+- [男女主正面对照](face_comparison.jpg)
 
-当前 `output/current.mp4`、正式角色模块和主剧本没有替换。候选仅覆盖罐子玩笑和放学邀请，尚未得到用户认可。
-候选源码、配音原件与配置另冻结在 [输入归档](../../output/archive/naturalness_trial_sources.zip)，避免清理临时截图后丢失本次实际音频与模块。
+本轮仍是待用户复看的隔离候选。正式角色模块、主剧本和 `output/current.mp4` 未替换；上一轮公开试片及说明已冻结在 [回退归档](../../output/archive/before_round_face.zip)。入口沿用同一组文件名。
 
-## 本轮可见结果
+## 可见变化与保留范围
 
-- 保留五官绘画、发型与身体，调整现有下脸几何。男主正脸的针尖下巴变圆顺；女主下颊更连续，正常镜头中的收益较小。侧脸只小幅收回鼻口凸度，没有增加视角修型。
-- 衣服阴影反差降低，但领口/脖子的碎色块、部分袖口和头颈连接仍不自然，不能当作已解决。身体姿态和动作沿用当前版本，没有重建身体。
-- 女主两句改为“装叶子的呀。你这么大，哪儿放得下。”和“你又不是叶子。明天放学再过来吧。”；沿用当前音色，用火山 native 语境指令重新试读。男主语音不变。
-- 接话间隔约 2.81→0.34 秒、3.00→1.10 秒。后一段保留拿稳罐子和抬眼的时间；没有压缩全片停顿。候选剪掉的是现有切镜前的空等，尚未写入正式剧本时间轴。
-- 新语音按最终 PCM 重新生成口型，字幕使用候选剧本。配乐仍为当前已选的 Suno 音乐，短片内连续铺设并按新对白压低；没有生成替代配乐。
+- 男主：缩短眼睛以下的整段下脸，放缓下颊向下巴的收束，并小幅收回鼻口凸度。正面和浅斜面的长三角形减轻。更强的一档试样出现过宽、偏幼态的下脸，因此选用较克制的一档。
+- 女主：较小幅度缩短和充实下脸；正面、45°的下颊更连贯，实际中景的变化比男主小。
+- 绘画细节：原有眼形、虹膜、发束和衣物沿用上一轮。几何改变时同步映射鼻口与绘画坐标，没有新增随转角开关的修型。
+- 头颈：下脸缩短后露颈变长，整体头部略向下落位，耳发一起跟随。复查了正侧面及上下俯仰；领口碎色块和颈部块状阴影仍然存在。
+- 头发：正面发束细节保留，侧后发仍有壳感；本轮没有重新设计后脑发束，也没有完整背面证据。
+- 声音：两段对白、间隔、配乐和音量均沿用上一轮。候选和同步对比直接复制上一轮 AAC 音轨，编码数据哈希一致。
 
-## 证据与检查范围
+## 分解观察与视频证据
 
-- 原画/基线/候选分解：[女主](../../tmp/natural_look/parts/aoi/parts.jpg)、[男主](../../tmp/natural_look/parts/lei/parts.jpg)。参考姿态未标定，只用于结构判断，不能当精确投影。
-- 整体回查：[女主](../../tmp/natural_look/parts/aoi/whole.jpg)、[男主](../../tmp/natural_look/parts/lei/whole.jpg)。两侧 45°、90°、正面，头转身体固定。
-- [女主六秒转面](../../tmp/natural_look/aoi_turn.mp4)、[男主六秒转面](../../tmp/natural_look/lei_turn.mp4)；实际编码视频抽帧已检查，不能据稀疏抽帧声称逐帧完全无变形。
-- 30 个头部/表情状态及 5 个场景时刻正反序一致；同角度分解的实际头/身角匹配、顶点有限、浏览器无错误。转面输入在渲染期间未变动。
-- 对比视频解码无错误；候选为 1280×720、30fps、391 帧。对最终短片抽帧复看对白与持罐过程。
-- 音频模型转写了四段对白，未报告吞字或接缝；其评价混淆了 A/B 重复与剧情重复，**不作为自然度优劣结论，也不是人工试听**。
+- [男主部位板](../../tmp/round_face/parts/lei/parts.jpg)：完整眼颊下巴关系比上一轮短而饱满；眉眼细节保留；侧面鼻口起伏更克制，下颌仍保留少年的转折；耳根继续贴合头部，耳内绘画未重做。
+- [女主部位板](../../tmp/round_face/parts/aoi/parts.jpg)：45°眼下到下巴的收束减缓，两侧纯侧面缩短幅度较小。原画姿态未标定，作为结构参考，不用于逐像素拟合。
+- 返回整脸：[男主](../../tmp/round_face/parts/lei/whole.jpg)、[女主](../../tmp/round_face/parts/aoi/whole.jpg)。重点浅角度：[男主](../../tmp/round_face/parts/lei/shallow.jpg)、[女主](../../tmp/round_face/parts/aoi/shallow.jpg)。前后机位、表情和头身转角一致；头部落位有小幅调整。
+- [俯仰总览](../../tmp/round_face/pitch_contact.jpg)：每角色在 0°、±45°、±90°转头下分别抬头、低头 15°，查看下颌到颈、耳发与领口。
+- [男主六秒转头](../../tmp/round_face/lei_turn.mp4)、[女主六秒转头](../../tmp/round_face/aoi_turn.mp4)：各 144 帧，查看了实际 MP4 的抽帧总览。浅角度序列暂未见新增脸颊突变；稀疏抽帧不等于逐帧美术验收。
+- [真实对白同步对比抽帧](../../tmp/round_face/delivered_comparison.jpg)：覆盖两组交流和持罐动作，检查最终合成实际采用了本轮脸型。
 
-完整头发背面、全身动态和整集节奏本轮未重新验收。试片显示局部改进，还不能声称已达到小雪成片的整体自然度。
+两角色各 22 个平视状态、10 个俯仰状态，以及 30 个头部/表情状态和 5 个实际场景时刻完成检查；报告没有浏览器错误，所采样的反向 seek 一致。部位、转面和实际对白渲染的源码哈希均与本轮候选匹配。最终候选为 1280×720、30fps、391 帧，视频解码无错误。构建和音轨核验见 [verification.json](verification.json)。这些检查不代表用户已认可自然度，也不能证明全身动作或完整剧集已完成验收。
 
-## 复现
+## 复现与回退
 
-在本 episode 目录执行，Python 使用仓库 `.venv/Scripts/python.exe`：
+本轮源码、配置和构建工具在 [本轮输入归档](../../output/archive/round_face_sources.zip)。上一轮独立模块、两句女主配音原件和配置在 [上一轮输入归档](../../output/archive/naturalness_trial_sources.zip)。`before_round_face.zip` 保留了修改前实际交付视频。
 
-1. `node tools/prepare_natural_look_trial.mjs`：生成隔离角色模块和基线哈希。
-2. `python tools/build_naturalness_trial.py prepare`：准备候选剧本、两句缓存配音、音频与口型；输出只在 `tmp/natural_look/dialogue`。
-3. `node render.mjs --range 15,24.3 --out ../tmp/natural_look/render_1.mp4 --board tmp/natural_look/render_1 --resource-overrides tmp/natural_look/scene_trial.json --audio-from tmp/natural_look/dialogue/assets3d/mixed.wav`
-4. 同命令用 `--range 64.2,74.4` 和 `render_2` 渲染第二段。
-5. `python tools/build_naturalness_trial.py assemble`：生成上面的候选与 A/B 视频，检查基线未变。
+在本 episode 目录：
 
-分解板由 `build_naturalness_trial.py boards` 生成；所需角度截图在 `tmp/natural_look/before|shape/<actor>/baseline`，使用现有 `render_profile_feature_study.mjs` 的 baseline、10 个标准视角和 `shape.json` 模块覆盖制作。完整构建哈希与剪辑区间见 [review.json](../../tmp/natural_look/review.json)。
+1. `node tools/prepare_round_face_trial.mjs` 从冻结的上一轮模块生成隔离版本，保留首次基线哈希。
+2. 用 `render_profile_feature_study.mjs` 的 `baseline`、`--additional-angles 20,30,75,-20,-30,-35,-55,-75` 和 `--pitch-study` 分别生成两角色平视及俯仰证据；当前模块覆盖为 `tmp/round_face/balanced.json`。
+3. 用 `review_drawn_characters.mjs --mode direct` 生成 `tmp/round_face/scene`；用 `render_character_profile_turn.mjs` 生成两角色转头视频，均使用同一覆盖配置。
+4. `node render.mjs --range 15,24.3 --out ../tmp/round_face/render_1.mp4 --board tmp/round_face/render_1 --resource-overrides tmp/round_face/scene_trial.json --audio-from tmp/natural_look/dialogue/assets3d/mixed.wav`；第二段使用 `64.2,74.4` 和 `render_2`。
+5. `python tools/review_round_face_trial.py boards` 生成局部与整体对照；`python tools/review_round_face_trial.py package` 核对来源、拼接原剪辑区间并刷新本页入口。Python 使用仓库 `.venv/Scripts/python.exe`。
+
+没有重新合成配音或更换 Suno 配乐，没有将候选写入正式角色资产。

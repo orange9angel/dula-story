@@ -1,5 +1,66 @@
 {
-  "status": "isolated candidate; user review pending",
+  "status": "round-face candidate; user review pending",
+  "priorReviewArchive": "output/archive/before_round_face.zip",
+  "previousVideoSha256": "4a969b3d817f8aa2fd7344e9c2bee04113c424f6fcdb41bd1a3e6ef19478f57c",
+  "candidateSha256": "c7c5607013878800213db71a2b9c976fc349f25ff8c3af3580fd55fe7306625b",
+  "comparisonSha256": "6e86cb029e62698caefd577f152339a7ad7ab37e7dca3c44a0127b2aa81bf1b5",
+  "inputOverrides": {
+    "/characters/bioarmor/tripo-drawn-look.js": {
+      "file": "tmp/round_face/tripo-balanced.js",
+      "sha256": "ad10d29d925b93d65ebca929703218ae11b83e9b22f65f627884af9c50ddba2e"
+    },
+    "/lib/craft3d/illustrated-import.js": {
+      "file": "tmp/natural_look/illustrated-import.js",
+      "sha256": "7af0abd84afea21ca64d011e71228f364144f2e9022d4e153737235bc859d6ec"
+    },
+    "/config/timeline.json": {
+      "file": "tmp/natural_look/dialogue/config/timeline.json",
+      "sha256": "3453c1d722028d0fa47cad14d7b64826dfd373065366f1cf2ebafe31e17f8dab"
+    },
+    "/config/voice_features.json": {
+      "file": "tmp/natural_look/dialogue/config/voice_features.json",
+      "sha256": "6bfafebe481afdc5f16b6e649d5b403cbfb2f830d22527d59fdce5288ef96c8e"
+    },
+    "/config/viseme_leixiao.json": {
+      "file": "tmp/natural_look/dialogue/config/viseme_leixiao.json",
+      "sha256": "bb3034c2c25cfbc07701c32d0472d45c55f68f93a1a0ad5bc05b2a1a702b645e"
+    },
+    "/config/viseme_qiantangkui.json": {
+      "file": "tmp/natural_look/dialogue/config/viseme_qiantangkui.json",
+      "sha256": "1d1abf677afe54147c666cd3c71db829e46085223d873ff6a281783803bfee64"
+    },
+    "/lib/craft3d/drawn-head.js": {
+      "file": "tmp/round_face/drawn-head.js",
+      "sha256": "589a98cd82918366ded37e040ae89c7c452bbaa07b745ddb609985e72c7fcbb1"
+    }
+  },
+  "audioPcmSha256": {
+    "trial_1.wav": "be4625f4d125ede73fabb120e89e21ed5f3c5d6a1e65097dd7c072375b2843f5",
+    "trial_2.wav": "8acf1dcaf248a4af8eda19552b9350bb2152919a75026c54d88b569f41d60444"
+  },
+  "checks": {
+    "identical_encoded_audio": true,
+    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\natural_look\\tripo-drawn-look.js": true,
+    "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-head.js": true,
+    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\current.mp4": true,
+    "scene_current_inputs": true,
+    "scene_no_errors": true,
+    "scene_reverse_equal": true,
+    "render_1_current_inputs": true,
+    "render_2_current_inputs": true,
+    "lei_balanced_current_inputs": true,
+    "lei_balanced": true,
+    "lei_pitch_current_inputs": true,
+    "lei_pitch": true,
+    "lei_turn_current_inputs": true,
+    "lei_turn": true,
+    "aoi_balanced_current_inputs": true,
+    "aoi_balanced": true,
+    "aoi_pitch_current_inputs": true,
+    "aoi_pitch": true,
+    "aoi_turn_current_inputs": true,
+    "aoi_turn": true
+  },
   "exchanges": [
     {
       "exchange": 1,
@@ -62,49 +123,5 @@
       }
     }
   ],
-  "baselineUnchanged": {
-    "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js": true,
-    "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\illustrated-import.js": true,
-    "output/current.mp4": true,
-    "script.story": true
-  },
-  "outputSha256": "6f89540ad9cc14e664e5829a25112507164f8bc16750ae02f1ab20fa658e3282",
-  "checks": {
-    "unchanged_processed_voice": true,
-    "no_line_truncated": true,
-    "candidate_story_hash": true,
-    "LeiXiao_silent_mouth_gate": true,
-    "LeiXiao_lip_source": true,
-    "QianTangKui_silent_mouth_gate": true,
-    "QianTangKui_lip_source": true,
-    "aoi_turn_inputs_frozen": true,
-    "lei_turn_inputs_frozen": true
-  },
-  "inputOverrides": {
-    "/characters/bioarmor/tripo-drawn-look.js": {
-      "file": "tmp/natural_look/tripo-drawn-look.js",
-      "sha256": "00d85dc3652f5cbfa48727c0cd060371c0754df4d3879243743d70a088d63519"
-    },
-    "/lib/craft3d/illustrated-import.js": {
-      "file": "tmp/natural_look/illustrated-import.js",
-      "sha256": "7af0abd84afea21ca64d011e71228f364144f2e9022d4e153737235bc859d6ec"
-    },
-    "/config/timeline.json": {
-      "file": "tmp/natural_look/dialogue/config/timeline.json",
-      "sha256": "3453c1d722028d0fa47cad14d7b64826dfd373065366f1cf2ebafe31e17f8dab"
-    },
-    "/config/voice_features.json": {
-      "file": "tmp/natural_look/dialogue/config/voice_features.json",
-      "sha256": "6bfafebe481afdc5f16b6e649d5b403cbfb2f830d22527d59fdce5288ef96c8e"
-    },
-    "/config/viseme_leixiao.json": {
-      "file": "tmp/natural_look/dialogue/config/viseme_leixiao.json",
-      "sha256": "bb3034c2c25cfbc07701c32d0472d45c55f68f93a1a0ad5bc05b2a1a702b645e"
-    },
-    "/config/viseme_qiantangkui.json": {
-      "file": "tmp/natural_look/dialogue/config/viseme_qiantangkui.json",
-      "sha256": "1d1abf677afe54147c666cd3c71db829e46085223d873ff6a281783803bfee64"
-    }
-  },
-  "candidateSha256": "4a969b3d817f8aa2fd7344e9c2bee04113c424f6fcdb41bd1a3e6ef19478f57c"
+  "limits": "Rendered sparse-frame visual review plus deterministic state checks; not user acceptance or a complete anatomy guarantee."
 }
