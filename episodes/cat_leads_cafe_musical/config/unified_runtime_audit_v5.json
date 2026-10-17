@@ -1,0 +1,337 @@
+{
+  "sameActors": true,
+  "finiteHeadValues": 775680,
+  "heads": {
+    "Girl": {
+      "meshes": [
+        "",
+        "",
+        "",
+        "",
+        "cafe-rear-hair-volume"
+      ],
+      "ears": 2,
+      "headScale": 1.23,
+      "posteriorZ": [
+        -0.2556542754173279,
+        0.044115759432315826
+      ],
+      "integration": {
+        "method": "shared depth map across skull and all hair layers; original UVs and frontal XY retained; lower nape locks wrapped behind jaw",
+        "posteriorDepthRatio": 0.62,
+        "positiveZChangedByPosteriorMap": 0,
+        "vertices": 445503,
+        "frontalXYChanged": false,
+        "lowerLocksWrapped": true
+      }
+    },
+    "Boy": {
+      "meshes": [
+        "",
+        "",
+        "",
+        "",
+        "cafe-rear-hair-volume"
+      ],
+      "ears": 2,
+      "headScale": 1.3,
+      "posteriorZ": [
+        -0.08412351459264755,
+        0.043314915150403976
+      ],
+      "integration": {
+        "method": "shared depth map across skull and all hair layers; original UVs and frontal XY retained; lower nape locks wrapped behind jaw",
+        "posteriorDepthRatio": 0.62,
+        "positiveZChangedByPosteriorMap": 0,
+        "vertices": 443525,
+        "frontalXYChanged": false,
+        "lowerLocksWrapped": true
+      }
+    }
+  },
+  "samples": [
+    {
+      "t": 0.7,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 4,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0.8086,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 8,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0.1258
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 10.5,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0.2491,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 12.65,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0
+      },
+      "tap": {
+        "tip": [
+          -1.725,
+          0.888,
+          -0.76
+        ],
+        "rimY": 0.888,
+        "grip": [
+          -1.6537647442495764,
+          0.954445029499089,
+          -0.9618848895959942
+        ],
+        "errorAtHit": 0
+      },
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 13.25,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0
+      },
+      "tap": {
+        "tip": [
+          -1.725,
+          0.888,
+          -0.76
+        ],
+        "rimY": 0.888,
+        "grip": [
+          -1.6537647442495764,
+          0.954445029499089,
+          -0.9618848895959942
+        ],
+        "errorAtHit": 0
+      },
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 14.8,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0.3918,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 16.4,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0.5625
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 18.7,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 434,
+        "maxPush": 0.06680140088237996,
+        "minClearance": 0.0069999999999999785
+      }
+    },
+    {
+      "t": 19.2,
+      "mode": "step-touch",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 213,
+        "maxPush": 0.016776541155854634,
+        "minClearance": 0.006999999999999992
+      }
+    },
+    {
+      "t": 40.066667,
+      "mode": "turn",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0.2845
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 234,
+        "maxPush": 0.020174736871738413,
+        "minClearance": 0.0069999999999999785
+      }
+    },
+    {
+      "t": 76.933333,
+      "mode": "turn",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 234,
+        "maxPush": 0.02017473280746941,
+        "minClearance": 0.0069999999999999785
+      }
+    },
+    {
+      "t": 96,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0.629,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 100,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0.1163,
+        "Boy": 0
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    },
+    {
+      "t": 102,
+      "mode": "dialogue",
+      "visible": true,
+      "jaw": {
+        "Girl": 0,
+        "Boy": 0.1948
+      },
+      "tap": null,
+      "garment": {
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision",
+        "vertices": 3225,
+        "corrected": 0,
+        "maxPush": 0,
+        "minClearance": 0.021105989127639987
+      }
+    }
+  ],
+  "legacyTableImageRequested": false,
+  "errors": []
+}

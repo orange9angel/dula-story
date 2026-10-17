@@ -1,0 +1,104 @@
+{
+  "revision": "v5: source-sized head envelope, closed waist and released dance arms",
+  "audioSha256": "51d99f65cd5def2f6880e1ff94697a10a972bbc2a76b7e077d05686f1c65ce04",
+  "audioUnchanged": true,
+  "normalSpeedListeningReview": false,
+  "exports": [
+    {
+      "file": "output\\half_beat_sunshine_craft3d_v5.mp4",
+      "sha256": "edcf1b5fb1e3d134429bbfe812341777d8115ced5c0806c52c105e14e93a79fd",
+      "duration": 107.5,
+      "frames": 3225,
+      "fullDecode": "passed",
+      "audioCorrelationLagMs": 0.0,
+      "seek": {
+        "samples": 48,
+        "mismatches": []
+      },
+      "soleAudit": {
+        "scope": "48 skinned sole vertices per foot; consecutive planted centroids and minimum height; not full self-collision",
+        "samples": 8810,
+        "maxPlantedStep": 0.0016954560553344349,
+        "minSoleY": -5.0238661443571304e-05,
+        "maxPlantedSoleY": 4.435998583714044e-05,
+        "warnings": []
+      },
+      "dialogue3dSamples": 14,
+      "beatsChecked": 130,
+      "maxWristError": 1.3226065311025397e-07,
+      "maxPlantedSoleHeight": 4.66475477222124e-05,
+      "skirt": {
+        "samples": 48,
+        "minCapsuleClearance": 0.006999999999999965,
+        "maxCorrection": 0.06658052100910705,
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision"
+      }
+    },
+    {
+      "file": "output\\cafe_3d_dialogue_v5.mp4",
+      "sha256": "8f842d0c9daa3d7758f35ba10e9c813cca7127104d340f2925f86cfd58b1a77e",
+      "duration": 23,
+      "frames": 690,
+      "fullDecode": "passed",
+      "audioCorrelationLagMs": 0.0,
+      "seek": {
+        "samples": 11,
+        "mismatches": [],
+        "source": "Corresponding exact-hash samples from full render and its reverse-order seek check; no second independent rendering"
+      },
+      "soleAudit": {
+        "scope": "Inherited full 107.5s render evidence, including this opening segment: 48 skinned sole vertices per foot; consecutive planted centroids and minimum height; not full self-collision",
+        "samples": 8810,
+        "maxPlantedStep": 0.0016954560553344349,
+        "minSoleY": -5.0238661443571304e-05,
+        "maxPlantedSoleY": 4.435998583714044e-05,
+        "warnings": []
+      },
+      "dialogue3dSamples": 9,
+      "beatsChecked": 7,
+      "maxWristError": 1.0222155315096204e-07,
+      "maxPlantedSoleHeight": 4.66475477222124e-05,
+      "skirt": {
+        "samples": 11,
+        "minCapsuleClearance": 0.006999999999999965,
+        "maxCorrection": 0.06626602255200957,
+        "scope": "Skirt vertices against solved leg capsules; not full imported mesh collision"
+      }
+    }
+  ],
+  "scope": "Decoded-video samples and finite mesh/contact samples; not full self-collision or artistic approval",
+  "wardrobePreview": {
+    "file": "output\\cafe_wardrobe_v5.mp4",
+    "sha256": "c6e6ca3a69a30a4cf4f6ad815b39476fc42f3e4135bc00bb71918643858b8304",
+    "sourceInterval": [
+      15.5,
+      43
+    ],
+    "duration": 27.5,
+    "frames": 825,
+    "fullDecode": "passed",
+    "audioCorrelationLagMs": 0.0,
+    "seek": {
+      "samples": 17,
+      "mismatches": [],
+      "source": "Inherited corresponding exact-hash samples from full render; not an independent GPU render"
+    }
+  },
+  "sourceHashes": {
+    "craft3d/bootstrap.js": "b16e2825105957f54d10c7e75e105cce89d44b73902c6c704ede6ac44ff24556",
+    "craft3d/viewer.js": "0ff690e797771a58f768f25a1f95c376e9ca34c7921c182fbe67c943add87e9c",
+    "craft3d/dialogue-v4.js": "50929e32ca28c521bd7a4db524c1d78a2f7f252ec9ef5344a998667af391b3b6",
+    "craft3d/dance-v5.js": "899eae2bc16665fa6cdcf0ac64b63df38e4ea52f55ef36d225c15b29c791e6d7",
+    "scenes/CafeTable3D.js": "22a7e91d938e49e55b4a28fb4f205e50802d131dceceb2828cfda186905d49b6",
+    "tools/render.mjs": "8f113a4e3244dad2b904188c29ec1c5129011e4508d7a3bf1417ef7b931dd71c",
+    "script.story": "217e5f0e1b246eb5e6abf5fa6c66353980bb56626e65ef9df1a3ca32ec3f1c39"
+  },
+  "assetHashes": {
+    "characters/sunprint/CafeKid.js": "86a3d79086b45ee6fbb4a98501d5256659f6444221ca622ce1f80826ebbaf134",
+    "characters/sunprint/RiggedCafeKid.js": "a031bb35701826702590b8fff20048a4055e9000ec295d45c04a8b653d03d4e2",
+    "characters/sunprint/CafeFaceIntegration.js": "728134271703bfe7b809fd4724e9c5f9dd1fd6cf737544a4ff693f50e8860347",
+    "characters/sunprint/CafeSkirt.js": "51a65fbc991f8d3a7960bc3db3e7644b372bde2f1de2662631ad8e83c5dfba3b",
+    "characters/sunprint/CafeHairIntegration.js": "01c9195bd7df30d8c92202d26c2fea346bba146444f83daea8967fda96ff9a45",
+    "characters/sunprint/CafeRearHair.js": "aa960e9faac3c804b1512362fb566708feb2e69ee3fcb35b512da3e8110017ea"
+  }
+}

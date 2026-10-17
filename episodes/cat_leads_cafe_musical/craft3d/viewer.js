@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import {characters,scenes} from './bootstrap.js';
-import {performanceAt} from './dance-v3.js';
+import {performanceAt} from './dance-v5.js';
 import {parseStory} from '../pilot/performance.js';
 import {performanceAt as tablePerformance} from '../performance.js';
 import {dialogueAt} from './dialogue-v4.js';

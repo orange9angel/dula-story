@@ -1,0 +1,40 @@
+{
+  "candidate": "v5 r5 plus blink skin-sampling fix",
+  "firstHeadAttempt": "rejected by user: 两个人的颜值都急剧下降",
+  "userArtApproval": false,
+  "normalSpeedAudiovisualReview": false,
+  "sourceRevisions": {
+    "assets": "c9c4e4f",
+    "skills": "76e7eee",
+    "engine": "d973335"
+  },
+  "reviewedEvidence": [
+    "storyboard/turns/integration_v5r5/Girl_sheet.jpg",
+    "storyboard/turns/integration_v5r5/Boy_sheet.jpg",
+    "storyboard/integration_v5/Girl_comparison.jpg",
+    "storyboard/integration_v5/Boy_comparison.jpg",
+    "storyboard/integration_v5/Boy_blink_1.jpg",
+    "storyboard/integration_v5/blink_26.8.jpg",
+    "storyboard/integration_v5/final_blink_26_8.jpg",
+    "storyboard/integration_v5/final_dialogue_4.jpg",
+    "storyboard/integration_v5/waist_comparison.jpg"
+  ],
+  "knownLimitations": [
+    "Girl strong-profile temple/neck hair folding and seam",
+    "Boy strong-profile hair stretching and eye occlusion",
+    "Limited garment/sole proxies; not full mesh collision proof",
+    "Original wardrobe and painted shading still differ from source illustration"
+  ],
+  "scope": "Static regional comparisons, actual-shot blink frames, decoded-video samples and numeric audits; final acceptance remains with user",
+  "evidenceSha256": {
+    "storyboard/turns/integration_v5r5/Girl_sheet.jpg": "35963bd135c3a435b52baab4703c63b0d9b4284267a7dd54aaee46fa7e5e96ef",
+    "storyboard/turns/integration_v5r5/Boy_sheet.jpg": "148408174e88e82963f6312afcf71a2caf24a976814ece7c9be3a2fef150350e",
+    "storyboard/integration_v5/Girl_comparison.jpg": "24b0c9294e918087964a227d88389a507536d128753927103ed095446d42478f",
+    "storyboard/integration_v5/Boy_comparison.jpg": "ba76987f4e1d9a8d286e60ab7f9eacfdf40e7a74cf8ef7ab5864f6073f4ddfe7",
+    "storyboard/integration_v5/Boy_blink_1.jpg": "a58e5cb89418c78732252a4cd29a6a2f1c086ba8ace1f2de3e0a7cf2599d351f",
+    "storyboard/integration_v5/blink_26.8.jpg": "c376e66241b6329c4fd6df2d0758f84b0cf99a70865607f0b6b1621755b8e440",
+    "storyboard/integration_v5/final_blink_26_8.jpg": "8c66cbcd4a3ca3dc25250c09218a7a8d70389aec99a8cadeae7a40a53522496b",
+    "storyboard/integration_v5/final_dialogue_4.jpg": "415b74c59f046e46d1b3402ea20a266074147d7d494f2eeb3d6075c2d6825f75",
+    "storyboard/integration_v5/waist_comparison.jpg": "ef2e3452448d2ea338af1af1ba9f72404e5aa02abf8f2ba4a8d73df1cd004dc9"
+  }
+}
