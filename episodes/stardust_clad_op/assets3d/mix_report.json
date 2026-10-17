@@ -1,0 +1,92 @@
+{
+ "duration": 49.2,
+ "sr": 48000,
+ "song_sha256": "c285882b38ccecfc4cda1f83a5aced9b9651b8318332cb09e1c095004cfe4867",
+ "song_rms": 0.0984,
+ "events": [
+  {
+   "t": 5.317,
+   "sfx": "energy_charge",
+   "gain": 0.9,
+   "lowpass": null
+  },
+  {
+   "t": 8.568,
+   "sfx": "energy_charge",
+   "gain": 0.9,
+   "lowpass": null
+  },
+  {
+   "t": 13.305,
+   "sfx": "energy_charge",
+   "gain": 0.9,
+   "lowpass": null
+  },
+  {
+   "t": 15.023,
+   "sfx": "dash_whoosh",
+   "gain": 0.8,
+   "lowpass": null
+  },
+  {
+   "t": 16.625,
+   "sfx": "block_impact",
+   "gain": 1.0,
+   "lowpass": null
+  },
+  {
+   "t": 19.83,
+   "sfx": "punch_heavy",
+   "gain": 1.0,
+   "lowpass": null
+  },
+  {
+   "t": 21.432,
+   "sfx": "dash_whoosh",
+   "gain": 0.6,
+   "lowpass": null
+  },
+  {
+   "t": 23.034,
+   "sfx": "body_drop",
+   "gain": 1.0,
+   "lowpass": null
+  },
+  {
+   "t": 23.034,
+   "sfx": "impact_thud",
+   "gain": 0.5,
+   "lowpass": null
+  },
+  {
+   "t": 31.045,
+   "sfx": "whoosh_fast",
+   "gain": 0.8,
+   "lowpass": null
+  },
+  {
+   "t": 33.855,
+   "sfx": "energy_blast",
+   "gain": 0.9,
+   "lowpass": null
+  },
+  {
+   "t": 47.02,
+   "sfx": "block_impact",
+   "gain": 1.0,
+   "lowpass": 1200
+  }
+ ],
+ "voice": {
+  "file": "assets3d/dialogue/hestia_line.wav",
+  "t": 45.0,
+  "duck_db": -8.0,
+  "duck_smooth_s": 0.15,
+  "voice_gain": 1.4
+ },
+ "peak_before": 1.1519,
+ "ceiling": 0.8128,
+ "normalized": true,
+ "mix_peak": 0.8128,
+ "mix_rms": 0.0739
+}

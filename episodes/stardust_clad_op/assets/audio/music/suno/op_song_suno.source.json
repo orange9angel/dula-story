@@ -1,0 +1,42 @@
+{
+  "source": "suno.com",
+  "song_id": "1e770ffb-0dc1-4076-a36c-98e3de49de11",
+  "clip_id": "1e770ffb-0dc1-4076-a36c-98e3de49de11",
+  "sibling_clip_id": "18375f44-a641-48e0-b049-c5884b339cdf",
+  "title": "先把锅刷了再出发",
+  "model": "v6",
+  "status": "downloaded",
+  "receipt_status": "submitted->complete",
+  "style": "1980s retro anime opening theme, heroic fast rock anthem, galloping drums, brass section stabs, retro synth arpeggios, soaring passionate male vocals, minor key, epic and nostalgic",
+  "lyrics_file": "config/op_lyrics.txt",
+  "file": "op_song_suno.wav",
+  "sha256": "c285882b38ccecfc4cda1f83a5aced9b9651b8318332cb09e1c095004cfe4867",
+  "duration_sec": 49.2,
+  "sample_rate": 48000,
+  "channels": 2,
+  "codec": "pcm_s16le",
+  "size_bytes": 9460240,
+  "submitted_at": "2026-10-17T14:29:41Z",
+  "downloaded_at": "2026-10-17T14:38:02Z",
+  "download_path": "More options -> Download -> WAV -> Unlock & Download",
+  "session": "stardust-op-song",
+  "vocal_check": {
+    "conclusion": "has_vocals",
+    "evidence": "whisper base (CPU, no_speech_threshold=0.2, condition_on_previous_text=False) transcribed 13 segments 0:00-44.2s matching all 8 lyric lines (sung vocals rejected by default no_speech_threshold); clip metadata make_instrumental=false, lyrics stored in metadata.prompt",
+    "checked_at": "2026-10-17T14:50:00Z"
+  },
+  "b_version": {
+    "clip_id": "18375f44-a641-48e0-b049-c5884b339cdf",
+    "file": "op_song_suno_b.wav",
+    "sha256": "e6227d843527eae71e4bffc1bfba37b3db565ccf06aa5193f49053aa306ee905",
+    "duration_sec": 41.2,
+    "sample_rate": 48000,
+    "channels": 2,
+    "codec": "pcm_s16le",
+    "size_bytes": 7924240,
+    "display_tags": "rock, 80s retro, anime opening",
+    "make_instrumental": false,
+    "downloaded_at": "2026-10-17T14:51:07Z",
+    "download_path": "More options -> Download -> WAV -> Unlock & Download"
+  }
+}

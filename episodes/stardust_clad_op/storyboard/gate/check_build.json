@@ -1,0 +1,24 @@
+{
+  "args": [
+    "--check",
+    "--board",
+    "storyboard/gate",
+    "--trace",
+    "storyboard/gate/trace.json",
+    "--q",
+    "&probe-door=1&probe-bento=1"
+  ],
+  "output": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_op\\output\\craft3d_r1.mp4",
+  "sourceSha256": {
+    "characters.js": "8aa6c190f8b8acc90d540c256ae54e7c2a5be99dce91d3a5b1bbcd34d3b096a6",
+    "performance.js": "0db87b617791afe3725457d08f192c933dd5358acea8a071cddd6e6f5a58c9a9",
+    "viewer.js": "65937ca70e5c03f762886d0baafdc3a7a4f4215f73f7e0e8dc14f94ea0cc4aac",
+    "viewer.html": "16fd23f9aaeee19442fff0b0c7433fa4ccb8c886b4660ab6131aa78cf8459918",
+    "render.mjs": "cd46c5773fa74ee44e56a6e09e30e89345aaaf584a46149b3efc6c85675eb6df",
+    "scenes/StardustShrineScene.js": "e40bc78a638c282869c9d232709bb067be3231c1d63e307fdf61850c268638c3",
+    "tools/audit_inputs.mjs": "3fb7dc267334f207062e03e6cb16be6b3939e7f5e77501c760869b12f99c1eea",
+    "config/timeline.json": "75a4e43b3f6daaad398fa629f981d778593244dff911ac17ac4d049fcea3b6f6",
+    "config/review_shots.json": "9ae7a7d179e2ba53af9c9892118326b9c0f3985f4a99c2469e5e0ed86c4be345",
+    "config/contact_contract.json": "0d65a931877e6b2dafe0161b4d332ba4d879cbb5b303e571e5ec424d80206d3e"
+  }
+}

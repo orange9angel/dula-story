@@ -1,0 +1,197 @@
+{
+ "duration": 49.2,
+ "step": 0.01,
+ "bpm": 151.99908088235293,
+ "segments": [
+  {
+   "id": "intro",
+   "kind": "action",
+   "character": null,
+   "start": 0.07,
+   "end": 3.32,
+   "move": "establish",
+   "shot": "establish"
+  },
+  {
+   "id": "clad_aoao",
+   "kind": "action",
+   "character": "Aoao",
+   "start": 3.32,
+   "end": 6.966,
+   "move": "clad_aoao",
+   "shot": "clad_aoao"
+  },
+  {
+   "id": "clad_xiaozao",
+   "kind": "action",
+   "character": "Xiaozao",
+   "start": 6.966,
+   "end": 10.588,
+   "move": "clad_xiaozao",
+   "shot": "clad_xiaozao"
+  },
+  {
+   "id": "clad_dafu",
+   "kind": "action",
+   "character": "Dafu",
+   "start": 10.588,
+   "end": 14.211,
+   "move": "clad_dafu",
+   "shot": "clad_dafu"
+  },
+  {
+   "id": "f1_standoff",
+   "kind": "action",
+   "character": null,
+   "start": 14.211,
+   "end": 15.023,
+   "move": "f1",
+   "shot": "f_two"
+  },
+  {
+   "id": "f2_dash",
+   "kind": "action",
+   "character": null,
+   "start": 15.023,
+   "end": 16.231,
+   "move": "f2",
+   "shot": "f_track"
+  },
+  {
+   "id": "f3_block",
+   "kind": "action",
+   "character": null,
+   "start": 16.231,
+   "end": 17.415,
+   "move": "f3",
+   "shot": "f_block"
+  },
+  {
+   "id": "f4_watch",
+   "kind": "action",
+   "character": null,
+   "start": 17.415,
+   "end": 19.435,
+   "move": "f4",
+   "shot": "f_xiao"
+  },
+  {
+   "id": "f5_clash",
+   "kind": "action",
+   "character": null,
+   "start": 19.435,
+   "end": 20.619,
+   "move": "f5",
+   "shot": "f_clash"
+  },
+  {
+   "id": "f6_stagger",
+   "kind": "action",
+   "character": null,
+   "start": 20.619,
+   "end": 22.639,
+   "move": "f6",
+   "shot": "f_wide"
+  },
+  {
+   "id": "f7_knock",
+   "kind": "action",
+   "character": null,
+   "start": 22.639,
+   "end": 23.847,
+   "move": "f7",
+   "shot": "f_knock"
+  },
+  {
+   "id": "f8_laugh",
+   "kind": "action",
+   "character": null,
+   "start": 23.847,
+   "end": 26.239,
+   "move": "f8",
+   "shot": "f_laugh"
+  },
+  {
+   "id": "f9_reset",
+   "kind": "action",
+   "character": null,
+   "start": 26.239,
+   "end": 28.653,
+   "move": "f9",
+   "shot": "f_wide2"
+  },
+  {
+   "id": "f10_prep",
+   "kind": "action",
+   "character": null,
+   "start": 28.653,
+   "end": 30.256,
+   "move": "f10",
+   "shot": "f_prep"
+  },
+  {
+   "id": "v2_charge",
+   "kind": "action",
+   "character": null,
+   "start": 30.256,
+   "end": 32.647,
+   "move": "v2charge",
+   "shot": "v2_low"
+  },
+  {
+   "id": "v2_gag",
+   "kind": "action",
+   "character": null,
+   "start": 32.647,
+   "end": 36.246,
+   "move": "v2gag",
+   "shot": "v2_gag"
+  },
+  {
+   "id": "v2_pose",
+   "kind": "action",
+   "character": null,
+   "start": 36.246,
+   "end": 40.635,
+   "move": "v2pose",
+   "shot": "v2_pose"
+  },
+  {
+   "id": "v2_hold",
+   "kind": "action",
+   "character": null,
+   "start": 40.635,
+   "end": 44.234,
+   "move": "v2hold",
+   "shot": "v2_hold"
+  },
+  {
+   "id": "out_freeze",
+   "kind": "action",
+   "character": null,
+   "start": 44.234,
+   "end": 46.626,
+   "move": "outfreeze",
+   "shot": "out_wide"
+  },
+  {
+   "id": "out_clang",
+   "kind": "action",
+   "character": null,
+   "start": 46.626,
+   "end": 48.228,
+   "move": "outclang",
+   "shot": "out_pot"
+  },
+  {
+   "id": "out_fade",
+   "kind": "action",
+   "character": null,
+   "start": 48.228,
+   "end": 49.2,
+   "move": "outfade",
+   "shot": "out_pot"
+  }
+ ],
+ "_comment": "P3 正式 OP 谱面：边界全部吸附 beatgrid beats[]（node tools/build_timeline.mjs 重建+断言）；接触帧压 downbeat 16.625/19.83/23.034，gag 顶点 33.855，画外音 45.0，收尾 47.02"
+}

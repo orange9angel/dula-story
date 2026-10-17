@@ -1,0 +1,37 @@
+{
+ "scope": "星屑战壳 OP：三角色全身（手-躯干距离）+ 步态（登场/走位/冲锋）+ 交锋接触帧（格挡/对拳锚点）",
+ "fps_min": 30,
+ "pose_tick_hz": 15,
+ "_matrix": "physical-completeness 矩阵裁剪：本集无持物/进食/门窗/坐姿/穿戴件扫掠——env（祭坛/石龛均在表演区外，走位与机位表保证路径净空，无穿越通路）、worn/supporter/cloth 类目不适用；交锋接触=手部锚点距离断言（bite/pinch），击飞落地=视觉抽帧验收（地面接触无手持物语义）",
+ "seated": {
+  "window": [0, 49.2],
+  "actors": {"aoao": "aoaoRoot", "xiaozao": "xiaozaoRoot", "dafu": "dafuRoot"},
+  "min": 0.08,
+  "max": 0.78,
+  "_comment": "全时间轴手-躯干轴 XZ 距离：下限防插进躯干，上限防悬浮空抓"
+ },
+ "gait": {
+  "actors": {
+   "aoao": {"speed_max": 4.0, "avg_min": 0.25, "bob_min": 0.003, "cadence": [0.6, 8.5]},
+   "xiaozao": {"speed_max": 4.0, "avg_min": 0.25, "bob_min": 0.003, "cadence": [0.6, 8.5]},
+   "dafu": {"speed_max": 4.0, "avg_min": 0.25, "bob_min": 0.003, "cadence": [0.6, 8.5]}
+  },
+  "_comment": "登场走入/走位/冲锋的步行 bout。avg_min/cadence 下限放宽到绕步/踉跄的诚实低速 bout（蒙太奇段含亚米级挪步），防滑冰靠 bob_min（重心起伏）与 speed_max 兜底"
+ },
+ "bite": {
+  "window": [16.3, 17.3],
+  "a": "dR",
+  "b": "shieldA",
+  "max": 0.34,
+  "_comment": "格挡接触（16.625 downbeat）：大釜右拳必须真的打进阿鏊锅盖盾面邻域"
+ },
+ "pinch": {
+  "window": [19.78, 19.90],
+  "a": "aR",
+  "b": "dR",
+  "point": "clashAnchor",
+  "min": 0.0,
+  "max": 0.32,
+  "_comment": "对拳接触（19.83 downbeat）：固定锚点落在双拳连线 ±0.32m 内——双拳在锚点真实相遇"
+ }
+}
