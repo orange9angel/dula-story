@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
+import {createHash} from 'node:crypto';
 import {compareNumericState} from 'dula-engine/lib/NumericAudit.js';
 import {auditInputs,episodeSources} from './tools/audit_inputs.mjs';
 
@@ -29,8 +30,18 @@ if(physicsOnly&&(serve||shotsArg))throw new Error('--physics-only cannot be comb
 if(!Number.isInteger(fps)||fps<1||fps>120)throw new Error('Bad --fps (expected integer 1..120)');
 fs.mkdirSync(board,{recursive:true});fs.mkdirSync(path.dirname(output),{recursive:true});
 const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json','.wav':'audio/wav','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png'};
+// Candidate modules/configs are served in memory; production files stay intact.
+const overrideArg=opt('--resource-overrides');
+const overrides=overrideArg?Object.entries(JSON.parse(fs.readFileSync(path.resolve(here,overrideArg),'utf8'))).map(([suffix,file])=>{
+  if(!suffix.startsWith('/')||!['.js','.json'].includes(path.extname(suffix)))throw new Error('Expected JS/JSON URL suffix for resource override');
+  const source=path.resolve(here,file),body=fs.readFileSync(source);
+  return {suffix,path:source,body,sha256:createHash('sha256').update(body).digest('hex')};
+}):[];
+const usedOverrides=new Set();
 const server=http.createServer((req,res)=>{
   const url=decodeURIComponent(req.url.split('?')[0]);let mount=root,relative=url.replace(/^\/episode\//,'').replace(/^\//,'')||'viewer.html';
+  const override=overrides.find(o=>url.endsWith(o.suffix));
+  if(override){usedOverrides.add(override.suffix);res.writeHead(200,{'Content-Type':mime[path.extname(override.suffix)],'Cache-Control':'no-store'}).end(override.body);return;}
   if(url==='/favicon.ico'){res.writeHead(204).end();return;}
   if(url.startsWith('/node_modules/'))mount=storyRoot;
   if(url.startsWith('/node_modules/three/')){mount=path.resolve(path.dirname(require.resolve('three')),'..');relative=url.slice('/node_modules/three/'.length);}
@@ -69,8 +80,10 @@ if(!serve){
       console.log(`shots complete: ${shots.length} frames -> ${board}`);
     }
     const sources=episodeSources;
-    const {createHash}=await import('node:crypto');
     const build=auditInputs(here);
+    const missed=overrides.filter(o=>!usedOverrides.has(o.suffix));
+    if(missed.length)throw new Error('Unused resource overrides: '+missed.map(o=>o.suffix).join(', '));
+    build.overrides=overrides.map(({body,...meta})=>meta);
     if(audioFrom)build.inputs.push({path:fs.realpathSync(audioFile),sha256:createHash('sha256').update(fs.readFileSync(audioFile)).digest('hex')});
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
       args,output,build,runtimeProfile:await page.evaluate(()=>window.renderProfile??null),
@@ -84,7 +97,7 @@ if(!serve){
     let ci=0;const trace=[],gaitTrace=[];
     if(!check&&!shots){
       const audioArgs=range?['-ss',String(range[0]),'-t',String(range[1]-range[0])]:[];
-      const audioCodec=audioFrom?['-c:a','copy']:['-c:a','aac','-ar','48000','-ac','2','-b:a','192k'];
+      const audioCodec=audioFrom&&['.mp4','.m4a','.aac'].includes(path.extname(audioFile).toLowerCase())?['-c:a','copy']:['-c:a','aac','-ar','48000','-ac','2','-b:a','192k'];
       const sound=fs.existsSync(audioFile)?[...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0',...audioCodec]:['-an'];
       encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec',captureFormat==='png'?'png':'mjpeg','-i','pipe:0',...sound,'-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
     }
@@ -108,6 +121,7 @@ if(!serve){
     if(traceArg){const tp=path.isAbsolute(traceArg)?traceArg:path.join(here,traceArg);fs.mkdirSync(path.dirname(tp),{recursive:true});
       fs.writeFileSync(tp,JSON.stringify({fps,duration,build,mode:physicsOnly?'physics-only':'render',frames:gaitTrace},null,1));console.log(`gait trace: ${tp} (${gaitTrace.length} frames)`);}
     if(errors.length)throw new Error(errors.join('\n'));
+    for(const item of overrides)if(createHash('sha256').update(fs.readFileSync(item.path)).digest('hex')!==item.sha256)throw new Error('Candidate input changed during render: '+item.path);
     if(traceArg){
       const seek=[];
       for(const t of [...checks].reverse()){

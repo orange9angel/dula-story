@@ -3,7 +3,9 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {StoryParser} from 'dula-engine/lib/StoryParser.js';
-const ep=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const index=process.argv.indexOf('--episode-dir');
+const ep=index<0?root:path.resolve(process.argv[index+1]);
 const text=fs.readFileSync(path.join(ep,'script.story'),'utf8'),entries=StoryParser.parse(text);
 const segments=entries.map(e=>({id:`entry_${e.index}`,entry:e.index,start:e.startTime,end:e.endTime,
   character:e.character,kind:e.dialogue?'dialogue':'action',text:e.dialogue,camera:e.cameraMove,events:(e.storyEvents??[]).map(x=>({type:x.name,options:x.options}))}));

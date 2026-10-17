@@ -1,10 +1,12 @@
 """Mix isolated speech and derive mouth energy from the final placed PCM stems."""
 from pathlib import Path
-import hashlib, json, subprocess
+import argparse, hashlib, json, subprocess
 import numpy as np
 from scipy.io import wavfile
 
-EP=Path(__file__).resolve().parents[1];SR=48000
+parser=argparse.ArgumentParser()
+parser.add_argument('--episode-dir',type=Path,default=Path(__file__).resolve().parents[1])
+EP=parser.parse_args().episode_dir.resolve();SR=48000
 def read_json(p):return json.loads(p.read_text(encoding='utf-8'))
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 tl=read_json(EP/'config/timeline.json');plan=read_json(EP/'config/audio_direction.json')

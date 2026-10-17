@@ -319,7 +319,10 @@ def configured_comparison(config_path):
                 x0,y0,x1,y1=keep['crops'][frame]
                 a=a[y0:y1,x0:x1];b=b[y0:y1,x0:x1]
             preservation[frame]=int(np.any(a!=b,axis=2).sum())
-    checks={'head_body_angles_match':all(abs(v['actualYaw']-v['actualBodyYaw'])<1e-4 for v in reports[1]['frames'].values()),
+    turn_mode=cfg.get('turn_mode','body')
+    if turn_mode not in ['head','body']:raise ValueError('turn_mode must be head or body')
+    checks={'declared_turn_mode_matches':all(abs(v['actualYaw']-v['actualBodyYaw'] if turn_mode=='body' else v['actualBodyYaw'])<1e-4 for v in reports[1]['frames'].values()),
+            'before_after_angles_match':all(frame in reports[0]['frames'] and all(abs(v[k]-reports[0]['frames'][frame][k])<1e-4 for k in ['actualYaw','actualBodyYaw']) for frame,v in reports[1]['frames'].items()),
             'no_browser_errors':not reports[1]['errors'],
             'finite_face_vertices':all(v['finite'] for v in reports[1]['frames'].values()),
             'reverse_seeks_equal':all(v.get('reverseSeekEqual',True) for v in reports[1]['frames'].values())}

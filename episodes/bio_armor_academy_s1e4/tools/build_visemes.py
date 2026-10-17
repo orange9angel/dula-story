@@ -1,14 +1,17 @@
 """Use shared known-text DTW + V17 visemes against final placed dialogue PCM."""
 from pathlib import Path
-import hashlib,json,re,sys
+import argparse,hashlib,json,re,sys
 import numpy as np
 from scipy.io import wavfile
 from scipy.ndimage import uniform_filter1d
 from faster_whisper import WhisperModel
 from faster_whisper.tokenizer import Tokenizer
 from pypinyin import pinyin,Style
-EP=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(EP.parents[2]/'dula-assets/lib/audio'))
+ROOT=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser()
+parser.add_argument('--episode-dir',type=Path,default=ROOT)
+EP=parser.parse_args().episode_dir.resolve()
+sys.path.insert(0,str(ROOT.parents[2]/'dula-assets/lib/audio'))
 from known_text_alignment import align_text
 from viseme_core import build_viseme_track
 def load(p):return json.loads(p.read_text(encoding='utf-8'))

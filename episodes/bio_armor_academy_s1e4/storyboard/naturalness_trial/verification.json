@@ -1,0 +1,110 @@
+{
+  "status": "isolated candidate; user review pending",
+  "exchanges": [
+    {
+      "exchange": 1,
+      "sourceCuts": [
+        [
+          15,
+          17.7333333333
+        ],
+        [
+          20.2,
+          23.566666666666666
+        ]
+      ],
+      "duration": 6.1,
+      "replyGap": 0.34212499996666423,
+      "music": "same selected Suno asset; continuous within exchange",
+      "response": {
+        "id": "entry_6",
+        "entry": 6,
+        "character": "QianTangKui",
+        "text": "装叶子的呀。你这么大，哪儿放得下。",
+        "start": 20.4,
+        "end": 24,
+        "audioEnd": 23.016229166666665,
+        "duration": 2.616229166666667,
+        "tempo": 1.0,
+        "raw_sha256": "8c8084de8ac28f646b3c55ab1f9999902ee7d8202d226e3ee007c8df75ed5aae",
+        "processed": "assets3d/processed/entry_6.wav",
+        "processed_sha256": "22add51f3d7092a333fdc8cb024e281002ec653c58714c99ea0b9ae04237c66d"
+      }
+    },
+    {
+      "exchange": 2,
+      "sourceCuts": [
+        [
+          64.2,
+          67.5
+        ],
+        [
+          69.4,
+          73.03333333333333
+        ]
+      ],
+      "duration": 6.933333333333334,
+      "replyGap": 1.1022291666666604,
+      "music": "same selected Suno asset; continuous within exchange",
+      "response": {
+        "id": "entry_17",
+        "entry": 17,
+        "character": "QianTangKui",
+        "text": "你又不是叶子。明天放学再过来吧。",
+        "start": 69.60000000000001,
+        "end": 74.10000000000001,
+        "audioEnd": 72.42258333333334,
+        "duration": 2.822583333333333,
+        "tempo": 1.0,
+        "raw_sha256": "63a3c1650485f4ea36d01836eda8cb02bc4b68b87c3af3bde964ffa2f02dbeb6",
+        "processed": "assets3d/processed/entry_17.wav",
+        "processed_sha256": "fbad68e49b900d173574dd13aeef832af4ceaa1e9b86553880a352e379bc2b34"
+      }
+    }
+  ],
+  "baselineUnchanged": {
+    "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js": true,
+    "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\illustrated-import.js": true,
+    "output/current.mp4": true,
+    "script.story": true
+  },
+  "outputSha256": "6f89540ad9cc14e664e5829a25112507164f8bc16750ae02f1ab20fa658e3282",
+  "checks": {
+    "unchanged_processed_voice": true,
+    "no_line_truncated": true,
+    "candidate_story_hash": true,
+    "LeiXiao_silent_mouth_gate": true,
+    "LeiXiao_lip_source": true,
+    "QianTangKui_silent_mouth_gate": true,
+    "QianTangKui_lip_source": true,
+    "aoi_turn_inputs_frozen": true,
+    "lei_turn_inputs_frozen": true
+  },
+  "inputOverrides": {
+    "/characters/bioarmor/tripo-drawn-look.js": {
+      "file": "tmp/natural_look/tripo-drawn-look.js",
+      "sha256": "00d85dc3652f5cbfa48727c0cd060371c0754df4d3879243743d70a088d63519"
+    },
+    "/lib/craft3d/illustrated-import.js": {
+      "file": "tmp/natural_look/illustrated-import.js",
+      "sha256": "7af0abd84afea21ca64d011e71228f364144f2e9022d4e153737235bc859d6ec"
+    },
+    "/config/timeline.json": {
+      "file": "tmp/natural_look/dialogue/config/timeline.json",
+      "sha256": "3453c1d722028d0fa47cad14d7b64826dfd373065366f1cf2ebafe31e17f8dab"
+    },
+    "/config/voice_features.json": {
+      "file": "tmp/natural_look/dialogue/config/voice_features.json",
+      "sha256": "6bfafebe481afdc5f16b6e649d5b403cbfb2f830d22527d59fdce5288ef96c8e"
+    },
+    "/config/viseme_leixiao.json": {
+      "file": "tmp/natural_look/dialogue/config/viseme_leixiao.json",
+      "sha256": "bb3034c2c25cfbc07701c32d0472d45c55f68f93a1a0ad5bc05b2a1a702b645e"
+    },
+    "/config/viseme_qiantangkui.json": {
+      "file": "tmp/natural_look/dialogue/config/viseme_qiantangkui.json",
+      "sha256": "1d1abf677afe54147c666cd3c71db829e46085223d873ff6a281783803bfee64"
+    }
+  },
+  "candidateSha256": "4a969b3d817f8aa2fd7344e9c2bee04113c424f6fcdb41bd1a3e6ef19478f57c"
+}
