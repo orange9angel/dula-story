@@ -1,0 +1,647 @@
+{
+  "$schema": "../../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "cat_leads_cafe_musical",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "The same 3D pair chats at a cafe table and then dances in the open floor.",
+    "audience": "General audience",
+    "designPriorities": [
+      "One character rig across speech and song",
+      "Continuous face, ear and neck surfaces",
+      "Keep existing music and beat choreography"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "craft3d/bootstrap.js",
+    "scenes": [
+      "CafeMusicalScene"
+    ],
+    "characters": [
+      "Boy",
+      "Girl"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "CafeMusicalScene",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "CafeMusicalScene",
+        "module": "scenes/CafeTable3D.js",
+        "export": "CafeTable3D",
+        "bootstrap": "craft3d/bootstrap.js",
+        "readiness": "synchronous"
+      },
+      "intent": {
+        "location": "Sunny Japanese neighborhood cafe",
+        "timeOfDay": "Sunny afternoon",
+        "tone": [
+          "warm",
+          "playful"
+        ],
+        "storyFunction": "A drawing conversation becomes a duet, then returns to coffee.",
+        "visualRules": [
+          "Both speakers use the same live 3D actors as the dance",
+          "The table and cups are solid props",
+          "No painted people in the background"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0.0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -3.2,
+            0,
+            -2.3
+          ],
+          "max": [
+            3.2,
+            3,
+            1.5
+          ]
+        },
+        "zones": [
+          {
+            "id": "mainStage",
+            "bounds": {
+              "min": [
+                -2.9,
+                0,
+                -1.8
+              ],
+              "max": [
+                2.6,
+                2.6,
+                1
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "seated dialogue and foreground dance"
+            ]
+          }
+        ],
+        "anchors": {
+          "table": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -1.3,
+              0.74,
+              -0.8
+            ],
+            "purpose": "table"
+          },
+          "girlSeat": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -1.95,
+              0.49,
+              -1.35
+            ],
+            "purpose": "girlSeat"
+          },
+          "boySeat": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -0.65,
+              0.49,
+              -1.35
+            ],
+            "purpose": "boySeat"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "Warm window light",
+        "readabilityRules": [
+          "Face and ears use the same warm skin response",
+          "Preserve original painted window background"
+        ]
+      },
+      "cameraObstacles": [
+        {
+          "type": "box",
+          "center": [
+            -1.3,
+            0.38,
+            -0.8
+          ],
+          "size": [
+            1.9,
+            0.76,
+            0.65
+          ],
+          "id": "tableBounds",
+          "space": "world"
+        }
+      ],
+      "audioAnchors": [],
+      "dependencies": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "Boy",
+      "scene": "CafeMusicalScene",
+      "kind": "character",
+      "runtimeName": "Boy",
+      "binding": "character:Boy",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "face": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.65,
+            0,
+            -1.35
+          ]
+        }
+      }
+    },
+    {
+      "id": "Girl",
+      "scene": "CafeMusicalScene",
+      "kind": "character",
+      "runtimeName": "Girl",
+      "binding": "character:Girl",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "face": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -1.95,
+            0,
+            -1.35
+          ]
+        }
+      }
+    },
+    {
+      "id": "table",
+      "scene": "CafeMusicalScene",
+      "kind": "prop",
+      "objectName": "table",
+      "binding": "table",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -1.3,
+            0.74,
+            -0.8
+          ]
+        }
+      },
+      "states": [
+        "present"
+      ],
+      "initialState": "present"
+    },
+    {
+      "id": "girlCup",
+      "scene": "CafeMusicalScene",
+      "kind": "prop",
+      "objectName": "girlCup",
+      "binding": "cups.Girl",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -1.68,
+            0.82,
+            -0.76
+          ]
+        }
+      },
+      "states": [
+        "present"
+      ],
+      "initialState": "present"
+    },
+    {
+      "id": "boyCup",
+      "scene": "CafeMusicalScene",
+      "kind": "prop",
+      "objectName": "boyCup",
+      "binding": "cups.Boy",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.88,
+            0.82,
+            -0.76
+          ]
+        }
+      },
+      "states": [
+        "present"
+      ],
+      "initialState": "present"
+    },
+    {
+      "id": "notebook",
+      "scene": "CafeMusicalScene",
+      "kind": "prop",
+      "objectName": "notebook",
+      "binding": "notebook",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.65,
+            0.785,
+            -0.91
+          ]
+        }
+      },
+      "states": [
+        "present"
+      ],
+      "initialState": "present"
+    },
+    {
+      "id": "spoon",
+      "scene": "CafeMusicalScene",
+      "kind": "prop",
+      "objectName": "spoon",
+      "binding": "spoon",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -1.68,
+            0.84,
+            -0.76
+          ]
+        }
+      },
+      "states": [
+        "present"
+      ],
+      "initialState": "present"
+    }
+  ],
+  "state": {
+    "phase": {
+      "type": "string",
+      "binding": "phase",
+      "initial": "table"
+    }
+  },
+  "events": [
+    {
+      "tag": "CeramicPickup",
+      "scene": "CafeMusicalScene",
+      "handler": "ceramicPickup",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "value": "tap",
+          "state": "phase"
+        }
+      ]
+    },
+    {
+      "tag": "SunlightPause",
+      "scene": "CafeMusicalScene",
+      "handler": "sunlightPause",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "value": "rise",
+          "state": "phase"
+        }
+      ]
+    },
+    {
+      "tag": "CafeDuet",
+      "scene": "CafeMusicalScene",
+      "handler": "cafeDuet",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "value": "dance",
+          "state": "phase"
+        }
+      ]
+    },
+    {
+      "tag": "CafeCoda",
+      "scene": "CafeMusicalScene",
+      "handler": "cafeCoda",
+      "argumentMode": "none",
+      "durationSeconds": 0.0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "value": "coda",
+          "state": "phase"
+        }
+      ]
+    }
+  ],
+  "blocking": [
+    {
+      "character": "Girl",
+      "scene": "CafeMusicalScene",
+      "entry": 1,
+      "zone": "mainStage",
+      "from": [
+        -1.95,
+        0,
+        -1.35
+      ],
+      "to": [
+        -1.95,
+        0,
+        -1.35
+      ],
+      "clearance": 0.15,
+      "purpose": "Seated conversation; a shot cut implies movement to the foreground dance area.",
+      "id": "seatedGirl"
+    },
+    {
+      "character": "Boy",
+      "scene": "CafeMusicalScene",
+      "entry": 1,
+      "zone": "mainStage",
+      "from": [
+        -0.65,
+        0,
+        -1.35
+      ],
+      "to": [
+        -0.65,
+        0,
+        -1.35
+      ],
+      "clearance": 0.15,
+      "purpose": "Seated conversation; a shot cut implies movement to the foreground dance area.",
+      "id": "seatedBoy"
+    }
+  ],
+  "shotChecks": [
+    {
+      "entry": 1,
+      "offsetSeconds": 0.7,
+      "scene": "CafeMusicalScene",
+      "mustSee": [
+        {
+          "entity": "Girl",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        },
+        {
+          "entity": "Boy",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        },
+        {
+          "entity": "table",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        }
+      ],
+      "id": "shot0",
+      "purpose": "Same 3D pair seated at opening",
+      "mustHavePresence": [],
+      "mustShowTogether": [
+        "Girl",
+        "Boy",
+        "table"
+      ]
+    },
+    {
+      "entry": 2,
+      "offsetSeconds": 0.8,
+      "scene": "CafeMusicalScene",
+      "mustSee": [
+        {
+          "entity": "Girl",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        }
+      ],
+      "id": "shot1",
+      "purpose": "Girl speech and head-neck integration",
+      "mustHavePresence": [],
+      "mustShowTogether": [
+        "Girl"
+      ]
+    },
+    {
+      "entry": 3,
+      "offsetSeconds": 0.8,
+      "scene": "CafeMusicalScene",
+      "mustSee": [
+        {
+          "entity": "Boy",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        }
+      ],
+      "id": "shot2",
+      "purpose": "Boy listening and speech",
+      "mustHavePresence": [],
+      "mustShowTogether": [
+        "Boy"
+      ]
+    },
+    {
+      "entry": 5,
+      "offsetSeconds": 0.75,
+      "scene": "CafeMusicalScene",
+      "mustSee": [
+        {
+          "entity": "girlCup",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        },
+        {
+          "entity": "spoon",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        }
+      ],
+      "id": "shot3",
+      "purpose": "Spoon and ceramic rim contact",
+      "mustHavePresence": [],
+      "mustShowTogether": [
+        "girlCup",
+        "spoon"
+      ]
+    },
+    {
+      "entry": 8,
+      "offsetSeconds": 0.7,
+      "scene": "CafeMusicalScene",
+      "mustSee": [
+        {
+          "entity": "Girl",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        },
+        {
+          "entity": "Boy",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        }
+      ],
+      "id": "shot4",
+      "purpose": "Standing from chairs before dance",
+      "mustHavePresence": [],
+      "mustShowTogether": [
+        "Girl",
+        "Boy"
+      ]
+    },
+    {
+      "entry": 9,
+      "offsetSeconds": 21,
+      "scene": "CafeMusicalScene",
+      "mustSee": [
+        {
+          "entity": "Girl",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        },
+        {
+          "entity": "Boy",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        }
+      ],
+      "id": "shot5",
+      "purpose": "The same 3D characters perform a full turn",
+      "mustHavePresence": [],
+      "mustShowTogether": [
+        "Girl",
+        "Boy"
+      ]
+    },
+    {
+      "entry": 12,
+      "offsetSeconds": 0.6,
+      "scene": "CafeMusicalScene",
+      "mustSee": [
+        {
+          "entity": "Girl",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        },
+        {
+          "entity": "girlCup",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.8,
+          "safeMargin": 0.02
+        }
+      ],
+      "id": "shot6",
+      "purpose": "Return to 3D conversation and cold coffee",
+      "mustHavePresence": [],
+      "mustShowTogether": [
+        "Girl",
+        "girlCup"
+      ]
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "scene-tool",
+      "story-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "episode viewer sampled render and reverse seek",
+      "actual skinned foot and wrist samples",
+      "visual-review"
+    ]
+  }
+}

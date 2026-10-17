@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "status": "draft",
+  "sources": [
+    {
+      "path": "script.story",
+      "sha256": "217e5f0e1b246eb5e6abf5fa6c66353980bb56626e65ef9df1a3ca32ec3f1c39"
+    }
+  ],
+  "policies": {
+    "priority": [
+      "dialogue",
+      "storySfx",
+      "ambience",
+      "music"
+    ],
+    "musicMode": "auto",
+    "ambienceMode": "auto",
+    "breath": "natural-tts-pauses-no-layered-breath"
+  },
+  "mix": {
+    "dialogueVolume": 1.0,
+    "bgmVolume": 0.3,
+    "sfxVolume": 0.8,
+    "useDucking": true,
+    "duckDepth": 0.3
+  },
+  "characters": {
+    "Girl": {
+      "voice": "unassigned",
+      "locale": "unspecified",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Boy": {
+      "voice": "unassigned",
+      "locale": "unspecified",
+      "identityPolicy": "preserve-native-voice"
+    }
+  },
+  "dialogue": [
+    {
+      "entry": 2,
+      "character": "Girl",
+      "text": "阿澈，再画下去，咖啡都凉了。",
+      "startTime": 2.6,
+      "endTime": 6.156,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": null,
+      "nextEntry": 3,
+      "intent": "teasing",
+      "subtext": "",
+      "delivery": {
+        "tone": "teasing",
+        "energy": 0.56,
+        "pace": 1.02,
+        "volume": 0.98,
+        "pitchSemitones": 0.1,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 3,
+      "character": "Boy",
+      "text": "先别动。你的影子正好到这里。",
+      "startTime": 6.6,
+      "endTime": 9.364,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 2,
+      "nextEntry": 4,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 4,
+      "character": "Girl",
+      "text": "我的影子都坐累了。",
+      "startTime": 9.7,
+      "endTime": 11.672,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 3,
+      "nextEntry": 6,
+      "intent": "teasing",
+      "subtext": "",
+      "delivery": {
+        "tone": "teasing",
+        "energy": 0.56,
+        "pace": 1.02,
+        "volume": 0.98,
+        "pitchSemitones": 0.1,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 6,
+      "character": "Girl",
+      "text": "接一句？",
+      "startTime": 14.4,
+      "endTime": 15.556000000000001,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 4,
+      "nextEntry": 7,
+      "intent": "bright",
+      "subtext": "",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 7,
+      "character": "Boy",
+      "text": "唱还行，跳不会。",
+      "startTime": 15.85,
+      "endTime": 17.822,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 6,
+      "nextEntry": 10,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 10,
+      "character": "Girl",
+      "text": "不是说不会跳？",
+      "startTime": 95.3,
+      "endTime": 97.032,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 7,
+      "nextEntry": 11,
+      "intent": "teasing",
+      "subtext": "",
+      "delivery": {
+        "tone": "teasing",
+        "energy": 0.56,
+        "pace": 1.02,
+        "volume": 0.98,
+        "pitchSemitones": 0.1,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 11,
+      "character": "Boy",
+      "text": "我只跟了你半步。",
+      "startTime": 97.35,
+      "endTime": 99.082,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 10,
+      "nextEntry": 12,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 12,
+      "character": "Girl",
+      "text": "咖啡真的凉了。",
+      "startTime": 99.5,
+      "endTime": 101.232,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 11,
+      "nextEntry": 13,
+      "intent": "amused",
+      "subtext": "",
+      "delivery": {
+        "tone": "amused",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 13,
+      "character": "Boy",
+      "text": "正好，现在能喝了。",
+      "startTime": 101.6,
+      "endTime": 103.332,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 12,
+      "nextEntry": null,
+      "intent": "gentle",
+      "subtext": "",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.32,
+        "pace": 0.96,
+        "volume": 0.94,
+        "pitchSemitones": -0.1,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "scene",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    }
+  ],
+  "ambience": [],
+  "sfx": [],
+  "music": [],
+  "exclusions": []
+}

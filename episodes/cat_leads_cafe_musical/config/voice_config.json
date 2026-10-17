@@ -1,0 +1,18 @@
+{
+  "Girl": {
+    "default": {
+      "provider": "seedtts",
+      "resourceId": "seed-tts-2.0",
+      "speaker": "zh_female_vv_uranus_bigtts",
+      "sampleRate": 24000
+    }
+  },
+  "Boy": {
+    "default": {
+      "provider": "seedtts",
+      "resourceId": "seed-tts-2.0",
+      "speaker": "zh_male_taocheng_uranus_bigtts",
+      "sampleRate": 24000
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title": "半拍晴天",
+  "series": "猫带我去的地方",
+  "type": "cafe musical special; episode number unassigned",
+  "status": "v4 delivered for review: unified 3D cast, integrated head skin/ears/neck and fitted pleated skirt",
+  "targetDurationSeconds": 107.5,
+  "pilotSeconds": 23,
+  "style": "Sunprint; original illustrated cast",
+  "userConfirmed": {
+    "cast": "2026-10-17: Xiao Lan has long blue hair, white shirt and blue plaid skirt; A Che has black short hair, white shirt and dark blue trousers",
+    "cafe": "2026-10-17: Japanese small-town feeling of the first episode convenience store",
+    "craft3dV2": "User: 不错，效果可以，继续细化，还有需要转身，所以不能只处理正面",
+    "craftMethodPreference": "2026-10-17: Any skill or method is acceptable; judge only the final visual integration."
+  },
+  "assumptions": [
+    "light playful daily-life duet",
+    "new special rather than replacing E01",
+    "no change to series foreshadow ledger"
+  ],
+  "providers": {
+    "images": "built-in imagegen",
+    "dialogue": "Volcano seed-tts-2.0",
+    "ambienceFoley": "Volcano Seed-Audio",
+    "song": "Suno",
+    "video": "local procedural render; no video generation"
+  },
+  "qualityStatus": {
+    "sourceArt": "generated candidates inspected",
+    "animatedIdentity": "Same two actor instances across every shot; facial features are UV marks on curved 3D heads with unified skin lighting, real ears, neck and jaw motion",
+    "continuousActing": "3D seated dialogue, turn toward listener, speech gestures and cup taps; original beat choreography retained; cuts imply movement between table and floor",
+    "song": "75.56s authorized WAV; 14 lyric phrases aligned; singer assignment listening pending",
+    "voice": "9 lines generated; ASR pinyin 9/9 exact",
+    "finalVideo": "107.5s 1080p30 v4, full decode and audio synchronization checked; no normal-speed audiovisual review claimed",
+    "skirt": "Fitted continuous pleats follow solved hips/knees; finite leg-capsule clearance checked. Candidate for visual review, not a claim of all-mesh collision freedom."
+  },
+  "selectedVideo": "output/half_beat_sunshine_craft3d_v4.mp4",
+  "rejectedRoute": "Whole-image 2D deformation was not the requested 2D-to-3D dance",
+  "userRevisionRequest": "V3 face looked like a mask; replace illustrated dialogue with the same 3D cast. Subsequent feedback: skirt clips and looks pasted on; judge final integration, with no restriction on craft method."
+}

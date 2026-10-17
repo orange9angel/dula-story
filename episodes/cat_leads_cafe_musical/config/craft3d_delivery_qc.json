@@ -1,0 +1,93 @@
+{
+  "route": "Skinned 3D bodies, curved painted heads and hair, source-art clothing projection; illustrated table dialogue retained",
+  "artisticStatus": "candidate, not approved; hairstyle side volume and wardrobe differ from original reference",
+  "exports": [
+    {
+      "file": "output\\half_beat_sunshine_craft3d_v2.mp4",
+      "sha256": "e138d80ec7b7249dd5d7345573d29c4828dc3acca7971ce3d23116d09522b30e",
+      "bytes": 49847081,
+      "duration": 107.5,
+      "audioDuration": 107.5,
+      "frames": 3225,
+      "fullDecode": "passed",
+      "seek": {
+        "samples": 30,
+        "mismatches": []
+      },
+      "soleAudit": {
+        "scope": "48 skinned sole vertices per foot; consecutive planted centroids and minimum height; not full self-collision",
+        "samples": 6731,
+        "maxPlantedStep": 0.0036383761941271584,
+        "minSoleY": -0.0009405185386555333,
+        "maxPlantedSoleY": 0.008365788665981632,
+        "warnings": []
+      }
+    },
+    {
+      "file": "output\\cafe_craft3d_dance_v1.mp4",
+      "sha256": "1049015e6140e1ae07f0390818767ba4623921fca08cfaf78d226c6150560d0a",
+      "bytes": 8686388,
+      "duration": 18.566667,
+      "audioDuration": 18.576,
+      "frames": 557,
+      "fullDecode": "passed",
+      "seek": {
+        "samples": 18,
+        "mismatches": []
+      },
+      "soleAudit": {
+        "scope": "48 skinned sole vertices per foot; consecutive planted centroids and minimum height; not full self-collision",
+        "samples": 1639,
+        "maxPlantedStep": 0.00361863089518762,
+        "minSoleY": -0.0008068406647232393,
+        "maxPlantedSoleY": 0.00858004965659151,
+        "warnings": []
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "file": "assets\\models\\girl_body_base.glb",
+      "sha256": "3ad5d4099d4a0c126a3aed76eb3530309dd942a37de148006683020d233b10bd",
+      "source": "dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_aoi_trial\\aoi_h31_lod160k_v2.glb",
+      "reuse": "existing locally rigged body; not newly generated from the cafe reference; runtime head replacement, wardrobe palette/projection and local geometry adaptation"
+    },
+    {
+      "file": "assets\\models\\boy_body_base.glb",
+      "sha256": "404fe816e8b555b487f8879a31d8c8401a6c6e73c6f2adf65978a3db18491011",
+      "source": "dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_h31_lod160k_v2.glb",
+      "reuse": "existing locally rigged body; not newly generated from the cafe reference; runtime head replacement, wardrobe palette/projection and local geometry adaptation"
+    }
+  ],
+  "audioSha256": "51d99f65cd5def2f6880e1ff94697a10a972bbc2a76b7e077d05686f1c65ce04",
+  "episodeSources": {
+    "craft3d/viewer.js": "7739d19e2f42215313e9373f3dba895857018da808133f133b1491629aa188d8",
+    "craft3d/bootstrap.js": "61915a1082fd5c30812023ad80f6f91d53cca7309e94b57e000d44620314b4e9",
+    "craft3d/performance.js": "0b0a3a17117d8c2ae03ca4c77e3b64dfad48f39a724eb3517bae91abadb94a9a",
+    "script.story": "217e5f0e1b246eb5e6abf5fa6c66353980bb56626e65ef9df1a3ca32ec3f1c39",
+    "tools/render.mjs": "4f264b67ca899ce996cb17dfaa7cdfcb1e0cd94eeff34765e36f21d1645a5f79",
+    "assets/images/girl_portrait_v1.png": "3b65c42f08dea0b8d48bb4f8d8cc6ccc4e9d96896d2dc614fec7f700bfd49da4",
+    "assets/images/boy_portrait_v1.png": "fd17b8b66608cad7faf2714499f351426c5df445867e996c904e21f7166e43bb",
+    "assets/images/girl_hair_v1.png": "23651ddd7caabebecce460c3f9bd0b7615c0cb32cad10023e3fab69ca3648c9c",
+    "assets/images/boy_hair_v1.png": "f4aceb70495996dfb0f1eebb06a81c2bb99a362ae5a02f4fd0710991a26cc1d5",
+    "assets/images/girl_body_v1.png": "02f61a9227f488564012e63ed704c7e65ce2c86c869710e1afbec125c408d103",
+    "assets/images/boy_body_v1.png": "1b2399be0ea964f18efa36688db9f472f1b62a3192ae14d77c62846f863925bf"
+  },
+  "assetSources": {
+    "characters/sunprint/CafeKid.js": "4040d0502c7f79baf93e18df31f9fabb33b043f8d6274e04e724c3cda40ea798",
+    "characters/sunprint/RiggedCafeKid.js": "48ab2ac64aacf7ba5c9cc3a24b379334c5c09d77c27453a72db05585256b8e5b",
+    "lib/craft3d/imported-performer.js": "3faa969cbd9d966b6879dcd828028b04d3c5ac492278154699d713cc690d163c",
+    "lib/craft3d/illustrated-import.js": "8d4f9127c2533fb77bd43cc61ebbe2e0237c474983c2187cfc319d5d586b827e",
+    "lib/craft3d/drawn-head.js": "058fa4330edc0a5633d1da6e829ec6e87abbfa1492916e7739a67980a1f255ec",
+    "lib/craft3d/painted-hair-shell.js": "b9ba9fc45ca556196934caf73a5b986b80864b1092d75d71f95095c33847aeaa"
+  },
+  "registryChangeFrameEquality": {
+    "samples": 30,
+    "mismatches": []
+  },
+  "finalVideoFramesReviewed": [
+    "storyboard/craft3d_full/release_26_8.jpg",
+    "storyboard/craft3d_full/release_61.jpg",
+    "storyboard/craft3d/release_9_2.jpg"
+  ]
+}

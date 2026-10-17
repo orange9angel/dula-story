@@ -1,0 +1,1 @@
+{"action":"evaluate","args":{"code":"JSON.stringify(Array.from(document.querySelectorAll('a[href*=\"/song/\"]')).map(a=>({text:a.innerText,url:a.href})).slice(0,16))"}}

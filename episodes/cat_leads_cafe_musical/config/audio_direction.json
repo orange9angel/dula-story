@@ -1,0 +1,417 @@
+{
+  "version": 1,
+  "status": "reviewed",
+  "sources": [
+    {
+      "path": "script.story",
+      "sha256": "217e5f0e1b246eb5e6abf5fa6c66353980bb56626e65ef9df1a3ca32ec3f1c39"
+    }
+  ],
+  "policies": {
+    "priority": [
+      "dialogue",
+      "storySfx",
+      "ambience",
+      "music"
+    ],
+    "musicMode": "directed",
+    "ambienceMode": "directed",
+    "breath": "natural-tts-pauses-no-layered-breath"
+  },
+  "mix": {
+    "dialogueVolume": 1.0,
+    "bgmVolume": 0.3,
+    "sfxVolume": 0.8,
+    "useDucking": true,
+    "duckDepth": 0.3
+  },
+  "characters": {
+    "Girl": {
+      "voice": "zh_female_vv_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-accepted-series-voice"
+    },
+    "Boy": {
+      "voice": "zh_male_taocheng_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-accepted-series-voice"
+    }
+  },
+  "dialogue": [
+    {
+      "entry": 2,
+      "character": "Girl",
+      "text": "阿澈，再画下去，咖啡都凉了。",
+      "startTime": 2.6,
+      "endTime": 6.156,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": null,
+      "nextEntry": 3,
+      "intent": "少女和熟悉的少年在午后咖啡厅闲聊，笑着提醒他别一直画自己，语气亲近、稍微打趣，别念成主持人。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "teasing",
+        "energy": 0.56,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 2.6,
+        "end": 6.056
+      },
+      "nativeRequest": {
+        "emotion": "happy",
+        "context": "少女和熟悉的少年在午后咖啡厅闲聊，笑着提醒他别一直画自己，语气亲近、稍微打趣，别念成主持人。"
+      }
+    },
+    {
+      "entry": 3,
+      "character": "Boy",
+      "text": "先别动。你的影子正好到这里。",
+      "startTime": 6.6,
+      "endTime": 9.364,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 2,
+      "nextEntry": 4,
+      "intent": "安静的少年正在认真画面前的少女，先轻轻让她别动，然后解释是在画她的影子，温柔但不抒情朗诵。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.34,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 6.6,
+        "end": 9.264
+      },
+      "nativeRequest": {
+        "emotion": "tenderness",
+        "context": "安静的少年正在认真画面前的少女，先轻轻让她别动，然后解释是在画她的影子，温柔但不抒情朗诵。"
+      }
+    },
+    {
+      "entry": 4,
+      "character": "Girl",
+      "text": "我的影子都坐累了。",
+      "startTime": 9.7,
+      "endTime": 11.672,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 3,
+      "nextEntry": 6,
+      "intent": "少女故意用影子坐累了开一个小玩笑，轻快自然，等对方笑。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "teasing",
+        "energy": 0.56,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 9.7,
+        "end": 11.572
+      },
+      "nativeRequest": {
+        "emotion": "happy",
+        "context": "少女故意用影子坐累了开一个小玩笑，轻快自然，等对方笑。"
+      }
+    },
+    {
+      "entry": 6,
+      "character": "Girl",
+      "text": "接一句？",
+      "startTime": 14.4,
+      "endTime": 15.556000000000001,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 4,
+      "nextEntry": 7,
+      "intent": "少女敲了两下杯沿，带笑邀请对方接着唱，短短三个字是邀请，不是命令。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "bright",
+        "energy": 0.56,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 14.4,
+        "end": 15.456
+      },
+      "nativeRequest": {
+        "emotion": "happy",
+        "context": "少女敲了两下杯沿，带笑邀请对方接着唱，短短三个字是邀请，不是命令。"
+      }
+    },
+    {
+      "entry": 7,
+      "character": "Boy",
+      "text": "唱还行，跳不会。",
+      "startTime": 15.85,
+      "endTime": 17.822,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 6,
+      "nextEntry": 10,
+      "intent": "少年被邀请一起唱歌，有点不好意思地坦白唱歌可以但跳舞不会，唱还行后有自然的小停顿。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.34,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 15.85,
+        "end": 17.722
+      },
+      "nativeRequest": {
+        "emotion": "calm",
+        "context": "少年被邀请一起唱歌，有点不好意思地坦白唱歌可以但跳舞不会，唱还行后有自然的小停顿。"
+      }
+    },
+    {
+      "entry": 10,
+      "character": "Girl",
+      "text": "不是说不会跳？",
+      "startTime": 95.3,
+      "endTime": 97.032,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 7,
+      "nextEntry": 11,
+      "intent": "少女看到刚刚还说不会跳的少年跟上来了，带一点得意笑着打趣，亲近温暖。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "teasing",
+        "energy": 0.56,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 95.3,
+        "end": 96.932
+      },
+      "nativeRequest": {
+        "emotion": "happy",
+        "context": "少女看到刚刚还说不会跳的少年跟上来了，带一点得意笑着打趣，亲近温暖。"
+      }
+    },
+    {
+      "entry": 11,
+      "character": "Boy",
+      "text": "我只跟了你半步。",
+      "startTime": 97.35,
+      "endTime": 99.082,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 10,
+      "nextEntry": 12,
+      "intent": "少年被少女调侃后轻轻回答，略有羞涩的笑意，不是严肃解释。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.34,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 97.35000000000001,
+        "end": 98.98200000000001
+      },
+      "nativeRequest": {
+        "emotion": "tenderness",
+        "context": "少年被少女调侃后轻轻回答，略有羞涩的笑意，不是严肃解释。"
+      }
+    },
+    {
+      "entry": 12,
+      "character": "Girl",
+      "text": "咖啡真的凉了。",
+      "startTime": 99.5,
+      "endTime": 101.232,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 11,
+      "nextEntry": 13,
+      "intent": "少女回到咖啡桌边，才发现聊天和跳舞真的把咖啡放凉了，有一点意外，又忍不住笑。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "amused",
+        "energy": 0.56,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 99.5,
+        "end": 101.132
+      },
+      "nativeRequest": {
+        "emotion": "happy",
+        "context": "少女回到咖啡桌边，才发现聊天和跳舞真的把咖啡放凉了，有一点意外，又忍不住笑。"
+      }
+    },
+    {
+      "entry": 13,
+      "character": "Boy",
+      "text": "正好，现在能喝了。",
+      "startTime": 101.6,
+      "endTime": 103.332,
+      "scene": "CafeMusicalScene",
+      "shotIds": [],
+      "previousEntry": 12,
+      "nextEntry": null,
+      "intent": "少年顺着咖啡凉了的玩笑轻轻接住，语气自然带笑，说正好现在可以喝了，给午后一个温暖收尾。",
+      "subtext": "在熟悉的同伴面前，用轻松的玩笑延长这个午后。",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.34,
+        "pace": 1,
+        "volume": 1,
+        "pitchSemitones": 0,
+        "emphasis": "soft",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      },
+      "speechWindow": {
+        "start": 101.60000000000001,
+        "end": 103.23200000000001
+      },
+      "nativeRequest": {
+        "emotion": "tenderness",
+        "context": "少年顺着咖啡凉了的玩笑轻轻接住，语气自然带笑，说正好现在可以喝了，给午后一个温暖收尾。"
+      }
+    }
+  ],
+  "ambience": [
+    {
+      "id": "cafe-room",
+      "entry": 1,
+      "name": "cafe_roomtone",
+      "startTime": 0,
+      "endTime": 107.5,
+      "role": "bed",
+      "priority": "ambience",
+      "provider": "Seed-Audio",
+      "file": "assets/audio/final/ambience.wav"
+    }
+  ],
+  "sfx": [
+    {
+      "id": "cup-0",
+      "entry": 5,
+      "name": "ceramic_tap",
+      "startTime": 12.65,
+      "endTime": 13.05,
+      "role": "event",
+      "priority": "storySfx",
+      "provider": "Seed-Audio"
+    },
+    {
+      "id": "cup-1",
+      "entry": 5,
+      "name": "ceramic_tap",
+      "startTime": 13.25,
+      "endTime": 13.65,
+      "role": "event",
+      "priority": "storySfx",
+      "provider": "Seed-Audio"
+    }
+  ],
+  "music": [
+    {
+      "id": "cafe-duet",
+      "entry": 9,
+      "startTime": 19.0,
+      "endTime": 94.56,
+      "purpose": "杯沿节奏带入日常二重唱，保留完整歌句与尾奏",
+      "provider": "Suno",
+      "clipId": "6ad31639-aa42-4a0f-8351-a9024f49a3c8"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "exclude-0",
+      "reason": "No generated-video API"
+    },
+    {
+      "id": "exclude-1",
+      "reason": "No rhythmic synthetic room tone"
+    },
+    {
+      "id": "exclude-2",
+      "reason": "No generic movement whooshes"
+    },
+    {
+      "id": "exclude-3",
+      "reason": "No postprocessing to change character age"
+    },
+    {
+      "id": "exclude-4",
+      "reason": "No claim of listening approval from ASR alone"
+    }
+  ],
+  "reviewScope": "Context and native requests reviewed; ASR 9/9 matches. Human listening pending."
+}

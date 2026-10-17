@@ -1,0 +1,2303 @@
+{
+  "duration": 18,
+  "fps": 30,
+  "errors": [],
+  "trace": [
+    {
+      "time": 0.5,
+      "state": {
+        "event": 1,
+        "t": 0.5,
+        "Girl": {
+          "time": 0.5,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.02889335530324871,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0.03520000000000001,
+            0.03520000000000001
+          ],
+          "elbowBend": [
+            0.09112,
+            0.09112
+          ],
+          "leftWrist": {
+            "x": -0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "rightWrist": {
+            "x": 0.2648046875,
+            "y": 1.02466796875,
+            "z": 0.11796875000000001
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 0.5,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.02889335530324871,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.2461,
+            "y": 0.9897500000000001,
+            "z": 0.08
+          },
+          "rightWrist": {
+            "x": 0.2461,
+            "y": 0.9897500000000001,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": -0.2,
+          "y": 1.17,
+          "span": 3.25
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 1.4,
+      "state": {
+        "event": 1,
+        "t": 1.4,
+        "Girl": {
+          "time": 1.4,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.03544396431984821,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0.1,
+            0.1
+          ],
+          "elbowBend": [
+            0.13,
+            0.13
+          ],
+          "leftWrist": {
+            "x": -0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "rightWrist": {
+            "x": 0.34,
+            "y": 1.24,
+            "z": 0.2
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 1.4,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.03544396431984821,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.2461,
+            "y": 0.9897500000000001,
+            "z": 0.08
+          },
+          "rightWrist": {
+            "x": 0.2461,
+            "y": 0.9897500000000001,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": -0.2,
+          "y": 1.17,
+          "span": 3.25
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 2.4,
+      "state": {
+        "event": 2,
+        "t": 2.4,
+        "Girl": {
+          "time": 2.4,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.018388637563069726,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "rightWrist": {
+            "x": 0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 2.4,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.018388637563069726,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0.035199999999999926,
+            0.035199999999999926
+          ],
+          "elbowBend": [
+            0.09111999999999996,
+            0.09111999999999996
+          ],
+          "leftWrist": {
+            "x": -0.28334101562499997,
+            "y": 1.0963947265625,
+            "z": 0.11796874999999996
+          },
+          "rightWrist": {
+            "x": 0.2461,
+            "y": 0.9897500000000001,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.58,
+          "y": 1.49,
+          "span": 1.39
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 3.6,
+      "state": {
+        "event": 2,
+        "t": 3.6,
+        "Girl": {
+          "time": 3.6,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.000009440589108886122,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "rightWrist": {
+            "x": 0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 3.6,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.000009440589108886122,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0.1,
+            0.1
+          ],
+          "elbowBend": [
+            0.13,
+            0.13
+          ],
+          "leftWrist": {
+            "x": -0.36380000000000007,
+            "y": 1.3268,
+            "z": 0.2
+          },
+          "rightWrist": {
+            "x": 0.2461,
+            "y": 0.9897500000000001,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.58,
+          "y": 1.49,
+          "span": 1.39
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 4.5,
+      "state": {
+        "event": 2,
+        "t": 4.5,
+        "Girl": {
+          "time": 4.5,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.010444247678882539,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "rightWrist": {
+            "x": 0.23,
+            "y": 0.925,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 4.5,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.010444247678882539,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0.010399999999999932,
+            0.010399999999999932
+          ],
+          "elbowBend": [
+            0.07623999999999996,
+            0.07623999999999996
+          ],
+          "leftWrist": {
+            "x": -0.290373726851852,
+            "y": 1.116533854166667,
+            "z": 0.12513888888888897
+          },
+          "rightWrist": {
+            "x": 0.2461,
+            "y": 0.9897500000000001,
+            "z": 0.08
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.06
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.58,
+          "y": 1.49,
+          "span": 1.39
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 5.5,
+      "state": {
+        "event": 3,
+        "t": 5.5,
+        "Girl": {
+          "time": 5.5,
+          "x": -0.5729629629629629,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.0317208796625054,
+          "bob": -0.008995409219586376,
+          "roll": 0.016302460012230097,
+          "armLift": [
+            0.1703857796602049,
+            0.1703857796602049
+          ],
+          "elbowBend": [
+            0.17223146779612294,
+            0.17223146779612294
+          ],
+          "leftWrist": {
+            "x": -0.32259259259259265,
+            "y": 1.2315466037512652,
+            "z": 0.1740740740740741
+          },
+          "rightWrist": {
+            "x": 0.32259259259259265,
+            "y": 1.104749692545031,
+            "z": 0.1740740740740741
+          },
+          "leftFoot": {
+            "x": -0.12703703703703703,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.2590309392146777,
+            "y": 0.12544662832433687,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.007360304452835279,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 5.5,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.0317208796625054,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.2461,
+            "y": 1.0914000000000001,
+            "z": 0.1
+          },
+          "rightWrist": {
+            "x": 0.2461,
+            "y": 1.0914000000000001,
+            "z": 0.1
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0.7980172272802375,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": -0.49,
+          "y": 1.39,
+          "span": 1.78
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.2850520237482851,
+              "y": 0.05144662832433689,
+              "planted": false
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 7,
+      "state": {
+        "event": 3,
+        "t": 7,
+        "Girl": {
+          "time": 7,
+          "x": -0.36,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.023743770522288335,
+          "bob": -3.2994715218560864e-34,
+          "roll": -0.013376606858593092,
+          "armLift": [
+            0.10655848285351728,
+            0.10655848285351728
+          ],
+          "elbowBend": [
+            0.13393508971211038,
+            0.13393508971211038
+          ],
+          "leftWrist": {
+            "x": -0.33,
+            "y": 1.1279798622165824,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.33,
+            "y": 1.2320201377834175,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.07400000000000001,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11000000000000001,
+            "y": 0.07400000000000001,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": -0.004178468717013852,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 7,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.023743770522288335,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.2461,
+            "y": 1.0914000000000001,
+            "z": 0.1
+          },
+          "rightWrist": {
+            "x": 0.2461,
+            "y": 1.0914000000000001,
+            "z": 0.1
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": -0.49,
+          "y": 1.39,
+          "span": 1.78
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.49763999999999997,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.22111999999999998,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 9.5,
+      "state": {
+        "event": 4,
+        "t": 9.5,
+        "Girl": {
+          "time": 9.5,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.014135646863510484,
+          "bob": -3.2994715218560864e-34,
+          "roll": -0.005562305898749041,
+          "armLift": [
+            0.1260942352531274,
+            0.1260942352531274
+          ],
+          "elbowBend": [
+            0.14565654115187643,
+            0.14565654115187643
+          ],
+          "leftWrist": {
+            "x": -0.33,
+            "y": 1.1583688103937537,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.33,
+            "y": 1.2016311896062462,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.07400000000000001,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11000000000000001,
+            "y": 0.07400000000000001,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": -0.0006611748140654619,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 9.5,
+          "x": 0.8160999999999999,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.014135646863510484,
+          "bob": -3.5304345283860124e-34,
+          "roll": -0.005202572345000484,
+          "armLift": [
+            0.1269935691374988,
+            0.1269935691374988
+          ],
+          "elbowBend": [
+            0.14619614148249926,
+            0.14619614148249926
+          ],
+          "leftWrist": {
+            "x": -0.3531,
+            "y": 1.240951518408859,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.3531,
+            "y": 1.2842484815911408,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918000000000001,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000003,
+            "y": 0.07918000000000001,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": -0.0006611748140654619,
+          "face": {
+            "blink": 0.3612416661871471,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.1,
+          "y": 1.05,
+          "span": 3.18
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.6224066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 1.0124466666666665,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 10.5,
+      "state": {
+        "event": 4,
+        "t": 10.5,
+        "Girl": {
+          "time": 10.5,
+          "x": -0.4908173615002511,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.033905927281763434,
+          "bob": -0.020928438127848475,
+          "roll": 0.01204435091445943,
+          "armLift": [
+            0.1701108772861486,
+            0.1701108772861486
+          ],
+          "elbowBend": [
+            0.17206652637168918,
+            0.17206652637168918
+          ],
+          "leftWrist": {
+            "x": -0.33,
+            "y": 1.22683914244512,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.33,
+            "y": 1.13316085755488,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.20918263849974883,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.2408173615002512,
+            "y": 0.07400000000000001,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.00400509188745932,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 10.5,
+          "x": 0.7078688150243809,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.033905927281763434,
+          "bob": -0.02252243003645342,
+          "roll": 0.011761570871821881,
+          "armLift": [
+            0.16940392717955471,
+            0.16940392717955471
+          ],
+          "elbowBend": [
+            0.17164235630773284,
+            0.17164235630773284
+          ],
+          "leftWrist": {
+            "x": -0.3531,
+            "y": 1.311541203238859,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.3531,
+            "y": 1.2136587967611412,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.25556881502438095,
+            "y": 0.07918000000000001,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.2259311849756191,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.00400509188745932,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.1,
+          "y": 1.05,
+          "span": 3.18
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.22111999999999987,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 1.0124466666666667,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 12,
+      "state": {
+        "event": 5,
+        "t": 12,
+        "Girl": {
+          "time": 12,
+          "x": -0.36,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.01993956574138996,
+          "bob": 0,
+          "roll": 0.0037424104347196976,
+          "armLift": [
+            0.14935602608679927,
+            0.14935602608679927
+          ],
+          "elbowBend": [
+            0.15961361565207954,
+            0.15961361565207954
+          ],
+          "leftWrist": {
+            "x": -0.33,
+            "y": 1.1945538183572433,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.33,
+            "y": 1.1654461816427566,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11000000000000001,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.0029976021091957226,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 12,
+          "x": 0.57,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.01993956574138996,
+          "bob": 0,
+          "roll": 0.004110315661991831,
+          "armLift": [
+            0.15027578915497958,
+            0.15027578915497958
+          ],
+          "elbowBend": [
+            0.16016547349298776,
+            0.16016547349298776
+          ],
+          "leftWrist": {
+            "x": -0.3531,
+            "y": 1.2797034801712883,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.3531,
+            "y": 1.2454965198287118,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.0029976021091957226,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.1,
+          "y": 1.05,
+          "span": 3.18
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.49763999999999997,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.22111999999999998,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.3763066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 0.7663466666666666,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 13.2,
+      "state": {
+        "event": 5,
+        "t": 13.2,
+        "Girl": {
+          "time": 13.2,
+          "x": -0.5533161276410282,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.00012678545345820927,
+          "bob": -0.017922524301548216,
+          "roll": -0.005919599641294496,
+          "armLift": [
+            0.12520100089676378,
+            0.12520100089676378
+          ],
+          "elbowBend": [
+            0.14512060053805825,
+            0.14512060053805825
+          ],
+          "leftWrist": {
+            "x": -0.33,
+            "y": 1.156979334728299,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.33,
+            "y": 1.2030206652717008,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.1466838723589718,
+            "y": 0.07400000000000001,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.2929442400502058,
+            "y": 0.09673406337188434,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": -0.0037118257489775694,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 13.2,
+          "x": 0.7784393970110994,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.00012678545345820927,
+          "bob": -0.018935122019432645,
+          "roll": -0.0062742968517926715,
+          "armLift": [
+            0.12431425787051834,
+            0.12431425787051834
+          ],
+          "elbowBend": [
+            0.14458855472231102,
+            0.14458855472231102
+          ],
+          "leftWrist": {
+            "x": -0.3531,
+            "y": 1.236491953655596,
+            "z": 0.18
+          },
+          "rightWrist": {
+            "x": 0.3531,
+            "y": 1.288708046344404,
+            "z": 0.18
+          },
+          "leftFoot": {
+            "x": -0.31283641398711054,
+            "y": 0.10578466036067352,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.1553606029889006,
+            "y": 0.07918000000000001,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": -0.0037118257489775694,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.1,
+          "y": 1.05,
+          "span": 3.18
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.7276400000000001,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.23149188759082245,
+              "y": 0.02273406337188397,
+              "planted": false
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.38960964969065554,
+              "y": 0.02660466036067321,
+              "planted": false
+            },
+            {
+              "x": 1.0124466666666667,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 14.5,
+      "state": {
+        "event": 5,
+        "t": 14.5,
+        "Girl": {
+          "time": 14.5,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.01800799341203963,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0.10310398412608084,
+            0.10310398412608084
+          ],
+          "elbowBend": [
+            0.13186239047564852,
+            0.13186239047564852
+          ],
+          "leftWrist": {
+            "x": -0.3128697069156804,
+            "y": 1.1525915310650887,
+            "z": 0.16629576553254433
+          },
+          "rightWrist": {
+            "x": 0.3128697069156804,
+            "y": 1.1525915310650887,
+            "z": 0.16629576553254433
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.0060149302187957115,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 14.5,
+          "x": 0.8160999999999999,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.01800799341203963,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0.10128812016385963,
+            0.10128812016385963
+          ],
+          "elbowBend": [
+            0.13077287209831578,
+            0.13077287209831578
+          ],
+          "leftWrist": {
+            "x": -0.33386849112426026,
+            "y": 1.2318295857988166,
+            "z": 0.16562130177514786
+          },
+          "rightWrist": {
+            "x": 0.33386849112426026,
+            "y": 1.2318295857988166,
+            "z": 0.16562130177514786
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000003,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.0060149302187957115,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.1,
+          "y": 1.05,
+          "span": 3.18
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.6224066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 1.0124466666666665,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 16.5,
+      "state": {
+        "event": 6,
+        "t": 16.5,
+        "Girl": {
+          "time": 16.5,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.02727217431297041,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.265,
+            "y": 1.076,
+            "z": 0.128
+          },
+          "rightWrist": {
+            "x": 0.265,
+            "y": 1.076,
+            "z": 0.128
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": -0.00025833228526824957,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 16.5,
+          "x": 0.8160999999999999,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.02727217431297041,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.28355,
+            "y": 1.1513200000000001,
+            "z": 0.128
+          },
+          "rightWrist": {
+            "x": 0.28355,
+            "y": 1.1513200000000001,
+            "z": 0.128
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000003,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": -0.00025833228526824957,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.1,
+          "y": 1.05,
+          "span": 3.18
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.6224066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 1.0124466666666665,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    },
+    {
+      "time": 17.5,
+      "state": {
+        "event": 6,
+        "t": 17.5,
+        "Girl": {
+          "time": 17.5,
+          "x": -0.59,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.005614407679350656,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.265,
+            "y": 1.076,
+            "z": 0.128
+          },
+          "rightWrist": {
+            "x": 0.265,
+            "y": 1.076,
+            "z": 0.128
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.003650807009442677,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1
+        },
+        "Boy": {
+          "time": 17.5,
+          "x": 0.8160999999999999,
+          "yaw": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.005614407679350656,
+          "bob": 0,
+          "roll": 0,
+          "armLift": [
+            0,
+            0
+          ],
+          "elbowBend": [
+            0.07,
+            0.07
+          ],
+          "leftWrist": {
+            "x": -0.28355,
+            "y": 1.1513200000000001,
+            "z": 0.128
+          },
+          "rightWrist": {
+            "x": 0.28355,
+            "y": 1.1513200000000001,
+            "z": 0.128
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000003,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftGesture": {
+            "open": 0.42
+          },
+          "rightGesture": {
+            "open": 0.42
+          },
+          "hairSway": 0.003650807009442677,
+          "face": {
+            "blink": 0,
+            "jaw": 0,
+            "gaze": [
+              -0.25,
+              0
+            ],
+            "smile": 0.2
+          },
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "scale": 1.07
+        },
+        "camera": {
+          "x": 0.1,
+          "y": 1.05,
+          "span": 3.18
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": -0.72764,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": -0.45111999999999997,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        },
+        "Boy": {
+          "route": "illustrated-2d-deformation",
+          "feet": [
+            {
+              "x": 0.6224066666666666,
+              "y": 0,
+              "planted": true
+            },
+            {
+              "x": 1.0124466666666665,
+              "y": 0,
+              "planted": true
+            }
+          ],
+          "supportedHeadTurn": "in-plane only"
+        }
+      }
+    }
+  ]
+}

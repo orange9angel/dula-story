@@ -1,0 +1,63 @@
+{
+  "scope": "Decoded media and numerical sync checks; normal-speed listening and singer-role review pending",
+  "audio": {
+    "mixed": {
+      "duration": 107.5,
+      "peak": 0.876007080078125,
+      "rmsDbFS": -20.179882049560547,
+      "sha256": "51d99f65cd5def2f6880e1ff94697a10a972bbc2a76b7e077d05686f1c65ce04"
+    },
+    "Girl": {
+      "duration": 107.5,
+      "peak": 0.710235595703125,
+      "rmsDbFS": -25.29249382019043,
+      "sha256": "97865671d232231325d426a1a586513e2bc8ea1a03038841fcb6161e61a192b0"
+    },
+    "Boy": {
+      "duration": 107.5,
+      "peak": 0.87335205078125,
+      "rmsDbFS": -24.902952194213867,
+      "sha256": "760dcaf3bc01dfaf85d6c77c679b1fcf9cd056a777deaba9ce9c78d3afbb88fb"
+    },
+    "music": {
+      "duration": 107.5,
+      "peak": 0.5665283203125,
+      "rmsDbFS": -21.03116226196289,
+      "sha256": "2fac93058e3553712db735c204d0beedd4093aec0ca85315c25f199ebe880c22"
+    },
+    "ambience": {
+      "duration": 107.5,
+      "peak": 0.061767578125,
+      "rmsDbFS": -43.055450439453125,
+      "sha256": "31aae3018d0a82f6ab253a501505ce5fe1ff37585a8b485159a496c5aad49240"
+    },
+    "foley": {
+      "duration": 107.5,
+      "peak": 0.72174072265625,
+      "rmsDbFS": -45.28228759765625,
+      "sha256": "a4ab8f8df20eca4fa3f5d986150fa18a854518672f0939fc5cab00b79be4fad9"
+    }
+  },
+  "mouth": {
+    "Girl": {
+      "quietFrames": 6440,
+      "quietMouthViolations": 0,
+      "firstViolations": [],
+      "speakingFrames": 4114,
+      "sourceHashMatches": true
+    },
+    "Boy": {
+      "quietFrames": 6443,
+      "quietMouthViolations": 0,
+      "firstViolations": [],
+      "speakingFrames": 4108,
+      "sourceHashMatches": true
+    }
+  },
+  "dialogueAsr": {
+    "matched": 9,
+    "total": 9,
+    "evidence": "config/dialogue_qc.json",
+    "limitation": "ASR does not judge performance or timbre"
+  }
+}

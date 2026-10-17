@@ -1,0 +1,11 @@
+import {bridge} from './bridge.mjs';import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {execFileSync} from 'node:child_process';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const clip=process.argv[2]??'6ad31639-aa42-4a0f-8351-a9024f49a3c8';
+const rows=bridge('network',{cmd:'list'}).requests;
+const r=rows.findLast(x=>x.status===200&&x.url.includes(clip)&&new URL(x.url).pathname.endsWith('.wav'));
+if(!r)throw Error('No UI-authorized WAV download observed');
+const response=await fetch(r.url);if(!response.ok)throw Error('WAV download status '+response.status);
+const bytes=Buffer.from(await response.arrayBuffer()),dir=path.join(root,'assets/audio/song');fs.mkdirSync(dir,{recursive:true});const file=path.join(dir,clip+'.wav');fs.writeFileSync(file,bytes);
+const probe=JSON.parse(execFileSync('ffprobe',['-v','error','-show_entries','format=duration:stream=codec_name,sample_rate,channels','-of','json',file],{encoding:'utf8',windowsHide:true}));
+const meta={clipId:clip,downloadMethod:'Suno UI WAV > Unlock & Download; observed authorized download response',sha256:crypto.createHash('sha256').update(bytes).digest('hex'),bytes:bytes.length,probe};
+fs.writeFileSync(file+'.source.json',JSON.stringify(meta,null,2));console.log(JSON.stringify(meta));bridge('cdp',{method:'Emulation.setFocusEmulationEnabled',params:{enabled:false}});

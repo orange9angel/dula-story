@@ -1,0 +1,5079 @@
+{
+  "duration": 107.5,
+  "fps": 30,
+  "errors": [],
+  "seek": {
+    "samples": 30,
+    "mismatches": []
+  },
+  "footAudit": {
+    "scope": "48 skinned sole vertices per foot; consecutive planted centroids and minimum height; not full self-collision",
+    "samples": 6731,
+    "maxPlantedStep": 0.0036383761941271584,
+    "minSoleY": -0.0009405185386555333,
+    "maxPlantedSoleY": 0.008365788665981632,
+    "warnings": []
+  },
+  "trace": [
+    {
+      "time": 0.7,
+      "state": {
+        "t": 0,
+        "absoluteTime": 0.7,
+        "Girl": {
+          "time": 0.7,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 0.7,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 3.4,
+      "state": {
+        "t": 0,
+        "absoluteTime": 3.4,
+        "Girl": {
+          "time": 3.4,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1.0267,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 3.4,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 7.6,
+      "state": {
+        "t": 0,
+        "absoluteTime": 7.6,
+        "Girl": {
+          "time": 7.6,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 7.6,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1.062,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 10.5,
+      "state": {
+        "t": 0,
+        "absoluteTime": 10.5,
+        "Girl": {
+          "time": 10.5,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.2491,
+            "width": 1.0388,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 10.5,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 12.666666666666666,
+      "state": {
+        "t": 0,
+        "absoluteTime": 12.666666666666666,
+        "Girl": {
+          "time": 12.666666666666666,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 12.666666666666666,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 13.266666666666667,
+      "state": {
+        "t": 0,
+        "absoluteTime": 13.266666666666667,
+        "Girl": {
+          "time": 13.266666666666667,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 13.266666666666667,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 14.8,
+      "state": {
+        "t": 0,
+        "absoluteTime": 14.8,
+        "Girl": {
+          "time": 14.8,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.3918,
+            "width": 1.0578,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 14.8,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 16.4,
+      "state": {
+        "t": 0,
+        "absoluteTime": 16.4,
+        "Girl": {
+          "time": 16.4,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 16.4,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.5625,
+            "width": 1.0562,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 18.3,
+      "state": {
+        "t": 0,
+        "absoluteTime": 18.3,
+        "Girl": {
+          "time": 18.3,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 18.3,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 20.2,
+      "state": {
+        "t": 0,
+        "absoluteTime": 20.2,
+        "Girl": {
+          "time": 20.2,
+          "x": -0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.3,
+            "y": 1.02,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11,
+            "y": 0.074,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 20.2,
+          "x": 0.82,
+          "yaw": 0,
+          "bob": 0,
+          "roll": 0,
+          "headYaw": 0,
+          "headPitch": 0,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.321,
+            "y": 1.0914000000000001,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "rightFoot": {
+            "x": 0.11770000000000001,
+            "y": 0.07918,
+            "z": 0
+          },
+          "leftFootYaw": -0.04,
+          "rightFootYaw": 0.04,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011595918370278437,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.7099999901431204,
+                0.13295789550245574,
+                -1.5440043660275293e-8
+              ],
+              "target": [
+                -0.71,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.9299999693399977,
+                0.13295839767460416,
+                -3.268220503255259e-8
+              ],
+              "target": [
+                -0.9299999999999999,
+                0.13295839753574087,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.9430214447754797,
+              "y": 0.00003412457634890253,
+              "z": 0.0782834070950368,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.7091604900987614,
+              "y": 6.80151789022742e-9,
+              "z": 0.07076662629886595,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                0.9377000481289662,
+                0.1283267057587819,
+                -7.839696649497574e-8
+              ],
+              "target": [
+                0.9377,
+                0.12832671759409603,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7023000465947528,
+                0.12832714490850988,
+                -7.682058088265276e-8
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6708878286139922,
+              "y": -1.6717125869566095e-7,
+              "z": 0.15690758333209703,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 0.9649308288041538,
+              "y": 0.00004432433500139826,
+              "z": 0.15552065088675268,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 22.5,
+      "state": {
+        "t": 1.5031,
+        "absoluteTime": 22.5,
+        "Girl": {
+          "time": 22.5,
+          "x": -0.5953453917159438,
+          "yaw": 0.300132273208003,
+          "bob": -0.010366983815069595,
+          "roll": 0.02402208718852027,
+          "headYaw": -0.10504629562280104,
+          "headPitch": 0.02402208718852027,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3762731806902643,
+            "y": 1.1791289732744066,
+            "z": 0.13694959570894763
+          },
+          "rightWrist": {
+            "x": 0.32542439356342145,
+            "y": 1.47574689818099,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.2132180467294521,
+            "y": 0.13196984488569702,
+            "z": -0.06598697394189125
+          },
+          "rightFoot": {
+            "x": 0.11018915181193556,
+            "y": 0.07400000000000001,
+            "z": 0.03410146936820677
+          },
+          "leftFootYaw": -0.3041164004230426,
+          "rightFootYaw": -0.22411640042304262,
+          "leftFootPitch": -0.08115778283997582,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.016440159635528983,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.417,
+            "width": 1.05,
+            "blink": 0.9445787724315394,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 22.5,
+          "x": 1.0299271246674804,
+          "yaw": 0.24751371345590248,
+          "bob": -0.018700853880465915,
+          "roll": 0.01707497097257014,
+          "headYaw": -0.08662979970956586,
+          "headPitch": 0.01707497097257014,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.3872802543273036,
+            "y": 1.219988600180209,
+            "z": 0.14312894540606746
+          },
+          "rightWrist": {
+            "x": 0.3430934181091012,
+            "y": 1.4777451447863896,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.3025589865685435,
+            "y": 0.10790854856849529,
+            "z": -0.07645520509564185
+          },
+          "rightFoot": {
+            "x": 0.1491835292120581,
+            "y": 0.07918000000000001,
+            "z": 0.03769796247719658
+          },
+          "leftFootYaw": -0.2578120678411942,
+          "rightFootYaw": -0.1778120678411942,
+          "leftFootPitch": -0.0402199679958934,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.0009330694430641379,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.48000001327245845,
+                0.13295788860756158,
+                -5.822331639038225e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                -6.938893903907228e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.8185409069974362,
+                0.19092819506188247,
+                -2.0601489769678238e-7
+              ],
+              "target": [
+                -0.8185408580254785,
+                0.1909282424214379,
+                1.3877787807814457e-17
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": -0.830901939952243,
+              "y": 0.05976880503948376,
+              "z": 0.08623981513069175,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": -0.477435065079263,
+              "y": 1.0450878351935704e-8,
+              "z": 0.07075087688555218,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1838000021911237,
+                0.12832665289365486,
+                -2.422382694849956e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7178576396176031,
+                0.15705565603394378,
+                -2.4701618953071325e-7
+              ],
+              "target": [
+                0.7178576792877689,
+                0.15705570800909424,
+                0
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6911160597001029,
+              "y": 0.03523408382899684,
+              "z": 0.16274166112933441,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": 1.21563714597103,
+              "y": 0.0000442990299337644,
+              "z": 0.15464320725605415,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 26.8,
+      "state": {
+        "t": 5.803100000000001,
+        "absoluteTime": 26.8,
+        "Girl": {
+          "time": 26.8,
+          "x": -0.6536218638578866,
+          "yaw": -0.15065883633289334,
+          "bob": -0.020832773877151056,
+          "roll": -0.0002555260703141148,
+          "headYaw": 0.05273059271651267,
+          "headPitch": -0.0002555260703141148,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3637438671849962,
+            "y": 1.4748075581603586,
+            "z": 0.1368719335924981
+          },
+          "rightWrist": {
+            "x": 0.39,
+            "y": 1.3172707612703356,
+            "z": 0.14562397786416603
+          },
+          "leftFoot": {
+            "x": -0.2732474373992808,
+            "y": 0.074,
+            "z": 0.041481466851049066
+          },
+          "rightFoot": {
+            "x": 0.1716551462350836,
+            "y": 0.07400000000000001,
+            "z": -0.02605882538601016
+          },
+          "leftFootYaw": 0.09257977597294614,
+          "rightFootYaw": 0.17257977597294616,
+          "leftFootPitch": 0,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011736027368647137,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.198,
+            "width": 1.01,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 26.8,
+          "x": 0.9441234640633451,
+          "yaw": -0.22078995626798312,
+          "bob": -0.023250186073080745,
+          "roll": -0.02239000594269365,
+          "headYaw": 0.07727648469379408,
+          "headPitch": -0.02239000594269365,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.37725197448625986,
+            "y": 1.60696987771127,
+            "z": 0.1404759872431299
+          },
+          "rightWrist": {
+            "x": 0.41730000000000006,
+            "y": 1.3666817246288288,
+            "z": 0.15382532908104332
+          },
+          "leftFoot": {
+            "x": -0.2359531397415675,
+            "y": 0.07918,
+            "z": 0.05295945258112403
+          },
+          "rightFoot": {
+            "x": 0.23385832882545488,
+            "y": 0.07918000000000001,
+            "z": -0.05248927430971049
+          },
+          "leftFootYaw": 0.15429516151582515,
+          "rightFootYaw": 0.23429516151582516,
+          "leftFootPitch": 0,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.017488428774746125,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.4800000032636186,
+                0.1329578874156847,
+                -8.043547403135953e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                -3.469446951953614e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.930000008421729,
+                0.13295838847813818,
+                -4.942765841065011e-8
+              ],
+              "target": [
+                -0.9299999999999999,
+                0.13295839753574087,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.9455925091314161,
+              "y": 0.000048091820863790065,
+              "z": 0.07787900896715433,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.47926303729479014,
+              "y": 1.0907440842063836e-8,
+              "z": 0.06927241320887757,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.183800026412069,
+                0.12832667188735158,
+                -2.0065943094615957e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                -6.938893903907228e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7023000222761118,
+                0.1283271157204393,
+                -1.675314269464212e-7
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6667286651313057,
+              "y": -1.8749621245219418e-7,
+              "z": 0.1560135945010006,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.2069013199792158,
+              "y": 0.00004436357216504777,
+              "z": 0.15618736903946034,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 31.5,
+      "state": {
+        "t": 10.5031,
+        "absoluteTime": 31.5,
+        "Girl": {
+          "time": 31.5,
+          "x": -0.6410311151581609,
+          "yaw": 0.14761821415482623,
+          "bob": -0.019728233925195012,
+          "roll": 0.007218089768322307,
+          "headYaw": -0.05166637495418918,
+          "headPitch": 0.007218089768322307,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.30973517784824545,
+            "y": 1.3440112004959248,
+            "z": 0.19413134693265874
+          },
+          "rightWrist": {
+            "x": 0.32840042565728744,
+            "y": 1.2846679351592183,
+            "z": 0.2377330495618084
+          },
+          "leftFoot": {
+            "x": -0.2857165935634073,
+            "y": 0.07631748510688861,
+            "z": -0.04248602884803059
+          },
+          "rightFoot": {
+            "x": 0.15927977337909566,
+            "y": 0.07400000000000001,
+            "z": 0.023684886349417573
+          },
+          "leftFootYaw": -0.16990402845624708,
+          "rightFootYaw": -0.08990402845624706,
+          "leftFootPitch": -0.003244479149644064,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.007127173466459451,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.298,
+            "width": 0.981,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 31.5,
+          "x": 0.9594323588785862,
+          "yaw": -0.28746255791686187,
+          "bob": -0.023533620470877214,
+          "roll": -0.018049575333448187,
+          "headYaw": 0.10061189527090166,
+          "headPitch": -0.018049575333448187,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.3054906792835714,
+            "y": 1.349912472544013,
+            "z": 0.23564080692538467
+          },
+          "rightWrist": {
+            "x": 0.3454055413731319,
+            "y": 1.426016507170936,
+            "z": 0.2583629724179121
+          },
+          "leftFoot": {
+            "x": -0.24658128661999015,
+            "y": 0.07918,
+            "z": 0.07290211979974501
+          },
+          "rightFoot": {
+            "x": 0.2151610239368352,
+            "y": 0.07918000000000001,
+            "z": -0.06361267295783238
+          },
+          "leftFootYaw": 0.21296705096683846,
+          "rightFootYaw": 0.29296705096683845,
+          "leftFootPitch": 0,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.017962996140399912,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.4800000070429413,
+                0.1329578842309887,
+                -7.976899908668234e-8
+              ],
+              "target": [
+                -0.4799999999999999,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.9297693072605218,
+                0.13577522789298296,
+                0.000035414126450965255
+              ],
+              "target": [
+                -0.9298892714992153,
+                0.1352758826426295,
+                6.938893903907228e-18
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": -0.943348643579089,
+              "y": 0.0030022706579214535,
+              "z": 0.07901439809526756,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": -0.4779417000514244,
+              "y": 7.131595581302563e-9,
+              "z": 0.06990645586905636,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1838000486266635,
+                0.12832667089142075,
+                -2.157271263986127e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                6.938893903907228e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7023000254263299,
+                0.12832712214138386,
+                -1.387772444877422e-7
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6654789059789471,
+              "y": -1.9901585874330344e-7,
+              "z": 0.15572366809798144,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.2056510460046048,
+              "y": 0.00004437271768798252,
+              "z": 0.1563672018358726,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 37,
+      "state": {
+        "t": 16.0031,
+        "absoluteTime": 37,
+        "Girl": {
+          "time": 37,
+          "x": -0.59,
+          "yaw": 0.24187608336901728,
+          "bob": -3.2994715218560864e-34,
+          "roll": -0.024434360268987307,
+          "headYaw": -0.08465662917915605,
+          "headPitch": -0.024434360268987307,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.35,
+            "y": 1.2,
+            "z": 0.17
+          },
+          "rightWrist": {
+            "x": 0.35,
+            "y": 1.2,
+            "z": 0.17
+          },
+          "leftFoot": {
+            "x": -0.1067979347342843,
+            "y": 0.07400000000000001,
+            "z": -0.026347696986483485
+          },
+          "rightFoot": {
+            "x": 0.10679793473428431,
+            "y": 0.07400000000000001,
+            "z": 0.02634769698648349
+          },
+          "leftFootYaw": -0.2528509533647352,
+          "rightFootYaw": -0.1728509533647352,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.015908398207421414,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.1722,
+            "width": 1.0143,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 37,
+          "x": 1.0661,
+          "yaw": 0.22506141824728684,
+          "bob": -0.00045555207078175786,
+          "roll": -0.015804533620632805,
+          "headYaw": -0.07877149638655039,
+          "headPitch": -0.015804533620632805,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.37451558590892126,
+            "y": 1.2839496815611708,
+            "z": 0.18197792954460631
+          },
+          "rightWrist": {
+            "x": 0.37451558590892126,
+            "y": 1.2839496815611708,
+            "z": 0.18197792954460631
+          },
+          "leftFoot": {
+            "x": -0.11473165336585464,
+            "y": 0.07918000000000001,
+            "z": -0.02626666548950164
+          },
+          "rightFoot": {
+            "x": 0.11473165336585466,
+            "y": 0.07918000000000001,
+            "z": 0.026266665489501642
+          },
+          "leftFootYaw": -0.23805404805761243,
+          "rightFootYaw": -0.15805404805761242,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.00028141349523955824,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.480000000473376,
+                0.13295789411478764,
+                -2.953116520765242e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                -3.469446951953614e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.6999544885194319,
+                0.13453272423057833,
+                0.00012417697910022119
+              ],
+              "target": [
+                -0.7,
+                0.1329583975357409,
+                3.469446951953614e-18
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.7111858911638047,
+              "y": 0.0016079780348625,
+              "z": 0.07875038484274507,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.47768213966704504,
+              "y": 1.0296925427840281e-8,
+              "z": 0.07116132858298702,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1838000200554446,
+                0.1283267009607264,
+                -9.816809362628298e-8
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                3.469446951953614e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.9484000206931535,
+                0.12832714855800353,
+                -7.517011030300225e-8
+              ],
+              "target": [
+                0.9484,
+                0.12832715944059897,
+                -3.469446951953614e-18
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.9212453452109389,
+              "y": -1.6074174884912198e-7,
+              "z": 0.1577003842512748,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.215220450298269,
+              "y": 0.000044332385817645974,
+              "z": 0.15472858665490774,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 41,
+      "state": {
+        "t": 1.4271362811791377,
+        "absoluteTime": 41,
+        "Girl": {
+          "time": 41,
+          "x": -0.6034859341725007,
+          "yaw": 0.28094348408091346,
+          "bob": -0.013178495366456074,
+          "roll": 0.024787471590237184,
+          "headYaw": -0.09833021942831971,
+          "headPitch": 0.024787471590237184,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3713030934016614,
+            "y": 1.1652728233039027,
+            "z": 0.13584513186703587
+          },
+          "rightWrist": {
+            "x": 0.3237676978005538,
+            "y": 1.4425626309770305,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.24721819413221058,
+            "y": 0.12677926411995835,
+            "z": -0.0713412627239817
+          },
+          "rightFoot": {
+            "x": 0.11864457840416455,
+            "y": 0.07400000000000001,
+            "z": 0.03423798991987185
+          },
+          "leftFootYaw": -0.2872302659912038,
+          "rightFootYaw": -0.20723026599120384,
+          "leftFootPitch": -0.0738909697679417,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.012141315931909018,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0.4807214707837819,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 41,
+          "x": 1.0135381157390688,
+          "yaw": 0.22706652610412525,
+          "bob": -0.020890792958143545,
+          "roll": 0.008354936043144915,
+          "headYaw": -0.07947328413644383,
+          "headPitch": 0.008354936043144915,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.38083173154489264,
+            "y": 1.2034686104749512,
+            "z": 0.14169594034330948
+          },
+          "rightWrist": {
+            "x": 0.3409439105149642,
+            "y": 1.4361475664828673,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.3027198760051813,
+            "y": 0.08450976133516969,
+            "z": -0.06994378495002318
+          },
+          "rightFoot": {
+            "x": 0.1658914269877568,
+            "y": 0.07918000000000001,
+            "z": 0.038329410170891906
+          },
+          "leftFootYaw": -0.23981854297163024,
+          "rightFootYaw": -0.15981854297163023,
+          "leftFootPitch": -0.00746166586923756,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.006328239424706435,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.1148,
+            "width": 1.0478,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.48000001439584444,
+                0.13295788697583782,
+                -6.533969074129509e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.8607920399088526,
+                0.1857376201445861,
+                -1.9395676872924206e-7
+              ],
+              "target": [
+                -0.860791999544158,
+                0.18573766165569922,
+                -1.3877787807814457e-17
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": -0.8734833447399306,
+              "y": 0.054403203605347325,
+              "z": 0.08554376438143381,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": -0.477513004856746,
+              "y": 9.740637888535875e-9,
+              "z": 0.07055297733901997,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1838000113245293,
+                0.12832665021692302,
+                -2.510640998848457e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.702901739535192,
+                0.1338723014356727,
+                0.0000042228270636622545
+              ],
+              "target": [
+                0.7028429976864553,
+                0.13365692077576866,
+                -1.3877787807814457e-17
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6757774047579317,
+              "y": 0.006846494780814898,
+              "z": 0.15865561009248896,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": 1.2152576130867345,
+              "y": 0.00004429322463672626,
+              "z": 0.1547208472057258,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 47.5,
+      "state": {
+        "t": 7.927136281179138,
+        "absoluteTime": 47.5,
+        "Girl": {
+          "time": 47.5,
+          "x": -0.7073391438770635,
+          "yaw": 0.34330450346904606,
+          "bob": -0.021770270606200185,
+          "roll": -0.022067222634947162,
+          "headYaw": -0.12015657621416612,
+          "headPitch": -0.022067222634947162,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.32905863791513223,
+            "y": 1.28253817009376,
+            "z": 0.19951485669395508
+          },
+          "rightWrist": {
+            "x": 0.3595293189575661,
+            "y": 1.4234650699150166,
+            "z": 0.18808835130304236
+          },
+          "leftFoot": {
+            "x": -0.20966804095780284,
+            "y": 0.07400000000000001,
+            "z": -0.07494777815463327
+          },
+          "rightFoot": {
+            "x": 0.21407333897706105,
+            "y": 0.074,
+            "z": 0.07652249262777922
+          },
+          "leftFootYaw": -0.34210796305276053,
+          "rightFootYaw": -0.2621079630527606,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.01760171065944574,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 47.5,
+          "x": 0.994765496402626,
+          "yaw": -0.09008963668283915,
+          "bob": -0.019160281307902153,
+          "roll": -0.02048669519067455,
+          "headYaw": 0.0315313728389937,
+          "headPitch": -0.02048669519067455,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.38141471390713066,
+            "y": 1.4369263161255548,
+            "z": 0.1896567949504564
+          },
+          "rightWrist": {
+            "x": 0.39935735695356533,
+            "y": 1.519911040215315,
+            "z": 0.18292830380804337
+          },
+          "leftFoot": {
+            "x": -0.29127945306030734,
+            "y": 0.07918000000000001,
+            "z": 0.026312483936767623
+          },
+          "rightFoot": {
+            "x": 0.18826790679461297,
+            "y": 0.07918,
+            "z": -0.01700702271064918
+          },
+          "leftFootYaw": 0.03927888028089845,
+          "rightFootYaw": 0.11927888028089845,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.004635830696050364,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.4278,
+            "width": 1.0041,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.4800000220725001,
+                0.13295788061640607,
+                -7.136240685878814e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.9300000043193797,
+                0.13295839111908503,
+                -8.191493064413358e-8
+              ],
+              "target": [
+                -0.9299999999999999,
+                0.1329583975357409,
+                -1.3877787807814457e-17
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.941726720219454,
+              "y": -0.000006047773094384893,
+              "z": 0.07797055868772429,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.47612125175563647,
+              "y": 5.646271539617676e-9,
+              "z": 0.0706294005199736,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1838000036191831,
+                0.12832665745580818,
+                -2.2661847591531892e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                -3.469446951953614e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7030904286391955,
+                0.131526216870622,
+                -0.000042651741981061114
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                3.469446951953614e-18
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.669973567839549,
+              "y": 0.0031988766889419493,
+              "z": 0.15651715104842798,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.2093479137108585,
+              "y": 0.00004428539740380053,
+              "z": 0.15580576780066005,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 54,
+      "state": {
+        "t": 14.427136281179141,
+        "absoluteTime": 54,
+        "Girl": {
+          "time": 54,
+          "x": -0.8040762592416196,
+          "yaw": 0.02925761883676752,
+          "bob": -0.008705855471820541,
+          "roll": 0.011139570250875338,
+          "headYaw": -0.010240166592868631,
+          "headPitch": 0.011139570250875338,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.35951490785781887,
+            "y": 1.43868174883147,
+            "z": 0.21757453928909432
+          },
+          "rightWrist": {
+            "x": 0.35951490785781887,
+            "y": 1.43868174883147,
+            "z": 0.21757453928909432
+          },
+          "leftFoot": {
+            "x": -0.12586984872177104,
+            "y": 0.074,
+            "z": -0.003683703210389527
+          },
+          "rightFoot": {
+            "x": 0.2555393524309864,
+            "y": 0.12659284000105914,
+            "z": 0.007478607009464598
+          },
+          "leftFootYaw": -0.06574670457635542,
+          "rightFootYaw": 0.014253295423644584,
+          "leftFootPitch": 0,
+          "rightFootPitch": -0.07362997600148279,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.016515547951613526,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 54,
+          "x": 0.8200720610143588,
+          "yaw": 0.010865405634354236,
+          "bob": -0.0025698515762967726,
+          "roll": 0.024998892278497574,
+          "headYaw": -0.0038028919720239822,
+          "headPitch": 0.024998892278497574,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.3851978465865794,
+            "y": 1.5595741596747683,
+            "z": 0.23538923293289715
+          },
+          "rightWrist": {
+            "x": 0.3851978465865794,
+            "y": 1.5595741596747683,
+            "z": 0.23538923293289715
+          },
+          "leftFoot": {
+            "x": -0.11776510917231668,
+            "y": 0.07918,
+            "z": -0.0012796160370212783
+          },
+          "rightFoot": {
+            "x": 0.1629086596936683,
+            "y": 0.12623817932271839,
+            "z": 0.0017701383285658534
+          },
+          "leftFootYaw": -0.04956155695823173,
+          "rightFootYaw": 0.030438443041768272,
+          "leftFootPitch": 0,
+          "rightFootPitch": -0.06588145105180573,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.013875708634608873,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0.2292,
+            "width": 0.9625,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.5484274972473493,
+                0.1855507077560527,
+                -1.2438461338692974e-7
+              ],
+              "target": [
+                -0.5484274958891444,
+                0.18555073593018107,
+                8.673617379884035e-19
+              ],
+              "planted": false
+            },
+            "left": {
+              "actual": [
+                -0.9299999744594893,
+                0.13295838872211319,
+                -9.47826791636297e-8
+              ],
+              "target": [
+                -0.9299999999999999,
+                0.13295839753574087,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.9429589751942413,
+              "y": 0.000005289069505386692,
+              "z": 0.07760618498041294,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.5461240088933454,
+              "y": 0.053113354871803554,
+              "z": 0.07759701469501995,
+              "planted": false,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                0.9829904249023264,
+                0.17538476723617757,
+                -3.78328133571193e-7
+              ],
+              "target": [
+                0.9829903374381219,
+                0.17538489691681441,
+                2.168404344971009e-19
+              ],
+              "planted": false
+            },
+            "left": {
+              "actual": [
+                0.702300050419779,
+                0.12832713425306042,
+                -1.2783571310542863e-7
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6710927582499863,
+              "y": -1.690507431503682e-7,
+              "z": 0.15694690794028346,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.0104239349868345,
+              "y": 0.057386199023721635,
+              "z": 0.16352610384110458,
+              "planted": false,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 57.5,
+      "state": {
+        "t": 17.92713628117914,
+        "absoluteTime": 57.5,
+        "Girl": {
+          "time": 57.5,
+          "x": -0.82,
+          "yaw": 0.047650730602613545,
+          "bob": -0.004494354867866865,
+          "roll": 0.00903540504103077,
+          "headYaw": -0.01667775571091474,
+          "headPitch": 0.00903540504103077,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3027396634272666,
+            "y": 1.0442725680993863,
+            "z": 0.10383552879817329
+          },
+          "rightWrist": {
+            "x": 0.3027396634272666,
+            "y": 1.0442725680993863,
+            "z": 0.10383552879817329
+          },
+          "leftFoot": {
+            "x": -0.10987514106100978,
+            "y": 0.07400000000000001,
+            "z": -0.005239597009618493
+          },
+          "rightFoot": {
+            "x": 0.14039447280793732,
+            "y": 0.11215943739139937,
+            "z": 0.006694967148965704
+          },
+          "leftFootYaw": -0.08193264293029992,
+          "rightFootYaw": -0.0019326429302999187,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -0.053423212347959124,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.015787762021567564,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1.0095,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 57.5,
+          "x": 0.8290742584204497,
+          "yaw": 0.07627576309459166,
+          "bob": -0.012409994118838343,
+          "roll": 0.024871452488078663,
+          "headYaw": -0.02669651708310708,
+          "headPitch": 0.024871452488078663,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.33040762184913347,
+            "y": 1.1304943957983888,
+            "z": 0.12017067058878687
+          },
+          "rightWrist": {
+            "x": 0.33040762184913347,
+            "y": 1.1304943957983888,
+            "z": 0.12017067058878687
+          },
+          "leftFoot": {
+            "x": -0.1264056513722798,
+            "y": 0.07918000000000001,
+            "z": -0.009660429555905892
+          },
+          "rightFoot": {
+            "x": 0.25482943363955923,
+            "y": 0.1399465103995907,
+            "z": 0.019475092812078265
+          },
+          "leftFootYaw": -0.10712267152324068,
+          "rightFootYaw": -0.027122671523240667,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -0.08507311455942695,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.014870788786501976,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1.0095,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.679445990319269,
+                0.17111731037885392,
+                -1.1605339966802575e-7
+              ],
+              "target": [
+                -0.6794459869653506,
+                0.17111733332052131,
+                -8.673617379884035e-19
+              ],
+              "planted": false
+            },
+            "left": {
+              "actual": [
+                -0.929999974768468,
+                0.1329583935337047,
+                -7.295935544604504e-8
+              ],
+              "target": [
+                -0.9299999999999999,
+                0.1329583975357409,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.9426895494482311,
+              "y": 0.000013899415211643078,
+              "z": 0.07786509548205713,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.6781602946670691,
+              "y": 0.03939665581174379,
+              "z": 0.07534930782670621,
+              "planted": false,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.0846469043445812,
+                0.18909308157950044,
+                -4.145245876274739e-7
+              ],
+              "target": [
+                1.084646791156457,
+                0.18909322799368672,
+                0
+              ],
+              "planted": false
+            },
+            "left": {
+              "actual": [
+                0.7023000407200517,
+                0.12832710991952379,
+                -2.1658683925507294e-7
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6723272304525661,
+              "y": -1.7528221043089105e-7,
+              "z": 0.15718461068933665,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.1132998871589685,
+              "y": 0.0738154134225828,
+              "z": 0.16551729490739087,
+              "planted": false,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 61,
+      "state": {
+        "t": 2.851172562358279,
+        "absoluteTime": 61,
+        "Girl": {
+          "time": 61,
+          "x": -0.6109175318940703,
+          "yaw": 0.3090031348577219,
+          "bob": -0.009955997865304728,
+          "roll": 0.0068547535818756404,
+          "headYaw": -0.10815109720020266,
+          "headPitch": 0.0068547535818756404,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.38616285252292315,
+            "y": 1.2330668869971564,
+            "z": 0.13872095084097438
+          },
+          "rightWrist": {
+            "x": 0.3338371474770769,
+            "y": 1.537660641851747,
+            "z": 0.12127904915902563
+          },
+          "leftFoot": {
+            "x": -0.256524925428566,
+            "y": 0.12096865869540724,
+            "z": -0.08189011907815859
+          },
+          "rightFoot": {
+            "x": 0.12471691087968165,
+            "y": 0.074,
+            "z": 0.03981321762762286
+          },
+          "leftFootYaw": -0.31192275867479524,
+          "rightFootYaw": -0.23192275867479525,
+          "leftFootPitch": -0.06575612217357013,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.014926329985280692,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.1635,
+            "width": 1.01,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 61,
+          "x": 1.065208277429826,
+          "yaw": 0.374976388418873,
+          "bob": -0.003473380495307741,
+          "roll": 0.02453347159772113,
+          "headYaw": -0.13124173594660554,
+          "headPitch": 0.02453347159772113,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.4171396397051533,
+            "y": 1.3028887812737728,
+            "z": 0.14974654656838443
+          },
+          "rightWrist": {
+            "x": 0.3532603602948468,
+            "y": 1.6754911844514195,
+            "z": 0.1284534534316156
+          },
+          "leftFoot": {
+            "x": -0.16856879627348406,
+            "y": 0.13308628911070847,
+            "z": -0.06634856125602355
+          },
+          "rightFoot": {
+            "x": 0.11035152733015272,
+            "y": 0.07918,
+            "z": 0.04343428459251622
+          },
+          "leftFootYaw": -0.3699792218086082,
+          "rightFootYaw": -0.28997922180860825,
+          "leftFootPitch": -0.07546880475499185,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.015739985167450586,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.1587,
+            "width": 1.01,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.48000001421345406,
+                0.1329578882611111,
+                -5.875572078872793e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.8801962873659307,
+                0.17992702662524102,
+                -1.6926304977071815e-7
+              ],
+              "target": [
+                -0.8801962517528188,
+                0.17992705623114813,
+                0
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": -0.8927682353788057,
+              "y": 0.048341324057994815,
+              "z": 0.08493412551920261,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": -0.4772266049026655,
+              "y": 1.0333012022865374e-8,
+              "z": 0.07076927530783392,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1837999972228492,
+                0.12832669617209014,
+                -1.0918788886232766e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.884051974172181,
+                0.1822333299603518,
+                -3.80144732914367e-7
+              ],
+              "target": [
+                0.8840520722978027,
+                0.18223344855130744,
+                -6.938893903907228e-18
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": 0.8597349607294649,
+              "y": 0.06554857186245953,
+              "z": 0.16726799194850867,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": 1.2179986617539222,
+              "y": 0.00004433593341471721,
+              "z": 0.1541383541212009,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 65,
+      "state": {
+        "t": 6.851172562358279,
+        "absoluteTime": 65,
+        "Girl": {
+          "time": 65,
+          "x": -0.59,
+          "yaw": 0.11616978378476311,
+          "bob": -3.2994715218560864e-34,
+          "roll": -0.014553520499830358,
+          "headYaw": -0.040659424324667084,
+          "headPitch": -0.014553520499830358,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.39,
+            "y": 1.43,
+            "z": 0.15
+          },
+          "rightWrist": {
+            "x": 0.39,
+            "y": 1.43,
+            "z": 0.15
+          },
+          "leftFoot": {
+            "x": -0.10925858634368543,
+            "y": 0.07400000000000001,
+            "z": -0.012749953340284665
+          },
+          "rightFoot": {
+            "x": 0.10925858634368545,
+            "y": 0.07400000000000001,
+            "z": 0.012749953340284666
+          },
+          "leftFootYaw": -0.14222940973059153,
+          "rightFootYaw": -0.06222940973059154,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.01744292730688014,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 65,
+          "x": 1.0661,
+          "yaw": 0.09239189020860211,
+          "bob": -3.5304345283860124e-34,
+          "roll": -0.024718827451597928,
+          "headYaw": -0.03233716157301074,
+          "headPitch": -0.024718827451597928,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.41730000000000006,
+            "y": 1.5301,
+            "z": 0.1605
+          },
+          "rightWrist": {
+            "x": 0.41730000000000006,
+            "y": 1.5301,
+            "z": 0.1605
+          },
+          "leftFoot": {
+            "x": -0.11719799827196774,
+            "y": 0.07918000000000001,
+            "z": -0.010859060780926348
+          },
+          "rightFoot": {
+            "x": 0.11719799827196775,
+            "y": 0.07918000000000001,
+            "z": 0.01085906078092635
+          },
+          "leftFootYaw": -0.12130486338356986,
+          "rightFootYaw": -0.04130486338356986,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.011878070141496302,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.47999999465109855,
+                0.13295789481791753,
+                -2.4720157823510114e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                1.734723475976807e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.6999974070669975,
+                0.13308723193063232,
+                0.000008440268776811755
+              ],
+              "target": [
+                -0.7,
+                0.1329583975357409,
+                -1.734723475976807e-18
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.7121550386142779,
+              "y": 0.00016792604277407388,
+              "z": 0.07856898187914253,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.4784622918399793,
+              "y": 8.815324242923038e-9,
+              "z": 0.07090369361494867,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1838000374720299,
+                0.12832670184806672,
+                -9.799337679500253e-8
+              ],
+              "target": [
+                1.1838000000000002,
+                0.12832671759409603,
+                1.734723475976807e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.948400035094196,
+                0.12832714908780052,
+                -6.072802179180048e-8
+              ],
+              "target": [
+                0.9484,
+                0.12832715944059897,
+                -1.734723475976807e-18
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.9187330216077437,
+              "y": -1.6417491360217775e-7,
+              "z": 0.15724769530626664,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.2127533220303328,
+              "y": 0.00004432697468565846,
+              "z": 0.15520916786462702,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 68.5,
+      "state": {
+        "t": 10.351172562358279,
+        "absoluteTime": 68.5,
+        "Girl": {
+          "time": 68.5,
+          "x": -0.6767795798960519,
+          "yaw": 0.25244583245217767,
+          "bob": -0.021891740009851352,
+          "roll": -0.01262366978146389,
+          "headYaw": -0.08835604135826218,
+          "headPitch": -0.01262366978146389,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.2916245149632297,
+            "y": 1.2819431940992931,
+            "z": 0.2136351377319065
+          },
+          "rightWrist": {
+            "x": 0.3242210419145915,
+            "y": 1.3201188827588255,
+            "z": 0.24051930539027236
+          },
+          "leftFoot": {
+            "x": -0.2451944509116279,
+            "y": 0.074,
+            "z": -0.06324762762163695
+          },
+          "rightFoot": {
+            "x": 0.19054253611705857,
+            "y": 0.07400000000000001,
+            "z": 0.049150228831065755
+          },
+          "leftFootYaw": -0.26215233255791637,
+          "rightFootYaw": -0.18215233255791635,
+          "leftFootPitch": 0,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.016960705368365588,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.2611,
+            "width": 1.0875,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 68.5,
+          "x": 0.9179888962028687,
+          "yaw": -0.3883825821713891,
+          "bob": -0.021823789377591236,
+          "roll": -0.024957843709164727,
+          "headYaw": 0.13593390375998618,
+          "headPitch": -0.024957843709164727,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.28675745144072373,
+            "y": 1.2896585500032645,
+            "z": 0.25581505229460527
+          },
+          "rightWrist": {
+            "x": 0.3410824887940132,
+            "y": 1.4666338114762902,
+            "z": 0.26124500747065793
+          },
+          "leftFoot": {
+            "x": -0.1996249853859746,
+            "y": 0.07918,
+            "z": 0.08167964957601942
+          },
+          "rightFoot": {
+            "x": 0.2460142299630645,
+            "y": 0.07918000000000001,
+            "z": -0.1006605263126004
+          },
+          "leftFootYaw": 0.30177667231082245,
+          "rightFootYaw": 0.3817766723108224,
+          "leftFootPitch": 0,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.013070815665369669,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.25,
+            "width": 1.0875,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.4800000168925513,
+                0.13295788139263492,
+                -7.963932834031962e-8
+              ],
+              "target": [
+                -0.47999999999999987,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.9299999897104131,
+                0.13295838994202108,
+                -6.146932637896008e-8
+              ],
+              "target": [
+                -0.9299999999999999,
+                0.13295839753574087,
+                6.938893903907228e-18
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.9425580021494409,
+              "y": 0.000010762768830487035,
+              "z": 0.07812299654606997,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.47701766824434044,
+              "y": 6.15189470597299e-9,
+              "z": 0.07020249018527108,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1838000213687394,
+                0.12832669459069285,
+                -1.352001162135963e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                -1.3877787807814457e-17
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7023000616774845,
+                0.12832710339113906,
+                -1.6582883988203179e-7
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6635949325101668,
+              "y": -1.9837643588512216e-7,
+              "z": 0.15526274843957372,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 1.2037557940092662,
+              "y": 0.00004437875685171857,
+              "z": 0.15662046698320692,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 72.5,
+      "state": {
+        "t": 14.351172562358279,
+        "absoluteTime": 72.5,
+        "Girl": {
+          "time": 72.5,
+          "x": -0.8130068146617773,
+          "yaw": 0.021502425944745614,
+          "bob": -0.006047275649602857,
+          "roll": 0.019155407266091717,
+          "headYaw": -0.007525849080660964,
+          "headPitch": 0.019155407266091717,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.3597885832687479,
+            "y": 1.4484558893378432,
+            "z": 0.21894291634373964
+          },
+          "rightWrist": {
+            "x": 0.3597885832687479,
+            "y": 1.4484558893378432,
+            "z": 0.21894291634373964
+          },
+          "leftFoot": {
+            "x": -0.11696614022786798,
+            "y": 0.074,
+            "z": -0.002515443455626621
+          },
+          "rightFoot": {
+            "x": 0.21872425947238539,
+            "y": 0.13199858157294633,
+            "z": 0.004703827158908888
+          },
+          "leftFootYaw": -0.05892213483137614,
+          "rightFootYaw": 0.02107786516862386,
+          "leftFootPitch": 0,
+          "rightFootPitch": -0.08119801420212487,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.017999958949504298,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0.317,
+            "width": 1.0217,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 72.5,
+          "x": 0.82,
+          "yaw": 0.006088909209612572,
+          "bob": -0.0010063553403257448,
+          "roll": 0.023010008574780486,
+          "headYaw": -0.0021311182233644,
+          "headPitch": 0.023010008574780486,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.3852,
+            "y": 1.5611936446596744,
+            "z": 0.23540000000000003
+          },
+          "rightWrist": {
+            "x": 0.3852,
+            "y": 1.5611936446596744,
+            "z": 0.23540000000000003
+          },
+          "leftFoot": {
+            "x": -0.11769781815385688,
+            "y": 0.07918,
+            "z": -0.0007166601856115688
+          },
+          "rightFoot": {
+            "x": 0.13040156061037042,
+            "y": 0.1051873085440764,
+            "z": 0.0007940130760019862
+          },
+          "leftFootYaw": -0.04535824010445906,
+          "rightFootYaw": 0.03464175989554094,
+          "leftFootPitch": 0,
+          "rightFootPitch": -0.03641023196170696,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.008137557952258975,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0.3119,
+            "width": 1.0217,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.5942319834767614,
+                0.19095644668597717,
+                -1.3187093045319287e-7
+              ],
+              "target": [
+                -0.5942319813932218,
+                0.1909564775020683,
+                0
+              ],
+              "planted": false
+            },
+            "left": {
+              "actual": [
+                -0.9299999729760418,
+                0.132958391009192,
+                -8.448384775094908e-8
+              ],
+              "target": [
+                -0.9299999999999999,
+                0.13295839753574087,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": -0.942931190153571,
+              "y": 0.000009795130542794467,
+              "z": 0.0777192359266067,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": -0.5923374548668816,
+              "y": 0.05884865145257384,
+              "z": 0.07825249457798497,
+              "planted": false,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                0.9504040461660764,
+                0.15433394356236213,
+                -2.957841227779756e-7
+              ],
+              "target": [
+                0.9504039779546044,
+                0.15433402613817243,
+                0
+              ],
+              "planted": false
+            },
+            "left": {
+              "actual": [
+                0.7023000490000509,
+                0.1283271389913727,
+                -1.0673297497904022e-7
+              ],
+              "target": [
+                0.7022999999999999,
+                0.12832715944059897,
+                0
+              ],
+              "planted": true
+            }
+          },
+          "feet": [
+            {
+              "x": 0.6710026610619488,
+              "y": -1.6785364493009352e-7,
+              "z": 0.15692962251283543,
+              "planted": true,
+              "samples": 48
+            },
+            {
+              "x": 0.9777484419540521,
+              "y": 0.03205673015386394,
+              "z": 0.16003034702093827,
+              "planted": false,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 78.5,
+      "state": {
+        "t": 1.775208843537417,
+        "absoluteTime": 78.5,
+        "Girl": {
+          "time": 78.5,
+          "x": -0.59,
+          "yaw": 0.3610996939946293,
+          "bob": -0.001877003208086878,
+          "roll": -0.004535906764895978,
+          "headYaw": -0.12638489289812024,
+          "headPitch": -0.004535906764895978,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.38839348301630927,
+            "y": 1.214552959050378,
+            "z": 0.13964299622584653
+          },
+          "rightWrist": {
+            "x": 0.3294644943387698,
+            "y": 1.558305393002692,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.1051037168654776,
+            "y": 0.0847864244241299,
+            "z": -0.039693350913398456
+          },
+          "rightFoot": {
+            "x": 0.10290597503941523,
+            "y": 0.07400000000000001,
+            "z": 0.03886335421946041
+          },
+          "leftFootYaw": -0.3577677307152738,
+          "rightFootYaw": -0.27776773071527383,
+          "leftFootPitch": -0.01510099419378186,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.008905595436412974,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.4157,
+            "width": 1.05,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 78.5,
+          "x": 1.064971499935653,
+          "yaw": 0.31686228251599685,
+          "bob": -0.008395954095215168,
+          "roll": 0.019846197066981403,
+          "headYaw": -0.1109017988805989,
+          "headPitch": 0.019846197066981403,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.40688792822518516,
+            "y": 1.2738661086274186,
+            "z": 0.1474862062722634
+          },
+          "rightWrist": {
+            "x": 0.3496293094083951,
+            "y": 1.6078747183920274,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.1917658770764708,
+            "y": 0.1379620565346605,
+            "z": -0.06288208542157939
+          },
+          "rightFoot": {
+            "x": 0.11291295171663175,
+            "y": 0.07918000000000001,
+            "z": 0.037025366469220944
+          },
+          "leftFootYaw": -0.3188388086140772,
+          "rightFootYaw": -0.23883880861407722,
+          "leftFootPitch": -0.08229487914852471,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.01798069829128285,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.4088,
+            "width": 1.05,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.4800000072836522,
+                0.13295789306805122,
+                -3.394877973877941e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.7023492604360323,
+                0.14374481561169256,
+                -9.79988644539409e-8
+              ],
+              "target": [
+                -0.7023492474637577,
+                0.14374482195987076,
+                0
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": -0.7130587106857519,
+              "y": 0.011665562435546065,
+              "z": 0.07968512763943854,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": -0.47692381786425725,
+              "y": 1.129643848616363e-8,
+              "z": 0.07141075982286288,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1837999911564459,
+                0.12832667838505984,
+                -1.7125976285031763e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.8631588519992526,
+                0.187109082139794,
+                -4.0103397588864276e-7
+              ],
+              "target": [
+                0.8631589426507434,
+                0.18710921597525948,
+                6.938893903907228e-18
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": 0.8377358047813696,
+              "y": 0.07135291539275605,
+              "z": 0.16787239259070055,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": 1.2169229350473945,
+              "y": 0.00004432471642432932,
+              "z": 0.15437300702354703,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 83,
+      "state": {
+        "t": 6.275208843537417,
+        "absoluteTime": 83,
+        "Girl": {
+          "time": 83,
+          "x": -0.59,
+          "yaw": 0.005061628105396954,
+          "bob": -0.005814107614570049,
+          "roll": 0.014050282802456501,
+          "headYaw": -0.0017715698368889336,
+          "headPitch": 0.014050282802456501,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.38549635995041615,
+            "y": 1.4354449925093895,
+            "z": 0.14774817997520806
+          },
+          "rightWrist": {
+            "x": 0.39,
+            "y": 1.4084231522118862,
+            "z": 0.14924939332506934
+          },
+          "leftFoot": {
+            "x": -0.15911397836391283,
+            "y": 0.12071328567225106,
+            "z": -0.0008053826628492216
+          },
+          "rightFoot": {
+            "x": 0.1099985908986592,
+            "y": 0.07400000000000001,
+            "z": 0.0005567767141426513
+          },
+          "leftFootYaw": -0.04445423273274932,
+          "rightFootYaw": 0.03554576726725068,
+          "leftFootPitch": -0.06539859994115149,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.017328625993535195,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.085,
+            "width": 1.02,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 83,
+          "x": 1.0517946621959626,
+          "yaw": -0.05848722590453331,
+          "bob": -0.014065584451553979,
+          "roll": 0.02480314044617098,
+          "headYaw": 0.020470529066586658,
+          "headPitch": 0.02480314044617098,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.4040074127370439,
+            "y": 1.5492658837058364,
+            "z": 0.15385370636852194
+          },
+          "rightWrist": {
+            "x": 0.41730000000000006,
+            "y": 1.4695103601280994,
+            "z": 0.15828456878950733
+          },
+          "leftFoot": {
+            "x": -0.2744580279192194,
+            "y": 0.1357746381118558,
+            "z": 0.01607061741197719
+          },
+          "rightFoot": {
+            "x": 0.13177962315906408,
+            "y": 0.07918000000000001,
+            "z": -0.007716225036445897
+          },
+          "leftFootYaw": 0.011468758795989312,
+          "rightFootYaw": 0.09146875879598931,
+          "leftFootPitch": -0.07923249335659813,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.012206399943778425,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.0839,
+            "width": 1.02,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.479999991457174,
+                0.13295789279677245,
+                -4.264327416181324e-8
+              ],
+              "target": [
+                -0.48,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.7491159986429333,
+                0.17967162986662005,
+                -2.037478204763854e-7
+              ],
+              "target": [
+                -0.7491160166420254,
+                0.17967168320799193,
+                0
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": -0.7624774781176076,
+              "y": 0.04786474883515465,
+              "z": 0.084196982479956,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": -0.4791417310471878,
+              "y": 8.019985632017833e-9,
+              "z": 0.07025504995713895,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.183800060874141,
+                0.12832666803422615,
+                -2.085759684689048e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                -1.734723475976807e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7768665439492833,
+                0.1849216666546426,
+                -4.03547363664325e-7
+              ],
+              "target": [
+                0.7768665373463772,
+                0.18492179755245478,
+                3.469446951953614e-18
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": 0.7443414744344828,
+              "y": 0.06860697890836379,
+              "z": 0.16622177999311577,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": 1.2099386755580182,
+              "y": 0.00004429504289235958,
+              "z": 0.15570778296918752,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 89,
+      "state": {
+        "t": 12.275208843537417,
+        "absoluteTime": 89,
+        "Girl": {
+          "time": 89,
+          "x": -0.6359754990250703,
+          "yaw": -0.2802789637268217,
+          "bob": -0.014927900107394582,
+          "roll": -0.011066507444336375,
+          "headYaw": 0.09809763730438759,
+          "headPitch": -0.011066507444336375,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.36,
+            "y": 1.5050760624222377,
+            "z": 0.15142404282327757
+          },
+          "rightWrist": {
+            "x": 0.3428560107058194,
+            "y": 1.2222002390682576,
+            "z": 0.22857199464709033
+          },
+          "leftFoot": {
+            "x": -0.28052928168786756,
+            "y": 0.08420268008021196,
+            "z": 0.08075214365572386
+          },
+          "rightFoot": {
+            "x": 0.1498890710981283,
+            "y": 0.074,
+            "z": -0.04314652548537337
+          },
+          "leftFootYaw": 0.2066454880796031,
+          "rightFootYaw": 0.2866454880796031,
+          "leftFootPitch": -0.014283752112296754,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.004303762094403823,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 89,
+          "x": 1.0536491929993144,
+          "yaw": 0.3139382785953262,
+          "bob": -0.008044303956444242,
+          "roll": 0.014949813154551024,
+          "headYaw": -0.10987839750836416,
+          "headPitch": 0.014949813154551024,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.3852,
+            "y": 1.626409637627899,
+            "z": 0.15282406676075097
+          },
+          "rightWrist": {
+            "x": 0.3645560166901878,
+            "y": 1.2857839130159965,
+            "z": 0.24572199165490616
+          },
+          "leftFoot": {
+            "x": -0.2446923739501764,
+            "y": 0.13933220785242745,
+            "z": -0.0794455936094632
+          },
+          "rightFoot": {
+            "x": 0.12378965790150026,
+            "y": 0.07918,
+            "z": 0.0401914563005529
+          },
+          "leftFootYaw": -0.31626568516388703,
+          "rightFootYaw": -0.23626568516388705,
+          "leftFootPitch": -0.08421309099339842,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.017526806433689583,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {
+        "Girl": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                -0.4799999955935089,
+                0.13295789109290557,
+                -6.586036213618307e-8
+              ],
+              "target": [
+                -0.4799999999999999,
+                0.13295789592912194,
+                0
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                -0.9278960110503698,
+                0.14316106390801092,
+                -5.930033242923516e-8
+              ],
+              "target": [
+                -0.9278960131882679,
+                0.14316107761595284,
+                0
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": -0.9445463586044234,
+              "y": 0.009567167109114195,
+              "z": 0.07955764400478839,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": -0.4800693424972242,
+              "y": 1.2461443715512491e-8,
+              "z": 0.06930804234590301,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        },
+        "Boy": {
+          "route": "skinned-three-dimensional-body-and-painted-head",
+          "joints": {
+            "right": {
+              "actual": [
+                1.1837999949787692,
+                0.12832668041451833,
+                -1.6547775427699918e-7
+              ],
+              "target": [
+                1.1838,
+                0.12832671759409603,
+                6.938893903907228e-18
+              ],
+              "planted": true
+            },
+            "left": {
+              "actual": [
+                0.7963827729804032,
+                0.18847925646443392,
+                -3.762083470304489e-7
+              ],
+              "target": [
+                0.7963828714309191,
+                0.18847936729302642,
+                -1.3877787807814457e-17
+              ],
+              "planted": false
+            }
+          },
+          "feet": [
+            {
+              "x": 0.7709011502883445,
+              "y": 0.07298902636784144,
+              "z": 0.1680823397287189,
+              "planted": false,
+              "samples": 48
+            },
+            {
+              "x": 1.216868763449137,
+              "y": 0.000044323917966509707,
+              "z": 0.15438462807605544,
+              "planted": true,
+              "samples": 48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": 95.8,
+      "state": {
+        "t": 0.4992451247165519,
+        "absoluteTime": 95.8,
+        "Girl": {
+          "time": 95.8,
+          "x": -0.803507660343316,
+          "yaw": 0.04989821398208533,
+          "bob": -0.008854593970510196,
+          "roll": 0.010642511306737788,
+          "headYaw": -0.017464374893729862,
+          "headPitch": 0.010642511306737788,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.30452365218980243,
+            "y": 1.021197966451273,
+            "z": 0.12100525604217831
+          },
+          "rightWrist": {
+            "x": 0.30150788406326745,
+            "y": 1.0387899471893935,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.12633490000502293,
+            "y": 0.074,
+            "z": -0.006309122961455088
+          },
+          "rightFoot": {
+            "x": 0.25708221575695184,
+            "y": 0.12601629053800523,
+            "z": 0.012838600500332437
+          },
+          "leftFootYaw": -0.08391042830423509,
+          "rightFootYaw": -0.003910428304235089,
+          "leftFootPitch": 0,
+          "rightFootPitch": -0.07282280675320732,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.01635341675819287,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0.2114,
+            "width": 1.0612,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 95.8,
+          "x": 0.8201226135281877,
+          "yaw": 0.018743774393931004,
+          "bob": -0.0026720735923335126,
+          "roll": 0.024987595493723147,
+          "headYaw": -0.006560321037875851,
+          "headPitch": 0.024987595493723147,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.32103298834183164,
+            "y": 1.088801233833959,
+            "z": 0.12840733074262925
+          },
+          "rightWrist": {
+            "x": 0.32101099611394385,
+            "y": 1.0889295218299708,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.11780191687902256,
+            "y": 0.07918,
+            "z": -0.0022083111738537436
+          },
+          "rightFoot": {
+            "x": 0.16500757537499475,
+            "y": 0.12715660182075159,
+            "z": 0.003093227021469654
+          },
+          "leftFootYaw": -0.05649452146665929,
+          "rightFootYaw": 0.02350547853334072,
+          "leftFootPitch": 0,
+          "rightFootPitch": -0.06716724254905221,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.014125574830442121,
+          "stance": {
+            "left": true,
+            "right": false
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 97.9,
+      "state": {
+        "t": 2.5992451247165604,
+        "absoluteTime": 97.9,
+        "Girl": {
+          "time": 97.9,
+          "x": -0.59,
+          "yaw": 0.3869329083052226,
+          "bob": -0.0020705172881686318,
+          "roll": 0.024938155736520237,
+          "headYaw": -0.1354265179068279,
+          "headPitch": 0.024938155736520237,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.39,
+            "y": 1.2179294827118314,
+            "z": 0.14
+          },
+          "rightWrist": {
+            "x": 0.33,
+            "y": 1.5679294827118315,
+            "z": 0.12
+          },
+          "leftFoot": {
+            "x": -0.13455285872154418,
+            "y": 0.11468961523823382,
+            "z": -0.05482680394331041
+          },
+          "rightFoot": {
+            "x": 0.10186778584723605,
+            "y": 0.074,
+            "z": 0.04150848354953068
+          },
+          "leftFootYaw": -0.38050095930859584,
+          "rightFootYaw": -0.3005009593085959,
+          "leftFootPitch": -0.05696546133352735,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.012917964649405334,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 97.9,
+          "x": 1.0661,
+          "yaw": 0.41748993055116224,
+          "bob": 0,
+          "roll": 0.009755847726756674,
+          "headYaw": -0.14612147569290676,
+          "headPitch": 0.009755847726756674,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.41730000000000006,
+            "y": 1.3054000000000001,
+            "z": 0.14980000000000002
+          },
+          "rightWrist": {
+            "x": 0.3531,
+            "y": 1.6799000000000002,
+            "z": 0.12840000000000001
+          },
+          "leftFoot": {
+            "x": -0.10759069637249186,
+            "y": 0.07918,
+            "z": -0.047723495828389084
+          },
+          "rightFoot": {
+            "x": 0.10759069637249187,
+            "y": 0.07918,
+            "z": 0.04772349582838909
+          },
+          "leftFootYaw": -0.40739113888502276,
+          "rightFootYaw": -0.3273911388850228,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.005304132285689174,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.2051,
+            "width": 1.0296,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 100,
+      "state": {
+        "t": 4.699245124716555,
+        "absoluteTime": 100,
+        "Girl": {
+          "time": 100,
+          "x": -0.82,
+          "yaw": -0.4190972283500128,
+          "bob": 0,
+          "roll": 0.007364818205803012,
+          "headYaw": 0.14668402992250446,
+          "headPitch": 0.007364818205803012,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.33,
+            "y": 1.58,
+            "z": 0.12
+          },
+          "rightWrist": {
+            "x": 0.39,
+            "y": 1.22,
+            "z": 0.14
+          },
+          "leftFoot": {
+            "x": -0.10048023510328374,
+            "y": 0.074,
+            "z": 0.044762957382067876
+          },
+          "rightFoot": {
+            "x": 0.10048023510328374,
+            "y": 0.074,
+            "z": -0.044762957382067876
+          },
+          "leftFootYaw": 0.3288055609480113,
+          "rightFootYaw": 0.40880556094801124,
+          "leftFootPitch": 0,
+          "rightFootPitch": 0,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.007025620086663804,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.1163,
+            "width": 1.0205,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 100,
+          "x": 0.82,
+          "yaw": -0.4102076553546106,
+          "bob": -3.5304345283860124e-34,
+          "roll": -0.01794309843684588,
+          "headYaw": 0.14357267937411372,
+          "headPitch": -0.01794309843684588,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.3531,
+            "y": 1.6906,
+            "z": 0.12840000000000001
+          },
+          "rightWrist": {
+            "x": 0.41730000000000006,
+            "y": 1.3054000000000001,
+            "z": 0.14980000000000002
+          },
+          "leftFoot": {
+            "x": -0.10793537609361603,
+            "y": 0.07918000000000001,
+            "z": 0.046938732274419824
+          },
+          "rightFoot": {
+            "x": 0.10793537609361605,
+            "y": 0.07918000000000001,
+            "z": -0.04693873227441983
+          },
+          "leftFootYaw": 0.32098273671205735,
+          "rightFootYaw": 0.4009827367120573,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.017955579697508182,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 102,
+      "state": {
+        "t": 6.699245124716555,
+        "absoluteTime": 102,
+        "Girl": {
+          "time": 102,
+          "x": -0.59,
+          "yaw": 0.10025895483521846,
+          "bob": -3.2994715218560864e-34,
+          "roll": -0.02479795014633472,
+          "headYaw": -0.035090634192326456,
+          "headPitch": -0.02479795014633472,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.39,
+            "y": 1.43,
+            "z": 0.15
+          },
+          "rightWrist": {
+            "x": 0.39,
+            "y": 1.43,
+            "z": 0.15
+          },
+          "leftFoot": {
+            "x": -0.10944761075281646,
+            "y": 0.07400000000000001,
+            "z": -0.011010018187994621
+          },
+          "rightFoot": {
+            "x": 0.10944761075281648,
+            "y": 0.07400000000000001,
+            "z": 0.011010018187994623
+          },
+          "leftFootYaw": -0.12822788025499224,
+          "rightFootYaw": -0.04822788025499224,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.015127189573546179,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 102,
+          "x": 1.0661,
+          "yaw": 0.06260287211311094,
+          "bob": -0.000645878914132753,
+          "roll": -0.014084318347669822,
+          "headYaw": -0.02191100523958883,
+          "headPitch": -0.014084318347669822,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.4171073959568661,
+            "y": 1.5299356311937022,
+            "z": 0.160403697978433
+          },
+          "rightWrist": {
+            "x": 0.41730000000000006,
+            "y": 1.5287800069348982,
+            "z": 0.16046789932614433
+          },
+          "leftFoot": {
+            "x": -0.11746943512742822,
+            "y": 0.07918000000000001,
+            "z": -0.007363546078007339
+          },
+          "rightFoot": {
+            "x": 0.11746943512742823,
+            "y": 0.07918000000000001,
+            "z": 0.00736354607800734
+          },
+          "leftFootYaw": -0.09509052745953764,
+          "rightFootYaw": -0.01509052745953763,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.0018245386864832451,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0.1948,
+            "width": 1.01,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    },
+    {
+      "time": 106.5,
+      "state": {
+        "t": 11.199245124716555,
+        "absoluteTime": 106.5,
+        "Girl": {
+          "time": 106.5,
+          "x": -0.59,
+          "yaw": -0.2614058019686072,
+          "bob": -0.00009661430399932834,
+          "roll": -0.019871207536868413,
+          "headYaw": 0.09149203068901252,
+          "headPitch": -0.019871207536868413,
+          "headRoll": 0.025,
+          "leftWrist": {
+            "x": -0.36,
+            "y": 1.5299033856960007,
+            "z": 0.14
+          },
+          "rightWrist": {
+            "x": 0.34,
+            "y": 1.1999033856960006,
+            "z": 0.23
+          },
+          "leftFoot": {
+            "x": -0.10626303808775324,
+            "y": 0.07400000000000001,
+            "z": 0.028428273538164527
+          },
+          "rightFoot": {
+            "x": 0.10626303808775325,
+            "y": 0.07400000000000001,
+            "z": -0.02842827353816453
+          },
+          "leftFootYaw": 0.1900371057323743,
+          "rightFootYaw": 0.2700371057323743,
+          "leftFootPitch": -1.9428902930940238e-17,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": -0.003906305021889405,
+          "stance": {
+            "left": true,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              0.15,
+              0
+            ],
+            "smile": 0
+          }
+        },
+        "Boy": {
+          "time": 106.5,
+          "x": 1.0661,
+          "yaw": 0.1651675630696906,
+          "bob": -0.003739036842475179,
+          "roll": 0.004495411932240917,
+          "headYaw": -0.057808647074391706,
+          "headPitch": 0.004495411932240917,
+          "headRoll": -0.025,
+          "leftWrist": {
+            "x": -0.3796227117841084,
+            "y": 1.6149130098280373,
+            "z": 0.15580631038634485
+          },
+          "rightWrist": {
+            "x": 0.36251293348864044,
+            "y": 1.2918445617597614,
+            "z": 0.24695804434090643
+          },
+          "leftFoot": {
+            "x": -0.13490795647274212,
+            "y": 0.11089211354228112,
+            "z": -0.022487278018417965
+          },
+          "rightFoot": {
+            "x": 0.1160981993814309,
+            "y": 0.07918000000000001,
+            "z": 0.01935195339983858
+          },
+          "leftFootYaw": -0.18534745550132775,
+          "rightFootYaw": -0.10534745550132774,
+          "leftFootPitch": -0.04439695895919357,
+          "rightFootPitch": -1.9428902930940238e-17,
+          "leftGesture": {
+            "open": 0.78
+          },
+          "rightGesture": {
+            "open": 0.78
+          },
+          "hairSway": 0.01388246903170808,
+          "stance": {
+            "left": false,
+            "right": true
+          },
+          "face": {
+            "jaw": 0,
+            "width": 1,
+            "blink": 0,
+            "gaze": [
+              -0.15,
+              0
+            ],
+            "smile": 0
+          }
+        }
+      },
+      "limbs": {}
+    }
+  ]
+}

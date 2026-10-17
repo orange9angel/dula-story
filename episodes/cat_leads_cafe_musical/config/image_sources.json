@@ -1,0 +1,108 @@
+{
+  "references": [
+    {
+      "file": "assets\\references\\boy_reference.png",
+      "sha256": "347351de9fdbe062f03cdfbf37803126d42c3e9df088e1342cf1a723697c811a"
+    },
+    {
+      "file": "assets\\references\\girl_reference.png",
+      "sha256": "879fe814d8b689d3ad9baacd0405a453b0af987dffe737de2c067a6d42c5402d"
+    },
+    {
+      "file": "assets\\references\\style_master.png",
+      "sha256": "edca5695ac34aff5a55c4e78602aa676fcb4080b4eacd560784ed48929498bc2"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets\\images\\boy_body_v1.png",
+      "sha256": "1b2399be0ea964f18efa36688db9f472f1b62a3192ae14d77c62846f863925bf",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": true,
+      "roleInCraft3d": "clothing surface projection"
+    },
+    {
+      "file": "assets\\images\\boy_hair_v1.png",
+      "sha256": "f4aceb70495996dfb0f1eebb06a81c2bb99a362ae5a02f4fd0710991a26cc1d5",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": false,
+      "roleInCraft3d": "curved hair painting"
+    },
+    {
+      "file": "assets\\images\\boy_portrait_v1.png",
+      "sha256": "fd17b8b66608cad7faf2714499f351426c5df445867e996c904e21f7166e43bb",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": false,
+      "roleInCraft3d": "curved face painting"
+    },
+    {
+      "file": "assets\\images\\cafe_master_v1.png",
+      "sha256": "188021608a975fa5c16387c22b5c5dff8b844b4015687d6376bed122ba072b12",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": true,
+      "roleInCraft3d": "background or illustrated dialogue"
+    },
+    {
+      "file": "assets\\images\\cafe_table_v1.png",
+      "sha256": "dfa33ee1b087bf347b66ab15be4da92a1155fdf9d3bf15365c546eba4c4af96a",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": false,
+      "usedInIllustratedV1": true,
+      "roleInCraft3d": "Archived 2D table scene; no longer loaded by the selected viewer"
+    },
+    {
+      "file": "assets\\images\\girl_body_v1.png",
+      "sha256": "02f61a9227f488564012e63ed704c7e65ce2c86c869710e1afbec125c408d103",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": true,
+      "roleInCraft3d": "clothing surface projection"
+    },
+    {
+      "file": "assets\\images\\girl_hair_v1.png",
+      "sha256": "23651ddd7caabebecce460c3f9bd0b7615c0cb32cad10023e3fab69ca3648c9c",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": false,
+      "roleInCraft3d": "curved hair painting"
+    },
+    {
+      "file": "assets\\images\\girl_portrait_v1.png",
+      "sha256": "3b65c42f08dea0b8d48bb4f8d8cc6ccc4e9d96896d2dc614fec7f700bfd49da4",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": false,
+      "roleInCraft3d": "curved face painting"
+    },
+    {
+      "file": "assets\\images\\girl_rear_hair_v2.png",
+      "sha256": "071b0027bd558f9e561456fd788a7e436abab571dcf602677cce6be3c7f9ab0a",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": false,
+      "roleInCraft3d": "3D rear scalp and long hair volume"
+    },
+    {
+      "file": "assets\\images\\girl_side_hair_v2.png",
+      "sha256": "1835692db72cba84432abb0e0e2afc2a91f479b600a540d21ee33834b600479d",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": false,
+      "roleInCraft3d": "view-weighted side colour projection on fixed hair geometry"
+    },
+    {
+      "file": "assets\\images\\boy_rear_hair_v2.png",
+      "sha256": "778da67e9a969872fe11f5350a53b852536bdd56f70804a80ce5995ed4c8c210",
+      "provider": "built-in imagegen",
+      "usedInSelectedRender": true,
+      "usedInIllustratedV1": false,
+      "roleInCraft3d": "3D rear scalp and nape"
+    }
+  ],
+  "illustratedV1UnusedReason": "Portrait/hair candidates were tested on procedural 3D body; body simplification rejected for this episode.",
+  "selectedRender": "output/half_beat_sunshine_craft3d_v4.mp4"
+}

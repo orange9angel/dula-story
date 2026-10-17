@@ -1,0 +1,10 @@
+from pathlib import Path
+p=Path(__file__).resolve().parent/'render.mjs';s=p.read_text(encoding='utf8')
+s=s.replace('craft3d_full_v3','craft3d_full_v4').replace('craft3d_v3','craft3d_v4').replace('half_beat_sunshine_craft3d_v3.mp4','half_beat_sunshine_craft3d_v4.mp4').replace('cafe_craft3d_dance_v3.mp4','cafe_craft3d_dance_v4.mp4')
+s=s.replace("const out=path.join(root,'output')","const dialogue=args.includes('--dialogue');const out=path.join(root,'output')")
+s=s.replace("craft?(full?'storyboard/craft3d_full_v4'","craft?(dialogue?'storyboard/craft3d_dialogue_v4':full?'storyboard/craft3d_full_v4'")
+s=s.replace('duration=pilot?18:fullDuration','duration=dialogue?23:pilot?18:fullDuration')
+s=s.replace("craft?(full?'half_beat_sunshine_craft3d_v4.mp4'","craft?(dialogue?'cafe_3d_dialogue_v4.mp4':full?'half_beat_sunshine_craft3d_v4.mp4'")
+s=s.replace('let previous=null;','let previous=null,previousMode=null;').replace('state:r.state,limbs:r.limbs','state:r.state,limbs:r.limbs,props:r.props,actorsVisible:r.actorsVisible')
+s=s.replace('if(!check&&previous){','if(!check&&previous&&previousMode===r.state.mode){').replace('previous=r.limbs;if(i%150','previous=r.limbs;previousMode=r.state.mode;if(i%150')
+p.write_text(s,encoding='utf8')

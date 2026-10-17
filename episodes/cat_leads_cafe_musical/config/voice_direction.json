@@ -1,0 +1,21 @@
+{
+ "status":"reviewed",
+ "reviewScope":"Script and native delivery direction reviewed; new clips require listening; no audio listening tool available in this run",
+ "priority":["dialogue","song vocals","motivated ceramic pickup","quiet room tone"],
+ "voiceSource":"E08 accepted series voice configuration; preserved Girl Vivi 2.0 and Boy Xiaotian 2.0",
+ "directions":{
+   "2":{"emotion":"happy","context":"少女和熟悉的少年在午后咖啡厅闲聊，笑着提醒他别一直画自己，语气亲近、稍微打趣，别念成主持人。"},
+   "3":{"emotion":"tenderness","context":"安静的少年正在认真画面前的少女，先轻轻让她别动，然后解释是在画她的影子，温柔但不抒情朗诵。"},
+   "4":{"emotion":"happy","context":"少女故意用影子坐累了开一个小玩笑，轻快自然，等对方笑。"},
+   "6":{"emotion":"happy","context":"少女敲了两下杯沿，带笑邀请对方接着唱，短短三个字是邀请，不是命令。"},
+   "7":{"emotion":"calm","context":"少年被邀请一起唱歌，有点不好意思地坦白唱歌可以但跳舞不会，唱还行后有自然的小停顿。"},
+   "10":{"emotion":"happy","context":"少女看到刚刚还说不会跳的少年跟上来了，带一点得意笑着打趣，亲近温暖。"},
+   "11":{"emotion":"tenderness","context":"少年被少女调侃后轻轻回答，略有羞涩的笑意，不是严肃解释。"},
+   "12":{"emotion":"happy","context":"少女回到咖啡桌边，才发现聊天和跳舞真的把咖啡放凉了，有一点意外，又忍不住笑。"},
+   "13":{"emotion":"tenderness","context":"少年顺着咖啡凉了的玩笑轻轻接住，语气自然带笑，说正好现在可以喝了，给午后一个温暖收尾。"}
+ },
+ "ambience":{"provider":"Seed-Audio","prompt":"生成一段30秒安静日式街角咖啡厅室内环境音：远处空调和轻微空气感，窗外极远的普通小镇街声。平稳、无阵风、无节律性涌动、音量恒定。无对白、无人声、无音乐、无鸟叫、无咖啡机蒸汽喷响、无敲击、无脚步。只有低声、柔和、连续的空间底噪。"},
+ "foley":{"provider":"Seed-Audio","prompt":"生成4秒独立真实音效：安静室内，一把小金属茶匙轻轻碰一次陶瓷咖啡杯沿，清脆而短的叮声，在第一秒发生，然后自然衰减。无音乐、无对白、无其他声音。"},
+ "song":{"provider":"Suno","clipId":"6ad31639-aa42-4a0f-8351-a9024f49a3c8","status":"authorized WAV downloaded; content and singer assignments to verify"},
+ "exclusions":["No generated-video API", "No rhythmic synthetic room tone", "No generic movement whooshes", "No postprocessing to change character age", "No claim of listening approval from ASR alone"]
+}

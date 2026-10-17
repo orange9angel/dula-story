@@ -1,0 +1,114 @@
+{
+    "scope":  "Decoded media and numerical sync checks; normal-speed listening and singer-role review pending",
+    "audio":  {
+                  "mixed":  {
+                                "duration":  107.5,
+                                "peak":  0.876007080078125,
+                                "rmsDbFS":  -20.179882049560547,
+                                "sha256":  "51d99f65cd5def2f6880e1ff94697a10a972bbc2a76b7e077d05686f1c65ce04"
+                            },
+                  "Girl":  {
+                               "duration":  107.5,
+                               "peak":  0.710235595703125,
+                               "rmsDbFS":  -25.29249382019043,
+                               "sha256":  "97865671d232231325d426a1a586513e2bc8ea1a03038841fcb6161e61a192b0"
+                           },
+                  "Boy":  {
+                              "duration":  107.5,
+                              "peak":  0.87335205078125,
+                              "rmsDbFS":  -24.902952194213867,
+                              "sha256":  "760dcaf3bc01dfaf85d6c77c679b1fcf9cd056a777deaba9ce9c78d3afbb88fb"
+                          },
+                  "music":  {
+                                "duration":  107.5,
+                                "peak":  0.5665283203125,
+                                "rmsDbFS":  -21.03116226196289,
+                                "sha256":  "2fac93058e3553712db735c204d0beedd4093aec0ca85315c25f199ebe880c22"
+                            },
+                  "ambience":  {
+                                   "duration":  107.5,
+                                   "peak":  0.061767578125,
+                                   "rmsDbFS":  -43.055450439453125,
+                                   "sha256":  "31aae3018d0a82f6ab253a501505ce5fe1ff37585a8b485159a496c5aad49240"
+                               },
+                  "foley":  {
+                                "duration":  107.5,
+                                "peak":  0.72174072265625,
+                                "rmsDbFS":  -45.28228759765625,
+                                "sha256":  "a4ab8f8df20eca4fa3f5d986150fa18a854518672f0939fc5cab00b79be4fad9"
+                            }
+              },
+    "mouth":  {
+                  "Girl":  {
+                               "quietFrames":  6440,
+                               "quietMouthViolations":  0,
+                               "firstViolations":  [
+
+                                                   ],
+                               "speakingFrames":  4114,
+                               "sourceHashMatches":  true
+                           },
+                  "Boy":  {
+                              "quietFrames":  6443,
+                              "quietMouthViolations":  0,
+                              "firstViolations":  [
+
+                                                  ],
+                              "speakingFrames":  4108,
+                              "sourceHashMatches":  true
+                          }
+              },
+    "dialogueAsr":  {
+                        "matched":  9,
+                        "total":  9,
+                        "evidence":  "config/dialogue_qc.json",
+                        "limitation":  "ASR does not judge performance or timbre"
+                    },
+    "video":  {
+                  "file":  "output\\half_beat_sunshine_v1.mp4",
+                  "sha256":  "2065d08ac799f0a9d4896f6a8681f5a34f3cfbe6ca74f06f390c67335676c5e7",
+                  "bytes":  36833644,
+                  "width":  1920,
+                  "height":  1080,
+                  "frames":  3225,
+                  "fps":  30,
+                  "duration":  107.5,
+                  "audioDuration":  107.5,
+                  "audioCorrelationLagMs":  0.0,
+                  "fullDecode":  "passed"
+              },
+    "renderChecks":  {
+                         "seek":  {
+                                      "samples":  30,
+                                      "mismatches":  [
+
+                                                     ]
+                                  },
+                         "footAudit":  {
+                                           "scope":  "Rendered actor sole anchors; checks consecutive planted samples, not all mesh intersections",
+                                           "samples":  8033,
+                                           "maxPlantedStep":  4.9960036108132044E-16,
+                                           "warnings":  [
+
+                                                        ]
+                                       }
+                     },
+    "sources":  {
+                    "viewer.js":  "0a7f7dde8e9b6994892771b7d84c41f8b285ce24f13e5bf468b0e2a6da17a570",
+                    "performance.js":  "0323886299423b18a5fcb7ccc6896f7eda72296c4cdf97bb9cdc026c44ca6073",
+                    "bootstrap.js":  "ea42154ada105f595d8bab86801f5a1f2baa07bba881ebcc366f690bf14b2391",
+                    "script.story":  "217e5f0e1b246eb5e6abf5fa6c66353980bb56626e65ef9df1a3ca32ec3f1c39",
+                    "scenes/CafeMusicalScene.js":  "96684647f5cee94d8430c1b95bbc8647a515ec8b1d0fca4ecf5c8589e22352ee",
+                    "tools/render.mjs":  "072adb8d849f0d023a245a5ed87ff9a3169f2da7ddd6e535daef21d39b9fadf3",
+                    "config/timing.json":  "59fab48c30ea2eafbd3e7f301e9d30d6c5f90de66fa175e0f933405076965ab7",
+                    "config/visemes.json":  "72556a498451ca1ee49b0a6bd07a4880aa31f42d30022bb4e03b68726c61f1d1",
+                    "config/subtitles.json":  "aa9cc04adb29dc5b29d25e19d0917246431b4b57f4dc0af06f1d7cb1882fa2c4"
+                },
+    "preview":  {
+                    "duration":  18,
+                    "sha256":  "404c630d9433131c3eb703b299f5031d440251975ef4db9c2a30de14bf3ae39f",
+                    "frames":  540,
+                    "file":  "output/cafe_hybrid_pilot_v1.mp4",
+                    "sourceStart":  14.4
+                }
+}

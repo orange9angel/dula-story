@@ -1,0 +1,12 @@
+# Rebuildable historical frame dumps; keep reports and selected comparisons.
+/storyboard/frame_*.jpg
+/storyboard/craft3d/frame_*.jpg
+/storyboard/craft3d_full/frame_*.jpg
+/storyboard/craft3d_full_v3/frame_*.jpg
+/storyboard/craft3d_v3/frame_*.jpg
+# Final dialogue preview derives from full_v4; these standalone frames predate it.
+/storyboard/craft3d_dialogue_v4/frame_*.jpg
+# Intermediate angle trials stay local. Keep accepted_v2, final_v3, face_v4_final.
+/storyboard/turns/rear_v*/
+/storyboard/turns/profile_clearance*/
+/storyboard/turns/face_v4_a/

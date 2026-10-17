@@ -1,0 +1,76 @@
+{
+  "revision": "v3 full turning and beat-driven dance",
+  "acceptedBaseline": "User accepted craft3d v2 before requesting side/rear refinement, turning and lighter beat-synced action",
+  "audioUnchanged": true,
+  "audioSha256": "51d99f65cd5def2f6880e1ff94697a10a972bbc2a76b7e077d05686f1c65ce04",
+  "exports": [
+    {
+      "file": "output\\half_beat_sunshine_craft3d_v3.mp4",
+      "sha256": "00014f28a04abb34524a0b790d45adfe56a09d579f9d1a1c7953b534ddc5169e",
+      "duration": 107.5,
+      "frames": 3225,
+      "fullDecode": "passed",
+      "audioCorrelationLagMs": 0.0,
+      "seek": {
+        "samples": 48,
+        "mismatches": []
+      },
+      "soleAudit": {
+        "scope": "48 skinned sole vertices per foot; consecutive planted centroids and minimum height; not full self-collision",
+        "samples": 4994,
+        "maxPlantedStep": 0.002227267474909931,
+        "minSoleY": -3.904684544149598e-05,
+        "maxPlantedSoleY": 4.435998583714044e-05,
+        "warnings": []
+      },
+      "beatsChecked": 130,
+      "maxSoleHeightOnBeat": 4.433977458488256e-05,
+      "maxWristTargetErrorOnBeat": 7.901279697209233e-08
+    },
+    {
+      "file": "output\\cafe_craft3d_dance_v3.mp4",
+      "sha256": "31b2251e5d4ff2a5f937f4e296699a0353c5ec620ed25325b141c82d9c5b7551",
+      "duration": 18.566667,
+      "frames": 557,
+      "fullDecode": "passed",
+      "audioCorrelationLagMs": 0.0,
+      "seek": {
+        "samples": 26,
+        "mismatches": []
+      },
+      "soleAudit": {
+        "scope": "48 skinned sole vertices per foot; consecutive planted centroids and minimum height; not full self-collision",
+        "samples": 1202,
+        "maxPlantedStep": 0.0022272674749102533,
+        "minSoleY": -3.904684544149598e-05,
+        "maxPlantedSoleY": 4.4359968787022446e-05,
+        "warnings": []
+      },
+      "beatsChecked": 32,
+      "maxSoleHeightOnBeat": 4.4339774584503956e-05,
+      "maxWristTargetErrorOnBeat": 7.901279693863457e-08
+    }
+  ],
+  "artisticScope": "Front/side/back sampled, final video decoded; no normal-speed audiovisual listening review claimed",
+  "beatGrid": {
+    "beats": 130,
+    "maxAttackToFrameErrorMs": 16.667,
+    "method": "Tracked metre locally refined within 50ms using final PCM 40-170Hz kick and 1.4-6.5kHz attack envelopes, weak pulses kept; nearest global 30fps frame"
+  },
+  "sourceHashes": {
+    "craft3d/dance-v3.js": "ef5eaadda63df80cabf6776b4ceed7b71a2420179d3a50d5a373cb82904d93e6",
+    "craft3d/viewer.js": "667239ed79fd2cdb770f6efa28d86bde093fed692585c5c5196f8b926a0ce76d",
+    "craft3d/bootstrap.js": "74c2d672e9a9119c0f1ca9770301cafc73653a17c22c57a83c56edf0156558c3",
+    "config/dance_beats_v3.json": "eb18da88ab2c1011bb53a11c5a397b84a0df0d2847dfaee6791659f32fd383b7",
+    "script.story": "217e5f0e1b246eb5e6abf5fa6c66353980bb56626e65ef9df1a3ca32ec3f1c39",
+    "assets/images/girl_rear_hair_v2.png": "071b0027bd558f9e561456fd788a7e436abab571dcf602677cce6be3c7f9ab0a",
+    "assets/images/girl_side_hair_v2.png": "1835692db72cba84432abb0e0e2afc2a91f479b600a540d21ee33834b600479d",
+    "assets/images/boy_rear_hair_v2.png": "778da67e9a969872fe11f5350a53b852536bdd56f70804a80ce5995ed4c8c210"
+  },
+  "assetHashes": {
+    "characters/sunprint/CafeKid.js": "a5454350b433e4ca2a825ce5d477c51314ae0c8de96169e0d04f1a0ab8f04a01",
+    "characters/sunprint/CafeRearHair.js": "06757628d3bbedc0ac67caf4ecdb7258f4d2c188c87c40d0101f9166c3b1dde5",
+    "characters/sunprint/RiggedCafeKid.js": "59397fa58514f27b20b816dbfdbdc5b4cbd64cc436434f7c58329d120c350ac1",
+    "lib/craft3d/locomotion.js": "52f5f9091a25e11c51ac0f7b61340d5580aece42d4d22c45453dda8106c14952"
+  }
+}

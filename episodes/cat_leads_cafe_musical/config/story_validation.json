@@ -1,0 +1,50 @@
+{
+  "runtime": "self-contained viewer registry in bootstrap.js; engine registerAll gate not applicable",
+  "entries": 14,
+  "errors": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "code": "dialogue-timing",
+      "message": "Estimated speech is 3.20s but the entry provides 2.76s",
+      "line": 9,
+      "entry": 3
+    },
+    {
+      "severity": "warning",
+      "code": "dialogue-timing",
+      "message": "Estimated speech is 2.10s but the entry provides 1.97s",
+      "line": 13,
+      "entry": 4
+    },
+    {
+      "severity": "warning",
+      "code": "dialogue-timing",
+      "message": "Estimated speech is 1.60s but the entry provides 1.73s",
+      "line": 37,
+      "entry": 10
+    },
+    {
+      "severity": "warning",
+      "code": "dialogue-timing",
+      "message": "Estimated speech is 1.85s but the entry provides 1.73s",
+      "line": 41,
+      "entry": 11
+    },
+    {
+      "severity": "warning",
+      "code": "dialogue-timing",
+      "message": "Estimated speech is 1.60s but the entry provides 1.73s",
+      "line": 45,
+      "entry": 12
+    },
+    {
+      "severity": "warning",
+      "code": "dialogue-timing",
+      "message": "Estimated speech is 1.95s but the entry provides 1.73s",
+      "line": 49,
+      "entry": 13
+    }
+  ],
+  "timingEvidence": "Decoded dialogue durations in timing.json supersede speech-rate estimates"
+}
