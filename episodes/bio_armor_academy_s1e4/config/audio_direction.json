@@ -4,7 +4,7 @@
   "sources": [
     {
       "path": "script.story",
-      "sha256": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4"
+      "sha256": "7d0e3fa85eef606205483b0093c74a85b8b02f16b0096dd37d81477751a47213"
     }
   ],
   "policies": {
@@ -98,7 +98,7 @@
       "intent": "让他坦白展示受伤的手",
       "subtext": "已经注意到你的遮掩",
       "delivery": {
-        "tone": "happy",
+        "tone": "casual_request",
         "nativeEmotion": null,
         "nativeEmotionScale": null,
         "energy": 0.38,
@@ -112,7 +112,7 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。看穿他藏手的小动作，亲近地提醒；藏着那只，轻轻点破，有一点笑意。只说台词。"
+          "同学一边求助一边把手藏着，你已经看到了，随口让他把那只手伸出来，亲近自然。"
         ],
         "nativeSpeechRate": 0
       }
@@ -174,7 +174,7 @@
       "intent": "用具体事实接住玩笑",
       "subtext": "可以放松一点",
       "delivery": {
-        "tone": "happy",
+        "tone": "dry_teasing",
         "nativeEmotion": null,
         "nativeEmotionScale": null,
         "energy": 0.38,
@@ -188,7 +188,7 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。一本正经地接他的玩笑。装叶子的，淡定；你这么大，放不下，忍住笑轻轻补刀，不嘲讽。只说台词。"
+          "同学刚开玩笑怕你把他泡进标本罐，你顺着他的玩笑随口回一句，说到放不下时自己有一点想笑。"
         ],
         "nativeSpeechRate": 0
       }
@@ -250,7 +250,7 @@
       "intent": "发现危险及时提醒",
       "subtext": "不要再强迫身体",
       "delivery": {
-        "tone": "surprised",
+        "tone": "concerned",
         "nativeEmotion": null,
         "nativeEmotionScale": null,
         "energy": 0.55,
@@ -264,7 +264,7 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。关心地及时提醒他松手，短而明确，不惊慌。只说台词。"
+          "你看见同学正使劲攥紧受伤的手，马上轻声提醒他松开，注意力在他的手上。"
         ],
         "nativeSpeechRate": 0
       }
@@ -326,7 +326,7 @@
       "intent": "叫停并指出代价",
       "subtext": "这回必须听我的",
       "delivery": {
-        "tone": "angry",
+        "tone": "firm_concern",
         "nativeEmotion": null,
         "nativeEmotionScale": null,
         "energy": 0.55,
@@ -340,7 +340,7 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。先清楚说停，再认真观察。语气坚定但不凶，仍在关心这个男生。只说台词。"
+          "你发现他手上的印子变长了，先短促叫停，看清楚后把自己的发现告诉他。"
         ],
         "nativeSpeechRate": 0
       }
@@ -402,7 +402,7 @@
       "intent": "诚实交代能力边界",
       "subtext": "不会骗你说能治好",
       "delivery": {
-        "tone": "sad",
+        "tone": "honest_concern",
         "nativeEmotion": null,
         "nativeEmotionScale": null,
         "energy": 0.38,
@@ -416,7 +416,7 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。诚实告诉他现在的限制，真诚平实，有陪他想办法的意愿，不阴沉不煽情。只说台词。"
+          "面前的同学担心自己会一直这样。你刚仔细看过他的手，无奈地告诉他实情，轻声对他说，说完还在想着能帮他的办法。"
         ],
         "nativeSpeechRate": 0
       }
@@ -478,7 +478,7 @@
       "intent": "让他参与日常工作",
       "subtext": "你是能帮忙的同学",
       "delivery": {
-        "tone": "happy",
+        "tone": "casual_invitation",
         "nativeEmotion": null,
         "nativeEmotionScale": null,
         "energy": 0.38,
@@ -492,7 +492,7 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。换个轻松话题，请他帮忙，像自然邀请他加入自己的生活，明亮亲近。只说台词。"
+          "刚才的事让他有点低落，你顺手请他帮忙拿叶子，让他留下来一起做点事，像平常聊天。"
         ],
         "nativeSpeechRate": 0
       }
@@ -554,7 +554,7 @@
       "intent": "给出具体约定",
       "subtext": "愿意继续陪你观察",
       "delivery": {
-        "tone": "happy",
+        "tone": "warm_invitation",
         "nativeEmotion": null,
         "nativeEmotionScale": null,
         "energy": 0.38,
@@ -568,7 +568,7 @@
         "pauseAfterMs": 0,
         "breath": "natural",
         "nativeContextTexts": [
-          "青春校园恋爱喜剧现场对白，清爽自然的女高中生，温柔机灵、含着笑意，和喜欢的男生近距离聊天，不播报、不嗲、不夸张喊叫。你不用，温柔接住他的玩笑；明天放学，自己来，带笑意主动约他再见，尾音轻快、稍害羞。只说台词。"
+          "同学问自己是不是也要贴标签，你接住他的玩笑，顺口约他明天放学再来，其实希望明天还能见到他。"
         ],
         "nativeSpeechRate": 0
       }
@@ -611,35 +611,19 @@
   ],
   "music": [
     {
-      "id": "tomorrows_meeting",
+      "id": "after_class_tomorrow",
       "provider": "Suno",
-      "asset": "assets3d/music/romcom_suno_episode.wav",
-      "sourceMetadata": "assets3d/music/romcom_suno_episode.source.json",
+      "asset": "assets3d/music/romance_suno_episode.wav",
+      "sourceMetadata": "assets3d/music/romance_suno_episode.source.json",
       "startTime": 0,
       "endTime": 82,
-      "targetRmsDb": -27,
-      "dialogueDuck": 0.45,
-      "prompt": "Instrumental romantic comedy anime underscore, 104 BPM, D major with warm added-sixth chords. Playful four-note piano question answered by clarinet and pizzicato strings, soft acoustic guitar and upright bass, tiny bell accents. Opening twenty seconds curious and buoyant, two shy classmates teasing each other after school. Middle thins into a brief minor-key surprise and short suspended pauses; ending returns to the warm motif with a gentle lift, anticipation of meeting tomorrow, soft complete cadence. Lively, intimate, expressive dynamics, melodic call-and-response with generous rests for dialogue. No vocals, humming, whispering, drums, shakers, vinyl hiss, environmental noise or sound effects. Avoid sad ambient pads, ominous drones, battle music or epic climax. Clean dry chamber ensemble, approximately ninety seconds.",
-      "reason": "轻快问答动机；罐子笑话后留反应，承认蚀纹无法消失时留白，结尾回到明天见的期待。",
+      "targetRmsDb": -28,
+      "dialogueDuck": 0.5,
+      "prompt": "Instrumental soundtrack for a tender youthful romance, 92 BPM, warm major-seventh and added-ninth harmony. Intimate acoustic piano carries a flowing, understated melody in long connected phrases, supported by soft fingerpicked nylon guitar, a rounded electric bass pulse and a small sustained string layer. Two classmates quietly growing closer after school: easy warmth, shy attraction, gentle forward motion and the hopeful feeling of seeing each other tomorrow. Opening establishes the melody simply; middle becomes more intimate and harmonically uncertain; ending warmly resolves with a small melodic lift and a complete soft cadence. Spacious modern acoustic arrangement under spoken dialogue, expressive but unhurried, approximately ninety seconds. Pure instrumental, clean recording. No vocals, humming, comedy stings, pizzicato, clarinet, ragtime, oom-pah, novelty sounds, shakers or ambient hiss.",
+      "reason": "连贯的钢琴与木吉他承托两人的亲近，笑点由对白和眼神完成；困难答复留白，约定明天时回到温暖旋律。",
       "envelope": [
         [
           0,
-          1
-        ],
-        [
-          17.5,
-          1
-        ],
-        [
-          18.4,
-          0.38
-        ],
-        [
-          20.2,
-          0.38
-        ],
-        [
-          21.4,
           1
         ],
         [
@@ -659,7 +643,7 @@
           1
         ],
         [
-          79,
+          79.5,
           1
         ],
         [

@@ -8,12 +8,12 @@
 
 3
 00:00:06,500 --> 00:00:11,500
-{Event:HideMark}{Camera:Static|position=-1.35,1.56,2.7|lookAt=-0.68,1.34,0|fov=31}
+{Event:HideMark}{Camera:Static|position=0.45,1.64,1.75|lookAt=-0.66,1.46,0|fov=22}
 [LeiXiao]这道印子……你能让它消失吗？
 
 4
 00:00:11,700 --> 00:00:14,800
-{Event:ShowLeft}{Camera:Static|position=1.45,1.54,2.65|lookAt=0.66,1.35,0|fov=31}
+{Event:ShowLeft}{Camera:Static|position=-0.45,1.56,1.80|lookAt=0.58,1.40,0|fov=22}
 [QianTangKui]先给我看。藏着那只。
 
 5
@@ -23,7 +23,7 @@
 
 6
 00:00:20,200 --> 00:00:24,300
-{Camera:Static|position=1.45,1.54,2.65|lookAt=0.66,1.35,0|fov=31}
+{Camera:Static|position=-0.45,1.56,1.80|lookAt=0.58,1.40,0|fov=22}
 [QianTangKui]装叶子的。你这么大，放不下。
 
 7
@@ -38,7 +38,7 @@
 
 9
 00:00:32,000 --> 00:00:35,800
-{Event:ForceRetract}{Camera:Static|position=-1.18,1.6,2.7|lookAt=-0.7,1.35,0|fov=29}
+{Event:ForceRetract}{Camera:Static|position=0.35,1.63,1.85|lookAt=-0.67,1.44,0|fov=23}
 [LeiXiao]就一下——怎么还长了？
 
 10
@@ -48,7 +48,7 @@
 
 11
 00:00:41,200 --> 00:00:44,500
-{Camera:Static|position=-1.15,1.56,2.5|lookAt=-0.7,1.39,0|fov=28}
+{Camera:Static|position=0.40,1.64,1.75|lookAt=-0.67,1.47,0|fov=22}
 [LeiXiao]那我一直这样？
 
 12
@@ -57,12 +57,12 @@
 
 13
 00:00:48,000 --> 00:00:53,500
-{Camera:Static|position=1.4,1.52,2.5|lookAt=0.58,1.34,0|fov=30}
+{Camera:Static|position=-0.45,1.57,1.80|lookAt=0.50,1.40,0.09|fov=22}
 [QianTangKui]这叫蚀。我现在没办法让它消失。
 
 14
 00:00:53,700 --> 00:00:58,000
-{Event:UnclenchAndShowMark}{Camera:Static|position=-1.15,1.56,2.5|lookAt=-0.7,1.33,0|fov=30}
+{Event:UnclenchAndShowMark}{Camera:Static|position=0.40,1.62,1.85|lookAt=-0.67,1.40,0|fov=24}
 [LeiXiao]……那明天再看。今天不试了。
 
 15
@@ -72,12 +72,12 @@
 
 16
 00:01:04,200 --> 00:01:09,200
-{Event:TakeJarWithMarkedHand}{Camera:Static|position=-1.28,1.51,2.35|lookAt=-0.35,1.32,0.18|fov=32}
+{Event:TakeJarWithMarkedHand}{Camera:Static|position=0.85,1.62,2.15|lookAt=-0.14,1.34,0.12|fov=27}
 [LeiXiao]我也得……贴个标签？
 
 17
 00:01:09,400 --> 00:01:14,400
-{Event:Reassure}{Camera:Static|position=1.3,1.52,2.55|lookAt=0.58,1.36,0|fov=30}
+{Event:Reassure}{Camera:Static|position=-0.40,1.58,1.75|lookAt=0.64,1.40,0.02|fov=23}
 [QianTangKui]你不用。明天放学，自己来。
 
 18

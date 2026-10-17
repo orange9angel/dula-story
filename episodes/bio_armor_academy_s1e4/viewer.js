@@ -12,7 +12,7 @@ import {applyTripoDrawnLook} from 'dula-assets/characters/bioarmor/tripo-drawn-l
 import {addLeiGraphicHair} from 'dula-assets/characters/bioarmor/lei-graphic-hair.js';
 import {addAoiGeneratedHair} from 'dula-assets/characters/bioarmor/aoi-generated-paint.js';
 import {BiologyRoomScene} from './scenes/BiologyRoomRemakeScene.js';
-import {posesAt} from './performance_remake.js';
+import {posesAt,attentionAt} from './performance_remake.js';
 import {preparePerformer,applyTripoPose,settleImportedWrists,placeImportedNotebook,settleImportedJarGrip} from './performance_tripo.js';
 import {createImportedProbe} from './tools/imported_probe.js';
 const W=1280,H=720,q=new URLSearchParams(location.search),numeric=q.has('probe-surface'),resolution=q.has('hd')?1.5:1;
@@ -147,15 +147,45 @@ function draw(t,capture=true){
   stage.notebook.rotation.set(.08,-.20,.04);
   if(actors.aoi.motionFix)placeImportedNotebook(actors.aoi,stage.notebook);
   applyMark(p.mark);const markVertices=null;
-  for(const [key,a] of Object.entries(actors)){
-    const targets={mark:actors.lei.bones.leftforearm.getWorldPosition(new THREE.Vector3()),
-      jar:stage.jar.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0,.2,0)),
-      partner:actors[key==='lei'?'aoi':'lei'].face.head.getWorldPosition(new THREE.Vector3())};
-    const target=new THREE.Vector3();
-    for(const [name,weight] of Object.entries(p[key].gazeWeights??{[p[key].gaze]:1}))target.addScaledVector(targets[name],weight);
+  // Preserve the same onset as the eyes plus 140ms; give head turns 650ms to
+  // settle so a nearby jar does not accelerate the angular path at the end.
+  const attention={},headWeights=attentionAt(Math.max(0,t-.41),TL,.65);
+  const eyeAt=a=>{
     const delta=a.bones.head.getWorldQuaternion(new THREE.Quaternion()).multiply(a.neutralQuaternion.head.clone().invert());
-    const local=target.clone().sub(a.bones.head.getWorldPosition(new THREE.Vector3())).applyQuaternion(delta.invert());
-    const gaze=[THREE.MathUtils.clamp(Math.atan2(local.x,Math.max(.1,local.z))/.65,-1,1),THREE.MathUtils.clamp(Math.atan2(local.y,Math.hypot(local.x,local.z))/.40,-1,1)];
+    return new THREE.Vector3(a.id==='lei'?-.012:0,a.id==='lei'?1.597:1.473,.095)
+      .sub(a.neutral.head).applyQuaternion(delta).add(a.bones.head.getWorldPosition(new THREE.Vector3()));
+  };
+  const targetFor=(key,weights)=>{
+    const targets={mark:actors.lei.bones.leftforearm.getWorldPosition(new THREE.Vector3()).lerp(actors.lei.bones.lefthand.getWorldPosition(new THREE.Vector3()),.62),
+      jar:stage.jar.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0,.2,0)),
+      partner:eyeAt(actors[key==='lei'?'aoi':'lei'])};
+    const target=new THREE.Vector3();
+    for(const [name,weight] of Object.entries(weights))target.addScaledVector(targets[name],weight);
+    return target;
+  };
+  // Resolve in a shared pass so actor iteration order cannot affect eye contact.
+  for(let pass=0;pass<2;pass++){
+    const aims=Object.fromEntries(Object.keys(actors).map(key=>[key,targetFor(key,headWeights[key])]));
+    for(const [key,a] of Object.entries(actors)){
+      const base=a.bones.neck.getWorldQuaternion(new THREE.Quaternion()).multiply(a.neutralQuaternion.neck.clone().invert());
+      const local=aims[key].clone().sub(eyeAt(a)).applyQuaternion(base.clone().invert());
+      // Reserve a small, continuous eye contribution. A sign() offset jumps
+      // by 0.26 radians when the target crosses straight ahead.
+      const yaw=Math.atan2(local.x,local.z),headYaw=THREE.MathUtils.clamp(yaw-.13*Math.tanh(yaw/.3),-1.18,1.18);
+      const pitch=THREE.MathUtils.clamp(-Math.atan2(local.y,Math.hypot(local.x,local.z)),-.35,.52)+p[key].attentionNod;
+      const rotation=new THREE.Quaternion().setFromEuler(new THREE.Euler(pitch,headYaw,p[key].headRoll*.5,'YXZ'));
+      a.setWorldQuaternion(a.bones.head,base.multiply(rotation).multiply(a.neutralQuaternion.head));
+      p[key].resolvedHead=[pitch,headYaw,p[key].headRoll*.5];
+    }
+  }
+  for(const [key,a] of Object.entries(actors)){
+    const origin=eyeAt(a),target=targetFor(key,p[key].gazeWeights);
+    const delta=a.bones.head.getWorldQuaternion(new THREE.Quaternion()).multiply(a.neutralQuaternion.head.clone().invert());
+    const local=target.clone().sub(origin).applyQuaternion(delta.clone().invert());
+    const yaw=Math.atan2(local.x,local.z),pitch=Math.atan2(local.y,Math.hypot(local.x,local.z));
+    const gaze=[THREE.MathUtils.clamp(yaw/.36,-1,1),THREE.MathUtils.clamp(pitch/.30,-1,1)];
+    attention[key]={target:p[key].gaze,weights:p[key].gazeWeights,origin:origin.toArray(),point:target.toArray(),
+      head: p[key].resolvedHead,remainingAngleDeg:Math.hypot(yaw,pitch)*180/Math.PI,gaze};
     a.face.apply({...p[key].acting,...mouthAt(t,key),blink:p[key].blink,gaze});
     a.face.updateGeometry?.();
   }
@@ -164,7 +194,7 @@ function draw(t,capture=true){
   if(window.freeCamera){camera.position.set(...window.freeCamera.pos);camera.lookAt(...(window.freeCamera.lookAt??window.freeCamera.look));camera.fov=window.freeCamera.fov??36;}
   camera.updateProjectionMatrix();camera.updateMatrixWorld(true);scene.updateMatrixWorld(true);
   const state={entry:seg.entry,phase:seg.id,mark:p.mark,markVertices,acting:p.phase,cues,cloth,jarOwner:p.jarOwner,jarPosition:stage.jar.position.toArray(),
-    performance:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,{head:[p[key].headPitch,p[key].headYaw,p[key].headRoll],
+    attention,performance:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,{head:p[key].resolvedHead,
       torso:p[key].torso,root:[p[key].rootX,p[key].rootZ,p[key].yaw],gestures:p[key].gestures,gaze:p[key].gaze}])),
     arms:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,[p[key].leftArm,p[key].rightArm]])),
     ik,tableCorrection,gripCorrection,hair:{aoi:hairMotion,vertices:aoiHair.selectedVertices,maxBindDisplacement:aoiHair.maxDisplacement},faces:Object.fromEntries(Object.entries(actors).map(([key,a])=>[key,{...a.face.state}])),...(importedProbe?importedProbe(p,camera):{})};

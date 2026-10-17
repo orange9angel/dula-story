@@ -1,18 +1,18 @@
 {
   "args": [
     "--out",
-    "romcom_candidate.mp4",
+    "natural_candidate.mp4",
     "--board",
-    "tmp/romcom_revision/final",
+    "tmp/natural_audio/final",
     "--trace",
-    "tmp/romcom_revision/final/trace.json"
+    "tmp/natural_audio/final/trace.json"
   ],
-  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\romcom_candidate.mp4",
+  "output": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\natural_candidate.mp4",
   "build": {
     "inputs": [
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\script.story",
-        "sha256": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4"
+        "sha256": "7d0e3fa85eef606205483b0093c74a85b8b02f16b0096dd37d81477751a47213"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\bootstrap.js",
@@ -20,7 +20,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.js",
-        "sha256": "c789419bff92366cd57032f7f32ae62b6801fedfd9dc8eccc352c045dc6fc005"
+        "sha256": "cfae6911925b49cc23beaa1036f1d4af1b071f3606f8c16415f08da3a0db8b2c"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\viewer.html",
@@ -40,7 +40,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_remake.js",
-        "sha256": "4bafb29ccae61cd5119dcb7614cab38a18ae1de475c24823e66057c1ba9ece5a"
+        "sha256": "8ffbabb6e8e79864be25113c91ec1d221cd1814969ac54ace0d343819550c124"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\performance_tripo.js",
@@ -72,7 +72,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\audit_inputs.mjs",
-        "sha256": "dba1d9f429aa2506529bf2940308cffa375c5f8b7650e312d0413b56bfadea90"
+        "sha256": "e5386f88c8963ee2c6eb9d1479bebf2833d4d0aa9c0936d00881c2d5450735df"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\compile_story.mjs",
@@ -84,7 +84,7 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\timeline.json",
-        "sha256": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8"
+        "sha256": "e4b4219be03f77f0f7895185cd54ba6e6a188744e2e78c9909a720fb4f49421a"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\cards.json",
@@ -108,11 +108,11 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_direction.json",
-        "sha256": "de9a50e2ca3f2f3ca2d112ab8e4bfd0608e9107d8e9875a1542254c13b165877"
+        "sha256": "f6a56e2048a1c06e0d4a4bd1cadc9793b3190eb5d1cb19493ff262e801304ab9"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\audio_timing.json",
-        "sha256": "c1d36b6b0bfb500a5b88808f6e2430ead9bf38af90edac7c78968d8151d67181"
+        "sha256": "ed55d0b54eccbd836720167e07f8b855f5572639c1af56d12ffa1f7fd05c213a"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_audio.py",
@@ -144,19 +144,19 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\viseme_qiantangkui.json",
-        "sha256": "8074876803567b0de0b222552112baeed0750b096ce442941dd367fec17018c6"
+        "sha256": "bb8f65409bc9bf0ffcca645a6c77850c840443141feac9e10ee9de62ab31edd2"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\dialogue_alignment.json",
-        "sha256": "8a2b6183248588101038607b9cfe5f02321ffca4808b30c428536cc7d6f98a31"
+        "sha256": "602cd0c0f6a153d30dc68cec0317d3029d9b841c96ba63997f8ab6bc3eab4e26"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\sound_cues.json",
-        "sha256": "e2a1d65cfb12f434faf3c814396dfbc509e0cf5e72a41d6032239707af8ec6d5"
+        "sha256": "e0f4a11ec985e9c1a0d88f23b3994db1a2b45d5e2794c6b52d8e8b0d40db1cc1"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\foley_anchors.json",
-        "sha256": "4aa273d3edb0c3efb28d59124e4a860b01a6d2c2fc9ae6472b6c97a24b424780"
+        "sha256": "66f36b95edae30b88dee068359b7cb1067e1f8418d2a44ae49bb74491c7a336d"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tools\\build_foley_anchors.mjs",
@@ -176,19 +176,23 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\voice_config.json",
-        "sha256": "ca4229249a46ed29897451ec9fb50ca3e7cc47986024cdea9ed63f29c52ae55b"
+        "sha256": "1e1b67b79dde21b5bb4c1cee6852b9fb2201c2e8268c6dad2a2d1e3d3408db8e"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\romcom_suno_receipt.json",
         "sha256": "5f74a50a95fc75ea10adac2f5a65fae43b08e85e67224e018736a2e3b9fa1cac"
       },
       {
-        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\music\\romcom_suno_episode.wav",
-        "sha256": "74566e1ddf79f344229f374032f94c8efeb94fe08502ed6d83e9974f8873748d"
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\romance_suno_receipt.json",
+        "sha256": "0865059763642434ec1740edb10615510751b1142495759314aebab7dc7fb8a8"
       },
       {
-        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\music\\romcom_suno_episode.source.json",
-        "sha256": "6ed270466f77d5e58c0c8326f7506189601b4e25f817257157a4295817310bd5"
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\music\\romance_suno_episode.wav",
+        "sha256": "7e6e60c7f43619bdaeb40b979503a9c803cb27a2a7bcbe422d06beed060234d7"
+      },
+      {
+        "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\music\\romance_suno_episode.source.json",
+        "sha256": "b69ef472bf21590daff3a38b0fa11b0ebcc1d68e6574d2f587f4395dd9e47d52"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\cards\\open_background.png",
@@ -1044,11 +1048,11 @@
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\config\\voice_features.json",
-        "sha256": "b537450ef484618db25a3d7659556c2a8853fe481badff2d37a427374ce016aa"
+        "sha256": "ebba4c1ca86057d3afd6e1d100120a6bc6218774b8c1c6e081b28c3953a47283"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\mixed.wav",
-        "sha256": "459c01b60a810ddc1d0dd50dfb8d402090791391b9e32b261a958158f948b744"
+        "sha256": "2a5454d43378b4180bc053fd7419d6df74edfddb8e69e23241a83ec27beec4b0"
       },
       {
         "path": "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\assets3d\\tripo_lei_trial\\lei_h31_lod160k_v2.glb",
@@ -1116,14 +1120,14 @@
     ]
   },
   "sourceSha256": {
-    "script.story": "82769c08ec487febca9f8c83da2b9d403161710c091390154b6d430834dd3ec4",
+    "script.story": "7d0e3fa85eef606205483b0093c74a85b8b02f16b0096dd37d81477751a47213",
     "bootstrap.js": "ddd4f3ef17639bdf1cd91806459db4e925327aded6b74c64afd7750843144357",
-    "viewer.js": "c789419bff92366cd57032f7f32ae62b6801fedfd9dc8eccc352c045dc6fc005",
+    "viewer.js": "cfae6911925b49cc23beaa1036f1d4af1b071f3606f8c16415f08da3a0db8b2c",
     "viewer.html": "f91b7fabd84965d9b9e37fc85acabff022506e9a912ba436e001be92306df225",
     "render.mjs": "939d75ff0dfca295588c0e7a82e73301a08f8b90e99866c5eeebb181113da529",
     "face_lab.js": "e421050f31283c567bc18b7adeade5bf0cc39ad58d2ea5258def669be338c2eb",
     "face_lab.html": "2266741c33c368601cd9b5b5db3abafca9f237e29b016885cddd58caac17ff03",
-    "performance_remake.js": "4bafb29ccae61cd5119dcb7614cab38a18ae1de475c24823e66057c1ba9ece5a",
+    "performance_remake.js": "8ffbabb6e8e79864be25113c91ec1d221cd1814969ac54ace0d343819550c124",
     "performance_tripo.js": "6c686e50fdd45e2225b4ed40e915c0c84617625f70dab8c0879dca29e3dffbb8",
     "tools/imported_probe.js": "f265ad5bef387f778441b157ead7baf568891da35fe621d9dd28a0e612763a16",
     "tools/check_imported_contact.py": "31d2e47f07ab0acec64e383b0b00e2489bcdb9089f63d76c5d4960df4a510c41",
@@ -1131,17 +1135,17 @@
     "config/episode_motion_review.json": "89c43d3bceee0ce02a6ead1233cbdea5b635a55c322a154e16eee78861a57a42",
     "config/imported_contact_contract.json": "f9fbf2fc356202c72588574fdc3fe27927873bde98c4ab73ead494082ca0d2e7",
     "scenes/BiologyRoomRemakeScene.js": "e91882c5e128e2cc6d10bf68b4a65f068fd4f917ff051b742c5c4b5e58a4346c",
-    "tools/audit_inputs.mjs": "dba1d9f429aa2506529bf2940308cffa375c5f8b7650e312d0413b56bfadea90",
+    "tools/audit_inputs.mjs": "e5386f88c8963ee2c6eb9d1479bebf2833d4d0aa9c0936d00881c2d5450735df",
     "tools/compile_story.mjs": "70f15d3212b39f42a538b3fbaa5bc5f6840bb99d844976f3aef87b58c1667ac9",
     "tools/numeric_probe.js": "9717d3dad23c0dc7f14fee9d4e85997463e1f672dc04e177aea5fe0656123a36",
-    "config/timeline.json": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8",
+    "config/timeline.json": "e4b4219be03f77f0f7895185cd54ba6e6a188744e2e78c9909a720fb4f49421a",
     "config/cards.json": "8bdc9c2e6a7224a242fec9c79dc47291409db5267d5928dc27dca6b2fdf4b5c0",
     "tools/build_series_cards.py": "49ba0a319fd520d194221dc725f76bcfdbc88aa4c3c82918d586d5190a1f8a1d",
     "tools/capture_card_backgrounds.mjs": "3331a0fac3059484d4b8b1b858609e281aafc30722560e59e40e542f62d9ab34",
     "config/contact_contract.json": "19760091de6c05fd7a7c7732d762e1e0576a552951bd0ef5898aa8cad5afa921",
     "config/scene_contract.json": "ffbee245d40c81db0ea686a48a13d57640bd97a9e499d9db80d1f3ffc2f9e660",
-    "config/audio_direction.json": "de9a50e2ca3f2f3ca2d112ab8e4bfd0608e9107d8e9875a1542254c13b165877",
-    "config/audio_timing.json": "c1d36b6b0bfb500a5b88808f6e2430ead9bf38af90edac7c78968d8151d67181",
+    "config/audio_direction.json": "f6a56e2048a1c06e0d4a4bd1cadc9793b3190eb5d1cb19493ff262e801304ab9",
+    "config/audio_timing.json": "ed55d0b54eccbd836720167e07f8b855f5572639c1af56d12ffa1f7fd05c213a",
     "tools/build_audio.py": "7947875ebcf4f048257f29b286620deb8f84c728dd8c31982e8e346027425283",
     "tools/check_audio_sync.py": "5e5264e33503f268072d7a41bf0dcfd8b67063c8e559f5dcba8024f07233f7b9",
     "tools/check_contact.py": "2e03f48b637c03ec24a718b136c6409ea9c285e8d1d720dca8a788cef6e7b5f9",
@@ -1149,10 +1153,10 @@
     "tools/prepare_ambience.py": "621c8a112d9d64b0253d0d322b7350e09460bccbe4007c84a56255503a85c82e",
     "tools/build_visemes.py": "143417c5eaa4aa58189a65fb620f84ed5c0d27b674f57a56002d07a4aa7ebe30",
     "config/viseme_leixiao.json": "bb3034c2c25cfbc07701c32d0472d45c55f68f93a1a0ad5bc05b2a1a702b645e",
-    "config/viseme_qiantangkui.json": "8074876803567b0de0b222552112baeed0750b096ce442941dd367fec17018c6",
-    "config/dialogue_alignment.json": "8a2b6183248588101038607b9cfe5f02321ffca4808b30c428536cc7d6f98a31",
-    "config/sound_cues.json": "e2a1d65cfb12f434faf3c814396dfbc509e0cf5e72a41d6032239707af8ec6d5",
-    "config/foley_anchors.json": "4aa273d3edb0c3efb28d59124e4a860b01a6d2c2fc9ae6472b6c97a24b424780",
+    "config/viseme_qiantangkui.json": "bb8f65409bc9bf0ffcca645a6c77850c840443141feac9e10ee9de62ab31edd2",
+    "config/dialogue_alignment.json": "602cd0c0f6a153d30dc68cec0317d3029d9b841c96ba63997f8ab6bc3eab4e26",
+    "config/sound_cues.json": "e0f4a11ec985e9c1a0d88f23b3994db1a2b45d5e2794c6b52d8e8b0d40db1cc1",
+    "config/foley_anchors.json": "66f36b95edae30b88dee068359b7cb1067e1f8418d2a44ae49bb74491c7a336d",
     "tools/build_foley_anchors.mjs": "3cdcf30dea7bdceecdc71d4ecd1a74647f29c30f4a521c0cfb3b0b9485ba408d",
     "tools/configure_episode.py": "cd680a7c8d634286f601efeff77c53b54d3889427c4edca88bf6e2ff430b8b20",
     "tools/configure_contracts.py": "9146c1387995b475728740c8bca236e07357f8637fa75c31bc85693685b66e62",

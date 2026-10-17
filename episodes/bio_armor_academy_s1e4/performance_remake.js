@@ -8,6 +8,27 @@ const pulse=(t,s,r,h,f)=>ease((t-s)/r)*(1-ease((t-s-r-h)/f));
 const gait=createLocomotion({lift:.032,turnLift:.026,heelStrike:0,toeOff:0,hipDelta:.004,sway:.009});
 export const LIMITS={armLengths:[.19,.18],legLengths:[.4,.4],maxHeadTurn:.5,maxWristStep:.065};
 export const GRIP_OFFSET={lei:.133,aoi:.139};
+// Attention is a sequence of story decisions. Times are entry-relative arrivals;
+// the eyes shift first and the viewer samples this same score later for the head.
+export function attentionAt(t,tl,transition=.38){
+  const e=n=>tl.segments.find(s=>s.entry===n).start;
+  const scores={
+    lei:[[2,0,'jar'],[3,0,'partner'],[4,.8,'mark'],[5,0,'partner'],[5,2.5,'jar'],[5,3.3,'partner'],
+      [7,.2,'mark'],[10,3.8,'partner'],[12,0,'mark'],[13,-.6,'partner'],[14,.2,'mark'],[14,1.5,'partner'],
+      [15,1.1,'jar'],[16,1.7,'partner'],[17,0,'partner'],[18,0,'jar'],[18,1.6,'partner'],[18,3.2,'jar']],
+    aoi:[[2,0,'jar'],[3,-.25,'partner'],[4,.8,'mark'],[5,1.2,'partner'],[7,.3,'mark'],
+      [10,2.6,'partner'],[10,3.5,'mark'],[11,.2,'partner'],[12,.2,'mark'],[13,1.05,'partner'],
+      [15,.5,'jar'],[15,1.1,'partner'],[15,1.8,'jar'],[16,2.1,'partner'],[18,.15,'jar'],[18,1.9,'partner'],[18,3.4,'jar']]};
+  return Object.fromEntries(Object.entries(scores).map(([key,score])=>{
+    let previous=score[0][2],weights={partner:0,mark:0,jar:0};weights[previous]=1;
+    for(const [entry,offset,target] of score){
+      const at=e(entry)+offset;if(t<at-transition)break;
+      const u=ease((t-at+transition)/transition);weights={partner:0,mark:0,jar:0};weights[previous]+=1-u;weights[target]+=u;
+      if(t<at)break;previous=target;
+    }
+    return [key,weights];
+  }));
+}
 // A bounded acceleration profile with a long constant-speed middle.
 function travel(u){u=clamp(u);const a=.18;return u<a?u*u/(2*a*(1-a)):u>1-a?1-(1-u)**2/(2*a*(1-a)):(u-a/2)/(1-a);}
 function grounded(x,z,yaw){return {rootX:x,rootZ:z,yaw,
@@ -63,10 +84,12 @@ export function posesAt(t,cues,tl){
         rotation:[lei?.025+.045*inspect-.065*recoil-.02*release:.015+.035*stop+.025*aoiHold,0,lei?-.018-.025*joke+.03*decision:.018+.02*tease]},
       gaze:lei?(pleased>.1||answer>.1?'partner':inspect>.15||tryHard>.1?'mark':lift>.2?'jar':'partner'):
         (invitation>.1||aoiAmused>.1||tease>.1||labelReply>.1?'partner':show>.4&&t<e(11)?'mark':aoiHold>.2||t>e(18)?'jar':'partner')};
-    const attend=clamp(lei?Math.max(pleased,answer):Math.max(invitation,aoiAmused,tease,labelReply));
-    const markWeight=clamp(lei?Math.max(inspect,tryHard):show*(1-ease((t-e(11)+.35)/.7)))*(1-attend);
-    const jarWeight=clamp(lei?lift:Math.max(aoiHold,ease((t-e(18))/.6)))*(1-attend)*(1-markWeight);
-    p.gazeWeights={mark:markWeight,jar:jarWeight,partner:1-markWeight-jarWeight};
+    p.gazeWeights=attentionAt(t,tl)[key];
+    p.gaze=Object.entries(p.gazeWeights).sort((a,b)=>b[1]-a[1])[0][0];
+    // Small discrete acknowledgements, timed to the other person's answer.
+    const nod=lei?b(6,2.8,.18,.05,.36)+b(13,3.5,.24,.05,.42)+b(17,3.15,.22,.05,.4):b(3,3.5,.20,.04,.35);
+    p.attentionNod=.055*nod;
+    p.torso.rotation[1]=(lei?.075:-.075)*p.gazeWeights.partner*ease((t-e(3))/.6);
     const frame=torsoFrame(p.torso);
     for(const [side,s] of [['left',-1],['right',1]]){
       const sy=lei?1.375:1.295,sx=lei?.17:.156,shoulder=V(s*sx,sy,0);
@@ -115,12 +138,12 @@ export function posesAt(t,cues,tl){
     p.leftFist=p.gestures.left.fist;
     p.emotion='neutral';
     p.acting=lei?{fear:.12*tryHard+.5*recoil+.28*doubt,focus:.2*inspect,
-      smile:.18*hide+.75*joke+.42*caught+.66*answer+.72*pleased+.32*shared+.12*decision,
+      smile:.18*hide+.65*joke+.42*caught+.58*answer+.72*pleased+.32*shared+.20*decision,
       eyeSmile:.25*joke+.45*pleased+.18*shared,browLift:.15*hide+.4*caught+.35*recoil+.2*pleased,
       browAsym:.55*joke+.42*answer}:
-      {fear:.12*recoil,focus:.48*stop+.08*inspect,
+      {fear:.12*recoil+.10*listen,focus:.48*stop+.08*inspect,
       smile:.32*aoiAmused+.55*tease+.32*labelReply+.72*reassure+.35*shared,
-      eyeSmile:.2*tease+.35*reassure+.15*shared,browLift:.16*invitation,
+      eyeSmile:.2*tease+.35*reassure+.15*shared,browLift:.16*invitation+.12*listen,
       browAsym:.5*tease+.28*labelReply};
     const blinks=lei?[5.6,11.65,19.8,24.25,35.5,42.1,48.3,54.8,63.6,69.1,75.7]:[4.2,14.85,21.6,28.7,35.95,44.8,53.3,58.1,64.0,74.3,78.0];
     p.blink=Math.max(...blinks.map(at=>Math.max(0,1-Math.abs(t-at)/.12)));

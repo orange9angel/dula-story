@@ -1,7 +1,7 @@
 {
-  "status": "technical-checks-passed; artistic review pending user",
+  "status": "technical-checks-passed; user review pending",
   "video": "output/current.mp4",
-  "videoSha256": "61448700c033db5046080191a6ab9f9c9cdb6b92b2725a3095cac4323f7302a7",
+  "videoSha256": "1b4791b0c6d5384c0b99b619a4bae1a4affacfcb945f56a6152cd9ce7ebdcab0",
   "duration": 82,
   "frames": 2460,
   "probe": {
@@ -51,46 +51,55 @@
     ]
   },
   "rollback": {
-    "archive": "output/archive/before_romcom_revision.zip",
-    "videoSha256": "38f4d64520aeecf4747006fcd6c654d3b777a4732acd0cbb654aa1f83148ec5e"
+    "archive": "output/archive/before_natural_audio.zip",
+    "videoSha256": "61448700c033db5046080191a6ab9f9c9cdb6b92b2725a3095cac4323f7302a7"
   },
+  "preserved": [
+    "assets3d/LeiXiao_stem.wav",
+    "config/viseme_leixiao.json",
+    "assets3d/sfx_stem.wav",
+    "assets3d/ambience_stem.wav",
+    "config/cards.json",
+    "performance_tripo.js",
+    "assets3d/dialogue_r3/entry_3.mp3",
+    "assets3d/processed/entry_3.wav",
+    "assets3d/dialogue_r3/entry_5.mp3",
+    "assets3d/processed/entry_5.wav",
+    "assets3d/dialogue_r3/entry_7.mp3",
+    "assets3d/processed/entry_7.wav",
+    "assets3d/dialogue_r3/entry_9.mp3",
+    "assets3d/processed/entry_9.wav",
+    "assets3d/dialogue_r3/entry_11.mp3",
+    "assets3d/processed/entry_11.wav",
+    "assets3d/dialogue_r3/entry_14.mp3",
+    "assets3d/processed/entry_14.wav",
+    "assets3d/dialogue_r3/entry_16.mp3",
+    "assets3d/processed/entry_16.wav"
+  ],
+  "unchangedSharedAssetCount": 54,
+  "dialogueTextAndTimingUnchanged": true,
   "audio": {
-    "mixSha256": "459c01b60a810ddc1d0dd50dfb8d402090791391b9e32b261a958158f948b744",
-    "decodedAacToNewPcmCorrelation": 0.999567330763599,
-    "maleSpeaker": "zh_male_shaonianzixin_uranus_bigtts",
+    "mixSha256": "2a5454d43378b4180bc053fd7419d6df74edfddb8e69e23241a83ec27beec4b0",
+    "decodedAacToNewPcmCorrelation": 0.999801479496015,
     "dialogueLines": 14,
+    "femaleReperformedLines": 7,
+    "malePcmUnchanged": true,
     "roomBed": false,
     "footsteps": 0,
     "music": {
-      "id": "tomorrows_meeting",
+      "id": "after_class_tomorrow",
       "provider": "Suno",
-      "asset": "assets3d/music/romcom_suno_episode.wav",
-      "sourceMetadata": "assets3d/music/romcom_suno_episode.source.json",
+      "asset": "assets3d/music/romance_suno_episode.wav",
+      "sourceMetadata": "assets3d/music/romance_suno_episode.source.json",
       "startTime": 0,
       "endTime": 82,
-      "targetRmsDb": -27,
-      "dialogueDuck": 0.45,
-      "prompt": "Instrumental romantic comedy anime underscore, 104 BPM, D major with warm added-sixth chords. Playful four-note piano question answered by clarinet and pizzicato strings, soft acoustic guitar and upright bass, tiny bell accents. Opening twenty seconds curious and buoyant, two shy classmates teasing each other after school. Middle thins into a brief minor-key surprise and short suspended pauses; ending returns to the warm motif with a gentle lift, anticipation of meeting tomorrow, soft complete cadence. Lively, intimate, expressive dynamics, melodic call-and-response with generous rests for dialogue. No vocals, humming, whispering, drums, shakers, vinyl hiss, environmental noise or sound effects. Avoid sad ambient pads, ominous drones, battle music or epic climax. Clean dry chamber ensemble, approximately ninety seconds.",
-      "reason": "轻快问答动机；罐子笑话后留反应，承认蚀纹无法消失时留白，结尾回到明天见的期待。",
+      "targetRmsDb": -28,
+      "dialogueDuck": 0.5,
+      "prompt": "Instrumental soundtrack for a tender youthful romance, 92 BPM, warm major-seventh and added-ninth harmony. Intimate acoustic piano carries a flowing, understated melody in long connected phrases, supported by soft fingerpicked nylon guitar, a rounded electric bass pulse and a small sustained string layer. Two classmates quietly growing closer after school: easy warmth, shy attraction, gentle forward motion and the hopeful feeling of seeing each other tomorrow. Opening establishes the melody simply; middle becomes more intimate and harmonically uncertain; ending warmly resolves with a small melodic lift and a complete soft cadence. Spacious modern acoustic arrangement under spoken dialogue, expressive but unhurried, approximately ninety seconds. Pure instrumental, clean recording. No vocals, humming, comedy stings, pizzicato, clarinet, ragtime, oom-pah, novelty sounds, shakers or ambient hiss.",
+      "reason": "连贯的钢琴与木吉他承托两人的亲近，笑点由对白和眼神完成；困难答复留白，约定明天时回到温暖旋律。",
       "envelope": [
         [
           0,
-          1
-        ],
-        [
-          17.5,
-          1
-        ],
-        [
-          18.4,
-          0.38
-        ],
-        [
-          20.2,
-          0.38
-        ],
-        [
-          21.4,
           1
         ],
         [
@@ -110,7 +119,7 @@
           1
         ],
         [
-          79,
+          79.5,
           1
         ],
         [
@@ -123,32 +132,175 @@
       "provider": "Suno",
       "method": "suno-driver via kimi-webbridge existing user browser",
       "status": "downloaded",
-      "createdAt": "2026-10-16T18:04:59.841Z",
-      "batchId": "e7b1f9a2-2193-4a92-9f9d-309a455ba3f6",
+      "createdAt": "2026-10-17T02:04:00.193Z",
+      "batchId": "c04525fe-f22d-4041-9eb4-56b0619d797f",
       "songIds": [
-        "c18019b2-0128-46ca-96d6-cc61ce58ba60",
-        "17a1ce87-aca6-41c7-a990-0636c974bb0a"
+        "78370d5a-fab0-477e-b82c-9a16a97be979",
+        "383c5d00-b1ab-4c0d-8988-5429d9c7b275"
       ],
       "instrumental": true,
-      "prompt": "Instrumental romantic comedy anime underscore, 104 BPM, D major with warm added-sixth chords. Playful four-note piano question answered by clarinet and pizzicato strings, soft acoustic guitar and upright bass, tiny bell accents. Opening twenty seconds curious and buoyant, two shy classmates teasing each other after school. Middle thins into a brief minor-key surprise and short suspended pauses; ending returns to the warm motif with a gentle lift, anticipation of meeting tomorrow, soft complete cadence. Lively, intimate, expressive dynamics, melodic call-and-response with generous rests for dialogue. No vocals, humming, whispering, drums, shakers, vinyl hiss, environmental noise or sound effects. Avoid sad ambient pads, ominous drones, battle music or epic climax. Clean dry chamber ensemble, approximately ninety seconds.",
-      "selectedSong": "c18019b2-0128-46ca-96d6-cc61ce58ba60",
-      "asset": "assets3d/music/romcom_suno.wav",
-      "sha256": "73e603e2aae3524a338d509d06deccd321826e36ebd03adc8c1274e0bb92b02d"
+      "prompt": "Instrumental soundtrack for a tender youthful romance, 92 BPM, warm major-seventh and added-ninth harmony. Intimate acoustic piano carries a flowing, understated melody in long connected phrases, supported by soft fingerpicked nylon guitar, a rounded electric bass pulse and a small sustained string layer. Two classmates quietly growing closer after school: easy warmth, shy attraction, gentle forward motion and the hopeful feeling of seeing each other tomorrow. Opening establishes the melody simply; middle becomes more intimate and harmonically uncertain; ending warmly resolves with a small melodic lift and a complete soft cadence. Spacious modern acoustic arrangement under spoken dialogue, expressive but unhurried, approximately ninety seconds. Pure instrumental, clean recording. No vocals, humming, comedy stings, pizzicato, clarinet, ragtime, oom-pah, novelty sounds, shakers or ambient hiss.",
+      "selectedSong": "78370d5a-fab0-477e-b82c-9a16a97be979",
+      "asset": "assets3d/music/romance_suno.wav",
+      "sha256": "a6690452ef7d7b2029352ad8704021c246040bd01344762ba7db13d52971919a"
     }
   },
-  "neutralPixelsChanged": {
-    "lei_0_neutral_pixels_changed": 0,
-    "lei_45_neutral_pixels_changed": 0,
-    "lei_70_neutral_pixels_changed": 0,
-    "aoi_0_neutral_pixels_changed": 0,
-    "aoi_45_neutral_pixels_changed": 0,
-    "aoi_70_neutral_pixels_changed": 0
+  "attentionSamples": [
+    {
+      "time": 8,
+      "lei": {
+        "headResidualDeg": 7.520758686005724,
+        "gaze": [
+          0.3646166687232408,
+          -4.107482692529382e-05
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 7.296215664562174,
+        "gaze": [
+          -0.3535658751278733,
+          0.01294949134457786
+        ]
+      }
+    },
+    {
+      "time": 17,
+      "lei": {
+        "headResidualDeg": 7.468032971603946,
+        "gaze": [
+          0.36199770981194457,
+          0.008088353582453741
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 7.376197806927069,
+        "gaze": [
+          -0.3572313244190469,
+          0.019695278172683035
+        ]
+      }
+    },
+    {
+      "time": 21.4,
+      "lei": {
+        "headResidualDeg": 7.476590272767246,
+        "gaze": [
+          0.3624688407942648,
+          -0.002601774068634455
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 7.321641479476036,
+        "gaze": [
+          -0.35415148932054274,
+          0.028789821802893002
+        ]
+      }
+    },
+    {
+      "time": 42.4,
+      "lei": {
+        "headResidualDeg": 7.394015573989303,
+        "gaze": [
+          0.3581297000588454,
+          -0.018793937348205704
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 11.934957301430329,
+        "gaze": [
+          -0.5780913644297204,
+          0.02975946750488464
+        ]
+      }
+    },
+    {
+      "time": 50.5,
+      "lei": {
+        "headResidualDeg": 7.413485867736564,
+        "gaze": [
+          0.35938703637388053,
+          -0.005469433573785933
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 12.023282609190543,
+        "gaze": [
+          -0.5824578698383122,
+          0.02739814402939202
+        ]
+      }
+    },
+    {
+      "time": 70.2,
+      "lei": {
+        "headResidualDeg": 8.028500153333011,
+        "gaze": [
+          0.3891894078981155,
+          -0.006963846907073402
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 6.666377901341157,
+        "gaze": [
+          -0.3230376601565552,
+          0.012104922890291633
+        ]
+      }
+    },
+    {
+      "time": 72.5,
+      "lei": {
+        "headResidualDeg": 7.7817023935111695,
+        "gaze": [
+          0.3768796230126123,
+          -0.020525801683633077
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 6.936313392293301,
+        "gaze": [
+          -0.33565609170769933,
+          0.024608681625827963
+        ]
+      }
+    },
+    {
+      "time": 76.5,
+      "lei": {
+        "headResidualDeg": 7.7870837993677355,
+        "gaze": [
+          0.3774928033168,
+          -0.006227731421923491
+        ]
+      },
+      "aoi": {
+        "headResidualDeg": 14.757403228634688,
+        "gaze": [
+          -0.6225481599426044,
+          0.42310085585203516
+        ]
+      }
+    }
+  ],
+  "headContinuity": {
+    "lei": {
+      "maxEulerDegreesPerSecond": 262.3312812892923,
+      "at": 27.867,
+      "limit": 400,
+      "scope": "Detect discontinuities in authored head rotation; not an anatomical guarantee"
+    },
+    "aoi": {
+      "maxEulerDegreesPerSecond": 287.7035876904356,
+      "at": 58.9,
+      "limit": 400,
+      "scope": "Detect discontinuities in authored head rotation; not an anatomical guarantee"
+    }
   },
   "motion": "sampled-motion-pass",
   "contact": "sampled-contact-pass",
   "seekPassed": true,
   "seekCount": 57,
-  "physicsSource": "tmp/romcom_revision/final_physics/trace.json",
   "picturePhysicsEquivalence": {
     "passed": true,
     "frames": 2460,
@@ -156,6 +308,6 @@
     "maxDelta": 0,
     "failures": []
   },
-  "visualReview": "16 isolated expression/angle frames compared; dialogue preview filmstrip and actual encoded keyframes inspected. No claim of watching the whole video at normal speed.",
-  "audioReview": "Complete new mix plus blind native-voice comparisons observed with an audio model; advisory only. Some model timing/ambience claims conflict with actual timeline/stems. No human listening or user acceptance claimed."
+  "visualReview": "Representative actual camera frames, ten-second interaction preview, final encoded 48-53.5s reply and 73.8-78.2s gaze-shift filmstrips, plus full encoded scene contact sheet inspected. No claim of normal-speed whole-video viewing.",
+  "audioReview": "Model observations of complete reply comparisons, score and final mix are advisory. User rejected the prior praised score; no human listening or artistic approval claimed."
 }

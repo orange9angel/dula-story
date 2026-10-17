@@ -1,8 +1,10 @@
 import fs from 'node:fs';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
 import {compareNumericState} from 'dula-engine/lib/NumericAudit.js';
-const root=new URL('../tmp/romcom_revision/',import.meta.url);
+const root=process.argv[2]?pathToFileURL(path.resolve(process.argv[2])+path.sep):new URL('../tmp/romcom_revision/',import.meta.url);
 const read=p=>JSON.parse(fs.readFileSync(new URL(p,root),'utf8'));
-const picture=read('final/trace.json'),physics=read('final_physics/trace.json');
+const picture=read('final/trace.json'),physics=read(`${process.argv[3]??'final_physics'}/trace.json`);
 if(picture.frames.length!==physics.frames.length)throw new Error('Frame coverage mismatch');
 const inputs=b=>JSON.stringify(b.inputs.map(x=>[x.path,x.sha256]).sort());
 if(inputs(picture.build)!==inputs(physics.build))throw new Error('Physics build is not the picture build');

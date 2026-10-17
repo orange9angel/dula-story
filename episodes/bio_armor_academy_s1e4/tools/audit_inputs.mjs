@@ -12,7 +12,7 @@ export const episodeSources=['script.story','bootstrap.js','viewer.js','viewer.h
   'tools/configure_episode.py','tools/configure_contracts.py','assets3d/textures/biology_wall_r3.png'];
 export function auditInputs(ep){
   const story=path.resolve(ep,'../..'),files=episodeSources.map(p=>path.join(ep,p));
-  for(const name of ['config/voice_config.json','config/romcom_suno_receipt.json'])
+  for(const name of ['config/voice_config.json','config/romcom_suno_receipt.json','config/romance_suno_receipt.json'])
     if(fs.existsSync(path.join(ep,name)))files.push(path.join(ep,name));
   const audio=JSON.parse(fs.readFileSync(path.join(ep,'config/audio_direction.json'),'utf8'));
   for(const cue of audio.music){
