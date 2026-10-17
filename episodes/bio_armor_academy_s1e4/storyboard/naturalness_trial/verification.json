@@ -1,13 +1,13 @@
 {
-  "status": "round-face candidate; user review pending",
-  "priorReviewArchive": "output/archive/before_round_face.zip",
-  "previousVideoSha256": "4a969b3d817f8aa2fd7344e9c2bee04113c424f6fcdb41bd1a3e6ef19478f57c",
-  "candidateSha256": "c7c5607013878800213db71a2b9c976fc349f25ff8c3af3580fd55fe7306625b",
-  "comparisonSha256": "6e86cb029e62698caefd577f152339a7ad7ab37e7dca3c44a0127b2aa81bf1b5",
+  "status": "head-proportion candidate; user review pending",
+  "priorReviewArchive": "output/archive/before_head_proportion.zip",
+  "previousVideoSha256": "c7c5607013878800213db71a2b9c976fc349f25ff8c3af3580fd55fe7306625b",
+  "candidateSha256": "1b6b20895d76746d69e4c2cc8e4e4b23ce5792ac5ef740096ad506986dfa8c12",
+  "comparisonSha256": "def01ed88a376a4ac9a3547bbc22c1cd3344e54516334e823eb491d9d1f7e989",
   "inputOverrides": {
     "/characters/bioarmor/tripo-drawn-look.js": {
-      "file": "tmp/round_face/tripo-balanced.js",
-      "sha256": "ad10d29d925b93d65ebca929703218ae11b83e9b22f65f627884af9c50ddba2e"
+      "file": "tmp/head_proportion/balanced.js",
+      "sha256": "d1667009324806729a329045caed8fe8a294cab05e3f84a418d69d423558173f"
     },
     "/lib/craft3d/illustrated-import.js": {
       "file": "tmp/natural_look/illustrated-import.js",
@@ -40,8 +40,7 @@
   },
   "checks": {
     "identical_encoded_audio": true,
-    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\natural_look\\tripo-drawn-look.js": true,
-    "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-head.js": true,
+    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\round_face\\tripo-balanced.js": true,
     "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\current.mp4": true,
     "scene_current_inputs": true,
     "scene_no_errors": true,
@@ -60,6 +59,17 @@
     "aoi_pitch": true,
     "aoi_turn_current_inputs": true,
     "aoi_turn": true
+  },
+  "earlierRasterSeekDifference": {
+    "differentPixels": 1,
+    "maxChannelDelta": 3,
+    "bbox": [
+      881,
+      285,
+      882,
+      286
+    ],
+    "stateEqual": true
   },
   "exchanges": [
     {

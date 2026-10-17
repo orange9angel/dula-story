@@ -4,6 +4,7 @@ import argparse,hashlib,json,shutil,subprocess,sys,zipfile
 from PIL import Image,ImageDraw,ImageFont
 EP=Path(__file__).resolve().parents[1];W=EP/'tmp/round_face';PREV=EP/'tmp/natural_look'
 PUBLIC=EP/'storyboard/naturalness_trial'
+PROPORTIONS=False
 read=lambda p:json.loads(p.read_text(encoding='utf-8'))
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 def save(p,obj):
@@ -13,8 +14,10 @@ def run(*args):subprocess.run([str(x) for x in args],cwd=EP,check=True)
 def boards():
     for actor in ['lei','aoi']:
         cfg=read(PREV/f'{actor}_parts.json')
-        cfg.update(before=f'tmp/round_face/before/{actor}/baseline',after=f'tmp/round_face/balanced/{actor}/baseline',
-            out=f'tmp/round_face/parts/{actor}',column_labels=['关系参考（并非精确投影）','上一轮已改善版本','本轮圆润候选'],
+        work=W.relative_to(EP).as_posix()
+        before=f'tmp/round_face/balanced/{actor}/baseline' if PROPORTIONS else f'{work}/before/{actor}/baseline'
+        cfg.update(before=before,after=f'{work}/balanced/{actor}/baseline',
+            out=f'{work}/parts/{actor}',column_labels=['关系参考（并非精确投影）','上一轮候选','本轮头部比例候选' if PROPORTIONS else '本轮圆润候选'],
             whole_frame_note='上一轮与本轮使用同机位和表情；头身转角相同，头部落位有小幅调整。',
             whole_frame_groups={'whole':['front','turn_45','turn_minus45','turn_65','turn_minus65','turn_90','turn_minus90'],
                 'shallow':['front','turn_15','turn_20','turn_25','turn_30','turn_35','turn_45']})
@@ -27,23 +30,43 @@ def boards():
             'reference':'tmp/yuki_comparison/yuki_112.png','reference_crop':[40,132,218,251],
             'model_crop':[250,370,650,690]})
         cfg['boards'][0]['title']=('男主' if actor=='lei' else '女主')+'：完整下脸比例、局部细节与连接'
+        if PROPORTIONS:
+            cfg['whole_frame_note']='同机位和表情；本轮静态调整头部纵深及上部高度，不改变下脸长度。'
+            cfg['boards'][0]['title']=('男主' if actor=='lei' else '女主')+'：眼颊耳颈与整头比例'
+            cfg['boards'][0]['rows'].insert(1,{
+                'frame':'turn_90' if actor=='lei' else 'turn_minus90',
+                'label':'眼眶—面颊—耳—颌颈（参考未标定）',
+                'reference':cfg['reference'],
+                'reference_crop':[580,575,785,790] if actor=='lei' else [40,170,240,345],
+                'model_crop':[330,390,700,750] if actor=='lei' else [220,350,620,700]})
         path=W/f'{actor}_parts.json';save(path,cfg)
         run(sys.executable,EP/'tools/build_oblique_feature_review.py','--comparison',path)
     font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',26)
     board=Image.new('RGB',(1200,1290),'#f1f0ea');draw=ImageDraw.Draw(board)
     for row,actor in enumerate(['lei','aoi']):
         for col,phase in enumerate(['before','balanced']):
-            im=Image.open(W/f'{phase}/{actor}/baseline/front.png').convert('RGB');im.thumbnail((600,600))
+            folder=EP/f'tmp/round_face/balanced/{actor}/baseline' if PROPORTIONS and phase=='before' else W/f'{phase}/{actor}/baseline'
+            frame=('turn_65' if actor=='lei' else 'turn_minus65') if PROPORTIONS else 'front'
+            im=Image.open(folder/(frame+'.png')).convert('RGB');im.thumbnail((600,600))
             x=col*600;y=row*645
-            label=('男主' if actor=='lei' else '女主')+(' · 上一轮' if col==0 else ' · 本轮圆润候选')
+            label=('男主' if actor=='lei' else '女主')+(' · 上一轮' if col==0 else ' · 本轮候选')
             draw.text((x+22,y+8),label,font=font,fill='#253629');board.paste(im,(x,y+45))
     board.save(W/'face_comparison.jpg',quality=94)
     board=Image.new('RGB',(1280,800),'#f1f0ea');draw=ImageDraw.Draw(board)
     for row,t in enumerate([41.3,65.4]):
-        for col,folder in enumerate([PREV/'scene_combined',W/'scene']):
+        for col,folder in enumerate([EP/'tmp/round_face/scene' if PROPORTIONS else PREV/'scene_combined',W/('scene_final' if PROPORTIONS else 'scene')]):
             im=Image.open(folder/f'scene_{t}.jpg').convert('RGB');im.thumbnail((640,360))
             x=640*col;y=400*row;draw.text((x+18,y+6),'上一轮' if col==0 else '本轮',font=font,fill='#253629');board.paste(im,(x,y+40))
     board.save(W/'scene_comparison.jpg',quality=94)
+    if PROPORTIONS:
+        board=Image.new('RGB',(700,660),'#f1f0ea');draw=ImageDraw.Draw(board)
+        for col,folder in enumerate([EP/'tmp/round_face/scene',W/'scene_final']):
+            im=Image.open(folder/'scene_16.2.jpg')
+            for row,(actor,box) in enumerate([('男主',(340,145,453,280)),('女主',(818,190,961,340))]):
+                tile=im.crop(box);tile=tile.resize((tile.width*2,tile.height*2))
+                board.paste(tile,(col*350+20,row*330+36))
+                draw.text((col*350+20,row*330+3),actor+(' · 上一轮' if col==0 else ' · 本轮'),font=font,fill='#253629')
+        board.save(W/'shot_comparison.jpg',quality=94)
     board=Image.new('RGB',(1500,1320),'#f1f0ea');draw=ImageDraw.Draw(board)
     for actor_index,actor in enumerate(['lei','aoi']):
         for pitch_index,pitch in enumerate([-15,15]):
@@ -57,7 +80,7 @@ def boards():
 def package():
     previous=read(PREV/'review.json');baseline=read(W/'baseline.json')
     # Freeze the old review entry before refreshing its familiar public filenames.
-    archive=EP/'output/archive/before_round_face.zip';archive.parent.mkdir(parents=True,exist_ok=True)
+    archive=EP/('output/archive/before_head_proportion.zip' if PROPORTIONS else 'output/archive/before_round_face.zip');archive.parent.mkdir(parents=True,exist_ok=True)
     old=W/'previous_candidate.mp4'
     if not archive.exists():
         assert sha(EP/'output/naturalness_candidate.mp4')==baseline['files'][str(EP/'output/naturalness_candidate.mp4')]
@@ -102,7 +125,7 @@ def package():
     for p,digest in baseline['files'].items():
         if p==str(EP/'output/naturalness_candidate.mp4'):continue
         checks[p]=sha(Path(p))==digest
-    scene=read(W/'scene/report.json')
+    scene=read(W/('scene_final/report.json' if PROPORTIONS else 'scene/report.json'))
     checks['scene_current_inputs']=current_inputs(scene)
     checks['scene_no_errors']=not scene['errors']
     checks['scene_reverse_equal']=all(s['seekEqual'] and s['stateEqual'] for s in scene['scene']['frames'].values())
@@ -120,26 +143,34 @@ def package():
         checks[actor+'_turn_current_inputs']=current_inputs(turn)
         checks[actor+'_turn']=not turn['errors'] and not turn['changedInputs']
     assert all(checks.values()),checks
+    # Retain the earlier failure even if the final frozen-source run is exact.
+    # No tolerance is substituted and a later pass does not prove its cause fixed.
+    seek_difference=read(W/'scene/pixel_seek_difference.json') if PROPORTIONS else None
     for p in [candidate,comparison]:run('ffmpeg','-v','error','-i',p,'-f','null','-')
     # Publish only to the isolated review entry, never output/current.mp4 or live modules.
     shutil.copy2(candidate,EP/'output/naturalness_candidate.mp4')
     shutil.copy2(comparison,EP/'output/naturalness_trial.mp4')
     shutil.copy2(W/'face_comparison.jpg',PUBLIC/'face_comparison.jpg')
     overrides=read(W/'scene_trial.json')
-    result={'status':'round-face candidate; user review pending','priorReviewArchive':archive.relative_to(EP).as_posix(),
+    result={'status':('head-proportion' if PROPORTIONS else 'round-face')+' candidate; user review pending','priorReviewArchive':archive.relative_to(EP).as_posix(),
         'previousVideoSha256':sha(old),'candidateSha256':sha(candidate),'comparisonSha256':sha(comparison),
         'inputOverrides':{suffix:{'file':f,'sha256':sha(EP/f)} for suffix,f in overrides.items()},
         'audioPcmSha256':{f'trial_{i}.wav':sha(PREV/f'trial_{i}.wav') for i in [1,2]},
-        'checks':checks,'exchanges':previous['exchanges'],
+        'checks':checks,'earlierRasterSeekDifference':seek_difference,'exchanges':previous['exchanges'],
         'limits':'Rendered sparse-frame visual review plus deterministic state checks; not user acceptance or a complete anatomy guarantee.'}
     save(W/'review.json',result);save(PUBLIC/'verification.json',result)
-    freeze=EP/'output/archive/round_face_sources.zip'
+    freeze=EP/('output/archive/head_proportion_sources.zip' if PROPORTIONS else 'output/archive/round_face_sources.zip')
     with zipfile.ZipFile(freeze,'w',zipfile.ZIP_DEFLATED) as z:
         for p in sorted(set([*W.glob('*.js'),*W.glob('*.json'),*(EP/f for f in overrides.values()),
-                EP/'tools/prepare_round_face_trial.mjs',EP/'tools/review_round_face_trial.py'])):
+                EP/'tools/prepare_round_face_trial.mjs',EP/'tools/review_round_face_trial.py',
+                *([EP/'tools/prepare_head_proportion_trial.mjs',*W.glob('user_*.png'),
+                   *W.glob('scene*/report.json'),*W.glob('scene/*seek*')] if PROPORTIONS else [])])):
             z.write(p,p.relative_to(EP).as_posix())
     print(json.dumps({'duration':sum(r['duration'] for r in previous['exchanges']),'checks':len(checks),'currentUnchanged':checks[str(EP/'output/current.mp4')]},ensure_ascii=False))
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('action',choices=['boards','package'])
-    globals()[parser.parse_args().action]()
+    parser.add_argument('--study',choices=['round-face','head-proportion'],default='round-face')
+    args=parser.parse_args();PROPORTIONS=args.study=='head-proportion'
+    if PROPORTIONS:W=EP/'tmp/head_proportion'
+    globals()[args.action]()
