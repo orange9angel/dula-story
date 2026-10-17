@@ -1,13 +1,28 @@
 {
-  "status": "head-proportion candidate; user review pending",
-  "priorReviewArchive": "output/archive/before_head_proportion.zip",
-  "previousVideoSha256": "c7c5607013878800213db71a2b9c976fc349f25ff8c3af3580fd55fe7306625b",
-  "candidateSha256": "1b6b20895d76746d69e4c2cc8e4e4b23ce5792ac5ef740096ad506986dfa8c12",
-  "comparisonSha256": "def01ed88a376a4ac9a3547bbc22c1cd3344e54516334e823eb491d9d1f7e989",
+  "status": "Local jaw/cheek candidate. Male eye improvement preserved; both whole faces remain unaccepted.",
+  "acceptedScope": "User accepted male eye protrusion improvement only. Both face shapes remain rejected.",
+  "checks": {
+    "lei_shape": true,
+    "lei_pitch": true,
+    "lei_turn": true,
+    "aoi_shape": true,
+    "aoi_pitch": true,
+    "aoi_turn": true,
+    "scene": true,
+    "male_upper_face_preserved": true,
+    "main_unchanged": true,
+    "render_1_inputs": true,
+    "render_2_inputs": true,
+    "encoded_audio_unchanged": true
+  },
+  "candidateSha256": "e4ca7e43b36335d7a7cdd97b37bf0b46ca9537131d67c34159a33a1de792aa65",
+  "comparisonSha256": "91c3aad0be78c98ba8179e73aa619eb60d0c4e76b8de4d1e3745d8cee88c3f28",
+  "priorReviewArchive": "output/archive/before_jaw_connection.zip",
+  "mainSha256": "1b4791b0c6d5384c0b99b619a4bae1a4affacfcb945f56a6152cd9ce7ebdcab0",
   "inputOverrides": {
     "/characters/bioarmor/tripo-drawn-look.js": {
-      "file": "tmp/head_proportion/balanced.js",
-      "sha256": "d1667009324806729a329045caed8fe8a294cab05e3f84a418d69d423558173f"
+      "file": "tmp/jaw_connection/candidate.js",
+      "sha256": "e7f595b84970604654151bc8f64865a9a6e678bcb46d7239c6cc56cee1b83738"
     },
     "/lib/craft3d/illustrated-import.js": {
       "file": "tmp/natural_look/illustrated-import.js",
@@ -33,43 +48,6 @@
       "file": "tmp/round_face/drawn-head.js",
       "sha256": "589a98cd82918366ded37e040ae89c7c452bbaa07b745ddb609985e72c7fcbb1"
     }
-  },
-  "audioPcmSha256": {
-    "trial_1.wav": "be4625f4d125ede73fabb120e89e21ed5f3c5d6a1e65097dd7c072375b2843f5",
-    "trial_2.wav": "8acf1dcaf248a4af8eda19552b9350bb2152919a75026c54d88b569f41d60444"
-  },
-  "checks": {
-    "identical_encoded_audio": true,
-    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\tmp\\round_face\\tripo-balanced.js": true,
-    "D:\\opensource\\movie\\dula-story\\episodes\\bio_armor_academy_s1e4\\output\\current.mp4": true,
-    "scene_current_inputs": true,
-    "scene_no_errors": true,
-    "scene_reverse_equal": true,
-    "render_1_current_inputs": true,
-    "render_2_current_inputs": true,
-    "lei_balanced_current_inputs": true,
-    "lei_balanced": true,
-    "lei_pitch_current_inputs": true,
-    "lei_pitch": true,
-    "lei_turn_current_inputs": true,
-    "lei_turn": true,
-    "aoi_balanced_current_inputs": true,
-    "aoi_balanced": true,
-    "aoi_pitch_current_inputs": true,
-    "aoi_pitch": true,
-    "aoi_turn_current_inputs": true,
-    "aoi_turn": true
-  },
-  "earlierRasterSeekDifference": {
-    "differentPixels": 1,
-    "maxChannelDelta": 3,
-    "bbox": [
-      881,
-      285,
-      882,
-      286
-    ],
-    "stateEqual": true
   },
   "exchanges": [
     {
@@ -133,5 +111,5 @@
       }
     }
   ],
-  "limits": "Rendered sparse-frame visual review plus deterministic state checks; not user acceptance or a complete anatomy guarantee."
+  "limits": "Sparse visual review and unchanged upper-face pixels do not establish natural appearance. Prior head-proportion one-pixel reverse-seek discrepancy remains unresolved."
 }
