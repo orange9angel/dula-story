@@ -5,6 +5,13 @@
 - [局部试样 · 13 秒](../../output/naturalness_candidate.mp4)
 - [同步对比 · 左上一轮，右局部试样](../../output/naturalness_trial.mp4)
 - [同机位脸颊与下颌对照](face_comparison.jpg)
+- [原始文生图与当前模型：完整头颈及局部](reference_comparison.jpg)
+
+最新用户反馈：耳朵下部没交代清楚，下颌与耳、颈的关系不对，女生脸太扁。本次追加的是结构诊断，未改模型或视频。与原画并排后应修正之前的优先级：原画同样存在较直的侧下颌，问题主要在面部体积和耳垂—颌后缘—颈根的连接，不能继续把“磨圆底边”作为主要解法。
+
+[分层证据](../../tmp/jaw_connection/diagnosis/ear_layers.jpg) 显示两角色单独耳朵都有下部网格，但完整渲染里耳垂的边界融入头颈；隐藏头发不能恢复，隐藏颈部能暴露头底轮廓与连接方式。源码中的贴附式耳图刻意留空耳垂分界，几何又抬高下部，男主还向头内收。以上共同解释了画面中的缺失感；没有做逐三角遮挡归因，不把它简化为“完全没建耳垂”或“全是头发挡住”。女生面中部及颊面过扁、鼻唇起伏弱、上颈阴影块生硬仍是主要差距。男生眼部已认可，继续保留。
+
+诊断由 `node tools/inspect_ear_jaw_layers.mjs` 按已交付覆盖文件哈希读取并分层渲染；`python tools/review_jaw_connection_trial.py reference` 生成两张对照。原画与模型只有近似姿态，所有裁切独立等比显示；坐标和源哈希见 `tmp/jaw_connection/diagnosis/reference_crops.json`，分层源记录见同目录 `layers.json`。这不增加任何一致性或美术通过声明。
 
 唯一试片入口沿用原文件名。正式角色源码、主剧本和 `output/current.mp4` 未改；上一轮完整试片、对比和说明保存在 [回退归档](../../output/archive/before_jaw_connection.zip)。这个归档包含男主已获认可的眼部，整体脸型依然是失败基线。
 
