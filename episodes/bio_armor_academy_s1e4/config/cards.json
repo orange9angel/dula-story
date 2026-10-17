@@ -2,8 +2,8 @@
   "version": 1,
   "recipe": "existing series title-card / ink erosion + light sweep + bokeh",
   "generator": "../../../dula-skills/title-card/scripts/make_title_card.py",
-  "generatorSha256": "76a9c26d895a770f3ac2b001ef194406e59350766573ef9de1dc0162d1510b99",
-  "timelineSha256": "210e284deca7aecb0f41c9c28576e1578b5e070632bde6e255973e93bbedf8d8",
+  "generatorSha256": "1eab1c503b96ce10ce22a3ae97ae2ab8320f3fd10cebb0d70cd0ce4d466fe1f0",
+  "timelineSha256": "e4b4219be03f77f0f7895185cd54ba6e6a188744e2e78c9909a720fb4f49421a",
   "cards": [
     {
       "id": "open",
@@ -13,6 +13,7 @@
       "fps": 30,
       "title": "9章",
       "subtitle": "残卷 · 其四  /  别再试了",
+      "inMode": "image",
       "outMode": "white",
       "background": "cards/open_background.png",
       "backgroundSha256": "b77f9a6d098859157f2ce4788715effdccca0cbfc257808958457b32d271e63f",
@@ -91,11 +92,11 @@
         "cards/open/f_071.png"
       ],
       "frameSha256": [
-        "45c5022dcaa72fc60285893485fbf2f42df16f886d6261dcd4cef17f74e00e90",
-        "a1c0f3b9c920e990465a5d0c304fdd8621f8a2361b89a325f0c38d12027d2d0c",
-        "a7e0e560d9430eea22d6ba3058be5e1178ddf7b426e351fd36669405e61c13d0",
-        "1aef6657005b6dbd137bda2949e2de756acf8686db00c8919acc42243eeb58e7",
-        "d23335b042e7cbcccd547c332ece37daeb1e5a388566b0085906b915c402455b",
+        "a3ebb5f316ff699e013fce81c6cdc04d70b567e3345daf42d553b4791561e662",
+        "f77a66a9fe6e58950594259cc9cad6618c7bc594991281cb210f83716e5fcc51",
+        "41a43b4dc7e4bf6d0400c51fca18a811192e23f8496acf430e11cbf6a1892e92",
+        "5691ceae1361c8d3d3f3c0156862463fea6aef0d979ba387040f76d072e7622f",
+        "995daf68fcd8b92e5946675da00a8bb3c2138b2317b3c45c5bef8806344f170c",
         "ceff76ee58de677984b7fab964c4aad67156797aecd75e317b5326d6f91ba568",
         "76802fd3fd3a0bdeb4aaee4493ae0267f393b7574b6d888e6e957a3f2133c9a5",
         "f0930ffde8c1c0ca14e5e9dd352c8ea0d75a4349858e1f2ff69d832a3765da52",
@@ -173,6 +174,7 @@
       "fps": 30,
       "title": "残卷",
       "subtitle": "其四 · 终",
+      "inMode": "white",
       "outMode": "black",
       "background": "cards/close_background.png",
       "backgroundSha256": "7132f58f12c4d23b07e78fe96ba0c4989448c91a8e0782c252f244ae34ad7a2a",

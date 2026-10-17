@@ -2,6 +2,16 @@
 
 播放入口：[output/current.mp4](../../output/current.mp4)。
 
+## 2026-10-17 片头首帧可见
+
+片头取消前 0.15 秒的白光入场，第 0 帧直接显示原底图，墨迹显字、光扫和出场
+保持原时序。生成脚本显式选择 `--in-mode image`；其余字卡沿用原入场方式。
+更新后的当前视频仍为 82 秒、2460 帧，原 AAC 数据不变，2.4 秒之后 2388 帧
+解码像素逐帧一致。首帧见 [opening_first_frame.png](opening_first_frame.png)，
+当前视频摘要与验证见 [opening_fix.json](opening_fix.json)。下面的 `verification.json`
+及 `render_build.json` 记录本次局部替换之前的整集构建，不能当作新 MP4 摘要。
+角色试验未合入此次片头修改。回退包：`output/archive/before_visible_opening.zip`。
+
 ## 2026-10-17 场景化对白、实际对视与温暖配乐
 
 - 用户指出上一版配乐偏滑稽，女主“这叫蚀”像在解释设定，两人也没有真正对视。

@@ -19,13 +19,15 @@ for card_id, entry, title, subtitle, mode in [
     duration = seg['end'] - seg['start']
     bg = EP / f'cards/{card_id}_background.png'
     out = EP / f'cards/{card_id}'
+    in_mode = 'image' if card_id == 'open' else 'white'
     command = [sys.executable, str(GEN), '--bg', str(bg), '--title', title,
                '--subtitle', subtitle, '--duration', str(duration), '--fps', str(fps),
-               '--reveal', '0.18,0.62', '--out-mode', mode, '--out-dir', str(out)]
+               '--reveal', '0.18,0.62', '--in-mode', in_mode,
+               '--out-mode', mode, '--out-dir', str(out)]
     subprocess.run(command, check=True)
     frames = [f'cards/{card_id}/f_{i:03d}.png' for i in range(round(duration * fps))]
     cards.append({'id': card_id, 'entry': entry, 'start': seg['start'], 'end': seg['end'],
-                  'fps': fps, 'title': title, 'subtitle': subtitle, 'outMode': mode,
+                  'fps': fps, 'title': title, 'subtitle': subtitle, 'inMode': in_mode, 'outMode': mode,
                   'background': str(bg.relative_to(EP)).replace('\\', '/'),
                   'backgroundSha256': sha(bg), 'frames': frames,
                   'frameSha256': [sha(EP / f) for f in frames]})

@@ -19,9 +19,13 @@ try{
     const actual=new Image();actual.src='data:image/png;base64,'+render.image;await actual.decode();
     const cv=document.createElement('canvas');cv.width=1280;cv.height=720;const g=cv.getContext('2d',{willReadFrequently:true});
     g.drawImage(im,0,0);const a=g.getImageData(0,0,1280,720).data;g.drawImage(actual,0,0);const b=g.getImageData(0,0,1280,720).data;
-    let max=0;for(let j=0;j<a.length;j++)max=Math.max(max,Math.abs(a[j]-b[j]));return {image:render.image,max};
+    let max=0,white=0,lo=255,hi=0;for(let j=0;j<a.length;j++)max=Math.max(max,Math.abs(a[j]-b[j]));
+    for(let j=0;j<b.length;j+=4){if(b[j]>=250&&b[j+1]>=250&&b[j+2]>=250)white++;lo=Math.min(lo,b[j],b[j+1],b[j+2]);hi=Math.max(hi,b[j],b[j+1],b[j+2]);}
+    return {image:render.image,max,whiteFraction:white/(1280*720),range:hi-lo};
    },t,expected);
-   checks.push({card:c.id,frame:i,t,maxPixelDifference:result.max});
+   const visibleOpening=c.id==='open'&&i===0&&c.inMode==='image';
+   checks.push({card:c.id,frame:i,t,maxPixelDifference:result.max,
+    ...(visibleOpening?{firstFrameVisible:result.whiteFraction<.95&&result.range>20}: {})});
    fs.writeFileSync(path.join(root,`${c.id}_${String(i).padStart(3,'0')}.png`),Buffer.from(result.image,'base64'));
   }
  }
@@ -31,7 +35,7 @@ try{
  bad.on('pageerror',e=>missingErrors.push(e.message));
  await bad.goto('http://127.0.0.1:4215/viewer.html?capture=1',{waitUntil:'networkidle0',timeout:120000});
  const missingRejected=missingErrors.some(e=>e.includes('Missing title-card frame'))&&await bad.evaluate(()=>window.ready!==true);
- const report={profile,checks,errors,missingRejected,passed:checks.every(c=>c.maxPixelDifference===0)&&!errors.length&&missingRejected};
+ const report={profile,checks,errors,missingRejected,passed:checks.every(c=>c.maxPixelDifference===0&&c.firstFrameVisible!==false)&&!errors.length&&missingRejected};
  fs.writeFileSync(path.join(root,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
  if(!report.passed)throw new Error('Title-card regression check failed');
 }finally{await browser.close();}
