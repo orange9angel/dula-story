@@ -19,7 +19,10 @@ TEX = EP / "assets3d/tex"
 JOBS = [("floor", 2.0), ("stone", 1.6), ("colonnade_ground", 2.0), ("caldera_ground", 2.0),
         ("altar_relief", 1.8), ("niche_wall", 1.6), ("fabric", 1.2), ("cast_iron", 1.4),
         ("colonnade_stone", 1.6), ("break_face", 2.0), ("rubble_ground", 2.2),
-        ("basalt_wall", 2.0), ("scorched_ground", 2.2), ("magma", 1.8)]
+        ("basalt_wall", 2.0), ("scorched_ground", 2.2), ("magma", 1.8),
+        # R9 场景升级
+        ("palace_floor", 2.0), ("palace_stone", 1.6), ("vault_coffer", 1.4),
+        ("gloom_shore", 2.0), ("gloom_water", 1.4), ("peak_rock", 2.0)]
 
 
 def normal_from_luma(img: Image.Image, strength: float) -> Image.Image:

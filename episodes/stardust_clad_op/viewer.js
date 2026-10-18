@@ -1,5 +1,7 @@
 // 《星屑战壳》OP viewer：横屏 1280×720，StardustShrineScene + 三主角。
 // R8 起角色/场景全部晋升 dula-assets（characters/stardust、scenes/stardust），本集只留谱面/机位/特效。
+// R9 场景升级：交锋主链=星辉内殿（AstralPalace），小凿=幽荧之河（Gloomriver），
+// 大釜=云巅圣峰（CloudPeak）；gag/outro 回圣殿（女神住圣殿）。世界坐标全局连续。
 // P3 正式谱面 49.2s（152BPM，条目边界吸附 beatgrid）：打斗快切机位硬切（卡点语法），
 // 特写机位在角色面朝 ±60° 内、距离 ≥3.0m。特效件抄 s1e2 模式：冲击环锚真实接触点、
 // 火花粒子 LCG、白闪 ≤.55、拟声词大字、地面裂缝+碎石。纯 (t,state) 确定函数。
@@ -7,8 +9,9 @@
 import * as THREE from 'three';
 import {AoaoCraft,XiaozaoCraft,DafuCraft,HestiaCraft} from 'dula-assets/characters/stardust/characters.js';
 import {StardustShrineScene} from 'dula-assets/scenes/stardust/StardustShrineScene.js';
-import {StarfallColonnadeScene} from 'dula-assets/scenes/stardust/StarfallColonnadeScene.js';
-import {EmberCalderaScene} from 'dula-assets/scenes/stardust/EmberCalderaScene.js';
+import {AstralPalaceScene} from 'dula-assets/scenes/stardust/AstralPalaceScene.js';
+import {GloomriverScene} from 'dula-assets/scenes/stardust/GloomriverScene.js';
+import {CloudPeakScene} from 'dula-assets/scenes/stardust/CloudPeakScene.js';
 import {poseAt,ease,clamp,T,BLOCK_PT,CLASH_PT,LAND_PT,HESTIA_SEAT} from './performance.js';
 
 const W=1280,H=720;
@@ -18,11 +21,11 @@ window.duration=TL.duration;
 const entries=TL.segments.map(s=>({startTime:s.start,endTime:s.end,
   opts:{move:s.move,shot:s.shot,kind:s.kind,scene:s.scene}}));
 
-// R2 多场景：三场景同存，按段 scene 字段硬切（角色世界坐标全局连续，Object3D
-// 单父级——切换即 reparent，无渐隐穿帮）
-const SCENES={shrine:new StardustShrineScene(),colonnade:new StarfallColonnadeScene(),caldera:new EmberCalderaScene()};
+// R9 多场景：四场景同存，按段 scene 字段硬切（角色世界坐标全局连续，Object3D
+// 单父级 reparent 无渐隐穿帮；柱廊/火山口仍在资产库，本集不再使用）
+const SCENES={shrine:new StardustShrineScene(),palace:new AstralPalaceScene(),
+  gloomriver:new GloomriverScene(),cloudpeak:new CloudPeakScene()};
 for(const sc of Object.values(SCENES)){sc.build();await sc.applyHybrid();}
-const stage=SCENES.shrine; // 特效件全部挂圣殿（交锋/落地/gag 都在圣殿链上）
 const actors={aoao:new AoaoCraft(),xiaozao:new XiaozaoCraft(),dafu:new DafuCraft(),hestia:new HestiaCraft()};
 SCENES.shrine.scene.add(actors.hestia.mesh);actors.hestia.mesh.visible=false; // 女神只住圣殿（outro 登场）
 // 女神台词口型：能量包络视素轨（build_audio.py 从 hestia_line.wav 生成；缺失静默降级闭嘴）
@@ -33,12 +36,16 @@ const jawAt=t=>{
   const i=Math.floor((t-voiceEnv.t0)/voiceEnv.dt);
   return i<0||i>=voiceEnv.jaw.length?0:voiceEnv.jaw[i];
 };
+// R9 特效分挂：瞬态特效（冲击环/闪光/火花/震尘环）随 fxGroup 跟当前场景 reparent；
+// 落地裂缝+碎石常驻交锋主场（宫殿）；gag 星屑汇聚常驻圣殿
+const fxGroup=new THREE.Group();
 let curScene=null;
 function useScene(name){
   const sc=SCENES[name]??SCENES.shrine;
   if(curScene===sc)return sc;
   curScene=sc;
   for(const a of Object.values(actors))sc.scene.add(a.mesh);
+  sc.scene.add(fxGroup);
   return sc;
 }
 useScene('shrine');
@@ -106,10 +113,10 @@ function camFor(shot,t,entry,states){
 // ── 特效网格（时间驱动，确定性）──
 const dustRing=new THREE.Mesh(new THREE.TorusGeometry(1,.07,8,40),
   new THREE.MeshBasicMaterial({color:0xc9b89a,transparent:true}));
-dustRing.rotation.x=-Math.PI/2;stage.scene.add(dustRing);
+dustRing.rotation.x=-Math.PI/2;fxGroup.add(dustRing);
 const impactRing=new THREE.Mesh(new THREE.TorusGeometry(1,.05,8,40),
   new THREE.MeshBasicMaterial({color:0x3DFFC8,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
-stage.scene.add(impactRing);
+fxGroup.add(impactRing);
 function ringAt(mesh,x,y,z,t,t0,color,maxR=1.8,dur=.55){
   const u=(t-t0)/dur;
   if(u<0||u>1){mesh.visible=false;return;}
@@ -124,14 +131,14 @@ const flareTex=(()=>{const c=document.createElement('canvas');c.width=c.height=1
   g.fillStyle=gr;g.fillRect(0,0,128,128);
   const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;})();
 const flare=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
-flare.visible=false;stage.scene.add(flare);
+flare.visible=false;fxGroup.add(flare);
 const sparks=[];
 {let sd=13;const rr=()=>{sd=(sd*1103515245+12345)&0x7fffffff;return sd/0x7fffffff;};
  for(let i=0;i<16;i++){
    const s=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
    const a=rr()*Math.PI*2,el=rr()*1.1+.2,sp=2.5+rr()*3;
    s.userData={vx:Math.cos(a)*Math.cos(el)*sp,vy:Math.sin(el)*sp,vz:Math.sin(a)*Math.cos(el)*sp};
-   s.visible=false;stage.scene.add(s);sparks.push(s);
+   s.visible=false;fxGroup.add(s);sparks.push(s);
  }}
 function flareAt(t,t0,x,y,z,color){
   const u=(t-t0)/.5;
@@ -146,7 +153,7 @@ function flareAt(t,t0,x,y,z,color){
     s.material.color.set(color);s.material.opacity=.9*(1-u);s.scale.setScalar(.04+.06*(1-u));}
 }
 // 击飞落点：地面径向裂缝（命中后常驻）+ 碎石飞溅
-const crackGroup=new THREE.Group();crackGroup.visible=false;stage.scene.add(crackGroup);
+const crackGroup=new THREE.Group();crackGroup.visible=false;SCENES.palace.scene.add(crackGroup);
 {
   const cm=new THREE.MeshBasicMaterial({color:0x141820});
   for(let i=0;i<8;i++){
@@ -164,7 +171,7 @@ const rubble=[];
     const r=new THREE.Mesh(new THREE.TetrahedronGeometry(.04+((i*13)%5)*.012),rm);
     const a=i/10*Math.PI*2+.7,sp=.8+((i*29)%10)/10*1.1;
     r.userData={dx:Math.cos(a)*sp,dz:Math.sin(a)*sp,v0:1.6+((i*17)%10)/10,ph:i};
-    r.castShadow=true;r.visible=false;stage.scene.add(r);rubble.push(r);
+    r.castShadow=true;r.visible=false;SCENES.palace.scene.add(r);rubble.push(r);
   }
 }
 function rubbleAt(t,t0,anchor){
@@ -182,7 +189,7 @@ const dustConv=[];
  for(let i=0;i<24;i++){
    const s=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
    s.userData={a:rr()*Math.PI*2,r:.6+rr()*1.6,h:rr()*1.8-.4,ph:rr()*6,spin:.8+rr()*1.2};
-   s.visible=false;stage.scene.add(s);dustConv.push(s);
+   s.visible=false;SCENES.shrine.scene.add(s);dustConv.push(s);
  }}
 function dustAt(t,target){
   const u=clamp((t-33.4)/(T.FREEZE-33.4));

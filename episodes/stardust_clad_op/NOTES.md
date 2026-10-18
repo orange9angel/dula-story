@@ -356,3 +356,50 @@ node --import ./tools/register_loader.mjs tools/scan_reach.mjs   # 离线 twoBon
 - 臂板修前/修后对照：`storyboard/r8_bracer/` vs `storyboard/r8_bracer_fixed/`。
 - 阿箸肖像：`storyboard/r8_azu/`。三人肖像复查：`storyboard/r8_portraits/`。
 - 成片重渲 `output/craft3d_full.mp4`（49.2s 不变）+ 字幕版重烧 `output/craft3d_full_subtitled.mp4`。
+
+## R9（监制整改：大气场景升级——星辉内殿/幽荧之河/云巅圣峰）
+
+> 宫殿内战斗、冥界河流、山巅秘境三种气质；文生图混合工艺往深里挖（有顶 interior 拱顶、
+> 水面混合、云海多层）。几何/动画/绑定/谱面时刻/接触帧物理链零改动，只换场景壳。
+
+### 新场景（全部直接落 dula-assets/scenes/stardust/）
+
+| 场景 | 内容 | 纹理（assets3d/tex/，Seedream 5.0 Pro，逐文件 source.json sha256） |
+|---|---|---|
+| `AstralPalaceScene` 星辉内殿 | 镶嵌地面+徽记环带+红毯长道、双列巨柱×12、长阶高台圣火盆、**桶形拱顶全封闭**（CylinderGeometry θ∈[π/2,3π/2]+rotateX(π/2)，有顶 interior 不走天空圆柱）、端墙整墙+半圆封板、高拱窗透光+光柱薄板、悬挂火环吊灯×2、尘埃浮尘 | palace_floor(+_n 2.0) 镶嵌大理石 / palace_stone(+_n 1.6) 宫殿石材 / vault_coffer(+_n 1.4) 藻井拱顶 |
+| `GloomriverScene` 幽荧之河 | 暗河横贯（z-2..-6 半透明水面+程序化流光层 offset 纯 t+萤光藻点顺流回绕）、魂光 sprite 14（LCG）、彼岸石柱阵+断桥拱+幽绿符纹环、渡口石阶+踏步石、冥草丛、雾板三层、ContinuousBackdrop 幽暗天穹 | gloom_shore(+_n 2.0) 滩涂 / gloom_water(+_n 1.4) 暗河 / backdrop_gloom 幽绿光带地平线 |
+| `CloudPeakScene` 云巅圣峰 | 峰顶岩盘+岩裙+缘部崩岩圈、山门双柱残楣+台阶、散碑刻石、**三层云海大盘**（纹理 drift 纯 t 异向异速）、远峰锥影雪顶带×9（锥体不贴图保色块）、星屑瀑布豁口（26 光点循环泻落） | peak_rock(+_n 2.0) 山岩 / backdrop_cloudpeak 云海远峰 |
+
+### 谱面重映射（build_timeline.mjs SEG 表改 scene 字段重生成；24 段边界吸附不变）
+
+| 段 | 旧场景 | 新场景 | 理由 |
+|---|---|---|---|
+| clad_aoao | 圣殿 | 宫殿 | 热血主主场=交锋主场（内殿大理石上读感最史诗） |
+| clad_xiaozao / f4 | 柱廊 | 幽荧河 | 冷面配冥河 |
+| clad_dafu / f6 / f8 | 火山口 | 云巅 | 憨厚配山岳 |
+| f1/f2/f3/f5/f7/f9/f10 | 圣殿 | 宫殿 | 交锋主链（格挡/对拳/击飞接触帧物理链世界坐标不变，只换壳） |
+| v2 冲锋三镜 | 圣殿/柱廊/火山口 | 宫殿/幽荧河/云巅 | 各场景一镜 |
+| intro/gag/outro | 圣殿 | 圣殿 | 女神住圣殿，首尾主场不换 |
+
+- 特效分挂改造（viewer.js）：瞬态件（冲击环/闪光/火花/震尘环）收进 `fxGroup` 随
+  useScene 跟当前场景 reparent；落地裂缝+碎石常驻宫殿（交锋主场）；gag 星屑汇聚常驻圣殿。
+- 柱廊/火山口留在资产库（S1E1 在用柱廊），本集不再实例化。
+
+### 验证证据
+
+- 四机位接缝探针：`storyboard/r9_check/probe/`（三场景 × 宽景/低仰角（宫殿=仰拍拱顶）/侧向/反向，
+  无竖直亮缝、无板缘、宫殿拱顶全闭、幽荧河/云巅背景板融合）。
+- 交锋链帧：`storyboard/r9_check/smoke/`（格挡/对拳/击飞落地在宫殿红毯徽记上成立，
+  裂缝落在地毯上可读）。
+- gate 全绿；成片重渲+字幕重烧。
+
+### 翻车记录（R9）
+
+- **CylinderGeometry 半管拱顶 θ 方向验算**：θStart=π（x≤0 半管）rotateX 后盖错一侧，
+  zenith 探针帧半殿露天；覆盖顶部的半管是 θ∈[π/2,3π/2]（cosθ≤0 段经 rotateX 翻到 +y）。
+  有顶 interior 的几何封口必须四机位+仰拍探帧验收（全景融合四要素第 1 条的 interior 版）。
+- **端墙只封上半圆= reverse 机位露背景底色**：CircleGeometry thetaLength π 是上半圆，
+  下半要整墙箱体补上；入口端的光面板别埋进墙体（面板 z 要比墙前面板浅，+z 端 11.85<11.9）。
+- **肋梁 TorusGeometry 半环别加 rotation.y**：XY 平面半环本来就是跨走廊的拱肋，
+  转了就读成纵向贴顶弧。
+- 夜景新场景灯光依旧首帧目检调（幽荧河 hemi .95→1.15、正面补光 .62→.95、河面点光 16→22）。

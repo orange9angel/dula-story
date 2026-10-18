@@ -11,28 +11,28 @@ const beats=grid.beats,DURATION=grid.duration; // 49.2
 // 目标边界（近似秒）→ 吸附最近 beat
 const snap=t=>beats.reduce((a,b)=>Math.abs(b-t)<Math.abs(a-t)?b:a);
 // [id, 近似start, 近似end, move, shot, character, scene]
-// R2 多场景跳切：角色世界坐标全局连续，场景壳按拍硬切（MV 跳切语法，接触帧仍在圣殿连续链上）
+// R9 场景升级：交锋主链搬星辉内殿（格挡/对拳/击飞在宫殿大理石上）；小凿=幽荧河、大釜=云巅；gag/outro 回圣殿（女神在圣殿）。世界坐标全局连续不变
 const SEG=[
   ['intro',0.07,3.32,'establish','establish',null,'shrine'],
   // verse1：三人各自场景登场秀战壳（生长起点压 downbeat：5.317/8.568/13.305）
-  ['clad_aoao',3.32,6.966,'clad_aoao','clad_aoao','Aoao','shrine'],
-  ['clad_xiaozao',6.966,10.588,'clad_xiaozao','clad_xiaozao','Xiaozao','colonnade'],
-  ['clad_dafu',10.588,14.211,'clad_dafu','clad_dafu','Dafu','caldera'],
+  ['clad_aoao',3.32,6.966,'clad_aoao','clad_aoao','Aoao','palace'],
+  ['clad_xiaozao',6.966,10.588,'clad_xiaozao','clad_xiaozao','Xiaozao','gloomriver'],
+  ['clad_dafu',10.588,14.211,'clad_dafu','clad_dafu','Dafu','cloudpeak'],
   // verse1'：切磋蒙太奇跨场景跳切（接触帧压 downbeat 16.625/19.83/23.034，在圣殿链上）
-  ['f1_standoff',14.211,15.023,'f1','f_two',null,'shrine'],
-  ['f2_dash',15.023,16.231,'f2','f_track',null,'shrine'],
-  ['f3_block',16.231,17.415,'f3','f_block',null,'shrine'],
-  ['f4_watch',17.415,19.435,'f4','f_xiao',null,'colonnade'],
-  ['f5_clash',19.435,20.619,'f5','f_clash',null,'shrine'],
-  ['f6_stagger',20.619,22.639,'f6','f_wide',null,'caldera'],
-  ['f7_knock',22.639,23.847,'f7','f_knock',null,'shrine'],
-  ['f8_laugh',23.847,26.239,'f8','f_laugh',null,'caldera'],
-  ['f9_reset',26.239,28.653,'f9','f_wide2',null,'shrine'],
-  ['f10_prep',28.653,30.256,'f10','f_prep',null,'shrine'],
+  ['f1_standoff',14.211,15.023,'f1','f_two',null,'palace'],
+  ['f2_dash',15.023,16.231,'f2','f_track',null,'palace'],
+  ['f3_block',16.231,17.415,'f3','f_block',null,'palace'],
+  ['f4_watch',17.415,19.435,'f4','f_xiao',null,'gloomriver'],
+  ['f5_clash',19.435,20.619,'f5','f_clash',null,'palace'],
+  ['f6_stagger',20.619,22.639,'f6','f_wide',null,'cloudpeak'],
+  ['f7_knock',22.639,23.847,'f7','f_knock',null,'palace'],
+  ['f8_laugh',23.847,26.239,'f8','f_laugh',null,'cloudpeak'],
+  ['f9_reset',26.239,28.653,'f9','f_wide2',null,'palace'],
+  ['f10_prep',28.653,30.256,'f10','f_prep',null,'palace'],
   // verse2：三个场景各 1 镜低机位冲锋 → 汇聚回圣殿合体 gag（顶点 33.855）
-  ['v2_charge_shrine',30.256,31.045,'v2charge','v2_low_aoao',null,'shrine'],
-  ['v2_charge_colonnade',31.045,31.835,'v2charge','v2_low_xiaozao',null,'colonnade'],
-  ['v2_charge_caldera',31.835,32.647,'v2charge','v2_low_dafu',null,'caldera'],
+  ['v2_charge_shrine',30.256,31.045,'v2charge','v2_low_aoao',null,'palace'],
+  ['v2_charge_colonnade',31.045,31.835,'v2charge','v2_low_xiaozao',null,'gloomriver'],
+  ['v2_charge_caldera',31.835,32.647,'v2charge','v2_low_dafu',null,'cloudpeak'],
   ['v2_gag',32.647,36.246,'v2gag','v2_gag',null,'shrine'],
   ['v2_pose',36.246,40.635,'v2pose','v2_pose',null,'shrine'],
   ['v2_hold',40.635,44.234,'v2hold','v2_hold',null,'shrine'],
