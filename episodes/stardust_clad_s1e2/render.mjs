@@ -144,6 +144,6 @@ if(!serve){
       fs.writeFileSync(path.join(board,'craft3d_trace.json'),JSON.stringify({duration,fps,errors,shots:trace},null,2));
       if(seek.some(s=>!s.equal))throw new Error('Sequential/direct seek image mismatch');
     }
-    console.log(physicsOnly?`physics complete: ${gaitTrace.length} frames; no images encoded`:check?`check complete: ${ci} frames`:`video complete: ${output}`);
+    if(!shots)console.log(physicsOnly?`physics complete: ${gaitTrace.length} frames; no images encoded`:check?`check complete: ${ci} frames`:`video complete: ${output}`);
   }finally{if(encoder&&!encoder.killed)encoder.kill();if(browser)await browser.close();server.close();}
 }

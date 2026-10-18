@@ -1,65 +1,886 @@
 {
- "_comment": "S1E2《夜守》对白（语义版见 storyboard.md）。声线=R12 定案；逐句 delivery=rate+context。夜铺 0-45s 零对白。喊招压帧：c1 银星雨 252 压蓄力亮孔顶点、c2 陨星落 274 压起跳顶点；t 初值按语义版，合成实测后重排窗口。",
- "colors": {"aoao": "#ffd98a", "xiaozao": "#a8d8ff", "dafu": "#ffb35e", "azu": "#ff8a96", "hestia": "#d8c8ff"},
- "voices": {
-  "aoao": "ICL_uranus_zh_male_rexueshaonian_tob",
-  "xiaozao": "zh_male_gaolengchenwen_uranus_bigtts",
-  "dafu": "zh_male_dongfanghaoran_uranus_bigtts",
-  "azu": "ICL_uranus_zh_female_aomanjiaosheng_tob",
-  "hestia": "zh_female_ganmaodianyin_uranus_bigtts"
- },
- "lines": [
-  {"id": "l01", "t": 48.0, "speaker": "aoao", "text": "第三夜了。……白天那一仗，现在想起来，手心还是烫的。",
-   "delivery": {"rate": -5, "context": "深夜独自值夜，低声自言自语，余悸"}},
-  {"id": "l02", "t": 62.0, "speaker": "aoao", "text": "她说我冲得太直。……是直。直得只剩直了。",
-   "delivery": {"rate": -5, "context": "自嘲，低声，认了"}},
-  {"id": "l03", "t": 78.0, "speaker": "aoao", "text": "合格是她给的。守住——得是我自己给的。",
-   "delivery": {"rate": -5, "context": "抬眼，一字一句，自我立誓"}},
-  {"id": "l04", "t": 92.0, "speaker": "aoao", "text": "再擦一遍。……反正，睡不着。",
-   "delivery": {"rate": -5, "context": "低声嘟囔，手上继续擦盾"}},
-  {"id": "l05", "t": 106.0, "speaker": "aoao", "text": "风不对。……尘走直线，旷野里没有这种事。",
-   "delivery": {"rate": 5, "context": "骤然警觉，压低声音，起身"}},
-  {"id": "l06", "t": 124.5, "speaker": "aoao", "text": "都起来——有东西，不怕火！",
-   "delivery": {"rate": 15, "context": "敲盾呼喊示警，全力高声"}},
-  {"id": "l07", "t": 132.0, "speaker": "dafu", "text": "俺的锅……不是，俺的甲呢——来了！",
-   "delivery": {"rate": 10, "context": "被叫醒手忙脚乱披甲赶来，憨直"}},
-  {"id": "l08", "t": 136.5, "speaker": "xiaozao", "text": "肩高两米，直线来的。……它没有绕的意思。",
-   "delivery": {"rate": -5, "context": "到场即读场，冷静报参数"}},
-  {"id": "l09", "t": 148.0, "speaker": "aoao", "text": "先过我这面盾——！",
-   "delivery": {"rate": 10, "context": "迎击呐喊，热血"}},
-  {"id": "l10", "t": 158.0, "speaker": "aoao", "text": "挡是挡住了……这力气，不是野兽该有的。",
-   "delivery": {"rate": 0, "context": "挡下重击后咬牙，手臂发麻"}},
-  {"id": "l11", "t": 171.0, "speaker": "dafu", "text": "让开！俺一拳——",
-   "delivery": {"rate": 15, "context": "蛮力宣言，冲锋怒吼"}},
-  {"id": "l12", "t": 182.0, "speaker": "dafu", "text": "……它咋比俺快？！",
-   "delivery": {"rate": 10, "context": "被撞飞在地，懵住，不可置信"}},
-  {"id": "l13", "t": 196.0, "speaker": "xiaozao", "text": "再给我两秒——它不停！",
-   "delivery": {"rate": 15, "context": "被逼连退，罕见地急"}},
-  {"id": "l14", "t": 210.0, "speaker": "aoao", "text": "盾……它抓的。",
-   "delivery": {"rate": -10, "context": "谷底喘息，盯着盾上抓痕，声音发哑"}},
-  {"id": "l15", "t": 216.0, "speaker": "aoao", "text": "它能快过我的盾。……快不过我站在这儿。",
-   "delivery": {"rate": -5, "context": "谷底立誓，从喘息到咬住，一字一顿"}},
-  {"id": "l16", "t": 236.0, "speaker": "aoao", "text": "我拖着它！它要绕——就让它绕我！",
-   "delivery": {"rate": 15, "context": "持盾正面拖住，喊给队友，血性"}},
-  {"id": "l17", "t": 242.0, "speaker": "xiaozao", "text": "窗口……这次我自己造。大釜，左翼，三步。",
-   "delivery": {"rate": 0, "context": "拾起盘，冷静下战术指令"}},
-  {"id": "l18", "t": 248.0, "speaker": "dafu", "text": "三步就三步！",
-   "delivery": {"rate": 10, "context": "听令执行，豪壮"}},
-  {"id": "c1", "t": 252.0, "speaker": "xiaozao", "text": "千孔·银星雨——！",
-   "delivery": {"rate": 15, "context": "全力呐喊出招名，高声压炸场"}},
-  {"id": "l19", "t": 262.0, "speaker": "xiaozao", "text": "……全中。一颗都没浪费。",
-   "delivery": {"rate": -10, "context": "爆发收束后低声自语，罕见的自我肯定"}},
-  {"id": "l20", "t": 270.0, "speaker": "dafu", "text": "该俺了。锅里的星，落下来——",
-   "delivery": {"rate": 5, "context": "终结蓄力，低沉起势"}},
-  {"id": "c2", "t": 274.0, "speaker": "dafu", "text": "陨星·釜底落！",
-   "delivery": {"rate": 15, "context": "全力呐喊出招名，高声压炸场"}},
-  {"id": "l21", "t": 300.0, "speaker": "dafu", "text": "俺去追——",
-   "delivery": {"rate": 10, "context": "见兽要逃，抬腿要追"}},
-  {"id": "l22", "t": 302.0, "speaker": "aoao", "text": "守住了。让它走。",
-   "delivery": {"rate": -10, "context": "拦住同伴，平静有分寸"}},
-  {"id": "l23", "t": 306.0, "speaker": "hestia", "text": "今晚的火，烧得安稳。",
-   "delivery": {"rate": -5, "context": "画外音，沙哑慵懒，带一点欣慰"}},
-  {"id": "l24", "t": 311.0, "speaker": "aoao", "text": "嗯。……明天，还我守。",
-   "delivery": {"rate": -10, "context": "看着火，轻声，落点独白"}}
- ]
+  "colors": {
+    "aoao": "#ffd98a",
+    "xiaozao": "#a8d8ff",
+    "dafu": "#ffb35e",
+    "azu": "#ff8a96",
+    "hestia": "#d8c8ff",
+    "yekari": "#b47cff"
+  },
+  "voices": {
+    "aoao": "ICL_uranus_zh_male_rexueshaonian_tob",
+    "xiaozao": "zh_male_gaolengchenwen_uranus_bigtts",
+    "dafu": "zh_male_dongfanghaoran_uranus_bigtts",
+    "azu": "ICL_uranus_zh_female_aomanjiaosheng_tob",
+    "hestia": "zh_female_ganmaodianyin_uranus_bigtts",
+    "yekari": "ICL_uranus_zh_male_diyinchenyu_tob"
+  },
+  "source": "script.story",
+  "source_sha256": "8a4a7a0176ce784b5b3233d34897dfc3fc892c793ed2ca4846e1fde6b58cf421",
+  "lines": [
+    {
+      "id": "n01",
+      "t": 15.0,
+      "end": 21.95,
+      "speaker": "xiaozao",
+      "text": "再擦，盾上那点金漆就没了。",
+      "delivery": {
+        "rate": -3,
+        "context": "深夜在朋友身旁坐着，轻声打趣，关心藏在玩笑里。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n02",
+      "t": 22.0,
+      "end": 30.95,
+      "speaker": "aoao",
+      "text": "金漆掉了能补。明晚要是又挡不住呢？",
+      "delivery": {
+        "rate": -3,
+        "context": "低声答话，手还在擦盾；后半句终于露出白天留下的担忧。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "shield",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n03",
+      "t": 31.0,
+      "end": 36.95,
+      "speaker": "xiaozao",
+      "text": "今天那一击，你挡住了。",
+      "delivery": {
+        "rate": -3,
+        "context": "平静而确切，提醒朋友一个事实，不是安慰小孩。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n04",
+      "t": 37.0,
+      "end": 47.95,
+      "speaker": "aoao",
+      "text": "是你们替我补上的。",
+      "delivery": {
+        "rate": -3,
+        "context": "停下手里的活，声音低下来，有些过意不去。"
+      },
+      "acting": {
+        "emotion": "sad",
+        "gaze": "shield",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n05",
+      "t": 48.0,
+      "end": 55.95,
+      "speaker": "xiaozao",
+      "text": "所以，你打算一夜不睡，把自己练成三个人？",
+      "delivery": {
+        "rate": -3,
+        "context": "朋友间轻轻反问，前半调侃，最后认真等他回答。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n06",
+      "t": 56.0,
+      "end": 64.95,
+      "speaker": "aoao",
+      "text": "至少下回，别让你们替我挨打。",
+      "delivery": {
+        "rate": -3,
+        "context": "对身旁朋友坦白，克制地咬住后半句，不喊口号。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "xiaozao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n07",
+      "t": 65.0,
+      "end": 77.95,
+      "speaker": "xiaozao",
+      "text": "你老这样，轮到我怕的时候，找谁？",
+      "delivery": {
+        "rate": -3,
+        "context": "这次没有开玩笑，语速稍慢，提出自己也会害怕。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n08",
+      "t": 78.0,
+      "end": 82.95,
+      "speaker": "aoao",
+      "text": "那就叫我。",
+      "delivery": {
+        "rate": -3,
+        "context": "听懂朋友的意思后抬头，短短一句，认真答应。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "xiaozao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n09",
+      "t": 83.0,
+      "end": 91.95,
+      "speaker": "xiaozao",
+      "text": "那你也得叫我们。",
+      "delivery": {
+        "rate": -3,
+        "context": "接住朋友的承诺，声音轻，但末尾坚定。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n10",
+      "t": 92.0,
+      "end": 99.95,
+      "speaker": "aoao",
+      "text": "知道了。你先去睡。",
+      "delivery": {
+        "rate": -3,
+        "context": "终于松一口气，带很轻的笑意，把朋友劝回去。"
+      },
+      "acting": {
+        "emotion": "happy",
+        "gaze": "xiaozao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n11",
+      "t": 106.0,
+      "end": 117.95,
+      "speaker": "aoao",
+      "text": "脚步停了。锁链还在响。",
+      "delivery": {
+        "rate": -3,
+        "context": "突然警觉，自言自语压低声音，先听，再判断，不像旁白。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n12",
+      "t": 120.0,
+      "end": 123.95,
+      "speaker": "yekari",
+      "text": "这里，还留着守夜的人。",
+      "delivery": {
+        "rate": 0,
+        "context": "年轻成年男子，冷静低沉的正常人声；看到旧景般停顿，绝不咆哮。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n13",
+      "t": 125.0,
+      "end": 131.95,
+      "speaker": "aoao",
+      "text": "大釜！小凿！有人闯殿！",
+      "delivery": {
+        "rate": -3,
+        "context": "从广场向身后的同伴呼喊示警，急促清楚。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n14",
+      "t": 132.0,
+      "end": 136.95,
+      "speaker": "dafu",
+      "text": "听见了！盾后面，给俺留个位置！",
+      "delivery": {
+        "rate": 0,
+        "context": "赶来助战，粗爽可靠，脚步刚停有一点喘气。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "aoao",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n15",
+      "t": 137.0,
+      "end": 139.95,
+      "speaker": "xiaozao",
+      "text": "右手持镰。别追刀光。",
+      "delivery": {
+        "rate": -3,
+        "context": "快速观察后低声提醒队友，字句短而清楚。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n16",
+      "t": 140.5,
+      "end": 145.45,
+      "speaker": "yekari",
+      "text": "交出火种。你们守不住它。",
+      "delivery": {
+        "rate": 0,
+        "context": "向面前少年冷静下判断，有自己的理由，尾句收紧。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n17",
+      "t": 145.5,
+      "end": 148.95,
+      "speaker": "aoao",
+      "text": "后面的灯，还等着这点火。",
+      "delivery": {
+        "rate": -3,
+        "context": "举盾护住身后，坚定而克制，不是向观众演讲。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n18",
+      "t": 149.0,
+      "end": 157.95,
+      "speaker": "yekari",
+      "text": "刈夜——无声镰弧！",
+      "delivery": {
+        "rate": 8,
+        "context": "出招名，前半低声蓄力，后半短促爆发，保持人类男声。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "aoao",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n19",
+      "t": 158.0,
+      "end": 161.95,
+      "speaker": "aoao",
+      "text": "挡住了……怎么还有一道？",
+      "delivery": {
+        "rate": -3,
+        "context": "盾后的少年先喘息，随即觉察手腕剧痛，惊讶压在声音里。"
+      },
+      "acting": {
+        "emotion": "surprised",
+        "gaze": "shield",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n20",
+      "t": 163.0,
+      "end": 170.95,
+      "speaker": "xiaozao",
+      "text": "石阶上，两道痕。",
+      "delivery": {
+        "rate": -3,
+        "context": "看见地上证据，低声说出观察，尚未完全理解。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "ground",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n21",
+      "t": 171.0,
+      "end": 175.95,
+      "speaker": "dafu",
+      "text": "少绕弯！俺来！",
+      "delivery": {
+        "rate": 0,
+        "context": "看同伴受伤后急于上前，直接有力。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n22",
+      "t": 176.0,
+      "end": 181.95,
+      "speaker": "yekari",
+      "text": "正好。",
+      "delivery": {
+        "rate": 0,
+        "context": "看出对手的冲劲，轻声自信，短促，不故作恶魔声。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "dafu",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n23",
+      "t": 182.0,
+      "end": 185.95,
+      "speaker": "dafu",
+      "text": "俺的劲……让他借走了。",
+      "delivery": {
+        "rate": 0,
+        "context": "胸口挨撞后的压声，疼得吸气，只说清这句，不夸张呻吟。"
+      },
+      "acting": {
+        "emotion": "pain",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n24",
+      "t": 195.0,
+      "end": 200.95,
+      "speaker": "xiaozao",
+      "text": "链子晚响半拍。我能封住！",
+      "delivery": {
+        "rate": -3,
+        "context": "从第一次受击发现规律，急于验证，后半句加快。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n25",
+      "t": 201.0,
+      "end": 207.95,
+      "speaker": "yekari",
+      "text": "你盯着刀，还是盯着他？",
+      "delivery": {
+        "rate": 0,
+        "context": "声东击西的试探，让对手在护同伴和封刀之间分神。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n26",
+      "t": 210.0,
+      "end": 215.95,
+      "speaker": "aoao",
+      "text": "手……握不住了。",
+      "delivery": {
+        "rate": -3,
+        "context": "受伤后努力握紧却失败，极轻的一句，带一次压住的吸气。"
+      },
+      "acting": {
+        "emotion": "pain",
+        "gaze": "shield",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n27",
+      "t": 216.0,
+      "end": 219.95,
+      "speaker": "yekari",
+      "text": "我也守过一整夜。",
+      "delivery": {
+        "rate": 0,
+        "context": "摸到自己旧扣带，第一次流露旧事，声音放轻，不煽情。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "strap",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n28",
+      "t": 220.0,
+      "end": 223.95,
+      "speaker": "yekari",
+      "text": "等到灯灭，一个人也没来。",
+      "delivery": {
+        "rate": 0,
+        "context": "继续说自己的经历，最后几个字冷下来，悲伤被压住。"
+      },
+      "acting": {
+        "emotion": "sad",
+        "gaze": "ground",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n29",
+      "t": 229.0,
+      "end": 234.95,
+      "speaker": "aoao",
+      "text": "所以，你也不让别人等到了？",
+      "delivery": {
+        "rate": -3,
+        "context": "疼痛中抬眼，质问面前的人，声音不高，后半句直指他的选择。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n30",
+      "t": 235.0,
+      "end": 240.95,
+      "speaker": "yekari",
+      "text": "火给强者，至少不会灭。",
+      "delivery": {
+        "rate": 0,
+        "context": "把动摇压回去，以确信保护自己，坚硬地回绝。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n31",
+      "t": 241.0,
+      "end": 245.95,
+      "speaker": "aoao",
+      "text": "小凿！第一刀，交给你！",
+      "delivery": {
+        "rate": -3,
+        "context": "终于向同伴明确求助，短促有力，随后准备自己接住另一刀。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "xiaozao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n32",
+      "t": 246.0,
+      "end": 249.95,
+      "speaker": "xiaozao",
+      "text": "只封一边。大釜，左边！",
+      "delivery": {
+        "rate": -3,
+        "context": "接受不完美的计划，眼神稳定，明确告诉同伴攻击目的。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n33",
+      "t": 252.0,
+      "end": 258.95,
+      "speaker": "xiaozao",
+      "text": "千孔——银星雨！",
+      "delivery": {
+        "rate": 8,
+        "context": "招式释放，千孔稍留半拍，银星雨干净地上扬爆发。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n34",
+      "t": 259.0,
+      "end": 263.95,
+      "speaker": "xiaozao",
+      "text": "大釜，收半步！",
+      "delivery": {
+        "rate": -3,
+        "context": "发现敌人在等冲势，立即提醒同伴收住；紧迫但不慌乱。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "dafu",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n35",
+      "t": 266.0,
+      "end": 273.25,
+      "speaker": "dafu",
+      "text": "这回，轮到你先动。",
+      "delivery": {
+        "rate": 0,
+        "context": "主动刹住冲劲，把力量收住，低声蓄着劲。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n36",
+      "t": 273.3,
+      "end": 283.95,
+      "speaker": "dafu",
+      "text": "陨星——釜底落！",
+      "delivery": {
+        "rate": 8,
+        "context": "必杀技，陨星蓄力后短停，釜底落强而清楚，最后一字压在落击。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n37",
+      "t": 288.0,
+      "end": 292.95,
+      "speaker": "yekari",
+      "text": "下一次，谁替你补上？",
+      "delivery": {
+        "rate": 0,
+        "context": "败后撑着武器，喘息里仍不肯相信，带疼痛但不求饶。"
+      },
+      "acting": {
+        "emotion": "pain",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n38",
+      "t": 293.0,
+      "end": 297.95,
+      "speaker": "aoao",
+      "text": "他们。也有我。",
+      "delivery": {
+        "rate": -3,
+        "context": "看过两个同伴再回答，坚定自然，绝不胜利演说。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "enemy",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n39",
+      "t": 300.0,
+      "end": 304.95,
+      "speaker": "dafu",
+      "text": "他往宫道去了！",
+      "delivery": {
+        "rate": 0,
+        "context": "看见敌人退走，本能要追，提醒同伴。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "enemy",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n40",
+      "t": 305.0,
+      "end": 312.95,
+      "speaker": "aoao",
+      "text": "别追。先扶住小凿。",
+      "delivery": {
+        "rate": -3,
+        "context": "立刻选择照顾同伴，不用大喊，明确下决定。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "dafu",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n41",
+      "t": 313.0,
+      "end": 317.95,
+      "speaker": "xiaozao",
+      "text": "你的手在抖。",
+      "delivery": {
+        "rate": -3,
+        "context": "走近看伤，担心但保持冷静，不是责备。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "shield",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n42",
+      "t": 318.0,
+      "end": 322.95,
+      "speaker": "aoao",
+      "text": "你看见了？",
+      "delivery": {
+        "rate": -3,
+        "context": "试着笑一下掩饰，被看穿后轻声问。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "xiaozao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n43",
+      "t": 323.0,
+      "end": 328.95,
+      "speaker": "xiaozao",
+      "text": "一直看着。把盾放低。",
+      "delivery": {
+        "rate": -3,
+        "context": "温和而直接，一直关注着朋友的伤，最后指导他动作。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "aoao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n44",
+      "t": 329.0,
+      "end": 334.95,
+      "speaker": "dafu",
+      "text": "这条扣带，俺来拉。",
+      "delivery": {
+        "rate": 0,
+        "context": "收起蛮力，仔细帮朋友收紧扣带，可靠而小心。"
+      },
+      "acting": {
+        "emotion": "neutral",
+        "gaze": "shield",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n45",
+      "t": 335.0,
+      "end": 341.95,
+      "speaker": "aoao",
+      "text": "轻点……好。够了。",
+      "delivery": {
+        "rate": -3,
+        "context": "拉紧时一痛，随即放松，最后感谢含在呼气里。"
+      },
+      "acting": {
+        "emotion": "pain",
+        "gaze": "dafu",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n46",
+      "t": 343.0,
+      "end": 351.95,
+      "speaker": "hestia",
+      "text": "焰阶宫求援。撤离的人，被封在雨里。",
+      "delivery": {
+        "rate": -3,
+        "context": "从殿内传来的急报，平稳清楚，担忧压住，强调被困居民。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "radio",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n47",
+      "t": 352.0,
+      "end": 360.95,
+      "speaker": "hestia",
+      "text": "十二星宫的路，第一道门就断了。",
+      "delivery": {
+        "rate": -3,
+        "context": "接着解释救援阻断的位置，克制紧急，不像设定朗读。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "radio",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n48",
+      "t": 361.0,
+      "end": 365.95,
+      "speaker": "dafu",
+      "text": "那这儿怎么办？",
+      "delivery": {
+        "rate": 0,
+        "context": "准备出发却担心身后，认真问留下的人。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "radio",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n49",
+      "t": 366.0,
+      "end": 375.95,
+      "speaker": "hestia",
+      "text": "有我。你们把人带回来。",
+      "delivery": {
+        "rate": -3,
+        "context": "先用很短的一句让孩子们放心，再坚定托付，温暖可靠。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "radio",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n50",
+      "t": 376.0,
+      "end": 384.95,
+      "speaker": "xiaozao",
+      "text": "盾裂到第三层了。下一击，别硬接。",
+      "delivery": {
+        "rate": -3,
+        "context": "摸到损伤后提醒朋友，严肃关心，最后几个字说得清楚。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "shield",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n51",
+      "t": 385.0,
+      "end": 391.95,
+      "speaker": "aoao",
+      "text": "那就换个接法。",
+      "delivery": {
+        "rate": -3,
+        "context": "这次不再逞强，抬眼给同伴一个简短而确信的回答。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "xiaozao",
+        "camera": "speech"
+      }
+    },
+    {
+      "id": "n52",
+      "t": 398.0,
+      "end": 407.95,
+      "speaker": "aoao",
+      "text": "天亮以前，让他们看见有人来。",
+      "delivery": {
+        "rate": -3,
+        "context": "三人开始行进，少年望向远路，承诺落在行动上，声音沉稳。"
+      },
+      "acting": {
+        "emotion": "determined",
+        "gaze": "gate",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n53",
+      "t": 416.0,
+      "end": 422.95,
+      "speaker": "azu",
+      "text": "焰阶宫前，别踩进那场雨。",
+      "delivery": {
+        "rate": -3,
+        "context": "遥远断续的传话，仍尽量说清警告，短促有压迫感。"
+      },
+      "acting": {
+        "emotion": "worry",
+        "gaze": "radio",
+        "camera": "stage"
+      }
+    },
+    {
+      "id": "n54",
+      "t": 423.0,
+      "end": 428.95,
+      "speaker": "aoao",
+      "text": "阿箸？你在哪一阶？",
+      "delivery": {
+        "rate": -3,
+        "context": "停步听到熟悉声音，立刻追问位置，担心而急切。"
+      },
+      "acting": {
+        "emotion": "surprised",
+        "gaze": "gate",
+        "camera": "stage"
+      }
+    }
+  ]
 }

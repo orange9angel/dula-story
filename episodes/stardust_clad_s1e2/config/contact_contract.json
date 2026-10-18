@@ -1,12 +1,12 @@
 {
- "scope": "星屑战壳 S1E2《夜守》：三角色全身+兽（潜行/扑击/肩撞/倒地/逃窜）+接触帧（c1 兽爪×盾/c2 兽肩撞×大釜胸甲/c3 银星雨压点环×兽域/c4 双拳×兽背）+谷底撑膝+独白坐姿擦盾+clad_fit 甲件贴身",
+ "scope": "星屑战壳 S1E2《夜守》重制（兽→人形先锋夜刈）：四角色全身+走位步态+接触帧（c1 镰刃×盾/c2 敌肩×大釜胸甲/c3 星雨压点射程/c4 双拳×敌胸徽记）+谷底倒地撑膝+独白坐姿擦盾+clad_fit 甲件贴身",
  "fps_min": 30,
  "pose_tick_hz": 15,
- "_matrix": "physical-completeness 矩阵：env=场景几何均在表演走廊外；无门窗/进食/道具手持；接触帧=活锚点距离断言（兽锚点=beast.js 头注）；走跑=gait+reach；兽位移靠根（不走连续四足步态）",
+ "_matrix": "physical-completeness 矩阵：env=场景几何均在表演走廊外；无门窗/进食；道具=脱手盘（落地静置）；接触帧=活锚点距离断言；走跑=gait+reach",
  "seated": {
   "window": [
    0,
-   320.0
+   434
   ],
   "actors": {
    "aoao": "aoaoRoot",
@@ -46,28 +46,27 @@
      8.5
     ]
    },
-   "beast": {
-    "speed_max": 8.0,
-    "avg_min": 0.05,
-    "bob_min": 0.0,
+   "yekari": {
+    "speed_max": 4.5,
+    "avg_min": 0.15,
+    "bob_min": 0.003,
     "cadence": [
-     0.1,
-     9.0
-    ],
-    "_c": "逃窜 bolt 实测 7.4m/s（狼形奔逃诚实速度）"
+     0.6,
+     8.5
+    ]
    }
   },
-  "_comment": "人侧走跑 bout；兽=潜行拖步（avg_min .05 诚实慢潜行）/扑击逃窜走 air/非 walk 帧"
+  "_comment": "人侧走跑 bout；夜刈=人形刺客（突进/败走 run bout）"
  },
  "bite": {
   "window": [
-   151.6,
-   152.3
+   151.7,
+   152.4
   ],
-  "a": "beastClawL",
+  "a": "yekariSickle",
   "b": "shieldA",
-  "max": 0.22,
-  "_comment": "c1（152）：兽扑击前爪×阿鏊盾面（pawExt 前伸上抬帧）"
+  "max": 0.2,
+  "_comment": "c1（152）：夜刈镰刃尖×阿鏊盾面（突进斩的物理句点）"
  },
  "contacts_local": [
   {
@@ -75,20 +74,20 @@
     177.8,
     178.5
    ],
-   "a": "beastShoulderL",
+   "a": "yekariShoulderL",
    "b": "dafuChest",
-   "max": 0.22,
-   "_comment": "c2（178）：兽肩撞×大釜胸甲（蛮力挥空的代价）"
+   "max": 0.2,
+   "_comment": "c2（178）：闪身入怀肩撞胸（蛮力挥空的代价）"
   },
   {
    "window": [
     255.6,
     256.6
    ],
-   "a": "beastRoot",
+   "a": "yekariRoot",
    "b": "xiaoDisc",
    "max": 3.4,
-   "_comment": "c3（256）：银星雨压点（兽域在弹雨扇面射程内——弹道弹着由 VFX 承担）"
+   "_comment": "c3（256）：银星雨压点（敌在弹雨扇面射程内——弹道弹着由 VFX 承担）"
   },
   {
    "window": [
@@ -96,9 +95,9 @@
     276.5
    ],
    "a": "dafuL",
-   "b": "beastBack",
+   "b": "yekariChest",
    "max": 0.3,
-   "_comment": "c4（276）：陨星·釜底落 双拳×兽背（终结压实）"
+   "_comment": "c4（276）：陨星·釜底落 双拳砸上敌胸徽记区（终结压实）"
   }
  ],
  "reach": {
@@ -344,6 +343,78 @@
      280.6
     ],
     "_c": "同上"
+   },
+   {
+    "subject": "yekariR",
+    "window": [
+     151.0,
+     152.6
+    ],
+    "_c": "c1 突进挥镰本体"
+   },
+   {
+    "subject": "yekariL",
+    "window": [
+     177.4,
+     178.6
+    ],
+    "_c": "c2 闪身入怀本体"
+   },
+   {
+    "subject": "yekariL",
+    "window": [
+     295.5,
+     298.0
+    ],
+    "_c": "骤起败走过渡"
+   },
+   {
+    "subject": "yekariR",
+    "window": [
+     295.5,
+     298.0
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     140.15,
+     140.23
+    ],
+    "_c": "Short pose transition or terminal weapon strike; no resting extension."
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     140.15,
+     140.23
+    ],
+    "_c": "Short pose transition or terminal weapon strike; no resting extension."
+   },
+   {
+    "subject": "yekariR",
+    "window": [
+     162.1,
+     162.14
+    ],
+    "_c": "Short pose transition or terminal weapon strike; no resting extension."
+   },
+   {
+    "subject": "yekariR",
+    "window": [
+     186.16,
+     186.23
+    ],
+    "_c": "Short pose transition or terminal weapon strike; no resting extension."
+   },
+   {
+    "subject": "yekariR",
+    "window": [
+     204.8,
+     206.71
+    ],
+    "_c": "Short pose transition or terminal weapon strike; no resting extension."
    }
   ],
   "_comment": "S1E3 P16 判据；动作本体/过渡帧按窗口白名单（S1E2《夜守》战斗段实测窗口）"
@@ -727,8 +798,68 @@
     "min": -0.05,
     "max": 0.028,
     "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "yekari.chest",
+    "window": [
+     145.0,
+     150.0
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "敌壳胸甲贴胸廓（stalk 静帧窗）"
+   },
+   {
+    "key": "yekari.belt",
+    "window": [
+     145.0,
+     150.0
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "yekari.shin_left",
+    "window": [
+     145.0,
+     150.0
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "yekari.shin_right",
+    "window": [
+     145.0,
+     150.0
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "同上"
+   },
+   {
+    "key": "yekari.pauldron_left",
+    "window": [
+     145.0,
+     150.0
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "yekari.pauldron_right",
+    "window": [
+     145.0,
+     150.0
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "同上"
    }
   ],
-  "_comment": "甲件贴身=静立域断言（探针设计意图）：各角色战斗段的平稳子窗；撞击/承压极端帧由 contacts_local 承担"
+  "_comment": "四角色静立域子窗（含敌役 stalk 窗）；撞击/承压帧由 contacts_local 承担"
  }
 }

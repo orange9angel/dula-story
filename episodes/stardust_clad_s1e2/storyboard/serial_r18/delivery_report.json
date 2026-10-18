@@ -1,0 +1,485 @@
+{
+  "version": "r18",
+  "master": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\output\\stardust_clad_s1e2_master_r18.mp4",
+    "duration": 434.0,
+    "frames": 13020,
+    "sha256": "10c74c6537a3a7ff37235400df37e0d9e7669d23a8abbce0676d8703de4df128",
+    "video": "h264",
+    "audio": "aac",
+    "decodePassed": true
+  },
+  "edit": {
+    "source": "script.story",
+    "source_sha256": "8a4a7a0176ce784b5b3233d34897dfc3fc892c793ed2ca4846e1fde6b58cf421",
+    "sourceDuration": 434.0,
+    "duration": 414.6,
+    "cuts": [
+      {
+        "id": "e01",
+        "start": 41.2,
+        "end": 48.0,
+        "reason": "保留承认后的反应，收掉重复静止"
+      },
+      {
+        "id": "e02",
+        "start": 61.2,
+        "end": 65.0,
+        "reason": "保留逞强后的迟疑，接同伴反问"
+      },
+      {
+        "id": "e03",
+        "start": 72.0,
+        "end": 76.0,
+        "reason": "保留听者转头，缩短转头前等待"
+      },
+      {
+        "id": "e04",
+        "start": 87.2,
+        "end": 92.0,
+        "reason": "约定落定后直接接轻声回应"
+      }
+    ],
+    "keptSourceSpans": [
+      [
+        0,
+        41.2
+      ],
+      [
+        48.0,
+        61.2
+      ],
+      [
+        65.0,
+        72.0
+      ],
+      [
+        76.0,
+        87.2
+      ],
+      [
+        92.0,
+        434.0
+      ]
+    ],
+    "releaseCues": {
+      "MONO": 14.0,
+      "EYE1": 63.4,
+      "STIR": 80.6,
+      "REVEAL": 98.6,
+      "RALLY": 104.6,
+      "FIGHT1": 120.6,
+      "SECOND_CUT": 133.8,
+      "C1": 132.6,
+      "CALL_ENEMY": 129.6,
+      "POUNCE": 130.1,
+      "C2": 158.6,
+      "TEST_SHOT": 178.6,
+      "DISC_DROP": 186.6,
+      "VALLEY": 188.6,
+      "SCAR": 193.6,
+      "STALL": 212.6,
+      "EYE2": 209.6,
+      "DISC_BACK": 222.6,
+      "EYE3": 226.6,
+      "FLANK": 228.6,
+      "C3": 236.6,
+      "CALL1": 232.6,
+      "RAIN_RELEASE": 234.75,
+      "BLOCK_RIGHT": 237.8,
+      "BRAKE": 242.3,
+      "FIN_CHARGE": 250.6,
+      "C4": 256.6,
+      "CALL2": 253.9,
+      "MARK": 266.6,
+      "DOWN": 264.6,
+      "BOLT": 276.6,
+      "LETGO": 285.6,
+      "HESTIA": 323.6,
+      "EYE4": 365.6,
+      "DEPART": 372.6,
+      "GATE": 388.6,
+      "RADIO": 396.6,
+      "FADE": 412.6,
+      "HOOK": 409.6
+    },
+    "releaseVoices": [
+      {
+        "id": "n01",
+        "sourceStart": 15.0,
+        "start": 15.0,
+        "duration": 3.336
+      },
+      {
+        "id": "n02",
+        "sourceStart": 22.0,
+        "start": 22.0,
+        "duration": 4.392
+      },
+      {
+        "id": "n03",
+        "sourceStart": 31.0,
+        "start": 31.0,
+        "duration": 3.12
+      },
+      {
+        "id": "n04",
+        "sourceStart": 37.0,
+        "start": 37.0,
+        "duration": 1.92
+      },
+      {
+        "id": "n05",
+        "sourceStart": 48.0,
+        "start": 41.2,
+        "duration": 4.968
+      },
+      {
+        "id": "n06",
+        "sourceStart": 56.0,
+        "start": 49.2,
+        "duration": 2.928
+      },
+      {
+        "id": "n07",
+        "sourceStart": 65.0,
+        "start": 54.4,
+        "duration": 4.584
+      },
+      {
+        "id": "n08",
+        "sourceStart": 78.0,
+        "start": 63.4,
+        "duration": 1.272
+      },
+      {
+        "id": "n09",
+        "sourceStart": 83.0,
+        "start": 68.4,
+        "duration": 1.896
+      },
+      {
+        "id": "n10",
+        "sourceStart": 92.0,
+        "start": 72.6,
+        "duration": 1.92
+      },
+      {
+        "id": "n11",
+        "sourceStart": 106.0,
+        "start": 86.6,
+        "duration": 3.336
+      },
+      {
+        "id": "n12",
+        "sourceStart": 120.0,
+        "start": 100.6,
+        "duration": 2.424
+      },
+      {
+        "id": "n13",
+        "sourceStart": 125.0,
+        "start": 105.6,
+        "duration": 2.904
+      },
+      {
+        "id": "n14",
+        "sourceStart": 132.0,
+        "start": 112.6,
+        "duration": 4.032
+      },
+      {
+        "id": "n15",
+        "sourceStart": 137.0,
+        "start": 117.6,
+        "duration": 2.904
+      },
+      {
+        "id": "n16",
+        "sourceStart": 140.5,
+        "start": 121.1,
+        "duration": 2.832
+      },
+      {
+        "id": "n17",
+        "sourceStart": 145.5,
+        "start": 126.1,
+        "duration": 2.736
+      },
+      {
+        "id": "n18",
+        "sourceStart": 149.0,
+        "start": 129.6,
+        "duration": 3.0
+      },
+      {
+        "id": "n19",
+        "sourceStart": 158.0,
+        "start": 138.6,
+        "duration": 2.736
+      },
+      {
+        "id": "n20",
+        "sourceStart": 163.0,
+        "start": 143.6,
+        "duration": 3.144
+      },
+      {
+        "id": "n21",
+        "sourceStart": 171.0,
+        "start": 151.6,
+        "duration": 2.256
+      },
+      {
+        "id": "n22",
+        "sourceStart": 176.0,
+        "start": 156.6,
+        "duration": 1.248
+      },
+      {
+        "id": "n23",
+        "sourceStart": 182.0,
+        "start": 162.6,
+        "duration": 3.864
+      },
+      {
+        "id": "n24",
+        "sourceStart": 195.0,
+        "start": 175.6,
+        "duration": 3.576
+      },
+      {
+        "id": "n25",
+        "sourceStart": 201.0,
+        "start": 181.6,
+        "duration": 2.832
+      },
+      {
+        "id": "n26",
+        "sourceStart": 210.0,
+        "start": 190.6,
+        "duration": 2.928
+      },
+      {
+        "id": "n27",
+        "sourceStart": 216.0,
+        "start": 196.6,
+        "duration": 1.632
+      },
+      {
+        "id": "n28",
+        "sourceStart": 220.0,
+        "start": 200.6,
+        "duration": 3.24
+      },
+      {
+        "id": "n29",
+        "sourceStart": 229.0,
+        "start": 209.6,
+        "duration": 3.144
+      },
+      {
+        "id": "n30",
+        "sourceStart": 235.0,
+        "start": 215.6,
+        "duration": 3.072
+      },
+      {
+        "id": "n31",
+        "sourceStart": 241.0,
+        "start": 221.6,
+        "duration": 2.928
+      },
+      {
+        "id": "n32",
+        "sourceStart": 246.0,
+        "start": 226.6,
+        "duration": 3.744
+      },
+      {
+        "id": "n33",
+        "sourceStart": 252.0,
+        "start": 232.6,
+        "duration": 2.448
+      },
+      {
+        "id": "n34",
+        "sourceStart": 259.0,
+        "start": 239.6,
+        "duration": 2.496
+      },
+      {
+        "id": "n35",
+        "sourceStart": 266.0,
+        "start": 246.6,
+        "duration": 3.24
+      },
+      {
+        "id": "n36",
+        "sourceStart": 273.3,
+        "start": 253.9,
+        "duration": 2.616
+      },
+      {
+        "id": "n37",
+        "sourceStart": 288.0,
+        "start": 268.6,
+        "duration": 2.664
+      },
+      {
+        "id": "n38",
+        "sourceStart": 293.0,
+        "start": 273.6,
+        "duration": 2.328
+      },
+      {
+        "id": "n39",
+        "sourceStart": 300.0,
+        "start": 280.6,
+        "duration": 2.04
+      },
+      {
+        "id": "n40",
+        "sourceStart": 305.0,
+        "start": 285.6,
+        "duration": 2.112
+      },
+      {
+        "id": "n41",
+        "sourceStart": 313.0,
+        "start": 293.6,
+        "duration": 1.92
+      },
+      {
+        "id": "n42",
+        "sourceStart": 318.0,
+        "start": 298.6,
+        "duration": 1.512
+      },
+      {
+        "id": "n43",
+        "sourceStart": 323.0,
+        "start": 303.6,
+        "duration": 3.552
+      },
+      {
+        "id": "n44",
+        "sourceStart": 329.0,
+        "start": 309.6,
+        "duration": 2.664
+      },
+      {
+        "id": "n45",
+        "sourceStart": 335.0,
+        "start": 315.6,
+        "duration": 3.576
+      },
+      {
+        "id": "n46",
+        "sourceStart": 343.0,
+        "start": 323.6,
+        "duration": 4.584
+      },
+      {
+        "id": "n47",
+        "sourceStart": 352.0,
+        "start": 332.6,
+        "duration": 3.576
+      },
+      {
+        "id": "n48",
+        "sourceStart": 361.0,
+        "start": 341.6,
+        "duration": 1.848
+      },
+      {
+        "id": "n49",
+        "sourceStart": 366.0,
+        "start": 346.6,
+        "duration": 2.736
+      },
+      {
+        "id": "n50",
+        "sourceStart": 376.0,
+        "start": 356.6,
+        "duration": 4.584
+      },
+      {
+        "id": "n51",
+        "sourceStart": 385.0,
+        "start": 365.6,
+        "duration": 1.92
+      },
+      {
+        "id": "n52",
+        "sourceStart": 398.0,
+        "start": 378.6,
+        "duration": 2.904
+      },
+      {
+        "id": "n53",
+        "sourceStart": 416.0,
+        "start": 396.6,
+        "duration": 3.336
+      },
+      {
+        "id": "n54",
+        "sourceStart": 423.0,
+        "start": 403.6,
+        "duration": 2.52
+      }
+    ],
+    "wavSha256": "a9cab9a285bd367ffeb219e6132bc2ac554ca6667fea13f490602c8316c38f32",
+    "peak": 0.7762451171875
+  },
+  "body": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\output\\stardust_clad_s1e2_r18.mp4",
+    "duration": 414.6,
+    "frames": 12438,
+    "sha256": "189289e03249379d213f5fc441a07575c8500a78059654735708ce385d9e65e9",
+    "video": "h264",
+    "audio": "aac",
+    "decodePassed": true
+  },
+  "opening": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_op\\output\\craft3d_full_subtitled_2026_10_18.mp4",
+    "duration": 49.2,
+    "frames": 1476,
+    "sha256": "11350d1ff572b7a5960c0c9a34b48eabfd062430614c8f72850fa82aab01e51e",
+    "video": "h264",
+    "audio": "aac",
+    "decodePassed": true
+  },
+  "tv": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\output\\stardust_clad_s1e2_tv_r18.mp4",
+    "duration": 463.8,
+    "frames": 13914,
+    "sha256": "58e71b1a681c61dfd01c452b4fe7bea4921843ad608b2734a955f58b5e06e970",
+    "video": "h264",
+    "audio": "aac",
+    "decodePassed": true
+  },
+  "mixedWavSha256": "8a51971136dc3b943820cf9eda3c6d00c9c3f4dc018cacc4a5a3919986f23a4f",
+  "bodyStartsInTv": 49.2,
+  "pictureReview": {
+    "method": "Direct inspection of decoded final-MP4 contact sheets; mapped-frame and audio-alignment checks stored alongside.",
+    "bodySheet": "storyboard/serial_r18/decoded_final/overview.jpg",
+    "tvSheet": "storyboard/serial_r18/decoded_final/tv_join_and_end.jpg",
+    "sourceActionSequences": "storyboard/serial_r17/decoded_final/{chain,finish}.jpg",
+    "editJoins": "storyboard/serial_r18/edit_preview/joins.jpg",
+    "observed": [
+      "Human opponent present throughout the sampled fight.",
+      "Normal stopped stances are upright; impact and injury poses remain bent where motivated.",
+      "Return-blade wrist contact, damaged shield, care strap and wet palace boundary remain visible.",
+      "Four editorial cuts preserve dialogue closeups and the listening turn.",
+      "Opening joins the night exterior at 49.2s; final fade stays within the declared duration."
+    ],
+    "limits": [
+      "Contact sheets show sampled positions, not a human normal-speed full-film viewing.",
+      "Existing procedural face/armor shapes remain visible; this is not commercial-studio animation parity.",
+      "Audio observations and numerical codec checks are not human aesthetic approval."
+    ]
+  },
+  "limits": "Technical checks and documented model-assisted listening; not a human full-film quality approval.",
+  "aliasesPublished": true
+}

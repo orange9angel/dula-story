@@ -1,0 +1,1687 @@
+{
+  "version": 1,
+  "status": "reviewed",
+  "reviewedBy": "episode-director",
+  "reviewScope": "creative plan; performance and final mix still require QC",
+  "sources": [
+    {
+      "path": "script.story",
+      "sha256": "8a4a7a0176ce784b5b3233d34897dfc3fc892c793ed2ca4846e1fde6b58cf421"
+    },
+    {
+      "path": "config/dialogue.json",
+      "sha256": "37a20f8c19c411dcded807ea68dbecf8b696b05e9dc1d373c03068e1ddfc6bd1"
+    },
+    {
+      "path": "config/voices.json",
+      "sha256": "4c066eab957a0cc9f0c755c9e7bf9707e8dab159bb7e853f1bc43fe05c54281c"
+    }
+  ],
+  "policies": {
+    "priority": [
+      "dialogue",
+      "storySfx",
+      "ambience",
+      "music"
+    ],
+    "musicMode": "directed",
+    "ambienceMode": "directed",
+    "breath": "natural-tts-pauses-no-layered-breath"
+  },
+  "mix": {
+    "dialogueVolume": 1.3,
+    "useDucking": true,
+    "duckDepth": 0.42,
+    "peakCeilingDb": -2.2
+  },
+  "characters": {
+    "Xiaozao": {
+      "voice": "zh_male_gaolengchenwen_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Aoao": {
+      "voice": "ICL_uranus_zh_male_rexueshaonian_tob",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Yekari": {
+      "voice": "ICL_uranus_zh_male_diyinchenyu_tob",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Dafu": {
+      "voice": "zh_male_dongfanghaoran_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Hestia": {
+      "voice": "zh_female_ganmaodianyin_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    },
+    "Azu": {
+      "voice": "ICL_uranus_zh_female_aomanjiaosheng_tob",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice"
+    }
+  },
+  "dialogue": [
+    {
+      "entry": 3,
+      "id": "n01",
+      "character": "Xiaozao",
+      "text": "再擦，盾上那点金漆就没了。",
+      "startTime": 15.0,
+      "endTime": 21.95,
+      "scene": "StardustShrineScene",
+      "intent": "深夜在朋友身旁坐着，轻声打趣，关心藏在玩笑里。",
+      "subtext": "担心朋友一味责备自己，先用玩笑打开话题。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "深夜在朋友身旁坐着，轻声打趣，关心藏在玩笑里。"
+      }
+    },
+    {
+      "entry": 4,
+      "id": "n02",
+      "character": "Aoao",
+      "text": "金漆掉了能补。明晚要是又挡不住呢？",
+      "startTime": 22.0,
+      "endTime": 30.95,
+      "scene": "StardustShrineScene",
+      "intent": "低声答话，手还在擦盾；后半句终于露出白天留下的担忧。",
+      "subtext": "害怕下一次保护不了同伴。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "低声答话，手还在擦盾；后半句终于露出白天留下的担忧。"
+      }
+    },
+    {
+      "entry": 5,
+      "id": "n03",
+      "character": "Xiaozao",
+      "text": "今天那一击，你挡住了。",
+      "startTime": 31.0,
+      "endTime": 36.95,
+      "scene": "StardustShrineScene",
+      "intent": "平静而确切，提醒朋友一个事实，不是安慰小孩。",
+      "subtext": "希望他承认自己也做到了。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "平静而确切，提醒朋友一个事实，不是安慰小孩。"
+      }
+    },
+    {
+      "entry": 6,
+      "id": "n04",
+      "character": "Aoao",
+      "text": "是你们替我补上的。",
+      "startTime": 37.0,
+      "endTime": 47.95,
+      "scene": "StardustShrineScene",
+      "intent": "停下手里的活，声音低下来，有些过意不去。",
+      "subtext": "不敢把同伴的付出算成自己的胜利。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "停下手里的活，声音低下来，有些过意不去。"
+      }
+    },
+    {
+      "entry": 7,
+      "id": "n05",
+      "character": "Xiaozao",
+      "text": "所以，你打算一夜不睡，把自己练成三个人？",
+      "startTime": 48.0,
+      "endTime": 55.95,
+      "scene": "StardustShrineScene",
+      "intent": "朋友间轻轻反问，前半调侃，最后认真等他回答。",
+      "subtext": "用荒唐的办法反问他不肯分担的习惯。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "朋友间轻轻反问，前半调侃，最后认真等他回答。"
+      }
+    },
+    {
+      "entry": 8,
+      "id": "n06",
+      "character": "Aoao",
+      "text": "至少下回，别让你们替我挨打。",
+      "startTime": 56.0,
+      "endTime": 64.95,
+      "scene": "StardustShrineScene",
+      "intent": "对身旁朋友坦白，克制地咬住后半句，不喊口号。",
+      "subtext": "把受伤都归到自己的责任。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "对身旁朋友坦白，克制地咬住后半句，不喊口号。"
+      }
+    },
+    {
+      "entry": 9,
+      "id": "n07",
+      "character": "Xiaozao",
+      "text": "你老这样，轮到我怕的时候，找谁？",
+      "startTime": 65.0,
+      "endTime": 77.95,
+      "scene": "StardustShrineScene",
+      "intent": "这次没有开玩笑，语速稍慢，提出自己也会害怕。",
+      "subtext": "我也需要你，不能永远被你挡在外面。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "这次没有开玩笑，语速稍慢，提出自己也会害怕。"
+      }
+    },
+    {
+      "entry": 10,
+      "id": "n08",
+      "character": "Aoao",
+      "text": "那就叫我。",
+      "startTime": 78.0,
+      "endTime": 82.95,
+      "scene": "StardustShrineScene",
+      "intent": "听懂朋友的意思后抬头，短短一句，认真答应。",
+      "subtext": "愿意听见朋友求助。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "听懂朋友的意思后抬头，短短一句，认真答应。"
+      }
+    },
+    {
+      "entry": 11,
+      "id": "n09",
+      "character": "Xiaozao",
+      "text": "那你也得叫我们。",
+      "startTime": 83.0,
+      "endTime": 91.95,
+      "scene": "StardustShrineScene",
+      "intent": "接住朋友的承诺，声音轻，但末尾坚定。",
+      "subtext": "求助应该是双向的。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "接住朋友的承诺，声音轻，但末尾坚定。"
+      }
+    },
+    {
+      "entry": 12,
+      "id": "n10",
+      "character": "Aoao",
+      "text": "知道了。你先去睡。",
+      "startTime": 92.0,
+      "endTime": 99.95,
+      "scene": "StardustShrineScene",
+      "intent": "终于松一口气，带很轻的笑意，把朋友劝回去。",
+      "subtext": "先答应，是否做到留待战斗检验。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "终于松一口气，带很轻的笑意，把朋友劝回去。"
+      }
+    },
+    {
+      "entry": 14,
+      "id": "n11",
+      "character": "Aoao",
+      "text": "脚步停了。锁链还在响。",
+      "startTime": 106.0,
+      "endTime": 117.95,
+      "scene": "StardustShrineScene",
+      "intent": "突然警觉，自言自语压低声音，先听，再判断，不像旁白。",
+      "subtext": "在眼下窗口向对方采取行动：突然警觉，自言自语压低声音，先听，再判断，不像旁白。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "突然警觉，自言自语压低声音，先听，再判断，不像旁白。"
+      }
+    },
+    {
+      "entry": 16,
+      "id": "n12",
+      "character": "Yekari",
+      "text": "这里，还留着守夜的人。",
+      "startTime": 120.0,
+      "endTime": 123.95,
+      "scene": "StarfallColonnadeScene",
+      "intent": "年轻成年男子，冷静低沉的正常人声；看到旧景般停顿，绝不咆哮。",
+      "subtext": "眼前的值夜人让自己想到从前。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "年轻成年男子，冷静低沉的正常人声；看到旧景般停顿，绝不咆哮。"
+      }
+    },
+    {
+      "entry": 18,
+      "id": "n13",
+      "character": "Aoao",
+      "text": "大釜！小凿！有人闯殿！",
+      "startTime": 125.0,
+      "endTime": 131.95,
+      "scene": "StardustShrineScene",
+      "intent": "从广场向身后的同伴呼喊示警，急促清楚。",
+      "subtext": "在眼下窗口向对方采取行动：从广场向身后的同伴呼喊示警，急促清楚。",
+      "delivery": {
+        "energy": 0.88,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "从广场向身后的同伴呼喊示警，急促清楚。"
+      }
+    },
+    {
+      "entry": 19,
+      "id": "n14",
+      "character": "Dafu",
+      "text": "听见了！盾后面，给俺留个位置！",
+      "startTime": 132.0,
+      "endTime": 136.95,
+      "scene": "StardustShrineScene",
+      "intent": "赶来助战，粗爽可靠，脚步刚停有一点喘气。",
+      "subtext": "在眼下窗口向对方采取行动：赶来助战，粗爽可靠，脚步刚停有一点喘气。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "赶来助战，粗爽可靠，脚步刚停有一点喘气。"
+      }
+    },
+    {
+      "entry": 20,
+      "id": "n15",
+      "character": "Xiaozao",
+      "text": "右手持镰。别追刀光。",
+      "startTime": 137.0,
+      "endTime": 139.95,
+      "scene": "StardustShrineScene",
+      "intent": "快速观察后低声提醒队友，字句短而清楚。",
+      "subtext": "在眼下窗口向对方采取行动：快速观察后低声提醒队友，字句短而清楚。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "快速观察后低声提醒队友，字句短而清楚。"
+      }
+    },
+    {
+      "entry": 22,
+      "id": "n16",
+      "character": "Yekari",
+      "text": "交出火种。你们守不住它。",
+      "startTime": 140.5,
+      "endTime": 145.45,
+      "scene": "StardustShrineScene",
+      "intent": "向面前少年冷静下判断，有自己的理由，尾句收紧。",
+      "subtext": "把抢火解释成强者的责任。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "向面前少年冷静下判断，有自己的理由，尾句收紧。"
+      }
+    },
+    {
+      "entry": 23,
+      "id": "n17",
+      "character": "Aoao",
+      "text": "后面的灯，还等着这点火。",
+      "startTime": 145.5,
+      "endTime": 148.95,
+      "scene": "StardustShrineScene",
+      "intent": "举盾护住身后，坚定而克制，不是向观众演讲。",
+      "subtext": "火后面有具体的人在等。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "举盾护住身后，坚定而克制，不是向观众演讲。"
+      }
+    },
+    {
+      "entry": 24,
+      "id": "n18",
+      "character": "Yekari",
+      "text": "刈夜——无声镰弧！",
+      "startTime": 149.0,
+      "endTime": 157.95,
+      "scene": "StardustShrineScene",
+      "intent": "出招名，前半低声蓄力，后半短促爆发，保持人类男声。",
+      "subtext": "在眼下窗口向对方采取行动：出招名，前半低声蓄力，后半短促爆发，保持人类男声。",
+      "delivery": {
+        "energy": 0.88,
+        "pace": 1.08,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 8,
+        "context": "出招名，前半低声蓄力，后半短促爆发，保持人类男声。"
+      }
+    },
+    {
+      "entry": 25,
+      "id": "n19",
+      "character": "Aoao",
+      "text": "挡住了……怎么还有一道？",
+      "startTime": 158.0,
+      "endTime": 161.95,
+      "scene": "StardustShrineScene",
+      "intent": "盾后的少年先喘息，随即觉察手腕剧痛，惊讶压在声音里。",
+      "subtext": "成功的判断被身体疼痛推翻。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "盾后的少年先喘息，随即觉察手腕剧痛，惊讶压在声音里。"
+      }
+    },
+    {
+      "entry": 27,
+      "id": "n20",
+      "character": "Xiaozao",
+      "text": "石阶上，两道痕。",
+      "startTime": 163.0,
+      "endTime": 170.95,
+      "scene": "StardustShrineScene",
+      "intent": "看见地上证据，低声说出观察，尚未完全理解。",
+      "subtext": "先说自己确实看见的证据。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "看见地上证据，低声说出观察，尚未完全理解。"
+      }
+    },
+    {
+      "entry": 28,
+      "id": "n21",
+      "character": "Dafu",
+      "text": "少绕弯！俺来！",
+      "startTime": 171.0,
+      "endTime": 175.95,
+      "scene": "StardustShrineScene",
+      "intent": "看同伴受伤后急于上前，直接有力。",
+      "subtext": "在眼下窗口向对方采取行动：看同伴受伤后急于上前，直接有力。",
+      "delivery": {
+        "energy": 0.88,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "看同伴受伤后急于上前，直接有力。"
+      }
+    },
+    {
+      "entry": 29,
+      "id": "n22",
+      "character": "Yekari",
+      "text": "正好。",
+      "startTime": 176.0,
+      "endTime": 181.95,
+      "scene": "StardustShrineScene",
+      "intent": "看出对手的冲劲，轻声自信，短促，不故作恶魔声。",
+      "subtext": "在眼下窗口向对方采取行动：看出对手的冲劲，轻声自信，短促，不故作恶魔声。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "看出对手的冲劲，轻声自信，短促，不故作恶魔声。"
+      }
+    },
+    {
+      "entry": 30,
+      "id": "n23",
+      "character": "Dafu",
+      "text": "俺的劲……让他借走了。",
+      "startTime": 182.0,
+      "endTime": 185.95,
+      "scene": "StardustShrineScene",
+      "intent": "胸口挨撞后的压声，疼得吸气，只说清这句，不夸张呻吟。",
+      "subtext": "第一次承认蛮力反而帮助了敌人。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "胸口挨撞后的压声，疼得吸气，只说清这句，不夸张呻吟。"
+      }
+    },
+    {
+      "entry": 32,
+      "id": "n24",
+      "character": "Xiaozao",
+      "text": "链子晚响半拍。我能封住！",
+      "startTime": 195.0,
+      "endTime": 200.95,
+      "scene": "StardustShrineScene",
+      "intent": "从第一次受击发现规律，急于验证，后半句加快。",
+      "subtext": "想立刻证明自己能弥补局面。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "从第一次受击发现规律，急于验证，后半句加快。"
+      }
+    },
+    {
+      "entry": 33,
+      "id": "n25",
+      "character": "Yekari",
+      "text": "你盯着刀，还是盯着他？",
+      "startTime": 201.0,
+      "endTime": 207.95,
+      "scene": "StardustShrineScene",
+      "intent": "声东击西的试探，让对手在护同伴和封刀之间分神。",
+      "subtext": "迫使对手在封刀和救同伴之间选择。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "声东击西的试探，让对手在护同伴和封刀之间分神。"
+      }
+    },
+    {
+      "entry": 35,
+      "id": "n26",
+      "character": "Aoao",
+      "text": "手……握不住了。",
+      "startTime": 210.0,
+      "endTime": 215.95,
+      "scene": "StardustShrineScene",
+      "intent": "受伤后努力握紧却失败，极轻的一句，带一次压住的吸气。",
+      "subtext": "终于无法再隐藏伤势。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "受伤后努力握紧却失败，极轻的一句，带一次压住的吸气。"
+      }
+    },
+    {
+      "entry": 36,
+      "id": "n27",
+      "character": "Yekari",
+      "text": "我也守过一整夜。",
+      "startTime": 216.0,
+      "endTime": 219.95,
+      "scene": "StardustShrineScene",
+      "intent": "摸到自己旧扣带，第一次流露旧事，声音放轻，不煽情。",
+      "subtext": "不愿承认自己被遗弃，却忍不住提起。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "摸到自己旧扣带，第一次流露旧事，声音放轻，不煽情。"
+      }
+    },
+    {
+      "entry": 37,
+      "id": "n28",
+      "character": "Yekari",
+      "text": "等到灯灭，一个人也没来。",
+      "startTime": 220.0,
+      "endTime": 223.95,
+      "scene": "StardustShrineScene",
+      "intent": "继续说自己的经历，最后几个字冷下来，悲伤被压住。",
+      "subtext": "不再相信会有人来。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "继续说自己的经历，最后几个字冷下来，悲伤被压住。"
+      }
+    },
+    {
+      "entry": 39,
+      "id": "n29",
+      "character": "Aoao",
+      "text": "所以，你也不让别人等到了？",
+      "startTime": 229.0,
+      "endTime": 234.95,
+      "scene": "StardustShrineScene",
+      "intent": "疼痛中抬眼，质问面前的人，声音不高，后半句直指他的选择。",
+      "subtext": "拒绝让旧伤变成伤害别人的理由。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "疼痛中抬眼，质问面前的人，声音不高，后半句直指他的选择。"
+      }
+    },
+    {
+      "entry": 40,
+      "id": "n30",
+      "character": "Yekari",
+      "text": "火给强者，至少不会灭。",
+      "startTime": 235.0,
+      "endTime": 240.95,
+      "scene": "StardustShrineScene",
+      "intent": "把动摇压回去，以确信保护自己，坚硬地回绝。",
+      "subtext": "重新用强弱理论压住自己的动摇。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "把动摇压回去，以确信保护自己，坚硬地回绝。"
+      }
+    },
+    {
+      "entry": 41,
+      "id": "n31",
+      "character": "Aoao",
+      "text": "小凿！第一刀，交给你！",
+      "startTime": 241.0,
+      "endTime": 245.95,
+      "scene": "StardustShrineScene",
+      "intent": "终于向同伴明确求助，短促有力，随后准备自己接住另一刀。",
+      "subtext": "把最危险的一刀明确托付给朋友。",
+      "delivery": {
+        "energy": 0.88,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "终于向同伴明确求助，短促有力，随后准备自己接住另一刀。"
+      }
+    },
+    {
+      "entry": 42,
+      "id": "n32",
+      "character": "Xiaozao",
+      "text": "只封一边。大釜，左边！",
+      "startTime": 246.0,
+      "endTime": 249.95,
+      "scene": "StardustShrineScene",
+      "intent": "接受不完美的计划，眼神稳定，明确告诉同伴攻击目的。",
+      "subtext": "接受不完美，改变攻击目标。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "接受不完美的计划，眼神稳定，明确告诉同伴攻击目的。"
+      }
+    },
+    {
+      "entry": 44,
+      "id": "n33",
+      "character": "Xiaozao",
+      "text": "千孔——银星雨！",
+      "startTime": 252.0,
+      "endTime": 258.95,
+      "scene": "StardustShrineScene",
+      "intent": "招式释放，千孔稍留半拍，银星雨干净地上扬爆发。",
+      "subtext": "在眼下窗口向对方采取行动：招式释放，千孔稍留半拍，银星雨干净地上扬爆发。",
+      "delivery": {
+        "energy": 0.88,
+        "pace": 1.08,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 8,
+        "context": "招式释放，千孔稍留半拍，银星雨干净地上扬爆发。"
+      }
+    },
+    {
+      "entry": 45,
+      "id": "n34",
+      "character": "Xiaozao",
+      "text": "大釜，收半步！",
+      "startTime": 259.0,
+      "endTime": 263.95,
+      "scene": "StardustShrineScene",
+      "intent": "发现敌人在等冲势，立即提醒同伴收住；紧迫但不慌乱。",
+      "subtext": "让同伴不要再次落入借力的陷阱。",
+      "delivery": {
+        "energy": 0.88,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "发现敌人在等冲势，立即提醒同伴收住；紧迫但不慌乱。"
+      }
+    },
+    {
+      "entry": 47,
+      "id": "n35",
+      "character": "Dafu",
+      "text": "这回，轮到你先动。",
+      "startTime": 266.0,
+      "endTime": 273.25,
+      "scene": "StardustShrineScene",
+      "intent": "主动刹住冲劲，把力量收住，低声蓄着劲。",
+      "subtext": "证明自己学会等和收力。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "主动刹住冲劲，把力量收住，低声蓄着劲。"
+      }
+    },
+    {
+      "entry": 48,
+      "id": "n36",
+      "character": "Dafu",
+      "text": "陨星——釜底落！",
+      "startTime": 273.3,
+      "endTime": 283.95,
+      "scene": "StardustShrineScene",
+      "intent": "必杀技，陨星蓄力后短停，釜底落强而清楚，最后一字压在落击。",
+      "subtext": "在眼下窗口向对方采取行动：必杀技，陨星蓄力后短停，釜底落强而清楚，最后一字压在落击。",
+      "delivery": {
+        "energy": 0.88,
+        "pace": 1.08,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 8,
+        "context": "必杀技，陨星蓄力后短停，釜底落强而清楚，最后一字压在落击。"
+      }
+    },
+    {
+      "entry": 50,
+      "id": "n37",
+      "character": "Yekari",
+      "text": "下一次，谁替你补上？",
+      "startTime": 288.0,
+      "endTime": 292.95,
+      "scene": "StardustShrineScene",
+      "intent": "败后撑着武器，喘息里仍不肯相信，带疼痛但不求饶。",
+      "subtext": "败了仍要验证对方的信念会不会破。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "败后撑着武器，喘息里仍不肯相信，带疼痛但不求饶。"
+      }
+    },
+    {
+      "entry": 51,
+      "id": "n38",
+      "character": "Aoao",
+      "text": "他们。也有我。",
+      "startTime": 293.0,
+      "endTime": 297.95,
+      "scene": "StardustShrineScene",
+      "intent": "看过两个同伴再回答，坚定自然，绝不胜利演说。",
+      "subtext": "不是依赖别人，也不是拒绝帮助。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "看过两个同伴再回答，坚定自然，绝不胜利演说。"
+      }
+    },
+    {
+      "entry": 53,
+      "id": "n39",
+      "character": "Dafu",
+      "text": "他往宫道去了！",
+      "startTime": 300.0,
+      "endTime": 304.95,
+      "scene": "StardustShrineScene",
+      "intent": "看见敌人退走，本能要追，提醒同伴。",
+      "subtext": "在眼下窗口向对方采取行动：看见敌人退走，本能要追，提醒同伴。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "看见敌人退走，本能要追，提醒同伴。"
+      }
+    },
+    {
+      "entry": 54,
+      "id": "n40",
+      "character": "Aoao",
+      "text": "别追。先扶住小凿。",
+      "startTime": 305.0,
+      "endTime": 312.95,
+      "scene": "StardustShrineScene",
+      "intent": "立刻选择照顾同伴，不用大喊，明确下决定。",
+      "subtext": "守住同伴比追逐胜利重要。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "立刻选择照顾同伴，不用大喊，明确下决定。"
+      }
+    },
+    {
+      "entry": 55,
+      "id": "n41",
+      "character": "Xiaozao",
+      "text": "你的手在抖。",
+      "startTime": 313.0,
+      "endTime": 317.95,
+      "scene": "StardustShrineScene",
+      "intent": "走近看伤，担心但保持冷静，不是责备。",
+      "subtext": "不再允许朋友把疼痛藏起来。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "走近看伤，担心但保持冷静，不是责备。"
+      }
+    },
+    {
+      "entry": 56,
+      "id": "n42",
+      "character": "Aoao",
+      "text": "你看见了？",
+      "startTime": 318.0,
+      "endTime": 322.95,
+      "scene": "StardustShrineScene",
+      "intent": "试着笑一下掩饰，被看穿后轻声问。",
+      "subtext": "被看穿后仍想笑着遮掩。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "试着笑一下掩饰，被看穿后轻声问。"
+      }
+    },
+    {
+      "entry": 57,
+      "id": "n43",
+      "character": "Xiaozao",
+      "text": "一直看着。把盾放低。",
+      "startTime": 323.0,
+      "endTime": 328.95,
+      "scene": "StardustShrineScene",
+      "intent": "温和而直接，一直关注着朋友的伤，最后指导他动作。",
+      "subtext": "关心一直存在，不需要他表现得很强。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "温和而直接，一直关注着朋友的伤，最后指导他动作。"
+      }
+    },
+    {
+      "entry": 58,
+      "id": "n44",
+      "character": "Dafu",
+      "text": "这条扣带，俺来拉。",
+      "startTime": 329.0,
+      "endTime": 334.95,
+      "scene": "StardustShrineScene",
+      "intent": "收起蛮力，仔细帮朋友收紧扣带，可靠而小心。",
+      "subtext": "把力量用于照顾细小的地方。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "收起蛮力，仔细帮朋友收紧扣带，可靠而小心。"
+      }
+    },
+    {
+      "entry": 59,
+      "id": "n45",
+      "character": "Aoao",
+      "text": "轻点……好。够了。",
+      "startTime": 335.0,
+      "endTime": 341.95,
+      "scene": "StardustShrineScene",
+      "intent": "拉紧时一痛，随即放松，最后感谢含在呼气里。",
+      "subtext": "接受别人的手，不再独自撑住。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "拉紧时一痛，随即放松，最后感谢含在呼气里。"
+      }
+    },
+    {
+      "entry": 61,
+      "id": "n46",
+      "character": "Hestia",
+      "text": "焰阶宫求援。撤离的人，被封在雨里。",
+      "startTime": 343.0,
+      "endTime": 351.95,
+      "scene": "StardustShrineScene",
+      "intent": "从殿内传来的急报，平稳清楚，担忧压住，强调被困居民。",
+      "subtext": "先交代需要救的人。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "从殿内传来的急报，平稳清楚，担忧压住，强调被困居民。"
+      }
+    },
+    {
+      "entry": 62,
+      "id": "n47",
+      "character": "Hestia",
+      "text": "十二星宫的路，第一道门就断了。",
+      "startTime": 352.0,
+      "endTime": 360.95,
+      "scene": "StardustShrineScene",
+      "intent": "接着解释救援阻断的位置，克制紧急，不像设定朗读。",
+      "subtext": "必须尽快打通路线。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "接着解释救援阻断的位置，克制紧急，不像设定朗读。"
+      }
+    },
+    {
+      "entry": 63,
+      "id": "n48",
+      "character": "Dafu",
+      "text": "那这儿怎么办？",
+      "startTime": 361.0,
+      "endTime": 365.95,
+      "scene": "StardustShrineScene",
+      "intent": "准备出发却担心身后，认真问留下的人。",
+      "subtext": "出发之前也想保护身后的人。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": 0,
+        "context": "准备出发却担心身后，认真问留下的人。"
+      }
+    },
+    {
+      "entry": 64,
+      "id": "n49",
+      "character": "Hestia",
+      "text": "有我。你们把人带回来。",
+      "startTime": 366.0,
+      "endTime": 375.95,
+      "scene": "StardustShrineScene",
+      "intent": "先用很短的一句让孩子们放心，再坚定托付，温暖可靠。",
+      "subtext": "以留守者身份承担责任。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "先用很短的一句让孩子们放心，再坚定托付，温暖可靠。"
+      }
+    },
+    {
+      "entry": 65,
+      "id": "n50",
+      "character": "Xiaozao",
+      "text": "盾裂到第三层了。下一击，别硬接。",
+      "startTime": 376.0,
+      "endTime": 384.95,
+      "scene": "StardustShrineScene",
+      "intent": "摸到损伤后提醒朋友，严肃关心，最后几个字说得清楚。",
+      "subtext": "让朋友保留克制，不重复受伤。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "摸到损伤后提醒朋友，严肃关心，最后几个字说得清楚。"
+      }
+    },
+    {
+      "entry": 66,
+      "id": "n51",
+      "character": "Aoao",
+      "text": "那就换个接法。",
+      "startTime": 385.0,
+      "endTime": 391.95,
+      "scene": "StardustShrineScene",
+      "intent": "这次不再逞强，抬眼给同伴一个简短而确信的回答。",
+      "subtext": "愿意换办法，不把逞强当勇敢。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "这次不再逞强，抬眼给同伴一个简短而确信的回答。"
+      }
+    },
+    {
+      "entry": 68,
+      "id": "n52",
+      "character": "Aoao",
+      "text": "天亮以前，让他们看见有人来。",
+      "startTime": 398.0,
+      "endTime": 407.95,
+      "scene": "StardustShrineScene",
+      "intent": "三人开始行进，少年望向远路，承诺落在行动上，声音沉稳。",
+      "subtext": "用行动回答没有人来的旧伤。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "三人开始行进，少年望向远路，承诺落在行动上，声音沉稳。"
+      }
+    },
+    {
+      "entry": 70,
+      "id": "n53",
+      "character": "Azu",
+      "text": "焰阶宫前，别踩进那场雨。",
+      "startTime": 416.0,
+      "endTime": 422.95,
+      "scene": "PalaceGateScene",
+      "intent": "遥远断续的传话，仍尽量说清警告，短促有压迫感。",
+      "subtext": "人在险境仍尽力给后来者警告。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "遥远断续的传话，仍尽量说清警告，短促有压迫感。"
+      }
+    },
+    {
+      "entry": 71,
+      "id": "n54",
+      "character": "Aoao",
+      "text": "阿箸？你在哪一阶？",
+      "startTime": 423.0,
+      "endTime": 428.95,
+      "scene": "PalaceGateScene",
+      "intent": "停步听到熟悉声音，立刻追问位置，担心而急切。",
+      "subtext": "从听见警告转为寻找同伴。",
+      "delivery": {
+        "energy": 0.42,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "stone-courtyard",
+        "breath": "natural"
+      },
+      "nativeDelivery": {
+        "rate": -3,
+        "context": "停步听到熟悉声音，立刻追问位置，担心而急切。"
+      }
+    }
+  ],
+  "ambience": [
+    {
+      "id": "night-bed",
+      "name": "night_wind_edited",
+      "startTime": 0,
+      "endTime": 434.0,
+      "volume": 0.16,
+      "role": "bed",
+      "priority": "ambience"
+    },
+    {
+      "id": "hearth-bed",
+      "name": "fire_crackle",
+      "startTime": 14.0,
+      "endTime": 392.0,
+      "volume": 0.1,
+      "role": "bed",
+      "priority": "ambience"
+    },
+    {
+      "id": "palace-rain",
+      "name": "rain_gate",
+      "startTime": 408.0,
+      "endTime": 434.0,
+      "volume": 0.28,
+      "role": "bed",
+      "priority": "ambience"
+    }
+  ],
+  "sfx": [
+    {
+      "id": "human-event-00",
+      "name": "chain_tension",
+      "startTime": 104.0,
+      "volume": 0.48,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "STIR",
+      "offset": 4
+    },
+    {
+      "id": "human-event-01",
+      "name": "boot_step",
+      "startTime": 119.0,
+      "volume": 0.35,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "REVEAL",
+      "offset": 1
+    },
+    {
+      "id": "human-event-02",
+      "name": "shield_bang",
+      "startTime": 124.5,
+      "volume": 0.66,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "RALLY",
+      "offset": 0.5
+    },
+    {
+      "id": "human-event-03",
+      "name": "sickle_whoosh",
+      "startTime": 151.64,
+      "volume": 0.68,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C1",
+      "offset": -0.36
+    },
+    {
+      "id": "human-event-04",
+      "name": "blade_shield",
+      "startTime": 152.0,
+      "volume": 0.95,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C1",
+      "offset": 0
+    },
+    {
+      "id": "human-event-05",
+      "name": "chain_tension",
+      "startTime": 153.02,
+      "volume": 0.65,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "SECOND_CUT",
+      "offset": -0.18
+    },
+    {
+      "id": "human-event-06",
+      "name": "blade_shield",
+      "startTime": 153.2,
+      "volume": 0.62,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "SECOND_CUT",
+      "offset": 0
+    },
+    {
+      "id": "human-event-07",
+      "name": "sickle_whoosh",
+      "startTime": 172.9,
+      "volume": 0.43,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C2",
+      "offset": -5.1
+    },
+    {
+      "id": "human-event-08",
+      "name": "armor_impact",
+      "startTime": 178.0,
+      "volume": 0.95,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C2",
+      "offset": 0
+    },
+    {
+      "id": "human-event-09",
+      "name": "rain_burst",
+      "startTime": 198.0,
+      "volume": 0.4,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "TEST_SHOT",
+      "offset": 0
+    },
+    {
+      "id": "human-event-10",
+      "name": "disc_clatter",
+      "startTime": 206.0,
+      "volume": 0.8,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "DISC_DROP",
+      "offset": 0
+    },
+    {
+      "id": "human-event-11",
+      "name": "rain_burst",
+      "startTime": 254.15,
+      "volume": 0.82,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "RAIN_RELEASE",
+      "offset": 0
+    },
+    {
+      "id": "human-event-12",
+      "name": "blade_shield",
+      "startTime": 256.0,
+      "volume": 0.42,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C3",
+      "offset": 0
+    },
+    {
+      "id": "human-event-13",
+      "name": "crater_slam",
+      "startTime": 276.0,
+      "volume": 0.92,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C4",
+      "offset": 0
+    },
+    {
+      "id": "human-event-14",
+      "name": "cloth_pull",
+      "startTime": 296.3,
+      "volume": 0.3,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "BOLT",
+      "offset": 0.3
+    },
+    {
+      "id": "human-event-15",
+      "name": "cloth_pull",
+      "startTime": 331.0,
+      "volume": 0.38,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "LETGO",
+      "offset": 26
+    }
+  ],
+  "music": [
+    {
+      "id": "quiet",
+      "asset": "bgm_nightwatch",
+      "startTime": 14.0,
+      "endTime": 82,
+      "sourceStart": 0,
+      "baseVolume": 0.28,
+      "fadeIn": 2.5,
+      "fadeOut": 2.5,
+      "purpose": "night conversation",
+      "preserveAsset": true
+    },
+    {
+      "id": "approach",
+      "asset": "bgm_nightwatch",
+      "startTime": 100.0,
+      "endTime": 140.0,
+      "sourceStart": 25,
+      "baseVolume": 0.32,
+      "fadeIn": 1.8,
+      "fadeOut": 1.8,
+      "purpose": "human intruder approach",
+      "preserveAsset": true
+    },
+    {
+      "id": "first-battle",
+      "asset": "bgm_nightbattle",
+      "startTime": 140.0,
+      "endTime": 208.0,
+      "sourceStart": 0,
+      "baseVolume": 0.43,
+      "fadeIn": 1.0,
+      "fadeOut": 1.0,
+      "purpose": "failed attempts",
+      "preserveAsset": true
+    },
+    {
+      "id": "decision",
+      "asset": "bgm_nightbattle",
+      "startTime": 229.0,
+      "endTime": 284.0,
+      "sourceStart": 14,
+      "baseVolume": 0.45,
+      "fadeIn": 1.2,
+      "fadeOut": 1.2,
+      "purpose": "shared counterattack",
+      "preserveAsset": true
+    },
+    {
+      "id": "road",
+      "asset": "bgm_nightwatch",
+      "startTime": 343.0,
+      "endTime": 408.0,
+      "sourceStart": 4,
+      "baseVolume": 0.3,
+      "fadeIn": 2.5,
+      "fadeOut": 2.5,
+      "purpose": "rescue responsibility",
+      "preserveAsset": true
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "no-beast-vocals",
+      "scope": "entire episode",
+      "sound": "beast_* / claw_scrape",
+      "reason": "All opponents are human; replace animal actions and sounds."
+    }
+  ],
+  "execution": {
+    "voice": "tools/gen_dialogue.py consumes nativeDelivery materialized in dialogue.json",
+    "mix": "tools/build_audio.py consumes this plan; footsteps derived from actual gait",
+    "musicGeneration": "none; accepted assets preserved; new score would use Suno"
+  }
+}

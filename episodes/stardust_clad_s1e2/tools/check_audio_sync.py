@@ -1,74 +1,58 @@
-#!/usr/bin/env python3
-"""《星屑战壳》S1E1 混音对位验证（沿用 OP 工艺）：
-① 每个 SFX 事件点 ±0.15s 窗内存在谱面瞬态；② 晨景底床 1s 块无掉线；③ 峰值 ≤ -1.8dBFS；
-④ 每句对白窗口内人声声压高于底（voice bus 已混入 mixed）。
-事件点位 = tools/build_audio.py 的 EVENTS 表；对白窗 = config/voice_envs.json（同一零点）。
-用法：.venv/Scripts/python.exe episodes/stardust_clad_s1e1/tools/check_audio_sync.py
-"""
+"""Verify the actual four stems, dialogue envelopes and picture-event alignment."""
 from pathlib import Path
-import json
-import subprocess
-import sys
-
+import hashlib,json,sys
 import numpy as np
+import soundfile as sf
 
-EP = Path(__file__).resolve().parents[1]
-SR = 48000
-
-def load(path, ch=1):
-    raw = subprocess.check_output(['ffmpeg', '-v', 'error', '-i', str(path),
-                                   '-ar', str(SR), '-ac', str(ch), '-f', 'f32le', '-'])
-    return np.frombuffer(raw, np.float32)
-
+EP=Path(__file__).resolve().parents[1]
+def read(p):return json.loads((EP/p).read_text(encoding='utf-8-sig'))
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
-    from build_audio import EVENTS, AMBIENCE, build_bed
-    mix = load(EP / 'assets3d/mixed.wav')
-    from scipy.signal import butter, sosfilt
-    hi = sosfilt(butter(2, 2000, fs=SR, btype='high', output='sos'), mix)
-    hop = SR // 100
-    env = np.sqrt(np.mean(hi[:len(hi) // hop * hop].reshape(-1, hop) ** 2, axis=1))
-    nov = np.maximum(np.diff(env), 0)
-    thr = np.percentile(nov, 60)
-    failures = []
-    for t0, name, *_ in EVENTS:
-        w0, w1 = int((t0 - .15) * 100), int((t0 + .15) * 100)
-        peak = float(nov[max(0, w0):w1].max()) if w1 > w0 else 0.0
-        if peak < thr:
-            failures.append(f'event {name}@{t0}: 窗内无谱面瞬态（novelty {peak:.5f} < {thr:.5f}）')
-    # 晨景底床连续性（build_bed 单源重建）
-    bed = build_bed(len(mix), AMBIENCE[0], AMBIENCE[1])
-    bedmono = bed.mean(axis=1)
-    blocks = len(bedmono) // SR
-    one = np.sqrt(np.mean(bedmono[:blocks * SR].reshape(-1, SR) ** 2, axis=1))
-    floor = one.mean() * 0.5
-    for i, v in enumerate(one):
-        if v < floor:
-            failures.append(f'bed dropout at {i}s (rms {v:.4f} < {floor:.4f})')
-    # 对白窗声压（mixed 直接量：对白窗应显著高于无对白参考段电平）
-    envs = json.loads((EP / 'config/voice_envs.json').read_text(encoding='utf-8'))
-    ref = float(np.sqrt(np.mean(mix[int(0.5 * SR):int(2.5 * SR)] ** 2)))  # establish 无对白段
-    for e in envs['lines']:
-        i0, i1 = int(e['t0'] * SR), int((e['t0'] + e['dur']) * SR)
-        if i1 <= i0:
-            failures.append(f"voice {e['id']}: 空窗口")
-            continue
-        v = float(np.sqrt(np.mean(mix[i0:i1] ** 2)))
-        if v < ref * 1.15:
-            failures.append(f"voice {e['id']}: 窗口声压 {v:.4f} 未显著超底 {ref:.4f}")
-    peak = float(np.abs(load(EP / 'assets3d/mixed.wav', 2)).max())
-    if peak > 10 ** (-1.8 / 20):
-        failures.append(f'peak {peak:.4f} over -1.8dBFS')
-    report = {'events_checked': len(EVENTS), 'onset_threshold': float(thr),
-              'bed_blocks': blocks, 'voice_lines': len(envs['lines']),
-              'peak': peak, 'failures': failures}
-    (EP / 'assets3d/audio_sync_report.json').write_text(
-        json.dumps(report, ensure_ascii=False, indent=1), encoding='utf-8')
-    if failures:
-        print('FAIL', len(failures))
-        for f in failures[:10]:
-            print(' ', f)
-        return 2
-    print(f"audio sync ok: {len(EVENTS)} events, bed {blocks}s, {len(envs['lines'])} lines, peak {peak:.4f}")
-
-if __name__ == '__main__':
-    sys.exit(main() or 0)
+    report=read('assets3d/mix_report.json');tl=read('config/timeline.json');cue=read('config/event_times.json')
+    env=read('config/voice_envs.json');dlg=read('config/dialogue.json');issues=[];warnings=[]
+    stems={k:sf.read(EP/f'assets3d/stems_r17/{k}.wav',always_2d=True)[0] for k in ['voice','music','sfx','ambience']}
+    mixed,sr=sf.read(EP/'assets3d/mixed.wav',always_2d=True)
+    if abs(len(mixed)/sr-tl['duration'])>.001:issues.append('mix duration differs from story')
+    if env['source_sha256']!=sha(EP/'assets3d/mixed.wav'):issues.append('stale lip-sync source')
+    if report['source_story_sha256']!=tl['source_sha256']:issues.append('stale sound direction')
+    if np.max(np.abs(mixed))>10**(-1.8/20):issues.append('peak exceeds ceiling')
+    for name,s in stems.items():
+        if s.shape!=mixed.shape:issues.append(f'{name}: missing samples')
+    residual=float(np.max(np.abs(mixed-sum(stems.values()))))
+    if residual>5/32768:issues.append('mix does not equal exported stems')
+    ratios=[]
+    background=stems['music']+stems['ambience']+stems['sfx']
+    for line,e in zip(dlg['lines'],env['lines']):
+        if line['id']!=e['id'] or abs(line['t']-e['t0'])>.001:issues.append(f"{line['id']}: stale voice timing")
+        if sha(EP/f"assets3d/dialogue/{line['id']}.wav")!=e['sha256']:issues.append(f"{line['id']}: stale waveform")
+        a=round(e['t0']*sr);b=round((e['t0']+e['dur'])*sr)
+        v=stems['voice'][a:b];bg=background[a:b]
+        level=np.max(np.abs(v),axis=1);mask=level>max(.004,float(level.max())*.08)
+        if not np.any(mask):issues.append(f"{line['id']}: no audible voice");continue
+        vr=float(np.sqrt(np.mean(v[mask]**2)));br=float(np.sqrt(np.mean(bg[mask]**2)))
+        ratio=20*np.log10(vr/max(br,1e-8));ratios.append({'id':line['id'],'voiceOverBackgroundDb':round(ratio,2)})
+        if ratio<3:issues.append(f"{line['id']}: speech masked ({ratio:.1f} dB)")
+        elif ratio<6:warnings.append(f"{line['id']}: narrow speech margin ({ratio:.1f} dB)")
+        if not any(e['jaw']):issues.append(f"{line['id']}: frozen mouth envelope")
+    required={'C1':'blade_shield','SECOND_CUT':'blade_shield','C2':'armor_impact','RAIN_RELEASE':'rain_burst','C4':'crater_slam'}
+    events=[]
+    for key,name in required.items():
+        matching=[x for x in report['events'] if x['name']==name and abs(x['startTime']-cue[key])<=.04]
+        if not matching:issues.append(f'{key}: missing aligned effect');continue
+        t=cue[key];a=round(t*sr);b=round((t+.15)*sr)
+        peak=float(np.abs(stems['sfx'][a:b]).max())
+        if peak<.004:issues.append(f'{key}: no SFX energy at contact')
+        events.append({'cue':key,'t':t,'peakFirst150ms':round(peak,5)})
+    if any(x['name'].startswith('beast_') or x['name']=='claw_scrape' for x in report['events']):issues.append('animal effect in human episode')
+    wind,srw=sf.read(EP/'assets3d/sfx/night_wind_edited.wav',always_2d=True)
+    mono=wind.mean(axis=1);n=len(mono)//srw
+    rms=np.sqrt(np.mean(mono[:n*srw].reshape(n,srw)**2,axis=1))
+    wind_ratio=float(rms.max()/max(rms.mean(),1e-8))
+    if wind_ratio>1.4:warnings.append(f'wind bed uneven: max/mean={wind_ratio:.2f}')
+    output={'passed':not issues,'duration':len(mixed)/sr,'peak':float(np.abs(mixed).max()),
+        'mixStemResidual':residual,'dialogue':ratios,'events':events,'windMaxMeanRms':wind_ratio,
+        'warnings':warnings,'failures':issues,'limit':'Numerical audibility and synchronization; aesthetic hearing is separately documented.'}
+    (EP/'assets3d/audio_sync_report.json').write_text(json.dumps(output,ensure_ascii=False,indent=2),encoding='utf-8')
+    print(json.dumps({k:v for k,v in output.items() if k not in ['dialogue','limit']},ensure_ascii=False))
+    return 2 if issues else 0
+if __name__=='__main__':sys.exit(main())

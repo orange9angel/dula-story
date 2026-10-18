@@ -1,0 +1,31 @@
+{
+  "seriesBible": "docs/stardust_series_bible.md",
+  "episode": "stardust_clad_s1e2",
+  "release": "r18",
+  "sourceSeconds": 434,
+  "bodySeconds": 414.6,
+  "tvSeconds": 463.8,
+  "voiceLines": 54,
+  "physicalSampleHz": 60,
+  "physicalFrames": 26040,
+  "standingTransitions": 44,
+  "maxStopHipStepMm": 3.2,
+  "numericSeekSamples": 77,
+  "pixelSeekSamples": 77,
+  "editorialCuts": 4,
+  "editorialRemovedSeconds": 19.4,
+  "preservedVoicedPcmDifference": 0,
+  "assetsCommit": "6068d7b",
+  "skillCommits": [
+    "e5d4e29",
+    "5514265",
+    "ef9b0b6",
+    "2ea962d"
+  ],
+  "limitations": [
+    "Procedural 3D/cel geometry remains the existing production style.",
+    "Physical anchors and sampled windows do not prove every pair of meshes is collision-free.",
+    "Audio-model observations are advisory; one opening timing verdict was rejected.",
+    "Final artifact verification is recorded separately in delivery_report.json."
+  ]
+}

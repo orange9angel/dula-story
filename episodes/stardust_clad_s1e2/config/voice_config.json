@@ -1,7 +1,32 @@
 {
- "TODO_Character": {
-  "voice": "TODO",
-  "rate": "+0%",
-  "pitch": "+0Hz"
- }
+  "Xiaozao": {
+    "voice": "zh_male_gaolengchenwen_uranus_bigtts",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "Aoao": {
+    "voice": "ICL_uranus_zh_male_rexueshaonian_tob",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "Yekari": {
+    "voice": "ICL_uranus_zh_male_diyinchenyu_tob",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "Dafu": {
+    "voice": "zh_male_dongfanghaoran_uranus_bigtts",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "Hestia": {
+    "voice": "zh_female_ganmaodianyin_uranus_bigtts",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "Azu": {
+    "voice": "ICL_uranus_zh_female_aomanjiaosheng_tob",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  }
 }

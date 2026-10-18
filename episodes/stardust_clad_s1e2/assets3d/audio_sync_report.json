@@ -1,8 +1,255 @@
 {
- "events_checked": 11,
- "onset_threshold": 2.0872821985661275e-05,
- "bed_blocks": 320,
- "voice_lines": 26,
- "peak": 0.7762451171875,
- "failures": []
+  "passed": true,
+  "duration": 434.0,
+  "peak": 0.7762451171875,
+  "mixStemResidual": 9.1552734375e-05,
+  "dialogue": [
+    {
+      "id": "n01",
+      "voiceOverBackgroundDb": 30.24
+    },
+    {
+      "id": "n02",
+      "voiceOverBackgroundDb": 27.1
+    },
+    {
+      "id": "n03",
+      "voiceOverBackgroundDb": 31.24
+    },
+    {
+      "id": "n04",
+      "voiceOverBackgroundDb": 29.89
+    },
+    {
+      "id": "n05",
+      "voiceOverBackgroundDb": 30.29
+    },
+    {
+      "id": "n06",
+      "voiceOverBackgroundDb": 28.27
+    },
+    {
+      "id": "n07",
+      "voiceOverBackgroundDb": 30.16
+    },
+    {
+      "id": "n08",
+      "voiceOverBackgroundDb": 30.63
+    },
+    {
+      "id": "n09",
+      "voiceOverBackgroundDb": 32.55
+    },
+    {
+      "id": "n10",
+      "voiceOverBackgroundDb": 29.06
+    },
+    {
+      "id": "n11",
+      "voiceOverBackgroundDb": 28.24
+    },
+    {
+      "id": "n12",
+      "voiceOverBackgroundDb": 25.91
+    },
+    {
+      "id": "n13",
+      "voiceOverBackgroundDb": 29.34
+    },
+    {
+      "id": "n14",
+      "voiceOverBackgroundDb": 27.49
+    },
+    {
+      "id": "n15",
+      "voiceOverBackgroundDb": 29.68
+    },
+    {
+      "id": "n16",
+      "voiceOverBackgroundDb": 21.42
+    },
+    {
+      "id": "n17",
+      "voiceOverBackgroundDb": 19.15
+    },
+    {
+      "id": "n18",
+      "voiceOverBackgroundDb": 18.48
+    },
+    {
+      "id": "n19",
+      "voiceOverBackgroundDb": 15.08
+    },
+    {
+      "id": "n20",
+      "voiceOverBackgroundDb": 16.51
+    },
+    {
+      "id": "n21",
+      "voiceOverBackgroundDb": 15.35
+    },
+    {
+      "id": "n22",
+      "voiceOverBackgroundDb": 19.29
+    },
+    {
+      "id": "n23",
+      "voiceOverBackgroundDb": 16.9
+    },
+    {
+      "id": "n24",
+      "voiceOverBackgroundDb": 13.25
+    },
+    {
+      "id": "n25",
+      "voiceOverBackgroundDb": 13.98
+    },
+    {
+      "id": "n26",
+      "voiceOverBackgroundDb": 27.64
+    },
+    {
+      "id": "n27",
+      "voiceOverBackgroundDb": 29.32
+    },
+    {
+      "id": "n28",
+      "voiceOverBackgroundDb": 29.03
+    },
+    {
+      "id": "n29",
+      "voiceOverBackgroundDb": 16.03
+    },
+    {
+      "id": "n30",
+      "voiceOverBackgroundDb": 12.24
+    },
+    {
+      "id": "n31",
+      "voiceOverBackgroundDb": 14.16
+    },
+    {
+      "id": "n32",
+      "voiceOverBackgroundDb": 15.33
+    },
+    {
+      "id": "n33",
+      "voiceOverBackgroundDb": 16.51
+    },
+    {
+      "id": "n34",
+      "voiceOverBackgroundDb": 14.07
+    },
+    {
+      "id": "n35",
+      "voiceOverBackgroundDb": 12.49
+    },
+    {
+      "id": "n36",
+      "voiceOverBackgroundDb": 14.7
+    },
+    {
+      "id": "n37",
+      "voiceOverBackgroundDb": 30.05
+    },
+    {
+      "id": "n38",
+      "voiceOverBackgroundDb": 29.89
+    },
+    {
+      "id": "n39",
+      "voiceOverBackgroundDb": 23.51
+    },
+    {
+      "id": "n40",
+      "voiceOverBackgroundDb": 28.96
+    },
+    {
+      "id": "n41",
+      "voiceOverBackgroundDb": 32.18
+    },
+    {
+      "id": "n42",
+      "voiceOverBackgroundDb": 30.18
+    },
+    {
+      "id": "n43",
+      "voiceOverBackgroundDb": 30.09
+    },
+    {
+      "id": "n44",
+      "voiceOverBackgroundDb": 31.11
+    },
+    {
+      "id": "n45",
+      "voiceOverBackgroundDb": 30.85
+    },
+    {
+      "id": "n46",
+      "voiceOverBackgroundDb": 30.95
+    },
+    {
+      "id": "n47",
+      "voiceOverBackgroundDb": 32.07
+    },
+    {
+      "id": "n48",
+      "voiceOverBackgroundDb": 31.95
+    },
+    {
+      "id": "n49",
+      "voiceOverBackgroundDb": 32.03
+    },
+    {
+      "id": "n50",
+      "voiceOverBackgroundDb": 31.49
+    },
+    {
+      "id": "n51",
+      "voiceOverBackgroundDb": 29.64
+    },
+    {
+      "id": "n52",
+      "voiceOverBackgroundDb": 25.11
+    },
+    {
+      "id": "n53",
+      "voiceOverBackgroundDb": 30.03
+    },
+    {
+      "id": "n54",
+      "voiceOverBackgroundDb": 26.83
+    }
+  ],
+  "events": [
+    {
+      "cue": "C1",
+      "t": 152.0,
+      "peakFirst150ms": 0.07819
+    },
+    {
+      "cue": "SECOND_CUT",
+      "t": 153.2,
+      "peakFirst150ms": 0.0336
+    },
+    {
+      "cue": "C2",
+      "t": 178.0,
+      "peakFirst150ms": 0.49313
+    },
+    {
+      "cue": "RAIN_RELEASE",
+      "t": 254.15,
+      "peakFirst150ms": 0.1734
+    },
+    {
+      "cue": "C4",
+      "t": 276.0,
+      "peakFirst150ms": 0.61203
+    }
+  ],
+  "windMaxMeanRms": 1.0899264654166039,
+  "warnings": [],
+  "failures": [],
+  "limit": "Numerical audibility and synchronization; aesthetic hearing is separately documented."
 }

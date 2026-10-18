@@ -1,0 +1,12 @@
+{
+  "provider": "volcano-seedaudio",
+  "source": "assets3d\\sfx\\night_wind.wav",
+  "source_sha256": "ea7167bee11093b24605159cb97ed31d7021ff1f7f02fe833885a04be39104f0",
+  "processing": "highpass 220 Hz; lowpass 1600 Hz; 400 ms RMS, 600 ms gain smoothing, gain .65..2.2; RMS .045",
+  "sha256": "5b1983438987a9807163b8afdf3d2f56c4846ed47652d051c1750d5aaab74d1f",
+  "qc": {
+    "maxMeanRms": 1.0586963891983032,
+    "highBandFraction": 3.9633846427022945e-06
+  },
+  "limit": "Level and bandwidth checks; listening observation stored separately."
+}

@@ -1,439 +1,6021 @@
 {
- "duration": 320.0,
- "sr": 48000,
- "events": [
-  {
-   "t": 124.5,
-   "sfx": "shield_bang",
-   "gain": 1.0
-  },
-  {
-   "t": 121.0,
-   "sfx": "beast_growl",
-   "gain": 0.8
-  },
-  {
-   "t": 149.5,
-   "sfx": "beast_roar",
-   "gain": 0.9
-  },
-  {
-   "t": 152.0,
-   "sfx": "claw_scrape",
-   "gain": 1.0
-  },
-  {
-   "t": 172.9,
-   "sfx": "beast_roar",
-   "gain": 0.7
-  },
-  {
-   "t": 178.0,
-   "sfx": "beast_charge",
-   "gain": 1.0
-  },
-  {
-   "t": 206.0,
-   "sfx": "disc_clatter",
-   "gain": 0.9
-  },
-  {
-   "t": 252.4,
-   "sfx": "rain_burst",
-   "gain": 1.0
-  },
-  {
-   "t": 256.0,
-   "sfx": "crater_slam",
-   "gain": 0.5
-  },
-  {
-   "t": 276.0,
-   "sfx": "crater_slam",
-   "gain": 1.0
-  },
-  {
-   "t": 295.5,
-   "sfx": "beast_flee",
-   "gain": 0.9
-  }
- ],
- "sources": {
-  "bgm:bgm_nightwatch": {
-   "path": "assets3d/sfx/bgm_nightwatch.wav",
-   "provider": "volcano-seedaudio",
-   "gain": 0.5,
-   "window": [
-    0.0,
-    140.0
-   ],
-   "sha256": "449f4376dbff92006eb735f84fef384f5142e1fde6cb3ae79e26721f86684b5b"
-  },
-  "bgm:bgm_nightbattle": {
-   "path": "assets3d/sfx/bgm_nightbattle.wav",
-   "provider": "volcano-seedaudio",
-   "gain": 0.58,
-   "window": [
-    140.0,
-    296.0
-   ],
-   "sha256": "d6bd3abad5e1ea95b27f60187f3f302d98a666c77c181a2f70d343d6f5d6af8c"
-  },
-  "ambience": {
-   "path": "assets3d/sfx/ambience_night.wav",
-   "provider": "volcano-seedaudio",
-   "gain": 0.3,
-   "sha256": "841b29e833450e59cf07102161bc835f368635e43fc36e255075218dd60dbd85"
-  },
-  "fire_bed": {
-   "path": "assets3d/sfx/fire_crackle.wav",
-   "provider": "volcano-seedaudio",
-   "gain": 0.16,
-   "window": [
-    14.0,
-    316.0
-   ],
-   "sha256": "f08e85c21a722654082f6bd496acf0b2fc4c15650e03ce625e85e475ccd2c7f3"
-  },
-  "sfx:shield_bang": {
-   "path": "assets3d/sfx/shield_bang.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "2cc8d38fab21f6a65ae22b7f535db7ab48e856e078878937dcaa7fe13f190168"
-  },
-  "sfx:beast_growl": {
-   "path": "assets3d/sfx/beast_growl.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "2d36fa687715a74b25f7a8a0ce47d3bff0e2ff176365194f9a929d9aafacb59d"
-  },
-  "sfx:beast_roar": {
-   "path": "assets3d/sfx/beast_roar.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "8220147121db7d9c5b49c1e5c52a5fc045fdd265e8f58eec3c66b59449731f48"
-  },
-  "sfx:claw_scrape": {
-   "path": "assets3d/sfx/claw_scrape.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "cc66dc1080c2f3f2455f177bd37b9f72c0c6ad6136a3534a0fcd8056829a3f09"
-  },
-  "sfx:beast_charge": {
-   "path": "assets3d/sfx/beast_charge.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "822155e68f57033dd6d3f763f80fb679bd2dab0b4a8fa5d41f82de4b01254e5e"
-  },
-  "sfx:disc_clatter": {
-   "path": "assets3d/sfx/disc_clatter.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "e808068309f5d7a2ecc7efa05a21343f815b34f4f780bce31bef30abb34e7ca1"
-  },
-  "sfx:rain_burst": {
-   "path": "assets3d/sfx/rain_burst.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "951ef2158562c85e389394ab9d071f175d5124bd16d63e8498fc1e7c9d42bb66"
-  },
-  "sfx:crater_slam": {
-   "path": "assets3d/sfx/crater_slam.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "63b8e7c8ff0383dcbd8d5bc656326e0916d6e494baee5e4652f760c238037ee8"
-  },
-  "sfx:beast_flee": {
-   "path": "assets3d/sfx/beast_flee.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "a682727102675bbf11159a968a929afcc160a52ec0ab05c4081f47074cd4f4ad"
-  },
-  "voice:l01": {
-   "path": "assets3d/dialogue/l01.wav",
-   "t": 48.0,
-   "provider": "volcano-seedtts",
-   "sha256": "3253d7e557931e1a5d56239c23608fb99845dc53328ac6311844cb973c93e168"
-  },
-  "voice:l02": {
-   "path": "assets3d/dialogue/l02.wav",
-   "t": 62.0,
-   "provider": "volcano-seedtts",
-   "sha256": "6fb5ccc5706307ee6a17695e6d77017eb607bafe85fab2cf39a3ab808685036c"
-  },
-  "voice:l03": {
-   "path": "assets3d/dialogue/l03.wav",
-   "t": 78.0,
-   "provider": "volcano-seedtts",
-   "sha256": "166a1f7d0cdf8f86960922c27ff94e80c35c032f923ab983ed475d53031a9a44"
-  },
-  "voice:l04": {
-   "path": "assets3d/dialogue/l04.wav",
-   "t": 92.0,
-   "provider": "volcano-seedtts",
-   "sha256": "72f50e42d05c072083cc61212fa58bc2264e10e8f1911ace3163cc5248872789"
-  },
-  "voice:l05": {
-   "path": "assets3d/dialogue/l05.wav",
-   "t": 106.0,
-   "provider": "volcano-seedtts",
-   "sha256": "8c093c93cd51f9f686ba6cd1cd89e7f3fc82dbfa97bca04b66e84a9242799f86"
-  },
-  "voice:l06": {
-   "path": "assets3d/dialogue/l06.wav",
-   "t": 124.5,
-   "provider": "volcano-seedtts",
-   "sha256": "f1488e31957ade5a303c4fb54ecd2c9912558a9529993c29d5a1031be5e2d87c"
-  },
-  "voice:l07": {
-   "path": "assets3d/dialogue/l07.wav",
-   "t": 132.0,
-   "provider": "volcano-seedtts",
-   "sha256": "8439d61d8a55c5d04fae81551fe2d89732c5499f46359a29350d3bc9fe5571e3"
-  },
-  "voice:l08": {
-   "path": "assets3d/dialogue/l08.wav",
-   "t": 136.5,
-   "provider": "volcano-seedtts",
-   "sha256": "9b6f232c0d6bee9f9c670fcf413a43d5d527602327a8b1898f8f2275885b8d88"
-  },
-  "voice:l09": {
-   "path": "assets3d/dialogue/l09.wav",
-   "t": 148.0,
-   "provider": "volcano-seedtts",
-   "sha256": "b7d8130b26523d7c6d3f6afd9d9be0e74be9a3d5d87c6edaba21c743625e7428"
-  },
-  "voice:l10": {
-   "path": "assets3d/dialogue/l10.wav",
-   "t": 158.0,
-   "provider": "volcano-seedtts",
-   "sha256": "4dea87246bdc60d3ff5bc5765042b0d5939b1be518c32ab7fe39bf1f89ba2fa7"
-  },
-  "voice:l11": {
-   "path": "assets3d/dialogue/l11.wav",
-   "t": 171.0,
-   "provider": "volcano-seedtts",
-   "sha256": "3f2dd149083f92e6d2253a289d4e5874ba653ae9bb9e5139c519e8c8d7b53312"
-  },
-  "voice:l12": {
-   "path": "assets3d/dialogue/l12.wav",
-   "t": 182.0,
-   "provider": "volcano-seedtts",
-   "sha256": "f26117330d22bc2435ff607ed2300c1108334c2f8cad940bc946ad34a5a8dae1"
-  },
-  "voice:l13": {
-   "path": "assets3d/dialogue/l13.wav",
-   "t": 196.0,
-   "provider": "volcano-seedtts",
-   "sha256": "51dbb2768eef1b5ae040c483e05672f8cca51cc86437a76f0d50a60e133e8cdf"
-  },
-  "voice:l14": {
-   "path": "assets3d/dialogue/l14.wav",
-   "t": 210.0,
-   "provider": "volcano-seedtts",
-   "sha256": "b7272a7ececad4c8c888a15c3f7861f9e2e32949cfe37701971842e9647be67a"
-  },
-  "voice:l15": {
-   "path": "assets3d/dialogue/l15.wav",
-   "t": 216.0,
-   "provider": "volcano-seedtts",
-   "sha256": "c225334e3f69c5c09d4283614c88776029bcd6262bca04876b45f7bcdc4b7640"
-  },
-  "voice:l16": {
-   "path": "assets3d/dialogue/l16.wav",
-   "t": 236.0,
-   "provider": "volcano-seedtts",
-   "sha256": "3956c448d54e5681fc8f656198e999f4d999309743c7dbc3fb9dc8d8cf161b12"
-  },
-  "voice:l17": {
-   "path": "assets3d/dialogue/l17.wav",
-   "t": 242.0,
-   "provider": "volcano-seedtts",
-   "sha256": "8b442c114b46dd2e00100da7271c4bd8aae56da63ad3da11da47861d033430bd"
-  },
-  "voice:l18": {
-   "path": "assets3d/dialogue/l18.wav",
-   "t": 248.0,
-   "provider": "volcano-seedtts",
-   "sha256": "8d58614d6ca801cc57a4922d20a362805cc7da5e01abc248bb16cd7b70dd9544"
-  },
-  "voice:c1": {
-   "path": "assets3d/dialogue/c1.wav",
-   "t": 252.0,
-   "provider": "volcano-seedtts",
-   "sha256": "bda984bd857c90f20c6a21eb99aceab3c04c03cae6d90dee84b838572f86db01"
-  },
-  "voice:l19": {
-   "path": "assets3d/dialogue/l19.wav",
-   "t": 262.0,
-   "provider": "volcano-seedtts",
-   "sha256": "30dacffb6a07862edc19d0c5c4768813f79e425f5d67734311dbf18dacbe28c5"
-  },
-  "voice:l20": {
-   "path": "assets3d/dialogue/l20.wav",
-   "t": 270.0,
-   "provider": "volcano-seedtts",
-   "sha256": "90caa7d9e0186cbb9daf894e58fd2f732e75f44369c0c86af79b13bf89ce4285"
-  },
-  "voice:c2": {
-   "path": "assets3d/dialogue/c2.wav",
-   "t": 274.0,
-   "provider": "volcano-seedtts",
-   "sha256": "e77f2a7a3bfc82576102bb345b3babf81c815088e33d2b6d464986bbb451652f"
-  },
-  "voice:l21": {
-   "path": "assets3d/dialogue/l21.wav",
-   "t": 300.0,
-   "provider": "volcano-seedtts",
-   "sha256": "f193e9e4739781f6171868185a9dc4d68b0aa5c02a8a9eff2a44268fed1fe962"
-  },
-  "voice:l22": {
-   "path": "assets3d/dialogue/l22.wav",
-   "t": 302.0,
-   "provider": "volcano-seedtts",
-   "sha256": "f3f3ffb5a4d70dbaa4d74cd21a09a461b529bf49fd544a8c0d7a5f5d2c8150fa"
-  },
-  "voice:l23": {
-   "path": "assets3d/dialogue/l23.wav",
-   "t": 306.0,
-   "provider": "volcano-seedtts",
-   "sha256": "fdf29fcd789b2fece527c991a1b1667a3d0245ac3739c2ad487919b54bd2eda3"
-  },
-  "voice:l24": {
-   "path": "assets3d/dialogue/l24.wav",
-   "t": 311.0,
-   "provider": "volcano-seedtts",
-   "sha256": "3452ec9589dcad52e54ff7c3b8b28cca91cf73fc1d977666c7dfb9c465c57f40"
-  }
- },
- "dialogue": [
-  {
-   "id": "l01",
-   "t": 48.0,
-   "dur": 6.336
-  },
-  {
-   "id": "l02",
-   "t": 62.0,
-   "dur": 5.928
-  },
-  {
-   "id": "l03",
-   "t": 78.0,
-   "dur": 4.488
-  },
-  {
-   "id": "l04",
-   "t": 92.0,
-   "dur": 4.056
-  },
-  {
-   "id": "l05",
-   "t": 106.0,
-   "dur": 3.84
-  },
-  {
-   "id": "l06",
-   "t": 124.5,
-   "dur": 2.664
-  },
-  {
-   "id": "l07",
-   "t": 132.0,
-   "dur": 4.248
-  },
-  {
-   "id": "l08",
-   "t": 136.5,
-   "dur": 4.896
-  },
-  {
-   "id": "l09",
-   "t": 148.0,
-   "dur": 1.488
-  },
-  {
-   "id": "l10",
-   "t": 158.0,
-   "dur": 4.656
-  },
-  {
-   "id": "l11",
-   "t": 171.0,
-   "dur": 2.304
-  },
-  {
-   "id": "l12",
-   "t": 182.0,
-   "dur": 1.848
-  },
-  {
-   "id": "l13",
-   "t": 196.0,
-   "dur": 2.304
-  },
-  {
-   "id": "l14",
-   "t": 210.0,
-   "dur": 2.064
-  },
-  {
-   "id": "l15",
-   "t": 216.0,
-   "dur": 3.216
-  },
-  {
-   "id": "l16",
-   "t": 236.0,
-   "dur": 3.024
-  },
-  {
-   "id": "l17",
-   "t": 242.0,
-   "dur": 6.264
-  },
-  {
-   "id": "l18",
-   "t": 248.0,
-   "dur": 2.064
-  },
-  {
-   "id": "c1",
-   "t": 252.0,
-   "dur": 2.472
-  },
-  {
-   "id": "l19",
-   "t": 262.0,
-   "dur": 3.408
-  },
-  {
-   "id": "l20",
-   "t": 270.0,
-   "dur": 3.84
-  },
-  {
-   "id": "c2",
-   "t": 274.0,
-   "dur": 2.664
-  },
-  {
-   "id": "l21",
-   "t": 300.0,
-   "dur": 1.344
-  },
-  {
-   "id": "l22",
-   "t": 302.0,
-   "dur": 2.256
-  },
-  {
-   "id": "l23",
-   "t": 306.0,
-   "dur": 2.808
-  },
-  {
-   "id": "l24",
-   "t": 311.0,
-   "dur": 3.576
-  }
- ],
- "duck_db": -6.0,
- "voice_gain": 1.3,
- "peak_before": 0.9853,
- "ceiling": 0.7762,
- "normalized": true,
- "mix_peak": 0.7762,
- "mix_rms": 0.0674
+  "duration": 434.0,
+  "sr": 48000,
+  "source_story_sha256": "8a4a7a0176ce784b5b3233d34897dfc3fc892c793ed2ca4846e1fde6b58cf421",
+  "sources": {
+    "night_wind_edited": {
+      "path": "assets3d\\sfx\\night_wind_edited.wav",
+      "sha256": "5b1983438987a9807163b8afdf3d2f56c4846ed47652d051c1750d5aaab74d1f",
+      "provider": "volcano-seedaudio"
+    },
+    "fire_crackle": {
+      "path": "assets3d\\sfx\\fire_crackle.wav",
+      "sha256": "f08e85c21a722654082f6bd496acf0b2fc4c15650e03ce625e85e475ccd2c7f3",
+      "provider": "volcano-seedaudio"
+    },
+    "rain_gate": {
+      "path": "assets3d\\sfx\\rain_gate.wav",
+      "sha256": "f41a7b4e46381afe49e813e7222e9d758e837783f602cc4766173fa9f1941cbd",
+      "provider": "volcano-seedaudio"
+    },
+    "bgm_nightwatch": {
+      "path": "assets3d\\sfx\\bgm_nightwatch.wav",
+      "sha256": "449f4376dbff92006eb735f84fef384f5142e1fde6cb3ae79e26721f86684b5b",
+      "provider": "volcano-seedaudio"
+    },
+    "bgm_nightbattle": {
+      "path": "assets3d\\sfx\\bgm_nightbattle.wav",
+      "sha256": "d6bd3abad5e1ea95b27f60187f3f302d98a666c77c181a2f70d343d6f5d6af8c",
+      "provider": "volcano-seedaudio"
+    },
+    "chain_tension": {
+      "path": "assets3d\\sfx\\chain_tension.wav",
+      "sha256": "5ecfc153e47ceb5278cd3c8752e0306361b1629b8a0421a065b3c8bf350ae84a",
+      "provider": "volcano-seedaudio"
+    },
+    "boot_step": {
+      "path": "assets3d\\sfx\\boot_step.wav",
+      "sha256": "2fcb4f0939a541727a3240343ea7219fb42efb387d25cc872a650c4d55193265",
+      "provider": "volcano-seedaudio"
+    },
+    "shield_bang": {
+      "path": "assets3d\\sfx\\shield_bang.wav",
+      "sha256": "2cc8d38fab21f6a65ae22b7f535db7ab48e856e078878937dcaa7fe13f190168",
+      "provider": "volcano-seedaudio"
+    },
+    "sickle_whoosh": {
+      "path": "assets3d\\sfx\\sickle_whoosh.wav",
+      "sha256": "1ef06ac666e7257680cfaeab7684ccba43e1852a503732a95f4f6c1a6dc96517",
+      "provider": "volcano-seedaudio"
+    },
+    "blade_shield": {
+      "path": "assets3d\\sfx\\blade_shield.wav",
+      "sha256": "cb6e7791423d83132f6d746c1b85215fda911e7b1ed89e282d2ef69f7318c2ac",
+      "provider": "volcano-seedaudio"
+    },
+    "armor_impact": {
+      "path": "assets3d\\sfx\\armor_impact.wav",
+      "sha256": "f8108aace746b8553a8a3df1fe6df0dd752f9af51607537b85417798b36aaa19",
+      "provider": "volcano-seedaudio"
+    },
+    "rain_burst": {
+      "path": "assets3d\\sfx\\rain_burst.wav",
+      "sha256": "951ef2158562c85e389394ab9d071f175d5124bd16d63e8498fc1e7c9d42bb66",
+      "provider": "volcano-seedaudio"
+    },
+    "disc_clatter": {
+      "path": "assets3d\\sfx\\disc_clatter.wav",
+      "sha256": "e808068309f5d7a2ecc7efa05a21343f815b34f4f780bce31bef30abb34e7ca1",
+      "provider": "volcano-seedaudio"
+    },
+    "crater_slam": {
+      "path": "assets3d\\sfx\\crater_slam.wav",
+      "sha256": "63b8e7c8ff0383dcbd8d5bc656326e0916d6e494baee5e4652f760c238037ee8",
+      "provider": "volcano-seedaudio"
+    },
+    "cloth_pull": {
+      "path": "assets3d\\sfx\\cloth_pull.wav",
+      "sha256": "41648110a21096ed1d0d25459521ea18356ed85765e1fb00dbfa14fc05e41117",
+      "provider": "volcano-seedaudio"
+    },
+    "n01": {
+      "path": "assets3d\\dialogue\\n01.wav",
+      "sha256": "0531b2a543f73efd1f6939858f5c4bc2074e5b794a0e0f82d57fd5df47381a80",
+      "provider": "volcano-seedtts"
+    },
+    "n02": {
+      "path": "assets3d\\dialogue\\n02.wav",
+      "sha256": "66f131677d2a7b01a0b59c4c41f033418898da19314313e061eae9ed73f2b928",
+      "provider": "volcano-seedtts"
+    },
+    "n03": {
+      "path": "assets3d\\dialogue\\n03.wav",
+      "sha256": "229b243fec67b3f5613363a19ad5ad598dd680000cc4b8e872da0a29cae65230",
+      "provider": "volcano-seedtts"
+    },
+    "n04": {
+      "path": "assets3d\\dialogue\\n04.wav",
+      "sha256": "83b16854a20e03d38be4db1f4d9ffde4a10d9882eba8657bf9fa2ee82575e788",
+      "provider": "volcano-seedtts"
+    },
+    "n05": {
+      "path": "assets3d\\dialogue\\n05.wav",
+      "sha256": "fc3775e6c934841a00b498372611fc6ebc07484223dd25fe6bca3984ef482f9a",
+      "provider": "volcano-seedtts"
+    },
+    "n06": {
+      "path": "assets3d\\dialogue\\n06.wav",
+      "sha256": "d3a23329e188ee901ae35e2da161c84716ca83e8c25fd02f6593d09b3df8f7a4",
+      "provider": "volcano-seedtts"
+    },
+    "n07": {
+      "path": "assets3d\\dialogue\\n07.wav",
+      "sha256": "03c738633a098507febc33ca804613f755da7193823a36538dc2836e4d2734d8",
+      "provider": "volcano-seedtts"
+    },
+    "n08": {
+      "path": "assets3d\\dialogue\\n08.wav",
+      "sha256": "da0849abde8df40696b41be53e029e09f1e8ac26d47411d1b55f1f367e3a5a14",
+      "provider": "volcano-seedtts"
+    },
+    "n09": {
+      "path": "assets3d\\dialogue\\n09.wav",
+      "sha256": "ff962ebd719c9acc998c622ec31345040d4b315c4c5d68e76db98355d3842830",
+      "provider": "volcano-seedtts"
+    },
+    "n10": {
+      "path": "assets3d\\dialogue\\n10.wav",
+      "sha256": "9939da64e1293dc9e37838b461f36a6e9a1ed466b032d84357a07814cacc1b57",
+      "provider": "volcano-seedtts"
+    },
+    "n11": {
+      "path": "assets3d\\dialogue\\n11.wav",
+      "sha256": "42cf40c968b9fafe6c78e98ab8065225a60db80e8fed5edf4626bb2c7dd48e5d",
+      "provider": "volcano-seedtts"
+    },
+    "n12": {
+      "path": "assets3d\\dialogue\\n12.wav",
+      "sha256": "0596474b84dfda60bc50cc96caaff6a5e8b6e1aea35d4c761ae9b054e854a4d6",
+      "provider": "volcano-seedtts"
+    },
+    "n13": {
+      "path": "assets3d\\dialogue\\n13.wav",
+      "sha256": "6f4fc22009c83c410b11229304a05fa0d50de9fe819493d0dfc917c841d10699",
+      "provider": "volcano-seedtts"
+    },
+    "n14": {
+      "path": "assets3d\\dialogue\\n14.wav",
+      "sha256": "f16f71d943b4f7a9d2f710f9c1621b4aaff404948d8dd8fe3b726c31e0acca59",
+      "provider": "volcano-seedtts"
+    },
+    "n15": {
+      "path": "assets3d\\dialogue\\n15.wav",
+      "sha256": "3205bc725a1d9b7bb3800f15aef64f1548ee97fe507decbf7a2ffac44e37b7c3",
+      "provider": "volcano-seedtts"
+    },
+    "n16": {
+      "path": "assets3d\\dialogue\\n16.wav",
+      "sha256": "b6f25d6dc84cf72bb7fc3fdf0c44aab744c9d408f00f33c5ac9a9a4a4d55dec8",
+      "provider": "volcano-seedtts"
+    },
+    "n17": {
+      "path": "assets3d\\dialogue\\n17.wav",
+      "sha256": "231a40465b00c7a5f90ab4d0892f3e6c804f8d3d435130a577e4223d0465a8d2",
+      "provider": "volcano-seedtts"
+    },
+    "n18": {
+      "path": "assets3d\\dialogue\\n18.wav",
+      "sha256": "8cd8b9b3bfbdcea4f5ece4c78923c4d4b8431e581de23c17d694843d50ecc6fb",
+      "provider": "volcano-seedtts"
+    },
+    "n19": {
+      "path": "assets3d\\dialogue\\n19.wav",
+      "sha256": "3e64561558538334812690f6db571bd09affe8431ad4a689cb897026c518d0c5",
+      "provider": "volcano-seedtts"
+    },
+    "n20": {
+      "path": "assets3d\\dialogue\\n20.wav",
+      "sha256": "9d81688e9d3e0de1967c73ae9d8f102ec45b3550834bdbb323bd43d928cac0e8",
+      "provider": "volcano-seedtts"
+    },
+    "n21": {
+      "path": "assets3d\\dialogue\\n21.wav",
+      "sha256": "2ea417caacfeb14ad965721c709fc168aeeed7c7cd1f5e05f324e7985839ae68",
+      "provider": "volcano-seedtts"
+    },
+    "n22": {
+      "path": "assets3d\\dialogue\\n22.wav",
+      "sha256": "c92bf9d512bc41479c70ec814be2b5ee3f9b336f85d454ee854fa5f1b8713747",
+      "provider": "volcano-seedtts"
+    },
+    "n23": {
+      "path": "assets3d\\dialogue\\n23.wav",
+      "sha256": "9ed4d2ae47cbe458d509fc12e2096689ea1afdd1cf866fd120276e5767a280f4",
+      "provider": "volcano-seedtts"
+    },
+    "n24": {
+      "path": "assets3d\\dialogue\\n24.wav",
+      "sha256": "74d02e6cc809e9116f121eac545ca0537ae2f21d4a248f94944b9f121484fe9a",
+      "provider": "volcano-seedtts"
+    },
+    "n25": {
+      "path": "assets3d\\dialogue\\n25.wav",
+      "sha256": "09bce430db8327603d5da95e777ee08a3df6ee05e95507536927d7c4400c0410",
+      "provider": "volcano-seedtts"
+    },
+    "n26": {
+      "path": "assets3d\\dialogue\\n26.wav",
+      "sha256": "4a909bff5e7447e591d50ae041b3654201d8ea7fd9669df5c63635515a9577dc",
+      "provider": "volcano-seedtts"
+    },
+    "n27": {
+      "path": "assets3d\\dialogue\\n27.wav",
+      "sha256": "7c8866ed4b4396baecedefe6014278b0fe9c19d1437d83d50f75c85e4066f197",
+      "provider": "volcano-seedtts"
+    },
+    "n28": {
+      "path": "assets3d\\dialogue\\n28.wav",
+      "sha256": "45f7e1f6134d7d8f6db6502d86f065658fa2ea9c0a4b24de68f9e13a94a828e3",
+      "provider": "volcano-seedtts"
+    },
+    "n29": {
+      "path": "assets3d\\dialogue\\n29.wav",
+      "sha256": "2d6e29b821383eff4fae9059125231fedc9275700a126f549753d2d000b508a3",
+      "provider": "volcano-seedtts"
+    },
+    "n30": {
+      "path": "assets3d\\dialogue\\n30.wav",
+      "sha256": "8914965e0b690a0def2481a5aba9e4fb70bb4845f156d56bf038f2c5a060c5db",
+      "provider": "volcano-seedtts"
+    },
+    "n31": {
+      "path": "assets3d\\dialogue\\n31.wav",
+      "sha256": "c46ae99eaaa7bc462d82cd84647256cc7a7b116100359548076c3420bdc5a2f7",
+      "provider": "volcano-seedtts"
+    },
+    "n32": {
+      "path": "assets3d\\dialogue\\n32.wav",
+      "sha256": "1fca870fe0463ee7544731b73e930f4b0f5f1e7432f62796fef514e9f6b5d830",
+      "provider": "volcano-seedtts"
+    },
+    "n33": {
+      "path": "assets3d\\dialogue\\n33.wav",
+      "sha256": "f8add6211d50ba8ca668337b6b6a488303501b4dbe0db1c180a566079618a867",
+      "provider": "volcano-seedtts"
+    },
+    "n34": {
+      "path": "assets3d\\dialogue\\n34.wav",
+      "sha256": "19517abff7b795f1c8319ac7f5904d6eda1c9c567f9ee6f036835e30ff9c3624",
+      "provider": "volcano-seedtts"
+    },
+    "n35": {
+      "path": "assets3d\\dialogue\\n35.wav",
+      "sha256": "fd701253995a7ae48999c6d2103fcb51c14f8aac4a309ee30e64911c938a487f",
+      "provider": "volcano-seedtts"
+    },
+    "n36": {
+      "path": "assets3d\\dialogue\\n36.wav",
+      "sha256": "4b17ccfb025f25f21b7b68d315ecf5b8bac62e2fc5c1e87c21ec3e07e8b3e464",
+      "provider": "volcano-seedtts"
+    },
+    "n37": {
+      "path": "assets3d\\dialogue\\n37.wav",
+      "sha256": "a1a84fe7255c0e86b1acfc56ce5cec790ac039bc6e014d9b8b7a8c1737f36f80",
+      "provider": "volcano-seedtts"
+    },
+    "n38": {
+      "path": "assets3d\\dialogue\\n38.wav",
+      "sha256": "95f54cba73c738006113a0eb9d49d9f6623c6ca500d6fd03512093c5485bf0f1",
+      "provider": "volcano-seedtts"
+    },
+    "n39": {
+      "path": "assets3d\\dialogue\\n39.wav",
+      "sha256": "8a5a9e6dc95249a1d286ad5d76eb54456320e767e8b7b2d6e9e8cea57428f87a",
+      "provider": "volcano-seedtts"
+    },
+    "n40": {
+      "path": "assets3d\\dialogue\\n40.wav",
+      "sha256": "77c39cc2b4144ac7b4a2165ca4863007c6c29609dfd04ab19d5a4abc14b65e39",
+      "provider": "volcano-seedtts"
+    },
+    "n41": {
+      "path": "assets3d\\dialogue\\n41.wav",
+      "sha256": "852796a0a646323a5e4064e1fd9dc4c2b24c7ec74f1dfbb6bc36ca25affe760d",
+      "provider": "volcano-seedtts"
+    },
+    "n42": {
+      "path": "assets3d\\dialogue\\n42.wav",
+      "sha256": "a7c57eee8c4e2333d8a2171621210cb736173dadf7c22bcc8fb6ac047a6b2ce1",
+      "provider": "volcano-seedtts"
+    },
+    "n43": {
+      "path": "assets3d\\dialogue\\n43.wav",
+      "sha256": "5c648f4a4ad7839566aeee4c8375f547d3fa68e1c8a40ca3a02c4e55f225ec00",
+      "provider": "volcano-seedtts"
+    },
+    "n44": {
+      "path": "assets3d\\dialogue\\n44.wav",
+      "sha256": "58c13c9ade2441e3d253137d4a1297654be73ed3b46cc2ebcaa47e01e7adf651",
+      "provider": "volcano-seedtts"
+    },
+    "n45": {
+      "path": "assets3d\\dialogue\\n45.wav",
+      "sha256": "db6ec79631d4f3c1695fb482e0a545ae5e750e88609213317405409582a633bf",
+      "provider": "volcano-seedtts"
+    },
+    "n46": {
+      "path": "assets3d\\dialogue\\n46.wav",
+      "sha256": "73da026d1bd2d0b9bf4d279a527963f1ee76a010ee890214733d3230e1066286",
+      "provider": "volcano-seedtts"
+    },
+    "n47": {
+      "path": "assets3d\\dialogue\\n47.wav",
+      "sha256": "5231a3fc19ddd5c3503e96b96f6c7f04ee65378c1c4ecc8003e15d66f8df0f29",
+      "provider": "volcano-seedtts"
+    },
+    "n48": {
+      "path": "assets3d\\dialogue\\n48.wav",
+      "sha256": "5d8dbc04f60ef9682fbbc8f4e82c6190230c5bcec99acfc6e3d9a5bf010dd90e",
+      "provider": "volcano-seedtts"
+    },
+    "n49": {
+      "path": "assets3d\\dialogue\\n49.wav",
+      "sha256": "b69f1bff88574c4068c38b54c3b3aefe7e23484045f8e0d943928403e23f6dea",
+      "provider": "volcano-seedtts"
+    },
+    "n50": {
+      "path": "assets3d\\dialogue\\n50.wav",
+      "sha256": "4e23f78318f8cecbdf35e4a0aaa35c109cc14f3c512c979ce0e5c6d809a67cdc",
+      "provider": "volcano-seedtts"
+    },
+    "n51": {
+      "path": "assets3d\\dialogue\\n51.wav",
+      "sha256": "b3e4a0beff34951b02bf9271210de8d3629857d8289f26c2e77731f4872e6b61",
+      "provider": "volcano-seedtts"
+    },
+    "n52": {
+      "path": "assets3d\\dialogue\\n52.wav",
+      "sha256": "cc1674b150d84d35710eba4a7ef86234b7d00ffa2a17fa19c956702f67a4360e",
+      "provider": "volcano-seedtts"
+    },
+    "n53": {
+      "path": "assets3d\\dialogue\\n53.wav",
+      "sha256": "a2ac31bcd34c9ec2ee3eceec0f857b5520736fe4bcc9574240de8edab7fd18fe",
+      "provider": "volcano-seedtts"
+    },
+    "n54": {
+      "path": "assets3d\\dialogue\\n54.wav",
+      "sha256": "06f6fdf9245c00709bf0f08dbc336eddd0223f3b144ecc0859d14fc71db2521a",
+      "provider": "volcano-seedtts"
+    }
+  },
+  "events": [
+    {
+      "id": "human-event-00",
+      "name": "chain_tension",
+      "startTime": 104.0,
+      "volume": 0.48,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "STIR",
+      "offset": 4,
+      "sourceLeadingTrim": 0.83
+    },
+    {
+      "id": "human-event-01",
+      "name": "boot_step",
+      "startTime": 119.0,
+      "volume": 0.35,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "REVEAL",
+      "offset": 1,
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "human-event-02",
+      "name": "shield_bang",
+      "startTime": 124.5,
+      "volume": 0.66,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "RALLY",
+      "offset": 0.5,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-03",
+      "name": "sickle_whoosh",
+      "startTime": 151.64,
+      "volume": 0.68,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C1",
+      "offset": -0.36,
+      "sourceLeadingTrim": 0.235
+    },
+    {
+      "id": "human-event-04",
+      "name": "blade_shield",
+      "startTime": 152.0,
+      "volume": 0.95,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C1",
+      "offset": 0,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-05",
+      "name": "chain_tension",
+      "startTime": 153.02,
+      "volume": 0.65,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "SECOND_CUT",
+      "offset": -0.18,
+      "sourceLeadingTrim": 0.83
+    },
+    {
+      "id": "human-event-06",
+      "name": "blade_shield",
+      "startTime": 153.2,
+      "volume": 0.62,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "SECOND_CUT",
+      "offset": 0,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-07",
+      "name": "sickle_whoosh",
+      "startTime": 172.9,
+      "volume": 0.43,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C2",
+      "offset": -5.1,
+      "sourceLeadingTrim": 0.235
+    },
+    {
+      "id": "human-event-08",
+      "name": "armor_impact",
+      "startTime": 178.0,
+      "volume": 0.95,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C2",
+      "offset": 0,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-09",
+      "name": "rain_burst",
+      "startTime": 198.0,
+      "volume": 0.4,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "TEST_SHOT",
+      "offset": 0,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-10",
+      "name": "disc_clatter",
+      "startTime": 206.0,
+      "volume": 0.8,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "DISC_DROP",
+      "offset": 0,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-11",
+      "name": "rain_burst",
+      "startTime": 254.15,
+      "volume": 0.82,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "RAIN_RELEASE",
+      "offset": 0,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-12",
+      "name": "blade_shield",
+      "startTime": 256.0,
+      "volume": 0.42,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C3",
+      "offset": 0,
+      "sourceLeadingTrim": 0.095
+    },
+    {
+      "id": "human-event-13",
+      "name": "crater_slam",
+      "startTime": 276.0,
+      "volume": 0.92,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "C4",
+      "offset": 0,
+      "sourceLeadingTrim": 0.0
+    },
+    {
+      "id": "human-event-14",
+      "name": "cloth_pull",
+      "startTime": 296.3,
+      "volume": 0.3,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "BOLT",
+      "offset": 0.3,
+      "sourceLeadingTrim": 1.175
+    },
+    {
+      "id": "human-event-15",
+      "name": "cloth_pull",
+      "startTime": 331.0,
+      "volume": 0.38,
+      "role": "event",
+      "priority": "storySfx",
+      "cue": "LETGO",
+      "offset": 26,
+      "sourceLeadingTrim": 1.175
+    },
+    {
+      "id": "step-0",
+      "name": "boot_step",
+      "startTime": 96.492,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.2720826971397487",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-1",
+      "name": "boot_step",
+      "startTime": 96.717,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5441653942794974",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-2",
+      "name": "boot_step",
+      "startTime": 96.942,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.816248091419246",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-3",
+      "name": "boot_step",
+      "startTime": 97.167,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.0883307885589948",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-4",
+      "name": "boot_step",
+      "startTime": 97.392,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.3604134856987435",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-5",
+      "name": "boot_step",
+      "startTime": 97.617,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.632496182838492",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-6",
+      "name": "boot_step",
+      "startTime": 97.833,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.9045788799782408",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-7",
+      "name": "boot_step",
+      "startTime": 98.058,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.1766615771179896",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-8",
+      "name": "boot_step",
+      "startTime": 98.283,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.4487442742577383",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-9",
+      "name": "boot_step",
+      "startTime": 98.508,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.720826971397487",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-10",
+      "name": "boot_step",
+      "startTime": 98.733,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.992909668537236",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-11",
+      "name": "boot_step",
+      "startTime": 98.95,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.264992365676984",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-12",
+      "name": "boot_step",
+      "startTime": 99.183,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.537075062816733",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-13",
+      "name": "boot_step",
+      "startTime": 99.417,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.537075062816733",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-14",
+      "name": "boot_step",
+      "startTime": 99.725,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-15",
+      "name": "boot_step",
+      "startTime": 99.958,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-16",
+      "name": "boot_step",
+      "startTime": 102.783,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.30893977889266466",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-17",
+      "name": "boot_step",
+      "startTime": 103.017,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6178795577853293",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-18",
+      "name": "boot_step",
+      "startTime": 103.192,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.926819336677994",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-19",
+      "name": "boot_step",
+      "startTime": 103.342,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.2357591155706587",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-20",
+      "name": "boot_step",
+      "startTime": 103.483,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.5446988944633233",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-21",
+      "name": "boot_step",
+      "startTime": 103.617,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.853638673355988",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-22",
+      "name": "boot_step",
+      "startTime": 103.742,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.1625784522486526",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-23",
+      "name": "boot_step",
+      "startTime": 103.875,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.4715182311413173",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-24",
+      "name": "boot_step",
+      "startTime": 104,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.780458010033982",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-25",
+      "name": "boot_step",
+      "startTime": 104.142,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.0893977889266466",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-26",
+      "name": "boot_step",
+      "startTime": 104.292,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.3983375678193113",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-27",
+      "name": "boot_step",
+      "startTime": 104.458,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.707277346711976",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-28",
+      "name": "boot_step",
+      "startTime": 104.683,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.016217125604641",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-29",
+      "name": "boot_step",
+      "startTime": 104.925,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.016217125604641",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-30",
+      "name": "boot_step",
+      "startTime": 118.617,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.334995854037363",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-31",
+      "name": "boot_step",
+      "startTime": 119.175,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.669991708074726",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-32",
+      "name": "boot_step",
+      "startTime": 119.758,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.004987562112089",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-33",
+      "name": "boot_step",
+      "startTime": 120.333,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.339983416149452",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-34",
+      "name": "boot_step",
+      "startTime": 120.908,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.674979270186815",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-35",
+      "name": "boot_step",
+      "startTime": 121.483,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.009975124224178",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-36",
+      "name": "boot_step",
+      "startTime": 122.058,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.344970978261541",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-37",
+      "name": "boot_step",
+      "startTime": 122.642,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.679966832298904",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-38",
+      "name": "boot_step",
+      "startTime": 123.217,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.0149626863362666",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-39",
+      "name": "boot_step",
+      "startTime": 123.725,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.0149626863362666",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-40",
+      "name": "boot_step",
+      "startTime": 125.458,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3359159212851328",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-41",
+      "name": "boot_step",
+      "startTime": 126.792,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6718318425702656",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-42",
+      "name": "boot_step",
+      "startTime": 128.158,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0077477638553984",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-43",
+      "name": "boot_step",
+      "startTime": 128.3,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.25612496949731395",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-44",
+      "name": "boot_step",
+      "startTime": 128.567,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5122499389946279",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-45",
+      "name": "boot_step",
+      "startTime": 128.783,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.7683749084919418",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-46",
+      "name": "boot_step",
+      "startTime": 129.008,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.0244998779892558",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-47",
+      "name": "boot_step",
+      "startTime": 129.267,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.2806248474865698",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-48",
+      "name": "boot_step",
+      "startTime": 129.517,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.2806248474865698",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-49",
+      "name": "boot_step",
+      "startTime": 129.525,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.3436636851405312",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-50",
+      "name": "boot_step",
+      "startTime": 129.783,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3259941553910321",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-51",
+      "name": "boot_step",
+      "startTime": 130,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6519883107820642",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-52",
+      "name": "boot_step",
+      "startTime": 130.217,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9779824661730963",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-53",
+      "name": "boot_step",
+      "startTime": 130.433,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.3039766215641284",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-54",
+      "name": "boot_step",
+      "startTime": 130.65,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.6299707769551606",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-55",
+      "name": "boot_step",
+      "startTime": 130.817,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.27856776554368234",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-56",
+      "name": "boot_step",
+      "startTime": 130.867,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.9559649323461925",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-57",
+      "name": "boot_step",
+      "startTime": 130.892,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.679579606425664",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-58",
+      "name": "boot_step",
+      "startTime": 131.083,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.2819590877372247",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-59",
+      "name": "boot_step",
+      "startTime": 131.1,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5571355310873647",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-60",
+      "name": "boot_step",
+      "startTime": 131.3,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.607953243128257",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-61",
+      "name": "boot_step",
+      "startTime": 131.375,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.835703296631047",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-62",
+      "name": "boot_step",
+      "startTime": 131.517,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.933947398519289",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-63",
+      "name": "boot_step",
+      "startTime": 131.658,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.1142710621747294",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-64",
+      "name": "boot_step",
+      "startTime": 131.733,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.259941553910321",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-65",
+      "name": "boot_step",
+      "startTime": 131.942,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.3928388277184118",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-66",
+      "name": "boot_step",
+      "startTime": 131.95,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.5859357093013533",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-67",
+      "name": "boot_step",
+      "startTime": 132.167,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.911929864692385",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-68",
+      "name": "boot_step",
+      "startTime": 132.225,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.671406593262094",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-69",
+      "name": "boot_step",
+      "startTime": 132.267,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.015495527710797",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-70",
+      "name": "boot_step",
+      "startTime": 132.392,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.237924020083417",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-71",
+      "name": "boot_step",
+      "startTime": 132.5,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.9499743588057763",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-72",
+      "name": "boot_step",
+      "startTime": 132.625,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.237924020083417",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-73",
+      "name": "boot_step",
+      "startTime": 132.783,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.2285421243494588",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-74",
+      "name": "boot_step",
+      "startTime": 132.925,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-75",
+      "name": "boot_step",
+      "startTime": 133.067,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.507109889893141",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-76",
+      "name": "boot_step",
+      "startTime": 133.158,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-77",
+      "name": "boot_step",
+      "startTime": 133.35,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.7856776554368237",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-78",
+      "name": "boot_step",
+      "startTime": 133.392,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-79",
+      "name": "boot_step",
+      "startTime": 133.608,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.7856776554368237",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-80",
+      "name": "boot_step",
+      "startTime": 133.633,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.35141144899593",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-81",
+      "name": "boot_step",
+      "startTime": 133.925,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-82",
+      "name": "boot_step",
+      "startTime": 134.158,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-83",
+      "name": "boot_step",
+      "startTime": 134.392,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-84",
+      "name": "boot_step",
+      "startTime": 135,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.6873273702810625",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-85",
+      "name": "boot_step",
+      "startTime": 136.375,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.023243291566195",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-86",
+      "name": "boot_step",
+      "startTime": 137.575,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.023243291566195",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-87",
+      "name": "boot_step",
+      "startTime": 141.492,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.34404555939406556",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-88",
+      "name": "boot_step",
+      "startTime": 142.75,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6880911187881311",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-89",
+      "name": "boot_step",
+      "startTime": 143.767,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0321366781821966",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-90",
+      "name": "boot_step",
+      "startTime": 144.683,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.3761822375762622",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-91",
+      "name": "boot_step",
+      "startTime": 145.592,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.720227796970328",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-92",
+      "name": "boot_step",
+      "startTime": 146.583,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.064273356364393",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-93",
+      "name": "boot_step",
+      "startTime": 147.825,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.408318915758459",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-94",
+      "name": "boot_step",
+      "startTime": 149.083,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.408318915758459",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-95",
+      "name": "boot_step",
+      "startTime": 149.975,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3138470965295043",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-96",
+      "name": "boot_step",
+      "startTime": 150.383,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6276941930590086",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-97",
+      "name": "boot_step",
+      "startTime": 150.725,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9415412895885129",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-98",
+      "name": "boot_step",
+      "startTime": 151.067,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.2553883861180173",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-99",
+      "name": "boot_step",
+      "startTime": 151.475,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.5692354826475217",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-100",
+      "name": "boot_step",
+      "startTime": 151.875,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.5692354826475217",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-101",
+      "name": "boot_step",
+      "startTime": 152.925,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.32715630820756003",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-102",
+      "name": "boot_step",
+      "startTime": 153.35,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6543126164151201",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-103",
+      "name": "boot_step",
+      "startTime": 153.792,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9814689246226801",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-104",
+      "name": "boot_step",
+      "startTime": 154.225,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.3086252328302401",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-105",
+      "name": "boot_step",
+      "startTime": 154.508,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.3086252328302401",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-106",
+      "name": "boot_step",
+      "startTime": 154.933,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-107",
+      "name": "boot_step",
+      "startTime": 155.283,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-108",
+      "name": "boot_step",
+      "startTime": 163.858,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3492849839314597",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-109",
+      "name": "boot_step",
+      "startTime": 164.275,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6985699678629194",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-110",
+      "name": "boot_step",
+      "startTime": 164.717,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.047854951794379",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-111",
+      "name": "boot_step",
+      "startTime": 165.158,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.3971399357258387",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-112",
+      "name": "boot_step",
+      "startTime": 165.6,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.7464249196572983",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-113",
+      "name": "boot_step",
+      "startTime": 165.9,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.7464249196572983",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-114",
+      "name": "boot_step",
+      "startTime": 166.333,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-115",
+      "name": "boot_step",
+      "startTime": 166.683,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-116",
+      "name": "boot_step",
+      "startTime": 168.342,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.2704163456597992",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-117",
+      "name": "boot_step",
+      "startTime": 168.65,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5408326913195984",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-118",
+      "name": "boot_step",
+      "startTime": 168.917,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.8112490369793977",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-119",
+      "name": "boot_step",
+      "startTime": 169.217,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.0816653826391969",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-120",
+      "name": "boot_step",
+      "startTime": 169.508,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0816653826391969",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-121",
+      "name": "boot_step",
+      "startTime": 177.558,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.22410934831014973",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-122",
+      "name": "boot_step",
+      "startTime": 177.817,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.44821869662029945",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-123",
+      "name": "boot_step",
+      "startTime": 177.967,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.44821869662029945",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-124",
+      "name": "boot_step",
+      "startTime": 178.892,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3291234148799235",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-125",
+      "name": "boot_step",
+      "startTime": 179.458,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.658246829759847",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-126",
+      "name": "boot_step",
+      "startTime": 180.042,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9873702446397705",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-127",
+      "name": "boot_step",
+      "startTime": 180.4,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.9873702446397705",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-128",
+      "name": "boot_step",
+      "startTime": 180.833,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-129",
+      "name": "boot_step",
+      "startTime": 181.183,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-130",
+      "name": "boot_step",
+      "startTime": 189.917,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3455253320699378",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-131",
+      "name": "boot_step",
+      "startTime": 190.342,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6910506641398756",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-132",
+      "name": "boot_step",
+      "startTime": 190.75,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.23323807579381203",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-133",
+      "name": "boot_step",
+      "startTime": 190.775,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0365759962098133",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-134",
+      "name": "boot_step",
+      "startTime": 191.217,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.3821013282797512",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-135",
+      "name": "boot_step",
+      "startTime": 191.408,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.46647615158762407",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-136",
+      "name": "boot_step",
+      "startTime": 191.658,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.727626660349689",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-137",
+      "name": "boot_step",
+      "startTime": 191.958,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.6997142273814361",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-138",
+      "name": "boot_step",
+      "startTime": 192.1,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.0731519924196267",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-139",
+      "name": "boot_step",
+      "startTime": 192.508,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.9329523031752481",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-140",
+      "name": "boot_step",
+      "startTime": 192.542,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.4186773244895647",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-141",
+      "name": "boot_step",
+      "startTime": 192.883,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.4186773244895647",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-142",
+      "name": "boot_step",
+      "startTime": 193.158,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.1661903789690602",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-143",
+      "name": "boot_step",
+      "startTime": 193.333,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-144",
+      "name": "boot_step",
+      "startTime": 193.683,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-145",
+      "name": "boot_step",
+      "startTime": 193.792,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.1661903789690602",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-146",
+      "name": "boot_step",
+      "startTime": 196.692,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.28284271247461895",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-147",
+      "name": "boot_step",
+      "startTime": 197.425,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5656854249492379",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-148",
+      "name": "boot_step",
+      "startTime": 198.017,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.5656854249492379",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-149",
+      "name": "boot_step",
+      "startTime": 207.525,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.2692582403567254",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-150",
+      "name": "boot_step",
+      "startTime": 208.375,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5385164807134508",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-151",
+      "name": "boot_step",
+      "startTime": 208.875,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.5385164807134508",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-152",
+      "name": "boot_step",
+      "startTime": 209.333,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-153",
+      "name": "boot_step",
+      "startTime": 209.683,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-154",
+      "name": "boot_step",
+      "startTime": 227.017,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.2981423969999719",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-155",
+      "name": "boot_step",
+      "startTime": 227.45,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5962847939999438",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-156",
+      "name": "boot_step",
+      "startTime": 227.808,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.8944271909999157",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-157",
+      "name": "boot_step",
+      "startTime": 228.142,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.1925695879998877",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-158",
+      "name": "boot_step",
+      "startTime": 228.492,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.4907119849998596",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-159",
+      "name": "boot_step",
+      "startTime": 228.925,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.7888543819998315",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-160",
+      "name": "boot_step",
+      "startTime": 229.358,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.7888543819998315",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-161",
+      "name": "boot_step",
+      "startTime": 229.942,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3555365663331973",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-162",
+      "name": "boot_step",
+      "startTime": 230.367,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.7110731326663946",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-163",
+      "name": "boot_step",
+      "startTime": 230.808,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.066609698999592",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-164",
+      "name": "boot_step",
+      "startTime": 231.25,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.4221462653327892",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-165",
+      "name": "boot_step",
+      "startTime": 231.692,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.7776828316659865",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-166",
+      "name": "boot_step",
+      "startTime": 232.125,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.133219397999184",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-167",
+      "name": "boot_step",
+      "startTime": 232.567,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.4887559643323813",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-168",
+      "name": "boot_step",
+      "startTime": 233.008,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.8442925306655784",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-169",
+      "name": "boot_step",
+      "startTime": 233.375,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.8442925306655784",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-170",
+      "name": "boot_step",
+      "startTime": 233.667,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.3333333333333333",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-171",
+      "name": "boot_step",
+      "startTime": 233.842,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.6666666666666666",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-172",
+      "name": "boot_step",
+      "startTime": 234.017,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-173",
+      "name": "boot_step",
+      "startTime": 234.192,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-174",
+      "name": "boot_step",
+      "startTime": 236.75,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.2603416558635552",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-175",
+      "name": "boot_step",
+      "startTime": 237.45,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5206833117271104",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-176",
+      "name": "boot_step",
+      "startTime": 238.158,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.7810249675906655",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-177",
+      "name": "boot_step",
+      "startTime": 238.8,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.7810249675906655",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-178",
+      "name": "boot_step",
+      "startTime": 244.9,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.210818510677892",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-179",
+      "name": "boot_step",
+      "startTime": 245.275,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.421637021355784",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-180",
+      "name": "boot_step",
+      "startTime": 245.65,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.632455532033676",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-181",
+      "name": "boot_step",
+      "startTime": 245.992,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.632455532033676",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-182",
+      "name": "boot_step",
+      "startTime": 246.517,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3535533905932738",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-183",
+      "name": "boot_step",
+      "startTime": 247.075,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.7071067811865476",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-184",
+      "name": "boot_step",
+      "startTime": 247.667,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0606601717798214",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-185",
+      "name": "boot_step",
+      "startTime": 248.25,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.4142135623730951",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-186",
+      "name": "boot_step",
+      "startTime": 248.325,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.27041634565979933",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-187",
+      "name": "boot_step",
+      "startTime": 248.608,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5408326913195987",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-188",
+      "name": "boot_step",
+      "startTime": 248.833,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.7677669529663689",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-189",
+      "name": "boot_step",
+      "startTime": 248.858,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.811249036979398",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-190",
+      "name": "boot_step",
+      "startTime": 249.142,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.0816653826391973",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-191",
+      "name": "boot_step",
+      "startTime": 249.417,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0816653826391973",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-192",
+      "name": "boot_step",
+      "startTime": 249.425,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.121320343559643",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-193",
+      "name": "boot_step",
+      "startTime": 249.85,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.121320343559643",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-194",
+      "name": "boot_step",
+      "startTime": 257.517,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.27041634565979944",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-195",
+      "name": "boot_step",
+      "startTime": 258.025,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5408326913195989",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-196",
+      "name": "boot_step",
+      "startTime": 258.325,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.5408326913195989",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-197",
+      "name": "boot_step",
+      "startTime": 259.317,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.27041634565979944",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-198",
+      "name": "boot_step",
+      "startTime": 259.825,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5408326913195989",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-199",
+      "name": "boot_step",
+      "startTime": 260.125,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.5408326913195989",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-200",
+      "name": "boot_step",
+      "startTime": 261.517,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.20155644370746378",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-201",
+      "name": "boot_step",
+      "startTime": 262.025,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.40311288741492757",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-202",
+      "name": "boot_step",
+      "startTime": 262.15,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.34311076928595535",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-203",
+      "name": "boot_step",
+      "startTime": 262.325,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.40311288741492757",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-204",
+      "name": "boot_step",
+      "startTime": 262.8,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.20155644370746378",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-205",
+      "name": "boot_step",
+      "startTime": 262.867,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6862215385719107",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-206",
+      "name": "boot_step",
+      "startTime": 263.292,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.6862215385719107",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-207",
+      "name": "boot_step",
+      "startTime": 263.433,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.40311288741492757",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-208",
+      "name": "boot_step",
+      "startTime": 263.733,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-209",
+      "name": "boot_step",
+      "startTime": 263.808,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.40311288741492757",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-210",
+      "name": "boot_step",
+      "startTime": 264.083,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-211",
+      "name": "boot_step",
+      "startTime": 279.525,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.27950849718747384",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-212",
+      "name": "boot_step",
+      "startTime": 280.375,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5590169943749477",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-213",
+      "name": "boot_step",
+      "startTime": 280.875,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.5590169943749477",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-214",
+      "name": "boot_step",
+      "startTime": 281.333,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-215",
+      "name": "boot_step",
+      "startTime": 281.683,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-216",
+      "name": "boot_step",
+      "startTime": 285.392,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3010398644698074",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-217",
+      "name": "boot_step",
+      "startTime": 285.75,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.22360679774997905",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-218",
+      "name": "boot_step",
+      "startTime": 285.75,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.25000000000000006",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-219",
+      "name": "boot_step",
+      "startTime": 285.9,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6020797289396148",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-220",
+      "name": "boot_step",
+      "startTime": 286.425,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9031195934094223",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-221",
+      "name": "boot_step",
+      "startTime": 286.55,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.4472135954999581",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-222",
+      "name": "boot_step",
+      "startTime": 286.55,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5000000000000001",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-223",
+      "name": "boot_step",
+      "startTime": 286.95,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.2041594578792296",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-224",
+      "name": "boot_step",
+      "startTime": 287.2,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.4472135954999581",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-225",
+      "name": "boot_step",
+      "startTime": 287.2,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.5000000000000001",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-226",
+      "name": "boot_step",
+      "startTime": 287.292,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.2041594578792296",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-227",
+      "name": "boot_step",
+      "startTime": 287.533,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.25",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-228",
+      "name": "boot_step",
+      "startTime": 287.675,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-229",
+      "name": "boot_step",
+      "startTime": 287.817,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.75",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-230",
+      "name": "boot_step",
+      "startTime": 287.958,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-231",
+      "name": "boot_step",
+      "startTime": 288.092,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-232",
+      "name": "boot_step",
+      "startTime": 297.108,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3400367627183862",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-233",
+      "name": "boot_step",
+      "startTime": 297.358,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6800735254367724",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-234",
+      "name": "boot_step",
+      "startTime": 297.608,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0201102881551585",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-235",
+      "name": "boot_step",
+      "startTime": 297.858,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.3601470508735447",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-236",
+      "name": "boot_step",
+      "startTime": 298.108,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.700183813591931",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-237",
+      "name": "boot_step",
+      "startTime": 298.358,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.040220576310317",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-238",
+      "name": "boot_step",
+      "startTime": 298.608,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.380257339028703",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-239",
+      "name": "boot_step",
+      "startTime": 298.858,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.7202941017470894",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-240",
+      "name": "boot_step",
+      "startTime": 299.108,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.0603308644654756",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-241",
+      "name": "boot_step",
+      "startTime": 299.358,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.400367627183862",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-242",
+      "name": "boot_step",
+      "startTime": 299.608,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.740404389902248",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-243",
+      "name": "boot_step",
+      "startTime": 299.858,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.080441152620634",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-244",
+      "name": "boot_step",
+      "startTime": 300.117,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.080441152620634",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-245",
+      "name": "boot_step",
+      "startTime": 300.483,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.35979594911560636",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-246",
+      "name": "boot_step",
+      "startTime": 300.7,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.7195918982312127",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-247",
+      "name": "boot_step",
+      "startTime": 300.9,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.079387847346819",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-248",
+      "name": "boot_step",
+      "startTime": 301.1,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.4391837964624254",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-249",
+      "name": "boot_step",
+      "startTime": 301.292,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.7989797455780319",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-250",
+      "name": "boot_step",
+      "startTime": 301.492,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.158775694693638",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-251",
+      "name": "boot_step",
+      "startTime": 301.692,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.5185716438092447",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-252",
+      "name": "boot_step",
+      "startTime": 301.892,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.878367592924851",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-253",
+      "name": "boot_step",
+      "startTime": 302.083,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.238163542040457",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-254",
+      "name": "boot_step",
+      "startTime": 302.283,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.5979594911560637",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-255",
+      "name": "boot_step",
+      "startTime": 302.483,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.95775544027167",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-256",
+      "name": "boot_step",
+      "startTime": 302.683,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.317551389387276",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-257",
+      "name": "boot_step",
+      "startTime": 302.883,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.677347338502883",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-258",
+      "name": "boot_step",
+      "startTime": 303.075,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:5.037143287618489",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-259",
+      "name": "boot_step",
+      "startTime": 303.275,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:5.396939236734095",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-260",
+      "name": "boot_step",
+      "startTime": 303.492,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:5.756735185849702",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-261",
+      "name": "boot_step",
+      "startTime": 303.725,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:5.756735185849702",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-262",
+      "name": "boot_step",
+      "startTime": 307.283,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.27679392340341913",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-263",
+      "name": "boot_step",
+      "startTime": 307.492,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.2716730571845504",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-264",
+      "name": "boot_step",
+      "startTime": 307.525,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5535878468068383",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-265",
+      "name": "boot_step",
+      "startTime": 307.592,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.24267032964268387",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-266",
+      "name": "boot_step",
+      "startTime": 307.767,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.8303817702102574",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-267",
+      "name": "boot_step",
+      "startTime": 308.008,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.1071756936136765",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-268",
+      "name": "boot_step",
+      "startTime": 308.125,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5433461143691009",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-269",
+      "name": "boot_step",
+      "startTime": 308.242,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.3839696170170956",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-270",
+      "name": "boot_step",
+      "startTime": 308.433,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.48534065928536774",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-271",
+      "name": "boot_step",
+      "startTime": 308.483,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.6607635404205148",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-272",
+      "name": "boot_step",
+      "startTime": 308.725,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.937557463823934",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-273",
+      "name": "boot_step",
+      "startTime": 308.783,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.8150191715536512",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-274",
+      "name": "boot_step",
+      "startTime": 308.967,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.214351387227353",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-275",
+      "name": "boot_step",
+      "startTime": 309.208,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.491145310630772",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-276",
+      "name": "boot_step",
+      "startTime": 309.317,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.7280109889280516",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-277",
+      "name": "boot_step",
+      "startTime": 309.442,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.7679392340341913",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-278",
+      "name": "boot_step",
+      "startTime": 309.442,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.0866922287382017",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-279",
+      "name": "boot_step",
+      "startTime": 309.692,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.0447331574376104",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-280",
+      "name": "boot_step",
+      "startTime": 309.842,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.7280109889280516",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-281",
+      "name": "boot_step",
+      "startTime": 309.867,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.0866922287382017",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-282",
+      "name": "boot_step",
+      "startTime": 309.925,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.0447331574376104",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-283",
+      "name": "boot_step",
+      "startTime": 310.133,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.25",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-284",
+      "name": "boot_step",
+      "startTime": 310.167,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.3333333333333333",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-285",
+      "name": "boot_step",
+      "startTime": 310.167,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.3333333333333333",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-286",
+      "name": "boot_step",
+      "startTime": 310.275,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-287",
+      "name": "boot_step",
+      "startTime": 310.342,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.6666666666666666",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-288",
+      "name": "boot_step",
+      "startTime": 310.342,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.6666666666666666",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-289",
+      "name": "boot_step",
+      "startTime": 310.417,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.75",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-290",
+      "name": "boot_step",
+      "startTime": 310.517,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-291",
+      "name": "boot_step",
+      "startTime": 310.517,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-292",
+      "name": "boot_step",
+      "startTime": 310.558,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-293",
+      "name": "boot_step",
+      "startTime": 310.692,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-294",
+      "name": "boot_step",
+      "startTime": 310.692,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-295",
+      "name": "boot_step",
+      "startTime": 310.692,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-296",
+      "name": "boot_step",
+      "startTime": 342.25,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.25",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-297",
+      "name": "boot_step",
+      "startTime": 342.25,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.25",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-298",
+      "name": "boot_step",
+      "startTime": 342.308,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.3333333333333333",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-299",
+      "name": "boot_step",
+      "startTime": 342.508,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-300",
+      "name": "boot_step",
+      "startTime": 342.508,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-301",
+      "name": "boot_step",
+      "startTime": 342.633,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.6666666666666666",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-302",
+      "name": "boot_step",
+      "startTime": 342.767,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.75",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-303",
+      "name": "boot_step",
+      "startTime": 342.767,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.75",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-304",
+      "name": "boot_step",
+      "startTime": 342.958,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-305",
+      "name": "boot_step",
+      "startTime": 343.025,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-306",
+      "name": "boot_step",
+      "startTime": 343.025,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-307",
+      "name": "boot_step",
+      "startTime": 343.283,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-308",
+      "name": "boot_step",
+      "startTime": 343.292,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-309",
+      "name": "boot_step",
+      "startTime": 343.292,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-310",
+      "name": "boot_step",
+      "startTime": 372.75,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.25",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-311",
+      "name": "boot_step",
+      "startTime": 372.75,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.25",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-312",
+      "name": "boot_step",
+      "startTime": 372.808,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.3333333333333333",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-313",
+      "name": "boot_step",
+      "startTime": 373.008,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-314",
+      "name": "boot_step",
+      "startTime": 373.008,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-315",
+      "name": "boot_step",
+      "startTime": 373.133,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:0.6666666666666666",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-316",
+      "name": "boot_step",
+      "startTime": 373.267,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.75",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-317",
+      "name": "boot_step",
+      "startTime": 373.267,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:0.75",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-318",
+      "name": "boot_step",
+      "startTime": 373.458,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-319",
+      "name": "boot_step",
+      "startTime": 373.525,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-320",
+      "name": "boot_step",
+      "startTime": 373.525,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-321",
+      "name": "boot_step",
+      "startTime": 373.783,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-322",
+      "name": "boot_step",
+      "startTime": 373.792,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-323",
+      "name": "boot_step",
+      "startTime": 373.792,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-324",
+      "name": "boot_step",
+      "startTime": 393.842,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3051638903933426",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-325",
+      "name": "boot_step",
+      "startTime": 394.325,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.2856998017697981",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-326",
+      "name": "boot_step",
+      "startTime": 394.4,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3302366575654495",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-327",
+      "name": "boot_step",
+      "startTime": 394.475,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6103277807866851",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-328",
+      "name": "boot_step",
+      "startTime": 394.95,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5713996035395962",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-329",
+      "name": "boot_step",
+      "startTime": 395,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9154916711800277",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-330",
+      "name": "boot_step",
+      "startTime": 395.092,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.660473315130899",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-331",
+      "name": "boot_step",
+      "startTime": 395.483,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.8570994053093943",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-332",
+      "name": "boot_step",
+      "startTime": 395.533,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.2206555615733703",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-333",
+      "name": "boot_step",
+      "startTime": 395.725,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9907099726963485",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-334",
+      "name": "boot_step",
+      "startTime": 396.017,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.1427992070791924",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-335",
+      "name": "boot_step",
+      "startTime": 396.058,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.5258194519667128",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-336",
+      "name": "boot_step",
+      "startTime": 396.358,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.320946630261798",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-337",
+      "name": "boot_step",
+      "startTime": 396.55,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.4284990088489904",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-338",
+      "name": "boot_step",
+      "startTime": 396.583,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.8309833423600554",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-339",
+      "name": "boot_step",
+      "startTime": 396.992,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.6511832878272474",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-340",
+      "name": "boot_step",
+      "startTime": 397.083,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.7141988106187886",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-341",
+      "name": "boot_step",
+      "startTime": 397.117,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.136147232753398",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-342",
+      "name": "boot_step",
+      "startTime": 397.617,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.9998986123885867",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-343",
+      "name": "boot_step",
+      "startTime": 397.625,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.981419945392697",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-344",
+      "name": "boot_step",
+      "startTime": 397.642,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.4413111231467406",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-345",
+      "name": "boot_step",
+      "startTime": 398.15,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.2855984141583847",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-346",
+      "name": "boot_step",
+      "startTime": 398.167,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.746475013540083",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-347",
+      "name": "boot_step",
+      "startTime": 398.258,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.3116566029581467",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-348",
+      "name": "boot_step",
+      "startTime": 398.675,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.571298215928183",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-349",
+      "name": "boot_step",
+      "startTime": 398.7,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.0516389039334255",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-350",
+      "name": "boot_step",
+      "startTime": 398.883,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.641893260523596",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-351",
+      "name": "boot_step",
+      "startTime": 399.208,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.856998017697981",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-352",
+      "name": "boot_step",
+      "startTime": 399.225,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.3568027943267684",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-353",
+      "name": "boot_step",
+      "startTime": 399.517,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.9721299180890455",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-354",
+      "name": "boot_step",
+      "startTime": 399.742,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.142697819467779",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-355",
+      "name": "boot_step",
+      "startTime": 399.75,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.661966684720111",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-356",
+      "name": "boot_step",
+      "startTime": 400.15,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.302366575654495",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-357",
+      "name": "boot_step",
+      "startTime": 400.275,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.4283976212375773",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-358",
+      "name": "boot_step",
+      "startTime": 400.283,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.9671305751134534",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-359",
+      "name": "boot_step",
+      "startTime": 400.783,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.6326032332199447",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-360",
+      "name": "boot_step",
+      "startTime": 400.808,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.272294465506796",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-361",
+      "name": "boot_step",
+      "startTime": 400.808,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.714097423007375",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-362",
+      "name": "boot_step",
+      "startTime": 401.342,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.577458355900139",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-363",
+      "name": "boot_step",
+      "startTime": 401.342,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.9997972247771734",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-364",
+      "name": "boot_step",
+      "startTime": 401.417,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.962839890785394",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-365",
+      "name": "boot_step",
+      "startTime": 401.867,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.882622246293481",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-366",
+      "name": "boot_step",
+      "startTime": 401.875,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.285497026546971",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-367",
+      "name": "boot_step",
+      "startTime": 402.05,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.293076548350844",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-368",
+      "name": "boot_step",
+      "startTime": 402.392,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:5.187786136686824",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-369",
+      "name": "boot_step",
+      "startTime": 402.408,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.571196828316769",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-370",
+      "name": "boot_step",
+      "startTime": 402.683,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.623313205916293",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-371",
+      "name": "boot_step",
+      "startTime": 402.925,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:5.492950027080166",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-372",
+      "name": "boot_step",
+      "startTime": 402.942,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.856896630086568",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-373",
+      "name": "boot_step",
+      "startTime": 403.317,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.953549863481743",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-374",
+      "name": "boot_step",
+      "startTime": 403.45,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:5.798113917473509",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-375",
+      "name": "boot_step",
+      "startTime": 403.475,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:5.142596431856366",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-376",
+      "name": "boot_step",
+      "startTime": 404,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:5.283786521047192",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-377",
+      "name": "boot_step",
+      "startTime": 404.067,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:6.103277807866851",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-378",
+      "name": "boot_step",
+      "startTime": 404.083,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:5.428296233626163",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-379",
+      "name": "boot_step",
+      "startTime": 404.742,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:5.283786521047192",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-380",
+      "name": "boot_step",
+      "startTime": 404.758,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:6.103277807866852",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-381",
+      "name": "boot_step",
+      "startTime": 404.758,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:5.428296233626164",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-382",
+      "name": "boot_step",
+      "startTime": 405.333,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-383",
+      "name": "boot_step",
+      "startTime": 405.333,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-384",
+      "name": "boot_step",
+      "startTime": 405.333,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-385",
+      "name": "boot_step",
+      "startTime": 405.683,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-386",
+      "name": "boot_step",
+      "startTime": 405.683,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-387",
+      "name": "boot_step",
+      "startTime": 405.683,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-388",
+      "name": "boot_step",
+      "startTime": 408.567,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-389",
+      "name": "boot_step",
+      "startTime": 408.592,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.27999999999999997",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-390",
+      "name": "boot_step",
+      "startTime": 408.625,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.3111111111111111",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-391",
+      "name": "boot_step",
+      "startTime": 409.042,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-392",
+      "name": "boot_step",
+      "startTime": 409.117,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.5599999999999999",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-393",
+      "name": "boot_step",
+      "startTime": 409.2,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:0.6222222222222222",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-394",
+      "name": "boot_step",
+      "startTime": 409.525,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.8999999999999999",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-395",
+      "name": "boot_step",
+      "startTime": 409.642,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.8399999999999999",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-396",
+      "name": "boot_step",
+      "startTime": 409.783,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:0.9333333333333333",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-397",
+      "name": "boot_step",
+      "startTime": 410.008,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.2",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-398",
+      "name": "boot_step",
+      "startTime": 410.167,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.1199999999999999",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-399",
+      "name": "boot_step",
+      "startTime": 410.367,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.2444444444444445",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-400",
+      "name": "boot_step",
+      "startTime": 410.483,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.5",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-401",
+      "name": "boot_step",
+      "startTime": 410.7,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.4",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-402",
+      "name": "boot_step",
+      "startTime": 410.958,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.5555555555555556",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-403",
+      "name": "boot_step",
+      "startTime": 410.967,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.7999999999999998",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-404",
+      "name": "boot_step",
+      "startTime": 411.225,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.6799999999999997",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-405",
+      "name": "boot_step",
+      "startTime": 411.442,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-406",
+      "name": "boot_step",
+      "startTime": 411.542,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:1.8666666666666667",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-407",
+      "name": "boot_step",
+      "startTime": 411.75,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:1.9599999999999997",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-408",
+      "name": "boot_step",
+      "startTime": 411.925,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.4",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-409",
+      "name": "boot_step",
+      "startTime": 412.133,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.177777777777778",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-410",
+      "name": "boot_step",
+      "startTime": 412.283,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.2399999999999998",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-411",
+      "name": "boot_step",
+      "startTime": 412.408,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.6999999999999997",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-412",
+      "name": "boot_step",
+      "startTime": 412.717,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.488888888888889",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-413",
+      "name": "boot_step",
+      "startTime": 412.808,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.5199999999999996",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-414",
+      "name": "boot_step",
+      "startTime": 412.883,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-415",
+      "name": "boot_step",
+      "startTime": 413.308,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.8",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-416",
+      "name": "boot_step",
+      "startTime": 413.342,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.8",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-417",
+      "name": "boot_step",
+      "startTime": 413.375,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:3.3",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-418",
+      "name": "boot_step",
+      "startTime": 413.817,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:2.8",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-419",
+      "name": "boot_step",
+      "startTime": 413.833,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:2.8",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-420",
+      "name": "boot_step",
+      "startTime": 413.842,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:3.3",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-421",
+      "name": "boot_step",
+      "startTime": 414.333,
+      "actor": "aoao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-422",
+      "name": "boot_step",
+      "startTime": 414.333,
+      "actor": "xiaozao",
+      "foot": "left",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-423",
+      "name": "boot_step",
+      "startTime": 414.333,
+      "actor": "dafu",
+      "foot": "left",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-424",
+      "name": "boot_step",
+      "startTime": 414.683,
+      "actor": "aoao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-425",
+      "name": "boot_step",
+      "startTime": 414.683,
+      "actor": "xiaozao",
+      "foot": "right",
+      "volume": 0.1,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    },
+    {
+      "id": "step-426",
+      "name": "boot_step",
+      "startTime": 414.683,
+      "actor": "dafu",
+      "foot": "right",
+      "volume": 0.16,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1",
+      "sourceLeadingTrim": 0.1
+    }
+  ],
+  "music": [
+    {
+      "id": "quiet",
+      "asset": "bgm_nightwatch",
+      "startTime": 14.0,
+      "endTime": 82,
+      "sourceStart": 0,
+      "baseVolume": 0.28,
+      "fadeIn": 2.5,
+      "fadeOut": 2.5,
+      "purpose": "night conversation",
+      "preserveAsset": true
+    },
+    {
+      "id": "approach",
+      "asset": "bgm_nightwatch",
+      "startTime": 100.0,
+      "endTime": 140.0,
+      "sourceStart": 25,
+      "baseVolume": 0.32,
+      "fadeIn": 1.8,
+      "fadeOut": 1.8,
+      "purpose": "human intruder approach",
+      "preserveAsset": true
+    },
+    {
+      "id": "first-battle",
+      "asset": "bgm_nightbattle",
+      "startTime": 140.0,
+      "endTime": 208.0,
+      "sourceStart": 0,
+      "baseVolume": 0.43,
+      "fadeIn": 1.0,
+      "fadeOut": 1.0,
+      "purpose": "failed attempts",
+      "preserveAsset": true
+    },
+    {
+      "id": "decision",
+      "asset": "bgm_nightbattle",
+      "startTime": 229.0,
+      "endTime": 284.0,
+      "sourceStart": 14,
+      "baseVolume": 0.45,
+      "fadeIn": 1.2,
+      "fadeOut": 1.2,
+      "purpose": "shared counterattack",
+      "preserveAsset": true
+    },
+    {
+      "id": "road",
+      "asset": "bgm_nightwatch",
+      "startTime": 343.0,
+      "endTime": 408.0,
+      "sourceStart": 4,
+      "baseVolume": 0.3,
+      "fadeIn": 2.5,
+      "fadeOut": 2.5,
+      "purpose": "rescue responsibility",
+      "preserveAsset": true
+    }
+  ],
+  "ambience": [
+    {
+      "id": "night-bed",
+      "name": "night_wind_edited",
+      "startTime": 0,
+      "endTime": 434.0,
+      "volume": 0.16,
+      "role": "bed",
+      "priority": "ambience"
+    },
+    {
+      "id": "hearth-bed",
+      "name": "fire_crackle",
+      "startTime": 14.0,
+      "endTime": 392.0,
+      "volume": 0.1,
+      "role": "bed",
+      "priority": "ambience"
+    },
+    {
+      "id": "palace-rain",
+      "name": "rain_gate",
+      "startTime": 408.0,
+      "endTime": 434.0,
+      "volume": 0.28,
+      "role": "bed",
+      "priority": "ambience"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "n01",
+      "t": 15.0,
+      "dur": 3.336
+    },
+    {
+      "id": "n02",
+      "t": 22.0,
+      "dur": 4.392
+    },
+    {
+      "id": "n03",
+      "t": 31.0,
+      "dur": 3.12
+    },
+    {
+      "id": "n04",
+      "t": 37.0,
+      "dur": 1.92
+    },
+    {
+      "id": "n05",
+      "t": 48.0,
+      "dur": 4.968
+    },
+    {
+      "id": "n06",
+      "t": 56.0,
+      "dur": 2.928
+    },
+    {
+      "id": "n07",
+      "t": 65.0,
+      "dur": 4.584
+    },
+    {
+      "id": "n08",
+      "t": 78.0,
+      "dur": 1.272
+    },
+    {
+      "id": "n09",
+      "t": 83.0,
+      "dur": 1.896
+    },
+    {
+      "id": "n10",
+      "t": 92.0,
+      "dur": 1.92
+    },
+    {
+      "id": "n11",
+      "t": 106.0,
+      "dur": 3.336
+    },
+    {
+      "id": "n12",
+      "t": 120.0,
+      "dur": 2.424
+    },
+    {
+      "id": "n13",
+      "t": 125.0,
+      "dur": 2.904
+    },
+    {
+      "id": "n14",
+      "t": 132.0,
+      "dur": 4.032
+    },
+    {
+      "id": "n15",
+      "t": 137.0,
+      "dur": 2.904
+    },
+    {
+      "id": "n16",
+      "t": 140.5,
+      "dur": 2.832
+    },
+    {
+      "id": "n17",
+      "t": 145.5,
+      "dur": 2.736
+    },
+    {
+      "id": "n18",
+      "t": 149.0,
+      "dur": 3.0
+    },
+    {
+      "id": "n19",
+      "t": 158.0,
+      "dur": 2.736
+    },
+    {
+      "id": "n20",
+      "t": 163.0,
+      "dur": 3.144
+    },
+    {
+      "id": "n21",
+      "t": 171.0,
+      "dur": 2.256
+    },
+    {
+      "id": "n22",
+      "t": 176.0,
+      "dur": 1.248
+    },
+    {
+      "id": "n23",
+      "t": 182.0,
+      "dur": 3.864
+    },
+    {
+      "id": "n24",
+      "t": 195.0,
+      "dur": 3.576
+    },
+    {
+      "id": "n25",
+      "t": 201.0,
+      "dur": 2.832
+    },
+    {
+      "id": "n26",
+      "t": 210.0,
+      "dur": 2.928
+    },
+    {
+      "id": "n27",
+      "t": 216.0,
+      "dur": 1.632
+    },
+    {
+      "id": "n28",
+      "t": 220.0,
+      "dur": 3.24
+    },
+    {
+      "id": "n29",
+      "t": 229.0,
+      "dur": 3.144
+    },
+    {
+      "id": "n30",
+      "t": 235.0,
+      "dur": 3.072
+    },
+    {
+      "id": "n31",
+      "t": 241.0,
+      "dur": 2.928
+    },
+    {
+      "id": "n32",
+      "t": 246.0,
+      "dur": 3.744
+    },
+    {
+      "id": "n33",
+      "t": 252.0,
+      "dur": 2.448
+    },
+    {
+      "id": "n34",
+      "t": 259.0,
+      "dur": 2.496
+    },
+    {
+      "id": "n35",
+      "t": 266.0,
+      "dur": 3.24
+    },
+    {
+      "id": "n36",
+      "t": 273.3,
+      "dur": 2.616
+    },
+    {
+      "id": "n37",
+      "t": 288.0,
+      "dur": 2.664
+    },
+    {
+      "id": "n38",
+      "t": 293.0,
+      "dur": 2.328
+    },
+    {
+      "id": "n39",
+      "t": 300.0,
+      "dur": 2.04
+    },
+    {
+      "id": "n40",
+      "t": 305.0,
+      "dur": 2.112
+    },
+    {
+      "id": "n41",
+      "t": 313.0,
+      "dur": 1.92
+    },
+    {
+      "id": "n42",
+      "t": 318.0,
+      "dur": 1.512
+    },
+    {
+      "id": "n43",
+      "t": 323.0,
+      "dur": 3.552
+    },
+    {
+      "id": "n44",
+      "t": 329.0,
+      "dur": 2.664
+    },
+    {
+      "id": "n45",
+      "t": 335.0,
+      "dur": 3.576
+    },
+    {
+      "id": "n46",
+      "t": 343.0,
+      "dur": 4.584
+    },
+    {
+      "id": "n47",
+      "t": 352.0,
+      "dur": 3.576
+    },
+    {
+      "id": "n48",
+      "t": 361.0,
+      "dur": 1.848
+    },
+    {
+      "id": "n49",
+      "t": 366.0,
+      "dur": 2.736
+    },
+    {
+      "id": "n50",
+      "t": 376.0,
+      "dur": 4.584
+    },
+    {
+      "id": "n51",
+      "t": 385.0,
+      "dur": 1.92
+    },
+    {
+      "id": "n52",
+      "t": 398.0,
+      "dur": 2.904
+    },
+    {
+      "id": "n53",
+      "t": 416.0,
+      "dur": 3.336
+    },
+    {
+      "id": "n54",
+      "t": 423.0,
+      "dur": 2.52
+    }
+  ],
+  "mix_peak": 0.7762471437454224,
+  "peak_before": 1.0954067707061768,
+  "scale": 0.7086382313743304,
+  "sha256": "8a51971136dc3b943820cf9eda3c6d00c9c3f4dc018cacc4a5a3919986f23a4f"
 }

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "tvSha256": "58e71b1a681c61dfd01c452b4fe7bea4921843ad608b2734a955f58b5e06e970",
+  "sampleTimes": [
+    48.6,
+    49.16,
+    49.2,
+    49.3,
+    90.4,
+    303.1,
+    455,
+    462.8
+  ],
+  "audioAlignment": [
+    {
+      "bodyTime": 41.35,
+      "tvTime": 90.55,
+      "lagMs": 0.0,
+      "correlation": 0.999517
+    },
+    {
+      "bodyTime": 254.05,
+      "tvTime": 303.25,
+      "lagMs": 0.0,
+      "correlation": 0.999561
+    },
+    {
+      "bodyTime": 403.75,
+      "tvTime": 452.95,
+      "lagMs": 0.0,
+      "correlation": 0.999699
+    }
+  ]
+}

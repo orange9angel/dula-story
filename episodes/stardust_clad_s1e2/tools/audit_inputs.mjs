@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 
-export const episodeSources=['performance.js','viewer.js','viewer.html','render.mjs',
+export const episodeSources=['script.story','serial_direction.js','shot_direction.js','story_fx.js','look_direction.js','config/event_times.js','config/voices.json','tools/compile_story.py','performance.js','viewer.js','viewer.html','render.mjs',
   'tools/audit_inputs.mjs',
-  'config/timeline.json','config/dialogue.json','config/review_shots.json','config/contact_contract.json'];
+  'config/timeline.json','config/dialogue.json','config/voice_envs.json','config/editorial_cuts.json','config/review_shots.json','config/contact_contract.json'];
 
 export function auditInputs(episode){
   const story=path.resolve(episode,'../..'),files=episodeSources.map(p=>path.join(episode,p));
