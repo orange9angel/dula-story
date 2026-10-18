@@ -224,3 +224,25 @@ E3 看火收尾（118.0）。
   review_shots（`storyboard/gate/gate_report.json`）。
 - 逐拍审片 32 镜：`storyboard/r1/shots/`（三处眼部特写 E1 85.5/E2 101.3/E3 118.4 重点复核）。
 - 成片：`output/craft3d_full.mp4`（120.0s h264+aac）。
+
+## R14（场景纹理轮：监制嫌"场景还是太粗糙"——晨版纹理集 + morningize/纹理共存）
+
+- **晨版纹理集**（hybrid-craft-scene 工艺，`tools/gen_textures.py` Seedream 15 张 +
+  `tools/derive_maps.py` 法线派生 12 张，逐文件 source.json sha256，skip-if-exists）：
+  圣殿 floor/stone/backdrop/altar_relief/niche_wall/fabric/cast_iron、
+  柱廊 colonnade_ground/colonnade_stone/break_face/rubble_ground/backdrop_colonnade、
+  角斗场 arena_sand/arena_rock/backdrop_arena。prompt 纪律：均匀散射光/无方向性阴影/
+  四方连续/无文字无人物；晨版=亮暖 albedo 但不烤光影（光影归灯光）。
+  （backdrop_arena 首轮 3 次响应截断 FAIL，重跑补生成——Ark 截断重试纪律实录。）
+- **morningize 与纹理共存**（监制点名"别互相覆盖"）：applyHybrid 先跑（它按纹理调定
+  压灰乘色），morningize 检测 `hybridApplied.length` 后**跳过 floor/far/stone 压色**，
+  只管灯光/雾/天顶；背景板筒存在时不再加程序化天球（球在筒内会盖住背景板）。
+- **continuousBackdrop 晨化**：资产侧 applyHybrid 对夜景图 brightness(1.4~1.45)，
+  晨版图直接吹白——ep 侧同口径 redraw 压回（brightness 0.72）+ zenithColor uniform
+  换晨空蓝（'#6f86b8'/'#7b8fc0'）。
+- **角斗场去灰蒙**（监制点名 51.5s 帧）：雾推远（near 40→60/far 150→260）+ 暖金主光
+  1.35 + 火炬环功率回 .6；沙场暖金/座席暖赭纹理上身。
+- 夜用剪影带（bandMeshes）晨雾里太黑：提亮 ×1.8 进霾。
+- 验收：establish+三场景四机位接缝帧（`storyboard/r14_check/`，无竖缝/无板缘亮线）→
+  gate ALL GREEN → 成片重渲 → final_check 对比 R13 同镜表 → OP 回归 ALL GREEN。
+- 教训已写回 dula-skills/hybrid-craft-scene「场景晨化/换时段与纹理共存」节（当轮提交）。

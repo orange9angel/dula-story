@@ -50,8 +50,9 @@ const dawnBg=()=>{
   g.fillStyle=gr;g.fillRect(0,0,2,256);
   const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;
 };
-function morningize(sc,{dome=false,fireDim=1,stone=1.5,fogNear=30,fogFar=110,floor='#7d8496',hemi=1.35,dir=1.45,additiveDim=1,pointDim=1}={}){
+function morningize(sc,{dome=false,fireDim=1,stone=1.5,fogNear=30,fogFar=110,floor='#7d8496',hemi=1.35,dir=1.45,additiveDim=1,pointDim=1,zenith=null}={}){
   const S=sc.scene;
+  const texd=(sc.hybridApplied??[]).length>0; // R14：有纹理的场景不再调色压色（applyHybrid 已按纹理调定），只管灯光/雾/天顶
   S.background=dawnBg();
   if(S.fog){S.fog.color.set('#7a86a8');S.fog.near=fogNear;S.fog.far=fogFar;}
   S.traverse(o=>{
@@ -59,16 +60,31 @@ function morningize(sc,{dome=false,fireDim=1,stone=1.5,fogNear=30,fogFar=110,flo
     if(o.isDirectionalLight){o.color.set('#ffd8b0');o.intensity=Math.max(o.intensity*dir,1.1*dir/1.45);}
     if(o.isPointLight)o.intensity*=pointDim; // 夜用火炬点光环在晨景叠加过曝——压功率留形
   });
+  if(zenith&&sc.backdrop){ // continuousBackdrop 晨化：夜空天顶 uniform 换晨空 + 资产侧夜景提亮压回
+    const u=sc.backdrop.material?.uniforms;
+    if(u?.zenithColor)u.zenithColor.value.set(zenith);
+    if(u?.sourceMap?.value?.image){ // 资产 applyHybrid 对夜景图 brightness(1.4~1.45)，晨版图会吹白——同口径 redraw 压回
+      const src=u.sourceMap.value.image;
+      const c=document.createElement('canvas');c.width=src.width;c.height=src.height;
+      const g=c.getContext('2d');g.filter='brightness(0.72)';g.drawImage(src,0,0);
+      const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;
+      t.wrapS=THREE.MirroredRepeatWrapping;
+      u.sourceMap.value=t;
+    }
+  }
   if(dome&&sc.dome){sc.dome.material.map=dawnSky();sc.dome.material.needsUpdate=true;}
-  if(!dome){
+  if(!dome&&!sc.backdrop){ // 有混合背景板的场景不再加程序化天球（球在筒内会盖住背景板）
     const sky=new THREE.Mesh(new THREE.SphereGeometry(95,32,16),
       new THREE.MeshBasicMaterial({map:dawnSky(),side:THREE.BackSide,fog:false,transparent:true,depthWrite:false}));
     sky.position.set(0,0,-6);sky.renderOrder=-99;S.add(sky);
   }
-  if(sc.floorMesh){sc.floorMesh.material.color.set(floor);sc.floorMesh.material.needsUpdate=true;}
-  if(sc.farMesh){sc.farMesh.material.color.set('#565e74');sc.farMesh.material.needsUpdate=true;}
-  for(const key of ['stoneMeshes','pillarMeshes','pileMeshes','rockMeshes','groundMeshes'])
-    for(const m of sc[key]??[])if(m!==sc.floorMesh&&m!==sc.farMesh)m.material.color.multiplyScalar(stone);
+  if(!texd){
+    if(sc.floorMesh){sc.floorMesh.material.color.set(floor);sc.floorMesh.material.needsUpdate=true;}
+    if(sc.farMesh){sc.farMesh.material.color.set('#565e74');sc.farMesh.material.needsUpdate=true;}
+    for(const key of ['stoneMeshes','pillarMeshes','pileMeshes','rockMeshes','groundMeshes'])
+      for(const m of sc[key]??[])if(m!==sc.floorMesh&&m!==sc.farMesh)m.material.color.multiplyScalar(stone);
+  }
+  for(const m of sc.bandMeshes??[])m.material.color.multiplyScalar(1.8); // 夜用剪影带在晨雾里太黑，提亮进霾
   if(additiveDim!==1)S.traverse(o=>{ // 夜用加色叠层（沙痕等）在晨景会吹白全场——只压 Mesh，火炬 Sprite 不动
     if(o.isMesh&&!o.isSprite&&o.material&&o.material.blending===THREE.AdditiveBlending)o.material.opacity=additiveDim;});
   if(fireDim!==1&&sc.fireLight){
@@ -80,10 +96,11 @@ function morningize(sc,{dome=false,fireDim=1,stone=1.5,fogNear=30,fogFar=110,flo
 // ── 场景与角色（多场景同存，按段 scene 字段硬切；世界坐标全局连续）──
 const SCENES={shrine:new StardustShrineScene(),colonnade:new StarfallColonnadeScene(),
   arena:new StarArenaScene(),palacegate:new PalaceGateScene()};
-for(const sc of Object.values(SCENES)){sc.build();await sc.applyHybrid();} // ep1 无纹理目录→静默回退程序化
-morningize(SCENES.shrine,{dome:true,fireDim:.6});
-morningize(SCENES.colonnade);
-morningize(SCENES.arena,{stone:.9,fogNear:40,fogFar:150,floor:'#596074',hemi:.8,dir:.8,additiveDim:.22,pointDim:.4}); // 考核战：晨光但不奶白，火炬环压功率留戏剧感
+for(const sc of Object.values(SCENES)){sc.build();await sc.applyHybrid();} // R14：晨版纹理集（无纹理目录则静默回退程序化）
+morningize(SCENES.shrine,{dome:true,fireDim:.6,zenith:'#6f86b8'});
+morningize(SCENES.colonnade,{fogFar:150,zenith:'#6f86b8'});
+// 考核战：晨雾推远收掉（监制点名 51.5 灰蒙）+ 暖金主光抬饱和；纹理场景不调色压色
+morningize(SCENES.arena,{fogNear:60,fogFar:260,hemi:1.15,dir:1.35,additiveDim:.22,pointDim:.6,zenith:'#7b8fc0'});
 morningize(SCENES.palacegate);
 const actors={aoao:new AoaoCraft(),xiaozao:new XiaozaoCraft(),dafu:new DafuCraft(),azu:new AzuCraft(),hestia:new HestiaCraft()};
 let curScene=null;
