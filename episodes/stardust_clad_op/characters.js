@@ -701,15 +701,26 @@ export class HestiaCraft{
        const a=i/6*TAU;f.position.set(Math.cos(a)*.10,0,Math.sin(a)*.10);
        f.userData={a,ph:i*1.1};this.halo.add(f);this.haloFlames.push(f);
      }}
-    // ── 金色长柄锅铲权杖（右手持；挂点=右手世界位姿×固定偏移）──
+    // ── 金色长柄锅铲权杖（右手持；R5：握点=手心（探针零缝），朝向=展示定型（纯 t））──
+    // 杖局部系：柄沿 +y（铲头在顶端），铲面薄于 z（法线 +z 朝主镜头）
     this.staff=new THREE.Group();this.mesh.add(this.staff);
-    const handle=new THREE.Mesh(new THREE.CylinderGeometry(.012,.012,.85,10),mat(goldD));
-    handle.rotation.x=Math.PI/2;this.staff.add(handle);
-    const blade=new THREE.Mesh(new THREE.SphereGeometry(1,16,10),mat(gold));
-    blade.scale.set(.075,.10,.018);blade.position.z=.48;this.staff.add(blade);
-    const bladeRim=new THREE.Mesh(new THREE.TorusGeometry(.072,.008,6,20),mat(goldD));
-    bladeRim.position.z=.48;this.staff.add(bladeRim);
-    mesh(this.staff,new THREE.SphereGeometry(.02,10,8),'#c8a24e').position.z=-.44; // 柄尾珠
+    for(const [y0,y1,rr] of [[-.40,-.18,.013],[-.18,.02,.016],[.02,.30,.013]]){ // 三节杆身（中段略粗）
+      const seg=new THREE.Mesh(new THREE.CylinderGeometry(rr,rr,y1-y0,10),mat(goldD));
+      seg.position.y=(y0+y1)/2;this.staff.add(seg);
+    }
+    for(const y of [-.18,.02]){ // 环箍（分节处神器感）
+      const collar=new THREE.Mesh(new THREE.TorusGeometry(.020,.006,6,14),mat(gold));
+      collar.rotation.x=Math.PI/2;collar.position.y=y;this.staff.add(collar);
+    }
+    // 铲头：宽勺形铲面（压扁球=圆角宽铲，宽约肩宽 1/3）+ 椭圆勾边 + 铲面高光
+    const blade=new THREE.Mesh(new THREE.SphereGeometry(1,20,14),mat(gold));
+    blade.scale.set(.058,.085,.014);blade.position.y=.42;this.staff.add(blade);
+    const bladeRim=new THREE.Mesh(new THREE.TorusGeometry(.062,.006,6,24),mat(goldD));
+    bladeRim.scale.set(.92,1.34,1);bladeRim.position.y=.42;this.staff.add(bladeRim);
+    const bladeHi=new THREE.Mesh(new THREE.CircleGeometry(.030,16),
+      new THREE.MeshBasicMaterial({color:'#fff2cc',transparent:true,opacity:.55,blending:THREE.AdditiveBlending,depthWrite:false}));
+    bladeHi.scale.set(1,1.5,1);bladeHi.position.set(0,.42,.016);this.staff.add(bladeHi); // 铲面高光（+z 面）
+    mesh(this.staff,new THREE.SphereGeometry(.02,10,8),'#c8a24e').position.y=-.43; // 柄尾珠
     this.setEmotion('neutral',0);
   }
   setEmotion(e,b){this.face.setEmotion(e,b);}
@@ -730,10 +741,11 @@ export class HestiaCraft{
       this.feet[side].position.copy(V(leg[2]));
       this.feet[side].rotation.set(p[side+'FootPitch']??.5,0,0); // 垂腿自然绷脚
     }
-    // 权杖=右手位姿×固定偏移（握持点在手心，柄沿掌轴）
+    // 权杖：握点=右手心（探针接触零缝），朝向=展示定型（铲面朝主镜头，纯 t 微晃）
     const hand=this.hands.right;
-    this.staff.position.copy(hand.position);this.staff.quaternion.copy(hand.quaternion);
-    this.staff.rotateX(Math.PI/2);this.staff.translateY(.10);
+    this.staff.position.copy(hand.position);
+    const t0=p.t??0;
+    this.staff.quaternion.setFromEuler(new THREE.Euler(-.18+.05*Math.sin(t0*1.1),.12,-.30));
     // 光环呼吸（纯 t）
     const t=p.t??0;
     this.halo.position.y=.30+.012*Math.sin(t*1.4);

@@ -439,11 +439,12 @@ function buildPoseHestia(actor,s,t){
   // 右手持杖（杖头拄在锅沿前方），左手搭沿；挥手窗左手抬起
   const poleR=V(.3,-.6,-.4),poleL=V(-.3,-.6,-.4);
   const shR=V(.13,.52,.02),shL=V(-.13,.52,.02);
-  const wR=V(.20,.30,.20); // 右手持杖位（杖拄地感；目标点收臂程内）
+  let wR=V(.20,.30,.20); // 右手持杖位（杖拄地感；目标点收臂程内）
   let wL=V(-.20,.26,.08); // 左手搭锅沿
-  if(s.wave>0){ // 懒洋洋挥手：抬到肩侧小幅晃
+  if(s.wave>0){ // 懒洋洋挥手：抬到肩侧小幅晃；右手权杖稍举起（铲面剪影清楚）
     wL=blend(wL,V(-.28,.58,.18),s.wave);wL.z+=.04*Math.sin(t*7)*s.wave;
     p.openL=.7*s.wave;p.fistL=.35-.25*s.wave;
+    wR=V(wR.x-.02*s.wave,wR.y+.06*s.wave,wR.z+.02*s.wave);
   }
   p.rightArm=[shR,twoBone(shR,wR,poleR,.17,.16),wR];
   p.leftArm=[shL,twoBone(shL,wL,poleL,.17,.16),wL];

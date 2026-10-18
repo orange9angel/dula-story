@@ -224,3 +224,19 @@ node --import ./tools/register_loader.mjs tools/scan_reach.mjs   # 离线 twoBon
 - **胫甲固定半径嵌入**：腿管实测半径（LimbSurface.radius(.62)）+8mm 才是"贴腿"，写死 .046 比大釜腿细。
 - **探针窗口要避开非中性姿态**：定格段阿鏊悬空收腿，叶间隙读数漂移正常——站姿基准窗挪到对峙拍，冲锋窗只抓深穿。
 - 半成品合并：被叫停轮的帷幔/火盆/楣梁与本论贴身甲同渲零冲突；其 update() 摆动全为纯 t 函数（seek 保持全绿 81/81）。
+
+## R4（歌词字幕烧入）
+
+- 链：`tools/build_lyrics_subs.py`（whisper 13 段粗锚 × op_lyrics.txt 真词 → 人声频段 300-3kHz 谱面流量起音沿精修（±150ms 窗，行起点吸附最强 onset；能量不足保粗锚）→ `config/lyrics_events.json` → subtitle-burn `make_subs.py` → `config/lyrics.ass` → 烧入）。
+- 校正量实测 -0.13~+0.05s（whisper 段界普遍滞后 20-130ms，符合预期）；相邻行不重叠（终点=下行起点-80ms）；44.16s 后器乐尾无字幕；与 45s 赫斯提亚台词天然错开。
+- 字幕版式：字幕组风底部居中、淡金（主题歌单一 speaker 取分色盘首色）、深描边、`\fad(400,500)`；group/project 留空不出片头卡（OP 自带字卡）。无英文副字幕（歌词无官译，不机翻）。
+- 烧入纪律：源=净版母带 `output/craft3d_full.mp4`（不叠烧）；`ffmpeg ass` 滤镜 Windows 盘符冒号转义由 make_subs 内置；抽帧用输出寻址（-ss 在 -i 前）。
+- 产物：`output/craft3d_full_subtitled.mp4`（49.200s，h264 crf18，音轨流拷贝不动）。抽帧验证 `storyboard/r4_check/`：2.5s（L2）/15s（二段 L1）/34.5s（L7）/40s（L8）/45.5s（台词帧无歌词残留）全过。
+
+## R5（权杖可读性小整改）
+
+- 权杖重做（HestiaCraft.staff）：铲头加大加宽（宽勺形铲面 ≈ 肩宽 1/3，压扁球+椭圆勾边+铲面高光片）、杆身三节带环箍、柄尾珠；朝向改**展示定型**（握点=右手心探针零缝，朝向=固定 Euler+纯 t 微晃，铲面法线朝 out_goddess 主镜头）——不再绑手掌轴（掌轴朝向由手臂 IK 决定，铲面天然不对镜头）。
+- 挥手窗（46.35-47.3）右手腕微抬 6cm，权杖随手上举，铲面剪影更清楚（22 帧）。
+- carry 探针（杖-手 ≤.12m）锚的是握点不是铲头，铲头加大后零误报，容差未动。
+- 教训：**展示型道具的朝向别绑手部 IK 轴**——手掌朝向服务表演，道具朝向服务读感；握点（接触）绑手、朝向（读感）独立定型，两者分离各管各的，探针测接触点即可。
+- 重渲 `output/craft3d_full.mp4`（49.2s 不变）→ 重烧 `build_lyrics_subs.py` → `output/craft3d_full_subtitled.mp4`（字幕/权杖同框正常，sub_45.5 帧验证）；gate 重跑全绿。
