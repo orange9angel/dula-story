@@ -10,9 +10,9 @@
       "passed": true,
       "tail": [
         "Failed to load resource: the server responded with a status of 404 (Not Found)",
-        "HTTP 404 http://127.0.0.1:63480/assets3d/tex/rubble_ground_normal.png",
+        "HTTP 404 http://127.0.0.1:58405/assets3d/tex/door_relief_normal.png",
         "Failed to load resource: the server responded with a status of 404 (Not Found)",
-        "HTTP 404 http://127.0.0.1:63480/assets3d/tex/backdrop_colonnade.png",
+        "HTTP 404 http://127.0.0.1:58405/assets3d/tex/backdrop_gate.png",
         "Failed to load resource: the server responded with a status of 404 (Not Found)"
       ],
       "errors": []
@@ -20,7 +20,7 @@
     {
       "name": "seek_determinism",
       "passed": true,
-      "note": "75 checks"
+      "note": "85 checks"
     },
     {
       "name": "contact_probe",
@@ -28,10 +28,10 @@
       "returncode": 0,
       "passed": true,
       "tail": [
-        " \"gait_cadence_max_azu\": 6.25",
-        "}",
-        "contact check: all assertions passed",
-        "contacts_local azuL-dafuPaulR: min 0.100m (max 0.16)",
+        "contacts_local azuL-xiaoPaulR: min 0.070m (max 0.16)",
+        "contacts_local azuR-dafuCapL: min 0.047m (max 0.18)",
+        "contacts_local azuL-shieldA: min 0.106m (max 0.2)",
+        "contacts_local azuR-shieldA: min 0.044m (max 0.2)",
         "clad_fit: 48 entries all in range"
       ],
       "errors": []
@@ -42,7 +42,7 @@
       "returncode": 0,
       "passed": true,
       "tail": [
-        "audio sync ok: 22 events, bed 75s, 21 lines, peak 0.7762"
+        "audio sync ok: 13 events, bed 120s, 22 lines, peak 0.7762"
       ],
       "errors": []
     },
@@ -53,9 +53,9 @@
       "passed": true,
       "tail": [
         "Failed to load resource: the server responded with a status of 404 (Not Found)",
-        "HTTP 404 http://127.0.0.1:65103/assets3d/tex/rubble_ground_normal.png",
+        "HTTP 404 http://127.0.0.1:53605/assets3d/tex/door_relief_normal.png",
         "Failed to load resource: the server responded with a status of 404 (Not Found)",
-        "HTTP 404 http://127.0.0.1:65103/assets3d/tex/backdrop_colonnade.png",
+        "HTTP 404 http://127.0.0.1:53605/assets3d/tex/backdrop_gate.png",
         "Failed to load resource: the server responded with a status of 404 (Not Found)"
       ],
       "errors": []

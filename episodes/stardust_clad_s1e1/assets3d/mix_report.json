@@ -1,124 +1,93 @@
 {
- "duration": 75.0,
+ "duration": 120.0,
  "sr": 48000,
  "events": [
   {
-   "t": 10.8,
-   "sfx": "dash_whoosh",
-   "gain": 0.8
-  },
-  {
-   "t": 16.5,
-   "sfx": "whoosh_fast",
-   "gain": 0.6
-  },
-  {
-   "t": 19.4,
+   "t": 19.8,
    "sfx": "scroll_pop",
    "gain": 0.9
   },
   {
-   "t": 27.4,
-   "sfx": "energy_charge",
-   "gain": 0.9
-  },
-  {
-   "t": 35.0,
-   "sfx": "pan_sizzle",
-   "gain": 0.9
-  },
-  {
-   "t": 42.8,
-   "sfx": "whoosh_fast",
-   "gain": 0.7
-  },
-  {
-   "t": 43.6,
-   "sfx": "stone_thud",
-   "gain": 1.0
-  },
-  {
-   "t": 44.0,
-   "sfx": "body_drop",
+   "t": 46.2,
+   "sfx": "dash_whoosh",
    "gain": 0.8
   },
   {
-   "t": 47.0,
-   "sfx": "star_chime",
-   "gain": 0.55
-  },
-  {
-   "t": 47.28,
-   "sfx": "star_chime",
-   "gain": 0.55
-  },
-  {
-   "t": 47.56,
-   "sfx": "star_chime",
-   "gain": 0.55
-  },
-  {
-   "t": 47.84,
-   "sfx": "star_chime",
-   "gain": 0.55
-  },
-  {
-   "t": 48.12,
-   "sfx": "star_chime",
-   "gain": 0.55
-  },
-  {
-   "t": 48.4,
-   "sfx": "star_chime",
-   "gain": 0.55
-  },
-  {
-   "t": 54.4,
+   "t": 51.5,
    "sfx": "chopstick_tap",
    "gain": 1.0
   },
   {
-   "t": 57.8,
+   "t": 52.2,
+   "sfx": "body_drop",
+   "gain": 0.7
+  },
+  {
+   "t": 63.5,
    "sfx": "chopstick_tap",
    "gain": 0.9
   },
   {
-   "t": 61.2,
-   "sfx": "chopstick_clack",
+   "t": 72.8,
+   "sfx": "whoosh_fast",
+   "gain": 0.8
+  },
+  {
+   "t": 74.0,
+   "sfx": "chopstick_tap",
+   "gain": 0.9
+  },
+  {
+   "t": 74.6,
+   "sfx": "body_drop",
+   "gain": 0.7
+  },
+  {
+   "t": 92.5,
+   "sfx": "whoosh_fast",
+   "gain": 0.9
+  },
+  {
+   "t": 96.5,
+   "sfx": "pot_shock",
    "gain": 1.0
   },
   {
-   "t": 34.95,
-   "sfx": "star_lotus",
-   "gain": 0.75
-  },
-  {
-   "t": 54.4,
+   "t": 97.5,
    "sfx": "chopstick_barrage",
    "gain": 0.9
   },
   {
-   "t": 61.2,
-   "sfx": "star_pierce",
-   "gain": 1.0
-  },
-  {
-   "t": 63.4,
-   "sfx": "pot_set",
+   "t": 98.6,
+   "sfx": "star_net",
    "gain": 0.9
   },
   {
-   "t": 74.3,
-   "sfx": "pot_clang",
+   "t": 99.5,
+   "sfx": "shield_block",
    "gain": 1.0
   }
  ],
  "sources": {
-  "bgm": {
+  "bgm:bgm_morning": {
    "path": "assets3d/sfx/bgm_morning.wav",
    "provider": "volcano-seedaudio",
    "gain": 0.55,
+   "window": [
+    0.0,
+    44.0
+   ],
    "sha256": "e63aea0227b0559b336a4d397282c0faf4481a0f7d9a16e9e0ac9fb38400e63f"
+  },
+  "bgm:bgm_trial": {
+   "path": "assets3d/sfx/bgm_trial.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.6,
+   "window": [
+    44.0,
+    112.0
+   ],
+   "sha256": "811e119f851946c01d55cb31e4fb5a758fa2939a3f8d5822b3bfc9e96dfd6195"
   },
   "ambience": {
    "path": "assets3d/sfx/ambience_morning.wav",
@@ -126,327 +95,301 @@
    "gain": 0.2,
    "sha256": "e13afc11f632e6529a093d2da2496f9c3dadc1550a9642a4f41efe35baa076b2"
   },
-  "hotpot_bed": {
-   "path": "assets3d/sfx/hotpot_bubble.wav",
+  "sfx:scroll_pop": {
+   "path": "assets3d/sfx/scroll_pop.wav",
    "provider": "volcano-seedaudio",
-   "gain": 0.3,
-   "t0": 64.2,
-   "sha256": "8303b6a636ced0a49b9e20cdd82a75bae973379cbf1e2daae6220682b8f487d6"
+   "sha256": "e5ef6711cc08496b6dc9bda2a02ba31c1c1dac73cc05744ee054d3be6f6fdabf"
   },
   "sfx:dash_whoosh": {
    "path": "assets3d/sfx/dash_whoosh.wav",
    "provider": "volcano-seedaudio",
    "sha256": "c2a41899fe3f8eb89bca707b09837b064a6c26f80d5dc3790f730b75b3b1dd41"
   },
-  "sfx:whoosh_fast": {
-   "path": "assets3d/sfx/whoosh_fast.wav",
+  "sfx:chopstick_tap": {
+   "path": "assets3d/sfx/chopstick_tap.wav",
    "provider": "volcano-seedaudio",
-   "sha256": "9a479c00a300b4d50257f8e42d2c2972359e84ed76c8445d6bdd092a0727f6a5"
-  },
-  "sfx:scroll_pop": {
-   "path": "assets3d/sfx/scroll_pop.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "e5ef6711cc08496b6dc9bda2a02ba31c1c1dac73cc05744ee054d3be6f6fdabf"
-  },
-  "sfx:energy_charge": {
-   "path": "assets3d/sfx/energy_charge.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "59e8e6753b3a915296a287651574a5ec0ed7bf178741792423bded9ab0bb4785"
-  },
-  "sfx:pan_sizzle": {
-   "path": "assets3d/sfx/pan_sizzle.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "b073923be438f17f357195a08218cd5b5a26b23842cd7c06d7cfa808a2042a09"
-  },
-  "sfx:stone_thud": {
-   "path": "assets3d/sfx/stone_thud.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "1fca7785dbce1d2baf3981ba63a9f0224db6f0dc2c3560ebca34df6969fb5caf"
+   "sha256": "7e56d2bfe68446b80b019bfec8c239d150202494a0e4d8ee09da7ae56dedaf22"
   },
   "sfx:body_drop": {
    "path": "assets3d/sfx/body_drop.wav",
    "provider": "volcano-seedaudio",
    "sha256": "1750d9e48ba18e31170780474c9401d13269a50c398c76184b6d4edf542202cc"
   },
-  "sfx:star_chime": {
-   "path": "assets3d/sfx/star_chime.wav",
+  "sfx:whoosh_fast": {
+   "path": "assets3d/sfx/whoosh_fast.wav",
    "provider": "volcano-seedaudio",
-   "sha256": "df3bb0a79afa3128044602bf7ffdc862976ecbd125e0f04cb4f37036e93cf0a5"
+   "sha256": "9a479c00a300b4d50257f8e42d2c2972359e84ed76c8445d6bdd092a0727f6a5"
   },
-  "sfx:chopstick_tap": {
-   "path": "assets3d/sfx/chopstick_tap.wav",
+  "sfx:pot_shock": {
+   "path": "assets3d/sfx/pot_shock.wav",
    "provider": "volcano-seedaudio",
-   "sha256": "7e56d2bfe68446b80b019bfec8c239d150202494a0e4d8ee09da7ae56dedaf22"
-  },
-  "sfx:chopstick_clack": {
-   "path": "assets3d/sfx/chopstick_clack.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "dae504b2e0e33e1d4aa06c58bee377761ae4472ab2cb48c857beafb07aa0954b"
-  },
-  "sfx:star_lotus": {
-   "path": "assets3d/sfx/star_lotus.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "28d32a41c8c441f93b702fbf8607344cf36734bb0bc55616473ec3135085050b"
+   "sha256": "5d161fab9a5ecc774726071550c9ee95c42377dcf9d256251315267dc011de1c"
   },
   "sfx:chopstick_barrage": {
    "path": "assets3d/sfx/chopstick_barrage.wav",
    "provider": "volcano-seedaudio",
    "sha256": "d66ffb26f502bc21a71752e52a7a1041ac33facd4b403596ee0a1c6fd8cf5021"
   },
-  "sfx:star_pierce": {
-   "path": "assets3d/sfx/star_pierce.wav",
+  "sfx:star_net": {
+   "path": "assets3d/sfx/star_net.wav",
    "provider": "volcano-seedaudio",
-   "sha256": "f948268f142ed10809c9564b5778194e60b2593dd5fa04e1fa23c32c9b11db68"
+   "sha256": "a4f902023ad3811941ce2e5ff17e81845f2d4b351942b1bd4610da1d01f446d2"
   },
-  "sfx:pot_set": {
-   "path": "assets3d/sfx/pot_set.wav",
+  "sfx:shield_block": {
+   "path": "assets3d/sfx/shield_block.wav",
    "provider": "volcano-seedaudio",
-   "sha256": "fb9c59777223c10ff766cb1026a0814de13796fef910abfbf0dd16487288e5e4"
-  },
-  "sfx:pot_clang": {
-   "path": "assets3d/sfx/pot_clang.wav",
-   "provider": "volcano-seedaudio",
-   "sha256": "4476c6a27faadd5535a648758140972d116acbeafe43339865ccb7d2b5899467"
+   "sha256": "647c2107a4cd0be26dbef81b3a03a5ed53a5cfca88842ce6e85cc1affdd0f6ff"
   },
   "voice:l01": {
    "path": "assets3d/dialogue/l01.wav",
-   "t": 3.4,
+   "t": 7.2,
    "provider": "volcano-seedtts",
-   "sha256": "b211dd9964522b3e8739f64b72ad6e2e8790441798bbc24d9319d0ae73270b74"
+   "sha256": "336c27665d76a908009d5375264bc4e2cdc23cacdc65123a656af4737b2b1ec0"
+  },
+  "voice:l02": {
+   "path": "assets3d/dialogue/l02.wav",
+   "t": 11.4,
+   "provider": "volcano-seedtts",
+   "sha256": "e8cd010ce700974c42c8059ec408551ac8da14ed5ddfa543b29f71ce88c13f3f"
   },
   "voice:l03": {
    "path": "assets3d/dialogue/l03.wav",
-   "t": 7.7,
+   "t": 15.4,
    "provider": "volcano-seedtts",
-   "sha256": "0c1f890a36d1dfde6cf6bfffdd6b3f56182a0186baf5d1157f192e054859cf19"
+   "sha256": "9b25162cb0fcd6f4649f3f98cc25eba8c7ac8d2558897903ebfdc63ed190d458"
   },
   "voice:l04": {
    "path": "assets3d/dialogue/l04.wav",
-   "t": 11.5,
+   "t": 24.5,
    "provider": "volcano-seedtts",
-   "sha256": "f3b4afa48fec287bd60a5b5a62b57b76de11686cbd78db7ff19813cddeb34b70"
+   "sha256": "63f148412858f2435643799c764a52112e2e5279f38c7216ed0be10eef1eb5ee"
   },
   "voice:l05": {
    "path": "assets3d/dialogue/l05.wav",
-   "t": 14.8,
+   "t": 38.0,
    "provider": "volcano-seedtts",
-   "sha256": "7b10731cf3b4db56d70971e78ddaaa2e1296bd58e1781b60af340065dba8629b"
+   "sha256": "670b6485402ece7ef310ce74f091a0b70136ae3be2b62f444cdc22b7889d1916"
   },
   "voice:l06": {
    "path": "assets3d/dialogue/l06.wav",
-   "t": 18.2,
+   "t": 41.6,
    "provider": "volcano-seedtts",
-   "sha256": "b4d6a93940084ad589671fa15925c6172fd1e48acd8c8eb1a81e5ab8992a52a0"
+   "sha256": "1f86cc30ec9861c8dce891ff5f9d731a3451ab442f64f391ec8826f5aa784784"
   },
   "voice:l07": {
    "path": "assets3d/dialogue/l07.wav",
-   "t": 20.3,
+   "t": 32.9,
    "provider": "volcano-seedtts",
-   "sha256": "6541240d4e38d7a5f520d38d2f8852ab3d867ffd053f62f5c84df0bcd4aff78f"
+   "sha256": "09cf8ed92eb1bdcba9229e1db891ed399c788baafcdd1036c7970fb8e670178d"
+  },
+  "voice:l08": {
+   "path": "assets3d/dialogue/l08.wav",
+   "t": 46.9,
+   "provider": "volcano-seedtts",
+   "sha256": "76642f34331cf0eb8afdbd7d7eaac93131e1706596b9296356d99ef6b38fcc82"
   },
   "voice:l09": {
    "path": "assets3d/dialogue/l09.wav",
-   "t": 25.2,
+   "t": 54.6,
    "provider": "volcano-seedtts",
-   "sha256": "f705a292133455dd1ffa92d8974769fdeeca43d0dbbdfc5dbb3aae65484c0a84"
+   "sha256": "6dfa569184ef0cc1c278288888ae164d4b1d1f9a7766117a4bcc2ead7f884534"
   },
   "voice:l10": {
    "path": "assets3d/dialogue/l10.wav",
-   "t": 31.5,
+   "t": 64.4,
    "provider": "volcano-seedtts",
-   "sha256": "15bd7b5ae63de53bf3d2f062cc75b37db1a0ca35e8bdfdbedb47d035857ff8a6"
-  },
-  "voice:c2": {
-   "path": "assets3d/dialogue/c2.wav",
-   "t": 33.4,
-   "provider": "volcano-seedtts",
-   "sha256": "d8559fae610f5f8ee4cb69674c694205cf8c73e9322bca253cb3b8723b28b0e0"
+   "sha256": "2aeaef11ac3b462668ac0b42003a04b1ff7aed7a8323856b6c9fe503404c9c3d"
   },
   "voice:l11": {
    "path": "assets3d/dialogue/l11.wav",
-   "t": 34.8,
+   "t": 75.8,
    "provider": "volcano-seedtts",
-   "sha256": "c0b9bb3b6093abb3b8c603a66cc8b0208ad208d7ff91b0b689299f64545c6f3d"
+   "sha256": "8fa4088102431f24480c6f9f8bc5926bf38b21c159ff30198666dd8b9b53565e"
   },
   "voice:l12": {
    "path": "assets3d/dialogue/l12.wav",
-   "t": 38.6,
+   "t": 83.6,
    "provider": "volcano-seedtts",
-   "sha256": "66ccc1d30685849266c2d37050663f0e06230d52bc546d92393ef9d68ba0820a"
+   "sha256": "f21b3f7762bff4cf60292aba1a0fd850a154da9ee2290a5e047908ad62110823"
   },
   "voice:l13": {
    "path": "assets3d/dialogue/l13.wav",
-   "t": 41.0,
+   "t": 88.6,
    "provider": "volcano-seedtts",
-   "sha256": "c336c48ce39ee949338d9be5972ed7d7a5d8d0f581c38583bde39d14215a29ba"
+   "sha256": "88d40691d15c8f799b9679951dd19c06a52b3d1759369fe66a8084088a3a3db3"
   },
   "voice:l14": {
    "path": "assets3d/dialogue/l14.wav",
-   "t": 44.6,
+   "t": 94.4,
    "provider": "volcano-seedtts",
-   "sha256": "da3e3f45286c4afa639b9602c251bc419d1dd3c5adc92d4ff983118c349c5f34"
+   "sha256": "67a59cab4e4f263b51b35151cce2a869a39b95b91d64403d08c22a9b3cd13882"
   },
   "voice:l15": {
    "path": "assets3d/dialogue/l15.wav",
-   "t": 48.5,
+   "t": 92.2,
    "provider": "volcano-seedtts",
-   "sha256": "75c22d511ff63f3576ef65897ac30d02c4e37e59c7b093b81d68485d2c79abab"
+   "sha256": "80ab8cc909b78d5e07caae15e83f3c9f7b34e97ca6b52c636c0e446cea3bbcde"
   },
   "voice:l16": {
    "path": "assets3d/dialogue/l16.wav",
-   "t": 51.1,
+   "t": 100.8,
    "provider": "volcano-seedtts",
-   "sha256": "6a2a750a76e8cc6960a46eca6111e267e6088f65ec6b0d57e029e87c0e82ccfa"
-  },
-  "voice:c1": {
-   "path": "assets3d/dialogue/c1.wav",
-   "t": 52.6,
-   "provider": "volcano-seedtts",
-   "sha256": "af24d8267c9e80c576117a1b6f5141834ed707c0a696ab637ab2db6c03781916"
-  },
-  "voice:c3": {
-   "path": "assets3d/dialogue/c3.wav",
-   "t": 59.1,
-   "provider": "volcano-seedtts",
-   "sha256": "82f9602f0d1fe3e0062a655b232cef45316af0e94f6e9bcf903c60afc8ff5f4c"
+   "sha256": "ff9a9f31841b915070cefb91cdf64c9de8ef054b04aa2befacf5c6135ddda0af"
   },
   "voice:l17": {
    "path": "assets3d/dialogue/l17.wav",
-   "t": 62.5,
+   "t": 105.0,
    "provider": "volcano-seedtts",
-   "sha256": "4aed93c351fb6ccf9a67675ea8666baa04b183ee42ca86af7101ac2fc036ef33"
+   "sha256": "d480d584ac0437c8d30357b078364d8f6bd6dc2c0a0c5158f4d89eaa4d725d4a"
   },
   "voice:l18": {
    "path": "assets3d/dialogue/l18.wav",
-   "t": 64.1,
+   "t": 110.1,
    "provider": "volcano-seedtts",
-   "sha256": "9e9dd9a0b8730240e63fdcb38e054f937d50085159bbc456589923cd3c094209"
+   "sha256": "285974db1010793054d5abf909d3c6a8205d86d22f4ad150fe2d731865257686"
   },
   "voice:l19": {
    "path": "assets3d/dialogue/l19.wav",
-   "t": 67.8,
+   "t": 112.1,
    "provider": "volcano-seedtts",
-   "sha256": "ffc1344812129ab68d457e1fc3840125f0040874913a1495d1f46a60ec6df67f"
+   "sha256": "9806b5e1b2a33b3833f523d999ab4443bb6e71b10e3fc0952ceadbac1a275de6"
   },
   "voice:l20": {
    "path": "assets3d/dialogue/l20.wav",
-   "t": 71.1,
+   "t": 116.3,
    "provider": "volcano-seedtts",
-   "sha256": "043221a96c004ebc4b195d11d71c48e8c32b42b3388c38addc56aa2cd3825e29"
+   "sha256": "691ae3453e846ac53b4e2460f1635a5d59da4ac69a503de217e9ea1155c3e6a9"
+  },
+  "voice:c1": {
+   "path": "assets3d/dialogue/c1.wav",
+   "t": 95.8,
+   "provider": "volcano-seedtts",
+   "sha256": "f48aa1f878a4f4dfd803bac8179fa2c2d7c84a4908b7821830cb4b74688d652d"
+  },
+  "voice:c2": {
+   "path": "assets3d/dialogue/c2.wav",
+   "t": 97.7,
+   "provider": "volcano-seedtts",
+   "sha256": "6c718be7f03a836a8b06cf4e0765b04a0844ff42e5b9183044d5fb7e811eaac0"
   }
  },
  "dialogue": [
   {
    "id": "l01",
-   "t": 3.4,
-   "dur": 3.84
+   "t": 7.2,
+   "dur": 3.864
   },
   {
-   "id": "l03",
-   "t": 7.7,
+   "id": "l02",
+   "t": 11.4,
    "dur": 3.624
   },
   {
+   "id": "l03",
+   "t": 15.4,
+   "dur": 5.064
+  },
+  {
    "id": "l04",
-   "t": 11.5,
-   "dur": 2.568
+   "t": 24.5,
+   "dur": 7.44
   },
   {
    "id": "l05",
-   "t": 14.8,
-   "dur": 3.408
+   "t": 38.0,
+   "dur": 3.312
   },
   {
    "id": "l06",
-   "t": 18.2,
-   "dur": 1.632
+   "t": 41.6,
+   "dur": 4.704
   },
   {
    "id": "l07",
-   "t": 20.3,
-   "dur": 5.112
+   "t": 32.9,
+   "dur": 4.56
+  },
+  {
+   "id": "l08",
+   "t": 46.9,
+   "dur": 5.256
   },
   {
    "id": "l09",
-   "t": 25.2,
-   "dur": 6.36
+   "t": 54.6,
+   "dur": 2.808
   },
   {
    "id": "l10",
-   "t": 31.5,
-   "dur": 4.248
-  },
-  {
-   "id": "c2",
-   "t": 33.4,
-   "dur": 1.632
+   "t": 64.4,
+   "dur": 2.952
   },
   {
    "id": "l11",
-   "t": 34.8,
-   "dur": 3.456
+   "t": 75.8,
+   "dur": 2.808
   },
   {
    "id": "l12",
-   "t": 38.6,
-   "dur": 1.536
+   "t": 83.6,
+   "dur": 2.952
   },
   {
    "id": "l13",
-   "t": 41.0,
-   "dur": 1.392
+   "t": 88.6,
+   "dur": 3.096
   },
   {
    "id": "l14",
-   "t": 44.6,
-   "dur": 2.568
+   "t": 94.4,
+   "dur": 1.176
   },
   {
    "id": "l15",
-   "t": 48.5,
-   "dur": 2.376
-  },
-  {
-   "id": "l16",
-   "t": 51.1,
-   "dur": 1.296
-  },
-  {
-   "id": "c1",
-   "t": 52.6,
-   "dur": 2.16
-  },
-  {
-   "id": "c3",
-   "t": 59.1,
-   "dur": 2.328
-  },
-  {
-   "id": "l17",
-   "t": 62.5,
+   "t": 92.2,
    "dur": 1.944
   },
   {
+   "id": "l16",
+   "t": 100.8,
+   "dur": 3.696
+  },
+  {
+   "id": "l17",
+   "t": 105.0,
+   "dur": 4.56
+  },
+  {
    "id": "l18",
-   "t": 64.1,
-   "dur": 3.456
+   "t": 110.1,
+   "dur": 1.728
   },
   {
    "id": "l19",
-   "t": 67.8,
-   "dur": 3.24
+   "t": 112.1,
+   "dur": 3.888
   },
   {
    "id": "l20",
-   "t": 71.1,
-   "dur": 2.664
+   "t": 116.3,
+   "dur": 3.264
+  },
+  {
+   "id": "c1",
+   "t": 95.8,
+   "dur": 2.04
+  },
+  {
+   "id": "c2",
+   "t": 97.7,
+   "dur": 2.328
   }
  ],
  "duck_db": -6.0,
  "voice_gain": 1.3,
- "peak_before": 0.9695,
+ "peak_before": 0.7982,
  "ceiling": 0.7762,
  "normalized": true,
  "mix_peak": 0.7762,
- "mix_rms": 0.0893
+ "mix_rms": 0.0925
 }
