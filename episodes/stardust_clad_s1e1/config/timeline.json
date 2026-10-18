@@ -1,0 +1,207 @@
+{
+ "duration": 75.0,
+ "step": 0.01,
+ "_comment": "《星屑战壳》S1E1 唯一时序数据源（无歌曲 beatgrid，按对白/动作节拍手排）。段边界即机位硬切点；move=performance.js phase，shot=viewer.js camFor 机位。对白摆点见 config/dialogue.json（t0 以合成实测为准重建）。",
+ "segments": [
+  {
+   "id": "s0_establish",
+   "kind": "action",
+   "character": null,
+   "scene": "shrine",
+   "start": 0.0,
+   "end": 3.2,
+   "move": "establish",
+   "shot": "establish"
+  },
+  {
+   "id": "s1_morning",
+   "kind": "action",
+   "character": null,
+   "scene": "shrine",
+   "start": 3.2,
+   "end": 10.6,
+   "move": "morning",
+   "shot": "morning_wide"
+  },
+  {
+   "id": "s2a_chase",
+   "kind": "action",
+   "character": null,
+   "scene": "colonnade",
+   "start": 10.6,
+   "end": 13.8,
+   "move": "chase",
+   "shot": "chase_side"
+  },
+  {
+   "id": "s2b_chase_low",
+   "kind": "action",
+   "character": null,
+   "scene": "colonnade",
+   "start": 13.8,
+   "end": 17.6,
+   "move": "chase",
+   "shot": "chase_low"
+  },
+  {
+   "id": "s3_notice",
+   "kind": "action",
+   "character": null,
+   "scene": "shrine",
+   "start": 17.6,
+   "end": 23.4,
+   "move": "notice",
+   "shot": "notice"
+  },
+  {
+   "id": "s4a_azu_walk",
+   "kind": "action",
+   "character": "Azu",
+   "scene": "shrine",
+   "start": 23.4,
+   "end": 27.0,
+   "move": "azu_walk",
+   "shot": "azu_track"
+  },
+  {
+   "id": "s4b_azu_clad",
+   "kind": "action",
+   "character": "Azu",
+   "scene": "shrine",
+   "start": 27.0,
+   "end": 30.0,
+   "move": "azu_clad",
+   "shot": "azu_clad_close"
+  },
+  {
+   "id": "s4c_azu_line",
+   "kind": "action",
+   "character": "Azu",
+   "scene": "shrine",
+   "start": 30.0,
+   "end": 33.0,
+   "move": "azu_idle",
+   "shot": "two_profile"
+  },
+  {
+   "id": "s5a_exam1",
+   "kind": "action",
+   "character": "Aoao",
+   "scene": "shrine",
+   "start": 33.0,
+   "end": 37.0,
+   "move": "exam1",
+   "shot": "exam1_two"
+  },
+  {
+   "id": "s5b_exam1_react",
+   "kind": "action",
+   "character": "Azu",
+   "scene": "shrine",
+   "start": 37.0,
+   "end": 40.0,
+   "move": "exam1b",
+   "shot": "azu_react"
+  },
+  {
+   "id": "s6a_exam2_lift",
+   "kind": "action",
+   "character": "Dafu",
+   "scene": "shrine",
+   "start": 40.0,
+   "end": 43.4,
+   "move": "exam2_lift",
+   "shot": "exam2_wide"
+  },
+  {
+   "id": "s6b_exam2_drop",
+   "kind": "action",
+   "character": "Dafu",
+   "scene": "shrine",
+   "start": 43.4,
+   "end": 46.6,
+   "move": "exam2_drop",
+   "shot": "exam2_wide"
+  },
+  {
+   "id": "s7a_exam3",
+   "kind": "action",
+   "character": "Xiaozao",
+   "scene": "shrine",
+   "start": 46.6,
+   "end": 49.4,
+   "move": "exam3",
+   "shot": "exam3_side"
+  },
+  {
+   "id": "s7b_exam3_nod",
+   "kind": "action",
+   "character": "Azu",
+   "scene": "shrine",
+   "start": 49.4,
+   "end": 52.0,
+   "move": "exam3b",
+   "shot": "azu_nod"
+  },
+  {
+   "id": "s8a_spar_shield",
+   "kind": "action",
+   "character": null,
+   "scene": "shrine",
+   "start": 52.0,
+   "end": 56.0,
+   "move": "spar1",
+   "shot": "spar_close"
+  },
+  {
+   "id": "s8b_spar_dodge",
+   "kind": "action",
+   "character": null,
+   "scene": "shrine",
+   "start": 56.0,
+   "end": 59.4,
+   "move": "spar2",
+   "shot": "spar_wide"
+  },
+  {
+   "id": "s8c_spar_pinch",
+   "kind": "action",
+   "character": null,
+   "scene": "shrine",
+   "start": 59.4,
+   "end": 63.0,
+   "move": "spar3",
+   "shot": "spar_pinch"
+  },
+  {
+   "id": "s9a_hotpot",
+   "kind": "action",
+   "character": "Dafu",
+   "scene": "shrine",
+   "start": 63.0,
+   "end": 66.8,
+   "move": "hotpot",
+   "shot": "hotpot_wide"
+  },
+  {
+   "id": "s9b_azu_break",
+   "kind": "action",
+   "character": "Azu",
+   "scene": "shrine",
+   "start": 66.8,
+   "end": 69.4,
+   "move": "azu_break",
+   "shot": "azu_close"
+  },
+  {
+   "id": "s10_finale",
+   "kind": "action",
+   "character": "Hestia",
+   "scene": "shrine",
+   "start": 69.4,
+   "end": 75.0,
+   "move": "finale",
+   "shot": "final_wide"
+  }
+ ]
+}

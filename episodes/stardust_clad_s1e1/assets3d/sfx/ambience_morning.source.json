@@ -1,0 +1,8 @@
+{
+ "name": "ambience_morning",
+ "prompt": "生成一段20秒纯环境音，无音乐无人声：清晨高原圣殿的环境底床，以持续平稳的晨风穿过石廊的均匀风声为主体（全程无间隙），远处极轻微偶发鸟鸣点缀，音量恒定、无阵风、无节律性涌动、无静默间隙",
+ "tag": "985d203c7f38",
+ "provider": "volcano-seedaudio",
+ "sha256": "e13afc11f632e6529a093d2da2496f9c3dadc1550a9642a4f41efe35baa076b2",
+ "postprocess": "slow AGC（1s 平滑，增益域 0.8-2.2，抬平风息）"
+}

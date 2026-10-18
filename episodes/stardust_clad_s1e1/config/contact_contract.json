@@ -1,0 +1,713 @@
+{
+ "scope": "星屑战壳 S1E1：四角色全身（手-躯干）+ 步态（晨练/追逐跑/走位）+ 切磋接触帧（TAP1 刃点盾/TAP2 刃点肩/PINCH 双筷夹盘）+ 举石 carry + 大釜坐地 + 女神坐姿（finale）+ clad_fit 甲件贴身",
+ "fps_min": 30,
+ "pose_tick_hz": 15,
+ "_matrix": "physical-completeness 矩阵裁剪：无门窗/进食/穿戴件扫掠；env=圣殿/柱廊几何均在表演走廊外（走位表保证净空）；追逐跑=RUN_GAIT 步态段（gait+reach 覆盖）；道具=饭团（手握跟随）/卷轴（悬浮）/煎蛋（贴盾面）/青石（carry 段断言）/火锅（落地道具）；切磋接触=活锚点距离断言（bite/pinch），白闪 ≤.12s 走 viewer 常量",
+ "seated": {
+  "window": [
+   0,
+   72.8
+  ],
+  "actors": {
+   "aoao": "aoaoRoot",
+   "xiaozao": "xiaozaoRoot",
+   "dafu": "dafuRoot",
+   "azu": "azuRoot"
+  },
+  "min": 0.08,
+  "max": 0.78,
+  "_comment": "全时间轴手-躯干轴 XZ 距离域；hestiaRoot 只在 finale 发射"
+ },
+ "gait": {
+  "actors": {
+   "aoao": {
+    "speed_max": 4.0,
+    "avg_min": 0.2,
+    "bob_min": 0.003,
+    "cadence": [
+     0.6,
+     8.5
+    ]
+   },
+   "xiaozao": {
+    "speed_max": 4.0,
+    "avg_min": 0.2,
+    "bob_min": 0.003,
+    "cadence": [
+     0.6,
+     8.5
+    ]
+   },
+   "dafu": {
+    "speed_max": 4.0,
+    "avg_min": 0.2,
+    "bob_min": 0.003,
+    "cadence": [
+     0.6,
+     8.5
+    ]
+   },
+   "azu": {
+    "speed_max": 4.0,
+    "avg_min": 0.15,
+    "bob_min": 0.003,
+    "cadence": [
+     0.6,
+     8.5
+    ]
+   }
+  },
+  "_comment": "晨练/追逐跑/走位/阿箸登场步行的步行 bout；avg_min/cadence 下限放宽到挪步/踉跄的诚实低速 bout；阿箸 avg_min .15=夹取前 10cm 诚实挪步 bout（59.9-60.7）"
+ },
+ "bite": {
+  "window": [
+   54.2,
+   54.7
+  ],
+  "a": "azuR",
+  "b": "shieldA",
+  "max": 0.18,
+  "_comment": "TAP1（54.4）：阿箸右筷刃尖必须真的点上阿鏊锅盖盾面（实测 .098）"
+ },
+ "pinch": {
+  "window": [
+   61.0,
+   61.5
+  ],
+  "a": "azuL",
+  "b": "azuR",
+  "point": "xiaoDisc",
+  "min": 0.0,
+  "max": 0.15,
+  "_comment": "PINCH（61.2）：双筷刃尖合拢夹住小凿花窗盘沿（盘心落在双刃连线邻域；实测 .038/.046）"
+ },
+ "reach": {
+  "ratio_max": 0.9,
+  "hang_deg": 35,
+  "allowed": [
+   {
+    "subject": "dafuL",
+    "window": [
+     23.4,
+     23.7
+    ],
+    "_c": "通告段尾→阿箸登场边界 2 帧过渡"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     23.4,
+     23.7
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     40.8,
+     41.1
+    ],
+    "_c": "深蹲抱石过渡 2 帧"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     40.8,
+     41.1
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     63.0,
+     63.3
+    ],
+    "_c": "掏锅过渡帧"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     63.0,
+     63.3
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "azuL",
+    "window": [
+     60.85,
+     62.35
+    ],
+    "_c": "双筷夹取动作本体（前伸持刃）"
+   },
+   {
+    "subject": "azuR",
+    "window": [
+     60.85,
+     62.35
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "azuR",
+    "window": [
+     67.0,
+     67.4
+    ],
+    "_c": "破功前倾过渡 2 帧"
+   }
+  ],
+  "_comment": "S1E3 P16 判据：腕-肩距/臂长 >.9 且前臂非垂挂=超伸僵直；发力/过渡帧按窗口白名单"
+ },
+ "limb_attach": {
+  "actors": {
+   "aoao": {
+    "max_elev_deg": 118,
+    "max_shoulder_axis": 0.17
+   },
+   "xiaozao": {
+    "max_elev_deg": 118,
+    "max_shoulder_axis": 0.16
+   },
+   "dafu": {
+    "max_elev_deg": 170,
+    "max_shoulder_axis": 0.23
+   },
+   "azu": {
+    "max_elev_deg": 118,
+    "max_shoulder_axis": 0.17
+   }
+  },
+  "_comment": "肩缝探针：肩点-躯干轴距上限=肩宽+2~4cm；dafu 抬臂上限 170°=举石过顶动作本体（41.4-42.8，双手举石直顶），其余角色 118°"
+ },
+ "carry": {
+  "entries": [
+   {
+    "box": "stonePos",
+    "actor": "dafu",
+    "window": [
+     41.2,
+     42.8
+    ],
+    "xz_max": 0.3,
+    "dy_max": 0.35
+   }
+  ],
+  "xz_max": 0.3,
+  "dy_max": 0.35,
+  "_comment": "举石段：青石中心-双手 ≤域（抱举语义；脱手后脱离断言窗）"
+ },
+ "food": {
+  "present_key": "hestiaOn",
+  "tip": {
+   "a": "hestiaHip",
+   "b": "potSeat",
+   "max": 0.18
+  },
+  "bone": {
+   "key": "hestiaFootY",
+   "min": 2.9
+  },
+  "frame_min": 10,
+  "_comment": "女神坐姿（finale）：臀-锅沿前点 ≤.18m；双脚最低点 ≥2.9m（悬空晃腿）"
+ },
+ "clad_fit": {
+  "frame_min": 20,
+  "entries": [
+   {
+    "key": "aoao.chest",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "胸甲整筒贴胸廓"
+   },
+   {
+    "key": "aoao.belt",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "aoao.shin_left",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "aoao.shin_right",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "aoao.pauldron_left",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "aoao.pauldron_right",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "aoao.leaf_FC",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_FL",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_FR",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_SL",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_SR",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_B",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.chest",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "胸甲整筒贴胸廓"
+   },
+   {
+    "key": "xiaozao.belt",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "xiaozao.shin_left",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "xiaozao.shin_right",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "xiaozao.pauldron_left",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "xiaozao.pauldron_right",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "xiaozao.leaf_FC",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_FL",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_FR",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_SL",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_SR",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_B",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.chest",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "胸甲整筒贴胸廓"
+   },
+   {
+    "key": "dafu.belt",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "dafu.shin_left",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "dafu.shin_right",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "dafu.pauldron_left",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "dafu.pauldron_right",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "dafu.leaf_FC",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_FL",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_FR",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_SL",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_SR",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_B",
+    "window": [
+     19.6,
+     22.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "azu.chest",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "胸甲整筒贴胸廓"
+   },
+   {
+    "key": "azu.belt",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "azu.shin_left",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "azu.shin_right",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "azu.pauldron_left",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "azu.pauldron_right",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "azu.leaf_FC",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "azu.leaf_FL",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "azu.leaf_FR",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "azu.leaf_SL",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "azu.leaf_SR",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "azu.leaf_B",
+    "window": [
+     30.6,
+     32.9
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   }
+  ],
+  "_comment": "甲件贴身探针（check_contact.py 本地段）：站姿窗口=通告读卷轴（三人 19.6-22.8）/阿箸监考（30.6-32.9）；搭盖合法阈随 OP 口径"
+ },
+ "contacts_local": [
+  {
+   "window": [
+    57.6,
+    58.0
+   ],
+   "a": "azuL",
+   "b": "dafuPaulR",
+   "max": 0.16,
+   "_comment": "TAP2（57.8）：左筷刃尖点大釜右肩甲（点距；实测 .100；共享探针 bite/pinch 已被 TAP1/PINCH 占用，本地段评估）"
+  }
+ ]
+}

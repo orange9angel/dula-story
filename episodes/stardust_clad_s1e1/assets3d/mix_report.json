@@ -1,0 +1,389 @@
+{
+ "duration": 75.0,
+ "sr": 48000,
+ "events": [
+  {
+   "t": 10.8,
+   "sfx": "dash_whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 16.5,
+   "sfx": "whoosh_fast",
+   "gain": 0.6
+  },
+  {
+   "t": 19.4,
+   "sfx": "scroll_pop",
+   "gain": 0.9
+  },
+  {
+   "t": 27.4,
+   "sfx": "energy_charge",
+   "gain": 0.9
+  },
+  {
+   "t": 35.0,
+   "sfx": "pan_sizzle",
+   "gain": 0.9
+  },
+  {
+   "t": 42.8,
+   "sfx": "whoosh_fast",
+   "gain": 0.7
+  },
+  {
+   "t": 43.6,
+   "sfx": "stone_thud",
+   "gain": 1.0
+  },
+  {
+   "t": 44.0,
+   "sfx": "body_drop",
+   "gain": 0.8
+  },
+  {
+   "t": 47.0,
+   "sfx": "star_chime",
+   "gain": 0.55
+  },
+  {
+   "t": 47.28,
+   "sfx": "star_chime",
+   "gain": 0.55
+  },
+  {
+   "t": 47.56,
+   "sfx": "star_chime",
+   "gain": 0.55
+  },
+  {
+   "t": 47.84,
+   "sfx": "star_chime",
+   "gain": 0.55
+  },
+  {
+   "t": 48.12,
+   "sfx": "star_chime",
+   "gain": 0.55
+  },
+  {
+   "t": 48.4,
+   "sfx": "star_chime",
+   "gain": 0.55
+  },
+  {
+   "t": 54.4,
+   "sfx": "chopstick_tap",
+   "gain": 1.0
+  },
+  {
+   "t": 57.8,
+   "sfx": "chopstick_tap",
+   "gain": 0.9
+  },
+  {
+   "t": 61.2,
+   "sfx": "chopstick_clack",
+   "gain": 1.0
+  },
+  {
+   "t": 63.4,
+   "sfx": "pot_set",
+   "gain": 0.9
+  },
+  {
+   "t": 74.3,
+   "sfx": "pot_clang",
+   "gain": 1.0
+  }
+ ],
+ "sources": {
+  "bgm": {
+   "path": "assets3d/sfx/bgm_morning.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.55,
+   "sha256": "e63aea0227b0559b336a4d397282c0faf4481a0f7d9a16e9e0ac9fb38400e63f"
+  },
+  "ambience": {
+   "path": "assets3d/sfx/ambience_morning.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.2,
+   "sha256": "e13afc11f632e6529a093d2da2496f9c3dadc1550a9642a4f41efe35baa076b2"
+  },
+  "hotpot_bed": {
+   "path": "assets3d/sfx/hotpot_bubble.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.3,
+   "t0": 64.2,
+   "sha256": "8303b6a636ced0a49b9e20cdd82a75bae973379cbf1e2daae6220682b8f487d6"
+  },
+  "sfx:dash_whoosh": {
+   "path": "assets3d/sfx/dash_whoosh.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "c2a41899fe3f8eb89bca707b09837b064a6c26f80d5dc3790f730b75b3b1dd41"
+  },
+  "sfx:whoosh_fast": {
+   "path": "assets3d/sfx/whoosh_fast.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "9a479c00a300b4d50257f8e42d2c2972359e84ed76c8445d6bdd092a0727f6a5"
+  },
+  "sfx:scroll_pop": {
+   "path": "assets3d/sfx/scroll_pop.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "e5ef6711cc08496b6dc9bda2a02ba31c1c1dac73cc05744ee054d3be6f6fdabf"
+  },
+  "sfx:energy_charge": {
+   "path": "assets3d/sfx/energy_charge.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "59e8e6753b3a915296a287651574a5ec0ed7bf178741792423bded9ab0bb4785"
+  },
+  "sfx:pan_sizzle": {
+   "path": "assets3d/sfx/pan_sizzle.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "b073923be438f17f357195a08218cd5b5a26b23842cd7c06d7cfa808a2042a09"
+  },
+  "sfx:stone_thud": {
+   "path": "assets3d/sfx/stone_thud.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "1fca7785dbce1d2baf3981ba63a9f0224db6f0dc2c3560ebca34df6969fb5caf"
+  },
+  "sfx:body_drop": {
+   "path": "assets3d/sfx/body_drop.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "1750d9e48ba18e31170780474c9401d13269a50c398c76184b6d4edf542202cc"
+  },
+  "sfx:star_chime": {
+   "path": "assets3d/sfx/star_chime.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "df3bb0a79afa3128044602bf7ffdc862976ecbd125e0f04cb4f37036e93cf0a5"
+  },
+  "sfx:chopstick_tap": {
+   "path": "assets3d/sfx/chopstick_tap.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "7e56d2bfe68446b80b019bfec8c239d150202494a0e4d8ee09da7ae56dedaf22"
+  },
+  "sfx:chopstick_clack": {
+   "path": "assets3d/sfx/chopstick_clack.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "dae504b2e0e33e1d4aa06c58bee377761ae4472ab2cb48c857beafb07aa0954b"
+  },
+  "sfx:pot_set": {
+   "path": "assets3d/sfx/pot_set.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "fb9c59777223c10ff766cb1026a0814de13796fef910abfbf0dd16487288e5e4"
+  },
+  "sfx:pot_clang": {
+   "path": "assets3d/sfx/pot_clang.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "4476c6a27faadd5535a648758140972d116acbeafe43339865ccb7d2b5899467"
+  },
+  "voice:l01": {
+   "path": "assets3d/dialogue/l01.wav",
+   "t": 3.4,
+   "provider": "volcano-seedtts",
+   "sha256": "c081cc19d7fccbbe3920bdf9ce46eb15238cad35023ef0725e904b7ca47d3c75"
+  },
+  "voice:l03": {
+   "path": "assets3d/dialogue/l03.wav",
+   "t": 7.7,
+   "provider": "volcano-seedtts",
+   "sha256": "5485c94b8593f7101f61c94b75619588fd3cd73646da6b25b770dd7514bae71c"
+  },
+  "voice:l04": {
+   "path": "assets3d/dialogue/l04.wav",
+   "t": 11.5,
+   "provider": "volcano-seedtts",
+   "sha256": "35d125d162f6eac7c7c96e20348d8740f23d79dcd677e0df4624a7fa45ab784d"
+  },
+  "voice:l05": {
+   "path": "assets3d/dialogue/l05.wav",
+   "t": 14.8,
+   "provider": "volcano-seedtts",
+   "sha256": "b284a4c279ead32e70afd102bbf4d63c8b78761c229e82f100cc89e8c2f4c7b2"
+  },
+  "voice:l06": {
+   "path": "assets3d/dialogue/l06.wav",
+   "t": 17.9,
+   "provider": "volcano-seedtts",
+   "sha256": "c14b5c4bdc208d951896cc5a202fb16572e83e2f93f54f40fb9c3a2d8573bd85"
+  },
+  "voice:l07": {
+   "path": "assets3d/dialogue/l07.wav",
+   "t": 20.4,
+   "provider": "volcano-seedtts",
+   "sha256": "85795618fc1e15a70c62105e105a04f4a46f005cc536e50b51b29a343dd354f8"
+  },
+  "voice:l09": {
+   "path": "assets3d/dialogue/l09.wav",
+   "t": 24.6,
+   "provider": "volcano-seedtts",
+   "sha256": "ff7cc6b274cffd8481f669937a8ecba7180e893c0b1ad58eee6df54c07014973"
+  },
+  "voice:l10": {
+   "path": "assets3d/dialogue/l10.wav",
+   "t": 30.6,
+   "provider": "volcano-seedtts",
+   "sha256": "f66d3fe36e84ddb9c020fc21b84fcfaec42a728f0b13de9e33de1bdd34f8fa2e"
+  },
+  "voice:l11": {
+   "path": "assets3d/dialogue/l11.wav",
+   "t": 34.8,
+   "provider": "volcano-seedtts",
+   "sha256": "f0ee05b921cdff0ea9733c8f692a3ea78adecb037062867bc65346d84770304d"
+  },
+  "voice:l12": {
+   "path": "assets3d/dialogue/l12.wav",
+   "t": 38.6,
+   "provider": "volcano-seedtts",
+   "sha256": "58c47de68ad87a28ea4bcd18e9c9d8879d5e949c374d692bd6475dc10a23fd28"
+  },
+  "voice:l13": {
+   "path": "assets3d/dialogue/l13.wav",
+   "t": 41.0,
+   "provider": "volcano-seedtts",
+   "sha256": "366f469c32b3768677ed37f692973abd7774d4c6c9d7d41bf34f87061c0f2aa8"
+  },
+  "voice:l14": {
+   "path": "assets3d/dialogue/l14.wav",
+   "t": 44.6,
+   "provider": "volcano-seedtts",
+   "sha256": "9f0860fbe06be4835c23a597b56c34ab799a3cf9fccd0e6bd711ef357c02a99b"
+  },
+  "voice:l15": {
+   "path": "assets3d/dialogue/l15.wav",
+   "t": 48.5,
+   "provider": "volcano-seedtts",
+   "sha256": "2394ce1dc76d2a9ea0bfb78ad7b07c46e860745b6465c1c9610c8c1c9e7a99e4"
+  },
+  "voice:l16": {
+   "path": "assets3d/dialogue/l16.wav",
+   "t": 51.1,
+   "provider": "volcano-seedtts",
+   "sha256": "18890b62b9fd637016f210affcf160e168ea6c4b68733c73583a79a10a673345"
+  },
+  "voice:l17": {
+   "path": "assets3d/dialogue/l17.wav",
+   "t": 62.5,
+   "provider": "volcano-seedtts",
+   "sha256": "46f60d676d2c266f6dca8b9ded88ec4093abe2fae4c745691ab7b0e2e60c6229"
+  },
+  "voice:l18": {
+   "path": "assets3d/dialogue/l18.wav",
+   "t": 64.1,
+   "provider": "volcano-seedtts",
+   "sha256": "538ce78cf231d8fdc6b907243d48bd95871b88764166ca30e2d57b4447a715be"
+  },
+  "voice:l19": {
+   "path": "assets3d/dialogue/l19.wav",
+   "t": 67.8,
+   "provider": "volcano-seedtts",
+   "sha256": "0d5a46bf1ac4faf62c4099cdbfb370a7cd757cf9df42f39e278773daf74f49c1"
+  },
+  "voice:l20": {
+   "path": "assets3d/dialogue/l20.wav",
+   "t": 71.1,
+   "provider": "volcano-seedtts",
+   "sha256": "c9ddff2374f3d94bde874237a17a20e93a40a5295c4660963583261580274fae"
+  }
+ },
+ "dialogue": [
+  {
+   "id": "l01",
+   "t": 3.4,
+   "dur": 4.032
+  },
+  {
+   "id": "l03",
+   "t": 7.7,
+   "dur": 3.624
+  },
+  {
+   "id": "l04",
+   "t": 11.5,
+   "dur": 3.072
+  },
+  {
+   "id": "l05",
+   "t": 14.8,
+   "dur": 2.832
+  },
+  {
+   "id": "l06",
+   "t": 17.9,
+   "dur": 1.632
+  },
+  {
+   "id": "l07",
+   "t": 20.4,
+   "dur": 4.056
+  },
+  {
+   "id": "l09",
+   "t": 24.6,
+   "dur": 5.472
+  },
+  {
+   "id": "l10",
+   "t": 30.6,
+   "dur": 3.864
+  },
+  {
+   "id": "l11",
+   "t": 34.8,
+   "dur": 3.624
+  },
+  {
+   "id": "l12",
+   "t": 38.6,
+   "dur": 1.056
+  },
+  {
+   "id": "l13",
+   "t": 41.0,
+   "dur": 1.632
+  },
+  {
+   "id": "l14",
+   "t": 44.6,
+   "dur": 2.448
+  },
+  {
+   "id": "l15",
+   "t": 48.5,
+   "dur": 2.424
+  },
+  {
+   "id": "l16",
+   "t": 51.1,
+   "dur": 1.224
+  },
+  {
+   "id": "l17",
+   "t": 62.5,
+   "dur": 1.464
+  },
+  {
+   "id": "l18",
+   "t": 64.1,
+   "dur": 3.648
+  },
+  {
+   "id": "l19",
+   "t": 67.8,
+   "dur": 3.072
+  },
+  {
+   "id": "l20",
+   "t": 71.1,
+   "dur": 3.216
+  }
+ ],
+ "duck_db": -6.0,
+ "voice_gain": 1.3,
+ "peak_before": 0.6972,
+ "ceiling": 0.7762,
+ "normalized": false,
+ "mix_peak": 0.6972,
+ "mix_rms": 0.0641
+}
