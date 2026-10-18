@@ -244,7 +244,8 @@ function drawSubtitle(t){ // 赫斯提亚画外音字幕
   ctx.fillText('赫斯提亚：打完记得把锅刷了。',W/2,H-60);
 }
 function fadeBlack(t){
-  const aIn=t<.5?1-ease(t/.5):0; // 黑场淡入
+  // R6：不纯黑开场——第 0 帧 30% 亮度可见（视频封面/平台抓帧读得出构图），0.6s 淡入到正常
+  const aIn=t<.6?(1-ease(t/.6))*.70:0;
   const aOut=t>48.228?ease((t-48.228)/(TL.duration-48.228)):0; // 淡黑收尾
   const a=Math.max(aIn,aOut);
   if(a>0){ctx.fillStyle=`rgba(4,5,10,${a})`;ctx.fillRect(0,0,W,H);}

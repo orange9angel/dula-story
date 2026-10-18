@@ -240,3 +240,9 @@ node --import ./tools/register_loader.mjs tools/scan_reach.mjs   # 离线 twoBon
 - carry 探针（杖-手 ≤.12m）锚的是握点不是铲头，铲头加大后零误报，容差未动。
 - 教训：**展示型道具的朝向别绑手部 IK 轴**——手掌朝向服务表演，道具朝向服务读感；握点（接触）绑手、朝向（读感）独立定型，两者分离各管各的，探针测接触点即可。
 - 重渲 `output/craft3d_full.mp4`（49.2s 不变）→ 重烧 `build_lyrics_subs.py` → `output/craft3d_full_subtitled.mp4`（字幕/权杖同框正常，sub_45.5 帧验证）；gate 重跑全绿。
+
+## R6（首帧非黑）
+
+- 监制问题"为什么第一帧是黑的"：intro 黑场淡入让第 0 帧纯黑，视频封面/平台抓帧=全黑。改法=fadeBlack 淡入从纯黑改 30% 亮度起（overlay alpha .70→0，0.6s 淡入到正常），构图第 0 帧可读；结尾淡黑不动。
+- 教训：**封面帧纪律**——第 0 帧必须是可读构图帧（夜景基调微亮起），"从黑场淡入"是把封面让给全黑。淡入可以保留，起点不能是 0% 亮度。
+- 抽帧验证 `storyboard/r6_check/`：frame0.jpg（净版第 0 帧）/frame_0.2s.jpg/sub_frame0.jpg（字幕版第 0 帧）均非黑可读；gate 重跑（全量，非 --skip-render）全绿；字幕版重烧 49.2s 不变。
