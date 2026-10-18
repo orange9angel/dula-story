@@ -487,3 +487,18 @@ AdditiveBlending；技名卡 drawMoveCard（canvas overlay 刷痕底条+楷体�
   锅鸣 17.66（压 19.83）/ 陨星 21.03（压 23.034）。
 - QC：4 条 3✅/1⚠️（同音字坑判例），`tmp/voice_audition/qc_calls_r12.md`；
   声画对位 16 事件重验绿；AAC 解码峰值 ≤0.8。
+
+## R15（监制修正：前臂护板移到手臂外侧——手和脚不一样）
+
+- 监制：手小臂护板应该在侧面，手和脚不一样。R8 把臂板翻到 +y 前侧是拿脚的思路套手——
+  臂甲的设计语言本来就在外侧（盾/花窗盘/肘翼都挂 ±x 外侧），主板在正面反而和它们撕裂。
+- 修法（dula-assets/characters/stardust/characters.js 臂铠段，资产层修正、三集共用）：
+  直筒臂时 forearmRig 只绕 x 轴旋转，rig ±x=臂外侧（left=-x/right=+x）。板弧心
+  θStart=sign·π/2−.75（柱局部 θ 经 rotation.x=π/2 映到 rig (r·sinθ,−r·cosθ)）；
+  分段环纹跟板走：rotation.z=−0.575π+(left?π:0)（207° 环弧开口留在手臂内侧）。
+  花窗盘/盾原本就在外侧，现在正好贴在板面上（盘贴臂板归位）。
+- 历史链：R2.6 后侧（装反）→ R8 前侧（脚思路误套）→ R15 外侧（落定）。
+- 验证：`storyboard/r15_arms/`（肖像组）+ `storyboard/r15_arms2/`（垂臂正面/外侧机位）；
+  探针无臂板项（fitRefs 只含胸/腰/叶/胫/肩），三集 gate ALL GREEN；三集成片重渲
+  （OP 字幕版重烧、S1E2 TV 版重建）。
+- 教训已写回 direct-animation-craft 踩坑记录（甲片方位分肢体规则）。
