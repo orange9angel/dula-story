@@ -21,7 +21,7 @@ def load(path, ch=1):
     return np.frombuffer(raw, np.float32)
 
 def main():
-    from build_audio import EVENTS, AMBIENCE, HOTPOT_BED, build_bed
+    from build_audio import EVENTS, AMBIENCE, build_bed
     mix = load(EP / 'assets3d/mixed.wav')
     from scipy.signal import butter, sosfilt
     hi = sosfilt(butter(2, 2000, fs=SR, btype='high', output='sos'), mix)

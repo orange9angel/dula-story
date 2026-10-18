@@ -1,207 +1,29 @@
 {
- "duration": 75.0,
+ "duration": 120.0,
  "step": 0.01,
- "_comment": "《星屑战壳》S1E1 唯一时序数据源（无歌曲 beatgrid，按对白/动作节拍手排）。段边界即机位硬切点；move=performance.js phase，shot=viewer.js camFor 机位。对白摆点见 config/dialogue.json（t0 以合成实测为准重建）。",
+ "_comment": "S1E1 R13 剧情级重写（故事载体=storyboard.md 大纲）：33 段含跨场景插入镜头（谷底空镜切圣殿圣火、F02 门阙报告插入）。场景：圣殿主+角斗场考核战主场+柱廊晨巡+门阙报告镜头。位移动机：巡逻路线/通告到场/上考场步伐/谷底后合体。",
  "segments": [
-  {
-   "id": "s0_establish",
-   "kind": "action",
-   "character": null,
-   "scene": "shrine",
-   "start": 0.0,
-   "end": 3.2,
-   "move": "establish",
-   "shot": "establish"
-  },
-  {
-   "id": "s1_morning",
-   "kind": "action",
-   "character": null,
-   "scene": "shrine",
-   "start": 3.2,
-   "end": 10.6,
-   "move": "morning",
-   "shot": "morning_wide"
-  },
-  {
-   "id": "s2a_chase",
-   "kind": "action",
-   "character": null,
-   "scene": "colonnade",
-   "start": 10.6,
-   "end": 13.8,
-   "move": "chase",
-   "shot": "chase_side"
-  },
-  {
-   "id": "s2b_chase_low",
-   "kind": "action",
-   "character": null,
-   "scene": "colonnade",
-   "start": 13.8,
-   "end": 17.6,
-   "move": "chase",
-   "shot": "chase_low"
-  },
-  {
-   "id": "s3_notice",
-   "kind": "action",
-   "character": null,
-   "scene": "shrine",
-   "start": 17.6,
-   "end": 23.4,
-   "move": "notice",
-   "shot": "notice"
-  },
-  {
-   "id": "s4a_azu_walk",
-   "kind": "action",
-   "character": "Azu",
-   "scene": "shrine",
-   "start": 23.4,
-   "end": 27.0,
-   "move": "azu_walk",
-   "shot": "azu_track"
-  },
-  {
-   "id": "s4b_azu_clad",
-   "kind": "action",
-   "character": "Azu",
-   "scene": "shrine",
-   "start": 27.0,
-   "end": 30.0,
-   "move": "azu_clad",
-   "shot": "azu_clad_close"
-  },
-  {
-   "id": "s4c_azu_line",
-   "kind": "action",
-   "character": "Azu",
-   "scene": "shrine",
-   "start": 30.0,
-   "end": 33.0,
-   "move": "azu_idle",
-   "shot": "two_profile"
-  },
-  {
-   "id": "s5a_exam1",
-   "kind": "action",
-   "character": "Aoao",
-   "scene": "shrine",
-   "start": 33.0,
-   "end": 37.0,
-   "move": "exam1",
-   "shot": "exam1_two"
-  },
-  {
-   "id": "s5b_exam1_react",
-   "kind": "action",
-   "character": "Azu",
-   "scene": "shrine",
-   "start": 37.0,
-   "end": 40.0,
-   "move": "exam1b",
-   "shot": "azu_react"
-  },
-  {
-   "id": "s6a_exam2_lift",
-   "kind": "action",
-   "character": "Dafu",
-   "scene": "shrine",
-   "start": 40.0,
-   "end": 43.4,
-   "move": "exam2_lift",
-   "shot": "exam2_wide"
-  },
-  {
-   "id": "s6b_exam2_drop",
-   "kind": "action",
-   "character": "Dafu",
-   "scene": "shrine",
-   "start": 43.4,
-   "end": 46.6,
-   "move": "exam2_drop",
-   "shot": "exam2_wide"
-  },
-  {
-   "id": "s7a_exam3",
-   "kind": "action",
-   "character": "Xiaozao",
-   "scene": "shrine",
-   "start": 46.6,
-   "end": 49.4,
-   "move": "exam3",
-   "shot": "exam3_side"
-  },
-  {
-   "id": "s7b_exam3_nod",
-   "kind": "action",
-   "character": "Azu",
-   "scene": "shrine",
-   "start": 49.4,
-   "end": 52.0,
-   "move": "exam3b",
-   "shot": "azu_nod"
-  },
-  {
-   "id": "s8a_spar_shield",
-   "kind": "action",
-   "character": null,
-   "scene": "shrine",
-   "start": 52.0,
-   "end": 56.0,
-   "move": "spar1",
-   "shot": "spar_close"
-  },
-  {
-   "id": "s8b_spar_dodge",
-   "kind": "action",
-   "character": null,
-   "scene": "shrine",
-   "start": 56.0,
-   "end": 59.4,
-   "move": "spar2",
-   "shot": "spar_wide"
-  },
-  {
-   "id": "s8c_spar_pinch",
-   "kind": "action",
-   "character": null,
-   "scene": "shrine",
-   "start": 59.4,
-   "end": 63.0,
-   "move": "spar3",
-   "shot": "spar_pinch"
-  },
-  {
-   "id": "s9a_hotpot",
-   "kind": "action",
-   "character": "Dafu",
-   "scene": "shrine",
-   "start": 63.0,
-   "end": 66.8,
-   "move": "hotpot",
-   "shot": "hotpot_wide"
-  },
-  {
-   "id": "s9b_azu_break",
-   "kind": "action",
-   "character": "Azu",
-   "scene": "shrine",
-   "start": 66.8,
-   "end": 69.4,
-   "move": "azu_break",
-   "shot": "azu_close"
-  },
-  {
-   "id": "s10_finale",
-   "kind": "action",
-   "character": "Hestia",
-   "scene": "shrine",
-   "start": 69.4,
-   "end": 75.0,
-   "move": "finale",
-   "shot": "final_wide"
-  }
+  {"id": "s0_coldopen", "kind": "action", "character": null, "scene": "shrine", "start": 0.0, "end": 5.5, "move": "coldopen", "shot": "establish"},
+  {"id": "s1a_patrol", "kind": "action", "character": null, "scene": "colonnade", "start": 5.5, "end": 12.5, "move": "patrol", "shot": "patrol_track"},
+  {"id": "s1b_patrol", "kind": "action", "character": null, "scene": "colonnade", "start": 12.5, "end": 19.0, "move": "patrol", "shot": "patrol_front"},
+  {"id": "s2_notice", "kind": "action", "character": null, "scene": "shrine", "start": 19.0, "end": 25.0, "move": "notice", "shot": "notice"},
+  {"id": "s3a_azu_walk", "kind": "action", "character": "Azu", "scene": "shrine", "start": 25.0, "end": 30.0, "move": "azu_walk", "shot": "azu_grand"},
+  {"id": "s3b_azu_declare", "kind": "action", "character": "Azu", "scene": "shrine", "start": 30.0, "end": 38.0, "move": "azu_declare", "shot": "two_profile"},
+  {"id": "s4a_to_arena", "kind": "action", "character": null, "scene": "shrine", "start": 38.0, "end": 40.5, "move": "to_arena", "shot": "walk_out"},
+  {"id": "s4b_to_arena", "kind": "action", "character": null, "scene": "arena", "start": 40.5, "end": 44.0, "move": "to_arena", "shot": "walk_in"},
+  {"id": "s5_test1", "kind": "action", "character": "Azu", "scene": "arena", "start": 44.0, "end": 56.0, "move": "test1", "shot": "test_wide"},
+  {"id": "s6_test2", "kind": "action", "character": "Azu", "scene": "arena", "start": 56.0, "end": 66.0, "move": "test2", "shot": "test_side"},
+  {"id": "s7_test3", "kind": "action", "character": "Azu", "scene": "arena", "start": 66.0, "end": 78.0, "move": "test3", "shot": "test_wide"},
+  {"id": "s8a_valley_fire", "kind": "action", "character": null, "scene": "shrine", "start": 78.0, "end": 81.5, "move": "valley_fire", "shot": "fire_closeup"},
+  {"id": "s8b_valley_aoao", "kind": "action", "character": "Aoao", "scene": "arena", "start": 81.5, "end": 88.0, "move": "valley_aoao", "shot": "eye_closeup"},
+  {"id": "s9a_combo_cmd", "kind": "action", "character": "Aoao", "scene": "arena", "start": 88.0, "end": 91.5, "move": "combo_cmd", "shot": "combo_group"},
+  {"id": "s9b_combo_toss", "kind": "action", "character": null, "scene": "arena", "start": 91.5, "end": 94.5, "move": "combo_toss", "shot": "combo_low"},
+  {"id": "s9c_combo_air", "kind": "action", "character": "Aoao", "scene": "arena", "start": 94.5, "end": 97.2, "move": "combo_air", "shot": "combo_air"},
+  {"id": "s9d_combo_barrage", "kind": "action", "character": "Azu", "scene": "arena", "start": 97.2, "end": 100.0, "move": "combo_barrage", "shot": "combo_catch"},
+  {"id": "s10a_sheathe", "kind": "action", "character": "Azu", "scene": "arena", "start": 100.0, "end": 103.5, "move": "sheathe", "shot": "eye_closeup_azu"},
+  {"id": "s10b_verdict", "kind": "action", "character": "Azu", "scene": "arena", "start": 103.5, "end": 109.0, "move": "sheathe", "shot": "sheathe_wide"},
+  {"id": "s11a_outro", "kind": "action", "character": "Hestia", "scene": "shrine", "start": 109.0, "end": 113.0, "move": "outro", "shot": "outro_fire"},
+  {"id": "s11b_f02", "kind": "action", "character": "Azu", "scene": "palacegate", "start": 113.0, "end": 117.6, "move": "f02_report", "shot": "report_close"},
+  {"id": "s11c_final", "kind": "action", "character": null, "scene": "shrine", "start": 117.6, "end": 120.0, "move": "outro_final", "shot": "fire_watch"}
  ]
 }

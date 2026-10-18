@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""《星屑战壳》S1E1 混音总线：BGM 为底 + 晨景底床 + SFX 事件摆点 + 对白（duck 平滑）。
-- BGM：assets3d/sfx/bgm_morning.wav（Seed-Audio 74s 单条）
+"""《星屑战壳》S1E1 混音总线：双段 BGM（晨曲 0-44 / 考核战 44-108）+ 晨景底床 + SFX 事件摆点 + 对白（duck 平滑）。
+- BGM：assets3d/sfx/bgm_morning.wav + bgm_trial.wav（Seed-Audio）
 - 对白：assets3d/dialogue/<id>.wav（seed-tts-2.0），摆点=config/dialogue.json 的 t
   （零点=谱面零点；口型包络从最终放置的同一 PCM 派生 → config/voice_envs.json）
 - 峰值上限 -2.2dBFS（AAC 过冲留量，OP R2 教训）
@@ -19,7 +19,7 @@ from scipy.signal import butter, sosfilt
 
 EP = Path(__file__).resolve().parents[1]
 SR = 48000
-DURATION = 75.000
+DURATION = 120.000
 SFX_DIR = 'assets3d/sfx'
 
 def load(path):
@@ -32,31 +32,26 @@ def rms(x):
 
 # SFX 事件总线：[时刻, 文件, 增益]（时刻=performance.js 的 T 表）
 EVENTS = [
-    (10.800, 'dash_whoosh', 0.8),    # 追逐起跑
-    (16.500, 'whoosh_fast', 0.6),    # 收步
-    (19.400, 'scroll_pop', 0.9),     # 年检通告卷轴
-    (27.400, 'energy_charge', 0.9),  # 阿箸战壳生长
-    (35.000, 'pan_sizzle', 0.9),     # 盾面煎蛋
-    (42.800, 'whoosh_fast', 0.7),    # 石头脱手
-    (43.600, 'stone_thud', 1.0),     # 石头落地
-    (44.000, 'body_drop', 0.8),      # 大釜坐地
-    (47.000, 'star_chime', 0.55),    # 穿孔 6 连
-    (47.280, 'star_chime', 0.55),
-    (47.560, 'star_chime', 0.55),
-    (47.840, 'star_chime', 0.55),
-    (48.120, 'star_chime', 0.55),
-    (48.400, 'star_chime', 0.55),
-    (54.400, 'chopstick_tap', 1.0),  # TAP1 刃点盾
-    (57.800, 'chopstick_tap', 0.9),  # TAP2 刃点肩甲
-    (61.200, 'chopstick_clack', 1.0),# PINCH 双筷夹盘
-    (34.950, 'star_lotus', 0.75),    # 莲华绽开（圆盾·星莲华，蛋落盾面帧）
-    (54.400, 'chopstick_barrage', 0.9), # 双箸乱穿残影（TAP1 刃点盾帧）
-    (61.200, 'star_pierce', 1.0),    # 夹星断（PINCH 夹盘帧）
-    (63.400, 'pot_set', 0.9),        # 火锅落地
-    (74.300, 'pot_clang', 1.0),      # 「当——」收尾（压尾字）
+    (19.800, 'scroll_pop', 0.9),     # 防务评估令公文展开
+    (46.200, 'dash_whoosh', 0.8),    # 阿鏊无脑冲锋
+    (51.500, 'chopstick_tap', 1.0),  # c1 刃点盾（无脑冲的句点）
+    (52.200, 'body_drop', 0.7),      # 阿鏊被点倒单膝触地
+    (63.500, 'chopstick_tap', 0.9),  # c2 刃点肩甲（犹豫的句点）
+    (72.800, 'whoosh_fast', 0.8),    # 大釜全力挥空
+    (74.000, 'chopstick_tap', 0.9),  # c3 刃点背（蛮力的句点）
+    (74.600, 'body_drop', 0.7),      # 大釜跪撑落地
+    (92.500, 'whoosh_fast', 0.9),    # 大釜合掌抛出阿鏊
+    (96.500, 'pot_shock', 1.0),      # c4 震堂·锅鸣一击（空中盾击被架开）
+    (97.500, 'chopstick_barrage', 0.9), # 流星·双箸乱穿弹幕
+    (98.600, 'star_net', 0.9),       # 天罗·星屑网侧翼收束
+    (99.500, 'shield_block', 1.0),   # c5 盾阵接住乱穿（挣到的反扑顶点）
 ]
 AMBIENCE = ('ambience_morning', 0.20)   # 晨风鸟鸣底床（全场循环）
-HOTPOT_BED = ('hotpot_bubble', 64.2, 0.30)  # 火锅咕嘟（64.2 起到结尾，淡入淡出）
+# BGM 双段：晨曲铺巡逻/通告（0-44），考核战鼓点铺考核→谷底→合体→评语（44-108 淡出）
+BGMS = [
+    ('bgm_morning', 0.55, 0.0, 44.0, 2.0),
+    ('bgm_trial', 0.60, 44.0, 112.0, 2.5),
+]
 DUCK_DB = -6.0
 DUCK_SMOOTH = 0.150
 
@@ -86,28 +81,38 @@ def build_bed(n, name, gain, t0=0.0, fade=0.8):
     return bed
 
 def main():
-    bgm = load(EP / SFX_DIR / 'bgm_morning.wav')
     n = int(DURATION * SR)
-    if len(bgm) >= n:
-        bgm = bgm[:n]
-    else:
-        bgm = np.pad(bgm, ((0, n - len(bgm)), (0, 0)))
-    # BGM 尾 1.5s 淡出（结尾让位锅鸣）
-    fo = int(1.5 * SR)
-    bgm[n - fo:] *= np.linspace(1, 0, fo)[:, None]
-    mix = bgm.copy() * 0.55
-
-    sources = {'bgm': {'path': f'{SFX_DIR}/bgm_morning.wav', 'provider': 'volcano-seedaudio', 'gain': 0.55,
-                       'sha256': hashlib.sha256((EP / SFX_DIR / 'bgm_morning.wav').read_bytes()).hexdigest()}}
+    mix = np.zeros((n, 2))
+    sources = {}
+    # BGM 双段摆位（各自带首尾淡入淡出，段间不叠）
+    for bgm_name, bgm_gain, t0, t1, fade in BGMS:
+        bgm = load(EP / SFX_DIR / f'{bgm_name}.wav') * bgm_gain
+        i0, i1 = int(t0 * SR), min(n, int(t1 * SR))
+        seg = bgm[:i1 - i0]
+        if len(seg) < i1 - i0:  # 不够长则尾部折头循环（build_bed 同源工艺）
+            xr = int(1.5 * SR)
+            w = np.linspace(0, 1, xr)[:, None]
+            rep = seg.copy()
+            rep[:xr] = seg[-xr:] * (1 - w) + seg[:xr] * w
+            seg = rep[:-xr]
+            tiled = np.zeros((i1 - i0, 2))
+            pos = 0
+            while pos < i1 - i0:
+                j = min(i1 - i0, pos + len(seg))
+                tiled[pos:j] += seg[:j - pos]
+                pos += len(seg)
+            seg = tiled
+        fi = int(fade * SR)
+        seg[:fi] *= np.linspace(0, 1, fi)[:, None]
+        seg[-fi:] *= np.linspace(1, 0, fi)[:, None]
+        mix[i0:i0 + len(seg)] += seg
+        sources[f'bgm:{bgm_name}'] = {'path': f'{SFX_DIR}/{bgm_name}.wav', 'provider': 'volcano-seedaudio',
+                                      'gain': bgm_gain, 'window': [t0, t1],
+                                      'sha256': hashlib.sha256((EP / SFX_DIR / f'{bgm_name}.wav').read_bytes()).hexdigest()}
     amb_name, amb_gain = AMBIENCE
     mix += build_bed(n, amb_name, amb_gain)
     sources['ambience'] = {'path': f'{SFX_DIR}/{amb_name}.wav', 'provider': 'volcano-seedaudio', 'gain': amb_gain,
                            'sha256': hashlib.sha256((EP / SFX_DIR / f'{amb_name}.wav').read_bytes()).hexdigest()}
-    hb_name, hb_t0, hb_gain = HOTPOT_BED
-    mix += build_bed(n, hb_name, hb_gain, t0=hb_t0, fade=1.0)
-    sources['hotpot_bed'] = {'path': f'{SFX_DIR}/{hb_name}.wav', 'provider': 'volcano-seedaudio',
-                             'gain': hb_gain, 't0': hb_t0,
-                             'sha256': hashlib.sha256((EP / SFX_DIR / f'{hb_name}.wav').read_bytes()).hexdigest()}
 
     placed = []
     for t0, name, gain in EVENTS:
