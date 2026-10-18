@@ -1,13 +1,14 @@
-// 《星屑战壳》OP viewer：横屏 1280×720，StardustShrineScene + 三主角（集内 characters.js）。
+// 《星屑战壳》OP viewer：横屏 1280×720，StardustShrineScene + 三主角。
+// R8 起角色/场景全部晋升 dula-assets（characters/stardust、scenes/stardust），本集只留谱面/机位/特效。
 // P3 正式谱面 49.2s（152BPM，条目边界吸附 beatgrid）：打斗快切机位硬切（卡点语法），
 // 特写机位在角色面朝 ±60° 内、距离 ≥3.0m。特效件抄 s1e2 模式：冲击环锚真实接触点、
 // 火花粒子 LCG、白闪 ≤.55、拟声词大字、地面裂缝+碎石。纯 (t,state) 确定函数。
 // window 契约（render.mjs 依赖）：duration / checkTimes / renderAt / stepAt / setFreeCamera / ready。
 import * as THREE from 'three';
-import {AoaoCraft,XiaozaoCraft,DafuCraft,HestiaCraft} from './characters.js';
-import {StardustShrineScene} from './scenes/StardustShrineScene.js';
-import {StarfallColonnadeScene} from './scenes/StarfallColonnadeScene.js';
-import {EmberCalderaScene} from './scenes/EmberCalderaScene.js';
+import {AoaoCraft,XiaozaoCraft,DafuCraft,HestiaCraft} from 'dula-assets/characters/stardust/characters.js';
+import {StardustShrineScene} from 'dula-assets/scenes/stardust/StardustShrineScene.js';
+import {StarfallColonnadeScene} from 'dula-assets/scenes/stardust/StarfallColonnadeScene.js';
+import {EmberCalderaScene} from 'dula-assets/scenes/stardust/EmberCalderaScene.js';
 import {poseAt,ease,clamp,T,BLOCK_PT,CLASH_PT,LAND_PT,HESTIA_SEAT} from './performance.js';
 
 const W=1280,H=720;

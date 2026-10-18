@@ -276,3 +276,83 @@ node --import ./tools/register_loader.mjs tools/scan_reach.mjs   # 离线 twoBon
   4mm（几何修型，不动探针阈值）。
 - 验证：`storyboard/r7_diag2/` 侧视/正面帧（腿伸直、胫甲前板可读）→ scan_reach 全时间轴
   reachable → gate 全绿（contact_probe 回 baseline）→ 重渲 `output/craft3d_full.mp4` + 重烧字幕版。
+
+## R8（资产晋升 dula-assets + 前臂甲板同族翻面修正 + 新角色阿箸）
+
+### ① 晋升映射表（可复用积木归资产库，本集只留谱面/机位/特效/素材）
+
+| 旧（集内，已删） | 新（dula-assets） |
+|---|---|
+| `characters.js`（758 行：boyBase/buildOrnateClad/applyCladState/cladFX/updateSkirtAndCape/updateCape/fitMetrics/sharedSetPose + 四角色） | `characters/stardust/characters.js`（+`README.md` 契约文档） |
+| `scenes/StardustShrineScene.js` | `scenes/stardust/StardustShrineScene.js` |
+| `scenes/StarfallColonnadeScene.js` | `scenes/stardust/StarfallColonnadeScene.js` |
+| `scenes/EmberCalderaScene.js` | `scenes/stardust/EmberCalderaScene.js` |
+
+- `viewer.js` 改 import `dula-assets/characters/stardust/characters.js` 与 `dula-assets/scenes/stardust/*`
+  （浏览器 importmap 前缀映射+file: 符号链接即时生效；Node 侧 `tools/scan_loader.mjs` 的
+  `'dula-assets/'` 前缀映射本就覆盖，无需扩展）。
+- SKIN 运行时注入改成资产模块内的注册式 API：`setStardustSkin(kind,palette)`，默认板
+  （lei=暖肤/aoi=冷白）模块加载即写入，调用方覆盖必须在首次构建角色前（skinMaterial 按
+  kind 缓存）。
+- 三场景 `applyHybrid(base)` 纹理基路径本来就是参数（默认 `'./assets3d/tex/'` 页面相对，
+  纹理文件留在本集 `assets3d/tex/` 不动；hybrid 缺失静默回退程序化的设计保持）。晋升后
+  只补了头注释说明口径。
+- `tools/audit_inputs.mjs` 指纹清单：删集内 characters.js/scenes 条目，改扫
+  `node_modules/dula-assets/characters/stardust` 与 `scenes/stardust` 两目录（同源覆盖）。
+- `dula-assets/AGENTS.md` 目录结构节补 stardust 两行（characters/scenes）；与 bioarmor 同样
+  走 viewer 链直接 import 子路径，不进 index.js/Registry。
+
+### ② 前臂甲板装反（与 R7 胫甲同族，同法修正）
+
+- 审查方法：自由机位帧 `storyboard/r8_bracer/`（t=14.5 对峙正/侧、t=19.83 对拳正/侧/顶、
+  三人英雄姿势臂铠特写）。修前事实：分段环纹在 rig +y（臂前侧）而半管主板弧心 θ=0
+  （柱局部 +z，rotation.x=π/2 后翻到 rig −y=臂后侧）——板在背面、纹在正面，正面看前臂
+  只剩袖子+悬浮环纹（aoao 右前臂、xiaozao 垂臂最明显）。
+- 修法（只动弧心角）：`θStart -.75 → Math.PI-.75`（弧心柱局部 −z → 旋转后 +y 前侧），
+  环纹/肘盖/肘翼/花窗盘/盾全部不动。修后 `storyboard/r8_bracer_fixed/`：板纹同侧，
+  对峙/对拳帧臂板读作护前臂前侧。
+- 探针锚点 shieldDome/bracerDiscL、clad_fit 54 条、生长序 ord、配色、T 时刻表全部未动。
+- 肖像组复查 `storyboard/r8_portraits/`（15 张，t=38.5 gag 定格姿势）：三人臂板/胫甲/
+  裙甲/肩甲全可读，无悬浮件。
+
+### ③ 新角色：阿箸 AzuCraft（筷子座，精英审查官——正片定位，不进 OP 画面）
+
+- 体型：修长高挑梯队（headHeight 1.68，比大釜 1.66 略高、胸廓/腿管显著细）；
+  boyBase 瘦高参数化。DIMS 余量：hipIdle .95+standStraight(.01 级)+maxBob(.04)=1.00 ≤
+  legA+legB+footY=.48+.48+.09=1.05，twoBone 不超伸（探针摆姿势时按臂长 .43 收目标点——
+  首轮探针臂目标超程 .49>.41 被 twoBone 当场抛错，教训同女神 R2.5：先量臂长再摆目标点）。
+- motif：双持筷刃——前臂甲延伸一对纤细黑漆银尖长筷（挂 forearmRig 随臂走，归属臂铠
+  生长段 ord=4；合拢夹取是双臂姿势语义，刃体刚性展示件）；冠新变体 `crown:'pins'`
+  双簪细角（筷形长簪+朱红簪头，簪头入 gems 随核脉动）。
+- 配色：漆黑漆器 pri `#1b1822`（Phong 高光+微弱 priGlow 固色防夜景吃掉）+白银勾边
+  trim `#dfe6ee`+朱红宝石核/接缝 `#e02a3c`/`#ff4a58`——与三人组（鎏金橙铜/亮银/铁灰鎏金）
+  剪影与色板双维度拉开。
+- 脸谱：aoi 细眼几何 + setStyle（eyeHeight .55/eyeWidth 1.08/eyeSpacing 84/lashes/
+  mouthWidth .85）+ 不笑冷傲基底 + 朱红眼尾三角妆贴片；发型件=黑长直（颅顶壳后倾让出
+  底发刘海+后垂 5 缕长直发+两侧长鬓）。
+- 契约四件套齐备：setPose/sharedSetPose 骨架、setCladState/updateCladFX/setEmotion，
+  mesh/body/limbs/hands/feet/headGroup 字段齐。
+- 验收：viewer 临时挂载出肖像帧 `storyboard/r8_azu/`（正/3⁄4/侧/背/脸特写+生长态），
+  剪影可读（高挑+长发+双簪+双筷刃）、无悬浮件无穿模；验收后临时挂载已撤（viewer.js
+  无残留，阿箸不进 OP 成片）。
+
+### ④ 翻车记录（R8）
+
+- **发型加件材质工艺必须与底发一致**：animatedHead 底发是 unlit Basic 顶点色
+  （#503a3b→#423037），首轮阿箸颅顶壳用 toon 黑色——夜景阴影里读成纯黑"眼罩带"，
+  与底发撕成两截。加件改同工艺 Basic + 同色阶（#47343a/#3a2b31）即融合。
+- **同族 rig 甲件要全清单审计**：R7 修胫甲时只翻了腿甲段；臂铠段同构造（forearmRig）
+  藏着同向假设不一致（主板 θ=0 在 −y 后侧、环纹在 +y 前侧）。发现一处翻面后，必须把
+  共用该 rig 构造的所有甲件逐一验算/出帧核对。
+- **探针摆姿势先量臂长**：阿箸首轮探针腕目标 .49m 超出臂长 .41m，twoBone 直接抛错
+  （Unreachable limb）卡死页面 ready——静态探针姿势同样要过 ≤.85 臂长纪律。
+
+### ⑤ 验证证据（R8）
+
+- `node render.mjs --check`：81 帧全绿 + seek 81/81 像素容差通过。
+- `episode_gate.py`：render_check / seek_determinism(81) / contact_probe / audio_sync /
+  review_shots **ALL GREEN**（`storyboard/gate/gate_report.json`）。
+- `tools/scan_reach.mjs`：all reachable（reach WARN 段与 R7 baseline 一致）。
+- 臂板修前/修后对照：`storyboard/r8_bracer/` vs `storyboard/r8_bracer_fixed/`。
+- 阿箸肖像：`storyboard/r8_azu/`。三人肖像复查：`storyboard/r8_portraits/`。
+- 成片重渲 `output/craft3d_full.mp4`（49.2s 不变）+ 字幕版重烧 `output/craft3d_full_subtitled.mp4`。
