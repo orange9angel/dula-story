@@ -124,3 +124,48 @@ QC（qc_lines.py，拼音级）：18 句 = 16 ✅ + 2 ⚠️（l07 80%/l03 85%�
 - 晨景亮场加色光效强度按首帧目检调（弹幕/崩散 opacity 比夜景抬一档）。
 - 证据帧：storyboard/r11_check/（shot_29/30 莲华+煎蛋、shot_53 乱穿+刃点盾、shot_60/61 夹星断+夹盘）。
 - 混音 normalized 触发（喊招顶格归一），AAC 复验 0.776 ≤0.8；gate ALL GREEN。
+
+## R12（配音升级：全员声线重铸到《9章》水准——数值全绿，戏感等监制耳朵终裁）
+
+### 《9章》配音工艺卡（调研 bio_armor_academy_s1e1/s1e3 实录压缩）
+
+| 层 | 做法 | 证据 |
+|---|---|---|
+| 选声 | seed-tts-2.0；主角可上 ICL 复刻克隆音色（雷晓=chanruoshaoye、轰刚=rexueshaonian、白岚=gaolengchenwen）；禁播音腔（解说/叙事音色不进正片） | s1e1 config/voice_config.json + volc-voice-casting SKILL |
+| 演绎 | 逐情绪 rate/volume 变体表（default/nervous/scared/shout/pained…）+ 带标点 tts_text；战损/嘶吼超 TTS 上限 → Seed-Audio 演绎（prompt 公式：角色状态→嗓音物理→念法→台词原文）+ 参考音频锁音色（@音频N，谱质心 <15%）→ 满意后复刻固化 | volc-voice-casting「表演化台词」节 |
+| 后期 | 对白峰一化 .55 → 混音 voice_gain；BGM −24dB rel voice + duck −8dB | s1e3 remix_audio.py |
+| 口型 | DTW 逐字对齐回写 timeline；viewer 链=能量包络轨（同一零点） | s1e3 build_audio.py |
+| QC | qc_lines.py 拼音重合率 ≥85%/时长在窗/峰值 .15-.99；同音字坑按拼音判 | qc_report.md 系列 |
+
+### 五角色声线定案（R12 重铸）
+
+| 角色 | R11 声线 | R12 声线 | 定案理由 |
+|---|---|---|---|
+| 阿鏊 | 开朗弟弟 | **ICL_uranus_zh_male_rexueshaonian_tob**（热血少年，轰刚同款克隆音色） | 热血+锋芒，9章实战验证 |
+| 小凿 | 高冷沉稳 | 高冷沉稳（不动） | 白岚同款冷面，已在 9章水准线上 |
+| 大釜 | 猪八戒 | **zh_male_dongfanghaoran_uranus_bigtts**（雄浑正气） | 豪壮大将感、去蠢腔 |
+| 阿箸 | 高冷御姐 | **ICL_uranus_zh_female_aomanjiaosheng_tob**（傲慢娇声） | 冥府贵族腔（冷傲+傲气压迫） |
+| 赫斯提亚 | 感冒电音 | 感冒电音（不动） | 慵懒基底已有，威压靠台词与威仪姿态 |
+
+### 逐句演绎（seed-tts 原生 speech_rate + context 演绎指令，标点保留）
+
+- 喊招档（重中之重）：rate +10~15 + context「全力呐喊出招名，高声压炸场」（OP 四招 +
+  S1E1 c1/c2/c3）；阿箸喊招用「冷冽宣告终结技，压迫感」变体。
+- 阿鏊常态：rate +5「少年热血有锋芒」；大釜常态：rate 0「豪壮不蠢」、慌张句 rate −5；
+  小凿全程 rate −5「平直克制」；阿箸常态 rate −5「从容威压」、破功句「小声自我说服」。
+- 逐句响度统一：混音前逐句峰一化 .5（9章工艺），再进 voice_gain/喊招顶格。
+
+### 摆点重推（新声线时长全变）
+
+- OP 喊招末字压帧（裁切实测回推）：沸泉 14.82→16.58 压 16.625 / 莲华 15.02→16.58 /
+  锅鸣 17.66→19.78 压 19.83 / 陨星 21.03→22.98 压 23.034。
+- S1E1 对白窗重排：l06→18.2、l07→20.3、l09→25.2、l10→31.5、c2→33.4（压 35.0 蛋落）、
+  c3→59.1（压 61.2 夹盘）；唯二有意交叠：c2 莲华喊招压着 l10 尾句（少年漫同喊）、
+  l07 尾音擦 l09 入场词起点。全部对白末字不超窗、声画对位 22 事件重验绿。
+
+### QC 证据（数值全绿；无音频输入环境，戏感未听审，等监制耳朵终裁）
+
+- S1E1 全量 21 句：18✅/3⚠️/0❌（⚠️=同音字坑既有判例：l03 先烈嘴/l07 粘捡俺/c3 夹心段），
+  报告 `tmp/voice_audition/qc_r12.md`。
+- OP 喊招 4 条：3✅/1⚠️（同音字），报告 `tmp/voice_audition/qc_calls_r12.md`。
+- 混音 AAC 解码峰值两集 ≤0.8（见验收节）；口型包络从最终 PCM 重派生（同一零点）。

@@ -23,16 +23,21 @@ def main():
     results = []
     for line in dlg['lines']:
         speaker = dlg['voices'][line['speaker']]
-        tag = hashlib.sha256(f"{line['text']}|{speaker}".encode()).hexdigest()[:12]
+        dlv = line.get('delivery', {})
+        tag = hashlib.sha256(f"{line['text']}|{speaker}|{dlv}".encode()).hexdigest()[:12]
         wav = OUT / f"{line['id']}.wav"
         meta = OUT / f"{line['id']}.source.json"
         if wav.exists() and meta.exists() and json.loads(meta.read_text(encoding='utf-8')).get('tag') == tag:
             results.append({'id': line['id'], 'skipped': True})
             continue
         mp3 = OUT / f"{line['id']}.mp3"
-        r = subprocess.run([str(PY), str(SEEDTTS), '--text', line['text'],
-                            '--speaker', speaker, '--out', str(mp3)],
-                           capture_output=True, text=True)
+        cmd = [str(PY), str(SEEDTTS), '--text', line['text'],
+               '--speaker', speaker, '--out', str(mp3)]
+        if dlv.get('rate'):
+            cmd += ['--speech-rate', str(dlv['rate'])]
+        if dlv.get('context'):
+            cmd += ['--context', dlv['context']]
+        r = subprocess.run(cmd, capture_output=True, text=True)
         if r.returncode != 0:
             print(f"FAIL {line['id']}: {r.stderr.strip()[:200]}")
             sys.exit(1)

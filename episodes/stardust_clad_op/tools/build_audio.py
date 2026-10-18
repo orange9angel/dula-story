@@ -108,6 +108,7 @@ def main():
                             'sha256': hashlib.sha256((EP / SFX_DIR / f'{name}.wav').read_bytes()).hexdigest()}
 
     voice = load(EP / 'assets3d/dialogue/hestia_line.wav')
+    voice = voice * (0.5 / max(np.abs(voice).max(), 1e-9))  # R12：峰一化（响度统一）
     vi = int(round(VOICE_T * SR))
     vj = min(n, vi + len(voice))
     # 口型包络轨（能量→jaw，20ms 帧）：供 viewer 女神慵懒口型；与混音同一音源零漂移
@@ -129,6 +130,7 @@ def main():
     calls_audio = []
     for c in calls_cfg['calls']:
         cw = load(EP / 'assets3d/calls' / f"{c['id']}.wav")
+        cw = cw * (0.5 / max(np.abs(cw).max(), 1e-9))  # R12：喊招财峰一化 .5 后顶格增益
         ci = int(round(c['t0'] * SR))
         cj = min(n, ci + len(cw))
         duck_windows.append((max(0, ci - int(.2 * SR)), cj))

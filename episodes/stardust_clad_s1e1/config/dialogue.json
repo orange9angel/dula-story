@@ -1,10 +1,10 @@
 {
  "_comment": "对白单源：TTS 文本（保留标点）/字幕显示/摆点 t0/声线。t0 按合成实测时长重排（zhubajie 语速慢，晨练段只留两句，大釜深蹲改无声表演；赫斯提亚收尾句压缩进 74.9s 片长）。口型包络由 build_audio.py 从最终 wav 派生（同一零点）。",
  "voices": {
-  "aoao": "zh_male_kailangdidi_uranus_bigtts",
+  "aoao": "ICL_uranus_zh_male_rexueshaonian_tob",
   "xiaozao": "zh_male_gaolengchenwen_uranus_bigtts",
-  "dafu": "zh_male_zhubajie_uranus_bigtts",
-  "azu": "zh_female_gaolengyujie_uranus_bigtts",
+  "dafu": "zh_male_dongfanghaoran_uranus_bigtts",
+  "azu": "ICL_uranus_zh_female_aomanjiaosheng_tob",
   "hestia": "zh_female_ganmaodianyin_uranus_bigtts"
  },
  "colors": {
@@ -19,121 +19,201 @@
    "id": "l01",
    "speaker": "aoao",
    "t": 3.4,
-   "text": "新的一天！屑铁级也要练出黄金的气势！"
+   "text": "新的一天！屑铁级也要练出黄金的气势！",
+   "delivery": {
+    "rate": 5,
+    "context": "少年热血，有锋芒，开朗但带战意"
+   }
   },
   {
    "id": "l03",
    "speaker": "xiaozao",
    "t": 7.7,
-   "text": "晨练先练嘴，是你们班的传统吗。"
+   "text": "晨练先练嘴，是你们班的传统吗。",
+   "delivery": {
+    "rate": -5,
+    "context": "冷面少言，平直克制"
+   }
   },
   {
    "id": "l04",
    "speaker": "aoao",
    "t": 11.5,
-   "text": "饭团归我啦！有本事追上我！"
+   "text": "饭团归我啦！有本事追上我！",
+   "delivery": {
+    "rate": 10,
+    "context": "边跑边喊，得意挑衅，高声压"
+   }
   },
   {
    "id": "l05",
    "speaker": "xiaozao",
    "t": 14.8,
-   "text": "站住。那是我的早饭。"
+   "text": "站住。那是我的早饭。",
+   "delivery": {
+    "rate": -5,
+    "context": "冷面追击，平直压迫"
+   }
   },
   {
    "id": "l06",
    "speaker": "dafu",
-   "t": 17.9,
-   "text": "你们慢点！"
+   "t": 18.2,
+   "text": "你们慢点！",
+   "delivery": {
+    "rate": 0,
+    "context": "喘气追赶，豪壮不蠢"
+   }
   },
   {
    "id": "l07",
    "speaker": "dafu",
-   "t": 20.4,
-   "text": "年、年检？！俺的壳还没擦亮……"
+   "t": 20.3,
+   "text": "年、年检？！俺的壳还没擦亮……",
+   "delivery": {
+    "rate": -5,
+    "context": "慌张但浑厚，大将慌了也压得住"
+   }
   },
   {
    "id": "l09",
    "speaker": "azu",
-   "t": 24.6,
-   "text": "筷子座，阿箸。奉圣殿之命，验收屑铁级。"
+   "t": 25.2,
+   "text": "筷子座，阿箸。奉圣殿之命，验收屑铁级。",
+   "delivery": {
+    "rate": -5,
+    "context": "冥府贵族式冷傲，从容威压"
+   }
   },
   {
    "id": "l10",
    "speaker": "azu",
-   "t": 30.6,
-   "text": "开始吧。别浪费我的午……时间。"
+   "t": 31.5,
+   "text": "开始吧。别浪费我的午……时间。",
+   "delivery": {
+    "rate": -5,
+    "context": "冷傲不耐，暗藏吃货动摇的克制"
+   }
   },
   {
    "id": "c2",
    "speaker": "aoao",
-   "t": 32.8,
-   "text": "圆盾·星莲华！"
+   "t": 33.4,
+   "text": "圆盾·星莲华！",
+   "delivery": {
+    "rate": 15,
+    "context": "全力呐喊出招名，高声压炸场"
+   }
   },
   {
    "id": "l11",
    "speaker": "aoao",
    "t": 34.8,
-   "text": "防御的最好形式，是把早饭煎好！"
+   "text": "防御的最好形式，是把早饭煎好！",
+   "delivery": {
+    "rate": 5,
+    "context": "得意洋洋地宣布歪理，热血搞笑"
+   }
   },
   {
    "id": "l12",
    "speaker": "azu",
    "t": 38.6,
-   "text": "……那是盾。"
+   "text": "……那是盾。",
+   "delivery": {
+    "rate": -5,
+    "context": "冷傲无语，一字一顿"
+   }
   },
   {
    "id": "l13",
    "speaker": "dafu",
    "t": 41.0,
-   "text": "给我起来——！"
+   "text": "给我起来——！",
+   "delivery": {
+    "rate": 5,
+    "context": "发力怒吼，豪壮炸场"
+   }
   },
   {
    "id": "l14",
    "speaker": "azu",
    "t": 44.6,
-   "text": "破坏公物。扣分。"
+   "text": "破坏公物。扣分。",
+   "delivery": {
+    "rate": -5,
+    "context": "面无表情记录扣分，冷酷"
+   }
   },
   {
    "id": "l15",
    "speaker": "xiaozao",
    "t": 48.5,
-   "text": "打完。收工。"
+   "text": "打完。收工。",
+   "delivery": {
+    "rate": -5,
+    "context": "冷面收工，平直利落"
+   }
   },
   {
    "id": "l16",
    "speaker": "azu",
    "t": 51.1,
-   "text": "……合格。"
+   "text": "……合格。",
+   "delivery": {
+    "rate": -5,
+    "context": "冷傲首肯，勉强认可"
+   }
   },
   {
    "id": "c1",
    "speaker": "azu",
    "t": 52.6,
-   "text": "流星·双箸乱穿！"
+   "text": "流星·双箸乱穿！",
+   "delivery": {
+    "rate": 5,
+    "context": "冷冽宣告连击技，高声压"
+   }
   },
   {
    "id": "c3",
    "speaker": "azu",
-   "t": 59.6,
-   "text": "合箸·夹星断！"
+   "t": 59.1,
+   "text": "合箸·夹星断！",
+   "delivery": {
+    "rate": 5,
+    "context": "冷冽宣告终结技，压迫感炸场"
+   }
   },
   {
    "id": "l17",
    "speaker": "azu",
    "t": 62.5,
-   "text": "……有点意思。"
+   "text": "……有点意思。",
+   "delivery": {
+    "rate": -5,
+    "context": "冷傲起兴，压迫感稍松"
+   }
   },
   {
    "id": "l18",
    "speaker": "dafu",
    "t": 64.1,
-   "text": "输了请吃火锅！俺带了菌子！"
+   "text": "输了请吃火锅！俺带了菌子！",
+   "delivery": {
+    "rate": 0,
+    "context": "豪爽热情，大方请客"
+   }
   },
   {
    "id": "l19",
    "speaker": "azu",
    "t": 67.8,
-   "text": "……年检结果，吃完再贴。"
+   "text": "……年检结果，吃完再贴。",
+   "delivery": {
+    "rate": -5,
+    "context": "破功后强撑冷傲，小声自我说服"
+   }
   },
   {
    "id": "l20",
@@ -141,5 +221,6 @@
    "t": 71.1,
    "text": "锅可以刷，报告不能逃。"
   }
- ]
+ ],
+ "_r12": "声线重铸轮：aoao=热血少年（轰刚同款克隆音色）、dafu=东方浩然（豪壮大将去蠢腔）、azu=傲慢娇声（冥府贵族腔，A/B 待定）；逐句 delivery=seed-tts 原生 speech_rate+context 演绎指令"
 }

@@ -21,16 +21,21 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     report = []
     for c in cfg['calls']:
-        tag = hashlib.sha256(f"{c['text']}|{c['voice']}".encode()).hexdigest()[:12]
+        dlv = c.get('delivery', {})
+        tag = hashlib.sha256(f"{c['text']}|{c['voice']}|{dlv}".encode()).hexdigest()[:12]
         wav = OUT / f"{c['id']}.wav"
         meta = OUT / f"{c['id']}.source.json"
         if wav.exists() and meta.exists() and json.loads(meta.read_text(encoding='utf-8')).get('tag') == tag:
             report.append({'id': c['id'], 'skipped': True})
             continue
         mp3 = OUT / f"{c['id']}.mp3"
-        r = subprocess.run([str(PY), str(SEEDTTS), '--text', c['text'],
-                            '--speaker', c['voice'], '--out', str(mp3)],
-                           capture_output=True, text=True)
+        cmd = [str(PY), str(SEEDTTS), '--text', c['text'],
+               '--speaker', c['voice'], '--out', str(mp3)]
+        if dlv.get('rate'):
+            cmd += ['--speech-rate', str(dlv['rate'])]
+        if dlv.get('context'):
+            cmd += ['--context', dlv['context']]
+        r = subprocess.run(cmd, capture_output=True, text=True)
         if r.returncode != 0:
             print(f"FAIL {c['id']}: {r.stderr.strip()[:200]}")
             sys.exit(1)

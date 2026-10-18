@@ -128,6 +128,7 @@ def main():
     envs = []
     for line in dlg['lines']:
         v = load(EP / 'assets3d/dialogue' / f"{line['id']}.wav")
+        v = v * (0.5 / max(np.abs(v).max(), 1e-9))  # R12：逐句峰一化 .5（响度统一，9章工艺）
         t0 = line['t']
         vi = int(round(t0 * SR))
         vj = min(n, vi + len(v))
