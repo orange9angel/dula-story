@@ -1,0 +1,27 @@
+{
+ "duration": 320.0,
+ "step": 0.01,
+ "_comment": "S1E2《夜守》正片节奏长剧（320s/19 段）：夜铺零对白 → 独白（E1）→ 异动 → 兽现 → 集结 → 战斗三连劣势（c1/c2/盘脱手）→ 谷底盾痕+E2 → 拖兽挣窗口 → 小凿「千孔·银星雨」首秀（E3 蓄力/c3 压点）→ 大釜「陨星·釜底落」终结（c4）→ F03 驭纹 → 余韵（E4）→ hook。F01/F02 冷静期全程沉默。",
+ "segments": [
+  {"id": "s0_wind", "kind": "action", "character": null, "scene": "colonnade", "start": 0.0, "end": 14.0, "move": "wind_colonnade", "shot": "night_wide"},
+  {"id": "s1_fire_a", "kind": "action", "character": null, "scene": "shrine", "start": 14.0, "end": 30.0, "move": "fire_a", "shot": "basins_slow"},
+  {"id": "s2_fire_b", "kind": "action", "character": null, "scene": "shrine", "start": 30.0, "end": 45.0, "move": "fire_b", "shot": "fire_closeup"},
+  {"id": "s3_mono_a", "kind": "action", "character": "Aoao", "scene": "shrine", "start": 45.0, "end": 66.0, "move": "mono_a", "shot": "mono_close"},
+  {"id": "s3b_mono_eye", "kind": "action", "character": "Aoao", "scene": "shrine", "start": 66.0, "end": 84.0, "move": "mono_eye", "shot": "eye_closeup"},
+  {"id": "s3c_mono_c", "kind": "action", "character": "Aoao", "scene": "shrine", "start": 84.0, "end": 100.0, "move": "mono_c", "shot": "mono_mid"},
+  {"id": "s4_stir", "kind": "action", "character": "Aoao", "scene": "shrine", "start": 100.0, "end": 118.0, "move": "stir", "shot": "stir_wide"},
+  {"id": "s5_reveal", "kind": "action", "character": null, "scene": "colonnade", "start": 118.0, "end": 124.0, "move": "reveal", "shot": "beast_silhouette"},
+  {"id": "s6_rally", "kind": "action", "character": null, "scene": "shrine", "start": 124.0, "end": 140.0, "move": "rally", "shot": "rally_group"},
+  {"id": "s7_fight1", "kind": "action", "character": "Aoao", "scene": "shrine", "start": 140.0, "end": 162.0, "move": "fight1", "shot": "fight_wide"},
+  {"id": "s8_fight2", "kind": "action", "character": "Dafu", "scene": "shrine", "start": 162.0, "end": 186.0, "move": "fight2", "shot": "fight_side"},
+  {"id": "s9_fight3", "kind": "action", "character": "Xiaozao", "scene": "shrine", "start": 186.0, "end": 208.0, "move": "fight3", "shot": "fight_press"},
+  {"id": "s10_valley", "kind": "action", "character": "Aoao", "scene": "shrine", "start": 208.0, "end": 224.0, "move": "valley", "shot": "scar_closeup"},
+  {"id": "s11a_turn", "kind": "action", "character": null, "scene": "shrine", "start": 224.0, "end": 246.0, "move": "turn", "shot": "turn_wide"},
+  {"id": "s11b_charge", "kind": "action", "character": "Xiaozao", "scene": "shrine", "start": 246.0, "end": 250.0, "move": "turn", "shot": "charge_closeup"},
+  {"id": "s12_rain", "kind": "action", "character": "Xiaozao", "scene": "shrine", "start": 250.0, "end": 264.0, "move": "rain", "shot": "rain_burst"},
+  {"id": "s13_finisher", "kind": "action", "character": "Dafu", "scene": "shrine", "start": 264.0, "end": 284.0, "move": "finisher", "shot": "finisher_slam"},
+  {"id": "s14_down", "kind": "action", "character": null, "scene": "shrine", "start": 284.0, "end": 298.0, "move": "beast_down", "shot": "mark_closeup"},
+  {"id": "s15_aftermath", "kind": "action", "character": "Aoao", "scene": "shrine", "start": 298.0, "end": 312.0, "move": "aftermath", "shot": "aftermath_fire"},
+  {"id": "s16_hook", "kind": "action", "character": null, "scene": "shrine", "start": 312.0, "end": 320.0, "move": "hook", "shot": "hook_card"}
+ ]
+}

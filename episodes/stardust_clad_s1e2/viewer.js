@@ -1,16 +1,15 @@
-// 《星屑战壳》S1E1 R13「圣火与战壳」viewer：横屏 1280×720。剧情级重写（监制否决"剧情太敷衍"）：
-// 圣殿晨景（morningize 重置）+ 柱廊晨巡 + 角斗场考核战 + 门阙报告镜头（F02）。
-// 角色/场景全部 dula-assets import（characters/stardust、scenes/stardust）。
-// 纯 (t,state) 确定函数；道具跟随活锚点仅渲染层（pose 计算不读网格）。
+// 《星屑战壳》S1E2《夜守》viewer（320s 正片节奏；故事载体=storyboard.md）。
+// 夜戏原生场景+OP 纹理集（无 morningize——S1E1 晨景教训：新集纹理第一天就在）。
+// 角色/场景/必杀技全 dula-assets import；蚀星兽=characters/stardust/beast.js（探针锚点活取）。
+// 规格继承 S1E1 R13/R14：双渲染沉淀/分色字幕/口型包络/技名卡/眼部特写机位/探针 state。
 // window 契约（render.mjs 依赖）：duration / checkTimes / renderAt / stepAt / setFreeCamera / ready。
 import * as THREE from 'three';
-import {AoaoCraft,XiaozaoCraft,DafuCraft,AzuCraft,HestiaCraft} from 'dula-assets/characters/stardust/characters.js';
+import {AoaoCraft,XiaozaoCraft,DafuCraft} from 'dula-assets/characters/stardust/characters.js';
+import {ErosionBeastCraft} from 'dula-assets/characters/stardust/beast.js';
 import {StardustShrineScene} from 'dula-assets/scenes/stardust/StardustShrineScene.js';
 import {StarfallColonnadeScene} from 'dula-assets/scenes/stardust/StarfallColonnadeScene.js';
-import {StarArenaScene} from 'dula-assets/scenes/stardust/StarArenaScene.js';
-import {PalaceGateScene} from 'dula-assets/scenes/stardust/PalaceGateScene.js';
-import {poseAt,ease,clamp,T,SHIELD_PT,XIAO_PAULR_PT,DAFU_BACK_PT,COMBO_PT,HESTIA_SEAT} from './performance.js';
 import {MOVES,buildMoveFX,drawMoveCard} from 'dula-assets/characters/stardust/moves.js';
+import {T,BEAST_PIN_PT,poseAt,clamp,ease,mix} from './performance.js';
 
 const W=1280,H=720;
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
@@ -31,78 +30,11 @@ const lineAt=t=>DIALOG.lines.find(l=>{
   return t>=t0&&t<=t0+dur+.25;
 });
 
-// ── 晨景重置（ep 侧皮肤：资产场景是夜景定型，本集拍早晨；只动灯光/天空/雾/地面明度）──
-const dawnSky=()=>{
-  const c=document.createElement('canvas');c.width=1024;c.height=512;const g=c.getContext('2d');
-  const gr=g.createLinearGradient(0,0,0,512);
-  gr.addColorStop(0,'#3a5a9c');gr.addColorStop(.42,'#7a8fc0');gr.addColorStop(.72,'#d8b08a');gr.addColorStop(.92,'#f0c894');
-  g.fillStyle=gr;g.fillRect(0,0,1024,512);
-  const fade=g.createLinearGradient(0,512*.38,0,512*.56);
-  fade.addColorStop(0,'rgba(0,0,0,0)');fade.addColorStop(1,'rgba(0,0,0,1)');
-  g.globalCompositeOperation='destination-out';g.fillStyle=fade;g.fillRect(0,512*.38,1024,512*.62);
-  g.globalCompositeOperation='source-over';
-  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;
-};
-const dawnBg=()=>{
-  const c=document.createElement('canvas');c.width=2;c.height=256;const g=c.getContext('2d');
-  const gr=g.createLinearGradient(0,0,0,256);
-  gr.addColorStop(0,'#3a5a9c');gr.addColorStop(.55,'#9aa8cc');gr.addColorStop(.85,'#e8c496');gr.addColorStop(1,'#8a94b4');
-  g.fillStyle=gr;g.fillRect(0,0,2,256);
-  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;
-};
-function morningize(sc,{dome=false,fireDim=1,stone=1.5,fogNear=30,fogFar=110,floor='#7d8496',hemi=1.35,dir=1.45,additiveDim=1,pointDim=1,zenith=null}={}){
-  const S=sc.scene;
-  const texd=(sc.hybridApplied??[]).length>0; // R14：有纹理的场景不再调色压色（applyHybrid 已按纹理调定），只管灯光/雾/天顶
-  S.background=dawnBg();
-  if(S.fog){S.fog.color.set('#7a86a8');S.fog.near=fogNear;S.fog.far=fogFar;}
-  S.traverse(o=>{
-    if(o.isHemisphereLight){o.intensity*=hemi;o.color.set('#8a9ec8');o.groundColor.set('#5a4f42');}
-    if(o.isDirectionalLight){o.color.set('#ffd8b0');o.intensity=Math.max(o.intensity*dir,1.1*dir/1.45);}
-    if(o.isPointLight)o.intensity*=pointDim; // 夜用火炬点光环在晨景叠加过曝——压功率留形
-  });
-  if(zenith&&sc.backdrop){ // continuousBackdrop 晨化：夜空天顶 uniform 换晨空 + 资产侧夜景提亮压回
-    const u=sc.backdrop.material?.uniforms;
-    if(u?.zenithColor)u.zenithColor.value.set(zenith);
-    if(u?.sourceMap?.value?.image){ // 资产 applyHybrid 对夜景图 brightness(1.4~1.45)，晨版图会吹白——同口径 redraw 压回
-      const src=u.sourceMap.value.image;
-      const c=document.createElement('canvas');c.width=src.width;c.height=src.height;
-      const g=c.getContext('2d');g.filter='brightness(0.72)';g.drawImage(src,0,0);
-      const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;
-      t.wrapS=THREE.MirroredRepeatWrapping;
-      u.sourceMap.value=t;
-    }
-  }
-  if(dome&&sc.dome){sc.dome.material.map=dawnSky();sc.dome.material.needsUpdate=true;}
-  if(!dome&&!sc.backdrop){ // 有混合背景板的场景不再加程序化天球（球在筒内会盖住背景板）
-    const sky=new THREE.Mesh(new THREE.SphereGeometry(95,32,16),
-      new THREE.MeshBasicMaterial({map:dawnSky(),side:THREE.BackSide,fog:false,transparent:true,depthWrite:false}));
-    sky.position.set(0,0,-6);sky.renderOrder=-99;S.add(sky);
-  }
-  if(!texd){
-    if(sc.floorMesh){sc.floorMesh.material.color.set(floor);sc.floorMesh.material.needsUpdate=true;}
-    if(sc.farMesh){sc.farMesh.material.color.set('#565e74');sc.farMesh.material.needsUpdate=true;}
-    for(const key of ['stoneMeshes','pillarMeshes','pileMeshes','rockMeshes','groundMeshes'])
-      for(const m of sc[key]??[])if(m!==sc.floorMesh&&m!==sc.farMesh)m.material.color.multiplyScalar(stone);
-  }
-  for(const m of sc.bandMeshes??[])m.material.color.multiplyScalar(1.8); // 夜用剪影带在晨雾里太黑，提亮进霾
-  if(additiveDim!==1)S.traverse(o=>{ // 夜用加色叠层（沙痕等）在晨景会吹白全场——只压 Mesh，火炬 Sprite 不动
-    if(o.isMesh&&!o.isSprite&&o.material&&o.material.blending===THREE.AdditiveBlending)o.material.opacity=additiveDim;});
-  if(fireDim!==1&&sc.fireLight){
-    const orig=sc.update.bind(sc);
-    sc.update=t=>{orig(t);sc.fireLight.intensity*=fireDim;};
-  }
-}
-
-// ── 场景与角色（多场景同存，按段 scene 字段硬切；世界坐标全局连续）──
-const SCENES={shrine:new StardustShrineScene(),colonnade:new StarfallColonnadeScene(),
-  arena:new StarArenaScene(),palacegate:new PalaceGateScene()};
-for(const sc of Object.values(SCENES)){sc.build();await sc.applyHybrid();} // R14：晨版纹理集（无纹理目录则静默回退程序化）
-morningize(SCENES.shrine,{dome:true,fireDim:.6,zenith:'#6f86b8'});
-morningize(SCENES.colonnade,{fogFar:150,zenith:'#6f86b8'});
-// 考核战：晨雾推远收掉（监制点名 51.5 灰蒙）+ 暖金主光抬饱和；纹理场景不调色压色
-morningize(SCENES.arena,{fogNear:60,fogFar:260,hemi:1.15,dir:1.35,additiveDim:.22,pointDim:.6,zenith:'#7b8fc0'});
-morningize(SCENES.palacegate);
-const actors={aoao:new AoaoCraft(),xiaozao:new XiaozaoCraft(),dafu:new DafuCraft(),azu:new AzuCraft(),hestia:new HestiaCraft()};
+// ── 场景与角色（夜版原生+纹理；两场景按段硬切；世界坐标全局连续）──
+const SCENES={shrine:new StardustShrineScene(),colonnade:new StarfallColonnadeScene()};
+for(const sc of Object.values(SCENES)){sc.build();await sc.applyHybrid();}
+const actors={aoao:new AoaoCraft(),xiaozao:new XiaozaoCraft(),dafu:new DafuCraft(),
+  beast:new ErosionBeastCraft()};
 let curScene=null;
 function useScene(name){
   const sc=SCENES[name]??SCENES.shrine;
@@ -111,7 +43,7 @@ function useScene(name){
   for(const a of Object.values(actors))sc.scene.add(a.mesh);
   return sc;
 }
-useScene('shrine');
+useScene('colonnade');
 
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
 renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
@@ -121,36 +53,37 @@ const ctx=canvas.getContext('2d');
 const camera=new THREE.PerspectiveCamera(44,W/H,.05,200);
 
 const lerp3=(a,b,u)=>a.map((x,i)=>x+(b[i]-x)*u);
-// ── 机位表（含三处眼部特写：谷底阿鏊/阿箸认可/结尾看火）──
+// ── 机位表（E1-E4 眼部/落点特写 + 蓄力特写 + 驭纹推近 + 余韵推镜）──
 function camFor(shot,t,states){
-  const face=(name,dy=0)=>{const s=states[name];return [s.rootX,s.rootZ];};
   switch(shot){
-    case 'establish':return{pos:lerp3([0,5.2,16],[0,4.2,13],ease(clamp(t/3.0))),look:[0,2.2,-6],fov:50};
-    case 'patrol_track':{const [x]=face('aoao');return{pos:[x+.6,1.5,8.0],look:[x-.6,1.15,3.0],fov:46};}
-    case 'patrol_front':{const [x]=face('aoao');return{pos:[x-.6,1.4,7.2],look:[x+.4,1.2,3.0],fov:44};}
-    case 'notice':return{pos:[-.6,1.8,6.8],look:[-.8,1.5,1.0],fov:44};
-    case 'azu_grand':{const s=states.azu;return{pos:[s.rootX+.6,.9,s.rootZ+4.6],look:[s.rootX,1.5,s.rootZ],fov:44};} // 低机位仰角排面
-    case 'two_profile':return{pos:[.2,1.5,6.4],look:[.2,1.3,2.8],fov:40};
-    case 'walk_out':return{pos:[-1.0,1.7,7.0],look:[1.6,1.2,2.8],fov:46};
-    case 'walk_in':return{pos:[0,2.6,10.5],look:[0,1.1,1.8],fov:48}; // 角斗场入场全景
-    case 'test_wide':return{pos:[-.4,2.0,7.8],look:[0,1.2,2.2],fov:46};
-    case 'test_side':return{pos:[-2.6,1.4,5.2],look:[-1.2,1.25,2.5],fov:40}; // 小凿读秒侧拍
-    case 'fire_closeup':return{pos:[0,2.3,-1.6],look:[0,1.85,-6],fov:34}; // 谷底空镜：圣火将熄特写
-    case 'eye_closeup':{const s=states.aoao;return{pos:[s.rootX+1.05,1.24,s.rootZ+.9],look:[s.rootX+.05,1.16,s.rootZ],fov:23};} // E1 谷底阿鏊（正面偏右，避开盾面，对准眼高）
-    case 'combo_group':return{pos:[-.6,1.7,6.8],look:[.2,1.2,2.3],fov:44};
-    case 'combo_low':return{pos:[.6,.8,5.6],look:[.5,1.6,2.3],fov:48}; // 仰角抛掷
-    case 'combo_air':return{pos:[-.6,1.6,6.0],look:[.8,1.9,2.4],fov:44}; // 空中突进
-    case 'combo_catch':return{pos:[-.2,1.6,6.4],look:[.5,1.35,2.4],fov:42}; // 接住一线
-    case 'eye_closeup_azu':{const s=states.azu;return{pos:[s.rootX-.75,1.63,s.rootZ+1.05],look:[s.rootX,1.58,s.rootZ],fov:24};} // E2 阿箸认可（收紧到眼）
-    case 'sheathe_wide':return{pos:[.2,1.9,7.2],look:[.4,1.3,2.4],fov:44};
-    case 'outro_fire':return{pos:[-.4,1.9,7.0],look:[-.6,1.6,-1],fov:46}; // 画外音：群像+灶火
-    case 'report_close':{const s=states.azu;return{pos:[s.rootX-.4,1.5,s.rootZ+1.8],look:[s.rootX,1.25,s.rootZ],fov:30};} // F02 报告独处
-    case 'fire_watch':{const s=states.aoao;return{pos:[s.rootX+.55,1.42,s.rootZ+1.7],look:[s.rootX,1.42,s.rootZ],fov:28};} // E3 看火
+    case 'night_wide':{const u=ease(clamp(t/14));return{pos:lerp3([9,2.4,11],[6.5,2.0,9],u),look:[0,1.4,2],fov:50};} // 旷野缓推
+    case 'basins_slow':{const u=ease(clamp((t-14)/16));return{pos:lerp3([0,1.7,7.0],[0,1.5,4.6],u),look:[0,1.3,-3],fov:46};} // 火盆群慢推
+    case 'fire_closeup':return{pos:[0,2.3,-1.6],look:[0,1.85,-6],fov:34}; // 圣火定场特写
+    case 'mono_close':return{pos:[.95,1.28,-3.75],look:[1.3,1.15,-2.2],fov:32}; // 火光里的独白（正面）
+    case 'eye_closeup':return{pos:[1.05,1.26,-3.35],look:[1.3,1.16,-2.25],fov:23}; // E1 眼部
+    case 'mono_mid':return{pos:[.2,1.5,-4.7],look:[1.3,1.0,-2.2],fov:38}; // 背影+火（剪影独白）
+    case 'stir_wide':return{pos:[0,1.8,8.2],look:[0,1.3,.5],fov:44}; // 他背火向外，旷野入画
+    case 'beast_silhouette':return{pos:[.5,.9,4.0],look:[3.2,1.0,8.6],fov:40}; // 低机位：兽踏出黑暗
+    case 'rally_group':return{pos:[0,1.9,7.8],look:[0,1.3,2.0],fov:46};
+    case 'fight_wide':return{pos:[-4.4,1.6,6.2],look:[-.5,1.15,3.2],fov:44}; // 侧拍：盾迎接触帧要看见盾面
+    case 'fight_side':return{pos:[3.6,1.5,5.8],look:[1.2,1.1,3.0],fov:42}; // 大釜侧
+    case 'fight_press':return{pos:[-4.4,1.5,5.4],look:[-2.2,1.1,2.8],fov:40}; // 小凿侧
+    case 'scar_closeup':return{pos:[-.85,1.32,5.0],look:[0,1.02,3.35],fov:24}; // 谷底：盾痕+盾沿上他的眼
+    case 'turn_wide':return{pos:[0,2.6,9.2],look:[0,1.2,3.9],fov:46};
+    case 'charge_closeup':return{pos:[-3.15,1.38,4.15],look:[-2.55,1.34,2.9],fov:23}; // E3 蓄力：盘孔亮起+他的眼
+    case 'rain_burst':return{pos:[-4.4,1.7,5.0],look:[-1.4,1.3,3.6],fov:42}; // 盘侧跟拍弹雨
+    case 'finisher_slam':return{pos:[.6,.9,7.6],look:[-.6,1.4,4.4],fov:46}; // 低机位落点
+    case 'mark_closeup':{const m=states.beastMarkPos??[-.9,1.0,4.9]; // F03 驭纹推近（活锚点；拉出让环纹衬亮沙地）
+      const u=ease(clamp((t-288)/4));
+      return{pos:lerp3([m[0]-2.0,m[1]+1.9,m[2]-2.4],[m[0]-.8,m[1]+1.05,m[2]-1.15],u),look:[m[0],m[1]-.18,m[2]+.1],fov:21};}
+    case 'aftermath_fire':{const u=ease(clamp((t-298)/13)); // 余韵推镜：群像背影→阿鏊落点特写（E4 要脸：终点对准头高）
+      return{pos:lerp3([-.4,1.9,7.2],[-.66,1.52,1.75],u),look:lerp3([-.6,1.5,-1],[-.8,1.55,2.55],u),fov:46-21*u};}
+    case 'hook_card':return{pos:[-.4,1.9,7.2],look:[-.6,1.5,-1],fov:46};
     default:return{pos:[0,3,12],look:[0,1.5,-2],fov:48};
   }
 }
 
-// ── 特效网格（OP 同族：冲击环/闪光火花 LCG/震尘环，全纯 t）──
+// ── 特效网格（S1E1 同族：冲击环/闪光火花 LCG/震尘环，全纯 t）──
 const flareTex=(()=>{const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d');
   const gr=g.createRadialGradient(64,64,2,64,64,64);
   gr.addColorStop(0,'#ffffff');gr.addColorStop(.3,'#ffffff');gr.addColorStop(1,'rgba(255,255,255,0)');
@@ -160,7 +93,7 @@ const impactRing=new THREE.Mesh(new THREE.TorusGeometry(1,.05,8,40),
   new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
 const dustRing=new THREE.Mesh(new THREE.TorusGeometry(1,.07,8,40),
   new THREE.MeshBasicMaterial({color:0xc9b89a,transparent:true}));
-dustRing.rotation.x=-Math.PI/2;
+dustRing.rotation.x=-Math.PI/2;dustRing.visible=false; // 初值必须不可见（seek 倒序回放到首用前=初值状态）
 const flare=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
 flare.visible=false;
 const sparks=[];
@@ -171,13 +104,35 @@ const sparks=[];
    s.userData={vx:Math.cos(a)*Math.cos(el)*sp,vy:Math.sin(el)*sp,vz:Math.sin(a)*Math.cos(el)*sp};
    s.visible=false;sparks.push(s);
  }}
-// R13：特效全挂角斗场（考核战主场；F02/圣殿段无特效）
-for(const m of [impactRing,dustRing,flare,...sparks])SCENES.arena.scene.add(m);
-// 必杀技 VFX 实例（锚点帧帧活取=渲染层纯函数）
+for(const m of [impactRing,dustRing,flare,...sparks])SCENES.shrine.scene.add(m); // 战斗主场=圣殿广场
+// 必杀技 VFX 实例（锚点帧帧活取）
+// ── 道具/物证（跟随活锚点=渲染层纯函数）──
+// 盾面抓痕：c1 兽爪留下的三道白痕（谷底特写物证；挂上即永久可见）
+const scarG=new THREE.Group();
+{for(let i=0;i<3;i++){
+  const s=new THREE.Mesh(new THREE.PlaneGeometry(.018,.22),
+    new THREE.MeshBasicMaterial({color:'#e8ecf2',transparent:true,opacity:.85,depthWrite:false}));
+  s.position.set((i-1)*.045,0,.012+i*.002);s.rotation.z=-.28+i*.06;
+  scarG.add(s);}
+ const dome=actors.aoao.shieldDome;
+ dome.add(scarG);scarG.position.set(.02,.06,.24);scarG.rotation.x=-.10; // 盾面中上偏右（贴弧面外法线）
+ scarG.visible=false;}
+// 脱手滚落的打孔阵盘（206 脱手 → 244.5 拾回；物证级道具）
+const droppedDisc=new THREE.Group();
+{const ring=new THREE.Mesh(new THREE.TorusGeometry(.16,.028,10,32),
+   new THREE.MeshToonMaterial({color:'#d8e4f0'}));
+ droppedDisc.add(ring);
+ const holes=new THREE.Mesh(new THREE.CircleGeometry(.13,24),
+   new THREE.MeshBasicMaterial({color:'#8fd8ff',transparent:true,opacity:.55,blending:THREE.AdditiveBlending,depthWrite:false}));
+ holes.position.z=.005;droppedDisc.add(holes);
+ droppedDisc.rotation.x=-Math.PI/2;droppedDisc.position.set(-2.9,.05,3.0);
+ droppedDisc.visible=false;SCENES.shrine.scene.add(droppedDisc);}
 const wv2=new THREE.Vector3();
-const shockFX=buildMoveFX('pot_shock');SCENES.arena.scene.add(shockFX.group);   // 阿鏊「震堂·锅鸣一击」（c4 空中突进）
-const barrageFX=buildMoveFX('chopstick_barrage');SCENES.arena.scene.add(barrageFX.group); // 阿箸「流星·双箸乱穿」（真招被逼出）
-const netFX=buildMoveFX('star_net');SCENES.arena.scene.add(netFX.group);       // 小凿「天罗·星屑网」（c5 侧翼收束）
+const rainFX=buildMoveFX('meteor_rain');SCENES.shrine.scene.add(rainFX.group);   // 小凿「千孔·银星雨」首秀
+const slamFX=buildMoveFX('crater_slam');SCENES.shrine.scene.add(slamFX.group);   // 大釜「陨星·釜底落」终结
+// 异动段旷野尘线（走直线的尘=反常）
+const dustTrail=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,color:'#9a8a70',transparent:true,opacity:.35,blending:THREE.AdditiveBlending,depthWrite:false}));
+dustTrail.visible=false;SCENES.colonnade.scene.add(dustTrail);
 function ringAt(mesh,x,y,z,t,t0,color,maxR=1.2,dur=.5){
   const u=(t-t0)/dur;
   if(u<0||u>1){mesh.visible=false;return;}
@@ -198,68 +153,38 @@ function flareAt(t,t0,x,y,z,color){
     s.material.color.set(color);s.material.opacity=.9*(1-u);s.scale.setScalar(.035+.05*(1-u));}
 }
 
-// ── 道具（跟随活锚点=渲染层纯函数；谱面不读网格）──
-// 防务令公文（圣物大锅喷出，悬浮展开）
-const scroll=new THREE.Group();
-{const paper=new THREE.Mesh(new THREE.PlaneGeometry(.62,.42),
-   new THREE.MeshBasicMaterial({color:'#f0e4c8',side:THREE.DoubleSide}));
- scroll.add(paper);
- const cv=document.createElement('canvas');cv.width=256;cv.height=172;const g=cv.getContext('2d');
- g.fillStyle='#f0e4c8';g.fillRect(0,0,256,172);g.fillStyle='#8a2a22';
- g.font='bold 40px STKAITI,KaiTi,serif';g.textAlign='center';g.fillText('总坛防务令',128,58);
- g.font='20px STKAITI,KaiTi,serif';g.fillStyle='#4a3630';
- g.fillText('今日评估',128,96);g.fillText('不合格者 战壳收回',128,126);
- const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;
- paper.material.map=tex;paper.material.needsUpdate=true;
- for(const y of [-.23,.23]){const rod=new THREE.Mesh(new THREE.CylinderGeometry(.02,.02,.66,8),
-   new THREE.MeshToonMaterial({color:'#8a5a2a'}));rod.rotation.z=Math.PI/2;rod.position.y=y;scroll.add(rod);}
- const glow=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,color:'#ffd98a',transparent:true,opacity:.5,blending:THREE.AdditiveBlending,depthWrite:false}));
- glow.scale.setScalar(1.6);scroll.add(glow);}
-scroll.visible=false;
-// F02 阿箸的评估报告（门阙独处镜头：公文板+左刃当笔）
-const report=new THREE.Group();
-{const paper=new THREE.Mesh(new THREE.PlaneGeometry(.5,.36),
-   new THREE.MeshBasicMaterial({color:'#f0e4c8',side:THREE.DoubleSide}));
- report.add(paper);
- const cv=document.createElement('canvas');cv.width=256;cv.height=184;const g=cv.getContext('2d');
- g.fillStyle='#f0e4c8';g.fillRect(0,0,256,184);g.fillStyle='#4a3630';
- g.font='bold 30px STKAITI,KaiTi,serif';g.textAlign='center';g.fillText('评估报告',128,50);
- g.font='20px STKAITI,KaiTi,serif';
- g.fillText('东厨班 · 战壳使',128,90);g.fillStyle='#8a2a22';
- g.font='bold 34px STKAITI,KaiTi,serif';g.fillText('合 格',128,140);
- const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;
- paper.material.map=tex;paper.material.needsUpdate=true;
- const glow=new THREE.Sprite(new THREE.SpriteMaterial({map:flareTex,color:'#ffb0b8',transparent:true,opacity:.4,blending:THREE.AdditiveBlending,depthWrite:false}));
- glow.scale.setScalar(1.2);report.add(glow);}
-report.visible=false;
-SCENES.shrine.scene.add(scroll);SCENES.palacegate.scene.add(report);
-
 // ── 画布叠加件 ──
 function flash(t,t0,dur=.09,strength=.5){ // 白闪 ≤.12s
   const u=(t-t0)/dur;if(u<0||u>1)return;
   ctx.fillStyle=`rgba(255,255,255,${(1-u)*strength})`;ctx.fillRect(0,0,W,H);
 }
-function drawSFX(text,color,t0,t1,t){
-  const u=clamp((t-t0)/(t1-t0));if(u<=0||u>=1)return;
-  const pop=u<.18?ease(u/.18)*1.15:1.15-.15*ease((u-.18)/.3);
-  const alpha=u>.75?1-(u-.75)/.25:1;
-  ctx.save();ctx.translate(W*.5,H*.34);ctx.scale(pop,pop);
-  ctx.font='bold 88px STKAITI,KaiTi,serif';ctx.textAlign='center';ctx.lineJoin='round';
-  ctx.globalAlpha=alpha;ctx.shadowColor='#fff';ctx.shadowBlur=9;
-  ctx.strokeStyle='#101418';ctx.lineWidth=10;ctx.strokeText(text,0,0);
-  ctx.fillStyle=color;ctx.fillText(text,0,0);
+function drawSFX(txt,color,t0,t1,t){ // 拟声词大字（接触帧）
+  if(t<t0||t>t1)return;
+  const u=(t-t0)/(t1-t0),pop=u<.18?u/.18:1,a=u>.75?1-(u-.75)/.25:1;
+  ctx.save();ctx.translate(W*.76,H*.30);ctx.rotate(-.06);ctx.globalAlpha=a;
+  ctx.font='bold 54px STKAITI,KaiTi,serif';ctx.textAlign='center';ctx.lineJoin='round';
+  ctx.shadowColor=color;ctx.shadowBlur=18;ctx.lineWidth=8;ctx.strokeStyle='#101018';
+  ctx.strokeText(txt,0,0);ctx.fillStyle=color;ctx.fillText(txt,0,0);
   ctx.restore();ctx.globalAlpha=1;
 }
-function drawTitle(t){ // 冷开题字：0.4 淡入 → 4.6 淡出（弱火气氛）
-  const alpha=t<.4?0:t<1.0?ease((t-.4)/.6):t>4.6?1-ease((t-4.6)/.5):1;
-  if(alpha<=0)return;
-  ctx.save();ctx.globalAlpha=alpha;ctx.textAlign='center';ctx.lineJoin='round';
-  ctx.shadowColor='#ffb35e';ctx.shadowBlur=16;
-  ctx.strokeStyle='#0c0a12';ctx.lineWidth=11;
-  ctx.font='bold 84px STKAITI,KaiTi,serif';
+function drawTitle(t){ // 夜铺上片名（1.5-7s）
+  const u=(t-1.5)/1.2;if(u<0||t>7)return;
+  const a=Math.min(1,u)*(t>5.8?Math.max(0,1-(t-5.8)/1.2):1);
+  ctx.save();ctx.globalAlpha=a;ctx.textAlign='center';ctx.lineJoin='round';
+  ctx.shadowColor='#8fd8ff';ctx.shadowBlur=26;ctx.lineWidth=10;ctx.strokeStyle='#0c0a14';
+  ctx.font='bold 88px STKAITI,KaiTi,serif';
   ctx.strokeText('星屑战壳',W/2,H*.40);ctx.fillStyle='#ffe8c0';ctx.fillText('星屑战壳',W/2,H*.40);
   ctx.shadowBlur=0;ctx.font='bold 30px STKAITI,KaiTi,serif';
-  ctx.strokeText('第一集 · 圣火与战壳',W/2,H*.40+56);ctx.fillStyle='#ffd98a';ctx.fillText('第一集 · 圣火与战壳',W/2,H*.40+56);
+  ctx.strokeText('第二集 · 夜守',W/2,H*.40+56);ctx.fillStyle='#ffd98a';ctx.fillText('第二集 · 夜守',W/2,H*.40+56);
+  ctx.restore();ctx.globalAlpha=1;
+}
+function drawHook(t){ // 次回字卡（312-318）
+  if(t<T.HOOK||t>318.5)return;
+  const a=ease(clamp((t-T.HOOK)/1.0))*(t>317?Math.max(0,1-(t-317)/1.5):1);
+  ctx.save();ctx.globalAlpha=a;ctx.textAlign='center';
+  ctx.font='bold 44px STKAITI,KaiTi,serif';ctx.lineJoin='round';
+  ctx.shadowColor='#ffd98a';ctx.shadowBlur=16;ctx.lineWidth=8;ctx.strokeStyle='#0c0a14';
+  ctx.strokeText('次回 · 第三夜',W/2,H*.52);ctx.fillStyle='#ffe8c0';ctx.fillText('次回 · 第三夜',W/2,H*.52);
   ctx.restore();ctx.globalAlpha=1;
 }
 function drawSubtitle(t){
@@ -271,13 +196,11 @@ function drawSubtitle(t){
   ctx.fillText(`${name}：${l.text}`,W/2,H-52);
 }
 function fadeBlack(t){
-  const aIn=t<.6?(1-ease(t/.6))*.70:0;
   const aOut=t>T.FADE?ease((t-T.FADE)/(TL.duration-T.FADE)):0;
-  const a=Math.max(aIn,aOut);
-  if(a>0){ctx.fillStyle=`rgba(10,12,20,${a})`;ctx.fillRect(0,0,W,H);}
+  if(aOut>0){ctx.fillStyle=`rgba(10,12,20,${aOut})`;ctx.fillRect(0,0,W,H);}
 }
 
-const BLINK_OFF={aoao:0,xiaozao:.83,dafu:1.61,azu:2.2};
+const BLINK_OFF={aoao:0,xiaozao:.83,dafu:1.61};
 const autoBlink=t=>Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
 
 function draw(t,capture=true){
@@ -285,80 +208,70 @@ function draw(t,capture=true){
   const {entry,opts,phase,states,poses}=perf;
   const scene=useScene(opts.scene);
   scene.update(t);
-  // F01：圣火变弱（冷开/谷底空镜/收尾段压暗压小——画面层不解释；update 每帧重写故在其后乘）
-  if(scene===SCENES.shrine&&['coldopen','valley_fire','outro','outro_final'].includes(phase)){
-    scene.fireLight.intensity*=.55;
-    for(const f of scene.flames)f.scale.multiplyScalar(.62);
-  }
+  // 兽：驭纹亮度先置（F03 镜头才亮）→ 蚀纹/驭纹 update 脉动（顺序反了=滞后一帧，seek 失配）
+  actors.beast.setMarkGlow(states.beast?.markGlow??.12);
+  actors.beast.update(t);
+  scarG.visible=t>=T.C1; // 抓痕=接触帧起的永久物证
+  // 盘脱手→滚落静置→拾回（臂盘与地盘同物两态）
+  const discDown=t>T.DISC_DROP&&t<244.5;
+  actors.xiaozao.bracerDiscL.visible=!discDown;
+  droppedDisc.visible=discDown;
+  if(discDown){const r=ease(clamp((t-T.DISC_DROP)/.6)); // 滚到墙根停住
+    droppedDisc.position.set(mix(-2.9,-2.55,r),.05,mix(3.0,3.35,r));
+    droppedDisc.rotation.z=(1-r)*2.2;}
+  if(actors.beast.mesh.visible) // F03 推近机位的活锚点
+    states.beastMarkPos=actors.beast.napeMark.getWorldPosition(new THREE.Vector3()).toArray();
 
   let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??44}
-    :camFor(opts.shot??'establish',t,states);
+    :camFor(opts.shot??'night_wide',t,states);
   camera.position.set(...c.pos);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
 
   // 表情/眨眼/战壳活效/视线/口型（全纯 (t,state)）
-  for(const name of ['aoao','xiaozao','dafu','azu']){
+  const FIGHT_PHASES=['fight1','fight2','fight3','valley','turn','rain','finisher','beast_down'];
+  for(const name of ['aoao','xiaozao','dafu']){
     const actor=actors[name],s=states[name];
     if(!actor.mesh.visible)continue;
     actor.setEmotion(s.emotion??'neutral',s.blink??autoBlink(t+BLINK_OFF[name]));
     actor.updateCladFX(t,s.cladT);
     if(actor.face.lookAtWorld){
-      // 战斗段互盯对手；眼部特写盯镜头（交流感）；其余看镜头
-      if(['test1','test2','test3','combo_cmd','combo_toss','combo_air','combo_barrage'].includes(phase)){
-        if(name==='azu'){
-          const targetPhase={test1:SHIELD_PT,test2:XIAO_PAULR_PT,test3:DAFU_BACK_PT,combo_air:COMBO_PT}[phase];
-          actor.face.lookAtWorld(new THREE.Vector3(...(targetPhase??[states.aoao.rootX,1.3,states.aoao.rootZ])));
-        }else actor.face.lookAtWorld(new THREE.Vector3(states.azu.rootX,1.5,states.azu.rootZ));
-      }else actor.face.lookAtWorld(camera.position);
+      if(FIGHT_PHASES.includes(phase)) // 战斗段互盯兽；谷底/蓄力特写盯镜头（交流感）
+        actor.face.lookAtWorld(opts.shot==='scar_closeup'||opts.shot==='rain_burst'?camera.position
+          :new THREE.Vector3(states.beast?.rootX??0,.9,states.beast?.rootZ??5));
+      else if(phase==='mono_a'||phase==='mono_eye'||phase==='mono_c')
+        actor.face.lookAtWorld(phase==='mono_eye'?camera.position:new THREE.Vector3(0,1.6,-6)); // 独白看火，E1 看镜头
+      else actor.face.lookAtWorld(camera.position);
     }
   }
   const active=lineAt(t);
-  for(const name of ['aoao','xiaozao','dafu','azu'])
+  for(const name of ['aoao','xiaozao','dafu'])
     actors[name].mouth.apply({jaw:active?.speaker===name?jawAt(active.id,t):0,width:1});
-  if(actors.hestia.mesh.visible){
-    actors.hestia.setEmotion('neutral',states.hestia.blink??autoBlink(t+2.3));
-    actors.hestia.face.lookAtWorld?.(camera.position);
-    actors.hestia.mouth.apply({jaw:active?.speaker==='hestia'?jawAt(active.id,t)*.85:0,width:1});
-  }
 
-  // ── 道具驱动 ──
-  scroll.visible=t>T.SCROLL&&t<37.5;
-  if(scroll.visible){
-    const u=ease(clamp((t-T.SCROLL)/1.0));
-    scroll.position.set(lerp3([0,3.9,-5],[0,1.9,.8],u)[0],lerp3([0,3.9,-5],[0,1.9,.8],u)[1]+.05*Math.sin(t*1.4)*u,lerp3([0,3.9,-5],[0,1.9,.8],u)[2]);
-    scroll.rotation.x=-.1+.05*Math.sin(t*.9);scroll.scale.setScalar(.3+.7*u);
-  }
-  report.visible=phase==='f02_report';
-  if(report.visible){ // 公文悬在阿箸左刃前（随她俯首）
-    report.position.set(states.azu.rootX+.25,1.18,states.azu.rootZ+.42);
-    report.rotation.set(-.15,.3,0);
-  }
-
-  // ── 特效事件（锚点=performance 常量/活锚点；全挂角斗场）──
+  // ── 特效事件（锚点=活体 getWorldPosition/谱面常量）──
   if(Math.abs(t-T.C1)<.5){const d=actors.aoao.shieldDome.getWorldPosition(new THREE.Vector3());
-    ringAt(impactRing,d.x,d.y,d.z,t,T.C1,'#ff8a96',1.0,.4);flareAt(t,T.C1,d.x,d.y,d.z,'#ffd0d4');}
-  else if(Math.abs(t-T.C2)<.5){const p=actors.xiaozao.fitRefs.pauldrons.find(x=>x.side==='right').ref.getWorldPosition(new THREE.Vector3());
-    ringAt(impactRing,p.x,p.y,p.z,t,T.C2,'#ff8a96',.8,.4);flareAt(t,T.C2,p.x,p.y,p.z,'#ffd0d4');}
-  else if(Math.abs(t-T.C3)<.5){const p=actors.dafu.caps.left.getWorldPosition(new THREE.Vector3()); // 活锚点：大釜左肩背
-    ringAt(impactRing,p.x,p.y,p.z,t,T.C3,'#ff8a96',.8,.4);flareAt(t,T.C3,p.x,p.y,p.z,'#ffd0d4');}
-  else if(Math.abs(t-T.C4)<.5){const d=actors.aoao.shieldDome.getWorldPosition(new THREE.Vector3()); // 活锚点：空中盾面
-    ringAt(impactRing,d.x,d.y,d.z,t,T.C4,'#ffd98a',1.2,.45);flareAt(t,T.C4,d.x,d.y,d.z,'#fff2cc');}
-  else if(Math.abs(t-T.C5)<.6){const d=actors.aoao.shieldDome.getWorldPosition(new THREE.Vector3());
-    ringAt(impactRing,d.x,d.y,d.z,t,T.C5,'#8fd8ff',1.2,.5);flareAt(t,T.C5,d.x,d.y,d.z,'#d4ecff');}
+    ringAt(impactRing,d.x,d.y,d.z,t,T.C1,'#8fd8ff',1.2,.45);flareAt(t,T.C1,d.x,d.y,d.z,'#d4ecff');}
+  else if(Math.abs(t-T.C2)<.5){const p=actors.dafu.caps.left.getWorldPosition(new THREE.Vector3());
+    ringAt(impactRing,p.x,p.y,p.z,t,T.C2,'#ffb35e',1.0,.4);flareAt(t,T.C2,p.x,p.y,p.z,'#ffe8c8');}
+  else if(Math.abs(t-T.DISC_DROP)<.5){ringAt(dustRing,states.xiaozao.rootX,.03,states.xiaozao.rootZ,t,T.DISC_DROP,'#c9b89a',.9,.5);}
   else{impactRing.visible=false;flare.visible=false;for(const s of sparks)s.visible=false;}
-  // 必杀技 VFX：锅鸣一击（c4 空中盾击）/ 双箸乱穿（barrage）/ 星屑网（c5 侧翼收束）
-  shockFX.update(t,T.C4-.15,actors.aoao.shieldDome.getWorldPosition(new THREE.Vector3())); // 冲击波原点=活盾面
-  {const tip=actors.azu.rigs.right.rig.localToWorld(new THREE.Vector3(0,0,.51));
-   const fwd=new THREE.Vector3(states.aoao.rootX-states.azu.rootX,0,states.aoao.rootZ-states.azu.rootZ).normalize();
-   barrageFX.update(t,T.BARRAGE,tip,fwd);}
-  netFX.update(t,T.C5-1.7,actors.xiaozao.bracerDiscL.getWorldPosition(wv2));
-  if(Math.abs(t-T.C1+.9)<.6)ringAt(dustRing,states.aoao.rootX,.03,states.aoao.rootZ,t,T.C1+.9,'#c9b89a',1.2,.5); // 阿鏊被点倒扬尘
-  else dustRing.visible=false;
+  if(Math.abs(t-T.BOLT)<.6)ringAt(dustRing,states.beast?.rootX??0,.05,states.beast?.rootZ??4.6,t,T.BOLT,'#8a7a66',1.6,.5);
+  else if(Math.abs(t-T.DISC_DROP)>=.5)dustRing.visible=false; // 不在窗口即隐（含倒序回放路径）
+  // 必杀技：银星雨（盘锚点扇形弹雨，c3 压点）/ 釜底落（c4 砸落爆发）——
+  // 每帧都 update（OP 纪律）：FX builder 自管窗口外隐藏；只在窗口内调用=初始态停在原点裸奔
+  {const disc=actors.xiaozao.bracerDiscL.getWorldPosition(wv2);
+   rainFX.update(t,T.CALL1+.4,disc);}
+  slamFX.update(t,T.C4,new THREE.Vector3(BEAST_PIN_PT[0],0,BEAST_PIN_PT[2]));
+  // 异动段尘线（旷野里走直线的尘）
+  if(phase==='stir'||phase==='reveal'){
+    const u=clamp((t-104)/14);
+    dustTrail.visible=true;dustTrail.position.set(3.5,.55,16-9*u);
+    dustTrail.scale.set(.8+2.2*u,.5+.3*u,1);dustTrail.material.opacity=.2+.25*u;
+  }else dustTrail.visible=false;
 
-  // ── 探针 state（contact/gait/reach/clad_fit/女神坐姿 契约用）──
+  // ── 探针 state（contact/gait/reach/clad_fit + 兽锚点 契约用）──
   const hands={},arms={},limbBody={},torsoAxis={},wv=new THREE.Vector3();
-  const ARM_LEN={aoao:.39,xiaozao:.36,dafu:.45,azu:.43},AXIS={aoao:1.47,xiaozao:1.37,dafu:1.65,azu:1.60};
-  const HIP={aoao:.87,xiaozao:.81,dafu:.96,azu:.95};
-  for(const name of ['aoao','xiaozao','dafu','azu']){
+  const ARM_LEN={aoao:.39,xiaozao:.36,dafu:.45},AXIS={aoao:1.47,xiaozao:1.37,dafu:1.65};
+  const HIP={aoao:.87,xiaozao:.81,dafu:.96};
+  for(const name of ['aoao','xiaozao','dafu']){
     hands[name]={};arms[name]={};
     torsoAxis[name]=[[0,HIP[name],0],[0,AXIS[name],0]];
     for(const side of ['left','right']){
@@ -372,70 +285,65 @@ function draw(t,capture=true){
     }
   }
   const locomotion={};
-  for(const name of ['aoao','xiaozao','dafu','azu'])
+  for(const name of ['aoao','xiaozao','dafu','beast'])
     if(poses[name]?.locomotion)locomotion[name]=poses[name].locomotion;
-  const hestiaKeys={};
-  if(actors.hestia.mesh.visible){
-    hestiaKeys.hestiaOn=1;
-    hestiaKeys.hestiaHip=[HESTIA_SEAT.x,HESTIA_SEAT.y+(states.hestia.bob??0),HESTIA_SEAT.z];
-    hestiaKeys.potSeat=[HESTIA_SEAT.x,HESTIA_SEAT.y,HESTIA_SEAT.z+.04];
-    hestiaKeys.hestiaFootY=Math.min(
-      actors.hestia.feet.left.getWorldPosition(new THREE.Vector3()).y,
-      actors.hestia.feet.right.getWorldPosition(new THREE.Vector3()).y);
-    hestiaKeys.staffGrip=actors.hestia.staff.getWorldPosition(new THREE.Vector3()).toArray();
-    hands.hestia={left:actors.hestia.hands.left.getWorldPosition(new THREE.Vector3()).toArray(),
-      right:actors.hestia.hands.right.getWorldPosition(new THREE.Vector3()).toArray()};
+  const beast=states.beast??{};
+  const beastKeys={};
+  if(actors.beast.mesh.visible){
+    beastKeys.beastOn=1;
+    beastKeys.beastClawL=actors.beast.claws.left.getWorldPosition(new THREE.Vector3()).toArray();
+    beastKeys.beastClawR=actors.beast.claws.right.getWorldPosition(new THREE.Vector3()).toArray();
+    beastKeys.beastShoulderL=actors.beast.shoulderL.getWorldPosition(new THREE.Vector3()).toArray();
+    beastKeys.beastBack=actors.beast.spineBack.getWorldPosition(new THREE.Vector3()).toArray();
+    beastKeys.beastNape=actors.beast.napeMark.getWorldPosition(new THREE.Vector3()).toArray();
+    beastKeys.beastRoot=[beast.rootX,0,beast.rootZ];
+    beastKeys.markGlow=beast.markGlow??.12;
   }
   const metrics={};
-  for(const name of ['aoao','xiaozao','dafu','azu']){
+  for(const name of ['aoao','xiaozao','dafu']){
     const f=actors[name].lastFit;
     if(f)for(const [k,v] of Object.entries(f))metrics[`${name}.${k}`]=v;
   }
-  const azuTipL=actors.azu.rigs.left.rig.localToWorld(new THREE.Vector3(0,0,.51)).toArray();
-  const azuTipR=actors.azu.rigs.right.rig.localToWorld(new THREE.Vector3(0,0,.51)).toArray();
   const state={entry:entries.indexOf(entry)+1,phase,shot:opts.shot,scene:opts.scene,
-    clad:{aoao:states.aoao.cladT,xiaozao:states.xiaozao.cladT,dafu:states.dafu.cladT,azu:states.azu.cladT},
+    clad:{aoao:states.aoao.cladT,xiaozao:states.xiaozao.cladT,dafu:states.dafu.cladT},
     aoaoRoot:[states.aoao.rootX,states.aoao.rootZ],
     xiaozaoRoot:[states.xiaozao.rootX,states.xiaozao.rootZ],
     dafuRoot:[states.dafu.rootX,states.dafu.rootZ],
-    azuRoot:[states.azu.rootX,states.azu.rootZ],
     limbBody,
     contact:{hands,arms,torsoAxis,
-      aR:hands.aoao.right,azuL:azuTipL,azuR:azuTipR,
+      aR:hands.aoao.right,
+      dafuL:hands.dafu.left,dafuR:hands.dafu.right,
       shieldA:actors.aoao.shieldDome.getWorldPosition(wv).toArray(),
-      xiaoPaulR:actors.xiaozao.fitRefs.pauldrons.find(x=>x.side==='right').ref.getWorldPosition(new THREE.Vector3()).toArray(),
-      dafuCapL:actors.dafu.caps.left.getWorldPosition(new THREE.Vector3()).toArray(),
-      metrics,...hestiaKeys},
+      dafuChest:actors.dafu.caps.left.getWorldPosition(new THREE.Vector3()).toArray(),
+      xiaoDisc:actors.xiaozao.bracerDiscL.getWorldPosition(new THREE.Vector3()).toArray(),
+      metrics,...beastKeys},
     ...(Object.keys(locomotion).length?{locomotion}:{})};
-  if(actors.hestia.mesh.visible)state.hestiaRoot=[HESTIA_SEAT.x,HESTIA_SEAT.z];
+  if(actors.beast.mesh.visible)state.beastRoot=[beast.rootX,beast.rootZ];
   if(!capture)return state;
-  // 双渲染沉淀：大姿态跳变（场景切换/不可见→入场）后首渲染有 GPU 缓冲滞后（实测 ~150px 边缘
-  // 条带，第二遍逐位稳定）——顺序渲染与 seek 直渲都取沉淀后的第二遍，保证逐位一致。
+  // 双渲染沉淀（R13 教训：大姿态跳变后首渲染 GPU 滞后，两遍取沉淀帧）
   renderer.render(scene.scene,camera);
   renderer.render(scene.scene,camera);
   ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);
   // ── 画布叠加层 ──
-  if(phase==='coldopen')drawTitle(t);
-  drawSFX('叮——！','#ff8a96',T.C1,T.C1+.38,t);
-  drawSFX('叮！','#ff8a96',T.C2,T.C2+.34,t);
-  drawSFX('叮！','#ff8a96',T.C3,T.C3+.34,t);
-  drawSFX('铛——！','#ffd98a',T.C4,T.C4+.45,t);
-  drawSFX('接住了！','#8fd8ff',T.C5,T.C5+.55,t);
-  flash(t,T.C1,.09,.45);flash(t,T.C2,.08,.4);flash(t,T.C3,.08,.4);
-  flash(t,T.C4,.1,.5);flash(t,T.C5,.1,.45);
+  if(phase==='wind_colonnade')drawTitle(t);
+  drawSFX('铛——！','#8fd8ff',T.C1,T.C1+.42,t);
+  drawSFX('砰！','#ffb35e',T.C2,T.C2+.38,t);
+  drawSFX('轰——！','#ffb35e',T.C4,T.C4+.5,t);
+  flash(t,T.C1,.09,.4);flash(t,T.C2,.08,.4);flash(t,T.C4,.1,.5);
+  drawMoveCard(ctx,W,H,{name:MOVES.meteor_rain.name,color:MOVES.meteor_rain.color,t,t0:T.CALL1,dur:.95});
+  drawMoveCard(ctx,W,H,{name:MOVES.crater_slam.name,color:MOVES.crater_slam.color,t,t0:T.CALL2,dur:.95});
   drawSubtitle(t);
-  // 技名卡（谷底后的回答：挣到的招才有卡）
-  drawMoveCard(ctx,W,H,{name:'震堂·锅鸣一击',color:'#ffd98a',t,t0:95.6,dur:.95});
-  drawMoveCard(ctx,W,H,{name:'流星·双箸乱穿',color:'#ff4a58',t,t0:97.55,dur:.9});
+  drawHook(t);
   fadeBlack(t);
   return {image:canvas.toDataURL('image/jpeg',.93).split(',')[1],state};
 }
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);
 window.setFreeCamera=c=>window.freeCamera=c;
 window.setSolo=n=>window.soloName=n;
-// check 抽帧表：条目始/中/末 + 全部事件帧 + 眼部特写
+window.__dbg={actors,SCENES,camera,renderer}; // 诊断句柄（渲染无副作用）
+// check 抽帧表：条目始/中/末 + 全部事件帧 + E1-E4 + 驭纹
 window.checkTimes=[...entries.flatMap(e=>[e.startTime+.15,(e.startTime+e.endTime)/2,e.endTime-.10]),
-  T.SCROLL+.3,T.AZU_IN+1,T.CHARGE1+.5,T.C1,T.C2,T.C3,T.FIRE_CUT+1,T.EYE1+1,T.EYE1+2.6,
-  T.CROUCH+.2,T.TOSS+.2,T.C4,T.CALL2+.2,T.C5,T.SHEATHE+.5,T.EYE2+.5,T.HESTIA+.5,T.F02+1,T.EYE3+.5]
+  T.EYE1,T.STIR+6,T.REVEAL+2,T.RALLY+1,T.C1,T.C2,T.DISC_DROP,T.SCAR,T.EYE2,T.STALL+2,
+  T.EYE3,T.CALL1,T.C3,T.FIN_CHARGE,T.CALL2,T.C4,T.MARK+1,T.BOLT,T.HESTIA+1,T.EYE4]
   .filter(t=>t>0&&t<TL.duration).sort((a,b)=>a-b);
 await document.fonts.ready;window.ready=true;

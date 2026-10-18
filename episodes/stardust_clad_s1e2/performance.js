@@ -1,501 +1,394 @@
-// 《星屑战壳》S1E1 R13「圣火与战壳」表演谱（115s 剧情级重写；故事载体=storyboard.md）：
-// 冷开圣火弱（F01）→ 柱廊巡逻 → 防务评估通告（真赌注）→ 上角斗场 → 考核三连（冲动被反制/
-// 犹豫错失/蛮力落空，各付真实代价）→ 谷底空镜+阿鏊眼部特写 → 合体战术（颠勺升华为战术）
-// → 逼出真招并接住 → 收刃留白 → 画外音收主题 + F02 报告独处（观众见角色不知）。
-// (t,state) 纯函数；条目边界 0.3s 插值（walk/turn 拍跳过——R13 保留纪律）；骨架沿用 R7/R13 前。
+// 《星屑战壳》S1E2《夜守》表演谱（320s 正片节奏长剧；故事载体=storyboard.md）：
+// 夜铺零对白（风/帷幔/火盆/圣火）→ 阿鏊值夜独白+表情特写 → 蚀星兽夜袭（不避火=反常）
+// → 轮番劣势（各人缺陷各付代价）→ 谷底盾痕最静拍 → 阿鏊拖兽挣窗口 → 小凿首秀
+// 「千孔·银星雨」（蓄力特写+技名卡+爆发）→ 大釜「陨星·釜底落」终结 → F03 驭纹镜头
+// （入画不解释）→ 余韵画外音+落点特写 → hook 字卡。F01/F02 冷静期：全程不提。
+// (t,state) 纯函数；条目边界 0.3s 插值（walk/turn 拍跳过）；骨架沿用 S1E1 R13 验收版。
+// R13 教训内建：后写条件块不得踩走拍 rootX（守卫 w>0&&w<1）；分支端点根位连续；
+// ease 峰值≈均值×1.5，走位窗口按 peak<speed_max 校。
 import * as THREE from 'three';
 import {twoBone} from 'dula-assets/lib/craft3d/pose.js';
 import {createLocomotion,angleDelta} from 'dula-assets/lib/craft3d/locomotion.js';
 const WALK_GAIT=createLocomotion({hipDelta:.040,lift:.068});
 const RUN_GAIT=createLocomotion({hipDelta:.050,lift:.105,sway:.022,armSwingGain:.30,armSwingMax:.16,heelStrike:.30,toeOff:.30});
-export const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x);};
-const mix=(a,b,u)=>a+(b-a)*u,V=(x,y,z=0)=>({x,y,z}),blend=(a,b,u)=>V(mix(a.x,b.x,u),mix(a.y,b.y,u),mix(a.z,b.z,u));
+export const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x)};
+export const mix=(a,b,u)=>a+(b-a)*u;const V=(x,y,z=0)=>({x,y,z}),blend=(a,b,u)=>V(mix(a.x,b.x,u),mix(a.y,b.y,u),mix(a.z,b.z,u));
 
 // ── 时刻表（viewer 特效/混音摆点共用）──
 export const T={
-  SCROLL:19.8,            // 防务令公文到
-  AZU_IN:25.0,            // 阿箸入场
-  DECLARE:30.0,           // 宣告段起
-  TEST1:44.0,             // 考核战起
-  CHARGE1:46.2,           // 阿鏊冲锋（无脑冲）
-  C1:51.5,                // 刃点盾（冲被反制）
-  C2:63.5,                // 刃点小凿肩甲（犹豫的句点）
-  SWING3:72.8,            // 大釜全力挥空
-  C3:74.0,                // 刃点大釜背（蛮力的句点）
-  FIRE_CUT:78.0,          // 谷底空镜（圣火将熄特写，全片最静）
-  EYE1:81.5,              // 阿鏊眼部特写（动摇→咬住）
-  COMBO_CMD:88.5,         // 战术指令
-  CROUCH:91.9,            // 大釜下蹲
-  TOSS:92.5,              // 抛出阿鏊（连人带盾）
-  CALL1:95.8,             // 阿鏊喊「震堂·锅鸣一击」
-  C4:96.5,                // 刃架盾（空中突进被架开）
-  CALL2:97.7,             // 阿箸喊「流星·双箸乱穿」
-  BARRAGE:97.5,           // 乱穿弹幕
-  C5:99.5,                // 接住一线（盾阵+网+压制）
-  SHEATHE:100.0,          // 收刃
-  EYE2:101.2,             // 阿箸眼部特写（认可）
-  HESTIA:111.7,           // 画外音
-  F02:113.0,              // 报告独处镜头
-  EYE3:118.0,             // 结尾看火
-  FADE:119.0,             // 淡黑起
+  MONO:45.0,              // 独白段起
+  EYE1:78.0,              // 阿鏊眼部特写（动摇：配得上吗）
+  STIR:100.0,             // 异动（风不对）
+  REVEAL:118.0,           // 兽踏出黑暗
+  RALLY:124.0,            // 敲盾为号
+  FIGHT1:140.0,           // 战斗起
+  POUNCE:149.5,           // 兽扑击起跳
+  C1:152.0,               // 兽爪×盾（挡得住一下）
+  C2:178.0,               // 兽肩撞×大釜胸甲（蛮力的代价）
+  DISC_DROP:206.0,        // 小凿盘脱手
+  VALLEY:208.0,           // 谷底段起
+  SCAR:213.0,             // 盾面抓痕特写（全片最静拍）
+  EYE2:216.0,             // 阿鏊眼部特写（咬住：快不过我站在这儿）
+  STALL:232.0,            // 阿鏊拖兽（我来拖）
+  DISC_BACK:242.0,        // 小凿拾盘
+  FLANK:248.0,            // 大釜左翼三步
+  EYE3:246.0,             // 小凿蓄力眼部特写（孔洞逐一亮起）
+  CALL1:252.0,            // 小凿喊「千孔·银星雨」
+  C3:256.0,               // 银星雨压点（弹着环×兽域）
+  FIN_CHARGE:270.0,       // 大釜蓄力特写
+  CALL2:274.0,            // 大釜喊「陨星·釜底落」
+  C4:276.0,               // 陨落砸兽背（终结接触帧）
+  DOWN:284.0,             // 兽瘫倒
+  MARK:290.0,             // 驭纹推近（F03，入画不解释）
+  BOLT:295.5,             // 兽醒逃入夜
+  LETGO:302.0,            // 「守住了。让它走。」
+  HESTIA:306.0,           // 画外音
+  EYE4:311.0,             // 阿鏊落点特写（不再擦盾）
+  HOOK:312.0,             // 字卡
+  FADE:318.5,             // 淡黑起
 };
 // 接触锚点（世界坐标常量，trace 实测回修）
-export const SHIELD_PT=[0.30,1.30,2.42];    // c1/c4/c5 盾区（角斗场阿鏊戒备位）
-export const XIAO_PAULR_PT=[-1.55,1.35,2.62];// c2 小凿右肩甲
-export const DAFU_BACK_PT=[1.55,1.35,1.85]; // c3 大釜背（挥空踉跄位）
-export const COMBO_PT=[0.55,1.42,2.35];     // c4 刃架盾空中接触 / c5 乱穿接住区
+export const BEAST_PIN_PT=[-.9,0,4.6];   // c3 银星雨压点（兽域地面）
 
 const DIMS={
   aoao:{hipIdle:.87,standStraight:.013,shoulderY:1.42,shoulderHalf:.14,hipHalf:.078,legA:.42,legB:.42,armA:.20,armB:.19,footY:.085},
   xiaozao:{hipIdle:.81,standStraight:.012,shoulderY:1.32,shoulderHalf:.125,hipHalf:.072,legA:.385,legB:.385,armA:.185,armB:.175,footY:.080},
   dafu:{hipIdle:.96,standStraight:.008,shoulderY:1.58,shoulderHalf:.19,hipHalf:.105,legA:.46,legB:.46,armA:.23,armB:.22,footY:.100},
-  azu:{hipIdle:.95,standStraight:.010,shoulderY:1.56,shoulderHalf:.13,hipHalf:.070,legA:.48,legB:.48,armA:.22,armB:.21,footY:.090},
 };
-const SPOTS={aoao:[-1.6,1.8],xiaozao:[-3.2,2.2],dafu:[.8,2.0]}; // 圣殿群像位
-const ARENA={aoao:[-2.2,1.8],xiaozao:[-2.8,2.4],dafu:[2.8,1.7],azu:[1.6,2.4]}; // 角斗场落位
 const IDLE={
   aoao:{left:V(-.20,1.10,.04),right:V(.20,1.10,.04)},
   xiaozao:{left:V(-.17,1.02,.03),right:V(.17,1.02,.03)},
   dafu:{left:V(-.28,1.16,.05),right:V(.28,1.16,.05)},
-  azu:{left:V(-.16,1.20,.04),right:V(.16,1.20,.04)},
 };
-const AZU_CROSS={left:V(-.10,1.26,.16),right:V(.12,1.24,.14)};
-export const HESTIA_SEAT={x:0,y:4.375,z:-5.06};
+// 圣殿广场防线（背对圣火面向旷野 +z）
+const LINE={aoao:[-.8,2.6],xiaozao:[-2.0,2.4],dafu:[.6,2.6]};
 
 function base(name){
-  const spot=SPOTS[name]??ARENA.azu;
+  const spot=LINE[name];
   return {visible:true,rootX:spot[0],rootZ:spot[1],yaw:0,bob:0,lean:0,air:0,tuck:0,
     left:{...IDLE[name].left},right:{...IDLE[name].right},
     headYaw:0,headPitch:0,headRoll:0,fist:.12,open:0,point:0,walk:null,turn:null,
-    cladT:1,emotion:name==='xiaozao'||name==='azu'?'neutral':'determined',blink:null,capeLift:0};
+    cladT:1,emotion:name==='xiaozao'?'neutral':'determined',blink:null,capeLift:0};
 }
 
-// ── 巡逻（柱廊晨景；位移=值夜巡逻路线，有动机）──
-function patrolSpec(name,s,t){
-  if(name==='azu'){s.visible=false;return;}
-  const FILE={aoao:0,xiaozao:1,dafu:2}[name]; // 纵队：阿鏊领队
-  const zLane=[2.6,3.0,3.4][FILE];
-  if(t<12.5){ // 东巡（-4.2→+4.0）
-    const a=clamp((t-5.5)/7.0),x0=-4.2-FILE*1.1,x1=4.0-FILE*1.1;
-    s.walk={from:[x0,zLane],to:[x1,zLane],a};
-    s.rootX=mix(x0,x1,ease(a));s.rootZ=zLane;s.yaw=Math.PI/2;
-  }else if(t<13.5){ // 东廊尽头换脚转身（向西回巡）
-    const a=clamp((t-12.5)/1.0);
-    s.rootX=4.0-FILE*1.1;s.rootZ=zLane;
-    s.turn={fromYaw:Math.PI/2,toYaw:-Math.PI/2,a};s.yaw=Math.PI/2+angleDelta(Math.PI/2,-Math.PI/2)*ease(a);
-  }else{ // 回巡
-    const a=clamp((t-13.5)/5.5),x0=4.0-FILE*1.1,x1=-2.6-FILE*1.1;
-    s.walk={from:[x0,zLane],to:[x1,zLane],a};
-    s.rootX=mix(x0,x1,ease(a));s.rootZ=zLane;s.yaw=-Math.PI/2;
-  }
-  s.fist=.15;s.emotion=name==='xiaozao'?'neutral':'determined';
+// ── 独白（值夜：擦盾的人，心事在手上；手位全程在臂程内）──
+function monoSpec(name,s,t){
+  if(name!=='aoao'){s.visible=false;return;}
+  // 坐在祭坛台阶上，面向圣火（-z），盾搁膝上
+  s.rootX=1.3;s.rootZ=-2.2;s.yaw=Math.PI;
+  s.sit={drop:.34,feet:.26};
+  const polish=Math.sin(t*2.4); // 擦盾往复
+  s.left=V(-.15,1.14,.12);                                   // 左手扶盾沿（臂程内）
+  s.right=V(.15+.025*polish,1.12+.015*Math.abs(polish),.14); // 右手掌心打圈擦
+  s.emotion='neutral';s.headPitch=.10;
+  if(t>60&&t<70){s.headPitch=.16;const r=ease(clamp((t-60)/1.2)); // l02「直得只剩直了」自嘲低头
+    s.emotion=r<1?'neutral':'sad';}
+  if(t>75.5&&t<82){const r=ease(clamp((t-76)/.8)); // E1 抬眼（配得上吗→自己给）
+    s.headPitch=mix(.10,-.06,r);s.emotion='determined';
+    s.left=V(-.17,1.12,.14);s.right=V(.17,1.12,.14);} // 擦盾的手停了
+  if(t>90){s.headPitch=.12;s.emotion='neutral';} // l04 再擦一遍
 }
-// ── 通告+阿箸到来（真赌注）──
-function noticeSpec(name,s,t){
-  if(name==='azu'){s.visible=false;return;}
-  const from={aoao:[-2.6,2.6],xiaozao:[-3.7,3.0],dafu:[-4.8,3.4]}[name]; // 接续巡逻回巡终点（-2.6-FILE*1.1, zLane），不跳位
-  const a=clamp((t-19.0)/2.4);
-  if(a<1){
-    s.walk={from,to:SPOTS[name],a};
-    s.rootX=mix(from[0],SPOTS[name][0],ease(a));s.rootZ=mix(from[1],SPOTS[name][1],ease(a));
-    s.yaw=Math.atan2(SPOTS[name][0]-from[0],SPOTS[name][1]-from[1]);
-  }else{
-    s.yaw=0;
-    if(t>T.SCROLL){s.headPitch=mix(s.headPitch,-.16,ease(clamp((t-T.SCROLL)/.5)));} // 抬头读公文
-    if(name==='aoao'&&t>30.4){s.emotion='angry';s.left=V(-.26,1.22,.14);s.fist=.7;} // 冲动顶撞
-    if(name==='dafu'&&t>24.0){s.emotion='worry';s.bob=.012*Math.sin(t*7);}
-    if(name==='xiaozao'){s.left=V(-.06,1.06,.12);s.right=V(.04,1.05,.10);s.fist=.3;} // 读她的步幅
+// ── 异动/集结 ──
+function stirSpec(name,s,t){
+  if(name!=='aoao'){s.visible=false;return;}
+  if(t<102){ // 收盾起身
+    const up=ease(clamp((t-100)/1.2));
+    s.rootX=1.3;s.rootZ=-2.2;s.yaw=Math.PI;s.sit=up<1?{drop:.34*(1-up),feet:.26*(1-up)}:null;
+    s.left=V(-.17,1.12,.10);s.right=V(.17,1.12,.10);s.emotion='neutral';return;
   }
+  const w=clamp((t-102.5)/2.5); // 快步到广场缘，背火向旷野
+  if(w>0&&w<1)s.walk={from:[1.3,-2.2],to:[0,1.6],a:w,facingYaw:0};
+  s.rootX=mix(1.3,0,ease(w));s.rootZ=mix(-2.2,1.6,ease(w));
+  s.yaw=Math.PI+angleDelta(Math.PI,0,ease(clamp((t-103)/.8))); // 转身向外
+  s.left=V(-.15,1.20,.14);s.right=V(.18,1.14,.06);s.emotion='surprised'; // 盾半抬戒备
+  if(t>112)s.emotion='determined';
 }
-function azuEnterSpec(s,phase,t){
-  if(phase==='azu_walk'){ // 审查官入场（步伐有分量：步幅没有一步多余）
-    const a=clamp((t-25.2)/4.2);
-    if(a<1){
-      s.walk={from:[5.2,3.2],to:[1.5,3.0],a,facingYaw:-Math.PI/2};
-      s.rootX=mix(5.2,1.5,ease(a));s.rootZ=mix(3.2,3.0,ease(a));s.yaw=-Math.PI/2;s.capeLift=.2;
-    }else{s.rootX=1.5;s.rootZ=3.0;s.yaw=-Math.PI/2;}
-    s.emotion='neutral';return;
+function rallySpec(name,s,t){
+  if(name==='aoao'){ // 敲盾为号后固守中线
+    s.rootX=0;s.rootZ=1.6;s.yaw=0;
+    const bang=ease(clamp((t-T.RALLY)/.3)); // 盾沿磕地一声（臂程底线：蓄到肩侧再砸）
+    s.right=blend(V(.18,1.14,.06),V(.26,1.34,.30),bang); // 举盾过头侧
+    if(t>T.RALLY+.5)s.right=blend(V(.26,1.34,.30),V(.18,1.14,.06),ease(clamp((t-T.RALLY-.5)/.5)));
+    s.left=V(-.15,1.20,.14);s.emotion='determined';
+    if(t>128){const w=clamp((t-128)/1.6);if(w>0&&w<1)s.walk={from:[0,1.6],to:LINE.aoao,a:w};
+      s.rootX=mix(0,LINE.aoao[0],ease(w));s.rootZ=mix(1.6,LINE.aoao[1],ease(w));}
+    return;
   }
-  // azu_declare：站定宣告；末句亮刃尖（威慑不是出手）
-  s.rootX=1.5;s.rootZ=3.0;s.yaw=-Math.PI/2;
-  s.left={...AZU_CROSS.left};s.right={...AZU_CROSS.right};
-  if(t>33.0&&t<34.4){const p=ease(clamp((t-33.0)/.5)); // 「证明给我看」抬刃一寸
-    s.right=blend(AZU_CROSS.right,V(.08,1.32,.20),p);}
-  if(t>36.0)s.headYaw=.06*Math.sin(t*.7);
+  // 小凿/大釜从两侧披甲赶到（诚实步速）
+  const from=name==='xiaozao'?[-4.6,1.4]:[4.6,1.2];
+  const w=clamp((t-(name==='dafu'?129.5:130.5))/3.2);
+  if(w>0&&w<1)s.walk={from,to:LINE[name],a:w,run:true};
+  s.rootX=mix(from[0],LINE[name][0],ease(w));s.rootZ=mix(from[1],LINE[name][1],ease(w));
+  s.yaw=Math.atan2(LINE[name][0]-from[0],LINE[name][1]-from[1]);
+  if(w>=1)s.yaw=0;
+  s.emotion=name==='dafu'?'surprised':'neutral';
+  if(name==='dafu'&&w>=1)s.left=V(-.28,1.16,.06),s.right=V(.28,1.16,.06),s.fist=.8;
+  if(name==='xiaozao'&&w>=1)s.left=V(.05,1.20,.14); // 举盘读场（臂程内）
 }
-// ── 上角斗场（上考场的步伐）──
-function toArenaSpec(name,s,t,phase){
-  if(name==='azu'){s.visible=false;return;} // 她已先到场（角斗场段她已在场内）
-  if(phase==='to_arena'&&t<40.5){ // 圣殿侧走出（向画面右；走到近右缘即可，跳切接力）
-    const a=clamp((t-38.0)/2.2);
-    const from=SPOTS[name],to={aoao:[2.4,2.6],xiaozao:[.6,2.9],dafu:[3.4,2.7]}[name]; // 诚实步速不超阈
-    if(a<1)s.walk={from,to,a}; // 到位后收步（跳切前 0.3s 站定，gait bout 干净闭合）
-    s.rootX=mix(from[0],to[0],ease(a));s.rootZ=mix(from[1],to[1],ease(a));
-    s.yaw=Math.atan2(to[0]-from[0],to[1]-from[1]);
-  }else{ // 角斗场侧走入落位（从左入场）
-    const a=clamp((t-40.5)/3.0);
-    const from=[-5.0,2.4],to=ARENA[name];
-    if(a<1)s.walk={from,to,a};
-    s.rootX=mix(from[0],to[0],ease(a));s.rootZ=mix(from[1],to[1],ease(a));
-    s.yaw=Math.atan2(to[0]-from[0],to[1]-from[1])*ease(clamp(a*2)) ; // 落位转向场心
-    if(a>=1)s.yaw=name==='azu'?-Math.PI/2:Math.atan2(ARENA.azu[0]-to[0],ARENA.azu[1]-to[1]);
-  }
-}
-// ── 考核战（认真的战斗：接近/试探/代价）──
-function testSpec(name,s,phase,t){
-  const A=ARENA;
-  if(name==='azu'){ // 审查官：招招有杀气但收着力（她在评估）
-    if(phase==='test1'){ // 侧闪让过冲锋 → 近身刃点盾（c1）
-      if(t<47.2){s.rootX=A.azu[0];s.rootZ=A.azu[1];s.yaw=-Math.PI/2;}
-      else if(t<47.9){const a=clamp((t-47.2)/.7);
-        s.walk={from:[A.azu[0],A.azu[1]],to:[1.2,2.9],a,facingYaw:-Math.PI/2};
-        s.rootX=mix(A.azu[0],1.2,ease(a));s.rootZ=mix(A.azu[1],2.9,ease(a));}
-      else{s.rootX=1.2;s.rootZ=2.9;}
-      s.yaw=-Math.PI/2;
-      if(t>50.6){const a=clamp((t-50.6)/.7); // 上步进刃程（诚实步速，进得更深才够到盾面）
-        if(a<1)s.walk={from:[1.2,2.9],to:[.62,2.5],a,facingYaw:-Math.PI/2};
-        s.rootX=mix(1.2,.62,ease(a));s.rootZ=mix(2.9,2.5,ease(a));}
-      const p=ease(clamp((t-(T.C1-.3))/.3));
-      s.right=blend(AZU_CROSS.right,V(.05,1.33,.30),p);s.noSwing=1;
-      if(t>T.C1){const r=ease(clamp((t-T.C1)/.4));s.right=blend(V(.05,1.33,.30),AZU_CROSS.right,r);}
-      return;
-    }
-    if(phase==='test2'){ // 缓步逼近（给小凿的窗口读秒施压）→ 点肩（c2）
-      if(t<63.2){const a=clamp((t-56.2)/6.8); // 极慢逼近=读秒压迫（接续 test1 进刃程落点；进到刃程才有点肩资格）
-        s.walk={from:[.62,2.5],to:[-2.18,2.21],a,facingYaw:-Math.PI/2};
-        s.rootX=mix(.62,-2.18,ease(a));s.rootZ=mix(2.5,2.21,ease(a));}
-      else{s.rootX=-2.18;s.rootZ=2.21;}
-      s.yaw=-Math.PI/2;
-      const p=ease(clamp((t-(T.C2-.25))/.25));
-      s.left=blend(AZU_CROSS.left,V(-.05,1.36,.34),p);s.noSwing=1;
-      if(t>T.C2){const r=ease(clamp((t-T.C2)/.4));s.left=blend(V(-.05,1.36,.34),AZU_CROSS.left,r);}
-      return;
-    }
-    if(phase==='test3'){ // 走回场心接招 → 滑步让挥空 → 绕背点背（c3；步幅没有一步多余）
-      if(t<71.5){const a=clamp((t-66.0)/5.5); // 读完小凿就走回来接大釜的科目（慢=压迫感）
-        if(a<1)s.walk={from:[-2.18,2.21],to:[.5,1.9],a,facingYaw:-Math.PI/2};
-        s.rootX=mix(-2.18,.5,ease(a));s.rootZ=mix(2.21,1.9,ease(a));s.yaw=-Math.PI/2;}
-      else if(t<73.2){ // 滑步让开全力一挥（读懂蓄力才动，不提前）
-        const a=clamp((t-72.7)/.5);
-        if(a>0&&a<1)s.walk={from:[.5,1.9],to:[1.1,1.35],a,facingYaw:-Math.PI/2};
-        if(a>0){s.rootX=mix(.5,1.1,ease(a));s.rootZ=mix(1.9,1.35,ease(a));}
-        else{s.rootX=.5;s.rootZ=1.9;}
-        s.yaw=-Math.PI/2;}
-      else{const a=clamp((t-73.2)/.6); // 绕到他背后（诚实步速，别瞬移）
-        if(a<1)s.walk={from:[1.1,1.35],to:[1.95,1.669],a,facingYaw:-Math.PI/2};
-        s.rootX=mix(1.1,1.95,ease(a));s.rootZ=mix(1.35,1.669,ease(a));s.yaw=-Math.PI/2;}
-      const p=ease(clamp((t-(T.C3-.25))/.25));
-      s.right=blend(AZU_CROSS.right,V(.05,1.44,.38),p);s.noSwing=1;
-      if(t>T.C3){const r=ease(clamp((t-T.C3)/.4));s.right=blend(V(.05,1.44,.38),AZU_CROSS.right,r);}
-      return;
-    }
-    return; // combo/sheathe 由 comboSpec 管
-  }
+// ── 战斗（正片节奏：攻防有因果，人人有台词位）──
+function fightSpec(name,s,phase,t){
   if(name==='aoao'){
-    if(phase==='test1'){ // 无脑冲：蓄力→冲锋→挥空踉跄→戒备→被点倒
-      if(t<46.2){s.rootX=A.aoao[0];s.rootZ=A.aoao[1];s.yaw=Math.atan2(A.azu[0]-A.aoao[0],A.azu[1]-A.aoao[1]);
-        const c=ease(clamp((t-44.6)/.6));s.bob=-.06*c;s.lean=.08*c;s.fist=.9;
-        s.left=V(-.24,1.10,-.02);s.right=V(.24,1.10,-.02);return;}
-      if(t<47.6){const a=clamp((t-46.2)/1.4); // 冲锋（RUN_GAIT 正片展示）
-        if(a<1)s.walk={from:A.aoao,to:[.3,2.1],a,run:true};
-        s.rootX=mix(A.aoao[0],.3,ease(a));s.rootZ=mix(A.aoao[1],2.1,ease(a));s.yaw=Math.PI/2;
-        s.lean=.12;s.capeLift=.5;s.fist=1;s.left=V(-.20,1.10,-.10);s.right=V(.22,1.20,.10);return;}
-      // 挥空冲过位→折返戒备
-      if(t<48.6){const a=clamp((t-47.6)/1.0);
-        s.walk={from:[.3,2.1],to:[-.2,2.2],a,facingYaw:Math.PI/2};
-        s.rootX=mix(.3,-.2,ease(a));s.rootZ=mix(2.1,2.2,ease(a));s.yaw=Math.PI/2;
-        s.lean=.12*(1-a);s.emotion='surprised';return;}
-      s.rootX=-.2;s.rootZ=2.2;s.yaw=Math.PI/2;s.fist=1;
-      s.left=V(-.14,1.30,.26);s.right=V(.22,1.16,.10); // 盾架起
-      if(t>T.C1){ // 被点：后坐→单膝触地→撑住
-        const r=ease(clamp((t-T.C1)/.4)),dn=ease(clamp((t-52.2)/.8));
-        s.bob=-.05*r*(1-dn*.5)-.30*dn;s.rootX=-.2-.12*r;s.emotion=r<1?'surprised':'determined';
-        if(dn>0){s.sit={drop:.30*dn,feet:.24*dn};s.left=V(-.30,.95,.10);s.right=V(.10,.90,.24);
-          s.headPitch=.20*dn;}
-      }
-      if(t>54.6){ // 撑膝起来退到场边（代价可见）
-        const a=clamp((t-54.6)/1.2);
-        if(a<1)s.walk={from:[-.32,2.2],to:[-3.0,2.6],a};
-        s.sit=null;s.rootX=mix(-.32,-3.0,ease(a));s.rootZ=mix(2.2,2.6,ease(a));
-        s.yaw=Math.PI/2;s.headPitch=.12*(1-a);s.emotion='determined';
-        s.left=V(-.20,1.10,.04);s.right=V(.20,1.10,.04);
-      }
+    if(phase==='fight1'){ // 盾迎扑击（c1 挡下）
+      s.rootX=LINE.aoao[0];s.rootZ=LINE.aoao[1];s.yaw=0;s.fist=1;
+      s.left=V(-.14,1.30,.26);s.right=V(.22,1.16,.10);s.emotion='determined'; // 盾架起
+      if(t>T.C1){const r=ease(clamp((t-T.C1)/.35)); // 承扑：后坐半步撑住
+        s.bob=-.06*r;s.rootZ=2.6-.18*r;s.lean=-.06*r;s.emotion=r<1?'surprised':'determined';}
+      if(t>156.5){const r=ease(clamp((t-156.5)/.5));s.emotion='determined';s.lean=0;} // l10 咬牙评力气
       return;
     }
-    if(phase==='test2'||phase==='test3'){ // 场边按住伤处看同伴（代价的持续性）
-      s.rootX=-3.0;s.rootZ=2.6;s.yaw=Math.PI/2;
-      s.left=V(-.20,1.08,.02);s.right=V(.24,1.12,.14);s.fist=.6;
-      s.emotion='worry';s.headPitch=.06;
-      if(phase==='test3'&&t>74.5)s.emotion='scared'; // 大釜也倒了
+    if(phase==='fight2'){ // 警戒大釜一侧（来不及补位）
+      s.rootX=LINE.aoao[0];s.rootZ=LINE.aoao[1];s.yaw=.3;s.emotion='worry';
+      s.left=V(-.15,1.22,.16);s.right=V(.18,1.14,.06);return;
+    }
+    if(phase==='fight3'){ // 兽压小凿，他横移试图咬回注意力
+      const w=clamp((t-196)/2.2);if(w>0&&w<1)s.walk={from:LINE.aoao,to:[-1.2,3.0],a:w};
+      s.rootX=mix(-.8,-1.2,ease(w));s.rootZ=mix(2.6,3.0,ease(w));s.yaw=-.3;
+      s.left=V(-.15,1.22,.16);s.emotion='worry';return;
+    }
+    return;
+  }
+  if(name==='dafu'){
+    if(phase==='fight1'){s.rootX=LINE.dafu[0];s.rootZ=LINE.dafu[1];s.yaw=-.2;
+      s.left=V(-.28,1.16,.06);s.right=V(.28,1.16,.06);s.fist=.8;s.emotion='determined';return;}
+    if(phase==='fight2'){ // 全力一拳挥空 → 被肩撞撞飞（c2）
+      s.rootX=LINE.dafu[0];s.rootZ=LINE.dafu[1];s.yaw=-.4;
+      const w=clamp((t-168)/1.6); // 上步逼近
+      if(w>0&&w<1)s.walk={from:LINE.dafu,to:[1.5,3.2],a:w};
+      s.rootX=mix(.6,1.5,ease(w));s.rootZ=mix(2.6,3.2,ease(w));
+      const wind=ease(clamp((t-170)/1.6)); // 蓄力过顶
+      s.left=blend(V(-.28,1.16,.06),V(-.28,1.70,-.08),wind);
+      s.right=blend(V(.28,1.16,.06),V(.28,1.70,-.08),wind);s.fist=1;s.emotion='determined';
+      const sw=ease(clamp((t-172.6)/.3)); // 挥空
+      if(sw>0){s.left=blend(V(-.28,1.70,-.08),V(-.06,1.30,.34),sw);
+        s.right=blend(V(.28,1.70,-.08),V(.06,1.32,.34),sw);s.lean=.14*sw;}
+      if(sw>=1&&t<178.4){const rc=ease(clamp((t-173.6)/.8)); // 随挥回收（别让臂挂在超伸位）
+        s.left=blend(V(-.06,1.30,.34),V(-.28,1.16,.06),rc);
+        s.right=blend(V(.06,1.32,.34),V(.28,1.16,.06),rc);s.lean=.14*(1-rc);}
+      if(t>T.C2){const r=ease(clamp((t-T.C2)/.3)),fly=ease(clamp((t-T.C2)/.8)); // 被撞飞
+        s.air=.5*Math.sin(fly*Math.PI);s.rootX=mix(1.5,2.6,fly);s.rootZ=mix(3.2,2.2,fly);
+        s.lean=-.3*fly;s.emotion='surprised';s.capeLift=.6*fly;
+        if(fly>=1){s.bob=-.30;s.sit={drop:.30,feet:.26};s.left=V(-.30,1.00,.08);s.right=V(.30,1.00,.08);}}
+      return;
+    }
+    if(phase==='fight3'){ // 倒地未起（代价持续；撑地低手位=动作本体白名单）
+      s.rootX=2.6;s.rootZ=2.2;s.yaw=-.6;s.sit={drop:.30,feet:.26};s.bob=-.30;
+      s.left=V(-.30,1.00,.08);s.right=V(.30,1.00,.08);s.emotion='scared';return;
+    }
+    return;
+  }
+  if(name==='xiaozao'){
+    if(phase==='fight1'){s.rootX=LINE.xiaozao[0];s.rootZ=LINE.xiaozao[1];s.yaw=.2;
+      s.left=V(.05,1.20,.14);s.right=V(.17,1.02,.03);s.emotion='neutral';return;}
+    if(phase==='fight2'){s.rootX=LINE.xiaozao[0];s.rootZ=LINE.xiaozao[1];s.yaw=.1;
+      s.left=V(.05,1.20,.14);s.emotion='worry';return;} // 大釜飞了，读场变急
+    if(phase==='fight3'){ // 兽压他：连退，盘被打脱
+      const w=clamp((t-190)/4.0);if(w>0&&w<1)s.walk={from:LINE.xiaozao,to:[-3.0,3.0],a:w,facingYaw:.6};
+      s.rootX=mix(-2.0,-3.0,ease(w));s.rootZ=mix(2.4,3.0,ease(w));s.yaw=.6; // 面兽后退
+      s.left=V(.05,1.20,.14);s.emotion='worry';
+      if(t>200)s.emotion='scared';
+      if(t>T.DISC_DROP){const r=ease(clamp((t-T.DISC_DROP)/.4)); // 盘脱手：臂被振开
+        s.left=blend(V(.05,1.20,.14),V(.14,1.00,.08),r);s.bob=-.05*r;s.emotion='scared';}
+      return;
+    }
+    return;
+  }
+}
+// ── 谷底+转机+首秀+终结 ──
+function turnSpec(name,s,phase,t){
+  if(name==='aoao'){
+    if(phase==='valley'){ // 撑盾喘息，盾痕特写位（SCAR 213）→ E2 立誓（216）
+      s.rootX=0;s.rootZ=3.2;s.yaw=0;
+      const dn=ease(clamp((t-208)/.6));
+      s.sit={drop:.26*dn,feet:.22*dn};s.bob=-.04*dn;s.emotion='scared'; // 单膝压地
+      s.left=V(-.18,1.10,.22);s.right=V(.10,.96,.16); // 盾拄地撑身（白名单：坐姿低手位）
+      s.headPitch=.18;
+      if(t>214){const r=ease(clamp((t-214)/1.4));s.headPitch=mix(.18,-.04,r);s.emotion='determined';}
+      if(t>219){const up=ease(clamp((t-219)/.9)); // 起（话落人起）
+        s.sit={drop:.26*(1-up),feet:.22*(1-up)};s.left=blend(V(-.18,1.10,.22),V(-.15,1.24,.18),up);}
+      return;
+    }
+    if(phase==='turn'){ // 正面拖兽：盾压低身位，随兽绕步（它要绕，就让它绕我）
+      s.rootX=.2;s.rootZ=3.6;s.yaw=0;s.fist=1;s.emotion='determined';
+      s.left=V(-.14,1.28,.22);s.right=V(.20,1.16,.08);
+      const circ=Math.sin((t-236)*.9); // 随兽小幅横移封线
+      s.rootX=.2+.3*circ*clamp((t-236)/2);s.bob=-.03;
+      if(t>244){s.left.z+=.02*Math.sin(t*6);} // 承压微颤
+      return;
+    }
+    if(phase==='rain'||phase==='finisher'){ // 拖住位不动如山
+      s.rootX=.2;s.rootZ=3.6;s.yaw=0;s.fist=1;s.emotion='determined';
+      s.left=V(-.14,1.28,.22);s.right=V(.20,1.16,.08);
+      if(t>T.C4){s.emotion='happy';} // 成了
       return;
     }
     return;
   }
   if(name==='xiaozao'){
-    if(phase==='test1'){s.rootX=A.xiaozao[0];s.rootZ=A.xiaozao[1];
-      s.yaw=Math.atan2(1.6-A.xiaozao[0],2.4-A.xiaozao[1]);s.headYaw=.1; // 观战读招
-      s.left=V(-.06,1.06,.12);s.right=V(.04,1.05,.10);return;}
-    if(phase==='test2'){ // 举盘瞄准——读秒犹豫（过度计算的代价）→ 被点肩
-      s.rootX=A.xiaozao[0];s.rootZ=A.xiaozao[1];s.yaw=Math.PI/2;
-      const raise=ease(clamp((t-56.5)/.8));
-      s.left=blend(IDLE.xiaozao.left,V(.06,1.20,.20),raise); // 举打孔阵
-      s.right=V(.16,1.06,.06);
-      if(t>59.0&&t<63.0){ // 读秒犹豫：臂微颤+指节收紧松开
-        s.left.z+=.008*Math.sin(t*22);s.fist=.3+.3*Math.abs(Math.sin(t*3.5));
-        s.headPitch=-.04;s.emotion='worry';
-      }
-      if(t>63.0){s.emotion='neutral';s.fist=.2;}
-      if(t>T.C2){const r=ease(clamp((t-T.C2)/.3));s.bob=-.04*r;s.headPitch=.10*r;
-        const d=ease(clamp((t-64.0)/.6));s.left=blend(V(.06,1.20,.20),IDLE.xiaozao.left,d);} // 垂盘
+    if(phase==='valley'){s.rootX=-3.0;s.rootZ=3.0;s.yaw=.6;s.emotion='scared';
+      s.left=V(.14,1.00,.08);s.right=V(.17,1.02,.03);s.bob=-.04;return;} // 盘脱手的空手（白名单段）
+    if(phase==='turn'){ // 拾盘（242）→ 归位 → 蓄力（孔洞亮归 viewer 战壳活效）
+      if(t<T.DISC_BACK){const w=clamp((t-236)/3.0);if(w>0&&w<1)s.walk={from:[-3.0,3.0],to:[-2.4,3.5],a:w};
+        s.rootX=mix(-3.0,-2.4,ease(w));s.rootZ=mix(3.0,3.5,ease(w));s.yaw=.4;s.emotion='worry';
+        s.left=V(.14,1.00,.08);return;}
+      if(t<244.5){const c=ease(clamp((t-T.DISC_BACK)/.8)); // 蹲下拾盘
+        s.rootX=-2.4;s.rootZ=3.5;s.yaw=.3;s.bob=-.14*c;s.sit={drop:.14*c,feet:.10*c};
+        s.left=V(.08,.80,.16);s.emotion='neutral';return;}
+      const w=clamp((t-244.5)/1.6);if(w>0&&w<1)s.walk={from:[-2.4,3.5],to:[-2.6,2.9],a:w};
+      s.rootX=mix(-2.4,-2.6,ease(w));s.rootZ=mix(3.5,2.9,ease(w));s.sit=null;s.yaw=.35;
+      const ch=ease(clamp((t-T.EYE3)/2.0)); // 蓄力：盘举到体侧外上方（E3 特写位；别挡脸）
+      s.left=blend(V(.05,1.10,.12),V(-.24,1.44,.16),ch);s.right=V(.17,1.06,.04);
+      s.emotion='neutral';s.fist=.2;
       return;
     }
-    if(phase==='test3'){s.rootX=-2.8;s.rootZ=2.4;s.yaw=Math.PI/2;s.emotion='worry';
-      s.left=V(-.17,1.02,.03);s.right=V(.17,1.02,.03);return;}
+    if(phase==='rain'){ // 「千孔·银星雨」：举盘定格→爆发下压
+      s.rootX=-2.6;s.rootZ=2.9;s.yaw=.35;s.emotion='determined';
+      const p=ease(clamp((t-T.CALL1)/.3));
+      s.left=blend(V(-.24,1.44,.16),V(-.16,1.12,.22),p); // 爆发=盘面前倾下压（白名单段）
+      s.noSwing=1;s.fist=.6;s.capeLift=.4;
+      if(t>T.C3+.8)s.emotion='neutral'; // l19 给自己
+      return;
+    }
+    if(phase==='finisher'){s.rootX=-2.6;s.rootZ=2.9;s.yaw=.35;s.emotion='determined';
+      s.left=V(-.17,1.02,.03);s.right=V(.17,1.02,.03);return;} // 静观终结（垂挂豁免位）
     return;
   }
   if(name==='dafu'){
-    if(phase==='test1'||phase==='test2'){s.rootX=A.dafu[0];s.rootZ=A.dafu[1];
-      s.yaw=Math.atan2(1.6-A.dafu[0],2.4-A.dafu[1]);s.emotion='worry';
-      s.left=V(-.28,1.16,.05);s.right=V(.28,1.16,.05);return;}
-    if(phase==='test3'){ // 蛮力：大步蓄力→全力挥空（不收敛）→ 被点背踉跄跪撑
-      s.rootX=A.dafu[0];s.rootZ=A.dafu[1];s.yaw=-Math.PI/2;
-      if(t>67.0&&t<68.4){const a=clamp((t-67.0)/1.4); // 逼近两步
-        s.walk={from:A.dafu,to:[1.6,1.9],a,facingYaw:-Math.PI/2};
-        s.rootX=mix(A.dafu[0],1.6,ease(a));s.rootZ=mix(A.dafu[1],1.9,ease(a));}
-      const wind=ease(clamp((t-70.4)/1.6)); // 高举蓄力
-      s.left=blend(V(-.32,1.28,.12),V(-.30,1.66,-.10),wind);
-      s.right=blend(V(.32,1.28,.12),V(.30,1.66,-.10),wind);s.fist=1;s.emotion='determined';
-      const sw=ease(clamp((t-T.SWING3)/.35)); // 全力挥空
-      if(sw>0){s.left=blend(V(-.30,1.66,-.10),V(-.02,1.30,.34),sw);
-        s.right=blend(V(.30,1.66,-.10),V(.02,1.32,.34),sw);s.lean=.14*sw;}
-      const st=clamp((t-73.1)/.7); // 踉跄前冲（拳势带人）
-      if(st>0){s.rootX=mix(1.6,1.35,ease(st));s.rootZ=mix(1.9,1.75,ease(st));} // st=0 时不得踩掉逼近走拍的 rootX
-      if(t>T.C3){const r=ease(clamp((t-T.C3)/.4)),dn=ease(clamp((t-74.6)/.8));
-        s.bob=-.05*r-.34*dn;s.emotion='scared';
-        if(dn>0){s.sit={drop:.34*dn,feet:.26*dn};s.left=V(-.34,.90,.10);s.right=V(.34,.90,.10);}
-      }
-      if(t>76.2){const a=clamp((t-76.2)/1.7); // 撑膝退到场边（三人同侧；窗口放宽压住 peak 速度）
-        if(a<1)s.walk={from:[1.35,1.75],to:[-2.2,2.8],a};
-        s.sit=null;s.rootX=mix(1.35,-2.2,ease(a));s.rootZ=mix(1.75,2.8,ease(a));
-        s.yaw=-Math.PI/2;s.emotion='worry';s.left=V(-.28,1.16,.05);s.right=V(.28,1.16,.05);}
+    if(phase==='valley'){ // 撑膝缓过来（被撞的人自己爬起；低手位=白名单）
+      s.rootX=2.6;s.rootZ=2.2;s.yaw=-.6;s.sit={drop:.30,feet:.26};s.bob=-.30;
+      s.left=V(-.30,1.00,.08);s.right=V(.30,1.00,.08);s.emotion='scared';
+      if(t>212){const r=ease(clamp((t-212)/1.6));s.emotion=r<1?'scared':'determined';
+        s.bob=-.30+.06*r;s.sit={drop:.30-.08*r,feet:.26-.06*r};}
+      return;
+    }
+    if(phase==='turn'){ // 起身→听令左翼三步（248）→把兽往点位赶
+      if(t<226){const up=ease(clamp((t-224.5)/1.2));
+        s.sit={drop:.30*(1-up),feet:.26*(1-up)};s.bob=-.30*(1-up);s.emotion='determined';
+        s.left=V(-.30,1.00,.08);s.right=V(.30,1.00,.08);return;}
+      const w=clamp((t-226.5)/3.0);if(w>0&&w<1)s.walk={from:[2.6,2.2],to:[1.8,3.8],a:w};
+      s.rootX=mix(2.6,1.8,ease(w));s.rootZ=mix(2.2,3.8,ease(w));s.yaw=-.7;s.emotion='determined';
+      s.left=V(-.28,1.16,.06);s.right=V(.28,1.16,.06);s.fist=.8;
+      if(t>T.FLANK){const st=clamp((t-T.FLANK)/1.5); // 左翼三步逼兽
+        if(st>0&&st<1)s.walk={from:[1.8,3.8],to:[.9,4.4],a:st};
+        s.rootX=mix(1.8,.9,ease(st));s.rootZ=mix(3.8,4.4,ease(st));s.yaw=-.9;s.capeLift=.3;}
+      return;
+    }
+    if(phase==='rain'){s.rootX=.9;s.rootZ=4.4;s.yaw=-.9;s.emotion='determined';
+      s.left=V(-.28,1.18,.06);s.right=V(.28,1.18,.06);s.fist=.8;return;}
+    if(phase==='finisher'){ // 「陨星·釜底落」：助跑→过顶蓄力特写→砸落（c4 双拳×兽背）
+      if(t<268){const w=clamp((t-265)/2.0);if(w>0&&w<1)s.walk={from:[.9,4.4],to:[-.4,4.0],a:w,run:true};
+        s.rootX=mix(.9,-.4,ease(w));s.rootZ=mix(4.4,4.0,ease(w));s.yaw=-1.0;
+        s.left=V(-.28,1.18,.06);s.right=V(.28,1.18,.06);s.fist=1;s.emotion='determined';return;}
+      const up=ease(clamp((t-268)/1.4)); // 起跳腾空（FIN_CHARGE 270 特写位；白名单段）
+      s.rootX=mix(-.4,-.9,up);s.rootZ=mix(4.0,4.25,up);s.yaw=-1.0;
+      s.air=Math.sin(clamp((t-268)/3.2)*Math.PI)*.9*(t<276?1:0);
+      s.left=blend(V(-.28,1.18,.06),V(-.26,1.72,-.06),up); // 双拳过顶
+      s.right=blend(V(.28,1.18,.06),V(.26,1.72,-.06),up);s.fist=1;s.capeLift=.7;s.tuck=.2*up;
+      const dn=ease(clamp((t-T.C4)/.3)); // 砸落
+      if(dn>0){s.air=0;s.rootX=-.9;s.rootZ=4.49;s.yaw=-1.0;
+        s.left=blend(V(-.26,1.72,-.06),V(-.14,1.06,.34),dn);
+        s.right=blend(V(.26,1.72,-.06),V(.14,1.06,.34),dn);
+        s.bob=-.22*dn;s.sit=dn<1?null:{drop:.22,feet:.18};s.lean=.16*dn;}
+      if(t>279){const w=clamp((t-279)/.8); // 收势退开（别站在兽身上）
+        if(w>0&&w<1)s.walk={from:[-.9,4.49],to:[-.4,3.9],a:w};
+        const r=ease(w);s.sit=null;s.bob=-.22*(1-r);s.lean=.16*(1-r);
+        s.rootX=mix(-.9,-.4,r);s.rootZ=mix(4.49,3.9,r);
+        s.emotion='happy';s.left=V(-.28,1.16,.05);s.right=V(.28,1.16,.05);}
       return;
     }
     return;
   }
 }
-// ── 谷底 → 转机（合体战术）→ 收刃 ──
-function comboSpec(name,s,phase,t){
-  const A=ARENA;
-  if(name==='azu'){
-    if(phase==='valley_fire'){s.visible=false;return;}
-    if(phase==='valley_aoao'){ // 收刃抱臂旁观谷底（她的科目是"值不值"）
-      s.rootX=1.2;s.rootZ=2.7;s.yaw=-Math.PI/2;
-      s.left={...AZU_CROSS.left};s.right={...AZU_CROSS.right};s.emotion='neutral';
-      return;
-    }
-    if(phase==='combo_cmd'||phase==='combo_toss'){ // 读指令，重心微沉戒备
-      s.rootX=1.2;s.rootZ=2.7;s.yaw=-Math.PI/2;
-      s.left={...AZU_CROSS.left};s.right={...AZU_CROSS.right};
-      s.bob=-.03*ease(clamp((t-91.5)/.8));s.emotion='neutral';return;
-    }
-    if(phase==='combo_air'){ // 双刃交叉架开空中盾击（c4）
-      s.rootX=1.2;s.rootZ=2.7;s.yaw=-Math.PI/2;
-      const p=ease(clamp((t-(T.C4-.4))/.4));
-      s.left=blend(AZU_CROSS.left,V(-.03,1.42,.34),p); // 双刃交叉上架（伸到拦截线才接得住盾）
-      s.right=blend(AZU_CROSS.right,V(.03,1.42,.34),p);s.noSwing=1;
-      if(t>T.C4){const r=ease(clamp((t-T.C4)/.3));s.bob=-.04*r;s.rootX=1.2+.06*r;} // 架开承力
-      return;
-    }
-    if(phase==='combo_barrage'){ // 真招被逼出：「流星·双箸乱穿」（c5 被接住）
-      const adv=clamp((t-97.5)/1.2); // 压着弹幕步步进逼（贴脸乱穿才有"被接住"的物理）
-      if(adv>0&&adv<1)s.walk={from:[1.26,2.7],to:[.45,2.5],a:adv,facingYaw:-Math.PI/2};
-      s.rootX=mix(1.26,.45,ease(adv));s.rootZ=mix(2.7,2.5,ease(adv));s.yaw=-Math.PI/2;
-      const p=ease(clamp((t-T.CALL2)/.3));
-      // 连续刺击：双臂交替前刺（弹幕由 VFX 承担）
-      const jab=Math.sin(Math.min(t-T.BARRAGE,1.6)*14);
-      s.left=V(-.04,1.34,.24+.06*Math.max(0,jab));
-      s.right=V(.04,1.34,.24+.06*Math.max(0,-jab));
-      s.noSwing=1;s.fist=.6;s.emotion='determined';s.capeLift=.4;
-      if(t>T.C5){const r=ease(clamp((t-T.C5)/.3)); // 被接住：双刃被盾阵网压制停住
-        s.left=blend(s.left,V(-.06,1.30,.18),r);s.right=blend(s.right,V(.06,1.30,.18),r);}
-      return;
-    }
-    // sheathe：收刃，评语
-    if(phase==='sheathe'){
-      const back=clamp((t-100.0)/.8);
-      if(back<1)s.walk={from:[.45,2.5],to:[1.8,2.6],a:back,facingYaw:-Math.PI/2};
-      s.rootX=mix(.45,1.8,ease(back));s.rootZ=mix(2.5,2.6,ease(back));s.yaw=-Math.PI/2;
-      s.left={...AZU_CROSS.left};s.right={...AZU_CROSS.right};s.capeLift=0;s.emotion='neutral';
-      if(t>109.9){const a=clamp((t-110.0)/.6);s.yaw=-Math.PI/2+angleDelta(-Math.PI/2,Math.PI/2)*ease(a);} // 「明天还查」转身
-      return;
-    }
-    return;
-  }
-  if(name==='aoao'){
-    if(phase==='valley_fire'){s.visible=false;return;}
-    if(phase==='valley_aoao'){ // 倒地→撑膝→抬头（E1 眼部特写段：动摇→咬住）
-      s.rootX=-1.2;s.rootZ=2.2;s.yaw=Math.PI/2*.8;
-      const dn=ease(clamp((t-81.5)/.3));
-      s.sit={drop:.30,feet:.24};s.bob=0;
-      s.left=V(-.30,.95,.10);s.right=V(.10,.90,.24);
-      s.emotion=t<84.6?'scared':'determined'; // 84.6 咬住
-      s.headPitch=t<84.6?.22:mix(.22,-.04,ease(clamp((t-84.6)/1.2))); // 抬头
-      if(t>87.0){const up=ease(clamp((t-87.0)/.8));s.sit={drop:.30*(1-up),feet:.24*(1-up)}; // 站起
-        s.left=blend(V(-.30,.95,.10),V(-.20,1.10,.04),up);s.right=blend(V(.10,.90,.24),V(.20,1.10,.04),up);}
-      return;
-    }
-    if(phase==='combo_cmd'){ // 站起发令（缺陷认领为战术）
-      const up=ease(clamp((t-88.0)/.7));
-      s.sit=up<1?{drop:.30*(1-up),feet:.24*(1-up)}:null;
-      s.rootX=-1.2;s.rootZ=2.2;s.yaw=Math.PI/2*.8;s.emotion='determined';
-      s.left=V(-.22,1.16,.08);s.right=V(.26,1.30,.14); // 抬臂指挥
-      return;
-    }
-    if(phase==='combo_toss'){ // 踏上大釜双掌（OP 颠勺升华为战术）
-      const w=clamp((t-91.5)/.7); // 快步到大釜跟前（窗口放宽避免 cadence 探针误判）
-      if(w<1)s.walk={from:[-1.2,2.2],to:[.15,2.15],a:w,run:true};
-      s.rootX=mix(-1.2,.15,ease(w));s.rootZ=2.15;s.yaw=Math.PI/2;s.capeLift=.3;
-      const c=ease(clamp((t-T.CROUCH)/.4)); // 大釜下蹲时他踩上去
-      s.rootY=0;s.air=c*.28; // 站上双掌（近似：根抬升）
-      s.left=V(-.30,1.15,0);s.right=V(.3,1.18,0);s.fist=.7;
-      return;
-    }
-    if(phase==='combo_air'){ // 空中突进盾击（喊招压帧 c4）
-      const u=clamp((t-92.6)/1.6); // 抛物线（OP gag 同源）
-      const flight=ease(u);
-      s.rootX=mix(.15,.27,flight);s.rootZ=mix(2.15,2.45,flight); // 停在双刃拦截线上（c4 接触成立）
-      s.air=Math.sin(u*Math.PI)*1.1+.28*(1-u); // 抛弧+落地
-      s.tuck=.25*Math.sin(u*Math.PI);
-      s.yaw=Math.PI/2;s.capeLift=.7;
-      s.left=V(-.14,1.38,.30);s.right=V(.24,1.20,.06);s.fist=1;s.emotion='determined';
-      if(t>T.C4){const r=ease(clamp((t-T.C4)/.35)); // 被架开弹落
-        s.air=Math.max(0,s.air*(1-r));s.bob=-.06*r;s.emotion='surprised';}
-      return;
-    }
-    if(phase==='combo_barrage'){ // 落地回防→盾阵接乱穿（c5 接住一线）
-      const w=clamp((t-97.2)/.6);
-      if(w<1)s.walk={from:[.27,2.45],to:[-.4,2.2],a:w,run:true};
-      s.rootX=mix(.27,-.4,ease(w));s.rootZ=mix(2.45,2.2,ease(w));s.yaw=Math.PI/2;
-      const g=ease(clamp((t-97.8)/.5));
-      s.left=blend(V(-.14,1.10,.04),V(-.14,1.30,.30),g); // 盾阵迎弹雨
-      s.right=V(.22,1.12,.06);s.fist=1;s.emotion='determined';s.capeLift=.3;
-      if(t>T.BARRAGE&&w>=1){const h=Math.sin((t-T.BARRAGE)*9); // 承弹微震（走拍结束后才接管 rootX）
-        s.bob=-.015*Math.abs(h);s.rootX=-.4-.02*Math.abs(h);}
-      return;
-    }
-    // sheathe：收势站定（接住的人不追击）
-    s.rootX=-.4;s.rootZ=2.2;s.yaw=Math.PI/2;s.fist=.4;
-    s.left=V(-.20,1.12,.06);s.right=V(.20,1.12,.06);s.emotion='determined';
-    return;
-  }
-  if(name==='dafu'){
-    if(phase==='valley_fire'){s.visible=false;return;}
-    if(phase==='valley_aoao'){s.rootX=-2.2;s.rootZ=2.8;s.yaw=Math.PI/2;s.emotion='worry';
-      s.left=V(-.28,1.16,.05);s.right=V(.28,1.16,.05);return;}
-    if(phase==='combo_cmd'){const w=clamp((t-88.0)/1.2); // 归位到抛掷点（诚实步速）
-      if(w<1)s.walk={from:[-2.2,2.8],to:[.4,2.1],a:w};
-      s.rootX=mix(-2.2,.4,ease(w));s.rootZ=mix(2.8,2.1,ease(w));s.yaw=Math.PI/2;
-      s.emotion='determined';return;}
-    if(phase==='combo_toss'){ // 下蹲合掌→抛（OP 颠勺同源工艺，这里是战术）
-      s.rootX=.4;s.rootZ=2.1;s.yaw=Math.PI/2;
-      const c=ease(clamp((t-T.CROUCH)/.4));
-      s.bob=-.16*c;s.left=blend(V(-.32,1.14,-.10),V(-.26,.98,.22),c);
-      s.right=blend(V(.32,1.14,-.10),V(.26,.98,.22),c);s.fist=.4;
-      const ts=ease(clamp((t-T.TOSS)/.3)); // 上抛
-      if(ts>0){s.bob=-.16*(1-ts)+.03*ts; // 上抛挺身（别顶到腿长帽）
-        s.left=blend(V(-.26,.98,.22),V(-.26,1.66,.16),ts);s.right=blend(V(.26,.98,.22),V(.26,1.66,.16),ts);
-        s.headPitch=mix(.14,-.12,ts);}
-      return;
-    }
-    if(phase==='combo_air'){ // 抛完立刻后撤让出弹道，再目送转接
-      const sb=clamp((t-93.2)/1.0);
-      if(sb>0&&sb<1)s.walk={from:[.4,2.1],to:[1.1,1.6],a:sb};
-      s.rootX=mix(.4,1.1,ease(sb));s.rootZ=mix(2.1,1.6,ease(sb));s.yaw=Math.PI/2;
-      s.left=V(-.26,1.30,.10);s.right=V(.26,1.30,.10);s.emotion='determined';s.headPitch=-.10;return;}
-    if(phase==='combo_barrage'){ // 压制近身：绕到阿箸侧翼逼停双刃（c5 链第三环）
-      const w=clamp((t-97.6)/1.2);
-      if(w<1)s.walk={from:[1.1,1.6],to:[1.9,2.3],a:w,facingYaw:-Math.PI/2};
-      s.rootX=mix(1.1,1.9,ease(w));s.rootZ=mix(1.6,2.3,ease(w));s.yaw=-Math.PI/2;
-      s.left=V(-.30,1.30,.16);s.right=V(.30,1.30,.16);s.fist=.9;s.emotion='determined';
-      return;
-    }
-    s.rootX=1.9;s.rootZ=2.3;s.yaw=-Math.PI/2;s.fist=.4;
-    s.left=V(-.28,1.16,.05);s.right=V(.28,1.16,.05);s.emotion='happy';return;
-  }
-  if(name==='xiaozao'){
-    if(phase==='valley_fire'){s.visible=false;return;}
-    if(phase==='valley_aoao'){s.rootX=-2.8;s.rootZ=2.4;s.yaw=Math.PI/2;s.emotion='worry';
-      s.left=V(-.17,1.02,.03);s.right=V(.17,1.02,.03);return;}
-    if(phase==='combo_cmd'){const w=clamp((t-88.2)/.7);
-      if(w<1)s.walk={from:[-2.8,2.4],to:[-1.6,2.5],a:w};
-      s.rootX=mix(-2.8,-1.6,ease(w));s.rootZ=mix(2.4,2.5,ease(w));s.yaw=Math.PI/2;
-      s.emotion='neutral';return;}
-    if(phase==='combo_toss'){ // 打孔阵标定点（他的计算为同伴而用）
-      s.rootX=-1.6;s.rootZ=2.5;s.yaw=Math.PI/2;
-      const p=ease(clamp((t-91.8)/.5));
-      s.left=blend(IDLE.xiaozao.left,V(.06,1.24,.22),p);s.emotion='neutral';return;}
-    if(phase==='combo_air'){s.rootX=-1.6;s.rootZ=2.5;s.yaw=Math.PI/2;
-      s.left=V(.06,1.24,.22);s.emotion='determined';return;}
-    if(phase==='combo_barrage'){ // 星屑网收束侧翼（c5 链第二环）
-      s.rootX=-1.6;s.rootZ=2.5;s.yaw=Math.PI/2;
-      const p=ease(clamp((t-97.8)/.5));
-      s.left=blend(V(.06,1.24,.22),V(.02,1.30,.30),p);s.emotion='determined';return;
-    }
-    s.rootX=-1.6;s.rootZ=2.5;s.yaw=Math.PI/2;s.emotion='neutral';
-    s.left=V(-.17,1.02,.03);s.right=V(.17,1.02,.03);return;
-  }
-}
-// ── 收尾（画外音/F02/末帧看火）──
+// ── 收尾（驭纹/余韵/hook）──
 function outroSpec(name,s,phase,t){
-  if(phase==='f02_report'){ // 阿箸独处门阙写报告（观众见、角色不知）
-    if(name!=='azu'){s.visible=false;return;}
-    s.visible=true;s.rootX=.5;s.rootZ=2.5;s.yaw=.3;s.cladT=1;
-    s.left=V(-.14,1.22,.10); // 左刃当笔，悬在公文上
-    s.right=V(.16,1.18,.04);s.emotion='neutral';
-    s.headPitch=.16+.02*Math.sin(t*.9); // 俯首书写
-    if(t>116.2)s.headPitch=.02; // 停笔（半句独白）
+  if(phase==='beast_down'){ // 围拢倒地的兽（警戒半步）
+    const p={aoao:[-.2,3.4],xiaozao:[-2.2,3.2],dafu:[.4,3.0]}[name];
+    const from={aoao:[.2,3.6],xiaozao:[-2.6,2.9],dafu:[-.6,4.5]}[name];
+    const w=clamp((t-285)/2.4);if(w>0&&w<1)s.walk={from,to:p,a:w};
+    s.rootX=mix(from[0],p[0],ease(w));s.rootZ=mix(from[1],p[1],ease(w));
+    s.yaw=Math.atan2(-1.2-p[0],4.4-p[1]); // 面兽
+    s.emotion='neutral';s.fist=.3;
+    if(t>T.BOLT){s.emotion='surprised';s.bob=-.02;} // 兽醒
     return;
   }
-  if(name==='azu'){s.visible=false;return;} // 她已离场（收刃后走出画面）
-  if(name==='hestia')return; // 独立链
-  // 圣殿群像：看火（末帧眼部特写 E3 归 viewer 机位）
-  s.rootX=SPOTS[name][0];s.rootZ=SPOTS[name][1];s.yaw=0;
-  s.left={...IDLE[name].left};s.right={...IDLE[name].right};s.fist=.15;
-  s.emotion=name==='xiaozao'?'neutral':'determined';
-  s.headPitch=-.10; // 抬眼看灶火
-  if(phase==='outro_final'&&t>T.EYE3)s.emotion=name==='aoao'?'determined':s.emotion;
-}
-
-function spec(name,phase,t){
-  const s=base(name);
-  if(name==='hestia')return s;
-  if(name==='azu'&&phase==='azu_walk'||name==='azu'&&phase==='azu_declare'){azuEnterSpec(s,phase,t);return s;}
-  if(name==='azu'&&phase==='f02_report'){outroSpec(name,s,phase,t);return s;}
-  // 阿箸只在角斗场/圣殿登场段/门阙报告在场
-  if(name==='azu'&&!['test1','test2','test3','valley_aoao','combo_cmd','combo_toss','combo_air',
-      'combo_barrage','sheathe'].includes(phase)){s.visible=false;return s;}
-  switch(phase){
-    case 'coldopen':s.visible=false;return s;
-    case 'patrol':patrolSpec(name,s,t);return s;
-    case 'notice':noticeSpec(name,s,t);return s;
-    case 'azu_walk':case 'azu_declare':{ // 三人静立看她（排面是对比出来的：他们不动，她走）
-      if(name==='azu'){s.visible=true;return s;}
-      s.rootX=SPOTS[name][0];s.rootZ=SPOTS[name][1];
-      const ty=Math.atan2(1.5-SPOTS[name][0],3.0-SPOTS[name][1]); // 转身目送她入场/宣告
-      s.yaw=mix(0,ty,ease(clamp((t-25.0)/.8)));
-      if(name==='aoao'&&t>37.6){s.emotion='angry';s.left=V(-.26,1.22,.14);s.fist=.7;} // 顶撞「守了三年」前压火
-      if(name==='dafu')s.emotion='worry';
-      return s;}
-    case 'to_arena':toArenaSpec(name,s,t,phase);return s;
-    case 'test1':case 'test2':case 'test3':testSpec(name,s,phase,t);return s;
-    case 'valley_fire':case 'valley_aoao':case 'combo_cmd':case 'combo_toss':
-    case 'combo_air':case 'combo_barrage':case 'sheathe':comboSpec(name,s,phase,t);return s;
-    case 'outro':case 'outro_final':outroSpec(name,s,phase,t);return s;
+  // aftermath/hook：面向圣火归队
+  const spot=LINE[name];
+  if(phase==='aftermath'){
+    const from={aoao:[-.2,3.4],xiaozao:[-2.2,3.2],dafu:[.4,3.0]}[name];
+    const w=clamp((t-298)/2.6);if(w>0&&w<1)s.walk={from,to:spot,a:w,facingYaw:Math.PI};
+    s.rootX=mix(from[0],spot[0],ease(w));s.rootZ=mix(from[1],spot[1],ease(w));
+    s.yaw=Math.PI; // 回身向火
+    s.emotion='neutral';s.fist=.15;
+    if(name==='aoao'){
+      s.left=V(-.20,1.10,.04);s.right=V(.20,1.10,.04); // 盾垂回臂侧（不再擦）
+      if(t>309){s.headPitch=-.06;s.emotion='determined';} // E4 看火
+    }
+    if(name==='dafu')s.emotion='happy';
+    return;
   }
-  return s;
+  // hook：静立余韵入黑
+  s.rootX=spot[0];s.rootZ=spot[1];s.yaw=Math.PI;s.emotion='neutral';
 }
 
-// ── 公共骨架求解（与前版同契约 + sit/air 扩展）──
+// ── 蚀星兽路径（所有段的兽位唯一事实源；人侧 read 用；分支端点根位连续——gait 探针抓跳变）──
+export function beastPath(t){
+  if(t<116)return{x:3.5,z:16,yaw:Math.PI};          // 藏夜色（不可见）
+  if(t<124)return{x:3.5,z:mix(16,8.5,ease(clamp((t-116)/8))),yaw:Math.PI}; // reveal 潜行出夜
+  if(t<140)return{x:mix(3.5,1.5,ease(clamp((t-124)/16))),z:mix(8.5,7.0,ease(clamp((t-124)/16))),yaw:Math.PI}; // 压近
+  if(t<149.5)return{x:mix(1.5,-.3,ease(clamp((t-140)/9.5))),z:mix(7.0,4.9,ease(clamp((t-140)/9.5))),yaw:Math.PI}; // stalk 中线
+  if(t<152.6)return{x:mix(-.3,-.8,ease(clamp((t-149.5)/2.5))),z:mix(4.9,3.6,ease(clamp((t-149.5)/2.5))),yaw:Math.PI}; // 扑击
+  if(t<156)return{x:mix(-.8,.4,ease(clamp((t-152.6)/3.4))),z:mix(3.6,4.4,ease(clamp((t-152.6)/3.4))),yaw:Math.PI}; // 被盾弹退
+  if(t<168)return{x:mix(.4,1.6,ease(clamp((t-156)/12))),z:mix(4.4,3.9,ease(clamp((t-156)/12))),yaw:mix(Math.PI,-1.0,ease(clamp((t-156)/12)))}; // 绕向大釜
+  if(t<177.4)return{x:mix(1.6,1.7,ease(clamp((t-168)/9.4))),z:mix(3.9,3.3,ease(clamp((t-168)/9.4))),yaw:-1.0}; // 对峙
+  if(t<178.5)return{x:mix(1.7,1.48,ease(clamp((t-177.4)/1.1))),z:mix(3.3,2.22,ease(clamp((t-177.4)/1.1))),yaw:-1.0}; // 肩撞突进（c2）
+  if(t<186)return{x:mix(1.48,.6,ease(clamp((t-178.5)/7.5))),z:mix(2.22,4.2,ease(clamp((t-178.5)/7.5))),yaw:mix(-1.0,1.9,ease(clamp((t-178.5)/7.5)))}; // 得手即退
+  if(t<206)return{x:mix(.6,-1.8,ease(clamp((t-186)/20))),z:mix(4.2,3.9,ease(clamp((t-186)/20))),yaw:1.9}; // 压小凿
+  if(t<224)return{x:mix(-1.8,-1.6,ease(clamp((t-206)/18))),z:mix(3.9,4.4,ease(clamp((t-206)/18))),yaw:1.4}; // 谷底兽踞
+  if(t<232)return{x:mix(-1.6,-.2,ease(clamp((t-224)/8))),z:mix(4.4,5.5,ease(clamp((t-224)/8))),yaw:mix(1.4,-1.2,ease(clamp((t-224)/8)))}; // 绕阿鏊外圈
+  if(t<240)return{x:mix(-.2,1.4,ease(clamp((t-232)/8))),z:mix(5.5,4.9,ease(clamp((t-232)/8))),yaw:-1.2};
+  if(t<246)return{x:mix(1.4,1.2,ease(clamp((t-240)/6))),z:mix(4.9,4.2,ease(clamp((t-240)/6))),yaw:-1.9};
+  if(t<250)return{x:mix(1.2,-.9,ease(clamp((t-246)/4))),z:mix(4.2,4.6,ease(clamp((t-246)/4))),yaw:mix(-1.9,0,ease(clamp((t-246)/4)))}; // 被大釜赶进标点
+  if(t<295.5)return{x:-.9,z:4.6,yaw:0};            // 银星雨压点→瘫（背对三人）
+  if(t<298.5)return{x:mix(-.9,4.5,ease(clamp((t-295.5)/2.2))),z:mix(4.6,14,ease(clamp((t-295.5)/2.2))),yaw:.6}; // 骤醒逃入夜
+  return{x:6,z:18,yaw:.6};
+}
+// 兽姿态谱（喂 ErosionBeastCraft.setPose；锚点纪律见 beast.js 头注）
+export function beastSpec(phase,t){
+  const B=beastPath(t);
+  const s={rootX:B.x,rootZ:B.z,yaw:B.yaw,crouch:0,air:0,pitch:0,pace:0,downK:0,pawExt:0,
+    headYaw:0,headPitch:0,jawOpen:0,t,visible:t>=116,markGlow:.12};
+  const inPh=(...ps)=>ps.includes(phase);
+  if(inPh('wind_colonnade','fire_a','fire_b','mono_a','mono_eye','mono_c','stir')){s.visible=false;return s;}
+  if(phase==='reveal'){s.crouch=.25;s.pace=.55;s.headPitch=.06;return s;} // 低伏潜行登场
+  if(phase==='rally'){s.crouch=.3;s.pace=.4;s.headPitch=.08;return s;}    // 压近
+  if(phase==='fight1'){
+    if(t<T.POUNCE){s.crouch=.3;s.pace=.6;return s;}
+    const u=clamp((t-T.POUNCE)/2.5); // 扑击：抛物线+前爪前伸上盾
+    s.crouch=.3*(1-u)+.1*u;s.air=Math.sin(u*Math.PI)*.55+.15*u;s.pitch=-.30*u;
+    s.pawExt=ease(clamp((u-.25)/.5));s.jawOpen=u*.8;
+    if(t>T.C1){const r=ease(clamp((t-T.C1)/.5)); // 被盾弹落
+      s.air=.15*(1-r);s.pitch=.18*(1-r)-.30*(1-r);s.crouch=.35;s.pawExt=1-r;s.jawOpen=.4*(1-r);}
+    return s;}
+  if(phase==='fight2'){
+    if(t<177.4){s.crouch=.2;s.pace=.5;return s;} // 绕步逼近
+    if(t<178.5){const u=clamp((t-177.4)/1.1); // 肩撞：立起前身压上去（c2）
+      s.crouch=.2-.45*u;s.pitch=-.75*u;s.air=.42*Math.sin(u*Math.PI*.8);s.jawOpen=.6*u;return s;}
+    const r=ease(clamp((t-178.5)/.8));s.crouch=.25;s.pitch=-.6*(1-r);s.jawOpen=.6*(1-r);return s;}
+  if(phase==='fight3'){s.crouch=.25;s.pace=.5;s.jawOpen=.3;s.headPitch=.12;return s;} // 压小凿
+  if(phase==='valley'){s.crouch=.35;s.pace=.12;s.headPitch=.16;return s;}  // 踞守环视
+  if(phase==='turn'){s.crouch=.3;s.pace=.55;s.jawOpen=.25;return s;}       // 绕阿鏊
+  if(phase==='rain'){
+    if(t<T.C3){s.crouch=.3;s.pace=.3;return s;}
+    const r=ease(clamp((t-T.C3)/.5));s.crouch=.3+.3*r;s.pitch=.2*r;s.pace=0;s.jawOpen=.2;return s;} // 被星雨压伏
+  if(phase==='finisher'){
+    if(t<T.C4){s.crouch=.55;s.pace=0;s.pitch=.15;return s;} // 困兽
+    const r=ease(clamp((t-T.C4)/.4));s.downK=r;s.air=0;return s;} // 砸瘫
+  if(phase==='beast_down'){
+    if(t<T.BOLT){s.downK=1;s.markGlow=t>T.MARK?.15+.75*ease(clamp((t-T.MARK)/.8)):.12;return s;} // 驭纹亮起（F03）
+    const u=ease(clamp((t-T.BOLT)/.5));s.downK=1-u;s.crouch=.1;s.pace=.9*u;s.jawOpen=.5*u;return s;} // 骤醒逃窜
+  s.visible=false;return s;
+}
+
+// ── 公共骨架求解（S1E1 R13 验收版同契约）──
 function buildPose(actor,s,t,d){
   const hipIdle=d.hipIdle,st=d.standStraight??0;
   let hipY=hipIdle+s.bob+st;
@@ -525,7 +418,7 @@ function buildPose(actor,s,t,d){
     for(const [side,sign] of [['left',-1],['right',1]]){
       const shoulder=V(sign*d.shoulderHalf,d.shoulderY+p.bob,0);
       const hand={...s[side]};
-      if(!s.turn&&!s.noSwing){ // 双臂对摆仅垂挂臂
+      if(!s.turn&&!s.noSwing){
         const dy=s[side].y-d.shoulderY,horiz0=Math.hypot(s[side].x-sign*d.shoulderHalf,s[side].z);
         const hangDeg=Math.atan2(horiz0,Math.max(.01,-dy))*180/Math.PI;
         hand.z+=(side==='right'?1:-1)*gait.armSwing*clamp((32-hangDeg)/18);
@@ -538,11 +431,11 @@ function buildPose(actor,s,t,d){
     }
   }else{
     const tuck=s.tuck??0;
-    if(s.sit){ // 倒地/跪撑：髋部下沉+双脚前伸（不整体倒机）
+    if(s.sit){
       hipY=hipIdle+s.bob+st-s.sit.drop;
       p.bob=s.bob+st-s.sit.drop;
     }
-    hipY=Math.min(hipY,d.legA+d.legB+d.footY-.02); // 非走拍同样受腿长帽（OP 颠勺 bob 过伸翻车实录）
+    hipY=Math.min(hipY,d.legA+d.legB+d.footY-.02);
     p.bob=Math.min(p.bob,d.legA+d.legB+d.footY-.02-hipIdle);
     for(const [side,sign] of [['left',-1],['right',1]]){
       const end=s.sit?V(sign*.13,d.footY,s.sit.feet):V(sign*.09,d.footY+tuck,.02-.4*tuck);
@@ -558,54 +451,37 @@ function buildPose(actor,s,t,d){
     }
   }
   if(p.blink==null)p.blink=Math.max(0,1-Math.abs((t%3.7)-3.4)/.12);
-  actor.setCladState(s.cladT); // 先长甲后摆姿势（探针锚点读本帧 scale）
+  actor.setCladState(s.cladT);
   actor.setPose(p);
   actor.mesh.visible=s.visible!==false;
   actor.mesh.position.y=s.air??0;
   return {...p,locomotion};
 }
 
-// ── 女神赫斯提亚（收尾画外音现身；坐姿直出腿链）──
-function specHestia(phase,t){
-  const s={visible:['outro','outro_final'].includes(phase)&&t>=T.HESTIA-.6,
-    bob:0,headYaw:.08*Math.sin(t*.7)+.05,headPitch:.06,headRoll:0,
-    swingAmp:.08,wave:0,blink:null,fistR:.55,fistL:.35,openL:0};
-  if(!s.visible)return s;
-  s.bob=.008*Math.sin(t*1.1);
-  if(t>115.2&&t<116.0)s.wave=Math.sin((t-115.2)/.8*Math.PI); // 说完懒挥手
-  return s;
-}
-function buildPoseHestia(actor,s,t){
-  const {x,y,z}=HESTIA_SEAT;
-  const p={rootX:x,rootY:y+s.bob,rootZ:z,yaw:0,bob:0,t,
-    headYaw:s.headYaw,headPitch:s.headPitch,headRoll:s.headRoll,
-    blink:s.blink,fistR:s.fistR,fistL:s.fistL,openL:s.openL};
-  for(const [side,sign] of [['left',-1],['right',1]]){
-    const sw=s.swingAmp*Math.sin(t*1.35+(side==='left'?0:Math.PI));
-    p[side+'Leg']=[V(sign*.075,-.02,.02),V(sign*.09,-.20,.44),V(sign*.10,-.64,.34+sw*.5)];
-    p[side+'FootPitch']=.5+.2*sw;
+function spec(name,phase,t){
+  const s=base(name);
+  switch(phase){
+    case 'wind_colonnade':case 'fire_a':case 'fire_b':s.visible=false;return s; // 夜铺零角色
+    case 'mono_a':case 'mono_eye':case 'mono_c':monoSpec(name,s,t);return s;
+    case 'stir':stirSpec(name,s,t);return s;
+    case 'reveal':s.visible=false;return s; // 兽的独镜
+    case 'rally':rallySpec(name,s,t);return s;
+    case 'fight1':case 'fight2':case 'fight3':fightSpec(name,s,phase,t);return s;
+    case 'valley':case 'turn':case 'rain':case 'finisher':turnSpec(name,s,phase,t);return s;
+    case 'beast_down':case 'aftermath':case 'hook':outroSpec(name,s,phase,t);return s;
   }
-  const poleR=V(.3,-.6,-.4),poleL=V(-.3,-.6,-.4);
-  const shR=V(.13,.52,.02),shL=V(-.13,.52,.02);
-  let wR=V(.20,.30,.20),wL=V(-.20,.26,.08);
-  if(s.wave>0){wL=blend(wL,V(-.28,.58,.18),s.wave);wL.z+=.04*Math.sin(t*7)*s.wave;
-    p.openL=.7*s.wave;p.fistL=.35-.25*s.wave;}
-  p.rightArm=[shR,twoBone(shR,wR,poleR,.17,.16),wR];
-  p.leftArm=[shL,twoBone(shL,wL,poleL,.17,.16),wL];
-  actor.setPose(p);
-  actor.mesh.visible=s.visible;
-  return p;
+  return s;
 }
 
 export function poseAt(actors,entries,t){
   const entry=entries.findLast(e=>e.startTime<=t)??entries[0],i=entries.indexOf(entry);
   const phase=entry.opts.move;
   const states={};
-  for(const name of ['aoao','xiaozao','dafu','azu'])states[name]=spec(name,phase,t);
+  for(const name of ['aoao','xiaozao','dafu'])states[name]=spec(name,phase,t);
   const dt=t-entry.startTime;
-  if(i&&dt<.3){ // 条目边界 0.3s 插值（walk/turn 拍跳过：root 不同源防 twoBone 抛错）
+  if(i&&dt<.3){ // 条目边界 0.3s 插值（walk/turn 拍跳过）
     const prev=entries[i-1],a=ease(dt/.3);
-    for(const name of ['aoao','xiaozao','dafu','azu']){
+    for(const name of ['aoao','xiaozao','dafu']){
       const o=spec(name,prev.opts.move,prev.endTime);
       if(o.visible===false)continue;
       const s=states[name];
@@ -617,11 +493,15 @@ export function poseAt(actors,entries,t){
     }
   }
   const poses={};
-  for(const name of ['aoao','xiaozao','dafu','azu'])poses[name]=buildPose(actors[name],states[name],t,DIMS[name]);
-  if(actors.hestia){
-    const hs=specHestia(phase,t);
-    states.hestia=hs;
-    poses.hestia=buildPoseHestia(actors.hestia,hs,t);
+  for(const name of ['aoao','xiaozao','dafu'])poses[name]=buildPose(actors[name],states[name],t,DIMS[name]);
+  // 兽：独立链（setPose 契约，非人形骨架）
+  if(actors.beast){
+    const bs=beastSpec(phase,t);
+    states.beast=bs;
+    actors.beast.setPose(bs);
+    actors.beast.mesh.visible=bs.visible!==false;
+    poses.beast={rootX:bs.rootX,rootZ:bs.rootZ,
+      locomotion:bs.visible&&bs.pace>0?{kind:'walk',step:Math.floor(t*1.1),steps:1,bob:-.05*bs.crouch,root:[bs.rootX,0,bs.rootZ]}:null};
   }
   return {entry,i,opts:entry.opts,phase,dt,states,poses};
 }

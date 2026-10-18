@@ -1,0 +1,64 @@
+{
+  "episode": "stardust_clad_s1e2",
+  "passed": true,
+  "mode": "full",
+  "steps": [
+    {
+      "name": "render_check",
+      "cmd": "node render.mjs --check --board storyboard/gate --trace storyboard/gate/trace.json --q &probe-door=1&probe-bento=1",
+      "returncode": 0,
+      "passed": true,
+      "tail": [
+        "check 8700/9600",
+        "check 9000/9600",
+        "check 9300/9600",
+        "gait trace: D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\storyboard\\gate\\trace.json (9600 frames)",
+        "check complete: 80 frames"
+      ],
+      "errors": []
+    },
+    {
+      "name": "seek_determinism",
+      "passed": true,
+      "note": "80 checks"
+    },
+    {
+      "name": "contact_probe",
+      "cmd": "D:\\opensource\\movie\\dula-story\\.venv\\Scripts\\python.exe D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\tools\\check_contact.py D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\storyboard\\gate\\trace.json",
+      "returncode": 0,
+      "passed": true,
+      "tail": [
+        "contact check: all assertions passed",
+        "contacts_local beastShoulderL-dafuChest: min 0.110m (max 0.22)",
+        "contacts_local beastRoot-xiaoDisc: min 2.652m (max 3.4)",
+        "contacts_local dafuL-beastBack: min 0.128m (max 0.3)",
+        "clad_fit: 36 entries all in range"
+      ],
+      "errors": []
+    },
+    {
+      "name": "audio_sync",
+      "cmd": "D:\\opensource\\movie\\dula-story\\.venv\\Scripts\\python.exe D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\tools\\check_audio_sync.py",
+      "returncode": 0,
+      "passed": true,
+      "tail": [
+        "audio sync ok: 11 events, bed 320s, 26 lines, peak 0.7762"
+      ],
+      "errors": []
+    },
+    {
+      "name": "review_shots",
+      "cmd": "node render.mjs --check --shots config/review_shots.json --board storyboard/gate/shots",
+      "returncode": 0,
+      "passed": true,
+      "tail": [
+        "http://127.0.0.1:63279/viewer.html",
+        "shots complete: 32 frames -> D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\storyboard\\gate\\shots",
+        "check complete: 0 frames"
+      ],
+      "errors": []
+    }
+  ],
+  "contact_failures_by_beat": {},
+  "note": "按报告列出的检查范围验收；生成审片图不等于完成视觉评审"
+}

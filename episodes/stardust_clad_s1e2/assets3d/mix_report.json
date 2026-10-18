@@ -1,0 +1,439 @@
+{
+ "duration": 320.0,
+ "sr": 48000,
+ "events": [
+  {
+   "t": 124.5,
+   "sfx": "shield_bang",
+   "gain": 1.0
+  },
+  {
+   "t": 121.0,
+   "sfx": "beast_growl",
+   "gain": 0.8
+  },
+  {
+   "t": 149.5,
+   "sfx": "beast_roar",
+   "gain": 0.9
+  },
+  {
+   "t": 152.0,
+   "sfx": "claw_scrape",
+   "gain": 1.0
+  },
+  {
+   "t": 172.9,
+   "sfx": "beast_roar",
+   "gain": 0.7
+  },
+  {
+   "t": 178.0,
+   "sfx": "beast_charge",
+   "gain": 1.0
+  },
+  {
+   "t": 206.0,
+   "sfx": "disc_clatter",
+   "gain": 0.9
+  },
+  {
+   "t": 252.4,
+   "sfx": "rain_burst",
+   "gain": 1.0
+  },
+  {
+   "t": 256.0,
+   "sfx": "crater_slam",
+   "gain": 0.5
+  },
+  {
+   "t": 276.0,
+   "sfx": "crater_slam",
+   "gain": 1.0
+  },
+  {
+   "t": 295.5,
+   "sfx": "beast_flee",
+   "gain": 0.9
+  }
+ ],
+ "sources": {
+  "bgm:bgm_nightwatch": {
+   "path": "assets3d/sfx/bgm_nightwatch.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.5,
+   "window": [
+    0.0,
+    140.0
+   ],
+   "sha256": "449f4376dbff92006eb735f84fef384f5142e1fde6cb3ae79e26721f86684b5b"
+  },
+  "bgm:bgm_nightbattle": {
+   "path": "assets3d/sfx/bgm_nightbattle.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.58,
+   "window": [
+    140.0,
+    296.0
+   ],
+   "sha256": "d6bd3abad5e1ea95b27f60187f3f302d98a666c77c181a2f70d343d6f5d6af8c"
+  },
+  "ambience": {
+   "path": "assets3d/sfx/ambience_night.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.3,
+   "sha256": "841b29e833450e59cf07102161bc835f368635e43fc36e255075218dd60dbd85"
+  },
+  "fire_bed": {
+   "path": "assets3d/sfx/fire_crackle.wav",
+   "provider": "volcano-seedaudio",
+   "gain": 0.16,
+   "window": [
+    14.0,
+    316.0
+   ],
+   "sha256": "f08e85c21a722654082f6bd496acf0b2fc4c15650e03ce625e85e475ccd2c7f3"
+  },
+  "sfx:shield_bang": {
+   "path": "assets3d/sfx/shield_bang.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "2cc8d38fab21f6a65ae22b7f535db7ab48e856e078878937dcaa7fe13f190168"
+  },
+  "sfx:beast_growl": {
+   "path": "assets3d/sfx/beast_growl.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "2d36fa687715a74b25f7a8a0ce47d3bff0e2ff176365194f9a929d9aafacb59d"
+  },
+  "sfx:beast_roar": {
+   "path": "assets3d/sfx/beast_roar.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "8220147121db7d9c5b49c1e5c52a5fc045fdd265e8f58eec3c66b59449731f48"
+  },
+  "sfx:claw_scrape": {
+   "path": "assets3d/sfx/claw_scrape.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "cc66dc1080c2f3f2455f177bd37b9f72c0c6ad6136a3534a0fcd8056829a3f09"
+  },
+  "sfx:beast_charge": {
+   "path": "assets3d/sfx/beast_charge.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "822155e68f57033dd6d3f763f80fb679bd2dab0b4a8fa5d41f82de4b01254e5e"
+  },
+  "sfx:disc_clatter": {
+   "path": "assets3d/sfx/disc_clatter.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "e808068309f5d7a2ecc7efa05a21343f815b34f4f780bce31bef30abb34e7ca1"
+  },
+  "sfx:rain_burst": {
+   "path": "assets3d/sfx/rain_burst.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "951ef2158562c85e389394ab9d071f175d5124bd16d63e8498fc1e7c9d42bb66"
+  },
+  "sfx:crater_slam": {
+   "path": "assets3d/sfx/crater_slam.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "63b8e7c8ff0383dcbd8d5bc656326e0916d6e494baee5e4652f760c238037ee8"
+  },
+  "sfx:beast_flee": {
+   "path": "assets3d/sfx/beast_flee.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "a682727102675bbf11159a968a929afcc160a52ec0ab05c4081f47074cd4f4ad"
+  },
+  "voice:l01": {
+   "path": "assets3d/dialogue/l01.wav",
+   "t": 48.0,
+   "provider": "volcano-seedtts",
+   "sha256": "3253d7e557931e1a5d56239c23608fb99845dc53328ac6311844cb973c93e168"
+  },
+  "voice:l02": {
+   "path": "assets3d/dialogue/l02.wav",
+   "t": 62.0,
+   "provider": "volcano-seedtts",
+   "sha256": "6fb5ccc5706307ee6a17695e6d77017eb607bafe85fab2cf39a3ab808685036c"
+  },
+  "voice:l03": {
+   "path": "assets3d/dialogue/l03.wav",
+   "t": 78.0,
+   "provider": "volcano-seedtts",
+   "sha256": "166a1f7d0cdf8f86960922c27ff94e80c35c032f923ab983ed475d53031a9a44"
+  },
+  "voice:l04": {
+   "path": "assets3d/dialogue/l04.wav",
+   "t": 92.0,
+   "provider": "volcano-seedtts",
+   "sha256": "72f50e42d05c072083cc61212fa58bc2264e10e8f1911ace3163cc5248872789"
+  },
+  "voice:l05": {
+   "path": "assets3d/dialogue/l05.wav",
+   "t": 106.0,
+   "provider": "volcano-seedtts",
+   "sha256": "8c093c93cd51f9f686ba6cd1cd89e7f3fc82dbfa97bca04b66e84a9242799f86"
+  },
+  "voice:l06": {
+   "path": "assets3d/dialogue/l06.wav",
+   "t": 124.5,
+   "provider": "volcano-seedtts",
+   "sha256": "f1488e31957ade5a303c4fb54ecd2c9912558a9529993c29d5a1031be5e2d87c"
+  },
+  "voice:l07": {
+   "path": "assets3d/dialogue/l07.wav",
+   "t": 132.0,
+   "provider": "volcano-seedtts",
+   "sha256": "8439d61d8a55c5d04fae81551fe2d89732c5499f46359a29350d3bc9fe5571e3"
+  },
+  "voice:l08": {
+   "path": "assets3d/dialogue/l08.wav",
+   "t": 136.5,
+   "provider": "volcano-seedtts",
+   "sha256": "9b6f232c0d6bee9f9c670fcf413a43d5d527602327a8b1898f8f2275885b8d88"
+  },
+  "voice:l09": {
+   "path": "assets3d/dialogue/l09.wav",
+   "t": 148.0,
+   "provider": "volcano-seedtts",
+   "sha256": "b7d8130b26523d7c6d3f6afd9d9be0e74be9a3d5d87c6edaba21c743625e7428"
+  },
+  "voice:l10": {
+   "path": "assets3d/dialogue/l10.wav",
+   "t": 158.0,
+   "provider": "volcano-seedtts",
+   "sha256": "4dea87246bdc60d3ff5bc5765042b0d5939b1be518c32ab7fe39bf1f89ba2fa7"
+  },
+  "voice:l11": {
+   "path": "assets3d/dialogue/l11.wav",
+   "t": 171.0,
+   "provider": "volcano-seedtts",
+   "sha256": "3f2dd149083f92e6d2253a289d4e5874ba653ae9bb9e5139c519e8c8d7b53312"
+  },
+  "voice:l12": {
+   "path": "assets3d/dialogue/l12.wav",
+   "t": 182.0,
+   "provider": "volcano-seedtts",
+   "sha256": "f26117330d22bc2435ff607ed2300c1108334c2f8cad940bc946ad34a5a8dae1"
+  },
+  "voice:l13": {
+   "path": "assets3d/dialogue/l13.wav",
+   "t": 196.0,
+   "provider": "volcano-seedtts",
+   "sha256": "51dbb2768eef1b5ae040c483e05672f8cca51cc86437a76f0d50a60e133e8cdf"
+  },
+  "voice:l14": {
+   "path": "assets3d/dialogue/l14.wav",
+   "t": 210.0,
+   "provider": "volcano-seedtts",
+   "sha256": "b7272a7ececad4c8c888a15c3f7861f9e2e32949cfe37701971842e9647be67a"
+  },
+  "voice:l15": {
+   "path": "assets3d/dialogue/l15.wav",
+   "t": 216.0,
+   "provider": "volcano-seedtts",
+   "sha256": "c225334e3f69c5c09d4283614c88776029bcd6262bca04876b45f7bcdc4b7640"
+  },
+  "voice:l16": {
+   "path": "assets3d/dialogue/l16.wav",
+   "t": 236.0,
+   "provider": "volcano-seedtts",
+   "sha256": "3956c448d54e5681fc8f656198e999f4d999309743c7dbc3fb9dc8d8cf161b12"
+  },
+  "voice:l17": {
+   "path": "assets3d/dialogue/l17.wav",
+   "t": 242.0,
+   "provider": "volcano-seedtts",
+   "sha256": "8b442c114b46dd2e00100da7271c4bd8aae56da63ad3da11da47861d033430bd"
+  },
+  "voice:l18": {
+   "path": "assets3d/dialogue/l18.wav",
+   "t": 248.0,
+   "provider": "volcano-seedtts",
+   "sha256": "8d58614d6ca801cc57a4922d20a362805cc7da5e01abc248bb16cd7b70dd9544"
+  },
+  "voice:c1": {
+   "path": "assets3d/dialogue/c1.wav",
+   "t": 252.0,
+   "provider": "volcano-seedtts",
+   "sha256": "bda984bd857c90f20c6a21eb99aceab3c04c03cae6d90dee84b838572f86db01"
+  },
+  "voice:l19": {
+   "path": "assets3d/dialogue/l19.wav",
+   "t": 262.0,
+   "provider": "volcano-seedtts",
+   "sha256": "30dacffb6a07862edc19d0c5c4768813f79e425f5d67734311dbf18dacbe28c5"
+  },
+  "voice:l20": {
+   "path": "assets3d/dialogue/l20.wav",
+   "t": 270.0,
+   "provider": "volcano-seedtts",
+   "sha256": "90caa7d9e0186cbb9daf894e58fd2f732e75f44369c0c86af79b13bf89ce4285"
+  },
+  "voice:c2": {
+   "path": "assets3d/dialogue/c2.wav",
+   "t": 274.0,
+   "provider": "volcano-seedtts",
+   "sha256": "e77f2a7a3bfc82576102bb345b3babf81c815088e33d2b6d464986bbb451652f"
+  },
+  "voice:l21": {
+   "path": "assets3d/dialogue/l21.wav",
+   "t": 300.0,
+   "provider": "volcano-seedtts",
+   "sha256": "f193e9e4739781f6171868185a9dc4d68b0aa5c02a8a9eff2a44268fed1fe962"
+  },
+  "voice:l22": {
+   "path": "assets3d/dialogue/l22.wav",
+   "t": 302.0,
+   "provider": "volcano-seedtts",
+   "sha256": "f3f3ffb5a4d70dbaa4d74cd21a09a461b529bf49fd544a8c0d7a5f5d2c8150fa"
+  },
+  "voice:l23": {
+   "path": "assets3d/dialogue/l23.wav",
+   "t": 306.0,
+   "provider": "volcano-seedtts",
+   "sha256": "fdf29fcd789b2fece527c991a1b1667a3d0245ac3739c2ad487919b54bd2eda3"
+  },
+  "voice:l24": {
+   "path": "assets3d/dialogue/l24.wav",
+   "t": 311.0,
+   "provider": "volcano-seedtts",
+   "sha256": "3452ec9589dcad52e54ff7c3b8b28cca91cf73fc1d977666c7dfb9c465c57f40"
+  }
+ },
+ "dialogue": [
+  {
+   "id": "l01",
+   "t": 48.0,
+   "dur": 6.336
+  },
+  {
+   "id": "l02",
+   "t": 62.0,
+   "dur": 5.928
+  },
+  {
+   "id": "l03",
+   "t": 78.0,
+   "dur": 4.488
+  },
+  {
+   "id": "l04",
+   "t": 92.0,
+   "dur": 4.056
+  },
+  {
+   "id": "l05",
+   "t": 106.0,
+   "dur": 3.84
+  },
+  {
+   "id": "l06",
+   "t": 124.5,
+   "dur": 2.664
+  },
+  {
+   "id": "l07",
+   "t": 132.0,
+   "dur": 4.248
+  },
+  {
+   "id": "l08",
+   "t": 136.5,
+   "dur": 4.896
+  },
+  {
+   "id": "l09",
+   "t": 148.0,
+   "dur": 1.488
+  },
+  {
+   "id": "l10",
+   "t": 158.0,
+   "dur": 4.656
+  },
+  {
+   "id": "l11",
+   "t": 171.0,
+   "dur": 2.304
+  },
+  {
+   "id": "l12",
+   "t": 182.0,
+   "dur": 1.848
+  },
+  {
+   "id": "l13",
+   "t": 196.0,
+   "dur": 2.304
+  },
+  {
+   "id": "l14",
+   "t": 210.0,
+   "dur": 2.064
+  },
+  {
+   "id": "l15",
+   "t": 216.0,
+   "dur": 3.216
+  },
+  {
+   "id": "l16",
+   "t": 236.0,
+   "dur": 3.024
+  },
+  {
+   "id": "l17",
+   "t": 242.0,
+   "dur": 6.264
+  },
+  {
+   "id": "l18",
+   "t": 248.0,
+   "dur": 2.064
+  },
+  {
+   "id": "c1",
+   "t": 252.0,
+   "dur": 2.472
+  },
+  {
+   "id": "l19",
+   "t": 262.0,
+   "dur": 3.408
+  },
+  {
+   "id": "l20",
+   "t": 270.0,
+   "dur": 3.84
+  },
+  {
+   "id": "c2",
+   "t": 274.0,
+   "dur": 2.664
+  },
+  {
+   "id": "l21",
+   "t": 300.0,
+   "dur": 1.344
+  },
+  {
+   "id": "l22",
+   "t": 302.0,
+   "dur": 2.256
+  },
+  {
+   "id": "l23",
+   "t": 306.0,
+   "dur": 2.808
+  },
+  {
+   "id": "l24",
+   "t": 311.0,
+   "dur": 3.576
+  }
+ ],
+ "duck_db": -6.0,
+ "voice_gain": 1.3,
+ "peak_before": 0.9853,
+ "ceiling": 0.7762,
+ "normalized": true,
+ "mix_peak": 0.7762,
+ "mix_rms": 0.0674
+}

@@ -1,0 +1,734 @@
+{
+ "scope": "星屑战壳 S1E2《夜守》：三角色全身+兽（潜行/扑击/肩撞/倒地/逃窜）+接触帧（c1 兽爪×盾/c2 兽肩撞×大釜胸甲/c3 银星雨压点环×兽域/c4 双拳×兽背）+谷底撑膝+独白坐姿擦盾+clad_fit 甲件贴身",
+ "fps_min": 30,
+ "pose_tick_hz": 15,
+ "_matrix": "physical-completeness 矩阵：env=场景几何均在表演走廊外；无门窗/进食/道具手持；接触帧=活锚点距离断言（兽锚点=beast.js 头注）；走跑=gait+reach；兽位移靠根（不走连续四足步态）",
+ "seated": {
+  "window": [
+   0,
+   320.0
+  ],
+  "actors": {
+   "aoao": "aoaoRoot",
+   "xiaozao": "xiaozaoRoot",
+   "dafu": "dafuRoot"
+  },
+  "min": 0.08,
+  "max": 0.78,
+  "_comment": "全时间轴手-躯干轴 XZ 距离域"
+ },
+ "gait": {
+  "actors": {
+   "aoao": {
+    "speed_max": 4.0,
+    "avg_min": 0.15,
+    "bob_min": 0.003,
+    "cadence": [
+     0.6,
+     8.5
+    ]
+   },
+   "xiaozao": {
+    "speed_max": 4.0,
+    "avg_min": 0.15,
+    "bob_min": 0.003,
+    "cadence": [
+     0.6,
+     8.5
+    ]
+   },
+   "dafu": {
+    "speed_max": 4.0,
+    "avg_min": 0.15,
+    "bob_min": 0.003,
+    "cadence": [
+     0.6,
+     8.5
+    ]
+   },
+   "beast": {
+    "speed_max": 8.0,
+    "avg_min": 0.05,
+    "bob_min": 0.0,
+    "cadence": [
+     0.1,
+     9.0
+    ],
+    "_c": "逃窜 bolt 实测 7.4m/s（狼形奔逃诚实速度）"
+   }
+  },
+  "_comment": "人侧走跑 bout；兽=潜行拖步（avg_min .05 诚实慢潜行）/扑击逃窜走 air/非 walk 帧"
+ },
+ "bite": {
+  "window": [
+   151.6,
+   152.3
+  ],
+  "a": "beastClawL",
+  "b": "shieldA",
+  "max": 0.22,
+  "_comment": "c1（152）：兽扑击前爪×阿鏊盾面（pawExt 前伸上抬帧）"
+ },
+ "contacts_local": [
+  {
+   "window": [
+    177.8,
+    178.5
+   ],
+   "a": "beastShoulderL",
+   "b": "dafuChest",
+   "max": 0.22,
+   "_comment": "c2（178）：兽肩撞×大釜胸甲（蛮力挥空的代价）"
+  },
+  {
+   "window": [
+    255.6,
+    256.6
+   ],
+   "a": "beastRoot",
+   "b": "xiaoDisc",
+   "max": 3.4,
+   "_comment": "c3（256）：银星雨压点（兽域在弹雨扇面射程内——弹道弹着由 VFX 承担）"
+  },
+  {
+   "window": [
+    275.7,
+    276.5
+   ],
+   "a": "dafuL",
+   "b": "beastBack",
+   "max": 0.3,
+   "_comment": "c4（276）：陨星·釜底落 双拳×兽背（终结压实）"
+  }
+ ],
+ "reach": {
+  "ratio_max": 0.9,
+  "hang_deg": 35,
+  "allowed": [
+   {
+    "subject": "aoaoL",
+    "window": [
+     208.0,
+     224.0
+    ],
+    "_c": "谷底盾拄地撑身（坐姿低手位）"
+   },
+   {
+    "subject": "aoaoR",
+    "window": [
+     208.0,
+     224.4
+    ],
+    "_c": "同上+转机边界过渡"
+   },
+   {
+    "subject": "aoaoL",
+    "window": [
+     224.0,
+     250.0
+    ],
+    "_c": "拖兽盾位持续承压"
+   },
+   {
+    "subject": "xiaozaoL",
+    "window": [
+     190.0,
+     208.0
+    ],
+    "_c": "fight3 举盘被压本体"
+   },
+   {
+    "subject": "xiaozaoL",
+    "window": [
+     206.0,
+     236.5
+    ],
+    "_c": "盘脱手空手垂落+谷底空手（valley→turn 前段）"
+   },
+   {
+    "subject": "xiaozaoL",
+    "window": [
+     236.0,
+     258.5
+    ],
+    "_c": "拾盘+蓄力举盘+银星雨爆发本体"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     170.0,
+     173.2
+    ],
+    "_c": "全力一拳蓄力挥空本体（fight2）"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     170.0,
+     173.2
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     173.2,
+     174.6
+    ],
+    "_c": "挥空随挥过渡帧"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     173.2,
+     174.6
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     178.0,
+     226.5
+    ],
+    "_c": "被撞飞/倒地撑地/撑膝起身（低手位本体）"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     178.0,
+     226.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     264.0,
+     268.0
+    ],
+    "_c": "终结助跑（摆臂冲量）"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     264.0,
+     268.0
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     268.0,
+     277.0
+    ],
+    "_c": "陨星落过顶蓄力+砸落本体"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     268.0,
+     277.0
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "aoaoL",
+    "window": [
+     150.5,
+     153.5
+    ],
+    "_c": "c1 盾迎承压帧"
+   },
+   {
+    "subject": "aoaoR",
+    "window": [
+     124.0,
+     125.3
+    ],
+    "_c": "敲盾为号本体"
+   },
+   {
+    "subject": "aoaoL",
+    "window": [
+     284.0,
+     288.5
+    ],
+    "_c": "围拢走步过渡"
+   },
+   {
+    "subject": "aoaoR",
+    "window": [
+     284.0,
+     288.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "xiaozaoL",
+    "window": [
+     284.0,
+     288.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     284.0,
+     288.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     284.0,
+     288.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "aoaoL",
+    "window": [
+     298.0,
+     301.5
+    ],
+    "_c": "归队走步过渡"
+   },
+   {
+    "subject": "aoaoR",
+    "window": [
+     298.0,
+     301.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "xiaozaoL",
+    "window": [
+     298.0,
+     301.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     298.0,
+     301.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     298.0,
+     301.5
+    ],
+    "_c": "同上"
+   },
+   {
+    "subject": "dafuL",
+    "window": [
+     277.0,
+     280.6
+    ],
+    "_c": "砸落压制+收势退开过渡帧"
+   },
+   {
+    "subject": "dafuR",
+    "window": [
+     277.0,
+     280.6
+    ],
+    "_c": "同上"
+   }
+  ],
+  "_comment": "S1E3 P16 判据；动作本体/过渡帧按窗口白名单（S1E2《夜守》战斗段实测窗口）"
+ },
+ "limb_attach": {
+  "actors": {
+   "aoao": {
+    "max_elev_deg": 118,
+    "max_shoulder_axis": 0.17
+   },
+   "xiaozao": {
+    "max_elev_deg": 118,
+    "max_shoulder_axis": 0.16
+   },
+   "dafu": {
+    "max_elev_deg": 170,
+    "max_shoulder_axis": 0.23
+   }
+  },
+  "_comment": "dafu 170°=蓄力/终结发力本体（fight2 挥空+finisher 过顶）；其余 118°"
+ },
+ "clad_fit": {
+  "frame_min": 20,
+  "entries": [
+   {
+    "key": "aoao.chest",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "胸甲整筒贴胸廓"
+   },
+   {
+    "key": "aoao.belt",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "aoao.shin_left",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "aoao.shin_right",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "aoao.pauldron_left",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "aoao.pauldron_right",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "aoao.leaf_FC",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_FL",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_FR",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_SL",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_SR",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "aoao.leaf_B",
+    "window": [
+     142.0,
+     150.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.chest",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "胸甲整筒贴胸廓"
+   },
+   {
+    "key": "xiaozao.belt",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "xiaozao.shin_left",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "xiaozao.shin_right",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "xiaozao.pauldron_left",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "xiaozao.pauldron_right",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "xiaozao.leaf_FC",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_FL",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_FR",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_SL",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_SR",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "xiaozao.leaf_B",
+    "window": [
+     186.2,
+     190.0
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.chest",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": 0.004,
+    "max": 0.025,
+    "_c": "胸甲整筒贴胸廓"
+   },
+   {
+    "key": "dafu.belt",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": 0.003,
+    "max": 0.022,
+    "_c": "腰带贴髋断面"
+   },
+   {
+    "key": "dafu.shin_left",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "dafu.shin_right",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": 0.002,
+    "max": 0.022,
+    "_c": "胫甲前片贴小腿"
+   },
+   {
+    "key": "dafu.pauldron_left",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "dafu.pauldron_right",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": 0.0,
+    "max": 0.06,
+    "_c": "肩甲根锚三角肌盖"
+   },
+   {
+    "key": "dafu.leaf_FC",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_FL",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_FR",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_SL",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_SR",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   },
+   {
+    "key": "dafu.leaf_B",
+    "window": [
+     163.0,
+     167.8
+    ],
+    "min": -0.05,
+    "max": 0.028,
+    "_c": "站姿甲叶贴腿间隙"
+   }
+  ],
+  "_comment": "甲件贴身=静立域断言（探针设计意图）：各角色战斗段的平稳子窗；撞击/承压极端帧由 contacts_local 承担"
+ }
+}

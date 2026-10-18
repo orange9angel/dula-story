@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""《星屑战壳》S1E1 混音总线：双段 BGM（晨曲 0-44 / 考核战 44-108）+ 晨景底床 + SFX 事件摆点 + 对白（duck 平滑）。
-- BGM：assets3d/sfx/bgm_morning.wav + bgm_trial.wav（Seed-Audio）
+"""《星屑战壳》S1E2《夜守》混音总线：双段 BGM（夜守 0-140 / 夜战 140-296）+ 夜旷野底床（厚）+ 火盆噼啪层 + SFX 事件摆点 + 对白（duck 平滑）。
+- BGM/底床/事件全 Seed-Audio（assets3d/sfx/，火山-only 规则）
 - 对白：assets3d/dialogue/<id>.wav（seed-tts-2.0），摆点=config/dialogue.json 的 t
   （零点=谱面零点；口型包络从最终放置的同一 PCM 派生 → config/voice_envs.json）
 - 峰值上限 -2.2dBFS（AAC 过冲留量，OP R2 教训）
 - 产物：assets3d/mixed.wav（48kHz 双声道）+ assets3d/mix_report.json + config/voice_envs.json
 
-用法（dula-story 根）：.venv/Scripts/python.exe episodes/stardust_clad_s1e1/tools/build_audio.py
+用法（dula-story 根）：.venv/Scripts/python.exe episodes/stardust_clad_s1e2/tools/build_audio.py
 """
 from pathlib import Path
 import hashlib
@@ -19,7 +19,7 @@ from scipy.signal import butter, sosfilt
 
 EP = Path(__file__).resolve().parents[1]
 SR = 48000
-DURATION = 120.000
+DURATION = 320.000
 SFX_DIR = 'assets3d/sfx'
 
 def load(path):
@@ -32,25 +32,24 @@ def rms(x):
 
 # SFX 事件总线：[时刻, 文件, 增益]（时刻=performance.js 的 T 表）
 EVENTS = [
-    (19.800, 'scroll_pop', 0.9),     # 防务评估令公文展开
-    (46.200, 'dash_whoosh', 0.8),    # 阿鏊无脑冲锋
-    (51.500, 'chopstick_tap', 1.0),  # c1 刃点盾（无脑冲的句点）
-    (52.200, 'body_drop', 0.7),      # 阿鏊被点倒单膝触地
-    (63.500, 'chopstick_tap', 0.9),  # c2 刃点肩甲（犹豫的句点）
-    (72.800, 'whoosh_fast', 0.8),    # 大釜全力挥空
-    (74.000, 'chopstick_tap', 0.9),  # c3 刃点背（蛮力的句点）
-    (74.600, 'body_drop', 0.7),      # 大釜跪撑落地
-    (92.500, 'whoosh_fast', 0.9),    # 大釜合掌抛出阿鏊
-    (96.500, 'pot_shock', 1.0),      # c4 震堂·锅鸣一击（空中盾击被架开）
-    (97.500, 'chopstick_barrage', 0.9), # 流星·双箸乱穿弹幕
-    (98.600, 'star_net', 0.9),       # 天罗·星屑网侧翼收束
-    (99.500, 'shield_block', 1.0),   # c5 盾阵接住乱穿（挣到的反扑顶点）
+    (124.500, 'shield_bang', 1.0),   # 敲盾为号
+    (121.000, 'beast_growl', 0.8),   # 兽踏出黑暗
+    (149.500, 'beast_roar', 0.9),    # 扑击起跳
+    (152.000, 'claw_scrape', 1.0),   # c1 兽爪抓盾
+    (172.900, 'beast_roar', 0.7),    # 大釜挥空瞬间兽低吼
+    (178.000, 'beast_charge', 1.0),  # c2 肩撞撞飞
+    (206.000, 'disc_clatter', 0.9),  # 盘脱手滚落
+    (252.400, 'rain_burst', 1.0),    # 千孔·银星雨爆发
+    (256.000, 'crater_slam', 0.5),   # 弹雨压点（轻铺垫）
+    (276.000, 'crater_slam', 1.0),   # c4 陨星·釜底落
+    (295.500, 'beast_flee', 0.9),    # 兽醒逃入夜
 ]
-AMBIENCE = ('ambience_morning', 0.20)   # 晨风鸟鸣底床（全场循环）
-# BGM 双段：晨曲铺巡逻/通告（0-44），考核战鼓点铺考核→谷底→合体→评语（44-108 淡出）
+AMBIENCE = ('ambience_night', 0.30)   # 夜旷野底床（厚：氛围感=大片感，存在感强于 S1E1）
+FIRE_BED = ('fire_crackle', 0.16, 14.0, 316.0)  # 圣殿火盆噼啪层（圣殿段在画面内）
+# BGM 双段：夜守沉隐（0-140），夜战压迫→爆发→落定（140-296 淡出，余韵留底床）
 BGMS = [
-    ('bgm_morning', 0.55, 0.0, 44.0, 2.0),
-    ('bgm_trial', 0.60, 44.0, 112.0, 2.5),
+    ('bgm_nightwatch', 0.50, 0.0, 140.0, 3.0),
+    ('bgm_nightbattle', 0.58, 140.0, 296.0, 3.0),
 ]
 DUCK_DB = -6.0
 DUCK_SMOOTH = 0.150
@@ -58,7 +57,10 @@ DUCK_SMOOTH = 0.150
 def build_bed(n, name, gain, t0=0.0, fade=0.8):
     """循环底床铺满 [t0,end]：先把源文件尾部 1.5s 折进头部做无缝环（loop repair），
     再平铺——段间叠化在稀疏内容上会造成接缝电平 dip（S1E1 晨风底床翻车实录），
-    源内折尾比铺排时叠化干净。fade 进/出。"""
+    源内折尾比铺排时叠化干净。fade 进/出。
+    S1E2 增补：慢 AGC 抬平生成源自身的起淡低谷（夜风床起音 fade-in 会在每个循环节
+    造成 dropout——增益域 0.8-2.2、1s uniform_filter1d 平滑防泵浦；np.convolve 全核
+    在 75s×48k 会挂起，别用）。"""
     amb = load(EP / SFX_DIR / f'{name}.wav') * gain
     xr = int(1.5 * SR)
     if len(amb) > 2 * xr:
@@ -66,6 +68,20 @@ def build_bed(n, name, gain, t0=0.0, fade=0.8):
         repaired = amb.copy()
         repaired[:xr] = amb[-xr:] * (1 - w) + amb[:xr] * w  # 尾部折进头部
         amb = repaired[:-xr]
+    # 慢 AGC：1s 块 RMS 相对中位数的低谷抬平
+    from scipy.ndimage import uniform_filter1d
+    mono = np.abs(amb).mean(axis=1)
+    blk = SR
+    nb = len(mono) // blk
+    if nb >= 4:
+        block = np.sqrt(np.mean(mono[:nb * blk].reshape(nb, blk) ** 2, axis=1))
+        med = np.median(block)
+        g = np.clip(med / np.maximum(block, 1e-6), 0.8, 2.2)
+        gsm = uniform_filter1d(g, size=3)
+        gfull = np.repeat(gsm, blk)
+        if len(gfull) < len(amb):
+            gfull = np.pad(gfull, (0, len(amb) - len(gfull)), constant_values=gsm[-1])
+        amb *= gfull[:len(amb)][:, None]
     seg = len(amb)
     bed = np.zeros((n, 2))
     pos = int(t0 * SR)
@@ -113,6 +129,13 @@ def main():
     mix += build_bed(n, amb_name, amb_gain)
     sources['ambience'] = {'path': f'{SFX_DIR}/{amb_name}.wav', 'provider': 'volcano-seedaudio', 'gain': amb_gain,
                            'sha256': hashlib.sha256((EP / SFX_DIR / f'{amb_name}.wav').read_bytes()).hexdigest()}
+    fb_name, fb_gain, fb_t0, fb_t1 = FIRE_BED
+    fb = build_bed(n, fb_name, fb_gain, t0=fb_t0, fade=1.2)
+    fb[int(fb_t1 * SR):] = 0
+    mix += fb
+    sources['fire_bed'] = {'path': f'{SFX_DIR}/{fb_name}.wav', 'provider': 'volcano-seedaudio',
+                           'gain': fb_gain, 'window': [fb_t0, fb_t1],
+                           'sha256': hashlib.sha256((EP / SFX_DIR / f'{fb_name}.wav').read_bytes()).hexdigest()}
 
     placed = []
     for t0, name, gain in EVENTS:
