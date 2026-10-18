@@ -16,6 +16,8 @@ import {StarArenaScene} from 'dula-assets/scenes/stardust/StarArenaScene.js';
 import {PalaceGateScene} from 'dula-assets/scenes/stardust/PalaceGateScene.js';
 import {DeepseaRuinsScene} from 'dula-assets/scenes/stardust/DeepseaRuinsScene.js';
 import {poseAt,ease,clamp,T,BLOCK_PT,CLASH_PT,LAND_PT,HESTIA_SEAT} from './performance.js';
+// R11 必杀技：技名卡+喊招压拍+VFX（资产库 moves.js；喊招摆点 config/calls.json 实测回推）
+import {MOVES,buildMoveFX,drawMoveCard} from 'dula-assets/characters/stardust/moves.js';
 
 const W=1280,H=720;
 window.debugFit=new URLSearchParams(location.search).has('debugFit'); // clad_fit 调试探针开关
@@ -207,6 +209,13 @@ function dustAt(t,target){
   }
 }
 
+// ── R11 必杀技 VFX 实例（挂 fxGroup 随场景 reparent；锚点帧帧活取）──
+const wv2=new THREE.Vector3();
+const steamFX=buildMoveFX('steam_pillar');fxGroup.add(steamFX.group);
+const lotusFX=buildMoveFX('star_lotus');fxGroup.add(lotusFX.group);
+const shockFX=buildMoveFX('pot_shock');fxGroup.add(shockFX.group);
+const slamFX=buildMoveFX('crater_slam');fxGroup.add(slamFX.group);
+
 // ── 画布叠加件 ──
 function flash(t,t0,dur=.1,strength=.5){ // 白闪 ≤.55
   const u=(t-t0)/dur;if(u<0||u>1)return;
@@ -317,6 +326,16 @@ function draw(t,capture=true){
   const disc=actors.xiaozao.bracerDiscL.getWorldPosition(new THREE.Vector3());
   dustAt(t,disc);
 
+  // ── R11 必杀技 VFX（活锚点=渲染层纯函数；技名卡在画布叠加层）──
+  // 大釜「沸泉·冲天柱」：蓄力期拳上蒸汽星屑柱（15.9 起，格挡帧收）
+  steamFX.update(t,15.9,actors.dafu.hands.right.getWorldPosition(wv2));
+  // 阿鏊「圆盾·星莲华」：盾面莲华光轮绽开（格挡前瞬绽，16.55 起）
+  lotusFX.update(t,16.55,actors.aoao.shieldDome.getWorldPosition(wv2));
+  // 阿鏊「震堂·锅鸣一击」：对拳帧环形冲击波三连（锚 CLASH_PT 真实接触点）
+  shockFX.update(t,T.CLASH,new THREE.Vector3(...CLASH_PT));
+  // 大釜「陨星·釜底落」：反震落点大环爆发+碎石迸起（锚 LAND_PT）
+  slamFX.update(t,T.KNOCK,new THREE.Vector3(LAND_PT[0],0,LAND_PT[2]));
+
   // ── trace 探针状态（contact/gait/reach/limb_attach/女神坐姿 契约用）──
   const hands={},arms={},limbBody={},torsoAxis={},wv=new THREE.Vector3();
   const ARM_LEN={aoao:.39,xiaozao:.36,dafu:.45},AXIS={aoao:1.47,xiaozao:1.37,dafu:1.65};
@@ -387,6 +406,11 @@ function draw(t,capture=true){
   flash(t,T.CLASH,.09,.5);
   flash(t,T.CLANG,.12,.4);
   drawTitleSmall(t);drawSubtitle(t);fadeBlack(t);
+  // ── R11 技名卡（蓄力期起、接触帧前后收；双人同喊分屏左右半卡）──
+  drawMoveCard(ctx,W,H,{name:'沸泉·冲天柱',color:'#ffc890',t,t0:15.45,dur:.95,side:'right'});
+  drawMoveCard(ctx,W,H,{name:'圆盾·星莲华',color:'#3dffc8',t,t0:15.9,dur:.95,side:'left'});
+  drawMoveCard(ctx,W,H,{name:'震堂·锅鸣一击',color:'#ffd98a',t,t0:19.1,dur:.9});
+  drawMoveCard(ctx,W,H,{name:'陨星·釜底落',color:'#ffb35e',t,t0:22.45,dur:.95});
   return {image:canvas.toDataURL('image/jpeg',.93).split(',')[1],state};
 }
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);

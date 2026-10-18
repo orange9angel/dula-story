@@ -7,6 +7,8 @@ import {AoaoCraft,XiaozaoCraft,DafuCraft,AzuCraft,HestiaCraft} from 'dula-assets
 import {StardustShrineScene} from 'dula-assets/scenes/stardust/StardustShrineScene.js';
 import {StarfallColonnadeScene} from 'dula-assets/scenes/stardust/StarfallColonnadeScene.js';
 import {poseAt,ease,clamp,T,SHIELD_PT,PAULDRON_PT,DISC_PT,HESTIA_SEAT} from './performance.js';
+// R11 必杀技：技名卡+喊招压拍+VFX（资产库 moves.js；晨景亮场景加色光效强度按首帧目检调）
+import {MOVES,buildMoveFX,drawMoveCard} from 'dula-assets/characters/stardust/moves.js';
 
 const W=1280,H=720;
 const TL=await fetch('./config/timeline.json').then(r=>r.json());
@@ -144,6 +146,11 @@ const sparks=[];
    s.visible=false;sparks.push(s);
  }}
 for(const m of [impactRing,dustRing,flare,...sparks])SCENES.shrine.scene.add(m);
+// R11 必杀技 VFX 实例（锚点帧帧活取=渲染层纯函数）
+const wv2=new THREE.Vector3();
+const lotusFX=buildMoveFX('star_lotus');SCENES.shrine.scene.add(lotusFX.group); // 阿鏊盾面莲华（exam1 煎蛋排面）
+const barrageFX=buildMoveFX('chopstick_barrage');SCENES.shrine.scene.add(barrageFX.group); // 阿箸乱穿（TAP1）
+const pierceFX=buildMoveFX('star_pierce');SCENES.shrine.scene.add(pierceFX.group); // 阿箸夹星断（PINCH）
 function ringAt(mesh,x,y,z,t,t0,color,maxR=1.2,dur=.5){
   const u=(t-t0)/dur;
   if(u<0||u>1){mesh.visible=false;return;}
@@ -356,6 +363,12 @@ function draw(t,capture=true){
   else if(Math.abs(t-T.PINCH)<.5){const d=actors.xiaozao.bracerDiscL.getWorldPosition(new THREE.Vector3());
     ringAt(impactRing,d.x,d.y,d.z,t,T.PINCH,'#8fd8ff',.8,.4);flareAt(t,T.PINCH,d.x,d.y,d.z,'#d4ecff');}
   else{impactRing.visible=false;flare.visible=false;for(const s of sparks)s.visible=false;}
+  // ── R11 必杀技 VFX 驱动（晨景亮场景：加色件 opacity 比夜景抬一档）──
+  lotusFX.update(t,34.7,actors.aoao.shieldDome.getWorldPosition(wv2)); // 莲华绽开（蛋落盾面）
+  {const tip=actors.azu.rigs.right.rig.localToWorld(new THREE.Vector3(0,0,.51));
+   const fwd=new THREE.Vector3(...SHIELD_PT).sub(tip).normalize();
+   barrageFX.update(t,54.1,tip,fwd);} // 乱穿残影（刃尖→盾心方向）
+  pierceFX.update(t,T.PINCH,actors.xiaozao.bracerDiscL.getWorldPosition(wv2)); // 夹星断（夹点）
   if(Math.abs(t-T.STONE_LAND)<.6)ringAt(dustRing,1.7,.03,.7,t,T.STONE_LAND,'#c9b89a',1.6,.6);
   else if(Math.abs(t-T.SIT)<.6)ringAt(dustRing,states.dafu.rootX,.03,states.dafu.rootZ,t,T.SIT,'#c9b89a',1.2,.5);
   else dustRing.visible=false;
@@ -439,7 +452,12 @@ function draw(t,capture=true){
   drawSFX('咔！','#8fd8ff',T.PINCH,T.PINCH+.40,t);
   drawSFX('当——！','#ffd98a',T.CLANG,T.CLANG+.55,t);
   flash(t,T.TAP1,.09,.45);flash(t,T.TAP2,.08,.4);flash(t,T.PINCH,.09,.4);flash(t,T.CLANG,.12,.4);
-  drawSubtitle(t);fadeBlack(t);
+  drawSubtitle(t);
+  // ── R11 技名卡（蓄力期起、招出帧前后收）──
+  drawMoveCard(ctx,W,H,{name:'圆盾·星莲华',color:'#3dffc8',t,t0:33.4,dur:.9});
+  drawMoveCard(ctx,W,H,{name:'流星·双箸乱穿',color:'#ff4a58',t,t0:52.9,dur:.9});
+  drawMoveCard(ctx,W,H,{name:'合箸·夹星断',color:'#e02a3c',t,t0:59.7,dur:.9});
+  fadeBlack(t);
   return {image:canvas.toDataURL('image/jpeg',.93).split(',')[1],state};
 }
 window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);

@@ -49,6 +49,9 @@ EVENTS = [
     (54.400, 'chopstick_tap', 1.0),  # TAP1 刃点盾
     (57.800, 'chopstick_tap', 0.9),  # TAP2 刃点肩甲
     (61.200, 'chopstick_clack', 1.0),# PINCH 双筷夹盘
+    (34.950, 'star_lotus', 0.75),    # 莲华绽开（圆盾·星莲华，蛋落盾面帧）
+    (54.400, 'chopstick_barrage', 0.9), # 双箸乱穿残影（TAP1 刃点盾帧）
+    (61.200, 'star_pierce', 1.0),    # 夹星断（PINCH 夹盘帧）
     (63.400, 'pot_set', 0.9),        # 火锅落地
     (74.300, 'pot_clang', 1.0),      # 「当——」收尾（压尾字）
 ]

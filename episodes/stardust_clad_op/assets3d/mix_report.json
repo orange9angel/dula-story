@@ -74,6 +74,30 @@
    "sfx": "pot_clang",
    "gain": 1.0,
    "lowpass": null
+  },
+  {
+   "t": 15.9,
+   "sfx": "steam_pillar",
+   "gain": 0.8,
+   "lowpass": null
+  },
+  {
+   "t": 16.55,
+   "sfx": "star_lotus",
+   "gain": 0.8,
+   "lowpass": null
+  },
+  {
+   "t": 19.83,
+   "sfx": "pot_shock",
+   "gain": 0.9,
+   "lowpass": null
+  },
+  {
+   "t": 23.034,
+   "sfx": "crater_slam",
+   "gain": 0.9,
+   "lowpass": null
   }
  ],
  "sources": {
@@ -132,6 +156,50 @@
    "path": "assets3d/sfx/pot_clang.wav",
    "provider": "volcano-seedaudio",
    "sha256": "40bfdda78aa77f8f756f0568e863f45d86145c169b59dcd47eddc08a1147e662"
+  },
+  "sfx:steam_pillar": {
+   "path": "assets3d/sfx/steam_pillar.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "75adf5c3c33b9f65984d9602e43b032bf284cb683ea7f1bcc3e31daed75cff79"
+  },
+  "sfx:star_lotus": {
+   "path": "assets3d/sfx/star_lotus.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "80e4f82ae8904a82e3f7ed378563634206e638f398b8ecc9917abcb9fdddc435"
+  },
+  "sfx:pot_shock": {
+   "path": "assets3d/sfx/pot_shock.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "4bc2ddff1a034f1c8bc89d52fa22e198a42848f10fe725e4400ab593fcc68d61"
+  },
+  "sfx:crater_slam": {
+   "path": "assets3d/sfx/crater_slam.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "5e9b49df2bcdcf18d3fd1aaef53e08cf8c4195504c6ebc00768129e6a4934056"
+  },
+  "call:call_dafu1": {
+   "path": "assets3d/calls/call_dafu1.wav",
+   "t": 13.83,
+   "provider": "volcano-seedtts",
+   "sha256": "2f566a759867f34ec79a0a9064f11e23b0faa72d1002e1dacd799ef0bb06245a"
+  },
+  "call:call_aoao1": {
+   "path": "assets3d/calls/call_aoao1.wav",
+   "t": 14.47,
+   "provider": "volcano-seedtts",
+   "sha256": "5ed7b99bf68bdf44c061a349ece9bf34746ce35bbe23e99c8c594892b216ea7a"
+  },
+  "call:call_aoao2": {
+   "path": "assets3d/calls/call_aoao2.wav",
+   "t": 18.07,
+   "provider": "volcano-seedtts",
+   "sha256": "75e953fe0c78221b1d3994fd3850d05cec2ae57e6eb287ed8833d84229ea4fb8"
+  },
+  "call:call_dafu2": {
+   "path": "assets3d/calls/call_dafu2.wav",
+   "t": 20.65,
+   "provider": "volcano-seedtts",
+   "sha256": "0a15ebf5f13964aaa45af0cc750a11eedea3942bc8b2e6a530be99f6d032cb22"
   }
  },
  "voice": {
@@ -143,9 +211,9 @@
   "provider": "volcano-seedtts",
   "sha256": "408c60474ba8bf1970b62699fa15a3bf0fd8e79e13cdc3e8f0ca87803e6eb49d"
  },
- "peak_before": 0.9726,
+ "peak_before": 1.3396,
  "ceiling": 0.7762,
  "normalized": true,
  "mix_peak": 0.7762,
- "mix_rms": 0.085
+ "mix_rms": 0.0721
 }

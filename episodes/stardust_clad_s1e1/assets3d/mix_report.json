@@ -88,6 +88,21 @@
    "gain": 1.0
   },
   {
+   "t": 34.95,
+   "sfx": "star_lotus",
+   "gain": 0.75
+  },
+  {
+   "t": 54.4,
+   "sfx": "chopstick_barrage",
+   "gain": 0.9
+  },
+  {
+   "t": 61.2,
+   "sfx": "star_pierce",
+   "gain": 1.0
+  },
+  {
    "t": 63.4,
    "sfx": "pot_set",
    "gain": 0.9
@@ -168,6 +183,21 @@
    "provider": "volcano-seedaudio",
    "sha256": "dae504b2e0e33e1d4aa06c58bee377761ae4472ab2cb48c857beafb07aa0954b"
   },
+  "sfx:star_lotus": {
+   "path": "assets3d/sfx/star_lotus.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "28d32a41c8c441f93b702fbf8607344cf36734bb0bc55616473ec3135085050b"
+  },
+  "sfx:chopstick_barrage": {
+   "path": "assets3d/sfx/chopstick_barrage.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "d66ffb26f502bc21a71752e52a7a1041ac33facd4b403596ee0a1c6fd8cf5021"
+  },
+  "sfx:star_pierce": {
+   "path": "assets3d/sfx/star_pierce.wav",
+   "provider": "volcano-seedaudio",
+   "sha256": "f948268f142ed10809c9564b5778194e60b2593dd5fa04e1fa23c32c9b11db68"
+  },
   "sfx:pot_set": {
    "path": "assets3d/sfx/pot_set.wav",
    "provider": "volcano-seedaudio",
@@ -226,6 +256,12 @@
    "provider": "volcano-seedtts",
    "sha256": "f66d3fe36e84ddb9c020fc21b84fcfaec42a728f0b13de9e33de1bdd34f8fa2e"
   },
+  "voice:c2": {
+   "path": "assets3d/dialogue/c2.wav",
+   "t": 32.8,
+   "provider": "volcano-seedtts",
+   "sha256": "2e4420eb34ecab1c4738345371cd79ee03b97d6b80d0eda249c8dcfb77e7cd0d"
+  },
   "voice:l11": {
    "path": "assets3d/dialogue/l11.wav",
    "t": 34.8,
@@ -261,6 +297,18 @@
    "t": 51.1,
    "provider": "volcano-seedtts",
    "sha256": "18890b62b9fd637016f210affcf160e168ea6c4b68733c73583a79a10a673345"
+  },
+  "voice:c1": {
+   "path": "assets3d/dialogue/c1.wav",
+   "t": 52.6,
+   "provider": "volcano-seedtts",
+   "sha256": "ed1ee6244ccfcbc8e6ceb460aaa43aba802afd0694867fdd257029df04a65f2e"
+  },
+  "voice:c3": {
+   "path": "assets3d/dialogue/c3.wav",
+   "t": 59.6,
+   "provider": "volcano-seedtts",
+   "sha256": "832b8d1012e6b8a6c24e1c84be37b6d08a427479e1d831fd581d0a11dc3f979a"
   },
   "voice:l17": {
    "path": "assets3d/dialogue/l17.wav",
@@ -329,6 +377,11 @@
    "dur": 3.864
   },
   {
+   "id": "c2",
+   "t": 32.8,
+   "dur": 2.256
+  },
+  {
    "id": "l11",
    "t": 34.8,
    "dur": 3.624
@@ -359,6 +412,16 @@
    "dur": 1.224
   },
   {
+   "id": "c1",
+   "t": 52.6,
+   "dur": 1.872
+  },
+  {
+   "id": "c3",
+   "t": 59.6,
+   "dur": 1.632
+  },
+  {
    "id": "l17",
    "t": 62.5,
    "dur": 1.464
@@ -381,9 +444,9 @@
  ],
  "duck_db": -6.0,
  "voice_gain": 1.3,
- "peak_before": 0.6972,
+ "peak_before": 0.838,
  "ceiling": 0.7762,
- "normalized": false,
- "mix_peak": 0.6972,
- "mix_rms": 0.0641
+ "normalized": true,
+ "mix_peak": 0.7762,
+ "mix_rms": 0.0623
 }

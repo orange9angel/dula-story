@@ -46,6 +46,11 @@ EVENTS = [
     (31.045, 'whoosh_fast',   0.8, None),   # 冲锋（downbeat）
     (33.855, 'energy_blast',  0.9, None),   # 合体 gag 顶点
     (47.020, 'pot_clang',     1.0, None),   # 「当——」锅鸣收尾（Seed-Audio 专用件，替代低通程序音）
+    # R11 必杀技专属 SFX（摆点=蓄力/接触帧）
+    (15.900, 'steam_pillar',  0.8, None),   # 大釜蓄力蒸汽柱（沸泉·冲天柱）
+    (16.550, 'star_lotus',   0.8, None),   # 莲华绽开（圆盾·星莲华，格挡前瞬）
+    (19.830, 'pot_shock',    0.9, None),   # 锅鸣冲击波（震堂·锅鸣一击，对拳帧）
+    (23.034, 'crater_slam',  0.9, None),   # 陨星坠地爆发（陨星·釜底落，击飞落地帧）
 ]
 AMBIENCE = ('ambience_night', 0.22)  # 夜风+星火噼啪底床（全场循环，20s 交叉淡化无缝）
 VOICE_T = 45.0      # 赫斯提亚画外音
@@ -114,17 +119,34 @@ def main():
     jaw = np.clip((env - lo) / (hi - lo) * 0.85, 0, 0.85)
     (EP / 'config/hestia_voice_env.json').write_text(json.dumps(
         {'t0': VOICE_T, 'dt': .02, 'jaw': [round(float(x), 3) for x in jaw]}), encoding='utf-8')
-    # duck：台词窗 ±0.3s 内歌曲 -8dB，150ms 余弦平滑进出
+    # duck：台词/喊招窗歌曲 -8dB，150ms 余弦平滑进出（先合并所有窗口再统一施加）
     duck = np.ones(n)
-    d0, d1 = vi - int(.3 * SR), min(n, vj + int(.3 * SR))
     g = 10 ** (DUCK_DB / 20)
     ramp = int(DUCK_SMOOTH * SR)
-    duck[d0:d1] = g
-    # 余弦平滑进出
-    duck[d0:d0 + ramp] = 1 + (g - 1) * (0.5 - 0.5 * np.cos(np.pi * np.arange(ramp) / ramp))
-    duck[d1 - ramp:d1] = g + (1 - g) * (0.5 - 0.5 * np.cos(np.pi * np.arange(ramp) / ramp))
+    duck_windows = [(vi - int(.3 * SR), min(n, vj + int(.3 * SR)))]
+    # ── R11 喊招（少年漫喊招必须炸出来：增益顶格 1.6，逐条并入 duck 窗）──
+    calls_cfg = json.loads((EP / 'config/calls.json').read_text(encoding='utf-8'))
+    calls_audio = []
+    for c in calls_cfg['calls']:
+        cw = load(EP / 'assets3d/calls' / f"{c['id']}.wav")
+        ci = int(round(c['t0'] * SR))
+        cj = min(n, ci + len(cw))
+        duck_windows.append((max(0, ci - int(.2 * SR)), cj))
+        calls_audio.append((ci, cj, cw, c))
+    for w0, w1 in duck_windows:
+        w0 = max(0, w0)
+        duck[w0:w1] = g
+        duck[w0:w0 + ramp] = 1 + (g - 1) * (0.5 - 0.5 * np.cos(np.pi * np.arange(ramp) / ramp))
+        duck[w1 - ramp:w1] = g + (1 - g) * (0.5 - 0.5 * np.cos(np.pi * np.arange(ramp) / ramp))
     mix *= duck[:, None]
     mix[vi:vj] += voice[:vj - vi] * 1.4  # 台词电平补偿（QC 峰值 0.25 偏低）
+    calls_placed = []
+    for ci, cj, cw, c in calls_audio:
+        mix[ci:cj] += cw[:cj - ci] * 1.6
+        calls_placed.append({'id': c['id'], 't': c['t0'], 'move': c['move']})
+        sources[f"call:{c['id']}"] = {'path': f'assets3d/calls/{c["id"]}.wav', 't': c['t0'],
+                                      'provider': 'volcano-seedtts',
+                                      'sha256': hashlib.sha256((EP / 'assets3d/calls' / f'{c["id"]}.wav').read_bytes()).hexdigest()}
 
     peak = float(np.abs(mix).max())
     ceiling = 10 ** (-2.2 / 20)  # -2.2dBFS（AAC 编码有约 1.3% 过冲，留余量保成片 ≤-1.8dBFS）

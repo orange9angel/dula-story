@@ -111,3 +111,16 @@ QC（qc_lines.py，拼音级）：18 句 = 16 ✅ + 2 ⚠️（l07 80%/l03 85%�
   contact_probe + audio_sync + review_shots 22 镜）。
 - 离线：scan_reach all reachable（WARN 15 条=2-3 帧边界过渡，白名单口径内）。
 - 成片 `output/craft3d_full.mp4`（75.0s h264+aac，混音 assets3d/mixed.wav 自动 mux）。
+
+## R11（必杀技接入：切磋段三接触帧升级 + 阿鏊考核段喊招）
+
+- 资产库 `dula-assets/characters/stardust/moves.js` 共享（八技定义+VFX 构建器+技名卡）。
+- 用上三技：阿鏊「圆盾·星莲华」（32.8 喊招末字压 35.0 蛋落盾面，莲华绽开给煎蛋 gag 排面）、
+  阿箸「流星·双箸乱穿」（52.6 喊招压 54.4 刃点盾，残影刺线弹幕）、阿箸「合箸·夹星断」
+  （59.6 喊招压 61.2 夹盘，夹点白闪+星屑崩散）。
+- 喊招走既有对白管线（dialogue.json 加 c1/c2/c3 三行 → 口型包络/分色字幕/duck 自动接入，
+  既有 18 句窗口与声画对位未动；22 事件总线新增 3 支必杀 SFX 摆点）。
+- QC：c1/c2 拼音 100% ✅；c3 80% ⚠️（「合箸夹星断」全句同音字「合住夹心段」，判合格）。
+- 晨景亮场加色光效强度按首帧目检调（弹幕/崩散 opacity 比夜景抬一档）。
+- 证据帧：storyboard/r11_check/（shot_29/30 莲华+煎蛋、shot_53 乱穿+刃点盾、shot_60/61 夹星断+夹盘）。
+- 混音 normalized 触发（喊招顶格归一），AAC 复验 0.776 ≤0.8；gate ALL GREEN。

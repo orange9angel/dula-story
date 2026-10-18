@@ -1,0 +1,41 @@
+{
+ "_comment": "R11 喊招（少年漫喊招语法，技名全部原创）：蓄力期起喊、末字压接触帧。t0=合成实测时长回推（dur 见 tmp/calls_probe.json）。声线与 S1E1 正片同人选（系列一致）。 t0 已按实测裁切时长回推（末字压接触帧：16.625/19.83/23.034）。",
+ "calls": [
+  {
+   "id": "call_dafu1",
+   "speaker": "dafu",
+   "voice": "zh_male_zhubajie_uranus_bigtts",
+   "text": "沸泉·冲天柱！",
+   "move": "steam_pillar",
+   "t0": 13.83,
+   "note": "蓄力期起喊，末字压格挡接触帧 16.625"
+  },
+  {
+   "id": "call_aoao1",
+   "speaker": "aoao",
+   "voice": "zh_male_kailangdidi_uranus_bigtts",
+   "text": "圆盾·星莲华！",
+   "move": "star_lotus",
+   "t0": 14.47,
+   "note": "与 dafu1 分屏交叠（少年漫同喊语法）"
+  },
+  {
+   "id": "call_aoao2",
+   "speaker": "aoao",
+   "voice": "zh_male_kailangdidi_uranus_bigtts",
+   "text": "震堂·锅鸣一击！",
+   "move": "pot_shock",
+   "t0": 18.07,
+   "note": "对拳 19.83 压末字（f4 跳切段音频连续）"
+  },
+  {
+   "id": "call_dafu2",
+   "speaker": "dafu",
+   "voice": "zh_male_zhubajie_uranus_bigtts",
+   "text": "陨星·釜底落！",
+   "move": "crater_slam",
+   "t0": 20.65,
+   "note": "反震终结 23.034 压末字"
+  }
+ ]
+}
