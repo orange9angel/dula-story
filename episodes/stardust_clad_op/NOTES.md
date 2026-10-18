@@ -403,3 +403,43 @@ node --import ./tools/register_loader.mjs tools/scan_reach.mjs   # 离线 twoBon
 - **肋梁 TorusGeometry 半环别加 rotation.y**：XY 平面半环本来就是跨走廊的拱肋，
   转了就读成纵向贴顶弧。
 - 夜景新场景灯光依旧首帧目检调（幽荧河 hemi .95→1.15、正面补光 .62→.95、河面点光 16→22）。
+
+## R10（监制整改：场景扩展——星屑角斗场/星辉门阙/沉星海底）
+
+> 角斗士场/宫殿门口/海底三种气质（监制点名，命名全部原创）。交锋主链搬角斗场沙场
+> （冲击读感）；R9 资产保留出镜（宫殿=阿鏊登场、幽荧河=f4 冷看、云巅=大釜登场+f6f8）。
+
+### 新场景（dula-assets/scenes/stardust/）
+
+| 场景 | 内容 | 纹理（Seedream，逐文件溯源 sha256） |
+|---|---|---|
+| `StarArenaScene` 星屑角斗场 | 细沙沙场（r13）+拖痕爪痕覆盖层（程序化保底常驻）+座席圈层三层岩块环（正面缺口留机位）+旗幡火炬交替环+断刃兽骨散件；露天 ContinuousBackdrop 夜空 | arena_sand(+_n 2.2) 细沙拖痕 / arena_rock(+_n 1.8) 风化岩块 / backdrop_arena 夜空座席剪影 |
+| `PalaceGateScene` 星辉门阙 | 超长石阶八级上行+门廊平台、巨型双开门扉（浅浮雕+金框门环）、门楣浮雕带+三角山墙、门侧执戟巨像×2、圣火盆列沿阶、广场断碑散件 | gate_stone(+_n 1.6) 外墙石材 / door_relief(+_n 1.8) 门扉浮雕 / backdrop_gate 夜宫剪影 |
+| `DeepseaRuinsScene` 沉星海底 | **水下顶封**：海面光幕大盘（y=14 从下方仰望，水纹光斑纹理 offset 纯 t 缓流）+god ray 光柱群缓摆+蓝绿水体 Fog 压远景；沉柱断拱遗迹+半埋坛罐+贝壳碎+上升气泡（LCG 循环）+远处遗迹剪影带 | deepsea_sand(+_n 1.6) 海底沙 / deepsea_stone(+_n 1.8) 遗迹石材 / water_surface 海面光幕（无法线，Basic 材质） |
+
+### 最终映射表（24 段边界吸附不变；出镜秒数≈段长合计）
+
+| 场景 | 段 | 出镜≈ |
+|---|---|---|
+| 圣殿 shrine | intro + gag/outro 链 | 14.3s |
+| 角斗场 arena | f1–f10 交锋主链 + v2 大釜镜 | 16.8s |
+| 海底 deepsea | clad_xiaozao + v2 小凿镜 | 4.4s |
+| 云巅 cloudpeak | clad_dafu + f6 + f8 | 6.4s |
+| 宫殿 palace | clad_aoao | 3.6s |
+| 门阙 palacegate | v2 阿鏊镜 | 0.8s |
+| 幽荧河 gloomriver | f4 冷看 | 2.0s |
+
+- 交锋接触帧（格挡 16.625/对拳 19.83/击飞 23.034）世界坐标不变，只换壳到沙场；
+  裂缝+碎石常驻件从宫殿挪角斗场（fxGroup reparent 机制沿用 R9）。
+- 门阙出镜 0.8s 偏少但冲锋低机位仰角排面镜刚好合适（台阶上行+巨门背景）。
+
+### 验证证据
+
+- 接缝探针：`storyboard/r10_check/probe/`（三场景 establish+四机位，海底加仰拍顶机位验海面封口）。
+- gate 全绿（交锋链探针数值与 R9 逐点一致——同坐标换壳）；成片重渲+字幕重烧。
+- S1E1 回归 gate ALL GREEN（它只用圣殿/柱廊，本轮三场景纯新增）。
+
+### 翻车记录（R10）
+
+- （本轮新场景一轮过：R9 的拱顶/封口/灯光教训直接复用；海底顶封用大盘光幕+雾压远景，
+  未踩新坑。唯一调整：幽荧河式夜景教训前置——角斗场/门阙首帧灯光一次到位。）

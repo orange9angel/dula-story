@@ -22,7 +22,10 @@ JOBS = [("floor", 2.0), ("stone", 1.6), ("colonnade_ground", 2.0), ("caldera_gro
         ("basalt_wall", 2.0), ("scorched_ground", 2.2), ("magma", 1.8),
         # R9 场景升级
         ("palace_floor", 2.0), ("palace_stone", 1.6), ("vault_coffer", 1.4),
-        ("gloom_shore", 2.0), ("gloom_water", 1.4), ("peak_rock", 2.0)]
+        ("gloom_shore", 2.0), ("gloom_water", 1.4), ("peak_rock", 2.0),
+        # R10 场景扩展
+        ("arena_sand", 2.2), ("arena_rock", 1.8), ("gate_stone", 1.6), ("door_relief", 1.8),
+        ("deepsea_sand", 1.6), ("deepsea_stone", 1.8)]
 
 
 def normal_from_luma(img: Image.Image, strength: float) -> Image.Image:
