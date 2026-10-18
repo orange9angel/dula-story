@@ -246,3 +246,33 @@ node --import ./tools/register_loader.mjs tools/scan_reach.mjs   # 离线 twoBon
 - 监制问题"为什么第一帧是黑的"：intro 黑场淡入让第 0 帧纯黑，视频封面/平台抓帧=全黑。改法=fadeBlack 淡入从纯黑改 30% 亮度起（overlay alpha .70→0，0.6s 淡入到正常），构图第 0 帧可读；结尾淡黑不动。
 - 教训：**封面帧纪律**——第 0 帧必须是可读构图帧（夜景基调微亮起），"从黑场淡入"是把封面让给全黑。淡入可以保留，起点不能是 0% 亮度。
 - 抽帧验证 `storyboard/r6_check/`：frame0.jpg（净版第 0 帧）/frame_0.2s.jpg/sub_frame0.jpg（字幕版第 0 帧）均非黑可读；gate 重跑（全量，非 --skip-render）全绿；字幕版重烧 49.2s 不变。
+
+## R7（监制整改：胫甲装反修正 + 人形步态——告别山羊腿）
+
+### ① 胫甲前片装反（characters.js 腿甲段）
+
+- 根因：forearmRig.align 把 rig 局部 +z 对到膝→踝骨轴；直筒腿时 **rig 局部 +y 才是腿前向**
+  （setFromUnitVectors(+z→朝下) 绕 x 转 +90°，局部 -y 翻到角色后方）。旧胫甲弧板弧心在 -y=
+  小腿后侧，与注释"-y=腿前向"相反；分段环纹本就在 +y 前侧——板在背面、纹在正面，各贴一边。
+- 修法：CylinderGeometry 弧心 θ 起 `Math.PI-.8`（柱局部 -z，rotation.x=π/2 后翻到 +y 前侧），
+  胫前棱线与 clad_fit ref 同步改 +y。探针度量是到骨轴的距离，左右对称不受翻面影响。
+- 教训：**rig 局部方向注释要用旋转验算，不要凭直觉写**；甲件装饰件（环纹）与主板分两次写时
+  方向假设可能不一致，落成"主板背面+装饰正面"的撕裂状态。
+
+### ② 人形步态（performance.js buildPose + 双 GAIT 实例）
+
+- 诊断（`storyboard/r7_diag/` 侧视帧）：髋部恒低、双膝全程深屈、脚踝坐膝后=山羊腿/蹲行；
+  站姿也伸不直（站不直）。根因：髋高目标恒为 hipIdle+微 hipDelta(.008)，远低于腿长允许的
+  cap（`hipY≤footY+√((legA+legB-.008)²−水平距²)`），腿永远用不满。
+- 修法三件套：
+  1. `DIMS.standStraight`（.013/.012/.008）：buildPose 里 hipY 与 p.bob 同加 st——髋/躯干/臂根
+     整体上移，站姿膝近伸直。idle 臂支 arm 的肩点与腕目标同加 p.bob（增量不变，reach 零影响）。
+  2. `createLocomotion` 双实例（不动共享默认值——s1e2/s1e3 已验收）：WALK_GAIT hipDelta .040
+     （支撑相髋部上抬腿伸直、迈步转换点下沉=人步行重心节律）；RUN_GAIT（lift .105/sway .022/
+     armSwingMax .16/heelStrike .30/toeOff .30）按 `walk.run` 分流。cap 机制兜底，永不超伸。
+  3. 双臂对摆（旧版只有右臂摆）但**只摆垂挂臂**：抬臂架势（格斗/踉跄/抬手）按前臂抬角
+     线性收掉摆动量（hangDeg>32° 归零），否则摆动把腕点顶过 reach .9 阈（f4/f6 各 11/5 条翻车）。
+- 连锁修型：腿伸直后大腿骨略前移，dafu 前中裙甲叶悬浮 +2mm 超阈（.0299>.028）——FC 叶内移
+  4mm（几何修型，不动探针阈值）。
+- 验证：`storyboard/r7_diag2/` 侧视/正面帧（腿伸直、胫甲前板可读）→ scan_reach 全时间轴
+  reachable → gate 全绿（contact_probe 回 baseline）→ 重渲 `output/craft3d_full.mp4` + 重烧字幕版。

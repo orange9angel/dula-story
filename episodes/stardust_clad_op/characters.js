@@ -333,7 +333,7 @@ function buildOrnateClad(host,cfg){
     const frontZ=.02+thR*.94-.004,backZ=-(at(beltY0)[1]+.012),sideX=d.hipHalf+thR*.55+.002; // 后叶贴臀面
     const fx=Math.sin(.5)*rxB*.62; // 前侧叶横向位
     const leafSpec=[ // [x, z, tag, 跟随腿]
-      [0,frontZ,'FC','both'],[-fx,(frontZ+.030)*.92,'FL','left'],[fx,(frontZ+.030)*.92,'FR','right'],
+      [0,frontZ-.004,'FC','both'],[-fx,(frontZ+.030)*.92,'FL','left'],[fx,(frontZ+.030)*.92,'FR','right'], // R7 腿伸直后大腿骨略前移，FC 叶内移 4mm 防悬浮
       [-sideX,.012,'SL','left'],[sideX,.012,'SR','right'],[0,backZ,'B','both'],
     ];
     for(const [lx,lz,tag,leg] of leafSpec){
@@ -368,13 +368,15 @@ function buildOrnateClad(host,cfg){
       const sr=host.shinRigs[side]=forearmRig(host);
       const g=reg(p,sr.rig,.052);
       const shinR=host.limbs[side+'Leg'].radius(.62)+.008; // 贴腿=实测腿管半径+间隙
-      // 胫甲前片：半管弧板贴小腿前侧（rig 局部 -y=腿前向）
-      const plate=new THREE.Mesh(new THREE.CylinderGeometry(shinR,shinR+.006*k,.24,14,1,false,-.8,1.6),pri);
+      // 胫甲前片：半管弧板贴小腿前侧（rig 局部 +y=腿前向：align 把 +z 对到膝→踝骨轴后，
+      // 直筒腿时 rig +y 恰朝角色前方；弧心放柱局部 -z（θ 起 π-.8），rotation.x=π/2 后翻到 +y。
+      // 旧版弧心 -y 在小腿后侧=装反，R7 修正；分段环纹本就在 +y 前侧，现与板面对齐）
+      const plate=new THREE.Mesh(new THREE.CylinderGeometry(shinR,shinR+.006*k,.24,14,1,false,Math.PI-.8,1.6),pri);
       plate.rotation.x=Math.PI/2;plate.rotation.z=0;plate.position.z=.12;
       plate.castShadow=true;g.add(plate);
-      // 胫前棱线（贴板面）
+      // 胫前棱线（贴板面前侧）
       const ridge=new THREE.Mesh(new THREE.BoxGeometry(.006,.006,.20),edgeM);
-      ridge.position.set(0,-(shinR+.003),.12);g.add(ridge);
+      ridge.position.set(0,shinR+.003,.12);g.add(ridge);
       // 分段环纹（贴板面弧条）
       for(const z of [.05,.19]){
         const band=new THREE.Mesh(new THREE.TorusGeometry(shinR+.003,.003,6,18,Math.PI*1.15),edgeM);
@@ -386,7 +388,7 @@ function buildOrnateClad(host,cfg){
         wing.position.set(ws*(shinR+.002),0,.235);wing.rotation.z=ws*1.9;wing.rotation.x=-.3;g.add(wing);
       }
       seamTorus(p,g,shinR+.002,.0025,[0,0,.12]);
-      const ref=new THREE.Object3D();ref.position.set(0,-(shinR+.002),.12);g.add(ref);
+      const ref=new THREE.Object3D();ref.position.set(0,shinR+.002,.12);g.add(ref);
       host.fitRefs.shins.push({ref,side});
     }
   }

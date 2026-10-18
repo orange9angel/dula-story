@@ -5,7 +5,11 @@
 // 接触帧 16.625（格挡）/19.83（拳甲相撞）/23.034（击飞落地），gag 顶点 33.855，收尾 47.02。
 import * as THREE from 'three';
 import {twoBone} from 'dula-assets/lib/craft3d/pose.js';
-import {walkingFeet,turningFeet,angleDelta} from 'dula-assets/lib/craft3d/locomotion.js';
+import {createLocomotion,angleDelta} from 'dula-assets/lib/craft3d/locomotion.js';
+// R7 人形步态（告别山羊腿）：支撑相髋部上抬把腿伸直（迈步转换点下沉=人步行重心节律）；
+// 跑步独立实例：更高抬膝/更大摆臂/更强起伏。buildPose 的 hipY≤footY+√(腿长²−水平距²) cap 保证永不超伸。
+const WALK_GAIT=createLocomotion({hipDelta:.040,lift:.068});
+const RUN_GAIT=createLocomotion({hipDelta:.050,lift:.105,sway:.022,armSwingGain:.30,armSwingMax:.16,heelStrike:.30,toeOff:.30});
 export const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x);};
 const mix=(a,b,u)=>a+(b-a)*u,V=(x,y,z=0)=>({x,y,z}),blend=(a,b,u)=>V(mix(a.x,b.x,u),mix(a.y,b.y,u),mix(a.z,b.z,u));
 
@@ -24,10 +28,12 @@ export const T={ // 绝对时刻表（全部来自 beatgrid）
   CHARGE_DB:31.045,GAG:33.855,FREEZE:34.35,VOICE:45.0,CLANG:47.02,
 };
 const DIMS={
-  aoao:{hipIdle:.87,shoulderY:1.42,shoulderHalf:.14,hipHalf:.078,legA:.42,legB:.42,armA:.20,armB:.19,footY:.085},
-  xiaozao:{hipIdle:.81,shoulderY:1.32,shoulderHalf:.125,hipHalf:.072,legA:.385,legB:.385,armA:.185,armB:.175,footY:.080},
+  // standStraight（R7）：髋/躯干整体上移量，膝从深屈改成近伸直（人形站姿）；
+  // 安全边界：hipIdle+standStraight+maxBob ≤ legA+legB+footY（scan_reach.mjs 120Hz 全时间轴验证）
+  aoao:{hipIdle:.87,standStraight:.013,shoulderY:1.42,shoulderHalf:.14,hipHalf:.078,legA:.42,legB:.42,armA:.20,armB:.19,footY:.085},
+  xiaozao:{hipIdle:.81,standStraight:.012,shoulderY:1.32,shoulderHalf:.125,hipHalf:.072,legA:.385,legB:.385,armA:.185,armB:.175,footY:.080},
   // hipIdle 必须 ≤ legA+legB+footY−.06：正 bob 挺身时腿不可拉直过伸（gag 颠勺翻车实录）
-  dafu:{hipIdle:.96,shoulderY:1.58,shoulderHalf:.19,hipHalf:.105,legA:.46,legB:.46,armA:.23,armB:.22,footY:.100},
+  dafu:{hipIdle:.96,standStraight:.008,shoulderY:1.58,shoulderHalf:.19,hipHalf:.105,legA:.46,legB:.46,armA:.23,armB:.22,footY:.100},
 };
 const IDLE={
   aoao:{left:V(-.20,1.10,.04),right:V(.20,1.10,.04)},
@@ -356,19 +362,19 @@ function spec(name,phase,t){
 
 // ── 公共骨架求解（三角色同契约；twoBone IK + 距离驱动步态）─────────────────
 function buildPose(actor,s,t,d){
-  const hipIdle=d.hipIdle;
-  let hipY=hipIdle+s.bob;
-  const p={rootX:s.rootX,rootZ:s.rootZ,yaw:s.yaw,bob:s.bob,lean:s.lean,
+  const hipIdle=d.hipIdle,st=d.standStraight??0; // R7：髋/躯干/臂根随 st 整体上移，腿伸直
+  let hipY=hipIdle+s.bob+st;
+  const p={rootX:s.rootX,rootZ:s.rootZ,yaw:s.yaw,bob:s.bob+st,lean:s.lean,
     headYaw:s.headYaw,headPitch:s.headPitch,headRoll:s.headRoll,
     fist:s.fist,open:s.open,point:s.point,blink:s.blink,capeLift:s.capeLift??0};
   let locomotion=null;
   if(s.walk||s.turn){
-    const half=d.hipHalf*1.15;
-    const gait=s.turn?turningFeet(s.turn,s.rootX,s.rootZ,s.yaw,half,d.footY)
-      :walkingFeet(s.walk,s.rootX,s.rootZ,s.yaw,half,d.footY,(d.legA+d.legB)*.75);
+    const half=d.hipHalf*1.15,G=!s.turn&&s.walk.run?RUN_GAIT:WALK_GAIT;
+    const gait=s.turn?WALK_GAIT.turningFeet(s.turn,s.rootX,s.rootZ,s.yaw,half,d.footY)
+      :G.walkingFeet(s.walk,s.rootX,s.rootZ,s.yaw,half,d.footY,(d.legA+d.legB)*.75);
     const heading=s.turn?s.yaw:(s.walk.facingYaw??Math.atan2(s.walk.to[0]-s.walk.from[0],s.walk.to[1]-s.walk.from[1]));
     p.rootX=s.rootX+Math.cos(heading)*gait.sway;p.rootZ=s.rootZ-Math.sin(heading)*gait.sway;
-    hipY=hipIdle+gait.hipDelta-(s.tuck??0)*.1;
+    hipY=hipIdle+st+gait.hipDelta-(s.tuck??0)*.1;
     for(const [side,sign] of [['left',-1],['right',1]]){
       const f=gait[side],horizontal=(f.x-sign*d.hipHalf)**2+f.z*f.z;
       hipY=Math.min(hipY,f.y+Math.sqrt(Math.max(.01,(d.legA+d.legB-.008)**2-horizontal)));
@@ -383,7 +389,13 @@ function buildPose(actor,s,t,d){
       root:[p.rootX,0,p.rootZ]};
     for(const [side,sign] of [['left',-1],['right',1]]){
       const shoulder=V(sign*d.shoulderHalf,d.shoulderY+p.bob,0);
-      const hand={...s[side]};if(side==='right'&&!s.turn&&!s.noSwing)hand.z+=gait.armSwing;
+      const hand={...s[side]};
+      if(!s.turn&&!s.noSwing){ // R7：双臂对摆（旧版只摆右臂）——但只摆垂挂臂；
+        // 抬臂架势（格斗/踉跄）不摆，否则摆动量把腕点顶过 reach .9 阈（f4/f6 探针翻车实录）
+        const dy=s[side].y-d.shoulderY,horiz0=Math.hypot(s[side].x-sign*d.shoulderHalf,s[side].z);
+        const hangDeg=Math.atan2(horiz0,Math.max(.01,-dy))*180/Math.PI;
+        hand.z+=(side==='right'?1:-1)*gait.armSwing*clamp((32-hangDeg)/18,0,1);
+      }
       const target=V(hand.x,hand.y+p.bob,hand.z);
       const delta=new THREE.Vector3(target.x-shoulder.x,target.y-shoulder.y,target.z-shoulder.z);
       const maxR=d.armA+d.armB-.005;
@@ -396,7 +408,7 @@ function buildPose(actor,s,t,d){
       p[side+'Leg']=[V(sign*d.hipHalf,hipY,0),null,V(sign*.09,d.footY+tuck,.02-.4*tuck)];
     for(const [side,sign] of [['left',-1],['right',1]]){
       const leg=p[side+'Leg'];leg[1]=twoBone(leg[0],leg[2],V(0,0,1),d.legA,d.legB);
-      const shoulder=V(sign*d.shoulderHalf,d.shoulderY+s.bob,0),target=V(s[side].x,s[side].y+s.bob,s[side].z);
+      const shoulder=V(sign*d.shoulderHalf,d.shoulderY+p.bob,0),target=V(s[side].x,s[side].y+p.bob,s[side].z); // R7：肩/腕同加 p.bob（含 st），臂链增量不变、探针零影响
       const delta=new THREE.Vector3(target.x-shoulder.x,target.y-shoulder.y,target.z-shoulder.z);
       const maxR=d.armA+d.armB-.005;
       if(delta.length()>maxR){delta.setLength(maxR);Object.assign(target,V(shoulder.x+delta.x,shoulder.y+delta.y,shoulder.z+delta.z));}
