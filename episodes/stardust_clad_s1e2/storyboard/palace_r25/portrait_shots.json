@@ -1,0 +1,117 @@
+{
+  "hero_front": {
+    "enemy": false,
+    "angle": 0
+  },
+  "hero_quarter": {
+    "enemy": false,
+    "angle": 0.65
+  },
+  "hero_side": {
+    "enemy": false,
+    "angle": 1.55
+  },
+  "hero_rear_quarter": {
+    "enemy": false,
+    "angle": 2.35
+  },
+  "hero_back": {
+    "enemy": false,
+    "angle": 3.141592653589793
+  },
+  "hero_left": {
+    "enemy": false,
+    "angle": -0.85
+  },
+  "enemy_front": {
+    "enemy": true,
+    "angle": 0
+  },
+  "enemy_quarter": {
+    "enemy": true,
+    "angle": 0.65
+  },
+  "enemy_side": {
+    "enemy": true,
+    "angle": 1.55
+  },
+  "enemy_rear_quarter": {
+    "enemy": true,
+    "angle": 2.35
+  },
+  "enemy_back": {
+    "enemy": true,
+    "angle": 3.141592653589793
+  },
+  "enemy_left": {
+    "enemy": true,
+    "angle": -0.85
+  },
+  "hero_whole": {
+    "view": "whole"
+  },
+  "enemy_whole": {
+    "enemy": true,
+    "view": "whole"
+  },
+  "hero_arms": {
+    "view": "chest",
+    "angle": 0.35
+  },
+  "enemy_guard": {
+    "enemy": true,
+    "t": 157,
+    "view": "chest"
+  },
+  "hero_metal": {
+    "view": "chest",
+    "angle": -0.3
+  },
+  "enemy_metal": {
+    "enemy": true,
+    "view": "chest",
+    "angle": 0.45
+  },
+  "hero_legs": {
+    "view": "legs",
+    "t": 9,
+    "angle": 0.15
+  },
+  "hero_squat": {
+    "view": "legs",
+    "t": 152.4,
+    "angle": 0.7
+  },
+  "hero_down": {
+    "pitch": 0.35,
+    "angle": 0.65
+  },
+  "enemy_up": {
+    "enemy": true,
+    "pitch": -0.3,
+    "angle": -0.65
+  },
+  "hero_halfblink": {
+    "blink": 0.5
+  },
+  "enemy_blink": {
+    "enemy": true,
+    "blink": 1
+  },
+  "hero_speaking": {
+    "t": 7.6
+  },
+  "hero_pain": {
+    "t": 60.2
+  },
+  "hero_worry": {
+    "t": 106.58
+  },
+  "enemy_surprise": {
+    "enemy": true,
+    "t": 155.38
+  },
+  "hero_call": {
+    "t": 163.32
+  }
+}

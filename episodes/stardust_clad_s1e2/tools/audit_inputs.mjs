@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 
-export const episodeSources=['script.story','duel_performance.js','viewer_palace.js','serial_direction.js','shot_direction.js','story_fx.js','look_direction.js','config/event_times.js','config/voices.json','tools/compile_story.py','performance.js','viewer.js','viewer.html','render.mjs',
+export const episodeSources=['script.story','duel_performance.js','viewer_palace.js','palace_camera.js','serial_direction.js','shot_direction.js','story_fx.js','look_direction.js','config/event_times.js','config/voices.json','tools/compile_story.py','performance.js','viewer.js','viewer.html','render.mjs',
   'tools/audit_inputs.mjs','tools/check_palace.py','tools/build_foley.mjs','tools/mix_serial.py','config/foley_contacts.json',
   'config/timeline.json','config/dialogue.json','config/voice_envs.json','config/editorial_cuts.json','config/palace_review_shots.json','config/palace_runtime_contract.json','config/scene_contract.json'];
 

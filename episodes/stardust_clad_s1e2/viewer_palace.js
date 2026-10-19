@@ -9,8 +9,12 @@ import {applyPalaceGauntlets} from 'dula-assets/characters/stardust/gauntlet-cla
 import {applyPalaceLowerClad} from 'dula-assets/characters/stardust/lower-clad.js';
 import {makeFootClearance} from 'dula-assets/characters/stardust/foot-clearance.js';
 import {applyPalaceCuirass,applyPalaceAnatomy} from 'dula-assets/characters/stardust/body-clad.js';
+import {applyPalaceArms,applySingleShoulders} from 'dula-assets/characters/stardust/palace-arms.js';
+import {applyPalacePortrait} from 'dula-assets/characters/stardust/palace-portrait.js';
+import {createRegalMetalEnvironment,applyOrnamentMetal} from 'dula-assets/characters/stardust/ornament-metal.js';
 import {directLook,moderateCladGlow} from './look_direction.js';
 import {poseAt,T,CAST,HIT_KEYS,clamp,ease,mix} from './duel_performance.js';
+import {palaceCamera} from './palace_camera.js';
 const W=1280,H=720;
 const query=new URLSearchParams(location.search),metal=query.get('metal')!=='0';
 const [tl,dlg,envs]=await Promise.all(['timeline','dialogue','voice_envs'].map(async n=>{const r=await fetch(`./config/${n}.json`);return r.ok?r.json():{};}));
@@ -27,8 +31,12 @@ renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 if(metal){const env=createArmorEnvironment(renderer);await Promise.all(CAST.map(name=>applyMetalClad(actors[name],{url:'./assets3d/tex/armor_engraved_r20.png',environment:env.texture,cleanMetal:query.get('sculpted')!=='0'})));}
 if(query.get('anatomy')!=='0')for(const name of CAST)refinePalaceLimbs(actors[name]);
 if(query.get('pelvis')!=='0')for(const name of CAST)applyPalaceAnatomy(actors[name]);
+if(query.get('arms')!=='0')for(const name of CAST)applyPalaceArms(actors[name]);
+if(query.get('portrait')!=='0')for(const name of CAST)applyPalacePortrait(actors[name]);
+if(query.get('singleShoulder')!=='0')for(const name of CAST)applySingleShoulders(actors[name]);
+if(metal&&query.get('ornament')!=='0'){const env=createRegalMetalEnvironment(renderer);for(const name of CAST)applyOrnamentMetal(actors[name],env.texture);}
 if(query.get('jointfix')!=='0')for(const name of CAST)actors[name].anatomicalHands=true;
-if(query.get('footfix')!=='0')actors.aoao.footClearance=makeFootClearance(actors.aoao,scene.lockSolids);
+if(query.get('footfix')!=='0')actors.aoao.footClearance=makeFootClearance(actors.aoao,scene.lockSolids,{anatomicalKnees:query.get('kneefix')!=='0'});
 const stageAudit=(query.has('probe-stage')||query.has('probe-surface'))?createStageClearance(actors,scene.navigationObstacles):null;
 const footBlockAudit=stageAudit?createStageClearance(actors,scene.lockSolids,{includeMesh:(mesh,a)=>{
  const roots=[...Object.values(a.feet),a.limbs.leftLeg.mesh,a.limbs.rightLeg.mesh,a.anatomy?.pelvis,...Object.values(a.lowerClad?.legs??{}).map(r=>r.rig)].filter(Boolean);
@@ -92,7 +100,8 @@ function overlay(t,perf,line){
 }
 function draw(t,capture=true){
  const perf=poseAt(actors,entries,t),active=lineAt(t);scene.update(t,T);
- let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??40}:cameraAt(t,perf,active);
+ const heldLine=active??dlg.lines.findLast(l=>l.t<=t&&l.t>=perf.entry.startTime);
+ let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??40}:query.get('cinema')==='0'?cameraAt(t,perf,active):palaceCamera(t,perf,heldLine,actors,()=>cameraAt(t,perf,active));
  let shake=0;for(const key of HIT_KEYS){const d=t-T[key];if(d>=0&&d<.34)shake+=(key==='C7'?.06:.028)*(1-d/.34);}
  camera.position.set(c.pos[0]+Math.sin(t*91)*shake,c.pos[1]+Math.cos(t*73)*shake*.6,c.pos[2]);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
  for(const name of CAST){const a=actors[name],s=perf.states[name],other=name==='aoao'?'yekari':'aoao';

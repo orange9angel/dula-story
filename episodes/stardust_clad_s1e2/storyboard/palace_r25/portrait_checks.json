@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "knee": {
+    "samples": 2130,
+    "priorMaxDegrees": 58.10326960886591,
+    "currentMaxDegrees": 24.56764159074149,
+    "minForwardDot": 0.9094710630978713
+  },
+  "face": {
+    "samples": 36,
+    "lowerFaceTextureMismatches": 0
+  },
+  "nonfinite": 0,
+  "singleShoulderErrors": 0,
+  "maxArmVectorError": 4.440892098500626e-16,
+  "materials": {
+    "aoao": 200,
+    "yekari": 151
+  },
+  "seek": [
+    {
+      "t": 9,
+      "equal": true,
+      "sha256": "c50c3ccb5c790030c464fc119b7cd0d6fcc597ae509fa80b03069c5816066548"
+    },
+    {
+      "t": 60.2,
+      "equal": true,
+      "sha256": "31f212d3e2623ca2e8e697f139654a148fb9f9ba596477a30d98f8102827bedd"
+    },
+    {
+      "t": 107,
+      "equal": true,
+      "sha256": "98c2f6563545aaf2aec8de0ce400bfd3840cdf687caebfe0cfcd38a36d6968a6"
+    },
+    {
+      "t": 157,
+      "equal": true,
+      "sha256": "2dea741d9846be02b346f9937a055ea327345386ff04b03dc9777ea1d53c4bde"
+    },
+    {
+      "t": 165.8,
+      "equal": true,
+      "sha256": "06dcd988fee0f32a6708290344b42f1ec10a6e6ef8d053d78c0b1d0e6898cb0f"
+    }
+  ],
+  "limits": "5 Hz knee/toe orientation, 18 lower-face samples, selected finite geometry and JPEG seek checks. Does not establish aesthetic approval or whole-body self-collision."
+}
