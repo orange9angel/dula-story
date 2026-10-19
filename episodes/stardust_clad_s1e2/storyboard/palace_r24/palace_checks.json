@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "fps": 60,
+  "frames": 12780,
+  "duration": 213,
+  "maxShieldNotchGap": 0.004176060251653239,
+  "maxArmBoneError": 2.498001805406602e-16,
+  "maxImpactAnchorError": 0.0,
+  "maxAttackPlantedFootDrift": 2.237726045655905e-16,
+  "maxRootStep": 0.028181138573075384,
+  "environment": {
+    "obstacles": 70,
+    "pairs": 1641010,
+    "broadSeparated": 1641010,
+    "narrowPairs": 0,
+    "maxDepth": 0,
+    "examples": []
+  },
+  "errors": [],
+  "limits": [
+    "stage solids: actual rendered geometry bounds; overlap uses triangle/box SAT and surface vertices",
+    "60Hz sampled validation, not continuous-time CCD or full self collision",
+    "final visual and audio observations are separate"
+  ],
+  "interactionSolids": {
+    "obstacles": 4,
+    "pairs": 93772,
+    "maxDepth": 0,
+    "examples": []
+  },
+  "maxLegBoneError": 3.885780586188048e-16,
+  "largestHeroFootSteps": [
+    {
+      "distance": 0.02243338055642166,
+      "t": 101.333,
+      "side": "left"
+    },
+    {
+      "distance": 0.022310339876086976,
+      "t": 101.35,
+      "side": "left"
+    },
+    {
+      "distance": 0.022186716228188186,
+      "t": 101.317,
+      "side": "left"
+    },
+    {
+      "distance": 0.021779021513479983,
+      "t": 101.367,
+      "side": "left"
+    },
+    {
+      "distance": 0.021565437186466394,
+      "t": 101.3,
+      "side": "left"
+    },
+    {
+      "distance": 0.020812560993759232,
+      "t": 101.383,
+      "side": "left"
+    },
+    {
+      "distance": 0.020614422691937723,
+      "t": 101.283,
+      "side": "left"
+    },
+    {
+      "distance": 0.019693345385907533,
+      "t": 100.417,
+      "side": "right"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "encoding": "UTF-8",
+  "documentsChecked": 11,
+  "consecutiveQuestionMarkOrReplacementCharacterLines": [],
+  "fixedFiles": [
+    "AGENTS.md",
+    "episodes/stardust_clad_s1e2/storyboard/palace_r24/user_request.json"
+  ],
+  "cause": "PowerShell-to-Python stdin encoding replaced Chinese while writing. Repaired from source with Unicode-safe apply_patch before Git commit. Verified working files and staged diff."
+}

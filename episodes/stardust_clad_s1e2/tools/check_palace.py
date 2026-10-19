@@ -12,9 +12,18 @@ def main():
     if len(frames)!=round(data['duration']*data['fps']):errors.append('incomplete full timeline')
     if not frames:raise ValueError('empty trace')
     if data['fps']<60:errors.append('environment sampling below 60Hz')
-    expected_obstacles=read(EP/'config/palace_stage_contract.json')['obstacleCount']
+    contract=read(EP/'config/palace_stage_contract.json');expected_obstacles=contract['obstacleCount'];block_count=len(contract['interactionSolids'])
+    block_pairs=0;block_depth=0;block_bad=[]
     env_pairs=0;env_broad=0;env_narrow=0;env_depth=0;env_bad=[]
     for i,f in enumerate(frames):
+        block=f.get('footBlock')
+        if not block or block['obstacles']!=block_count or block['pairs']!=len(f['cast'])*block_count:errors.append('incomplete feet/pelvis/lock coverage')
+        else:
+            block_pairs+=block['pairs'];block_depth=max(block_depth,block['maxDepth'])
+            if block['pairs']!=block['broadSeparated']+block['narrowPairs']:errors.append('unaccounted lock pairs')
+            if block['collisions']:
+                errors.append('lower body intersects lock solid')
+                if len(block_bad)<12:block_bad.append({'t':f['t'],'collisions':block['collisions']})
         if abs(f['t']-i/data['fps'])>.001:errors.append('missing or nonsequential sample')
         env=f.get('environment')
         if not env:errors.append('missing environment surface audit');continue
@@ -26,7 +35,7 @@ def main():
             errors.append('actor intersects stage solid')
             if len(env_bad)<12:env_bad.append({'t':f['t'],'collisions':env['collisions']})
     distance=lambda a,b:math.dist(a,b)
-    trap=[];bones=[];effect=[];plant=[];step=[]
+    trap=[];bones=[];leg_bones=[];effect=[];plant=[];step=[];foot_steps=[]
     for f in frames:
         if set(f['cast'])-{'aoao','yekari'}:errors.append('unexpected cast')
         if f['t']<T['ARRIVE'] and f['cast']!=['aoao']:errors.append('intruder before arrival')
@@ -36,6 +45,10 @@ def main():
             expected=[.20,.19] if who=='aoao' else [.21,.20]
             for side,p in arms.items():
                 bones.extend(abs(distance(p[i],p[i+1])-expected[i]) for i in range(2))
+        if set(f.get('legs',{}))!={'aoao','yekari'}:errors.append('missing actual leg joints')
+        for who,legs in f.get('legs',{}).items():
+            expected=.42 if who=='aoao' else .49
+            for p in legs.values():leg_bones.extend(abs(distance(p[i],p[i+1])-expected) for i in range(2))
         for c in f['contacts'].values():effect.append(distance(c['effect'],c['target']))
         for p in f['roots'].values():
             if any(not math.isfinite(v) for v in p):errors.append('non-finite root')
@@ -47,14 +60,18 @@ def main():
     for a,b in zip(frames,frames[1:]):
         for who in ['aoao','yekari']:
             if who in a['cast'] and who in b['cast']:step.append(distance(a['roots'][who],b['roots'][who]))
+        for side in ['left','right']:foot_steps.append({'distance':distance(a['feet']['aoao'][side],b['feet']['aoao'][side]),'t':b['t'],'side':side})
     if max(trap)>.025:errors.append('shield rim misses fixed notch')
     if max(bones)>.002:errors.append('arm bone length changes')
+    if max(leg_bones,default=1)>.002:errors.append('leg bone length changes')
     if max(effect)>.001:errors.append('impact displaced from target')
     if max(plant)>.015:errors.append('attack stance slides')
     if max(step)>.08:errors.append('root discontinuity')
+    if max(x['distance'] for x in foot_steps)>.04:errors.append('hero foot placement discontinuity')
     late=next(f for f in frames if f['t']>=T['RESTORE']+4)
     if late['gateOpen']<.9 or late['windowsLit']!=36:errors.append('street restoration missing')
     if not all([trap,bones,effect,plant,step]):errors.append('empty required action window')
     result={'passed':not errors,'fps':data['fps'],'frames':len(frames),'duration':data['duration'],'maxShieldNotchGap':max(trap,default=None),'maxArmBoneError':max(bones,default=None),'maxImpactAnchorError':max(effect,default=None),'maxAttackPlantedFootDrift':max(plant,default=None),'maxRootStep':max(step,default=None),'environment':{'obstacles':expected_obstacles,'pairs':env_pairs,'broadSeparated':env_broad,'narrowPairs':env_narrow,'maxDepth':env_depth,'examples':env_bad},'errors':sorted(set(errors)),'limits':['stage solids: actual rendered geometry bounds; overlap uses triangle/box SAT and surface vertices','60Hz sampled validation, not continuous-time CCD or full self collision','final visual and audio observations are separate']}
+    result['interactionSolids']={'obstacles':block_count,'pairs':block_pairs,'maxDepth':block_depth,'examples':block_bad};result['maxLegBoneError']=max(leg_bones,default=None);result['largestHeroFootSteps']=sorted(foot_steps,key=lambda x:x['distance'],reverse=True)[:8]
     (EP/args.out).write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result));return bool(errors)
 if __name__=='__main__':raise SystemExit(main())

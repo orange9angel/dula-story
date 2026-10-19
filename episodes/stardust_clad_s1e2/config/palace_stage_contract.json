@@ -1,8 +1,10 @@
 {
- "version": 1,
+ "version": 2,
  "scene": "EmberTierPalaceScene",
  "source": "scene.navigationObstacles: references to actual rendered BoxGeometry meshes",
  "obstacleCount": 70,
+ "interactionSolids": ["lock_base", "lock_tongue", "lock_cheek_0", "lock_cheek_1"],
+ "interactionScope": "Actual legs, pelvis, greaves and boots against all four lock solids, including the animated tongue. Shield contact is tested separately.",
  "requiredFamilies": ["column_", "rail_", "firegate_", "palace_facade_", "portal_", "palace_inside_", "facade_pilaster_"],
  "actors": ["aoao", "yekari"],
  "scope": "Final visible body, skinned hands, armor, weapons and cape against declared navigation solids; actual triangle/box SAT and inside vertices at 60Hz",

@@ -16,9 +16,9 @@ function travel(s,t,a,b,from,to,facing){
  s.rootX=mix(from[0],to[0],p);s.rootZ=mix(from[1],to[1],p);s.yaw=facing;
  s.walk=u>0&&u<1?{from,to,a:u,facingYaw:facing}:null;
 }
-function state(name,t,phase){
- const hero=name==='aoao',sh=hero?1.42:1.52;
- const s={visible:hero||t>=T.ARRIVE,rootX:hero?-.95:1.35,rootZ:hero?.15:-.03,yaw:hero?.85:-.85,
+function state(name,t,phase,clearance=false){
+ const hero=name==='aoao',sh=hero?1.42:1.52,homeZ=clearance?-.04:.15;
+ const s={visible:hero||t>=T.ARRIVE,rootX:hero?-.95:1.35,rootZ:hero?homeZ:-.03,yaw:hero?.85:-.85,
  bob:0,lean:0,air:0,tuck:0,left:V(-.17,sh-.27,.12),right:V(.18,sh-.28,.10),headYaw:0,headPitch:0,headRoll:0,
  fist:.45,open:0,point:0,walk:null,turn:null,cladT:1,emotion:'neutral',blink:null,capeLift:0,noSwing:1};
  const breath=Math.sin(t*2.0)*.004;s.left.y+=breath;s.right.y+=breath;
@@ -37,10 +37,10 @@ function state(name,t,phase){
   if(t>=T.C2+1&&t<T.CHARGE2&&!['probe','gate_strike'].includes(phase)){s.left=V(-.15,1.20,.16);s.headPitch=.10;s.emotion='worry';}
   // The probe deliberately lowers the guard before the higher cut forces it back up.
   if(phase==='probe'){const lower=pulse(t,78,79.1,79.5,80.7);s.left.y-=.17*lower;}
-  if(t>=T.GATE_ATTACK&&t<T.C5-.3)travel(s,t,T.GATE_ATTACK,T.C5-.4,[-.95,.15],[-1.55,-.35],.95);
+  if(t>=T.GATE_ATTACK&&t<T.C5-.3)travel(s,t,T.GATE_ATTACK,T.C5-.4,[-.95,homeZ],[-1.55,-.35],.95);
   if(t>=T.C5-.3&&t<132){s.rootX=-1.55;s.rootZ=-.35;s.bob=-.18;s.sit={drop:.12,feet:.12};s.left=V(-.15,1.17,.17);s.emotion='pain';s.headPitch=.18;}
   if(t>=132&&t<138){const u=ease((t-132)/1.2);s.rootX=-1.55;s.rootZ=-.35;s.bob=-.18*(1-u);s.sit={drop:.12*(1-u),feet:.12*(1-u)};s.emotion='determined';
-   if(t>133.2)travel(s,t,133.2,137.8,[-1.55,-.35],[-.95,.15],.85);}
+   if(t>133.2)travel(s,t,133.2,137.8,[-1.55,-.35],[-.95,homeZ],.85);}
   if(t>=T.TRAP-.8&&t<T.RELEASE){
    const u=ease((t-(T.TRAP-.8))/.8);s.bob=-.035*u;s.sit={drop:.56*u,feet:.26*u};s.left=blend(V(-.11,1.37,.24),V(-.14,1.12,.22),u);s.right=V(.09,1.20,.21);s.headPitch=.08;s.emotion='determined';
    const strain=Math.sin(t*24)*.003;s.left.x+=strain;
@@ -81,10 +81,11 @@ function state(name,t,phase){
    if(t>T.RETREAT+6.7)s.visible=false;
   }
  }
+ if(hero&&clearance&&Math.abs(s.rootX+.95)<.001&&s.sit)s.rootZ=homeZ+.19*ease(s.sit.drop/.56);
  return s;
 }
 export function poseAt(actors,entries,t){
  const entry=entries.findLast(e=>e.startTime<=t)??entries[0],phase=entry.opts.move,pt=heldTime(t),states={},poses={};
- for(const name of CAST){states[name]=state(name,pt,phase);poses[name]=buildPose(actors[name],states[name],pt,DIMS[name]);}
+ for(const name of CAST){states[name]=state(name,pt,phase,!!actors[name].footClearance);poses[name]=buildPose(actors[name],states[name],pt,DIMS[name]);}
  return{entry,opts:entry.opts,phase,states,poses};
 }

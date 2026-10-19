@@ -4,6 +4,9 @@ import {poseAt,CAST} from '../duel_performance.js';
 const tl=JSON.parse(fs.readFileSync(new URL('../config/timeline.json',import.meta.url)));
 const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:{move:s.move,shot:s.shot}}));
 const actors=Object.fromEntries(CAST.map(n=>[n,{setPose(){},setCladState(){},mesh:{position:{y:0}}}]));
+// Use the current palace route/hip mode. The obstacle placement field does not
+// change stance timing; actual feet are validated separately in the viewer.
+actors.aoao.footClearance={adjust:(end,side,p,pitch=0,yaw=0)=>({yaw,pole:{x:0,y:0,z:1}})};
 const prev={},last={},cues=[];
 for(let frame=0;frame<tl.duration*120;frame++){
   const t=frame/120,perf=poseAt(actors,entries,t);

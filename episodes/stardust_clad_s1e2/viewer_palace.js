@@ -7,6 +7,8 @@ import {createArmorEnvironment,applyMetalClad,refinePalaceLimbs} from 'dula-asse
 import {createStageClearance} from 'dula-assets/lib/craft3d/stage-clearance.js';
 import {applyPalaceGauntlets} from 'dula-assets/characters/stardust/gauntlet-clad.js';
 import {applyPalaceLowerClad} from 'dula-assets/characters/stardust/lower-clad.js';
+import {makeFootClearance} from 'dula-assets/characters/stardust/foot-clearance.js';
+import {applyPalaceCuirass,applyPalaceAnatomy} from 'dula-assets/characters/stardust/body-clad.js';
 import {directLook,moderateCladGlow} from './look_direction.js';
 import {poseAt,T,CAST,HIT_KEYS,clamp,ease,mix} from './duel_performance.js';
 const W=1280,H=720;
@@ -16,17 +18,26 @@ const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:s}));
 const scene=new EmberTierPalaceScene();scene.build();await scene.applyHybrid();
 const actors={aoao:new AoaoCraft(),yekari:new YekariCraft()};directLook(actors);
 for(const name of CAST){applyPalaceClad(actors[name],name,{sculpted:query.get('sculpted')!=='0'});scene.scene.add(actors[name].mesh);}
-if(query.get('gauntlets')!=='0')for(const name of CAST)applyPalaceGauntlets(actors[name]);
-if(query.get('greaves')!=='0')for(const name of CAST)applyPalaceLowerClad(actors[name]);
+if(query.get('cuirass')!=='0')for(const name of CAST)applyPalaceCuirass(actors[name]);
+if(query.get('gauntlets')!=='0')for(const name of CAST)applyPalaceGauntlets(actors[name],{distinct:query.get('identities')!=='0'});
+if(query.get('greaves')!=='0')for(const name of CAST)applyPalaceLowerClad(actors[name],{distinct:query.get('identities')!=='0'});
 const camera=new THREE.PerspectiveCamera(39,W/H,.05,100);
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 if(metal){const env=createArmorEnvironment(renderer);await Promise.all(CAST.map(name=>applyMetalClad(actors[name],{url:'./assets3d/tex/armor_engraved_r20.png',environment:env.texture,cleanMetal:query.get('sculpted')!=='0'})));}
 if(query.get('anatomy')!=='0')for(const name of CAST)refinePalaceLimbs(actors[name]);
+if(query.get('pelvis')!=='0')for(const name of CAST)applyPalaceAnatomy(actors[name]);
+if(query.get('jointfix')!=='0')for(const name of CAST)actors[name].anatomicalHands=true;
+if(query.get('footfix')!=='0')actors.aoao.footClearance=makeFootClearance(actors.aoao,scene.lockSolids);
 const stageAudit=(query.has('probe-stage')||query.has('probe-surface'))?createStageClearance(actors,scene.navigationObstacles):null;
+const footBlockAudit=stageAudit?createStageClearance(actors,scene.lockSolids,{includeMesh:(mesh,a)=>{
+ const roots=[...Object.values(a.feet),a.limbs.leftLeg.mesh,a.limbs.rightLeg.mesh,a.anatomy?.pelvis,...Object.values(a.lowerClad?.legs??{}).map(r=>r.rig)].filter(Boolean);
+ for(let p=mesh;p;p=p.parent)if(roots.includes(p))return true;return false;
+}}):null;
 if(stageAudit){
  const contract=await(await fetch('./config/palace_stage_contract.json')).json();
  if(stageAudit.ids.length!==contract.obstacleCount||contract.requiredFamilies.some(prefix=>!stageAudit.ids.some(id=>id.startsWith(prefix))))throw new Error('Incomplete stage obstacle coverage');
+ if(JSON.stringify(footBlockAudit.ids)!==JSON.stringify(contract.interactionSolids))throw new Error('Incomplete interaction solid coverage');
 }
 const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;document.body.append(canvas);const ctx=canvas.getContext('2d');
 const fx=createCombatLight(scene.scene,{detailed:query.get('particles')!=='0'}),contacts={};
@@ -107,11 +118,11 @@ function draw(t,capture=true){
  if(t>=T.RELEASE&&t<T.C7+.18){const u=clamp((t-T.RELEASE)/(T.C7-T.RELEASE)),from=scene.lockPoint.clone(),wrist=actors.yekari.chainSocket.getWorldPosition(new THREE.Vector3()),target=wrist.lerp(contacts.C7,ease((t-(T.C7-.12))/.12));beamShot={from,to:from.clone().lerp(target,u),alpha:t<T.C7?.82:Math.max(0,1-(t-T.C7)/.18),width:.55+.35*u};}
  fx.update(t,camera,{arc,charge,beamShot});
  let rimLow=new THREE.Vector3(0,999,0);for(let i=0;i<64;i++){const a=i*Math.PI/32,p=world(actors.aoao.shieldDome,new THREE.Vector3(Math.cos(a)*.265,.052,Math.sin(a)*.265));if(p.y<rimLow.y)rimLow=p;}
- const trace={phase:perf.phase,scene:'ember',cast:CAST.filter(n=>actors[n].mesh.visible),roots:{},arms:{},feet:{},contacts:{},shieldRimLow:rimLow.toArray(),slot:scene.lockPoint.toArray(),gateOpen:scene.gate.position.y,windowsLit:scene.windows.filter(w=>w.visible).length};
+ const trace={phase:perf.phase,scene:'ember',cast:CAST.filter(n=>actors[n].mesh.visible),roots:{},arms:{},legs:{},feet:{},hands:{},contacts:{},shieldRimLow:rimLow.toArray(),slot:scene.lockPoint.toArray(),gateOpen:scene.gate.position.y,windowsLit:scene.windows.filter(w=>w.visible).length};
  for(const n of CAST){const a=actors[n],p=perf.poses[n];trace.roots[n]=a.mesh.position.toArray();trace.arms[n]={};trace.feet[n]={};
-  for(const side of ['left','right']){trace.arms[n][side]=p[side+'Arm'].map(v=>[v.x,v.y,v.z]);trace.feet[n][side]=a.feet[side].getWorldPosition(new THREE.Vector3()).toArray();}}
+  trace.legs[n]={};trace.hands[n]={};for(const side of ['left','right']){trace.arms[n][side]=p[side+'Arm'].map(v=>[v.x,v.y,v.z]);trace.legs[n][side]=p[side+'Leg'].map(v=>[v.x,v.y,v.z]);trace.feet[n][side]=a.feet[side].getWorldPosition(new THREE.Vector3()).toArray();trace.hands[n][side]=a.hands[side].quaternion.toArray();}}
  for(const key of HIT_KEYS)if(Math.abs(t-T[key])<.15)trace.contacts[key]={target:contacts[key].toArray(),effect:fx.impacts.find(e=>e.id===key).group.position.toArray(),active:t>=T[key]};
- if(stageAudit)trace.environment=stageAudit.sample();
+ if(stageAudit){trace.environment=stageAudit.sample();trace.footBlock=footBlockAudit.sample();}
  if(!capture)return trace;
  renderer.render(scene.scene,camera);renderer.render(scene.scene,camera);ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);overlay(t,perf,active);
  return{image:canvas.toDataURL('image/jpeg',.93).split(',')[1],state:trace};
