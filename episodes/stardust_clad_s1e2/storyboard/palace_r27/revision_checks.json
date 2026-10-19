@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "nonfinite": 0,
+  "glowVisible": 0,
+  "crownVisible": 0,
+  "oldShoulders": 0,
+  "geometrySamples": 1210,
+  "torusEffects": 0,
+  "topology": {
+    "aoao": {
+      "vertices": 8492,
+      "triangles": 16980,
+      "unpairedEdges": 0
+    },
+    "yekari": {
+      "vertices": 8030,
+      "triangles": 16056,
+      "unpairedEdges": 0
+    }
+  },
+  "sceneDiamondVisible": false,
+  "mouthSamples": 142,
+  "mouthMismatch": 0,
+  "maxJointError": 0,
+  "maxArmError": 0,
+  "seek": [
+    {
+      "t": 9,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "689df8c3c1f098cf4e599340fa04621720af9106b03f2f5064b937c37545fd02"
+    },
+    {
+      "t": 24.4,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "51d9849afe11ddcb6695913d94cfc58bebe680b6cd0dfdefc724ee43ca3d8e97"
+    },
+    {
+      "t": 26,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "1ec4234d9ef608b727a891053549a6c43429ccb01c5ab46fd94452439e6c3b49"
+    },
+    {
+      "t": 58.1,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "92c6519914d3a12e9fe4a893cee44b9ac96ddba196e6d916c5d93673e0f0d5b6"
+    },
+    {
+      "t": 60.3,
+      "equal": false,
+      "meanError": 0.00009006076388888889,
+      "maxError": 3,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "d96ec24a53e1745106ef9c35681f2b69401dde99e598edf6f5acfb6539537fd2"
+    },
+    {
+      "t": 152.4,
+      "equal": false,
+      "meanError": 0.00006618923611111112,
+      "maxError": 2,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "0053b1e35aab91586f743c62883d5fd24d5c563c0f55d8c3fda1aecce2698b39"
+    },
+    {
+      "t": 165.8,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "091f8d6f5b87025d2c72c451a2b3499e93e71b0ada886061390776f75120403b"
+    },
+    {
+      "t": 171.1,
+      "equal": false,
+      "meanError": 0.00011284722222222222,
+      "maxError": 2,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "e379f6147afca1d6e083c7aebc56f0b3cc9ad92f2953fac028c8a2fd152adf88"
+    },
+    {
+      "t": 193.1,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "3a0e3cba12849a06f961a8b20ce127a2998cb44a08c46d08dfb09f14b88dce11"
+    }
+  ],
+  "limits": "5 Hz state/geometry checks; sampled lip state and seek. Existing baseline has sub-pixel JPEG variation at 60.3/152.4s; seek uses decoded error <0.01 and RGB changes >8 below 0.001%. Walk/crouch windows and invisible actors excluded from preserved-joint comparison. Pose comparison uses new boots on both versions to isolate gait from geometry-driven clearance. Original geometry comparison measured 2.33mm leg and 0.40mm arm change from that clearance correction. Whole-film stage clearance is separate. Not aesthetic approval or whole-body self-collision."
+}

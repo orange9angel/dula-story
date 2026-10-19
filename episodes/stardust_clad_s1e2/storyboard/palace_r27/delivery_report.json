@@ -1,0 +1,130 @@
+{
+  "version": "palace_r27",
+  "body": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\output\\stardust_clad_s1e2_palace_r27.mp4",
+    "duration": 213.0,
+    "frames": 6390,
+    "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+    "video": "h264",
+    "audio": "aac",
+    "decodePassed": true
+  },
+  "opening": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_op\\output\\craft3d_full_subtitled_2026_10_18.mp4",
+    "duration": 49.2,
+    "frames": 1476,
+    "sha256": "11350d1ff572b7a5960c0c9a34b48eabfd062430614c8f72850fa82aab01e51e",
+    "video": "h264",
+    "audio": "aac",
+    "decodePassed": true
+  },
+  "tv": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\output\\stardust_clad_s1e2_palace_tv_r27.mp4",
+    "duration": 262.2,
+    "frames": 7866,
+    "sha256": "a7c6d808d42eeb597497d19d70d1b9aced840e536260316b36bbf6abc02d9395",
+    "video": "h264",
+    "audio": "aac",
+    "decodePassed": true
+  },
+  "sourceStorySha256": "1e9912a9dbbcc5bf8b3dd2ab4b2c2e802aa31edb058cfa3ab6655f76448487f5",
+  "mixSha256": "972332de5c845e0a6665d1cc80479701db807c83d0338f59c6963f908c19c97a",
+  "pictureSamples": [
+    {
+      "t": 3,
+      "frame": "storyboard\\palace_r27\\decoded\\palace.png",
+      "sourceMeanPixelError": 1.5987,
+      "largeErrorFraction": 0.00084
+    },
+    {
+      "t": 9,
+      "frame": "storyboard\\palace_r27\\decoded\\hero_clad.png",
+      "sourceMeanPixelError": 1.3863,
+      "largeErrorFraction": 0.00089
+    },
+    {
+      "t": 29,
+      "frame": "storyboard\\palace_r27\\decoded\\enemy_clad.png",
+      "sourceMeanPixelError": 1.1705,
+      "largeErrorFraction": 0.00068
+    },
+    {
+      "t": 57.7,
+      "frame": "storyboard\\palace_r27\\decoded\\duel.png",
+      "sourceMeanPixelError": 1.6634,
+      "largeErrorFraction": 0.00108
+    },
+    {
+      "t": 58.1,
+      "frame": "storyboard\\palace_r27\\decoded\\clash.png",
+      "sourceMeanPixelError": 1.8482,
+      "largeErrorFraction": 0.00131
+    },
+    {
+      "t": 60.1,
+      "frame": "storyboard\\palace_r27\\decoded\\wrist.png",
+      "sourceMeanPixelError": 1.8093,
+      "largeErrorFraction": 0.0014
+    },
+    {
+      "t": 103.1,
+      "frame": "storyboard\\palace_r27\\decoded\\gate.png",
+      "sourceMeanPixelError": 1.8131,
+      "largeErrorFraction": 0.00091
+    },
+    {
+      "t": 152.4,
+      "frame": "storyboard\\palace_r27\\decoded\\trap.png",
+      "sourceMeanPixelError": 1.7449,
+      "largeErrorFraction": 0.00109
+    },
+    {
+      "t": 165.5,
+      "frame": "storyboard\\palace_r27\\decoded\\hero_charge.png",
+      "sourceMeanPixelError": 1.9637,
+      "largeErrorFraction": 0.00137
+    },
+    {
+      "t": 171.1,
+      "frame": "storyboard\\palace_r27\\decoded\\finish.png",
+      "sourceMeanPixelError": 1.8443,
+      "largeErrorFraction": 0.00081
+    },
+    {
+      "t": 187,
+      "frame": "storyboard\\palace_r27\\decoded\\aftermath.png",
+      "sourceMeanPixelError": 1.4004,
+      "largeErrorFraction": 0.00075
+    },
+    {
+      "t": 209,
+      "frame": "storyboard\\palace_r27\\decoded\\street.png",
+      "sourceMeanPixelError": 1.3614,
+      "largeErrorFraction": 0.0005
+    }
+  ],
+  "audioSyncSamples": [
+    {
+      "t": 7,
+      "shiftMs": 0.0
+    },
+    {
+      "t": 57,
+      "shiftMs": 0.0
+    },
+    {
+      "t": 103,
+      "shiftMs": 0.0
+    },
+    {
+      "t": 168,
+      "shiftMs": 0.0
+    },
+    {
+      "t": 202,
+      "shiftMs": 0.0
+    }
+  ],
+  "aliasesPublished": true,
+  "limits": "Decoded-frame samples and numerical checks. Not human full-film listening or aesthetic approval."
+}

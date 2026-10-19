@@ -1,5 +1,6 @@
 import {buildPose} from 'dula-assets/characters/stardust/pose-rig.js';
 import {T} from './config/event_times.js';
+import {directNaturalTravel} from './palace_locomotion.js';
 export {T};
 export const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x)},mix=(a,b,u)=>a+(b-a)*u;
 const V=(x,y,z=0)=>({x,y,z});
@@ -86,6 +87,6 @@ function state(name,t,phase,clearance=false){
 }
 export function poseAt(actors,entries,t){
  const entry=entries.findLast(e=>e.startTime<=t)??entries[0],phase=entry.opts.move,pt=heldTime(t),states={},poses={};
- for(const name of CAST){states[name]=state(name,pt,phase,!!actors[name].footClearance);poses[name]=buildPose(actors[name],states[name],pt,DIMS[name]);}
+ for(const name of CAST){states[name]=state(name,pt,phase,!!actors[name].footClearance);if(actors[name].palaceGait)directNaturalTravel(states[name],name,pt,T);poses[name]=buildPose(actors[name],states[name],pt,DIMS[name]);}
  return{entry,opts:entry.opts,phase,states,poses};
 }

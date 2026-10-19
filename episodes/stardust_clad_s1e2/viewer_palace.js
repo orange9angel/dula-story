@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {AoaoCraft,YekariCraft} from 'dula-assets/characters/stardust/characters.js';
 import {applyPalaceClad} from 'dula-assets/characters/stardust/palace-clad.js';
 import {EmberTierPalaceScene} from 'dula-assets/scenes/stardust/EmberTierPalaceScene.js';
+import {applyPalaceTorchlight} from 'dula-assets/scenes/stardust/palace-torchlight.js';
 import {createCombatLight} from 'dula-assets/lib/craft3d/combat-light.js';
 import {createCombustionCombat} from 'dula-assets/lib/craft3d/combustion-combat.js';
 import {animateCalderaBackdrop} from 'dula-assets/lib/craft3d/living-caldera.js';
@@ -14,23 +15,27 @@ import {applyPalaceCuirass,applyPalaceAnatomy} from 'dula-assets/characters/star
 import {applyPalaceArms,applySingleShoulders,removeCladGlow} from 'dula-assets/characters/stardust/palace-arms.js';
 import {applyPalacePortrait} from 'dula-assets/characters/stardust/palace-portrait.js';
 import {applyShadedPortrait} from 'dula-assets/characters/stardust/shaded-portrait.js';
+import {applySoftPortrait} from 'dula-assets/characters/stardust/soft-portrait.js';
 import {applyConnectedPelvis} from 'dula-assets/characters/stardust/connected-pelvis.js';
 import {hearthFire} from 'dula-assets/lib/craft3d/combustion-particles.js';
 import {createRegalMetalEnvironment,applyOrnamentMetal} from 'dula-assets/characters/stardust/ornament-metal.js';
 import {directLook,moderateCladGlow} from './look_direction.js';
 import {poseAt,T,CAST,HIT_KEYS,clamp,ease,mix} from './duel_performance.js';
 import {palaceCamera} from './palace_camera.js';
+import {palaceGait} from './palace_locomotion.js';
 const W=1280,H=720;
 const query=new URLSearchParams(location.search),metal=query.get('metal')!=='0';
 const [tl,dlg,envs]=await Promise.all(['timeline','dialogue','voice_envs'].map(async n=>{const r=await fetch(`./config/${n}.json`);return r.ok?r.json():{};}));
 const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:s}));
 const scene=new EmberTierPalaceScene();scene.build();await scene.applyHybrid();
+const hall=query.get('hall')==='0'?null:applyPalaceTorchlight(scene);
 const livingCaldera=query.get('volcano')!=='0'?animateCalderaBackdrop(scene.backdrop):null;
 const actors={aoao:new AoaoCraft(),yekari:new YekariCraft()};directLook(actors);
+if(query.get('naturalWalk')!=='0')for(const a of Object.values(actors))a.palaceGait=palaceGait;
 for(const name of CAST){applyPalaceClad(actors[name],name,{sculpted:query.get('sculpted')!=='0'});scene.scene.add(actors[name].mesh);}
-if(query.get('cuirass')!=='0')for(const name of CAST)applyPalaceCuirass(actors[name],{integratedShoulders:query.get('unified')!=='0'});
-if(query.get('gauntlets')!=='0')for(const name of CAST)applyPalaceGauntlets(actors[name],{distinct:query.get('identities')!=='0'});
-if(query.get('greaves')!=='0')for(const name of CAST)applyPalaceLowerClad(actors[name],{distinct:query.get('identities')!=='0'});
+if(query.get('cuirass')!=='0')for(const name of CAST)applyPalaceCuirass(actors[name],{integratedShoulders:query.get('unified')!=='0',signature:query.get('signature')!=='0'});
+if(query.get('gauntlets')!=='0')for(const name of CAST)applyPalaceGauntlets(actors[name],{distinct:query.get('identities')!=='0',signature:query.get('signature')!=='0'});
+if(query.get('greaves')!=='0')for(const name of CAST)applyPalaceLowerClad(actors[name],{distinct:query.get('identities')!=='0',signature:query.get('signature')!=='0'});
 const camera=new THREE.PerspectiveCamera(39,W/H,.05,100);
 const sceneFire=query.get('hearthParticles')==='0'?null:hearthFire(scene.scene,new THREE.Vector3(-2.7,.87,-.98));
 if(sceneFire){scene.heart.visible=false;scene.embers.forEach(m=>m.visible=false);}
@@ -45,6 +50,7 @@ if(query.get('portrait')!=='0')for(const name of CAST)applyPalacePortrait(actors
 if(query.get('singleShoulder')!=='0')for(const name of CAST)applySingleShoulders(actors[name]);
 if(metal&&query.get('ornament')!=='0'){const env=createRegalMetalEnvironment(renderer);for(const name of CAST)applyOrnamentMetal(actors[name],env.texture);}
 if(query.get('portrait')!=='0'&&query.get('shaded')!=='0')for(const name of CAST)applyShadedPortrait(actors[name]);
+if(query.get('portrait')!=='0'&&query.get('shaded')!=='0'&&query.get('softPortrait')!=='0')for(const name of CAST)applySoftPortrait(actors[name]);
 if(query.get('orbs')!=='1')for(const name of CAST)removeCladGlow(actors[name]);
 if(query.get('jointfix')!=='0')for(const name of CAST)actors[name].anatomicalHands=true;
 if(query.get('footfix')!=='0')actors.aoao.footClearance=makeFootClearance(actors.aoao,scene.lockSolids,{anatomicalKnees:query.get('kneefix')!=='0'});
@@ -116,6 +122,7 @@ function draw(t,capture=true){
  let shake=0;for(const key of HIT_KEYS){const d=t-T[key];if(d>=0&&d<.34)shake+=(key==='C7'?.06:.028)*(1-d/.34);}
  camera.position.set(c.pos[0]+Math.sin(t*91)*shake,c.pos[1]+Math.cos(t*73)*shake*.6,c.pos[2]);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
  sceneFire?.update(t,camera,.70+.30*ease((t-T.RESTORE)/3));
+ hall?.update(t,camera);
  for(const name of CAST){const a=actors[name],s=perf.states[name],other=name==='aoao'?'yekari':'aoao';
   const blink=Math.max(0,1-Math.abs(((t+(name==='aoao'?0:1.4))%4.3)-4.1)/.11);
   const emot=active?.speaker===name?active.acting.emotion:s.emotion;
@@ -123,6 +130,7 @@ function draw(t,capture=true){
   const target=active?.acting.gaze==='ground'||s.headPitch>.15?new THREE.Vector3(-.4,.1,0):head(other);
   if(t<20||t>T.RETREAT+6.7)target.copy(new THREE.Vector3(-2.7,1.1,-1.25));
   a.face.lookAtWorld?.(target);a.mouth.apply({jaw:active?.speaker===name?jaw(active.id,t):0,width:1});
+  a.softPortrait?.update(t);
  }
  let arc=null,charge=null,beamShot=null,chainEnd=null;
  for(const key of ['C1','C3','C5','C6']){
@@ -139,8 +147,9 @@ function draw(t,capture=true){
  if(t>=T.RELEASE&&t<T.C7+.18){const u=clamp((t-T.RELEASE)/(T.C7-T.RELEASE)),from=scene.lockPoint.clone(),wrist=actors.yekari.chainSocket.getWorldPosition(new THREE.Vector3()),target=wrist.lerp(contacts.C7,ease((t-(T.C7-.12))/.12));beamShot={from,to:from.clone().lerp(target,u),alpha:t<T.C7?.82:Math.max(0,1-(t-T.C7)/.18),width:.55+.35*u};}
  fx.update(t,camera,{arc,charge,beamShot});
  let rimLow=new THREE.Vector3(0,999,0);for(let i=0;i<64;i++){const a=i*Math.PI/32,p=world(actors.aoao.shieldDome,new THREE.Vector3(Math.cos(a)*.265,.052,Math.sin(a)*.265));if(p.y<rimLow.y)rimLow=p;}
- const trace={phase:perf.phase,scene:'ember',cast:CAST.filter(n=>actors[n].mesh.visible),roots:{},arms:{},legs:{},feet:{},hands:{},contacts:{},shieldRimLow:rimLow.toArray(),slot:scene.lockPoint.toArray(),gateOpen:scene.gate.position.y,windowsLit:scene.windows.filter(w=>w.visible).length};
+ const trace={phase:perf.phase,scene:'ember',cast:CAST.filter(n=>actors[n].mesh.visible),roots:{},arms:{},legs:{},feet:{},hands:{},contacts:{},locomotion:{},shieldRimLow:rimLow.toArray(),slot:scene.lockPoint.toArray(),gateOpen:scene.gate.position.y,windowsLit:scene.windows.filter(w=>w.visible).length};
  for(const n of CAST){const a=actors[n],p=perf.poses[n];trace.roots[n]=a.mesh.position.toArray();trace.arms[n]={};trace.feet[n]={};
+  trace.locomotion[n]={...p.locomotion,yaw:a.mesh.rotation.y,feet:Object.fromEntries(['left','right'].map(side=>[side,{...p.locomotion?.feet[side],position:a.feet[side].getWorldPosition(new THREE.Vector3()).toArray(),quaternion:a.feet[side].getWorldQuaternion(new THREE.Quaternion()).toArray()}]))};
   trace.legs[n]={};trace.hands[n]={};for(const side of ['left','right']){trace.arms[n][side]=p[side+'Arm'].map(v=>[v.x,v.y,v.z]);trace.legs[n][side]=p[side+'Leg'].map(v=>[v.x,v.y,v.z]);trace.feet[n][side]=a.feet[side].getWorldPosition(new THREE.Vector3()).toArray();trace.hands[n][side]=a.hands[side].quaternion.toArray();}}
  for(const key of HIT_KEYS)if(Math.abs(t-T[key])<.15)trace.contacts[key]={target:contacts[key].toArray(),effect:fx.impacts.find(e=>e.id===key).group.position.toArray(),active:t>=T[key]};
  if(stageAudit){trace.environment=stageAudit.sample();trace.footBlock=footBlockAudit.sample();}
@@ -150,4 +159,4 @@ function draw(t,capture=true){
 }
 window.duration=tl.duration;window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...entries.map(e=>e.startTime+.5),...HIT_KEYS.flatMap(k=>[T[k]-.1,T[k],T[k]+.15]),T.RESTORE+4].sort((a,b)=>a-b);
-window.__dbg={actors,scene,camera,renderer,contacts,stageAudit,fx,livingCaldera};await document.fonts.ready;window.ready=true;
+window.__dbg={actors,scene,camera,renderer,contacts,stageAudit,fx,livingCaldera,hall};await document.fonts.ready;window.ready=true;
