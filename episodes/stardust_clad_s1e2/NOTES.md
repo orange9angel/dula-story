@@ -1,12 +1,16 @@
 # 《星屑战壳》S1E2《焰阶宫·盾与暗链》R19
 
 当前正本：`script.story`，213秒，22句对白，28个动作段，1280×720 / 30fps。
+2026-10-19 用户反馈：“效果好了非常多，可以先同步文档，skill和git”。
+记录为对R19改进效果的认可；后续沿用本版的分宫叙事、双人圣衣区分和接触声光工艺。
+精确成片哈希与反馈范围见 `storyboard/palace_r19/user_feedback.json`。
 本轮按用户要求改为阿鏊独守焰阶宫、对战夜刈。小凿、 大釜、阿箸分守各自宫殿，
 只有开头通信与字幕交代去向；正片战场只有两人，没有总坛大锅。
 
-当前看片文件：`output/stardust_clad_s1e2_palace_r19.mp4`。保留原片头的版本为
-`output/stardust_clad_s1e2_palace_tv_r19.mp4`。本轮完成封装验证后，常用入口
-`craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 指向新版本；旧入口备份在
+当前看片文件：[213秒正片](output/stardust_clad_s1e2_palace_r19.mp4)、
+[262.2秒带片头版](output/stardust_clad_s1e2_palace_tv_r19.mp4)、
+[26秒反击预览](output/palace_duel_preview_r19.mp4)。封装验证已完成，常用入口
+`craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 已指向新版本；旧入口备份在
 `output/archive/pre_palace_r19/`，旧 R18 固定文件保留。
 
 ## 本轮变化与执行入口
@@ -36,7 +40,8 @@
 配音QC为21条通过、1条警告、0条失败：p07原创招式名的拼音转写重合率83%，
 属于需人工复听的读音观察项，不将转写当成漏字定论。148—178秒混音经过音频模型
 单独观察，报告认为对白清晰、没有明显异常重复爆点；模型措辞和精确时间不作为测量。
-未声称人耳全片审听、完整网格无穿模、商业画质通过或用户审美验收。
+用户后续认可改进效果，独立记录于上述反馈文件；技术证据仍不等于人耳全片审听、
+完整网格无穿模或商业画质认证，p07读音观察项继续保留。
 
 场景 JSON Schema、story catalog 与 DSL 验证通过。`Beat/Cue/Act` 是本集编译元数据，
 其真实消费入口见 `config/palace_runtime_contract.json`；通用 scene_tool 的 SceneBase
@@ -45,6 +50,10 @@
 
 系列正本已同步 [各宫分守安排](../../docs/stardust_series_bible.md)。
 本轮工艺教训已回写并提交 dula-skills（80b7e69）。
+实现提交：dula-story `9cd1ddb`、dula-assets `d118555`。本次文档同步补充认可记录、
+资产接口与最终小型证据文件；MP4按仓库既有规则保留在本地 `output/`。
+长逐帧trace、派生四总线和中间试片留本地，可按执行链重建；不会把旧版数值报告
+当作R19证据提交。
 
 ---
 
