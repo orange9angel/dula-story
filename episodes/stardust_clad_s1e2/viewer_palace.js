@@ -3,9 +3,12 @@ import {AoaoCraft,YekariCraft} from 'dula-assets/characters/stardust/characters.
 import {applyPalaceClad} from 'dula-assets/characters/stardust/palace-clad.js';
 import {EmberTierPalaceScene} from 'dula-assets/scenes/stardust/EmberTierPalaceScene.js';
 import {createCombatLight} from 'dula-assets/lib/craft3d/combat-light.js';
+import {createArmorEnvironment,applyMetalClad,refinePalaceLimbs} from 'dula-assets/characters/stardust/metal-clad.js';
+import {createStageClearance} from 'dula-assets/lib/craft3d/stage-clearance.js';
 import {directLook,moderateCladGlow} from './look_direction.js';
 import {poseAt,T,CAST,HIT_KEYS,clamp,ease,mix} from './duel_performance.js';
 const W=1280,H=720;
+const query=new URLSearchParams(location.search),metal=query.get('metal')!=='0';
 const [tl,dlg,envs]=await Promise.all(['timeline','dialogue','voice_envs'].map(async n=>{const r=await fetch(`./config/${n}.json`);return r.ok?r.json():{};}));
 const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:s}));
 const scene=new EmberTierPalaceScene();scene.build();await scene.applyHybrid();
@@ -14,8 +17,15 @@ for(const name of CAST){applyPalaceClad(actors[name],name);scene.scene.add(actor
 const camera=new THREE.PerspectiveCamera(39,W/H,.05,100);
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+if(metal){const env=createArmorEnvironment(renderer);await Promise.all(CAST.map(name=>applyMetalClad(actors[name],{url:'./assets3d/tex/armor_engraved_r20.png',environment:env.texture})));}
+if(query.get('anatomy')!=='0')for(const name of CAST)refinePalaceLimbs(actors[name]);
+const stageAudit=(query.has('probe-stage')||query.has('probe-surface'))?createStageClearance(actors,scene.navigationObstacles):null;
+if(stageAudit){
+ const contract=await(await fetch('./config/palace_stage_contract.json')).json();
+ if(stageAudit.ids.length!==contract.obstacleCount||contract.requiredFamilies.some(prefix=>!stageAudit.ids.some(id=>id.startsWith(prefix))))throw new Error('Incomplete stage obstacle coverage');
+}
 const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;document.body.append(canvas);const ctx=canvas.getContext('2d');
-const fx=createCombatLight(scene.scene),contacts={};
+const fx=createCombatLight(scene.scene,{detailed:query.get('particles')!=='0'}),contacts={};
 const world=(obj,v=new THREE.Vector3())=>obj.localToWorld(v.clone());
 const shield=()=>world(actors.aoao.shieldDome,new THREE.Vector3(0,.278,0));
 for(const key of HIT_KEYS){
@@ -42,7 +52,7 @@ function cameraAt(t,perf,line){
  if(shot==='gate_detail')return{pos:[-.1,1.65,2.7],look:[-1.8,.7,-.6],fov:39};
  if(shot==='tracks')return{pos:[.1,1.3,2.3],look:[-.45,.1,-.02],fov:36};
  if(shot==='embers')return{pos:[-1.25,1.6,1.3],look:[-2.7,.95,-1.25],fov:33};
- if(shot==='streets'){const u=ease((t-205)/6);return{pos:[mix(2,.6,u),mix(2.8,1.8,u),mix(-10.4,-11.1,u)],look:[-.1,.15,-15.2],fov:50};}
+ if(shot==='streets'){const u=ease((t-205)/6);return{pos:[mix(2,.6,u),mix(2.8,1.8,u),mix(-14,-14.1,u)],look:[-.1,.15,-17.3],fov:56};}
  if(shot==='gate_fight')return{pos:[-.7,2.4,5.3],look:[-.9,1.0,-.4],fov:47};
  if(shot==='finisher')return{pos:[.1,1.4,6.1],look:[.2,1.1,0],fov:43};
  if(shot==='impact'||shot==='side')return{pos:[-.1,1.8,5.5],look:[.1,1.12,0],fov:42};
@@ -97,10 +107,11 @@ function draw(t,capture=true){
  for(const n of CAST){const a=actors[n],p=perf.poses[n];trace.roots[n]=a.mesh.position.toArray();trace.arms[n]={};trace.feet[n]={};
   for(const side of ['left','right']){trace.arms[n][side]=p[side+'Arm'].map(v=>[v.x,v.y,v.z]);trace.feet[n][side]=a.feet[side].getWorldPosition(new THREE.Vector3()).toArray();}}
  for(const key of HIT_KEYS)if(Math.abs(t-T[key])<.15)trace.contacts[key]={target:contacts[key].toArray(),effect:fx.impacts.find(e=>e.id===key).group.position.toArray(),active:t>=T[key]};
+ if(stageAudit)trace.environment=stageAudit.sample();
  if(!capture)return trace;
  renderer.render(scene.scene,camera);renderer.render(scene.scene,camera);ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);overlay(t,perf,active);
  return{image:canvas.toDataURL('image/jpeg',.93).split(',')[1],state:trace};
 }
 window.duration=tl.duration;window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...entries.map(e=>e.startTime+.5),...HIT_KEYS.flatMap(k=>[T[k]-.1,T[k],T[k]+.15]),T.RESTORE+4].sort((a,b)=>a-b);
-window.__dbg={actors,scene,camera,renderer,contacts};await document.fonts.ready;window.ready=true;
+window.__dbg={actors,scene,camera,renderer,contacts,stageAudit};await document.fonts.ready;window.ready=true;

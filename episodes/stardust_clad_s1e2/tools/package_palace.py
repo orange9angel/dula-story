@@ -8,7 +8,9 @@ from package_release import probe,digest,read,OPENING
 EP=Path(__file__).resolve().parents[1];BOARD=EP/'storyboard/palace_r19'
 BODY=EP/'output/stardust_clad_s1e2_palace_r19.mp4';TV=EP/'output/stardust_clad_s1e2_palace_tv_r19.mp4'
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--publish-aliases',action='store_true');a=p.parse_args()
+    global BOARD,BODY,TV
+    p=argparse.ArgumentParser();p.add_argument('--publish-aliases',action='store_true');p.add_argument('--version',choices=['r19','r20'],default='r19');a=p.parse_args()
+    version='palace_'+a.version;BOARD=EP/'storyboard'/version;BODY=EP/f'output/stardust_clad_s1e2_palace_{a.version}.mp4';TV=EP/f'output/stardust_clad_s1e2_palace_tv_{a.version}.mp4'
     for file in [BOARD/'palace_checks.json',BOARD/'physics_final/seek_check.json',EP/'assets3d/audio_sync_report.json']:assert read(file)['passed'],file
     for item in read(BOARD/'render_trace.json')['build']['inputs']:assert digest(Path(item['path']))==item['sha256'],item['path']
     body=probe(BODY,213);opening=probe(OPENING,49.2)
@@ -34,9 +36,9 @@ def main():
         filters='[0:v]trim=duration=49.2,setpts=PTS-STARTPTS,setsar=1[v0];[1:v]trim=duration=213,setpts=PTS-STARTPTS,setsar=1[v1];[0:a]atrim=duration=49.2,asetpts=PTS-STARTPTS[a0];[2:a]atrim=duration=213,asetpts=PTS-STARTPTS[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]'
         subprocess.run(['ffmpeg','-y','-v','error','-i',str(OPENING),'-i',str(BODY),'-i',str(EP/'assets3d/mixed.wav'),'-filter_complex',filters,'-map','[v]','-map','[a]','-c:v','libx264','-preset','medium','-crf','18','-r','30','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-ar','48000','-ac','2','-movflags','+faststart',str(TV)],check=True)
     tv=probe(TV,262.2)
-    report={'version':'palace_r19','body':body,'opening':opening,'tv':tv,'sourceStorySha256':digest(EP/'script.story'),'mixSha256':digest(EP/'assets3d/mixed.wav'),'pictureSamples':picture,'audioSyncSamples':sync,'aliasesPublished':False,'limits':'Decoded-frame samples, numerical checks, and one audio-only model observation. Not human full-film listening or aesthetic approval.'}
+    report={'version':version,'body':body,'opening':opening,'tv':tv,'sourceStorySha256':digest(EP/'script.story'),'mixSha256':digest(EP/'assets3d/mixed.wav'),'pictureSamples':picture,'audioSyncSamples':sync,'aliasesPublished':False,'limits':'Decoded-frame samples and numerical checks. Not human full-film listening or aesthetic approval.'}
     if a.publish_aliases:
-        archive=EP/'output/archive/pre_palace_r19';archive.mkdir(parents=True,exist_ok=True)
+        archive=EP/'output/archive'/('pre_'+version);archive.mkdir(parents=True,exist_ok=True)
         for source,name in [(BODY,'craft3d_full.mp4'),(TV,'craft3d_tv_s1e2.mp4')]:
             target=EP/'output'/name;backup=archive/name
             if target.exists() and digest(target)!=digest(source):

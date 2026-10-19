@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "cleanRoute": {
+    "obstacles": 70,
+    "actors": 2,
+    "pairs": 140,
+    "broadSeparated": 140,
+    "narrowPairs": 0,
+    "triangles": 0,
+    "vertices": 0,
+    "maxDepth": 0,
+    "collisions": [],
+    "minBroadGap": 0.6626204429641582
+  },
+  "injectedColumn": {
+    "obstacles": 70,
+    "actors": 2,
+    "pairs": 140,
+    "broadSeparated": 135,
+    "narrowPairs": 5,
+    "triangles": 114792,
+    "vertices": 91148,
+    "maxDepth": 0.33824571342919935,
+    "collisions": [
+      {
+        "actor": "yekari",
+        "obstacle": "column_1_1_base",
+        "triangles": 3392,
+        "depth": 0.14995006322860718,
+        "part": "BufferGeometry"
+      },
+      {
+        "actor": "yekari",
+        "obstacle": "column_1_1_shaft",
+        "triangles": 104465,
+        "depth": 0.33824571342919935,
+        "part": "BufferGeometry"
+      },
+      {
+        "actor": "yekari",
+        "obstacle": "column_1_1_flute_-0.23",
+        "triangles": 13,
+        "depth": 0,
+        "part": "CylinderGeometry"
+      }
+    ],
+    "minBroadGap": 0
+  },
+  "restoredRoute": {
+    "obstacles": 70,
+    "actors": 2,
+    "pairs": 140,
+    "broadSeparated": 140,
+    "narrowPairs": 0,
+    "triangles": 0,
+    "vertices": 0,
+    "maxDepth": 0,
+    "collisions": [],
+    "minBroadGap": 0.6626204429641582
+  },
+  "emptyRejected": true
+}

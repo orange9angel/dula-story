@@ -1,0 +1,353 @@
+{
+  "source": "actual viewer before entry-path repair, 30Hz",
+  "frames": 210,
+  "failedFrames": 57,
+  "failureWindow": [
+    20.433,
+    22.3
+  ],
+  "maxDepth": 0.3395328710791397,
+  "obstacles": [
+    "column_1_1_base",
+    "column_1_1_flute_-0.23",
+    "column_1_1_flute_0",
+    "column_1_1_flute_0.23",
+    "column_1_1_shaft"
+  ],
+  "sourceInputs": [
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\script.story",
+      "sha256": "1e9912a9dbbcc5bf8b3dd2ab4b2c2e802aa31edb058cfa3ab6655f76448487f5"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\duel_performance.js",
+      "sha256": "c7ce115645ba02e0e848f35bf95cc8d7e6b1280c869979af8572eb572dac50d5"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\viewer_palace.js",
+      "sha256": "73aa569dd0e73d8f0a82cbe42c3e1fe2da1f7992d89bfbb6602fe092345358d6"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\serial_direction.js",
+      "sha256": "e87135609687e34b24223c24d116a9ac280094f1e2d88005b2a24196a8843029"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\shot_direction.js",
+      "sha256": "e228e9e4e42c1191b28f1fefe386db3abc615614cd70ae2cf3b0f9b75638fd82"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\story_fx.js",
+      "sha256": "9ae04f51abca86cd96d98b7f7336f6c96edf2bb7946db24cbe7e4edc8935bde4"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\look_direction.js",
+      "sha256": "3f428a6932434318f3a4cc78f31060bbe63d3e70eb98dfcbbd375a620fd67cf6"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\event_times.js",
+      "sha256": "a9e38543b33877f281987ee6badd1f629632ca62ed6bae6716d37acdefa1bd62"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\voices.json",
+      "sha256": "4c066eab957a0cc9f0c755c9e7bf9707e8dab159bb7e853f1bc43fe05c54281c"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\tools\\compile_story.py",
+      "sha256": "4998fe1d613a881926e6a99fafe1205ed787c1c6b55bdb59bdbdf21a594d2004"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\performance.js",
+      "sha256": "eae6b8738f5b15364b313137eabd7cfe63532ba48e42779fe2e73b8f877105f9"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\viewer.js",
+      "sha256": "54c377b16bcce5c716cf76b99eae81d2a4d3d7af4b58dc2a4ea5784a1bddddcf"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\viewer.html",
+      "sha256": "207576c3935416293573c3e0fbb0cd04495cf6b2479b1138c3787837def42281"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\render.mjs",
+      "sha256": "ee502158edc4d41ead53e552eb7ca7a78e2004fd57f4fb5d6e936fb052a3bb62"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\tools\\audit_inputs.mjs",
+      "sha256": "242bc85ca582f0c3c4cba428dfef36cbf73bf4327edf4f405fb49612e8691ee4"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\timeline.json",
+      "sha256": "032d83d0743299caf2c9f63ee78683ea3b13ff53446bf5305f8b6b6429366ec2"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\dialogue.json",
+      "sha256": "d2be9b49e12c9888544b563ad03172c8c82248d4a9dc1ca93648399bcf38a8d8"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\voice_envs.json",
+      "sha256": "5dcbee7fc7757fed64c27373339709a35b3f676a285be96af8c225de2fe70870"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\editorial_cuts.json",
+      "sha256": "9920e1557c8e6e4fc348882f0479d50419b10f8538ae300f729bfca4a9b71ea0"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\palace_review_shots.json",
+      "sha256": "662bb6681c3d9fdbfa57ecad59c4d63f1e86571d3a3159991417e39f01ed6cfb"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\palace_runtime_contract.json",
+      "sha256": "538967e7fdf447affd9c10a89247db4058705b413df9a573eb51ff4ba9d1e6f4"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\config\\scene_contract.json",
+      "sha256": "04210ce69a8a22a6df168f87303119cc486954fde521e8af130d9085f3b4f742"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\anatomical-hand.js",
+      "sha256": "b0771a7b55a7892e7278dd38ecfd9791e5d53f233158b3b97890194e2c24e7ca"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\body-audit.js",
+      "sha256": "999342f7594229be1886607fcbe734d32f561e59ad0b91dda49c74e72f5665b8"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\combat-light.js",
+      "sha256": "858b0c7f48048c75ea37c52843ea3ac9c27e981a91cd05ea25c5300a4e552923"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\continuous-backdrop.js",
+      "sha256": "a5fce0cd8f21583faac7794f411fe19922322f601f9c0a2db2c5672797012b87"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-ear.js",
+      "sha256": "8ef8531399e9cd83a056d28489fc8216acd95cd04fd0e4ba170366e94b882151"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-face.js",
+      "sha256": "8eb655762eba40076e7f39a80b2a0badfbc407644c2a569fe22698c4979f2810"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\drawn-head.js",
+      "sha256": "058fa4330edc0a5633d1da6e829ec6e87abbfa1492916e7739a67980a1f255ec"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\facial-deform.js",
+      "sha256": "b67546d71db9b4ee932f5733af9ef29aae38db6e109294aaec8f198211cf590f"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\garment-clearance.js",
+      "sha256": "92a673945b93f6c86e728b88f9f5c1524e31211d39a48c44b90f5f048aebf557"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\generated-face-paint.js",
+      "sha256": "dac4e1e165efd271cd0316eb3e8351e3b186a9b07105c78da5d03b15d4c91959"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\generated-portrait-paint.js",
+      "sha256": "49ce053f8f14aa4be092edf914e9c526ff3ceed4d3a46acfdcc9eb95e96c5cd3"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\graphic-hair.js",
+      "sha256": "1e8947a5587693a6ed83eee9b3eb504e1c821d953b9c2d1fd8203bd1a666aff5"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\hand.js",
+      "sha256": "91f3289e3daad4ad13a2711554a69d45b29fd5fc4d99ef902ec678911cc571d7"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\illustrated-import.js",
+      "sha256": "8d4f9127c2533fb77bd43cc61ebbe2e0237c474983c2187cfc319d5d586b827e"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-cel-look.js",
+      "sha256": "548120ed2c4e549688c94982e0e86783e02aee453a1991a838ee03b47ac3ec40"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\imported-performer.js",
+      "sha256": "3faa969cbd9d966b6879dcd828028b04d3c5ac492278154699d713cc690d163c"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\locomotion.js",
+      "sha256": "52f5f9091a25e11c51ac0f7b61340d5580aece42d4d22c45453dda8106c14952"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\look.js",
+      "sha256": "e5634e29af63dd58b9e31a8b5b123efbad208d721304d483d5021635c70f467c"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\oblique-face-support.js",
+      "sha256": "190edb9f576c00e82e56e4293fece8dd2c3009a1634d31ee63a3bed978214426"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\painted-hair-shell.js",
+      "sha256": "b9ba9fc45ca556196934caf73a5b986b80864b1092d75d71f95095c33847aeaa"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\pose.js",
+      "sha256": "669eda04a0bf251315f2518f24140d8948149838bfd93863056024c2e80c9536"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\profile-hair-paint.js",
+      "sha256": "ea1b4ada2064caaaa3e28baebdfb64b910c97a218802a88b38307f357edb953e"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\projected-face.js",
+      "sha256": "eea47c0ef978e1cdc3d5d24893c383231e16437fc53f2f2b6b80619bd781807b"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\retargeted-motion.js",
+      "sha256": "8211ae275786bfe1c29415a4d8cf321f2eb110d3a6b21c5035ed14f168b58bad"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\secondary-hair.js",
+      "sha256": "371479582de72235edc90b4454b7a21fc36f47deb5f2944abd6f2afaa3331dd8"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skin-mark.js",
+      "sha256": "0920ae300b097fbe8237d6dc003ef550eadd256d41a048f0f717601e2838f101"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\skinned-samples.js",
+      "sha256": "ae5629b26dccb4ed4dd0b4305eb6e0840dc21c76e6c662de79e03b3558b52261"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\stage-clearance.js",
+      "sha256": "a8d3fc9d472967ea73f0cb0eac824168fd47df7a74a92df33009710f7a06e3b7"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\supported-performance.js",
+      "sha256": "12ca0399fab8433267b921b39dd51b0c036c9972644b60abeaba8e526b6694fc"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\surface.js",
+      "sha256": "694a05d2a95b8c3c0ce4e16264edcaec6263db576e8b880eea28758463b20cfb"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\lib\\craft3d\\table-hand-clearance.js",
+      "sha256": "b2a682681cba51c8a0746b84422ad59e526b2de7f49d64f1fd7dd8fd254ca265"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-generated-paint.js",
+      "sha256": "dff4cdfeafccb54efc7e07b738c80873e692df18e0acf1da6e8b7b6286f4078c"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\aoi-graphic-hair.js",
+      "sha256": "3972a7d4776b832fabe084b16429f4caafa04ac32fdcb240951449b079c170a6"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\characters.js",
+      "sha256": "ce10e0a5e3f3f230991e318ec118572944b6e164501ee25f15bb6d5b10dcab1f"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_details.js",
+      "sha256": "0c7196c4781809d4c68fb1f4bf12a085011ef21f557ed4f9a7d6099deb14e3f0"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_finish.js",
+      "sha256": "9418513953a12fd36466f217ec1148ca7bdb4dfb75ae1bdb1baa67dadb17b4b1"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\character_look.js",
+      "sha256": "4d078b05c8f98729f293ae701c03a32bea1dbeafd2234f603f7dee48666d7d83"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-generated-hair.js",
+      "sha256": "46c74531bafbf963eaf74d8162a5da106270c152b18ebbb2eb72a501123e0ffd"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-generated-paint.js",
+      "sha256": "329347e114bd75f870e39c1f5f339a4d502697cf4b35bcb33057122e87f72ef7"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-geometry-config.js",
+      "sha256": "e7c5dc9e640545d1c726119e6464ff59f49c5e4f7a1543acb5eb0a484162fa62"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\lei-graphic-hair.js",
+      "sha256": "211db2c78f1db382896929821e2124499cbae769df4ad82f1ced654a058ce122"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\QianTangKuiCraft.js",
+      "sha256": "9093163ed72dae120b9b3fe671cc233df4238f99b44d21d6af39c1abc21d0e4a"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-drawn-look.js",
+      "sha256": "ba41aeaef5c233cfb1a83924f0be59e33a2a7925bcfe2ca1968c05f009ab1aad"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\bioarmor\\tripo-look.js",
+      "sha256": "6c818ca069e081bc7910b243fd3da5d7d2b1fa61a35fdfbdd2e4727b1defa53a"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\stardust\\beast.js",
+      "sha256": "1ec1facafcffbe978125c1c7c4ec89daff7953bc19df23983a5b5901029eaa40"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\stardust\\characters.js",
+      "sha256": "92f05fc7970544d9957d91aedb60cc57e25c0a7a973cc347bc70c9f822537cd4"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\stardust\\metal-clad.js",
+      "sha256": "dbe830904bbb24e90baffa86a50c5b27136001c2280d053c29d1f00ee5644b30"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\stardust\\moves.js",
+      "sha256": "7c6ac0ed121ac06ea0768bd77e39f81660cec3b8f109ae3cbad988b4dee8800f"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\stardust\\palace-clad.js",
+      "sha256": "71e7487a69957a76e8800c6f0c4f09f81f075a1aeb2123b68cee918b8497a82b"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\characters\\stardust\\pose-rig.js",
+      "sha256": "05da07d192c0f5f039b4dba5175eac08eebb4676bb56b3bed7c63dab784e318c"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\AstralPalaceScene.js",
+      "sha256": "5eec107013e4f2d6d0a154ff6696db62468178cb02ea88d81d7fe940d65e1717"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\CloudPeakScene.js",
+      "sha256": "20041bfb867b4f54b04210e790e40f03ec699243fd664335c6e66e03452c9792"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\DeepseaRuinsScene.js",
+      "sha256": "cbc418c31e7fa2ca92d3cb25c821c16fe2322ee29f77537a718a64e1d1a24935"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\EmberCalderaScene.js",
+      "sha256": "23043f10826cdd4fc2630051381a383068bf4c043a8aa547946579ef2565e7f4"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\EmberTierPalaceScene.js",
+      "sha256": "a0d6d73bcb9ad1c909aad8f33156e4dd17df83777184c243686036ce25fa4556"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\GloomriverScene.js",
+      "sha256": "9fe9cc5bf530872b1b901915fbc0948f36ddc510b2e2d359f7814ef78f4164e4"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\PalaceGateScene.js",
+      "sha256": "1b11789563813f41dc245ad298cc519bd4148468a609269600d3a075c27da964"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\StarArenaScene.js",
+      "sha256": "101f8023c84b1c2e158956d7fb1ab3a657be2e7cd50df3a4595fa03a87b116da"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\StardustShrineScene.js",
+      "sha256": "bf5fde738e7967d5e0ea621e0a162943acdd6cf36df0f6c31fc055742f9ac017"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-assets\\scenes\\stardust\\StarfallColonnadeScene.js",
+      "sha256": "3028f1a6f4c5be450c60bd6672bde76238eaba369917c82797e7af39a989658d"
+    },
+    {
+      "path": "D:\\opensource\\movie\\dula-engine\\lib\\NumericAudit.js",
+      "sha256": "8851381d4d542911162afd595152c96b7b15a3d5223ba95ea43c89274298330c"
+    }
+  ],
+  "currentNegativeProbe": "stage_negative_probe.json",
+  "currentFullReport": "palace_checks.json"
+}

@@ -54,7 +54,9 @@ function state(name,t,phase){
    if(t>=T.RESTORE)s.emotion='neutral';}
  }else{
   if(t<T.ARRIVE){s.visible=false;}
-  if(t>=T.ARRIVE&&t<27)travel(s,t,T.ARRIVE,26.5,[5.6,-.03],[1.35,-.03],-.85);
+  // Enter through the clear bay between the two columns, then plant and turn.
+  if(t>=T.ARRIVE&&t<26)travel(s,t,T.ARRIVE,26,[5.5,1.85],[1.35,-.03],Math.atan2(-4.15,-1.88));
+  if(t>=26&&t<27){const a=ease(t-26),fromYaw=Math.atan2(-4.15,-1.88);s.yaw=mix(fromYaw,-.85,a);s.turn={fromYaw,toYaw:-.85,a};}
   if(t>=27&&t<51){s.headYaw=-.15;s.right=V(.18,1.26,.14);}
   for(const h of [T.C1,T.C3,T.C5,T.C6]){
    const wind=pulse(t,h-2.1,h-.7,h-.5,h+.35),swing=pulse(t,h-.48,h,h+.1,h+.7);
@@ -73,8 +75,9 @@ function state(name,t,phase){
    if(u>=1){s.sit={drop:.31,feet:.19};s.bob=-.08;}
   }
   if(t>=T.RETREAT){const up=ease((t-T.RETREAT)/.8);s.sit={drop:.31*(1-up),feet:.19*(1-up)};s.bob=-.08*(1-up);s.headPitch=.12*(1-up);s.air=0;s.tuck=0;
-   if(t>=T.RETREAT+.8&&t<T.RETREAT+2){const a=ease((t-T.RETREAT-.8)/1.2);s.yaw=mix(-.85,2.295,a);s.turn={fromYaw:-.85,toYaw:2.295,a};}
-   if(t>=T.RETREAT+2)travel(s,t,T.RETREAT+2,T.RETREAT+6.7,[2.9,-.45],[6.8,-3.9],2.295);
+   const retreatYaw=Math.atan2(2.6,-1.4);
+   if(t>=T.RETREAT+.8&&t<T.RETREAT+2){const a=ease((t-T.RETREAT-.8)/1.2);s.yaw=mix(-.85,retreatYaw,a);s.turn={fromYaw:-.85,toYaw:retreatYaw,a};}
+   if(t>=T.RETREAT+2)travel(s,t,T.RETREAT+2,T.RETREAT+6.7,[2.9,-.45],[5.5,-1.85],retreatYaw);
    if(t>T.RETREAT+6.7)s.visible=false;
   }
  }

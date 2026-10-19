@@ -1,14 +1,30 @@
 """Scoped physics assertions for the palace duel; not a mesh collision guarantee."""
 from pathlib import Path
-import json,math,sys,hashlib
+import json,math,sys,hashlib,argparse
 EP=Path(__file__).resolve().parents[1]
 read=lambda p:json.loads(p.read_text(encoding='utf-8'))
 def main():
-    source=EP/(sys.argv[1] if len(sys.argv)>1 else 'storyboard/palace_r19/physics_final/trace.json')
+    parser=argparse.ArgumentParser();parser.add_argument('trace',nargs='?',default='storyboard/palace_r20/physics_final/trace.json');parser.add_argument('--out',default='storyboard/palace_r20/palace_checks.json');args=parser.parse_args()
+    source=EP/args.trace
     data=read(source);frames=data['frames'];T=read(EP/'config/event_times.json');errors=[]
     for item in data['build']['inputs']:
         if hashlib.sha256(Path(item['path']).read_bytes()).hexdigest()!=item['sha256']:errors.append('stale input: '+item['path'])
     if len(frames)!=round(data['duration']*data['fps']):errors.append('incomplete full timeline')
+    if not frames:raise ValueError('empty trace')
+    if data['fps']<60:errors.append('environment sampling below 60Hz')
+    expected_obstacles=read(EP/'config/palace_stage_contract.json')['obstacleCount']
+    env_pairs=0;env_broad=0;env_narrow=0;env_depth=0;env_bad=[]
+    for i,f in enumerate(frames):
+        if abs(f['t']-i/data['fps'])>.001:errors.append('missing or nonsequential sample')
+        env=f.get('environment')
+        if not env:errors.append('missing environment surface audit');continue
+        if env['obstacles']!=expected_obstacles or env['pairs']!=len(f['cast'])*expected_obstacles:errors.append('incomplete actor/environment pairing')
+        if env['pairs']!=env['broadSeparated']+env['narrowPairs']:errors.append('unaccounted environment pairs')
+        if not all(math.isfinite(env[k]) for k in ['maxDepth','minBroadGap','pairs']):errors.append('nonfinite environment audit')
+        env_pairs+=env['pairs'];env_broad+=env['broadSeparated'];env_narrow+=env['narrowPairs'];env_depth=max(env_depth,env['maxDepth'])
+        if env['collisions']:
+            errors.append('actor intersects stage solid')
+            if len(env_bad)<12:env_bad.append({'t':f['t'],'collisions':env['collisions']})
     distance=lambda a,b:math.dist(a,b)
     trap=[];bones=[];effect=[];plant=[];step=[]
     for f in frames:
@@ -38,6 +54,7 @@ def main():
     if max(step)>.08:errors.append('root discontinuity')
     late=next(f for f in frames if f['t']>=T['RESTORE']+4)
     if late['gateOpen']<.9 or late['windowsLit']!=36:errors.append('street restoration missing')
-    result={'passed':not errors,'fps':data['fps'],'frames':len(frames),'duration':data['duration'],'maxShieldNotchGap':max(trap),'maxArmBoneError':max(bones),'maxImpactAnchorError':max(effect),'maxAttackPlantedFootDrift':max(plant),'maxRootStep':max(step),'errors':sorted(set(errors)),'limits':['checks anchors and skeletal lengths, not every deformed triangle','final visual and audio observations are separate']}
-    (EP/'storyboard/palace_r19/palace_checks.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result));return bool(errors)
+    if not all([trap,bones,effect,plant,step]):errors.append('empty required action window')
+    result={'passed':not errors,'fps':data['fps'],'frames':len(frames),'duration':data['duration'],'maxShieldNotchGap':max(trap,default=None),'maxArmBoneError':max(bones,default=None),'maxImpactAnchorError':max(effect,default=None),'maxAttackPlantedFootDrift':max(plant,default=None),'maxRootStep':max(step,default=None),'environment':{'obstacles':expected_obstacles,'pairs':env_pairs,'broadSeparated':env_broad,'narrowPairs':env_narrow,'maxDepth':env_depth,'examples':env_bad},'errors':sorted(set(errors)),'limits':['stage solids: actual rendered geometry bounds; overlap uses triangle/box SAT and surface vertices','60Hz sampled validation, not continuous-time CCD or full self collision','final visual and audio observations are separate']}
+    (EP/args.out).write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result));return bool(errors)
 if __name__=='__main__':raise SystemExit(main())

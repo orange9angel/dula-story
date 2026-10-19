@@ -1,130 +1,153 @@
 {
   "source": "actual locomotion stance transition at 120 Hz",
   "storySha256": "1e9912a9dbbcc5bf8b3dd2ab4b2c2e802aa31edb058cfa3ab6655f76448487f5",
+  "performanceSha256": "0090419d17964543115d2ef8a9d23ae552550f98186633bf41bf63e5343d4e43",
   "cues": [
     {
       "id": "step-0",
       "name": "boot_step",
-      "startTime": 20.592,
+      "startTime": 20.525,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:0.3541666666666667"
+      "contact": "left:0.3504595461549368"
     },
     {
       "id": "step-1",
       "name": "boot_step",
-      "startTime": 21.075,
+      "startTime": 20.942,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:0.7083333333333334"
+      "contact": "right:0.7009190923098736"
     },
     {
       "id": "step-2",
       "name": "boot_step",
-      "startTime": 21.55,
+      "startTime": 21.35,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:1.0625"
+      "contact": "left:1.0513786384648105"
     },
     {
       "id": "step-3",
       "name": "boot_step",
-      "startTime": 22.025,
+      "startTime": 21.75,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:1.4166666666666667"
+      "contact": "right:1.4018381846197472"
     },
     {
       "id": "step-4",
       "name": "boot_step",
-      "startTime": 22.5,
+      "startTime": 22.158,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:1.7708333333333335"
+      "contact": "left:1.7522977307746839"
     },
     {
       "id": "step-5",
       "name": "boot_step",
-      "startTime": 22.975,
+      "startTime": 22.567,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:2.125"
+      "contact": "right:2.102757276929621"
     },
     {
       "id": "step-6",
       "name": "boot_step",
-      "startTime": 23.458,
+      "startTime": 22.975,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:2.479166666666667"
+      "contact": "left:2.4532168230845577"
     },
     {
       "id": "step-7",
       "name": "boot_step",
-      "startTime": 23.933,
+      "startTime": 23.375,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:2.8333333333333335"
+      "contact": "right:2.8036763692394944"
     },
     {
       "id": "step-8",
       "name": "boot_step",
-      "startTime": 24.408,
+      "startTime": 23.783,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:3.1875"
+      "contact": "left:3.154135915394431"
     },
     {
       "id": "step-9",
       "name": "boot_step",
-      "startTime": 24.883,
+      "startTime": 24.192,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:3.541666666666667"
+      "contact": "right:3.5045954615493677"
     },
     {
       "id": "step-10",
       "name": "boot_step",
-      "startTime": 25.358,
+      "startTime": 24.6,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:3.8958333333333335"
+      "contact": "left:3.855055007704305"
     },
     {
       "id": "step-11",
+      "name": "boot_step",
+      "startTime": 25,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "right:4.205514553859242"
+    },
+    {
+      "id": "step-12",
+      "name": "boot_step",
+      "startTime": 25.425,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "left:4.555974100014178"
+    },
+    {
+      "id": "step-13",
       "name": "boot_step",
       "startTime": 25.85,
       "actor": "yekari",
@@ -132,21 +155,43 @@
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:4.25"
+      "contact": "right:4.555974100014178"
     },
     {
-      "id": "step-12",
+      "id": "step-14",
       "name": "boot_step",
-      "startTime": 26.333,
+      "startTime": 26.375,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:4.25"
+      "contact": "turn:left:0.5"
     },
     {
-      "id": "step-13",
+      "id": "step-15",
+      "name": "boot_step",
+      "startTime": 26.6,
+      "actor": "yekari",
+      "foot": "right",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:right:1"
+    },
+    {
+      "id": "step-16",
+      "name": "boot_step",
+      "startTime": 26.917,
+      "actor": "yekari",
+      "foot": "left",
+      "volume": 0.15,
+      "role": "event",
+      "priority": "storySfx",
+      "contact": "turn:left:1"
+    },
+    {
+      "id": "step-17",
       "name": "boot_step",
       "startTime": 99.708,
       "actor": "aoao",
@@ -157,7 +202,7 @@
       "contact": "left:0.2603416558635552"
     },
     {
-      "id": "step-14",
+      "id": "step-18",
       "name": "boot_step",
       "startTime": 99.708,
       "actor": "yekari",
@@ -168,7 +213,7 @@
       "contact": "left:0.3321478920936008"
     },
     {
-      "id": "step-15",
+      "id": "step-19",
       "name": "boot_step",
       "startTime": 100.717,
       "actor": "aoao",
@@ -179,7 +224,7 @@
       "contact": "right:0.5206833117271104"
     },
     {
-      "id": "step-16",
+      "id": "step-20",
       "name": "boot_step",
       "startTime": 100.717,
       "actor": "yekari",
@@ -190,7 +235,7 @@
       "contact": "right:0.6642957841872016"
     },
     {
-      "id": "step-17",
+      "id": "step-21",
       "name": "boot_step",
       "startTime": 101.775,
       "actor": "aoao",
@@ -201,7 +246,7 @@
       "contact": "left:0.7810249675906655"
     },
     {
-      "id": "step-18",
+      "id": "step-22",
       "name": "boot_step",
       "startTime": 101.775,
       "actor": "yekari",
@@ -212,7 +257,7 @@
       "contact": "left:0.9964436762808023"
     },
     {
-      "id": "step-19",
+      "id": "step-23",
       "name": "boot_step",
       "startTime": 102.417,
       "actor": "aoao",
@@ -223,7 +268,7 @@
       "contact": "right:0.7810249675906655"
     },
     {
-      "id": "step-20",
+      "id": "step-24",
       "name": "boot_step",
       "startTime": 102.417,
       "actor": "yekari",
@@ -234,7 +279,7 @@
       "contact": "right:0.9964436762808023"
     },
     {
-      "id": "step-21",
+      "id": "step-25",
       "name": "boot_step",
       "startTime": 133.075,
       "actor": "yekari",
@@ -245,7 +290,7 @@
       "contact": "left:0.3321478920936008"
     },
     {
-      "id": "step-22",
+      "id": "step-26",
       "name": "boot_step",
       "startTime": 134.1,
       "actor": "aoao",
@@ -256,7 +301,7 @@
       "contact": "left:0.2603416558635552"
     },
     {
-      "id": "step-23",
+      "id": "step-27",
       "name": "boot_step",
       "startTime": 134.625,
       "actor": "yekari",
@@ -267,7 +312,7 @@
       "contact": "right:0.6642957841872016"
     },
     {
-      "id": "step-24",
+      "id": "step-28",
       "name": "boot_step",
       "startTime": 135.4,
       "actor": "aoao",
@@ -278,7 +323,7 @@
       "contact": "right:0.5206833117271104"
     },
     {
-      "id": "step-25",
+      "id": "step-29",
       "name": "boot_step",
       "startTime": 136.242,
       "actor": "yekari",
@@ -289,7 +334,7 @@
       "contact": "left:0.9964436762808023"
     },
     {
-      "id": "step-26",
+      "id": "step-30",
       "name": "boot_step",
       "startTime": 136.742,
       "actor": "aoao",
@@ -300,7 +345,7 @@
       "contact": "left:0.7810249675906655"
     },
     {
-      "id": "step-27",
+      "id": "step-31",
       "name": "boot_step",
       "startTime": 137.208,
       "actor": "yekari",
@@ -311,7 +356,7 @@
       "contact": "right:0.9964436762808023"
     },
     {
-      "id": "step-28",
+      "id": "step-32",
       "name": "boot_step",
       "startTime": 137.558,
       "actor": "aoao",
@@ -322,7 +367,7 @@
       "contact": "right:0.7810249675906655"
     },
     {
-      "id": "step-29",
+      "id": "step-33",
       "name": "boot_step",
       "startTime": 192.133,
       "actor": "yekari",
@@ -333,7 +378,7 @@
       "contact": "turn:left:0.25"
     },
     {
-      "id": "step-30",
+      "id": "step-34",
       "name": "boot_step",
       "startTime": 192.317,
       "actor": "yekari",
@@ -344,7 +389,7 @@
       "contact": "turn:right:0.5"
     },
     {
-      "id": "step-31",
+      "id": "step-35",
       "name": "boot_step",
       "startTime": 192.475,
       "actor": "yekari",
@@ -355,7 +400,7 @@
       "contact": "turn:left:0.75"
     },
     {
-      "id": "step-32",
+      "id": "step-36",
       "name": "boot_step",
       "startTime": 192.65,
       "actor": "yekari",
@@ -366,7 +411,7 @@
       "contact": "turn:right:1"
     },
     {
-      "id": "step-33",
+      "id": "step-37",
       "name": "boot_step",
       "startTime": 192.925,
       "actor": "yekari",
@@ -377,180 +422,114 @@
       "contact": "turn:left:1"
     },
     {
-      "id": "step-34",
-      "name": "boot_step",
-      "startTime": 193.383,
-      "actor": "yekari",
-      "foot": "left",
-      "volume": 0.15,
-      "role": "event",
-      "priority": "storySfx",
-      "contact": "left:0.34713109915419565"
-    },
-    {
-      "id": "step-35",
-      "name": "boot_step",
-      "startTime": 193.675,
-      "actor": "yekari",
-      "foot": "right",
-      "volume": 0.15,
-      "role": "event",
-      "priority": "storySfx",
-      "contact": "right:0.6942621983083913"
-    },
-    {
-      "id": "step-36",
-      "name": "boot_step",
-      "startTime": 193.95,
-      "actor": "yekari",
-      "foot": "left",
-      "volume": 0.15,
-      "role": "event",
-      "priority": "storySfx",
-      "contact": "left:1.041393297462587"
-    },
-    {
-      "id": "step-37",
-      "name": "boot_step",
-      "startTime": 194.233,
-      "actor": "yekari",
-      "foot": "right",
-      "volume": 0.15,
-      "role": "event",
-      "priority": "storySfx",
-      "contact": "right:1.3885243966167826"
-    },
-    {
       "id": "step-38",
       "name": "boot_step",
-      "startTime": 194.508,
+      "startTime": 193.492,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:1.7356554957709782"
+      "contact": "left:0.3281071791162978"
     },
     {
       "id": "step-39",
       "name": "boot_step",
-      "startTime": 194.783,
+      "startTime": 193.942,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:2.082786594925174"
+      "contact": "right:0.6562143582325956"
     },
     {
       "id": "step-40",
       "name": "boot_step",
-      "startTime": 195.058,
+      "startTime": 194.4,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:2.4299176940793696"
+      "contact": "left:0.9843215373488934"
     },
     {
       "id": "step-41",
       "name": "boot_step",
-      "startTime": 195.333,
+      "startTime": 194.858,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:2.7770487932335652"
+      "contact": "right:1.312428716465191"
     },
     {
       "id": "step-42",
       "name": "boot_step",
-      "startTime": 195.608,
+      "startTime": 195.317,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:3.124179892387761"
+      "contact": "left:1.6405358955814888"
     },
     {
       "id": "step-43",
       "name": "boot_step",
-      "startTime": 195.883,
+      "startTime": 195.775,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:3.4713109915419564"
+      "contact": "right:1.9686430746977868"
     },
     {
       "id": "step-44",
       "name": "boot_step",
-      "startTime": 196.158,
+      "startTime": 196.233,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:3.818442090696152"
+      "contact": "left:2.2967502538140843"
     },
     {
       "id": "step-45",
       "name": "boot_step",
-      "startTime": 196.433,
+      "startTime": 196.7,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:4.165573189850348"
+      "contact": "right:2.624857432930382"
     },
     {
       "id": "step-46",
       "name": "boot_step",
-      "startTime": 196.708,
+      "startTime": 197.158,
       "actor": "yekari",
       "foot": "left",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "left:4.512704289004543"
+      "contact": "left:2.95296461204668"
     },
     {
       "id": "step-47",
       "name": "boot_step",
-      "startTime": 196.983,
+      "startTime": 197.558,
       "actor": "yekari",
       "foot": "right",
       "volume": 0.15,
       "role": "event",
       "priority": "storySfx",
-      "contact": "right:4.859835388158739"
-    },
-    {
-      "id": "step-48",
-      "name": "boot_step",
-      "startTime": 197.283,
-      "actor": "yekari",
-      "foot": "left",
-      "volume": 0.15,
-      "role": "event",
-      "priority": "storySfx",
-      "contact": "left:5.206966487312934"
-    },
-    {
-      "id": "step-49",
-      "name": "boot_step",
-      "startTime": 197.592,
-      "actor": "yekari",
-      "foot": "right",
-      "volume": 0.15,
-      "role": "event",
-      "priority": "storySfx",
-      "contact": "right:5.206966487312934"
+      "contact": "right:2.95296461204668"
     }
   ]
 }

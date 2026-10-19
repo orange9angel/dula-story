@@ -1,0 +1,14 @@
+{
+ "version": 1,
+ "scene": "EmberTierPalaceScene",
+ "source": "scene.navigationObstacles: references to actual rendered BoxGeometry meshes",
+ "obstacleCount": 70,
+ "requiredFamilies": ["column_", "rail_", "firegate_", "palace_facade_", "portal_", "palace_inside_", "facade_pilaster_"],
+ "actors": ["aoao", "yekari"],
+ "scope": "Final visible body, skinned hands, armor, weapons and cape against declared navigation solids; actual triangle/box SAT and inside vertices at 60Hz",
+ "toleranceMeters": 0.001,
+ "timeline": [0, 213],
+ "entry": {"time": [20, 26], "from": [5.5, 1.85], "to": [1.35, -0.03], "turn": [26, 27]},
+ "exit": {"time": [193, 197.7], "from": [2.9, -0.45], "to": [5.5, -1.85]},
+ "limits": ["No continuous-time guarantee between samples", "No actor self collision or all cloth interactions", "Floor support and shield-notch contact remain separate", "Does not claim arbitrary concave environment support"]
+}

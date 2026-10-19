@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import {poseAt,CAST} from '../duel_performance.js';
 const tl=JSON.parse(fs.readFileSync(new URL('../config/timeline.json',import.meta.url)));
 const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:{move:s.move,shot:s.shot}}));
@@ -17,5 +18,6 @@ for(let frame=0;frame<tl.duration*120;frame++){
   }
 }
 fs.writeFileSync(new URL('../config/foley_contacts.json',import.meta.url),JSON.stringify({
-  source:'actual locomotion stance transition at 120 Hz',storySha256:tl.source_sha256,cues},null,2));
+  source:'actual locomotion stance transition at 120 Hz',storySha256:tl.source_sha256,
+  performanceSha256:createHash('sha256').update(fs.readFileSync(new URL('../duel_performance.js',import.meta.url))).digest('hex'),cues},null,2));
 console.log(JSON.stringify({footsteps:cues.length,duration:tl.duration}));

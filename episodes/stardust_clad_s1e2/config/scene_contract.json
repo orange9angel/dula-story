@@ -46,7 +46,9 @@
           "只有阿鏊和夜刈在战场",
           "无总坛大锅",
           "腕伤与裂盾不恢复",
-          "盾沿抵住固定闸槽"
+          "盾沿抵住固定闸槽",
+          "宫门连接封闭暗内殿，不能透出后方天空",
+          "圣衣刻纹与金属反射，脸部沿用现有版本"
         ]
       },
       "coordinates": {
@@ -67,7 +69,7 @@
           ],
           "max": [
             18,
-            8,
+            9,
             10
           ]
         },
@@ -76,19 +78,57 @@
             "id": "duel",
             "bounds": {
               "min": [
-                -3,
+                -1.8,
                 0,
-                -2
+                -0.9
               ],
               "max": [
-                7,
+                3.8,
                 3,
-                2
+                0.9
               ]
             },
             "walkable": true,
             "purpose": [
-              "双人对战及入退场"
+              "双人对战，铜闸与卡槽另验接触"
+            ]
+          },
+          {
+            "id": "entryBay",
+            "bounds": {
+              "min": [
+                3.8,
+                0,
+                0.8
+              ],
+              "max": [
+                5.8,
+                3,
+                2.7
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "前侧柱间入场"
+            ]
+          },
+          {
+            "id": "exitBay",
+            "bounds": {
+              "min": [
+                3.8,
+                0,
+                -2.7
+              ],
+              "max": [
+                5.8,
+                3,
+                -0.8
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "后侧柱间退场，止于栏杆内"
             ]
           }
         ],
@@ -226,9 +266,9 @@
           "space": "world",
           "relativeTo": "$scene",
           "position": [
-            5.6,
+            5.5,
             0,
-            -0.03
+            1.85
           ]
         }
       }
@@ -322,7 +362,10 @@
       "check_palace.py",
       "audio_sync_report",
       "exact-time visual samples",
-      "representative video"
+      "representative video",
+      "palace_stage_contract.json: 70 named navigation solids with visible-actor pair coverage",
+      "known old route must collide with column_1_1_shaft",
+      "27 portal enclosure rays from three viewpoints"
     ]
   }
 }

@@ -68,6 +68,7 @@ def main():
         place(buses['music'],x,cue['startTime'],cue['baseVolume'])
     foley=read(EP/'config/foley_contacts.json')
     assert foley['storySha256']==tl['source_sha256'],'stale Foley contacts'
+    assert foley.get('performanceSha256')==digest(EP/'duel_performance.js'),'stale footsteps for current movement paths'
     events=plan['sfx']+foley['cues'];event_cache={}
     for cue in events:
         name=cue['name'];assert not name.startswith('beast_') and name!='claw_scrape'
