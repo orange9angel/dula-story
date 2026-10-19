@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "nonfinite": 0,
+  "glowVisible": 0,
+  "crownVisible": 0,
+  "oldShoulders": 0,
+  "geometrySamples": 5500,
+  "torusEffects": 0,
+  "topology": {
+    "aoao": {
+      "vertices": 8492,
+      "triangles": 16980,
+      "unpairedEdges": 0
+    },
+    "yekari": {
+      "vertices": 8030,
+      "triangles": 16056,
+      "unpairedEdges": 0
+    }
+  },
+  "sceneDiamondVisible": false,
+  "mouthSamples": 142,
+  "mouthMismatch": 0,
+  "maxJointError": 0,
+  "seek": [
+    {
+      "t": 9,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "b50fcd02bb07f4181e88c1ce468ae854c35759f39173882a650305bcccca29ad"
+    },
+    {
+      "t": 58.1,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "ae463cf8beb63c62b6d7b04dca23d7f3b4190d8877614bc633a18d9b668dc7db"
+    },
+    {
+      "t": 60.3,
+      "equal": false,
+      "meanError": 0.000014105902777777777,
+      "maxError": 1,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "d7d10ceaef1f71d906415fb9edf31452256c07f54cfcff5b91fea3d3b913d40e"
+    },
+    {
+      "t": 152.4,
+      "equal": false,
+      "meanError": 0.00014539930555555554,
+      "maxError": 3,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "13eb72c4fbfa218bff70d1b45934c071175ebc70cd07777e2707a5ba6d49a879"
+    },
+    {
+      "t": 165.8,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "e25954561ceb23dbe87545669e39285555a238964a64ee935ebce1ab56d27633"
+    },
+    {
+      "t": 171.1,
+      "equal": true,
+      "meanError": 0,
+      "maxError": 0,
+      "largeFraction": 0,
+      "passed": true,
+      "sha256": "d01660173aae8cb47258cbc42014a2d900f7ea07741b2e9c5175027305b0c626"
+    }
+  ],
+  "limits": "5 Hz state/geometry checks; sampled lip pixels and seek. Existing baseline has sub-pixel JPEG variation at 60.3/152.4s; seek uses decoded error <0.01 and RGB changes >8 below 0.001%. Whole-film stage clearance is separate. Not aesthetic approval or whole-body self-collision."
+}

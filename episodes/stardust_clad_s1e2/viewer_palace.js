@@ -3,14 +3,19 @@ import {AoaoCraft,YekariCraft} from 'dula-assets/characters/stardust/characters.
 import {applyPalaceClad} from 'dula-assets/characters/stardust/palace-clad.js';
 import {EmberTierPalaceScene} from 'dula-assets/scenes/stardust/EmberTierPalaceScene.js';
 import {createCombatLight} from 'dula-assets/lib/craft3d/combat-light.js';
+import {createCombustionCombat} from 'dula-assets/lib/craft3d/combustion-combat.js';
+import {animateCalderaBackdrop} from 'dula-assets/lib/craft3d/living-caldera.js';
 import {createArmorEnvironment,applyMetalClad,refinePalaceLimbs} from 'dula-assets/characters/stardust/metal-clad.js';
 import {createStageClearance} from 'dula-assets/lib/craft3d/stage-clearance.js';
 import {applyPalaceGauntlets} from 'dula-assets/characters/stardust/gauntlet-clad.js';
 import {applyPalaceLowerClad} from 'dula-assets/characters/stardust/lower-clad.js';
 import {makeFootClearance} from 'dula-assets/characters/stardust/foot-clearance.js';
 import {applyPalaceCuirass,applyPalaceAnatomy} from 'dula-assets/characters/stardust/body-clad.js';
-import {applyPalaceArms,applySingleShoulders} from 'dula-assets/characters/stardust/palace-arms.js';
+import {applyPalaceArms,applySingleShoulders,removeCladGlow} from 'dula-assets/characters/stardust/palace-arms.js';
 import {applyPalacePortrait} from 'dula-assets/characters/stardust/palace-portrait.js';
+import {applyShadedPortrait} from 'dula-assets/characters/stardust/shaded-portrait.js';
+import {applyConnectedPelvis} from 'dula-assets/characters/stardust/connected-pelvis.js';
+import {hearthFire} from 'dula-assets/lib/craft3d/combustion-particles.js';
 import {createRegalMetalEnvironment,applyOrnamentMetal} from 'dula-assets/characters/stardust/ornament-metal.js';
 import {directLook,moderateCladGlow} from './look_direction.js';
 import {poseAt,T,CAST,HIT_KEYS,clamp,ease,mix} from './duel_performance.js';
@@ -20,21 +25,27 @@ const query=new URLSearchParams(location.search),metal=query.get('metal')!=='0';
 const [tl,dlg,envs]=await Promise.all(['timeline','dialogue','voice_envs'].map(async n=>{const r=await fetch(`./config/${n}.json`);return r.ok?r.json():{};}));
 const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:s}));
 const scene=new EmberTierPalaceScene();scene.build();await scene.applyHybrid();
+const livingCaldera=query.get('volcano')!=='0'?animateCalderaBackdrop(scene.backdrop):null;
 const actors={aoao:new AoaoCraft(),yekari:new YekariCraft()};directLook(actors);
 for(const name of CAST){applyPalaceClad(actors[name],name,{sculpted:query.get('sculpted')!=='0'});scene.scene.add(actors[name].mesh);}
-if(query.get('cuirass')!=='0')for(const name of CAST)applyPalaceCuirass(actors[name]);
+if(query.get('cuirass')!=='0')for(const name of CAST)applyPalaceCuirass(actors[name],{integratedShoulders:query.get('unified')!=='0'});
 if(query.get('gauntlets')!=='0')for(const name of CAST)applyPalaceGauntlets(actors[name],{distinct:query.get('identities')!=='0'});
 if(query.get('greaves')!=='0')for(const name of CAST)applyPalaceLowerClad(actors[name],{distinct:query.get('identities')!=='0'});
 const camera=new THREE.PerspectiveCamera(39,W/H,.05,100);
+const sceneFire=query.get('hearthParticles')==='0'?null:hearthFire(scene.scene,new THREE.Vector3(-2.7,.87,-.98));
+if(sceneFire){scene.heart.visible=false;scene.embers.forEach(m=>m.visible=false);}
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 if(metal){const env=createArmorEnvironment(renderer);await Promise.all(CAST.map(name=>applyMetalClad(actors[name],{url:'./assets3d/tex/armor_engraved_r20.png',environment:env.texture,cleanMetal:query.get('sculpted')!=='0'})));}
 if(query.get('anatomy')!=='0')for(const name of CAST)refinePalaceLimbs(actors[name]);
 if(query.get('pelvis')!=='0')for(const name of CAST)applyPalaceAnatomy(actors[name]);
+if(query.get('pelvis')!=='0'&&query.get('connectedHip')!=='0')for(const name of CAST)applyConnectedPelvis(actors[name]);
 if(query.get('arms')!=='0')for(const name of CAST)applyPalaceArms(actors[name]);
 if(query.get('portrait')!=='0')for(const name of CAST)applyPalacePortrait(actors[name]);
 if(query.get('singleShoulder')!=='0')for(const name of CAST)applySingleShoulders(actors[name]);
 if(metal&&query.get('ornament')!=='0'){const env=createRegalMetalEnvironment(renderer);for(const name of CAST)applyOrnamentMetal(actors[name],env.texture);}
+if(query.get('portrait')!=='0'&&query.get('shaded')!=='0')for(const name of CAST)applyShadedPortrait(actors[name]);
+if(query.get('orbs')!=='1')for(const name of CAST)removeCladGlow(actors[name]);
 if(query.get('jointfix')!=='0')for(const name of CAST)actors[name].anatomicalHands=true;
 if(query.get('footfix')!=='0')actors.aoao.footClearance=makeFootClearance(actors.aoao,scene.lockSolids,{anatomicalKnees:query.get('kneefix')!=='0'});
 const stageAudit=(query.has('probe-stage')||query.has('probe-surface'))?createStageClearance(actors,scene.navigationObstacles):null;
@@ -48,7 +59,7 @@ if(stageAudit){
  if(JSON.stringify(footBlockAudit.ids)!==JSON.stringify(contract.interactionSolids))throw new Error('Incomplete interaction solid coverage');
 }
 const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;document.body.append(canvas);const ctx=canvas.getContext('2d');
-const fx=createCombatLight(scene.scene,{detailed:query.get('particles')!=='0'}),contacts={};
+const fx=query.get('combustion')==='0'?createCombatLight(scene.scene,{detailed:query.get('particles')!=='0'}):createCombustionCombat(scene.scene),contacts={};
 const world=(obj,v=new THREE.Vector3())=>obj.localToWorld(v.clone());
 const shield=()=>world(actors.aoao.shieldDome,new THREE.Vector3(0,.278,0));
 for(const key of HIT_KEYS){
@@ -99,11 +110,12 @@ function overlay(t,perf,line){
  if(t>T.FADE){ctx.fillStyle=`rgba(8,11,17,${ease((t-T.FADE)/(tl.duration-T.FADE))})`;ctx.fillRect(0,0,W,H);}
 }
 function draw(t,capture=true){
- const perf=poseAt(actors,entries,t),active=lineAt(t);scene.update(t,T);
+ const perf=poseAt(actors,entries,t),active=lineAt(t);scene.update(t,T);livingCaldera?.update(t);
  const heldLine=active??dlg.lines.findLast(l=>l.t<=t&&l.t>=perf.entry.startTime);
  let c=window.freeCamera?{pos:window.freeCamera.pos,look:window.freeCamera.lookAt,fov:window.freeCamera.fov??40}:query.get('cinema')==='0'?cameraAt(t,perf,active):palaceCamera(t,perf,heldLine,actors,()=>cameraAt(t,perf,active));
  let shake=0;for(const key of HIT_KEYS){const d=t-T[key];if(d>=0&&d<.34)shake+=(key==='C7'?.06:.028)*(1-d/.34);}
  camera.position.set(c.pos[0]+Math.sin(t*91)*shake,c.pos[1]+Math.cos(t*73)*shake*.6,c.pos[2]);camera.lookAt(...c.look);camera.fov=c.fov;camera.updateProjectionMatrix();
+ sceneFire?.update(t,camera,.70+.30*ease((t-T.RESTORE)/3));
  for(const name of CAST){const a=actors[name],s=perf.states[name],other=name==='aoao'?'yekari':'aoao';
   const blink=Math.max(0,1-Math.abs(((t+(name==='aoao'?0:1.4))%4.3)-4.1)/.11);
   const emot=active?.speaker===name?active.acting.emotion:s.emotion;
@@ -122,8 +134,8 @@ function draw(t,capture=true){
  if(t>=T.TRAP&&t<T.C7)chainEnd=scene.lockPoint.clone();
  actors.yekari.setChainEndWorld(chainEnd,chainEnd?.02:.10);
  if(t>=T.C7){actors.yekari.returnBlade.visible=false;for(const m of actors.yekari.chainLinks)m.visible=false;}
- for(const a of [T.CHARGE1,T.CHARGE2])if(t>=a&&t<a+5){charge={point:head('yekari').add(new THREE.Vector3(0,-.7,0)),color:'#b08bff',power:.3+.7*ease((t-a)/4)};}
- if(t>=T.HERO_CHARGE&&t<T.RELEASE){charge={point:shield(),color:'#ffbf5b',power:.35+.65*ease((t-T.HERO_CHARGE)/3)};}
+ for(const a of [T.CHARGE1,T.CHARGE2])if(t>=a&&t<a+5){charge={point:head('yekari').add(new THREE.Vector3(0,-.7,0)),base:actors.yekari.mesh.position.clone().setY(.03),start:a,height:2.0,color:'#b08bff',power:.3+.7*ease((t-a)/4)};}
+ if(t>=T.HERO_CHARGE&&t<T.RELEASE){charge={point:shield(),base:actors.aoao.mesh.position.clone().setY(.03),start:T.HERO_CHARGE,height:1.85,color:'#ffbf5b',power:.35+.65*ease((t-T.HERO_CHARGE)/3)};}
  if(t>=T.RELEASE&&t<T.C7+.18){const u=clamp((t-T.RELEASE)/(T.C7-T.RELEASE)),from=scene.lockPoint.clone(),wrist=actors.yekari.chainSocket.getWorldPosition(new THREE.Vector3()),target=wrist.lerp(contacts.C7,ease((t-(T.C7-.12))/.12));beamShot={from,to:from.clone().lerp(target,u),alpha:t<T.C7?.82:Math.max(0,1-(t-T.C7)/.18),width:.55+.35*u};}
  fx.update(t,camera,{arc,charge,beamShot});
  let rimLow=new THREE.Vector3(0,999,0);for(let i=0;i<64;i++){const a=i*Math.PI/32,p=world(actors.aoao.shieldDome,new THREE.Vector3(Math.cos(a)*.265,.052,Math.sin(a)*.265));if(p.y<rimLow.y)rimLow=p;}
@@ -138,4 +150,4 @@ function draw(t,capture=true){
 }
 window.duration=tl.duration;window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...entries.map(e=>e.startTime+.5),...HIT_KEYS.flatMap(k=>[T[k]-.1,T[k],T[k]+.15]),T.RESTORE+4].sort((a,b)=>a-b);
-window.__dbg={actors,scene,camera,renderer,contacts,stageAudit};await document.fonts.ready;window.ready=true;
+window.__dbg={actors,scene,camera,renderer,contacts,stageAudit,fx,livingCaldera};await document.fonts.ready;window.ready=true;
