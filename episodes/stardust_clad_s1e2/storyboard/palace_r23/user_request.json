@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-19",
+  "acceptedBaseline": "R22 gauntlets and R21 shoulders",
+  "baselineVideo": "output/stardust_clad_s1e2_palace_r22.mp4",
+  "baselineSha256": "85cdfebf80b970e3a899acbf76c26f56096a802862f2154586ff5d1c24fb019d",
+  "requests": [
+    "可以了，你看看护腿，其实也是一个腿套，直接套进去的",
+    "腰带你也仔细看一下？腰带是一个金属腰带，你的腰带现在是透明的，而且偏下面一点，显得腿短，要上来一点。"
+  ],
+  "references": "Two user-supplied armor illustrations; diagnostic comparison retained locally, not redistributed in git.",
+  "scope": "Fitted wraparound greaves, articulated ankle/boot surfaces and an opaque raised metal belt with attached hip leaves.",
+  "preserve": ["approved shoulders", "approved gauntlets", "current face", "procedural rig and poses", "shield and weapon contact anchors", "story and timing", "accepted audio and opening", "palace and combat effects"],
+  "approvalScope": "R23 appearance remains for user evaluation; earlier approval does not cover the whole character."
+}

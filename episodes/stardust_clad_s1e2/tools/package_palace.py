@@ -9,7 +9,7 @@ EP=Path(__file__).resolve().parents[1];BOARD=EP/'storyboard/palace_r19'
 BODY=EP/'output/stardust_clad_s1e2_palace_r19.mp4';TV=EP/'output/stardust_clad_s1e2_palace_tv_r19.mp4'
 def main():
     global BOARD,BODY,TV
-    p=argparse.ArgumentParser();p.add_argument('--publish-aliases',action='store_true');p.add_argument('--version',choices=['r19','r20','r21','r22'],default='r19');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--publish-aliases',action='store_true');p.add_argument('--version',choices=['r19','r20','r21','r22','r23'],default='r19');a=p.parse_args()
     version='palace_'+a.version;BOARD=EP/'storyboard'/version;BODY=EP/f'output/stardust_clad_s1e2_palace_{a.version}.mp4';TV=EP/f'output/stardust_clad_s1e2_palace_tv_{a.version}.mp4'
     for file in [BOARD/'palace_checks.json',BOARD/'physics_final/seek_check.json',EP/'assets3d/audio_sync_report.json']:assert read(file)['passed'],file
     for item in read(BOARD/'render_trace.json')['build']['inputs']:assert digest(Path(item['path']))==item['sha256'],item['path']

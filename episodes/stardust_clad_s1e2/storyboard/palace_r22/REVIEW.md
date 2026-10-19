@@ -2,7 +2,8 @@
 
 2026-10-19 用户明确“肩膀可以了”，继续指出护臂像圆圈加铁块，提供四张铠甲参考。
 R21肩甲保留；本轮修订护臂、手背和手指装备，保留程序动作、现有脸、盾和武器挂点。
-R21肩甲的认可不代表整个人物造型通过；R22护臂是待用户评价的新候选。
+后续反馈：用户明确“可以了”，转而要求护腿做成腿套，并指出腰带透明、偏低。
+据此记录R22护臂获认可；认可范围不扩大到整个人物，后续修订见R23。
 
 ## 观察与实现
 
@@ -52,5 +53,6 @@ node --import ./tools/register_loader.mjs render.mjs --out stardust_clad_s1e2_pa
 ../../.venv/Scripts/python.exe tools/package_palace.py --version r22 --publish-aliases
 ```
 
-`?gauntlets=0` 只关闭本轮护臂，保留已认可R21肩甲；旧转面对照若复现应同时加此参数。
+`?gauntlets=0` 只关闭本轮护臂，保留已认可R21肩甲。R23接入后复现本轮对照，
+两边还需统一加 `greaves=0`；固定R22影片是当时完整基线。
 工艺记录见 `dula-skills/hybrid-craft-scene/references/animated-metal-armor.md` 的R22段。

@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "t": 171.1,
+      "equal": true,
+      "sha256": "73896aaf068393ffeeaf019f0a6dc250153e7692c2807c01462340936b7bfc37"
+    },
+    {
+      "t": 152.4,
+      "equal": true,
+      "sha256": "5e1b096b5035ad42c99c9a4ea48f337d37f60e92b123f1ec479771bc0883c987"
+    },
+    {
+      "t": 23.1,
+      "equal": true,
+      "sha256": "34e49bb3018f3aa7e3687efdf537614e8b946b4e39b38ee14e613e4a69d476d6"
+    },
+    {
+      "t": 9,
+      "equal": true,
+      "sha256": "983614ef25c13f77c9efc1bac69c85fe50613e2bedeedf41bea8f4dcc7b6596d"
+    }
+  ],
+  "scope": "Actual full-frame JPEG equality after reverse seek; four representative times, including walk, deep crouch and impact."
+}

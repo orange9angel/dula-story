@@ -1,4 +1,23 @@
-# 《星屑战壳》S1E2《焰阶宫·盾与暗链》R22
+# 《星屑战壳》S1E2《焰阶宫·盾与暗链》R23
+
+2026-10-19 用户认可R22护臂，要求护腿做成套入小腿的金属腿套；补充腰带应为
+不透明金属且位置提高。R23改为完整包裹小腿的曲面腿套、活动踝口和金属靴面；
+腰带补内壁与厚边，约上移10厘米并一起抬高裙甲挂点。R21肩甲、R22护臂保留，
+脸、原程序动作、盾/武器锚点、故事、声音和OP不变。
+
+[14秒护腿与腰带A/B](output/lower_armor_comparison_r23.mp4)、
+[26秒实战片段](output/palace_duel_preview_r23.mp4)、
+[213秒正片](output/stardust_clad_s1e2_palace_r23.mp4)、
+[262.2秒带原片头版](output/stardust_clad_s1e2_palace_tv_r23.mp4)。
+[修订证据与复现](storyboard/palace_r23/REVIEW.md)。护腿与腰带外观待用户评价。
+
+16个封闭甲壳、72条正侧背射线、4,264组实际靴甲与鞋底采样通过，肩臂与接触锚点
+保留；全片60Hz、12,780帧导航/接触回归通过，范围不含全部自碰撞。
+成片12个抽帧对照通过，5个声画窗口偏移均为0ms；详见
+`storyboard/palace_r23/delivery_report.json`。
+常用入口 `craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 对应R23；固定R22和旧版保留。
+
+## R22 历史修订（护臂后续获认可）
 
 2026-10-19 用户认可R21肩甲，继续指出护臂像圆环加铁块，要求类似金属手套。
 R22保留肩甲，改为收腕的连续前臂壳、内侧护片、手背甲和随原指骨开合的分节指甲。
@@ -8,9 +27,9 @@ R22保留肩甲，改为收腕的连续前臂壳、内侧护片、手背甲和�
 [26秒实战片段](output/palace_duel_preview_r22.mp4)、
 [213秒正片](output/stardust_clad_s1e2_palace_r22.mp4)、
 [262.2秒带原片头版](output/stardust_clad_s1e2_palace_tv_r22.mp4)。
-[修订证据与复现](storyboard/palace_r22/REVIEW.md)。R21肩甲已认可，R22护臂待用户评价；
+[修订证据与复现](storyboard/palace_r22/REVIEW.md)。R21肩甲、R22护臂后续均获认可；
 不把局部装备认可扩展为整个人物造型通过。
-常用入口 `craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 已指向R22，R21固定版本与
+当时常用入口 `craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 指向R22，R21固定版本与
 `output/archive/pre_palace_r22/` 保留。全片60Hz回归与12个最终抽帧对照通过，
 5个声画检查窗口偏移均为0ms，音轨与原片头未重做。
 

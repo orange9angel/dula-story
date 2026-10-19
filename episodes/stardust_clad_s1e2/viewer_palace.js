@@ -6,6 +6,7 @@ import {createCombatLight} from 'dula-assets/lib/craft3d/combat-light.js';
 import {createArmorEnvironment,applyMetalClad,refinePalaceLimbs} from 'dula-assets/characters/stardust/metal-clad.js';
 import {createStageClearance} from 'dula-assets/lib/craft3d/stage-clearance.js';
 import {applyPalaceGauntlets} from 'dula-assets/characters/stardust/gauntlet-clad.js';
+import {applyPalaceLowerClad} from 'dula-assets/characters/stardust/lower-clad.js';
 import {directLook,moderateCladGlow} from './look_direction.js';
 import {poseAt,T,CAST,HIT_KEYS,clamp,ease,mix} from './duel_performance.js';
 const W=1280,H=720;
@@ -16,6 +17,7 @@ const scene=new EmberTierPalaceScene();scene.build();await scene.applyHybrid();
 const actors={aoao:new AoaoCraft(),yekari:new YekariCraft()};directLook(actors);
 for(const name of CAST){applyPalaceClad(actors[name],name,{sculpted:query.get('sculpted')!=='0'});scene.scene.add(actors[name].mesh);}
 if(query.get('gauntlets')!=='0')for(const name of CAST)applyPalaceGauntlets(actors[name]);
+if(query.get('greaves')!=='0')for(const name of CAST)applyPalaceLowerClad(actors[name]);
 const camera=new THREE.PerspectiveCamera(39,W/H,.05,100);
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
