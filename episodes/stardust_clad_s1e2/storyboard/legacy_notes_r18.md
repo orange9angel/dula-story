@@ -1,0 +1,94 @@
+# 《星屑战壳》S1E2《夜守·第一道伤》R18
+
+2026-10-19 接续制作。当前动作母版为 434 秒；正片经剧本明示的四处静拍删减后为 414.6 秒（6 分 54.6 秒），带片头为 463.8 秒（7 分 43.8 秒）。画面为 1280×720、30 fps；54 句角色配音、72 个剧本条目、19 个段落。以人形先锋夜刈取代旧兽版，按连续剧的关系变化与战斗因果展开。旧笔记仅供追溯：`storyboard/legacy_notes_r16.md`。
+
+## 看片入口
+
+- [带片头版：7 分 43.8 秒](output/craft3d_tv_s1e2.mp4)
+- [纯正片：6 分 54.6 秒](output/craft3d_full.mp4)
+- 固定版本文件：`output/stardust_clad_s1e2_tv_r18.mp4` 与 `output/stardust_clad_s1e2_r18.mp4`。
+- 旧的 320 秒兽版与 369.2 秒 TV 版保存在 `output/archive/pre_r18/`。R17 和 R18 动作母版均保留，常用入口以 R18 剪辑版为准。
+
+最终正片 12,438 帧，TV 版 13,914 帧；完整解码检查通过。15 个源/成片映射样本一致，正片 4 个、TV 版 3 个抽检音频窗口相对最终 PCM 均为 0 ms 位移。实际查看的最终抽帧、片头接缝、剪辑接缝及证据局限记在 `storyboard/serial_r18/delivery_report.json`，没有将其写成人耳全片审听或商业画质验收。
+
+## 剧情与后续
+
+本集完成守火战：修盾夜谈 → 链镰的两道刀路 → 三人各自失败 → 受伤后把窗口交给同伴 → 封路合击 → 处理伤口 → 第一宫求援。最后抵达焰阶宫外的雨幕，第一宫战斗留给后续，不在本集赶完十二宫。
+
+十二名人形宫主、各自信念、招式规则与跨集代价见 [系列圣经](../../docs/stardust_series_bible.md)。E3 / E4 接续焰阶宫；左腕伤、裂盾、两个损坏盘孔和大釜胸伤持续。夜刈败退而未被感化；镰柄残月只作为物证，暂不解释。
+
+## 当前执行链
+
+- `script.story` 是时序正本；`tools/compile_story.py` 编译对白、段落、事件秒点、运行时 cue，以及四条 `Event:EditCut`。动作源时间与成片时间分别保存，`config/editorial_cuts.json` 是派生缓存，不是第二份手写时间表。
+- 本集沿用自包含 viewer 渲染。`Event:Beat`、`Cue`、`Act`、`EditCut` 由本集编译器解释，并非通用引擎事件处理器。
+- `bootstrap.js` 注册六名角色和三个共享场景。主场为殿前广场；来袭与夜谈使用柱廊；结尾使用宫门场景。
+- `performance.js` 负责有限落脚和 IK；`serial_direction.js` 负责人物的剧情动作；`shot_direction.js` 负责镜头、视线和表情；`story_fx.js` 负责链镰回刃、战损、扣带、星雨与雨界；`look_direction.js` 整理材质色块。
+- 人物与武器原件在 `dula-assets/characters/stardust/characters.js`，招式共享件在同目录 `moves.js`。保留接手时已做的主角去披风与甲件修型。
+
+## 站姿问题的处理
+
+接手时的调整没有彻底解决行走与静立基线不一致：走路结束后骨盆会下落，形成半蹲。现在按每个角色实际腿长计算自然站高，走路和静立使用相同的高度基线，转身和移动分时，后退不再把脚轴直接扭向移动方向。
+
+`storyboard/stance_review/` 保留同机位基线与修订图。当前 44 次起停边界的最大骨盆跳变为 3.2 mm，正常静立膝角约 170°。受伤承压、坐姿与落地卸力仍有明确屈膝，不能把这些表演统一拉直。
+
+## 战斗与表演
+
+- 夜刈是成年男子，使用主镰与柄尾短链回刃，脚步、受击与配音均按人重新制作。
+- 回刃绕盾伤腕，两道划痕留在原地；链节沿曲线紧密排列，按绝对时间更新，避免跳转残影。
+- 小凿的阵盘与掉落件使用同一造型；拾盘省略手接地镜头，切回时盘已收回。两个暗孔在后续蓄力仍保留。
+- 星雨封右侧，大釜封左侧；俯视战术镜头交代三人的位置。大釜听到“收半步”先刹住，再蓄力、起跳、命中与卸力。
+- 伤腕不能因喊招恢复；阿鏊以右手支持左前臂。余波中大釜拉紧可见扣带。
+- 第一宫门内有雨、门外干燥，三人停在边界前；阿箸只有前方的声音，本集不提前展示宫主。
+
+## 声音
+
+对白使用已有角色声线与火山 seed-TTS 原生语境演绎。54 句 WAV、源文件与演绎参数在 `assets3d/dialogue/n*.{wav,mp3,source.json}`。54 句均已做识别与时长检查；识别中的四处提示另外核对，最终所有句子均落在实际发声窗口内。
+
+新增链响、靴步、镰风、刃盾接触、甲片受击、扣带、门内雨声与夜风走火山 Seed-Audio。最初的脚步带吱响、风底含雷感，已分别重生成与从原始风声做滤波、电平整理；编辑来源保留。混音不引用旧兽吼、兽冲刺和爪抓声。
+
+保留已接受的 `bgm_nightwatch` 与 `bgm_nightbattle`，按剧情剪成五段，并保留观察与选择时的音乐留白。本轮未另换配乐生成后端。后续新配乐仍走 `episode-scoring` 与 `suno-driver`。
+
+声音正本计划为 `config/audio_direction.json`。`tools/build_foley.mjs` 从实际落脚状态派生 427 个脚步；总混音包含 443 个事件。`tools/mix_serial.py` 输出对白、音乐、环境、音效四条总线及 `assets3d/mixed.wav`。峰值约 -2.2 dBFS，关键打击声对齐接触 cue，发声与口型共用实际 WAV 时间。
+
+## 验收证据与限度
+
+- 剧本验证：72 条、0 错误；小凿连续三句是有意的战术指挥。
+- 独立批评：剧本与分镜六项各 4/5；这不代表成片画面、配音或商业动画质量已获认可。
+- 最新全片数值检查：`storyboard/serial_r18/locked_physics/`，60 Hz、26,040 帧；接触、步态、可达与 42 项甲件窗口检查通过，77 个顺序/跳转数值样本一致。
+- 站姿专项：`storyboard/stance_review/stance_report.json`。
+- 最终混音：`assets3d/audio_sync_report.json`，434 秒、四总线求和一致、无削波、关键命中音存在、对白电平余量通过。
+- 原始声音识别与模型辅助听觉记录：`storyboard/voice_qc_r17.md` 和 `storyboard/serial_r17/*listening.json`。这些是音频模型观察，不是人耳全片审听，也不能单独证明画面同步。
+- 听觉模型复核了关键声音、12 条重要对白和合招混音段；静帧与片段检查记录在同目录。R17 母版抽帧已检查；R18 最终视频检查、源/成片 cue 映射、文件哈希与版本路径写入 `storyboard/serial_r18/delivery_report.json`。
+
+当前仍是程序化三渲二制作，人物网格和脸部结构有既有工艺限制。数值接触使用声明的锚点与窗口，不是全身精确网格无穿模证明；最终戏感与美术观感交由成片评审。
+
+## 开场剪辑复审
+
+实际抽帧发现四处重复静止。R18 在剧本中明示删去源时间 41.2–48、61.2–65、72–76、87.2–92 秒，共 19.4 秒；保留关键转头、迟疑和承诺回应。所有对白完整保留，54 句配音与关键 cue 都不落入删减区。音画采用同一保留区间，音乐/环境切口仅做 5 ms 边缘淡化，不变速、不改打斗。`tools/package_release.py` 校验帧数、保护发声窗口、生成成片 cue/对白时间表，并从源 WAV 重建剪辑音轨。
+
+音频模型对开场的停顿秒数和“没有音乐”判断与实测不符，该原始回复已标明不可靠，不能作为节奏通过证据。最终删减依据是实测语音窗口与画面内容。
+
+## 本集复现命令
+
+在本集目录执行，Python 使用 `dula-story/.venv/Scripts/python.exe`：
+
+```powershell
+python tools/compile_story.py
+python tools/direct_audio.py
+node --import ./tools/register_loader.mjs tools/build_foley.mjs
+python tools/mix_serial.py
+python tools/check_audio_sync.py
+node render.mjs --physics-only --fps 60 --board storyboard/serial_r18/locked_physics
+python tools/check_contact.py storyboard/serial_r18/locked_physics/trace.json
+node render.mjs --check --board storyboard/serial_r18/pixel_seek
+node render.mjs --out stardust_clad_s1e2_master_r18.mp4 --board storyboard/serial_r18/final_render --trace storyboard/serial_r18/final_render/trace.json
+python tools/package_release.py
+```
+
+重新生成收费素材前按对应声音 skill 检查预算与缓存；上面的混音命令只读取已有素材。更改对白内容、角色动作或 cue 后，重新派生混音与对应检查，不能拿旧 trace 当新版本证据。
+
+## 已沉淀到 skill
+
+连载战斗的因果、人的信念、招式规则、对白/表情/行动联动、声音留白与跨集代价进入 `story-writer/references/serial-battle-direction.md`，并由编剧、表演导演和系列架构入口引用（提交 `e5d4e29`）。站高与起停、Windows 中文 UTF-8、最终总线验收教训分别进入对应 skill（提交 `5514265`）。
+
+R18 开场时长实测、静拍收剪和源/成片时间纪律另已写回连载导演工艺（`2ea962d`）；音频模型错误秒数的处理已写回声音导演契约（`ef9b0b6`）。

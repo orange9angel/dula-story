@@ -1,0 +1,328 @@
+{
+  "$schema": "../../../../../dula-skills/scene-designer/references/scene-contract.schema.json",
+  "contractVersion": "1.0",
+  "episode": "stardust_clad_s1e2",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "阿鏊守住焰阶宫向街区供火的闸门，以卡链和回火反制夜刈。",
+    "audience": "少年战斗动画观众",
+    "designPriorities": [
+      "单宫双人战场",
+      "盾沿卡槽可见",
+      "战损延续",
+      "接触点声光同源"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "EmberTierPalaceScene"
+    ],
+    "characters": [
+      "Aoao",
+      "Yekari"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "EmberTierPalaceScene",
+      "implementation": {
+        "kind": "official",
+        "name": "EmberTierPalaceScene",
+        "module": "../../../dula-assets/scenes/stardust/EmberTierPalaceScene.js",
+        "export": "EmberTierPalaceScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "焰阶宫九阶铜闸前庭及下方街区",
+        "timeOfDay": "清晨前，火山红光映天",
+        "tone": [
+          "紧张",
+          "铜金与紫银对立"
+        ],
+        "storyFunction": "守火民生与强者独占的选择交锋",
+        "visualRules": [
+          "只有阿鏊和夜刈在战场",
+          "无总坛大锅",
+          "腕伤与裂盾不恢复",
+          "盾沿抵住固定闸槽"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0.0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -18,
+            -1.2,
+            -30
+          ],
+          "max": [
+            18,
+            8,
+            10
+          ]
+        },
+        "zones": [
+          {
+            "id": "duel",
+            "bounds": {
+              "min": [
+                -3,
+                0,
+                -2
+              ],
+              "max": [
+                7,
+                3,
+                2
+              ]
+            },
+            "walkable": true,
+            "purpose": [
+              "双人对战及入退场"
+            ]
+          }
+        ],
+        "anchors": {
+          "notch": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -0.968,
+              0.334,
+              0.45
+            ],
+            "purpose": "卡住盾沿与暗链的固定铜槽"
+          },
+          "gate": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -2.7,
+              0,
+              -1.25
+            ],
+            "purpose": "保住中央闸心和外侧火路"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "冷石、暖火、局部碰撞光",
+        "readabilityRules": [
+          "白核只覆盖接触局部",
+          "保留两人轮廓",
+          "脸部不随蓄力过曝"
+        ]
+      },
+      "cameraObstacles": [
+        {
+          "id": "gateFrame",
+          "type": "box",
+          "space": "world",
+          "center": [
+            -2.7,
+            0.9,
+            -1.25
+          ],
+          "size": [
+            1.65,
+            1.8,
+            0.4
+          ]
+        }
+      ],
+      "audioAnchors": [
+        {
+          "id": "fire",
+          "kind": "point",
+          "semantic": "铜闸内火流与锁舌",
+          "position": [
+            -2.7,
+            1,
+            -1.25
+          ],
+          "radius": 6,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "palaceStone",
+          "type": "texture",
+          "path": "assets3d/tex/palace_stone.png",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "Aoao",
+      "scene": "EmberTierPalaceScene",
+      "kind": "character",
+      "runtimeName": "Aoao",
+      "binding": "character:Aoao",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "face": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      },
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.95,
+            0,
+            0.15
+          ]
+        }
+      }
+    },
+    {
+      "id": "Yekari",
+      "scene": "EmberTierPalaceScene",
+      "kind": "character",
+      "runtimeName": "Yekari",
+      "binding": "character:Yekari",
+      "parent": "$scene",
+      "initialPresence": "offstage",
+      "visualForwardAxis": "+Z",
+      "focusPoints": {
+        "body": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "face": [
+          0.0,
+          1.6,
+          0.0
+        ]
+      },
+      "initial": {
+        "visible": false,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            5.6,
+            0,
+            -0.03
+          ]
+        }
+      }
+    },
+    {
+      "id": "gate",
+      "scene": "EmberTierPalaceScene",
+      "kind": "prop",
+      "binding": "gate",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -2.7,
+            0,
+            -1.25
+          ]
+        }
+      },
+      "states": [
+        "closed",
+        "open"
+      ],
+      "initialState": "closed"
+    },
+    {
+      "id": "tongue",
+      "scene": "EmberTierPalaceScene",
+      "kind": "prop",
+      "binding": "tongue",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -0.968,
+            0.294,
+            0.45
+          ]
+        }
+      },
+      "states": [
+        "latched",
+        "drawn"
+      ],
+      "initialState": "latched"
+    }
+  ],
+  "state": {},
+  "events": [],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "heroIdentity",
+      "scene": "EmberTierPalaceScene",
+      "entry": 2,
+      "offsetSeconds": 2,
+      "purpose": "铜鳞甲与导火盾辨识",
+      "mustSee": [
+        {
+          "entity": "Aoao",
+          "minFrameArea": 0.15,
+          "maxOcclusion": 0.2,
+          "safeMargin": 0.04
+        }
+      ],
+      "mustHavePresence": [
+        {
+          "character": "Yekari",
+          "value": "offstage"
+        }
+      ],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "JSON schema",
+      "story-tool catalog and validate",
+      "viewer compilation manifest"
+    ],
+    "runtimeChecks": [
+      "60Hz full trace and numeric seek",
+      "check_palace.py",
+      "audio_sync_report",
+      "exact-time visual samples",
+      "representative video"
+    ]
+  }
+}

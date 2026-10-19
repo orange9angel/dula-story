@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import {poseAt,CAST} from '../performance.js';
+import {poseAt,CAST} from '../duel_performance.js';
 const tl=JSON.parse(fs.readFileSync(new URL('../config/timeline.json',import.meta.url)));
 const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:{move:s.move,shot:s.shot}}));
 const actors=Object.fromEntries(CAST.map(n=>[n,{setPose(){},setCladState(){},mesh:{position:{y:0}}}]));

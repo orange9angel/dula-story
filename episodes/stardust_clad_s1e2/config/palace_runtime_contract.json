@@ -1,0 +1,21 @@
+{
+  "mode": "compiled-viewer",
+  "source": "script.story",
+  "compiler": "tools/compile_story.py",
+  "entry": "viewer_palace.js",
+  "events": {
+    "Beat": {
+      "output": "config/timeline.json",
+      "consumer": "duel_performance.js:poseAt"
+    },
+    "Cue": {
+      "output": "config/event_times.js",
+      "consumer": "viewer_palace.js:draw + scene.update"
+    },
+    "Act": {
+      "output": "config/dialogue.json",
+      "consumer": "viewer_palace.js:lineAt + draw"
+    }
+  },
+  "scope": "These tags are authoring metadata compiled before rendering, not SceneBase callbacks. scene_tool generic event dispatch validation does not cover this mode."
+}

@@ -1,4 +1,54 @@
-# 《星屑战壳》S1E2《夜守·第一道伤》R18
+# 《星屑战壳》S1E2《焰阶宫·盾与暗链》R19
+
+当前正本：`script.story`，213秒，22句对白，28个动作段，1280×720 / 30fps。
+本轮按用户要求改为阿鏊独守焰阶宫、对战夜刈。小凿、 大釜、阿箸分守各自宫殿，
+只有开头通信与字幕交代去向；正片战场只有两人，没有总坛大锅。
+
+当前看片文件：`output/stardust_clad_s1e2_palace_r19.mp4`。保留原片头的版本为
+`output/stardust_clad_s1e2_palace_tv_r19.mp4`。本轮完成封装验证后，常用入口
+`craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 指向新版本；旧入口备份在
+`output/archive/pre_palace_r19/`，旧 R18 固定文件保留。
+
+## 本轮变化与执行入口
+
+- 场景：焰阶宫九阶前庭、铜闸、固定导火槽及下方街区。生活目标是恢复街坊早灶，
+  反击依赖试闸时铺垫的卡槽与夜刈收链棘轮。独立剧本复审24/30，六项均4分。
+- 阿鏊：铜金叠甲、肩甲分层、铆钉炉门盾、太阳纹章、臂甲导火鳍、胫甲。
+  夜刈：紫银斜链胸纹、非对称月肩甲、腕部棘轮。均沿用已有脸型与骨架。
+- 光效：紫白光刃带、蓄力光粒、实际接触点白核、冲击环与碎屑、局部回光、
+  0.1秒短停；回火从铜槽沿链到腕甲，再在胸甲爆发。左腕、裂盾、断鳍保留到结尾。
+- 声音：22句原角色火山配音，6个新增 Seed-Audio 资产，50次实际脚点 Foley，
+  25个剧情 SFX，保留既有两首配乐，未更换音乐生成后端。
+- 默认入口 `viewer.html → viewer_palace.js → duel_performance.js`。
+  可复用资产位于 dula-assets 的 `palace-clad.js`、`pose-rig.js`、
+  `EmberTierPalaceScene.js`、`combat-light.js`。
+- 编译、配音、混音及质检依次使用 `compile_story.py`、`direct_palace_audio.py`、
+  `gen_dialogue.py`、`gen_sfx.py`、`build_foley.mjs`、`mix_serial.py`、
+  `check_palace.py`、`check_audio_sync.py`、`package_palace.py`。
+
+## 验证范围
+
+`storyboard/palace_r19/` 保存试片、全片60Hz轨迹、顺序/跳转一致性、12个画面样本、
+配音QC、模型音频观察与最终交付报告。固定槽口最大盾沿偏差4.18毫米；
+出招窗口支撑脚无平移，骨长与接触光核检查通过。该检查不覆盖所有变形三角面的穿插。
+10个关键声画落点通过，总线峰值0.767、对白与背景能量检查无告警。
+
+配音QC为21条通过、1条警告、0条失败：p07原创招式名的拼音转写重合率83%，
+属于需人工复听的读音观察项，不将转写当成漏字定论。148—178秒混音经过音频模型
+单独观察，报告认为对白清晰、没有明显异常重复爆点；模型措辞和精确时间不作为测量。
+未声称人耳全片审听、完整网格无穿模、商业画质通过或用户审美验收。
+
+场景 JSON Schema、story catalog 与 DSL 验证通过。`Beat/Cue/Act` 是本集编译元数据，
+其真实消费入口见 `config/palace_runtime_contract.json`；通用 scene_tool 的 SceneBase
+回调验证不支持此模式，未添加空回调伪造通过。旧 `check_contact.py` 与
+`config/contact_contract.json` 仅适用于R18，当前门禁使用 `check_palace.py`。
+
+系列正本已同步 [各宫分守安排](../../docs/stardust_series_bible.md)。
+本轮工艺教训已回写并提交 dula-skills（80b7e69）。
+
+---
+
+## R18 历史记录（以下不代表当前制作状态）
 
 2026-10-19 接续制作。当前动作母版为 434 秒；正片经剧本明示的四处静拍删减后为 414.6 秒（6 分 54.6 秒），带片头为 463.8 秒（7 分 43.8 秒）。画面为 1280×720、30 fps；54 句角色配音、72 个剧本条目、19 个段落。以人形先锋夜刈取代旧兽版，按连续剧的关系变化与战斗因果展开。旧笔记仅供追溯：`storyboard/legacy_notes_r16.md`。
 

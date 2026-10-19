@@ -10,7 +10,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
     report=read('assets3d/mix_report.json');tl=read('config/timeline.json');cue=read('config/event_times.json')
     env=read('config/voice_envs.json');dlg=read('config/dialogue.json');issues=[];warnings=[]
-    stems={k:sf.read(EP/f'assets3d/stems_r17/{k}.wav',always_2d=True)[0] for k in ['voice','music','sfx','ambience']}
+    stems={k:sf.read(EP/f'assets3d/stems_palace/{k}.wav',always_2d=True)[0] for k in ['voice','music','sfx','ambience']}
     mixed,sr=sf.read(EP/'assets3d/mixed.wav',always_2d=True)
     if abs(len(mixed)/sr-tl['duration'])>.001:issues.append('mix duration differs from story')
     if env['source_sha256']!=sha(EP/'assets3d/mixed.wav'):issues.append('stale lip-sync source')
@@ -34,7 +34,7 @@ def main():
         if ratio<3:issues.append(f"{line['id']}: speech masked ({ratio:.1f} dB)")
         elif ratio<6:warnings.append(f"{line['id']}: narrow speech margin ({ratio:.1f} dB)")
         if not any(e['jaw']):issues.append(f"{line['id']}: frozen mouth envelope")
-    required={'C1':'blade_shield','SECOND_CUT':'blade_shield','C2':'armor_impact','RAIN_RELEASE':'rain_burst','C4':'crater_slam'}
+    required={'C1':'cosmic_clash','C2':'blade_shield','C3':'cosmic_clash','C4':'armor_impact','C5':'cosmic_clash','C6':'cosmic_clash','TRAP':'blade_shield','LOCK':'shield_bang','RELEASE':'flame_release','C7':'cosmic_detonation'}
     events=[]
     for key,name in required.items():
         matching=[x for x in report['events'] if x['name']==name and abs(x['startTime']-cue[key])<=.04]

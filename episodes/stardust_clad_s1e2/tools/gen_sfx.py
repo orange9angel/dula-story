@@ -22,7 +22,7 @@ WORKSPACE = EP.parents[2]
 OUT = EP / 'assets3d/sfx'
 
 # 动画片夸张质感 + 材质锁定 + 无音乐无人声（BGM 单列：无台词无音效）
-JOBS = json.loads((EP / 'config/human_sfx_jobs.json').read_text(encoding='utf-8'))
+JOBS = json.loads((EP / 'config/palace_sfx_jobs.json').read_text(encoding='utf-8'))
 
 # 溯源元数据（内容变了才重生成）
 def gen_one(item):

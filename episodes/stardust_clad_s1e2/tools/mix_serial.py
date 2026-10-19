@@ -98,7 +98,7 @@ def main():
     mixed=sum(buses.values());peak=float(np.max(np.abs(mixed)));ceiling=10**(-2.2/20)
     scale=min(1,ceiling/max(peak,1e-8));mixed*=scale
     out=EP/'assets3d/mixed.wav';sf.write(out,mixed,SR,subtype='PCM_16')
-    stemdir=EP/'assets3d/stems_r17';stemdir.mkdir(exist_ok=True)
+    stemdir=EP/'assets3d/stems_palace';stemdir.mkdir(exist_ok=True)
     for name,bus in buses.items():sf.write(stemdir/f'{name}.wav',bus*scale,SR,subtype='PCM_16')
     (EP/'config/voice_envs.json').write_text(json.dumps({'source':str(out.relative_to(EP)),'source_sha256':digest(out),'lines':envs},ensure_ascii=False),encoding='utf-8')
     report={'duration':duration,'sr':SR,'source_story_sha256':tl['source_sha256'],'sources':sources,

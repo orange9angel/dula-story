@@ -1,4 +1,9 @@
-# 第二集《夜守·第一道伤》——制作分镜
+# 第二集《焰阶宫·盾与暗链》——制作分镜
+
+当前R19采用[单宫对决分镜](storyboard_palace.md)，时序见 `script.story`，验收见
+`NOTES.md` 与 `storyboard/palace_r19/`。原总坛群战已被用户否决并重制。
+
+以下保留R18历史分镜，仅供追溯，不作为当前生产输入。
 
 当前为人形敌役与连载节奏重写。时序正本是 `script.story`；`tools/compile_story.py` 生成对白、段落和事件表。下列文字保留导演意图；实际执行、检查范围和不足见 NOTES.md 与 storyboard/serial_r18/delivery_report.json。R18 的四处开场静拍删减由剧本中的 EditCut 明示，源动作母版 434 秒，成片 414.6 秒。
 
