@@ -13,11 +13,11 @@ const [tl,dlg,envs]=await Promise.all(['timeline','dialogue','voice_envs'].map(a
 const entries=tl.segments.map(s=>({startTime:s.start,endTime:s.end,opts:s}));
 const scene=new EmberTierPalaceScene();scene.build();await scene.applyHybrid();
 const actors={aoao:new AoaoCraft(),yekari:new YekariCraft()};directLook(actors);
-for(const name of CAST){applyPalaceClad(actors[name],name);scene.scene.add(actors[name].mesh);}
+for(const name of CAST){applyPalaceClad(actors[name],name,{sculpted:query.get('sculpted')!=='0'});scene.scene.add(actors[name].mesh);}
 const camera=new THREE.PerspectiveCamera(39,W/H,.05,100);
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
-if(metal){const env=createArmorEnvironment(renderer);await Promise.all(CAST.map(name=>applyMetalClad(actors[name],{url:'./assets3d/tex/armor_engraved_r20.png',environment:env.texture})));}
+if(metal){const env=createArmorEnvironment(renderer);await Promise.all(CAST.map(name=>applyMetalClad(actors[name],{url:'./assets3d/tex/armor_engraved_r20.png',environment:env.texture,cleanMetal:query.get('sculpted')!=='0'})));}
 if(query.get('anatomy')!=='0')for(const name of CAST)refinePalaceLimbs(actors[name]);
 const stageAudit=(query.has('probe-stage')||query.has('probe-surface'))?createStageClearance(actors,scene.navigationObstacles):null;
 if(stageAudit){
