@@ -1,4 +1,20 @@
-# 《星屑战壳》S1E2《焰阶宫·盾与暗链》R21
+# 《星屑战壳》S1E2《焰阶宫·盾与暗链》R22
+
+2026-10-19 用户认可R21肩甲，继续指出护臂像圆环加铁块，要求类似金属手套。
+R22保留肩甲，改为收腕的连续前臂壳、内侧护片、手背甲和随原指骨开合的分节指甲。
+补齐金属指尖，活动缝保留柔性衬层；盾/武器挂点、脸、动作与声音保持。
+
+[12秒护臂开合A/B](output/gauntlet_comparison_r22.mp4)、
+[26秒实战片段](output/palace_duel_preview_r22.mp4)、
+[213秒正片](output/stardust_clad_s1e2_palace_r22.mp4)、
+[262.2秒带原片头版](output/stardust_clad_s1e2_palace_tv_r22.mp4)。
+[修订证据与复现](storyboard/palace_r22/REVIEW.md)。R21肩甲已认可，R22护臂待用户评价；
+不把局部装备认可扩展为整个人物造型通过。
+常用入口 `craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 已指向R22，R21固定版本与
+`output/archive/pre_palace_r22/` 保留。全片60Hz回归与12个最终抽帧对照通过，
+5个声画检查窗口偏移均为0ms，音轨与原片头未重做。
+
+## R21 历史修订（肩甲后续获认可）
 
 2026-10-19 当前修订：用户指出R20肩甲折纸感与盾背透明，并补充铠甲角色参考。
 改为有前后包裹、内壁及厚边的曲面肩壳；盾牌封闭背面，保留挂点和接触坐标。
@@ -8,7 +24,7 @@
 [26秒反击片段](output/palace_duel_preview_r21.mp4)、
 [213秒正片](output/stardust_clad_s1e2_palace_r21.mp4)、
 [262.2秒带原片头版](output/stardust_clad_s1e2_palace_tv_r21.mp4)。
-[修订证据、复现与范围](storyboard/palace_r21/REVIEW.md)。R21外观待用户评价；
+[修订证据、复现与范围](storyboard/palace_r21/REVIEW.md)。R21肩甲后续获用户认可；
 R20特定失败已明确记录，不再沿用“待评价”概括其肩甲和盾背。
 常用入口 `craft3d_full.mp4` / `craft3d_tv_s1e2.mp4` 已更新至R21；旧入口备份在
 `output/archive/pre_palace_r21/`，R19/R20固定版本保留。全片12,780个60Hz采样、
