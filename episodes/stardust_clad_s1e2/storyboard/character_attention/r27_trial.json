@@ -1,0 +1,1296 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e2_palace_r27.mp4",
+    "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+  },
+  "scope": {
+    "subjects": [
+      "aoao",
+      "yekari"
+    ],
+    "windows": [
+      {
+        "id": "discovery",
+        "start": 128.0,
+        "end": 132.0
+      },
+      {
+        "id": "reaction",
+        "start": 132.0,
+        "end": 137.0
+      },
+      {
+        "id": "decision",
+        "start": 163.0,
+        "end": 166.0
+      },
+      {
+        "id": "release",
+        "start": 171.0,
+        "end": 174.0
+      }
+    ],
+    "accepted_properties": [
+      "角色身份与既有进步",
+      "现有对白和配乐",
+      "已认可的火焰烟火效果基础"
+    ],
+    "limitations": "主代理直接看了6张时间序列板，覆盖所声明4个窗口的57个采样帧。这不是正常速度完整播放，也不是独立盲测；用户此前已指出脸发、身体和动作大类问题。本轮只试用问题发现skill，未修改影片。未做听觉审查。"
+  },
+  "checks": [
+    {
+      "subject": "aoao",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "在可见近景中，棕发、眉眼、金甲和盾牌身份一致；本轮未见明确换脸。未覆盖后侧。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "头颈过渡和面部体积问题见A01。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "A01"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "gaze",
+      "status": "needs_evidence",
+      "observation": "132–137秒视线主要朝画面右方，但半秒采样和单方近景不足以判断完整注意过程。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补132秒前后的眼神交接和对手关系，并加密采样。"
+    },
+    {
+      "subject": "aoao",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "可见情绪变化较弱，保留采样限制，见A02。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "A02"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "前侧厚束问题见A03；后侧不在本次证据范围。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "A03"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "body",
+      "status": "needs_evidence",
+      "observation": "可见金甲遮住大部分胸腹，近景和持盾姿势不足以判断姿态相关的软组织变化。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补露出肩颈、上臂及胸腰转动的原镜头与诊断视图。"
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "status": "needs_evidence",
+      "observation": "右手握拳和左侧盾牌可辨，但左手握持处被盾遮住，指组/腕部受力不能据此通过。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "取可见盾后握持和腕部的连续近景。"
+    },
+    {
+      "subject": "aoao",
+      "dimension": "support",
+      "status": "needs_evidence",
+      "observation": "释放段足部靠近前景方块，鞋底与承重变化难以分辨。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补无前景遮挡的接触诊断机位并与最终镜头对照。"
+    },
+    {
+      "subject": "aoao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "本次所选窗口没有阿鳌的完整行走、起停或转身过程，不能推广为全片步态通过。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "action",
+      "status": "needs_evidence",
+      "observation": "当前覆盖蓄势片段和命中后，缺166–171秒实际释放过程，不能完整判断发力链。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补166–171秒，连同当前证据观察整次释放。"
+    },
+    {
+      "subject": "aoao",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "当前采样中没有看到身份或甲件突然切换；只限这些采样，不能排除帧间抖动。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "脸部可读性受高亮效果干扰，见A04。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "A04"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "本次只观察图像，未听该时间窗，不判断发力声缺失或同步。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "动作修订时按授权的音频流程连听对应片段，沿用已认可对白和音乐。"
+    },
+    {
+      "subject": "aoao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "回看整幅，首要关系仍是头颈被领甲吞没及光效压脸，已归A01/A04；未增加另一项有足够证据的缺陷。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "深发、深色高领甲和长柄武器在可见范围一致，未见明确身份突变。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "status": "needs_evidence",
+      "observation": "唯一近景164.5秒上半脸被裁，远景尺度又小，不能完整判断脸体积与头颈关系。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补完整头颈近景。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "gaze",
+      "status": "needs_evidence",
+      "observation": "164.5秒眼眉不完整，受击全景的眼部过小。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补可读眼睛的反应近景及前后时间。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "expression",
+      "status": "needs_evidence",
+      "observation": "远景能见头位变化，不能可靠判断眉眼及咬牙的细节。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补受击反应的面部连续近景。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hair",
+      "status": "needs_evidence",
+      "observation": "当前主要正侧/远景，缺后侧及清楚的发梢跟随过程。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补头部转动和受击时发束近景，含后侧。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "body",
+      "status": "needs_evidence",
+      "observation": "躯干刚性观感在动作项Y01中可见，但衣甲遮挡及画幅限制了软组织轮廓判断。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "做与受击姿势相同的身体诊断视图。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "status": "needs_evidence",
+      "observation": "164.5秒武器与双手关系可见，但指腹和握柄接触尺度不足。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "补实际握柄与腕部的连续局部视图。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "support",
+      "status": "needs_evidence",
+      "observation": "能看见落地屈膝，但六帧每秒不足以判断鞋底接触瞬间与支撑锁定。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "对172.5–172.9秒落地加密到输出帧，并查看鞋底。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "本窗口是受击腾起后落地，不是步行/转身。落地问题在支撑和动作项记录。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "受击全身参与不足，见Y01。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_2.jpg",
+          "sha256": "82310cdc4931565c1102c7b2f433977f0c31f7ca87f844b7252f2b2a6f51dea5",
+          "window": "release",
+          "at": [
+            173.0,
+            173.16666666666666,
+            173.33333333333334,
+            173.5,
+            173.66666666666666,
+            173.83333333333334,
+            174.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "Y01"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "采样中人物先升起后下降并屈膝，宏观顺序连续；僵硬由Y01记录，帧间连续性未获全覆盖。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_2.jpg",
+          "sha256": "82310cdc4931565c1102c7b2f433977f0c31f7ca87f844b7252f2b2a6f51dea5",
+          "window": "release",
+          "at": [
+            173.0,
+            173.16666666666666,
+            173.33333333333334,
+            173.5,
+            173.66666666666666,
+            173.83333333333334,
+            174.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "164.5秒反应构图裁掉眼眉，需验证镜头意图，见Y02。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "Y02"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "未听受击和落地时间窗，不能断言缺少泄气声、落地声或声画错位。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "动作修订时查看对应音轨并做实际声画联审。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "完整画面中最突出的仍是受击时整身移动、躯干反应弱；未把同一现象拆成多个自主发现成绩。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_2.jpg",
+          "sha256": "82310cdc4931565c1102c7b2f433977f0c31f7ca87f844b7252f2b2a6f51dea5",
+          "window": "release",
+          "at": [
+            173.0,
+            173.16666666666666,
+            173.33333333333334,
+            173.5,
+            173.66666666666666,
+            173.83333333333334,
+            174.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "A01",
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "origin": "retrospective",
+      "status": "open",
+      "fact": "132–137秒近景，面颊与下颌的大面较平，颈部几乎被高宽领甲吞没，头与胸之间缺少可读的颈肩过渡。",
+      "impact": "近景虽有五官，但头插在硬壳上的观感仍强。",
+      "priority": "high",
+      "hypothesis": "需分开验证脸面转折、颈部可见长度和领甲遮挡，尚未通过改模验证。",
+      "next_action": "保持脸型身份，做同机位头颈/领甲关系试样，并看俯仰和转头。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "subject": "aoao",
+      "dimension": "expression",
+      "origin": "retrospective",
+      "status": "open",
+      "fact": "132–135秒的半秒采样中主要可见嘴开合；眉眼、下颌和颈肩的情绪变化较弱。不能凭这个采样排除帧间微表情。",
+      "impact": "台词的承担与决意在身体和脸上的差别不够清楚。",
+      "priority": "high",
+      "hypothesis": "可能缺少意图驱动的眼—头—肩节拍；应先加密画面和读当前表演谱。",
+      "next_action": "在132–135秒加密观察并将决意时点与实际眉眼、下颌、颈肩变化关联。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "A03",
+      "subject": "aoao",
+      "dimension": "hair",
+      "origin": "retrospective",
+      "status": "open",
+      "fact": "132–137秒前侧发束仍呈较厚圆条，亮暗和间隙较规则；新增细线没有消除实体块感。",
+      "impact": "仍能读出头套/塑胶束的观感，影响脸部自然度。",
+      "priority": "high",
+      "hypothesis": "主束截面与大形组织可能比细纹数量更关键；未检查后侧，不能泛化全部发型。",
+      "next_action": "对前侧主束做宽薄、遮挡和负空间试样，同时补后侧和转头复查。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "A04",
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "165.5秒一条高亮竖向效果穿过脸部，166秒脸与周围光柱都明显发白；脸部转面信息被削弱。",
+      "impact": "关键喊招近景里，光效抢走表情的可读性。",
+      "priority": "high",
+      "hypothesis": "可能是前景光柱遮挡和面部回光叠加，尚未分层验证；不是要求重做已认可的火焰。",
+      "next_action": "保持光效基础，比较脸前效果遮挡/局部曝光的受控试样，再看整镜气势。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "Y01",
+      "subject": "yekari",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "171.333–172.5秒受击后人物升起并后移，躯干大体直立，持械双臂形状变化很小；172.667后才出现明显屈膝。",
+      "impact": "冲击主要表现为整个人被平移，受击侧压缩、胸腰扭转与防御失衡不够可读。",
+      "priority": "high",
+      "hypothesis": "需验证根位移与关节反应是否脱节；当前是画面诊断，不是源码定论。",
+      "next_action": "补命中前后连续动作，设计受击方向传到胸腰、肩头和落地承重的姿势链。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/release_1.jpg",
+          "sha256": "d19fb1b77320cb20a45d37d05ff6b79df815f61e35118ff5ff080b673c3bfa8c",
+          "window": "release",
+          "at": [
+            171.0,
+            171.16666666666666,
+            171.33333333333334,
+            171.5,
+            171.66666666666666,
+            171.83333333333334,
+            172.0,
+            172.16666666666666,
+            172.33333333333334,
+            172.5,
+            172.66666666666666,
+            172.83333333333334
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/release_2.jpg",
+          "sha256": "82310cdc4931565c1102c7b2f433977f0c31f7ca87f844b7252f2b2a6f51dea5",
+          "window": "release",
+          "at": [
+            173.0,
+            173.16666666666666,
+            173.33333333333334,
+            173.5,
+            173.66666666666666,
+            173.83333333333334,
+            174.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "Y02",
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "164.5秒切到夜刈时，画面上缘裁掉大部分眼眉和头顶，主要留下鼻口以下及上身。",
+      "impact": "该帧不能承担完整眼神反应；需查切镜前后是有意身体特写还是镜头目标失准。",
+      "priority": "high",
+      "hypothesis": "反应镜头的取景或时间窗可能与头部位置不匹配，单帧不足以确定整镜错误。",
+      "next_action": "加密164.2–164.8秒；若镜头意图是脸部反应，调整构图保留眼眉，复验与前后镜头连接。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/decision_1.jpg",
+          "sha256": "d67c8dddb7b0cd5025eeab7ec8e32c665f96e7936af5fdb7d50ce8874dd4ea7f",
+          "window": "decision",
+          "at": [
+            163.0,
+            163.5,
+            164.0,
+            164.5,
+            165.0,
+            165.5,
+            166.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [],
+  "misses": [
+    {
+      "id": "M01",
+      "origin": "self_found",
+      "type": "evidence_selection",
+      "original_record": "../form_study_20261020/REVIEW.md 的旧试片计划第1项",
+      "original_judgement": "把128–132秒计划为验证发现线索时的眼神与脸部表演窗口。",
+      "later_observation": "128–131.8秒实际为导火槽和腿部插入镜头，脸不可见；132秒后才转入阿鳌近景。",
+      "cause": "按剧情cue推定了镜头内容，未先核对实际画面能否提供所需证据。",
+      "next_attention": "选窗后先检查要评的部位是否可见、是否覆盖所需行为；图像不支持就主动改窗。",
+      "boundary": "地面插入镜头本身可以正确说明线索，不因看不到脸就判为拍摄错误。",
+      "evidence": [
+        {
+          "path": "../../tmp/attention_review_trial/discovery_1.jpg",
+          "sha256": "f804dcad428da6d3f09d31dd6e1fd73a6899db58f9c37a1b2b9b6b62ec5ee85d",
+          "window": "discovery",
+          "at": [
+            128.0,
+            128.2,
+            128.4,
+            128.6,
+            128.8,
+            129.0,
+            129.2,
+            129.4,
+            129.6,
+            129.8,
+            130.0,
+            130.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/discovery_2.jpg",
+          "sha256": "598eb3ae38f3fc6a8285180507596be0640d3c5270c86ae6d38f020a8b534065",
+          "window": "discovery",
+          "at": [
+            130.4,
+            130.6,
+            130.8,
+            131.0,
+            131.2,
+            131.4,
+            131.6,
+            131.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../../tmp/attention_review_trial/reaction_1.jpg",
+          "sha256": "26b335ddfa89189d77a94ee8eb0b1dbe6d4140a0036322bf619ebce59e37aa82",
+          "window": "reaction",
+          "at": [
+            132.0,
+            132.5,
+            133.0,
+            133.5,
+            134.0,
+            134.5,
+            135.0,
+            135.5,
+            136.0,
+            136.5,
+            137.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "result": "已将当前表情观察改到132–137秒。仅纠正选窗，未修改影片或证明表演改善。",
+      "generalization": "本轮支持这个取证检查有用；未独立盲测，跨片段效果待积累。"
+    }
+  ],
+  "reviewer_conclusion": "已对2名角色的14个维度逐项作出范围内观察或明确补证要求。6条问题中A01–A03是已知反馈的复查，A04/Y01/Y02为本轮具体定位，仍受此前任务背景提示。自主纠正了旧计划选错眼神观察窗口的问题。存在待补证项，整体覆盖未完成；没有修片、正常速度验收或同水平达标结论。"
+}
