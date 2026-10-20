@@ -1,0 +1,110 @@
+{
+  "source": "output\\stardust_clad_s1e3_hair_sculpt_r10.mp4",
+  "sha256": "2a0af60b96b39e76cdd628538d56eabd0dfe529414c0fee5a9229ad774292eac",
+  "viewing_method": "stills and ordered decoded frames; no native realtime video perception",
+  "reference_sources": [
+    {
+      "id": "A",
+      "file": "structure_03.jpg",
+      "page": "https://characterdesignreferences.com/art-of-animation-9/art-of-saint-seiya-knights-of-the-zodiac",
+      "url": "https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1685493854600-1BH8PNRBBVF36KOEUKG0/Art_of_Saint_Seiya_Knights_of_the_Zodiac_3.jpg",
+      "scope": "Expression drawing with visible date 02 8/2. Reposted production drawing, not independently authenticated. Structure only.",
+      "sha256": "f2b3170d89f9fecc94bebc14e0ce870af9e33bfa3c7405b9068d1a74b2cb4c8f",
+      "size": [
+        2048,
+        1448
+      ]
+    },
+    {
+      "id": "B",
+      "file": "structure_04.jpg",
+      "page": "https://characterdesignreferences.com/art-of-animation-9/art-of-saint-seiya-knights-of-the-zodiac",
+      "url": "https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1685493876653-ZJCZV7J77LWNUY656UQP/Art_of_Saint_Seiya_Knights_of_the_Zodiac_4.jpg",
+      "scope": "Training-costume drawing dated 04 3/10. Rear silhouette supplement from another drawing, not proof of an exact 2002 rear design.",
+      "sha256": "79dc6bafe707d72cf74708f6496c9ff71cf4fbf72c655970a9345d155a6d0f51",
+      "size": [
+        2048,
+        1448
+      ]
+    },
+    {
+      "id": "C",
+      "file": "color_03.jpg",
+      "page": "https://animationdigitalnetwork.com/video/1195-saint-seiya-chapitre-hades/25530-episode-26",
+      "url": "https://image.animationdigitalnetwork.com/license/saintseiyahades/tv/web/eps26_1920x1080.jpg",
+      "scope": "Distributor episode-26 still, later chapter; only broad light/shadow and lock-group organization. Top of hair cropped by original shot.",
+      "sha256": "27422a8d3421e35a67170e68ec1b5d340a32cda1c23b72d75014563daaeb95ac",
+      "size": [
+        1920,
+        1080
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "path": "frame_0.500.png",
+      "at": 0.5,
+      "sha256": "e25aad5e04f2c600378b0988d63e01eb21c7ce1635a0708a0f562c32b37d000f",
+      "reference": "structure_03.jpg",
+      "reference_sha256": "f2b3170d89f9fecc94bebc14e0ce870af9e33bfa3c7405b9068d1a74b2cb4c8f",
+      "reference_crop": [
+        780,
+        35,
+        1260,
+        550
+      ]
+    },
+    {
+      "path": "frame_2.567.png",
+      "at": 2.566666667,
+      "sha256": "be74d6e72cd5b47b31a00045c96285b00bae1e928b4badb6ebfb120808a682e9",
+      "reference": "structure_03.jpg",
+      "reference_sha256": "f2b3170d89f9fecc94bebc14e0ce870af9e33bfa3c7405b9068d1a74b2cb4c8f",
+      "reference_crop": [
+        1280,
+        690,
+        2048,
+        1448
+      ]
+    },
+    {
+      "path": "frame_7.000.png",
+      "at": 7,
+      "sha256": "23b4609a139140be7409474f79649acaab4ab0b3fda1f3c0fcafcc20d1459134",
+      "reference": "structure_03.jpg",
+      "reference_sha256": "f2b3170d89f9fecc94bebc14e0ce870af9e33bfa3c7405b9068d1a74b2cb4c8f",
+      "reference_crop": [
+        70,
+        650,
+        745,
+        1420
+      ]
+    },
+    {
+      "path": "frame_6.500.png",
+      "at": 6.5,
+      "sha256": "15158dfcf18a1b0af13bfefff45e8de16e93a449f9d71b1c8b2e1b4404f66b7f",
+      "reference": "structure_04.jpg",
+      "reference_sha256": "79dc6bafe707d72cf74708f6496c9ff71cf4fbf72c655970a9345d155a6d0f51",
+      "reference_crop": [
+        1320,
+        135,
+        1635,
+        430
+      ]
+    }
+  ],
+  "board_sha256": "8d646d1a7bd8480a0d852d2b788801d6f8c6fd527eff6033120ea010f64e570d",
+  "decision": "Not accepted for production replacement or reference-level quality.",
+  "source_snapshot_sha256": "f4571f0335eb5d794e7324e1384c2db740090a533a78da61e0a0144b3fecf4bb",
+  "design_images": [
+    {
+      "path": "trials\\hair-sculpt\\design\\design_01_rejected.png",
+      "sha256": "d98295e2586bbb9f72a1875f2c998df997988a54f4934b80bb3b9d9191b11703"
+    },
+    {
+      "path": "trials\\hair-sculpt\\design\\design_02_target.png",
+      "sha256": "8f30292ce0232ed2e63f7c287bf6131726eb5f1bfb98007169a3fd566414a747"
+    }
+  ]
+}

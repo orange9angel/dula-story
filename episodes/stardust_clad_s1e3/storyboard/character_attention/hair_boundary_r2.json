@@ -1,0 +1,538 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e3_hair_boundary_r2.mp4",
+    "sha256": "f5d9dcdbcf117b2f61cb51ad98028fbcca349561ba8a7efdf4e3a2f3b00174f9"
+  },
+  "scope": {
+    "subjects": [
+      "xiaozao"
+    ],
+    "windows": [
+      {
+        "id": "study",
+        "start": 0,
+        "end": 12
+      }
+    ],
+    "accepted_properties": [
+      "Hair-only candidate; current face, collar, pose and camera retained on both sides. No artistic acceptance implied."
+    ],
+    "limitations": "Still and ordered-frame observation only. No matched reference motion comparison. Turntable is diagnostic, not physical turning. Whole-episode integration not performed."
+  },
+  "checks": [
+    {
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "The hair now reads as a shorter outward-swept cut, but the top is flat and grouped side points are repetitive. This is not yet a convincing realization of the independent design.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "S01"
+      ],
+      "next_action": "Fit distinct inner and outer lock boundaries to the design, then recheck side and rear views."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "gaze",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "Only the central fringe uses paired boundary curves. Its middle now reads as a continuous curved band and R2 clears the eye; neighboring locks and side/rear chunky forms remain unresolved.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "S02"
+      ],
+      "next_action": "Fit distinct inner and outer lock boundaries to the design, then recheck side and rear views."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "body",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hands_props",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "support",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "Ordered MP4 frames at turn, stop and side transition show no wholesale lock switching in these samples. Matched reference dynamics and realtime naturalness remain unverified.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/decoded/turn_01.jpg",
+          "sha256": "6e3c5dec90f0d747825b0bb99505a8ebe3e31ff1b73e48b91cb32f746411930a",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_boundary_r2/decoded/reverse_01.jpg",
+          "sha256": "8a037fb9134487d2afdd7f8e267aa8fd0996c3a4ecbfa49642f8877318faaa85",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_boundary_r2/decoded/side_01.jpg",
+          "sha256": "6427d3fd0f0e24a74d625bb89081b37c8c7df7d833b49bfd027c091eceaeb814",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Review matched motion and actual-size continuous playback."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "Lock-aligned light shapes replace the fixed-height band, but heavy middle forms and large dark side areas remain obvious at the actual shot scale.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "S03"
+      ],
+      "next_action": "Fit distinct inner and outer lock boundaries to the design, then recheck side and rear views."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair trial. Face and armor preserved; no claim of whole-character quality acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Returned to the complete head; the already listed thick side/rear groups and inconsistent silhouette remain. No additional distinct defect asserted in this scoped pass.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Fit distinct inner and outer lock boundaries to the design, then recheck side and rear views."
+    }
+  ],
+  "issues": [
+    {
+      "id": "S01",
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The hair now reads as a shorter outward-swept cut, but the top is flat and grouped side points are repetitive. This is not yet a convincing realization of the independent design.",
+      "impact": "Prevents promotion to production or reference-level quality.",
+      "priority": "high",
+      "hypothesis": "Generic centerline and common cross-section still fail to express independent lock boundaries; underside closure fixes holes but not the thick appearance.",
+      "next_action": "Validate an authored single main lock across views before rebuilding the whole hairstyle.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The forehead cap is opened and thin tube highlights are reduced. Broad side/rear locks still read as thick leaves with dark grooves; hairline joins remain irregular.",
+      "impact": "Prevents promotion to production or reference-level quality.",
+      "priority": "high",
+      "hypothesis": "Generic centerline and common cross-section still fail to express independent lock boundaries; underside closure fixes holes but not the thick appearance.",
+      "next_action": "Validate an authored single main lock across views before rebuilding the whole hairstyle.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "Lock-aligned light shapes replace the fixed-height band, but heavy middle forms and large dark side areas remain obvious at the actual shot scale.",
+      "impact": "Prevents promotion to production or reference-level quality.",
+      "priority": "high",
+      "hypothesis": "Generic centerline and common cross-section still fail to express independent lock boundaries; underside closure fixes holes but not the thick appearance.",
+      "next_action": "Validate an authored single main lock across views before rebuilding the whole hairstyle.",
+      "evidence": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "id": "boundary-r1-r2",
+      "change": "Learned from hairline/ribbon drawing diagrams and the paired-boundary patch method; replaced only the central fringe, then raised the tip after observing eye occlusion.",
+      "result": "Local contour control improved; entire hairstyle remains below target. No production replacement.",
+      "before": "hair_sculpt_r10.json",
+      "after": [
+        {
+          "path": "../hair_boundary_r2/preview/front.jpg",
+          "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/oblique.jpg",
+          "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+          "window": "study",
+          "at": [
+            2.55
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/preview/profile.jpg",
+          "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_boundary_r2/decoded/turn_01.jpg",
+          "sha256": "6e3c5dec90f0d747825b0bb99505a8ebe3e31ff1b73e48b91cb32f746411930a",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_boundary_r2/decoded/reverse_01.jpg",
+          "sha256": "8a037fb9134487d2afdd7f8e267aa8fd0996c3a4ecbfa49642f8877318faaa85",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_boundary_r2/decoded/side_01.jpg",
+          "sha256": "6427d3fd0f0e24a74d625bb89081b37c8c7df7d833b49bfd027c091eceaeb814",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "misses": [
+    {
+      "id": "process-learning-delay",
+      "origin": "user_reported",
+      "prior_record": "hair_sculpt_r10.json",
+      "prior_judgment": "Repeated geometry variants were not improving the chunky silhouette.",
+      "later_finding": "Did not promptly seek more specific drawing instruction until the user reminded the agent.",
+      "lesson": "When cause or effective repair is unclear, inspect author tutorial diagrams and run one comparable local experiment before scaling up.",
+      "validation_status": "Applied to one fringe only; broader success not established."
+    }
+  ],
+  "reviewer_conclusion": "Targeted web learning followed by an actual paired-boundary fringe experiment and decoded-frame inspection. Local contour gain, unresolved whole-hair design. Not reference-level quality."
+}

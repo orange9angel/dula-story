@@ -1,0 +1,88 @@
+{
+  "video": "output\\stardust_clad_s1e3_hair_boundary_r2.mp4",
+  "sha256": "f5d9dcdbcf117b2f61cb51ad98028fbcca349561ba8a7efdf4e3a2f3b00174f9",
+  "source_snapshot_sha256": "fc1f3d2cb5332fd1b0530ec6ffe4a721a9109980b738bf0bb78a208efb458eec",
+  "frames": 360,
+  "seek_passed": true,
+  "seek_samples": 17,
+  "non_finite": 0,
+  "max_root_shift": 0,
+  "observed_evidence": [
+    {
+      "path": "../hair_boundary_r2/preview/front.jpg",
+      "sha256": "7f4ed36161260a1f2326eb710ba7690134a1e81da3040e12fe3c6bbf0ad64e88",
+      "window": "study",
+      "at": [
+        0.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_boundary_r2/preview/oblique.jpg",
+      "sha256": "df48eec51851c1cdc42c5deca93fe815c99ddf6d3d4f347c8b7b421d318fdcce",
+      "window": "study",
+      "at": [
+        2.55
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_boundary_r2/preview/profile.jpg",
+      "sha256": "c8afa9d0273d7785575fa4d7cc5d3e45983e9db9a9e8ee44986aeef11c60141c",
+      "window": "study",
+      "at": [
+        7
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_boundary_r2/decoded/turn_01.jpg",
+      "sha256": "6e3c5dec90f0d747825b0bb99505a8ebe3e31ff1b73e48b91cb32f746411930a",
+      "window": "study",
+      "at": [
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7,
+        1.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_boundary_r2/decoded/reverse_01.jpg",
+      "sha256": "8a037fb9134487d2afdd7f8e267aa8fd0996c3a4ecbfa49642f8877318faaa85",
+      "window": "study",
+      "at": [
+        2.0,
+        2.1,
+        2.2,
+        2.3,
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_boundary_r2/decoded/side_01.jpg",
+      "sha256": "6427d3fd0f0e24a74d625bb89081b37c8c7df7d833b49bfd027c091eceaeb814",
+      "window": "study",
+      "at": [
+        6.8,
+        6.9,
+        7.0,
+        7.1,
+        7.2
+      ],
+      "method": "ordered_frames"
+    }
+  ],
+  "learning": "LEARNING.md",
+  "decision": "local study; no production acceptance"
+}
