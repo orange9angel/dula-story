@@ -17,16 +17,16 @@
       }
     ],
     "accepted_properties": [
-      "?????????/?????????????????????"
+      "Retained episode identity, silver-blue/purple palettes and existing character voices."
     ],
-    "limitations": "??MP4???????????????????????/???????????????????"
+    "limitations": "Decoded stills and ordered frames, not realtime viewing or listening. Mostly front and three-quarter angles; no complete walk cycle or rear coverage."
   },
   "checks": [
     {
       "subject": "xiaozao",
       "dimension": "identity",
       "status": "no_issue_observed",
-      "observation": "??????????????",
+      "observation": "The hero retains a small silver-blue silhouette; the opponent retains a taller purple silhouette. This is limited identity evidence, not design approval.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -56,7 +56,7 @@
       "subject": "xiaozao",
       "dimension": "face_structure",
       "status": "finding",
-      "observation": "?????????????????????????",
+      "observation": "Cheek, nose-side and jaw volumes are weak; the high collar hides the neck connection.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -82,13 +82,13 @@
       "issue_ids": [
         "xiaozao_face_structure"
       ],
-      "next_action": "???????????????"
+      "next_action": "Develop and inspect a head-neck-shoulder shape and turn sample."
     },
     {
       "subject": "xiaozao",
       "dimension": "gaze",
       "status": "finding",
-      "observation": "????????????????????????????",
+      "observation": "The gaze remains mostly fixed on the opponent; decisions about the cargo are insufficiently expressed by eyes and head.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -133,13 +133,13 @@
       "issue_ids": [
         "xiaozao_gaze"
       ],
-      "next_action": "??????????????????????"
+      "next_action": "Author clear attention targets and eye-head-shoulder timing, then inspect close shots."
     },
     {
       "subject": "xiaozao",
       "dimension": "expression",
       "status": "finding",
-      "observation": "?????????????????????",
+      "observation": "Binding, pulling and release have weak brow, cheek and jaw changes.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -199,13 +199,13 @@
       "issue_ids": [
         "xiaozao_expression"
       ],
-      "next_action": "????/????????????????"
+      "next_action": "Develop asymmetric pain, decision and surprise facial-neck poses."
     },
     {
       "subject": "xiaozao",
       "dimension": "hair",
       "status": "finding",
-      "observation": "???????????????????????????",
+      "observation": "Thick, similarly shaped locks read as sculpted hard pieces rather than layered hair.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -231,13 +231,13 @@
       "issue_ids": [
         "xiaozao_hair"
       ],
-      "next_action": "???????????????????"
+      "next_action": "Redesign the primary silhouette, lock hierarchy and ear/nape clearance before adding motion."
     },
     {
       "subject": "xiaozao",
       "dimension": "body",
       "status": "finding",
-      "observation": "????????????????????????",
+      "observation": "The torso tilts mostly as one shell; compression and expansion under armor are weak.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -281,13 +281,13 @@
       "issue_ids": [
         "xiaozao_body"
       ],
-      "next_action": "????????????????????????"
+      "next_action": "Redesign chest-pelvis twisting and compression poses with adequate deformation."
     },
     {
       "subject": "xiaozao",
       "dimension": "hands_props",
       "status": "needs_evidence",
-      "observation": "???????/?????????????????",
+      "observation": "Cable and shield are visible, but finger contact is too small to verify gripping and load.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -325,13 +325,13 @@
         }
       ],
       "issue_ids": [],
-      "next_action": "?????????????????/??????"
+      "next_action": "Capture the palm and wrist through gripping and release at readable scale."
     },
     {
       "subject": "xiaozao",
       "dimension": "support",
       "status": "finding",
-      "observation": "????????????????????????????",
+      "observation": "Leg and root changes are present, but the hips, chest and shoulders do not convincingly transmit the load.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -375,13 +375,13 @@
       "issue_ids": [
         "xiaozao_support"
       ],
-      "next_action": "?????????????????????????????"
+      "next_action": "Redesign the supporting-leg, pelvis and chest load chain; do not infer naturalness from foot origins."
     },
     {
       "subject": "xiaozao",
       "dimension": "locomotion",
       "status": "needs_evidence",
-      "observation": "????/??????????????????????",
+      "observation": "Only a half-step and recovery step are present; there is no complete walking cycle.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/cut_01.jpg",
@@ -404,13 +404,13 @@
         }
       ],
       "issue_ids": [],
-      "next_action": "????????????????????????"
+      "next_action": "Create a start, two full steps, stop and turn sample from a consistent camera."
     },
     {
       "subject": "xiaozao",
       "dimension": "action",
       "status": "finding",
-      "observation": "????????????????????????",
+      "observation": "Counter-pulling relies on overall lean and wrist motion; shoulder, chest, neck and face response is weak.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -454,13 +454,13 @@
       "issue_ids": [
         "xiaozao_action"
       ],
-      "next_action": "??????????????????????"
+      "next_action": "Redesign anticipation, force transfer, contact and release key poses."
     },
     {
       "subject": "xiaozao",
       "dimension": "temporal",
       "status": "no_issue_observed",
-      "observation": "??0.2?0.3??????????????????????????????????????",
+      "observation": "The inspected 0.2-0.3 second samples connect the pull and release without an obvious large jump; they do not prove normal-speed naturalness.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -508,7 +508,7 @@
       "subject": "xiaozao",
       "dimension": "shot_integration",
       "status": "finding",
-      "observation": "??????????????/?????????????",
+      "observation": "Wheel spokes and horizontal cables overlap the heads and action silhouettes, competing for attention.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -553,22 +553,22 @@
       "issue_ids": [
         "xiaozao_shot_integration"
       ],
-      "next_action": "??????????????????????"
+      "next_action": "Separate the character projection from the wind screen and cargo cables."
     },
     {
       "subject": "xiaozao",
       "dimension": "av_coordination",
       "status": "needs_evidence",
-      "observation": "????????????cue???????????????????????",
+      "observation": "Audio sources and cues were checked, but there was no listening evidence.",
       "evidence": [],
       "issue_ids": [],
-      "next_action": "?????????????????????????????"
+      "next_action": "Listen and view the final mix before judging effort voices, Foley and ambience."
     },
     {
       "subject": "xiaozao",
       "dimension": "open_scan",
       "status": "needs_evidence",
-      "observation": "?????????????????????????????????????????????",
+      "observation": "The combined result still resembles procedural figures on a constructed platform. Rear head, nape and all sole surfaces were not covered.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -611,13 +611,13 @@
         }
       ],
       "issue_ids": [],
-      "next_action": "?????????????????????"
+      "next_action": "Inspect rear/side-rear structures and shoe contacts, then return to final framing."
     },
     {
       "subject": "jianwang",
       "dimension": "identity",
       "status": "no_issue_observed",
-      "observation": "???????????????????",
+      "observation": "The hero retains a small silver-blue silhouette; the opponent retains a taller purple silhouette. This is limited identity evidence, not design approval.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -647,7 +647,7 @@
       "subject": "jianwang",
       "dimension": "face_structure",
       "status": "finding",
-      "observation": "?????????????????????????",
+      "observation": "Cheek, nose-side and jaw volumes are weak; the high collar hides the neck connection.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -673,13 +673,13 @@
       "issue_ids": [
         "jianwang_face_structure"
       ],
-      "next_action": "???????????????"
+      "next_action": "Develop and inspect a head-neck-shoulder shape and turn sample."
     },
     {
       "subject": "jianwang",
       "dimension": "gaze",
       "status": "finding",
-      "observation": "????????????????????????",
+      "observation": "The gaze remains mostly fixed on the opponent; decisions about the cargo are insufficiently expressed by eyes and head.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -724,13 +724,13 @@
       "issue_ids": [
         "jianwang_gaze"
       ],
-      "next_action": "??????????????????????"
+      "next_action": "Author clear attention targets and eye-head-shoulder timing, then inspect close shots."
     },
     {
       "subject": "jianwang",
       "dimension": "expression",
       "status": "finding",
-      "observation": "??????????????????????",
+      "observation": "Binding, pulling and release have weak brow, cheek and jaw changes.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -790,13 +790,13 @@
       "issue_ids": [
         "jianwang_expression"
       ],
-      "next_action": "????/????????????????"
+      "next_action": "Develop asymmetric pain, decision and surprise facial-neck poses."
     },
     {
       "subject": "jianwang",
       "dimension": "hair",
       "status": "finding",
-      "observation": "???????????????????????????",
+      "observation": "Thick, similarly shaped locks read as sculpted hard pieces rather than layered hair.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -822,13 +822,13 @@
       "issue_ids": [
         "jianwang_hair"
       ],
-      "next_action": "???????????????????"
+      "next_action": "Redesign the primary silhouette, lock hierarchy and ear/nape clearance before adding motion."
     },
     {
       "subject": "jianwang",
       "dimension": "body",
       "status": "finding",
-      "observation": "????????????????????????",
+      "observation": "The torso tilts mostly as one shell; compression and expansion under armor are weak.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -872,13 +872,13 @@
       "issue_ids": [
         "jianwang_body"
       ],
-      "next_action": "????????????????????????"
+      "next_action": "Redesign chest-pelvis twisting and compression poses with adequate deformation."
     },
     {
       "subject": "jianwang",
       "dimension": "hands_props",
       "status": "needs_evidence",
-      "observation": "???????????????????????????",
+      "observation": "Cable and shield are visible, but finger contact is too small to verify gripping and load.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -916,13 +916,13 @@
         }
       ],
       "issue_ids": [],
-      "next_action": "?????????????????/??????"
+      "next_action": "Capture the palm and wrist through gripping and release at readable scale."
     },
     {
       "subject": "jianwang",
       "dimension": "support",
       "status": "finding",
-      "observation": "???????????????????????????",
+      "observation": "Leg and root changes are present, but the hips, chest and shoulders do not convincingly transmit the load.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -966,13 +966,13 @@
       "issue_ids": [
         "jianwang_support"
       ],
-      "next_action": "?????????????????????????????"
+      "next_action": "Redesign the supporting-leg, pelvis and chest load chain; do not infer naturalness from foot origins."
     },
     {
       "subject": "jianwang",
       "dimension": "locomotion",
       "status": "needs_evidence",
-      "observation": "????/??????????????????????",
+      "observation": "Only a half-step and recovery step are present; there is no complete walking cycle.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/cut_01.jpg",
@@ -995,13 +995,13 @@
         }
       ],
       "issue_ids": [],
-      "next_action": "????????????????????????"
+      "next_action": "Create a start, two full steps, stop and turn sample from a consistent camera."
     },
     {
       "subject": "jianwang",
       "dimension": "action",
       "status": "finding",
-      "observation": "????????????????????????????",
+      "observation": "Counter-pulling relies on overall lean and wrist motion; shoulder, chest, neck and face response is weak.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1045,13 +1045,13 @@
       "issue_ids": [
         "jianwang_action"
       ],
-      "next_action": "??????????????????????"
+      "next_action": "Redesign anticipation, force transfer, contact and release key poses."
     },
     {
       "subject": "jianwang",
       "dimension": "temporal",
       "status": "no_issue_observed",
-      "observation": "??0.2?0.3??????????????????????????????????????",
+      "observation": "The inspected 0.2-0.3 second samples connect the pull and release without an obvious large jump; they do not prove normal-speed naturalness.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1099,7 +1099,7 @@
       "subject": "jianwang",
       "dimension": "shot_integration",
       "status": "finding",
-      "observation": "??????????????/?????????????",
+      "observation": "Wheel spokes and horizontal cables overlap the heads and action silhouettes, competing for attention.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1144,22 +1144,22 @@
       "issue_ids": [
         "jianwang_shot_integration"
       ],
-      "next_action": "??????????????????????"
+      "next_action": "Separate the character projection from the wind screen and cargo cables."
     },
     {
       "subject": "jianwang",
       "dimension": "av_coordination",
       "status": "needs_evidence",
-      "observation": "????????????cue???????????????????????",
+      "observation": "Audio sources and cues were checked, but there was no listening evidence.",
       "evidence": [],
       "issue_ids": [],
-      "next_action": "?????????????????????????????"
+      "next_action": "Listen and view the final mix before judging effort voices, Foley and ambience."
     },
     {
       "subject": "jianwang",
       "dimension": "open_scan",
       "status": "needs_evidence",
-      "observation": "?????????????????????????????????????????????",
+      "observation": "The combined result still resembles procedural figures on a constructed platform. Rear head, nape and all sole surfaces were not covered.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1202,7 +1202,7 @@
         }
       ],
       "issue_ids": [],
-      "next_action": "?????????????????????"
+      "next_action": "Inspect rear/side-rear structures and shoe contacts, then return to final framing."
     }
   ],
   "issues": [
@@ -1212,11 +1212,11 @@
       "dimension": "face_structure",
       "origin": "user_reported",
       "status": "open",
-      "fact": "?????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Cheek, nose-side and jaw volumes are weak; the high collar hides the neck connection.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "???????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Develop and inspect a head-neck-shoulder shape and turn sample.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1246,11 +1246,11 @@
       "dimension": "gaze",
       "origin": "user_reported",
       "status": "open",
-      "fact": "????????????????????????????",
-      "impact": "???????????????????",
+      "fact": "The gaze remains mostly fixed on the opponent; decisions about the cargo are insufficiently expressed by eyes and head.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "??????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Author clear attention targets and eye-head-shoulder timing, then inspect close shots.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1299,11 +1299,11 @@
       "dimension": "expression",
       "origin": "user_reported",
       "status": "open",
-      "fact": "?????????????????????",
-      "impact": "???????????????????",
+      "fact": "Binding, pulling and release have weak brow, cheek and jaw changes.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "????/????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Develop asymmetric pain, decision and surprise facial-neck poses.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1367,11 +1367,11 @@
       "dimension": "hair",
       "origin": "user_reported",
       "status": "open",
-      "fact": "???????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Thick, similarly shaped locks read as sculpted hard pieces rather than layered hair.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "???????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign the primary silhouette, lock hierarchy and ear/nape clearance before adding motion.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1401,11 +1401,11 @@
       "dimension": "body",
       "origin": "user_reported",
       "status": "open",
-      "fact": "????????????????????????",
-      "impact": "???????????????????",
+      "fact": "The torso tilts mostly as one shell; compression and expansion under armor are weak.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "????????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign chest-pelvis twisting and compression poses with adequate deformation.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1453,11 +1453,11 @@
       "dimension": "support",
       "origin": "user_reported",
       "status": "open",
-      "fact": "????????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Leg and root changes are present, but the hips, chest and shoulders do not convincingly transmit the load.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "?????????????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign the supporting-leg, pelvis and chest load chain; do not infer naturalness from foot origins.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1505,11 +1505,11 @@
       "dimension": "action",
       "origin": "user_reported",
       "status": "open",
-      "fact": "????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Counter-pulling relies on overall lean and wrist motion; shoulder, chest, neck and face response is weak.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "??????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign anticipation, force transfer, contact and release key poses.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1557,11 +1557,11 @@
       "dimension": "shot_integration",
       "origin": "self_found",
       "status": "open",
-      "fact": "??????????????/?????????????",
-      "impact": "???????????????????",
+      "fact": "Wheel spokes and horizontal cables overlap the heads and action silhouettes, competing for attention.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "medium",
-      "hypothesis": "??????????????????????",
-      "next_action": "??????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Separate the character projection from the wind screen and cargo cables.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1610,11 +1610,11 @@
       "dimension": "face_structure",
       "origin": "user_reported",
       "status": "open",
-      "fact": "?????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Cheek, nose-side and jaw volumes are weak; the high collar hides the neck connection.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "???????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Develop and inspect a head-neck-shoulder shape and turn sample.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1644,11 +1644,11 @@
       "dimension": "gaze",
       "origin": "user_reported",
       "status": "open",
-      "fact": "????????????????????????",
-      "impact": "???????????????????",
+      "fact": "The gaze remains mostly fixed on the opponent; decisions about the cargo are insufficiently expressed by eyes and head.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "??????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Author clear attention targets and eye-head-shoulder timing, then inspect close shots.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1697,11 +1697,11 @@
       "dimension": "expression",
       "origin": "user_reported",
       "status": "open",
-      "fact": "??????????????????????",
-      "impact": "???????????????????",
+      "fact": "Binding, pulling and release have weak brow, cheek and jaw changes.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "????/????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Develop asymmetric pain, decision and surprise facial-neck poses.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1765,11 +1765,11 @@
       "dimension": "hair",
       "origin": "user_reported",
       "status": "open",
-      "fact": "???????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Thick, similarly shaped locks read as sculpted hard pieces rather than layered hair.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "???????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign the primary silhouette, lock hierarchy and ear/nape clearance before adding motion.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -1799,11 +1799,11 @@
       "dimension": "body",
       "origin": "user_reported",
       "status": "open",
-      "fact": "????????????????????????",
-      "impact": "???????????????????",
+      "fact": "The torso tilts mostly as one shell; compression and expansion under armor are weak.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "????????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign chest-pelvis twisting and compression poses with adequate deformation.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1851,11 +1851,11 @@
       "dimension": "support",
       "origin": "user_reported",
       "status": "open",
-      "fact": "???????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Leg and root changes are present, but the hips, chest and shoulders do not convincingly transmit the load.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "?????????????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign the supporting-leg, pelvis and chest load chain; do not infer naturalness from foot origins.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1903,11 +1903,11 @@
       "dimension": "action",
       "origin": "user_reported",
       "status": "open",
-      "fact": "????????????????????????????",
-      "impact": "???????????????????",
+      "fact": "Counter-pulling relies on overall lean and wrist motion; shoulder, chest, neck and face response is weak.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "high",
-      "hypothesis": "????/????????????????????????????",
-      "next_action": "??????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Redesign anticipation, force transfer, contact and release key poses.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/contest_01.jpg",
@@ -1955,11 +1955,11 @@
       "dimension": "shot_integration",
       "origin": "self_found",
       "status": "open",
-      "fact": "??????????????/?????????????",
-      "impact": "???????????????????",
+      "fact": "Wheel spokes and horizontal cables overlap the heads and action silhouettes, competing for attention.",
+      "impact": "Weakens bodily credibility or narrative readability.",
       "priority": "medium",
-      "hypothesis": "??????????????????????",
-      "next_action": "??????????????????????",
+      "hypothesis": "Current shape representation or pose design is insufficient; validate the specific cause with a focused sample.",
+      "next_action": "Separate the character projection from the wind screen and cargo cables.",
       "evidence": [
         {
           "path": "../windsieve_r1/decoded/overview_01.jpg",
@@ -2005,58 +2005,18 @@
   ],
   "iterations": [
     {
-      "change": "?????????????Suno????????????????????",
-      "result": "????????????????????????????????",
-      "evidence": [
-        {
-          "path": "../windsieve_r1/decoded/overview_01.jpg",
-          "sha256": "20987cb28b2d62741db1107527b6ac8ba495a28a42b0bb9e7b37847317f5c762",
-          "window": "trial",
-          "at": [
-            0.7,
-            2.7,
-            4.7,
-            6.7,
-            8.7,
-            10.7,
-            12.7,
-            14.7,
-            16.7,
-            18.7,
-            20.7,
-            22.7
-          ],
-          "method": "ordered_frames"
-        },
-        {
-          "path": "../windsieve_r1/decoded/cut_01.jpg",
-          "sha256": "21a5b50498c07c71e9b47406ad6b32c782f856d90fe3ff639408358c81c801af",
-          "window": "trial",
-          "at": [
-            18.5,
-            18.7,
-            18.9,
-            19.1,
-            19.3,
-            19.5,
-            19.7,
-            19.9,
-            20.1,
-            20.3,
-            20.5
-          ],
-          "method": "ordered_frames"
-        }
-      ]
+      "change": "Independent wind-gorge stage, cargo objective and new Suno cue. Preview rock occlusion and sky streaks were repaired.",
+      "result": "Final frames show cargo protection before the cut. Face, hair and load performance remain weak."
     }
   ],
   "misses": [
     {
       "origin": "user_reported",
-      "prior_judgment": "??R3????/?????????????????",
-      "later_finding": "??????????????????????????",
-      "lesson": "?????????????????????????????"
+      "prior_judgment": "Recovery R3 focused on craft restoration but incorrectly reused the previous palace and music.",
+      "later_finding": "User required episode-specific story, setting and music unless continuity justifies reuse.",
+      "lesson": "Separate reusable craft from prior-episode content; verify actual audio hashes."
     }
   ],
-  "reviewer_conclusion": "??????????????????????????????????????S1E2????"
+  "reviewer_conclusion": "Independent episode content was implemented; character art remains unapproved. Pending coverage is not passed. No claim of exceeding S1E2 or the external reference.",
+  "encoding_repair_note": "On the hair-study turn, question marks caused by the earlier Windows pipe encoding were detected. Observation text was restored in English from the existing windsieve REVIEW.md and reviewed evidence; no new pass or fix status was assigned."
 }

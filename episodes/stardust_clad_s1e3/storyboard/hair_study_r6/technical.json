@@ -1,0 +1,46 @@
+{
+  "source": "output\\stardust_clad_s1e3_hair_study_r6.mp4",
+  "sha256": "a03dfac50b0672353b478f4150ddae27bf9763b9afdc4652ad72cca837d737bd",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "nb_frames": "480",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "nb_frames": "751"
+      }
+    ],
+    "format": {
+      "duration": "16.000000"
+    }
+  },
+  "sequential_seek": {
+    "passed": true,
+    "checks": 22
+  },
+  "source_changed_since_render": [],
+  "review_method": [
+    "still",
+    "ordered_frames"
+  ],
+  "artistic_acceptance": false,
+  "audio": "16-second generated silence for the diagnostic comparison, no music/voice/SFX evaluation",
+  "remaining": [
+    "Cap-like mass remains",
+    "Hero stray tips are visually awkward",
+    "Weak rear-hair layering",
+    "Target design quality not reached",
+    "No body, face or fight improvement"
+  ]
+}

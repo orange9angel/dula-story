@@ -1,0 +1,709 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e3_hair_study_r6.mp4",
+    "sha256": "a03dfac50b0672353b478f4150ddae27bf9763b9afdc4652ad72cca837d737bd"
+  },
+  "scope": {
+    "subjects": [
+      "xiaozao",
+      "jianwang"
+    ],
+    "windows": [
+      {
+        "id": "study",
+        "start": 0,
+        "end": 16
+      }
+    ],
+    "accepted_properties": [
+      "Hair-only comparison. Face, armor, pose, lighting and camera shared between columns."
+    ],
+    "limitations": "Experimental hair, not a full-character or episode acceptance. Stills and ordered frames only; silent diagnostic."
+  },
+  "checks": [
+    {
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "The candidate loses volume and expressive silhouette; similar palettes do not prove identity preservation.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao_identity"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "gaze",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "Tubular highlights are reduced, but the overall mass remains cap-like and the nape layering is weak.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao_hair"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "body",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hands_props",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "support",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "Sequential and seek images agree and sampled turns are connected. Normal-speed naturalness, stronger acceleration and meaningful settling were not established.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Review a redesigned candidate through purposeful turns, acceleration and settling, including normal-speed evidence when available."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "Thin stray tips and strip-like overlaps distract from the intended larger hairstyle shapes.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao_shot_integration"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "status": "finding",
+      "observation": "The combined head still reads as a simple procedural form. Making individual locks thinner has not produced a successful hairstyle.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao_open_scan"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "The candidate loses volume and expressive silhouette; similar palettes do not prove identity preservation.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang_identity"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "face_structure",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "gaze",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "expression",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "Tubular highlights are reduced, but the overall mass remains cap-like and the nape layering is weak.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang_hair"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "body",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "hands_props",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "support",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "Sequential and seek images agree and sampled turns are connected. Normal-speed naturalness, stronger acceleration and meaningful settling were not established.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Review a redesigned candidate through purposeful turns, acceleration and settling, including normal-speed evidence when available."
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "Thin stray tips and strip-like overlaps distract from the intended larger hairstyle shapes.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang_shot_integration"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "Outside this isolated hair construction study. No improvement or acceptance is claimed for this dimension.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "open_scan",
+      "status": "finding",
+      "observation": "The combined head still reads as a simple procedural form. Making individual locks thinner has not produced a successful hairstyle.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang_open_scan"
+      ],
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement."
+    }
+  ],
+  "issues": [
+    {
+      "id": "xiaozao_identity",
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The candidate loses volume and expressive silhouette; similar palettes do not prove identity preservation.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao_hair",
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "Tubular highlights are reduced, but the overall mass remains cap-like and the nape layering is weak.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao_shot_integration",
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "Thin stray tips and strip-like overlaps distract from the intended larger hairstyle shapes.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao_open_scan",
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The combined head still reads as a simple procedural form. Making individual locks thinner has not produced a successful hairstyle.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/hero_01.jpg",
+          "sha256": "fd84081ebc1f1feb87251828003f75fd98edba585bdc6c765e439903290b6e20",
+          "window": "study",
+          "at": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang_identity",
+      "subject": "jianwang",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The candidate loses volume and expressive silhouette; similar palettes do not prove identity preservation.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang_hair",
+      "subject": "jianwang",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "Tubular highlights are reduced, but the overall mass remains cap-like and the nape layering is weak.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang_shot_integration",
+      "subject": "jianwang",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "Thin stray tips and strip-like overlaps distract from the intended larger hairstyle shapes.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang_open_scan",
+      "subject": "jianwang",
+      "dimension": "open_scan",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The combined head still reads as a simple procedural form. Making individual locks thinner has not produced a successful hairstyle.",
+      "impact": "No demonstrated overall hairstyle improvement.",
+      "priority": "high",
+      "hypothesis": "The silhouette and mass design remain inadequate; representation changes alone cannot supply the missing design.",
+      "next_action": "Redesign original front/side hair silhouettes, mass hierarchy and negative spaces before further mesh refinement.",
+      "evidence": [
+        {
+          "path": "../hair_study_r6/decoded/enemy_01.jpg",
+          "sha256": "d59e5cd215b948b5b979a796d71e693380ecf5cc36c53c57e4fb4b43d1fb2b76",
+          "window": "study",
+          "at": [
+            8.5,
+            9.5,
+            10.5,
+            11.5,
+            12.5,
+            13.5,
+            14.5,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [],
+  "misses": [],
+  "reviewer_conclusion": "Research and an explicit comparison were completed. Hair art is unapproved and remains opt-in. The episode, body, face and fighting were not upgraded."
+}
