@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e3_hair_study_r6.mp4",
+    "sha256": "a03dfac50b0672353b478f4150ddae27bf9763b9afdc4652ad72cca837d737bd"
+  },
+  "scope": {
+    "subjects": [
+      "xiaozao"
+    ],
+    "windows": [
+      {
+        "id": "compare",
+        "start": 0.0,
+        "end": 7.1
+      }
+    ],
+    "accepted_properties": [
+      "Hair-only diagnosis; baseline and candidate share actor, pose and camera. No new artistic approval."
+    ],
+    "limitations": "External references differ in version, medium, view and lighting; rear is a separate dated design. Static comparisons only. Source details in ../hair_reference_comparison/manifest.json."
+  },
+  "checks": [
+    {
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "Candidate loses the old mass without establishing a coherent new silhouette; isolated spikes do not replace main-lock direction.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/angles.jpg",
+          "sha256": "9724dc1dad923702a53d5117dbb863db43410b97a7854ff5d384ef6e107c82a8",
+          "window": "compare",
+          "at": [
+            0.5,
+            2.566666667,
+            7,
+            6.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "H01"
+      ],
+      "next_action": "Design original front, side and rear silhouettes before mesh revision."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "gaze",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "The old hair reads as thick parallel locks. Candidate middle sections cling to a rounded shell, with abrupt thin tips and weak ear/nape grouping.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/angles.jpg",
+          "sha256": "9724dc1dad923702a53d5117dbb863db43410b97a7854ff5d384ef6e107c82a8",
+          "window": "compare",
+          "at": [
+            0.5,
+            2.566666667,
+            7,
+            6.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "H02"
+      ],
+      "next_action": "Author root-to-middle-to-tip curves and widths; keep root attachment distinct from mid-lock volume."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "body",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hands_props",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "support",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "No matched reference sequence for turn, stop, wind direction or recovery was examined in this comparison.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "Review matched continuous reference and candidate motion before judging hair-control naturalness."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "The candidate has a visible near-horizontal light band across multiple side/rear locks and a large shell-like shadow; the old hair has repeated tubular bright lines.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/lighting.jpg",
+          "sha256": "061aaf4ed34524aea022b27836cd418eae5ae6a16c52068ead1af82ddd24a023",
+          "window": "compare",
+          "at": [
+            0.5,
+            5,
+            6.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "H03"
+      ],
+      "next_action": "Separate overall mass shading from main-lock light shapes; then compare under identical diagnostic views and changed light directions."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "Outside this user-requested hair structure and lighting comparison; no claim of improvement or acceptance.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Returned to the full head after the lock and light details. The same silhouette and shell problems remain; no additional distinct hair defect is asserted in this limited pass.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/angles.jpg",
+          "sha256": "9724dc1dad923702a53d5117dbb863db43410b97a7854ff5d384ef6e107c82a8",
+          "window": "compare",
+          "at": [
+            0.5,
+            2.566666667,
+            7,
+            6.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_reference_comparison/lighting.jpg",
+          "sha256": "061aaf4ed34524aea022b27836cd418eae5ae6a16c52068ead1af82ddd24a023",
+          "window": "compare",
+          "at": [
+            0.5,
+            5,
+            6.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "H01",
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "Candidate loses the old mass without establishing a coherent new silhouette; isolated spikes do not replace main-lock direction.",
+      "impact": "Weakens the intended drawn-hair appearance and the complete head silhouette.",
+      "priority": "high",
+      "hypothesis": "The previous correction removed volume instead of redesigning main groups.",
+      "next_action": "Design original front, side and rear silhouettes before mesh revision.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/angles.jpg",
+          "sha256": "9724dc1dad923702a53d5117dbb863db43410b97a7854ff5d384ef6e107c82a8",
+          "window": "compare",
+          "at": [
+            0.5,
+            2.566666667,
+            7,
+            6.5
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "H02",
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "The old hair reads as thick parallel locks. Candidate middle sections cling to a rounded shell, with abrupt thin tips and weak ear/nape grouping.",
+      "impact": "Weakens the intended drawn-hair appearance and the complete head silhouette.",
+      "priority": "high",
+      "hypothesis": "The current sheet wrap projects roots and much of the middle onto one ellipsoid.",
+      "next_action": "Author root-to-middle-to-tip curves and widths; keep root attachment distinct from mid-lock volume.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/angles.jpg",
+          "sha256": "9724dc1dad923702a53d5117dbb863db43410b97a7854ff5d384ef6e107c82a8",
+          "window": "compare",
+          "at": [
+            0.5,
+            2.566666667,
+            7,
+            6.5
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "H03",
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "The candidate has a visible near-horizontal light band across multiple side/rear locks and a large shell-like shadow; the old hair has repeated tubular bright lines.",
+      "impact": "Weakens the intended drawn-hair appearance and the complete head silhouette.",
+      "priority": "high",
+      "hypothesis": "Verified shader uses radial head-form shading and a fixed local-y light band; no scene-light variation render was performed.",
+      "next_action": "Separate overall mass shading from main-lock light shapes; then compare under identical diagnostic views and changed light directions.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/lighting.jpg",
+          "sha256": "061aaf4ed34524aea022b27836cd418eae5ae6a16c52068ead1af82ddd24a023",
+          "window": "compare",
+          "at": [
+            0.5,
+            5,
+            6.5
+          ],
+          "method": "still"
+        }
+      ]
+    }
+  ],
+  "iterations": [],
+  "misses": [
+    {
+      "id": "M-H03",
+      "origin": "user_reported",
+      "prior_record": "hair_study_r6.json",
+      "prior_judgment": "R6 rejected for cap-like shape, but shading was only described as flatter with fewer tube highlights.",
+      "later_finding": "The side/rear horizontal band and radial shell shading were not explicitly diagnosed until the user asked about lighting.",
+      "evidence": [
+        {
+          "path": "../hair_reference_comparison/lighting.jpg",
+          "sha256": "061aaf4ed34524aea022b27836cd418eae5ae6a16c52068ead1af82ddd24a023",
+          "window": "compare",
+          "at": [
+            0.5,
+            5,
+            6.5
+          ],
+          "method": "still"
+        }
+      ],
+      "lesson": "Track outer silhouette, lock mid-section and light shape independently; ensure they describe compatible curvature. Existing cel-look guidance was not fully executed.",
+      "counterexample": "Designed highlight bands and smooth short hairstyles are not inherently defects.",
+      "validation_status": "Diagnosis only; no new repair or generalization result."
+    }
+  ],
+  "reviewer_conclusion": "Actual multi-angle reference comparison completed. Candidate remains below the intended hair design quality; no production asset changed. Motion comparison remains evidence-limited. See ../hair_reference_comparison/REVIEW.md."
+}

@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-20",
+  "source_video": "output/stardust_clad_s1e3_hair_study_r6.mp4",
+  "source_sha256": "a03dfac50b0672353b478f4150ddae27bf9763b9afdc4652ad72cca837d737bd",
+  "method": "still and previously inspected ordered frames; no realtime motion judgment",
+  "references": [
+    {
+      "id": "A",
+      "file": "structure_03.jpg",
+      "page": "https://characterdesignreferences.com/art-of-animation-9/art-of-saint-seiya-knights-of-the-zodiac",
+      "url": "https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1685493854600-1BH8PNRBBVF36KOEUKG0/Art_of_Saint_Seiya_Knights_of_the_Zodiac_3.jpg",
+      "scope": "Expression drawing with visible date 02 8/2. Reposted production drawing, not independently authenticated. Structure only.",
+      "sha256": "f2b3170d89f9fecc94bebc14e0ce870af9e33bfa3c7405b9068d1a74b2cb4c8f",
+      "size": [
+        2048,
+        1448
+      ]
+    },
+    {
+      "id": "B",
+      "file": "structure_04.jpg",
+      "page": "https://characterdesignreferences.com/art-of-animation-9/art-of-saint-seiya-knights-of-the-zodiac",
+      "url": "https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1685493876653-ZJCZV7J77LWNUY656UQP/Art_of_Saint_Seiya_Knights_of_the_Zodiac_4.jpg",
+      "scope": "Training-costume drawing dated 04 3/10. Rear silhouette supplement from another drawing, not proof of an exact 2002 rear design.",
+      "sha256": "79dc6bafe707d72cf74708f6496c9ff71cf4fbf72c655970a9345d155a6d0f51",
+      "size": [
+        2048,
+        1448
+      ]
+    },
+    {
+      "id": "C",
+      "file": "color_03.jpg",
+      "page": "https://animationdigitalnetwork.com/video/1195-saint-seiya-chapitre-hades/25530-episode-26",
+      "url": "https://image.animationdigitalnetwork.com/license/saintseiyahades/tv/web/eps26_1920x1080.jpg",
+      "scope": "Distributor episode-26 still, later chapter; only broad light/shadow and lock-group organization. Top of hair cropped by original shot.",
+      "sha256": "27422a8d3421e35a67170e68ec1b5d340a32cda1c23b72d75014563daaeb95ac",
+      "size": [
+        1920,
+        1080
+      ]
+    }
+  ],
+  "angle_rows": [
+    {
+      "angle": "近正面",
+      "focus": "额前分组",
+      "time": 0.5,
+      "reference": "A",
+      "crop": [
+        780,
+        35,
+        1260,
+        550
+      ]
+    },
+    {
+      "angle": "斜侧面",
+      "focus": "主束弧线",
+      "time": 2.566666667,
+      "reference": "A",
+      "crop": [
+        1280,
+        690,
+        2048,
+        1448
+      ]
+    },
+    {
+      "angle": "侧面",
+      "focus": "耳前／耳后",
+      "time": 7,
+      "reference": "A",
+      "crop": [
+        70,
+        650,
+        745,
+        1420
+      ]
+    },
+    {
+      "angle": "后斜面",
+      "focus": "后脑／颈后",
+      "time": 6.5,
+      "reference": "B",
+      "crop": [
+        1320,
+        135,
+        1635,
+        430
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "path": "frame_00.500.png",
+      "at": 0.5,
+      "sha256": "83beb8a46481f7ff667e8ad05286fcb527426600c24b1d546573314ef021c38f"
+    },
+    {
+      "path": "frame_02.567.png",
+      "at": 2.566666667,
+      "sha256": "3d0532e0c3181a898ae28fec09ec19a8c3068f0ff542d523e5c51f4f469a5a79"
+    },
+    {
+      "path": "frame_07.000.png",
+      "at": 7,
+      "sha256": "69f96a3c0826a174a4a26be77c8d74a17f5df7bb4780399832d39ab26d536677"
+    },
+    {
+      "path": "frame_06.500.png",
+      "at": 6.5,
+      "sha256": "82bc5004110ea34659a3048aa4b325c9d7e2c07a536aabd3e572ca5af425ff16"
+    },
+    {
+      "path": "frame_05.000.png",
+      "at": 5,
+      "sha256": "198a6e1ea94dcbeb67b8bfa38fee53d4fc6b26e0056ed4ce9496fe352952f691"
+    }
+  ],
+  "boards": [
+    {
+      "path": "angles.jpg",
+      "sha256": "9724dc1dad923702a53d5117dbb863db43410b97a7854ff5d384ef6e107c82a8"
+    },
+    {
+      "path": "lighting.jpg",
+      "sha256": "061aaf4ed34524aea022b27836cd418eae5ae6a16c52068ead1af82ddd24a023"
+    }
+  ],
+  "limitations": [
+    "Different character identities, camera, lighting, color and medium; no direct aesthetic score.",
+    "Rear reference is a separate dated costume drawing, not a verified same-version turnaround.",
+    "No complete same-version colored turnaround or matched dynamic reference was reviewed.",
+    "The new candidate remains rejected; no production asset changed in this comparison."
+  ]
+}
