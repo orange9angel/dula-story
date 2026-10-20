@@ -1,0 +1,30 @@
+{
+  "story_validation": {
+    "exitCode": 0,
+    "tail": [
+      "WARNING [dialogue-timing] Estimated speech is 2.70s but the entry provides 2.32s (line 3319, entry 579)",
+      "WARNING [dialogue-timing] Estimated speech is 3.45s but the entry provides 3.67s (line 3336, entry 582)",
+      "Validated 585 entries: 0 error(s), 601 warning(s)"
+    ],
+    "warningCounts": {
+      "WARNING [dialogue-gap]": 330,
+      "WARNING [dialogue-timing]": 271
+    }
+  },
+  "scene_validation": {
+    "exitCode": 0,
+    "tail": [
+      "WARNING [STORY-dialogue-gap] entry=582 Back-to-back spoken entries have no reaction or breath gap",
+      "WARNING [STORY-dialogue-gap] entry=583 Back-to-back spoken entries have no reaction or breath gap",
+      "Scene contract: 0 error(s), 354 warning(s)"
+    ]
+  },
+  "catalog": {
+    "exitCode": 0,
+    "tail": [
+      "  xiaoyue (1): RidingPose",
+      "  xingzai (2): TandemFlight, XingzaiFloat",
+      "  yuyuhakusho (4): SpiritGunCharge, SpiritGunFire, SpiritSwordDraw, SpiritSwordSwing"
+    ]
+  }
+}

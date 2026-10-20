@@ -1,0 +1,3601 @@
+{
+  "errors": [],
+  "elapsed": 36.568,
+  "sourceSha256": {
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\bootstrap.js": "dd64c79a654ad4752c4ecfdd5883db1831e52ffa52a14616dadae59908483fa8",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\cast-pilot.js": "c1f3b0f7434b5e8c042f97c9ba2bbfe76fb8a1c60890ccadea2a1c7fd4912bc8",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\cinematography.js": "56e11bf0c215bd9a1767ac6602451dbe0852344f004d875fb32b92b5d4d7be5a",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\effects.js": "64e86d57468bc466a160a9c4abcd6cc0c6cdaeba90d3666e3f674187606464c1",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\layout.js": "aec7cb66ecb3be604ac3574cf38472a9e5e713a219fb7186953a54aec41b1e43",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\performance.js": "0dca8c1074dc462464225f6a3c67f23254ff25c79acf252561ea0b6e04c3f59a",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\pose.js": "235decd6f5e0edad516082bd0ed9713520732795e5e48e3ef72862850f674e4c",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\props.js": "1a3294754067930525b05e2fd5b9e70c77815a50f1c77a91146ef54846eb4058",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\scenes.js": "61e2576493f698949d59ce9ab49266ef3f41e613518cddb1d7fd11dc90392e8e",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\stage.js": "494375e193d9dab13e4029151595dd4b54e2de7dc163da5200d97e27e9308ad2",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\viewer.js": "7eba0d18f6c880f6b71e3dc6789c38ee82d3f02dc5e83acc6ef41df61f368611",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\script.story": "13764f880f1c1684d42f374dc48d1397a597d76290c57ea2757d9975aa5d60f7",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\longform\\config\\timeline.json": "603aba55621cc84778cbbd083dcbf27d3710563dd408c6f2490fc7c3ac56a20d"
+  },
+  "sourceUnchanged": true,
+  "scope": "Sampled reach, head-ray visibility, speaker presence and first-action foot surfaces; not full mesh collision certification.",
+  "samples": 1184,
+  "clamps": [],
+  "blocked": [],
+  "feet": [
+    {
+      "t": 0.5,
+      "beat": "B01",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": -0.039999994039535525,
+      "gap": 0.030116078009625923,
+      "stance": true
+    },
+    {
+      "t": 0.5,
+      "beat": "B01",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 0.5,
+      "beat": "B01",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.010000000149011638,
+      "gap": -0.019320584177216563,
+      "stance": true
+    },
+    {
+      "t": 0.5,
+      "beat": "B01",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.010000000149011638,
+      "gap": -0.019320584177216563,
+      "stance": true
+    },
+    {
+      "t": 59.158,
+      "beat": "B02",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 59.158,
+      "beat": "B02",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 59.158,
+      "beat": "B02",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.03756790309676462,
+      "surface": 0.01000000014901161,
+      "gap": 0.027567902947753006,
+      "stance": false
+    },
+    {
+      "t": 59.158,
+      "beat": "B02",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 114.596,
+      "beat": "B03",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005242401819133756,
+      "stance": true
+    },
+    {
+      "t": 114.596,
+      "beat": "B03",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005242401819133756,
+      "stance": true
+    },
+    {
+      "t": 114.596,
+      "beat": "B03",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 114.596,
+      "beat": "B03",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 154.986,
+      "beat": "B04",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005242401819133756,
+      "stance": true
+    },
+    {
+      "t": 154.986,
+      "beat": "B04",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005242401819133756,
+      "stance": true
+    },
+    {
+      "t": 154.986,
+      "beat": "B04",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 154.986,
+      "beat": "B04",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 200.466,
+      "beat": "B05",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 200.466,
+      "beat": "B05",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 200.466,
+      "beat": "B05",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 200.466,
+      "beat": "B05",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 250.051,
+      "beat": "B06",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 292.876,
+      "beat": "B07",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": -2.384185793236071e-9,
+      "gap": -0.009883913645723809,
+      "stance": true
+    },
+    {
+      "t": 292.876,
+      "beat": "B07",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": -2.384185793236071e-9,
+      "gap": -0.009883913645723809,
+      "stance": true
+    },
+    {
+      "t": 292.876,
+      "beat": "B07",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 292.876,
+      "beat": "B07",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 333.236,
+      "beat": "B08",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 333.236,
+      "beat": "B08",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 333.236,
+      "beat": "B08",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 333.236,
+      "beat": "B08",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 372.056,
+      "beat": "B09",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 372.056,
+      "beat": "B09",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 372.056,
+      "beat": "B09",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 372.056,
+      "beat": "B09",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 372.056,
+      "beat": "B09",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 372.056,
+      "beat": "B09",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 419.332,
+      "beat": "B10",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 419.332,
+      "beat": "B10",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 419.332,
+      "beat": "B10",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 419.332,
+      "beat": "B10",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 419.332,
+      "beat": "B10",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.03813769776581623,
+      "surface": 0.01000000014901161,
+      "gap": 0.028137697616804618,
+      "stance": false
+    },
+    {
+      "t": 419.332,
+      "beat": "B10",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010620122561936528,
+      "surface": 0.01000000014901161,
+      "gap": -0.02062012271094814,
+      "stance": true
+    },
+    {
+      "t": 462.162,
+      "beat": "B11",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 462.162,
+      "beat": "B11",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 462.162,
+      "beat": "B11",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 462.162,
+      "beat": "B11",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 462.162,
+      "beat": "B11",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 462.162,
+      "beat": "B11",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 506.337,
+      "beat": "B12",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 558.982,
+      "beat": "B13",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.0038898618175281785,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.0038898677779926616,
+      "stance": false
+    },
+    {
+      "t": 558.982,
+      "beat": "B13",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.008327144975751953,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.008327150936216436,
+      "stance": true
+    },
+    {
+      "t": 558.982,
+      "beat": "B13",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.009320589988669406,
+      "stance": true
+    },
+    {
+      "t": 558.982,
+      "beat": "B13",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.009320589988669406,
+      "stance": true
+    },
+    {
+      "t": 558.982,
+      "beat": "B13",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.010805737993163604,
+      "stance": true
+    },
+    {
+      "t": 558.982,
+      "beat": "B13",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.010805737993163604,
+      "stance": true
+    },
+    {
+      "t": 650.372,
+      "beat": "B14",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 650.372,
+      "beat": "B14",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 650.372,
+      "beat": "B14",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 650.372,
+      "beat": "B14",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 650.372,
+      "beat": "B14",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 650.372,
+      "beat": "B14",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 696.817,
+      "beat": "B15",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 696.817,
+      "beat": "B15",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 696.817,
+      "beat": "B15",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 696.817,
+      "beat": "B15",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 744.426,
+      "beat": "B16",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 744.426,
+      "beat": "B16",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 744.426,
+      "beat": "B16",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.009320589988669406,
+      "stance": true
+    },
+    {
+      "t": 744.426,
+      "beat": "B16",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.009320589988669406,
+      "stance": true
+    },
+    {
+      "t": 744.426,
+      "beat": "B16",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.010805737993163604,
+      "stance": true
+    },
+    {
+      "t": 744.426,
+      "beat": "B16",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 5.960464483090178e-9,
+      "gap": -0.010805737993163604,
+      "stance": true
+    },
+    {
+      "t": 807.831,
+      "beat": "B17",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": -2.384185793236071e-9,
+      "gap": -0.009883913645723809,
+      "stance": true
+    },
+    {
+      "t": 807.831,
+      "beat": "B17",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": -2.384185793236071e-9,
+      "gap": -0.009883913645723809,
+      "stance": true
+    },
+    {
+      "t": 807.831,
+      "beat": "B17",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 807.831,
+      "beat": "B17",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 807.831,
+      "beat": "B17",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 807.831,
+      "beat": "B17",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 848.651,
+      "beat": "B49",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 848.651,
+      "beat": "B49",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 848.651,
+      "beat": "B49",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": -0.039999994039535525,
+      "gap": 0.0306794100113306,
+      "stance": true
+    },
+    {
+      "t": 848.651,
+      "beat": "B49",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.010000000149011638,
+      "gap": -0.019320584177216563,
+      "stance": true
+    },
+    {
+      "t": 1014.191,
+      "beat": "B18",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1014.191,
+      "beat": "B18",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1014.191,
+      "beat": "B18",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1014.191,
+      "beat": "B18",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1014.191,
+      "beat": "B18",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1014.191,
+      "beat": "B18",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1056.976,
+      "beat": "B19",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1100.256,
+      "beat": "B20",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1100.256,
+      "beat": "B20",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1100.256,
+      "beat": "B20",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 1100.256,
+      "beat": "B20",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 1100.256,
+      "beat": "B20",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1100.256,
+      "beat": "B20",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1139.181,
+      "beat": "B21",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1187.581,
+      "beat": "B22",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1234.133,
+      "beat": "B23",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.04900552114790007,
+      "surface": 0.01000000014901161,
+      "gap": 0.03900552099888846,
+      "stance": false
+    },
+    {
+      "t": 1234.133,
+      "beat": "B23",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1234.133,
+      "beat": "B23",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.005931369814807661,
+      "surface": 0.01000000014901161,
+      "gap": -0.01593136996381927,
+      "stance": true
+    },
+    {
+      "t": 1234.133,
+      "beat": "B23",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.00460893452961611,
+      "surface": 0.01000000014901161,
+      "gap": -0.01460893467862772,
+      "stance": false
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.6418015399682307,
+      "surface": 0.6400000035762787,
+      "gap": 0.0018015363919520189,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.6418015399682307,
+      "surface": 0.6400000035762787,
+      "gap": 0.0018015363919520189,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1283.218,
+      "beat": "B24",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1329.588,
+      "beat": "B25",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1329.588,
+      "beat": "B25",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1329.588,
+      "beat": "B25",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1329.588,
+      "beat": "B25",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1329.588,
+      "beat": "B25",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1329.588,
+      "beat": "B25",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1376.053,
+      "beat": "B26",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1440.854,
+      "beat": "B50",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.010000000149011583,
+      "gap": -0.020242400180005997,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1580.576,
+      "beat": "B27",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1631.281,
+      "beat": "B28",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1631.281,
+      "beat": "B28",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1631.281,
+      "beat": "B28",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1631.281,
+      "beat": "B28",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1631.281,
+      "beat": "B28",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1631.281,
+      "beat": "B28",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1683.076,
+      "beat": "B29",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1725.886,
+      "beat": "B30",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1725.886,
+      "beat": "B30",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1725.886,
+      "beat": "B30",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1725.886,
+      "beat": "B30",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1770.536,
+      "beat": "B31",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1770.536,
+      "beat": "B31",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1770.536,
+      "beat": "B31",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1770.536,
+      "beat": "B31",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1770.536,
+      "beat": "B31",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.024350089285276,
+      "surface": -0.039999994039535525,
+      "gap": 0.06435008332481153,
+      "stance": false
+    },
+    {
+      "t": 1770.536,
+      "beat": "B31",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 1826.471,
+      "beat": "B32",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1826.471,
+      "beat": "B32",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 1826.471,
+      "beat": "B32",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1826.471,
+      "beat": "B32",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 1826.471,
+      "beat": "B32",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1826.471,
+      "beat": "B32",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1871.476,
+      "beat": "B33",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1871.476,
+      "beat": "B33",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1871.476,
+      "beat": "B33",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1871.476,
+      "beat": "B33",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1914.666,
+      "beat": "B34",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1914.666,
+      "beat": "B34",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 1944.926,
+      "beat": "B35",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1944.926,
+      "beat": "B35",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 1944.926,
+      "beat": "B35",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 1944.926,
+      "beat": "B35",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": -0.039999994039535525,
+      "gap": 0.02975759400854111,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2027.821,
+      "beat": "B37",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": -0.039999994039535525,
+      "gap": 0.02975759400854111,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2068.891,
+      "beat": "B38",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": -0.039999994039535525,
+      "gap": 0.02975759400854111,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2113.708,
+      "beat": "B39",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": -0.039999994039535525,
+      "gap": 0.02975759400854111,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.5906794159717951,
+      "surface": 0.5999999982118607,
+      "gap": -0.0093205822400656,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2154.743,
+      "beat": "B40",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.6406794159717951,
+      "surface": 0.6400000035762787,
+      "gap": 0.0006794123955163878,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.6406794159717951,
+      "surface": 0.6400000035762787,
+      "gap": 0.0006794123955163878,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2221.324,
+      "beat": "B41",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2287.174,
+      "beat": "B42",
+      "name": "weihe",
+      "side": "left",
+      "sole": 0.6401160839700905,
+      "surface": 0.6400000035762787,
+      "gap": 0.00011608039381172386,
+      "stance": true
+    },
+    {
+      "t": 2287.174,
+      "beat": "B42",
+      "name": "weihe",
+      "side": "right",
+      "sole": 0.6401160839700905,
+      "surface": 0.6400000035762787,
+      "gap": 0.00011608039381172386,
+      "stance": true
+    },
+    {
+      "t": 2287.174,
+      "beat": "B42",
+      "name": "yabo",
+      "side": "left",
+      "sole": 0.6406794159717951,
+      "surface": 0.6400000035762787,
+      "gap": 0.0006794123955163878,
+      "stance": true
+    },
+    {
+      "t": 2287.174,
+      "beat": "B42",
+      "name": "yabo",
+      "side": "right",
+      "sole": 0.6406794159717951,
+      "surface": 0.6400000035762787,
+      "gap": 0.0006794123955163878,
+      "stance": true
+    },
+    {
+      "t": 2287.174,
+      "beat": "B42",
+      "name": "mideng",
+      "side": "left",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2287.174,
+      "beat": "B42",
+      "name": "mideng",
+      "side": "right",
+      "sole": 0.48919426796730087,
+      "surface": 0.49999999821186064,
+      "gap": -0.010805730244559775,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2361.533,
+      "beat": "B43",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "jianwang",
+      "side": "left",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "jianwang",
+      "side": "right",
+      "sole": 0.0018015399682307209,
+      "surface": 0.01000000014901161,
+      "gap": -0.00819846018078089,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2397.673,
+      "beat": "B44",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005242401819133756,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005242401819133756,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004883917818048943,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004320585816344263,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": -0.0049999982118606595,
+      "gap": -0.004320585816344263,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005805733820838462,
+      "stance": true
+    },
+    {
+      "t": 2437.048,
+      "beat": "B45",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": -0.0049999982118606595,
+      "gap": -0.005805733820838462,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.010000000149011583,
+      "gap": -0.019883916178921185,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.01000000014901161,
+      "gap": -0.019320584177216535,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2495.008,
+      "beat": "B46",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.010000000149011638,
+      "gap": -0.019320584177216563,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.010000000149011638,
+      "gap": -0.019320584177216563,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2534.718,
+      "beat": "B47",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2577.458,
+      "beat": "B48",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2577.458,
+      "beat": "B48",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2577.458,
+      "beat": "B48",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2577.458,
+      "beat": "B48",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "xiaozao",
+      "side": "left",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "xiaozao",
+      "side": "right",
+      "sole": -0.010242400030994416,
+      "surface": 0.01000000014901161,
+      "gap": -0.020242400180006025,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "weihe",
+      "side": "left",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "weihe",
+      "side": "right",
+      "sole": -0.009883916029909602,
+      "surface": 0.01000000014901161,
+      "gap": -0.019883916178921213,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "yabo",
+      "side": "left",
+      "sole": -0.009320584028204923,
+      "surface": 0.010000000149011638,
+      "gap": -0.019320584177216563,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "yabo",
+      "side": "right",
+      "sole": -0.009320584028204923,
+      "surface": 0.010000000149011638,
+      "gap": -0.019320584177216563,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "mideng",
+      "side": "left",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    },
+    {
+      "t": 2614.757,
+      "beat": "END",
+      "name": "mideng",
+      "side": "right",
+      "sole": -0.010805732032699121,
+      "surface": 0.01000000014901161,
+      "gap": -0.02080573218171073,
+      "stance": true
+    }
+  ],
+  "grips": [
+    {
+      "t": 2332.3489999999997,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2332.4489999999996,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2332.5489999999995,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2332.6489999999994,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2332.7489999999993,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2332.8489999999993,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2332.948999999999,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.048999999999,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.148999999999,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.2329999999997,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.248999999999,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.348999999999,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.4489999999987,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.5489999999986,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.6489999999985,
+      "wristSeparation": 0.040000000000000036
+    },
+    {
+      "t": 2333.7489999999984,
+      "wristSeparation": 0.040000000000000036
+    }
+  ],
+  "missingSpeakers": [],
+  "events": {
+    "impacts": [
+      {
+        "id": "cut",
+        "line": "B04_03",
+        "beat": "B04",
+        "time": 166.466,
+        "attacker": "xiaozao",
+        "target": "thread"
+      },
+      {
+        "id": "guard",
+        "line": "B11_07",
+        "beat": "B11",
+        "time": 490.812,
+        "attacker": "jianwang",
+        "target": "xiaozao"
+      },
+      {
+        "id": "chest",
+        "line": "B15_06",
+        "beat": "B15",
+        "time": 727.692,
+        "attacker": "xiaozao",
+        "target": "jianwang"
+      },
+      {
+        "id": "strike",
+        "line": "B29_06",
+        "beat": "B29",
+        "time": 1711.391,
+        "attacker": "xiaozao",
+        "target": "jianwang"
+      },
+      {
+        "id": "counter",
+        "line": "B30_06",
+        "beat": "B30",
+        "time": 1752.6609999999998,
+        "attacker": "xiaozao",
+        "target": "jianwang"
+      },
+      {
+        "id": "low-kick",
+        "line": "B29_04",
+        "beat": "B29",
+        "time": 1702.056,
+        "attacker": "xiaozao",
+        "target": "jianwang",
+        "type": "kick",
+        "side": "right"
+      },
+      {
+        "id": "three-0",
+        "beat": "B33",
+        "time": 1872.6760000000002,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "variant": 0,
+        "side": "right"
+      },
+      {
+        "id": "three-1",
+        "beat": "B33",
+        "time": 1874.076,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "variant": 1,
+        "side": "left"
+      },
+      {
+        "id": "three-2",
+        "beat": "B33",
+        "time": 1875.6760000000002,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "variant": 2,
+        "side": "right"
+      },
+      {
+        "id": "exchange-B11-8-4",
+        "beat": "B11",
+        "time": 501.437,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "side": "left",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B15-4-3",
+        "beat": "B15",
+        "time": 719.832,
+        "attacker": "xiaozao",
+        "target": "jianwang",
+        "side": "right",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B15-8-2.7",
+        "beat": "B15",
+        "time": 736.1260000000001,
+        "attacker": "xiaozao",
+        "target": "jianwang",
+        "side": "left",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B15-8-7.4",
+        "beat": "B15",
+        "time": 740.826,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "side": "right",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B29-0-3",
+        "beat": "B29",
+        "time": 1685.576,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "side": "left",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B29-8-3",
+        "beat": "B29",
+        "time": 1718.306,
+        "attacker": "xiaozao",
+        "target": "jianwang",
+        "side": "left",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B29-8-7",
+        "beat": "B29",
+        "time": 1722.306,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "side": "right",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B30-0-3",
+        "beat": "B30",
+        "time": 1728.386,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "side": "left",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B30-8-3",
+        "beat": "B30",
+        "time": 1762.116,
+        "attacker": "xiaozao",
+        "target": "jianwang",
+        "side": "right",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B30-8-7.8",
+        "beat": "B30",
+        "time": 1766.916,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "side": "left",
+        "zone": "guard"
+      },
+      {
+        "id": "exchange-B33-4-3",
+        "beat": "B33",
+        "time": 1890.006,
+        "attacker": "jianwang",
+        "target": "xiaozao",
+        "side": "right",
+        "zone": "guard"
+      }
+    ],
+    "jump": 2331.199,
+    "catch": 2332.2490000000003,
+    "release": 2205.234,
+    "waves": [
+      2162.408,
+      2185.309,
+      2205.234
+    ]
+  }
+}

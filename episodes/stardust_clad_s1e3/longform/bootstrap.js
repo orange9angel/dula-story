@@ -1,0 +1,17 @@
+import {registerAll} from 'dula-assets';
+import {registerCharacter,registerScene} from 'dula-engine';
+import {XiaozaoPalaceCraft,JianwangPalaceCraft} from 'dula-assets/characters/stardust/wind-palace-craft.js';
+import {WeiheWindwardCraft,YaboWindwardCraft,MidengWindwardCraft} from 'dula-assets/characters/stardust/windward-cast.js';
+import {WindwardMarketScene,WindwardCourtScene,WindwardStoreScene,WindwardGreenhouseScene,WindwardBridgeScene,WindwardWellScene} from './scenes.js';
+registerAll();
+registerCharacter('Xiaozao',XiaozaoPalaceCraft);
+registerCharacter('Jianwang',JianwangPalaceCraft);
+registerCharacter('Weihe',WeiheWindwardCraft);
+registerCharacter('Yabo',YaboWindwardCraft);
+registerCharacter('Mideng',MidengWindwardCraft);
+registerScene('WindwardMarket',WindwardMarketScene);
+registerScene('WindwardCourt',WindwardCourtScene);
+registerScene('WindwardStore',WindwardStoreScene);
+registerScene('WindwardGreenhouse',WindwardGreenhouseScene);
+registerScene('WindwardBridge',WindwardBridgeScene);
+registerScene('WindwardWell',WindwardWellScene);

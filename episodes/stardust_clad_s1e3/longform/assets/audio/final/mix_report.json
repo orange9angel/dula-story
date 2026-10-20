@@ -1,0 +1,425 @@
+{
+  "duration": 2686.257,
+  "sampleRate": 48000,
+  "channels": 2,
+  "storySha256": "13764f880f1c1684d42f374dc48d1397a597d76290c57ea2757d9975aa5d60f7",
+  "runtimeEventSources": {
+    "performance.js": "0dca8c1074dc462464225f6a3c67f23254ff25c79acf252561ea0b6e04c3f59a",
+    "pose.js": "235decd6f5e0edad516082bd0ed9713520732795e5e48e3ef72862850f674e4c",
+    "layout.js": "aec7cb66ecb3be604ac3574cf38472a9e5e713a219fb7186953a54aec41b1e43",
+    "script.story": "13764f880f1c1684d42f374dc48d1397a597d76290c57ea2757d9975aa5d60f7"
+  },
+  "sources": {
+    "wood_creak": {
+      "path": "longform/assets/audio/sfx/wood_creak.wav",
+      "sha256": "f8d05cc3e2d740d1a282f184436f427fa20de6a21d58529818f1c2782e4bf8e2",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/wood_creak.source.json"
+    },
+    "string_snap": {
+      "path": "assets3d/sfx/string_snap.wav",
+      "sha256": "81de0ddaebede18b91b84e7128210b30867b6ff5f62f2990af38737f61d5f45f",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/string_snap.source.json"
+    },
+    "armor_impact": {
+      "path": "assets3d/sfx/armor_impact.wav",
+      "sha256": "f8108aace746b8553a8a3df1fe6df0dd752f9af51607537b85417798b36aaa19",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/armor_impact.source.json"
+    },
+    "blade_shield": {
+      "path": "assets3d/sfx/blade_shield.wav",
+      "sha256": "cb6e7791423d83132f6d746c1b85215fda911e7b1ed89e282d2ef69f7318c2ac",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/blade_shield.source.json"
+    },
+    "chain_tension": {
+      "path": "assets3d/sfx/chain_tension.wav",
+      "sha256": "5ecfc153e47ceb5278cd3c8752e0306361b1629b8a0421a065b3c8bf350ae84a",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/chain_tension.source.json"
+    },
+    "boot_step": {
+      "path": "assets3d/sfx/boot_step.wav",
+      "sha256": "2fcb4f0939a541727a3240343ea7219fb42efb387d25cc872a650c4d55193265",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/boot_step.source.json"
+    },
+    "gate_grind": {
+      "path": "longform/assets/audio/sfx/gate_grind.wav",
+      "sha256": "77a659d66ab5f314eba39ea059ebf7ee28ce004f2f7c127377c2bfa0431a2081",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/gate_grind.source.json"
+    },
+    "store_air": {
+      "path": "longform/assets/audio/sfx/store_air.wav",
+      "sha256": "08c028e7a11651afc08fb1744e7a710f28770c41adaededa1fec33cf291c92e3",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/store_air.source.json"
+    },
+    "bell_tap": {
+      "path": "longform/assets/audio/sfx/bell_tap.wav",
+      "sha256": "a5661c72960362c5f6120d267d9c1b9e235c57c1528979f85a3902741683c493",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/bell_tap.source.json"
+    },
+    "wood_step": {
+      "path": "longform/assets/audio/sfx/wood_step.wav",
+      "sha256": "5705e722afae09351e50ba6de9b2ee75829ab35699e9310135de7d3a50032615",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/wood_step.source.json"
+    },
+    "wind_release": {
+      "path": "longform/assets/audio/sfx/wind_release.wav",
+      "sha256": "5e0e73af9eefe2f309e98c0a2e9c30ddfcca422d8f8e6849ddccb19e300e04d6",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/wind_release.source.json"
+    },
+    "bridge_crack": {
+      "path": "assets3d/sfx/bridge_crack.wav",
+      "sha256": "3380e6a7ef932f2a9a094a77c7dd3b50089f33c76fda2d07e05b231b596dd639",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/bridge_crack.source.json"
+    },
+    "buckle_click": {
+      "path": "longform/assets/audio/sfx/buckle_click.wav",
+      "sha256": "2ff442cc9146970c021a04935eb7d0d21fb5698759810d7ac99c9b7be8cce150",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/buckle_click.source.json"
+    },
+    "wind_gorge": {
+      "path": "assets3d/sfx/wind_gorge.wav",
+      "sha256": "4128aa389b92b06ade78da3d171670dbde03562f44099ae9126b50af6af01779",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/wind_gorge.source.json"
+    },
+    "glasshouse_air": {
+      "path": "longform/assets/audio/sfx/glasshouse_air.wav",
+      "sha256": "7d0fe6a0a23fbe5c82754507461dff79f38a5fc9f7f26880d6fd2e5b055d0b5c",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/glasshouse_air.source.json"
+    },
+    "sickle_whoosh": {
+      "path": "assets3d/sfx/sickle_whoosh.wav",
+      "sha256": "1ef06ac666e7257680cfaeab7684ccba43e1852a503732a95f4f6c1a6dc96517",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/sickle_whoosh.source.json"
+    },
+    "cloth_pull": {
+      "path": "assets3d/sfx/cloth_pull.wav",
+      "sha256": "41648110a21096ed1d0d25459521ea18356ed85765e1fb00dbfa14fc05e41117",
+      "provider": "volcano-seedaudio",
+      "metadata": "assets3d/sfx/cloth_pull.source.json"
+    },
+    "well_air": {
+      "path": "longform/assets/audio/sfx/well_air.wav",
+      "sha256": "e84524682f05f0814ed7e3175f9f791629fa5b075384b54d5c7756be0e2beb33",
+      "provider": "volcano-seedaudio",
+      "metadata": "longform/assets/audio/sfx/well_air.source.json"
+    },
+    "windhome": {
+      "path": "longform/assets/audio/suno/windhome/windhome.wav",
+      "sha256": "4cbd3f7e7d6fa73348dd56032440bd58608edf24618a5104a539c4708625ec4e",
+      "provider": "suno",
+      "metadata": "longform/assets/audio/suno/windhome/generation_receipts.json"
+    },
+    "webpressure": {
+      "path": "longform/assets/audio/suno/webpressure/webpressure.wav",
+      "sha256": "221e677f21ccbadfe021f2d6e259a4fe9317410d8a30ffc9cd21e91ada209f5c",
+      "provider": "suno",
+      "metadata": "longform/assets/audio/suno/webpressure/generation_receipts.json"
+    },
+    "borrowwind": {
+      "path": "longform/assets/audio/suno/borrowwind/borrowwind.wav",
+      "sha256": "c04f4ed7af967381a0830d2511dcf589d7f9962b44f4d79459e1241afdcad68e",
+      "provider": "suno",
+      "metadata": "longform/assets/audio/suno/borrowwind/generation_receipts.json"
+    }
+  },
+  "stems": {
+    "dialogue": {
+      "peak": 0.52001953125,
+      "rms": 0.05730629709022566
+    },
+    "ambience": {
+      "peak": 0.12351223826408386,
+      "rms": 0.01444935389967988
+    },
+    "foley": {
+      "peak": 0.32724612951278687,
+      "rms": 0.0057273393681952145
+    },
+    "music": {
+      "peak": 0.19843944907188416,
+      "rms": 0.016873034099148733
+    }
+  },
+  "masterGain": 1,
+  "mixPeak": 0.6550987958908081,
+  "stemSumMaxError": 3.5762786865234375e-07,
+  "voicedTenSecondSNRMedianDB": 18.603105387472603,
+  "voicedTenSecondSNRMinimumDB": 4.1216485836169365,
+  "perLineVoicedSNRMedianDB": 18.235015581752485,
+  "lowestVoicedLineSNR": [
+    {
+      "id": "B19_01",
+      "start": 1060.396,
+      "text": "趴下！别站在玻璃下面！",
+      "tone": "danger",
+      "snrDB": 8.308798330286006
+    },
+    {
+      "id": "B39_03",
+      "start": 2123.993,
+      "text": "接住。只借你这一次。",
+      "tone": "finale",
+      "snrDB": 8.53030677647977
+    },
+    {
+      "id": "B36_05",
+      "start": 2004.536,
+      "text": "那盘撑不过十息。",
+      "tone": "finale",
+      "snrDB": 10.684429044697293
+    },
+    {
+      "id": "B30_01",
+      "start": 1732.666,
+      "text": "缺了一个孔，你就少一个方向。",
+      "tone": "danger",
+      "snrDB": 11.30105423802084
+    },
+    {
+      "id": "B29_05",
+      "start": 1707.496,
+      "text": "弥灯，走！别回头数他打了几拳！",
+      "tone": "danger",
+      "snrDB": 11.539676543207563
+    },
+    {
+      "id": "B39_05",
+      "start": 2134.528,
+      "text": "手握紧一点，你们两个的嘴都比手硬。",
+      "tone": "finale",
+      "snrDB": 11.725488626764044
+    },
+    {
+      "id": "B14_08",
+      "start": 685.342,
+      "text": "人在怕的时候，错得更多。",
+      "tone": "danger",
+      "snrDB": 11.727583855190709
+    },
+    {
+      "id": "B37_01",
+      "start": 2032.921,
+      "text": "我只是换一个支点。风种还是我的。",
+      "tone": "finale",
+      "snrDB": 11.751501359203036
+    },
+    {
+      "id": "B19_02",
+      "start": 1062.611,
+      "text": "那片风叶把热风放出来了，可底闸没开，它只能往暖管里挤！",
+      "tone": "danger",
+      "snrDB": 11.87093972278696
+    },
+    {
+      "id": "B06_05",
+      "start": 274.266,
+      "text": "……只移到梁上。不许碰我的线。",
+      "tone": "dispute",
+      "snrDB": 11.975745668990765
+    },
+    {
+      "id": "B39_01",
+      "start": 2119.368,
+      "text": "我松手，不是认输。",
+      "tone": "finale",
+      "snrDB": 11.999907630128174
+    },
+    {
+      "id": "B38_04",
+      "start": 2082.499,
+      "text": "我来这里，不是帮你们修桥的！",
+      "tone": "dispute",
+      "snrDB": 12.031207880348756
+    },
+    {
+      "id": "B43_01",
+      "start": 2365.793,
+      "text": "现在是四拍。真的是四拍。",
+      "tone": "home",
+      "snrDB": 12.050017092193341
+    },
+    {
+      "id": "B40_03",
+      "start": 2174.933,
+      "text": "开了半尺，还差一点！",
+      "tone": "finale",
+      "snrDB": 12.26396962623613
+    },
+    {
+      "id": "B18_05",
+      "start": 1035.631,
+      "text": "喝！",
+      "tone": "danger",
+      "snrDB": 12.29099145525469
+    },
+    {
+      "id": "B42_07",
+      "start": 2331.099,
+      "text": "哈！",
+      "tone": "finale",
+      "snrDB": 12.438054621571041
+    },
+    {
+      "id": "B38_05",
+      "start": 2090.974,
+      "text": "那你也别让这座桥变成你的坟。",
+      "tone": "dispute",
+      "snrDB": 12.451300907628404
+    },
+    {
+      "id": "B14_06",
+      "start": 679.602,
+      "text": "这座宫教给你的办法，也会错。",
+      "tone": "danger",
+      "snrDB": 12.508447154741244
+    },
+    {
+      "id": "B32_08",
+      "start": 1859.591,
+      "text": "小凿，你得把他那只手带过来！",
+      "tone": "danger",
+      "snrDB": 12.570098332360335
+    },
+    {
+      "id": "B42_08",
+      "start": 2332.533,
+      "text": "托住了！往上，别管我！",
+      "tone": "finale",
+      "snrDB": 12.60846392397648
+    }
+  ],
+  "bedMeasurements": {
+    "wind_gorge": {
+      "duration": 10.5,
+      "oneSecondMaxOverMean": 1.056522250175476,
+      "highBandEnergyRatio": 6.978230022854615e-08,
+      "shortEnvelopeCorrelationMax": 0.2202915956457338,
+      "auditoryReview": "not performed; measurements do not certify sound semantics"
+    },
+    "store_air": {
+      "duration": 8.5,
+      "oneSecondMaxOverMean": 1.1121488809585571,
+      "highBandEnergyRatio": 1.794057411958558e-07,
+      "shortEnvelopeCorrelationMax": 0.4686994498285313,
+      "auditoryReview": "not performed; measurements do not certify sound semantics"
+    },
+    "glasshouse_air": {
+      "duration": 8.5,
+      "oneSecondMaxOverMean": 1.1488336324691772,
+      "highBandEnergyRatio": 5.920079148016929e-07,
+      "shortEnvelopeCorrelationMax": 0.16504326130431174,
+      "auditoryReview": "not performed; measurements do not certify sound semantics"
+    },
+    "well_air": {
+      "duration": 8.5,
+      "oneSecondMaxOverMean": 1.0501964092254639,
+      "highBandEnergyRatio": 1.9306020069734158e-11,
+      "shortEnvelopeCorrelationMax": 0.22584318494633995,
+      "auditoryReview": "not performed; measurements do not certify sound semantics"
+    }
+  },
+  "eventEdits": {
+    "('bell_tap', True)": {
+      "originalOnset": 0.092,
+      "duration": 0.42,
+      "peakOffset": 0.013
+    },
+    "('boot_step', True)": {
+      "originalOnset": 0.172,
+      "duration": 0.4,
+      "peakOffset": 0.018
+    },
+    "('wood_step', True)": {
+      "originalOnset": 0.487,
+      "duration": 0.38,
+      "peakOffset": 0.073
+    },
+    "('sickle_whoosh', False)": {
+      "originalOnset": 0.23
+    },
+    "('string_snap', True)": {
+      "originalOnset": 0.572,
+      "duration": 0.55,
+      "peakOffset": 0.088
+    },
+    "('wood_creak', False)": {
+      "originalOnset": 0.09
+    },
+    "('armor_impact', True)": {
+      "originalOnset": 0.087,
+      "duration": 0.65,
+      "peakOffset": 0.033
+    },
+    "('chain_tension', False)": {
+      "originalOnset": 0.82
+    },
+    "('blade_shield', True)": {
+      "originalOnset": 0.172,
+      "duration": 0.828,
+      "peakOffset": 0.043
+    },
+    "('wind_release', False)": {
+      "originalOnset": 0.09
+    },
+    "('bridge_crack', True)": {
+      "originalOnset": 0.442,
+      "duration": 0.75,
+      "peakOffset": 0.018
+    },
+    "('gate_grind', False)": {
+      "originalOnset": 0.09
+    },
+    "('buckle_click', True)": {
+      "originalOnset": 2.642,
+      "duration": 0.4,
+      "peakOffset": 0.033
+    },
+    "('cloth_pull', True)": {
+      "originalOnset": 2.527,
+      "duration": 0.473,
+      "peakOffset": 0.008
+    }
+  },
+  "musicSeconds": 1348.8289999999997,
+  "reviewLimits": [
+    "No claim of auditory audition or semantic sound acceptance.",
+    "Bed envelope correlation is reported, not silently treated as a passing musicality metric."
+  ],
+  "outputs": {
+    "dialogue": {
+      "path": "longform/assets/audio/final/dialogue.wav",
+      "sha256": "75ec37bdc990382da406f3b5020a4039d1da1637b4deb3daea5ffb746994174f"
+    },
+    "ambience": {
+      "path": "longform/assets/audio/final/ambience.wav",
+      "sha256": "0299b8203b2504c1d86fd1175193f99cc336e54a686122bb2c897fd9f4fb8880"
+    },
+    "foley": {
+      "path": "longform/assets/audio/final/foley.wav",
+      "sha256": "a54556f14be7b97324a54d73da9429d532ed9a5c222bb26ba5dd0c40829c55c1"
+    },
+    "music": {
+      "path": "longform/assets/audio/final/music.wav",
+      "sha256": "75e7eac124308d089d62cb2c0d3aa061f8eaebc03e37ab66220e6b320a2c8476"
+    },
+    "mixed": {
+      "path": "longform/assets/audio/final/mixed.wav",
+      "sha256": "4dea62a4fee00d08eccb55a3492c80eb2d607a0b3ee8300bd4944048156e9081"
+    }
+  }
+}

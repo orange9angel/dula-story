@@ -23,6 +23,8 @@ const board=path.join(here,opt('--board')??(physicsOnly?'storyboard/physics':'st
 const output=path.join(here,'output',outArg??'craft3d_r1.mp4');
 const audioRelative=opt('--audio')??'assets3d/mixed.wav';
 const audioFile=path.join(here,audioRelative);
+const videoOnly=args.includes('--video-only');
+const encoderThreads=Number(opt('--threads')??0);
 const extraSources=viewerEntry==='viewer.html'?[]:fs.readdirSync(path.join(here,path.dirname(viewerEntry)))
  .filter(f=>/\.(js|html|story|json|py)$/.test(f)).map(f=>path.join(path.dirname(viewerEntry),f));
 const fps=Number(opt('--fps')??30); // 60Hz collision audit; final output defaults to 30fps.
@@ -81,16 +83,40 @@ if(!serve){
     const startFrame=range?Math.round(range[0]*fps):0,endFrame=range?Math.min(frames,Math.round(range[1]*fps)):frames;
     if(range)checks=checks.filter(t=>t>=startFrame/fps&&t<endFrame/fps);
     let ci=0;const trace=[],gaitTrace=[];
+    const qc=args.includes('--longform-qc')?{frames:0,actorSamples:0,walkingSamples:0,stancePairs:0,maxClamp:0,maxStanceXZSpeed:0,maxRootWalkSpeed:0,nonFinite:[],worstClamps:[],worstStance:[],scope:'Actual rendered frame state; no full mesh collision or subjective naturalness certification.'}:null;
+    const previousQC={};
     if(!check&&!shots){
       const audioArgs=range?['-ss',String(range[0]),'-t',String(range[1]-range[0])]:[];
-      const sound=fs.existsSync(audioFile)?[...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0','-c:a','aac','-ar','48000','-ac','2','-b:a','192k']:['-an'];
-      encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',...sound,'-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
+      const sound=!videoOnly&&fs.existsSync(audioFile)?[...audioArgs,'-i',audioFile,'-map','0:v:0','-map','1:a:0','-c:a','aac','-ar','48000','-ac','2','-b:a','192k']:['-an'];
+      encoder=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',...sound,'-c:v','libx264','-threads',String(encoderThreads),'-preset','medium','-crf','18','-pix_fmt','yuv420p','-t',String((endFrame-startFrame)/fps),'-movflags','+faststart',output],{stdio:['pipe','inherit','inherit'],windowsHide:true});
     }
     for(let i=startFrame;i<endFrame;i++){
       const t=i/fps;
       const capture=!physicsOnly&&(!check||(ci<checks.length&&t>=checks[ci]));
-      const result=await page.evaluate((t,capture)=>capture?window.renderAt(t):window.stepAt(t),t,capture);
+      const result=await page.evaluate((t,capture)=>{try{return capture?window.renderAt(t):window.stepAt(t);}catch(e){throw new Error(`Render t=${t}: ${e.message}`);}},t,capture);
       if(errors.length)throw new Error(errors.join('\n'));
+      if(qc){
+        const st=result.state??result;qc.frames++;
+        for(const[name,a]of Object.entries(st.actors??{})){
+          qc.actorSamples++;const prev=previousQC[name];
+          if(a.root.some(x=>!Number.isFinite(x))||!Number.isFinite(a.maxClamp))qc.nonFinite.push({t,name});
+          if(a.maxClamp>qc.maxClamp){qc.maxClamp=a.maxClamp;qc.worstClamps.push({t,name,beat:st.beat,amount:a.maxClamp});}
+          if(a.walkKey){
+            qc.walkingSamples++;
+            if(prev&&prev.beat===st.beat&&prev.walkKey===a.walkKey&&t-prev.t<1.1/fps){
+              const speed=Math.hypot(a.root[0]-prev.root[0],a.root[2]-prev.root[2])*fps;qc.maxRootWalkSpeed=Math.max(qc.maxRootWalkSpeed,speed);
+              for(const side of ['left','right']){
+                const f=a.feet[side],p=prev.feet[side];
+                if(f.stance&&p.stance&&f.contact===p.contact){
+                  qc.stancePairs++;const speed=Math.hypot(f.position[0]-p.position[0],f.position[2]-p.position[2])*fps;
+                  if(speed>qc.maxStanceXZSpeed){qc.maxStanceXZSpeed=speed;qc.worstStance.push({t,name,side,beat:st.beat,speed});}
+                }
+              }
+            }
+          }
+          previousQC[name]={...a,t,beat:st.beat};
+        }
+      }
       if(traceArg)gaitTrace.push({t:Math.round(t*1000)/1000,...(result.state??result)});
       if(capture){
         const buffer=Buffer.from(result.image,'base64');
@@ -104,6 +130,7 @@ if(!serve){
       if(i%300===0)console.log(`${check?'check':'render'} ${i}/${endFrame}`);
     }
     if(encoder){encoder.stdin.end();const [code]=await once(encoder,'close');if(code!==0)throw new Error(`ffmpeg failed: ${code}`);}
+    if(qc){qc.worstClamps=qc.worstClamps.slice(-12);qc.worstStance=qc.worstStance.slice(-12);fs.writeFileSync(path.join(board,'frame_qc.json'),JSON.stringify(qc,null,2));}
     if(traceArg){const tp=path.isAbsolute(traceArg)?traceArg:path.join(here,traceArg);fs.mkdirSync(path.dirname(tp),{recursive:true});
       fs.writeFileSync(tp,JSON.stringify({fps,duration,build,mode:physicsOnly?'physics-only':'render',frames:gaitTrace},null,1));console.log(`gait trace: ${tp} (${gaitTrace.length} frames)`);}
     if(errors.length)throw new Error(errors.join('\n'));

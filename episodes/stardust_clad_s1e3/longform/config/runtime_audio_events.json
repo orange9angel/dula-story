@@ -1,0 +1,3807 @@
+{
+  "events": [
+    {
+      "id": "opening-bell-0",
+      "time": 1.8,
+      "source": "bell_tap",
+      "gain": 0.15,
+      "transient": true
+    },
+    {
+      "id": "opening-bell-1",
+      "time": 2.3,
+      "source": "bell_tap",
+      "gain": 0.15,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-81",
+      "time": 5.9166666666666625,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-82",
+      "time": 6.583333333333327,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-83",
+      "time": 7.249999999999991,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-84",
+      "time": 7.749999999999989,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-85",
+      "time": 8.333333333333323,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-86",
+      "time": 9.083333333333329,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-87",
+      "time": 9.833333333333334,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-88",
+      "time": 59.5000000000006,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-89",
+      "time": 60.16666666666728,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-90",
+      "time": 60.6666666666673,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-91",
+      "time": 61.16666666666731,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-92",
+      "time": 61.666666666667325,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-93",
+      "time": 62.16666666666734,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-94",
+      "time": 62.833333333334025,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-95",
+      "time": 63.50000000000071,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-96",
+      "time": 164.6666666666679,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-97",
+      "time": 164.8333333333346,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-98",
+      "time": 165.08333333333462,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-99",
+      "time": 165.16666666666796,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "cut-wind",
+      "time": 166.306,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "cut",
+      "time": 166.466,
+      "source": "string_snap",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-100",
+      "time": 168.9166666666684,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-101",
+      "time": 169.08333333333508,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-102",
+      "time": 169.25000000000176,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-103",
+      "time": 169.41666666666845,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "enemy-land",
+      "time": 203.966,
+      "source": "boot_step",
+      "gain": 0.13,
+      "transient": true
+    },
+    {
+      "id": "store-door",
+      "time": 293.07599999999996,
+      "source": "wood_creak",
+      "gain": 0.11,
+      "transient": false
+    },
+    {
+      "id": "step-weihe-left-104",
+      "time": 295.2500000000027,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-105",
+      "time": 295.9166666666692,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-106",
+      "time": 296.5000000000024,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-107",
+      "time": 296.91666666666896,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-108",
+      "time": 297.41666666666885,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-109",
+      "time": 297.8333333333354,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-110",
+      "time": 298.3333333333353,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-111",
+      "time": 298.8333333333352,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-112",
+      "time": 299.5000000000017,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-113",
+      "time": 300.1666666666682,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-114",
+      "time": 419.4999999999744,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-115",
+      "time": 419.9999999999743,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-116",
+      "time": 420.4166666666409,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-117",
+      "time": 420.83333333330745,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-118",
+      "time": 421.249999999974,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-119",
+      "time": 421.6666666666406,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-120",
+      "time": 422.1666666666405,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-121",
+      "time": 422.66666666664037,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-122",
+      "time": 489.08333333329193,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-123",
+      "time": 489.08333333329193,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-124",
+      "time": 489.3333333332919,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-125",
+      "time": 489.3333333332919,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-126",
+      "time": 489.4999999999585,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-127",
+      "time": 489.4999999999585,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "guard-wind",
+      "time": 490.652,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "guard",
+      "time": 490.812,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-128",
+      "time": 492.2499999999579,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-129",
+      "time": 492.66666666662445,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-130",
+      "time": 492.9166666666244,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-131",
+      "time": 493.083333333291,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-132",
+      "time": 493.33333333329097,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-133",
+      "time": 493.4166666666243,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-134",
+      "time": 493.5833333332909,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-135",
+      "time": 493.74999999995754,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-136",
+      "time": 493.74999999995754,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-137",
+      "time": 499.7499999999562,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-138",
+      "time": 499.7499999999562,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-139",
+      "time": 499.9999999999561,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-140",
+      "time": 499.9999999999561,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-141",
+      "time": 500.16666666662275,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-142",
+      "time": 500.16666666662275,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B11-8-4-wind",
+      "time": 501.277,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B11-8-4",
+      "time": 501.437,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-143",
+      "time": 502.8333333332888,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-144",
+      "time": 503.2499999999554,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-145",
+      "time": 503.58333333328864,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-146",
+      "time": 503.66666666662195,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-147",
+      "time": 503.9166666666219,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-148",
+      "time": 504.0833333332885,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-149",
+      "time": 504.16666666662184,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-150",
+      "time": 504.4166666666218,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-151",
+      "time": 504.4166666666218,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-152",
+      "time": 559.9166666666418,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-153",
+      "time": 561.083333333309,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-154",
+      "time": 561.9166666666428,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-155",
+      "time": 562.5833333333097,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-156",
+      "time": 563.2499999999767,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-157",
+      "time": 563.8333333333103,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-158",
+      "time": 564.4166666666439,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-159",
+      "time": 564.9166666666441,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-160",
+      "time": 565.4999999999777,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-161",
+      "time": 565.999999999978,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-162",
+      "time": 566.4999999999782,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-163",
+      "time": 566.9999999999784,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-164",
+      "time": 567.4999999999786,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-165",
+      "time": 567.9999999999789,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-166",
+      "time": 568.5833333333125,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-167",
+      "time": 569.0833333333127,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-168",
+      "time": 569.6666666666463,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-169",
+      "time": 570.3333333333132,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-170",
+      "time": 570.9999999999802,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-171",
+      "time": 571.8333333333139,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-172",
+      "time": 572.9166666666478,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-173",
+      "time": 574.083333333315,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-174",
+      "time": 582.4999999999854,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-175",
+      "time": 583.8333333333194,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-176",
+      "time": 584.8333333333198,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-177",
+      "time": 585.6666666666536,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-178",
+      "time": 586.3333333333205,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-179",
+      "time": 587.0833333333209,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-180",
+      "time": 587.6666666666545,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-181",
+      "time": 588.3333333333214,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-182",
+      "time": 588.916666666655,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-183",
+      "time": 589.583333333322,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-184",
+      "time": 590.1666666666556,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-185",
+      "time": 590.7499999999892,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-186",
+      "time": 591.3333333333228,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-187",
+      "time": 591.9999999999898,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-188",
+      "time": 592.6666666666567,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-189",
+      "time": 593.3333333333237,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-190",
+      "time": 593.9999999999907,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-191",
+      "time": 594.8333333333244,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-192",
+      "time": 595.7499999999915,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-193",
+      "time": 597.0833333333254,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-194",
+      "time": 598.4166666666594,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-195",
+      "time": 598.9166666666596,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-196",
+      "time": 598.9166666666596,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-197",
+      "time": 599.4999999999932,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-198",
+      "time": 599.9999999999934,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-199",
+      "time": 600.3333333333269,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-200",
+      "time": 600.6666666666604,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-201",
+      "time": 600.9166666666605,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-202",
+      "time": 601.1666666666606,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-203",
+      "time": 601.4166666666607,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-204",
+      "time": 601.5833333333275,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-205",
+      "time": 601.8333333333276,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-206",
+      "time": 602.0833333333277,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-207",
+      "time": 602.2499999999944,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-208",
+      "time": 602.4999999999945,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-209",
+      "time": 602.7499999999947,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-210",
+      "time": 602.9999999999948,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-211",
+      "time": 603.1666666666615,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-212",
+      "time": 603.4166666666616,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-213",
+      "time": 603.7499999999951,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-214",
+      "time": 603.9999999999952,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-215",
+      "time": 604.3333333333287,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-216",
+      "time": 604.8333333333289,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-217",
+      "time": 605.3333333333292,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "bridge-board",
+      "time": 607.462,
+      "source": "wood_creak",
+      "gain": 0.12,
+      "transient": false
+    },
+    {
+      "id": "step-weihe-left-218",
+      "time": 612.0833333333322,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-219",
+      "time": 613.3333333333328,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-220",
+      "time": 614.3333333333333,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-221",
+      "time": 615.0833333333336,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-222",
+      "time": 615.8333333333339,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-223",
+      "time": 616.5000000000009,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-224",
+      "time": 617.1666666666679,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-225",
+      "time": 617.7500000000015,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-226",
+      "time": 618.3333333333351,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-227",
+      "time": 618.9166666666687,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-228",
+      "time": 619.5833333333356,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-229",
+      "time": 620.1666666666692,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-230",
+      "time": 620.7500000000028,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-231",
+      "time": 621.4166666666698,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-232",
+      "time": 622.0833333333368,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-233",
+      "time": 622.7500000000038,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-234",
+      "time": 623.5833333333375,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-235",
+      "time": 624.5000000000045,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-236",
+      "time": 625.7500000000051,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-237",
+      "time": 627.083333333339,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-238",
+      "time": 627.5000000000059,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-239",
+      "time": 627.5000000000059,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-240",
+      "time": 628.416666666673,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-241",
+      "time": 629.1666666666733,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-242",
+      "time": 629.7500000000069,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-243",
+      "time": 630.2500000000072,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-244",
+      "time": 630.666666666674,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-245",
+      "time": 631.0833333333409,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-246",
+      "time": 631.4166666666744,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-247",
+      "time": 631.8333333333412,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-248",
+      "time": 632.1666666666747,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-249",
+      "time": 632.5833333333416,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-250",
+      "time": 632.916666666675,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-251",
+      "time": 633.3333333333419,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-252",
+      "time": 633.6666666666754,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-253",
+      "time": 634.1666666666756,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-254",
+      "time": 634.5833333333425,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-255",
+      "time": 635.1666666666761,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-256",
+      "time": 635.833333333343,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-257",
+      "time": 636.6666666666767,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "stone-net-catch",
+      "time": 697.317,
+      "source": "chain_tension",
+      "gain": 0.15,
+      "transient": false
+    },
+    {
+      "id": "step-xiaozao-left-258",
+      "time": 718.0833333333804,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-259",
+      "time": 718.0833333333804,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-260",
+      "time": 718.3333333333806,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-261",
+      "time": 718.3333333333806,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B15-4-3-wind",
+      "time": 719.672,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B15-4-3",
+      "time": 719.832,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-262",
+      "time": 721.4166666667153,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-263",
+      "time": 721.9166666667155,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-264",
+      "time": 722.0833333333823,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-265",
+      "time": 722.3333333333824,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-266",
+      "time": 722.4166666667157,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-267",
+      "time": 722.5833333333825,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-268",
+      "time": 722.7500000000492,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-269",
+      "time": 726.0000000000507,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-270",
+      "time": 726.0000000000507,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-271",
+      "time": 726.2500000000508,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-272",
+      "time": 726.2500000000508,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-273",
+      "time": 726.4166666667176,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-274",
+      "time": 726.4166666667176,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "chest-wind",
+      "time": 727.532,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "chest",
+      "time": 727.692,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-275",
+      "time": 729.3333333333856,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-276",
+      "time": 729.7500000000524,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-277",
+      "time": 729.9166666667192,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-278",
+      "time": 730.1666666667193,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-279",
+      "time": 730.333333333386,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-280",
+      "time": 730.4166666667194,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-281",
+      "time": 730.6666666667195,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-282",
+      "time": 730.6666666667195,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-283",
+      "time": 734.4166666667212,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-284",
+      "time": 734.4166666667212,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-285",
+      "time": 734.6666666667213,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-286",
+      "time": 734.6666666667213,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-287",
+      "time": 734.833333333388,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-288",
+      "time": 734.833333333388,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B15-8-2.7-wind",
+      "time": 735.9660000000001,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B15-8-2.7",
+      "time": 736.1260000000001,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-289",
+      "time": 737.750000000056,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-290",
+      "time": 738.2500000000563,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-291",
+      "time": 738.3333333333896,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-292",
+      "time": 738.5833333333898,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-293",
+      "time": 738.7500000000565,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-294",
+      "time": 738.8333333333899,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-295",
+      "time": 738.8333333333899,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-296",
+      "time": 739.08333333339,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-297",
+      "time": 739.08333333339,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-298",
+      "time": 739.3333333333901,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-299",
+      "time": 739.3333333333901,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B15-8-7.4-wind",
+      "time": 740.666,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B15-8-7.4",
+      "time": 740.826,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-300",
+      "time": 742.2500000000581,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-301",
+      "time": 742.666666666725,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-302",
+      "time": 743.0000000000584,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-303",
+      "time": 743.0833333333918,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-304",
+      "time": 743.3333333333919,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-305",
+      "time": 743.3333333333919,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-306",
+      "time": 743.583333333392,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-307",
+      "time": 743.583333333392,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "bridge-strain",
+      "time": 746.426,
+      "source": "chain_tension",
+      "gain": 0.16,
+      "transient": false
+    },
+    {
+      "id": "step-weihe-left-308",
+      "time": 812.2500000000899,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-309",
+      "time": 814.6666666667577,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-310",
+      "time": 816.5000000000919,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-311",
+      "time": 818.2500000000927,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-312",
+      "time": 819.8333333334267,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-313",
+      "time": 821.5000000000941,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-314",
+      "time": 823.3333333334283,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-315",
+      "time": 825.7500000000961,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-316",
+      "time": 828.1666666667638,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "first-petal",
+      "time": 1035.931,
+      "source": "blade_shield",
+      "gain": 0.23,
+      "transient": true
+    },
+    {
+      "id": "hot-pipe",
+      "time": 1058.476,
+      "source": "wind_release",
+      "gain": 0.15,
+      "transient": false
+    },
+    {
+      "id": "step-yabo-left-317",
+      "time": 1234.0833333333285,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-318",
+      "time": 1234.4999999999948,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-yabo-right-319",
+      "time": 1234.4999999999948,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-yabo-left-320",
+      "time": 1234.7499999999945,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-yabo-right-321",
+      "time": 1235.0833333333276,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-322",
+      "time": 1235.249999999994,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-yabo-left-323",
+      "time": 1235.3333333333273,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-yabo-right-324",
+      "time": 1235.5833333333271,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-325",
+      "time": 1235.9999999999934,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-yabo-left-326",
+      "time": 1235.9999999999934,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-yabo-right-327",
+      "time": 1236.3333333333264,
+      "source": "boot_step",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-328",
+      "time": 1236.6666666666595,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "slip",
+      "time": 1330.888,
+      "source": "bridge_crack",
+      "gain": 0.2,
+      "transient": true
+    },
+    {
+      "id": "trial-gate",
+      "time": 1445.354,
+      "source": "gate_grind",
+      "gain": 0.14,
+      "transient": false
+    },
+    {
+      "id": "belt-0",
+      "time": 1583.076,
+      "source": "buckle_click",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "belt-1",
+      "time": 1603.686,
+      "source": "buckle_click",
+      "gain": 0.1,
+      "transient": true
+    },
+    {
+      "id": "market-air-release",
+      "time": 1637.481,
+      "source": "wind_release",
+      "gain": 0.11,
+      "transient": false
+    },
+    {
+      "id": "market-canopy-fall",
+      "time": 1638.781,
+      "source": "wood_creak",
+      "gain": 0.14,
+      "transient": false
+    },
+    {
+      "id": "step-xiaozao-left-329",
+      "time": 1683.8333333329194,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-330",
+      "time": 1683.8333333329194,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-331",
+      "time": 1684.0833333329192,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-332",
+      "time": 1684.0833333329192,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B29-0-3-wind",
+      "time": 1685.416,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B29-0-3",
+      "time": 1685.576,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-333",
+      "time": 1686.9999999995832,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-334",
+      "time": 1687.4166666662495,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-335",
+      "time": 1687.7499999995825,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-336",
+      "time": 1687.8333333329158,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-337",
+      "time": 1688.0833333329156,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-338",
+      "time": 1688.1666666662488,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-339",
+      "time": 1688.3333333329153,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-340",
+      "time": 1688.4999999995819,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-341",
+      "time": 1700.3333333329044,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-342",
+      "time": 1700.3333333329044,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-343",
+      "time": 1700.5833333329042,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-344",
+      "time": 1700.5833333329042,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-345",
+      "time": 1700.7499999995707,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-346",
+      "time": 1700.7499999995707,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "low-kick-wind",
+      "time": 1701.896,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "low-kick",
+      "time": 1702.056,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-347",
+      "time": 1703.6666666662347,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-348",
+      "time": 1704.1666666662343,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-349",
+      "time": 1704.3333333329008,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-350",
+      "time": 1704.5833333329006,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-351",
+      "time": 1704.6666666662338,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-352",
+      "time": 1704.8333333329003,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-353",
+      "time": 1704.9999999995669,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-354",
+      "time": 1704.9999999995669,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-355",
+      "time": 1708.249999999564,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-356",
+      "time": 1708.7499999995634,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-357",
+      "time": 1708.8333333328967,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-358",
+      "time": 1709.249999999563,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-359",
+      "time": 1709.3333333328962,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-360",
+      "time": 1709.6666666662293,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-361",
+      "time": 1709.6666666662293,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-362",
+      "time": 1709.6666666662293,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-363",
+      "time": 1709.8333333328958,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-364",
+      "time": 1709.916666666229,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-365",
+      "time": 1709.916666666229,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-366",
+      "time": 1709.9999999995623,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-367",
+      "time": 1710.0833333328956,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-368",
+      "time": 1710.0833333328956,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-369",
+      "time": 1710.249999999562,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-370",
+      "time": 1710.4166666662286,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-371",
+      "time": 1710.6666666662284,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-372",
+      "time": 1710.7499999995616,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-373",
+      "time": 1711.0833333328947,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-374",
+      "time": 1711.166666666228,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "strike-wind",
+      "time": 1711.231,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "strike",
+      "time": 1711.391,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-375",
+      "time": 1711.5833333328942,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-376",
+      "time": 1711.7499999995607,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-377",
+      "time": 1712.166666666227,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-378",
+      "time": 1712.3333333328935,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-379",
+      "time": 1712.4166666662268,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-380",
+      "time": 1712.4166666662268,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-381",
+      "time": 1712.7499999995598,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-382",
+      "time": 1712.9999999995596,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-383",
+      "time": 1713.4999999995591,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-384",
+      "time": 1713.6666666662256,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-385",
+      "time": 1713.6666666662256,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-386",
+      "time": 1713.9166666662254,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-387",
+      "time": 1713.9999999995587,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-388",
+      "time": 1714.1666666662252,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-389",
+      "time": 1714.3333333328917,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-390",
+      "time": 1714.3333333328917,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-391",
+      "time": 1716.5833333328897,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-392",
+      "time": 1716.5833333328897,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-393",
+      "time": 1716.8333333328894,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-394",
+      "time": 1716.8333333328894,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-395",
+      "time": 1716.999999999556,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-396",
+      "time": 1716.999999999556,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B29-8-3-wind",
+      "time": 1718.146,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B29-8-3",
+      "time": 1718.306,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-397",
+      "time": 1719.91666666622,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-398",
+      "time": 1720.3333333328862,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-399",
+      "time": 1720.3333333328862,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-400",
+      "time": 1720.583333332886,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-401",
+      "time": 1720.8333333328858,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-402",
+      "time": 1720.8333333328858,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-403",
+      "time": 1720.9999999995523,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-404",
+      "time": 1720.9999999995523,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B29-8-7-wind",
+      "time": 1722.146,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B29-8-7",
+      "time": 1722.306,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-405",
+      "time": 1723.7499999995498,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-406",
+      "time": 1724.0833333328828,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-407",
+      "time": 1724.4166666662159,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-408",
+      "time": 1724.5833333328824,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-409",
+      "time": 1724.8333333328821,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-410",
+      "time": 1724.9166666662154,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-411",
+      "time": 1725.083333332882,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-412",
+      "time": 1725.2499999995484,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-413",
+      "time": 1725.2499999995484,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-414",
+      "time": 1726.6666666662138,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-415",
+      "time": 1726.6666666662138,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-416",
+      "time": 1726.9166666662136,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-417",
+      "time": 1726.9166666662136,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-418",
+      "time": 1727.08333333288,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-419",
+      "time": 1727.08333333288,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B30-0-3-wind",
+      "time": 1728.2259999999999,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B30-0-3",
+      "time": 1728.386,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-420",
+      "time": 1729.8333333328776,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-421",
+      "time": 1730.1666666662106,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-422",
+      "time": 1730.4999999995437,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-423",
+      "time": 1730.6666666662102,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-424",
+      "time": 1730.91666666621,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-425",
+      "time": 1730.9999999995432,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-426",
+      "time": 1731.1666666662097,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-427",
+      "time": 1731.3333333328762,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-428",
+      "time": 1731.3333333328762,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-429",
+      "time": 1750.9166666661918,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-430",
+      "time": 1750.9166666661918,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-431",
+      "time": 1751.1666666661915,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-432",
+      "time": 1751.1666666661915,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "counter-wind",
+      "time": 1752.5009999999997,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "counter",
+      "time": 1752.6609999999998,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-433",
+      "time": 1754.249999999522,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-434",
+      "time": 1754.7499999995216,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-435",
+      "time": 1754.9166666661881,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-436",
+      "time": 1755.166666666188,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-437",
+      "time": 1755.2499999995212,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-438",
+      "time": 1755.4166666661877,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-439",
+      "time": 1755.5833333328542,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-440",
+      "time": 1760.4166666661831,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-441",
+      "time": 1760.4166666661831,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-442",
+      "time": 1760.666666666183,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-443",
+      "time": 1760.666666666183,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-444",
+      "time": 1760.8333333328494,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-445",
+      "time": 1760.8333333328494,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B30-8-3-wind",
+      "time": 1761.956,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B30-8-3",
+      "time": 1762.116,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-446",
+      "time": 1763.7499999995134,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-447",
+      "time": 1764.249999999513,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-448",
+      "time": 1764.3333333328462,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-449",
+      "time": 1764.583333332846,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-450",
+      "time": 1764.7499999995125,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-451",
+      "time": 1764.8333333328458,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-452",
+      "time": 1764.916666666179,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-453",
+      "time": 1764.916666666179,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-454",
+      "time": 1765.1666666661788,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-455",
+      "time": 1765.4166666661786,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-456",
+      "time": 1765.4166666661786,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B30-8-7.8-wind",
+      "time": 1766.7559999999999,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B30-8-7.8",
+      "time": 1766.916,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-457",
+      "time": 1768.3333333328426,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-458",
+      "time": 1768.7499999995089,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-459",
+      "time": 1769.083333332842,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-460",
+      "time": 1769.1666666661752,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-461",
+      "time": 1769.416666666175,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-462",
+      "time": 1769.4999999995082,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-463",
+      "time": 1769.6666666661747,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-464",
+      "time": 1769.8333333328412,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-465",
+      "time": 1770.9999999995068,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-466",
+      "time": 1771.7499999995061,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-467",
+      "time": 1772.333333332839,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-468",
+      "time": 1772.9166666661717,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-469",
+      "time": 1773.4999999995046,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-right-470",
+      "time": 1774.2499999995039,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-mideng-left-471",
+      "time": 1774.9999999995032,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "lamp-hook",
+      "time": 1777.036,
+      "source": "buckle_click",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "ratchet-lock",
+      "time": 1813.371,
+      "source": "buckle_click",
+      "gain": 0.12,
+      "transient": true
+    },
+    {
+      "id": "side-gate",
+      "time": 1843.296,
+      "source": "gate_grind",
+      "gain": 0.18,
+      "transient": false
+    },
+    {
+      "id": "step-xiaozao-right-472",
+      "time": 1871.1666666660824,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-473",
+      "time": 1871.1666666660824,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-474",
+      "time": 1871.4166666660822,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-475",
+      "time": 1871.4166666660822,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "three-0-wind",
+      "time": 1872.516,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "three-0",
+      "time": 1872.6760000000002,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "three-1-wind",
+      "time": 1873.916,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "three-1",
+      "time": 1874.076,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "three-2-wind",
+      "time": 1875.516,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "three-2",
+      "time": 1875.6760000000002,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-476",
+      "time": 1877.0833333327437,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-477",
+      "time": 1877.49999999941,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-478",
+      "time": 1877.833333332743,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-479",
+      "time": 1877.9166666660763,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-480",
+      "time": 1878.166666666076,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-481",
+      "time": 1878.3333333327425,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-482",
+      "time": 1878.4166666660758,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-483",
+      "time": 1878.5833333327423,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-484",
+      "time": 1878.6666666660756,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-485",
+      "time": 1888.2499999994002,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-486",
+      "time": 1888.2499999994002,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-487",
+      "time": 1888.4999999994,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-488",
+      "time": 1888.4999999994,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-489",
+      "time": 1888.7499999993997,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-490",
+      "time": 1888.7499999993997,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "exchange-B33-4-3-wind",
+      "time": 1889.846,
+      "source": "sickle_whoosh",
+      "gain": 0.1,
+      "transient": false
+    },
+    {
+      "id": "exchange-B33-4-3",
+      "time": 1890.006,
+      "source": "armor_impact",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-491",
+      "time": 1891.416666666064,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-492",
+      "time": 1891.8333333327303,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-493",
+      "time": 1892.1666666660633,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-494",
+      "time": 1892.2499999993966,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-495",
+      "time": 1892.4999999993963,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-496",
+      "time": 1892.6666666660628,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-497",
+      "time": 1892.749999999396,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-498",
+      "time": 1892.9166666660626,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-499",
+      "time": 1892.9999999993959,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "dark-tap-0",
+      "time": 1919.671,
+      "source": "bell_tap",
+      "gain": 0.11,
+      "transient": true
+    },
+    {
+      "id": "dark-tap-1",
+      "time": 1920.171,
+      "source": "bell_tap",
+      "gain": 0.11,
+      "transient": true
+    },
+    {
+      "id": "dark-tap-2",
+      "time": 1930.406,
+      "source": "bell_tap",
+      "gain": 0.11,
+      "transient": true
+    },
+    {
+      "id": "dark-tap-3",
+      "time": 1930.906,
+      "source": "bell_tap",
+      "gain": 0.11,
+      "transient": true
+    },
+    {
+      "id": "bracer-release",
+      "time": 1953.921,
+      "source": "buckle_click",
+      "gain": 0.14,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-500",
+      "time": 1971.999999999324,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-501",
+      "time": 1972.4166666659903,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-502",
+      "time": 1972.7499999993233,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-503",
+      "time": 1972.999999999323,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-504",
+      "time": 1973.2499999993229,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-505",
+      "time": 1973.4999999993227,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-506",
+      "time": 1973.7499999993224,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-507",
+      "time": 1973.9999999993222,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-508",
+      "time": 1974.249999999322,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-509",
+      "time": 1974.583333332655,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-510",
+      "time": 1974.916666665988,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-511",
+      "time": 1975.3333333326543,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "stairs-land",
+      "time": 1980.571,
+      "source": "wood_step",
+      "gain": 0.19,
+      "transient": true
+    },
+    {
+      "id": "enemy-platform-land",
+      "time": 2027.801,
+      "source": "wood_step",
+      "gain": 0.17,
+      "transient": true
+    },
+    {
+      "id": "third-petal",
+      "time": 2055.546,
+      "source": "blade_shield",
+      "gain": 0.25,
+      "transient": true
+    },
+    {
+      "id": "main-thread-cut",
+      "time": 2123.993,
+      "source": "string_snap",
+      "gain": 0.24,
+      "transient": true
+    },
+    {
+      "id": "gate-load-0",
+      "time": 2162.1079999999997,
+      "source": "gate_grind",
+      "gain": 0.18,
+      "transient": false
+    },
+    {
+      "id": "last-petal-0",
+      "time": 2162.658,
+      "source": "blade_shield",
+      "gain": 0.25,
+      "transient": true
+    },
+    {
+      "id": "gate-load-1",
+      "time": 2185.009,
+      "source": "gate_grind",
+      "gain": 0.195,
+      "transient": false
+    },
+    {
+      "id": "last-petal-1",
+      "time": 2185.559,
+      "source": "blade_shield",
+      "gain": 0.265,
+      "transient": true
+    },
+    {
+      "id": "gate-load-2",
+      "time": 2204.9339999999997,
+      "source": "gate_grind",
+      "gain": 0.21,
+      "transient": false
+    },
+    {
+      "id": "wind-release",
+      "time": 2205.234,
+      "source": "wind_release",
+      "gain": 0.32,
+      "transient": false
+    },
+    {
+      "id": "last-petal-2",
+      "time": 2205.484,
+      "source": "blade_shield",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "platform-fall",
+      "time": 2222.824,
+      "source": "bridge_crack",
+      "gain": 0.28,
+      "transient": true
+    },
+    {
+      "id": "platform-clip",
+      "time": 2258.8790000000004,
+      "source": "buckle_click",
+      "gain": 0.16,
+      "transient": true
+    },
+    {
+      "id": "enemy-belay",
+      "time": 2312.179,
+      "source": "buckle_click",
+      "gain": 0.12,
+      "transient": true
+    },
+    {
+      "id": "catch",
+      "time": 2332.2490000000003,
+      "source": "cloth_pull",
+      "gain": 0.25,
+      "transient": true
+    },
+    {
+      "id": "catch-armor",
+      "time": 2332.2790000000005,
+      "source": "armor_impact",
+      "gain": 0.18,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-512",
+      "time": 2343.333333333125,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-513",
+      "time": 2343.333333333125,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-514",
+      "time": 2344.333333333127,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-515",
+      "time": 2344.333333333127,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-516",
+      "time": 2345.166666666462,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-517",
+      "time": 2345.166666666462,
+      "source": "wood_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-518",
+      "time": 2426.0833333332757,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-519",
+      "time": 2427.4166666666115,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-520",
+      "time": 2428.4166666666133,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-521",
+      "time": 2429.249999999948,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-522",
+      "time": 2430.083333333283,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-523",
+      "time": 2430.916666666618,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-524",
+      "time": 2431.7499999999527,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-525",
+      "time": 2432.5833333332876,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-526",
+      "time": 2433.5833333332894,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-right-527",
+      "time": 2434.8333333332916,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-jianwang-left-528",
+      "time": 2436.1666666666274,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-529",
+      "time": 2604.666666666934,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-530",
+      "time": 2605.000000000268,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-531",
+      "time": 2606.3333333336036,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-532",
+      "time": 2606.916666666938,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-533",
+      "time": 2607.750000000273,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-534",
+      "time": 2608.500000000274,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-535",
+      "time": 2609.000000000275,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-536",
+      "time": 2610.000000000277,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-537",
+      "time": 2610.4166666669444,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-left-538",
+      "time": 2611.916666666947,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-right-539",
+      "time": 2612.083333333614,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-weihe-right-540",
+      "time": 2613.6666666669503,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "step-xiaozao-left-541",
+      "time": 2613.7500000002838,
+      "source": "boot_step",
+      "gain": 0.075,
+      "transient": true
+    },
+    {
+      "id": "last-bell-1",
+      "time": 2681.257,
+      "source": "bell_tap",
+      "gain": 0.12,
+      "transient": true
+    },
+    {
+      "id": "last-bell-2",
+      "time": 2681.757,
+      "source": "bell_tap",
+      "gain": 0.12,
+      "transient": true
+    }
+  ],
+  "sampled": 2354,
+  "sourceStorySha256": "13764f880f1c1684d42f374dc48d1397a597d76290c57ea2757d9975aa5d60f7",
+  "duration": 2686.257,
+  "sources": {
+    "performance.js": "0dca8c1074dc462464225f6a3c67f23254ff25c79acf252561ea0b6e04c3f59a",
+    "pose.js": "235decd6f5e0edad516082bd0ed9713520732795e5e48e3ef72862850f674e4c",
+    "layout.js": "aec7cb66ecb3be604ac3574cf38472a9e5e713a219fb7186953a54aec41b1e43",
+    "script.story": "13764f880f1c1684d42f374dc48d1397a597d76290c57ea2757d9975aa5d60f7"
+  }
+}

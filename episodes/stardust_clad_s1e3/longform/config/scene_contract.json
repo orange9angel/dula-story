@@ -1,0 +1,1412 @@
+{
+  "contractVersion": "1.0",
+  "episode": "stardust_clad_s1e3_longform",
+  "sourceStory": "script.story",
+  "intent": {
+    "premise": "被丝线锁住的风路迫使守卫在控制与信任之间作出选择。",
+    "audience": "中文奇幻动作长剧观众",
+    "designPriorities": [
+      "各角色外形可辨",
+      "受力和救援步骤可读",
+      "伤害与道具损坏持续"
+    ]
+  },
+  "registrations": {
+    "bootstrap": "bootstrap.js",
+    "scenes": [
+      "WindwardMarket",
+      "WindwardCourt",
+      "WindwardStore",
+      "WindwardGreenhouse",
+      "WindwardBridge",
+      "WindwardWell"
+    ],
+    "characters": [
+      "Xiaozao",
+      "Jianwang",
+      "Weihe",
+      "Yabo",
+      "Mideng"
+    ]
+  },
+  "scenes": [
+    {
+      "registryName": "WindwardMarket",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "WindwardMarket",
+        "module": "scenes.js",
+        "export": "WindwardMarketScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "风铃渡",
+        "timeOfDay": "下午至暮色",
+        "tone": [
+          "克制奇幻",
+          "生活质感"
+        ],
+        "storyFunction": "最后一趟货物、返乡与日常修复",
+        "visualRules": [
+          "面部近景避开柱、闸与同镜人物",
+          "粗绳承重，细丝攻击，颜色与材质分开"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -4,
+            -0.5,
+            -2.5
+          ],
+          "max": [
+            4,
+            4,
+            2.5
+          ]
+        },
+        "zones": [
+          {
+            "id": "marketVolume",
+            "bounds": {
+              "min": [
+                -4,
+                -0.5,
+                -2.5
+              ],
+              "max": [
+                4,
+                4,
+                2.5
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "场景支持体积；具体踏板和台阶由layout.js与stage.js定义，不把包围盒全当可行走地面"
+            ]
+          }
+        ],
+        "anchors": {
+          "bell": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              1.45,
+              -1.7
+            ],
+            "purpose": "bell"
+          },
+          "basket": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              1.6,
+              0,
+              0.3
+            ],
+            "purpose": "basket"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "室外暖侧光与冷天空补光；井内保留冷色压力光",
+        "keyDirection": [
+          -5,
+          8,
+          6
+        ],
+        "readabilityRules": [
+          "眼睛与受力手部不能淹没在暗部"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "marketAir",
+          "kind": "region",
+          "semantic": "风铃渡连续空气环境",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 6,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "sceneModule",
+          "type": "module",
+          "path": "stage.js",
+          "required": true
+        },
+        {
+          "id": "villagePlate",
+          "type": "texture",
+          "path": "assets/tex/windward_village.png",
+          "required": true
+        }
+      ]
+    },
+    {
+      "registryName": "WindwardCourt",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "WindwardCourt",
+        "module": "scenes.js",
+        "export": "WindwardCourtScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "风筛庭",
+        "timeOfDay": "下午至暮色",
+        "tone": [
+          "克制奇幻",
+          "生活质感"
+        ],
+        "storyFunction": "守卫与敌手的争执、交锋和代价",
+        "visualRules": [
+          "面部近景避开柱、闸与同镜人物",
+          "粗绳承重，细丝攻击，颜色与材质分开"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -4.5,
+            -0.5,
+            -3.5
+          ],
+          "max": [
+            4.5,
+            5,
+            3.5
+          ]
+        },
+        "zones": [
+          {
+            "id": "courtyardVolume",
+            "bounds": {
+              "min": [
+                -4.5,
+                -0.5,
+                -3.5
+              ],
+              "max": [
+                4.5,
+                5,
+                3.5
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "场景支持体积；具体踏板和台阶由layout.js与stage.js定义，不把包围盒全当可行走地面"
+            ]
+          }
+        ],
+        "anchors": {
+          "rotor": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              2.5,
+              -3.4
+            ],
+            "purpose": "rotor"
+          },
+          "plant": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              1.9,
+              0.7,
+              -0.7
+            ],
+            "purpose": "plant"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "室外暖侧光与冷天空补光；井内保留冷色压力光",
+        "keyDirection": [
+          -5,
+          8,
+          6
+        ],
+        "readabilityRules": [
+          "眼睛与受力手部不能淹没在暗部"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "courtyardAir",
+          "kind": "region",
+          "semantic": "风筛庭连续空气环境",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 6,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "sceneModule",
+          "type": "module",
+          "path": "stage.js",
+          "required": true
+        },
+        {
+          "id": "villagePlate",
+          "type": "texture",
+          "path": "assets/tex/windward_village.png",
+          "required": true
+        }
+      ]
+    },
+    {
+      "registryName": "WindwardStore",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "WindwardStore",
+        "module": "scenes.js",
+        "export": "WindwardStoreScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "旧索仓",
+        "timeOfDay": "下午至暮色",
+        "tone": [
+          "克制奇幻",
+          "生活质感"
+        ],
+        "storyFunction": "绞盘救人、旧桥姓名与救索准备",
+        "visualRules": [
+          "面部近景避开柱、闸与同镜人物",
+          "粗绳承重，细丝攻击，颜色与材质分开"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -4,
+            -0.5,
+            -3
+          ],
+          "max": [
+            4,
+            4.5,
+            4.4
+          ]
+        },
+        "zones": [
+          {
+            "id": "storeVolume",
+            "bounds": {
+              "min": [
+                -4,
+                -0.5,
+                -3
+              ],
+              "max": [
+                4,
+                4.5,
+                4.4
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "场景支持体积；具体踏板和台阶由layout.js与stage.js定义，不把包围盒全当可行走地面"
+            ]
+          }
+        ],
+        "anchors": {
+          "winch": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -2,
+              0.7,
+              0.2
+            ],
+            "purpose": "winch"
+          },
+          "door": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              1.1,
+              2.9
+            ],
+            "purpose": "door"
+          },
+          "memorial": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0.2,
+              2.15,
+              -2.84
+            ],
+            "purpose": "memorial"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "室外暖侧光与冷天空补光；井内保留冷色压力光",
+        "keyDirection": [
+          -5,
+          8,
+          6
+        ],
+        "readabilityRules": [
+          "眼睛与受力手部不能淹没在暗部"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "storeAir",
+          "kind": "region",
+          "semantic": "旧索仓连续空气环境",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 6,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "sceneModule",
+          "type": "module",
+          "path": "stage.js",
+          "required": true
+        },
+        {
+          "id": "villagePlate",
+          "type": "texture",
+          "path": "assets/tex/windward_village.png",
+          "required": true
+        }
+      ]
+    },
+    {
+      "registryName": "WindwardGreenhouse",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "WindwardGreenhouse",
+        "module": "scenes.js",
+        "export": "WindwardGreenhouseScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "暖芽温室",
+        "timeOfDay": "下午至暮色",
+        "tone": [
+          "克制奇幻",
+          "生活质感"
+        ],
+        "storyFunction": "展示风路受阻对生活的代价",
+        "visualRules": [
+          "面部近景避开柱、闸与同镜人物",
+          "粗绳承重，细丝攻击，颜色与材质分开"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -4,
+            -0.5,
+            -3.5
+          ],
+          "max": [
+            4,
+            4,
+            3.5
+          ]
+        },
+        "zones": [
+          {
+            "id": "greenhouseVolume",
+            "bounds": {
+              "min": [
+                -4,
+                -0.5,
+                -3.5
+              ],
+              "max": [
+                4,
+                4,
+                3.5
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "场景支持体积；具体踏板和台阶由layout.js与stage.js定义，不把包围盒全当可行走地面"
+            ]
+          }
+        ],
+        "anchors": {
+          "plant": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0.8,
+              0.8,
+              -0.6
+            ],
+            "purpose": "plant"
+          },
+          "pipe": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0.3,
+              -2.8
+            ],
+            "purpose": "pipe"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "室外暖侧光与冷天空补光；井内保留冷色压力光",
+        "keyDirection": [
+          -5,
+          8,
+          6
+        ],
+        "readabilityRules": [
+          "眼睛与受力手部不能淹没在暗部"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "greenhouseAir",
+          "kind": "region",
+          "semantic": "暖芽温室连续空气环境",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 6,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "sceneModule",
+          "type": "module",
+          "path": "stage.js",
+          "required": true
+        },
+        {
+          "id": "villagePlate",
+          "type": "texture",
+          "path": "assets/tex/windward_village.png",
+          "required": true
+        }
+      ]
+    },
+    {
+      "registryName": "WindwardBridge",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "WindwardBridge",
+        "module": "scenes.js",
+        "export": "WindwardBridgeScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "折翼桥",
+        "timeOfDay": "下午至暮色",
+        "tone": [
+          "克制奇幻",
+          "生活质感"
+        ],
+        "storyFunction": "有限踏板上的接力救援",
+        "visualRules": [
+          "面部近景避开柱、闸与同镜人物",
+          "粗绳承重，细丝攻击，颜色与材质分开"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -6.9,
+            -2,
+            -2
+          ],
+          "max": [
+            6.9,
+            4,
+            2
+          ]
+        },
+        "zones": [
+          {
+            "id": "bridgeVolume",
+            "bounds": {
+              "min": [
+                -6.9,
+                -2,
+                -2
+              ],
+              "max": [
+                6.9,
+                4,
+                2
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "场景支持体积；具体踏板和台阶由layout.js与stage.js定义，不把包围盒全当可行走地面"
+            ]
+          }
+        ],
+        "anchors": {
+          "cargo": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0.76,
+              -1.4
+            ],
+            "purpose": "cargo"
+          },
+          "safe": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -4.8,
+              0,
+              0
+            ],
+            "purpose": "safe"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "室外暖侧光与冷天空补光；井内保留冷色压力光",
+        "keyDirection": [
+          -5,
+          8,
+          6
+        ],
+        "readabilityRules": [
+          "眼睛与受力手部不能淹没在暗部"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "bridgeAir",
+          "kind": "region",
+          "semantic": "折翼桥连续空气环境",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 6,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "sceneModule",
+          "type": "module",
+          "path": "stage.js",
+          "required": true
+        },
+        {
+          "id": "villagePlate",
+          "type": "texture",
+          "path": "assets/tex/windward_village.png",
+          "required": true
+        }
+      ]
+    },
+    {
+      "registryName": "WindwardWell",
+      "implementation": {
+        "kind": "episode-local",
+        "name": "WindwardWell",
+        "module": "scenes.js",
+        "export": "WindwardWellScene",
+        "bootstrap": "bootstrap.js",
+        "readiness": "readyPromise"
+      },
+      "intent": {
+        "location": "风井",
+        "timeOfDay": "下午至暮色",
+        "tone": [
+          "克制奇幻",
+          "生活质感"
+        ],
+        "storyFunction": "三点开闸、平台失托和最后抓握",
+        "visualRules": [
+          "面部近景避开柱、闸与同镜人物",
+          "粗绳承重，细丝攻击，颜色与材质分开"
+        ]
+      },
+      "coordinates": {
+        "unit": "meter",
+        "upAxis": "+Y",
+        "horizontalAxes": [
+          "X",
+          "Z"
+        ],
+        "groundY": 0
+      },
+      "stage": {
+        "bounds": {
+          "min": [
+            -5.5,
+            -16,
+            -10
+          ],
+          "max": [
+            5.5,
+            6,
+            3
+          ]
+        },
+        "zones": [
+          {
+            "id": "windwellVolume",
+            "bounds": {
+              "min": [
+                -5.5,
+                -16,
+                -10
+              ],
+              "max": [
+                5.5,
+                6,
+                3
+              ]
+            },
+            "walkable": false,
+            "purpose": [
+              "场景支持体积；具体踏板和台阶由layout.js与stage.js定义，不把包围盒全当可行走地面"
+            ]
+          }
+        ],
+        "anchors": {
+          "gate": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              1.25,
+              -1.85
+            ],
+            "purpose": "gate"
+          },
+          "handle": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              -1.65,
+              1.18,
+              0.1
+            ],
+            "purpose": "handle"
+          },
+          "lamp": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              2.3,
+              2.05,
+              -0.58
+            ],
+            "purpose": "lamp"
+          },
+          "rescueLedge": {
+            "space": "world",
+            "relativeTo": "$scene",
+            "position": [
+              0,
+              0.64,
+              1.7
+            ],
+            "purpose": "rescueLedge"
+          }
+        }
+      },
+      "lighting": {
+        "mood": "室外暖侧光与冷天空补光；井内保留冷色压力光",
+        "keyDirection": [
+          -5,
+          8,
+          6
+        ],
+        "readabilityRules": [
+          "眼睛与受力手部不能淹没在暗部"
+        ]
+      },
+      "cameraObstacles": [],
+      "audioAnchors": [
+        {
+          "id": "windwellAir",
+          "kind": "region",
+          "semantic": "风井连续空气环境",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 6,
+          "loop": true
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "sceneModule",
+          "type": "module",
+          "path": "stage.js",
+          "required": true
+        },
+        {
+          "id": "villagePlate",
+          "type": "texture",
+          "path": "assets/tex/windward_village.png",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "market-bell",
+      "scene": "WindwardMarket",
+      "kind": "prop",
+      "binding": "stage.props.marketBell",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            1.45,
+            -1.7
+          ]
+        }
+      }
+    },
+    {
+      "id": "market-basket",
+      "scene": "WindwardMarket",
+      "kind": "prop",
+      "binding": "stage.props.marketBasket",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            1.6,
+            0,
+            0.3
+          ]
+        }
+      }
+    },
+    {
+      "id": "courtyard-rotor",
+      "scene": "WindwardCourt",
+      "kind": "prop",
+      "binding": "stage.dynamic.courtyard.rotor",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            2.5,
+            -3.4
+          ]
+        }
+      }
+    },
+    {
+      "id": "courtyard-plant",
+      "scene": "WindwardCourt",
+      "kind": "prop",
+      "binding": "stage.props.courtyardPlant",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            1.9,
+            0.7,
+            -0.7
+          ]
+        }
+      }
+    },
+    {
+      "id": "store-winch",
+      "scene": "WindwardStore",
+      "kind": "prop",
+      "binding": "stage.dynamic.store.winch",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -2,
+            0.7,
+            0.2
+          ]
+        }
+      }
+    },
+    {
+      "id": "store-door",
+      "scene": "WindwardStore",
+      "kind": "prop",
+      "binding": "stage.dynamic.store.door",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            1.1,
+            2.9
+          ]
+        }
+      }
+    },
+    {
+      "id": "store-memorial",
+      "scene": "WindwardStore",
+      "kind": "prop",
+      "binding": "stage.groups.store.getObjectByName('memorial-plaque')",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0.2,
+            2.15,
+            -2.84
+          ]
+        }
+      }
+    },
+    {
+      "id": "greenhouse-plant",
+      "scene": "WindwardGreenhouse",
+      "kind": "prop",
+      "binding": "stage.props.greenhousePlant",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0.8,
+            0.8,
+            -0.6
+          ]
+        }
+      }
+    },
+    {
+      "id": "greenhouse-pipe",
+      "scene": "WindwardGreenhouse",
+      "kind": "prop",
+      "binding": "stage.props.warmPipe",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0.3,
+            -2.8
+          ]
+        }
+      }
+    },
+    {
+      "id": "bridge-cargo",
+      "scene": "WindwardBridge",
+      "kind": "prop",
+      "binding": "stage.props.bridgeBasket",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0.76,
+            -1.4
+          ]
+        }
+      }
+    },
+    {
+      "id": "windwell-gate",
+      "scene": "WindwardWell",
+      "kind": "prop",
+      "binding": "stage.dynamic.windwell.gate",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            1.25,
+            -1.85
+          ]
+        }
+      }
+    },
+    {
+      "id": "windwell-handle",
+      "scene": "WindwardWell",
+      "kind": "prop",
+      "binding": "stage.props.gateHandle",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            -1.65,
+            1.18,
+            0.1
+          ]
+        }
+      }
+    },
+    {
+      "id": "windwell-rescueLedge",
+      "scene": "WindwardWell",
+      "kind": "prop",
+      "binding": "stage.groups.windwell.getObjectByName('upper-rescue-ledge')",
+      "parent": "$scene",
+      "initialPresence": "onstage",
+      "initial": {
+        "visible": true,
+        "transform": {
+          "space": "world",
+          "relativeTo": "$scene",
+          "position": [
+            0,
+            0.64,
+            1.7
+          ]
+        }
+      }
+    }
+  ],
+  "state": {
+    "performanceKind": {
+      "type": "string",
+      "initial": "action",
+      "binding": "scene.userData.performanceKind"
+    }
+  },
+  "events": [
+    {
+      "tag": "Act",
+      "scene": "WindwardMarket",
+      "handler": "act",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "dialogue"
+        }
+      ]
+    },
+    {
+      "tag": "Action",
+      "scene": "WindwardMarket",
+      "handler": "action",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "action"
+        }
+      ]
+    },
+    {
+      "tag": "Act",
+      "scene": "WindwardCourt",
+      "handler": "act",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "dialogue"
+        }
+      ]
+    },
+    {
+      "tag": "Action",
+      "scene": "WindwardCourt",
+      "handler": "action",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "action"
+        }
+      ]
+    },
+    {
+      "tag": "Act",
+      "scene": "WindwardStore",
+      "handler": "act",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "dialogue"
+        }
+      ]
+    },
+    {
+      "tag": "Action",
+      "scene": "WindwardStore",
+      "handler": "action",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "action"
+        }
+      ]
+    },
+    {
+      "tag": "Act",
+      "scene": "WindwardGreenhouse",
+      "handler": "act",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "dialogue"
+        }
+      ]
+    },
+    {
+      "tag": "Action",
+      "scene": "WindwardGreenhouse",
+      "handler": "action",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "action"
+        }
+      ]
+    },
+    {
+      "tag": "Act",
+      "scene": "WindwardBridge",
+      "handler": "act",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "dialogue"
+        }
+      ]
+    },
+    {
+      "tag": "Action",
+      "scene": "WindwardBridge",
+      "handler": "action",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "action"
+        }
+      ]
+    },
+    {
+      "tag": "Act",
+      "scene": "WindwardWell",
+      "handler": "act",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "dialogue"
+        }
+      ]
+    },
+    {
+      "tag": "Action",
+      "scene": "WindwardWell",
+      "handler": "action",
+      "argumentMode": "none",
+      "durationSeconds": 0,
+      "requires": [],
+      "effects": [
+        {
+          "op": "setState",
+          "state": "performanceKind",
+          "value": "action"
+        }
+      ]
+    }
+  ],
+  "blocking": [],
+  "shotChecks": [
+    {
+      "id": "marketEstablish",
+      "scene": "WindwardMarket",
+      "entry": 1,
+      "offsetSeconds": 1.5,
+      "purpose": "最后一趟货物、返乡与日常修复",
+      "mustSee": [
+        {
+          "entity": "market-bell",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.55,
+          "safeMargin": 0.02
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "courtyardEstablish",
+      "scene": "WindwardCourt",
+      "entry": 11,
+      "offsetSeconds": 1.5,
+      "purpose": "守卫与敌手的争执、交锋和代价",
+      "mustSee": [
+        {
+          "entity": "courtyard-rotor",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.55,
+          "safeMargin": 0.02
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "storeEstablish",
+      "scene": "WindwardStore",
+      "entry": 65,
+      "offsetSeconds": 1.5,
+      "purpose": "绞盘救人、旧桥姓名与救索准备",
+      "mustSee": [
+        {
+          "entity": "store-winch",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.55,
+          "safeMargin": 0.02
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "greenhouseEstablish",
+      "scene": "WindwardGreenhouse",
+      "entry": 87,
+      "offsetSeconds": 1.5,
+      "purpose": "展示风路受阻对生活的代价",
+      "mustSee": [
+        {
+          "entity": "greenhouse-plant",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.55,
+          "safeMargin": 0.02
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "bridgeEstablish",
+      "scene": "WindwardBridge",
+      "entry": 22,
+      "offsetSeconds": 1.5,
+      "purpose": "有限踏板上的接力救援",
+      "mustSee": [
+        {
+          "entity": "bridge-cargo",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.55,
+          "safeMargin": 0.02
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    },
+    {
+      "id": "windwellEstablish",
+      "scene": "WindwardWell",
+      "entry": 142,
+      "offsetSeconds": 1.5,
+      "purpose": "三点开闸、平台失托和最后抓握",
+      "mustSee": [
+        {
+          "entity": "windwell-gate",
+          "minFrameArea": 0.001,
+          "maxOcclusion": 0.55,
+          "safeMargin": 0.02
+        }
+      ],
+      "mustHavePresence": [],
+      "mustShowTogether": []
+    }
+  ],
+  "acceptance": {
+    "staticChecks": [
+      "story-tool",
+      "scene-tool",
+      "node-check"
+    ],
+    "runtimeChecks": [
+      "tools/audit_runtime.mjs scan",
+      "sequential-and-seek-image-check",
+      "direct-visual-review"
+    ]
+  }
+}
