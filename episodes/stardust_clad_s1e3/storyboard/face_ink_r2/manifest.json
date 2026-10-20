@@ -1,0 +1,93 @@
+{
+  "video": "output\\stardust_clad_s1e3_face_ink_r2.mp4",
+  "sha256": "927457fb51b93e198b8d858af281588b3ebe2425ba033d87d14bf3cb4099d08b",
+  "source_snapshot_sha256": "0505433cd134cbee45bd4c097f85ffeb3e91588d9e470a6c70e42cb596fe80b9",
+  "source_snapshot_note": "Code snapshot only; runtime packages and textures remain in workspace.",
+  "frames": 360,
+  "fps": 30,
+  "duration": 12,
+  "seek_passed": true,
+  "seek_samples": 20,
+  "non_finite": 0,
+  "max_root_shift": 0,
+  "max_tip_shift": 0.060789795795333994,
+  "geometry_metric_scope": "Existing animated hair parts only; the static ear wrap is not part of these lag metrics.",
+  "observed_evidence": [
+    {
+      "path": "../face_ink_r2/decoded/turn_01.jpg",
+      "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+      "window": "study",
+      "at": [
+        1.0,
+        1.2,
+        1.4,
+        1.6,
+        1.8,
+        2.0,
+        2.2,
+        2.4,
+        2.6,
+        2.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../face_ink_r2/decoded/rotation_01.jpg",
+      "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+      "window": "study",
+      "at": [
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        7.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../face_ink_r2/decoded/blink_01.jpg",
+      "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+      "window": "study",
+      "at": [
+        8.4,
+        8.45,
+        8.5,
+        8.55,
+        8.6,
+        8.65,
+        8.7,
+        8.75,
+        8.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../face_ink_r2/decoded/gaze_01.jpg",
+      "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+      "window": "study",
+      "at": [
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        11.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../face_ink_r2/details.jpg",
+      "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+      "window": "study",
+      "at": [
+        0.5
+      ],
+      "method": "still"
+    }
+  ],
+  "limitations": "Selected stills and ordered decoded frames only; no normal-speed playback, full episode integration, reference-matched dynamics or artistic equivalence claim.",
+  "production_video_sha256": "e8fca986f8feed91c83d3eab73b614ae905412aa4ccd8250430cf4673d7f2f49"
+}

@@ -1,0 +1,1106 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e3_face_ink_r2.mp4",
+    "sha256": "927457fb51b93e198b8d858af281588b3ebe2425ba033d87d14bf3cb4099d08b"
+  },
+  "scope": {
+    "subjects": [
+      "xiaozao"
+    ],
+    "windows": [
+      {
+        "id": "study",
+        "start": 0,
+        "end": 12
+      }
+    ],
+    "accepted_properties": [
+      "Same head geometry, hair R9, armor, lights, gaze and blink in both panes.",
+      "Keep the established green iris, mole and eye aperture; add restrained graphic detail."
+    ],
+    "limitations": "Selected stills and ordered decoded frames only; no normal-speed playback, full episode integration, reference-matched dynamics or artistic equivalence claim."
+  },
+  "checks": [
+    {
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "Iris color, eye aperture, mole and head silhouette remain recognizable.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "F01 describes the local graphic improvement, not a complete anatomy pass.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "F01"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "In sampled gaze changes, iris paint and highlights move together inside the original opening.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "Blink clipping works in sampled open/half/closed phases; broader expression remains generic.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "F02"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "Both panes use the same R9 hair. Its separate unresolved shape limitations remain in the hair record.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "body",
+      "status": "not_applicable",
+      "observation": "Not part of this silent local head study; whole episode, sound and body performance unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hands_props",
+      "status": "not_applicable",
+      "observation": "Not part of this silent local head study; whole episode, sound and body performance unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "support",
+      "status": "not_applicable",
+      "observation": "Not part of this silent local head study; whole episode, sound and body performance unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "Not part of this silent local head study; whole episode, sound and body performance unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "Not part of this silent local head study; whole episode, sound and body performance unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "Only timestamped decoded sequences were inspected. Normal-speed naturalness, unsampled transitions and full episode behavior remain unreviewed.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Review normal-speed playback and final episode shots before dynamic acceptance."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "Details read in the front close-up and remain surface-bound in sampled turns; extreme profile compresses them.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "Not part of this silent local head study; whole episode, sound and body performance unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Returned to complete head views; no additional separate regression asserted beyond the listed limited performance.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "F01",
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "The baseline has a very tall dark pupil, weak lower iris separation and faint facial plane accents; small catchlights already existed.",
+      "impact": "Eye depth and local facial structure are weak at the study scale.",
+      "priority": "high",
+      "hypothesis": "The painted pupil and iris values dominate the eye; small white dots alone cannot establish the intended appearance.",
+      "next_action": "Recheck under episode lighting and at actual shot sizes.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "Rounder pupil, layered lower iris paint and reflections, sparse warm under-eye and nose lines on the existing UV.",
+      "result": "The reviewed comparison shows rounder dark pupils, visible lower reflections and clearer small plane accents; no anatomical remodel claimed.",
+      "verification": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The trial still uses a restrained generic face performance; added ink does not provide the reference expression or flesh deformation.",
+      "impact": "The reference-level expressive goal remains unmet.",
+      "priority": "high",
+      "hypothesis": "Facial geometry, acting design and mouth deformation are unchanged.",
+      "next_action": "Apply a narrative expression test before claiming a performance improvement.",
+      "evidence": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "id": "face-r1-r2",
+      "change": "Opt-in curved UV graphic details; R2 also carries the repaired hair root in both panes.",
+      "result": "Local eye/line improvement, sampled blink and gaze clipping retained.",
+      "after": [
+        {
+          "path": "../face_ink_r2/decoded/turn_01.jpg",
+          "sha256": "62e6ceac78d7dc633b6dd6e6f2377710555278fa6440380007a6a7d38d5cd190",
+          "window": "study",
+          "at": [
+            1.0,
+            1.2,
+            1.4,
+            1.6,
+            1.8,
+            2.0,
+            2.2,
+            2.4,
+            2.6,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/rotation_01.jpg",
+          "sha256": "3a8bb593bb32c1f5e3d952283556a6e7b120bf3c55b2850b639f481add80ea33",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/blink_01.jpg",
+          "sha256": "c129cad0b7a2414a489fa74d07bedafb7b9bc0431c5f267cc4bcb7f6051ac27a",
+          "window": "study",
+          "at": [
+            8.4,
+            8.45,
+            8.5,
+            8.55,
+            8.6,
+            8.65,
+            8.7,
+            8.75,
+            8.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/decoded/gaze_01.jpg",
+          "sha256": "fad37d7986dc9ea07edfaf364823c066fbe722c77a9d54428266ce51dc35fd8e",
+          "window": "study",
+          "at": [
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../face_ink_r2/details.jpg",
+          "sha256": "d15f042273c25abd8a1f56694b562e1eb1edf2ebce86ab5f705d0982262da359",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        }
+      ]
+    }
+  ],
+  "misses": [
+    {
+      "id": "feature-existence-versus-readability",
+      "origin": "user_reported",
+      "prior_judgment": "Baseline already contained a white eye reflection.",
+      "later_finding": "User asked for the reference's visible eye and facial ink treatment; having a small dot did not provide comparable readability.",
+      "lesson": "Compare pupil, iris values, reflection shape and normal-size readability separately.",
+      "validation_status": "Prompted trial only, no cross-character blind test."
+    }
+  ],
+  "reviewer_conclusion": "Observed local improvements only. Selected stills and ordered decoded frames only; no normal-speed playback, full episode integration, reference-matched dynamics or artistic equivalence claim."
+}

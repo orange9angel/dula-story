@@ -1,0 +1,114 @@
+{
+  "video": "output\\stardust_clad_s1e3_hair_ear_coverage_r9.mp4",
+  "sha256": "0b90f8204837a86ae04df8e0493bb9cd7918cbdc39178f95117bc0c7ff8e19ac",
+  "source_snapshot_sha256": "7426dad89523f90fb4f76305510cf37e5fdb55b259a2f22572478c1297e5f74d",
+  "source_snapshot_note": "Code snapshot only; runtime packages and textures remain in workspace.",
+  "frames": 480,
+  "fps": 30,
+  "duration": 16,
+  "seek_passed": true,
+  "seek_samples": 21,
+  "non_finite": 0,
+  "max_root_shift": 0,
+  "max_tip_shift": 0.07685873081170687,
+  "geometry_metric_scope": "Existing animated hair parts only; the static ear wrap is not part of these lag metrics.",
+  "observed_evidence": [
+    {
+      "path": "../hair_ear_coverage_r9/decoded/turn_01.jpg",
+      "sha256": "4e40a2698c0d5697380d679cf46c776420cd91a0850829c9fd7f1437ee809db8",
+      "window": "study",
+      "at": [
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7,
+        1.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_ear_coverage_r9/decoded/reverse_01.jpg",
+      "sha256": "018d58564cc19323a51c37c61f8141913dd539a9fcb39b6226a0b9a2a0c8822f",
+      "window": "study",
+      "at": [
+        2.0,
+        2.1,
+        2.2,
+        2.3,
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_ear_coverage_r9/decoded/rotation_01.jpg",
+      "sha256": "a2593f4b55c2a14638660946662ad906f988c6facee004e36fcce7a0f0797c4c",
+      "window": "study",
+      "at": [
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        7.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_ear_coverage_r9/decoded/pitch_01.jpg",
+      "sha256": "a034981ad476ccfc2e878ede7def04037b5809fd6571ed65a4396ebcafb8d6f8",
+      "window": "study",
+      "at": [
+        12.0,
+        12.5,
+        13.0,
+        13.5,
+        14.0,
+        14.5,
+        15.0,
+        15.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_ear_coverage_r9/details.jpg",
+      "sha256": "3ed0ea89ee0dc67c7e0d63b11c68e0b2a60e8b31c82345cb6c1892f46e82d16b",
+      "window": "study",
+      "at": [
+        0.5,
+        5,
+        7
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_ear_coverage_r9/preview/front.jpg",
+      "sha256": "f5075def4d1db852202e6159dcf7d7d55313cf88f3e2331e744b8aa20f239fc4",
+      "window": "study",
+      "at": [
+        0.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_ear_coverage_r9/preview/front_down.jpg",
+      "sha256": "fd897b785fdcfc3f5da28b5d96d7ac0683dbab20d5e442286903f06524ff33f1",
+      "window": "study",
+      "at": [
+        12.5
+      ],
+      "method": "still"
+    }
+  ],
+  "limitations": "Selected stills and ordered decoded frames only; no normal-speed playback, full episode integration, reference-matched dynamics or artistic equivalence claim.",
+  "production_video_sha256": "e8fca986f8feed91c83d3eab73b614ae905412aa4ccd8250430cf4673d7f2f49"
+}
