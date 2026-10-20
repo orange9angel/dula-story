@@ -226,7 +226,25 @@ export function createPerformance(actors,timeline,envelopes){
    story.bridgeGap=true;story.cargoX=3.0;story.cargoZ=-.72;story.cargoY=.28-sag;story.rescueThird=true;
    w.worldHands={left:V(2.71,.98-sag,-.63),right:V(2.71,.98-sag,-.81)};
    if(lt>3)w.feet={right:V(.16,.42-sag,.19)};
-   story.residents=[{id:0,x:-5.5,z:-.3},{id:1,x:-5.1,z:.45},{id:2,x:3.0,z:-.72,lower:story.cargoY+.04,sit:true}];
+   const finish=b.actions.at(-1),dt=t-finish.start;
+   if(dt>=0){
+    const lift=ease(dt/2.6),lower=ease((dt-13)/3.2);
+    story.cargoY=.28+.12*lift-.26*lower;
+    w.drop=.18-.04*lift+.25*lower;
+    if(dt<4){
+     const down=ease((dt-2.8)/1.2);
+     w.feet={right:V(mix(.16,.12,down),mix(.42,actors.weihe.dimensions.footY,down),mix(.19,0,down))};
+     w.feetZ=[0,0];
+    }else{
+     w.feet=null;
+     walk(w,[2.54,-.52],[1.64,-.52],t,finish.start+4,finish.start+13,{facing:Math.PI/2,drop:.14,crouched:true});
+     w.drop=.14+.25*lower;
+    }
+    story.cargoX=w.rootX+.46;
+    w.lean=.14-.045*lower;
+    w.worldHands={left:V(w.rootX+.17,story.cargoY+.70,-.63),right:V(w.rootX+.17,story.cargoY+.70,-.81)};
+   }
+   story.residents=[{id:0,x:-5.5,z:-.3},{id:1,x:-5.1,z:.45},{id:2,x:story.cargoX,z:-.72,lower:story.cargoY+.04,sit:true}];
   }
   if(n===17){
    at(y,-1.65,.45,-Math.PI/2);gesture(y,'pull');y.drop=.10;y.lean=.07;story.winch=lt*.30;
@@ -265,15 +283,33 @@ export function createPerformance(actors,timeline,envelopes){
    if(lt>=3.2){
     at(j,1.10,-.85,Math.PI/2);
     if(lt<8.5){
-     const p=ease((lt-3.2)/5.3),z=mix(-.7,-.95,p);j.drop=.45;j.lean=.12;j.headPitch=.17;j.fist=.22;j.open=.28;
+     const p=ease((lt-3.2)/5.3),z=mix(-.7,-.95,p);j.drop=.45;j.lean=.12;j.bodyAdvance=.07;j.headPitch=.17;j.fist=.22;j.open=.28;
      j.worldHands={left:V(1.45,.92+Math.sin(p*Math.PI)*.14,z+.10),right:V(1.45,.92+Math.sin(p*Math.PI)*.14,z-.10)};
      story.plantHeld=true;story.plantCarrier='jianwang';
     }else{gesture(j,'inspect');j.headPitch=.12;}
    }
-   story.plantAside=lt>=8.5;story.clapper=true;story.clapperPlaced=lt>=3.6;
-   walk(y,[-1.7,-.65],[.65,.10],t,b.start,b.start+2.8,{facing:.0,drop:.04});
-   if(lt>=2.8&&lt<4.8){y.yaw=Math.PI;y.drop=.16;y.lean=.12;y.worldHands={right:V(.65,.82,-.15)};}
-   else if(lt>=4.8){at(y,.65,.1,.7);gesture(y,'explain',1,.35);}
+   story.plantAside=lt>=8.5;story.clapper=true;story.clapperPlaced=lt>=4.15;
+   const approachYaw=Math.atan2(2.35,.75);
+   walk(y,[-1.7,-.65],[.65,.10],t,b.start,b.start+2.8,{facing:approachYaw,drop:.04});
+   if(lt>=2.8){
+    at(y,.65,.1);y.feetZ=[0,0];
+    if(lt<3.8){
+     const a=ease((lt-2.8)/1);
+     y.yaw=mix(approachYaw,Math.PI,a);y.turn={fromYaw:approachYaw,toYaw:Math.PI,a};
+    }else if(lt<4.8){
+     y.yaw=Math.PI;
+    }else if(lt<6.0){
+     const a=ease((lt-4.8)/1.2);
+     y.yaw=mix(Math.PI,.7,a);y.turn={fromYaw:Math.PI,toYaw:.7,a};
+    }else y.yaw=.7;
+    const reach=ease((lt-3.5)/.6)*(1-ease((lt-4.65)/.5));
+    y.drop=mix(.014,.16,reach);y.lean=.12*reach;
+    if(reach>0){
+     const rest=localToWorld(actors.yabo,y,V(.18,y.shoulderY-.30-y.drop,.09));
+     y.worldHands={right:V(mix(rest.x,.65,reach),mix(rest.y,.82,reach),mix(rest.z,-.15,reach))};
+    }
+    if(lt>=5.15)gesture(y,'explain',ease((lt-5.15)/.85),.35);
+   }
   }
   if(n===24){
    at(h,-.25,-1.42,Math.PI);at(w,-1.0,-1.42,Math.PI);gesture(h,'pull');gesture(w,'pull');

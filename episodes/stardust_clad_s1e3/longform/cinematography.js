@@ -141,6 +141,11 @@ export function createCinematography(actors,stage,props){
   if(n===5&&lt<5)return{pos:[2.2,2.35,6.2],look:[.65,1.2+state.states.jianwang.rootY*.65,.1],fov:39,kind:'entrance',subject:'jianwang'};
   if(n===7&&lt<8)return{pos:[2.1,1.85,4.8],look:[-.1,1.1,2.6],fov:42,kind:'door-entry',subject:'weihe'};
   if(n===13&&action)return{pos:[.3,2.05,7.4],look:[state.states.weihe.rootX*.35,1.0,0],fov:43,kind:'rescue-traverse',subject:'bridge'};
+  if(n===16&&action===b.actions.at(-1)){
+   const x=state.states.weihe.rootX,dt=t-action.start;
+   if(dt<4)return{pos:[x-1.2,1.35,2.0],look:[x+.27,.75,-.65],fov:43,kind:'basket-unbrace',subject:'weihe'};
+   return{pos:[x-1.5,2.0,3.2],look:[x+.30,.95,-.60],fov:43,kind:'basket-recovery',subject:'weihe'};
+  }
   if(n===16&&action)return lt<2?
    {pos:[1.8,2.1,8.6],look:[state.story.cargoX*.4,1.0,-.4],fov:42,kind:'cargo-rescue',subject:'basket'}:
    {pos:[1.3,1.85,2.8],look:[2.8,1.0,-.6],fov:40,kind:'cargo-rescue-detail',subject:'basket'};

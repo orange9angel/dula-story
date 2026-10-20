@@ -33,6 +33,10 @@ export function applyPose(a,s){
    f.y-=Math.sin(Math.abs(old))*(old<0?.08:.17);
    f.y+=Math.sin(Math.abs(f.pitch))*(f.pitch<0?.08:.17);
   }
+ }else if(s.turn){
+  const sc=a.mesh.scale.x;
+  gait=loco.turningFeet(s.turn,s.rootX/sc,s.rootZ/sc,s.yaw,s.stance,d.footY);
+  for(const side of['left','right'])gait[side].z*=sc/a.mesh.scale.z;
  }
  const bodyAdvance=s.bodyAdvance??0;
  let hipY=d.footY+d.legA+d.legB-.010-s.drop+(s.air??0)+(gait?.hipDelta??0);

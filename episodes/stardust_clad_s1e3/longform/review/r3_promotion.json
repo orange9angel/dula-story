@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-20T22:15:29.548576+00:00",
+  "fromBuild": "stardust_clad_s1e3_borrowed_wind_r2",
+  "changes": "B23 Yabo approach facing, planted turning steps, reach/recovery and clapper timing; Jianwang torso advances toward the plant to keep hands reachable. B16 final action now lifts, unbraces, backs away from the missing plank and settles the occupied basket. Foley scan includes turns and new contacts.",
+  "files": [
+    {
+      "path": "performance.js",
+      "sha256": "e8b71eab298c2db9878c54c09ca89c1be9e3b37b426a52f4567febc5424536d4",
+      "beforeSha256": "0f16c7afc3c4eb72e0b472ac76dcebd4077558fac190d4514df5590765654131"
+    },
+    {
+      "path": "pose.js",
+      "sha256": "20eb23c1d54defcd694748e96f9fb0a58de7d58aad817dc6211a325770624793",
+      "beforeSha256": "235decd6f5e0edad516082bd0ed9713520732795e5e48e3ef72862850f674e4c"
+    },
+    {
+      "path": "cinematography.js",
+      "sha256": "d88e02bd7b91d6f2f71cf5316dcf1718f82e4642741bec0f698bef4fec41e8b2",
+      "beforeSha256": "36f09daec683dd87f8f2c4991691315df8f8c19745eb2584e6311cc5ffe74e94"
+    },
+    {
+      "path": "tools/audit_runtime.mjs",
+      "sha256": "9f54ecce08adc89b0465f5a274c557cf9bf497cc87e0aef01693af9ba59e3284"
+    }
+  ],
+  "candidateEvidence": [
+    "turn_before",
+    "turn_after",
+    "turn_formal_after",
+    "turn_comparison.json",
+    "turn_runtime_audit.json",
+    "turn_audio_events.json",
+    "turn_r3_reach_encoded",
+    "turn_r3_reach_decoded",
+    "turn_r3_final_encoded",
+    "bridge_r3_encoded",
+    "bridge_r3_decoded"
+  ],
+  "status": "Promoted; final audio rebuild and complete R3 render still required."
+}

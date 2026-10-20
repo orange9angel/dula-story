@@ -75,6 +75,9 @@ try{
     add(e.id+'-wind',e.time-.16,'sickle_whoosh',.10,false);
    }
    for(const [i,t]of[1.8,2.3].entries())add('opening-bell-'+i,t,'bell_tap',.15);
+   add('clapper-place',B.B23.start+4.15,'buckle_click',.055);
+   add('basket-lift-final',B.B16.actions.at(-1).start+.6,'chain_tension',.085,false);
+   add('basket-settle-final',B.B16.actions.at(-1).start+15.5,'wood_creak',.08,false);
    add('enemy-land',B.B05.start+4,'boot_step',.13);
    add('store-door',B.B07.start+.7,'wood_creak',.11,false);
    add('bridge-strain',B.B16.start+2.5,'chain_tension',.16,false);
@@ -109,11 +112,11 @@ try{
    add('last-bell-1',B.END.end-5,'bell_tap',.12);add('last-bell-2',B.END.end-4.5,'bell_tap',.12);
    const previous={},lastTime={};let sampled=0;
    for(let t=0;t<T.duration;t+=1/12){
-    const s=d.performance.sample(t),moving=Object.entries(s.states).some(([k,p])=>p.visible&&p.walk);
+    const s=d.performance.sample(t),moving=Object.entries(s.states).some(([k,p])=>p.visible&&(p.walk||p.turn));
     if(!moving){for(const k of Object.keys(previous))delete previous[k];continue;}
     let r;try{r=window.stepAt(t);}catch(e){throw new Error(`Audio contact scan t=${t}: ${e.message}`);}sampled++;
     for(const[name,a]of Object.entries(r.actors)){
-     if(!s.states[name].walk)continue;
+     if(!s.states[name].walk&&!s.states[name].turn)continue;
      for(const side of['left','right']){
       const key=name+'-'+side,f=a.feet[side],p=previous[key];
       if(p&&f.stance&&(!p.stance||f.contact!==p.contact)&&t-(lastTime[key]??-10)>.27){
