@@ -1,0 +1,226 @@
+{
+  "video": "output/stardust_clad_s1e3_hair_mass_r6.mp4",
+  "sha256": "84e5b9218a1660478ee0ca5f55fc9899a2d968a1e4712d6091d830de5e9dd800",
+  "source_snapshot_sha256": "2c2e71f1842cdc4b864aaf7e2aa0b435abb02c7eafb7362a5f7da34b5f8eae1b",
+  "source_snapshot_note": "Code snapshot only; runtime packages and textures remain in the workspace.",
+  "frames": 480,
+  "fps": 30,
+  "duration": 16,
+  "seek_passed": true,
+  "seek_samples": 21,
+  "non_finite": 0,
+  "max_root_shift": 0,
+  "max_tip_shift": 0.07685873081170687,
+  "scalp_geometry_changed": true,
+  "geometry_probe_scope": "Animated parts only; static lower fill follows head and is inspected visually.",
+  "observed_evidence": [
+    {
+      "path": "../hair_mass_r6/preview/front.jpg",
+      "sha256": "b5237a415d96aa48abd630e8a13692cd197e53a794d43c66df0f5d8dea200121",
+      "window": "study",
+      "at": [
+        0.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/right_oblique.jpg",
+      "sha256": "1219ae6ccf0bce2e25f22c93795477b0c7934b289fe0947acb5dad9b2e98136e",
+      "window": "study",
+      "at": [
+        4.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/right_profile.jpg",
+      "sha256": "5a293d87d2cd87d6009b44eab8c92dd91590f91b11169e66b4cd0887ff5a9a2f",
+      "window": "study",
+      "at": [
+        5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/right_rear.jpg",
+      "sha256": "5b11cb300b3ed89f8dec2e33925a67699bf259dafe5764f275acfa9582fe14b5",
+      "window": "study",
+      "at": [
+        5.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/rear.jpg",
+      "sha256": "24a4125c581b3c7724426f5af16bce5d0edc92182b152d797bb0e2c5b4ebf56d",
+      "window": "study",
+      "at": [
+        6
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/left_rear.jpg",
+      "sha256": "861fa09a708669266b50ceae2511fb3c32c3c58163795d36db0667fa1b91a85a",
+      "window": "study",
+      "at": [
+        6.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/left_profile.jpg",
+      "sha256": "4740ffc54eb7d49e5ad64469fff1c9b2ca65ca85d0aff2efa17d89291ef0d13f",
+      "window": "study",
+      "at": [
+        7
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/left_oblique.jpg",
+      "sha256": "46491449829c8e4697d15ee5e0aa155019c3df2b97a50ff788db9533f4f05cd7",
+      "window": "study",
+      "at": [
+        7.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/front_down.jpg",
+      "sha256": "5f36e86b1549db48b7506ca830908f1ce8f6447de8b6714e8ef96fa67094d4d0",
+      "window": "study",
+      "at": [
+        12.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/front_up.jpg",
+      "sha256": "e6f5d1deac2d1e43ae978f99d8d3ede3692baeebbf7f8cd2daee0fd8080561a2",
+      "window": "study",
+      "at": [
+        13.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/rear_down.jpg",
+      "sha256": "b60f24280b650a87aca558df7baec48729610fbd5fd634be93711d462869874a",
+      "window": "study",
+      "at": [
+        14.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/preview/rear_up.jpg",
+      "sha256": "6e65efc3663824deb2f4c11335bff1721b3108d55041fb93600a318c77a2b55f",
+      "window": "study",
+      "at": [
+        15.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_mass_r6/decoded/turn_01.jpg",
+      "sha256": "a4f6dc161261b60dcbf85baa082641af33509f26645c92ca8514cf1592d5422a",
+      "window": "study",
+      "at": [
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7,
+        1.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_mass_r6/decoded/reverse_01.jpg",
+      "sha256": "1f57d396fbcc69e59bbe337a1fe53f9b63f2dc26fec298b0e50bd742be3cacf7",
+      "window": "study",
+      "at": [
+        2.0,
+        2.1,
+        2.2,
+        2.3,
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_mass_r6/decoded/rotation_01.jpg",
+      "sha256": "ce4bc14fe85621ea7771f326cd8dbc94a5807b5ce03d6d5e91f32b230fd75395",
+      "window": "study",
+      "at": [
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        7.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_mass_r6/decoded/side_01.jpg",
+      "sha256": "f729a8a96f3e5dbb8f49eaebcee59c2c09010eab4938ab010707cd44dcd0cf49",
+      "window": "study",
+      "at": [
+        6.8,
+        6.9,
+        7.0,
+        7.1,
+        7.2
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_mass_r6/decoded/light_01.jpg",
+      "sha256": "9137af9129398f64377594d9137823da3fa4c511bccc58e43bd41e133d5f7be8",
+      "window": "study",
+      "at": [
+        8.0,
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        11.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_mass_r6/decoded/pitch_01.jpg",
+      "sha256": "c002bb5ec816b17c24ee3f343518020a23e4d57df4769aa25e7d4f2282b7772b",
+      "window": "study",
+      "at": [
+        12.0,
+        12.5,
+        13.0,
+        13.5,
+        14.0,
+        14.5,
+        15.0,
+        15.5
+      ],
+      "method": "ordered_frames"
+    }
+  ],
+  "decision": "Local candidate only; posterior contour, nape edge and light shapes unresolved.",
+  "review": "REVIEW.md",
+  "production_unchanged_sha256": "e8fca986f8feed91c83d3eab73b614ae905412aa4ccd8250430cf4673d7f2f49",
+  "asset_commit": "cc03fbf",
+  "skill_commit": "7588a72"
+}
