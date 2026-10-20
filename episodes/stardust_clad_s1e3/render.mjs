@@ -15,12 +15,16 @@ const opt=(name)=>{const i=args.indexOf(name);return i>=0?args[i+1]:null;};
 const cameraArg=opt('--camera'); // "px,py,pz,lx,ly,lz[,fov]" — locks a free camera for the whole run
 const rangeArg=opt('--range');   // "start,end" in seconds
 const outArg=opt('--out');       // filename under output/
+const viewerEntry=opt('--viewer')??'viewer.html';
 const traceArg=opt('--trace')??(physicsOnly?`${opt('--board')??'storyboard/physics'}/trace.json`:null);
 const shotsArg=opt('--shots');   // JSON：[{name,t,camera:[px,py,pz,lx,ly,lz,fov?]}] 逐拍近景审片板（逐镜点名，不走 checkTimes）
 const extraQuery=(opt('--q')??'')+(physicsOnly?'&probe-door=1&probe-bento=1&probe-surface=1':'');
 const board=path.join(here,opt('--board')??(physicsOnly?'storyboard/physics':'storyboard/r1/check'));
 const output=path.join(here,'output',outArg??'craft3d_r1.mp4');
-const audioFile=path.join(here,'assets3d/mixed.wav'); // P3 起接混音总线（缺失则静默 -an）
+const audioRelative=opt('--audio')??'assets3d/mixed.wav';
+const audioFile=path.join(here,audioRelative);
+const extraSources=viewerEntry==='viewer.html'?[]:fs.readdirSync(path.join(here,path.dirname(viewerEntry)))
+ .filter(f=>/\.(js|html|story|json|py)$/.test(f)).map(f=>path.join(path.dirname(viewerEntry),f));
 const fps=Number(opt('--fps')??30); // 60Hz collision audit; final output defaults to 30fps.
 if(physicsOnly&&(serve||shotsArg))throw new Error('--physics-only cannot be combined with --serve or --shots');
 if(!Number.isInteger(fps)||fps<1||fps>120)throw new Error('Bad --fps (expected integer 1..120)');
@@ -38,7 +42,7 @@ const server=http.createServer((req,res)=>{
   fs.createReadStream(target).pipe(res);
 });
 server.listen(serve?Number(opt('--port')??4215):0,'127.0.0.1');await once(server,'listening');
-const url=`http://127.0.0.1:${server.address().port}/viewer.html`;console.log(url);
+const url=`http://127.0.0.1:${server.address().port}/${viewerEntry.replaceAll('\\','/')}`;console.log(url);
 if(!serve){
   let browser,encoder;
   try{
@@ -64,11 +68,11 @@ if(!serve){
       }
       console.log(`shots complete: ${shots.length} frames -> ${board}`);
     }
-    const sources=episodeSources;
+    const sources=[...episodeSources,...extraSources];
     const {createHash}=await import('node:crypto');
-    const build=auditInputs(here);
+    const build=auditInputs(here,extraSources,audioRelative);
     fs.writeFileSync(path.join(board,check?'check_build.json':'render_build.json'),JSON.stringify({
-      args,output,build,
+      args,output,viewerEntry,audioRelative,build,
       sourceSha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(here,p))).digest('hex')]))
     },null,2));
     let checks=await page.evaluate(()=>window.checkTimes);
@@ -91,7 +95,7 @@ if(!serve){
       if(capture){
         const buffer=Buffer.from(result.image,'base64');
         if(!check&&!encoder.stdin.write(buffer))await once(encoder.stdin,'drain');
-        if(check&&ci<checks.length&&t>=checks[ci]){
+        if(ci<checks.length&&t>=checks[ci]){
           const filename=`shot_${String(ci+1).padStart(2,'0')}.jpg`;
           fs.writeFileSync(path.join(board,filename),buffer);
           trace.push({t,filename,...result.state});ci++;
@@ -116,7 +120,7 @@ if(!serve){
       fs.writeFileSync(path.join(board,'seek_check.json'),JSON.stringify({mode:'numeric',checks:seek,passed},null,2));
       if(!passed)throw new Error('Sequential/direct seek numeric mismatch');
     }
-    if(check&&!shots&&!physicsOnly){
+    if(!shots&&!physicsOnly){
       const seek=[];
       for(const shot of [...trace].reverse()){
         // 像素容差比较：JPEG 编码器在复杂边缘偶有单个 8×8 块的字节级非确定性，

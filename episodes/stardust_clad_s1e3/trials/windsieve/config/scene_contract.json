@@ -1,0 +1,26 @@
+{
+  "contractVersion":"1.0",
+  "episode":"stardust_clad_s1e3_windsieve_trial",
+  "sourceStory":"script.story",
+  "intent":{"premise":"小凿拦下袭向送药吊篮的银索，用受伤的手拖住缄网，争取药篮过峡的时间。","audience":"少年冒险动画观众","designPriorities":["送药目标可见","独立云峡建筑","两人发力可读","药篮与攻击索分开"]},
+  "registrations":{"bootstrap":"bootstrap.js","scenes":["WindSieveTerraceScene"],"characters":["Xiaozao","Jianwang"]},
+  "scenes":[{
+    "registryName":"WindSieveTerraceScene",
+    "implementation":{"kind":"official","name":"WindSieveTerraceScene","module":"../../../dula-assets/scenes/stardust/WindSieveTerraceScene.js","export":"WindSieveTerraceScene","bootstrap":"bootstrap.js","readiness":"readyPromise"},
+    "intent":{"location":"风筛宫云峡转运台","timeOfDay":"白昼","tone":["青石","冷天光","稀薄空气"],"storyFunction":"药篮在背景过峡，两人争夺的时间直接决定能否送达","visualRules":["不是上一宫殿换色","无旧宫门台阶列柱壁火","承重缆索与细攻击索可区分","药篮送达后留在远台","角色不站到裂缝上"]},
+    "coordinates":{"unit":"meter","upAxis":"+Y","horizontalAxes":["X","Z"],"groundY":0},
+    "stage":{"bounds":{"min":[-15,-16,-18],"max":[15,11,8]},"zones":[{"id":"stance","bounds":{"min":[-2,-0.15,-0.8],"max":[2,0,1]},"walkable":true,"purpose":["两人对峙与有限补步"]}],"anchors":{"cargoStart":{"space":"world","relativeTo":"$scene","position":[-3,0.75,-2.5],"purpose":"药篮起运"},"cargoEnd":{"space":"world","relativeTo":"$scene","position":[3,0.75,-2.5],"purpose":"远台收篮"}}},
+    "lighting":{"mood":"冷天光与浅暖侧光","keyDirection":[-5,8,5],"readabilityRules":["背后风筛轮廓不盖住脸","高光保留衣甲轮廓"]},
+    "cameraObstacles":[],
+    "audioAnchors":[{"id":"gorge","kind":"point","semantic":"峡谷风、风筛布叶与缆绳受力","position":[0,0,-2],"radius":15,"loop":true}],
+    "dependencies":[{"id":"sky","type":"texture","path":"../../assets3d/tex/backdrop_cloudpeak.png","required":true},{"id":"rock","type":"texture","path":"../../assets3d/tex/peak_rock.png","required":true}]
+  }],
+  "entities":[
+    {"id":"Xiaozao","scene":"WindSieveTerraceScene","kind":"character","runtimeName":"Xiaozao","binding":"character:Xiaozao","parent":"$scene","initialPresence":"onstage","visualForwardAxis":"+Z","initial":{"visible":true,"transform":{"space":"world","relativeTo":"$scene","position":[-0.56,0,0.12]}}},
+    {"id":"Jianwang","scene":"WindSieveTerraceScene","kind":"character","runtimeName":"Jianwang","binding":"character:Jianwang","parent":"$scene","initialPresence":"onstage","visualForwardAxis":"+Z","initial":{"visible":true,"transform":{"space":"world","relativeTo":"$scene","position":[0.62,0,-0.12]}}},
+    {"id":"medicine","scene":"WindSieveTerraceScene","kind":"prop","objectName":"medicine-cargo","binding":"stage.medicine","parent":"$scene","initialPresence":"onstage","initial":{"visible":true,"transform":{"space":"world","relativeTo":"$scene","position":[-3,0.75,-2.5]}},"states":["crossing","arrived"],"initialState":"crossing"}
+  ],
+  "state":{},"events":[],"blocking":[],
+  "shotChecks":[{"id":"cargoGoal","scene":"WindSieveTerraceScene","entry":1,"offsetSeconds":0.7,"purpose":"药篮、承重索和拦截关系可见","mustSee":[{"entity":"medicine","minFrameArea":0.005,"maxOcclusion":0.1,"safeMargin":0.01}],"mustHavePresence":[],"mustShowTogether":[]}],
+  "acceptance":{"staticChecks":["story vocabulary","scene schema","source hashes"],"runtimeChecks":["explicit viewer story compilation; no generic custom-event handlers","sequential/direct seek","decoded start/action/end shots","real shoe origins only; no full-mesh guarantee"]}
+}

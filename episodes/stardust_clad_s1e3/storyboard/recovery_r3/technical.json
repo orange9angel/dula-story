@@ -1,0 +1,80 @@
+{
+  "video": {
+    "path": "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e3\\output\\stardust_clad_s1e3_recovery_r3.mp4",
+    "sha256": "957ad9c4c435ea2564f0f28f97ed3a51cb09a66dd31a466f3a157b933a5ff250",
+    "duration": 26,
+    "video_frames": 780,
+    "format": "1280x720 30fps H264; 48kHz stereo AAC",
+    "decode_errors": 0
+  },
+  "sequential_seek": {
+    "passed": true,
+    "checks": 22
+  },
+  "source_changed_since_render": [],
+  "max_arm_target_clamp_m": 0.004012129181783064,
+  "max_arm_clamp_time": 17.233333333333334,
+  "max_arm_clamp_actor": "xiaozao",
+  "planted_feet": [
+    {
+      "actor": "xiaozao",
+      "side": "left",
+      "window": [
+        0,
+        11.5
+      ],
+      "max_origin_displacement_m": 7.850462293418876e-17
+    },
+    {
+      "actor": "xiaozao",
+      "side": "left",
+      "window": [
+        12.4,
+        25.9
+      ],
+      "max_origin_displacement_m": 7.850462293418876e-17
+    },
+    {
+      "actor": "xiaozao",
+      "side": "right",
+      "window": [
+        0,
+        25.9
+      ],
+      "max_origin_displacement_m": 5.551115123125783e-17
+    },
+    {
+      "actor": "jianwang",
+      "side": "left",
+      "window": [
+        0,
+        25.9
+      ],
+      "max_origin_displacement_m": 5.551115123125783e-17
+    },
+    {
+      "actor": "jianwang",
+      "side": "right",
+      "window": [
+        0,
+        19.65
+      ],
+      "max_origin_displacement_m": 4.163336342344337e-17
+    },
+    {
+      "actor": "jianwang",
+      "side": "right",
+      "window": [
+        20.2,
+        25.9
+      ],
+      "max_origin_displacement_m": 2.7755575615628914e-17
+    }
+  ],
+  "limits": [
+    "Foot object origins, not shoe-surface clearance or naturalness.",
+    "Reach target clamped by up to 4.1mm; do not claim zero clamp.",
+    "No audio listening or real-time video viewing.",
+    "Build input inventory is conservative and includes original episode sources not used by this trial."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "provider":"Suno",
+  "song_id":"51c9dfab-1feb-4e58-9175-43268ea4dc23",
+  "song_url":"https://suno.com/song/51c9dfab-1feb-4e58-9175-43268ea4dc23",
+  "generation_receipt":"generation_receipts.json",
+  "request":"../../../../config/windsieve_score_style.txt",
+  "requested_instrumental":true,
+  "lyrics_editor":"cleared before submission",
+  "download_kind":"normal UI Unlock & Download; WAV requested in UI, actual payload MP3",
+  "actual_container":"mp3",
+  "actual_audio_codec":"mp3",
+  "filename_note":"Driver saved .wav but ffprobe identifies MP3; retained exact downloaded bytes and filename to preserve render provenance.",
+  "sha256":"d40dab6b1b568a5170476ce0440ce9af24474a3b8a0465f8ffaca76f78614165",
+  "duration_seconds":188.4,
+  "sample_rate":48000,
+  "channels":2,
+  "trial_excerpt_seconds":[0,26],
+  "title_note":"UI title input not found; this is the local filename, not a claim about the generated song title.",
+  "review":"Decoded successfully. No listening performed. Requested approximately 70 seconds; actual result is 188.4 seconds.",
+  "generation_cost":"Existing account credits; exact debit not observed."
+}

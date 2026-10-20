@@ -1,0 +1,111 @@
+{
+  "source_sha256": "1dbc9149bd18b04f544da6847afd5ab31f8ff082dcf7a5b32b6e36207437c4dc",
+  "duration": 26.0,
+  "sources": [
+    {
+      "path": "assets3d/dialogue/l05.wav",
+      "sha256": "1479b1bf1e1288f35976aa7b93cc57009d8064192ff8976e77ff8747d76fe34c",
+      "receipt": "assets3d\\dialogue\\l05.source.json"
+    },
+    {
+      "path": "assets3d/dialogue/e01.wav",
+      "sha256": "74881435d40abfff6505ecd0bbd0d7c958de39834d0ab751f178befd76e72d45",
+      "receipt": "assets3d\\dialogue\\e01.source.json"
+    },
+    {
+      "path": "assets3d/dialogue/l13.wav",
+      "sha256": "ed54eed088dec84af8075626b9a805a43b373c83b90d82bd6d3149c1a64351d1",
+      "receipt": "assets3d\\dialogue\\l13.source.json"
+    },
+    {
+      "path": "assets3d/dialogue/e03.wav",
+      "sha256": "5084ac166f82adf6bfac84f1dbc1adcb9916efa4f3628b197c2dc891ecbac61c",
+      "receipt": "assets3d\\dialogue\\e03.source.json"
+    },
+    {
+      "path": "assets3d/sfx/blade_shield.wav",
+      "sha256": "cb6e7791423d83132f6d746c1b85215fda911e7b1ed89e282d2ef69f7318c2ac",
+      "receipt": "assets3d\\sfx\\blade_shield.source.json"
+    },
+    {
+      "path": "assets3d/sfx/cloth_pull.wav",
+      "sha256": "41648110a21096ed1d0d25459521ea18356ed85765e1fb00dbfa14fc05e41117",
+      "receipt": "assets3d\\sfx\\cloth_pull.source.json"
+    },
+    {
+      "path": "assets3d/sfx/boot_step.wav",
+      "sha256": "2fcb4f0939a541727a3240343ea7219fb42efb387d25cc872a650c4d55193265",
+      "receipt": "assets3d\\sfx\\boot_step.source.json"
+    },
+    {
+      "path": "assets3d/sfx/chain_tension.wav",
+      "sha256": "5ecfc153e47ceb5278cd3c8752e0306361b1629b8a0421a065b3c8bf350ae84a",
+      "receipt": "assets3d\\sfx\\chain_tension.source.json"
+    },
+    {
+      "path": "assets3d/sfx/cloth_pull.wav",
+      "sha256": "41648110a21096ed1d0d25459521ea18356ed85765e1fb00dbfa14fc05e41117",
+      "receipt": "assets3d\\sfx\\cloth_pull.source.json"
+    },
+    {
+      "path": "assets3d/sfx/string_snap.wav",
+      "sha256": "81de0ddaebede18b91b84e7128210b30867b6ff5f62f2990af38737f61d5f45f",
+      "receipt": "assets3d\\sfx\\string_snap.source.json"
+    },
+    {
+      "path": "assets3d/sfx/boot_step.wav",
+      "sha256": "2fcb4f0939a541727a3240343ea7219fb42efb387d25cc872a650c4d55193265",
+      "receipt": "assets3d\\sfx\\boot_step.source.json"
+    },
+    {
+      "path": "assets3d/sfx/bgm_nightbattle.wav",
+      "sha256": "d6bd3abad5e1ea95b27f60187f3f302d98a666c77c181a2f70d343d6f5d6af8c",
+      "receipt": "assets3d\\sfx\\bgm_nightbattle.source.json"
+    },
+    {
+      "path": "assets3d/sfx/wind_gorge.wav",
+      "sha256": "4128aa389b92b06ade78da3d171670dbde03562f44099ae9126b50af6af01779",
+      "receipt": "assets3d\\sfx\\wind_gorge.source.json"
+    }
+  ],
+  "events": [
+    [
+      "block",
+      "blade_shield",
+      0.4
+    ],
+    [
+      "bind",
+      "cloth_pull",
+      0.28
+    ],
+    [
+      "plant",
+      "boot_step",
+      0.27
+    ],
+    [
+      "lock",
+      "chain_tension",
+      0.25
+    ],
+    [
+      "pull",
+      "cloth_pull",
+      0.33
+    ],
+    [
+      "cut_hit",
+      "string_snap",
+      0.45
+    ],
+    [
+      "land",
+      "boot_step",
+      0.32
+    ]
+  ],
+  "mixed_sha256": "36a786b1275d4526d0945354c78b22f6b31534c3d2a28fdd55e3934ec5b48983",
+  "peak": 0.5098071098327637,
+  "listening": "not performed; technical validation only"
+}
