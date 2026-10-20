@@ -6,7 +6,9 @@ export function strand(scene,color,width=.008,segments=24){
  const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(segments*18),3));
  const mat=new THREE.MeshBasicMaterial({color,side:THREE.DoubleSide,transparent:true,opacity:1});
  const mesh=new THREE.Mesh(geo,mat);mesh.frustumCulled=false;scene.add(mesh);
- return{mesh,update(from,to,camera,{sag=0,alpha=1,curve=null}={}){
+ let latest=null;
+ function update(from,to,camera,{sag=0,alpha=1,curve=null}={}){
+  latest={from,to,sag,alpha,curve};
   mesh.visible=alpha>0;if(!mesh.visible)return;mat.opacity=alpha;
   const point=u=>curve?curve(u):from.clone().lerp(to,u).add(V([0,-Math.sin(u*Math.PI)*sag,0]));
   const attr=geo.attributes.position;let k=0;
@@ -15,8 +17,9 @@ export function strand(scene,color,width=.008,segments=24){
    let normal=new THREE.Vector3().crossVectors(t,eye).normalize().multiplyScalar(width*.5);
    if(normal.lengthSq()<1e-8)normal=V([width*.5,0,0]);
    for(const p of[a.clone().sub(normal),b.clone().sub(normal),a.clone().add(normal),a.clone().add(normal),b.clone().sub(normal),b.clone().add(normal)])attr.setXYZ(k++,p.x,p.y,p.z);
-  }attr.needsUpdate=true;
- }};
+  }attr.needsUpdate=true;geo.computeBoundingSphere();
+ }
+ return{mesh,update,face(camera){if(latest)update(latest.from,latest.to,camera,latest);}};
 }
 function simpleMat(color,emissive=null){return new THREE.MeshStandardMaterial({color,roughness:.60,metalness:emissive?0:.45,...(emissive?{emissive,emissiveIntensity:1}: {})});}
 function addMesh(parent,geometry,material,pos=[0,0,0]){const o=new THREE.Mesh(geometry,material);o.position.fromArray(pos);o.castShadow=true;parent.add(o);return o;}
@@ -121,7 +124,7 @@ export async function createStoryProps(stage,actors,renderer,textureUrl){
    o.update(i>=8?hand('jianwang','right'):V(points[0]),i>=8?V([.28,2.04,i===8?-.10:1.0]):V(points[1]),camera,{alpha:s.netRock?.68:0,sag:i>=8?0:.06});
   }
   if(s.lampHeld&&lamp.visible){lamp.position.copy(hand('mideng','left').lerp(hand('mideng','right'),.5));lamp.position.y-=.035;lamp.rotation.set(0,0,.03*Math.sin(t*1.6));}
-  else{lamp.position.set(...(beat.scene==='store'?[-2.6,.26,1.0]:[2.3,2.05,-.58]));lamp.rotation.set(0,0,0);}
+  else{lamp.position.set(...(s.lampRest==='courtyard-table'?[2.25,.94,-.70]:beat.scene==='store'?[-2.6,.26,1.0]:[2.3,2.05,-.58]));lamp.rotation.set(0,0,0);}
   lamp.userData.glass.color.set(s.lampOn?'#ffe0a1':'#4b5862');lamp.userData.glass.emissiveIntensity=s.lampOn?.85:0;lampLight.intensity=s.lampOn?.40:0;
   heldPlant.visible=!!s.plantHeld;
   ratchetArm.rotation.z=-Math.PI*.5*(n<31?0:n===31?(s.ratchetTurn??0):1);
@@ -160,7 +163,9 @@ export async function createStoryProps(stage,actors,renderer,textureUrl){
   }
   detachedBracer.visible=n===35&&s.bracerLost;
   if(detachedBracer.visible){const u=clamp((t-state.beat.start)/Math.max(.1,state.bt));detachedBracer.position.copy(hand('jianwang','left')).add(V([0,-.09,0]));detachedBracer.rotation.z=.6;}
-  const palm=hand('jianwang','right'),leftPalm=hand('jianwang','left');
+  // The remote control lines enter the well through the shaft when their owner is upstairs.
+  const palm=states.jianwang.visible?hand('jianwang','right'):V([.46,2.70,-1.80]),
+   leftPalm=states.jianwang.visible?hand('jianwang','left'):V([-.46,2.70,-1.80]);
   for(const[i,o]of threads.entries()){
    let alpha=0,a=palm,b=V([0,0,0]),sag=0;
    if(s.threadMode==='web'&&['courtyard','bridge'].includes(beat.scene)){
@@ -204,6 +209,9 @@ export async function createStoryProps(stage,actors,renderer,textureUrl){
   }
   return{residentStates,discBroken:d,grips:{lamp:lamp.visible&&s.lampHeld?lamp.position.distanceTo(hand('mideng','left').lerp(hand('mideng','right'),.5)):null}};
  }
- return{update,root,lamp,disc,petals,residents,threads,hand,clapper,makerMark,netRock,rescueRing};
+ const alignToCamera=camera=>{
+  for(const o of[...stoneNet,...threads,band,black,yellow,red,rescue])o.face(camera);
+ };
+ return{update,alignToCamera,root,lamp,disc,petals,residents,threads,hand,clapper,makerMark,netRock,rescueRing};
 }
 function pulseBlink(t){const d=(t%4.7)-4.1;return Math.max(0,1-Math.abs(d)/.085);}

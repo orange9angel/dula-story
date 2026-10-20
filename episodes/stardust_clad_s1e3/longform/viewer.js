@@ -27,7 +27,9 @@ function pose(t){
  const sceneAdapter=sceneAdapters[state.beat.scene].bindState(state,timeline.duration);
  if(state.action)sceneAdapter.action();else sceneAdapter.act();
  for(const[name,a]of Object.entries(actors)){
-  const s=state.states[name];a.mesh.visible=s.visible&&!state.story.cutaway;if(s.visible)traces[name]=applyPose(a,s);
+  const s=state.states[name];a.mesh.visible=s.visible&&!state.story.cutaway;
+  // Hidden actors still have deterministic transforms for gaze and attached anchors.
+  const trace=applyPose(a,s);if(s.visible)traces[name]=trace;
  }
  for(const[name,a]of Object.entries(actors)){
   const s=state.states[name];if(!s.visible)continue;
@@ -83,7 +85,8 @@ function overlay(state){
 }
 function draw(t,capture=true){
  const state=pose(t);cinematography.update(camera,state,free);const propState=props.update(state,camera);
- stage.scene.updateMatrixWorld(true);const shot=cinematography.update(camera,state,free);effects.update(state,camera);
+ stage.scene.updateMatrixWorld(true);const shot=cinematography.update(camera,state,free);
+ props.alignToCamera(camera);effects.update(state,camera);
  const data={t,beat:state.beat.id,scene:state.story.cutaway??state.beat.scene,storyScene:state.beat.scene,shot,active:state.spoken?.id??null,
   actors:Object.fromEntries(Object.entries(state.states).filter(([k,s])=>s.visible).map(([k,s])=>[k,{root:[s.rootX,s.rootY??0,s.rootZ],yaw:s.yaw,head:[s.headYaw,s.headPitch],jaw:s.jaw??0,
    walkKey:s.walk?JSON.stringify([s.walk.from,s.walk.to,s.walk.facingYaw]):null,...state.traces[k]}])),

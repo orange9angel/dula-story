@@ -34,9 +34,12 @@ export function createCinematography(actors,stage,props){
    ray.set(pos,aim.clone().sub(pos).normalize());ray.far=pos.distanceTo(aim)-.13;
    if(ray.intersectObjects(solids,false).length)score+=8;
   }
-  for(const[name,a]of Object.entries(actors)){
-   if(name===subject||!state.states[name].visible)continue;
-   const h=head(name),body=a.mesh.localToWorld(V([0,1.05,0])),shoulders=a.mesh.localToWorld(V([0,a.dimensions.shoulderY-.025,0]));
+  const foreground=[...Object.entries(actors).filter(([name])=>state.states[name].visible),
+   ...props.residents.filter(a=>a.mesh.visible).map((a,i)=>['resident-'+i,a])];
+  for(const[name,a]of foreground){
+   if(name===subject)continue;
+   const h=a.headGroup.getWorldPosition(new THREE.Vector3()).add(V([0,.04,0])),
+    body=a.mesh.localToWorld(V([0,1.05,0])),shoulders=a.mesh.localToWorld(V([0,a.dimensions.shoulderY-.025,0]));
    for(const aim of[target,target.clone().add(V([0,-.12,0])),target.clone().add(V([0,-.26,0]))]){
     const dir=aim.clone().sub(pos).normalize(),len=pos.distanceTo(aim);
     for(const[c,r]of[[h,.23],[body,.30*a.mesh.scale.x],[shoulders,.43*a.mesh.scale.x]]){
@@ -55,12 +58,18 @@ export function createCinematography(actors,stage,props){
    const angle=yaw+offset,p=target.clone().add(V([Math.sin(angle)*dist+Math.cos(angle)*side,.055+(Math.abs(offset)>.7?.10:0),Math.cos(angle)*dist-Math.sin(angle)*side]));
    if(state.beat.scene==='windwell'&&p.z< -1.45){p.z=-1.42;p.x+=name==='jianwang'?-1.0:1.0;}
    if(state.beat.scene==='store'){p.x=Math.max(-3.35,Math.min(3.35,p.x));p.z=Math.min(2.55,p.z);}
+   // Clipping a camera to a wall boundary must not move it inside its own subject.
+   if(p.distanceTo(target)<(close?1.0:1.4))continue;
    const score=obstruction(p,target,name,state)+Math.abs(offset)*.1;
    if(score<best){pos=p;best=score;}
    if(score<1)break;
   }
+  if(!pos)return{...WIDE[state.beat.scene],kind:'wide',subject:state.beat.scene};
   if(!close)target.y-=.24;
-  return{pos:pos.toArray(),look:target.toArray(),fov:close?30:34,kind:reaction?'reaction':close?'portrait':'medium',subject:name};
+  const baseFov=close?30:34,actualDistance=pos.distanceTo(target);
+  const fov=actualDistance<dist*.95?
+   THREE.MathUtils.radToDeg(2*Math.atan(Math.tan(THREE.MathUtils.degToRad(baseFov*.5))*dist/actualDistance)):baseFov;
+  return{pos:pos.toArray(),look:target.toArray(),fov,kind:reaction?'reaction':close?'portrait':'medium',subject:name};
  }
  function insert(kind,state){
   const n=state.n,scene=state.beat.scene;
@@ -90,7 +99,9 @@ export function createCinematography(actors,stage,props){
    return out(p.clone().add(V([.8,.50,1.7])).toArray(),p.toArray(),37);
   }
   if(kind==='waist'){const p=actors.weihe.mesh.localToWorld(V([0,.9,.05]));return out(p.clone().add(V([.4,.18,1.1])).toArray(),p.toArray(),32);}
-  const p=props.hand('xiaozao',kind==='wrist'?'left':'right');
+  const owner=state.states.xiaozao.visible?'xiaozao':
+   state.states.jianwang.visible?'jianwang':Object.keys(state.states).find(k=>state.states[k].visible);
+  const p=props.hand(owner,kind==='wrist'?'left':'right');
   return out(p.clone().add(V([.65,.24,1.15])).toArray(),p.toArray(),31);
  }
  function choose(state){
@@ -104,6 +115,11 @@ export function createCinematography(actors,stage,props){
   if(n===23&&lt>=3.2&&lt<8.5)return{pos:[2.45,1.65,.75],look:[1.30,1.05,-.8],fov:40,kind:'plant-rescue',subject:'jianwang'};
   if(n===24&&lt<6)return{pos:[-2.8,1.8,.9],look:[-.55,1.15,-1.5],fov:44,kind:'gate-opening',subject:'two-person-pull'};
   if(n===25&&lt<7)return{pos:[-1.3,1.3,1.6],look:[-.08,1.0,.20],fov:40,kind:'band-catch',subject:'two-person-grip'};
+  if(n===10&&state.story.plantHeld&&active?.speaker==='mideng'){
+   const p=head('mideng'),angle=state.states.mideng.yaw+1.15;
+   return{pos:p.clone().add(V([Math.sin(angle)*1.85,.10,Math.cos(angle)*1.85])).toArray(),
+    look:p.clone().add(V([0,-.13,0])).toArray(),fov:38,kind:'plant-presentation',subject:'mideng'};
+  }
   if(n===42&&t>=(b.actions[1].start+8)&&t<(b.actions[1].start+11.5)){
    const p=props.rescueRing.getWorldPosition(new THREE.Vector3()),yaw=state.states.jianwang.yaw;
    return{pos:p.clone().add(V([Math.sin(yaw)*1.05+Math.cos(yaw)*.25,.23,Math.cos(yaw)*1.05-Math.sin(yaw)*.25])).toArray(),
@@ -116,9 +132,13 @@ export function createCinematography(actors,stage,props){
   const hit=state.impacts.find(e=>t>e.time-1.35&&t<e.time+1.0);
   if(hit){
    if(!hit.zone&&actors[hit.target]&&t>hit.time+.18&&t<hit.time+.75)return portrait(hit.target,state,{reaction:true});
+   if(hit.attacker==='xiaozao'&&actors[hit.target]&&!hit.zone&&hit.type!=='kick'){
+    const a=state.states.xiaozao,b=state.states[hit.target],x=(a.rootX+b.rootX)/2,z=(a.rootZ+b.rootZ)/2;
+    return{pos:[x+.8,1.90,z-1.4],look:[x,1.25,z],fov:64,kind:'contact',subject:hit.id};
+   }
    return{pos:hit.type==='kick'?[2.2,1.65,4.0]:hit.zone?[1.3,1.85,4.1]:[1.3,1.70,3.2],look:hit.type==='kick'?[0,1.1,.1]:[0,1.18,.10],fov:hit.zone?39:hit.type==='kick'?37:36,kind:'contact',subject:hit.id};
   }
-  if(n===5&&lt<5)return{pos:[2.2,1.45,5.0],look:[.65,2.2-.18*lt,.1],fov:37,kind:'entrance',subject:'jianwang'};
+  if(n===5&&lt<5)return{pos:[2.2,2.35,6.2],look:[.65,1.2+state.states.jianwang.rootY*.65,.1],fov:39,kind:'entrance',subject:'jianwang'};
   if(n===7&&lt<8)return{pos:[2.1,1.85,4.8],look:[-.1,1.1,2.6],fov:42,kind:'door-entry',subject:'weihe'};
   if(n===13&&action)return{pos:[.3,2.05,7.4],look:[state.states.weihe.rootX*.35,1.0,0],fov:43,kind:'rescue-traverse',subject:'bridge'};
   if(n===16&&action)return lt<2?
@@ -136,6 +156,26 @@ export function createCinematography(actors,stage,props){
    return{...wide,pos:wide.pos.map((v,i)=>i===0?v-.4:v),kind:'action-wide'};
   }
   const l=active??previousLine;
+  if(['B41_04','B41_06','B42_02'].includes(l?.id)){
+   const p=head('xiaozao'),angle=state.states.xiaozao.yaw-.65;
+   return{pos:p.clone().add(V([Math.sin(angle)*1.65,.17,Math.cos(angle)*1.65])).toArray(),
+    look:p.clone().add(V([0,-.10,0])).toArray(),fov:36,kind:'rescue-dialogue',subject:'xiaozao'};
+  }
+  if(n===13&&l?.speaker==='yabo'){
+   const p=head('yabo'),angle=state.states.yabo.yaw-1.0;
+   return{pos:p.clone().add(V([Math.sin(angle)*1.55,.15,Math.cos(angle)*1.55])).toArray(),
+    look:p.clone().add(V([0,-.08,0])).toArray(),fov:38,kind:'bridge-guidance',subject:'yabo'};
+  }
+  if(n===24&&['weihe','xiaozao'].includes(l?.speaker)){
+   const p=head(l.speaker),side=l.speaker==='weihe'?-1:1;
+   return{pos:[p.x+side*1.75,p.y+.10,-1.58],look:p.clone().add(V([0,-.10,0])).toArray(),
+    fov:35,kind:'gate-profile',subject:l.speaker};
+  }
+  if(n===16&&l?.speaker==='weihe'){
+   const p=head('weihe'),angle=state.states.weihe.yaw-.8;
+   return{pos:p.clone().add(V([Math.sin(angle)*1.7,.14,Math.cos(angle)*1.7])).toArray(),
+    look:p.clone().add(V([0,-.10,0])).toArray(),fov:35,kind:'cargo-dialogue',subject:'weihe'};
+  }
   if(l&&state.states[l.speaker]?.visible){
    const i=Number(l.id.split('_')[1]),since=t-l.start,listener=state.states[l.speaker].target;
    if(listener&&state.states[listener]?.visible&&since<.55&&i%4===0)return portrait(listener,state,{reaction:true});

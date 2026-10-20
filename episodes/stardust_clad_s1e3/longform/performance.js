@@ -185,8 +185,10 @@ export function createPerformance(actors,timeline,envelopes){
   if(n===9){gesture(m,'hold');at(y,-1.9,-.6,.6);if(lt<6){gesture(y,'crouch',1,.6);y.headPitch=.18;}story.lampHeld=true;}
   if(n===10){
    walk(m,[2.4,.35],[.6,.55],t,b.start,b.start+4,{facing:-.45});gesture(m,'hold');
+   story.lampHeld=false;story.lampRest='courtyard-table';
    story.plantHeld=lt<bt*.55;story.plantCarrier='mideng';
    if(t>key(4)){at(m,1.48,-.25,1.05);gesture(m,'hold');}
+   if(story.plantHeld){m.left.y-=.08;m.right.y-=.08;}
    if(active?.speaker==='xiaozao')h.headPitch=.11;
   }
   if(n===11){at(m,-1.45,.15,.4);gesture(j,'thread');gesture(h,'guard');story.silverDust=prog(b.start,b.start+5);}
@@ -506,6 +508,11 @@ export function createPerformance(actors,timeline,envelopes){
   // admitting pain, remembered loss and the final release are different holds.
   if(n===1){w.focus=.10;w.smile=.30;y.focus=.12;y.smile=.22;w.browAsym=.22;}
   if(n===9){m.focus=.18;m.fear=.22;w.focus=.25;y.focus=.30;}
+  if(n===16){
+   const effort=.5+.5*Math.sin(lt*2.25);
+   w.focus=.74+.10*effort;w.fear=.13;w.browAsym=.34;
+   w.headPitch=-.035+.025*effort;w.lean+=.012*effort;w.drop+=.006*effort;
+  }
   if(n===17.5){w.focus=.18;w.fear=lt<35?.24:.10;y.focus=.16;y.smile=t>key(20)?.08:.18;}
   if(n===20){h.focus=.15;h.fear=.14;h.browAsym=.32;w.focus=.12;w.smile=.10;m.focus=.18;}
   if(n===21&&active?.speaker==='yabo'){y.headYaw=-.11;y.headPitch=.08;y.browAsym=.28;y.focus=.18;}

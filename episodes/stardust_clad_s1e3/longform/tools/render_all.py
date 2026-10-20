@@ -147,15 +147,24 @@ def run_part(part):
         print(f"done part {index:03}: {part['frames']} frames; clamp={qc['maxClamp']:.5f}", flush=True)
 
 started = time.monotonic()
+failures = []
 with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:
     futures = [pool.submit(run_part, part) for part in build["parts"]]
     for future in concurrent.futures.as_completed(futures):
-        future.result()
+        try:
+            future.result()
+        except Exception as error:
+            failures.append(str(error))
 after = capture_sources()
 if after["identity"] != source["identity"]:
     build.update(state="source-changed", ended=now(), sourceAfter=after)
     save(build_file, build)
     raise RuntimeError("Sources changed during rendering; output must not be presented as a frozen build")
+if failures:
+    build.update(state="failed", ended=now(), sourceUnchanged=True, failures=failures,
+                 elapsedSeconds=time.monotonic()-started)
+    save(build_file, build)
+    raise RuntimeError("Failed parts were preserved; no full movie was assembled: "+"; ".join(failures))
 concat = RUN/"concat.txt"
 concat.write_text("".join("file '"+Path(part["path"]).as_posix().replace("'", r"'\''")+"'\n"
                           for part in build["parts"]), encoding="utf-8")
