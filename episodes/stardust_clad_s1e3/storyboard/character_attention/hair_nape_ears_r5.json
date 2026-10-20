@@ -1,0 +1,2022 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e3_hair_nape_ears_r5.mp4",
+    "sha256": "d405ec257ddd528b842858922597762596b163b88addd69fe1a574f1dc5b3cf5"
+  },
+  "scope": {
+    "subjects": [
+      "xiaozao"
+    ],
+    "windows": [
+      {
+        "id": "study",
+        "start": 0,
+        "end": 16
+      }
+    ],
+    "accepted_properties": [
+      "User approved the direction of the connected R6 dark mass, not full benchmark quality.",
+      "Preserve the current forehead height and connected dark fill; extend sideburns/nape and revise ears.",
+      "Same face geometry, armor, camera and pose in both panes. Ear and hair candidates only."
+    ],
+    "limitations": "Stills and ordered frames; no realtime playback, matched reference dynamics, whole-episode integration or all-angle collision claim."
+  },
+  "checks": [
+    {
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "Dark fill and face framing are retained. The crown and posterior mass remain heavy and rigid.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "N04"
+      ],
+      "next_action": "Redesign broad contour and root-to-fringe flow before further detail accumulation."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "In reviewed ear crops and turn samples, the white ornament-like folds are replaced by skin-colored shallow forms and thin dark folds. Both ear bases remain attached; whole-face anatomical quality is not re-evaluated.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "gaze",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "Sideburns now descend to the lower-ear region; posterior hair reaches the neck. Forehead coverage is retained with a small irregular edge change. Root/fringe naturalness improves only slightly; broad masses and pointed lower transitions remain rigid.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "N03"
+      ],
+      "next_action": "Redesign broad contour and root-to-fringe flow before further detail accumulation."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "body",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hands_props",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "support",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "Sampled turns, stops, profiles and pitch retain coherent ear attachment and continuous hair fill. No claim about unsampled flicker, normal-speed naturalness, or reference-matched motion.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Review normal-speed playback and matched reference motion before dynamic acceptance."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "The ear change reads at normal head-shot size; hairline changes are subtle. Some existing light planes still read as bands with abrupt ends.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "N05"
+      ],
+      "next_action": "Redesign broad contour and root-to-fringe flow before further detail accumulation."
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "This silent local hair/ear study does not evaluate this behavior. Existing episode, audio and body performance remain unchanged.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Returned to complete heads after crops. Listed issues cover the remaining heavy mass, rigid lower edge and light bands. No additional distinct defect asserted in this limited study.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "N01",
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "R6 sideburns end high and the lower hair stops above the requested neck coverage.",
+      "impact": "Missing requested length in side and pitched rear views.",
+      "priority": "high",
+      "hypothesis": "Spherical lower fill wraps inward; previous review checked gaps instead of endpoint landmarks.",
+      "next_action": "Keep checking these endpoints against ear lobe and neck when altering poses.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "Downward tapered continuous nape, longer connected sideburns, separate forehead protection.",
+      "result": "Lower-ear sideburns and neck-length rear fill are visibly present in sampled profiles and rear pitch. Shape quality remains under N04.",
+      "verification": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Old ears have white raised folds and a violet cavity, with overly broad frontal presentation.",
+      "impact": "Reads as an attached ornament rather than part of the face.",
+      "priority": "high",
+      "hypothesis": "Old ear palette and orientation no longer match final face treatment.",
+      "next_action": "Recheck ear lobe and shading when changing the face palette or hair occlusion.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "Opt-in shallow auricle, sparse dark folds, face-related skin color, revised local orientation.",
+      "result": "White ornament effect reduced; profile retains lobe and internal structure while front shows a narrower ear plane. This does not certify complete anatomical realism.",
+      "verification": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "in_progress",
+      "fact": "Frontal roots and fringe edges still feel coarse; user requires no wig effect and no recession.",
+      "impact": "Front framing remains below the requested naturalness.",
+      "priority": "high",
+      "hypothesis": "Visible edge largely belongs to the large fringe surfaces, not only the hidden cap.",
+      "next_action": "Redesign the exposed root-to-fringe transition as authored boundaries, preserving forehead height.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "Small unequal downward extensions at existing temple/cap/fringe borders; central anchor unchanged.",
+      "result": "No material frontal recession in compared views; edge changes are modest and do not eliminate wig feel."
+    },
+    {
+      "id": "N04",
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "The posterior/crown mass remains heavy and nape tips can still feel stiff.",
+      "impact": "Prevents whole-hair artistic acceptance.",
+      "priority": "high",
+      "hypothesis": "Large contour and highlight design remain inherited from the earlier coarse study.",
+      "next_action": "Use an authored side/back contour before another broad geometry expansion.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "Some inherited light planes still read as bands with abrupt ends in profile.",
+      "impact": "Lighting does not fully describe the intended soft flowing mass.",
+      "priority": "high",
+      "hypothesis": "The highlight field is tied to inherited lock coordinates rather than a newly authored light design.",
+      "next_action": "Redraw and taper the selected light planes on the actual side and posterior forms.",
+      "evidence": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "id": "nape-ear-r1-to-r5",
+      "change": "Longer nape and sideburns, new ears, conservative frontal edge adjustment.",
+      "result": "R1 rejected for cloth-like lower panel and overly long sideburns. R2 tapered the panel and shortened sideburns; R3 varied the lower hem but exposed thin old tips. R4 removed duplicate short-nape tips. R5 reduced the posterior main tip. Remaining hard mass and subtle front improvement are not accepted as benchmark quality.",
+      "before": [
+        {
+          "path": "../hair_nape_ears_r1/preview/left_profile.jpg",
+          "sha256": "af52884bafe164cdbe2d5379bea2c3f4f2222e667225a67aebd6b2b36a1ac37d",
+          "window": "study",
+          "at": [
+            7
+          ],
+          "method": "still"
+        }
+      ],
+      "after": [
+        {
+          "path": "../hair_nape_ears_r5/preview/front.jpg",
+          "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+          "window": "study",
+          "at": [
+            0.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+          "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+          "window": "study",
+          "at": [
+            15.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/details.jpg",
+          "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+          "window": "study",
+          "at": [
+            0.5,
+            7,
+            14.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+          "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+          "window": "study",
+          "at": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+          "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+          "window": "study",
+          "at": [
+            2.0,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+          "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+          "window": "study",
+          "at": [
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+          "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+          "window": "study",
+          "at": [
+            6.8,
+            6.9,
+            7.0,
+            7.1,
+            7.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+          "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+          "window": "study",
+          "at": [
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+          "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+          "window": "study",
+          "at": [
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "misses": [
+    {
+      "id": "coverage-versus-length",
+      "origin": "user_reported",
+      "prior_judgment": "R6 review emphasized connected dark color and visible ears.",
+      "later_finding": "User identified insufficient sideburn/nape length and odd ears, then required no hairline recession.",
+      "lesson": "Trace hair endpoints against ear lobe, jaw rear and neck; evaluate ear anatomy and palette separately from visibility. Preserve forehead anchors while refining edges.",
+      "validation_status": "Prompted local recheck and repair; no cross-character blind test."
+    },
+    {
+      "id": "long-fill-side-effect",
+      "origin": "self_found",
+      "prior_judgment": "A continuous downward fill should supply the missing length.",
+      "later_finding": "R1 actual rear view reads as a hanging rectangular cloth panel; sideburns are too long and needle-like.",
+      "lesson": "Length, taper, whole silhouette and old-tip overlap must be checked independently.",
+      "validation_status": "R2-R5 improve the panel and remove redundant tips; whole-hair rigidity remains."
+    }
+  ],
+  "reviewer_conclusion": "Local ear and length improvements, no material frontal recession, but modest hairline gain and unresolved wig-like mass. Final MP4 inspected through six timestamped ordered-frame boards plus selected full views and detail crops; not realtime viewing or whole-episode acceptance."
+}

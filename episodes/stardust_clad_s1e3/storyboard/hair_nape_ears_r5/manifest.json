@@ -1,0 +1,183 @@
+{
+  "video": "output\\stardust_clad_s1e3_hair_nape_ears_r5.mp4",
+  "sha256": "d405ec257ddd528b842858922597762596b163b88addd69fe1a574f1dc5b3cf5",
+  "source_snapshot_sha256": "aefeef1408e433ab06e0fcf52438a259738a27ada7f7a87098b0ac3fd5c02217",
+  "source_snapshot_note": "Code only. Runtime packages and textures remain in workspace.",
+  "frames": 480,
+  "fps": 30,
+  "duration": 16,
+  "seek_passed": true,
+  "seek_samples": 21,
+  "non_finite": 0,
+  "max_root_shift": 0,
+  "max_tip_shift": 0.07685873081170687,
+  "center_forehead_anchor_unchanged": true,
+  "forehead_pixel_check": {
+    "method": "Thresholded skin occupancy in matched frontal JPEG crops; not an aesthetic score or whole-hairline proof.",
+    "left_roi": [
+      190,
+      215,
+      450,
+      350
+    ],
+    "right_roi": [
+      830,
+      215,
+      1090,
+      350
+    ],
+    "new_skin_pixels": 1,
+    "new_hair_over_previous_skin_pixels": 119,
+    "skin_before": 12106,
+    "skin_after": 11988,
+    "interpretation": "No material frontal recession observed. One pixel difference is below the meaningful boundary scale."
+  },
+  "observed_evidence": [
+    {
+      "path": "../hair_nape_ears_r5/preview/front.jpg",
+      "sha256": "1df2b7d35f3c172f701a93d32e773cb9b60301ac58276236c3fa5253d858d29a",
+      "window": "study",
+      "at": [
+        0.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_nape_ears_r5/preview/rear_up.jpg",
+      "sha256": "9ed88c4bb350fcd67bcce11b2ad2776cd4932244eb4d35e1b59f202453137127",
+      "window": "study",
+      "at": [
+        15.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_nape_ears_r5/details.jpg",
+      "sha256": "d80586910f85991e72a9899668da0768a205780755481d767e3d9614013a63ad",
+      "window": "study",
+      "at": [
+        0.5,
+        7,
+        14.5
+      ],
+      "method": "still"
+    },
+    {
+      "path": "../hair_nape_ears_r5/decoded/turn_01.jpg",
+      "sha256": "9452b355f030c97cb1db968835c167219a7c1dd947a96003eeeaa856478acdab",
+      "window": "study",
+      "at": [
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7,
+        1.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_nape_ears_r5/decoded/reverse_01.jpg",
+      "sha256": "108a09491e1400e0c0eb76b8ec924478ce5f623520d80574751f80642ac96ac2",
+      "window": "study",
+      "at": [
+        2.0,
+        2.1,
+        2.2,
+        2.3,
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_nape_ears_r5/decoded/rotation_01.jpg",
+      "sha256": "d6d9498b92ba2f7c57c972a4a02c174dd787751ae5cc318200f55c81a23f43fe",
+      "window": "study",
+      "at": [
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        7.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_nape_ears_r5/decoded/side_01.jpg",
+      "sha256": "d633c857a1d13ff9464f8c10d64ef05689d0a099bc8786a0263efddc7ab33bc7",
+      "window": "study",
+      "at": [
+        6.8,
+        6.9,
+        7.0,
+        7.1,
+        7.2
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_nape_ears_r5/decoded/light_01.jpg",
+      "sha256": "d8d106e2a286e0c01a71611575eac9a90adefafc58d27c028fb8fe3e2c948627",
+      "window": "study",
+      "at": [
+        8.0,
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        11.5
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "../hair_nape_ears_r5/decoded/pitch_01.jpg",
+      "sha256": "de6ab51a231f3c4e220f172ca282fe6b6818bcc633cb02da5886b9329d61a2c3",
+      "window": "study",
+      "at": [
+        12.0,
+        12.5,
+        13.0,
+        13.5,
+        14.0,
+        14.5,
+        15.0,
+        15.5
+      ],
+      "method": "ordered_frames"
+    }
+  ],
+  "limitations": "Stills and ordered frames; no realtime playback, matched reference dynamics, whole-episode integration or all-angle collision claim.",
+  "production_video_sha256": "e8fca986f8feed91c83d3eab73b614ae905412aa4ccd8250430cf4673d7f2f49",
+  "sources": [
+    {
+      "url": "https://tips.clip-studio.com/en-us/articles/2206",
+      "seen": "text: nonuniform hairline and curved fringe"
+    },
+    {
+      "url": "https://tips.clip-studio.com/en-us/articles/6015",
+      "seen": "text and actual hairline/direction diagrams"
+    },
+    {
+      "url": "https://www.clipstudio.net/how-to-draw/archives/160418",
+      "seen": "text and structure, angles, simplification diagrams 002,006,007"
+    },
+    {
+      "url": "https://www.proko.com/course-lesson/how-to-draw-ears-anatomy-and-structure/",
+      "seen": "lesson text; not full video"
+    }
+  ],
+  "asset_commit": "54395d8",
+  "skills_commit": "e22480b"
+}
