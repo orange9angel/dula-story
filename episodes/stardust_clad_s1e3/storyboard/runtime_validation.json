@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "route": "tools/compile_story.py -> performance.js/viewer.js -> render.mjs",
+  "schema": true,
+  "story_sha256": "6fac11dbdf1e7138964f058f455cb31bbfde4793e7ea15b91f04090820726c08",
+  "events": [
+    "Act",
+    "Beat",
+    "Cue"
+  ],
+  "duration": 136,
+  "dialogue": 19,
+  "generic_scene_tool": "Not applicable to custom Beat/Cue/Act execution. Its EVT001 errors are retained as an integration limitation; no dummy scene handlers added.",
+  "limitations": [
+    "No engine custom-event dispatch",
+    "No full mesh collision certification",
+    "No listening or real-time viewing acceptance",
+    "Artistic acceptance is separate"
+  ]
+}

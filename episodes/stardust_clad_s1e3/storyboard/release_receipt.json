@@ -1,0 +1,41 @@
+{
+  "video": "output\\stardust_clad_s1e3_pilot_r14.mp4",
+  "sha256": "a67165c2cd38fcbd242f829f19ff9358c8f27f15502e272aa6ff70b1e88eefe1",
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "136.000000",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0",
+        "duration": "136.000000"
+      }
+    ],
+    "format": {
+      "duration": "136.000000",
+      "size": "21390824"
+    }
+  },
+  "full_decode": "passed ffmpeg -v error -f null",
+  "viewing": "primary reviewer; timestamped stills and ordered frames",
+  "artistic_acceptance": false,
+  "status": "experiment_complete_quality_target_not_met",
+  "skill_commit": "2ec33bb",
+  "assets_commit": "d36c6e7",
+  "review": "storyboard/character_attention/r14.json",
+  "baseline_preserved": true
+}

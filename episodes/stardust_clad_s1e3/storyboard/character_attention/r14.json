@@ -1,0 +1,2622 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e3_pilot_r14.mp4",
+    "sha256": "a67165c2cd38fcbd242f829f19ff9358c8f27f15502e272aa6ff70b1e88eefe1"
+  },
+  "scope": {
+    "subjects": [
+      "xiaozao",
+      "jianwang",
+      "weihe"
+    ],
+    "windows": [
+      {
+        "id": "episode",
+        "start": 0.0,
+        "end": 136.0
+      }
+    ],
+    "accepted_properties": [
+      "S1E2 R27 文件与音轨保留",
+      "本轮沿用已认可的两份配乐素材"
+    ],
+    "limitations": "主代理看过标时静帧/顺序帧；没有正常速度或慢放视频输入，没有听觉输入。背面与若干接触瞬间未充分覆盖；不声称全片全维度验收。"
+  },
+  "checks": [
+    {
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "近景与整身已恢复蓝银战壳，但新脸的年龄感、圆肩甲和躯干不够协调。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-identity"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "13/33/73 秒面颊、眼窝到下颌仍缺少层次；新增明暗没有消除基础几何感。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-face_structure"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "gaze",
+      "status": "needs_evidence",
+      "observation": "看到眼和头朝向变化；没有足够连续证据确认所有台词的注意目标与眼头先后。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/face_01.jpg",
+          "sha256": "a9fa97929ff0b05ce795f689ead7f3c6c711b8ba58a045917b60dfb194944b0c",
+          "window": "episode",
+          "at": [
+            63.0,
+            63.25,
+            63.5,
+            63.75,
+            64.0,
+            64.25,
+            64.5,
+            64.75,
+            65.0,
+            65.25,
+            65.5,
+            65.75
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "33/73 秒压力与决意的差异弱；63–65.75 秒表情近乎保持，主要变化来自嘴与细小头姿。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/face_01.jpg",
+          "sha256": "a9fa97929ff0b05ce795f689ead7f3c6c711b8ba58a045917b60dfb194944b0c",
+          "window": "episode",
+          "at": [
+            63.0,
+            63.25,
+            63.5,
+            63.75,
+            64.0,
+            64.25,
+            64.5,
+            64.75,
+            65.0,
+            65.25,
+            65.5,
+            65.75
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-expression"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "前发片的层次与发梢稍有变化，但颅顶仍是一块连续帽壳大形。后侧未充分覆盖。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/face_01.jpg",
+          "sha256": "a9fa97929ff0b05ce795f689ead7f3c6c711b8ba58a045917b60dfb194944b0c",
+          "window": "episode",
+          "at": [
+            63.0,
+            63.25,
+            63.5,
+            63.75,
+            64.0,
+            64.25,
+            64.5,
+            64.75,
+            65.0,
+            65.25,
+            65.5,
+            65.75
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-hair"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "body",
+      "status": "finding",
+      "observation": "上臂轮廓、圆肩甲、宽腰带和筒状战壳仍像拼装，负重时胸廓体积变化弱。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-body"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "救援时腕点邻近，但掌指包握对方手腕的关系仍不清，不能由5.5厘米腕点距离验收抓握。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-hands_props"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "已看救援尾段能见完好桥面上的支撑；4段实际踝点检查通过。仅限这些窗口，不涵盖所有鞋底/网格。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "26–29.3 秒起步明显下蹲，胸头和持盘臂变化少；末步起身与前段屈膝分离。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/gait_01.jpg",
+          "sha256": "b7410d6249d2b91109baf689b10ecb7886b3de56955e2e944fb8fcdea007d3a0",
+          "window": "episode",
+          "at": [
+            26.0,
+            26.3,
+            26.6,
+            26.9,
+            27.2,
+            27.5,
+            27.8,
+            28.1,
+            28.4,
+            28.7,
+            29.0,
+            29.3
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-locomotion"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "反击期间转身和残盘位移可见，但蓄力到加速、切弦与卸力的对比弱。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-action"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "temporal",
+      "status": "finding",
+      "observation": "起步到直立的节奏分段，动作转换缺少贯穿躯干的连续变化；不据抽帧排除帧间跳变。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/gait_01.jpg",
+          "sha256": "b7410d6249d2b91109baf689b10ecb7886b3de56955e2e944fb8fcdea007d3a0",
+          "window": "episode",
+          "at": [
+            26.0,
+            26.3,
+            26.6,
+            26.9,
+            27.2,
+            27.5,
+            27.8,
+            28.1,
+            28.4,
+            28.7,
+            29.0,
+            29.3
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-temporal"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "大量近景与中景直接展示程序角色；切弦的接触关系和动作重点仍弱。负重构图单独修复。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-shot_integration"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "没有实际听觉输入，技术时序与声轨存在不能证明声画感染力。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "status": "finding",
+      "observation": "整体仍有游戏展示感；修掉颈筒和腰部接缝没有让人物整体超过认可基线。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "xiaozao-open_scan"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "窄脸、紫发、长袖有所区别，但眼形与身体模板仍接近主角，缺少明确个人姿态。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-identity"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "23 秒近景有鼻侧暗面，脸颊、眼窝和嘴周关系仍简略，缺少参考片的层次。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-face_structure"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "gaze",
+      "status": "needs_evidence",
+      "observation": "可见朝向主角的一侧视线；受击前后眼神转换尚未取得足够的近景连续证据。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "从23秒控制局面到103秒失势，变化主要在头姿，眉眼和面部反应幅度不足。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-expression"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "已去除硬板披风后可见后发，但前发仍是几块平顺发片，主束与留白不足。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-hair"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "body",
+      "status": "finding",
+      "observation": "胸甲和腰带仍是明显几何壳体，手臂及受击后的躯干体积变化弱。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-body"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "细弦从手部区域发出，但指套、操纵与放松手指的具体关系不易读出。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-hands_props"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "support",
+      "status": "needs_evidence",
+      "observation": "反击后可见离地与回落，栏杆和中景尺度限制脚底判断，不能确认完整落地接触。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "locomotion",
+      "status": "needs_evidence",
+      "observation": "救援尾段看到被拉近的起步，但当前帧列没有完整覆盖90.8–96.6秒的全部换脚。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "切弦后有退让和下沉，身体反应仍近似整体移动，肩胸与手指的反应层次不足。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-action"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "受击帧列覆盖一部分转换，尚不能排除其他动作窗口的突跳。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "攻击与失势常共用相近的中景呈现，缺少能读出敌人判断变化的关键反应近景。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-shot_integration"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "声音未实际聆听，不判断声音表演或落地音的主观自然度。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "jianwang",
+      "dimension": "open_scan",
+      "status": "finding",
+      "observation": "结尾仍与其他两人聚在近处，剧本中退向远端的空间收束没有充分呈现。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/ending_01.jpg",
+          "sha256": "a622e95d9050109c809a72ae1be5397f8aab6aa360c85a90126da83503db8a73",
+          "window": "episode",
+          "at": [
+            129.0,
+            129.6,
+            130.2,
+            130.8,
+            131.4,
+            132.0,
+            132.6,
+            133.2,
+            133.8,
+            134.4,
+            135.0,
+            135.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "jianwang-open_scan"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "绿衣与药箱易辨认，但脸和肢体设计接近同一模板，角色个性主要依赖身份道具。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "weihe-identity"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "68秒求救近景中鼻颊和下颌仍是较硬的大块面，眼窝与嘴周细节弱。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "weihe-face_structure"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "gaze",
+      "status": "needs_evidence",
+      "observation": "求救面部可读且朝主角一侧；未以足够连续近景证实眼、头、伸手的先后。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "weihe",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "求救与脱险表情变化偏小，害怕、试探信任和松口气没有充分分开。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "weihe-expression"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "后发条与侧发可辨，但前额的分束设计仍接近主角，头发大形偏整齐。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "weihe-hair"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "body",
+      "status": "finding",
+      "observation": "衣袖、肩和躯干呈简单管面，悬挂与站立之间缺少压缩和牵拉的身体刻画。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "weihe-body"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "药箱主要跟随身体，单手护箱、推箱与交接动作缺乏清楚的手指接触过程。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "weihe-hands_props"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "获救后落在后半完好桥面，未再回到坠落的前半板；不代表鞋底和衣物全程无相交。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "129–135.6秒先走可见，但屈膝和位移明显，抱箱上身近乎固定，尚不自然。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/ending_01.jpg",
+          "sha256": "a622e95d9050109c809a72ae1be5397f8aab6aa360c85a90126da83503db8a73",
+          "window": "episode",
+          "at": [
+            129.0,
+            129.6,
+            130.2,
+            130.8,
+            131.4,
+            132.0,
+            132.6,
+            133.2,
+            133.8,
+            134.4,
+            135.0,
+            135.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "weihe-locomotion"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "救援呈线性升起和移位，抓扶、翻上桥与保护药箱的身体动作仍不够。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "weihe-action"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "1.1秒间隔救援帧不足以确认抓手和落地瞬间，尚需加密或正常速度输入。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "weihe",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "68秒脸已不再被前栏索横穿；只验收这一构图修正，未验收整体镜头成熟度。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "weihe",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "没有听觉输入，不把对白缓存和口型能量曲线当作音频演绎通过。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "按所述缺口主动补取对应连续片段与必要实际感官输入。"
+    },
+    {
+      "subject": "weihe",
+      "dimension": "open_scan",
+      "status": "finding",
+      "observation": "获救后主动推箱、打开箱盖及空间离场没有被充分落实，文字不能替代画面。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/ending_01.jpg",
+          "sha256": "a622e95d9050109c809a72ae1be5397f8aab6aa360c85a90126da83503db8a73",
+          "window": "episode",
+          "at": [
+            129.0,
+            129.6,
+            130.2,
+            130.8,
+            131.4,
+            132.0,
+            132.6,
+            133.2,
+            133.8,
+            134.4,
+            135.0,
+            135.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "weihe-open_scan"
+      ],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "xiaozao-identity",
+      "subject": "xiaozao",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "近景与整身已恢复蓝银战壳，但新脸的年龄感、圆肩甲和躯干不够协调。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-face_structure",
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "13/33/73 秒面颊、眼窝到下颌仍缺少层次；新增明暗没有消除基础几何感。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-expression",
+      "subject": "xiaozao",
+      "dimension": "expression",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "33/73 秒压力与决意的差异弱；63–65.75 秒表情近乎保持，主要变化来自嘴与细小头姿。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/face_01.jpg",
+          "sha256": "a9fa97929ff0b05ce795f689ead7f3c6c711b8ba58a045917b60dfb194944b0c",
+          "window": "episode",
+          "at": [
+            63.0,
+            63.25,
+            63.5,
+            63.75,
+            64.0,
+            64.25,
+            64.5,
+            64.75,
+            65.0,
+            65.25,
+            65.5,
+            65.75
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-hair",
+      "subject": "xiaozao",
+      "dimension": "hair",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "前发片的层次与发梢稍有变化，但颅顶仍是一块连续帽壳大形。后侧未充分覆盖。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/face_01.jpg",
+          "sha256": "a9fa97929ff0b05ce795f689ead7f3c6c711b8ba58a045917b60dfb194944b0c",
+          "window": "episode",
+          "at": [
+            63.0,
+            63.25,
+            63.5,
+            63.75,
+            64.0,
+            64.25,
+            64.5,
+            64.75,
+            65.0,
+            65.25,
+            65.5,
+            65.75
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-body",
+      "subject": "xiaozao",
+      "dimension": "body",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "上臂轮廓、圆肩甲、宽腰带和筒状战壳仍像拼装，负重时胸廓体积变化弱。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-hands_props",
+      "subject": "xiaozao",
+      "dimension": "hands_props",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "救援时腕点邻近，但掌指包握对方手腕的关系仍不清，不能由5.5厘米腕点距离验收抓握。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-locomotion",
+      "subject": "xiaozao",
+      "dimension": "locomotion",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "26–29.3 秒起步明显下蹲，胸头和持盘臂变化少；末步起身与前段屈膝分离。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/gait_01.jpg",
+          "sha256": "b7410d6249d2b91109baf689b10ecb7886b3de56955e2e944fb8fcdea007d3a0",
+          "window": "episode",
+          "at": [
+            26.0,
+            26.3,
+            26.6,
+            26.9,
+            27.2,
+            27.5,
+            27.8,
+            28.1,
+            28.4,
+            28.7,
+            29.0,
+            29.3
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-action",
+      "subject": "xiaozao",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "反击期间转身和残盘位移可见，但蓄力到加速、切弦与卸力的对比弱。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-temporal",
+      "subject": "xiaozao",
+      "dimension": "temporal",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "起步到直立的节奏分段，动作转换缺少贯穿躯干的连续变化；不据抽帧排除帧间跳变。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/gait_01.jpg",
+          "sha256": "b7410d6249d2b91109baf689b10ecb7886b3de56955e2e944fb8fcdea007d3a0",
+          "window": "episode",
+          "at": [
+            26.0,
+            26.3,
+            26.6,
+            26.9,
+            27.2,
+            27.5,
+            27.8,
+            28.1,
+            28.4,
+            28.7,
+            29.0,
+            29.3
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-shot_integration",
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "大量近景与中景直接展示程序角色；切弦的接触关系和动作重点仍弱。负重构图单独修复。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "xiaozao-open_scan",
+      "subject": "xiaozao",
+      "dimension": "open_scan",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "整体仍有游戏展示感；修掉颈筒和腰部接缝没有让人物整体超过认可基线。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-identity",
+      "subject": "jianwang",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "窄脸、紫发、长袖有所区别，但眼形与身体模板仍接近主角，缺少明确个人姿态。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-face_structure",
+      "subject": "jianwang",
+      "dimension": "face_structure",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "23 秒近景有鼻侧暗面，脸颊、眼窝和嘴周关系仍简略，缺少参考片的层次。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-expression",
+      "subject": "jianwang",
+      "dimension": "expression",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "从23秒控制局面到103秒失势，变化主要在头姿，眉眼和面部反应幅度不足。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-hair",
+      "subject": "jianwang",
+      "dimension": "hair",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "已去除硬板披风后可见后发，但前发仍是几块平顺发片，主束与留白不足。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-body",
+      "subject": "jianwang",
+      "dimension": "body",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "胸甲和腰带仍是明显几何壳体，手臂及受击后的躯干体积变化弱。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-hands_props",
+      "subject": "jianwang",
+      "dimension": "hands_props",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "细弦从手部区域发出，但指套、操纵与放松手指的具体关系不易读出。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-action",
+      "subject": "jianwang",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "切弦后有退让和下沉，身体反应仍近似整体移动，肩胸与手指的反应层次不足。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-shot_integration",
+      "subject": "jianwang",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "攻击与失势常共用相近的中景呈现，缺少能读出敌人判断变化的关键反应近景。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "jianwang-open_scan",
+      "subject": "jianwang",
+      "dimension": "open_scan",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "结尾仍与其他两人聚在近处，剧本中退向远端的空间收束没有充分呈现。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/ending_01.jpg",
+          "sha256": "a622e95d9050109c809a72ae1be5397f8aab6aa360c85a90126da83503db8a73",
+          "window": "episode",
+          "at": [
+            129.0,
+            129.6,
+            130.2,
+            130.8,
+            131.4,
+            132.0,
+            132.6,
+            133.2,
+            133.8,
+            134.4,
+            135.0,
+            135.6
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "weihe-identity",
+      "subject": "weihe",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "绿衣与药箱易辨认，但脸和肢体设计接近同一模板，角色个性主要依赖身份道具。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "weihe-face_structure",
+      "subject": "weihe",
+      "dimension": "face_structure",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "68秒求救近景中鼻颊和下颌仍是较硬的大块面，眼窝与嘴周细节弱。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "weihe-expression",
+      "subject": "weihe",
+      "dimension": "expression",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "求救与脱险表情变化偏小，害怕、试探信任和松口气没有充分分开。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "weihe-hair",
+      "subject": "weihe",
+      "dimension": "hair",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "后发条与侧发可辨，但前额的分束设计仍接近主角，头发大形偏整齐。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "weihe-body",
+      "subject": "weihe",
+      "dimension": "body",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "衣袖、肩和躯干呈简单管面，悬挂与站立之间缺少压缩和牵拉的身体刻画。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "weihe-hands_props",
+      "subject": "weihe",
+      "dimension": "hands_props",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "药箱主要跟随身体，单手护箱、推箱与交接动作缺乏清楚的手指接触过程。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "weihe-locomotion",
+      "subject": "weihe",
+      "dimension": "locomotion",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "129–135.6秒先走可见，但屈膝和位移明显，抱箱上身近乎固定，尚不自然。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/ending_01.jpg",
+          "sha256": "a622e95d9050109c809a72ae1be5397f8aab6aa360c85a90126da83503db8a73",
+          "window": "episode",
+          "at": [
+            129.0,
+            129.6,
+            130.2,
+            130.8,
+            131.4,
+            132.0,
+            132.6,
+            133.2,
+            133.8,
+            134.4,
+            135.0,
+            135.6
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "weihe-action",
+      "subject": "weihe",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "救援呈线性升起和移位，抓扶、翻上桥与保护药箱的身体动作仍不够。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P1",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "weihe-open_scan",
+      "subject": "weihe",
+      "dimension": "open_scan",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "获救后主动推箱、打开箱盖及空间离场没有被充分落实，文字不能替代画面。",
+      "impact": "削弱当前场景中的人物可信度与可读性。",
+      "priority": "P2",
+      "hypothesis": "当前形体设计及表演曲线不足；这是待进一步验证的原因判断，不以参数数量证明效果。",
+      "next_action": "先在代表性短片修订，并同时对照认可基线；未复看到收益前保持未解决。",
+      "evidence": [
+        {
+          "path": "../r14/decoded/ending_01.jpg",
+          "sha256": "a622e95d9050109c809a72ae1be5397f8aab6aa360c85a90126da83503db8a73",
+          "window": "episode",
+          "at": [
+            129.0,
+            129.6,
+            130.2,
+            130.8,
+            131.4,
+            132.0,
+            132.6,
+            133.2,
+            133.8,
+            134.4,
+            135.0,
+            135.6
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "F01",
+      "subject": "xiaozao",
+      "dimension": "face_structure",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "白色旧颈筒露在新脸与衣甲之间。",
+      "impact": "造成明显的身体、叙事或构图错误。",
+      "priority": "P1",
+      "hypothesis": "沿用了不适用于新角色或当前动作状态的旧部件、落点或镜头。",
+      "next_action": "保留回归证据；继续检查同维度的其他未解决项。",
+      "evidence": [
+        {
+          "path": "../r7/check/shot_03.jpg",
+          "sha256": "0961140c3735212c4371b00a64f35405f8d6f86e33088ae7b551442a42998d40",
+          "window": "episode",
+          "at": [
+            12
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "移除误继承的颈筒，重新接合肤色颈部。",
+      "result": "最终近景未再出现白色颈筒；整脸仍有其他缺陷。",
+      "verification": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "subject": "xiaozao",
+      "dimension": "body",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "上身战壳与腰部间出现不合设定的裸露断带。",
+      "impact": "造成明显的身体、叙事或构图错误。",
+      "priority": "P1",
+      "hypothesis": "沿用了不适用于新角色或当前动作状态的旧部件、落点或镜头。",
+      "next_action": "保留回归证据；继续检查同维度的其他未解决项。",
+      "evidence": [
+        {
+          "path": "../r7/check/board_2.jpg",
+          "sha256": "499bc1243f55defac2c477465acaf0e229849f81b83025117cbdf83b15bda056",
+          "window": "episode",
+          "at": [
+            40,
+            40.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "恢复连续深色内搭并接回成熟战壳。",
+      "result": "裸露断带消失；宽腰带和硬甲的造型自然度仍未通过。",
+      "verification": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "subject": "jianwang",
+      "dimension": "body",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "背后披风成为直立硬矩形。",
+      "impact": "造成明显的身体、叙事或构图错误。",
+      "priority": "P1",
+      "hypothesis": "沿用了不适用于新角色或当前动作状态的旧部件、落点或镜头。",
+      "next_action": "保留回归证据；继续检查同维度的其他未解决项。",
+      "evidence": [
+        {
+          "path": "../r7/check/board_2.jpg",
+          "sha256": "499bc1243f55defac2c477465acaf0e229849f81b83025117cbdf83b15bda056",
+          "window": "episode",
+          "at": [
+            36,
+            40.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "关闭被clad状态更新重新显示的旧披风组。",
+      "result": "最终中景未再出现背后黑色矩形。",
+      "verification": [
+        {
+          "path": "../r14/decoded/counter_01.jpg",
+          "sha256": "fb62782d819541d1283d5c5676ee8179a8defe1551467dec14d25efe321670cd",
+          "window": "episode",
+          "at": [
+            99.6,
+            99.8,
+            100.0,
+            100.2,
+            100.4,
+            100.6,
+            100.8,
+            101.0,
+            101.2,
+            101.4,
+            101.6,
+            101.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "subject": "weihe",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "求救近景中栏索横穿眼睛。",
+      "impact": "造成明显的身体、叙事或构图错误。",
+      "priority": "P1",
+      "hypothesis": "沿用了不适用于新角色或当前动作状态的旧部件、落点或镜头。",
+      "next_action": "保留回归证据；继续检查同维度的其他未解决项。",
+      "evidence": [
+        {
+          "path": "../r7/check/board_3.jpg",
+          "sha256": "6baddc0bd403dcdb59d27761708d6ce45dd4d1e29d14339a1d4b5464773d27e2",
+          "window": "episode",
+          "at": [
+            68
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "损坏栏索随破坏下垂并修改求救机位。",
+      "result": "68秒求救脸的眼睛未再被栏索遮挡。",
+      "verification": [
+        {
+          "path": "../r14/decoded/girl_01.jpg",
+          "sha256": "4992e8588daaed7369312a2325bd47fd5da22fa8e1544c58d98ef3550b780b0c",
+          "window": "episode",
+          "at": [
+            68.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "subject": "weihe",
+      "dimension": "support",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "救回后仍落在已经缺失桥板的位置。",
+      "impact": "造成明显的身体、叙事或构图错误。",
+      "priority": "P1",
+      "hypothesis": "沿用了不适用于新角色或当前动作状态的旧部件、落点或镜头。",
+      "next_action": "保留回归证据；继续检查同维度的其他未解决项。",
+      "evidence": [
+        {
+          "path": "../r9/check/board_4.jpg",
+          "sha256": "22d2756a71ca8995ae573e101abd4fd3235d176a59d37a6565179502023d96fd",
+          "window": "episode",
+          "at": [
+            93
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "断裂限定为前半板，获救落点迁至后半完好桥面。",
+      "result": "91.9秒和93秒所见落点位于保留的后半板；不推广为全程几何保证。",
+      "verification": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "subject": "xiaozao",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "83–88秒负重时站姿镜头留下大片天空，人物挤到画面下缘。",
+      "impact": "造成明显的身体、叙事或构图错误。",
+      "priority": "P1",
+      "hypothesis": "沿用了不适用于新角色或当前动作状态的旧部件、落点或镜头。",
+      "next_action": "保留回归证据；继续检查同维度的其他未解决项。",
+      "evidence": [
+        {
+          "path": "../r12/decoded/rescue_01.jpg",
+          "sha256": "44f4859c51ca696707236d5abe1817f537a3851ed78cbd62955358a7785053c5",
+          "window": "episode",
+          "at": [
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "重设负重段摄影机位置、焦点与视野。",
+      "result": "最终负重段能同时看见脸、肩臂、残盘和拉人手。",
+      "verification": [
+        {
+          "path": "../r14/decoded/rescue_01.jpg",
+          "sha256": "36bee40574752872aa5334ca5c9083c8051ab6075c6ee5e6ebab8dc859886667",
+          "window": "episode",
+          "at": [
+            79.8,
+            80.9,
+            82.0,
+            83.1,
+            84.2,
+            85.3,
+            86.4,
+            87.5,
+            88.6,
+            89.7,
+            90.8,
+            91.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "subject": "jianwang",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "正式现身前已经站在开场远景中。",
+      "impact": "造成明显的身体、叙事或构图错误。",
+      "priority": "P1",
+      "hypothesis": "沿用了不适用于新角色或当前动作状态的旧部件、落点或镜头。",
+      "next_action": "保留回归证据；继续检查同维度的其他未解决项。",
+      "evidence": [
+        {
+          "path": "../r9/check/board_1.jpg",
+          "sha256": "d41efd1696c0eaa723b5fab960dd6eb30aa6f12fe4974b0fb5f6c30d7aeb4f11",
+          "window": "episode",
+          "at": [
+            3
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "可见性由编译后的entry起点控制。",
+      "result": "最终3秒远景只有小凿与苇禾，敌人于现身段才出现。",
+      "verification": [
+        {
+          "path": "../r14/decoded/overview_01.jpg",
+          "sha256": "53af51c70d177bdac5da63d1bd6ce1676cbfd8b1f4b41ab80c79c7050f884b87",
+          "window": "episode",
+          "at": [
+            3.0,
+            13.0,
+            23.0,
+            33.0,
+            43.0,
+            53.0,
+            63.0,
+            73.0,
+            83.0,
+            93.0,
+            103.0,
+            113.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "revision": "R1–R7",
+      "result": "新身体制作损失了成熟衣甲；反复修近景后才充分回到整身对照。不是成功升级。"
+    },
+    {
+      "revision": "R9–R12",
+      "result": "局部连接、落点和腕点约束改善，整体仍未超过认可基线。"
+    },
+    {
+      "revision": "R11",
+      "result": "发梢变形曾出现NaN，本轮不能作有效视觉验收；后续加有限数和控制台错误门禁。"
+    },
+    {
+      "revision": "R13–R14",
+      "result": "修正负重构图和宫名标记后导出，整体艺术验收仍不通过。"
+    }
+  ],
+  "misses": [
+    {
+      "id": "M01",
+      "earlier_judgment": "最初把注意力放在头脸与连续肢体。",
+      "later_finding": "全身战壳与腰部造型退步。",
+      "attention_change": "新片先与已接受基线同看完整人物，不能只比本轮更差的原型。"
+    },
+    {
+      "id": "M02",
+      "earlier_judgment": "主要检查两人的抓手位置。",
+      "later_finding": "获救后的落点仍在破损桥板。",
+      "attention_change": "追查动作改变环境后的支撑和下一动作。"
+    },
+    {
+      "id": "M03",
+      "earlier_judgment": "多轮记录集中于负重脸部。",
+      "later_finding": "最终解码才充分重视大量天空挤掉躯干的构图错误。",
+      "attention_change": "负重同时查看脸、躯干与接触，不以一张脸可见就认为镜头有效。"
+    }
+  ],
+  "reviewer_conclusion": "未达到整体超过S1E2认可基线的目标。已看参考片段在形体、发型、表情及镜头组织上更强。局部修复有效；尚无正常速度/听觉和全部角度证据，也未证明可稳定替代全部人工迭代。",
+  "comparisons": {
+    "reference": {
+      "path": "../../../stardust_clad_s1e2/tmp/form_reference/reference.mp4",
+      "sha256": "403bb8c4aa25008171cbb560299fe87ddd3a5c54c2ad2aeb393b1f57cdf5f3c3",
+      "reviewed": "本轮复看 ref_faces_body.jpg；此前已看防守、眼神与下坡顺序帧",
+      "verdict": "已看角色造型与表演片段明显强于本集；不以碎石下坡标定平地步态。"
+    },
+    "baseline": {
+      "path": "../../../stardust_clad_s1e2/output/stardust_clad_s1e2_palace_r27.mp4",
+      "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+      "verdict": "本集未证明超过已接受的整体造型与场面基线。"
+    }
+  }
+}

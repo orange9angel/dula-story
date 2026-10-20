@@ -1,0 +1,220 @@
+{
+  "duration": 136.0,
+  "step": 0.01,
+  "source": "script.story",
+  "source_sha256": "6fac11dbdf1e7138964f058f455cb31bbfde4793e7ea15b91f04090820726c08",
+  "segments": [
+    {
+      "id": "bridge",
+      "label": "风筛宫",
+      "start": 0.0,
+      "kind": "action",
+      "character": null,
+      "end": 6.0
+    },
+    {
+      "id": "wait",
+      "label": "等风",
+      "start": 6.0,
+      "kind": "action",
+      "character": null,
+      "end": 10.0
+    },
+    {
+      "id": "count",
+      "label": "计算",
+      "visual": "苇禾已抬脚等到风弱，小凿伸手拦住，筛盘拦下飞石留下银粉；错过空档后远处弦光落到桥索上",
+      "start": 10.0,
+      "kind": "action",
+      "character": null,
+      "end": 15.0
+    },
+    {
+      "id": "entry",
+      "label": "缄网现身",
+      "start": 15.0,
+      "kind": "action",
+      "character": null,
+      "end": 21.0
+    },
+    {
+      "id": "enemy_line",
+      "label": "静止的桥",
+      "start": 21.0,
+      "kind": "action",
+      "character": null,
+      "end": 26.0
+    },
+    {
+      "id": "step",
+      "label": "试探落脚",
+      "start": 26.0,
+      "kind": "action",
+      "character": null,
+      "end": 30.0
+    },
+    {
+      "id": "snare_face",
+      "label": "疼痛与判断",
+      "start": 30.0,
+      "kind": "action",
+      "character": null,
+      "end": 34.0
+    },
+    {
+      "id": "guard",
+      "label": "以拳试弦",
+      "start": 34.0,
+      "kind": "action",
+      "character": null,
+      "end": 39.0
+    },
+    {
+      "id": "strike",
+      "label": "第一拳失败",
+      "visual": "小凿先以筛盘抵住腕前的弦，右拳沿弦击向对手；桥板传来振动，弦先收紧，胸肩被拉回，盘缘银粉散落",
+      "start": 39.0,
+      "kind": "action",
+      "character": null,
+      "end": 45.0
+    },
+    {
+      "id": "pain",
+      "label": "受力停顿",
+      "start": 45.0,
+      "kind": "action",
+      "character": null,
+      "end": 50.0
+    },
+    {
+      "id": "fracture",
+      "label": "桥的代价",
+      "visual": "缄网见桥晃动立即握紧手指试图止晃；索被拉直，旧支座开裂，苇禾抱药箱跌到桥缘，左手抓住尚未断开的承重索",
+      "start": 50.0,
+      "kind": "action",
+      "character": null,
+      "end": 55.0
+    },
+    {
+      "id": "hear",
+      "label": "谷中回声",
+      "visual": "空镜：一片断木越落越小，风筛宫远处的布幡停止摆动；不增加新线索，不解释规律",
+      "start": 55.0,
+      "kind": "action",
+      "character": null,
+      "end": 60.0
+    },
+    {
+      "id": "dust",
+      "label": "银尘显弦",
+      "visual": "小凿不再挣扎，翻腕抖落盘缘银粉；粉末沿一根连接承重索与缄网指套的弦停住，观众看清共用受力路径",
+      "start": 60.0,
+      "kind": "action",
+      "character": null,
+      "end": 66.0
+    },
+    {
+      "id": "choice",
+      "label": "迟疑的半拍",
+      "visual": "小凿先看完整筛孔，再看苇禾发白的手指；风声暂低，镜头停在两人之间未被握住的那只手",
+      "start": 66.0,
+      "kind": "action",
+      "character": null,
+      "end": 72.0
+    },
+    {
+      "id": "decide",
+      "label": "不再数三",
+      "start": 72.0,
+      "kind": "action",
+      "character": null,
+      "end": 77.0
+    },
+    {
+      "id": "brace",
+      "label": "折盘承重",
+      "visual": "小凿主动折下三格筛孔，弯盘卡住苇禾抓着的承重索，左臂背负索重、右手抓住她腕部，后脚踩住桥梁；碎片落入深谷",
+      "start": 77.0,
+      "kind": "action",
+      "character": null,
+      "end": 83.0
+    },
+    {
+      "id": "load",
+      "label": "负重",
+      "start": 83.0,
+      "kind": "action",
+      "character": null,
+      "end": 88.0
+    },
+    {
+      "id": "haul",
+      "label": "救人上桥",
+      "visual": "苇禾先把药箱推上桥板，再借小凿右臂翻上；小凿保持左臂拉住盘中承重索，连接缄网指套的弦被反向拉紧，对手被迫踏前一步",
+      "start": 88.0,
+      "kind": "action",
+      "character": null,
+      "end": 94.0
+    },
+    {
+      "id": "counter_prepare",
+      "label": "弦的另一端",
+      "visual": "苇禾将药箱推离战线并握住桥侧护索；小凿拉索迫使缄网靠近，银粉在直线弦上亮起；确认苇禾已安全后右手握住松弛承重索，左手旋出残盘，两人距离收至一步",
+      "start": 94.0,
+      "kind": "action",
+      "character": null,
+      "end": 99.0
+    },
+    {
+      "id": "counter",
+      "label": "贴身切弦",
+      "visual": "小凿后脚蹬地、转髋带肩，以残盘锐边切断已拉直的操纵弦；缄网手指骤然松开，肩胸随失衡下沉，先后脚着地缓冲",
+      "start": 99.0,
+      "kind": "action",
+      "character": null,
+      "end": 105.0
+    },
+    {
+      "id": "release",
+      "label": "桥重新呼吸",
+      "visual": "缄网失衡退向远端，蹬住桥板，低头看指套的断弦；桥重新随风起伏",
+      "start": 105.0,
+      "kind": "action",
+      "character": null,
+      "end": 111.0
+    },
+    {
+      "id": "cost",
+      "label": "缺了的筛孔",
+      "start": 111.0,
+      "kind": "action",
+      "character": null,
+      "end": 117.0
+    },
+    {
+      "id": "answer",
+      "label": "仍然害怕",
+      "start": 117.0,
+      "kind": "action",
+      "character": null,
+      "end": 123.0
+    },
+    {
+      "id": "warmth",
+      "label": "药箱",
+      "start": 123.0,
+      "kind": "action",
+      "character": null,
+      "end": 129.0
+    },
+    {
+      "id": "end",
+      "label": "第一步",
+      "visual": "苇禾抱药箱先走，小凿看到一阵尚未停止的风，握着缺孔筛盘迈出第一步，未再数三；缄网留在远端看着重新晃动的桥",
+      "start": 129.0,
+      "kind": "action",
+      "character": null,
+      "end": 136.0
+    }
+  ]
+}

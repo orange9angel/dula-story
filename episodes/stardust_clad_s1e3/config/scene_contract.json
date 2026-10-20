@@ -1,0 +1,28 @@
+{
+  "contractVersion":"1.0",
+  "episode":"stardust_clad_s1e3",
+  "sourceStory":"script.story",
+  "intent":{"premise":"小凿在受丝弦控制的悬桥上救下送药人，以残盘切断控制。","audience":"少年冒险动画观众","designPriorities":["角色受力可读","救援前后支撑一致","残盘保持战损","先试片再判断质量"]},
+  "registrations":{"bootstrap":"bootstrap.js","scenes":["WindSievePalaceScene"],"characters":["Xiaozao","Jianwang","Weihe"]},
+  "scenes":[{
+    "registryName":"WindSievePalaceScene",
+    "implementation":{"kind":"official","name":"WindSievePalaceScene","module":"../../../dula-assets/scenes/stardust/WindSievePalaceScene.js","export":"WindSievePalaceScene","bootstrap":"bootstrap.js","readiness":"readyPromise"},
+    "intent":{"location":"峡谷上方的风筛宫悬桥","timeOfDay":"白昼","tone":["冷蓝","克制"],"storyFunction":"等待与冒险的选择必须通过桥的承重表现","visualRules":["前半桥板损坏后不恢复","救回的同伴落在后半完好桥面","栏索不遮求救表情","画面采用自包含 viewer 编译执行"]},
+    "coordinates":{"unit":"meter","upAxis":"+Y","horizontalAxes":["X","Z"],"groundY":0},
+    "stage":{"bounds":{"min":[-12,-12,-10],"max":[12,9,10]},"zones":[{"id":"bridge","bounds":{"min":[-6.4,-0.13,-1],"max":[6.4,0,1]},"walkable":true,"purpose":["初始通路；断裂后局部不可行走"]}],"anchors":{"brokenFront":{"space":"world","relativeTo":"$scene","position":[-1.72,0,0.5],"purpose":"仅前半桥板坠落"},"rescuedBack":{"space":"world","relativeTo":"$scene","position":[-1.72,0,-0.32],"purpose":"苇禾获救落点"}}},
+    "lighting":{"mood":"冷天光与暖侧光","keyDirection":[-5,8,7],"readabilityRules":["面部保留明暗平面","金属高光不能吞掉轮廓"]},
+    "cameraObstacles":[],
+    "audioAnchors":[{"id":"gorge","kind":"point","semantic":"峡谷风与桥索","position":[0,0,0],"radius":15,"loop":true}],
+    "dependencies":[{"id":"backdrop","type":"texture","path":"assets3d/tex/backdrop_cloudpeak.png","required":true}]
+  }],
+  "entities":[
+    {"id":"Xiaozao","scene":"WindSievePalaceScene","kind":"character","runtimeName":"Xiaozao","binding":"character:Xiaozao","parent":"$scene","initialPresence":"onstage","visualForwardAxis":"+Z","focusPoints":{"face":[0,1.62,0],"body":[0,1,0]},"initial":{"visible":true,"transform":{"space":"world","relativeTo":"$scene","position":[-2,0,-0.2]}}},
+    {"id":"Jianwang","scene":"WindSievePalaceScene","kind":"character","runtimeName":"Jianwang","binding":"character:Jianwang","parent":"$scene","initialPresence":"offstage","visualForwardAxis":"+Z","focusPoints":{"face":[0,1.7,0],"body":[0,1,0]},"initial":{"visible":false,"transform":{"space":"world","relativeTo":"$scene","position":[1.1,0,0]}}},
+    {"id":"Weihe","scene":"WindSievePalaceScene","kind":"character","runtimeName":"Weihe","binding":"character:Weihe","parent":"$scene","initialPresence":"onstage","visualForwardAxis":"+Z","focusPoints":{"face":[0,1.45,0],"body":[0,1,0]},"initial":{"visible":true,"transform":{"space":"world","relativeTo":"$scene","position":[-2.9,0,0.3]}}}
+  ],
+  "state":{},
+  "events":[],
+  "blocking":[],
+  "shotChecks":[{"id":"helpFace","scene":"WindSievePalaceScene","entry":14,"offsetSeconds":2,"purpose":"求救视线必须越过栏索可见","mustSee":[{"entity":"Weihe","minFrameArea":0.1,"maxOcclusion":0.2,"safeMargin":0.04}],"mustHavePresence":[],"mustShowTogether":[]}],
+  "acceptance":{"staticChecks":["story_tool catalog/validate","scene contract schema","compiled script hash"],"runtimeChecks":["full 30 fps state trace","sequential/direct seek","actual ankle support trajectory","wrist rendezvous distance","decoded ordered frames; artistic acceptance remains separate"]}
+}

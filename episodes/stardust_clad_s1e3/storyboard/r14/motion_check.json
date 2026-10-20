@@ -1,0 +1,91 @@
+{
+  "trace": "storyboard\\r14\\trace.json",
+  "fps": 30,
+  "frames": 4080,
+  "stale": [],
+  "stance_checks": [
+    {
+      "character": "xiaozao",
+      "side": "left",
+      "start": 27.05,
+      "end": 28.0,
+      "samples": 29,
+      "ankle_drift_m": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "character": "xiaozao",
+      "side": "right",
+      "start": 26.05,
+      "end": 27.05,
+      "samples": 30,
+      "ankle_drift_m": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "character": "xiaozao",
+      "side": "right",
+      "start": 28.05,
+      "end": 29.9,
+      "samples": 56,
+      "ankle_drift_m": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "character": "xiaozao",
+      "side": "left",
+      "start": 28.75,
+      "end": 29.9,
+      "samples": 35,
+      "ankle_drift_m": 0.0,
+      "passed": true
+    }
+  ],
+  "grip": {
+    "min_m": 0.054999999999999716,
+    "max_m": 0.05500000000000016,
+    "target_wrist_separation_m": 0.055,
+    "palm_contact_not_measured": true
+  },
+  "arm_reach": [
+    {
+      "character": "xiaozao",
+      "side": "left",
+      "time": 0,
+      "clamp_m": 0
+    },
+    {
+      "character": "xiaozao",
+      "side": "right",
+      "time": 0,
+      "clamp_m": 0
+    },
+    {
+      "character": "jianwang",
+      "side": "left",
+      "time": 0,
+      "clamp_m": 0
+    },
+    {
+      "character": "jianwang",
+      "side": "right",
+      "time": 0,
+      "clamp_m": 0
+    },
+    {
+      "character": "weihe",
+      "side": "left",
+      "time": 0,
+      "clamp_m": 0
+    },
+    {
+      "character": "weihe",
+      "side": "right",
+      "time": 0,
+      "clamp_m": 0
+    }
+  ],
+  "scope": "Actual ankle centers and wrist origins, not skin/cloth collision or perceptual naturalness.",
+  "passed": true,
+  "artistic_acceptance": false
+}
