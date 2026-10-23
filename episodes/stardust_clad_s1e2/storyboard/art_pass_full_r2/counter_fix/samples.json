@@ -1,0 +1,1234 @@
+[
+  {
+    "t": 163.5,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 163.5,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_01",
+      "kind": "eyes",
+      "heroCel": "hero_portrait",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0.03200000151991844,
+        "emotion": "resolve",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 640,
+        "cy": 360,
+        "z": 1,
+        "roll": -0.014199849737039732
+      },
+      "motionFrame": 15,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -6.92138671875
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            38
+          ],
+          "leftHand": [
+            -5.186700000000006,
+            38
+          ],
+          "rightHand": [
+            0,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            1.364759999999996,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -8.060400000000008,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -8.060400000000048,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "4ef730937cb9383b8ac47f69724ff356386d76ca2d1bf284310f0459b0d09dbe"
+  },
+  {
+    "t": 165.5,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 165.5,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_04",
+      "kind": "shield",
+      "heroCel": "hero_charge",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 315,
+        "cy": 562.6709241172053,
+        "z": 1.75,
+        "roll": -0.05
+      },
+      "motionFrame": 75,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            -2.333333333333333,
+            1.2962962962962963
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            38
+          ],
+          "leftHand": [
+            -5.186700000000006,
+            38
+          ],
+          "rightHand": [
+            0,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0.4193999999999898,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -9.005760000000013,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -9.005760000000054,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "7aea840bb20f38c8d5d983e94b497f1e2660fc9bf64a2be3ee2d87c437c699f2"
+  },
+  {
+    "t": 168.1,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 168.1,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_06",
+      "kind": "rise",
+      "heroCel": "hero_breakdown",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 430,
+        "cy": 390,
+        "z": 1.25,
+        "roll": -0.013800000000001207
+      },
+      "motionFrame": 153,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            38
+          ],
+          "leftHand": [
+            -5.186700000000006,
+            38
+          ],
+          "rightHand": [
+            0,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            -1.827359999999989,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.252519999999993,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.252520000000032,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "71dd274e6d1c49aecf561df53034cef9c13d201678dfc6c3e01785eb70d988f8"
+  },
+  {
+    "t": 168.45,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 168.45,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_07",
+      "kind": "release",
+      "heroCel": "hero_release",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 475,
+        "cy": 395,
+        "z": 1.447592592592594,
+        "roll": -0.061388888888890145
+      },
+      "motionFrame": 163,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -2.32776000000001
+          ],
+          "leftHand": [
+            0.27612000000000636,
+            -3.149279999999992
+          ],
+          "rightHand": [
+            0,
+            -2.32776000000001
+          ],
+          "pelvis": [
+            0,
+            -2.3277599999999996
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            -2.32776000000001
+          ],
+          "leftHand": [
+            0.27612000000000636,
+            -3.149279999999992
+          ],
+          "rightHand": [
+            0,
+            -2.32776000000001
+          ],
+          "pelvis": [
+            0,
+            -2.3277599999999996
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            38
+          ],
+          "leftHand": [
+            5.343326249998203,
+            35.26562500000048
+          ],
+          "rightHand": [
+            0,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            1.4522399999999935,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -7.97292000000001,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -7.97292000000005,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "424e2657913e64077cccc5b0f38f244cb75af2793af0c8327554ba86601fd34c"
+  },
+  {
+    "t": 169.5,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 169.5,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_08",
+      "kind": "chain",
+      "heroCel": "hero_release",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 569.3877551020394,
+        "cy": 481.690962099126,
+        "z": 1.35,
+        "roll": -0.08
+      },
+      "motionFrame": 195,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            7.514640000000002,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            -1.8140400000000056,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.23920000000001,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.23920000000005,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "dd5ef3dacbd25bcfb5fb8dd1974acdc76e5ec36106465d0ef06fbc531089ad6d"
+  },
+  {
+    "t": 170.6,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 170.6,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_08",
+      "kind": "chain",
+      "heroCel": "hero_release",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 894.897959183674,
+        "cy": 342.18658892128263,
+        "z": 1.35,
+        "roll": -0.08
+      },
+      "motionFrame": 228,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            7.514640000000002,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            1.0317600000000127,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -8.39339999999999,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -8.393400000000032,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "72acb558645da1fb61a505f7e53ba60ebaa72ad1372d6787cbce6bed7cfffed1"
+  },
+  {
+    "t": 171.1,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 171.1,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_10",
+      "kind": "impact",
+      "heroCel": "hero_release",
+      "enemyCel": "enemy_hit",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 1008.2023048520821,
+        "cy": 329.2809219408328,
+        "z": 1.55,
+        "roll": 0.07
+      },
+      "motionFrame": 243,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            7.514640000000002,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            -7.089660000000011
+          ],
+          "rightHand": [
+            9.425160000000004,
+            14.510340000000008
+          ],
+          "leftHand": [
+            -8.719740000000002,
+            16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            -7.089660000000011
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            10.124999999999424,
+            -4.21874999999976
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            -3.9968028886505635e-14,
+            0
+          ],
+          "leftHand": [
+            -3.9968028886505635e-14,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "fe72edfc1ffde5181e63c8a12d1a14d43a771e7383a0f467d841d11260f0b3b0"
+  },
+  {
+    "t": 172.9,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 172.9,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_12",
+      "kind": "settle",
+      "heroCel": "hero_release",
+      "enemyCel": "enemy_land",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "design": "aoao-quarter-r2",
+        "occlusion": "source-skin"
+      },
+      "view": {
+        "cx": 690,
+        "cy": 390,
+        "z": 0.95,
+        "roll": 0
+      },
+      "motionFrame": 297,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            -23.93514,
+            -38
+          ],
+          "rightHand": [
+            -6.2684999999999995,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            -23.93514,
+            -38
+          ],
+          "rightHand": [
+            -6.2684999999999995,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            -29.121840000000006,
+            -38
+          ],
+          "rightHand": [
+            -6.2684999999999995,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            38
+          ],
+          "rightHand": [
+            9.425160000000044,
+            38
+          ],
+          "leftHand": [
+            -8.719739999999963,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            38
+          ],
+          "rightHand": [
+            3.9968028886505635e-14,
+            38
+          ],
+          "leftHand": [
+            3.9968028886505635e-14,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            38
+          ],
+          "rightHand": [
+            0,
+            38
+          ],
+          "leftHand": [
+            0,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "8cd92b0a50fcdcdab81d0aa7d55c5282c2b8b8daeb3336a7d93e98724ad87527"
+  }
+]

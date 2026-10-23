@@ -1,0 +1,81 @@
+{
+  "source": "output/archive/painted_r2_before_counter_fix.mp4",
+  "source_sha256": "cde370bbdd5a0d7cfe58d122384ec6b8b220b5aba7dfd25aa288ceb04a3f5dfa",
+  "replacement": "output/painted_r2_counter_fix.mp4",
+  "replacement_sha256": "125e37e4030bf65f0767e8b9da3f64df28c4fdd8cf77e83962eb870601c062ac",
+  "output": "output/stardust_clad_s1e2_painted_r2.mp4",
+  "output_sha256": "19ee5e88d6b403072f818a23795f48f939a796a71cb910abc7d6bde04c2a340f",
+  "window": {
+    "start": 163,
+    "end": 174,
+    "first_frame": 4890,
+    "end_frame_exclusive": 5220
+  },
+  "frames": 6390,
+  "fps": 30.0,
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "213.000000",
+        "nb_frames": "6390"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "213.000000",
+        "nb_frames": "9986"
+      }
+    ],
+    "format": {
+      "duration": "213.000000"
+    }
+  },
+  "audio_packets_identical": true,
+  "audio_pcm_identical": true,
+  "boundary_samples": [
+    {
+      "frame": 4889,
+      "source": "original",
+      "mean_abs_rgb_error": 0.5201038049768518,
+      "passed": true
+    },
+    {
+      "frame": 4890,
+      "source": "replacement",
+      "mean_abs_rgb_error": 0.2892918113425926,
+      "passed": true
+    },
+    {
+      "frame": 5055,
+      "source": "replacement",
+      "mean_abs_rgb_error": 1.312286964699074,
+      "passed": true
+    },
+    {
+      "frame": 5219,
+      "source": "replacement",
+      "mean_abs_rgb_error": 0.8868674045138889,
+      "passed": true
+    },
+    {
+      "frame": 5220,
+      "source": "original",
+      "mean_abs_rgb_error": 1.1491728153935186,
+      "passed": true
+    },
+    {
+      "frame": 6389,
+      "source": "original",
+      "mean_abs_rgb_error": 0.028833550347222223,
+      "passed": true
+    }
+  ],
+  "note": "Picture outside the insertion comes from the source and is re-encoded; no pixel-identical claim",
+  "passed": true
+}

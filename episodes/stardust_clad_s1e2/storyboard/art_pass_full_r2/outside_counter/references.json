@@ -1,0 +1,956 @@
+{
+  "config": {
+    "url": "http://127.0.0.1:4250/art_pass_full_r2.html?capture=1",
+    "adapter": "config/art_pass_r2_boundary_capture.mjs",
+    "width": 1280,
+    "height": 720,
+    "output": "storyboard/art_pass_full_r2/outside_counter",
+    "samples": [
+      {
+        "id": "t4",
+        "t": 4
+      },
+      {
+        "id": "t20_3",
+        "t": 20.3
+      },
+      {
+        "id": "t21_3",
+        "t": 21.3
+      },
+      {
+        "id": "t22_1",
+        "t": 22.1
+      },
+      {
+        "id": "t24_6",
+        "t": 24.6
+      },
+      {
+        "id": "t25_5",
+        "t": 25.5
+      },
+      {
+        "id": "t35",
+        "t": 35
+      },
+      {
+        "id": "t54_5",
+        "t": 54.5
+      },
+      {
+        "id": "t58_1",
+        "t": 58.1
+      },
+      {
+        "id": "t64_2",
+        "t": 64.2
+      },
+      {
+        "id": "t107",
+        "t": 107
+      },
+      {
+        "id": "t193_2",
+        "t": 193.2
+      },
+      {
+        "id": "t194",
+        "t": 194
+      },
+      {
+        "id": "t200",
+        "t": 200
+      }
+    ]
+  },
+  "states": [
+    {
+      "sample": {
+        "id": "t4",
+        "t": 4
+      },
+      "state": {
+        "t": 4,
+        "shot": "a02",
+        "kind": "wide",
+        "emotion": "establish",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": 0.13248334035864753,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          }
+        ],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 120
+      }
+    },
+    {
+      "sample": {
+        "id": "t20_3",
+        "t": 20.3
+      },
+      "state": {
+        "t": 20.3,
+        "shot": "a07",
+        "kind": "walk",
+        "emotion": "arrival",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": -0.07839154571114898,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "walk_arrival_2",
+            "wholeCel": true,
+            "referencePose": 2,
+            "sourceTime": 20.166666666666668,
+            "registrationError": 0.012866539988999915,
+            "feet": [
+              {
+                "x": 1494.9219487499997,
+                "y": 617.81732,
+                "source": [
+                  5.454359,
+                  0.144481,
+                  1.743474
+                ],
+                "contact": "planned:left:0"
+              },
+              {
+                "x": 1460.7182675,
+                "y": 623.09422,
+                "source": [
+                  5.467731,
+                  0.098286,
+                  1.921232
+                ],
+                "contact": "planned:right:0"
+              }
+            ],
+            "cuff": [
+              1440.7182899999998,
+              341.36584000000005
+            ],
+            "x": 1471.60108,
+            "y": 636.484375,
+            "height": 490
+          }
+        ],
+        "walking": true,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 920,
+          "cy": 390,
+          "z": 1.1,
+          "roll": 0
+        },
+        "motionFrame": 609
+      }
+    },
+    {
+      "sample": {
+        "id": "t21_3",
+        "t": 21.3
+      },
+      "state": {
+        "t": 21.3,
+        "shot": "a07",
+        "kind": "walk",
+        "emotion": "arrival",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": 0.04521930589487571,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "walk_arrival_4",
+            "wholeCel": true,
+            "referencePose": 4,
+            "sourceTime": 20.666666666666668,
+            "registrationError": 0.011702756202999992,
+            "feet": [
+              {
+                "x": 1349.89338,
+                "y": 619.79164125,
+                "source": [
+                  5.117269,
+                  0.09,
+                  1.590768
+                ],
+                "contact": "planned:left:1"
+              },
+              {
+                "x": 1497.17971625,
+                "y": 603.19114625,
+                "source": [
+                  5.353383,
+                  0.139536,
+                  1.869431
+                ],
+                "contact": "planned:right:0"
+              }
+            ],
+            "cuff": [
+              1380.00795,
+              345.48882000000003
+            ],
+            "x": 1420.11213,
+            "y": 636.484375,
+            "height": 490
+          }
+        ],
+        "walking": true,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 920,
+          "cy": 390,
+          "z": 1.1,
+          "roll": 0
+        },
+        "motionFrame": 639
+      }
+    },
+    {
+      "sample": {
+        "id": "t22_1",
+        "t": 22.1
+      },
+      "state": {
+        "t": 22.1,
+        "shot": "a07",
+        "kind": "walk",
+        "emotion": "arrival",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": 0.4550349141022591,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "walk_arrival_7",
+            "wholeCel": true,
+            "referencePose": 7,
+            "sourceTime": 21.066666666666666,
+            "registrationError": 0.004361517257000029,
+            "feet": [
+              {
+                "x": 1417.99367875,
+                "y": 603.9232325,
+                "source": [
+                  5.117269,
+                  0.123774,
+                  1.590768
+                ],
+                "contact": "planned:left:1"
+              },
+              {
+                "x": 1245.72805375,
+                "y": 618.36287875,
+                "source": [
+                  4.637731,
+                  0.098866,
+                  1.545232
+                ],
+                "contact": "planned:right:2"
+              }
+            ],
+            "cuff": [
+              1333.50494,
+              349.94461
+            ],
+            "x": 1347.54437,
+            "y": 636.484375,
+            "height": 490
+          }
+        ],
+        "walking": true,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 920,
+          "cy": 390,
+          "z": 1.1,
+          "roll": 0
+        },
+        "motionFrame": 663
+      }
+    },
+    {
+      "sample": {
+        "id": "t24_6",
+        "t": 24.6
+      },
+      "state": {
+        "t": 24.6,
+        "shot": "a09",
+        "kind": "walk",
+        "emotion": "arrival",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": -0.6072002403095541,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "walk_arrival_2",
+            "wholeCel": true,
+            "referencePose": 2,
+            "sourceTime": 22.3,
+            "registrationError": 0.006255972223249948,
+            "feet": [
+              {
+                "x": 1152.0596987499998,
+                "y": 616.28621,
+                "source": [
+                  3.967077,
+                  0.151138,
+                  1.069718
+                ],
+                "contact": "planned:left:3"
+              },
+              {
+                "x": 1088.6636975,
+                "y": 625,
+                "source": [
+                  3.807731,
+                  0.09,
+                  1.169232
+                ],
+                "contact": "planned:right:4"
+              }
+            ],
+            "cuff": [
+              1099.97191,
+              345.69973000000005
+            ],
+            "x": 1123.7042299999998,
+            "y": 636.484375,
+            "height": 490
+          }
+        ],
+        "walking": true,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 920,
+          "cy": 390,
+          "z": 1.1,
+          "roll": 0
+        },
+        "motionFrame": 738
+      }
+    },
+    {
+      "sample": {
+        "id": "t25_5",
+        "t": 25.5
+      },
+      "state": {
+        "t": 25.5,
+        "shot": "a09",
+        "kind": "walk",
+        "emotion": "arrival",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": 0.3906700217020803,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "walk_arrival_5",
+            "wholeCel": true,
+            "referencePose": 5,
+            "sourceTime": 22.766666666666666,
+            "registrationError": 0.005208206521000054,
+            "feet": [
+              {
+                "x": 1014.7371087499998,
+                "y": 614.47265625,
+                "source": [
+                  3.457269,
+                  0.09,
+                  0.838768
+                ],
+                "contact": "planned:left:5"
+              },
+              {
+                "x": 1046.97415125,
+                "y": 617.54591875,
+                "source": [
+                  3.629931,
+                  0.146706,
+                  1.08868
+                ],
+                "contact": "planned:right:4"
+              }
+            ],
+            "cuff": [
+              1003.5055399999998,
+              346.6333
+            ],
+            "x": 1040.98266,
+            "y": 636.484375,
+            "height": 490
+          }
+        ],
+        "walking": true,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 920,
+          "cy": 390,
+          "z": 1.1,
+          "roll": 0
+        },
+        "motionFrame": 765
+      }
+    },
+    {
+      "sample": {
+        "id": "t35",
+        "t": 35
+      },
+      "state": {
+        "t": 35,
+        "shot": "a12",
+        "kind": "hero_face",
+        "emotion": "resolve",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": {
+          "actor": "aoao",
+          "jaw": 0.04399999976158142,
+          "emotion": "resolve",
+          "blink": 0,
+          "gaze": 0.10392304845413262,
+          "design": "aoao-quarter-r2",
+          "occlusion": "source-skin",
+          "hair": -2.6699868131005
+        },
+        "bodies": [],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 1050
+      }
+    },
+    {
+      "sample": {
+        "id": "t54_5",
+        "t": 54.5
+      },
+      "state": {
+        "t": 54.5,
+        "shot": "a19",
+        "kind": "enemy_charge",
+        "emotion": "charge",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_block",
+            "x": 370,
+            "y": 625,
+            "height": 450,
+            "hair": 0.5129245605207514,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "enemy_windup",
+            "x": 980,
+            "y": 625,
+            "height": 430,
+            "hair": -0.769386840781127,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": [
+              868.9670668953688,
+              238
+            ]
+          }
+        ],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 1,
+        "view": {
+          "cx": 920,
+          "cy": 360,
+          "z": 1.24816,
+          "roll": 0.025
+        },
+        "motionFrame": 1635
+      }
+    },
+    {
+      "sample": {
+        "id": "t58_1",
+        "t": 58.1
+      },
+      "state": {
+        "t": 58.1,
+        "shot": "a21",
+        "kind": "block",
+        "emotion": "impact",
+        "shield": {
+          "id": "intact",
+          "level": 0
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_recoil",
+            "x": 366.89401436090554,
+            "y": 625,
+            "height": 455,
+            "hair": -3.7475155598180825,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "enemy_strike",
+            "x": 980,
+            "y": 625,
+            "height": 430,
+            "hair": 8.740438764007251,
+            "motion": [
+              0,
+              -0.4958100000000043
+            ],
+            "feet": null,
+            "cuff": [
+              749.79590443686,
+              300.35
+            ]
+          }
+        ],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 481.7748489366254,
+          "cy": 390.8874244683127,
+          "z": 1.32,
+          "roll": -0.025
+        },
+        "motionFrame": 1743
+      }
+    },
+    {
+      "sample": {
+        "id": "t64_2",
+        "t": 64.2
+      },
+      "state": {
+        "t": 64.2,
+        "shot": "a25",
+        "kind": "wide",
+        "emotion": "wounded",
+        "shield": {
+          "id": "cracked",
+          "level": 1
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_block",
+            "x": 370,
+            "y": 625,
+            "height": 450,
+            "hair": 0.7128434940860906,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "enemy_recover",
+            "x": 980,
+            "y": 625,
+            "height": 430,
+            "hair": -1.069265241129136,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": [
+              933.6531302876481,
+              440.09999999999997
+            ]
+          }
+        ],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 1926
+      }
+    },
+    {
+      "sample": {
+        "id": "t107",
+        "t": 107
+      },
+      "state": {
+        "t": 107,
+        "shot": "a43",
+        "kind": "hero_face",
+        "emotion": "pain",
+        "shield": {
+          "id": "deep-cracks",
+          "level": 2
+        },
+        "route": "full-draw-over",
+        "face": {
+          "actor": "aoao",
+          "jaw": 0.492000013589859,
+          "emotion": "pain",
+          "blink": 0,
+          "gaze": 0.07177326365894583,
+          "design": "aoao-quarter-r2",
+          "occlusion": "source-skin",
+          "hair": 0.10077875968956479
+        },
+        "bodies": [],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 3210
+      }
+    },
+    {
+      "sample": {
+        "id": "t193_2",
+        "t": 193.2
+      },
+      "state": {
+        "t": 193.2,
+        "shot": "a72",
+        "kind": "walk",
+        "emotion": "retreat",
+        "shield": {
+          "id": "deep-cracks",
+          "level": 2
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": -0.7215367980124086,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "walk_retreat_1",
+            "wholeCel": true,
+            "referencePose": 1,
+            "sourceTime": 193.13333333333333,
+            "registrationError": 0.0005778025730000017,
+            "feet": [
+              {
+                "x": 999.8034887499999,
+                "y": 625.56533875,
+                "source": [
+                  2.959028,
+                  0.129284,
+                  -0.392968
+                ],
+                "contact": "planned:left:0"
+              },
+              {
+                "x": 934.45418625,
+                "y": 605.34279375,
+                "source": [
+                  2.862925,
+                  0.093835,
+                  -0.518853
+                ],
+                "contact": "planned:right:0"
+              }
+            ],
+            "cuff": [
+              975.64219,
+              342.87556000000006
+            ],
+            "x": 982.13256,
+            "y": 636.484375,
+            "height": 490
+          }
+        ],
+        "walking": true,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 930,
+          "cy": 390,
+          "z": 1.1,
+          "roll": 0
+        },
+        "motionFrame": 5796
+      }
+    },
+    {
+      "sample": {
+        "id": "t194",
+        "t": 194
+      },
+      "state": {
+        "t": 194,
+        "shot": "a72",
+        "kind": "walk",
+        "emotion": "retreat",
+        "shield": {
+          "id": "deep-cracks",
+          "level": 2
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_idle",
+            "x": 370,
+            "y": 625,
+            "height": 490,
+            "hair": 0.7815822823669667,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "walk_retreat_3",
+            "wholeCel": true,
+            "referencePose": 3,
+            "sourceTime": 193.46666666666667,
+            "registrationError": 0,
+            "feet": [
+              {
+                "x": 1117.36465375,
+                "y": 609.6875,
+                "source": [
+                  3.320897,
+                  0.121943,
+                  -0.587821
+                ],
+                "contact": "planned:left:0"
+              },
+              {
+                "x": 932.6576225,
+                "y": 624.04296875,
+                "source": [
+                  2.862925,
+                  0.117842,
+                  -0.518853
+                ],
+                "contact": "planned:right:0"
+              }
+            ],
+            "cuff": [
+              1013.0698600000001,
+              344.40621
+            ],
+            "x": 1007.30606,
+            "y": 636.484375,
+            "height": 490
+          }
+        ],
+        "walking": true,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 930,
+          "cy": 390,
+          "z": 1.1,
+          "roll": 0
+        },
+        "motionFrame": 5820
+      }
+    },
+    {
+      "sample": {
+        "id": "t200",
+        "t": 200
+      },
+      "state": {
+        "t": 200,
+        "shot": "a75",
+        "kind": "hero_face",
+        "emotion": "relief",
+        "shield": {
+          "id": "deep-cracks",
+          "level": 2
+        },
+        "route": "full-draw-over",
+        "face": {
+          "actor": "aoao",
+          "jaw": 0.12399999797344208,
+          "emotion": "relief",
+          "blink": 0,
+          "gaze": 0.1122019491222499,
+          "design": "aoao-quarter-r2",
+          "occlusion": "source-skin",
+          "hair": -2.3215574944673127
+        },
+        "bodies": [],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 6000
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "provider": "built-in image_gen",
+  "use": "3D-conditioned whole-body walk cels and localized flame-removal plates; facial features are native Canvas curves, not newly generated faces",
+  "assets": [
+    {
+      "file": "background_flames_removed.png",
+      "references": [
+        "../art_pass_r2/background.png"
+      ],
+      "prompt": "Edit target: the supplied hand-painted animation background. Make a clean plate for later particle flame compositing. Remove ONLY the visible bright flame tongues inside the large caged brazier at left and the two small wall lanterns beside the door. Reconstruct the dark warm stone/metal behind those tiny flames. Keep every metal bar, bowl, lantern frame, ALL architecture, framing, colors, staircase, cracks and lighting spill outside these small flame interiors exactly unchanged. No fire, sparks, smoke inside the three lamps; their interiors should be empty dark warm brown stone. Preserve original 1672x943 aspect ratio and composition. This is localized removal, not a reinterpretation; do not redesign the scene.",
+      "integration": "Only flamePatches in config/painted_environment_r2.js are copied into the original; outside pixels remain from the accepted plate.",
+      "sha256": "648c80345bd179f54f73d4d2c5c2acc573ec7bee3ce107cdc0b6e70e1291e889"
+    },
+    {
+      "file": "walk_arrival.png",
+      "references": [
+        "../../storyboard/art_pass_full_r2/walk_reference/arrival_reference.png",
+        "../art_pass_r2/enemy_ready.png"
+      ],
+      "prompt": "Production animation draw-over sprite sheet, transparent background, exactly 4 columns x 2 rows equal cells, no labels/borders. Image 1 is the eight sequential ACTUAL 3D walking poses, left to right then second row; transfer their exact whole-body motion, contact leg, passing leg, hip elevation, torso weight and small arm counter-swing into eight polished hand-drawn animation cels. Image 2 is the CHARACTER IDENTITY and art design: same adult male, narrow angular teal eyes, long dark navy layered hair high ponytail, violet metal armor angular shoulder/collar and silver chain at wrist, black undersuit. Apply design2 faithfully to poses1. All eight figures face LEFT in profile/slight three-quarter, full body head to feet, same scale, same proportions, each centered around identical pelvis X position and common floor baseline within each cell. Match foot positions and body weight of the corresponding reference panel, including the crossed/passing positions; do not repeat a static upper body. Clean expressive ink contours, dimensional planar shadows, intricate armor facets, coherent soft environment shading as design reference. Hair and ponytail follow walking inertia modestly. Arms hang naturally with small counter-swing, don't carry the original fighting stance. No backgrounds, shadows, floor, detached objects or effects. Keep all eight figures isolated with generous gutters, no clipped feet or hair.",
+      "transparent_background": true,
+      "limitation": "The generation is an approximate draw-over; exact skeleton adherence was not achieved or claimed.",
+      "sha256": "b80d94f335cb7da314c224aa3ffa564e0628ed5c07be54e5f48cacdc284fd245"
+    },
+    {
+      "file": "walk_retreat.png",
+      "references": [
+        "../../storyboard/art_pass_full_r2/retreat_reference/retreat_reference.png",
+        "walk_arrival.png"
+      ],
+      "prompt": "Transparent animation sprite atlas, exactly 4 columns x 2 rows equal cells, full bodies, no labels/gutters drawn. Image1 is actual 3D retreat walking poses; faithfully draw over all 8 poses in order. Image2 is the exact character design, proportions, rendering and wardrobe to transfer, navy layered long high ponytail, violet angular collar armor, violet greaves, black undersuit, silver wrist chain. This time all eight figures face RIGHT, slight REAR three-quarter view as image1, walking away; never mirror the previous front-view art, draw correct back and side armor. Match corresponding reference contact/swing leg, hip height, leg overlap and small counter-swing of arms. Preserve a continuous coherent character and identical scale; centers and floor baseline equal within cells. Refine armor plane shadows and drawn contours to reference2 quality, hair has modest inertial motion. Common low floor baseline, generous separation, no clipped feet/hair. First frame standing poised to leave, subsequent frames one smooth walking cycle. Transparent alpha around each isolated figure, no scenery, shadows, glow, effect or visible floor.",
+      "transparent_background": true,
+      "sha256": "de5d1a78d9a770fb443fb805ff7a433da6c16e98b99d0daaa01fde2245740e2e"
+    },
+    {
+      "file": "gate_flames_removed.png",
+      "references": [
+        "../art_pass_full_r1/gate.png"
+      ],
+      "prompt": "Localized clean-plate edit of supplied animation background. Remove ONLY the visible static flames INSIDE the caged cylindrical furnace in the upper-left (roughly source x=10..145,y=130..270). Replace the flame interiors with dark warm brown metal/stone interior. Preserve every vertical iron bar, rings, furnace silhouette, pipes, surrounding orange light spill, entire rest of image EXACTLY unchanged. Keep the orange faceted gemstone on the right intact, it is a physical prop not a flame. No new objects, no fire/smoke/sparks. Maintain exact composition/aspect ratio, camera and original painted style. This small patch will be composited into the original image and filled with animated particles later.",
+      "integration": "The furnace interior patch is used for gate, repair_insert and trap_insert; these plates share the same furnace framing.",
+      "sha256": "c647b586018c467d2d17b8b693ff1f46198e2ab76381631929b19cf3973b8a11"
+    }
+  ]
+}

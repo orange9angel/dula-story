@@ -1,4 +1,27 @@
-# 《星屑战壳》S1E2《焰阶宫·盾与暗链》整集二维 R1
+# 《星屑战壳》S1E2《焰阶宫·盾与暗链》
+
+## R2 角色与粒子修订候选（2026-10-24）
+
+当前修订入口 `art_pass_full_r2.html`，配置 `config/art_pass_full_r2_pipeline.json`，
+候选输出 `output/stardust_clad_s1e2_painted_r2.mp4`。更新角色专属程序五官、3D姿势
+参考的完整人物走路cel、跨镜盾裂状态；人物及场景火焰/烟/命中全部走粒子。
+保留接受的场景原画，仅局部去除烤入的静态火焰，声音仍复制R27原音轨。
+
+[实际复看与限制](storyboard/art_pass_full_r2/REVIEW.md)，
+[原R1漏检纠正](storyboard/character_attention/painted_r1_missed_faces_walk_props.md)。
+走路仍属有限cel动画，五官精细程度与粒子形态仍有提升空间，不能将规则落地或
+程序检查通过等同于美术最终通过。共享执行代码已经放进对应skill的assets/scripts。
+
+```powershell
+node ../../../dula-skills/draw-over-animation/scripts/pipeline.mjs --episode . --config config/art_pass_full_r2_pipeline.json --step render --render
+node ../../../dula-skills/draw-over-animation/scripts/pipeline.mjs --episode . --config config/art_pass_full_r2_pipeline.json --step probe
+python ../../../dula-skills/draw-over-animation/scripts/verify_full_episode.py --episode . --config config/art_pass_full_r2_pipeline.json --repair-config config/art_pass_full_r2_counter_assembly.json
+```
+
+前两条用于完整重渲；第三条核对本次带短窗口修正的交付。完整重渲后应去掉
+`--repair-config`，使用该次真实导出的顺序/跳转记录，不沿用本次拼接报告。
+
+## 整集二维 R1（历史交付）
 
 2026-10-24 当前交付：[213 秒整集二维版](output/stardust_clad_s1e2_painted_r1.mp4)。
 全片 0–213 秒使用二维人物与绘画场景，79 段镜表连续覆盖；163–174 秒沿用已认可

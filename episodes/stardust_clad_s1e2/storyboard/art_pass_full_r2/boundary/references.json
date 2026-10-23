@@ -1,0 +1,207 @@
+{
+  "config": {
+    "url": "http://127.0.0.1:4250/art_pass_full_r2.html?capture=1",
+    "adapter": "config/art_pass_r2_boundary_capture.mjs",
+    "width": 1280,
+    "height": 720,
+    "output": "storyboard/art_pass_full_r2/boundary",
+    "samples": [
+      {
+        "id": "sequential174",
+        "t": 174,
+        "pre": [
+          162.96666666666667,
+          173.96666666666667
+        ]
+      },
+      {
+        "id": "seek174",
+        "t": 174,
+        "pre": [
+          207.5
+        ]
+      },
+      {
+        "id": "repeated174",
+        "t": 174
+      }
+    ]
+  },
+  "states": [
+    {
+      "sample": {
+        "id": "sequential174",
+        "t": 174,
+        "pre": [
+          162.96666666666667,
+          173.96666666666667
+        ]
+      },
+      "state": {
+        "t": 174,
+        "shot": "a66",
+        "kind": "wide",
+        "emotion": "settle",
+        "shield": {
+          "id": "deep-cracks",
+          "level": 2
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_release",
+            "x": 370,
+            "y": 625,
+            "height": 375,
+            "hair": 0.652559155402003,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "enemy_land",
+            "x": 980,
+            "y": 625,
+            "height": 355,
+            "hair": -0.9788387331030045,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          }
+        ],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 5220
+      }
+    },
+    {
+      "sample": {
+        "id": "seek174",
+        "t": 174,
+        "pre": [
+          207.5
+        ]
+      },
+      "state": {
+        "t": 174,
+        "shot": "a66",
+        "kind": "wide",
+        "emotion": "settle",
+        "shield": {
+          "id": "deep-cracks",
+          "level": 2
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_release",
+            "x": 370,
+            "y": 625,
+            "height": 375,
+            "hair": 0.652559155402003,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "enemy_land",
+            "x": 980,
+            "y": 625,
+            "height": 355,
+            "hair": -0.9788387331030045,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          }
+        ],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 5220
+      }
+    },
+    {
+      "sample": {
+        "id": "repeated174",
+        "t": 174
+      },
+      "state": {
+        "t": 174,
+        "shot": "a66",
+        "kind": "wide",
+        "emotion": "settle",
+        "shield": {
+          "id": "deep-cracks",
+          "level": 2
+        },
+        "route": "full-draw-over",
+        "face": null,
+        "bodies": [
+          {
+            "key": "hero_release",
+            "x": 370,
+            "y": 625,
+            "height": 375,
+            "hair": 0.652559155402003,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          },
+          {
+            "key": "enemy_land",
+            "x": 980,
+            "y": 625,
+            "height": 355,
+            "hair": -0.9788387331030045,
+            "motion": [
+              0,
+              0
+            ],
+            "feet": null,
+            "cuff": null
+          }
+        ],
+        "walking": false,
+        "walkPhase": null,
+        "charge": 0,
+        "view": {
+          "cx": 640,
+          "cy": 365,
+          "z": 1.02,
+          "roll": 0
+        },
+        "motionFrame": 5220
+      }
+    }
+  ]
+}
