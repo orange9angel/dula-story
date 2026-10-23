@@ -1,0 +1,1737 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e2_painted_r1.mp4",
+    "sha256": "dd6958fb03a5187af7071bd6a6fd3508b8fc53246f70e8d9e9392bb417a832ed"
+  },
+  "scope": {
+    "subjects": [
+      "aoao",
+      "yekari"
+    ],
+    "windows": [
+      {
+        "id": "complete",
+        "start": 0,
+        "end": 213
+      }
+    ],
+    "accepted_properties": [
+      "??????/????",
+      "???????",
+      "???????????"
+    ],
+    "limitations": "???????????????????????????????????????????????????????????????"
+  },
+  "checks": [
+    {
+      "subject": "aoao",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "???????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "?????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "expression",
+      "status": "no_issue_observed",
+      "observation": "??????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_face.jpg",
+          "sha256": "26356d9b5cbc16d8d1cfa7ada8fad23c400e4d00759c03d559cbf715ae903e99",
+          "window": "complete",
+          "at": [
+            108.0,
+            108.2,
+            108.4,
+            108.6,
+            108.8,
+            109.0,
+            109.2,
+            109.4,
+            109.6,
+            109.8,
+            110.0,
+            110.2,
+            110.4,
+            110.6,
+            110.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "??????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "???????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "???????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t152_5.png",
+          "sha256": "ce221a7781b694dd0396f845787f77ca4dfa32579cbf46f5ceb0e70e3990b7a3",
+          "window": "complete",
+          "at": [
+            152.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "?????????????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_arrival.jpg",
+          "sha256": "ccde917be8b0369c4a41fa2429f3072e893b27ef4ffd49a2025aa697c330fa98",
+          "window": "complete",
+          "at": [
+            20.0,
+            20.5,
+            21.0,
+            21.5,
+            22.0,
+            22.5,
+            23.0,
+            23.5,
+            24.0,
+            24.5,
+            25.0,
+            25.5,
+            26.0,
+            26.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "???????????????????????????????????????",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "action",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_face.jpg",
+          "sha256": "26356d9b5cbc16d8d1cfa7ada8fad23c400e4d00759c03d559cbf715ae903e99",
+          "window": "complete",
+          "at": [
+            108.0,
+            108.2,
+            108.4,
+            108.6,
+            108.8,
+            109.0,
+            109.2,
+            109.4,
+            109.6,
+            109.8,
+            110.0,
+            110.2,
+            110.4,
+            110.6,
+            110.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "??????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t152_5.png",
+          "sha256": "ce221a7781b694dd0396f845787f77ca4dfa32579cbf46f5ceb0e70e3990b7a3",
+          "window": "complete",
+          "at": [
+            152.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "?????????????????????/PCM ???????????????????????????????",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_retreat_end.jpg",
+          "sha256": "0037dae90636483beba2adcde6762548bb53c739291f8f482298c915ed984957",
+          "window": "complete",
+          "at": [
+            197.2,
+            197.29999999999998,
+            197.39999999999998,
+            197.5,
+            197.6,
+            197.7,
+            197.79999999999998,
+            197.89999999999998,
+            198.0,
+            198.1,
+            198.2,
+            198.29999999999998
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "???????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "?????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "expression",
+      "status": "no_issue_observed",
+      "observation": "??????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_face.jpg",
+          "sha256": "26356d9b5cbc16d8d1cfa7ada8fad23c400e4d00759c03d559cbf715ae903e99",
+          "window": "complete",
+          "at": [
+            108.0,
+            108.2,
+            108.4,
+            108.6,
+            108.8,
+            109.0,
+            109.2,
+            109.4,
+            109.6,
+            109.8,
+            110.0,
+            110.2,
+            110.4,
+            110.6,
+            110.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "??????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t47.png",
+          "sha256": "b2ec06938dbaa91d47d83e9f498e2a8c71eb307641fae93c771c16b3de7c1c37",
+          "window": "complete",
+          "at": [
+            47
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/t29.png",
+          "sha256": "2d04a566bf8f27e5c63cf1781de68c0a3d9df3821f419bbbca991b65d584a7eb",
+          "window": "complete",
+          "at": [
+            29
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "???????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "???????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t152_5.png",
+          "sha256": "ce221a7781b694dd0396f845787f77ca4dfa32579cbf46f5ceb0e70e3990b7a3",
+          "window": "complete",
+          "at": [
+            152.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "?????????????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_arrival.jpg",
+          "sha256": "ccde917be8b0369c4a41fa2429f3072e893b27ef4ffd49a2025aa697c330fa98",
+          "window": "complete",
+          "at": [
+            20.0,
+            20.5,
+            21.0,
+            21.5,
+            22.0,
+            22.5,
+            23.0,
+            23.5,
+            24.0,
+            24.5,
+            25.0,
+            25.5,
+            26.0,
+            26.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_arrival.jpg",
+          "sha256": "ccde917be8b0369c4a41fa2429f3072e893b27ef4ffd49a2025aa697c330fa98",
+          "window": "complete",
+          "at": [
+            20.0,
+            20.5,
+            21.0,
+            21.5,
+            22.0,
+            22.5,
+            23.0,
+            23.5,
+            24.0,
+            24.5,
+            25.0,
+            25.5,
+            26.0,
+            26.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_retreat_end.jpg",
+          "sha256": "0037dae90636483beba2adcde6762548bb53c739291f8f482298c915ed984957",
+          "window": "complete",
+          "at": [
+            197.2,
+            197.29999999999998,
+            197.39999999999998,
+            197.5,
+            197.6,
+            197.7,
+            197.79999999999998,
+            197.89999999999998,
+            198.0,
+            198.1,
+            198.2,
+            198.29999999999998
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "action",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "temporal",
+      "status": "finding",
+      "observation": "?????? 197.5 ?????????197.7 ????????????? 198 ???????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/retreat_fix/before.jpg",
+          "sha256": "d64621398c5aa3056fec76cd61e76180743aa620223cb1b7f3f08d569af986e2",
+          "window": "complete",
+          "at": [
+            191.0,
+            191.5,
+            192.0,
+            192.5,
+            193.0,
+            193.5,
+            194.0,
+            194.5,
+            195.0,
+            195.5,
+            196.0,
+            196.5,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_retreat_end.jpg",
+          "sha256": "0037dae90636483beba2adcde6762548bb53c739291f8f482298c915ed984957",
+          "window": "complete",
+          "at": [
+            197.2,
+            197.29999999999998,
+            197.39999999999998,
+            197.5,
+            197.6,
+            197.7,
+            197.79999999999998,
+            197.89999999999998,
+            198.0,
+            198.1,
+            198.2,
+            198.29999999999998
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "retreat_end_pose"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "??????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/t152_5.png",
+          "sha256": "ce221a7781b694dd0396f845787f77ca4dfa32579cbf46f5ceb0e70e3990b7a3",
+          "window": "complete",
+          "at": [
+            152.5
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_impact.jpg",
+          "sha256": "e9d6cd19950e71ad4649aec792bff14a7a75075c30146b7136774141de18a4f9",
+          "window": "complete",
+          "at": [
+            57.0,
+            57.2,
+            57.4,
+            57.6,
+            57.8,
+            58.0,
+            58.2,
+            58.4,
+            58.6,
+            58.8,
+            59.0,
+            59.2,
+            59.4,
+            59.6,
+            59.8,
+            60.0,
+            60.2,
+            60.4,
+            60.6,
+            60.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "?????????????????????/PCM ???????????????????????????????",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "????????????????????????????????????????????????????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/decoded_overview.jpg",
+          "sha256": "1e78ecefb4ed409faa86ecee1ae96d72b71362872df10829d010016f22cd6c1a",
+          "window": "complete",
+          "at": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55,
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100,
+            105,
+            110,
+            115,
+            120,
+            125,
+            130,
+            135,
+            140,
+            145,
+            150,
+            155,
+            160,
+            165,
+            170,
+            175,
+            180,
+            185,
+            190,
+            195,
+            200,
+            205,
+            210
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../art_pass_full_r1/decoded_retreat_end.jpg",
+          "sha256": "0037dae90636483beba2adcde6762548bb53c739291f8f482298c915ed984957",
+          "window": "complete",
+          "at": [
+            197.2,
+            197.29999999999998,
+            197.39999999999998,
+            197.5,
+            197.6,
+            197.7,
+            197.79999999999998,
+            197.89999999999998,
+            198.0,
+            198.1,
+            198.2,
+            198.29999999999998
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "retreat_end_pose",
+      "subject": "yekari",
+      "dimension": "temporal",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "??????????????????????",
+      "impact": "???????????????????????",
+      "priority": "visible continuity defect",
+      "hypothesis": "???? 197.5 ???????? enemy_land??????? 197.7 ??????",
+      "next_action": "??? 197.2?198.3 ????????",
+      "evidence": [
+        {
+          "path": "../art_pass_full_r1/retreat_fix/before.jpg",
+          "sha256": "d64621398c5aa3056fec76cd61e76180743aa620223cb1b7f3f08d569af986e2",
+          "window": "complete",
+          "at": [
+            191.0,
+            191.5,
+            192.0,
+            192.5,
+            193.0,
+            193.5,
+            194.0,
+            194.5,
+            195.0,
+            195.5,
+            196.0,
+            196.5,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "?????????? 198 ???????????? 191?198 ???????????",
+      "result": "????????????????????????????",
+      "verification": [
+        {
+          "path": "../art_pass_full_r1/decoded_retreat_end.jpg",
+          "sha256": "0037dae90636483beba2adcde6762548bb53c739291f8f482298c915ed984957",
+          "window": "complete",
+          "at": [
+            197.2,
+            197.29999999999998,
+            197.39999999999998,
+            197.5,
+            197.6,
+            197.7,
+            197.79999999999998,
+            197.89999999999998,
+            198.0,
+            198.1,
+            198.2,
+            198.29999999999998
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "change": "??????????????????????????????",
+      "result": "??/????????????????"
+    },
+    {
+      "change": "?????????????????????????",
+      "result": "? retreat_end_pose?"
+    }
+  ],
+  "misses": [
+    {
+      "earlier": "R28 ?? 163?174 ?????????????????",
+      "correction": "???? 0?213 ???????????????"
+    },
+    {
+      "earlier": "????????????????????",
+      "correction": "????????????????????????????????????"
+    }
+  ],
+  "reviewer_conclusion": "????????????????????????????????????????????????????????????????"
+}

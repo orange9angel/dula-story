@@ -1,0 +1,110 @@
+{
+    "schema":  "draw-over-pipeline-v1",
+    "baseUrl":  "http://127.0.0.1:4250/",
+    "source":  {
+                   "video":  "output/archive/painted_r1_before_retreat_fix.mp4",
+                   "sha256":  "14535ca90901054c5a7274333e58fcc4bc81326d8c169ab523d73df303b74928"
+               },
+    "pilot":  {
+                  "fps":  30,
+                  "width":  1280,
+                  "height":  720,
+                  "viewer":  "art_pass_full_r1.html?capture=1",
+                  "board":  "storyboard/art_pass_full_r1/retreat_fix",
+                  "output":  "output/stardust_clad_s1e2_painted_retreat_r1.mp4",
+                  "samples":  [
+                                  191,
+                                  192,
+                                  196.3,
+                                  197.4,
+                                  197.6,
+                                  197.9
+                              ],
+                  "hashEvery":  15,
+                  "repeatSamples":  [
+                                        191,
+                                        197.4,
+                                        197.6,
+                                        197.9
+                                    ],
+                  "sourceFiles":  [
+                                      "script.story",
+                                      "art_pass_full_r1.story",
+                                      "art_pass_full_r1.js",
+                                      "art_pass_full_r1.html",
+                                      "config/art_pass_full_r1_pipeline.json",
+                                      "config/art_pass_full_r1_motion.json",
+                                      "config/voice_envs.json",
+                                      "config/dialogue.json",
+                                      "art_pass_r2.js",
+                                      "art_pass_r3.html",
+                                      "config/art_pass_full_r1_probe.mjs",
+                                      "assets3d/art_pass_runtime/cel-integration.js",
+                                      "assets3d/art_pass_runtime/cel-stage.js",
+                                      "assets3d/art_pass_runtime/face-acting.js",
+                                      "assets3d/art_pass_runtime/limb-rig2d.js",
+                                      "assets3d/art_pass_runtime/motion-controls.js",
+                                      "assets3d/art_pass_runtime/particle-stage.js",
+                                      "config/art_pass_full_r1_retreat.json"
+                                  ],
+                  "assetDirectories":  [
+                                           "assets3d/art_pass_full_r1",
+                                           "assets3d/art_pass_r2"
+                                       ],
+                  "audioCopy":  true,
+                  "deliveryScope":  "Repair retreat ending inside the fully painted episode",
+                  "start":  191,
+                  "end":  198
+              },
+    "bake":  {
+                 "viewer":  "viewer.html?capture=1",
+                 "adapter":  "config/art_pass_r2_bake_adapter.mjs",
+                 "sourceFiles":  [
+                                     "script.story",
+                                     "duel_performance.js",
+                                     "palace_camera.js",
+                                     "palace_locomotion.js",
+                                     "viewer_palace.js",
+                                     "config/art_pass_r2_bake_adapter.mjs"
+                                 ],
+                 "windows":  [
+                                 {
+                                     "id":  "full_episode",
+                                     "start":  0,
+                                     "end":  213,
+                                     "output":  "config/art_pass_full_r1_motion.json",
+                                     "consumedByPilot":  true
+                                 }
+                             ]
+             },
+    "probe":  {
+                  "adapter":  "config/art_pass_full_r1_probe.mjs",
+                  "output":  "storyboard/art_pass_full_r1/performance_check.json"
+              },
+    "package":  {
+                    "comparison":  "output/stardust_clad_s1e2_painted_comparison_r1.mp4",
+                    "font":  "C:/Windows/Fonts/msyh.ttc",
+                    "labels":  [
+                                   "R27 source",
+                                   "Full painted episode R1"
+                               ],
+                    "sheets":  [
+                                   {
+                                       "name":  "overview",
+                                       "start":  0,
+                                       "duration":  213,
+                                       "everyFrames":  150,
+                                       "width":  320,
+                                       "layout":  "6x8"
+                                   }
+                               ]
+                },
+    "runtime":  {
+                    "directory":  "assets3d/art_pass_runtime"
+                },
+    "integration":  {
+                        "output":  "output/stardust_clad_s1e2_painted_r1.mp4",
+                        "report":  "storyboard/art_pass_full_r1/retreat_fix/integration.json",
+                        "crf":  17
+                    }
+}
