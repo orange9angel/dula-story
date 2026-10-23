@@ -1,0 +1,215 @@
+{
+  "source": "output/stardust_clad_s1e2_palace_r27.mp4",
+  "source_sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+  "start": 163.0,
+  "duration": 11.0,
+  "scope": "configured shot-specific pilot; not full-episode integration",
+  "outputs": [
+    {
+      "file": "output/art_pass_counter_r3.mp4",
+      "sha256": "9d80c3c334b4aae01a52ad6ac5aa474013cee4f99b43abbe737f6dc063e6d82e",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1",
+            "duration": "11.000000",
+            "nb_frames": "330"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0",
+            "duration": "11.000000",
+            "nb_frames": "517"
+          }
+        ],
+        "format": {
+          "duration": "11.000000"
+        }
+      },
+      "audio": {
+        "correlation": 0.9994113304114786,
+        "offset_ms": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "file": "output/art_pass_counter_comparison_r3.mp4",
+      "sha256": "c6ed27abd3d0cad17a14c7bc20e03b286fa811cd67e6d54c5f4084ea692e3434",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 2560,
+            "height": 768,
+            "r_frame_rate": "30/1",
+            "duration": "11.000000",
+            "nb_frames": "330"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0",
+            "duration": "11.000000",
+            "nb_frames": "517"
+          }
+        ],
+        "format": {
+          "duration": "11.000000"
+        }
+      },
+      "audio": {
+        "correlation": 0.9994113304114786,
+        "offset_ms": 0.0,
+        "passed": true
+      }
+    }
+  ],
+  "motion": [
+    {
+      "id": "counter",
+      "frames": 331,
+      "sha256": "5b3c009a39e9613b5ccebbb15e472d73a0539fd1e43583baf6eba772845fc79f",
+      "finite": true,
+      "consumed_by_pilot": true,
+      "note": ""
+    },
+    {
+      "id": "walk",
+      "frames": 211,
+      "sha256": "7927b86eac45cf12db7525597315378bc1a96dc30182f7b25ee96f5f45d01e79",
+      "finite": true,
+      "consumed_by_pilot": false,
+      "note": "Only motion data exported; no completed 2D walk"
+    }
+  ],
+  "determinism": {
+    "passed": true,
+    "checks": [
+      {
+        "t": 173.96666666666667,
+        "equal": true
+      },
+      {
+        "t": 173.5,
+        "equal": true
+      },
+      {
+        "t": 173,
+        "equal": true
+      },
+      {
+        "t": 172.5,
+        "equal": true
+      },
+      {
+        "t": 172,
+        "equal": true
+      },
+      {
+        "t": 171.5,
+        "equal": true
+      },
+      {
+        "t": 171,
+        "equal": true
+      },
+      {
+        "t": 170.5,
+        "equal": true
+      },
+      {
+        "t": 170,
+        "equal": true
+      },
+      {
+        "t": 169.5,
+        "equal": true
+      },
+      {
+        "t": 169,
+        "equal": true
+      },
+      {
+        "t": 168.5,
+        "equal": true
+      },
+      {
+        "t": 168,
+        "equal": true
+      },
+      {
+        "t": 167.5,
+        "equal": true
+      },
+      {
+        "t": 167,
+        "equal": true
+      },
+      {
+        "t": 166.5,
+        "equal": true
+      },
+      {
+        "t": 166,
+        "equal": true
+      },
+      {
+        "t": 165.5,
+        "equal": true
+      },
+      {
+        "t": 165,
+        "equal": true
+      },
+      {
+        "t": 164.5,
+        "equal": true
+      },
+      {
+        "t": 164,
+        "equal": true
+      },
+      {
+        "t": 163.5,
+        "equal": true
+      },
+      {
+        "t": 163,
+        "equal": true
+      },
+      {
+        "t": 163.6,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 168.15,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 168.5,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 171.05,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 173.8,
+        "repeat": true,
+        "equal": true
+      }
+    ]
+  },
+  "technical_passed": true,
+  "visual_review": "See episode review; technical checks are not visual approval"
+}

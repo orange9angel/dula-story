@@ -3,6 +3,7 @@
 import * as THREE from 'three';
 import {createMotionController} from './assets3d/art_pass_runtime/motion-controls.js';
 import {T} from './config/event_times.js';
+const options=new URLSearchParams(location.search),useParticles=options.get('fx')==='particles',integrateCels=options.get('integrate')==='1';
 const W=1280,H=720,START=T.HERO_CHARGE,END=174,FPS=30;
 const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x);},mix=(a,b,u)=>a+(b-a)*u;
 const pulse=(t,a,b,c,d)=>ease((t-a)/(b-a))*(1-ease((t-c)/(d-c)));
@@ -20,6 +21,12 @@ const images=Object.fromEntries(await Promise.all(keys.map(async k=>{const im=ne
 const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;document.body.append(canvas);const g=canvas.getContext('2d');
 const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,preserveDrawingBuffer:true});renderer.setSize(W,H);renderer.setPixelRatio(1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0,0);
 const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(0,W,0,H,-100,100);camera.position.z=10;
+const particleStage=useParticles?await(async()=>{
+ const [{createParticleStage},{combustionAura}]=await Promise.all([import('./assets3d/art_pass_runtime/particle-stage.js'),import('dula-assets/lib/craft3d/combustion-particles.js')]);
+ return createParticleStage({THREE,renderer,makeAura:combustionAura,width:W,height:H,pixelsPerUnit:200});
+})():null;
+const integration=integrateCels?await import('./assets3d/art_pass_runtime/cel-integration.js'):null;
+const celLight=integration?.createCelIntegration({width:W,height:H});
 const portrait=document.createElement('canvas');portrait.width=portrait.height=1254;const pg=portrait.getContext('2d');
 const cells={};
 for(const key of keys.filter(k=>k!=='background')){
@@ -104,7 +111,7 @@ function viewTransform(ctx){ctx.translate(W/2,H/2);ctx.rotate(view.roll);ctx.sca
 function backdrop(t){g.fillStyle='#171827';g.fillRect(0,0,W,H);g.save();const b={...view,z:1+(view.z-1)*.18,cx:640+(view.cx-640)*.28,cy:360+(view.cy-360)*.28};g.translate(W/2,H/2);g.rotate(b.roll*.3);g.scale(b.z,b.z);g.translate(-b.cx,-b.cy);g.drawImage(images.background,-70,-40,1420,800);g.restore();
  const grad=g.createLinearGradient(0,0,0,H);grad.addColorStop(0,'rgba(9,13,32,.18)');grad.addColorStop(.7,'rgba(10,9,20,0)');grad.addColorStop(1,'rgba(8,11,28,.30)');g.fillStyle=grad;g.fillRect(0,0,W,H);
 }
-function floorShadow(x,y,rx,ry,a=.45){g.save();viewTransform(g);g.fillStyle=`rgba(10,9,22,${a})`;g.beginPath();g.ellipse(x,y,rx,ry,-.05,0,Math.PI*2);g.fill();g.restore();}
+function floorShadow(x,y,rx,ry,a=.45){g.save();viewTransform(g);if(integration)integration.drawGroundContact(g,{x,y,radiusX:rx,radiusY:ry,opacity:Math.min(a,.35),cast:[x<700?120:75,-24]});else{g.fillStyle=`rgba(10,9,22,${a})`;g.beginPath();g.ellipse(x,y,rx,ry,-.05,0,Math.PI*2);g.fill();}g.restore();}
 function flamePath(x,y,h,w,seed,time){const n=Math.sin(time*8+seed)*w*.8;return[['M',x-w*.4,y],['C',x-w*1.7,y-h*.13,x-w*1.1,y-h*.25,x+n-w*.5,y-h*.35],['Q',x+n+w*.35,y-h*.48,x+n-w*.4,y-h*.61],['Q',x+n+w*.6,y-h*.72,x+n,y-h],['C',x+n+w*1.7,y-h*.67,x+w*.1,y-h*.59,x+w*.5,y-h*.48],['Q',x+w*1.6,y-h*.32,x+w*.6,y-h*.23],['Q',x-w*.25,y-h*.15,x+w*.5,y],['Z']];}
 function aura(t,front=false){const d=t-START,p=clamp(d/5.4),fade=1-ease((t-T.RELEASE)/.55);if(fade<=0)return;
  g.save();viewTransform(g);g.globalAlpha=fade*(front?.30:.78);
@@ -147,13 +154,15 @@ function draw(t){
  if(shot.kind==='settle')view={cx:690,cy:390,z:.95,roll:0};
  const shake=t>=T.C7&&t<T.C7+.25?Math.sin(dt*92)*5*(1-(t-T.C7)/.25):0;view.cx+=shake;view.cy+=shake*.4;
  backdrop(t);
+ const chargePower=(.35+.65*ease((t-START)/3))*(1-ease((t-T.RELEASE)/.45));
+ particleStage?.update(t,{view,base:[410,625],power:portraitOnly?0:chargePower,start:START,height:2.05,color:'#ffbf5b'});
  if(!portraitOnly){
   for(const pin of rigs[heroKey].pins.slice(0,2)){const p=worldPoint(heroKey,...pin,t);floorShadow(...p,26,5,.48);}
   if(t<T.C7){for(const pin of rigs.enemy_ready.pins){const p=worldPoint('enemy_ready',...pin,t);floorShadow(...p,29,5,.48);}}
   else if(t<T.LAND){const pos=enemyHitPlacement(t);floorShadow(pos.x+113*.34,119+1482*.34,31,5,.25);}
   else{for(const pin of rigs.enemy_land.pins){const p=worldPoint('enemy_land',...pin,t);floorShadow(...p,29,5,.48);}}
   g.save();viewTransform(g);path(g,[['M',251,621],['L',287,610],['L',314,627],['L',278,646],['Z']],'#272336','#ae7437',3);path(g,[['M',270,630],['L',299,620]],null,'#f4a13b',5);g.restore();
-  aura(t,false);chain(t);
+  if(particleStage)particleStage.draw(g,'back');else aura(t,false);chain(t);
   place(heroKey,placements[heroKey],t,1);
   if(t<T.C7)place('enemy_ready',placements.enemy_ready,t,2);
   else if(t<T.LAND)place('enemy_hit',enemyHitPlacement(t),t,2);
@@ -162,12 +171,14 @@ function draw(t){
   const pos=shot.kind==='eyes'?{x:mix(-1900,-1965,ease(u)),y:mix(-1480,-1530,ease(u)),s:mix(3,3.08,ease(u))}:{x:-135,y:-250,s:.94};
   place('hero_portrait',pos,t,2);
  }
- renderer.render(scene,camera);g.drawImage(renderer.domElement,0,0);
- if(!portraitOnly){energy(t);aura(t,true);impact(t);debris(t);}
+ renderer.render(scene,camera);
+ if(celLight)celLight.draw(g,renderer.domElement,{warmPoint:screen(140,480),warmRadius:900*view.z,firePoint:screen(410,460),firePower:chargePower,time:t});
+ else g.drawImage(renderer.domElement,0,0);
+ if(!portraitOnly){energy(t);if(particleStage)particleStage.draw(g,'front');else aura(t,true);impact(t);debris(t);}
  if(shot.kind==='release')speedLines(t,785,360,.6*(1-u));if(shot.kind==='impact')speedLines(t,...screen(1025,300),.9*(1-u));
  if(portraitOnly&&shot.kind==='call'){const grad=g.createLinearGradient(0,720,800,0);grad.addColorStop(0,'rgba(255,168,40,.22)');grad.addColorStop(1,'rgba(255,168,40,0)');g.fillStyle=grad;g.fillRect(0,0,W,H);}
  // Local compositing clock; source sound is never quantized with cel exposures.
- subtitle(t);return{image:canvas.toDataURL('image/png').split(',')[1],state:{t,shot:shot.id,kind:shot.kind,heroCel:portraitOnly?'hero_portrait':heroKey,enemyCel:t<T.C7?'enemy_ready':t<T.LAND?'enemy_hit':'enemy_land',face,view,motionFrame,motionOffsets:offsets,sourceCues:{RELEASE:T.RELEASE,C7:T.C7,LAND:T.LAND}}};
+ subtitle(t);return{image:canvas.toDataURL('image/png').split(',')[1],state:{t,shot:shot.id,kind:shot.kind,heroCel:portraitOnly?'hero_portrait':heroKey,enemyCel:t<T.C7?'enemy_ready':t<T.LAND?'enemy_hit':'enemy_land',face,view,motionFrame,motionOffsets:offsets,particles:particleStage?.counts??null,sceneIntegration:integrateCels,sourceCues:{RELEASE:T.RELEASE,C7:T.C7,LAND:T.LAND}}};
 }
 await document.fonts.ready;window.renderAt=draw;window.ready=true;window.duration=END-START;window.shots=shots;window.__dbg={cells,images,shots,placements,deform,worldPoint,motion,poseEdits,rigs};
 if(!new URLSearchParams(location.search).has('capture')){

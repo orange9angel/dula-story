@@ -1,0 +1,262 @@
+{
+  "source": [
+    {
+      "path": "art_pass_r2.js",
+      "sha256": "93118b95aac6ec11d06190113a5589f813587d72ea4b33d0c8eaa9926d2021b9"
+    },
+    {
+      "path": "art_pass_r2.story",
+      "sha256": "73efda47b4b850e0c28c949a7a146995d1a56100dd314698600e55ed42dd2c04"
+    },
+    {
+      "path": "art_pass_r2.html",
+      "sha256": "799575e9546b6e884186eff25449a8455de8c83e099b1c59927a256c78c12349"
+    },
+    {
+      "path": "config/art_pass_r2_bake_adapter.mjs",
+      "sha256": "233722a09f50fe7ec8d229b2404474d99ab14d868420bc74a10b4a8bfe56344c"
+    },
+    {
+      "path": "config/art_pass_r2_probe_adapter.mjs",
+      "sha256": "37a611930d71ca05d31c43c7491f863e5b61e13ef85a2270bbaa6b707870aa80"
+    },
+    {
+      "path": "script.story",
+      "sha256": "1e9912a9dbbcc5bf8b3dd2ab4b2c2e802aa31edb058cfa3ab6655f76448487f5"
+    },
+    {
+      "path": "config/event_times.js",
+      "sha256": "a9e38543b33877f281987ee6badd1f629632ca62ed6bae6716d37acdefa1bd62"
+    },
+    {
+      "path": "config/dialogue.json",
+      "sha256": "d2be9b49e12c9888544b563ad03172c8c82248d4a9dc1ca93648399bcf38a8d8"
+    },
+    {
+      "path": "config/voice_envs.json",
+      "sha256": "8233531d9eef4c9885e28ff993e4c2e3a56cca4edc0ed3198ac1b484d528cc5e"
+    },
+    {
+      "path": "config/art_pass_r2_counter_motion.json",
+      "sha256": "5b3c009a39e9613b5ccebbb15e472d73a0539fd1e43583baf6eba772845fc79f"
+    },
+    {
+      "path": "config/art_pass_r2_pose_edits.json",
+      "sha256": "91a3eda3282b43d49d9431a20eaf0fa2e180c5bf22a7fb89dd79dba9a23f5e0b"
+    },
+    {
+      "path": "assets3d/art_pass_runtime/motion-controls.js",
+      "sha256": "44fb27a565b01a58d42efa177c3a562e93e310d6814f6e6be57f296066fb7931"
+    },
+    {
+      "path": "config/art_pass_r3_pipeline.json",
+      "sha256": "f186086a789ec4921357d67ec6ceeca8b2ed13be5843fdb0bfb2bcd67f4fd239"
+    },
+    {
+      "path": "art_pass_r3.html",
+      "sha256": "5c61f7723f1a5805556a34dda29e8fa4e9eb126893d726f4a08b7e759d9a6dcd"
+    },
+    {
+      "path": "assets3d/art_pass_runtime/particle-stage.js",
+      "sha256": "a5ef1fd3585e35609e6fd15da35c5e98605b16ace378fcab9781ef754d298930"
+    },
+    {
+      "path": "assets3d/art_pass_runtime/cel-integration.js",
+      "sha256": "6a4b35b2f2853422e475dd9d58893b7a6ed1b0710555e148d4d9790146f6fd48"
+    },
+    {
+      "path": "../../../dula-assets/lib/craft3d/combustion-particles.js",
+      "sha256": "acc36cdaa1bddb735d9aa3e1f304153277f45d900257d2bfe04451dc423413a6"
+    },
+    {
+      "path": "assets3d/art_pass_r2/background.png",
+      "sha256": "a3edc2e7d0762b6f9c472e0c7cc32aed3fad96b6bf039a17bac00c154dcb2603"
+    },
+    {
+      "path": "assets3d/art_pass_r2/enemy_hit.png",
+      "sha256": "f75e20b427b78cc295d60b05c84db61b838b7e366927c9a24e21732677def106"
+    },
+    {
+      "path": "assets3d/art_pass_r2/enemy_land.png",
+      "sha256": "a7b11804a55e5bad869aabce05196588ef2d8935fc5d2e9f060ba83bffe48d84"
+    },
+    {
+      "path": "assets3d/art_pass_r2/enemy_ready.png",
+      "sha256": "ffc7b42c90fb024419e724301e589a1494407c32bafbdda43029f66e5becd3ba"
+    },
+    {
+      "path": "assets3d/art_pass_r2/hero_breakdown.png",
+      "sha256": "2aeef355435d35bb04bff561834ac65ac513e0a528c7b7de66bdc71a13f886b9"
+    },
+    {
+      "path": "assets3d/art_pass_r2/hero_charge.png",
+      "sha256": "45870669eaa2adef03c59c1bccbe17c1de63739f688c95bf8be0d0686ee9ef10"
+    },
+    {
+      "path": "assets3d/art_pass_r2/hero_charge_candidate.png",
+      "sha256": "85ef0df8543dea0d20eb019c8274a576568fb223528acd0c96f2a03862232ad7"
+    },
+    {
+      "path": "assets3d/art_pass_r2/hero_portrait.png",
+      "sha256": "085bb3ad716819913ea569eb8e9c67af122a36b837597e3ef88f927cf13adb70"
+    },
+    {
+      "path": "assets3d/art_pass_r2/hero_release.png",
+      "sha256": "3d6434dc1d5e5326f7bc80c2ca939b3e93b1d999d96d665d8dcae40ca1b99c52"
+    }
+  ],
+  "pipeline": {
+    "config": {
+      "schema": "draw-over-pipeline-v1",
+      "baseUrl": "http://127.0.0.1:4250/",
+      "source": {
+        "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+        "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+      },
+      "pilot": {
+        "timeline": "art_pass_r2.story",
+        "fps": 30,
+        "width": 1280,
+        "height": 720,
+        "viewer": "art_pass_r3.html?capture=1&fx=particles&integrate=1",
+        "board": "storyboard/art_pass_r3",
+        "output": "output/art_pass_counter_r3.mp4",
+        "samples": [
+          163.05,
+          163.6,
+          164.3,
+          164.95,
+          165.9,
+          167.2,
+          168.15,
+          168.5,
+          169.8,
+          170.8,
+          171.05,
+          171.5,
+          172.7,
+          173.8
+        ],
+        "hashEvery": 15,
+        "repeatSamples": [
+          163.6,
+          168.15,
+          168.5,
+          171.05,
+          173.8
+        ],
+        "sourceFiles": [
+          "art_pass_r2.js",
+          "art_pass_r2.story",
+          "art_pass_r2.html",
+          "config/art_pass_r2_bake_adapter.mjs",
+          "config/art_pass_r2_probe_adapter.mjs",
+          "script.story",
+          "config/event_times.js",
+          "config/dialogue.json",
+          "config/voice_envs.json",
+          "config/art_pass_r2_counter_motion.json",
+          "config/art_pass_r2_pose_edits.json",
+          "assets3d/art_pass_runtime/motion-controls.js",
+          "config/art_pass_r3_pipeline.json",
+          "art_pass_r3.html",
+          "assets3d/art_pass_runtime/particle-stage.js",
+          "assets3d/art_pass_runtime/cel-integration.js",
+          "../../../dula-assets/lib/craft3d/combustion-particles.js"
+        ],
+        "assetDirectories": [
+          "assets3d/art_pass_r2"
+        ]
+      },
+      "bake": {
+        "viewer": "viewer.html?capture=1",
+        "adapter": "config/art_pass_r2_bake_adapter.mjs",
+        "sourceFiles": [
+          "script.story",
+          "duel_performance.js",
+          "palace_camera.js",
+          "palace_locomotion.js",
+          "viewer_palace.js",
+          "config/art_pass_r2_bake_adapter.mjs"
+        ],
+        "windows": [
+          {
+            "id": "counter",
+            "timeline": "art_pass_r2.story",
+            "output": "config/art_pass_r2_counter_motion.json",
+            "consumedByPilot": true
+          },
+          {
+            "id": "walk",
+            "start": 20,
+            "end": 27,
+            "output": "config/art_pass_r2_walk_motion.json",
+            "consumedByPilot": false,
+            "note": "Only motion data exported; no completed 2D walk"
+          }
+        ]
+      },
+      "probe": {
+        "adapter": "config/art_pass_r2_probe_adapter.mjs",
+        "output": "storyboard/art_pass_r3/motion_bridge_check.json"
+      },
+      "package": {
+        "comparison": "output/art_pass_counter_comparison_r3.mp4",
+        "font": "C:/Windows/Fonts/msyh.ttc",
+        "labels": [
+          "R27 原版 · 163–174 秒",
+          "R3 二维作画 · 粒子火焰与场景融合 · 原声"
+        ],
+        "sheets": [
+          {
+            "name": "decoded_overview",
+            "start": 0,
+            "duration": 11,
+            "everyFrames": 15,
+            "layout": "4x6"
+          },
+          {
+            "name": "decoded_rise",
+            "start": 4.8,
+            "duration": 0.94,
+            "everyFrames": 2,
+            "layout": "4x4"
+          },
+          {
+            "name": "decoded_hit",
+            "start": 7.8,
+            "duration": 0.94,
+            "everyFrames": 2,
+            "layout": "4x4"
+          }
+        ]
+      },
+      "runtime": {
+        "directory": "assets3d/art_pass_runtime"
+      },
+      "integration": {
+        "output": "output/stardust_clad_s1e2_palace_r28.mp4",
+        "report": "storyboard/art_pass_r3/full_episode.json"
+      }
+    },
+    "shared": [
+      {
+        "path": "package_pilot.py",
+        "sha256": "2583fb88e7c8bbe64e92a3998c6d7f545b0e193a7f4e0ab311ce4dcd46d25ecc"
+      },
+      {
+        "path": "pipeline.mjs",
+        "sha256": "a9a56a091ac27cb5314410945c03a2136a3c5b23c39b5f3e2fb51786696e38a7"
+      },
+      {
+        "path": "replace_window.py",
+        "sha256": "188ef50d4a0bff4feabfe35b0e4ee1b2a305852b77599b20153d616986e5188c"
+      }
+    ]
+  },
+  "start": 163,
+  "end": 174,
+  "frames": 330,
+  "fps": 30,
+  "errors": []
+}

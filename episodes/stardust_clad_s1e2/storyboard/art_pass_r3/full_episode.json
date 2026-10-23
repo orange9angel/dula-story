@@ -1,0 +1,84 @@
+{
+  "source": "output/stardust_clad_s1e2_palace_r27.mp4",
+  "source_sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+  "replacement": "output/art_pass_counter_r3.mp4",
+  "replacement_sha256": "9d80c3c334b4aae01a52ad6ac5aa474013cee4f99b43abbe737f6dc063e6d82e",
+  "output": "output/stardust_clad_s1e2_palace_r28.mp4",
+  "output_sha256": "71fd720b33bbaab612e1d5447b843388e9d0183d7904b2632da294c46a7d173a",
+  "window": {
+    "start": 163.0,
+    "end": 174.0,
+    "first_frame": 4890,
+    "end_frame_exclusive": 5220
+  },
+  "frames": 6390,
+  "fps": 30.0,
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "213.000000",
+        "nb_frames": "6390",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "213.000000",
+        "nb_frames": "9986"
+      }
+    ],
+    "format": {
+      "duration": "213.000000"
+    }
+  },
+  "audio_packets_identical": true,
+  "audio_pcm_identical": true,
+  "boundary_samples": [
+    {
+      "frame": 4889,
+      "source": "original",
+      "mean_abs_rgb_error": 0.9526352719907407,
+      "passed": true
+    },
+    {
+      "frame": 4890,
+      "source": "replacement",
+      "mean_abs_rgb_error": 0.8248625578703703,
+      "passed": true
+    },
+    {
+      "frame": 5055,
+      "source": "replacement",
+      "mean_abs_rgb_error": 1.5094878472222222,
+      "passed": true
+    },
+    {
+      "frame": 5219,
+      "source": "replacement",
+      "mean_abs_rgb_error": 1.2074291087962963,
+      "passed": true
+    },
+    {
+      "frame": 5220,
+      "source": "original",
+      "mean_abs_rgb_error": 0.42795030381944443,
+      "passed": true
+    },
+    {
+      "frame": 6389,
+      "source": "original",
+      "mean_abs_rgb_error": 0.0007512297453703704,
+      "passed": true
+    }
+  ],
+  "note": "Picture outside the insertion comes from the source and is re-encoded; no pixel-identical claim",
+  "passed": true
+}
