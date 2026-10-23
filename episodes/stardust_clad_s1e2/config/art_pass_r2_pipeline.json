@@ -1,0 +1,125 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4250/",
+  "source": {
+    "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+    "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+  },
+  "pilot": {
+    "timeline": "art_pass_r2.story",
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "art_pass_r2.html?capture=1",
+    "board": "storyboard/art_pass_r2",
+    "output": "output/art_pass_counter_r2.mp4",
+    "samples": [
+      163.05,
+      163.6,
+      164.3,
+      164.95,
+      165.9,
+      167.2,
+      168.15,
+      168.5,
+      169.8,
+      170.8,
+      171.05,
+      171.5,
+      172.7,
+      173.8
+    ],
+    "hashEvery": 15,
+    "repeatSamples": [
+      163.6,
+      168.15,
+      168.5,
+      171.05,
+      173.8
+    ],
+    "sourceFiles": [
+      "art_pass_r2.js",
+      "art_pass_r2.story",
+      "art_pass_r2.html",
+      "config/art_pass_r2_pipeline.json",
+      "config/art_pass_r2_bake_adapter.mjs",
+      "config/art_pass_r2_probe_adapter.mjs",
+      "script.story",
+      "config/event_times.js",
+      "config/dialogue.json",
+      "config/voice_envs.json",
+      "config/art_pass_r2_counter_motion.json",
+      "config/art_pass_r2_pose_edits.json",
+      "assets3d/art_pass_runtime/motion-controls.js"
+    ],
+    "assetDirectories": [
+      "assets3d/art_pass_r2"
+    ]
+  },
+  "bake": {
+    "viewer": "viewer.html?capture=1",
+    "adapter": "config/art_pass_r2_bake_adapter.mjs",
+    "sourceFiles": [
+      "script.story",
+      "duel_performance.js",
+      "palace_camera.js",
+      "palace_locomotion.js",
+      "viewer_palace.js",
+      "config/art_pass_r2_bake_adapter.mjs"
+    ],
+    "windows": [
+      {
+        "id": "counter",
+        "timeline": "art_pass_r2.story",
+        "output": "config/art_pass_r2_counter_motion.json",
+        "consumedByPilot": true
+      },
+      {
+        "id": "walk",
+        "start": 20,
+        "end": 27,
+        "output": "config/art_pass_r2_walk_motion.json",
+        "consumedByPilot": false,
+        "note": "Only motion data exported; no completed 2D walk"
+      }
+    ]
+  },
+  "probe": {
+    "adapter": "config/art_pass_r2_probe_adapter.mjs",
+    "output": "storyboard/art_pass_r2/motion_bridge_check.json"
+  },
+  "package": {
+    "comparison": "output/art_pass_counter_comparison_r2.mp4",
+    "font": "C:/Windows/Fonts/msyh.ttc",
+    "labels": [
+      "R27 ?? ? 163?174 ?",
+      "R2 ???? ? ??????? ? ??"
+    ],
+    "sheets": [
+      {
+        "name": "decoded_overview",
+        "start": 0,
+        "duration": 11,
+        "everyFrames": 15,
+        "layout": "4x6"
+      },
+      {
+        "name": "decoded_rise",
+        "start": 4.8,
+        "duration": 0.94,
+        "everyFrames": 2,
+        "layout": "4x4"
+      },
+      {
+        "name": "decoded_hit",
+        "start": 7.8,
+        "duration": 0.94,
+        "everyFrames": 2,
+        "layout": "4x4"
+      }
+    ]
+  },
+  "runtime": {
+    "directory": "assets3d/art_pass_runtime"
+  }
+}

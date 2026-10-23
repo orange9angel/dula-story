@@ -1,0 +1,193 @@
+{
+  "scope": "independent synthetic fixture; not a second episode art review",
+  "fixture_config": {
+    "schema": "draw-over-pipeline-v1",
+    "baseUrl": "http://127.0.0.1:4251/",
+    "source": {
+      "video": "source.mp4",
+      "sha256": "a1e8063912dc557b1427e34cab6e2005a60f95fb09b6a306e928d134f7cf5f73"
+    },
+    "runtime": {
+      "directory": "runtime"
+    },
+    "pilot": {
+      "start": 2,
+      "end": 2.5,
+      "fps": 12,
+      "width": 320,
+      "height": 180,
+      "viewer": "pilot.html",
+      "board": "review",
+      "output": "output/pilot.mp4",
+      "samples": [
+        2,
+        2.25
+      ],
+      "repeatSamples": [
+        2.25
+      ],
+      "hashEvery": 2,
+      "sourceFiles": [
+        "pilot.html",
+        "motion.json",
+        "runtime/motion-controls.js"
+      ]
+    },
+    "bake": {
+      "viewer": "source.html",
+      "adapter": "bake.mjs",
+      "sourceFiles": [
+        "source.html",
+        "bake.mjs"
+      ],
+      "windows": [
+        {
+          "id": "fixture",
+          "start": 2,
+          "end": 2.5,
+          "output": "motion.json",
+          "consumedByPilot": true
+        }
+      ]
+    },
+    "probe": {
+      "adapter": "probe.mjs",
+      "output": "review/probe.json"
+    },
+    "package": {
+      "comparison": "output/compare.mp4",
+      "font": "C:/Windows/Fonts/msyh.ttc",
+      "fontSize": 12,
+      "headerHeight": 32,
+      "labels": [
+        "Fixture source",
+        "Shared drawing pipeline"
+      ],
+      "sheets": [
+        {
+          "name": "decoded",
+          "start": 0,
+          "duration": 0.5,
+          "everyFrames": 1,
+          "layout": "3x2",
+          "width": 160
+        }
+      ]
+    }
+  },
+  "delivery": {
+    "source": "source.mp4",
+    "source_sha256": "a1e8063912dc557b1427e34cab6e2005a60f95fb09b6a306e928d134f7cf5f73",
+    "start": 2,
+    "duration": 0.5,
+    "scope": "configured shot-specific pilot; not full-episode integration",
+    "outputs": [
+      {
+        "file": "output/pilot.mp4",
+        "sha256": "a1cb0397c6e8f4f92efe31a8abee71f942de5064eee7290253fb0c5ee5db450e",
+        "media": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_type": "video",
+              "width": 320,
+              "height": 180,
+              "r_frame_rate": "12/1",
+              "duration": "0.500000",
+              "nb_frames": "6"
+            },
+            {
+              "codec_type": "audio",
+              "r_frame_rate": "0/0",
+              "duration": "0.500000",
+              "nb_frames": "25"
+            }
+          ],
+          "format": {
+            "duration": "0.500000"
+          }
+        },
+        "audio": {
+          "correlation": 0.9985948917525881,
+          "offset_ms": 0.0,
+          "passed": true
+        }
+      },
+      {
+        "file": "output/compare.mp4",
+        "sha256": "c6b0b6e01c0b24299a43180829596a553d19fd0bcd2c3f482d7835216d32e031",
+        "media": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_type": "video",
+              "width": 640,
+              "height": 212,
+              "r_frame_rate": "12/1",
+              "duration": "0.500000",
+              "nb_frames": "6"
+            },
+            {
+              "codec_type": "audio",
+              "r_frame_rate": "0/0",
+              "duration": "0.500000",
+              "nb_frames": "25"
+            }
+          ],
+          "format": {
+            "duration": "0.500000"
+          }
+        },
+        "audio": {
+          "correlation": 0.9985948917525881,
+          "offset_ms": 0.0,
+          "passed": true
+        }
+      }
+    ],
+    "motion": [
+      {
+        "id": "fixture",
+        "frames": 7,
+        "sha256": "18169ddce198e592bdcdb2ece23535b33a43231894d506a140e653f1d30bcc04",
+        "finite": true,
+        "consumed_by_pilot": true,
+        "note": ""
+      }
+    ],
+    "determinism": {
+      "passed": true,
+      "checks": [
+        {
+          "t": 2.4166666666666665,
+          "equal": true
+        },
+        {
+          "t": 2.3333333333333335,
+          "equal": true
+        },
+        {
+          "t": 2.1666666666666665,
+          "equal": true
+        },
+        {
+          "t": 2,
+          "equal": true
+        },
+        {
+          "t": 2.25,
+          "repeat": true,
+          "equal": true
+        }
+      ]
+    },
+    "technical_passed": true,
+    "visual_review": "See episode review; technical checks are not visual approval"
+  },
+  "probe": {
+    "passed": true,
+    "note": "independent fixture names, frame rate, size and window"
+  }
+}
