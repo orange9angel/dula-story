@@ -1,0 +1,11 @@
+{
+  "provider": "built-in imagegen",
+  "created": "2026-10-24",
+  "asset": "aoao_head_base.png",
+  "reference": "../../storyboard/art_pass_pilot/sources/resolve_132.png",
+  "prompt": "Use case: style-transfer. Create ONE production-ready transparent 2D animation cutout asset of the brown-haired hero in the reference. Reference image is identity, head angle and hairstyle guidance. Redraw ONLY HIS HEAD AND VISIBLE NECK, no armor, no shoulders, no background, no text, no decorative objects. Keep his youthful masculine angular-soft face, warm pale peach skin, deep reddish brown short tousled hair with the recognizable swept fringe and upward loose crown tufts, no helmet. Head orientation: almost frontal, slightly turned toward screen right, exactly like the reference, both eyes would be visible, left ear more visible. Artistic treatment: polished hand-drawn dramatic television cel animation, elegant variable dark contours, broad organized hair locks with crisp 2-tone shaded planes, subtle cheek/temple/jaw structure, designed under-chin neck shadow, fine ear anatomy. Avoid 3D shading, plastic hair tubes, photorealism, painterly noise, hard mechanical face geometry. This is a SPECIAL ANIMATION BASE LAYER: do NOT draw eyeballs, eyelids, eyebrows or mouth/lips at all; leave those regions clean flat pale peach skin for independently animated vector facial features. DO draw the nose using fine 2D line and tiny cel shadow, ears, jaw and neck. No empty eye sockets, no holes, no white eyes: uninterrupted flat skin. Keep face central and spacious, no hair crossing the eye regions. Entire hair silhouette and neck inside the image with transparent margins. Square 1024 x 1024 image, hair top at about y=60, chin about y=780, neck ending around y=960. Neck naturally narrows into the shoulders that are outside this asset. Genuine transparent background.",
+  "purpose": "Head and neck production base; independently animated native vector facial features are composited at render time.",
+  "actual_dimensions": [1254, 1254],
+  "status": "composited_in_r1_pilot_style_not_finally_approved",
+  "review": "../../storyboard/art_pass_pilot/REVIEW.md"
+}

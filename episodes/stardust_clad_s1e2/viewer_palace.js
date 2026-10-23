@@ -66,6 +66,7 @@ if(stageAudit){
 }
 const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;document.body.append(canvas);const ctx=canvas.getContext('2d');
 const fx=query.get('combustion')==='0'?createCombatLight(scene.scene,{detailed:query.get('particles')!=='0'}):createCombustionCombat(scene.scene),contacts={};
+const artPass=query.get('artPass')==='1'?await(await import('./art_pass_r1.js')).createArtPass({actors,scene:scene.scene,camera}):null;
 const world=(obj,v=new THREE.Vector3())=>obj.localToWorld(v.clone());
 const shield=()=>world(actors.aoao.shieldDome,new THREE.Vector3(0,.278,0));
 for(const key of HIT_KEYS){
@@ -146,6 +147,7 @@ function draw(t,capture=true){
  if(t>=T.HERO_CHARGE&&t<T.RELEASE){charge={point:shield(),base:actors.aoao.mesh.position.clone().setY(.03),start:T.HERO_CHARGE,height:1.85,color:'#ffbf5b',power:.35+.65*ease((t-T.HERO_CHARGE)/3)};}
  if(t>=T.RELEASE&&t<T.C7+.18){const u=clamp((t-T.RELEASE)/(T.C7-T.RELEASE)),from=scene.lockPoint.clone(),wrist=actors.yekari.chainSocket.getWorldPosition(new THREE.Vector3()),target=wrist.lerp(contacts.C7,ease((t-(T.C7-.12))/.12));beamShot={from,to:from.clone().lerp(target,u),alpha:t<T.C7?.82:Math.max(0,1-(t-T.C7)/.18),width:.55+.35*u};}
  fx.update(t,camera,{arc,charge,beamShot});
+ artPass?.update(t,perf,active,active?.speaker==='aoao'?jaw(active.id,t):0);
  let rimLow=new THREE.Vector3(0,999,0);for(let i=0;i<64;i++){const a=i*Math.PI/32,p=world(actors.aoao.shieldDome,new THREE.Vector3(Math.cos(a)*.265,.052,Math.sin(a)*.265));if(p.y<rimLow.y)rimLow=p;}
  const trace={phase:perf.phase,scene:'ember',cast:CAST.filter(n=>actors[n].mesh.visible),roots:{},arms:{},legs:{},feet:{},hands:{},contacts:{},locomotion:{},shieldRimLow:rimLow.toArray(),slot:scene.lockPoint.toArray(),gateOpen:scene.gate.position.y,windowsLit:scene.windows.filter(w=>w.visible).length};
  for(const n of CAST){const a=actors[n],p=perf.poses[n];trace.roots[n]=a.mesh.position.toArray();trace.arms[n]={};trace.feet[n]={};
@@ -155,8 +157,8 @@ function draw(t,capture=true){
  if(stageAudit){trace.environment=stageAudit.sample();trace.footBlock=footBlockAudit.sample();}
  if(!capture)return trace;
  renderer.render(scene.scene,camera);renderer.render(scene.scene,camera);ctx.clearRect(0,0,W,H);ctx.drawImage(renderer.domElement,0,0);overlay(t,perf,active);
- return{image:canvas.toDataURL('image/jpeg',.93).split(',')[1],state:trace};
+ return{image:canvas.toDataURL(query.get('captureFormat')==='png'?'image/png':'image/jpeg',.93).split(',')[1],state:trace,artPass:artPass?.meta.last};
 }
 window.duration=tl.duration;window.renderAt=t=>draw(t);window.stepAt=t=>draw(t,false);window.setFreeCamera=c=>window.freeCamera=c;
 window.checkTimes=[...entries.map(e=>e.startTime+.5),...HIT_KEYS.flatMap(k=>[T[k]-.1,T[k],T[k]+.15]),T.RESTORE+4].sort((a,b)=>a-b);
-window.__dbg={actors,scene,camera,renderer,contacts,stageAudit,fx,livingCaldera,hall};await document.fonts.ready;window.ready=true;
+window.__dbg={actors,scene,camera,renderer,contacts,stageAudit,fx,livingCaldera,hall,artPass};await document.fonts.ready;window.ready=true;

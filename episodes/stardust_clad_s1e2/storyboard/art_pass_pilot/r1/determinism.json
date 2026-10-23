@@ -1,0 +1,177 @@
+{
+  "sequentialVsSeek": [
+    {
+      "window": "resolve",
+      "t": 136.96666666666667,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 136.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 136,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 135.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 135,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 134.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 134,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 133.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 133,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 132.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "resolve",
+      "t": 132,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "guard",
+      "t": 58.96666666666667,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "guard",
+      "t": 58.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "guard",
+      "t": 58,
+      "equal": false,
+      "maxChannelDelta": 1,
+      "changedPixels": 1,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "guard",
+      "t": 57.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "guard",
+      "t": 57,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "window": "guard",
+      "t": 56.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    }
+  ],
+  "repeat": [
+    {
+      "t": 132.8,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "t": 134.5,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "t": 58.2,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    },
+    {
+      "t": 58.9,
+      "equal": true,
+      "maxChannelDelta": 0,
+      "changedPixels": 0,
+      "withinBaselineNoise": true
+    }
+  ],
+  "exactMatchPassed": false,
+  "passed": true,
+  "tolerance": {
+    "maxChannelDelta": 1,
+    "maxChangedPixels": 100,
+    "reason": "Unmodified viewer repeat captures show up to 40 pixels differing by one 8-bit level; exact failures remain reported."
+  }
+}

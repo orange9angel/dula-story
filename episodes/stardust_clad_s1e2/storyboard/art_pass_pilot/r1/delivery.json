@@ -1,0 +1,160 @@
+{
+  "source": "output\\stardust_clad_s1e2_palace_r27.mp4",
+  "source_sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+  "windows": [
+    {
+      "id": "resolve",
+      "source_start": 132,
+      "duration": 5,
+      "video": "output\\art_pass_resolve_r1_voiced.mp4",
+      "comparison": "output\\art_pass_resolve_comparison_r1.mp4",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1",
+            "duration": "5.000000",
+            "nb_frames": "150"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0",
+            "duration": "5.000000",
+            "nb_frames": "236"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      },
+      "audio": {
+        "correlation": 0.9998559951782227,
+        "offset_ms": 0.0,
+        "samples": 80000,
+        "passed": true
+      }
+    },
+    {
+      "id": "guard",
+      "source_start": 56.5,
+      "duration": 2.5,
+      "video": "output\\art_pass_guard_r1_voiced.mp4",
+      "comparison": "output\\art_pass_guard_comparison_r1.mp4",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1",
+            "duration": "2.500000",
+            "nb_frames": "75"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0",
+            "duration": "2.500000",
+            "nb_frames": "119"
+          }
+        ],
+        "format": {
+          "duration": "2.500000"
+        }
+      },
+      "audio": {
+        "correlation": 0.9993308186531067,
+        "offset_ms": 0.0,
+        "samples": 40000,
+        "passed": true
+      }
+    }
+  ],
+  "status": "technical_validation_only",
+  "art_pass_pilot_r1.mp4": {
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "duration": "7.500000",
+          "nb_frames": "225"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "7.500000",
+          "nb_frames": "353"
+        }
+      ],
+      "format": {
+        "duration": "7.500000"
+      }
+    },
+    "sha256": "edcb09520d7215c0163a5298716ff1c8e503acb2847b5c6ace3198c54a82d03d",
+    "assembled_audio": [
+      {
+        "source_start": 132,
+        "assembled_start": 0,
+        "zero_offset_correlation": 0.999610960483551,
+        "passed": true
+      },
+      {
+        "source_start": 56.5,
+        "assembled_start": 5,
+        "zero_offset_correlation": 0.9984073042869568,
+        "passed": true
+      }
+    ]
+  },
+  "art_pass_pilot_comparison_r1.mp4": {
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 768,
+          "r_frame_rate": "30/1",
+          "duration": "7.500000",
+          "nb_frames": "225"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "7.500000",
+          "nb_frames": "353"
+        }
+      ],
+      "format": {
+        "duration": "7.500000"
+      }
+    },
+    "sha256": "c6a22ddfc0c98f3df06332fad5ec74f1daa64352e9d53d169cdb899e8d4ca1ca",
+    "assembled_audio": [
+      {
+        "source_start": 132,
+        "assembled_start": 0,
+        "zero_offset_correlation": 0.9993619322776794,
+        "passed": true
+      },
+      {
+        "source_start": 56.5,
+        "assembled_start": 5,
+        "zero_offset_correlation": 0.9978433847427368,
+        "passed": true
+      }
+    ]
+  },
+  "passed": true
+}
