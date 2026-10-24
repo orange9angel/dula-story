@@ -151,7 +151,7 @@
 25
 00:02:38,000 --> 00:02:42,950
 {Event:Beat|id=p21|move=counter_prepare|shot=hero|scene=ember|action=回火从闸舌沿盾鳞升起，阿鏊臂甲鳍片先变红；他看见烧损仍压住盾不放}
-{Event:Act|id=p18|rate=0|context=左腕受伤仍借盾沿压住锁链，短句之后立刻行动。|emotion=determined|gaze=enemy|camera=speech}
+{Event:Act|id=p18|rate=0|context=右腕受伤仍借盾沿压住锁链，短句之后立刻行动。|emotion=determined|gaze=enemy|camera=speech}
 [Aoao]烧穿就烧穿。先把火送下去！
 
 26

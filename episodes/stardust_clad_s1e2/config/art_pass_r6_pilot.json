@@ -1,0 +1,182 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4250/",
+  "source": {
+    "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+    "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+  },
+  "pilot": {
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "art_pass_full_r6.html?capture=1",
+    "board": "storyboard/painted_r6/pilot",
+    "output": "output/stardust_clad_s1e2_painted_r6_pilot.mp4",
+    "samples": [
+      172.9,
+      173.3,
+      173.767,
+      174,
+      174.3,
+      174.6,
+      174.9,
+      175,
+      175.4,
+      176,
+      177.8,
+      178.2,
+      181.6,
+      184.5,
+      186,
+      187,
+      187.8,
+      189,
+      191,
+      191.4,
+      191.8,
+      192.2,
+      192.6,
+      192.9,
+      193.2,
+      193.5,
+      193.9,
+      194.3,
+      194.6,
+      195,
+      195.4,
+      195.8,
+      196.2,
+      196.6,
+      197,
+      197.5
+    ],
+    "hashEvery": 90,
+    "repeatSamples": [
+      9,
+      21.5,
+      25.6,
+      29.2,
+      58,
+      103,
+      117.8,
+      152.5,
+      167.2,
+      193.2,
+      200
+    ],
+    "sourceFiles": [
+      "script.story",
+      "art_pass_full_r1.story",
+      "art_pass_full_r6.js",
+      "art_pass_full_r6.html",
+      "config/art_pass_full_r6_pipeline.json",
+      "config/art_pass_full_r1_motion.json",
+      "config/voice_envs.json",
+      "config/dialogue.json",
+      "assets3d/art_pass_runtime/cel-integration.js",
+      "assets3d/art_pass_runtime/cel-stage.js",
+      "assets3d/art_pass_runtime/face-acting.js",
+      "assets3d/art_pass_runtime/limb-rig2d.js",
+      "assets3d/art_pass_runtime/motion-controls.js",
+      "assets3d/art_pass_runtime/particle-stage.js",
+      "config/face_design_r2.js",
+      "assets3d/art_pass_runtime/authored-face.js",
+      "config/painted_environment_r2.js",
+      "config/prop_state_r2.js",
+      "config/walk_cels_r2.js",
+      "assets3d/art_pass_runtime/particle-effects-stage.js",
+      "assets3d/art_pass_runtime/whole-pose-walk.js",
+      "assets3d/art_pass_runtime/prop-damage.js",
+      "config/art_pass_full_r6_probe.mjs",
+      "config/portraits_r4.js",
+      "config/portrait_r4_prepare.json",
+      "config/walk_baked_r7.json",
+      "config/walk_cel_r7_production.json",
+      "assets3d/art_pass_runtime/baked-cel-clip.js",
+      "assets3d/art_pass_runtime/raster-face.js",
+      "art_pass_full_r6.story",
+      "config/continuity_r6.json",
+      "config/continuity_r6_stage.js",
+      "config/continuity_r4_regions.json",
+      "assets3d/art_pass_runtime/story-state.js",
+      "config/event_times.js",
+      "config/event_times.json",
+      "config/timeline.json",
+      "config/continuity_r4_generation.json",
+      "config/exit_passing_r4.json",
+      "config/portrait_r4_pain_prepare.json",
+      "assets3d/art_pass_runtime/continuity-check.js",
+      "config/portraits_r6.js",
+      "config/portrait_r5_prepare.json",
+      "config/continuity_r5_regions.json",
+      "config/continuity_r5_crops.json",
+      "config/continuity_r6_art.js",
+      "config/continuity_r5_generation.json",
+      "config/continuity_r6_crops.json",
+      "config/continuity_r6_generation.json",
+      "config/prop_state_r6.js",
+      "config/continuity_r6_passing.json"
+    ],
+    "assetDirectories": [
+      "assets3d/art_pass_full_r1",
+      "assets3d/art_pass_r2",
+      "assets3d/art_pass_full_r2",
+      "assets3d/portraits_r4",
+      "assets3d/walk_cel_r7/rgba",
+      "assets3d/continuity_r4",
+      "assets3d/continuity_r5",
+      "assets3d/portraits_r5",
+      "assets3d/continuity_r6"
+    ],
+    "audioCopy": true,
+    "deliveryScope": "25.5 second corrected continuity pilot",
+    "start": 172.5,
+    "end": 198
+  },
+  "bake": {
+    "viewer": "viewer.html?capture=1",
+    "adapter": "config/art_pass_r2_bake_adapter.mjs",
+    "sourceFiles": [
+      "script.story",
+      "duel_performance.js",
+      "palace_camera.js",
+      "palace_locomotion.js",
+      "viewer_palace.js",
+      "config/art_pass_r2_bake_adapter.mjs"
+    ],
+    "windows": [
+      {
+        "id": "full_episode",
+        "start": 0,
+        "end": 213,
+        "output": "config/art_pass_full_r1_motion.json",
+        "consumedByPilot": true
+      }
+    ]
+  },
+  "probe": {
+    "adapter": "config/art_pass_full_r6_probe.mjs",
+    "output": "storyboard/painted_r6/full/performance_check.json"
+  },
+  "package": {
+    "comparison": "output/stardust_clad_s1e2_painted_comparison_r4.mp4",
+    "font": "C:/Windows/Fonts/msyh.ttc",
+    "labels": [
+      "R27 source",
+      "Hybrid drawing R5"
+    ],
+    "sheets": [
+      {
+        "name": "overview",
+        "start": 0,
+        "duration": 213,
+        "everyFrames": 150,
+        "width": 320,
+        "layout": "6x8"
+      }
+    ]
+  },
+  "runtime": {
+    "directory": "assets3d/art_pass_runtime"
+  }
+}

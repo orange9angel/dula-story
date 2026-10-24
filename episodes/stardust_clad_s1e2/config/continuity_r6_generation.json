@@ -1,0 +1,24 @@
+{
+  "provider": "built-in imagegen",
+  "calls": 5,
+  "cost": "not exposed by tool",
+  "raws": [
+    "gate_open_raw.png",
+    "exit_raw.png",
+    "right_shield_raw.png",
+    "hero_raw.png",
+    "passing_raw.png"
+  ],
+  "accepted": {
+    "gate": "localized interior only",
+    "exit": "12 registered body cels, separately corrected far-leg passing cel 6",
+    "right_shield": "registered right-arm prop",
+    "hero": "only recoil and lowering; top-right rejected for wrong arm",
+    "passing": "complete registered cel; local lower-body splice rejected for hip seam"
+  },
+  "rejected": [
+    "hero atlas top-right swaps to left arm",
+    "exit atlas cel 6 repeats near-leg phase",
+    "passing region splice breaks hip contour"
+  ]
+}

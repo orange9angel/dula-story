@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "t": 197.96666666666667,
+      "equal": true
+    },
+    {
+      "t": 196.5,
+      "equal": true
+    },
+    {
+      "t": 193.5,
+      "equal": true
+    },
+    {
+      "t": 190.5,
+      "equal": true
+    },
+    {
+      "t": 187.5,
+      "equal": true
+    },
+    {
+      "t": 184.5,
+      "equal": true
+    },
+    {
+      "t": 181.5,
+      "equal": true
+    },
+    {
+      "t": 178.5,
+      "equal": true
+    },
+    {
+      "t": 175.5,
+      "equal": true
+    },
+    {
+      "t": 172.5,
+      "equal": false,
+      "within_pixel_tolerance": true
+    },
+    {
+      "t": 9,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 21.5,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 25.6,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 29.2,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 58,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 103,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 117.8,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 152.5,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 167.2,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 193.2,
+      "repeat": true,
+      "equal": true
+    },
+    {
+      "t": 200,
+      "repeat": true,
+      "equal": true
+    }
+  ],
+  "exact_report": "storyboard/painted_r6/pilot/determinism.json",
+  "tolerance": {
+    "max_channel_delta": 2,
+    "max_changed_pixels": 8
+  },
+  "reviews": [
+    {
+      "t": 172.5,
+      "sequential": "storyboard/painted_r6/seek_before.png",
+      "seek": "storyboard/painted_r6/seek_after.png",
+      "max_channel_delta": 2,
+      "changed_pixels": 7,
+      "passed": true,
+      "sha256": {
+        "sequential": "de9c296fd32e54923b1732d0bba3327abdb1810b457970d40e65513ecac0666e",
+        "seek": "1718d625b7caa19a5eda407c27b5e23787a750a925e5759910df6f4a8c0f4c06"
+      }
+    }
+  ],
+  "note": "Exact mismatches remain false. Tolerance uses independently recaptured PNG pairs, not original full-render checkpoint buffers."
+}

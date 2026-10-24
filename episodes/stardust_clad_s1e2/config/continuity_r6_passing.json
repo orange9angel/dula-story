@@ -1,0 +1,89 @@
+{
+  "base": "assets3d/continuity_r6/exit_6_base.png",
+  "size": [
+    314,
+    418
+  ],
+  "donor": "assets3d/continuity_r6/passing_raw.png",
+  "donorCrop": [
+    0,
+    0,
+    1087,
+    1447
+  ],
+  "alphaCutoff": 24,
+  "donorPolygon": [
+    [
+      435,
+      675
+    ],
+    [
+      650,
+      675
+    ],
+    [
+      690,
+      890
+    ],
+    [
+      800,
+      1447
+    ],
+    [
+      250,
+      1447
+    ],
+    [
+      250,
+      960
+    ],
+    [
+      430,
+      870
+    ]
+  ],
+  "affine": [
+    [
+      0.29459659511472985,
+      0,
+      11.863804589193165
+    ],
+    [
+      0,
+      0.29459659511472985,
+      1.8134715025906303
+    ]
+  ],
+  "targetPolygon": [
+    [
+      132,
+      208
+    ],
+    [
+      314,
+      208
+    ],
+    [
+      314,
+      418
+    ],
+    [
+      0,
+      418
+    ],
+    [
+      0,
+      270
+    ],
+    [
+      132,
+      270
+    ]
+  ],
+  "transitionY": [
+    208,
+    216
+  ],
+  "output": "assets3d/continuity_r6/exit_6.png",
+  "report": "assets3d/continuity_r6/passing_registration.json"
+}

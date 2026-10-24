@@ -1,0 +1,1433 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e2_painted_r6.mp4",
+    "sha256": "a0bb37e01760b525111fcbf6f37431d44565f090fbc36578002bdb820e5442d6"
+  },
+  "scope": {
+    "subjects": [
+      "aoao",
+      "yekari"
+    ],
+    "windows": [
+      {
+        "id": "revision",
+        "start": 0.0,
+        "end": 213.0
+      }
+    ],
+    "accepted_properties": [
+      "Accepted painted backgrounds except localized furnace interior",
+      "Accepted R7 entrance walk",
+      "Particle effects and accepted dialogue/music/ambience audio"
+    ],
+    "limitations": "58 unique final encoded frames viewed as five ordered sheets plus selected full-size frames. No real-time playback or audio listening. Finite-pose rise and gait remain limited."
+  },
+  "checks": [
+    {
+      "subject": "aoao",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "Red hair, gold armor, slim build and facial identity remain recognizable across the sampled portraits and bodies.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/overview.jpg",
+          "sha256": "3be5e25c0a66c69786d0fb3f4ae0874fe954129416264d1f4dc3ae324e42dc4e",
+          "window": "revision",
+          "at": [
+            7.333,
+            21.5,
+            25.6,
+            35,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170,
+            200,
+            204,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "Single clean eye and mouth contours; head/neck edges remain connected in sampled speech frames.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "Hero keeps screen-right attention toward opponent in the sampled answer; no new gaze drift observed.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "Pain carries through speech without fractional double exposure; relief later returns to the base drawing.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "expression-double"
+      ],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "Main red hair locks and silhouette remain stable; dynamic secondary hair motion was not expanded.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "Bracing, kneeling and lowering poses retain limb volume; the sparse lift-to-stand transition remains limited.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "Trace right shoulder through elbow/wrist in brace and knee poses; common insert uses right arm; rim and crack state persist across scale.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "shield-outline",
+        "arm-laterality",
+        "shield-orientation"
+      ],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "Shield descends to floor channel and visibly lifts away; full body returns to raised hold before lowering. Sparse stance transitions do not prove continuous support mechanics.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "locomotion",
+      "status": "no_issue_observed",
+      "observation": "Hero stays near the furnace in these revision windows; no new hero walking cycle is introduced.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/overview.jpg",
+          "sha256": "3be5e25c0a66c69786d0fb3f4ae0874fe954129416264d1f4dc3ae324e42dc4e",
+          "window": "revision",
+          "at": [
+            7.333,
+            21.5,
+            25.6,
+            35,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170,
+            200,
+            204,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "Raised hold and lowering clarify the action; finite lift cels still produce a discrete rise.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "hero-inbetweens"
+      ],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "Damage persists across the sampled transitions; pose changes remain stepped rather than fully drawn inbetween animation.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "Gate uncovers a brick-lined cavity; environment and flame source stay aligned in sampled open/closed frames.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/gate.jpg",
+          "sha256": "81fd29903b0030412c47a5f15d6f8cd2e197bab3e6bbcd462ce580322610d946",
+          "window": "revision",
+          "at": [
+            175,
+            175.4,
+            176,
+            177.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "furnace-depth"
+      ],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "Original audio packets and decoded PCM are identical, but this review had no listening or real-time audiovisual evidence.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "Review normal-speed audiovisual playback before claiming fresh synchronization or performance approval."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Full compositions preserve scene and fire route; finite body acting remains weaker than the close-up illustration quality.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/overview.jpg",
+          "sha256": "3be5e25c0a66c69786d0fb3f4ae0874fe954129416264d1f4dc3ae324e42dc4e",
+          "window": "revision",
+          "at": [
+            7.333,
+            21.5,
+            25.6,
+            35,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170,
+            200,
+            204,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "Departure is slimmer relative to R5; fixed camera and registered full-body cels avoid the former stockier design. Rise-to-turn still changes pose abruptly.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "exit-volume"
+      ],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "Opponent portrait retains clear single eyes and mouth; face remains small during departure.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "Wounded confrontation still looks toward hero; departure turns head and shoulders toward exit.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "expression",
+      "status": "no_issue_observed",
+      "observation": "Hurt disbelief remains in portrait and low body pose; mouth cel changes do not dissolve two face drawings.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "Blue hair retains identity through turn and rear view; discrete outlines change at pose switches.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "Waist, hips and thighs are leaner than previous generated departure; legs retain volume. Posture protects chest.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "Physical chain remains separate from its particle flame; opponent cuff/chain ownership remains the prior setup.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/overview.jpg",
+          "sha256": "3be5e25c0a66c69786d0fb3f4ae0874fe954129416264d1f4dc3ae324e42dc4e",
+          "window": "revision",
+          "at": [
+            7.333,
+            21.5,
+            25.6,
+            35,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170,
+            200,
+            204,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "Separate near and far passing phases are visible; finite cels and root travel do not certify no sliding between all contacts.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "Turn finishes before forward travel; corrected passing cel changes support side, but finite pose gait still has pauses.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "exit-naturalness"
+      ],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "Chest-protecting withdrawal is readable; half-rise to standing turn still has an abrupt silhouette change.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "enemy-rise-transition"
+      ],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "No camera-size jump across the exit cuts; finite exposure changes remain noticeable.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "Exit camera stays fixed and pillar provides final occlusion; full-body slim silhouette stays visible before leaving.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "Original audio packets and decoded PCM are identical, but this review had no listening or real-time audiovisual evidence.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "Review normal-speed audiovisual playback before claiming fresh synchronization or performance approval."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Entrance and counteraction retain prior staging; exit is improved in proportion but not certified as natural continuous acting.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/overview.jpg",
+          "sha256": "3be5e25c0a66c69786d0fb3f4ae0874fe954129416264d1f4dc3ae324e42dc4e",
+          "window": "revision",
+          "at": [
+            7.333,
+            21.5,
+            25.6,
+            35,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170,
+            200,
+            204,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "Retain evidence and check affected relations on subsequent changes."
+    }
+  ],
+  "issues": [
+    {
+      "id": "shield-outline",
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Intact contact insert had a false missing rim; later poses restored its outline.",
+      "impact": "Breaks perceived continuity, character identity or physical staging.",
+      "priority": "high",
+      "hypothesis": "An unreviewed shared polygon cut through the intact drawing; old insert silhouette also differed.",
+      "next_action": "Retain comparison and recheck this relation whenever pose or asset source changes.",
+      "change": "Replace both contact/detail inserts with one complete round-rim right-arm cel and persist shared crack coordinates.",
+      "result": "Round lower rim remains complete in intact and cracked inserts, and full poses no longer have to inherit a false missing chunk.",
+      "evidence": [
+        {
+          "path": "../painted_r6/user_report/issue_1.png",
+          "sha256": "fdedf1ae328627f6ada8dde525cd3259d149e6e1f7224e393fd9ccfc2af45669",
+          "window": "revision",
+          "at": [
+            14
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../painted_r6/baseline_decoded/prop.jpg",
+          "sha256": "0b342df5f549d1d2a774e5bf69eef9466a22863c5b7f9a1e7a0cb2d7eab24e2b",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "verification": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "arm-laterality",
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Close-up injured one anatomical arm while full-body art injured the other.",
+      "impact": "Breaks perceived continuity, character identity or physical staging.",
+      "priority": "high",
+      "hypothesis": "Component names were treated as proof of anatomical side although generated poses swapped hands.",
+      "next_action": "Retain comparison and recheck this relation whenever pose or asset source changes.",
+      "change": "Use right-arm insert/detail, replace the wrong-arm recoil cel, keep right-forearm damage and correct the unspoken director context.",
+      "result": "Near right shoulder connects to crossing right forearm and shield in accepted full poses; close-up now comes from the same side.",
+      "evidence": [
+        {
+          "path": "../painted_r6/user_report/issue_2.png",
+          "sha256": "48994fb0fb497dfdd6de7876676a5c9afa3a2efdb927acfc145ae89a0b75ec94",
+          "window": "revision",
+          "at": [
+            60
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../painted_r6/baseline_decoded/prop.jpg",
+          "sha256": "0b342df5f549d1d2a774e5bf69eef9466a22863c5b7f9a1e7a0cb2d7eab24e2b",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "verification": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "shield-orientation",
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Lift insert cut directly to a different shield orientation and intact silhouette.",
+      "impact": "Breaks perceived continuity, character identity or physical staging.",
+      "priority": "high",
+      "hypothesis": "Held state did not constrain the actual next pose or shield angle.",
+      "next_action": "Retain comparison and recheck this relation whenever pose or asset source changes.",
+      "change": "Carry the common prop through lifting; cut to raised shield, then lowering cel, then idle.",
+      "result": "174.0/174.3 retain raised shield before 174.6 lowering and 174.9 resting; discrete pose transitions remain a separate limitation.",
+      "evidence": [
+        {
+          "path": "../painted_r6/user_report/issue_3.png",
+          "sha256": "cb3784fdb0c72e5635cc16f23a63ffbcb2a286970296b8e3382c28fcc4cacc0c",
+          "window": "revision",
+          "at": [
+            152
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../painted_r6/baseline_decoded/prop.jpg",
+          "sha256": "0b342df5f549d1d2a774e5bf69eef9466a22863c5b7f9a1e7a0cb2d7eab24e2b",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "verification": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "furnace-depth",
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Raised furnace gate exposed a flat black rectangle.",
+      "impact": "Breaks perceived continuity, character identity or physical staging.",
+      "priority": "high",
+      "hypothesis": "Opening was filled with a solid rectangle behind a translated crop.",
+      "next_action": "Retain comparison and recheck this relation whenever pose or asset source changes.",
+      "change": "Paint and register a brick-lined cavity with jambs/coals behind the sliding original shutter.",
+      "result": "Opening now reveals brick sidewall and receding hearth rather than a flat patch; channel particles remain.",
+      "evidence": [
+        {
+          "path": "../painted_r6/user_report/issue_4.png",
+          "sha256": "9caa614ae8a90e0f9506e9314d927ef22efafdf0c12075e5ba4077f0632fc7c7",
+          "window": "revision",
+          "at": [
+            176
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../painted_r6/baseline_decoded/gate.jpg",
+          "sha256": "7976e89e42ebcf7966051b93c74e2743dd198d50416628c2ff99a8a313b0d67d",
+          "window": "revision",
+          "at": [
+            175,
+            175.4,
+            176,
+            177.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "verification": [
+        {
+          "path": "../painted_r6/decoded/gate.jpg",
+          "sha256": "81fd29903b0030412c47a5f15d6f8cd2e197bab3e6bbcd462ce580322610d946",
+          "window": "revision",
+          "at": [
+            175,
+            175.4,
+            176,
+            177.8
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "expression-double",
+      "subject": "aoao",
+      "dimension": "expression",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Brows, eyes and mouth had double contours during the late speech.",
+      "impact": "Breaks perceived continuity, character identity or physical staging.",
+      "priority": "high",
+      "hypothesis": "A fractional pain value dissolved two different line drawings.",
+      "next_action": "Retain comparison and recheck this relation whenever pose or asset source changes.",
+      "change": "Categorical complete expression cels for portraits and body pain donors, with existing mouth states.",
+      "result": "184.5/186/187/187.8 show a single set of eye and mouth contours; 30 fractional-expression pixel cases select complete drawings.",
+      "evidence": [
+        {
+          "path": "../painted_r6/user_report/issue_5.png",
+          "sha256": "d3924e28858e89bb3844ab62d2079ec0c8597df4c0795741fb6f45f9d8cecc7b",
+          "window": "revision",
+          "at": [
+            187
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../painted_r6/baseline_decoded/face.jpg",
+          "sha256": "40b5ee96a8b89cc988cc57762e0cbf2fd40ab07d1c9d98bfc1577b76ddc18a80",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "verification": [
+        {
+          "path": "../painted_r6/decoded/face.jpg",
+          "sha256": "1da2c2f5847be8640dd2da8b23bc483c2ca6e3f38d73dc9b193808405520bb54",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            184.5,
+            186,
+            187,
+            187.8,
+            198.5,
+            200
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "exit-volume",
+      "subject": "yekari",
+      "dimension": "identity",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Departure changed character to a stockier torso/hip/thigh design.",
+      "impact": "Breaks perceived continuity, character identity or physical staging.",
+      "priority": "high",
+      "hypothesis": "Fixed rendering height did not constrain the generated anatomical proportions.",
+      "next_action": "Retain comparison and recheck this relation whenever pose or asset source changes.",
+      "change": "Redraw against accepted slender references; uniformly register whole cels and correct opposite passing phase.",
+      "result": "Final same-camera departure is slimmer and longer-legged than R5, with two distinct passing phases; this does not certify smooth film-quality gait.",
+      "evidence": [
+        {
+          "path": "../painted_r6/user_report/issue_6.png",
+          "sha256": "05386985300ecc767cccc6e72d55e53c549849044ef1539c3f3bf1366490d5a1",
+          "window": "revision",
+          "at": [
+            193
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../painted_r6/baseline_decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "verification": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "exit-naturalness",
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "origin": "user_reported",
+      "status": "deferred",
+      "fact": "User described exit gait as game-like. Wounded posture and timing improve intent, but finite cels and rise-to-turn transitions remain hard.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "medium",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Further complete grounded inbetweens and real-time acting review; no naturalness pass claimed.",
+      "change": "Added partial rise, chest protection, turning, pause and distance-driven steps; further grounded inbetweens are needed.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "hero-inbetweens",
+      "subject": "aoao",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Three lifting poses clarify prop logic but do not give a fully continuous bodily rise.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "medium",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Further complete grounded inbetweens and real-time acting review; no naturalness pass claimed.",
+      "change": "Added reviewed lifting cels; additional between-poses remain a production refinement.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/prop.jpg",
+          "sha256": "a24dbaf597f80fa14794a34f2dfe443cf5f56d4de1efe6d1826193d310074954",
+          "window": "revision",
+          "at": [
+            14,
+            15.5,
+            60.5,
+            80,
+            105,
+            152.1,
+            153.7,
+            173.767,
+            174,
+            174.3,
+            174.6,
+            174.9,
+            69,
+            75.6,
+            137.6,
+            189
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "enemy-rise-transition",
+      "subject": "yekari",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Half-rise to standing turn still presents an abrupt head/shoulder and pose change; fixing camera scale does not remove all artwork proportion differences.",
+      "impact": "Limits the weight and naturalness of the exit.",
+      "priority": "medium",
+      "hypothesis": "Rising and turning cels use different drawing proportions and few inbetweens.",
+      "next_action": "Further complete grounded inbetweens and real-time acting review; no naturalness pass claimed.",
+      "evidence": [
+        {
+          "path": "../painted_r6/decoded/exit.jpg",
+          "sha256": "832f5dd5f9b24fde4fb72eb912ae88ddcaeded2b437b348ecbf823e40008282c",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "baseline": "painted_full_r5.json",
+      "candidate": "painted_full_r6.json",
+      "benefit": "Common prop silhouette/right arm, explicit shield lowering, painted furnace interior, single expression cels, slimmer exit.",
+      "remaining": "Finite pose naturalness and normal-speed audiovisual review."
+    }
+  ],
+  "misses": [
+    {
+      "origin": "user_reported",
+      "previous_judgment": "R5 recorded component carry, portrait stability and exit camera scale as fixed in sampled scope. Original report remains unchanged.",
+      "later_evidence": "Six user screenshots reveal topology, anatomical side, shield orientation, opening interior, intermediate-expression ghosting and body proportions.",
+      "change": "Trace actual contours and shoulder-elbow-wrist-thumb chain; compare intermediate expressions and same-angle anatomy separately from state labels and camera height.",
+      "limits": "A broader checklist and source fingerprints do not guarantee artistic continuity."
+    }
+  ],
+  "reviewer_conclusion": "Six reported defects have concrete R6 changes and final decoded evidence. Body rise and gait remain visibly stepped; two AV checks need listening evidence. This is not a complete artistic or film-quality acceptance."
+}

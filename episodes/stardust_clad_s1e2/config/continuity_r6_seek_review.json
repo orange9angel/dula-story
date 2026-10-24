@@ -1,0 +1,15 @@
+{
+  "exact_report": "storyboard/painted_r6/pilot/determinism.json",
+  "output": "storyboard/painted_r6/pilot/determinism_tolerance.json",
+  "tolerance": {
+    "max_channel_delta": 2,
+    "max_changed_pixels": 8
+  },
+  "pairs": [
+    {
+      "t": 172.5,
+      "sequential": "storyboard/painted_r6/seek_before.png",
+      "seek": "storyboard/painted_r6/seek_after.png"
+    }
+  ]
+}

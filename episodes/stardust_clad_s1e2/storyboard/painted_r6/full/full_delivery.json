@@ -1,0 +1,686 @@
+{
+  "scope": "complete episode",
+  "source": "output/stardust_clad_s1e2_palace_r27.mp4",
+  "source_sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+  "output": "output/stardust_clad_s1e2_painted_r6.mp4",
+  "output_sha256": "a0bb37e01760b525111fcbf6f37431d44565f090fbc36578002bdb820e5442d6",
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "213.000000",
+        "nb_frames": "6390"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "213.000000",
+        "nb_frames": "9986"
+      }
+    ],
+    "format": {
+      "duration": "213.000000"
+    }
+  },
+  "checks": {
+    "accepted_source_unchanged": true,
+    "whole_episode_window": true,
+    "frame_count": true,
+    "frame_rate": true,
+    "dimensions": true,
+    "duration": true,
+    "audio_packets_identical": true,
+    "audio_pcm_identical": true,
+    "deterministic": true,
+    "episode_probe": true,
+    "render_sources_current": true
+  },
+  "passed": true,
+  "determinism_checks": 83,
+  "artwork_scope": [
+    {
+      "id": "a01",
+      "start": 0,
+      "end": 3.8,
+      "kind": "street",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a02",
+      "start": 3.8,
+      "end": 7,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a03",
+      "start": 7,
+      "end": 12.2,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a04",
+      "start": 12.2,
+      "end": 14,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a05",
+      "start": 14,
+      "end": 16.8,
+      "kind": "gate",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a06",
+      "start": 16.8,
+      "end": 20,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a07",
+      "start": 20,
+      "end": 22.8,
+      "kind": "walk",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a08",
+      "start": 22.8,
+      "end": 24.4,
+      "kind": "cuff",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a09",
+      "start": 24.4,
+      "end": 27,
+      "kind": "walk",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a10",
+      "start": 27,
+      "end": 32.2,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a11",
+      "start": 32.2,
+      "end": 34,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a12",
+      "start": 34,
+      "end": 37,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a13",
+      "start": 37,
+      "end": 40,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a14",
+      "start": 40,
+      "end": 44.5,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a15",
+      "start": 44.5,
+      "end": 46,
+      "kind": "gate",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a16",
+      "start": 46,
+      "end": 49,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a17",
+      "start": 49,
+      "end": 51,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a18",
+      "start": 51,
+      "end": 53.5,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a19",
+      "start": 53.5,
+      "end": 56,
+      "kind": "enemy_charge",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a20",
+      "start": 56,
+      "end": 57.8,
+      "kind": "attack",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a21",
+      "start": 57.8,
+      "end": 58.35,
+      "kind": "block",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a22",
+      "start": 58.35,
+      "end": 59.75,
+      "kind": "recoil",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a23",
+      "start": 59.75,
+      "end": 60.4,
+      "kind": "wrist",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a24",
+      "start": 60.4,
+      "end": 62,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a25",
+      "start": 62,
+      "end": 65,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a26",
+      "start": 65,
+      "end": 68,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a27",
+      "start": 68,
+      "end": 71,
+      "kind": "wrist",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a28",
+      "start": 71,
+      "end": 75.2,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a29",
+      "start": 75.2,
+      "end": 78,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a30",
+      "start": 78,
+      "end": 80.8,
+      "kind": "block",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a31",
+      "start": 80.8,
+      "end": 81.35,
+      "kind": "block",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a32",
+      "start": 81.35,
+      "end": 82.75,
+      "kind": "recoil",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a33",
+      "start": 82.75,
+      "end": 83.3,
+      "kind": "wrist",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a34",
+      "start": 83.3,
+      "end": 85,
+      "kind": "tracks",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a35",
+      "start": 85,
+      "end": 88,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a36",
+      "start": 88,
+      "end": 91,
+      "kind": "tracks",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a37",
+      "start": 91,
+      "end": 95.8,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a38",
+      "start": 95.8,
+      "end": 98,
+      "kind": "gate",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a39",
+      "start": 98,
+      "end": 101.5,
+      "kind": "attack",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a40",
+      "start": 101.5,
+      "end": 102.8,
+      "kind": "block",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a41",
+      "start": 102.8,
+      "end": 103.4,
+      "kind": "block",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a42",
+      "start": 103.4,
+      "end": 106,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a43",
+      "start": 106,
+      "end": 110.9,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a44",
+      "start": 110.9,
+      "end": 113,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a45",
+      "start": 113,
+      "end": 117,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a46",
+      "start": 117,
+      "end": 119.4,
+      "kind": "enemy_face_close",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a47",
+      "start": 119.4,
+      "end": 121,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a48",
+      "start": 121,
+      "end": 123,
+      "kind": "furnace",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a49",
+      "start": 123,
+      "end": 126,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a50",
+      "start": 126,
+      "end": 128.5,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a51",
+      "start": 128.5,
+      "end": 132,
+      "kind": "gate",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a52",
+      "start": 132,
+      "end": 135.4,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a53",
+      "start": 135.4,
+      "end": 138,
+      "kind": "rise",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a54",
+      "start": 138,
+      "end": 140.8,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a55",
+      "start": 140.8,
+      "end": 143,
+      "kind": "enemy_charge",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a56",
+      "start": 143,
+      "end": 145,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a57",
+      "start": 145,
+      "end": 148.8,
+      "kind": "attack",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a58",
+      "start": 148.8,
+      "end": 149.4,
+      "kind": "block",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a59",
+      "start": 149.4,
+      "end": 151.7,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a60",
+      "start": 151.7,
+      "end": 153.6,
+      "kind": "gate",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a61",
+      "start": 153.6,
+      "end": 155,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a62",
+      "start": 155,
+      "end": 158,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a63",
+      "start": 158,
+      "end": 161,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a64",
+      "start": 161,
+      "end": 163,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_01",
+      "start": 163,
+      "end": 164.1,
+      "kind": "hero_face_close",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_02",
+      "start": 164.1,
+      "end": 164.8,
+      "kind": "enemy_charge",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_03",
+      "start": 164.8,
+      "end": 165.4,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_04",
+      "start": 165.4,
+      "end": 166.5,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_05",
+      "start": 166.5,
+      "end": 167.9,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_06",
+      "start": 167.9,
+      "end": 168.4,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_07",
+      "start": 168.4,
+      "end": 169.3,
+      "kind": "kneel",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_08",
+      "start": 169.3,
+      "end": 170.7,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_09",
+      "start": 170.7,
+      "end": 171,
+      "kind": "enemy_charge",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_10",
+      "start": 171,
+      "end": 171.3,
+      "kind": "enemy_low",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "ap_r2_11",
+      "start": 171.3,
+      "end": 172.6,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "c_land",
+      "start": 172.6,
+      "end": 172.9,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "c_free",
+      "start": 172.9,
+      "end": 174,
+      "kind": "gate",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a66",
+      "start": 174,
+      "end": 175,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a67",
+      "start": 175,
+      "end": 178,
+      "kind": "gate",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a68",
+      "start": 178,
+      "end": 181.5,
+      "kind": "enemy_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a69",
+      "start": 181.5,
+      "end": 184,
+      "kind": "enemy_low",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a70",
+      "start": 184,
+      "end": 187.9,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a71",
+      "start": 187.9,
+      "end": 191,
+      "kind": "wrist",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a72",
+      "start": 191,
+      "end": 194.2,
+      "kind": "walk",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a73",
+      "start": 194.2,
+      "end": 196.2,
+      "kind": "cuff",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a74",
+      "start": 196.2,
+      "end": 198,
+      "kind": "walk",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a75",
+      "start": 198,
+      "end": 203.2,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a76",
+      "start": 203.2,
+      "end": 205,
+      "kind": "wide",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a77",
+      "start": 205,
+      "end": 209.3,
+      "kind": "street",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a78",
+      "start": 209.3,
+      "end": 212,
+      "kind": "hero_face",
+      "route": "full-hybrid-r6"
+    },
+    {
+      "id": "a79",
+      "start": 212,
+      "end": 213,
+      "kind": "street",
+      "route": "full-hybrid-r6"
+    }
+  ],
+  "repair": null,
+  "note": "Technical checks are separate from the recorded visual review."
+}
