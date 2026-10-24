@@ -1,0 +1,41 @@
+{
+  "before": {
+    "maxBoneError": 2.220446049250313e-16,
+    "backwardKnees": 0,
+    "hipAxisRangeDegrees": [
+      0.0,
+      0.0
+    ]
+  },
+  "after": {
+    "maxBoneError": 1.6653345369377348e-16,
+    "backwardKnees": 0,
+    "hipAxisRangeDegrees": [
+      13.410532119271885,
+      14.101614565770364
+    ]
+  },
+  "seek": [
+    {
+      "i": 32,
+      "equal": true
+    },
+    {
+      "i": 0,
+      "equal": true
+    },
+    {
+      "i": 17,
+      "equal": true
+    },
+    {
+      "i": 6,
+      "equal": true
+    },
+    {
+      "i": 24,
+      "equal": true
+    }
+  ],
+  "scope": "Source-pose geometry only; no world-contact or artistic approval."
+}

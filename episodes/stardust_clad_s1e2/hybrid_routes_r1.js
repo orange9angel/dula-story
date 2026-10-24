@@ -8,7 +8,7 @@ const rootAt=t=>{const u=THREE.MathUtils.clamp((t-20)/6,0,1),r=.12,k=1/(1-r),p=u
 const data=await(await fetch('./assets3d/hybrid_routes_r1/mocap/walk.json')).json();
 let time=NaN;
 const base=new URLSearchParams(location.search).get('motion')==='base';
-const motion=base?null:installMocapPoseStudy({THREE,actor,data,getTime:()=>time,rootAt,start:20.2,end:22.6,kneeForward:new URLSearchParams(location.search).get('knees')==='forward',dims:{hipIdle:.93,hipHalf:.068,legA:.49,legB:.49,shoulderHalf:.125,shoulderY:1.52,armA:.21,armB:.20,footY:.09}});
+const motion=base?null:installMocapPoseStudy({THREE,actor,data,getTime:()=>time,rootAt,start:20.2,end:22.6,kneeForward:new URLSearchParams(location.search).get('knees')==='forward',pelvisMotion:new URLSearchParams(location.search).get('pelvis')==='source',dims:{hipIdle:.93,hipHalf:.068,legA:.49,legB:.49,shoulderHalf:.125,shoulderY:1.52,armA:.21,armB:.20,footY:.09}});
 window.setFreeCamera({pos:[.2,1.65,5.0],lookAt:[4.3,1.0,1.3],fov:32});
 window.renderAt=t=>{time=t;const out=sourceRender(t);out.state.study=motion?.last;return out;};
 window.hybridStudy={motion,rootAt};
