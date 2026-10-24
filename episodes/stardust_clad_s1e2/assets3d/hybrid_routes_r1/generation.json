@@ -1,0 +1,47 @@
+{
+  "provider": "built-in image_gen",
+  "calls": [
+    {
+      "prompt": "Create a tightly pose-registered FOUR-POSE anime animation cleanup sheet from IMAGE 1. IMAGE 1 is a 2 columns by 2 rows grid, exact body poses and composition guide. IMAGE 2 is ONLY the same character's face, hair, clothing identity and drawing-quality reference. Output the same 2x2 layout, all four complete figures, TRANSPARENT background, no text, no panel lines, no ground shadows. Keep each figure's head center, hands, pelvis, knees, ankles, toe tips at the same normalized positions as its corresponding guide cell. Keep the same left-facing shallow three-quarter side camera, identical scale and framing, and never crop the hair or feet. These four guides are consecutive phases of ONE walk, and the NEAR and FAR legs must keep their identities: top-left is one long contact, top-right a crossing/pass, bottom-left the OPPOSITE leg leads, bottom-right the opposite crossing/pass. In top-left the visible near thigh extends toward screen right/back while the far leg reaches screen left; bottom-left the near leg reaches screen left/front while the far knee bends behind. Match the different arm swing and wrist-held long hooked sickle angles in each cell. Do not invent new poses. DO NOT retain the ugly model surfaces: redraw the entire character as elegant high-quality hand-drawn cel animation, with natural lean male anatomy under a fitted dark charcoal bodysuit, a gently tapered thigh front and a convincing groin/hip connection. Remove localized swollen sausage-like thigh lumps. Preserve slender but substantial muscular volume, compact knees, readable weight bearing, coherent waist and chest; keep human proportions. Refine the youthful face, chin and nose silhouette, teal eyes and eyebrows directly in the drawing, not a featureless white face. Keep blue-black swept hair and short tied-back locks, dark violet curved high-collar armor, shin armor and boots. Give armor coherent designed broad cel shadow shapes and restrained highlights instead of plastic CGI reflections. Actual polished line variation, organized hair masses, anatomy and cloth folds at an animation-film drawing standard. Same facial design and hair outline across all four cells. Work within each guide pose but improve actual contours and internal shapes; do not just restyle a 3D screenshot. No cape added, no additional weapons, no aura, fire or effects. The four figures must be individually isolated by real alpha, not a checkerboard picture. Full sheet aspect ratio 2:3.",
+      "source": "exec-0cd499e1-ec6e-431c-87d3-29697005110d.png",
+      "output": "keys_opaque.png",
+      "references": [
+        "storyboard/hybrid_routes_r1/keypose_guide.png",
+        "assets3d/art_pass_r2/enemy_ready.png"
+      ],
+      "sha256": "cd2e1cc12c6f9510f648bc6ebfeb980d5658c937a66e238ba5252a08dd6d8e90",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "prompt": "Draw exactly FOUR missing in-between cels for this walking character. Reference image 1 is the exact pose guide: a 2-column, 2-row grid. Reference image 2 is the approved DRAWING DESIGN, face, body proportions and outfit for the very same walk. Match that polished drawing quality and character identity. Output a 2x2 grid on genuine transparent background. No text, frames or ground shadow. Use the exact four poses of image 1, NOT the poses of image 2. All characters face screen left in the same shallow three-quarter side camera. Top-left: near leg swings with knee bent, boot lifted behind toward screen right; far leg is straight and planted. Top-right: near leg now extends almost straight toward screen left, far foot follows behind toward screen right; sickle arm swings back. Bottom-left: opposite passing phase, NEAR LEG straight planted, FAR knee bent and boot lifted behind; sickle hangs down. Bottom-right: near leg extends behind to screen right, far leg steps forward to screen left, sickle arm swings forward. Preserve the different front/back leg identities, both actual foot positions, shoulder counter-rotation, hands and sickle position from each guide. These are all distinct, successive in-betweens between the keys in reference 2. Human lean male anatomy, natural tapered thighs with smooth front contour, correct connected hips, broad organized cel shadows, subtle folds at hip and knee. Youthful angular face with teal eyes, coherent blue-black tied back hair, fitted black bodysuit, dark-violet high collar armor, boots and shin guards, one curved hooked short sickle always in the same hand. No cape. Hair and outfit MUST match reference 2; do not redesign the armor or ponytail. Keep each head, pelvis and boot in the same normalized cell position and scale as image 1; do not enlarge figures to fill cells. All feet and hair completely inside each cell with ample transparent margin. The drawing must be complete in each frame, not assembled paper limbs. The output is one 2:3 aspect ratio image with four complete separate characters, real alpha outside figures.",
+      "output": "inbetweens.png",
+      "source": "exec-070628d4-4bf1-4dcf-b28c-5679da4834e9.png",
+      "references": [
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/storyboard/hybrid_routes_r1/inbetween_guide.png",
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/assets3d/hybrid_routes_r1/keys_opaque.png"
+      ],
+      "sha256": "29a7813b2b574a383d1d59d839fbd9dcbc8398d4b400269a569041f6a2a71a49",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    }
+  ],
+  "callCount": 2,
+  "actualTokens": null,
+  "actualCost": null,
+  "acceptance": "static art candidates only; continuity not approved"
+}

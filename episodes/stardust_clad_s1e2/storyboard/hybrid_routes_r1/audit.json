@@ -1,0 +1,106 @@
+{
+  "status": "exploration_not_production_approved",
+  "frames": 33,
+  "window": [
+    20.84,
+    21.94
+  ],
+  "maxLegLengthError": 1.609823385706477e-15,
+  "kneeAngleRange": [
+    101.14173054431164,
+    169.64303726580368
+  ],
+  "feet": {
+    "left": {
+      "minimumSoleY": -0.008000000000000458,
+      "maximumSoleY": 0.18540209106206568,
+      "nearGroundAnkleHorizontalSpeedMax": 2.889095860032879,
+      "note": "ankle speed includes heel/toe roll; not contact-point slip metric"
+    },
+    "right": {
+      "minimumSoleY": -0.008000000000000004,
+      "maximumSoleY": 0.20605124701572336,
+      "nearGroundAnkleHorizontalSpeedMax": 0.42282033518809214,
+      "note": "ankle speed includes heel/toe roll; not contact-point slip metric"
+    }
+  },
+  "seek": [
+    {
+      "i": 32,
+      "equal": true
+    },
+    {
+      "i": 0,
+      "equal": true
+    },
+    {
+      "i": 17,
+      "equal": true
+    },
+    {
+      "i": 6,
+      "equal": true
+    },
+    {
+      "i": 24,
+      "equal": true
+    }
+  ],
+  "baselineSeek": [
+    {
+      "i": 32,
+      "equal": true
+    },
+    {
+      "i": 0,
+      "equal": true
+    },
+    {
+      "i": 17,
+      "equal": true
+    },
+    {
+      "i": 6,
+      "equal": true
+    },
+    {
+      "i": 24,
+      "equal": true
+    }
+  ],
+  "files": {
+    "output/hybrid_routes_r1_cycle.mp4": "afc39474ef485da28755d44a02d8e321b1f2a62242ac607e5d5fc4547738cc22",
+    "output/hybrid_routes_r1_compare.mp4": "d78f960377db4a2e586ef2c700033acc189144e9dd0879f8c926a4911206f694",
+    "output/hybrid_routes_keypaint_r1.mp4": "9aaa1e03142911ebc8c2a2af15b78582f9894455687bc3000586f250ec894994",
+    "assets3d/hybrid_routes_r1/keys_opaque.png": "cd2e1cc12c6f9510f648bc6ebfeb980d5658c937a66e238ba5252a08dd6d8e90",
+    "assets3d/hybrid_routes_r1/inbetweens.png": "29a7813b2b574a383d1d59d839fbd9dcbc8398d4b400269a569041f6a2a71a49"
+  },
+  "video": [
+    {
+      "path": "output/hybrid_routes_r1_cycle.mp4",
+      "decodedFrames": 33,
+      "fps": 30.0
+    },
+    {
+      "path": "output/hybrid_routes_r1_compare.mp4",
+      "decodedFrames": 132,
+      "fps": 30.0
+    },
+    {
+      "path": "output/hybrid_routes_keypaint_r1.mp4",
+      "decodedFrames": 33,
+      "fps": 30.0
+    }
+  ],
+  "surfaceR3": {
+    "decodedFrames": 33,
+    "sha256": "5648d21400f873b2d05a4e10093a23c31be451823b08cb8b9abf9313fd0dae73",
+    "minimumReferenceCoverage": 0.9872707986058493,
+    "status": "rejected_visual_ghosting_holes",
+    "observedFrames": [
+      6,
+      18
+    ]
+  },
+  "sourceVideoSha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+}
