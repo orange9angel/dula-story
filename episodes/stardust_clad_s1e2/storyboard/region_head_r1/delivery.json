@@ -1,0 +1,178 @@
+{
+  "region_head_r1": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "2.000000",
+        "nb_frames": "60"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "2.008000",
+        "nb_frames": "107"
+      }
+    ],
+    "sha256": "632a4e9d7dc92dbea776c553fa983883e549fd1265dc659f66be8b5933350c2b",
+    "bytes": 690202,
+    "audio_adts_sha256": "fc6adcac0b028a0830caf26bb0325f906046e56fde5b87992e5262cbd9db2ed1"
+  },
+  "region_head_r1_base": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "2.000000",
+        "nb_frames": "60"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "2.008000",
+        "nb_frames": "107"
+      }
+    ],
+    "sha256": "53a4d941790f371d77fe9d85cee1ef99725ceda0295196b4dc12d53cab1df414",
+    "bytes": 689004,
+    "audio_adts_sha256": "fc6adcac0b028a0830caf26bb0325f906046e56fde5b87992e5262cbd9db2ed1"
+  },
+  "region_head_r1_compare": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "2.000000",
+        "nb_frames": "60"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "2.008000",
+        "nb_frames": "107"
+      }
+    ],
+    "sha256": "b0ac84e31d12fbf74b227076c4e1d2053ccc8c51fe7bad8dc21c501e8d728337",
+    "bytes": 1113612,
+    "audio_adts_sha256": "fc6adcac0b028a0830caf26bb0325f906046e56fde5b87992e5262cbd9db2ed1"
+  },
+  "source_audio_adts_sha256": "fc6adcac0b028a0830caf26bb0325f906046e56fde5b87992e5262cbd9db2ed1",
+  "source_sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+  "boundary_audit_passed": true,
+  "frames_checked": 60,
+  "audio_identical": true,
+  "paint_determinism": {
+    "passed": true,
+    "checks": [
+      {
+        "t": 22.166666666666664,
+        "equal": true
+      },
+      {
+        "t": 21.866666666666667,
+        "equal": true
+      },
+      {
+        "t": 21.53333333333333,
+        "equal": true
+      },
+      {
+        "t": 21.2,
+        "equal": true
+      },
+      {
+        "t": 20.866666666666667,
+        "equal": true
+      },
+      {
+        "t": 20.53333333333333,
+        "equal": true
+      },
+      {
+        "t": 20.2,
+        "equal": true
+      },
+      {
+        "t": 20.2,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 21.2,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 22.1,
+        "repeat": true,
+        "equal": true
+      }
+    ]
+  },
+  "base_determinism": {
+    "passed": true,
+    "checks": [
+      {
+        "t": 22.166666666666664,
+        "equal": true
+      },
+      {
+        "t": 21.866666666666667,
+        "equal": true
+      },
+      {
+        "t": 21.53333333333333,
+        "equal": true
+      },
+      {
+        "t": 21.2,
+        "equal": true
+      },
+      {
+        "t": 20.866666666666667,
+        "equal": true
+      },
+      {
+        "t": 20.53333333333333,
+        "equal": true
+      },
+      {
+        "t": 20.2,
+        "equal": true
+      },
+      {
+        "t": 20.2,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 21.2,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 22.1,
+        "repeat": true,
+        "equal": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "date": "2026-10-24",
+  "file": "head_paint.png",
+  "prompt": "Edit IMAGE 1 as a tightly registered animation paint-over, keeping its exact square 1024x1024 composition and every silhouette/landmark position. IMAGE 2 is only a character/design-quality reference: the same blue-black-haired young male with teal eyes and dark violet armor. IMAGE 3 is a region guide: ONLY the white head/hair area may be repainted. Keep the entire dark blue background and all visible collar/armor pixels of IMAGE 1 unchanged. Preserve the exact head angle, head size, nose tip, chin edge, ear position, hair outer outline, hair gaps, neck attachment and main hair-tuft directions from IMAGE 1. Do not crop, enlarge, reposition, rotate or redesign the head. Transform only its existing facial features and hair surface from crude 3D rendering into refined hand-drawn cel animation cleanup: confident natural tapered eyelids, elegant teal iris with restrained highlights, coordinated focused eyebrows, delicate nose/cheek planes and a subtle closed mouth. Eye centers remain at approximately (394,540) for the near eye and (309,530) for the tiny occluded far-eye fragment; nose tip stays around (317,605), mouth (344,655), chin boundary (390,780), ear (607,632). Far eye remains naturally mostly occluded, not a second full eye. Draw skin as clean pale warm ivory with a restrained cool-violet shadow plane along temple, jaw and neck, avoid the flat white face and muddy airbrush. Repaint hair WITHIN the original outer contour into organized irregular cel-shaded locks and a few coherent dark-blue highlight masses; remove tube-like parallel shiny ribs. Keep all tuft roots and tips in the SAME locations. Fine expressive linework, controlled two or three shade levels, keep his youthful identity. Do not add a new expression, new hair ornaments, glow, aura, fire, particles, text, border or a different background. The result will be projected back onto the exact original animated 3D head, so structural registration is more important than inventing a different beautiful pose. Return the full edited IMAGE 1, opaque square image, exact framing.",
+  "references": [
+    "../../storyboard/region_head_r1/reference/head_source.png",
+    "../art_pass_r2/enemy_ready.png",
+    "../../storyboard/region_head_r1/reference/head_mask.png"
+  ],
+  "status": "candidate for constrained projected surface paint, not a whole-character cel"
+}

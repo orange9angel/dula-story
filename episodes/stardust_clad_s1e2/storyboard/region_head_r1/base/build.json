@@ -1,0 +1,149 @@
+{
+  "source": [
+    {
+      "path": "scene_hybrid_r1.js",
+      "sha256": "05c72712e386718d24337e6aa6a9a250e8ca9d58ebe2d918c01c3666b5ea5c35"
+    },
+    {
+      "path": "scene_hybrid_r1.html",
+      "sha256": "f905bc15dc130d7f7f197cc3b5edfc2fb28381d4b08704b249631409eb826c9a"
+    },
+    {
+      "path": "viewer_palace.js",
+      "sha256": "f1bfd08ccee1931585c1c5b08469411718a0353c974bcabc5972c8bffae1ded0"
+    },
+    {
+      "path": "palace_locomotion.js",
+      "sha256": "f66c378d1a92d8df8bc6c175adb77a6ecda16305ae75427c1e0730e92da09cba"
+    },
+    {
+      "path": "duel_performance.js",
+      "sha256": "472554bb827f3fb73b87e2c4f24e8ce9c3e9064954139dcd6cbab188d93d85ee"
+    },
+    {
+      "path": "config/painted_environment_r2.js",
+      "sha256": "a061d7bb624d2c30a5ad532e212af2a2352792c173d076ae74f23bb29137b6c4"
+    },
+    {
+      "path": "assets3d/art_pass_runtime/painted-backplate-stage.js",
+      "sha256": "7989c3b363cbe9a5658d6e688648bafda4bb7f0f8e77fa87415176356c1f2253"
+    },
+    {
+      "path": "region_head_r1.js",
+      "sha256": "4332b2d60a14d32bddfe94e74e7c7435909e694c8d7ef6a88c30335136e2953f"
+    },
+    {
+      "path": "region_head_r1.html",
+      "sha256": "f8be20ca9aa76620d6b27667862f67486d982ad1318c0bd84e7b536cccb80b78"
+    },
+    {
+      "path": "config/region_head_r1.js",
+      "sha256": "17a8f22beb2fabd816b14415b858f33d31715c4a26e1446da7a7d397aeaec7ca"
+    },
+    {
+      "path": "assets3d/art_pass_runtime/projected-region-paint.js",
+      "sha256": "a6150bcc798f6fa1fd2d71dc5773c897c33210ff814e8d8a5af2b7e50533b68c"
+    },
+    {
+      "path": "assets3d/region_head_r1/generation.json",
+      "sha256": "f5488c44658095e06b3bf98cec1cfbf0745b589663b12ee93fcad878b9c244e5"
+    },
+    {
+      "path": "assets3d/region_head_r1/head_mask.png",
+      "sha256": "8761896bc21d913224844d2b976d49bffccbd1119f2b35fc1765aacaeff9afc2"
+    },
+    {
+      "path": "assets3d/region_head_r1/head_paint.png",
+      "sha256": "198fd20571ce2bf13edbf08b1178b7e0d2dba3f2da652037a6f14de0d53079d7"
+    }
+  ],
+  "pipeline": {
+    "config": {
+      "schema": "draw-over-pipeline-v1",
+      "baseUrl": "http://127.0.0.1:4250/",
+      "source": {
+        "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+        "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+      },
+      "runtime": {
+        "directory": "assets3d/art_pass_runtime"
+      },
+      "pilot": {
+        "start": 20.2,
+        "end": 22.2,
+        "fps": 30,
+        "width": 1280,
+        "height": 720,
+        "viewer": "region_head_r1.html?capture=1&mode=base",
+        "board": "storyboard/region_head_r1/base",
+        "output": "output/region_head_r1_base.mp4",
+        "samples": [
+          20.2,
+          20.6,
+          21.2,
+          21.6,
+          22.1
+        ],
+        "repeatSamples": [
+          20.2,
+          21.2,
+          22.1
+        ],
+        "hashEvery": 10,
+        "sourceFiles": [
+          "scene_hybrid_r1.js",
+          "scene_hybrid_r1.html",
+          "viewer_palace.js",
+          "palace_locomotion.js",
+          "duel_performance.js",
+          "config/painted_environment_r2.js",
+          "assets3d/art_pass_runtime/painted-backplate-stage.js",
+          "region_head_r1.js",
+          "region_head_r1.html",
+          "config/region_head_r1.js",
+          "assets3d/art_pass_runtime/projected-region-paint.js",
+          "assets3d/region_head_r1/generation.json"
+        ],
+        "audioCopy": true,
+        "assetDirectories": [
+          "assets3d/region_head_r1"
+        ]
+      }
+    },
+    "shared": [
+      {
+        "path": "capture_references.mjs",
+        "sha256": "5baa371b189e15e42721a44b03ddc911fca10c2826899a1ad3788465eece026b"
+      },
+      {
+        "path": "package_pilot.py",
+        "sha256": "2583fb88e7c8bbe64e92a3998c6d7f545b0e193a7f4e0ab311ce4dcd46d25ecc"
+      },
+      {
+        "path": "pipeline.mjs",
+        "sha256": "35e5671edcd08160932dae37eeb3fdccbecc70631ad3791a9db06e893e4871e0"
+      },
+      {
+        "path": "replace_window.py",
+        "sha256": "188ef50d4a0bff4feabfe35b0e4ee1b2a305852b77599b20153d616986e5188c"
+      },
+      {
+        "path": "review_region_paint.mjs",
+        "sha256": "a3ae7f1b54c4ce8738a1a4021c2be219aab2c364a05ede5cd7e73d8de6c79491"
+      },
+      {
+        "path": "review_seek_tolerance.py",
+        "sha256": "44b2834c8b2e61a9b666958e5075a14a45d832749a7c4962553968e960bb1dce"
+      },
+      {
+        "path": "verify_full_episode.py",
+        "sha256": "89600010cd4be9ad94c50aea538c859517fa318283e1fbb92441d433b357f9b8"
+      }
+    ]
+  },
+  "start": 20.2,
+  "end": 22.2,
+  "frames": 60,
+  "fps": 30,
+  "errors": []
+}

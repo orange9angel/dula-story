@@ -1,0 +1,52 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4250/",
+  "source": {
+    "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+    "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+  },
+  "runtime": {
+    "directory": "assets3d/art_pass_runtime"
+  },
+  "pilot": {
+    "start": 20.2,
+    "end": 22.2,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "region_head_r1.html?capture=1",
+    "board": "storyboard/region_head_r1/paint",
+    "output": "output/region_head_r1.mp4",
+    "samples": [
+      20.2,
+      20.6,
+      21.2,
+      21.6,
+      22.1
+    ],
+    "repeatSamples": [
+      20.2,
+      21.2,
+      22.1
+    ],
+    "hashEvery": 10,
+    "sourceFiles": [
+      "scene_hybrid_r1.js",
+      "scene_hybrid_r1.html",
+      "viewer_palace.js",
+      "palace_locomotion.js",
+      "duel_performance.js",
+      "config/painted_environment_r2.js",
+      "assets3d/art_pass_runtime/painted-backplate-stage.js",
+      "region_head_r1.js",
+      "region_head_r1.html",
+      "config/region_head_r1.js",
+      "assets3d/art_pass_runtime/projected-region-paint.js",
+      "assets3d/region_head_r1/generation.json"
+    ],
+    "audioCopy": true,
+    "assetDirectories": [
+      "assets3d/region_head_r1"
+    ]
+  }
+}
