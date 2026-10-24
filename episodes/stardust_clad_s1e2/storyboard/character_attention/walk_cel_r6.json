@@ -1,5 +1,21 @@
 {
   "schema_version": 1,
+  "user_acceptance": {
+    "date": "2026-10-24",
+    "feedback": "基本可以了",
+    "status": "basically_accepted",
+    "scope": "所展示R6固定朝向步态的姿势、人物形体与整体运动；作为后续制作基线。",
+    "source": {
+      "path": "../../output/walk_cel_r6_compare.mp4",
+      "sha256": "ed40c9a1aae131f4f86f18d8b7de37e69c59a624542603afb9f5c14ca558d1f4"
+    },
+    "preserve": [
+      "R6姿态与身体运动",
+      "原画大腿体积及髋—膝走向",
+      "translate配准，不回退至逐行压宽"
+    ],
+    "limitations": "用户认可与原审查证据分别保存，不自动关闭正片接触或其他视角的待验事项。"
+  },
   "source": {
     "path": "../../output/walk_cel_r6_compare.mp4",
     "sha256": "ed40c9a1aae131f4f86f18d8b7de37e69c59a624542603afb9f5c14ca558d1f4"
