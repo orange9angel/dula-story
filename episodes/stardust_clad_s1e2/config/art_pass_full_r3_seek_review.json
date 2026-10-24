@@ -1,0 +1,16 @@
+{
+  "exact_report": "storyboard/painted_r3/full/determinism_exact.json",
+  "output": "storyboard/painted_r3/full/determinism.json",
+  "tolerance": {
+    "max_channel_delta": 1,
+    "max_changed_pixels": 64
+  },
+  "pairs": [
+    {
+      "t": 174,
+      "sequential": "storyboard/painted_r3/boundary/sequential174.png",
+      "seek": "storyboard/painted_r3/boundary/seek174.png",
+      "capture_config": "config/art_pass_r3_boundary_capture.json"
+    }
+  ]
+}

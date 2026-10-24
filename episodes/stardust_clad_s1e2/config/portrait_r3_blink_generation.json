@@ -1,0 +1,14 @@
+{
+  "provider": "built-in imagegen",
+  "prompt": "Use case: precise-object-edit / animation blink cel. Edit the supplied four-cell transparent portrait atlas. Preserve the EXACT 2 by 2 layout, all four character positions, dimensions, nose, mouth state, head angles, chin, hair, armor, existing palette, transparency, line quality and shading. Change ONLY the eyes in each of the four cells into a natural fully CLOSED blink. Eyelids meet cleanly in a single elegant tapered line following the actual perspective of each face, with no visible iris, pupil or white eyeball remaining and no second old eye outline. Eyebrows should stay in their existing neutral intent shape. Top left and bottom left are the same red-brown-haired gold-armored man facing screen right; top right and bottom right are the same navy-haired purple-armored man facing screen left. No smile or new emotion. Do not change the closed/open mouths from the input. This is an alternate blink donor for a production animation rig, so pixel registration and unchanged identity are more important than creating a new illustration. Keep the same 1254x1254 canvas and transparent background.",
+  "reference": "assets3d/portraits_r3/atlas_raw.png",
+  "source": "C:/Users/orang/.codex/generated_images/01a169bf-3468-7e01-aff1-36809a8a8954/exec-4ac510a6-a30c-41b8-8ed0-4aa10d8e47d1.png",
+  "saved": "assets3d/portraits_r3/atlas_blink_raw.png",
+  "actualSize": [
+    1254,
+    1254
+  ],
+  "imagegenCalls": 1,
+  "usageAndCost": "not returned",
+  "purpose": "Only registered eye-region pixels are used; masks keep the rest of the accepted portrait unchanged."
+}

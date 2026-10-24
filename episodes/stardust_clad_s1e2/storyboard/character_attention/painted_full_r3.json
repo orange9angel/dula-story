@@ -1,0 +1,2019 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e2_painted_r3.mp4",
+    "sha256": "a8a746cd2cf5ddf526d0e25101daf775c93b74f4877691e0429f4edab2053360"
+  },
+  "scope": {
+    "subjects": [
+      "aoao",
+      "yekari"
+    ],
+    "windows": [
+      {
+        "id": "episode",
+        "start": 0,
+        "end": 213
+      }
+    ],
+    "accepted_properties": [
+      "User accepted R7 trial sufficiently for production and deferred later overall polish.",
+      "Accepted painted scenes, audio and particle-only dynamic effects are retained."
+    ],
+    "limitations": "Final MP4 sampled as stills and ordered frame sheets, not realtime playback. Not all angles or every output frame visually reviewed. Technical report is separate from artistic acceptance."
+  },
+  "checks": [
+    {
+      "subject": "aoao",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "Red hair, gold eyes and gold armor remain recognizable in portraits and body shots.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "Jaw, nose, ear and neck are readable at the delivered portrait scale; no exposed old template eyes in the sampled closed/open mouth states. Large turns are outside this fixed-view evidence.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "Portrait gaze remains directed toward the opponent side; no eye crossing observed in sampled open-eye frames. This does not establish subtle gaze acting.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "Mouth opening and eyelid closure are visible, but the same brow intention persists across most dialogue and reaction portraits; emotion labels do not create new facial acting.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "aoao-expression-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "Authored hair masses and ears retain their design, but sampled changes are modest and do not establish independent tip inertia or new turn silhouettes.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "aoao-hair-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "Armor, waist and bent knee retain mass across the combat keys.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "Shield stays associated with the forearm; visible shield faces carry damage in later combat samples. Fine finger articulation is limited by scale.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/damage.jpg",
+          "sha256": "1f8d3eaaf3f9a923923664172c077a9ba41dd76fc747715e2a2d90b62a4a2c93",
+          "method": "ordered_frames",
+          "at": [
+            59.0,
+            64.2,
+            103.5,
+            167.0,
+            169.5,
+            185.0
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "support",
+      "status": "finding",
+      "observation": "Kneel-to-rise pose changes and contact shadows do not consistently make the exact shoe load transfer legible around 165-168 seconds.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "aoao-support-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "This character has no new walking cycle in this revision; stance and combat steps are recorded under action/support.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "Counter sequence has readable preparation, rise and release, but body transitions still change between a finite set of drawings.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "aoao-action-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "temporal",
+      "status": "finding",
+      "observation": "Combat pose changes are visibly discrete; no claim of smooth in-betweens across all body drawings.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "aoao-temporal-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "Warm scene light, cool shaded armor and foreground/background composition remain legible; aura and chain particles are present in sampled final shots. All-angle contact quality is not inferred.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "Accepted audio was preserved byte-for-byte at packet level and PCM level. No new realtime audiovisual listening was performed, so subjective timing is not re-certified.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "During later overall review, listen and watch the final MP4 at normal speed; retain accepted audio unless a specific timing defect is observed."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Full-frame overview shows a coherent scene and character palette. Remaining strongest limitation is finite combat/portrait acting, already recorded above; shield is offscreen at 185 seconds and is not visually certified there.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/damage.jpg",
+          "sha256": "1f8d3eaaf3f9a923923664172c077a9ba41dd76fc747715e2a2d90b62a4a2c93",
+          "method": "ordered_frames",
+          "at": [
+            59.0,
+            64.2,
+            103.5,
+            167.0,
+            169.5,
+            185.0
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "Navy hair, cyan eyes and purple armor remain recognizable across the R7 walk, portrait and combat samples. Different perspective drawing is still visible.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "Jaw, nose, ear and neck are readable at the delivered portrait scale; no exposed old template eyes in the sampled closed/open mouth states. Large turns are outside this fixed-view evidence.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "Portrait gaze remains directed toward the opponent side; no eye crossing observed in sampled open-eye frames. This does not establish subtle gaze acting.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "Mouth opening and eyelid closure are visible, but the same brow intention persists across most dialogue and reaction portraits; emotion labels do not create new facial acting.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "yekari-expression-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "Authored hair masses and ears retain their design, but sampled changes are modest and do not establish independent tip inertia or new turn silhouettes.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "yekari-hair-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "R7 thigh silhouettes retain width and shoulder/hip proportions during arrival and retreat; the stop no longer expands into the older idle body.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/arrival.jpg",
+          "sha256": "fefa089792f0a066e6087aebdcf6450eaca08919101d027d8b9237a4c7a77751",
+          "method": "ordered_frames",
+          "at": [
+            20.3,
+            20.466666666666665,
+            20.6,
+            20.733333333333334,
+            20.9,
+            21.066666666666666,
+            21.2,
+            21.333333333333332,
+            21.5,
+            21.666666666666668,
+            21.8,
+            21.933333333333334,
+            22.1,
+            22.266666666666666,
+            22.4,
+            22.533333333333335
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/settle.jpg",
+          "sha256": "a51e7c5398d2c23b9b4644a3eace5118a36da820d00005c7ded05ae086fa1814",
+          "method": "ordered_frames",
+          "at": [
+            25.6,
+            25.7,
+            25.8,
+            25.9,
+            26.0,
+            26.1,
+            26.2,
+            26.3,
+            26.4,
+            26.5,
+            26.6,
+            26.7,
+            26.8,
+            26.9,
+            27.0,
+            27.1
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/retreat.jpg",
+          "sha256": "61619d4c0d097e9028488e8edeb01c438112f915e66acdf651cb3bcd50e05867",
+          "method": "ordered_frames",
+          "at": [
+            192.8,
+            192.93333333333334,
+            193.06666666666666,
+            193.2,
+            193.33333333333334,
+            193.46666666666667,
+            193.56666666666666,
+            193.7,
+            193.83333333333334,
+            193.96666666666667,
+            194.1,
+            194.23333333333332,
+            194.36666666666667,
+            194.5,
+            194.63333333333333,
+            194.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "Chain attachment is readable at the cuff and attack hand in the counter sequence; finer grasp articulation and held-part shape changes still need polish.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/retreat.jpg",
+          "sha256": "61619d4c0d097e9028488e8edeb01c438112f915e66acdf651cb3bcd50e05867",
+          "method": "ordered_frames",
+          "at": [
+            192.8,
+            192.93333333333334,
+            193.06666666666666,
+            193.2,
+            193.33333333333334,
+            193.46666666666667,
+            193.56666666666666,
+            193.7,
+            193.83333333333334,
+            193.96666666666667,
+            194.1,
+            194.23333333333332,
+            194.36666666666667,
+            194.5,
+            194.63333333333333,
+            194.73333333333332
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "yekari-hands_props-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "Arrival shoes approach the ground and receive contact shadows; the sparse ordered samples do not prove zero support-foot slide. Retained R7 scope is limited.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/arrival.jpg",
+          "sha256": "fefa089792f0a066e6087aebdcf6450eaca08919101d027d8b9237a4c7a77751",
+          "method": "ordered_frames",
+          "at": [
+            20.3,
+            20.466666666666665,
+            20.6,
+            20.733333333333334,
+            20.9,
+            21.066666666666666,
+            21.2,
+            21.333333333333332,
+            21.5,
+            21.666666666666668,
+            21.8,
+            21.933333333333334,
+            22.1,
+            22.266666666666666,
+            22.4,
+            22.533333333333335
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/retreat.jpg",
+          "sha256": "61619d4c0d097e9028488e8edeb01c438112f915e66acdf651cb3bcd50e05867",
+          "method": "ordered_frames",
+          "at": [
+            192.8,
+            192.93333333333334,
+            193.06666666666666,
+            193.2,
+            193.33333333333334,
+            193.46666666666667,
+            193.56666666666666,
+            193.7,
+            193.83333333333334,
+            193.96666666666667,
+            194.1,
+            194.23333333333332,
+            194.36666666666667,
+            194.5,
+            194.63333333333333,
+            194.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "status": "no_issue_observed",
+      "observation": "Alternating swing legs are visible during arrival; final adjacent-foot pose holds through the cut at 27 seconds. Retreat moves right while facing left. Reverse phase is reused and is not a new rear view.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/arrival.jpg",
+          "sha256": "fefa089792f0a066e6087aebdcf6450eaca08919101d027d8b9237a4c7a77751",
+          "method": "ordered_frames",
+          "at": [
+            20.3,
+            20.466666666666665,
+            20.6,
+            20.733333333333334,
+            20.9,
+            21.066666666666666,
+            21.2,
+            21.333333333333332,
+            21.5,
+            21.666666666666668,
+            21.8,
+            21.933333333333334,
+            22.1,
+            22.266666666666666,
+            22.4,
+            22.533333333333335
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/settle.jpg",
+          "sha256": "a51e7c5398d2c23b9b4644a3eace5118a36da820d00005c7ded05ae086fa1814",
+          "method": "ordered_frames",
+          "at": [
+            25.6,
+            25.7,
+            25.8,
+            25.9,
+            26.0,
+            26.1,
+            26.2,
+            26.3,
+            26.4,
+            26.5,
+            26.6,
+            26.7,
+            26.8,
+            26.9,
+            27.0,
+            27.1
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/retreat.jpg",
+          "sha256": "61619d4c0d097e9028488e8edeb01c438112f915e66acdf651cb3bcd50e05867",
+          "method": "ordered_frames",
+          "at": [
+            192.8,
+            192.93333333333334,
+            193.06666666666666,
+            193.2,
+            193.33333333333334,
+            193.46666666666667,
+            193.56666666666666,
+            193.7,
+            193.83333333333334,
+            193.96666666666667,
+            194.1,
+            194.23333333333332,
+            194.36666666666667,
+            194.5,
+            194.63333333333333,
+            194.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "Counter sequence reads as tension, hit and backward reaction; intermediate transfer through torso and limbs remains limited.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "yekari-action-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "temporal",
+      "status": "finding",
+      "observation": "Stop body-pop is absent in decoded final frames; remaining hand/weapon contours still change discretely with the finite cel sequence.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/settle.jpg",
+          "sha256": "a51e7c5398d2c23b9b4644a3eace5118a36da820d00005c7ded05ae086fa1814",
+          "method": "ordered_frames",
+          "at": [
+            25.6,
+            25.7,
+            25.8,
+            25.9,
+            26.0,
+            26.1,
+            26.2,
+            26.3,
+            26.4,
+            26.5,
+            26.6,
+            26.7,
+            26.8,
+            26.9,
+            27.0,
+            27.1
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/retreat.jpg",
+          "sha256": "61619d4c0d097e9028488e8edeb01c438112f915e66acdf651cb3bcd50e05867",
+          "method": "ordered_frames",
+          "at": [
+            192.8,
+            192.93333333333334,
+            193.06666666666666,
+            193.2,
+            193.33333333333334,
+            193.46666666666667,
+            193.56666666666666,
+            193.7,
+            193.83333333333334,
+            193.96666666666667,
+            194.1,
+            194.23333333333332,
+            194.36666666666667,
+            194.5,
+            194.63333333333333,
+            194.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [
+        "yekari-temporal-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "Warm scene light, cool shaded armor and foreground/background composition remain legible; aura and chain particles are present in sampled final shots. All-angle contact quality is not inferred.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "Accepted audio was preserved byte-for-byte at packet level and PCM level. No new realtime audiovisual listening was performed, so subjective timing is not re-certified.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "During later overall review, listen and watch the final MP4 at normal speed; retain accepted audio unless a specific timing defect is observed."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Full-frame overview shows a coherent scene and character palette. Remaining strongest limitation is finite combat/portrait acting, already recorded above; shield is offscreen at 185 seconds and is not visually certified there.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/damage.jpg",
+          "sha256": "1f8d3eaaf3f9a923923664172c077a9ba41dd76fc747715e2a2d90b62a4a2c93",
+          "method": "ordered_frames",
+          "at": [
+            59.0,
+            64.2,
+            103.5,
+            167.0,
+            169.5,
+            185.0
+          ],
+          "window": "episode"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "aoao-expression-polish",
+      "subject": "aoao",
+      "dimension": "expression",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Mouth opening and eyelid closure are visible, but the same brow intention persists across most dialogue and reaction portraits; emotion labels do not create new facial acting.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "aoao-hair-polish",
+      "subject": "aoao",
+      "dimension": "hair",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Authored hair masses and ears retain their design, but sampled changes are modest and do not establish independent tip inertia or new turn silhouettes.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "aoao-support-polish",
+      "subject": "aoao",
+      "dimension": "support",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Kneel-to-rise pose changes and contact shadows do not consistently make the exact shoe load transfer legible around 165-168 seconds.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "aoao-action-polish",
+      "subject": "aoao",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Counter sequence has readable preparation, rise and release, but body transitions still change between a finite set of drawings.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "aoao-temporal-polish",
+      "subject": "aoao",
+      "dimension": "temporal",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Combat pose changes are visibly discrete; no claim of smooth in-betweens across all body drawings.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "yekari-expression-polish",
+      "subject": "yekari",
+      "dimension": "expression",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Mouth opening and eyelid closure are visible, but the same brow intention persists across most dialogue and reaction portraits; emotion labels do not create new facial acting.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/overview.jpg",
+          "sha256": "64f568bd64628878a2e5eb4a50d1982bc991cea90ea7f1b82f25649489bc67ab",
+          "method": "ordered_frames",
+          "at": [
+            2.0,
+            7.4,
+            14.5,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "yekari-hair-polish",
+      "subject": "yekari",
+      "dimension": "hair",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Authored hair masses and ears retain their design, but sampled changes are modest and do not establish independent tip inertia or new turn silhouettes.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "yekari-hands_props-polish",
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Chain attachment is readable at the cuff and attack hand in the counter sequence; finer grasp articulation and held-part shape changes still need polish.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/retreat.jpg",
+          "sha256": "61619d4c0d097e9028488e8edeb01c438112f915e66acdf651cb3bcd50e05867",
+          "method": "ordered_frames",
+          "at": [
+            192.8,
+            192.93333333333334,
+            193.06666666666666,
+            193.2,
+            193.33333333333334,
+            193.46666666666667,
+            193.56666666666666,
+            193.7,
+            193.83333333333334,
+            193.96666666666667,
+            194.1,
+            194.23333333333332,
+            194.36666666666667,
+            194.5,
+            194.63333333333333,
+            194.73333333333332
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "yekari-action-polish",
+      "subject": "yekari",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Counter sequence reads as tension, hit and backward reaction; intermediate transfer through torso and limbs remains limited.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/counter.jpg",
+          "sha256": "0109957d9899ee4184b2888bcf0af12d1c0b2b8fc30071ad5e88347723f49913",
+          "method": "ordered_frames",
+          "at": [
+            163.0,
+            163.66666666666666,
+            164.3,
+            164.93333333333334,
+            165.6,
+            166.26666666666668,
+            166.9,
+            167.53333333333333,
+            168.2,
+            168.86666666666667,
+            169.5,
+            170.13333333333333,
+            170.8,
+            171.46666666666667,
+            172.1,
+            172.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    },
+    {
+      "id": "yekari-temporal-polish",
+      "subject": "yekari",
+      "dimension": "temporal",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Stop body-pop is absent in decoded final frames; remaining hand/weapon contours still change discretely with the finite cel sequence.",
+      "impact": "Limits nuanced acting or physical continuity in the full-film review version.",
+      "priority": "follow-up polish",
+      "hypothesis": "Finite authored poses and limited view-specific control remain in the retained combat/portrait assets.",
+      "next_action": "Review during the later overall polish requested by the user; preserve accepted design.",
+      "evidence": [
+        {
+          "path": "../painted_r3/decoded/settle.jpg",
+          "sha256": "a51e7c5398d2c23b9b4644a3eace5118a36da820d00005c7ded05ae086fa1814",
+          "method": "ordered_frames",
+          "at": [
+            25.6,
+            25.7,
+            25.8,
+            25.9,
+            26.0,
+            26.1,
+            26.2,
+            26.3,
+            26.4,
+            26.5,
+            26.6,
+            26.7,
+            26.8,
+            26.9,
+            27.0,
+            27.1
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/retreat.jpg",
+          "sha256": "61619d4c0d097e9028488e8edeb01c438112f915e66acdf651cb3bcd50e05867",
+          "method": "ordered_frames",
+          "at": [
+            192.8,
+            192.93333333333334,
+            193.06666666666666,
+            193.2,
+            193.33333333333334,
+            193.46666666666667,
+            193.56666666666666,
+            193.7,
+            193.83333333333334,
+            193.96666666666667,
+            194.1,
+            194.23333333333332,
+            194.36666666666667,
+            194.5,
+            194.63333333333333,
+            194.73333333333332
+          ],
+          "window": "episode"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "change": "Promoted R7 RGBA walk to full episode and replaced portrait template eyes with authored raster identity plus local mouth/blink donors.",
+      "before_record": "../painted_r3/REVIEW.md",
+      "after_evidence": [
+        {
+          "path": "../painted_r3/decoded/settle.jpg",
+          "sha256": "a51e7c5398d2c23b9b4644a3eace5118a36da820d00005c7ded05ae086fa1814",
+          "method": "ordered_frames",
+          "at": [
+            25.6,
+            25.7,
+            25.8,
+            25.9,
+            26.0,
+            26.1,
+            26.2,
+            26.3,
+            26.4,
+            26.5,
+            26.6,
+            26.7,
+            26.8,
+            26.9,
+            27.0,
+            27.1
+          ],
+          "window": "episode"
+        },
+        {
+          "path": "../painted_r3/decoded/faces.jpg",
+          "sha256": "b28a0286d6aee81f6d5a9076960adb0459ac2db4868267965d82aff2077ccb1d",
+          "method": "ordered_frames",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            8.933333333333334,
+            9.0,
+            9.033333333333333,
+            27.3,
+            27.466666666666665,
+            27.6,
+            31.1,
+            31.166666666666668,
+            31.233333333333334
+          ],
+          "window": "episode"
+        }
+      ],
+      "result": "Stopped pose keeps the R7 silhouette; both blink donors close cleanly in final decoded frames. Remaining global polish is explicitly deferred."
+    }
+  ],
+  "misses": [],
+  "reviewer_conclusion": "Complete 213-second review version delivered. Decoded visual samples support the stated integration, not blanket artistic approval. Deferred acting/contact issues remain; normal-speed audiovisual review is not claimed."
+}

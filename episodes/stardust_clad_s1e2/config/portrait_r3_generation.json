@@ -1,0 +1,19 @@
+{
+  "provider": "built-in imagegen",
+  "intent": "single four-cel portrait atlas",
+  "prompt": "Use case: identity-preserve. Create ONE production animation atlas, a precise 2-column by 2-row sheet on genuinely transparent background, no lettering, no panel lines. The two columns contain two established adult male fantasy armor characters from the reference images. LEFT column: the red-brown spiky-haired amber-eyed young adult man in gold armor from reference 1 and reference 4, looking three-quarter toward screen right. RIGHT column: the dark-navy layered long-haired teal-eyed young adult man in deep purple armor from reference 2 and reference 3, looking three-quarter toward screen left. Reference 1 and 2 are facially blank closeup edit targets: preserve their exact hair silhouette, ears, nose, jaw contour, collar, armor, head angle and sophisticated painted cel shading. Reference 3 provides the accepted navy character face identity and eye shape; reference 4 provides the accepted gold character face identity. Fill the blank facial features at professional hand-drawn animation quality, matching those identities: restrained handsome angular eyelids, coherent near/far eye perspective, defined but not oversize irises, natural brows, fine lips, no giant almond eyes, no far eye outside the face silhouette. Each cell is the same square close portrait from upper chest to entire hair, at equal scale. TOP ROW: neutral intent listening, eyes open, lips closed. BOTTOM ROW: exactly duplicate the corresponding top portrait, changing ONLY the mouth into a modest speaking opening (about one third of a shout), thin upper teeth and dark interior, maintaining every other facial feature, pose, hair and armor. Make the mouth enough for speaking without a broad horizontal white tooth bar. Maintain tight registration top/bottom per character. Keep 24px transparent padding around each portrait within its quadrant and a clear transparent gutter. No environment, no glows, no new accessories, no extra head turns. Highest practical resolution, target 2048x2048. This is one reusable four-cel portrait atlas for an existing episode, not four redesigned characters.",
+  "requestedSize": [
+    2048,
+    2048
+  ],
+  "requestedCells": 4,
+  "source": "C:/Users/orang/.codex/generated_images/01a169bf-3468-7e01-aff1-36809a8a8954/exec-173bf2d0-0168-47fe-ba0e-c65b6ad08c45.png",
+  "imagegenCalls": 1,
+  "actualUsage": "not returned",
+  "references": [
+    "assets3d/art_pass_r2/hero_portrait.png",
+    "assets3d/art_pass_full_r1/enemy_portrait.png",
+    "storyboard/walk_cel_r7/head_reference.png",
+    "assets3d/art_pass_full_r1/hero_poses.png"
+  ]
+}

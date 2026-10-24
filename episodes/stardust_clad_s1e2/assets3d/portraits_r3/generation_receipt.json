@@ -1,0 +1,24 @@
+{
+  "portraitCalls": 2,
+  "imageFiles": [
+    "assets3d/portraits_r3/atlas_raw.png",
+    "assets3d/portraits_r3/atlas_blink_raw.png"
+  ],
+  "actualSizes": [
+    [
+      1254,
+      1254
+    ],
+    [
+      1254,
+      1254
+    ]
+  ],
+  "promptFiles": [
+    "config/portrait_r3_generation.json",
+    "config/portrait_r3_blink_generation.json"
+  ],
+  "provider": "built-in imagegen",
+  "usageAndCost": "not returned",
+  "adopted": "Two closed identity bases; registered mouth and blink regions only. Original atlas files preserved."
+}

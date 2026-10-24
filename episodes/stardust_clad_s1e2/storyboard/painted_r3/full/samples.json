@@ -1,0 +1,1741 @@
+[
+  {
+    "t": 4,
+    "shot": "a02",
+    "kind": "wide",
+    "emotion": "establish",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0.13248334035864753,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      }
+    ],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 120,
+    "sha256": "1644cbb0d237afc37603ff527769a086e75a3f56097f87495196afb50bbc9db7"
+  },
+  {
+    "t": 9,
+    "shot": "a03",
+    "kind": "hero_face",
+    "emotion": "calm",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "aoao",
+      "jaw": 0.0689999982714653,
+      "emotion": "calm",
+      "blink": 0.9807852804032315,
+      "gaze": 0.11220194912224979,
+      "mouthCel": "closed",
+      "design": "aoao-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": -1.5053679030617224
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 270,
+    "sha256": "001365ac3ca0d2d737a7e00fb2bdcb022da81d4834dbbd92c4cb3087cc91f30d"
+  },
+  {
+    "t": 20.5,
+    "shot": "a07",
+    "kind": "walk",
+    "emotion": "arrival",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": -0.526392312523344,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 10,
+        "phase": 0.326569264069264,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 74.71215351812367,
+        "direction": 1,
+        "x": 1414.8214285714287,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 1439.248511904762,
+            "y": 625.8723958333334
+          }
+        ],
+        "cuff": [
+          1446.2046330839958,
+          380.17395923464136
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0010.png",
+        "source": "accepted-r7",
+        "sourceTime": 20.5,
+        "retreatMode": "forward"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 920,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 615,
+    "sha256": "0e0130114d0135a4e60a15e19423d351d0f9be1fd3ec5549794b0f43e69f320d"
+  },
+  {
+    "t": 21.5,
+    "shot": "a07",
+    "kind": "walk",
+    "emotion": "arrival",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0.500887995544573,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 30,
+        "phase": 0.9191017316017315,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 224.13646055437098,
+        "direction": 1,
+        "x": 1284.4642857142858,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 1217.289806547619,
+            "y": 626.7447916666666
+          },
+          {
+            "x": 1356.000744047619,
+            "y": 622.3828125
+          }
+        ],
+        "cuff": [
+          1237.5411486699152,
+          342.7164724314005
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0030.png",
+        "source": "accepted-r7",
+        "sourceTime": 21.5,
+        "retreatMode": "forward"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 920,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 645,
+    "sha256": "4fc776b8a73832450341582ce92463bc7cfcfa7457f7ea0439f4ea87b7aef933"
+  },
+  {
+    "t": 22.6,
+    "shot": "a07",
+    "kind": "walk",
+    "emotion": "arrival",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": -0.6483795623834664,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 18,
+        "phase": 1.5708874458874464,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 388.50319829424325,
+        "direction": 1,
+        "x": 1141.0714285714284,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 1068.6625744047617,
+            "y": 626.7447916666666
+          },
+          {
+            "x": 1218.7146577380952,
+            "y": 602.3177083333334
+          }
+        ],
+        "cuff": [
+          1199.582051835867,
+          373.2195512267393
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0018.png",
+        "source": "accepted-r7",
+        "sourceTime": 22.6,
+        "retreatMode": "forward"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 920,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 678,
+    "sha256": "c6c194bc93d3e48ca156cb8e98a92e9d0396a73359bf833e8e5cf9735f5db86e"
+  },
+  {
+    "t": 24.6,
+    "shot": "a09",
+    "kind": "walk",
+    "emotion": "arrival",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": -0.6072002403095541,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 23,
+        "phase": 1.7192121212121219,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 425.9075820895524,
+        "direction": 1,
+        "x": 1108.4399999999998,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 1084.0129166666666,
+            "y": 625.8723958333334
+          },
+          {
+            "x": 1153.804583333333,
+            "y": 569.1666666666666
+          }
+        ],
+        "cuff": [
+          1140.5268167274874,
+          368.7139889140373
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0023.png",
+        "source": "accepted-r7",
+        "sourceTime": 24.6,
+        "retreatMode": "forward"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 920,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 738,
+    "sha256": "32e70bfcde9ea7472de8304d1885c1390fbf951ae8a19be09ae2af73b98032ea"
+  },
+  {
+    "t": 25.6,
+    "shot": "a09",
+    "kind": "walk",
+    "emotion": "arrival",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0.5850168914528323,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 7,
+        "phase": 2.2392121212121223,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 557.0407164179107,
+        "direction": 1,
+        "x": 994.0399999999997,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 966.1233333333331,
+            "y": 625.8723958333334
+          },
+          {
+            "x": 1010.6155208333331,
+            "y": 588.359375
+          }
+        ],
+        "cuff": [
+          952.4866631433591,
+          321.8453725369063
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0007.png",
+        "source": "accepted-r7",
+        "sourceTime": 25.6,
+        "retreatMode": "forward"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 920,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 768,
+    "sha256": "1fe7e6b48183157b316375b63a671436dde70f0b4a32fed0546519964d23f29c"
+  },
+  {
+    "t": 26.1,
+    "shot": "a09",
+    "kind": "walk",
+    "emotion": "arrival",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0.5577168629084918,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 9,
+        "phase": 2.3030303030303028,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 573.1343283582089,
+        "direction": 1,
+        "x": 980,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 1004.4270833333334,
+            "y": 625.8723958333334
+          }
+        ],
+        "cuff": [
+          1011.3995465017665,
+          379.5250505518958
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0009.png",
+        "source": "accepted-r7",
+        "sourceTime": 26.1,
+        "retreatMode": "forward"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 920,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 783,
+    "sha256": "6b3f2d0e00ccbeaf958eb1a93c6f5e15a45cb1545af4fb49ed478ae06a886507"
+  },
+  {
+    "t": 29.2,
+    "shot": "a10",
+    "kind": "enemy_face",
+    "emotion": "cold",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "yekari",
+      "jaw": 0,
+      "emotion": "cold",
+      "blink": 0,
+      "gaze": 0.11651301809112621,
+      "mouthCel": "closed",
+      "design": "yekari-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": -2.168263299581634
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 876,
+    "sha256": "c4832b7e668d66e388dbbfb88fc81b41b9b87c5c8aa876d0ce26a493e45809bf"
+  },
+  {
+    "t": 35.5,
+    "shot": "a12",
+    "kind": "hero_face",
+    "emotion": "resolve",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "aoao",
+      "jaw": 0,
+      "emotion": "resolve",
+      "blink": 0,
+      "gaze": 0.12,
+      "mouthCel": "closed",
+      "design": "aoao-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": 1.4452863813082175
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 1065,
+    "sha256": "c38f79767ff2fb3003e0da66ba3aeac34e6d21c4fa06322c7e556ac02a0c223d"
+  },
+  {
+    "t": 54.5,
+    "shot": "a19",
+    "kind": "enemy_charge",
+    "emotion": "charge",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_block",
+        "x": 370,
+        "y": 625,
+        "height": 450,
+        "hair": 0.5129245605207514,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "enemy_windup",
+        "x": 980,
+        "y": 625,
+        "height": 430,
+        "hair": -0.769386840781127,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": [
+          868.9670668953688,
+          238
+        ]
+      }
+    ],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 1,
+    "view": {
+      "cx": 920,
+      "cy": 360,
+      "z": 1.24816,
+      "roll": 0.025
+    },
+    "motionFrame": 1635,
+    "sha256": "36f5774935bc8e437ad808ed8e0bf0c77ad812575112fd4c35dfdb2cc5f58cb1"
+  },
+  {
+    "t": 58.1,
+    "shot": "a21",
+    "kind": "block",
+    "emotion": "impact",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_recoil",
+        "x": 366.89401436090554,
+        "y": 625,
+        "height": 455,
+        "hair": -3.7475155598180825,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "enemy_strike",
+        "x": 980,
+        "y": 625,
+        "height": 430,
+        "hair": 8.740438764007251,
+        "motion": [
+          0,
+          -0.4958100000000043
+        ],
+        "feet": null,
+        "cuff": [
+          749.79590443686,
+          300.35
+        ]
+      }
+    ],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 481.7748489366254,
+      "cy": 390.8874244683127,
+      "z": 1.32,
+      "roll": -0.025
+    },
+    "motionFrame": 1743,
+    "sha256": "8ae62a9be094f80880f020fcad31fdeccfc053d20c4b8c8668b823b9d8782349"
+  },
+  {
+    "t": 64.2,
+    "shot": "a25",
+    "kind": "wide",
+    "emotion": "wounded",
+    "shield": {
+      "id": "cracked",
+      "level": 1
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_block",
+        "x": 370,
+        "y": 625,
+        "height": 450,
+        "hair": 0.7128434940860906,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "enemy_recover",
+        "x": 980,
+        "y": 625,
+        "height": 430,
+        "hair": -1.069265241129136,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": [
+          933.6531302876481,
+          440.09999999999997
+        ]
+      }
+    ],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 1926,
+    "sha256": "76302670e0f410c6cf595ef8e19f239de7af378311d5e4270062ae9a6aeecb66"
+  },
+  {
+    "t": 107,
+    "shot": "a43",
+    "kind": "hero_face",
+    "emotion": "pain",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "aoao",
+      "jaw": 0.492000013589859,
+      "emotion": "pain",
+      "blink": 0,
+      "gaze": 0.07177326365894583,
+      "mouthCel": "open",
+      "design": "aoao-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": 0.10077875968956479
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 3210,
+    "sha256": "935ff7c67f7b102aa71655d5caaa744f7e710ab927248fb206a915c14e9802aa"
+  },
+  {
+    "t": 117.8,
+    "shot": "a46",
+    "kind": "enemy_face_close",
+    "emotion": "sad",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "yekari",
+      "jaw": 0.421999990940094,
+      "emotion": "sad",
+      "blink": 0,
+      "gaze": -0.35,
+      "mouthCel": "open",
+      "design": "yekari-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": -0.09334022618395031
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 3534,
+    "sha256": "de0e7358066682e816591bf1fd4bf3ff9b0c55514c4f603308061a023a3ad727"
+  },
+  {
+    "t": 163.2,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 163.2,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_01",
+      "kind": "eyes",
+      "heroCel": "hero_portrait",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "resolve",
+        "blink": 0.8856976235603156,
+        "gaze": 0,
+        "mouthCel": "closed",
+        "design": "aoao-raster-r3",
+        "identity": "authored raster",
+        "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot"
+      },
+      "view": {
+        "cx": 640,
+        "cy": 360,
+        "z": 1,
+        "roll": -0.022821187077385636
+      },
+      "motionFrame": 6,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -3.4999999999997016
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            38
+          ],
+          "leftHand": [
+            -5.186700000000006,
+            38
+          ],
+          "rightHand": [
+            0,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            -1.8592200000000059,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.28438000000001,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.284380000000048,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "c14926506fc991f92815d8ef5ceaaff0948621c3b8be5b02a7b80566c548e608"
+  },
+  {
+    "t": 165,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 165,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_03",
+      "kind": "call",
+      "heroCel": "hero_portrait",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "mouthCel": "closed",
+        "design": "aoao-raster-r3",
+        "identity": "authored raster",
+        "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot"
+      },
+      "view": {
+        "cx": 640,
+        "cy": 360,
+        "z": 1,
+        "roll": -0.045
+      },
+      "motionFrame": 60,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            38
+          ],
+          "leftHand": [
+            -5.186700000000006,
+            38
+          ],
+          "rightHand": [
+            0,
+            38
+          ],
+          "pelvis": [
+            0,
+            38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            1.1696400000000207,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -8.255519999999983,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -8.255520000000022,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "ec45cc06d137657205b4b3abc8c9a319d0ee4e6b6016b40fc47b2da83cb79409"
+  },
+  {
+    "t": 169.5,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 169.5,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_08",
+      "kind": "chain",
+      "heroCel": "hero_release",
+      "enemyCel": "enemy_ready",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "mouthCel": "closed",
+        "design": "aoao-raster-r3",
+        "identity": "authored raster",
+        "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot"
+      },
+      "view": {
+        "cx": 569.3877551020394,
+        "cy": 481.690962099126,
+        "z": 1.35,
+        "roll": -0.08
+      },
+      "motionFrame": 195,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            7.514640000000002,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            -1.8140400000000056,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.23920000000001,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719740000000002,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            7.089660000000011
+          ],
+          "rightHand": [
+            -11.23920000000005,
+            -14.510340000000008
+          ],
+          "leftHand": [
+            8.719739999999963,
+            -16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            7.089660000000011
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "dd5ef3dacbd25bcfb5fb8dd1974acdc76e5ec36106465d0ef06fbc531089ad6d"
+  },
+  {
+    "t": 171.1,
+    "shot": "a65",
+    "kind": "approved_counter",
+    "route": "revised-counter-particles",
+    "pilot": {
+      "t": 171.1,
+      "shield": {
+        "id": "deep-cracks",
+        "level": 2
+      },
+      "shot": "ap_r2_10",
+      "kind": "impact",
+      "heroCel": "hero_release",
+      "enemyCel": "enemy_hit",
+      "face": {
+        "jaw": 0,
+        "emotion": "shout",
+        "blink": 0,
+        "gaze": 0,
+        "mouthCel": "closed",
+        "design": "aoao-raster-r3",
+        "identity": "authored raster",
+        "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot"
+      },
+      "view": {
+        "cx": 1008.2023048520821,
+        "cy": 329.2809219408328,
+        "z": 1.55,
+        "roll": 0.07
+      },
+      "motionFrame": 243,
+      "motionOffsets": {
+        "hero_charge": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_breakdown": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            12.701340000000007,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "hero_release": {
+          "head": [
+            0,
+            -38
+          ],
+          "leftHand": [
+            7.514640000000002,
+            -38
+          ],
+          "rightHand": [
+            0,
+            -38
+          ],
+          "pelvis": [
+            0,
+            -38
+          ]
+        },
+        "enemy_ready": {
+          "head": [
+            0,
+            -7.089660000000011
+          ],
+          "rightHand": [
+            9.425160000000004,
+            14.510340000000008
+          ],
+          "leftHand": [
+            -8.719740000000002,
+            16.31034000000001
+          ],
+          "pelvis": [
+            0,
+            -7.089660000000011
+          ]
+        },
+        "enemy_hit": {
+          "head": [
+            10.124999999999424,
+            -4.21874999999976
+          ],
+          "rightHand": [
+            0,
+            0
+          ],
+          "leftHand": [
+            0,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        },
+        "enemy_land": {
+          "head": [
+            0,
+            0
+          ],
+          "rightHand": [
+            -3.9968028886505635e-14,
+            0
+          ],
+          "leftHand": [
+            -3.9968028886505635e-14,
+            0
+          ],
+          "pelvis": [
+            0,
+            0
+          ]
+        }
+      },
+      "particles": [
+        56,
+        30,
+        60
+      ],
+      "sceneIntegration": true,
+      "sourceCues": {
+        "RELEASE": 168.4,
+        "C7": 171,
+        "LAND": 172.6
+      }
+    },
+    "sha256": "fe72edfc1ffde5181e63c8a12d1a14d43a771e7383a0f467d841d11260f0b3b0"
+  },
+  {
+    "t": 193.2,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": -0.7215367980124086,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 5,
+        "phase": 0.17575757575757783,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 32.09552238805918,
+        "direction": -1,
+        "x": 1007.9999999999995,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 980.0833333333329,
+            "y": 625.8723958333334
+          },
+          {
+            "x": 1024.5755208333328,
+            "y": 588.359375
+          }
+        ],
+        "cuff": [
+          967.0359730062071,
+          320.6103586348566
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0005.png",
+        "source": "accepted-r7",
+        "sourceTime": 193.2,
+        "retreatMode": "backward-step"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5796,
+    "sha256": "15b7e24ded1fe38786a5e4f16d3df0e913451a1932dfd5bc3400fa89f921e01c"
+  },
+  {
+    "t": 194,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0.7815822823669667,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 29,
+        "phase": -0.11515151515151717,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 105.45671641791097,
+        "direction": -1,
+        "x": 1072.0000000000005,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 1004.8255208333338,
+            "y": 626.7447916666666
+          },
+          {
+            "x": 1143.5364583333337,
+            "y": 622.3828125
+          }
+        ],
+        "cuff": [
+          1024.8217338375357,
+          343.34359602968146
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0029.png",
+        "source": "accepted-r7",
+        "sourceTime": 194,
+        "retreatMode": "backward-step"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5820,
+    "sha256": "5a2870d34f5ae2b0d90fe3ba0e0f6eea167eb5177d8dc3784106ad2fa35491bf"
+  },
+  {
+    "t": 196.8,
+    "shot": "a74",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r3",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": -0.45896597198534306,
+        "motion": [
+          0,
+          0
+        ],
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "yekari_walk_r7",
+        "index": 28,
+        "phase": -1.1333333333333393,
+        "wholeCel": true,
+        "baked": true,
+        "distance": 362.2208955223896,
+        "direction": -1,
+        "x": 1296.0000000000014,
+        "y": 625,
+        "height": 670,
+        "feet": [
+          {
+            "x": 1328.7148437500014,
+            "y": 625.8723958333334
+          }
+        ],
+        "cuff": [
+          1307.8783061025656,
+          381.59211321550157
+        ],
+        "sourceImage": "./assets3d/walk_cel_r7/rgba/0028.png",
+        "source": "accepted-r7",
+        "sourceTime": 196.8,
+        "retreatMode": "backward-step"
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5904,
+    "sha256": "cc9f64a693135bfe73a98855140b610a9e1206bd1f2f857be5947d9fd010ba41"
+  },
+  {
+    "t": 200,
+    "shot": "a75",
+    "kind": "hero_face",
+    "emotion": "relief",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "aoao",
+      "jaw": 0.12399999797344208,
+      "emotion": "relief",
+      "blink": 0,
+      "gaze": 0.1122019491222499,
+      "mouthCel": "half",
+      "design": "aoao-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": -2.3215574944673127
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 6000,
+    "sha256": "e69f484911a28c1ddf9961828dcfba1e15712a4cefc952203dd0bfceb9742d74"
+  },
+  {
+    "t": 210,
+    "shot": "a78",
+    "kind": "hero_face",
+    "emotion": "relief",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "aoao",
+      "jaw": 0,
+      "emotion": "relief",
+      "blink": 0,
+      "gaze": 0.08728483698876503,
+      "mouthCel": "closed",
+      "design": "aoao-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": -0.8889329940479427
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 6300,
+    "sha256": "91e450404b84f5d414cb433111b7e8c16a7758149efe3976039a3d41638e1d03"
+  },
+  {
+    "t": 9.01,
+    "shot": "a03",
+    "kind": "hero_face",
+    "emotion": "calm",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "aoao",
+      "jaw": 0.0689999982714653,
+      "emotion": "calm",
+      "blink": 1,
+      "gaze": 0.11245698236455261,
+      "mouthCel": "closed",
+      "design": "aoao-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": -1.5876220779457237
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 270,
+    "sha256": "9a8b772d1077ff528771e5facf3ff9295c4b709b37f3360ad13259ecfc232a41"
+  },
+  {
+    "t": 31.16,
+    "shot": "a10",
+    "kind": "enemy_face",
+    "emotion": "cold",
+    "shield": {
+      "id": "intact",
+      "level": 0
+    },
+    "route": "full-hybrid-r3",
+    "face": {
+      "actor": "yekari",
+      "jaw": 0.28299999237060547,
+      "emotion": "cold",
+      "blink": 1,
+      "gaze": 0.0705342302750969,
+      "mouthCel": "half",
+      "design": "yekari-raster-r3",
+      "identity": "authored raster",
+      "expressionScope": "mouth cels and eyelid closure; emotional head pose is controlled by the shot",
+      "hair": -2.1913178434590974
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 935,
+    "sha256": "188ec838fb4a4e0dddc382f33a3ffaf4d19fbebaa6f865e4db639c70bc41e9e0"
+  }
+]
