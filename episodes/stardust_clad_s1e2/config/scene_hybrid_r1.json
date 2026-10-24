@@ -1,0 +1,42 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4250/",
+  "source": {
+    "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+    "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+  },
+  "runtime": {
+    "directory": "assets3d/art_pass_runtime"
+  },
+  "pilot": {
+    "start": 20,
+    "end": 26,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "scene_hybrid_r1.html?capture=1",
+    "board": "storyboard/scene_hybrid_r1/render",
+    "output": "output/scene_hybrid_r1.mp4",
+    "samples": [
+      20.5,
+      21.5,
+      23,
+      25.5
+    ],
+    "repeatSamples": [
+      21.5,
+      25.5
+    ],
+    "hashEvery": 30,
+    "sourceFiles": [
+      "scene_hybrid_r1.js",
+      "scene_hybrid_r1.html",
+      "viewer_palace.js",
+      "palace_locomotion.js",
+      "duel_performance.js",
+      "config/painted_environment_r2.js",
+      "assets3d/art_pass_runtime/painted-backplate-stage.js"
+    ],
+    "audioCopy": true
+  }
+}

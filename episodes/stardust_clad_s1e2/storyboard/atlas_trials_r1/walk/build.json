@@ -1,0 +1,105 @@
+{
+  "source": [
+    {
+      "path": "atlas_trials_r1.js",
+      "sha256": "53148a4b2a92f7d61b7389be35738da52546814b0b75fe706237bcd4bf519b57"
+    },
+    {
+      "path": "atlas_trials_r1.html",
+      "sha256": "21de1f977ba159684c049cfeeb8a04f66466f1c8e9b7baec25ff7dc72bbf0cc4"
+    },
+    {
+      "path": "assets3d/art_pass_runtime/atlas-player.js",
+      "sha256": "f5be24faaff26b7d9e68af836bfdb69eca5e43a0b66719ff3ded687c45ee51c8"
+    },
+    {
+      "path": "assets3d/atlas_trials_r1/generation.json",
+      "sha256": "303d046086df21dbda0f8f5c4e1d8e4f2f21ed9b4ac46ae60938222dcf101e68"
+    },
+    {
+      "path": "assets3d/atlas_trials_r1/expression6.png",
+      "sha256": "b0601e5b1bf373ae51cf0dd3754fae54fa4340fc4f165d6abc85ff8f394e9dd0"
+    },
+    {
+      "path": "assets3d/atlas_trials_r1/walk16.png",
+      "sha256": "2a0721c0e63b921c006284c27d2153d32dc739a347517ef3042aa368d61d179c"
+    }
+  ],
+  "pipeline": {
+    "config": {
+      "schema": "draw-over-pipeline-v1",
+      "baseUrl": "http://127.0.0.1:4250/",
+      "source": {
+        "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+        "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+      },
+      "runtime": {
+        "directory": "assets3d/art_pass_runtime"
+      },
+      "pilot": {
+        "start": 0,
+        "end": 6,
+        "fps": 30,
+        "width": 1280,
+        "height": 720,
+        "viewer": "atlas_trials_r1.html?kind=walk",
+        "board": "storyboard/atlas_trials_r1/walk",
+        "output": "output/walk_atlas_r1.mp4",
+        "samples": [
+          0,
+          0.2,
+          0.4,
+          0.7,
+          1.1,
+          1.2
+        ],
+        "repeatSamples": [
+          0.3,
+          2.4
+        ],
+        "hashEvery": 30,
+        "sourceFiles": [
+          "atlas_trials_r1.js",
+          "atlas_trials_r1.html",
+          "assets3d/art_pass_runtime/atlas-player.js",
+          "assets3d/atlas_trials_r1/generation.json"
+        ],
+        "assetDirectories": [
+          "assets3d/atlas_trials_r1"
+        ],
+        "silent": true
+      }
+    },
+    "shared": [
+      {
+        "path": "capture_references.mjs",
+        "sha256": "5baa371b189e15e42721a44b03ddc911fca10c2826899a1ad3788465eece026b"
+      },
+      {
+        "path": "package_pilot.py",
+        "sha256": "2583fb88e7c8bbe64e92a3998c6d7f545b0e193a7f4e0ab311ce4dcd46d25ecc"
+      },
+      {
+        "path": "pipeline.mjs",
+        "sha256": "35e5671edcd08160932dae37eeb3fdccbecc70631ad3791a9db06e893e4871e0"
+      },
+      {
+        "path": "replace_window.py",
+        "sha256": "188ef50d4a0bff4feabfe35b0e4ee1b2a305852b77599b20153d616986e5188c"
+      },
+      {
+        "path": "review_seek_tolerance.py",
+        "sha256": "44b2834c8b2e61a9b666958e5075a14a45d832749a7c4962553968e960bb1dce"
+      },
+      {
+        "path": "verify_full_episode.py",
+        "sha256": "89600010cd4be9ad94c50aea538c859517fa318283e1fbb92441d433b357f9b8"
+      }
+    ]
+  },
+  "start": 0,
+  "end": 6,
+  "frames": 180,
+  "fps": 30,
+  "errors": []
+}

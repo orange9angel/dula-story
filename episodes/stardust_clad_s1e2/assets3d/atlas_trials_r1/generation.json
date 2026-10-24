@@ -1,0 +1,35 @@
+{
+  "provider": "built-in image_gen",
+  "date": "2026-10-24",
+  "status": "candidates, not integrated into episode",
+  "images": [
+    {
+      "file": "expression6.png",
+      "prompt": "Create ONE production animation sprite atlas for the original burgundy-haired young gold-armored male in the attached references. Reference 1 is the established head/hair/collar silhouette and framing (its blank face is only a placeholder: draw full beautiful face). Reference 2 supplies his actual amber eyes and heroic identity. Precisely 3 columns by 2 rows, six equal square cells, total image landscape 3:2, ideally 3072x2048. Transparent background, no text, no grid lines. All six cells show the IDENTICAL three-quarter bust facing screen right, top of all hair fully in frame, same crop, same size, same head orientation, same nose-tip and chin coordinates, identical hairstyle and gold armor collar geometry. No camera movement and no body translation. Preserve original youthful proportions and amber iris color. A tightly registered ordered six-frame ANIMATED BLINK with focused subtle expression, NOT six unrelated poses: cell1 eyes naturally open, thoughtful relaxed brows, lips gently closed; cell2 upper eyelids halfway down, same mouth and brows; cell3 eyelids completely closed with graceful curved lash line, relaxed lids; cell4 upper eyelids halfway reopening; cell5 eyes open again, brows very subtly gather toward focused determination; cell6 holds focused open eyes, closed mouth with tiny resolved tension. Maintain lid thickness, facial perspective, eye socket anatomy, nose, jaw and cheek shadow consistently. Important: the far eye is appropriately foreshortened, NOT a flattened line or wedge. Crisp professional hand-drawn cel animation cleanup, refined variable-width linework, controlled two-tone shadows, detailed stylized golden collar, no painterly smear, no 3D render. No flames, no particles, no glow, no background. Each whole bust stays inside its own cell with about 6 percent transparent margins. Every immutable contour should be copied consistently across cells; only eyelids/brows and minimal cheek tension change.",
+      "references": [
+        "../art_pass_r2/hero_portrait.png",
+        "../art_pass_r2/hero_charge.png"
+      ],
+      "sha256": "b0601e5b1bf373ae51cf0dd3754fae54fa4340fc4f165d6abc85ff8f394e9dd0",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "walk16.png",
+      "prompt": "Create ONE coherent 16-frame WALK CYCLE sprite atlas. EXACTLY FOUR columns and FOUR rows of equal rectangular cells, row-major order, total canvas portrait 3:4, ideally 2400x3200 or higher. Reference 1 is the 4x4 ordered 3D motion guide: faithfully redraw the pose INSIDE EACH corresponding cell, preserving leg phase, boot positions, hips, shoulder height, camera direction and root registration. Reference 2 is CHARACTER DESIGN ONLY: the same youthful male, blue-black layered hair, teal eyes, dark violet plated armor with pointed shoulder plates, short dark cape and small hooked sickle. Use his elegant cel-drawn design, not the black simplified material of the 3D guide. Continuous measured walking toward SCREEN LEFT, fixed side view, no turning, no running. Exactly one complete cycle: frames1-8 first step, frames9-16 opposite step, frame16 naturally leads into frame1. All16 must be distinct correctly advancing inbetweens, not repeated standing poses. Near and far legs must retain their own identities during the crossover. Weight shifts smoothly over the support foot, toe-off, bent swing knee and heel contact. Arms swing subtly in opposition, weapon carried low, no combat. Body size, hairstyle, armor topology, cape length, anatomical proportions and horizontal pelvis registration must remain consistent across all16. Preserve subtle vertical body bob from guide. Each full character including hair, cape, sickle and both boots is fully inside its own cell with 5 percent margins. No extra legs, no mirrored characters, no perspective or zoom changes. Use genuine fully TRANSPARENT alpha background. Absolutely no glow/aura/vignette/baked shadow/backdrop and no gray/white solid background; only opaque character pixels with transparent empty space. No dividing lines, numbers or captions. Very clean refined hand-drawn action animation cels, two-tone shaded armor, restrained fine lines, consistent lighting. This is one registered animation sequence, not a character pose collection.",
+      "references": [
+        "../../storyboard/walk16_r1/reference/reference16.png",
+        "../art_pass_r2/enemy_ready.png"
+      ],
+      "sha256": "2a0721c0e63b921c006284c27d2153d32dc739a347517ef3042aa368d61d179c",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA"
+    }
+  ]
+}

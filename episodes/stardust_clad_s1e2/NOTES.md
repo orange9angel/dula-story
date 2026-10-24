@@ -1,8 +1,25 @@
 # 《星屑战壳》S1E2《焰阶宫·盾与暗链》
 
+## 当前方向：场景分离与多宫格试片（2026-10-24）
+
+用户否决R2近景五官及走路，先提出恢复原3D人物、保留绘画场景，随后要求尝试更多
+宫格的角色动作。当前只新增独立候选，没有把新试片冒充全片升级或覆盖R27/R2。
+
+- `output/walk_atlas_r1.mp4`：6秒，同一16格素材对照8格/16格；右侧16格循环另导出
+  `output/walk16_r1.gif`。16姿势来自原3D步态的完整左右脚周期，整格播放，没有切腿。
+- `output/expression_atlas_r1.mp4`：6秒，六格眨眼/凝神候选；固定三分之四机位。
+- `output/scene_hybrid_r1.mp4`：原片20–26秒，原3D角色、原步态和五官，加绘画背景、
+  实际阴影和粒子火焰；复制R27相应音轨。固定机位试片，尚未重做其他摄影/场景。
+
+多宫格提供更多中间姿势，仍有发型/披风/轮廓漂移；原地循环不证明接地、转身和
+进出镜已经完成。3D人物方案保留原表演，也保留模型质感。查看
+[本轮观察记录](storyboard/atlas_trials_r1/REVIEW.md)。素材与完整提示词在
+`assets3d/atlas_trials_r1/generation.json`。共享播放器、固定背景接入和导出能力在
+`dula-skills/draw-over-animation`，本集只维护素材/绑定/时间配置。
+
 ## R2 角色与粒子修订候选（2026-10-24）
 
-当前修订入口 `art_pass_full_r2.html`，配置 `config/art_pass_full_r2_pipeline.json`，
+历史修订入口 `art_pass_full_r2.html`，配置 `config/art_pass_full_r2_pipeline.json`，
 候选输出 `output/stardust_clad_s1e2_painted_r2.mp4`。更新角色专属程序五官、3D姿势
 参考的完整人物走路cel、跨镜盾裂状态；人物及场景火焰/烟/命中全部走粒子。
 保留接受的场景原画，仅局部去除烤入的静态火焰，声音仍复制R27原音轨。

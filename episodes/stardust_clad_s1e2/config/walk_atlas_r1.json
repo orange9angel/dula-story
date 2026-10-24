@@ -1,0 +1,44 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4250/",
+  "source": {
+    "video": "output/stardust_clad_s1e2_palace_r27.mp4",
+    "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+  },
+  "runtime": {
+    "directory": "assets3d/art_pass_runtime"
+  },
+  "pilot": {
+    "start": 0,
+    "end": 6,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "atlas_trials_r1.html?kind=walk",
+    "board": "storyboard/atlas_trials_r1/walk",
+    "output": "output/walk_atlas_r1.mp4",
+    "samples": [
+      0,
+      0.2,
+      0.4,
+      0.7,
+      1.1,
+      1.2
+    ],
+    "repeatSamples": [
+      0.3,
+      2.4
+    ],
+    "hashEvery": 30,
+    "sourceFiles": [
+      "atlas_trials_r1.js",
+      "atlas_trials_r1.html",
+      "assets3d/art_pass_runtime/atlas-player.js",
+      "assets3d/atlas_trials_r1/generation.json"
+    ],
+    "assetDirectories": [
+      "assets3d/atlas_trials_r1"
+    ],
+    "silent": true
+  }
+}

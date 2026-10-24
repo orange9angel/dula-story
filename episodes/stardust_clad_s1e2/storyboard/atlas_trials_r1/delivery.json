@@ -1,0 +1,210 @@
+{
+  "walk_atlas_r1": {
+    "file": "output\\walk_atlas_r1.mp4",
+    "sha256": "f2a7ddbd0d2f2a132898c0f2c91e30a5089fd7ceea35e556ff4a4a14306d9f34",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "duration": "6.000000",
+          "nb_frames": "180"
+        }
+      ],
+      "format": {
+        "duration": "6.000000",
+        "size": "755242"
+      }
+    },
+    "determinism": {
+      "passed": true,
+      "checks": [
+        {
+          "t": 5.966666666666667,
+          "equal": true
+        },
+        {
+          "t": 5,
+          "equal": true
+        },
+        {
+          "t": 4,
+          "equal": true
+        },
+        {
+          "t": 3,
+          "equal": true
+        },
+        {
+          "t": 2,
+          "equal": true
+        },
+        {
+          "t": 1,
+          "equal": true
+        },
+        {
+          "t": 0,
+          "equal": true
+        },
+        {
+          "t": 0.3,
+          "repeat": true,
+          "equal": true
+        },
+        {
+          "t": 2.4,
+          "repeat": true,
+          "equal": true
+        }
+      ]
+    }
+  },
+  "expression_atlas_r1": {
+    "file": "output\\expression_atlas_r1.mp4",
+    "sha256": "b42202d00fb5f6465981983d569cd4c453b6e45e6553800d54c699b58e5b0453",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "duration": "6.000000",
+          "nb_frames": "180"
+        }
+      ],
+      "format": {
+        "duration": "6.000000",
+        "size": "410867"
+      }
+    },
+    "determinism": {
+      "passed": true,
+      "checks": [
+        {
+          "t": 5.966666666666667,
+          "equal": true
+        },
+        {
+          "t": 5,
+          "equal": true
+        },
+        {
+          "t": 4,
+          "equal": true
+        },
+        {
+          "t": 3,
+          "equal": true
+        },
+        {
+          "t": 2,
+          "equal": true
+        },
+        {
+          "t": 1,
+          "equal": true
+        },
+        {
+          "t": 0,
+          "equal": true
+        },
+        {
+          "t": 0.3,
+          "repeat": true,
+          "equal": true
+        },
+        {
+          "t": 2.4,
+          "repeat": true,
+          "equal": true
+        }
+      ]
+    }
+  },
+  "scene_hybrid_r1": {
+    "file": "output\\scene_hybrid_r1.mp4",
+    "sha256": "4a7f1abb610b9f47416a1aca060674a50bea816bff3956aade766706f4ff0877",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "duration": "6.000000",
+          "nb_frames": "180"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "duration": "6.005000",
+          "nb_frames": "285"
+        }
+      ],
+      "format": {
+        "duration": "6.005000",
+        "size": "929881"
+      }
+    },
+    "determinism": {
+      "passed": true,
+      "checks": [
+        {
+          "t": 25.96666666666667,
+          "equal": true
+        },
+        {
+          "t": 25,
+          "equal": true
+        },
+        {
+          "t": 24,
+          "equal": true
+        },
+        {
+          "t": 23,
+          "equal": true
+        },
+        {
+          "t": 22,
+          "equal": true
+        },
+        {
+          "t": 21,
+          "equal": true
+        },
+        {
+          "t": 20,
+          "equal": true
+        },
+        {
+          "t": 21.5,
+          "repeat": true,
+          "equal": true
+        },
+        {
+          "t": 25.5,
+          "repeat": true,
+          "equal": true
+        }
+      ]
+    }
+  },
+  "audio": {
+    "source_sha256": "546597f7cc3d009e71e94c36708cfa312d331994ec05ae64fe6f1be847282aca",
+    "actual_sha256": "546597f7cc3d009e71e94c36708cfa312d331994ec05ae64fe6f1be847282aca",
+    "equal": true,
+    "note": "AAC packet copying leaves container duration 6.005 seconds; video is exactly 6 seconds."
+  },
+  "status": "technical checks pass; visual candidates only"
+}
