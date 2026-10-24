@@ -1,0 +1,703 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/walk_cel_r7_solo.mp4",
+    "sha256": "d1f03306e4ecdfe41d9723b87b74661a3399ae3ca57d6af129080ef72705d734"
+  },
+  "scope": {
+    "subjects": [
+      "chain_knight"
+    ],
+    "windows": [
+      {
+        "id": "cycle",
+        "start": 0,
+        "end": 1.1
+      }
+    ],
+    "accepted_properties": [
+      "R6用户反馈：基本可以了。保留姿态和大腿形体，新增头部问题另记。"
+    ],
+    "limitations": "只看实际解码帧列和局部/全身对照，未正常速度播放；单视角小角度投影，未覆盖正片。"
+  },
+  "checks": [
+    {
+      "subject": "chain_knight",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "保留同一头发、眼形、脸型与衣甲原画；所看固定机位帧列未见新增身份跳形。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "头与领口改为独立运动，小角度下耳根和颈部连接保持；体积视差细微，仍不能关闭用户指出的纸片观感。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "issue_ids": [
+        "head_puppet"
+      ],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "侧向前视保持，未因头部投影新增明显眼神跳转；本轮无剧情视线变化。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "expression",
+      "status": "not_applicable",
+      "observation": "本段为中性前行，无对白或表情转折；没有据此验收特写演技。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "后发随头部曲面一起转动，未加入各发束的独立惯性跟随。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "issue_ids": [
+        "hair_follow"
+      ],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "全身对照保留胸胯和大腿形体；y>=210像素与R6一致。仅作此次局部修改的回归判断。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_full_comparison.jpg",
+          "sha256": "25869caddffd5e7e771d812a5ac1b6f4beca705fb20dc108ef8b922424dfe4f8",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.16666666666666666,
+            0.3333333333333333,
+            0.5,
+            0.6666666666666666,
+            1
+          ]
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "原8格武器形状和手臂姿势仍改变，本轮头部修改未解决。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_full_comparison.jpg",
+          "sha256": "25869caddffd5e7e771d812a5ac1b6f4beca705fb20dc108ef8b922424dfe4f8",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.16666666666666666,
+            0.3333333333333333,
+            0.5,
+            0.6666666666666666,
+            1
+          ]
+        }
+      ],
+      "issue_ids": [
+        "prop_cel_changes"
+      ],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "support",
+      "status": "needs_evidence",
+      "observation": "灰底原地动作资产没有真实场景接触证据。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "接入实际场景、根位移、脚下阴影后复验承重。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "locomotion",
+      "status": "no_issue_observed",
+      "observation": "用户基本认可的R6腿形与走路姿态保留，本轮未改换脚时序或脚轨迹；未宣称其余场景步态通过。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_full_comparison.jpg",
+          "sha256": "25869caddffd5e7e771d812a5ac1b6f4beca705fb20dc108ef8b922424dfe4f8",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.16666666666666666,
+            0.3333333333333333,
+            0.5,
+            0.6666666666666666,
+            1
+          ]
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "无出招、格挡、命中与受击，不由走路试片验收战斗。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "已经观察完整33帧头部序列；尚无正常速度观看证据，不能据此排除用户描述的整体波浪感。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "以导出的相同周期头部和全身对照检验正常速度观感。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "shot_integration",
+      "status": "needs_evidence",
+      "observation": "本轮只有固定机位灰底资产，没有整集场景与特写证据。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "动作路线稳定后接入场景并复验遮挡、接触和镜头边界。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "本次无声步态实验，未改原对白、配乐及环境音。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    },
+    {
+      "subject": "chain_knight",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "已回到完整人物复看；除已记录的头部深度限制、发梢同步和原格武器变化外，采样中未发现新增的明显形体退步。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_full_comparison.jpg",
+          "sha256": "25869caddffd5e7e771d812a5ac1b6f4beca705fb20dc108ef8b922424dfe4f8",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.16666666666666666,
+            0.3333333333333333,
+            0.5,
+            0.6666666666666666,
+            1
+          ]
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "保留本轮观察的范围限制。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "head_puppet",
+      "subject": "chain_knight",
+      "dimension": "face_structure",
+      "origin": "user_reported",
+      "status": "in_progress",
+      "priority": "high",
+      "fact": "用户指出颈部以上仍像折纸人偶；R6头像、耳和后发几乎作为同一轮廓随胸胯摆动。",
+      "impact": "漂亮原画不能维持头部在空间中转动的感觉。",
+      "hypothesis": "头部共用身体按行形变，源头部世界朝向没有传到二维；单视角绘画的深度关系不足。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/before_head_sequence.jpg",
+          "sha256": "b6d5b9c48b016b1a1b10bb92f49eea1430a5c58165a5e3080715ed25564a0011",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "change": "源旋转插值、独立刚性头部深度表面、颈根挂接与领口前景遮挡。",
+      "result": "R7小角度连接和身份保持，头部相对领口有变化；深度视差较细微，整体纸片感未宣称根治。",
+      "verification": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "next_action": "待正常速度观感判断；大转头需补角度原画，不能无限拉伸本表面。"
+    },
+    {
+      "id": "head_nod_trial",
+      "subject": "chain_knight",
+      "dimension": "face_structure",
+      "origin": "self_found",
+      "status": "fixed",
+      "priority": "medium",
+      "fact": "第一轮头部源幅度在第5与15帧之间点头变化偏大。",
+      "impact": "独立运动仍可能读成人偶点头。",
+      "hypothesis": "源步行俯仰幅度不适合当前绘画与视角。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/head_trial.jpg",
+          "sha256": "82ad76f8f98aa8485015768c1ecaaaafe096cbf6897f7679367fbfaae55763b3",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.16666666666666666,
+            0.3333333333333333,
+            0.5,
+            0.6666666666666666,
+            0.8333333333333334,
+            1
+          ]
+        }
+      ],
+      "change": "保留源相位，源轴角度增益由[1,1,1]改为[0.55,1,0.8]。",
+      "result": "最终相机滚转跨度由8.07度收至4.44度；帧列中低头幅度收回，头部仍有转动和身体起伏。",
+      "verification": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "next_action": "此项只关闭明显过量的试作幅度，不能替主观自然度通过。"
+    },
+    {
+      "id": "hair_follow",
+      "subject": "chain_knight",
+      "dimension": "hair",
+      "origin": "retrospective",
+      "status": "deferred",
+      "priority": "medium",
+      "fact": "后发各束仍整体随头部转动。",
+      "impact": "头发的惯性与层次变化有限。",
+      "hypothesis": "当前投影只有一个刚性头部表面，无独立发梢驱动。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ],
+      "next_action": "头部路线稳定后按实际加速变化补发束跟随；不添加无因统一波浪。"
+    },
+    {
+      "id": "prop_cel_changes",
+      "subject": "chain_knight",
+      "dimension": "hands_props",
+      "origin": "retrospective",
+      "status": "deferred",
+      "priority": "medium",
+      "fact": "跨8张原画时武器轮廓与持物姿态仍发生变化。",
+      "impact": "完整动作仍可能有换格感。",
+      "hypothesis": "独立生成的手臂与武器原画没有统一几何约束。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_full_comparison.jpg",
+          "sha256": "25869caddffd5e7e771d812a5ac1b6f4beca705fb20dc108ef8b922424dfe4f8",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.16666666666666666,
+            0.3333333333333333,
+            0.5,
+            0.6666666666666666,
+            1
+          ]
+        }
+      ],
+      "next_action": "沿R6既有未完成项处理持械和过渡，不能由头部改动误记为通过。"
+    }
+  ],
+  "iterations": [
+    {
+      "revision": "R7",
+      "config": "config/walk_cel_r7_head.json",
+      "change": "独立源头部旋转和深度投影；俯仰由第一轮过量收小；R6下身像素保持。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r7/decoded_head_sequence.jpg",
+          "sha256": "fadcd8e0ccc39d8c4d9e97fae5bc4ad01ec226517945d4b45ce4fdd406b8ae2d",
+          "method": "ordered_frames",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ]
+        }
+      ]
+    }
+  ],
+  "misses": [
+    {
+      "origin": "user_reported",
+      "previous_record": "walk_cel_r6.json",
+      "missed_relation": "上轮聚焦大腿与共同起伏，没有判断鼻尖—耳根—后脑—领口的前后关系；把头部有运动与形体稳定当作充分证据。",
+      "correction": "观察完整头颈帧列与整人，分开验证刚性、深度参与和观感；不以数值通过关闭纸片感。"
+    }
+  ],
+  "reviewer_conclusion": "已交付R7局部试片，源头部方向与体积投影实际参与，连接和身份在所看帧保持。效果细微，尚不能宣称纸片感根治；用户观感未验收。"
+}
