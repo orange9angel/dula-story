@@ -1,0 +1,157 @@
+{
+  "atlas": "assets3d/portraits_r3/atlas_raw.png",
+  "output": "assets3d/portraits_r4",
+  "actors": {
+    "aoao": {
+      "closedRect": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "openRect": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "alignmentROI": [
+        352,
+        280,
+        164,
+        96
+      ],
+      "mouthWindow": [
+        423,
+        387,
+        67,
+        45
+      ],
+      "upperLipY": 399,
+      "feather": 5,
+      "neighborExclusions": [
+        {
+          "rect": [
+            612,
+            0,
+            15,
+            627
+          ],
+          "color": "cool"
+        }
+      ],
+      "eyeWindows": [
+        [
+          375,
+          282,
+          98,
+          58
+        ],
+        [
+          480,
+          299,
+          56,
+          51
+        ]
+      ],
+      "halfPolygon": [
+        [
+          425,
+          390
+        ],
+        [
+          479,
+          390
+        ],
+        [
+          479,
+          406
+        ],
+        [
+          466,
+          419
+        ],
+        [
+          425,
+          419
+        ]
+      ]
+    },
+    "yekari": {
+      "closedRect": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "openRect": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "alignmentROI": [
+        130,
+        278,
+        129,
+        110
+      ],
+      "mouthWindow": [
+        179,
+        403,
+        59,
+        42
+      ],
+      "upperLipY": 417,
+      "feather": 5,
+      "neighborExclusions": [
+        {
+          "rect": [
+            0,
+            0,
+            15,
+            627
+          ],
+          "color": "warm"
+        }
+      ],
+      "eyeWindows": [
+        [
+          162,
+          299,
+          82,
+          56
+        ],
+        [
+          133,
+          333,
+          39,
+          42
+        ]
+      ],
+      "halfPolygon": [
+        [
+          181,
+          405
+        ],
+        [
+          237,
+          405
+        ],
+        [
+          237,
+          438
+        ],
+        [
+          200,
+          438
+        ],
+        [
+          181,
+          420
+        ]
+      ]
+    }
+  },
+  "blinkAtlas": "assets3d/portraits_r3/atlas_blink_raw.png"
+}

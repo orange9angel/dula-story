@@ -1,0 +1,115 @@
+{
+  "base": "assets3d/continuity_r4/exit_atlas_corrected.png",
+  "baseCrop": [
+    627,
+    418,
+    941,
+    836
+  ],
+  "size": [
+    314,
+    418
+  ],
+  "donor": "assets3d/continuity_r4/opposite_raw.png",
+  "donorCrop": [
+    768,
+    0,
+    1536,
+    1024
+  ],
+  "alphaCutoff": 160,
+  "donorPolygon": [
+    [
+      350,
+      525
+    ],
+    [
+      470,
+      525
+    ],
+    [
+      530,
+      635
+    ],
+    [
+      525,
+      727
+    ],
+    [
+      477,
+      810
+    ],
+    [
+      490,
+      1004
+    ],
+    [
+      324,
+      1004
+    ],
+    [
+      320,
+      870
+    ],
+    [
+      245,
+      820
+    ],
+    [
+      241,
+      742
+    ],
+    [
+      295,
+      684
+    ],
+    [
+      337,
+      627
+    ]
+  ],
+  "affine": [
+    [
+      0.40366971492767334,
+      0,
+      6.532110214233398
+    ],
+    [
+      0,
+      0.40366971492767334,
+      6
+    ]
+  ],
+  "targetPolygon": [
+    [
+      132,
+      219
+    ],
+    [
+      314,
+      219
+    ],
+    [
+      314,
+      418
+    ],
+    [
+      0,
+      418
+    ],
+    [
+      0,
+      280
+    ],
+    [
+      132,
+      280
+    ]
+  ],
+  "transitionY": [
+    219,
+    230
+  ],
+  "output": "assets3d/continuity_r4/exit_passing.png",
+  "report": "assets3d/continuity_r4/exit_passing_registration.json"
+}

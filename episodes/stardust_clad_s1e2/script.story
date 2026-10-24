@@ -13,6 +13,7 @@
 00:00:14,000 --> 00:00:19,950
 {Event:Beat|id=p03|move=repair|shot=gate_detail|scene=ember|action=炉门盾三层铜鳞与臂甲导火鳍近景；阿鏊以盾沿试闸，窄槽夹住铜边，松压才脱出}
 {Event:Cue|name=LATCH|offset=1.5}
+{Event:Cue|name=TEST_FREE|offset=2.1}
 {Event:Act|id=p02|rate=0|context=检查闸槽时自言自语，末尾有一点无奈的笑。|emotion=neutral|gaze=gate|camera=stage}
 [Aoao]又卡了。下面那条街，还等着开早灶呢。
 
@@ -165,6 +166,8 @@
 {Event:Cue|name=RELEASE|offset=0.4}
 {Event:Cue|name=C7|offset=3}
 {Event:Cue|name=LAND|offset=4.6}
+{Event:Cue|name=SHIELD_LIFT|offset=4.9}
+{Event:Cue|name=SHIELD_FREE|offset=5.8}
 {Event:Cue|name=GATE_OPEN|offset=7}
 
 28
@@ -184,6 +187,8 @@
 {Event:Beat|id=p26|move=retreat|shot=two|scene=ember}
 {Event:Cue|name=RETREAT|offset=0}
 {Event:Cue|name=MARK|offset=1}
+{Event:Cue|name=TURN_START|offset=0.8}
+{Event:Cue|name=TURN_END|offset=2}
 
 31
 00:03:18,000 --> 00:03:24,950

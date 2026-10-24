@@ -1,0 +1,218 @@
+{
+  "config": {
+    "atlas": "assets3d/continuity_r4/pain_atlas_raw.png",
+    "output": "assets3d/portraits_r4_pain_donor",
+    "actors": {
+      "aoao": {
+        "closedRect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "openRect": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "alignmentROI": [
+          352,
+          280,
+          164,
+          96
+        ],
+        "mouthWindow": [
+          423,
+          387,
+          67,
+          45
+        ],
+        "upperLipY": 399,
+        "feather": 5,
+        "neighborExclusions": [
+          {
+            "rect": [
+              612,
+              0,
+              15,
+              627
+            ],
+            "color": "cool"
+          }
+        ],
+        "eyeWindows": [
+          [
+            375,
+            282,
+            98,
+            58
+          ],
+          [
+            480,
+            299,
+            56,
+            51
+          ]
+        ],
+        "halfPolygon": [
+          [
+            425,
+            390
+          ],
+          [
+            479,
+            390
+          ],
+          [
+            479,
+            406
+          ],
+          [
+            466,
+            419
+          ],
+          [
+            425,
+            419
+          ]
+        ]
+      },
+      "yekari": {
+        "closedRect": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "openRect": [
+          627,
+          627,
+          1254,
+          1254
+        ],
+        "alignmentROI": [
+          130,
+          278,
+          129,
+          110
+        ],
+        "mouthWindow": [
+          179,
+          403,
+          59,
+          42
+        ],
+        "upperLipY": 417,
+        "feather": 5,
+        "neighborExclusions": [
+          {
+            "rect": [
+              0,
+              0,
+              15,
+              627
+            ],
+            "color": "warm"
+          }
+        ],
+        "eyeWindows": [
+          [
+            162,
+            299,
+            82,
+            56
+          ],
+          [
+            133,
+            333,
+            39,
+            42
+          ]
+        ],
+        "halfPolygon": [
+          [
+            181,
+            405
+          ],
+          [
+            237,
+            405
+          ],
+          [
+            237,
+            438
+          ],
+          [
+            200,
+            438
+          ],
+          [
+            181,
+            420
+          ]
+        ]
+      }
+    }
+  },
+  "actors": [
+    {
+      "actor": "aoao",
+      "size": [
+        627,
+        627
+      ],
+      "registrationScore": 0.9925234404377168,
+      "warp": [
+        [
+          0.9999686479568481,
+          -0.007919145748019218,
+          2.9119389057159424
+        ],
+        [
+          0.007919145748019218,
+          0.9999686479568481,
+          -9.29459285736084
+        ]
+      ],
+      "mouthWindow": [
+        423,
+        387,
+        67,
+        45
+      ],
+      "outsideWindowMaxDifference": 0,
+      "halfDomainGuarded": true,
+      "blink": null
+    },
+    {
+      "actor": "yekari",
+      "size": [
+        627,
+        627
+      ],
+      "registrationScore": 0.9955132274664905,
+      "warp": [
+        [
+          1.0,
+          -0.0002099167904816568,
+          0.3239988088607788
+        ],
+        [
+          0.0002099167904816568,
+          1.0,
+          -4.984282970428467
+        ]
+      ],
+      "mouthWindow": [
+        179,
+        403,
+        59,
+        42
+      ],
+      "outsideWindowMaxDifference": 0,
+      "halfDomainGuarded": true,
+      "blink": null
+    }
+  ]
+}

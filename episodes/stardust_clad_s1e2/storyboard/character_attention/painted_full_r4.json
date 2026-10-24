@@ -1,0 +1,1926 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e2_painted_r4.mp4",
+    "sha256": "048480ed10677c49954aa0211fa7e034803ce448a54baf7eef89f26bf2a6f253"
+  },
+  "scope": {
+    "subjects": [
+      "aoao",
+      "yekari"
+    ],
+    "windows": [
+      {
+        "id": "episode",
+        "start": 0,
+        "end": 213
+      }
+    ],
+    "accepted_properties": [
+      "沿用用户已接受绘画场景、R7入场与声音；用户没有验收本R4。"
+    ],
+    "limitations": "实际观察为最终MP4的有序帧列和静帧；没有实时播放或听音。状态断言与技术通过不代表全片艺术验收。"
+  },
+  "checks": [
+    {
+      "subject": "aoao",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "金色衣甲、红发和金眼在全身及近景仍可识别；新增供体只改脸部窗口。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/overview.jpg",
+          "sha256": "94b5c82cb7c4e9fadb0edccc748cc80a24f53f32067a7d746a6991e82e8968b3",
+          "window": "episode",
+          "at": [
+            2.0,
+            7.333333333333333,
+            14.5,
+            16.8,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            173.3,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "半开嘴在近景保持嘴唇、下颌边界，未再见此前嘴边黑块；没有新增大角度头部。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "aoao-mouth"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "受击后近景仍看向对手，眉眼痛感可读；没有据此声称逐句视线均精修。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/pain.jpg",
+          "sha256": "bd30ea3b5c54ad191c4509eccdeaad3681392d04e3ebcb8af1e01c609fc6b414",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107.0,
+            158.5,
+            178.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "受击后的格挡、跪姿和说话特写持续有压眉、紧眼或露齿，未在下一镜直接换回平静。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/pain.jpg",
+          "sha256": "bd30ea3b5c54ad191c4509eccdeaad3681392d04e3ebcb8af1e01c609fc6b414",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107.0,
+            158.5,
+            178.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "pain-carry"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "红发主束和发际线在脸部供体合成后保持原形；动态仍沿用有限发梢控制。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "跪姿腰甲、手臂、膝与盾的相对位置保持；拔盾后切站姿，没有用躯干拉伸冒充起身。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "卡槽段保持盾端在槽边，拔盾插入镜头显示离槽，随后远景才手持；裂纹状态延续。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/opening_shield.jpg",
+          "sha256": "5c8205d5bc5cef02a0ecee4ef9d22931525ad84ae5f38b805823b52753666168",
+          "window": "episode",
+          "at": [
+            14.5,
+            15.4,
+            15.6,
+            16.1,
+            16.5,
+            16.8,
+            17.1
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "shield-continuity"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "盾端与槽沿的遮挡关系可见；跪姿及恢复站立仍是有限原画，未验证实际每帧鞋底承重。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "locomotion",
+      "status": "no_issue_observed",
+      "observation": "本轮主角没有新增长距离走路，观察其卡槽支撑到站立的关系；不能据此评任意步态。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "压盾、火沿链返流、对手受击、拔盾和重新持盾顺序可读；站起过程仍省略中间画。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "aoao-transition-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "受伤眉眼与盾的位置约束跨切镜保留；从跪姿到站姿仍有有限原画切换。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/pain.jpg",
+          "sha256": "bd30ea3b5c54ad191c4509eccdeaad3681392d04e3ebcb8af1e01c609fc6b414",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107.0,
+            158.5,
+            178.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "槽内可见粒子燃烧带，堵塞低火与开启后的强火区分；主要动作没有被火完全遮住。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/fire.jpg",
+          "sha256": "2bc03da7b5e2fcd6ea9b87c5598682ca88c70032f3155d434a03ea8e59317122",
+          "window": "episode",
+          "at": [
+            99.5,
+            153.7,
+            161.5,
+            170.0,
+            175.8,
+            200.0,
+            204.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/overview.jpg",
+          "sha256": "94b5c82cb7c4e9fadb0edccc748cc80a24f53f32067a7d746a6991e82e8968b3",
+          "window": "episode",
+          "at": [
+            2.0,
+            7.333333333333333,
+            14.5,
+            16.8,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            173.3,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "fire-channel"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "音轨沿用已接受母版，本轮未进行实时声画或听音复核。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "本轮仅保留母版声音并验证相同；若精修脚步/起身，需补实时声画复核。"
+    },
+    {
+      "subject": "aoao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "从盾尖、锁链、表情追到下一镜，未再见该组因果重置；有限起身与转面仍需后续整体精修。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/overview.jpg",
+          "sha256": "94b5c82cb7c4e9fadb0edccc748cc80a24f53f32067a7d746a6991e82e8968b3",
+          "window": "episode",
+          "at": [
+            2.0,
+            7.333333333333333,
+            14.5,
+            16.8,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            173.3,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "紫甲、深蓝发和不对称腕部在转向及近景可识别；生成图仅采用审核过的转面及步相。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/overview.jpg",
+          "sha256": "94b5c82cb7c4e9fadb0edccc748cc80a24f53f32067a7d746a6991e82e8968b3",
+          "window": "episode",
+          "at": [
+            2.0,
+            7.333333333333333,
+            14.5,
+            16.8,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            173.3,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "半开嘴没有此前黑发/衣领采样黑块；痛感眉眼局部锁回，脸型和领口保持。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "yekari-mouth"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "对峙时朝主角；离场时头与身体转向右后方，方向与向右移动相容。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/pain.jpg",
+          "sha256": "bd30ea3b5c54ad191c4509eccdeaad3681392d04e3ebcb8af1e01c609fc6b414",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107.0,
+            158.5,
+            178.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "expression",
+      "status": "no_issue_observed",
+      "observation": "反击受伤后的特写保留疲痛眉眼，说话开闭嘴不回到原平静眉眼。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/pain.jpg",
+          "sha256": "bd30ea3b5c54ad191c4509eccdeaad3681392d04e3ebcb8af1e01c609fc6b414",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107.0,
+            158.5,
+            178.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "转身出现后脑与后颈发束，向右后侧走路保持同一深蓝发型；有限格切换仍可察觉。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "转身原画给出侧背、背面及右后侧体积；步态保留原上身，不再次波浪扭曲。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "反击前腕端与锁链连通；断链后的拔盾镜头留有分开的链段。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/opening_shield.jpg",
+          "sha256": "5c8205d5bc5cef02a0ecee4ef9d22931525ad84ae5f38b805823b52753666168",
+          "window": "episode",
+          "at": [
+            14.5,
+            15.4,
+            15.6,
+            16.1,
+            16.5,
+            16.8,
+            17.1
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "两次经过相有近远腿遮挡交换，支撑脚与根移动仍需更细的真实鞋底滑移审查。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "先完成转背再向右前进，原倒播退行已经替换；经过相区分两腿，八格周期仍有限。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "turn-exit",
+        "repeated-leg-phase"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "能读到拉链、受击后仰、落地及转身离开；落地到站姿的中间动作仍较少。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "yekari-transition-polish"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "转身阶段根位置不先滑走，随后向前换格；有限曝光仍存在步相切换。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/pain.jpg",
+          "sha256": "bd30ea3b5c54ad191c4509eccdeaad3681392d04e3ebcb8af1e01c609fc6b414",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107.0,
+            158.5,
+            178.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "转向、后脑及迈步在实际场景中可见，出画由前景柱遮挡。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/fire.jpg",
+          "sha256": "2bc03da7b5e2fcd6ea9b87c5598682ca88c70032f3155d434a03ea8e59317122",
+          "window": "episode",
+          "at": [
+            99.5,
+            153.7,
+            161.5,
+            170.0,
+            175.8,
+            200.0,
+            204.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/overview.jpg",
+          "sha256": "94b5c82cb7c4e9fadb0edccc748cc80a24f53f32067a7d746a6991e82e8968b3",
+          "window": "episode",
+          "at": [
+            2.0,
+            7.333333333333333,
+            14.5,
+            16.8,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            173.3,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "原声音母版完整保留，本轮没有实际听音验证新转身/步相与脚步声逐帧关系。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "本轮仅保留母版声音并验证相同；若精修脚步/起身，需补实时声画复核。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "原3D中的转身意图恢复；生成格数不再作为换腿证据，未把有限新视角称作自然度全面通过。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/overview.jpg",
+          "sha256": "94b5c82cb7c4e9fadb0edccc748cc80a24f53f32067a7d746a6991e82e8968b3",
+          "window": "episode",
+          "at": [
+            2.0,
+            7.333333333333333,
+            14.5,
+            16.8,
+            21.5,
+            26.3,
+            29.5,
+            35.5,
+            54.5,
+            58.1,
+            64.2,
+            105.0,
+            117.8,
+            152.5,
+            165.4,
+            169.5,
+            171.1,
+            173.3,
+            174.1,
+            193.3,
+            196.8,
+            200.0,
+            208.0,
+            212.5
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "aoao-mouth",
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "R3半开嘴时，嘴边或下颌出现黑色碎块。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "本轮修复",
+      "hypothesis": "同时约束半开嘴的目标区域与源采样域。",
+      "next_action": "保留当前状态继承及证据；后续改镜头时复验。",
+      "evidence": [
+        {
+          "path": "../painted_r4/baseline/mouth_ab.jpg",
+          "sha256": "77aaff8bd00892510bd2e5898fd18d20794434c71aa3907e1fe510e2f5a48682",
+          "window": "episode",
+          "at": [
+            7.333333333333333,
+            27.433333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "同时约束半开嘴的目标区域与源采样域。",
+      "result": "R3/R4同帧对照及R4全尺寸半开嘴未再见原黑块。",
+      "verification": [
+        {
+          "path": "../painted_r4/decoded/frame_220.png",
+          "sha256": "e1ee7c0b179510ee8ec20b50fa3ffe2e5ac0794b5c746400fcc5db4468a9e4f5",
+          "window": "episode",
+          "at": [
+            7.333333333333333
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "yekari-mouth",
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "R3半开嘴时，嘴边或下颌出现黑色碎块。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "本轮修复",
+      "hypothesis": "同时约束半开嘴的目标区域与源采样域。",
+      "next_action": "保留当前状态继承及证据；后续改镜头时复验。",
+      "evidence": [
+        {
+          "path": "../painted_r4/baseline/mouth_ab.jpg",
+          "sha256": "77aaff8bd00892510bd2e5898fd18d20794434c71aa3907e1fe510e2f5a48682",
+          "window": "episode",
+          "at": [
+            7.333333333333333,
+            27.433333333333334
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "同时约束半开嘴的目标区域与源采样域。",
+      "result": "R3/R4同帧对照及R4全尺寸半开嘴未再见原黑块。",
+      "verification": [
+        {
+          "path": "../painted_r4/decoded/frame_823.png",
+          "sha256": "7f642c2538a64753bf013d5e8dfb8ba53247a3884f31cd5060f9146ed9e01e5b",
+          "window": "episode",
+          "at": [
+            27.433333333333334
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "shield-continuity",
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "插入镜头盾卡在槽里，切远景却重新自由持盾。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "本轮修复",
+      "hypothesis": "统一held/wedged/lifting状态，保持跪姿压槽，补拔盾与断链可见过程。",
+      "next_action": "保留当前状态继承及证据；后续改镜头时复验。",
+      "evidence": [
+        {
+          "path": "../painted_r4/baseline/logic.jpg",
+          "sha256": "a47418610f333395b4eb8da9334e21bca2d00cff1b51307e8542fa4622d35b06",
+          "window": "episode",
+          "at": [
+            151.9,
+            153.7,
+            161.5,
+            168.7
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "统一held/wedged/lifting状态，保持跪姿压槽，补拔盾与断链可见过程。",
+      "result": "153.7—172.8秒保持压槽；173.3—173.8抬离，174.1秒才恢复手持。",
+      "verification": [
+        {
+          "path": "../painted_r4/decoded/opening_shield.jpg",
+          "sha256": "5c8205d5bc5cef02a0ecee4ef9d22931525ad84ae5f38b805823b52753666168",
+          "window": "episode",
+          "at": [
+            14.5,
+            15.4,
+            15.6,
+            16.1,
+            16.5,
+            16.8,
+            17.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/frame_503.png",
+          "sha256": "6cc9c3b3362ceddaaf4b711f0eb010343f49062a18228a7013d8c0242e17123a",
+          "window": "episode",
+          "at": [
+            16.766666666666666
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../painted_r4/decoded/frame_5214.png",
+          "sha256": "c2698a4affc64b18be413cfd440329b8c0b68cd2dfc63c6356edfc33c448229c",
+          "window": "episode",
+          "at": [
+            173.8
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "pain-carry",
+      "subject": "aoao",
+      "dimension": "expression",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "全身受击龇牙，下一特写又回到平静眉眼。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "本轮修复",
+      "hypothesis": "受伤表情轨道跨镜持续，眉眼与说话嘴型分开，补局部表情供体。",
+      "next_action": "保留当前状态继承及证据；后续改镜头时复验。",
+      "evidence": [
+        {
+          "path": "../painted_r4/baseline/expression.jpg",
+          "sha256": "3dee5c1f6fe5b4bbf53a2bd8ed567fef99dd7b65ce2ec84a8b8ae65a5c98db1e",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107,
+            158.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "受伤表情轨道跨镜持续，眉眼与说话嘴型分开，补局部表情供体。",
+      "result": "60.5、65.5、107、158.5秒在开闭嘴时保留痛感；近远景不再直接重置。",
+      "verification": [
+        {
+          "path": "../painted_r4/decoded/pain.jpg",
+          "sha256": "bd30ea3b5c54ad191c4509eccdeaad3681392d04e3ebcb8af1e01c609fc6b414",
+          "window": "episode",
+          "at": [
+            58.2,
+            58.8,
+            60.5,
+            65.5,
+            103.6,
+            107.0,
+            158.5,
+            178.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/decoded/mouth.jpg",
+          "sha256": "c553a63219f8902c3c970a9e0efba83bedbc3cb7618d9cd7853e718fca7e4fd3",
+          "window": "episode",
+          "at": [
+            7.2,
+            7.333333333333333,
+            7.5,
+            27.3,
+            27.466666666666665,
+            27.6,
+            60.5,
+            65.5,
+            107.0,
+            178.3,
+            178.4,
+            178.6
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "fire-channel",
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "槽内缺火，开启火路的对白没有对应画面。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "本轮修复",
+      "hypothesis": "在槽内按剧情强度与路径绘制炉火/火流粒子，沿用壁灯及招式粒子。",
+      "next_action": "保留当前状态继承及证据；后续改镜头时复验。",
+      "evidence": [
+        {
+          "path": "../painted_r4/baseline/logic.jpg",
+          "sha256": "a47418610f333395b4eb8da9334e21bca2d00cff1b51307e8542fa4622d35b06",
+          "window": "episode",
+          "at": [
+            175.8
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "在槽内按剧情强度与路径绘制炉火/火流粒子，沿用壁灯及招式粒子。",
+      "result": "175.8秒近景、204秒远景可见槽内连续燃烧；200秒为脸部特写，不用于目测槽内火。",
+      "verification": [
+        {
+          "path": "../painted_r4/decoded/fire.jpg",
+          "sha256": "2bc03da7b5e2fcd6ea9b87c5598682ca88c70032f3155d434a03ea8e59317122",
+          "window": "episode",
+          "at": [
+            99.5,
+            153.7,
+            161.5,
+            170.0,
+            175.8,
+            200.0,
+            204.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "turn-exit",
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "R3结尾倒播侧向步态退行，丢失原3D转身离开的意图。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "本轮修复",
+      "hypothesis": "191.8—193秒四个转向原画，之后右后侧朝向向前移动。",
+      "next_action": "保留当前状态继承及证据；后续改镜头时复验。",
+      "evidence": [
+        {
+          "path": "../painted_r4/baseline/logic.jpg",
+          "sha256": "a47418610f333395b4eb8da9334e21bca2d00cff1b51307e8542fa4622d35b06",
+          "window": "episode",
+          "at": [
+            193,
+            196.8
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r4/baseline/turn_3d_reference.jpg",
+          "sha256": "5ecbcfc2a8de794127b8ea1ceaadafb92058f902b9ff2781d49f8a0d802e54ca",
+          "window": "episode",
+          "at": [
+            192,
+            193
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "191.8—193秒四个转向原画，之后右后侧朝向向前移动。",
+      "result": "最终MP4先看见侧背/背面，之后向右前进，未再保持面对对手倒退。",
+      "verification": [
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "repeated-leg-phase",
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "生成步态两次经过相重复抬近腿，格数增加但未形成近远腿交换。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "本轮修复",
+      "hypothesis": "对照彩色腿身份参考，只采用供体中修对的远腿经过局部，保留原上身。",
+      "next_action": "保留当前状态继承及证据；后续改镜头时复验。",
+      "evidence": [
+        {
+          "path": "../painted_r4/baseline/exit_leg_audit.png",
+          "sha256": "e70c0e40b46757764f12fe9be2f4fe3487ca418ea75e16ebea09335801495efc",
+          "window": "episode",
+          "at": [
+            193,
+            194
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "对照彩色腿身份参考，只采用供体中修对的远腿经过局部，保留原上身。",
+      "result": "193.6与194.6秒可见直近腿/弯远腿与弯近腿/直远腿的遮挡交换；不代表已验证每帧脚底不滑。",
+      "verification": [
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "aoao-transition-polish",
+      "subject": "aoao",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "有限原画使起身与部分战斗连接缺少细化的中间动作。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "后续整体精修",
+      "hypothesis": "目前画面以有限原画切换表达姿势和结果，尚未完成逐帧过渡。",
+      "next_action": "保持当前逻辑修复，在后续整体调整中补过渡画和接触细节。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/trap_release.jpg",
+          "sha256": "d243b6bc19573ae88127c452096001e62738d87c39861ee4c31271644884ab81",
+          "window": "episode",
+          "at": [
+            151.8,
+            152.1,
+            153.7,
+            161.5,
+            165.7,
+            168.7,
+            171.5,
+            172.8,
+            172.93333333333334,
+            173.3,
+            173.8,
+            174.1
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "yekari-transition-polish",
+      "subject": "yekari",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "有限原画使起身与部分战斗连接缺少细化的中间动作。",
+      "impact": "影响跨镜因果或角色动作可读性。",
+      "priority": "后续整体精修",
+      "hypothesis": "目前画面以有限原画切换表达姿势和结果，尚未完成逐帧过渡。",
+      "next_action": "保持当前逻辑修复，在后续整体调整中补过渡画和接触细节。",
+      "evidence": [
+        {
+          "path": "../painted_r4/decoded/exit.jpg",
+          "sha256": "5a7e6f370771e37a5514a8c777a471fac59a6726c7da6930e193115544918e99",
+          "window": "episode",
+          "at": [
+            191.7,
+            191.9,
+            192.16666666666666,
+            192.46666666666667,
+            192.76666666666668,
+            193.1,
+            193.33333333333334,
+            193.6,
+            193.83333333333334,
+            194.1,
+            194.33333333333334,
+            194.6,
+            194.83333333333334,
+            195.1,
+            196.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "before": "R3原输出和原记录保留",
+      "after": "R4整集213秒；76个不同时间帧的解码样本与全尺寸关键帧",
+      "result": "用户报告的因果与嘴部问题在本轮已观察窗口得到修复，有限起身与步相仍需后续整体精修。"
+    }
+  ],
+  "misses": [
+    {
+      "origin": "user_reported",
+      "previous_judgment": "R3记录了反向步态复用并写退场保持朝向对手；半开嘴局部锁区被当作足够稳定。",
+      "later_evidence": "用户指出应转身以及嘴边黑块、无火、卡槽/表情重置；带提示复查确认。",
+      "change": "沿事件前因、执行、结果、下一镜追同一盾端、链端、眉眼与朝向；增加源采样域检查。",
+      "limits": "此轮为用户触发的专项回测，不能据此保证以后不漏检。"
+    }
+  ],
+  "reviewer_conclusion": "本轮视觉逻辑修复已在所列最终解码样本中确认。两项声画维度待证；两名角色的动作过渡继续列后续精修。"
+}

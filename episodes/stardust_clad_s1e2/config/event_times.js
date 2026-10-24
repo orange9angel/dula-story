@@ -2,6 +2,7 @@
 export const T = {
   "OPEN": 0.0,
   "LATCH": 15.5,
+  "TEST_FREE": 16.1,
   "ARRIVE": 20.0,
   "CHAIN_HEARD": 23.0,
   "CHARGE1": 51.0,
@@ -26,9 +27,13 @@ export const T = {
   "RELEASE": 168.4,
   "C7": 171.0,
   "LAND": 172.6,
+  "SHIELD_LIFT": 172.9,
+  "SHIELD_FREE": 173.8,
   "GATE_OPEN": 175.0,
   "RETREAT": 191.0,
   "MARK": 192.0,
+  "TURN_START": 191.8,
+  "TURN_END": 193.0,
   "RESTORE": 198.0,
   "END": 210.0,
   "FADE": 212.0
