@@ -8,7 +8,7 @@ const rootAt=t=>{const u=THREE.MathUtils.clamp((t-20)/6,0,1),r=.12,k=1/(1-r),p=u
 const data=await(await fetch('./assets3d/hybrid_routes_r1/mocap/walk.json')).json();
 let time=NaN;
 const base=new URLSearchParams(location.search).get('motion')==='base';
-const motion=base?null:installMocapPoseStudy({THREE,actor,data,getTime:()=>time,rootAt,start:20.2,end:22.6,dims:{hipIdle:.93,hipHalf:.068,legA:.49,legB:.49,shoulderHalf:.125,shoulderY:1.52,armA:.21,armB:.20,footY:.09}});
+const motion=base?null:installMocapPoseStudy({THREE,actor,data,getTime:()=>time,rootAt,start:20.2,end:22.6,kneeForward:new URLSearchParams(location.search).get('knees')==='forward',dims:{hipIdle:.93,hipHalf:.068,legA:.49,legB:.49,shoulderHalf:.125,shoulderY:1.52,armA:.21,armB:.20,footY:.09}});
 window.setFreeCamera({pos:[.2,1.65,5.0],lookAt:[4.3,1.0,1.3],fov:32});
 window.renderAt=t=>{time=t;const out=sourceRender(t);out.state.study=motion?.last;return out;};
 window.hybridStudy={motion,rootAt};
@@ -24,7 +24,8 @@ window.capturePaintStudy=(t,reference=null,maps=[])=>{
   let minY=Infinity;const foot=actor.feet[side];foot.traverseVisible(m=>{if(!m.isMesh)return;const p=m.geometry.attributes.position;for(let i=0;i<p.count;i++)minY=Math.min(minY,new THREE.Vector3().fromBufferAttribute(p,i).applyMatrix4(m.matrixWorld).y);});
   feet[side]={world:foot.getWorldPosition(new THREE.Vector3()).toArray(),soleMinY:minY};
  }
- renderer.setSize(size.x,size.y,false);return{image,mask,flow,state:{motion:motion?.last??null,feet,guideLimitations:guide.limitations}};
+ const joints={};if(motion?.last)for(const side of ['left','right'])joints[side]=motion.last.pose[side+'Leg'].map(v=>{const q=new THREE.Vector3(v.x,v.y,v.z).applyMatrix4(actor.mesh.matrixWorld).project(c);return[(q.x+1)*256,(1-q.y)*384];});
+ renderer.setSize(size.x,size.y,false);return{image,mask,flow,state:{motion:motion?.last??null,feet,joints,guideLimitations:guide.limitations}};
 };
 window.renderStudyPortrait=(t,scope='body')=>{
  time=t;sourceRender(t);const r=actor.mesh.position.clone(),c=new THREE.PerspectiveCamera(32,2/3,.05,100);

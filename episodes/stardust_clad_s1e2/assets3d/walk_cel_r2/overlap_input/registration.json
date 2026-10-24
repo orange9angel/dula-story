@@ -1,0 +1,124 @@
+{
+  "config": {
+    "size": [
+      512,
+      768
+    ],
+    "scale": 0.75,
+    "faceROI": [
+      80,
+      40,
+      380,
+      185
+    ],
+    "faceTarget": [
+      232,
+      147
+    ],
+    "hipTarget": [
+      261,
+      302
+    ],
+    "groundY": 632,
+    "output": "assets3d/walk_cel_r2/overlap_input",
+    "cels": [
+      {
+        "id": "k0",
+        "hip": [
+          312,
+          312
+        ],
+        "file": "assets3d/walk_cel_r2/keys.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 0
+      },
+      {
+        "id": "b0",
+        "hip": [
+          284,
+          333
+        ],
+        "file": "assets3d/hybrid_routes_r1/inbetweens.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 0
+      }
+    ],
+    "largestComponentOnly": true,
+    "stableTop": {
+      "reference": "k0",
+      "startY": 188,
+      "endY": 194
+    }
+  },
+  "records": [
+    {
+      "id": "k0",
+      "face": [
+        294.65304384844615,
+        118.60366113239677
+      ],
+      "hip": [
+        312.0,
+        312.0
+      ],
+      "soleY": 754.0,
+      "ySource": [
+        0.0,
+        118.60366113239677,
+        312.0,
+        754.0,
+        768.0
+      ],
+      "yTarget": [
+        58.04725415070243,
+        147.0,
+        302.0,
+        632.0,
+        642.5
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        232.00365764447696,
+        147.80760790051207
+      ],
+      "faceResidual": 0.8076161831790083,
+      "removedLowAlphaPixels": 17977
+    },
+    {
+      "id": "b0",
+      "face": [
+        273.36902390438246,
+        143.1324701195219
+      ],
+      "hip": [
+        284.0,
+        333.0
+      ],
+      "soleY": 720.0,
+      "ySource": [
+        0.0,
+        143.1324701195219,
+        333.0,
+        720.0,
+        768.0
+      ],
+      "yTarget": [
+        39.65064741035857,
+        147.0,
+        302.0,
+        632.0,
+        668.0
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        232.23459915611815,
+        147.7789029535865
+      ],
+      "faceResidual": 0.8134657799545946,
+      "removedLowAlphaPixels": 11998
+    }
+  ],
+  "scope": "Complete-cel alignment. No proof of limb identity or natural walking."
+}

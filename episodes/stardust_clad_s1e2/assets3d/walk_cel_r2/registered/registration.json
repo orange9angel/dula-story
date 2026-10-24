@@ -1,0 +1,394 @@
+{
+  "config": {
+    "size": [
+      512,
+      768
+    ],
+    "scale": 0.75,
+    "faceROI": [
+      80,
+      40,
+      380,
+      185
+    ],
+    "faceTarget": [
+      232,
+      147
+    ],
+    "hipTarget": [
+      261,
+      302
+    ],
+    "groundY": 632,
+    "output": "assets3d/walk_cel_r2/registered",
+    "cels": [
+      {
+        "id": "k0",
+        "hip": [
+          312,
+          312
+        ],
+        "file": "assets3d/walk_cel_r2/keys.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 0
+      },
+      {
+        "id": "k1",
+        "hip": [
+          280,
+          312
+        ],
+        "file": "assets3d/walk_cel_r2/keys.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 1
+      },
+      {
+        "id": "k2",
+        "hip": [
+          316,
+          306
+        ],
+        "file": "assets3d/walk_cel_r2/keys.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 2
+      },
+      {
+        "id": "k3",
+        "hip": [
+          276,
+          312
+        ],
+        "file": "assets3d/walk_cel_r2/keys.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 3
+      },
+      {
+        "id": "b0",
+        "hip": [
+          281,
+          332
+        ],
+        "file": "assets3d/walk_cel_r2/b0_overlap.png",
+        "columns": 1,
+        "rows": 1,
+        "cell": 0,
+        "sourceSize": [
+          512,
+          768
+        ],
+        "scale": 1.0
+      },
+      {
+        "id": "b1",
+        "hip": [
+          278,
+          340
+        ],
+        "file": "assets3d/walk_cel_r2/inbetweens.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 1
+      },
+      {
+        "id": "b2",
+        "hip": [
+          289,
+          315
+        ],
+        "file": "assets3d/walk_cel_r2/inbetweens.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 2
+      },
+      {
+        "id": "b3",
+        "hip": [
+          257,
+          313
+        ],
+        "file": "assets3d/walk_cel_r2/inbetweens.png",
+        "columns": 2,
+        "rows": 2,
+        "cell": 3
+      }
+    ],
+    "largestComponentOnly": true,
+    "stableTop": {
+      "reference": "k0",
+      "startY": 188,
+      "endY": 194
+    }
+  },
+  "records": [
+    {
+      "id": "k0",
+      "face": [
+        294.65304384844615,
+        118.60366113239677
+      ],
+      "hip": [
+        312.0,
+        312.0
+      ],
+      "soleY": 754.0,
+      "ySource": [
+        0.0,
+        118.60366113239677,
+        312.0,
+        754.0,
+        768.0
+      ],
+      "yTarget": [
+        58.04725415070243,
+        147.0,
+        302.0,
+        632.0,
+        642.5
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        232.00365764447696,
+        147.80760790051207
+      ],
+      "faceResidual": 0.8076161831790083,
+      "removedLowAlphaPixels": 17977
+    },
+    {
+      "id": "k1",
+      "face": [
+        264.10293509714757,
+        118.95452666391071
+      ],
+      "hip": [
+        280.0,
+        312.0
+      ],
+      "soleY": 751.0,
+      "ySource": [
+        0.0,
+        118.95452666391071,
+        312.0,
+        751.0,
+        768.0
+      ],
+      "yTarget": [
+        57.784105002066966,
+        147.0,
+        302.0,
+        632.0,
+        644.75
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        231.51940298507463,
+        148.2955223880597
+      ],
+      "faceResidual": 1.3817929471230856,
+      "removedLowAlphaPixels": 15202
+    },
+    {
+      "id": "k2",
+      "face": [
+        292.4158815612382,
+        119.66621803499326
+      ],
+      "hip": [
+        316.0,
+        306.0
+      ],
+      "soleY": 746.0,
+      "ySource": [
+        0.0,
+        119.66621803499326,
+        306.0,
+        746.0,
+        768.0
+      ],
+      "yTarget": [
+        57.250336473755056,
+        147.0,
+        302.0,
+        632.0,
+        648.5
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        231.9343891402715,
+        147.67420814479638
+      ],
+      "faceResidual": 0.6773930966758461,
+      "removedLowAlphaPixels": 16648
+    },
+    {
+      "id": "k3",
+      "face": [
+        265.7708587708588,
+        117.00732600732601
+      ],
+      "hip": [
+        276.0,
+        312.0
+      ],
+      "soleY": 736.0,
+      "ySource": [
+        0.0,
+        117.00732600732601,
+        312.0,
+        736.0,
+        768.0
+      ],
+      "yTarget": [
+        59.24450549450549,
+        147.0,
+        302.0,
+        632.0,
+        656.0
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        232.26609442060087,
+        147.87696709585123
+      ],
+      "faceResidual": 0.9164483225368721,
+      "removedLowAlphaPixels": 13473
+    },
+    {
+      "id": "b0",
+      "face": [
+        233.8135294117647,
+        136.2005882352941
+      ],
+      "hip": [
+        281.0,
+        332.0
+      ],
+      "soleY": 664.0,
+      "ySource": [
+        0.0,
+        136.2005882352941,
+        332.0,
+        664.0,
+        768.0
+      ],
+      "yTarget": [
+        10.799411764705894,
+        147.0,
+        302.0,
+        632.0,
+        736.0
+      ],
+      "xScale": 1.0,
+      "faceAfter": [
+        233.57868020304568,
+        147.13052936910805
+      ],
+      "faceResidual": 1.584067264887476,
+      "removedLowAlphaPixels": 3494
+    },
+    {
+      "id": "b1",
+      "face": [
+        236.12691771269178,
+        143.186889818689
+      ],
+      "hip": [
+        278.0,
+        340.0
+      ],
+      "soleY": 719.0,
+      "ySource": [
+        0.0,
+        143.186889818689,
+        340.0,
+        719.0,
+        768.0
+      ],
+      "yTarget": [
+        39.60983263598325,
+        147.0,
+        302.0,
+        632.0,
+        668.75
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        232.0288,
+        147.3856
+      ],
+      "faceResidual": 0.3866740229185402,
+      "removedLowAlphaPixels": 301668
+    },
+    {
+      "id": "b2",
+      "face": [
+        272.3128923225495,
+        116.82423949782714
+      ],
+      "hip": [
+        289.0,
+        315.0
+      ],
+      "soleY": 683.0,
+      "ySource": [
+        0.0,
+        116.82423949782714,
+        315.0,
+        683.0,
+        768.0
+      ],
+      "yTarget": [
+        59.38182037662965,
+        147.0,
+        302.0,
+        632.0,
+        695.75
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        232.60032626427406,
+        147.11500815660685
+      ],
+      "faceResidual": 0.6112434045970174,
+      "removedLowAlphaPixels": 312744
+    },
+    {
+      "id": "b3",
+      "face": [
+        235.8061797752809,
+        116.12593632958801
+      ],
+      "hip": [
+        257.0,
+        313.0
+      ],
+      "soleY": 684.0,
+      "ySource": [
+        0.0,
+        116.12593632958801,
+        313.0,
+        684.0,
+        768.0
+      ],
+      "yTarget": [
+        59.905547752808985,
+        147.0,
+        302.0,
+        632.0,
+        695.0
+      ],
+      "xScale": 0.75,
+      "faceAfter": [
+        232.0549717057397,
+        147.40662894098625
+      ],
+      "faceResidual": 0.4103278982466727,
+      "removedLowAlphaPixels": 302972
+    }
+  ],
+  "measurementStage": "After registration, before optional stableTop compositing",
+  "scope": "Complete-cel alignment. No proof of limb identity or natural walking."
+}

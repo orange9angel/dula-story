@@ -1,0 +1,98 @@
+{
+  "status": "bounded_revision_not_production_approved",
+  "observation": "Ordered cels and decoded video frame sequence; no realtime playback observation",
+  "window": [
+    20.84,
+    21.94
+  ],
+  "beforeKnees": {
+    "samples": 66,
+    "backwards": 15,
+    "minimumForwardOffsetMeters": -0.19424296253226173,
+    "maxBoneLengthError": 1.609823385706477e-15,
+    "scope": "3D guide knees; does not measure generated artwork"
+  },
+  "afterKnees": {
+    "samples": 66,
+    "backwards": 0,
+    "minimumForwardOffsetMeters": 0.042995779796117725,
+    "maxBoneLengthError": 2.220446049250313e-16,
+    "scope": "3D guide knees; does not measure generated artwork"
+  },
+  "faceStability": {
+    "before": {
+      "centroidRangeXY": [
+        8.656100240540269,
+        15.352893928655817
+      ],
+      "centroidRmsPixels": 5.156486252468193,
+      "stableTopMaxPixelDifference": 243
+    },
+    "after": {
+      "centroidRangeXY": [
+        0.0,
+        0.0
+      ],
+      "centroidRmsPixels": 2.842170943040401e-14,
+      "stableTopMaxPixelDifference": 0
+    }
+  },
+  "seek": [
+    {
+      "i": 32,
+      "equal": true
+    },
+    {
+      "i": 0,
+      "equal": true
+    },
+    {
+      "i": 17,
+      "equal": true
+    },
+    {
+      "i": 6,
+      "equal": true
+    },
+    {
+      "i": 24,
+      "equal": true
+    }
+  ],
+  "files": {
+    "output/walk_cel_r2_compare.mp4": {
+      "sha256": "a51cef9f1bcb67a2788a9104d7566a24fc4f216240cb6b012a814a7c25e4e260",
+      "bytes": 815271
+    },
+    "output/walk_cel_r2_solo.mp4": {
+      "sha256": "e7965cc4428bfbbaadcf7fd08e2177fd4c68d834f8dad1e532d85a330c41a0fe",
+      "bytes": 351853
+    },
+    "assets3d/walk_cel_r2/keys.png": {
+      "sha256": "b7229af3d7d5ad6e4b1c447703efbeb6f1147a0046cc3710aa98e37b288b24cd",
+      "bytes": 1716124
+    },
+    "assets3d/walk_cel_r2/inbetweens.png": {
+      "sha256": "fcaa4e77e662e43946e12d521ca897e5dc5e5385be399cca88aeb8c1f7d9ac74",
+      "bytes": 1839546
+    },
+    "output/stardust_clad_s1e2_palace_r27.mp4": {
+      "sha256": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab",
+      "bytes": 70655394
+    },
+    "assets3d/walk_cel_r2/b0_overlap.png": {
+      "sha256": "9780c14e072be391a19c6b9ec712d9d2af5c9dbe9548891892860c857c144c9f",
+      "bytes": 1146802
+    }
+  },
+  "video": {
+    "frames": 132,
+    "fps": 30.0,
+    "size": [
+      1024,
+      842
+    ],
+    "decodedFrames": 132
+  },
+  "finalStableTopMaxPixelDifference": 0
+}

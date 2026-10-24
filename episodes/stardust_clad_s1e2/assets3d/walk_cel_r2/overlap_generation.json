@@ -1,0 +1,12 @@
+{
+  "provider": "image_gen.imagegen",
+  "prompt": "Edit reference 1, the finished transparent anime walk drawing. Reference 2 is ONLY the authoritative leg pose and overlap guide, not the appearance. Produce ONE full-body transparent cel, same framing, same handsome face, hair, armor, upper body, hands and hooked weapon as reference 1. Target just the WRONG LEG OVERLAP below the waist: this is the opposite passing pose from a foreground straight support leg. The leg nearest the viewer is the character's anatomical RIGHT leg; its THIGH comes down from the visible right hip toward screen-left, its KNEE is flexed forward and IN FRONT of the far leg, and its armored SHIN runs diagonally DOWN-RIGHT across/in front of the upright far shin to the raised boot behind him. The anatomical LEFT leg is the FAR supporting leg, mostly hidden behind the bent near thigh/knee, with its narrow shin extending VERTICALLY DOWN behind the diagonal near shin to the planted boot. Reproduce that occlusion relationship exactly from reference 2: DIAGONAL SHIN IN FRONT, VERTICAL SUPPORT SHIN BEHIND. Both knees are anatomical forward bends, never reverse bends. In 512x768 coordinates, near knee roughly (231,472), raised ankle (330,554), raised boot toe (305,581); far support knee around (251,479), planted ankle around (244,608), planted boot toe (193,628). Preserve those spatial targets, subject height, head at original location, waist height. Only the forward-facing bent knee and leg overlap are redrawn; no added armor, no new props, no change in art quality, no ground shadow/background, no text. Transparent background RGBA. Output 2:3 portrait; a single cel, not a grid.",
+  "refs": [
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\assets3d\\walk_cel_r2\\registered\\b0.png",
+    "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\storyboard\\walk_cel_r2\\reference\\b0_guide.png"
+  ],
+  "inputArchive": "assets3d/walk_cel_r2/overlap_input/b0.png",
+  "archiveMethod": "Deterministically regenerated original edit input with saved overlap_input_config.json after the registered output was replaced",
+  "output": "assets3d/walk_cel_r2/b0_overlap.png",
+  "purpose": "Foreground bent right shin crossing in front of far upright left support shin"
+}

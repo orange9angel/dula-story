@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-24",
+  "provider": "image_gen.imagegen",
+  "purpose": "Revise approved complete-character walk cels from corrected forward-knee 3D references",
+  "calls": [
+    {
+      "prompt": "Edit reference image 1, a 2x2 sheet of four animation cels. Keep its handsome character design, face, hair, torso armor, arms, hands and weapon in every cell. Preserve the original drawing quality, exact upper-body placement, scale, camera, colors and transparent margins. Change ONLY the legs from the hip armor downward to correct human knee anatomy. Reference image 2 supplies the corrected joint bends and near/far leg ordering for the four corresponding cells; use ONLY its leg pose, never its ugly rendering, body contour, face or materials. All figures face screen LEFT. A human kneecap points forward toward screen LEFT, never bows backward toward screen RIGHT. In the rear extended leg of the top-left cel, move the knee forward so the thigh and shin form an anatomically normal soft knee, not an inverted backward elbow; preserve the foot position and boot design. Apply the same correction to any hyperextended rear knee in the other cels. Preserve a lean natural thigh front without bulges. Keep left/right leg identities across the two opposing contacts: near leg behind in top-left, near leg forward in bottom-left. Top-right and bottom-right are the two opposite passing/settling poses. Do not duplicate the same leg ordering across all four. Calves may trail backward when a knee bends; the KNEE itself must remain forward of the hip-to-ankle line. Do not add extra joints or change leg length. Exactly two legs and two feet in every cell. Boots point left and remain connected to the shins. No new costume details, no cape, no added effects, no new facial expression. This is a local anatomy correction to an already accepted drawing, NOT a new character sheet. Return the same 2 columns x 2 rows sheet with a genuinely transparent background, no text or framing, same 2:3 aspect ratio.",
+      "refs": [
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/assets3d/hybrid_routes_r1/keys_opaque.png",
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/storyboard/walk_cel_r2/k_guide.png"
+      ],
+      "output": "assets3d/walk_cel_r2/keys.png"
+    },
+    {
+      "prompt": "Locally correct the 2x2 animation cel sheet in reference image 1. This exact handsome anime character design is approved. Preserve every cell's head, face, hair, neck, torso armor, arms, hands, weapon, color, linework and upper-body coordinates. Change only the legs below the hip armor. Reference image 2 is a corrected four-pose leg skeleton guide, NOT a style reference. Follow its four leg poses and their near/far ordering, adapted to the existing slender drawn anatomy of image 1. All figures face screen LEFT; kneecaps point LEFT and flex forward, NEVER hyperextend or kink backward toward RIGHT. Top-left: the NEAR thigh swings forward and its knee bends normally, its calf trails back/right with boot lifted, FAR leg straight planted. Top-right: the near leg advances into a modest front contact, far leg trails behind with normal slight knee flexion; make the stride smaller than the current very wide stride, like guide 2. Bottom-left: NEAR leg now straight supporting, FAR leg passes behind it with its knee bent forward and boot lifted back/right; preserve this opposite occlusion to top-left. Bottom-right: opposite contact approach, near leg trails back with a soft forward knee and far leg reaches forward; reduce the current overly wide stride. Use a normal restrained adult walking range, no high stepping, no squat, no rubber bends, no reverse knees. Keep the same head/neck-to-hip proportions in all four cels; improve lower-body continuity without redesigning the character. Exactly two coherent legs and boots per figure, original black bodysuit and purple shin armor. Preserve genuine alpha transparency and the original 2 columns by 2 rows layout, 2:3 aspect ratio, no added shadows, text, effects or background.",
+      "refs": [
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/assets3d/hybrid_routes_r1/inbetweens.png",
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/storyboard/walk_cel_r2/b_guide.png"
+      ],
+      "output": "assets3d/walk_cel_r2/inbetweens.png"
+    },
+    {
+      "record": "assets3d/walk_cel_r2/overlap_generation.json"
+    }
+  ],
+  "selection": {
+    "k0": "new keys cell 0",
+    "k1": "new keys cell 1",
+    "k2": "new keys cell 2",
+    "k3": "new keys cell 3",
+    "b0": "Single-cel overlap repair b0_overlap.png; previous b0 and atlas revision b0 rejected for repeating near-side support",
+    "b1": "new inbetweens cell 1",
+    "b2": "new inbetweens cell 2",
+    "b3": "new inbetweens cell 3"
+  },
+  "processing": "Whole-cel anchor registration, alpha matte cleanup and same-view head-region reuse; no cut-leg rig. Generation alone did not ensure continuity.",
+  "tokenUsage": "not available",
+  "cost": "not available"
+}
