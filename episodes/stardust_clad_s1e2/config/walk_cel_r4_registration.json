@@ -1,0 +1,70 @@
+{
+  "size": [
+    512,
+    768
+  ],
+  "scale": 0.88,
+  "faceROI": [
+    80,
+    40,
+    380,
+    210
+  ],
+  "faceTarget": [
+    232,
+    147
+  ],
+  "hipTarget": [
+    261,
+    322
+  ],
+  "groundY": 632,
+  "output": "assets3d/walk_cel_r4/registered",
+  "largestComponentOnly": true,
+  "cels": [
+    {
+      "id": "c0",
+      "hip": [
+        298,
+        337
+      ],
+      "file": "assets3d/walk_cel_r4/gaps_raw.png",
+      "columns": 2,
+      "rows": 2,
+      "cell": 0
+    },
+    {
+      "id": "c1",
+      "hip": [
+        297,
+        332
+      ],
+      "file": "assets3d/walk_cel_r4/gaps_raw.png",
+      "columns": 2,
+      "rows": 2,
+      "cell": 1
+    },
+    {
+      "id": "c2",
+      "hip": [
+        293,
+        346
+      ],
+      "file": "assets3d/walk_cel_r4/gaps_raw.png",
+      "columns": 2,
+      "rows": 2,
+      "cell": 2
+    },
+    {
+      "id": "c3",
+      "hip": [
+        294,
+        345
+      ],
+      "file": "assets3d/walk_cel_r4/gaps_raw.png",
+      "columns": 2,
+      "rows": 2,
+      "cell": 3
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-24",
+  "provider": "image_gen.imagegen",
+  "calls": [
+    {
+      "prompt": "Create ONE animation inbetween sprite sheet, exactly 2 columns by 2 rows on a 1024x1536 transparent RGBA canvas, each cel occupying its own 512x768 cell. Image 1 is ONLY the exact 4 target poses and camera, read top-left, top-right, bottom-left, bottom-right. Images 2-5 are the accepted final character design/rendering, NOT the target poses. Redraw the attractive navy-haired youthful male armored character from images 2-5 in the four EXACT poses from image 1. Keep original slender athletic silhouette, handsome face and navy tied spiky hair, identical chest and purple armor design, fitted dark trousers, detailed boots, same hand gripping same long purple hooked weapon; preserve natural human thigh and knee curves, never copy the blocky mannequin face or crude armor/hips of image 1. All four cells must retain the same face size, shoulder width, chest shape, armor decoration and palette. The images are 4 specific gap poses within an EXISTING walk, not a new 4-frame walk cycle. Top-left: nearer leg trailing with heel raised and shin extending diagonally backward to screen-right, far leg near vertical bearing weight, nearer forearm angled forward and weapon down-left. Top-right: near knee forward screen-left with near lower leg crossing diagonally IN FRONT of far upright shin, near foot lifted on screen-right. Bottom-left: both feet down with modest separation; near leg just extending forward screen-left, near arm almost vertical by waist, far fist forward. Bottom-right: near leg upright planted, far leg bends behind, far foot lifted screen-right BEHIND the near shin; near hand by rear waist, weapon behind, far fist forward. Preserve near/far identities and contrasting shin overlap in the two raised-foot poses. No reverse knees, no splayed feet, no duplicated limbs, no new symbols. Match the full body placement of design references within each cell: hair top y72, face center approximately (232,147), shoulder around (261,207), hip around (261,337), planted sole y630. Allow natural pose-dependent shoulder and pelvis movement, but never enlarge or crop character. Every entire figure and weapon fits within its cell. High-quality clean 2D animation drawing with controlled dark cel shadows and fine purple armor highlights like images 2-5. Do not make a contact sheet of unchanged source images. No text, borders, ground, gray backdrop, cast shadows, aura or glow. True alpha transparency.",
+      "refs": [
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/storyboard/walk_cel_r4/gap_guide.png",
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/assets3d/walk_cel_r2/registered/k0.png",
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/assets3d/walk_cel_r2/registered/b0.png",
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/assets3d/walk_cel_r2/registered/k1.png",
+        "D:/opensource/movie/dula-story/episodes/stardust_clad_s1e2/assets3d/walk_cel_r2/registered/k2.png"
+      ],
+      "output": "assets3d/walk_cel_r4/gaps_raw.png"
+    }
+  ],
+  "cost": "not returned",
+  "tokenUsage": "not returned",
+  "scope": "One candidate sheet of four targeted pose gaps; quality and continuity require actual review."
+}

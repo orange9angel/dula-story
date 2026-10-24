@@ -1,0 +1,26 @@
+{
+  "scope": "Outline and head motion diagnostics, not a natural-walk score",
+  "observation": "Ordered full drawings, continuous crop sequence and decoded output frames; no realtime playback observation",
+  "bodyProjectionMaxError": 4.1382633578908315e-13,
+  "chestOutline": {
+    "sampleBodyY": 238,
+    "beforeRangePx": 13.0,
+    "afterMotionCompensatedRangePx": 1.1312725858042256,
+    "beforeMaxAdjacentStepPx": 11.0,
+    "afterMaxAdjacentStepPx": 1.0451649506762237
+  },
+  "headActualCentroidRangeXY": [
+    4.090082000921484,
+    8.686731416433133
+  ],
+  "intendedBodyYRange": 6.582192660888609,
+  "decodedFrames": 132,
+  "cycleRepeatDecodedEqual": true,
+  "loopBoundaryMeanAbsolutePixelStep": 0.8258966127276326,
+  "files": {
+    "output/walk_cel_r3_compare.mp4": "8bdd1f446026c29d345fa842c83b1527f9bdc4385484364420e59b0286d915e9",
+    "output/walk_cel_r3_solo.mp4": "df24044d9b9fa797c6085839441c6980a1dd2a00c7be5783c97adc9c98c9ad39",
+    "assets3d/walk_cel_r3/torso_raw.png": "492b80d2d6955432cf98947cc571f0d3b6d77c90c0bfb9fc53f5622d89328d41",
+    "output/stardust_clad_s1e2_palace_r27.mp4": "1a97fe47a3e61bbac717de929de7cbe8f6bc7fc1e56cc68086ae8fcebe0905ab"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-24",
+  "provider": "image_gen.imagegen",
+  "calls": [
+    {
+      "prompt": "Production animation compositing layer, edit the supplied image. Make ONE reusable clean HEAD-NECK-TORSO-PELVIS layer for this exact character, same three-quarter side view facing screen-left. Keep the handsome face, hair, high collar, chest armor, dark undersuit, waist and purple pointed hip armor exactly the same design, proportions, perspective and rendering. Remove BOTH entire arms from shoulder down, both hands, and the entire hooked weapon, leaving transparent space where the arms extended. Reconstruct only the narrow chest/back side that was hidden by the near arm, with coherent dark fitted body armor; no sockets, stumps, wounds or shoulder balls. Keep the torso silhouette narrow and athletic, do not widen shoulders. Remove BOTH legs below the hip armor; retain the complete waist/hip armor and a short dark smooth pelvis backing down to the armor's lower edge, so other leg drawings can be composited behind. This is a clean animation layer, not a new pose. Preserve original canvas placement and scale: original is 512x768, head face center about (232,147), top of hair about y72, waist about y310, bottom of hip armor about y360. Keep plenty of transparent empty canvas below. Return same 2:3 full canvas with true RGBA transparency; no backdrop, no shadow, no halo, no labels. Do not crop or enlarge the torso to fill the frame. Only remove limbs/weapon and finish the previously occluded torso.",
+      "refs": [
+        "D:\\opensource\\movie\\dula-story\\episodes\\stardust_clad_s1e2\\assets3d\\walk_cel_r2\\registered\\k1.png"
+      ],
+      "output": "assets3d/walk_cel_r3/torso_raw.png"
+    }
+  ],
+  "use": "One clean chest/neck painting, body-coordinate registration and pose-driven animation. Final face/hair reused from the accepted cel, moving with the body.",
+  "tokenUsage": "not returned",
+  "cost": "not returned"
+}
