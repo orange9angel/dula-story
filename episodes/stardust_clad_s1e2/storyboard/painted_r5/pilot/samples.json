@@ -1,0 +1,1084 @@
+[
+  {
+    "t": 178.2,
+    "shot": "a68",
+    "kind": "enemy_face",
+    "emotion": "pain",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "present",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "hurt-disbelief"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "enemy_face",
+    "face": {
+      "actor": "yekari",
+      "jaw": 0,
+      "emotion": "pain",
+      "blink": 0,
+      "gaze": 0.021426827375835192,
+      "strain": 1,
+      "mouthCel": "closed",
+      "design": "yekari-raster-r5",
+      "identity": "authored raster",
+      "expressionScope": "authored mouth/blink and optional persistent expression donor",
+      "hair": 0,
+      "rigid": true,
+      "settle": 0.06103789067331024,
+      "nod": 3,
+      "intent": "hurt-disbelief"
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 5346,
+    "sha256": "35f42d64f4b7df87a4b50869ae8079ad070a43a5a1e18b68b1d6035b05a6f04b"
+  },
+  {
+    "t": 180.5,
+    "shot": "a68",
+    "kind": "enemy_face",
+    "emotion": "pain",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "present",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "hurt-disbelief"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "enemy_face",
+    "face": {
+      "actor": "yekari",
+      "jaw": 0.6579999923706055,
+      "emotion": "pain",
+      "blink": 0,
+      "gaze": 0.09381977789616358,
+      "strain": 1,
+      "mouthCel": "open",
+      "design": "yekari-raster-r5",
+      "identity": "authored raster",
+      "expressionScope": "authored mouth/blink and optional persistent expression donor",
+      "hair": 0,
+      "rigid": true,
+      "settle": 1,
+      "nod": 3,
+      "intent": "hurt-disbelief"
+    },
+    "bodies": [],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 640,
+      "cy": 365,
+      "z": 1.02,
+      "roll": 0
+    },
+    "motionFrame": 5415,
+    "sha256": "b4526e60fb1454f1811570d2d1ea830e0325fd699a94bf2a44c8b150969da743"
+  },
+  {
+    "t": 181.6,
+    "shot": "a69",
+    "kind": "enemy_low",
+    "emotion": "defeated",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "present",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "hurt-disbelief"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "enemy_low",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "enemy_land",
+        "x": 980,
+        "y": 625,
+        "height": 355,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2
+        },
+        "feet": null,
+        "cuff": null
+      }
+    ],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 985,
+      "cy": 450,
+      "z": 1.35,
+      "roll": 0
+    },
+    "motionFrame": 5448,
+    "sha256": "a0f29506c6b91ece82e833eec7db251f5ab601fec685dfa0b19af8d969f25495"
+  },
+  {
+    "t": 191,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "rising",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "enemy_land",
+        "x": 980,
+        "y": 625,
+        "height": 355,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2
+        },
+        "feet": null,
+        "cuff": null
+      }
+    ],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5730,
+    "sha256": "ff53cdbe2846dfb1293876b44df8e5d1eb60eaeaf4b6269c4248e023d32220f4"
+  },
+  {
+    "t": 191.4,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "rising",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "enemy_rise",
+        "x": 980,
+        "y": 625,
+        "height": 430,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2
+        },
+        "feet": null,
+        "cuff": null
+      }
+    ],
+    "walking": false,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5742,
+    "sha256": "11c739bdc21453e50a3946b7d42701e3cc5efa8af57849e20c81455e9a1f60f4"
+  },
+  {
+    "t": 191.8,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "turning",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 0,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "turning-away",
+        "heading": 0,
+        "x": 980,
+        "y": 625,
+        "height": 528,
+        "distance": 0,
+        "feet": [],
+        "cuff": [
+          970,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5754,
+    "sha256": "8536ed213056f463dee860a45988b5fa042c2f40ff101ac15c82ecdebfca9b3b"
+  },
+  {
+    "t": 192.2,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "turning",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 1,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "turning-away",
+        "heading": 1.0471975511965481,
+        "x": 980,
+        "y": 625,
+        "height": 528,
+        "distance": 0,
+        "feet": [],
+        "cuff": [
+          970,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5766,
+    "sha256": "45141e63c1cca3aa82df20344f618860bcbc42aa65ef71194e718e720dac22c0"
+  },
+  {
+    "t": 192.6,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "turning",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 2,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "turning-away",
+        "heading": 2.0943951023931704,
+        "x": 980,
+        "y": 625,
+        "height": 528,
+        "distance": 0,
+        "feet": [],
+        "cuff": [
+          970,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5778,
+    "sha256": "47d0ee81052601f04f271f6533af46b32417d2417c7a9dff77fee1891f2f7914"
+  },
+  {
+    "t": 193,
+    "shot": "a72",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "forward_exit",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 3,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "right-rear",
+        "heading": 3.141592653589793,
+        "x": 980,
+        "y": 625,
+        "height": 528,
+        "distance": 0,
+        "feet": [],
+        "cuff": [
+          970,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5790,
+    "sha256": "6ac2f899e6f2a684c9575394bd66cf255e350ba1e04209775755564de423e474"
+  },
+  {
+    "t": 194.2,
+    "shot": "a73",
+    "kind": "cuff",
+    "emotion": "mark",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "forward_exit",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "cuff",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 5,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "right-rear",
+        "heading": 3.141592653589793,
+        "x": 1029.979999999999,
+        "y": 625,
+        "height": 528,
+        "distance": 49.979999999999045,
+        "feet": [],
+        "cuff": [
+          1019.9799999999991,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5826,
+    "sha256": "2464648e026b2f0b5b5ace0d32b0f8b1844abc1dcde79035299356039405dc61"
+  },
+  {
+    "t": 194.6,
+    "shot": "a73",
+    "kind": "cuff",
+    "emotion": "mark",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "forward_exit",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "cuff",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 6,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "right-rear",
+        "heading": 3.141592653589793,
+        "x": 1063.5799999999995,
+        "y": 625,
+        "height": 528,
+        "distance": 83.57999999999953,
+        "feet": [],
+        "cuff": [
+          1053.5799999999995,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5838,
+    "sha256": "9701affbfc1f07fd3f3c5303b71508902dd32db1d14d3f088104bffcb1146576"
+  },
+  {
+    "t": 195,
+    "shot": "a73",
+    "kind": "cuff",
+    "emotion": "mark",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "forward_exit",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "cuff",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 8,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "right-rear",
+        "heading": 3.141592653589793,
+        "x": 1097.18,
+        "y": 625,
+        "height": 528,
+        "distance": 117.18,
+        "feet": [],
+        "cuff": [
+          1087.18,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5850,
+    "sha256": "4ad0e358e8b5de932faa99e51f31087dca83b2d8d6e56017f211b00d58bcb6eb"
+  },
+  {
+    "t": 196.2,
+    "shot": "a74",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "forward_exit",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 11,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "right-rear",
+        "heading": 3.141592653589793,
+        "x": 1197.979999999999,
+        "y": 625,
+        "height": 528,
+        "distance": 217.979999999999,
+        "feet": [],
+        "cuff": [
+          1187.979999999999,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5886,
+    "sha256": "46e37150c448afaafa495fab5f5ba4242c674631661e1a8f91db8cce923192a1"
+  },
+  {
+    "t": 197.5,
+    "shot": "a74",
+    "kind": "walk",
+    "emotion": "retreat",
+    "shield": {
+      "id": "deep-cracks",
+      "level": 2
+    },
+    "route": "full-hybrid-r5",
+    "continuity": {
+      "shieldMode": "held",
+      "chainMode": "broken",
+      "firePower": 1,
+      "fireRoute": "open",
+      "heroStrain": 0.65,
+      "enemyStrain": 1,
+      "exitPhase": "forward_exit",
+      "shieldOwner": "aoao",
+      "forearmDamage": 2,
+      "enemyIntent": "wounded-withdrawal"
+    },
+    "mechanism": null,
+    "slot": [
+      520,
+      625
+    ],
+    "originalKind": "walk",
+    "face": null,
+    "bodies": [
+      {
+        "key": "hero_idle",
+        "x": 370,
+        "y": 625,
+        "height": 490,
+        "hair": 0,
+        "motion": [
+          0,
+          0
+        ],
+        "rigid": true,
+        "forearm": {
+          "level": 2,
+          "visibility": "occluded",
+          "reason": "Shield face covers its holding wrist; chest hand is the other arm."
+        },
+        "feet": null,
+        "cuff": null
+      },
+      {
+        "key": "exit_cel",
+        "cameraScale": 1.1,
+        "rigid": true,
+        "index": 7,
+        "wholeCel": true,
+        "direction": 1,
+        "facing": "right-rear",
+        "heading": 3.141592653589793,
+        "x": 1307.1799999999998,
+        "y": 625,
+        "height": 528,
+        "distance": 327.17999999999995,
+        "feet": [],
+        "cuff": [
+          1297.1799999999998,
+          425
+        ]
+      }
+    ],
+    "walking": true,
+    "walkPhase": null,
+    "charge": 0,
+    "view": {
+      "cx": 930,
+      "cy": 390,
+      "z": 1.1,
+      "roll": 0
+    },
+    "motionFrame": 5925,
+    "sha256": "69c48f060e860687e55bd9a6a83a1a7c5d96233d455461b4c17ad467a8dbc699"
+  }
+]

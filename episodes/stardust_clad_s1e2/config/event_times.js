@@ -17,6 +17,8 @@ export const T = {
   "C5": 103.0,
   "QUIET": 121.0,
   "DISCOVER": 128.0,
+  "SHIELD_RELIFT": 135.4,
+  "SHIELD_RELIFT_END": 137.6,
   "CHARGE2": 138.0,
   "C6": 149.0,
   "CHAIN3": 151.75,

@@ -122,6 +122,8 @@
 21
 00:02:12,000 --> 00:02:17,950
 {Event:Beat|id=p17|move=resolve|shot=hero|scene=ember}
+{Event:Cue|name=SHIELD_RELIFT|offset=3.4}
+{Event:Cue|name=SHIELD_RELIFT_END|offset=5.6}
 {Event:Act|id=p15|rate=0|context=站起来直视对手，不否认他的伤，坚定说自己的选择。|emotion=determined|gaze=enemy|camera=speech}
 [Aoao]你没等到的，不能让下面的人再等一遍。
 

@@ -1,0 +1,519 @@
+{
+  "source": "script.story",
+  "tracks": {
+    "shieldMode": [
+      {
+        "at": 0,
+        "value": "held"
+      },
+      {
+        "at": 14,
+        "value": "testing"
+      },
+      {
+        "at": {
+          "cue": "LATCH"
+        },
+        "value": "test_locked"
+      },
+      {
+        "at": {
+          "cue": "TEST_FREE"
+        },
+        "value": "test_lifting"
+      },
+      {
+        "at": 16.8,
+        "value": "held"
+      },
+      {
+        "at": 103.4,
+        "value": "ground_braced"
+      },
+      {
+        "at": {
+          "cue": "SHIELD_RELIFT"
+        },
+        "value": "relifting"
+      },
+      {
+        "at": {
+          "cue": "SHIELD_RELIFT_END"
+        },
+        "value": "held"
+      },
+      {
+        "at": 149.4,
+        "value": "ground_braced"
+      },
+      {
+        "at": {
+          "cue": "TRAP"
+        },
+        "value": "wedged"
+      },
+      {
+        "at": {
+          "cue": "SHIELD_LIFT"
+        },
+        "value": "lifting"
+      },
+      {
+        "at": {
+          "cue": "SHIELD_FREE"
+        },
+        "value": "held"
+      }
+    ],
+    "chainMode": [
+      {
+        "at": 0,
+        "value": "stowed"
+      },
+      {
+        "at": {
+          "cue": "CHAIN_HEARD"
+        },
+        "value": "free"
+      },
+      {
+        "at": {
+          "cue": "TRAP"
+        },
+        "value": "locked"
+      },
+      {
+        "at": {
+          "cue": "C7",
+          "offset": 0.1
+        },
+        "value": "broken"
+      }
+    ],
+    "firePower": [
+      {
+        "at": 0,
+        "value": 0.35
+      },
+      {
+        "at": {
+          "cue": "GATE_ATTACK"
+        },
+        "value": 0.1,
+        "duration": 1
+      },
+      {
+        "at": {
+          "cue": "TRAP"
+        },
+        "value": 0.08
+      },
+      {
+        "at": 158,
+        "value": 0.55,
+        "duration": 1.5
+      },
+      {
+        "at": {
+          "cue": "HERO_CHARGE"
+        },
+        "value": 0.85,
+        "duration": 2
+      },
+      {
+        "at": {
+          "cue": "GATE_OPEN"
+        },
+        "value": 1,
+        "duration": 1.5
+      }
+    ],
+    "fireRoute": [
+      {
+        "at": 0,
+        "value": "restricted"
+      },
+      {
+        "at": {
+          "cue": "GATE_ATTACK"
+        },
+        "value": "damaged"
+      },
+      {
+        "at": 158,
+        "value": "backflow"
+      },
+      {
+        "at": {
+          "cue": "RELEASE"
+        },
+        "value": "chain_return"
+      },
+      {
+        "at": {
+          "cue": "GATE_OPEN"
+        },
+        "value": "open"
+      }
+    ],
+    "heroStrain": [
+      {
+        "at": 0,
+        "value": 0
+      },
+      {
+        "at": {
+          "cue": "C1"
+        },
+        "value": 1,
+        "duration": 0.1
+      },
+      {
+        "at": 68,
+        "value": 0.3,
+        "duration": 3
+      },
+      {
+        "at": {
+          "cue": "C3"
+        },
+        "value": 1,
+        "duration": 0.1
+      },
+      {
+        "at": 86,
+        "value": 0.4,
+        "duration": 3
+      },
+      {
+        "at": {
+          "cue": "C5"
+        },
+        "value": 1,
+        "duration": 0.1
+      },
+      {
+        "at": 128,
+        "value": 0.35,
+        "duration": 4
+      },
+      {
+        "at": {
+          "cue": "C6"
+        },
+        "value": 1,
+        "duration": 0.1
+      },
+      {
+        "at": {
+          "cue": "SHIELD_FREE"
+        },
+        "value": 0.65,
+        "duration": 3
+      },
+      {
+        "at": {
+          "cue": "RESTORE"
+        },
+        "value": 0.12,
+        "duration": 6
+      }
+    ],
+    "enemyStrain": [
+      {
+        "at": 0,
+        "value": 0
+      },
+      {
+        "at": {
+          "cue": "C7"
+        },
+        "value": 1
+      }
+    ],
+    "exitPhase": [
+      {
+        "at": 0,
+        "value": "present"
+      },
+      {
+        "at": {
+          "cue": "RETREAT"
+        },
+        "value": "rising"
+      },
+      {
+        "at": {
+          "cue": "TURN_START"
+        },
+        "value": "turning"
+      },
+      {
+        "at": {
+          "cue": "TURN_END"
+        },
+        "value": "forward_exit"
+      },
+      {
+        "at": 198,
+        "value": "gone"
+      }
+    ],
+    "shieldOwner": [
+      {
+        "at": 0,
+        "value": "aoao"
+      }
+    ],
+    "forearmDamage": [
+      {
+        "at": 0,
+        "value": 0
+      },
+      {
+        "at": {
+          "cue": "SCAR"
+        },
+        "value": 1
+      },
+      {
+        "at": {
+          "cue": "HERO_CHARGE"
+        },
+        "value": 2
+      }
+    ],
+    "enemyIntent": [
+      {
+        "at": 0,
+        "value": "controlled-threat"
+      },
+      {
+        "at": {
+          "cue": "C7"
+        },
+        "value": "hurt-disbelief"
+      },
+      {
+        "at": {
+          "cue": "RETREAT"
+        },
+        "value": "wounded-withdrawal"
+      }
+    ]
+  },
+  "contracts": [
+    {
+      "id": "test-free-visible",
+      "at": [
+        16.5,
+        16.79
+      ],
+      "expect": {
+        "continuity.shieldMode": {
+          "equals": "test_lifting"
+        },
+        "mechanism.lift": {
+          "min": 0.5
+        }
+      }
+    },
+    {
+      "id": "trap-holds-across-cuts",
+      "at": [
+        153.7,
+        161.5,
+        165.7,
+        168.7,
+        170
+      ],
+      "expect": {
+        "continuity.shieldMode": {
+          "equals": "wedged"
+        },
+        "bodies.0.key": {
+          "equals": "hero_kneel"
+        },
+        "continuity.chainMode": {
+          "equals": "locked"
+        }
+      }
+    },
+    {
+      "id": "freed-before-held",
+      "at": [
+        173.3,
+        173.79
+      ],
+      "expect": {
+        "continuity.shieldMode": {
+          "equals": "lifting"
+        },
+        "continuity.chainMode": {
+          "equals": "broken"
+        },
+        "mechanism.lift": {
+          "min": 0.5
+        }
+      }
+    },
+    {
+      "id": "held-after-free",
+      "at": [
+        174.1,
+        184.1
+      ],
+      "expect": {
+        "continuity.shieldMode": {
+          "equals": "held"
+        },
+        "continuity.chainMode": {
+          "equals": "broken"
+        }
+      }
+    },
+    {
+      "id": "strain-carried",
+      "at": [
+        58.8,
+        60.5,
+        65.5,
+        107,
+        158.5
+      ],
+      "expect": {
+        "continuity.heroStrain": {
+          "min": 0.9
+        }
+      }
+    },
+    {
+      "id": "enemy-strain-after-hit",
+      "at": [
+        178.4,
+        182
+      ],
+      "expect": {
+        "continuity.enemyStrain": {
+          "min": 0.9
+        }
+      }
+    },
+    {
+      "id": "turn-before-exit",
+      "at": [
+        192.3,
+        192.7
+      ],
+      "expect": {
+        "continuity.exitPhase": {
+          "equals": "turning"
+        },
+        "bodies.1.facing": {
+          "equals": "turning-away"
+        },
+        "bodies.1.distance": {
+          "equals": 0
+        }
+      }
+    },
+    {
+      "id": "walk-forwards",
+      "at": [
+        193.1,
+        194,
+        196,
+        197.5
+      ],
+      "expect": {
+        "continuity.exitPhase": {
+          "equals": "forward_exit"
+        },
+        "bodies.1.facing": {
+          "equals": "right-rear"
+        },
+        "bodies.1.direction": {
+          "equals": 1
+        }
+      }
+    },
+    {
+      "id": "fire-channel-reopens",
+      "at": [
+        175.8,
+        200,
+        204
+      ],
+      "expect": {
+        "continuity.fireRoute": {
+          "equals": "open"
+        },
+        "continuity.firePower": {
+          "min": 0.7
+        }
+      }
+    },
+    {
+      "id": "relift-before-held",
+      "at": [
+        135.8,
+        136.6,
+        137.2
+      ],
+      "expect": {
+        "continuity.shieldMode": {
+          "equals": "relifting"
+        }
+      }
+    },
+    {
+      "id": "armor-does-not-heal",
+      "at": [
+        69,
+        80,
+        105,
+        136,
+        153.7,
+        174.1,
+        204
+      ],
+      "expect": {
+        "continuity.forearmDamage": {
+          "min": 1
+        }
+      }
+    },
+    {
+      "id": "exit-camera-stays-in-scene",
+      "at": [
+        191.9,
+        193.1,
+        194.5,
+        196.3,
+        197.5
+      ],
+      "expect": {
+        "view.z": {
+          "equals": 1.1
+        }
+      }
+    },
+    {
+      "id": "line-intent-carried",
+      "at": [
+        178.2,
+        180.5,
+        181.6,
+        183.5
+      ],
+      "expect": {
+        "continuity.enemyIntent": {
+          "equals": "hurt-disbelief"
+        },
+        "continuity.enemyStrain": {
+          "equals": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1222 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/stardust_clad_s1e2_painted_r5.mp4",
+    "sha256": "07c84b8811cdbbd0b00d5ead2d6e9bb275c0f8c6079675be5d5b0ef3df9e2a64"
+  },
+  "scope": {
+    "subjects": [
+      "aoao",
+      "yekari"
+    ],
+    "windows": [
+      {
+        "id": "revision",
+        "start": 0.0,
+        "end": 213.0
+      }
+    ],
+    "accepted_properties": [
+      "R7 arrival frames",
+      "Painted hall backgrounds",
+      "Particle-only dynamic effects",
+      "Original dialogue and music audio"
+    ],
+    "limitations": "Sampled revision review of 68 decoded final frames, plus 24 pilot frames and selected full-size source renders. Not realtime playback; no audio listening. Scope does not certify all 6390 frames or cinematic naturalness."
+  },
+  "checks": [
+    {
+      "subject": "aoao",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "Red hair, gold eyes and armor design remain consistent in reviewed portraits and poses. Three lift drawings clarify action but pose transitions still need polish.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/overview.jpg",
+          "sha256": "7f6968104e557bd77e286940d6730ecf23703b5924617dc559b20a6ef477b678",
+          "window": "revision",
+          "at": [
+            7.333333333333333,
+            21.5,
+            25.6,
+            35.0,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170.0,
+            175.8,
+            184.2,
+            200.0,
+            204.0,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "Portrait jaw/neck boundaries stay coherent at sampled mouth states; rigid placement removes the broad head/armor wave. Limited-angle artwork remains.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/portrait.jpg",
+          "sha256": "f890a4cdfe51d6aec3c54c682223c575f931a6eabc585b95bc08d590405409b9",
+          "window": "revision",
+          "at": [
+            17.0,
+            17.3,
+            17.6,
+            18.0,
+            29.2,
+            65.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "portrait-wave"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "Hero keeps rightward opponent attention in early and counter portraits; final relaxed face remains consistent with the ending.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/overview.jpg",
+          "sha256": "7f6968104e557bd77e286940d6730ecf23703b5924617dc559b20a6ef477b678",
+          "window": "revision",
+          "at": [
+            7.333333333333333,
+            21.5,
+            25.6,
+            35.0,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170.0,
+            175.8,
+            184.2,
+            200.0,
+            204.0,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "expression",
+      "status": "no_issue_observed",
+      "observation": "Hero keeps pain in 60.5/65.5 and 158.5 portraits, then eases toward relief at 200/209.5; mouth shape changes without broad sheet warping.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/overview.jpg",
+          "sha256": "7f6968104e557bd77e286940d6730ecf23703b5924617dc559b20a6ef477b678",
+          "window": "revision",
+          "at": [
+            7.333333333333333,
+            21.5,
+            25.6,
+            35.0,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170.0,
+            175.8,
+            184.2,
+            200.0,
+            204.0,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "Hair silhouettes and layered painted highlights remain. Broad Gaussian hair motion was removed because it bent the face; independent tip follow-through is not added.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/portrait.jpg",
+          "sha256": "f890a4cdfe51d6aec3c54c682223c575f931a6eabc585b95bc08d590405409b9",
+          "window": "revision",
+          "at": [
+            17.0,
+            17.3,
+            17.6,
+            18.0,
+            29.2,
+            65.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "Kneeling shield forearm now carries the same scar texture as the close-up. Wounded exit protects the chest; intermediate poses remain limited.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/armor.jpg",
+          "sha256": "947c46d369c661d6eb0fe85ef55c960e6ac4b604c0376d4db02938c2d0634f99",
+          "window": "revision",
+          "at": [
+            60.5,
+            69.0,
+            75.6,
+            80.0,
+            105.0,
+            136.2,
+            153.7,
+            165.7,
+            174.1,
+            189.0,
+            204.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "Shield stays ground-supported before relift; visible lifted edge precedes hand-held state. Wounded wrist is marked when exposed and hidden behind shield in idle/recoil.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/support.jpg",
+          "sha256": "eb88edf8ddb1161fc294352638b68a925d84cd5a730720739eda9fa99ad199c4",
+          "window": "revision",
+          "at": [
+            103.6,
+            123.5,
+            135.4,
+            135.8,
+            136.2,
+            136.6,
+            137.0,
+            137.6,
+            149.5,
+            151.9,
+            153.7,
+            168.7,
+            172.7,
+            173.3,
+            173.76666666666668,
+            174.1
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "armor-carry",
+        "shield-relift"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "Kneel, partial rise, ground clearance and slot exit are visible. Discrete walk cels do not prove precise sole locking between all sampled frames.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/support.jpg",
+          "sha256": "eb88edf8ddb1161fc294352638b68a925d84cd5a730720739eda9fa99ad199c4",
+          "window": "revision",
+          "at": [
+            103.6,
+            123.5,
+            135.4,
+            135.8,
+            136.2,
+            136.6,
+            137.0,
+            137.6,
+            149.5,
+            151.9,
+            153.7,
+            168.7,
+            172.7,
+            173.3,
+            173.76666666666668,
+            174.1
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "Hero has no new walking segment in this revision; kneel-to-rise is reviewed under action and support.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "Added partial rise and three-stage shield lifting make the action progression readable, but limited poses still produce hard transitions.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/support.jpg",
+          "sha256": "eb88edf8ddb1161fc294352638b68a925d84cd5a730720739eda9fa99ad199c4",
+          "window": "revision",
+          "at": [
+            103.6,
+            123.5,
+            135.4,
+            135.8,
+            136.2,
+            136.6,
+            137.0,
+            137.6,
+            149.5,
+            151.9,
+            153.7,
+            168.7,
+            172.7,
+            173.3,
+            173.76666666666668,
+            174.1
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "hero-inbetweens"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "Shield support, lifting, trap and release inherit across cuts. Added lift poses still change discretely.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/support.jpg",
+          "sha256": "eb88edf8ddb1161fc294352638b68a925d84cd5a730720739eda9fa99ad199c4",
+          "window": "revision",
+          "at": [
+            103.6,
+            135.4,
+            135.8,
+            136.6,
+            137.6,
+            153.7,
+            173.3,
+            174.1
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "shot_integration",
+      "status": "no_issue_observed",
+      "observation": "Accepted painted background and particle fire remain; fixed exit camera no longer scales character separately from the hall.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/overview.jpg",
+          "sha256": "7f6968104e557bd77e286940d6730ecf23703b5924617dc559b20a6ef477b678",
+          "window": "revision",
+          "at": [
+            7.333333333333333,
+            21.5,
+            25.6,
+            35.0,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170.0,
+            175.8,
+            184.2,
+            200.0,
+            204.0,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "aoao",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "Audio packets and PCM are preserved; reviewer did not listen or watch synchronized playback.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "Review normal-speed audiovisual playback before claiming performance/sound timing acceptance."
+    },
+    {
+      "subject": "aoao",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Whole-body replay exposed a leftover old arm fragment during torso compositing; corrected registration and mask cleared it. Final passing pose has connected waist/arm silhouette.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191.0,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195.0,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "Hair colors, eye colors and armor designs remain recognizable; exit camera no longer jumps 1.1 to 1.75. Rising-to-standing drawing proportions still need polish.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/overview.jpg",
+          "sha256": "7f6968104e557bd77e286940d6730ecf23703b5924617dc559b20a6ef477b678",
+          "window": "revision",
+          "at": [
+            7.333333333333333,
+            21.5,
+            25.6,
+            35.0,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170.0,
+            175.8,
+            184.2,
+            200.0,
+            204.0,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "Portrait jaw/neck boundaries stay coherent at sampled mouth states; rigid placement removes the broad head/armor wave. Limited-angle artwork remains.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/expression.jpg",
+          "sha256": "6ec785fa7b2f68c20b6e2324e17f6b328b08b0dd144d3dd3bb9da5ae0862f486",
+          "window": "revision",
+          "at": [
+            178.2,
+            179,
+            180.5,
+            181.6,
+            182.5,
+            183.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "Hero looks toward opponent; wounded opponent keeps the accusing leftward gaze across portrait and crouched-body cut.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/expression.jpg",
+          "sha256": "6ec785fa7b2f68c20b6e2324e17f6b328b08b0dd144d3dd3bb9da5ae0862f486",
+          "window": "revision",
+          "at": [
+            178.2,
+            179,
+            180.5,
+            181.6,
+            182.5,
+            183.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "New enemy brow/mouth donors carry hurt disbelief into the crouched face; hero pain and later relief remain readable in sampled portraits.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/expression.jpg",
+          "sha256": "6ec785fa7b2f68c20b6e2324e17f6b328b08b0dd144d3dd3bb9da5ae0862f486",
+          "window": "revision",
+          "at": [
+            178.2,
+            179,
+            180.5,
+            181.6,
+            182.5,
+            183.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "enemy-intent"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hair",
+      "status": "no_issue_observed",
+      "observation": "Hair silhouettes and layered painted highlights remain. Broad Gaussian hair motion was removed because it bent the face; independent tip follow-through is not added.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/expression.jpg",
+          "sha256": "6ec785fa7b2f68c20b6e2324e17f6b328b08b0dd144d3dd3bb9da5ae0862f486",
+          "window": "revision",
+          "at": [
+            178.2,
+            179,
+            180.5,
+            181.6,
+            182.5,
+            183.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "Crouched, partly raised and turned bodies remain readable; the change between rising and turn artwork is still abrupt.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191.0,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195.0,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "Crouched body protects chest and presents the broken cuff; exit adds chest-protecting posture. Exact cuff fragment topology across all turn views was not certified.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/expression.jpg",
+          "sha256": "6ec785fa7b2f68c20b6e2324e17f6b328b08b0dd144d3dd3bb9da5ae0862f486",
+          "window": "revision",
+          "at": [
+            178.2,
+            179.0,
+            180.5,
+            181.6,
+            182.5,
+            183.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "Crouch-to-rise and planted turn are visible; moving-foot frames alternate. Discrete frames do not prove continuous sole locking.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            193.2,
+            194.6,
+            196.2,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "Enemy rises, turns through back view, pauses and walks forward; camera size jump is removed. Eight-cel cadence and rise transitions remain visibly stepped.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191.0,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195.0,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "exit-naturalness"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "Half-rise clarifies the start but the move into standing turn still changes head/shoulder presentation abruptly.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            193.2,
+            194.6,
+            196.2,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "enemy-rise-transition"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "temporal",
+      "status": "no_issue_observed",
+      "observation": "Damage and intent persist at reviewed cuts. Exit root starts after turn; drawing changes remain discrete and need further performance polish.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191.0,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195.0,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "Accepted painted background and particle fire remain; fixed exit camera no longer scales character separately from the hall.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/overview.jpg",
+          "sha256": "7f6968104e557bd77e286940d6730ecf23703b5924617dc559b20a6ef477b678",
+          "window": "revision",
+          "at": [
+            7.333333333333333,
+            21.5,
+            25.6,
+            35.0,
+            58.2,
+            95.9,
+            117.8,
+            129.5,
+            158.5,
+            170.0,
+            175.8,
+            184.2,
+            200.0,
+            204.0,
+            209.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "exit-scale"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "Audio packets and PCM are preserved; reviewer did not listen or watch synchronized playback.",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "Review normal-speed audiovisual playback before claiming performance/sound timing acceptance."
+    },
+    {
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "Whole-body replay exposed a leftover old arm fragment during torso compositing; corrected registration and mask cleared it. Final passing pose has connected waist/arm silhouette.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191.0,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195.0,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "armor-carry",
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Close-up showed a cracked shield forearm while later whole-body artwork remained intact.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "high",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Retain final-frame evidence and check future affected cuts.",
+      "change": "Scar texture is mapped onto exposed shield-arm armor and damage does not regress.",
+      "evidence": [
+        {
+          "path": "../painted_r5/baseline/prop_sequence.jpg",
+          "sha256": "e2c30e6cdc4da77017de18a0d53dd58d14953d1f2ae666e2a0fa9e8260e5bcbd",
+          "window": "revision",
+          "at": [
+            69,
+            75.6,
+            80,
+            105,
+            151.9,
+            174.1,
+            191.5,
+            196,
+            204
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../painted_r5/baseline/user_forearm69.png",
+          "sha256": "a0fc4145561a0ffc132477b65c27cc4db2adf5961e898f1f666c7c1cd4ff6ed7",
+          "window": "revision",
+          "at": [
+            69
+          ],
+          "method": "still"
+        }
+      ],
+      "result": "Scar texture is mapped onto exposed shield-arm armor and damage does not regress.",
+      "verification": [
+        {
+          "path": "../painted_r5/decoded/armor.jpg",
+          "sha256": "947c46d369c661d6eb0fe85ef55c960e6ac4b604c0376d4db02938c2d0634f99",
+          "window": "revision",
+          "at": [
+            60.5,
+            69.0,
+            75.6,
+            80.0,
+            105.0,
+            136.2,
+            153.7,
+            165.7,
+            174.1,
+            189.0,
+            204.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "shield-relift",
+      "subject": "aoao",
+      "dimension": "hands_props",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Ground-supported shield returned to hand-held artwork without a visible lifting stage.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "high",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Retain final-frame evidence and check future affected cuts.",
+      "change": "Three reviewed poses show ground support, lifting and clearance before the next held state.",
+      "evidence": [
+        {
+          "path": "../painted_r5/baseline/prop_sequence.jpg",
+          "sha256": "e2c30e6cdc4da77017de18a0d53dd58d14953d1f2ae666e2a0fa9e8260e5bcbd",
+          "window": "revision",
+          "at": [
+            69,
+            75.6,
+            80,
+            105,
+            151.9,
+            174.1,
+            191.5,
+            196,
+            204
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "result": "Three reviewed poses show ground support, lifting and clearance before the next held state.",
+      "verification": [
+        {
+          "path": "../painted_r5/decoded/support.jpg",
+          "sha256": "eb88edf8ddb1161fc294352638b68a925d84cd5a730720739eda9fa99ad199c4",
+          "window": "revision",
+          "at": [
+            103.6,
+            123.5,
+            135.4,
+            135.8,
+            136.2,
+            136.6,
+            137.0,
+            137.6,
+            149.5,
+            151.9,
+            153.7,
+            168.7,
+            172.7,
+            173.3,
+            173.76666666666668,
+            174.1
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "portrait-wave",
+      "subject": "aoao",
+      "dimension": "face_structure",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "User observed face and armor rippling like a sheet in air.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "high",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Retain final-frame evidence and check future affected cuts.",
+      "change": "Rigid placement removes broad per-vertex warping while mouth states and small intentional settling remain.",
+      "evidence": [
+        {
+          "path": "../painted_r5/baseline_decoded/face_before.jpg",
+          "sha256": "f63126d6a9f701492cd48696be0845a0a5df0c671dc79327abe57505560f8942",
+          "window": "revision",
+          "at": [
+            17.0,
+            17.3,
+            17.6,
+            18.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "result": "Rigid placement removes broad per-vertex warping while mouth states and small intentional settling remain.",
+      "verification": [
+        {
+          "path": "../painted_r5/decoded/portrait.jpg",
+          "sha256": "f890a4cdfe51d6aec3c54c682223c575f931a6eabc585b95bc08d590405409b9",
+          "window": "revision",
+          "at": [
+            17.0,
+            17.3,
+            17.6,
+            18.0,
+            29.2,
+            65.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "enemy-intent",
+      "subject": "yekari",
+      "dimension": "expression",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Calm/pained close-up conflicted with exaggerated snarling body artwork during the same question.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "high",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Retain final-frame evidence and check future affected cuts.",
+      "change": "New portrait windows and body face carry hurt disbelief through the cut.",
+      "evidence": [
+        {
+          "path": "../painted_r5/baseline_decoded/expression_exit_before.jpg",
+          "sha256": "69754f8357feaccf5922bf979d4220e3d113daa19a48f4297422772a36d504fc",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            191.4,
+            194.3,
+            196.2
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "result": "New portrait windows and body face carry hurt disbelief through the cut.",
+      "verification": [
+        {
+          "path": "../painted_r5/decoded/expression.jpg",
+          "sha256": "6ec785fa7b2f68c20b6e2324e17f6b328b08b0dd144d3dd3bb9da5ae0862f486",
+          "window": "revision",
+          "at": [
+            178.2,
+            179.0,
+            180.5,
+            181.6,
+            182.5,
+            183.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "exit-scale",
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "Exit wrist insert enlarged character much more than its background, then shrank him back.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "high",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Retain final-frame evidence and check future affected cuts.",
+      "change": "Exit view scale is 1.1 across all three cuts; actual decoded frames no longer show the former zoom jump.",
+      "evidence": [
+        {
+          "path": "../painted_r5/baseline_decoded/expression_exit_before.jpg",
+          "sha256": "69754f8357feaccf5922bf979d4220e3d113daa19a48f4297422772a36d504fc",
+          "window": "revision",
+          "at": [
+            178.2,
+            181.6,
+            191.4,
+            194.3,
+            196.2
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "result": "Exit view scale is 1.1 across all three cuts; actual decoded frames no longer show the former zoom jump.",
+      "verification": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191.0,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195.0,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "exit-naturalness",
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "origin": "user_reported",
+      "status": "deferred",
+      "fact": "User described exit gait as game-like. Wounded posture and timing improve intent, but finite cels and rise-to-turn transitions remain hard.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "medium",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Use consistent head/body landmarks and additional grounded poses; inspect normal-speed transitions.",
+      "change": "Added partial rise, chest protection, turning, pause and distance-driven steps; further grounded inbetweens are needed.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191.0,
+            191.4,
+            191.8,
+            192.2,
+            192.6,
+            192.9,
+            193.2,
+            193.5,
+            193.9,
+            194.3,
+            194.6,
+            195.0,
+            195.4,
+            195.8,
+            196.2,
+            196.6,
+            197.0,
+            197.5
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "hero-inbetweens",
+      "subject": "aoao",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Three lifting poses clarify prop logic but do not give a fully continuous bodily rise.",
+      "impact": "Distracts from narrative continuity or physical acting.",
+      "priority": "medium",
+      "hypothesis": "Artwork state, placement and shot changes were previously validated in isolation.",
+      "next_action": "Use consistent head/body landmarks and additional grounded poses; inspect normal-speed transitions.",
+      "change": "Added reviewed lifting cels; additional between-poses remain a production refinement.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/support.jpg",
+          "sha256": "eb88edf8ddb1161fc294352638b68a925d84cd5a730720739eda9fa99ad199c4",
+          "window": "revision",
+          "at": [
+            103.6,
+            123.5,
+            135.4,
+            135.8,
+            136.2,
+            136.6,
+            137.0,
+            137.6,
+            149.5,
+            151.9,
+            153.7,
+            168.7,
+            172.7,
+            173.3,
+            173.76666666666668,
+            174.1
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "enemy-rise-transition",
+      "subject": "yekari",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "deferred",
+      "fact": "Half-rise to standing turn still presents an abrupt head/shoulder and pose change; fixing camera scale does not remove all artwork proportion differences.",
+      "impact": "Limits the weight and naturalness of the exit.",
+      "priority": "medium",
+      "hypothesis": "Rising and turning cels use different drawing proportions and few inbetweens.",
+      "next_action": "Register head-to-shoulder and torso landmarks across a complete rise/turn set and add grounded transitional poses.",
+      "evidence": [
+        {
+          "path": "../painted_r5/decoded/exit.jpg",
+          "sha256": "519daee11c4f475967a062f512f826d41851f6f4647aca511036683922419e28",
+          "window": "revision",
+          "at": [
+            191,
+            191.4,
+            191.8,
+            192.2
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "baseline": "painted_full_r4.json",
+      "candidate": "painted_full_r5.json",
+      "benefit": "Persistent forearm scar, visible relift, coherent enemy intent and fixed exit camera.",
+      "remaining": "Finite-pose acting and normal-speed audiovisual review."
+    }
+  ],
+  "misses": [
+    {
+      "origin": "user_reported",
+      "previous_judgment": "R4 marked shield-continuity, pain-carry and turn-exit fixed within its sampled scope. Original R4 report is preserved.",
+      "later_evidence": "User identified forearm damage, shield relift, emotional intent, portrait wave and exit scale/gait failures.",
+      "change": "Audit individual components, ownership/support, line intent, camera scale and body proportions across event and shot boundaries, with actual pixel evidence.",
+      "limits": "R5 still has discrete pose transitions; a larger checklist is not a guarantee against future misses."
+    }
+  ],
+  "reviewer_conclusion": "R5 repairs the documented camera jump, broad portrait deformation, exposed forearm damage carry, shield relift process and enemy intent mismatch in sampled final frames. Limited-pose naturalness remains deferred; audiovisual review needs evidence. Technical success does not imply artistic completion."
+}

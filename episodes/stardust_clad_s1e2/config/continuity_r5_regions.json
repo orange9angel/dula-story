@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "base": "assets3d/portraits_r4/yekari_closed.png",
+      "donor": "assets3d/continuity_r5/enemy_portrait_donor/yekari_closed.png",
+      "rects": [
+        [
+          130,
+          273,
+          129,
+          94
+        ],
+        [
+          177,
+          401,
+          64,
+          46
+        ]
+      ],
+      "feather": 5,
+      "output": "assets3d/portraits_r5/yekari_strain_closed.png"
+    },
+    {
+      "base": "assets3d/portraits_r4/yekari_half.png",
+      "donor": "assets3d/continuity_r5/enemy_portrait_donor/yekari_half.png",
+      "rects": [
+        [
+          130,
+          273,
+          129,
+          94
+        ],
+        [
+          177,
+          401,
+          64,
+          46
+        ]
+      ],
+      "feather": 5,
+      "output": "assets3d/portraits_r5/yekari_strain_half.png"
+    },
+    {
+      "base": "assets3d/portraits_r4/yekari_open.png",
+      "donor": "assets3d/continuity_r5/enemy_portrait_donor/yekari_open.png",
+      "rects": [
+        [
+          130,
+          273,
+          129,
+          94
+        ],
+        [
+          177,
+          401,
+          64,
+          46
+        ]
+      ],
+      "feather": 5,
+      "output": "assets3d/portraits_r5/yekari_strain_open.png"
+    },
+    {
+      "base": "assets3d/art_pass_r2/enemy_land.png",
+      "donor": "assets3d/continuity_r5/enemy_land_donor.png",
+      "rects": [
+        [
+          340,
+          338,
+          160,
+          122
+        ]
+      ],
+      "feather": 5,
+      "output": "assets3d/continuity_r5/enemy_land.png"
+    },
+    {
+      "base": "assets3d/continuity_r5/exit_passing_registered.png",
+      "donor": "assets3d/continuity_r5/exit_6.png",
+      "rects": [
+        [
+          0,
+          0,
+          314,
+          206
+        ],
+        [
+          239,
+          190,
+          75,
+          60
+        ]
+      ],
+      "feather": 4,
+      "output": "assets3d/continuity_r5/exit_6.png",
+      "preserveAlpha": false
+    }
+  ],
+  "report": "assets3d/continuity_r5/region_report.json"
+}

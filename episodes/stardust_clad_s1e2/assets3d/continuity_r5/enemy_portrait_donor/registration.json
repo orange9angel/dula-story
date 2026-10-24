@@ -1,0 +1,104 @@
+{
+  "config": {
+    "atlas": "assets3d/continuity_r5/enemy_direction_raw.png",
+    "output": "assets3d/continuity_r5/enemy_portrait_donor",
+    "actors": {
+      "yekari": {
+        "closedRect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "openRect": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "alignmentROI": [
+          130,
+          278,
+          129,
+          110
+        ],
+        "mouthWindow": [
+          179,
+          403,
+          59,
+          42
+        ],
+        "upperLipY": 417,
+        "feather": 5,
+        "neighborExclusions": [],
+        "eyeWindows": [
+          [
+            162,
+            299,
+            82,
+            56
+          ],
+          [
+            133,
+            333,
+            39,
+            42
+          ]
+        ],
+        "halfPolygon": [
+          [
+            181,
+            405
+          ],
+          [
+            237,
+            405
+          ],
+          [
+            237,
+            438
+          ],
+          [
+            200,
+            438
+          ],
+          [
+            181,
+            420
+          ]
+        ]
+      }
+    }
+  },
+  "actors": [
+    {
+      "actor": "yekari",
+      "size": [
+        627,
+        627
+      ],
+      "registrationScore": 0.9943828826500217,
+      "warp": [
+        [
+          0.9999987483024597,
+          -0.0015743182739242911,
+          1.0562762022018433
+        ],
+        [
+          0.0015743182739242911,
+          0.9999987483024597,
+          -0.28848543763160706
+        ]
+      ],
+      "mouthWindow": [
+        179,
+        403,
+        59,
+        42
+      ],
+      "outsideWindowMaxDifference": 0,
+      "halfDomainGuarded": true,
+      "blink": null
+    }
+  ]
+}

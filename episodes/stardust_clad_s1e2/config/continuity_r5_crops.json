@@ -1,0 +1,254 @@
+{
+  "items": [
+    {
+      "source": "assets3d/continuity_r5/enemy_direction_raw.png",
+      "crop": [
+        104,
+        627,
+        522,
+        1254
+      ],
+      "size": [
+        1024,
+        1536
+      ],
+      "output": "assets3d/continuity_r5/enemy_land_donor.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/enemy_direction_raw.png",
+      "crop": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "output": "assets3d/continuity_r5/enemy_rise.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/hero_lift_raw.png",
+      "crop": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "output": "assets3d/continuity_r5/hero_lift_0.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/hero_lift_raw.png",
+      "crop": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "output": "assets3d/continuity_r5/hero_lift_1.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/hero_lift_raw.png",
+      "crop": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "output": "assets3d/continuity_r5/hero_lift_2.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        0,
+        0,
+        314,
+        418
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_0.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        314,
+        0,
+        627,
+        418
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_1.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        627,
+        0,
+        940,
+        418
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_2.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        940,
+        0,
+        1254,
+        418
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_3.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        0,
+        418,
+        314,
+        836
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_4.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        314,
+        418,
+        627,
+        836
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_5.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        627,
+        418,
+        940,
+        836
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_6.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        940,
+        418,
+        1254,
+        836
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_7.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        0,
+        836,
+        314,
+        1254
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_8.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        314,
+        836,
+        627,
+        1254
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_9.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        627,
+        836,
+        940,
+        1254
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_10.png"
+    },
+    {
+      "source": "assets3d/continuity_r5/exit_wounded_raw.png",
+      "crop": [
+        940,
+        836,
+        1254,
+        1254
+      ],
+      "size": [
+        314,
+        418
+      ],
+      "output": "assets3d/continuity_r5/exit_11.png"
+    },
+    {
+      "source": "assets3d/continuity_r4/exit_passing.png",
+      "canvas": [
+        314,
+        418
+      ],
+      "position": [
+        33,
+        0
+      ],
+      "output": "assets3d/continuity_r5/exit_passing_registered.png"
+    },
+    {
+      "source": "assets3d/art_pass_full_r1/shield_detail.png",
+      "crop": [
+        902,
+        715,
+        1000,
+        915
+      ],
+      "luminanceAlpha": {
+        "ceiling": 205,
+        "range": 120,
+        "feather": 12
+      },
+      "output": "assets3d/continuity_r5/forearm_scar.png"
+    }
+  ],
+  "report": "assets3d/continuity_r5/crop_report.json"
+}
