@@ -1,0 +1,424 @@
+{
+  "config": {
+    "layersConfig": "config/walk_cel_r5_prepare.json",
+    "output": "storyboard/walk_cel_r6/baseline_metric",
+    "beforeFrames": "storyboard/walk_cel_r3/render/revised",
+    "depthProfile": [
+      [
+        0,
+        235,
+        80,
+        22
+      ],
+      [
+        180,
+        247,
+        43,
+        24
+      ],
+      [
+        230,
+        254,
+        48,
+        34
+      ],
+      [
+        290,
+        263,
+        34,
+        31
+      ],
+      [
+        330,
+        265,
+        45,
+        34
+      ],
+      [
+        380,
+        266,
+        40,
+        30
+      ],
+      [
+        470,
+        266,
+        65,
+        26
+      ]
+    ],
+    "chestY": 225,
+    "pelvisY": 335,
+    "pivot": [
+      263,
+      335
+    ],
+    "followEndY": 380,
+    "footLockY": 612,
+    "armDepthOffset": 5,
+    "legStartY": 354,
+    "legBlend": 8,
+    "bodyFadeStartY": 361,
+    "bodyFadeEndY": 377,
+    "minLegComponent": 1200,
+    "clothUnderlayY": [
+      355,
+      442
+    ],
+    "weaponOverrides": {
+      "k0": [
+        [
+          [
+            213,
+            309
+          ],
+          [
+            225,
+            319
+          ],
+          [
+            125,
+            416
+          ],
+          [
+            113,
+            405
+          ]
+        ],
+        [
+          [
+            103,
+            399
+          ],
+          [
+            128,
+            381
+          ],
+          [
+            143,
+            379
+          ],
+          [
+            136,
+            401
+          ],
+          [
+            166,
+            386
+          ],
+          [
+            153,
+            414
+          ],
+          [
+            128,
+            432
+          ],
+          [
+            106,
+            433
+          ],
+          [
+            100,
+            421
+          ]
+        ]
+      ],
+      "b3": [
+        [
+          [
+            207,
+            305
+          ],
+          [
+            218,
+            316
+          ],
+          [
+            143,
+            392
+          ],
+          [
+            130,
+            382
+          ]
+        ],
+        [
+          [
+            122,
+            374
+          ],
+          [
+            148,
+            355
+          ],
+          [
+            165,
+            348
+          ],
+          [
+            154,
+            369
+          ],
+          [
+            179,
+            364
+          ],
+          [
+            173,
+            393
+          ],
+          [
+            145,
+            408
+          ],
+          [
+            125,
+            406
+          ],
+          [
+            119,
+            392
+          ]
+        ]
+      ],
+      "b2": [
+        [
+          [
+            293,
+            338
+          ],
+          [
+            307,
+            338
+          ],
+          [
+            309,
+            392
+          ],
+          [
+            318,
+            387
+          ],
+          [
+            326,
+            370
+          ],
+          [
+            338,
+            370
+          ],
+          [
+            341,
+            412
+          ],
+          [
+            330,
+            433
+          ],
+          [
+            312,
+            437
+          ],
+          [
+            298,
+            427
+          ],
+          [
+            292,
+            412
+          ]
+        ]
+      ]
+    },
+    "rootSampleY": 373,
+    "rootROI": [
+      170,
+      335
+    ],
+    "rootTarget": [
+      234,
+      296
+    ],
+    "rootBlendStartY": 366,
+    "rootBlendEndY": 445,
+    "harmonics": 2,
+    "lateralGain": 0.7,
+    "hipYawGain": 1,
+    "hipRollGain": 0.55,
+    "chestYawGain": 1,
+    "chestRollGain": 0.8,
+    "labels": [
+      "R3 · 胯部随原画换形",
+      "R5 · 连续腰胯 / 胸胯分别转动"
+    ],
+    "footer": "同机位同周期 / 保留整头与人体原画",
+    "samples": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30
+    ],
+    "rootProfile": "per_row"
+  },
+  "selectedFrames": [
+    0
+  ],
+  "motion": [
+    {
+      "i": 0,
+      "key": "k0",
+      "dx": 0.01809484490086106,
+      "dy": -0.31835527721176504,
+      "lean": -0.006192904467735775,
+      "hipYaw": 0.11960019587614881,
+      "hipRoll": 0.04586173645305433,
+      "chestYaw": -0.07137086437666575,
+      "chestRoll": 0.020107926691829404
+    }
+  ],
+  "rootRegistration": [
+    {
+      "id": "k0",
+      "sourceRoot": [
+        226.0,
+        304.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 0,
+      "occupiedRowWidthRatio": {
+        "min": 0.696969696969697,
+        "max": 1.0,
+        "mean": 0.8069604194685832
+      }
+    },
+    {
+      "id": "b0",
+      "sourceRoot": [
+        206.0,
+        271.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 0,
+      "occupiedRowWidthRatio": {
+        "min": 0.9305555555555556,
+        "max": 1.0,
+        "mean": 0.9656694057983528
+      }
+    },
+    {
+      "id": "k1",
+      "sourceRoot": [
+        235.0,
+        293.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 1,
+      "occupiedRowWidthRatio": {
+        "min": 0.984375,
+        "max": 1.0862068965517242,
+        "mean": 1.0273447794095234
+      }
+    },
+    {
+      "id": "b1",
+      "sourceRoot": [
+        214.0,
+        279.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 0,
+      "occupiedRowWidthRatio": {
+        "min": 0.9166666666666666,
+        "max": 1.0,
+        "mean": 0.9576673148283066
+      }
+    },
+    {
+      "id": "k2",
+      "sourceRoot": [
+        223.0,
+        300.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 0,
+      "occupiedRowWidthRatio": {
+        "min": 0.7070707070707071,
+        "max": 1.0108695652173914,
+        "mean": 0.8159423863153462
+      }
+    },
+    {
+      "id": "b2",
+      "sourceRoot": [
+        232.0,
+        292.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 0,
+      "occupiedRowWidthRatio": {
+        "min": 1.0,
+        "max": 1.1923076923076923,
+        "mean": 1.0924375841125764
+      }
+    },
+    {
+      "id": "k3",
+      "sourceRoot": [
+        236.0,
+        308.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 1606,
+      "occupiedRowWidthRatio": {
+        "min": 0.8533333333333334,
+        "max": 1.0125,
+        "mean": 0.919756745697204
+      }
+    },
+    {
+      "id": "b3",
+      "sourceRoot": [
+        225.0,
+        305.0
+      ],
+      "targetRoot": [
+        234,
+        296
+      ],
+      "occludedClothPixels": 0,
+      "occupiedRowWidthRatio": {
+        "min": 0.7558139534883721,
+        "max": 1.0,
+        "mean": 0.8443812487384719
+      }
+    }
+  ],
+  "projectionMaxError": 4.865013002195067e-13,
+  "inverseResidualMaxPx": 0.039725750783762635,
+  "scope": "Bounded chest/pelvis curved-surface motion. Original leg/arm pose changes and world contact remain independent review items."
+}

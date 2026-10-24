@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/walk_cel_r6_compare.mp4",
+    "sha256": "ed40c9a1aae131f4f86f18d8b7de37e69c59a624542603afb9f5c14ca558d1f4"
+  },
+  "scope": {
+    "subjects": [
+      "yekari"
+    ],
+    "windows": [
+      {
+        "id": "cycle",
+        "start": 0,
+        "end": 1.1
+      }
+    ],
+    "accepted_properties": [
+      "第三种原画的角色设计与脸型",
+      "已有场景、音轨和粒子工艺",
+      "用户本轮认可R5姿势已接近；保留原动作控制"
+    ],
+    "limitations": "本轮修复R5配准导致的大腿挤细与拉弯。查看编码后全身八阶段、局部对照和33帧大腿序列；未声称正常速度播放观察。上身/脚部未变化证据同时引用shape_audit。"
+  },
+  "checks": [
+    {
+      "subject": "yekari",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "固定朝向全身帧保持认可的脸型、发型、紫甲和瘦长设计；不推广到其他视角。",
+      "issue_ids": [],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "本全身尺度内颈领连接仍成立，整头随身体移动；没有面部特写或转面证据。",
+      "issue_ids": [],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "无交互的走路窗口中视线保持向左侧行进方向。",
+      "issue_ids": [],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "expression",
+      "status": "not_applicable",
+      "observation": "本轮局部步态实验没有安排情绪改变或对白，不能用于评价正片表情。",
+      "issue_ids": [],
+      "evidence": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "发型保留，发梢随整头移动，缺少独立跟随。",
+      "issue_ids": [
+        "rigid_hair"
+      ],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": "主体步态完成后处理发束跟随。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "本窗口大腿中段厚度与髋—膝方向恢复，腰甲连接可见；本项只关闭配准造成的面条腿退步。",
+      "issue_ids": [
+        "noodle_thighs"
+      ],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_thighs.jpg",
+          "sha256": "3b29e56c443ffd9d80cb72314fc38bcab220831312ea7ed049bcaea7730da303",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../walk_cel_r6/decoded_thigh_sequence.jpg",
+          "sha256": "015f0e1529aeca0bf2146fb797d7de92975ed016ac3316094f0adb8c0fa28fb8",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": "换角度或新原画须按相同关节方向和原画宽度复查。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "实际顺序帧内握持可读，杆/钩设计仍随cel变化。",
+      "issue_ids": [
+        "prop_design"
+      ],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": "独立统一武器和握点。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "support",
+      "status": "needs_evidence",
+      "observation": "灰底原位周期不能证明世界鞋底接触和重心承重；底稿骨长通过不能替代该证据。",
+      "issue_ids": [],
+      "evidence": [],
+      "next_action": "把候选放回实际路径与地面，获取接触相和根轨迹。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "腿势在换格时仍跃迁，起停/转身不在本窗口。",
+      "issue_ids": [
+        "phase_jump"
+      ],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": "按左右腿身份补过渡。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "action",
+      "status": "not_applicable",
+      "observation": "本窗口没有进攻、受击或其他交互动作。",
+      "issue_ids": [],
+      "evidence": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "temporal",
+      "status": "finding",
+      "observation": "连续躯干与持帧肢体之间的时序差异仍明显。",
+      "issue_ids": [
+        "cel_jumps"
+      ],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": "修各层转换的共同时间关系。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "shot_integration",
+      "status": "needs_evidence",
+      "observation": "本轮灰底同机位诊断，没有实际场景、前景和接触影。",
+      "issue_ids": [],
+      "evidence": [],
+      "next_action": "局部动作成立后接回原镜头验证。"
+    },
+    {
+      "subject": "yekari",
+      "dimension": "av_coordination",
+      "status": "not_applicable",
+      "observation": "试片设计为无声动作诊断，未评价或改变既有音轨。",
+      "issue_ids": [],
+      "evidence": [],
+      "next_action": ""
+    },
+    {
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "status": "finding",
+      "observation": "腰胯连续性局部改善不足以让完整角色成为自然走路，纸片感仍未判解决。",
+      "issue_ids": [
+        "paper_body"
+      ],
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "next_action": "继续解决全身姿态与承重，不能只增加表面明暗。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "paper_body",
+      "subject": "yekari",
+      "dimension": "open_scan",
+      "origin": "user_reported",
+      "status": "in_progress",
+      "fact": "胸与胯已有不同的小幅运动，完整身体仍是有限画形配合腿臂跳切，缺少连续的体积与重量表达。",
+      "impact": "仍有纸片人的观感风险，不能推荐为自然走路成品。",
+      "priority": "high",
+      "hypothesis": "浅曲面只改变已有表面投影，八格姿态和遮挡阶段仍稀疏。",
+      "next_action": "以统一身体/装备和关节约束的过渡修画补齐关键阶段，再作实际场景验证。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "prop_design",
+      "subject": "yekari",
+      "dimension": "hands_props",
+      "origin": "retrospective",
+      "status": "open",
+      "fact": "手仍持械，但八张原画的杆长、钩形和角度不完全一致。",
+      "impact": "持械连续性削弱。",
+      "priority": "medium",
+      "hypothesis": "武器被每张整人物原画重画，分层只能修暗边和断杆，不能锁定统一设计。",
+      "next_action": "独立绑定同一刚性武器，并检查手腕与握点。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "phase_jump",
+      "subject": "yekari",
+      "dimension": "locomotion",
+      "origin": "retrospective",
+      "status": "open",
+      "fact": "接触到抬腿、过腿到下一接触的腿势仍突然变化。",
+      "impact": "换脚可读，但自然步态未通过。",
+      "priority": "high",
+      "hypothesis": "继承八格腿势及原曝光，当前只修腿根，不产生新的关节/遮挡过渡。",
+      "next_action": "按同一左右腿身份和原动作阶段补受约束过渡，不只平滑身体位置。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "cel_jumps",
+      "subject": "yekari",
+      "dimension": "temporal",
+      "origin": "retrospective",
+      "status": "open",
+      "fact": "同一cel内身体缓慢运动，切换时手臂和腿的轮廓仍发生大幅改变。",
+      "impact": "全身时序不统一。",
+      "priority": "high",
+      "hypothesis": "连续身体控制与持帧肢体混合，原画间缺少可兼容过渡。",
+      "next_action": "协调身体、手臂、腿和武器在转换阶段的画形与曝光。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "rigid_hair",
+      "subject": "yekari",
+      "dimension": "hair",
+      "origin": "retrospective",
+      "status": "open",
+      "fact": "发型与整头一起移动，发梢没有独立滞后。",
+      "impact": "细节表演有限。",
+      "priority": "low",
+      "hypothesis": "复用整头画形，目前没有发束次级层。",
+      "next_action": "在主体步态成立后按头部加减速补有限发梢跟随。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "noodle_thighs",
+      "subject": "yekari",
+      "dimension": "body",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "R5接缝配准挤细大腿中段并把髋—膝走向拉弯，用户指出面条腿。",
+      "impact": "损坏已认可的人体造型。",
+      "priority": "high",
+      "hypothesis": "双腿逐行归一化到固定宽度；长区间非线性回混把腿的分离宽度当作漂移。",
+      "next_action": "保持当前姿态；新角度须重验原画厚度、骨干走向和膝髋连接，不推广本窗口为全片通过。",
+      "evidence": [
+        {
+          "path": "../walk_cel_r6/decoded_thighs.jpg",
+          "sha256": "3b29e56c443ffd9d80cb72314fc38bcab220831312ea7ed049bcaea7730da303",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "change": "撤销行宽归一化，以线性横向位移配准腿根；底图裤边按实际腿支撑收回。",
+      "result": "跨步前后大腿的中段体积恢复，过腿上段不再被强制拉成S弯；33帧身体控制与R5一致，上身/脚部未变。",
+      "verification": [
+        {
+          "path": "../walk_cel_r6/decoded_thighs.jpg",
+          "sha256": "3b29e56c443ffd9d80cb72314fc38bcab220831312ea7ed049bcaea7730da303",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../walk_cel_r6/decoded_thigh_sequence.jpg",
+          "sha256": "015f0e1529aeca0bf2146fb797d7de92975ed016ac3316094f0adb8c0fa28fb8",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [
+    {
+      "change": "保留R5姿态与曝光，恢复原画宽度及髋—膝走向。",
+      "rejected": "仅缩短混合范围导致裤边悬空和接缝折角，保留thigh_trials.jpg。",
+      "chosen": "rootProfile translate + bodySupportY；无新增生图。",
+      "verification": [
+        {
+          "path": "../walk_cel_r6/decoded_comparison.jpg",
+          "sha256": "fe35d278b77ac6d09110ccda432d2c1762b198109dadc37ef75afc5869edb899",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../walk_cel_r6/decoded_thighs.jpg",
+          "sha256": "3b29e56c443ffd9d80cb72314fc38bcab220831312ea7ed049bcaea7730da303",
+          "window": "cycle",
+          "at": [
+            0,
+            0.166667,
+            0.333333,
+            0.5,
+            0.633333,
+            0.8,
+            0.933333,
+            1.033333
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "../walk_cel_r6/decoded_thigh_sequence.jpg",
+          "sha256": "015f0e1529aeca0bf2146fb797d7de92975ed016ac3316094f0adb8c0fa28fb8",
+          "window": "cycle",
+          "at": [
+            0,
+            0.033333,
+            0.066667,
+            0.1,
+            0.133333,
+            0.166667,
+            0.2,
+            0.233333,
+            0.266667,
+            0.3,
+            0.333333,
+            0.366667,
+            0.4,
+            0.433333,
+            0.466667,
+            0.5,
+            0.533333,
+            0.566667,
+            0.6,
+            0.633333,
+            0.666667,
+            0.7,
+            0.733333,
+            0.766667,
+            0.8,
+            0.833333,
+            0.866667,
+            0.9,
+            0.933333,
+            0.966667,
+            1,
+            1.033333,
+            1.066667
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "limits": "原有换格跳切、武器设计差异和场景接触仍属独立缺口。"
+    }
+  ],
+  "misses": [
+    {
+      "origin": "user_reported",
+      "previous_record": "walk_cel_r5.json",
+      "previous_judgment": "接缝连续性改善，未识别大腿中段被挤细和骨干走向受损。",
+      "later_finding": "用户认可姿势方向，指出大腿成面条。",
+      "failure": "有实际全身和局部序列，注意力仍只落在接缝，没有回到同姿态原画比较体积与髋—膝方向。",
+      "changed_attention": "并排追踪各条腿的髋—膝轴与上中下厚度；先保全形体，再处理局部接合。",
+      "counterexample": "有意夸张、交叉或透视缩短不要求屏幕行宽相同。"
+    }
+  ],
+  "reviewer_conclusion": "本窗口面条腿退步已局部修复，保留用户认可的R5姿态方向。该记录不把全片场景接触、换格时序和武器尺寸差异改为通过。"
+}
