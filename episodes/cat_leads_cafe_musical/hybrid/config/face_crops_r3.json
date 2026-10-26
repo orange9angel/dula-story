@@ -1,0 +1,16 @@
+{
+  "comment": "r3 表情脸槽 512×512：裁切框与 r2 完全一致（girl (330,180,960,810)，boy (350,140,990,780)）。",
+  "report": "hybrid/config/face_crops_r3_report.json",
+  "items": [
+    {"source": "hybrid/tmp/face_composed/girl_tease_closed.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_tease_closed.png"},
+    {"source": "hybrid/tmp/face_composed/girl_tease_half.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_tease_half.png"},
+    {"source": "hybrid/tmp/face_composed/girl_tease_open.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_tease_open.png"},
+    {"source": "hybrid/tmp/face_composed/girl_tease_blink.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_tease_blink.png"},
+    {"source": "hybrid/tmp/face_composed/girl_invite_closed.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_invite_closed.png"},
+    {"source": "hybrid/tmp/face_composed/boy_focus_closed.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_focus_closed.png"},
+    {"source": "hybrid/tmp/face_composed/boy_focus_half.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_focus_half.png"},
+    {"source": "hybrid/tmp/face_composed/boy_focus_open.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_focus_open.png"},
+    {"source": "hybrid/tmp/face_composed/boy_focus_blink.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_focus_blink.png"},
+    {"source": "hybrid/tmp/face_composed/boy_lookup_closed.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_lookup_closed.png"}
+  ]
+}

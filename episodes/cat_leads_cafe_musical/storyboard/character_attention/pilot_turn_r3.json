@@ -1,0 +1,1066 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/hybrid_pilot_turn_full.mp4",
+    "sha256": "a05a33860c34c8de9629a76a14455a55bae9acbdcd4ae7ffae1dda157e3dce24"
+  },
+  "scope": {
+    "subjects": [
+      "Girl",
+      "Boy"
+    ],
+    "windows": [
+      {
+        "id": "turn_all",
+        "start": 0.0,
+        "end": 6.5
+      }
+    ],
+    "accepted_properties": [
+      "身份锚=已认可原画；音频链锁定",
+      "r3 已接入：转身五相位关键画+一拍二曝光+相位断言 10/10+raster-face 前端相位"
+    ],
+    "limitations": "抽帧+全分辨率裁区（still/ordered_frames），未做正常速度声画联看；转身相位间硬切观感未在动态下验证。用户在正常播放中发现过我没抓到的问题（M2），本轮已改全分辨率裁区取证。"
+  },
+  "checks": [
+    {
+      "subject": "Girl",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "正/侧/背三向关键画身份稳定（发丝、rim 光、服装细节与已认可原画一致）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "front 相位脸片 r3.1 锚点修复后单一贴合；侧/背相位无脸片（设计如此）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_front_settle_42.40.png",
+          "sha256": "75da9c16c309e34900f281ca91beda6c8e888b5e83168f2adcdbf3f9c0e8af82",
+          "window": "turn_all",
+          "at": [
+            5.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "交叉步相位视线向运动方向，收势段回正。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "expression",
+      "status": "needs_evidence",
+      "observation": "转身段为歌唱段，脸片仅在 front 相位叠加；侧/背无表情信息（被头发/角度遮挡属正常）；收势闭眼笑可见。表情-歌声对齐未做声画联看。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_front_settle_42.40.png",
+          "sha256": "75da9c16c309e34900f281ca91beda6c8e888b5e83168f2adcdbf3f9c0e8af82",
+          "window": "turn_all",
+          "at": [
+            5.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "r4 正常速度声画联看"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "发帘甩动、发梢滞后、侧背发丝层次全部达标（相对 V5 是质变）；但剪影边缘亮流苏 halo 同对话段（P-D2/P-D7 同因），转身画中段的亮边在亮地板前可见。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T1"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "交叉步/重心转移/手臂展开-收拢由关键画承担，无程序拉伸。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "转身手型为张开放松（关键画自带），无持物。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "support",
+      "status": "finding",
+      "observation": "交叉步 cel 自带脚位与烘焙实时脚点有小幅残差（子代理遗留确认）；接触影逐帧跟脚点在；但 cel 脚与影的相对关系在硬切帧可能瞬跳。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T2"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "转身由 5 相位关键画硬切驱动（一拍二），相位间无过渡画；0.4s 抽样下动作可读，但硬切的动态观感（是否台阶感）未经正常速度验证。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T3"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "action",
+      "status": "no_issue_observed",
+      "observation": "预备（展开）-极值（背开）-回收（收势下沉）结构完整，相对 r2 立牌旋转是本质改善。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_front_settle_42.40.png",
+          "sha256": "75da9c16c309e34900f281ca91beda6c8e888b5e83168f2adcdbf3f9c0e8af82",
+          "window": "turn_all",
+          "at": [
+            5.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "一拍二曝光表已断言执行（probe）；正常速度节奏感未验证。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "r4 正常速度声画联看"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "亮边 halo（同 P-D2 因）；地板接触影偏淡；人物与背景光向基本一致。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T4"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "字幕在框；唱段口型 front 相位 jaw 驱动可见；未做听觉联看。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "r4 正常速度声画联看"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "双人朝向相反设计（面对面/背对背）读感自然；未见清单外问题。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "正/侧/背三向关键画身份稳定（发丝、rim 光、服装细节与已认可原画一致）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "front 相位脸片 r3.1 锚点修复后单一贴合；侧/背相位无脸片（设计如此）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_front_settle_42.40.png",
+          "sha256": "75da9c16c309e34900f281ca91beda6c8e888b5e83168f2adcdbf3f9c0e8af82",
+          "window": "turn_all",
+          "at": [
+            5.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "交叉步相位视线向运动方向，收势段回正。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "expression",
+      "status": "needs_evidence",
+      "observation": "转身段为歌唱段，脸片仅在 front 相位叠加；侧/背无表情信息（被头发/角度遮挡属正常）；收势闭眼笑可见。表情-歌声对齐未做声画联看。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_front_settle_42.40.png",
+          "sha256": "75da9c16c309e34900f281ca91beda6c8e888b5e83168f2adcdbf3f9c0e8af82",
+          "window": "turn_all",
+          "at": [
+            5.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "r4 正常速度声画联看"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "发帘甩动、发梢滞后、侧背发丝层次全部达标（相对 V5 是质变）；但剪影边缘亮流苏 halo 同对话段（P-D2/P-D7 同因），转身画中段的亮边在亮地板前可见。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T1b"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "交叉步/重心转移/手臂展开-收拢由关键画承担，无程序拉伸。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "转身手型为张开放松（关键画自带），无持物。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "support",
+      "status": "finding",
+      "observation": "交叉步 cel 自带脚位与烘焙实时脚点有小幅残差（子代理遗留确认）；接触影逐帧跟脚点在；但 cel 脚与影的相对关系在硬切帧可能瞬跳。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T2b"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "locomotion",
+      "status": "finding",
+      "observation": "转身由 5 相位关键画硬切驱动（一拍二），相位间无过渡画；0.4s 抽样下动作可读，但硬切的动态观感（是否台阶感）未经正常速度验证。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T3b"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "action",
+      "status": "no_issue_observed",
+      "observation": "预备（展开）-极值（背开）-回收（收势下沉）结构完整，相对 r2 立牌旋转是本质改善。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_front_settle_42.40.png",
+          "sha256": "75da9c16c309e34900f281ca91beda6c8e888b5e83168f2adcdbf3f9c0e8af82",
+          "window": "turn_all",
+          "at": [
+            5.5
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "一拍二曝光表已断言执行（probe）；正常速度节奏感未验证。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "r4 正常速度声画联看"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "亮边 halo（同 P-D2 因）；地板接触影偏淡；人物与背景光向基本一致。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-T4b"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "字幕在框；唱段口型 front 相位 jaw 驱动可见；未做听觉联看。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "r4 正常速度声画联看"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "双人朝向相反设计（面对面/背对背）读感自然；未见清单外问题。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "P-T1",
+      "subject": "Girl",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "转身 cel 剪影边缘亮流苏 halo（defringe 引入，同 P-D2 根因）",
+      "impact": "贴纸感",
+      "priority": "P0",
+      "hypothesis": "defringe 把暗边替成亮边",
+      "next_action": "边缘处理重做后复验",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    },
+    {
+      "id": "P-T1b",
+      "subject": "Boy",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "同 P-T1（boy clean 版边缘亮像素 2-12%）",
+      "impact": "贴纸感",
+      "priority": "P0",
+      "hypothesis": "同",
+      "next_action": "同",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    },
+    {
+      "id": "P-T2",
+      "subject": "Girl",
+      "dimension": "support",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "交叉步 cel 脚位与烘焙脚点小残差，硬切帧脚-影关系可能瞬跳",
+      "impact": "接触可信度",
+      "priority": "P1",
+      "hypothesis": "关键画脚位≠实时烘焙脚位",
+      "next_action": "相位切换帧逐帧看脚-影；必要时按烘焙脚位微调 cel 落点",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "接入 motion-controls 逐关节驱动层：相位内四肢/躯干随烘焙关节连续变形（rig_turn_cels.json 人工标定），支撑脚 pins 固定",
+      "result": "相位内抬腿连续下落、手臂连续开合、支撑脚 0px 位移（probe driveChecks 80 项全过）",
+      "verification": "fix_r6/drive_seq_{0..5}_armleg_crop.png 原生分辨率连续帧裁区；probe 断言：施加量==烘焙位移限幅等值、pin 位移 0、相位内有显著运动"
+    },
+    {
+      "id": "P-T2b",
+      "subject": "Boy",
+      "dimension": "support",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "同 P-T2",
+      "impact": "接触可信度",
+      "priority": "P1",
+      "hypothesis": "同",
+      "next_action": "同",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "接入 motion-controls 逐关节驱动层：相位内四肢/躯干随烘焙关节连续变形（rig_turn_cels.json 人工标定），支撑脚 pins 固定",
+      "result": "相位内抬腿连续下落、手臂连续开合、支撑脚 0px 位移（probe driveChecks 80 项全过）",
+      "verification": "fix_r6/drive_seq_{0..5}_armleg_crop.png 原生分辨率连续帧裁区；probe 断言：施加量==烘焙位移限幅等值、pin 位移 0、相位内有显著运动"
+    },
+    {
+      "id": "P-T3",
+      "subject": "Girl",
+      "dimension": "locomotion",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "五相位硬切无过渡画，动态台阶感未验证",
+      "impact": "转身流畅度",
+      "priority": "P1",
+      "hypothesis": "相位间隔 1.16s 硬切",
+      "next_action": "用户试片门判断硬切观感",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/phase_back_40.07.png",
+          "sha256": "34644eda114317824323972865af03532dc7b9b68a2a6bad8115b3a2bacaa7fc",
+          "window": "turn_all",
+          "at": [
+            3.17
+          ],
+          "method": "still"
+        }
+      ],
+      "result": "见 r8 iteration",
+      "change": "纯画序列+整拍冻结+绝对角度选画",
+      "verification": "fix_r8/"
+    },
+    {
+      "id": "P-T3b",
+      "subject": "Boy",
+      "dimension": "locomotion",
+      "origin": "self_found",
+      "status": "fixed",
+      "fact": "同 P-T3",
+      "impact": "转身流畅度",
+      "priority": "P1",
+      "hypothesis": "同",
+      "next_action": "用户试片门判断硬切观感",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/phase_side_38.93.png",
+          "sha256": "6fefc5c15e2cb70728c49681474b5d78235cb048469d2a48335717266f534deb",
+          "window": "turn_all",
+          "at": [
+            2.03
+          ],
+          "method": "still"
+        }
+      ],
+      "result": "见 r8 iteration",
+      "change": "纯画序列+整拍冻结+绝对角度选画",
+      "verification": "fix_r8/"
+    },
+    {
+      "id": "P-T4",
+      "subject": "Girl",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "亮边贴纸感（合成层表现）+接触影偏淡",
+      "impact": "融合度",
+      "priority": "P0",
+      "hypothesis": "同 P-D2",
+      "next_action": "边缘修复后同机位复验",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    },
+    {
+      "id": "P-T4b",
+      "subject": "Boy",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "同 P-T4",
+      "impact": "融合度",
+      "priority": "P0",
+      "hypothesis": "同",
+      "next_action": "同",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "turn_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    }
+  ],
+  "iterations": [
+    {
+      "round": "r4",
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "P0 边缘两项修复并验证；P-D6 disproven",
+      "guard_note": "渲染帧 halo 指标三轮标定失败（被窗框/字幕带主导，r4 反而 0.0263>r3 0.0249）：该指标不作门，halo 类缺陷的门=资产边缘带统计（≤1.5%）+原生分辨率目检。frame_guard.py 保留 freeze/diff 机械检查，halo 部分标记实验性。"
+    },
+    {
+      "round": "r5/r5b",
+      "change": "撤除整脸贴片路线（M3），改为同一头上的眼窗/嘴窗整换；眼窗供体收窄到眼球/眼睑区并等比缩放居中；逐 cel 实测眼/嘴框",
+      "result": "刘海犄角（41.87s）消失；r5 引入的阿澈 focus 眼窗黑带在 r5b 修复（供体窗排除眉睫暗带）；tease/blink/open 各态全分辨率目检通过",
+      "verification": "fix_r5/settle_boy_head_41.87_horn_report.png、fix_r5b/{boy_focus_abs7.2,girl_tease_abs5.0,wide_blink_abs9.5}.png；compose 锁区外零差分 30/30；probe/package 全绿",
+      "note": "路线回归 skill 既定图案：同头窗口整换/近景整肖像。整脸贴片三次接缝缺陷后废弃。"
+    },
+    {
+      "round": "r6",
+      "change": "驱动层接入（rig 标定+关节增量经 cel-stage warp 施加+相位参考帧按 @phN 后缀解耦）+阿澈眼窗收窄至纯眼球区",
+      "result": "相位内非纸片化；眼窗横带原生裁区确认消失",
+      "verification": "fix_r6/drive_seq_*_armleg_crop.png（原生）、boy_focus_eyes_native_crop.png（原生）；probe 80 项 driveChecks 全过",
+      "incident": "子代理重渲覆盖 r5b 默认名片（未先改名），r5b 片丢失但可确定性重建；已立\"重渲前先改名\"纪律"
+    },
+    {
+      "round": "r7",
+      "change": "路线纠正落地：8 相位真画周期（stabilize_cel_anchors 配准）+驱动层限相位内微调+同图表情变体（撤跨图移植）",
+      "result": "纸片人断言通过（残差 3397≠0）；朝向映射按实测反向播放（画序列左起转 vs 烘焙右起转）；表情同图贴回零差分",
+      "verification": "主代理逐张看 8 相位/边界/原生裁区；probe/package 全绿",
+      "open": "女孩发梢滞后方向为反向播放近似（左起转画右起转用）；唱段转身嘴型静止（turn cel 无嘴变体）——均列用户判断项"
+    },
+    {
+      "round": "r8(进行中)",
+      "change": "转身改纯画序列：相位内真冻结（删 warp/bob/sway），按绝对角度选画禁时间倒放，女孩补右起转正脸画",
+      "result": "完成：相位内真冻结（躯干内饰逐像素一致）、腿部无下拉拧转（原生裁区实证）、朝向物理正确（右起转画序）、相位边界换画率 56.1%",
+      "verification": "fix_r8/ 八相位+freeze_pair+legs_girl_t5_39.43_native（主代理逐张看）；probe 冻结/换画/相位断言全绿；确定性检查 10 项过（turnPhaseEntry 离线锚定）"
+    },
+    {
+      "round": "r9",
+      "change": "摆放锚=画内支撑脚对位相位入场帧触地脚（整拍锁死）；显示人高锚定烘焙头-脚投影距+头顶余量（V5 实测）；唱段嘴型同图变体接入",
+      "result": "脚相位内 0 位移；人高一致性 err≤0.53%；嘴态随 jaw 整换",
+      "verification": "主代理原生分辨率复核：fix_r9/feet_native 双帧（零滑移）、r9_3.0 腿部裁区（变形消失）、r9_41.95 嘴部（开口）、same_shot r8/r9 对照（人高恢复）；probe/package 全绿",
+      "open": "眨眼未接转身段；转后 stand 段嘴静止"
+    },
+    {
+      "round": "r10",
+      "change": "显示尺度统一：每角色全相位同一缩放（烘焙头-脚投影距+头顶余量 / 注册后脸-脚底跨距），弃用逐 cel 归一（量纲错配曾致 t1r 巨人化，已回退）",
+      "result": "跨相位头高恒定；主代理独立实测渲染帧：女孩发顶-鞋底跨距 4 相位 = 1024/1024/1024/1025px",
+      "verification": "probe heightChecks 20/20（err≤0.91%）；主代理实测+fix_r10/phase* 整帧逐张看；V5 同帧对照在 fix_r10/v5_40.08.png",
+      "note": "back_open 全身内容高 -8% 为画法真实差异（背面发垂、颅顶无蓬发），头高恒定，不拦截"
+    },
+    {
+      "round": "r11",
+      "change": "转身画集配准从三点分区重映射改为纯相似变换（hybrid/tools/similarity_register.py），嘴型变体在新坐标系重合成",
+      "result": "渲染帧正面/侧面躯干同长（原生裁区并排，fix_r11/torso_front_vs_side_native.png）；t6 源画vs相似注册版零变形；probe torsoChecks 26/26，其余断言全绿",
+      "verification": "主代理原生分辨率复验通过；比例门（check_cel_proportions 人工地标表）入库流程确立",
+      "open": "侧/背面画裙摆下缘漂移（+3~4%）仍按门驳回待重生成或修画；转身眨眼未接"
+    },
+    {
+      "round": "r12",
+      "change": "头顶余量手估改实测（眼线/下巴/颅顶解剖）；每角色单一世界站高常量（girl 1.342m/boy 1.382m），全相位全段统一由它×相机ppm 得显示高",
+      "result": "女：男=0.9709（男孩高 3.0%，与烘焙设定一致）；跨相位跨段人高 err≤0.91%；同框帧男孩明显略高",
+      "verification": "fix_r12/pair_40.08.png 与 V5 同帧对照（主代理已看）；probe/package 全绿",
+      "note": "试片人物整体比 V5 小（V5 的 3D 大头绘画不再当比例基准）——有意裁定，待用户确认"
+    },
+    {
+      "round": "r13+r14",
+      "change": "r13 人物尺度贴回 V5 同机位（世界站高=V5 实测锚定，脉冲人景同步）；r14 裙摆漂移 8 张有界修画（腰上袜下逐像素恒等断言）+男孩地标表首建过门",
+      "result": "人物与家具比例恢复；女男比 0.9711；脉冲同步；女孩 10/10、男孩 8/8 过比例门；顺带修复 r7 起 t3/t5 镜像源误用旧配准的历史欠账",
+      "verification": "主代理看 fix_r13 同帧对照（人物大小= V5）与 fix_r14 修前修后/八相位对照（裙摆上收、大腿变长、无接缝）；probe/package 全绿",
+      "open": "男孩 t5 腰-2.3%/t1 裤脚-2.7% 贴近门边（姿势固有）；sit/stand 画未建比例表"
+    },
+    {
+      "round": "r15/r15b",
+      "change": "批次6链式重生成女孩4张漂移画（累积历史参考）+t3_v2有界修裙+back_open槽位残留（stabilize时代contentTop）修正",
+      "result": "M10渲染实测：女孩8相位spread 1.91%、男孩1.41%全绿；跨相位比例一致（比例门10/10）；锚表sock.top历史错误（0.601→实测0.733）一并更正",
+      "verification": "主代理看 fix_r15b/phases_r15b.png 八相位墙（全相位同一人）+pair对照；probe全绿；顺带根治t1r嘴变体贴在刘海上的隐形失效（r9时代遗留）",
+      "note": "M10教训双向：我的t1r -4%是字幕污染误报（子代理修正），probe原断言测摆放参数又漏真离群——断言测渲染结果且排除字幕带/天空色"
+    },
+    {
+      "round": "r16",
+      "change": "男孩转身槽位 span 为 stabilize 时代残留（1434 vs 实际 1281）导致男孩在转身段小 11%；改为每角色全片唯一尺度常量（stand 段眼线锚定派生），turnKeys contentTop/Bottom 全改注册后实测真值",
+      "result": "stand/turn 两段女男眼高比一致（0.9851，男孩高）；跨段交界无 pop；M10 spread 女 0.81%/男 1.15%",
+      "verification": "主代理带尺帧复验 fix_r16/heightcheck_turn_p2.png（男孩眼线更高）+boundary_seq.png 交界 6 帧；probe/package 全绿",
+      "note": "断言现测渲染帧眼线（解剖点），非发顶/参数"
+    }
+  ],
+  "misses": [
+    {
+      "id": "M3",
+      "round": "r2-r4",
+      "origin": "user_reported",
+      "original_claim": "采用 512² 整脸片叠加到全身/坐姿 cel 头部的做法，并以此通过近景验收",
+      "later_finding": "用户在转身试片 41.9s 帧看到阿澈刘海犄角（脸片与身体 cel 刘海不匹配）。回溯：draw-over-animation skill 的既定图案是嘴窗/眼窗在同一个头上整换、近景用整张肖像；整脸贴片无依据，且已连续造成 R3-F1 双重脸、P-D4 椭圆边、刘海犄角三次接缝缺陷",
+      "lesson": "采用合成结构前先核对 skill 的既定图案；同一缺陷类（接缝）连续两轮复发时，应怀疑路线而不是继续修参数",
+      "anti_overreach": "嘴眼窗整换也有接缝风险，仍需锁区外零差分断言+全分辨率目检；不是说局部替换万无一失",
+      "correction_by": "用户质问'skill有让你这么做吗'后回查原文"
+    },
+    {
+      "id": "M4",
+      "round": "r5b 复验",
+      "origin": "user_reported",
+      "original_claim": "r5b 复验称'focus 垂眸自然、暗带消失'（看的是 fix_r5b 整帧图）",
+      "later_finding": "用户全屏播放 3.0s 帧仍见眼部深色横带。我查看的整帧图经 ReadMediaFile 降到 1000px 宽，暗带在该尺度被抹平；原生分辨率裁区（780,470,400,330）立即可见。这是 M2（低分辨率证据漏检边缘缺陷）的同类复发",
+      "lesson": "脸/眼/边缘类缺陷的验收证据必须是原生分辨率裁区，整帧图经工具降采样后一律不算数；同一漏检模式第二次复发，升级为硬规则写回 skill",
+      "anti_overreach": "供体含碎发的横向溢出是本次具体根因，不代表窗口整换路线错误（小蓝侧同路线通过）",
+      "correction_by": "用户播放截图（'你是认真的吗'）"
+    },
+    {
+      "id": "M5",
+      "round": "r7 复验",
+      "origin": "user_reported",
+      "original_claim": "r7 相位整帧+边界帧+腿部原生裁区验收通过",
+      "later_finding": "用户播放 3.0s 帧见女孩腿部变形（抬起的脚被 warp 拉向地面拧转）与整体皮影式晃动。我的验收帧选了相位代表帧，没查相位内任意中间帧的 warp 扭曲；源画对照证明原画腿部解剖干净，变形来自驱动层",
+      "lesson": "相位代表帧通过 ≠ 相位内任意帧通过；凡有 warp/驱动层的镜头，必须抽相位内中间帧的局部裁区（尤其非钉住部位：抬起的脚、摆动的手）",
+      "anti_overreach": "冻结相位不等于退回纸片人——运动由 8 张换画承担；防过修：不要把'保持'写成'全程静止'，换画帧必须有实质姿势推进",
+      "correction_by": "用户播放帧+'只有皮影戏才可能整个人左右摆动'"
+    },
+    {
+      "id": "M6",
+      "round": "r8 复验",
+      "origin": "user_reported",
+      "original_claim": "r8 验收通过（相位冻结/换腿/接触断言全绿）",
+      "later_finding": "用户播放发现：脚滑移（摆放锚定持续运动的烘焙关节而非画内支撑脚落点）、人物显示高度较 r7 缩小（跨轮尺度回归我未复查）、唱段嘴静止",
+      "lesson": "跨轮验收必须包含与上一轮的同机位尺度对照（显示人高是基本回归项）；摆放锚点语义要逐帧验证——'相位内静止'的断言当时只查了躯干内饰，没查脚底世界位",
+      "anti_overreach": "冻结曝光本身用户未否定（这次没再提皮影），位移纪律修的是锚点语义不是曝光",
+      "correction_by": "用户播放帧（'平移法术吗''腿短了2倍''全程脸部表情没变化'）"
+    },
+    {
+      "id": "M7",
+      "round": "r9 后",
+      "origin": "user_reported",
+      "original_claim": "转身相位画验收通过（身份/朝向/腿部解剖逐张查过）",
+      "later_finding": "用户两帧对照发现跨相位比例观感不一致。测量证实：原画内部比例全部一致（头10.0%/腿48.0%），但各画全身像素高 1271–1505px，显示层归一化不统一导致头身观感漂移。'跨画体型一致性'（story-continuity 矩阵）从未进验收循环",
+      "lesson": "相位画入库验收必须包含跨画体型一致性：头宽/头高/肩宽/腰胯/肢段长度逐画测量并列成表；显示层按头高恒定归一化，不按全身等高",
+      "anti_overreach": "各画总高不同本身不是错（姿势不同），错的是显示归一化不统一",
+      "correction_by": "用户两帧对照（'你觉得这两个比例一样吗'）"
+    },
+    {
+      "id": "M8",
+      "round": "r11 用户复看",
+      "origin": "user_reported",
+      "original_claim": "r9 尺度锚定（crownM 手估 girl 0.65/boy 0.48）通过 probe 头高一致断言",
+      "later_finding": "用户发现女孩比男孩高半个头。烘焙世界坐标显示男孩应高 3%（头脚 1.328 vs 1.284m）。我的断言只查'跨相位一致'，没查'两角色相对关系是否符合设定'——一致性断言保护了错误的绝对值",
+      "lesson": "尺度断言必须含**角色间相对关系**（谁高谁高多少来自设定/烘焙世界坐标），不能只查单角色跨段一致；头顶余量这类补偿量必须实测（cel 发顶-脸锚），禁止手估",
+      "anti_overreach": "男孩只高 3% 是微妙关系，目检难分辨——这正是必须进断言的理由",
+      "correction_by": "用户（'怎么女的比男的高半个头'）"
+    },
+    {
+      "id": "M9",
+      "round": "r12 用户复看",
+      "origin": "user_reported",
+      "original_claim": "r12 人物比例修复通过（人物自身跨相位一致）",
+      "later_finding": "用户发现人物比家具小（'还没桌子高'）+忽大忽小。人物自身一致性通过了，但人物-场景相对尺度从未进验收：家具层是按 V5 人物大小校准的，人物缩小后椅子/吧台变巨人国；拍点脉冲只作用于背景导致人景相对缩放摆动",
+      "lesson": "尺度验收必须包含人物 vs 场景/家具/道具的相对关系（同帧对照原片），不能只查人物自身；改动人物尺度后必须复查一切按旧尺度校准的层",
+      "anti_overreach": "贴回 V5 大小不等于继承 V5 的大头比例——比例按 cel 原画，占幅按原片取景",
+      "correction_by": "用户（'两个人还没桌子高''忽大忽小'）"
+    },
+    {
+      "id": "M10",
+      "round": "r13/r14 后用户复看",
+      "origin": "user_reported",
+      "original_claim": "probe 报跨相位显示人高 spread 0.04% 全绿",
+      "later_finding": "用户仍见忽大忽小；主代理实测渲染帧内容框：t1r 相位矮 4%（985 vs 1025px）。probe 测的是摆放参数不是渲染结果；且各画内容框高不同（姿势/发量），同缩放≠同显示高",
+      "lesson": "显示一致性断言必须测渲染后画面的实际内容框（色掩码实测），摆放参数一致不等于画面一致；每张画的内容框差异要纳入接入校准",
+      "anti_overreach": "跨相位±4%以内在连续播放中可读性有限，真正刺眼的是比例漂移（躯干/大腿围度），两者要分开测",
+      "correction_by": "用户（'还是忽大忽小…全身比例一直在变化'）"
+    },
+    {
+      "id": "M11",
+      "round": "r15b 用户复看",
+      "origin": "user_reported",
+      "original_claim": "r12/r15b 的 probe 报女男比 0.9711、跨段人高一致，全绿",
+      "later_finding": "用户与主代理带尺帧实测：stand 段男略高（正确）而转身段女高（反了）——比例断言测的是 worldStandH 参数比，不是渲染后的实际眼线/头顶关系；跨段交界（stand→turn）从未抽帧对照",
+      "lesson": "角色间比例断言必须用渲染帧实测的解剖点（眼线/头顶/脚底），不用参数比；跨段交界帧列为必查项",
+      "anti_overreach": "女孩发型体量大于男孩，'发顶-脚底'跨距不能直接当身高比——用眼线/解剖颅顶",
+      "correction_by": "用户（'你看过，怎么还不一样高'+相位墙有高有低）"
+    }
+  ],
+  "reviewer_conclusion": "Not reviewed. Coverage completion is not artistic acceptance."
+}

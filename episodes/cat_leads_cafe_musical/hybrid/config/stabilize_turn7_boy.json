@@ -1,0 +1,235 @@
+{
+  "size": [
+    1024,
+    1536
+  ],
+  "scale": 1.0,
+  "faceTarget": [
+    512,
+    225
+  ],
+  "hipTarget": [
+    512,
+    680
+  ],
+  "groundY": 1470,
+  "faceROI": [
+    300,
+    60,
+    724,
+    460
+  ],
+  "cels": [
+    {
+      "id": "boy_front_open",
+      "file": "hybrid\\assets\\cels\\boy_turn_front_open_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        505,
+        660
+      ],
+      "face": [
+        512,
+        225
+      ]
+    },
+    {
+      "id": "boy_t1",
+      "file": "hybrid\\assets\\cels\\boy_turn_t1_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        520,
+        640
+      ],
+      "face": [
+        516,
+        255
+      ]
+    },
+    {
+      "id": "boy_side_cross",
+      "file": "hybrid\\assets\\cels\\boy_turn_side_cross_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        390,
+        690
+      ],
+      "face": [
+        320,
+        205
+      ]
+    },
+    {
+      "id": "boy_t3",
+      "file": "hybrid\\assets\\cels\\boy_turn_t3_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        510,
+        630
+      ],
+      "face": [
+        554,
+        239
+      ]
+    },
+    {
+      "id": "boy_back_open",
+      "file": "hybrid\\assets\\cels\\boy_turn_back_open_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        445,
+        670
+      ],
+      "face": [
+        430,
+        200
+      ]
+    },
+    {
+      "id": "boy_t5",
+      "file": "hybrid\\assets\\cels\\boy_turn_t5_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        500,
+        640
+      ],
+      "face": [
+        477,
+        351
+      ]
+    },
+    {
+      "id": "boy_t6",
+      "file": "hybrid\\assets\\cels\\boy_turn_t6_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        500,
+        630
+      ],
+      "face": [
+        545,
+        214
+      ]
+    },
+    {
+      "id": "boy_t7",
+      "file": "hybrid\\assets\\cels\\boy_turn_t7_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        500,
+        660
+      ],
+      "face": [
+        501,
+        380
+      ]
+    },
+    {
+      "id": "boy_front_open_mouth_open",
+      "file": "hybrid/assets/cels/boy_turn_front_open_clean_mouth_open.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        505,
+        660
+      ],
+      "face": [
+        512,
+        225
+      ]
+    },
+    {
+      "id": "boy_front_open_mouth_half",
+      "file": "hybrid/assets/cels/boy_turn_front_open_clean_mouth_half.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        505,
+        660
+      ],
+      "face": [
+        512,
+        225
+      ]
+    },
+    {
+      "id": "boy_t1_mouth_open",
+      "file": "hybrid/assets/cels/boy_turn_t1_clean_mouth_open.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        520,
+        640
+      ],
+      "face": [
+        516,
+        255
+      ]
+    },
+    {
+      "id": "boy_t1_mouth_half",
+      "file": "hybrid/assets/cels/boy_turn_t1_clean_mouth_half.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        520,
+        640
+      ],
+      "face": [
+        516,
+        255
+      ]
+    },
+    {
+      "id": "boy_t7_mouth_open",
+      "file": "hybrid/assets/cels/boy_turn_t7_clean_mouth_open.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        500,
+        660
+      ],
+      "face": [
+        501,
+        380
+      ]
+    },
+    {
+      "id": "boy_t7_mouth_half",
+      "file": "hybrid/assets/cels/boy_turn_t7_clean_mouth_half.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        500,
+        660
+      ],
+      "face": [
+        501,
+        380
+      ]
+    }
+  ],
+  "output": "hybrid/assets/cels/turn_reg"
+}

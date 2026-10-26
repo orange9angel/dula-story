@@ -1,0 +1,26 @@
+{
+  "comment": "r3 表情供体锁区：tease/focus 用眼窗+嘴窗双窗整换（眉眼联动，不止换嘴）；half/open/blink 在表情基图上沿用 r2 供体窗。invite/lookup 本轮只产 closed（预留）。",
+  "report": "hybrid/config/face_compose_r3_report.json",
+  "items": [
+    {"base": "assets/images/girl_portrait_v1.png", "donor": "hybrid/assets/cels/girl_face_tease_v1.png",
+     "rects": [[380, 340, 550, 140], [520, 520, 280, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_tease_closed.png"},
+    {"base": "hybrid/tmp/face_composed/girl_tease_closed.png", "donor": "hybrid/assets/cels/girl_face_half_v1.png",
+     "rects": [[520, 520, 280, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_tease_half.png"},
+    {"base": "hybrid/tmp/face_composed/girl_tease_closed.png", "donor": "hybrid/assets/cels/girl_face_open_v1.png",
+     "rects": [[520, 520, 280, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_tease_open.png"},
+    {"base": "hybrid/tmp/face_composed/girl_tease_closed.png", "donor": "hybrid/assets/cels/girl_face_blink_v1.png",
+     "rects": [[380, 340, 550, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_tease_blink.png"},
+    {"base": "assets/images/girl_portrait_v1.png", "donor": "hybrid/assets/cels/girl_face_invite_v1.png",
+     "rects": [[380, 340, 550, 140], [520, 520, 280, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_invite_closed.png"},
+    {"base": "assets/images/boy_portrait_v1.png", "donor": "hybrid/assets/cels/boy_face_focus_v1.png",
+     "rects": [[400, 300, 560, 140], [560, 480, 270, 130]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_focus_closed.png"},
+    {"base": "hybrid/tmp/face_composed/boy_focus_closed.png", "donor": "hybrid/assets/cels/boy_face_half_v1.png",
+     "rects": [[560, 480, 270, 130]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_focus_half.png"},
+    {"base": "hybrid/tmp/face_composed/boy_focus_closed.png", "donor": "hybrid/assets/cels/boy_face_open_v1.png",
+     "rects": [[560, 480, 270, 130]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_focus_open.png"},
+    {"base": "hybrid/tmp/face_composed/boy_focus_closed.png", "donor": "hybrid/assets/cels/boy_face_blink_v1.png",
+     "rects": [[400, 300, 560, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_focus_blink.png"},
+    {"base": "assets/images/boy_portrait_v1.png", "donor": "hybrid/assets/cels/boy_face_lookup_v1.png",
+     "rects": [[400, 300, 560, 140], [560, 480, 270, 130]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_lookup_closed.png"}
+  ]
+}

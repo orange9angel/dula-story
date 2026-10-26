@@ -1,0 +1,117 @@
+{
+  "batch1": {
+    "provider": "codex built-in imagegen (gen_image_auto.py, codex leg)",
+    "calls": 9,
+    "cost": "not exposed by tool (ChatGPT subscription quota)",
+    "date": "2026-10-24",
+    "refs": {
+      "girl": [
+        "assets/images/girl_portrait_v1.png",
+        "assets/images/girl_body_v1.png"
+      ],
+      "boy": [
+        "assets/images/boy_portrait_v1.png",
+        "assets/images/boy_body_v1.png"
+      ]
+    },
+    "accepted": {
+      "girl_side_v1.png": "侧面全身，发丝/侧轮廓/身份一致，1024x1536",
+      "girl_back_v1.png": "背面全身，发帘有发丝层次（针对基线 I1 背面发帘问题）",
+      "boy_side_v1.png": "侧面全身，琥珀 rim 在画面右侧（背侧），身份一致",
+      "boy_back_v1.png": "背面全身；注：背面未见 rim 光带（正面 rim 属性），边缘有少量 alpha 杂点待清理",
+      "girl_face_open_v1.png": "开口歌唱嘴，身份保持；全图低噪重编码，仅作嘴窗供体（锁区合成）",
+      "girl_face_half_v1.png": "半开嘴，同上",
+      "girl_face_blink_v1.png": "闭眼，细浅短弧线达标（无粗黑眼线），作眼窗供体",
+      "boy_face_open_v1.png": "开口，同上",
+      "boy_face_half_v1.png": "半开嘴，同上",
+      "boy_face_blink_v1.png": "闭眼，弧线略深但可接受，作眼窗供体"
+    },
+    "rejected": [],
+    "notes": "表情变体 diff 遍布全图（2.5-4.9% 像素，>30 阈值密度簇仍覆盖大部）——符合 bio_armor_s1e1 记录的低噪重编码模式；采用前提=窗口化锁回合成的供体，不整图替换。目检确认脸部身份无漂移。"
+  },
+  "batch2": {
+    "provider": "codex built-in imagegen (gen_image_auto.py, codex leg)",
+    "calls": 3,
+    "cost": "not exposed by tool (ChatGPT subscription quota)",
+    "date": "2026-10-24",
+    "accepted": {
+      "girl_sit_v1.png": "正面坐姿，双手置膝、裙摆铺开、发后垂，身份一致",
+      "boy_sit_v1.png": "正面坐姿前倾，viewer-left 手持笔（解剖右手，符合'画画'设定），rim 光在 viewer-right；边缘 alpha 杂点待清理",
+      "cafe_table_fg_v1.png": "桌+双椅+杯碟勺+笔记本笔；计划裁切分层：椅在后层、桌面+物前层；边缘黄红流苏需 defringe"
+    },
+    "rejected": []
+  },
+  "batch3": {
+    "provider": "codex built-in imagegen (gen_image_auto.py, codex leg)",
+    "date": "2026-10-24",
+    "cost": "not exposed by tool (ChatGPT subscription quota)",
+    "rejected": [],
+    "notes": "转身/敲杯关键画均为逐拍专用原画（作画层），不程序变形复用立绘",
+    "calls": 12,
+    "accepted": {
+      "girl_face_tease_v1.png": "眯眼坏笑，眉眼联动（非只换嘴），身份保持；嘴眼窗锁区供体",
+      "girl_face_invite_v1.png": "明亮开口笑，身份保持",
+      "boy_face_focus_v1.png": "双瞳下垂看本子+轻微笑，身份保持",
+      "boy_face_lookup_v1.png": "抬眼看画面左上+眉微抬，身份保持",
+      "girl_sit_reach_v1.png": "坐姿右臂前伸持勺，手臂与身体相连（根治 r2 悬浮手的供体）",
+      "girl_turn_front_open_v1.png": "正面双臂低位展开+重心转移起始",
+      "girl_turn_side_cross_v1.png": "侧面交叉步+发梢滞后甩动+裙褶张开，身份保持",
+      "girl_sit_tap_v1.png": "坐姿持勺触杯位（敲杯接触帧供体）",
+      "girl_turn_back_open_v1.png": "背面双臂展开+发帘甩向一侧露肩+裙褶张开+单跟抬起，动态与发丝层次达标",
+      "boy_turn_front_open_v1.png": "正面双臂低位展开+重心转移，rim 光 viewer-right，身份保持",
+      "boy_turn_side_cross_v1.png": "侧面交叉步+发流+rim 保持，开口笑",
+      "boy_turn_back_open_v1.png": "背面双臂展开+rim 带在 viewer-right 边缘+单腿后抬"
+    },
+    "note": "批次3全部12张一次通过、零拒用；男孩转身画边缘有 alpha 杂点，接入前需清理"
+  },
+  "batch4": {
+    "provider": "codex built-in imagegen (gen_image_auto.py, codex leg)",
+    "calls": 18,
+    "cost": "not exposed by tool (ChatGPT subscription quota)",
+    "date": "2026-10-24",
+    "purpose": "路线纠正：转身改 8 相位逐拍画（每相位独立画，禁镜像），表情改同图局部编辑（坐姿 cel 自身头部裁区编辑贴回）",
+    "accepted": {
+      "girl_turn_t1/t3/t5/t6/t7": "5 张补相位全过（T0/T2/T4 沿用批次3）",
+      "boy_turn_t1/t3/t5/t6/t7": "同上；rim 光各朝向均正确（无镜像翻转）",
+      "girl_sit_{eyes_tease,eyes_blink,mouth_open,mouth_half}": "同图局部编辑，tease 视线向画面右（他的方向）",
+      "boy_sit_{eyes_focus,eyes_blink,mouth_open,mouth_half}": "同图局部编辑，focus 垂眸向左下（本子）"
+    },
+    "rejected": [],
+    "notes": "全部 18 张一次通过；局部编辑变体带全图低噪重编码（3-5%），由窗口锁区贴回兜住，属已知模式"
+  },
+  "batch4b": {
+    "provider": "codex built-in imagegen",
+    "calls": 2,
+    "cost": "not exposed by tool",
+    "date": "2026-10-24",
+    "purpose": "女孩右起转 3/4 正面补画（原画集为左起转，反向播放导致发梢/重心物理反向）",
+    "accepted": {
+      "girl_turn_t1r_v1.png": "45°右起转，口袋 viewer-right 正确",
+      "girl_turn_t7r_v1.png": "315°回收，口袋方向正确"
+    },
+    "rejected": []
+  },
+  "batch5": {
+    "provider": "codex built-in imagegen",
+    "calls": 12,
+    "cost": "not exposed by tool",
+    "date": "2026-10-25",
+    "purpose": "转身正面系同图嘴部变体（唱段口型）",
+    "accepted": "12/12（抽查 girl front_open/boy t1 开口笑同图同源）",
+    "rejected": []
+  },
+  "batch6": {
+    "provider": "codex built-in imagegen",
+    "calls": 4,
+    "cost": "not exposed by tool",
+    "date": "2026-10-25",
+    "purpose": "链式重生成女孩漂移最大 4 画（参考=身份锚+全部已验收相位画累积历史，比例锁写进 prompt）",
+    "accepted": {
+      "girl_turn_t1r_v2": "全身 1438、裙摆 55.8%（门内）",
+      "girl_turn_t3_v2": "全身 1509、裙摆 57.7%——仍需有界修裙摆（比 v1 的 58.3% 收敛但未过门）",
+      "girl_turn_back_open_v2": "全身 1478（发量补全）、裙摆 54.9%",
+      "girl_turn_t7r_v2": "全身 1496、裙摆 54.4% 精确落锚"
+    },
+    "rejected": []
+  }
+}

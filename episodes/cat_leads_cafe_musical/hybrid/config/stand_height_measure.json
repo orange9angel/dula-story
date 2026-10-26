@@ -1,0 +1,36 @@
+{
+  "Girl": {
+    "worldStandH": 1.582,
+    "crownM": 0.0581,
+    "bakedHeadFootM": 1.284,
+    "crownCelPx": 56,
+    "measure": "eyes=236 chin=298 skullTop=180 spanToSole=1234px mPerPx=0.001041"
+  },
+  "Boy": {
+    "worldStandH": 1.629,
+    "crownM": 0.0543,
+    "bakedHeadFootM": 1.328,
+    "crownCelPx": 49,
+    "measure": "eyes=281 chin=335 skullTop=232 spanToSole=1189px mPerPx=0.001117"
+  },
+  "V5_anchor_40.08": {
+    "girl": {
+      "headProjY": 437.1,
+      "hairTopY": 320,
+      "crownPx": 117,
+      "headFootPx": 498.0,
+      "personPx": 615
+    },
+    "boy": {
+      "headProjY": 421.9,
+      "hairTopY": 294,
+      "crownPx": 128,
+      "headFootPx": 515.0,
+      "personPx": 649
+    },
+    "span": 2.78,
+    "ppm": 388.6,
+    "frame": "hybrid/review/fix_r12/v5_40.08.png"
+  },
+  "note_r13": "worldStandH 改为 V5 同帧锚定（r12 的 cel 实测 crown 保留为参照）；女男比锁 0.9709"
+}

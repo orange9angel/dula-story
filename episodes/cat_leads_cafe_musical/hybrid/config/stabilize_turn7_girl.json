@@ -1,0 +1,235 @@
+{
+  "size": [
+    1024,
+    1536
+  ],
+  "scale": 1.0,
+  "faceTarget": [
+    512,
+    215
+  ],
+  "hipTarget": [
+    512,
+    690
+  ],
+  "groundY": 1470,
+  "faceROI": [
+    300,
+    60,
+    724,
+    460
+  ],
+  "cels": [
+    {
+      "id": "girl_front_open",
+      "file": "hybrid\\assets\\cels\\girl_turn_front_open_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        495,
+        700
+      ],
+      "face": [
+        490,
+        200
+      ]
+    },
+    {
+      "id": "girl_t1r",
+      "file": "hybrid\\assets\\cels\\girl_turn_t1r_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        560,
+        620
+      ],
+      "face": [
+        555,
+        342
+      ]
+    },
+    {
+      "id": "girl_t6",
+      "file": "hybrid\\assets\\cels\\girl_turn_t6_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        600,
+        570
+      ],
+      "face": [
+        556,
+        209
+      ]
+    },
+    {
+      "id": "girl_t5",
+      "file": "hybrid/assets/cels/girl_turn_t5_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        420,
+        555
+      ],
+      "face": [
+        478,
+        231
+      ]
+    },
+    {
+      "id": "girl_back_open",
+      "file": "hybrid\\assets\\cels\\girl_turn_back_open_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        470,
+        720
+      ],
+      "face": [
+        455,
+        195
+      ]
+    },
+    {
+      "id": "girl_t3",
+      "file": "hybrid/assets/cels/girl_turn_t3_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        480,
+        560
+      ],
+      "face": [
+        594,
+        200
+      ]
+    },
+    {
+      "id": "girl_side_cross",
+      "file": "hybrid\\assets\\cels\\girl_turn_side_cross_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        355,
+        705
+      ],
+      "face": [
+        265,
+        200
+      ]
+    },
+    {
+      "id": "girl_t7r",
+      "file": "hybrid\\assets\\cels\\girl_turn_t7r_clean.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        480,
+        585
+      ],
+      "face": [
+        511,
+        208
+      ]
+    },
+    {
+      "id": "girl_front_open_mouth_open",
+      "file": "hybrid/assets/cels/girl_turn_front_open_clean_mouth_open.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        495,
+        700
+      ],
+      "face": [
+        490,
+        200
+      ]
+    },
+    {
+      "id": "girl_front_open_mouth_half",
+      "file": "hybrid/assets/cels/girl_turn_front_open_clean_mouth_half.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        495,
+        700
+      ],
+      "face": [
+        490,
+        200
+      ]
+    },
+    {
+      "id": "girl_t1r_mouth_open",
+      "file": "hybrid/assets/cels/girl_turn_t1r_clean_mouth_open.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        560,
+        620
+      ],
+      "face": [
+        555,
+        342
+      ]
+    },
+    {
+      "id": "girl_t1r_mouth_half",
+      "file": "hybrid/assets/cels/girl_turn_t1r_clean_mouth_half.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        560,
+        620
+      ],
+      "face": [
+        555,
+        342
+      ]
+    },
+    {
+      "id": "girl_t7r_mouth_open",
+      "file": "hybrid/assets/cels/girl_turn_t7r_clean_mouth_open.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        480,
+        585
+      ],
+      "face": [
+        511,
+        208
+      ]
+    },
+    {
+      "id": "girl_t7r_mouth_half",
+      "file": "hybrid/assets/cels/girl_turn_t7r_clean_mouth_half.png",
+      "columns": 1,
+      "rows": 1,
+      "cell": 0,
+      "hip": [
+        480,
+        585
+      ],
+      "face": [
+        511,
+        208
+      ]
+    }
+  ],
+  "output": "hybrid/assets/cels/turn_reg"
+}

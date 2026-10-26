@@ -1,0 +1,18 @@
+{
+  "comment": "脸窗锁回：closed 基图=原肖像（assets/images/*_portrait_v1.png），half/open 只锁嘴窗，blink 只锁眼窗；羽化 8px，锁区外零差分（脚本断言）。供体是全图低噪重编码，禁止整图替换。",
+  "report": "hybrid/config/face_compose_report.json",
+  "items": [
+    {"base": "assets/images/girl_portrait_v1.png", "donor": "hybrid/assets/cels/girl_face_half_v1.png",
+     "rects": [[520, 520, 280, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_half.png"},
+    {"base": "assets/images/girl_portrait_v1.png", "donor": "hybrid/assets/cels/girl_face_open_v1.png",
+     "rects": [[520, 520, 280, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_open.png"},
+    {"base": "assets/images/girl_portrait_v1.png", "donor": "hybrid/assets/cels/girl_face_blink_v1.png",
+     "rects": [[380, 340, 550, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/girl_blink.png"},
+    {"base": "assets/images/boy_portrait_v1.png", "donor": "hybrid/assets/cels/boy_face_half_v1.png",
+     "rects": [[560, 480, 270, 130]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_half.png"},
+    {"base": "assets/images/boy_portrait_v1.png", "donor": "hybrid/assets/cels/boy_face_open_v1.png",
+     "rects": [[560, 480, 270, 130]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_open.png"},
+    {"base": "assets/images/boy_portrait_v1.png", "donor": "hybrid/assets/cels/boy_face_blink_v1.png",
+     "rects": [[400, 300, 560, 140]], "feather": 8, "output": "hybrid/tmp/face_composed/boy_blink.png"}
+  ]
+}

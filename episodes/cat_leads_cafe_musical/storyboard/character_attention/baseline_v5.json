@@ -1,0 +1,1305 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/half_beat_sunshine_craft3d_v5.mp4",
+    "sha256": "edcf1b5fb1e3d134429bbfe812341777d8115ced5c0806c52c105e14e93a79fd"
+  },
+  "scope": {
+    "subjects": [
+      "Girl",
+      "Boy"
+    ],
+    "windows": [
+      {
+        "id": "dialogue",
+        "start": 2.0,
+        "end": 18.0
+      },
+      {
+        "id": "turn1",
+        "start": 17.5,
+        "end": 21.0
+      },
+      {
+        "id": "dance1",
+        "start": 21.0,
+        "end": 35.0
+      },
+      {
+        "id": "dance_mid",
+        "start": 40.0,
+        "end": 52.0
+      },
+      {
+        "id": "turn2",
+        "start": 54.0,
+        "end": 58.5
+      },
+      {
+        "id": "ending",
+        "start": 94.5,
+        "end": 107.5
+      },
+      {
+        "id": "turn1_real",
+        "start": 36.9,
+        "end": 43.4
+      }
+    ],
+    "accepted_properties": [
+      "人设：长蓝发小蓝、黑短发（右侧琥珀色rim光）阿澈、白衬衫，以 assets/images/{girl,boy}_portrait_v1.png 为用户已认可身份锚",
+      "音频全链（mixed.wav sha256 51d99f65…）与 130 拍点、两次完整转身时点",
+      "剧情与 28 条 script.story 时序",
+      "咖啡厅背景板的整体氛围（晴天日式街角）在用户历史反馈中未被否定"
+    ],
+    "limitations": "本轮审查方法为解码抽帧（拼图+三张全分辨率单帧，method=ordered_frames/still），未做正常速度声画联看；歌舞动态（step-touch 连贯性、口型跟唱、表情切换时点）只从间隔 0.5-3s 的静帧推断，结论限于可见事实。"
+  },
+  "checks": [
+    {
+      "subject": "Girl",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "近景（4.5s/12s/31s/101s）脸与已认可原画基本同一人；中远景（18.77s 起、52s、95s）蓝发塌成单一深青色块，丢失原画的发丝分层与浅蓝高光，身份辨识度下降。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dialogue.jpg",
+          "sha256": "ece027aeaad1feb413fcb1344af49b673b58238fe8db1819bc22169def92b680",
+          "window": "dialogue",
+          "at": [
+            2.0,
+            4.5,
+            7.0,
+            9.5,
+            12.0,
+            14.5,
+            17.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/dance1.jpg",
+          "sha256": "e42569104bea56dffe3303c53b649dd6a519c0cf561d9fc1b47a0dca12f419ed",
+          "window": "dance1",
+          "at": [
+            22.0,
+            25.0,
+            28.0,
+            31.0,
+            34.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I13"
+      ],
+      "next_action": "混合路线以已认可原画为身份锚逐镜替换，禁止曲面投影在中远景丢失发丝层次"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "近景脸型五官成立（4.5s、12s 全分辨率确认、101s 与原画一致）；全景（19.2s-20.7s、52s）脸缩成白色块加两个黑点，眼部结构丢失。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.77,
+            19.2,
+            19.7,
+            20.2,
+            20.7
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/full_12.0.png",
+          "sha256": "f1f958a1328281419657b3bbe0ea555304688371e8ebfc37a68719eb7a791668",
+          "window": "dialogue",
+          "at": [
+            12.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "I4"
+      ],
+      "next_action": "确定各景别脸部的最小可读尺寸；全景用简化但结构完整的脸 cel，不直接缩 3D 投影"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "对白近景（4.5s 邀唱、12s）视线方向与情境基本匹配；未做正常速度观看，视线游移未评。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dialogue.jpg",
+          "sha256": "ece027aeaad1feb413fcb1344af49b673b58238fe8db1819bc22169def92b680",
+          "window": "dialogue",
+          "at": [
+            4.5,
+            12.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片 A 中以 cel 眼高光方向显式控制视线"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "expression",
+      "status": "needs_evidence",
+      "observation": "静帧可见微笑/开口状态，但表情随台词的时点变化无法从 2.5s 间隔抽帧判断。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dialogue.jpg",
+          "sha256": "ece027aeaad1feb413fcb1344af49b673b58238fe8db1819bc22169def92b680",
+          "window": "dialogue",
+          "at": [
+            4.5,
+            12.0,
+            14.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片 A 加密表情切换边界帧（每 0.2s）再评"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "P0：中远景头发为无结构的深青整体块；40s 背面整背被发帘覆盖如斗篷（对应用户历史反馈'前后像两个头'）；近景侧面（31s）仍可见接缝/折片残留（agent 历史自查已记录侧发接缝未根治）。全分辨率 12s 近景发丝层次尚可，说明问题集中在非近景距离。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            40.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.77,
+            19.2
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/ending.jpg",
+          "sha256": "5b75732b279b3c0707fac2dceac0a3188e0835aabaf06ee1111256507ff48b17",
+          "window": "ending",
+          "at": [
+            95.0,
+            104.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I1"
+      ],
+      "next_action": "头发纳入整头 cel 重画范围，背面/侧面用专用角度原画，禁止单图拉伸"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "body",
+      "status": "finding",
+      "observation": "站姿/坐姿比例大致正常；但 18.3s-18.77s 起身过程躯干垂直平移、无重心下沉预备；19.2s 起双臂保持半举姿态时间长（对应用户历史反馈'双臂长期举起'）。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.3,
+            18.77,
+            19.2
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I3"
+      ],
+      "next_action": "作画层补预备/跟随；手臂静息位纳入原画"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "全分辨率 12s：敲杯手势中勺与手指糊成一团、指形不可辨；桌面侧左手为扁平连指团块，肘区有不该出现的肤色块。2s 双人镜头中持杯手同样为团块。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/full_12.0.png",
+          "sha256": "f1f958a1328281419657b3bbe0ea555304688371e8ebfc37a68719eb7a791668",
+          "window": "dialogue",
+          "at": [
+            12.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "frames_baseline_v5/full_2.0.png",
+          "sha256": "6b9135bc8498f86ceebdf4abb36ffb9a8d5de3293b9aa27fda7fabe200df0943",
+          "window": "dialogue",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "I11"
+      ],
+      "next_action": "手部纳入 cel 重画；敲杯接触帧用专用手型原画钉住"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "抽帧中脚底均落地、坐姿臀椅接触成立（历史 QC 记录 8810 对支撑脚采样最大位移 1.70mm）；未见悬空。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            54.9,
+            55.9,
+            57.4
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "cel 替换后沿用既有脚位数据作接触锚，逐镜复核"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "locomotion",
+      "status": "needs_evidence",
+      "observation": "step-touch 为横向小步，0.5s 间隔静帧无法判定换脚流畅性；转身中景（18.77-19.2s）帧间人物朝向变化突兀，疑似直接跳转而非连续转面。 更正：真实转身窗口 37.77-42.4s 经 0.4s 间隔采样，朝向连续过渡无跳变；失败集中在背面画形与手臂姿态。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.77,
+            19.2,
+            19.7
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_turn1_real/turn1_real.jpg",
+          "sha256": "64e0d4a03a48f5e292942e6d061816e1303b35b8247d24542311bc00e2cc988e",
+          "window": "turn1_real",
+          "at": [
+            37.0,
+            38.5,
+            39.3,
+            40.5,
+            41.3,
+            42.4
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I6"
+      ],
+      "next_action": "试片 B 对转身窗口加密到逐帧/隔帧取帧再判"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "歌舞段（22s-52s）多为直立小幅度摆手，舞蹈感染力弱；pose 之间缺预备-发力-恢复结构。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance1.jpg",
+          "sha256": "e42569104bea56dffe3303c53b649dd6a519c0cf561d9fc1b47a0dca12f419ed",
+          "window": "dance1",
+          "at": [
+            22.0,
+            25.0,
+            28.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            43.0,
+            49.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I14"
+      ],
+      "next_action": "作画层为关键拍点设计起势/极值/恢复三画"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "口型与歌声对齐未在本轮评估（纯视觉抽帧）；历史 audio_qc 记录 9 句对白 ASR 全匹配，歌唱口型由 DTW 轨驱动。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "试片验收时对口型切换边界做加密帧检查"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "人物（硬边赛璐璐+3D投影）与背景（柔和手绘水彩）风格硬度不一致；人物脚下接触影很弱，全景里人物像浮贴在背景上；阳光光斑在地面有、在人物身上无对应。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            54.9,
+            56.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/ending.jpg",
+          "sha256": "5b75732b279b3c0707fac2dceac0a3188e0835aabaf06ee1111256507ff48b17",
+          "window": "ending",
+          "at": [
+            95.0,
+            104.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I5"
+      ],
+      "next_action": "cel 合成时加接触影与环境色边；背景板重制时统一光向"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "本轮未听音轨（纯画面审查）；音频链锁定不变，风险在口型 cel 切换时点。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "试片 A 导出后做一次声画联看"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "open_scan",
+      "status": "finding",
+      "observation": "片头字卡（2s 左上'半拍晴天'）与字幕可读；95s 收尾构图与开场呼应成立。组合层面：全景双人中女孩辨识度显著低于男孩（发块 vs 有rim光），画面重心偏男孩；2s 全分辨率帧中女孩膝部为球状裸膝，略 doll 感。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/full_2.0.png",
+          "sha256": "6b9135bc8498f86ceebdf4abb36ffb9a8d5de3293b9aa27fda7fabe200df0943",
+          "window": "dialogue",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "frames_baseline_v5/ending.jpg",
+          "sha256": "5b75732b279b3c0707fac2dceac0a3188e0835aabaf06ee1111256507ff48b17",
+          "window": "ending",
+          "at": [
+            95.0,
+            106.5
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I15"
+      ],
+      "next_action": "见 I1；膝部造型纳入身体 cel 观察"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "identity",
+      "status": "finding",
+      "observation": "近景（7s、17.8s 全分辨率确认、43s、46s、98s）脸型与原画一致；但已认可原画的琥珀色 rim 光在 3D 中变成头顶/右侧平贴橙色斑块，中景读作脏污/染发，偏离身份设计意图。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            43.0,
+            46.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/full_17.8.png",
+          "sha256": "aae1e858b7987271c610c5c88f6285652079808a83a6206217aec230340a1e48",
+          "window": "turn1",
+          "at": [
+            17.8
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "I16"
+      ],
+      "next_action": "rim 光以画入 cel 的渐变呈现，不按色块贴面"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "近景五官成立（17.8s 全分辨率确认）；31s/55.9s 中景眼部区域过暗成一团；全景脸部细节同样丢失（同 Girl I4）。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance1.jpg",
+          "sha256": "e42569104bea56dffe3303c53b649dd6a519c0cf561d9fc1b47a0dca12f419ed",
+          "window": "dance1",
+          "at": [
+            31.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            55.9
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/full_17.8.png",
+          "sha256": "aae1e858b7987271c610c5c88f6285652079808a83a6206217aec230340a1e48",
+          "window": "turn1",
+          "at": [
+            17.8
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "I8"
+      ],
+      "next_action": "同 Girl face_structure"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "98s 收尾近景视线向镜头/女孩方向，成立；17.8s'唱还行，跳不会'视线略飘但与台词情绪不冲突。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/ending.jpg",
+          "sha256": "5b75732b279b3c0707fac2dceac0a3188e0835aabaf06ee1111256507ff48b17",
+          "window": "ending",
+          "at": [
+            98.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片 A 保持既有视线锚点"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "expression",
+      "status": "needs_evidence",
+      "observation": "同 Girl expression：静帧表情可见，时点变化未评。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dialogue.jpg",
+          "sha256": "ece027aeaad1feb413fcb1344af49b673b58238fe8db1819bc22169def92b680",
+          "window": "dialogue",
+          "at": [
+            7.0,
+            17.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片 A 加密边界帧"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "橙色斑块问题见 identity/I2；17.8s 全分辨率下近景发束层次尚可；另 43s 头顶发束轮廓在光斑下边界含糊；历史自查记录的'强侧面拉伸'在本轮窗口未抽到强侧面帧，未独立复验。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            43.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/full_17.8.png",
+          "sha256": "aae1e858b7987271c610c5c88f6285652079808a83a6206217aec230340a1e48",
+          "window": "turn1",
+          "at": [
+            17.8
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "I2"
+      ],
+      "next_action": "转身试片 B 补强侧面帧验证"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "body",
+      "status": "finding",
+      "observation": "55.9s 单臂笔直上举保持多帧、17.8s 手在胸前半举，均为用户历史反馈'双臂长期举起'的残留形态；起身同样缺预备下沉。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            55.9
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/full_17.8.png",
+          "sha256": "aae1e858b7987271c610c5c88f6285652079808a83a6206217aec230340a1e48",
+          "window": "turn1",
+          "at": [
+            17.8
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "I7"
+      ],
+      "next_action": "同 Girl body"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "全分辨率 2s：确认手持笔在本子上（道具存在，符合'画画'设定），但握笔手为团块、指形不可辨；17.8s 胸前手为无结构连指团块（台词'跳不会'的摆手动作读不出）。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/full_2.0.png",
+          "sha256": "6b9135bc8498f86ceebdf4abb36ffb9a8d5de3293b9aa27fda7fabe200df0943",
+          "window": "dialogue",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "frames_baseline_v5/full_17.8.png",
+          "sha256": "aae1e858b7987271c610c5c88f6285652079808a83a6206217aec230340a1e48",
+          "window": "turn1",
+          "at": [
+            17.8
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "I12"
+      ],
+      "next_action": "手部纳入 cel 重画；握笔手型用专用原画"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "同 Girl support：抽帧中支撑均成立，引用同一 QC 记录。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            54.9,
+            57.4
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "cel 化后逐镜复核"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "locomotion",
+      "status": "needs_evidence",
+      "observation": "同 Girl locomotion：静帧间隔不足判步态；转身连续性存疑（I10）。 更正：真实转身窗口 37.77-42.4s 经 0.4s 间隔采样，朝向连续过渡无跳变；失败集中在背面画形与手臂姿态。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.77,
+            19.2,
+            19.7
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_turn1_real/turn1_real.jpg",
+          "sha256": "64e0d4a03a48f5e292942e6d061816e1303b35b8247d24542311bc00e2cc988e",
+          "window": "turn1_real",
+          "at": [
+            37.0,
+            38.5,
+            39.3,
+            40.5,
+            41.3,
+            42.4
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I10"
+      ],
+      "next_action": "试片 B 逐帧验证"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "action",
+      "status": "finding",
+      "observation": "同 Girl action：pose 之间缺预备-发力-恢复；55.9s 直举手臂无收势即进入下一 pose（帧间跳变）。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            55.4,
+            55.9,
+            56.4
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I17"
+      ],
+      "next_action": "作画层补过渡画"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "同 Girl temporal。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "试片验收时加密检查"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "同 Girl I5：人物-背景风格硬度差、接触影弱；男孩白衬衫在亮背景前轮廓可读性尚可，优于女孩。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            54.9,
+            56.4
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [
+        "I9"
+      ],
+      "next_action": "同 Girl shot_integration"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "本轮未听音轨。",
+      "evidence": [],
+      "issue_ids": [],
+      "next_action": "试片 A 声画联看"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "未见清单外新增不协调；整体观感弱点集中在头发色块与手臂/手部姿态，已分别立案。",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            46.0,
+            49.0
+          ],
+          "method": "ordered_frames"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "subject": "Girl",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "中远景头发为无发丝结构的深青整体块；背面整背发帘如斗篷；近景侧面有接缝/折片残留（用户历史链：'前后像两个头'→V5 首轮重建被否'颜值急剧下降'）",
+      "impact": "身份辨识度与美术质量在主景别下崩坏",
+      "priority": "P0",
+      "hypothesis": "曲面投影+共同深度映射无法表达发丝层次；侧面/背面无专用画形",
+      "next_action": "混合路线整头 cel 重画，角度专用原画",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            40.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.77
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_turn1_real/turn1_real.jpg",
+          "sha256": "64e0d4a03a48f5e292942e6d061816e1303b35b8247d24542311bc00e2cc988e",
+          "window": "turn1_real",
+          "at": [
+            37.0,
+            38.5,
+            39.3,
+            40.5,
+            41.3,
+            42.4
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I2",
+      "subject": "Boy",
+      "dimension": "hair",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "已认可原画的琥珀色 rim 光在 3D 渲染中为头顶/右侧平贴橙色斑块，中景读作脏污",
+      "impact": "身份设计意图被误读",
+      "priority": "P1",
+      "hypothesis": "投影把渐变 rim 光采样成色块贴面",
+      "next_action": "cel 中按原画渐变画入 rim 光",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            43.0,
+            46.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I3",
+      "subject": "Girl",
+      "dimension": "body",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "双臂长期半举（19.2s 起）；起身缺重心预备；pose 间缺预备-发力-恢复结构",
+      "impact": "表演僵硬，'游戏感'来源之一",
+      "priority": "P0",
+      "hypothesis": "3D 位姿谱只给目标姿势，无过渡画与静息位设计",
+      "next_action": "作画层为关键拍点补起势/极值/恢复三画与静息手位",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.3,
+            18.77,
+            19.2
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I4",
+      "subject": "Girl",
+      "dimension": "face_structure",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "全景脸部塌成白色块+黑点",
+      "impact": "远景镜头情绪传达失败",
+      "priority": "P1",
+      "hypothesis": "3D 曲面五官随距离缩尺后细节低于可读阈值",
+      "next_action": "按景别设计脸部 cel 简化档位",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            19.2,
+            20.2
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I5",
+      "subject": "Girl",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "人物硬边赛璐璐与背景柔和水彩硬度不一致；接触影弱，人物像浮贴在背景上；地面有光斑而人物无对应光影",
+      "impact": "纸片感/贴纸感，整体融合度低",
+      "priority": "P1",
+      "hypothesis": "人物与背景分两路渲染，无统一光向与接触影",
+      "next_action": "cel 合成加脚下接触影与环境色边；背景板重制统一光向",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            54.9,
+            56.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/ending.jpg",
+          "sha256": "5b75732b279b3c0707fac2dceac0a3188e0835aabaf06ee1111256507ff48b17",
+          "window": "ending",
+          "at": [
+            104.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I6",
+      "subject": "Girl",
+      "dimension": "locomotion",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "原判断基于错误时窗（18.77-19.2s 实为起身+切镜）。真实首次转身=绝对 37.77-42.4s（beat32-40 相对 songStart=19.0）：0.4s 间隔采样下朝向经侧面/背面连续过渡，未见朝向跳变；但背面相位（39.3-40.9s）女孩为无发丝结构的发帘、男孩为空白背，且转身全程双臂夹体侧、无展开-收拢结构",
+      "impact": "两次完整转身是用户明确要求保留的卖点，当前可信度不足",
+      "priority": "P0",
+      "hypothesis": "3D 连续旋转成立；失败在背面/侧面无专用画形与手臂姿态设计",
+      "next_action": "试片 B（窗口 36.9-43.4s）用 front/side/back 三向 cel 硬切换 + 转身手臂张开原画",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.77,
+            19.2,
+            19.7
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_turn1_real/turn1_real.jpg",
+          "sha256": "64e0d4a03a48f5e292942e6d061816e1303b35b8247d24542311bc00e2cc988e",
+          "window": "turn1_real",
+          "at": [
+            37.0,
+            38.5,
+            39.3,
+            40.5,
+            41.3,
+            42.4
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I7",
+      "subject": "Boy",
+      "dimension": "body",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "55.9s 单臂笔直上举保持多帧、17.8s 手在胸前半举；起身缺预备下沉；pose 间缺预备-发力-恢复",
+      "impact": "表演僵硬",
+      "priority": "P0",
+      "hypothesis": "同 I3",
+      "next_action": "同 I3",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            55.4,
+            55.9,
+            56.4
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/full_17.8.png",
+          "sha256": "aae1e858b7987271c610c5c88f6285652079808a83a6206217aec230340a1e48",
+          "window": "turn1",
+          "at": [
+            17.8
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "I8",
+      "subject": "Boy",
+      "dimension": "face_structure",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "全景脸部细节丢失；31s/55.9s 中景眼部区域过暗成一团",
+      "impact": "远景情绪传达失败",
+      "priority": "P1",
+      "hypothesis": "同 I4；男孩深色发与暗眼区合并降低对比",
+      "next_action": "按景别设计脸部 cel 简化档位",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance1.jpg",
+          "sha256": "e42569104bea56dffe3303c53b649dd6a519c0cf561d9fc1b47a0dca12f419ed",
+          "window": "dance1",
+          "at": [
+            31.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            55.9
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I9",
+      "subject": "Boy",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "同 I5：风格硬度差、接触影弱、人物浮贴",
+      "impact": "纸片感/贴纸感",
+      "priority": "P1",
+      "hypothesis": "同 I5",
+      "next_action": "同 I5",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            54.9,
+            56.4
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I10",
+      "subject": "Boy",
+      "dimension": "locomotion",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "同 I6：原判断时窗错误已更正；真实转身 37.77-42.4s 朝向连续，但背面画形崩坏、手臂夹体侧",
+      "impact": "转身卖点可信度不足",
+      "priority": "P0",
+      "hypothesis": "同 I6",
+      "next_action": "同 I6",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn1.jpg",
+          "sha256": "0de635a58611ac4699623ad09496a99aed61c444d4ab5db3f6cc1b55b3255faf",
+          "window": "turn1",
+          "at": [
+            18.77,
+            19.2,
+            19.7
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_turn1_real/turn1_real.jpg",
+          "sha256": "64e0d4a03a48f5e292942e6d061816e1303b35b8247d24542311bc00e2cc988e",
+          "window": "turn1_real",
+          "at": [
+            37.0,
+            38.5,
+            39.3,
+            40.5,
+            41.3,
+            42.4
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I11",
+      "subject": "Girl",
+      "dimension": "hands_props",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "全分辨率 12s：敲杯手势中勺与手指糊成一团、指形不可辨；桌面左手为扁平连指团块；肘区有不该出现的肤色块",
+      "impact": "近景关键道具互动（敲杯邀唱是剧情节点）画形崩坏",
+      "priority": "P0",
+      "hypothesis": "3D 手部网格在低幅度姿势下无指形表达；勺为叠加道具无握持约束",
+      "next_action": "敲杯接触帧用专用手型 cel 钉住；手臂静息位重画",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/full_12.0.png",
+          "sha256": "f1f958a1328281419657b3bbe0ea555304688371e8ebfc37a68719eb7a791668",
+          "window": "dialogue",
+          "at": [
+            12.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "I12",
+      "subject": "Boy",
+      "dimension": "hands_props",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "2s 握笔手为团块、指形不可辨（道具笔存在）；17.8s 胸前手为无结构连指团块",
+      "impact": "开场'画画'设定与摆手台词的手部表达失败",
+      "priority": "P1",
+      "hypothesis": "同 I11",
+      "next_action": "握笔手型专用原画；摆手过渡画",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/full_2.0.png",
+          "sha256": "6b9135bc8498f86ceebdf4abb36ffb9a8d5de3293b9aa27fda7fabe200df0943",
+          "window": "dialogue",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "frames_baseline_v5/full_17.8.png",
+          "sha256": "aae1e858b7987271c610c5c88f6285652079808a83a6206217aec230340a1e48",
+          "window": "turn1",
+          "at": [
+            17.8
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "I13",
+      "subject": "Girl",
+      "dimension": "identity",
+      "origin": "user_reported",
+      "status": "open",
+      "fact": "中远景蓝发成单一色块后，与已认可原画的发丝层次相比身份辨识度显著下降（近景一致）",
+      "impact": "主景别下角色不像'那个小蓝'",
+      "priority": "P0",
+      "hypothesis": "同 I1 的曲面投影问题在身份维度的表现",
+      "next_action": "整头 cel 重画后以原画对照验收身份",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance1.jpg",
+          "sha256": "e42569104bea56dffe3303c53b649dd6a519c0cf561d9fc1b47a0dca12f419ed",
+          "window": "dance1",
+          "at": [
+            22.0,
+            25.0
+          ],
+          "method": "ordered_frames"
+        },
+        {
+          "path": "frames_turn1_real/turn1_real.jpg",
+          "sha256": "64e0d4a03a48f5e292942e6d061816e1303b35b8247d24542311bc00e2cc988e",
+          "window": "turn1_real",
+          "at": [
+            37.0,
+            38.5,
+            39.3,
+            40.5,
+            41.3,
+            42.4
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I14",
+      "subject": "Girl",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "歌舞段 pose 之间缺预备-发力-恢复结构，直立小幅摆手为主",
+      "impact": "舞蹈感染力弱",
+      "priority": "P0",
+      "hypothesis": "位姿谱只含目标姿势",
+      "next_action": "关键拍点起势/极值/恢复三画",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance1.jpg",
+          "sha256": "e42569104bea56dffe3303c53b649dd6a519c0cf561d9fc1b47a0dca12f419ed",
+          "window": "dance1",
+          "at": [
+            22.0,
+            25.0,
+            28.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I15",
+      "subject": "Girl",
+      "dimension": "open_scan",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "双人全景中女孩辨识度显著低于男孩；2s 全分辨率帧膝部为球状裸膝，doll 感",
+      "impact": "画面重心与搭档平衡偏移",
+      "priority": "P2",
+      "hypothesis": "发块吸收细节+膝部程序化造型",
+      "next_action": "随 I1 与身体 cel 一并复验",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/full_2.0.png",
+          "sha256": "6b9135bc8498f86ceebdf4abb36ffb9a8d5de3293b9aa27fda7fabe200df0943",
+          "window": "dialogue",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "I16",
+      "subject": "Boy",
+      "dimension": "identity",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "已认可原画的琥珀色 rim 光渲染成头顶/右侧平贴橙色斑块，中景读作脏污，偏离身份设计意图",
+      "impact": "身份设计意图被误读",
+      "priority": "P1",
+      "hypothesis": "投影把渐变 rim 光采样成色块贴面",
+      "next_action": "cel 中按原画渐变画入 rim 光",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/dance_mid.jpg",
+          "sha256": "ce391a92113aef5b235e00dbac1cbc0fa015a4dfd375120f93aba4f370541344",
+          "window": "dance_mid",
+          "at": [
+            43.0,
+            46.0
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    },
+    {
+      "id": "I17",
+      "subject": "Boy",
+      "dimension": "action",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "55.9s 直举手臂无收势即进入下一 pose（帧间跳变）；pose 间缺预备-发力-恢复",
+      "impact": "舞蹈感染力弱、定格感",
+      "priority": "P0",
+      "hypothesis": "同 I14",
+      "next_action": "同 I14",
+      "evidence": [
+        {
+          "path": "frames_baseline_v5/turn2.jpg",
+          "sha256": "ae130594a98d04d2c8a97871cefdb2cd1ca667265688b92590bca422a9ed37e4",
+          "window": "turn2",
+          "at": [
+            55.4,
+            55.9,
+            56.4
+          ],
+          "method": "ordered_frames"
+        }
+      ]
+    }
+  ],
+  "iterations": [],
+  "misses": [
+    {
+      "id": "M1",
+      "round": "baseline_v5",
+      "origin": "self_found",
+      "original_claim": "I6/I10 称'转身窗口 18.77-19.2s 帧间朝向跳变'",
+      "later_finding": "该时窗是起身+切镜，不是转身；dance_beats_v3.json 的 beats[] 相对 songStart=19.0，beat32=绝对 37.77s。转身本身朝向连续，真实缺陷是背面画形与手臂姿态",
+      "lesson": "剧情/谱面 cue 换算成绝对秒必须显式验证（打印实际秒数再写进记录）；抽帧时间窗先核对内容再下动作结论",
+      "anti_overreach": "不能因此断言转身已合格——0.4s 间隔采样不含逐帧，背面画形问题仍需修",
+      "correction_by": "管线搭建子代理烘焙时发现窗口与 yaw 不符"
+    }
+  ],
+  "reviewer_conclusion": "V5 基线巡检（解码抽帧+三张全分辨率单帧，非实时）：P0 为 Girl 头发画形崩坏（I1）、双臂/手部姿态僵硬（I3/I7/I11）、转身连续性存疑（I6/I10）；P1 为 Boy 发色块（I2）、远景脸塌（I4/I8）、人景融合（I5/I9）、Boy 手型（I12）。近景脸部与原画一致性是当前可保留资产；2s 全分辨率帧确认'男孩持笔画画'道具成立。结论支持按混合制作路线重做视频部分。Coverage completion is not artistic acceptance."
+}

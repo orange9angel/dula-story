@@ -1,0 +1,594 @@
+{
+  "schema": "cafe-hybrid-cel-slots-v13",
+  "comment": "v13（r16）：全片唯一尺度常量——转身段 scaleKTurn 由 stand 段眼线锚定派生（scaleK = WSH/standSpan × standSoleToEye/turnSoleToEyeConst；同名常量作用于该角色全部转身相位画，不逐相位另算）。turnKeys contentTop/Bottom 改为注册后实测真值（旧值系 stabilize 时代残留，男孩 span 1434 vs 真实 1281 致转身段男孩画小 ~11%、眼线关系反转）。蓬发不计身高，眼线为锚。",
+  "background": "../assets/images/cafe_master_v1.png",
+  "backgroundWorld": {
+    "width": 6.45,
+    "height": 3.6297,
+    "center": [
+      0,
+      1.05,
+      -3
+    ]
+  },
+  "visemes": "../config/visemes.json",
+  "subtitles": "../config/subtitles.json",
+  "furniture": {
+    "metersPerPlatePx": 0.00125,
+    "chairLeft": {
+      "src": "assets/cels/cafe_chair_left.png",
+      "cushionAnchorPx": [
+        194,
+        301
+      ],
+      "actor": "Girl",
+      "seatDrop": 0.064
+    },
+    "chairRight": {
+      "src": "assets/cels/cafe_chair_right.png",
+      "cushionAnchorPx": [
+        194,
+        301
+      ],
+      "actor": "Boy",
+      "seatDrop": 0.064
+    },
+    "table": {
+      "src": "assets/cels/cafe_table_layer.png",
+      "srcNoSpoon": "assets/cels/cafe_table_layer_nospoon.png",
+      "cupAnchorPx": [
+        744,
+        400
+      ],
+      "cupWorld": [
+        -1.66,
+        0.86,
+        -1.05
+      ],
+      "noSpoonFrom": 11.9
+    }
+  },
+  "tapAction": {
+    "actor": "Girl",
+    "from": 11.9,
+    "hits": [
+      12.65
+    ],
+    "holdFrames": 2,
+    "reachCel": {
+      "src": "assets/cels/girl_sit_reach_clean.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "contentTop": 15,
+      "contentBottom": 1478,
+      "worldHeight": 1.3,
+      "spoonTipPx": [
+        395,
+        665
+      ]
+    },
+    "tapCel": {
+      "src": "assets/cels/girl_sit_tap_clean.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "contentTop": 74,
+      "contentBottom": 1482,
+      "worldHeight": 1.3,
+      "spoonTipPx": [
+        160,
+        770
+      ]
+    },
+    "comment": "abs>=from 切 reach（手臂相连持勺）；hit ±holdFrames 帧切 tap（勺触杯沿）；之后回 reach 到窗口末。13.25s 第二击在窗口外。关键画为画面左伸手，运行时水平镜像（scaleX:-1）适配杯在画面右的构图；spoonTipPx 为原图坐标（viewer 按 scaleX 翻转换算）的勺尖点，敲杯特写时桌层杯位对齐此点（接触钉住）。"
+  },
+  "turnPhases": {
+    "mode": "yaw8",
+    "sign": {
+      "Girl": 1,
+      "Boy": -1
+    },
+    "keys": {
+      "Girl": [
+        "front_open",
+        "t1r",
+        "t6",
+        "t5_mir",
+        "back_open",
+        "t3_mir",
+        "side_cross",
+        "t7r"
+      ],
+      "Boy": [
+        "front_open",
+        "t1",
+        "side_cross",
+        "t3",
+        "back_open",
+        "t5",
+        "t6",
+        "t7"
+      ]
+    },
+    "comment": "idx=floor(((sign*yaw mod 2π)+π/8)/2π*8)%8。女孩右起转正向播放，男孩反向角正向播放，均非时间倒放。"
+  },
+  "windows": [
+    {
+      "id": "dialogueA",
+      "motion": "config/motion_dialogue_a.json",
+      "start": 4.0,
+      "end": 13.0,
+      "mode": "sit"
+    },
+    {
+      "id": "turnB",
+      "motion": "config/motion_turn_b.json",
+      "start": 17.8,
+      "end": 23.5,
+      "mode": "rise",
+      "riseEnd": 19.0,
+      "riseFade": 0.6
+    },
+    {
+      "id": "turnFull",
+      "motion": "config/motion_turn_full.json",
+      "start": 36.9,
+      "end": 43.4,
+      "mode": "turn",
+      "turnStart": 37.7667,
+      "turnEnd": 42.4333
+    }
+  ],
+  "turnWindow": "turnFull",
+  "actors": {
+    "Girl": {
+      "label": "小蓝",
+      "placeholderColor": "#86b8e8",
+      "sitCel": {
+        "src": "assets/cels/girl_sit_clean.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contentTop": 63,
+        "contentBottom": 1469,
+        "worldHeight": 1.3
+      },
+      "standCel": {
+        "src": "assets/cels/girl_stand_v1.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contentTop": 16,
+        "contentBottom": 1521,
+        "worldHeight": 1.66,
+        "headPx": 150,
+        "faceSoleSpan": 1505,
+        "eyeRow": 160
+      },
+      "turnKeys": {
+        "front_open": {
+          "src": "assets/cels/turn_reg/girl_front_open.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 610,
+          "pin": [
+            610,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "mouths": {
+            "open": "assets/cels/turn_reg/girl_front_open_mouth_open.png",
+            "half": "assets/cels/turn_reg/girl_front_open_mouth_half.png"
+          },
+          "eyeRow": 150,
+          "eyeRowEstimated": false
+        },
+        "t1r": {
+          "src": "assets/cels/turn_reg/girl_t1r.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 745,
+          "pin": [
+            745,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "mouths": {
+            "open": "assets/cels/turn_reg/girl_t1r_mouth_open.png",
+            "half": "assets/cels/turn_reg/girl_t1r_mouth_half.png"
+          },
+          "eyeRow": 125,
+          "eyeRowEstimated": false
+        },
+        "t6": {
+          "src": "assets/cels/turn_reg/girl_t6.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 820,
+          "pin": [
+            820,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "eyeRow": 141,
+          "eyeRowEstimated": true
+        },
+        "t5_mir": {
+          "src": "assets/cels/turn_reg/girl_t5_mir.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 420,
+          "pin": [
+            420,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "eyeRow": 141,
+          "eyeRowEstimated": true
+        },
+        "back_open": {
+          "src": "assets/cels/turn_reg/girl_back_open.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 637,
+          "pin": [
+            637,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "note_r15b": "contentTop 165→36：165 是 stabilize 时代排发残留（span 1309 vs 兄弟相位 1420-1446），致该相位显示尺度大 8.5%（M10 渲染实测 +9.21%）；v2 发量补全后无排发需求，与兄弟相位同族（span 1438）。主代理裁决授权。",
+          "eyeRow": 141,
+          "eyeRowEstimated": true
+        },
+        "t3_mir": {
+          "src": "assets/cels/turn_reg/girl_t3_mir.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 203,
+          "pin": [
+            203,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "eyeRow": 141,
+          "eyeRowEstimated": true
+        },
+        "side_cross": {
+          "src": "assets/cels/turn_reg/girl_side_cross.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 458,
+          "pin": [
+            458,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "eyeRow": 160,
+          "eyeRowEstimated": false
+        },
+        "t7r": {
+          "src": "assets/cels/turn_reg/girl_t7r.png",
+          "contentTop": 0,
+          "contentBottom": 1470,
+          "footX": 469,
+          "pin": [
+            469,
+            1465
+          ],
+          "worldHeight": 1.66,
+          "mouths": {
+            "open": "assets/cels/turn_reg/girl_t7r_mouth_open.png",
+            "half": "assets/cels/turn_reg/girl_t7r_mouth_half.png"
+          },
+          "eyeRow": 131,
+          "eyeRowEstimated": false
+        }
+      },
+      "rig": {
+        "ref": 0,
+        "pins": [],
+        "j": {
+          "head": [
+            512,
+            300,
+            160,
+            180
+          ],
+          "leftHand": [
+            240,
+            980,
+            110,
+            140
+          ],
+          "rightHand": [
+            784,
+            980,
+            110,
+            140
+          ],
+          "leftFoot": [
+            430,
+            1450,
+            100,
+            80
+          ],
+          "rightFoot": [
+            600,
+            1450,
+            100,
+            80
+          ]
+        }
+      },
+      "crownM": 0.0581,
+      "faceSoleSpan": 1471,
+      "worldStandH": 1.582,
+      "eyeRowTurnConst": 141,
+      "scaleKStand": 0.00105116,
+      "scaleKTurn": 0.00107647
+    },
+    "Boy": {
+      "label": "阿澈",
+      "placeholderColor": "#e8c586",
+      "sitCel": {
+        "src": "assets/cels/boy_sit_clean.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contentTop": 24,
+        "contentBottom": 1505,
+        "worldHeight": 1.36
+      },
+      "standCel": {
+        "src": "assets/cels/boy_stand_v1.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contentTop": 17,
+        "contentBottom": 1519,
+        "worldHeight": 1.77,
+        "headPx": 185,
+        "faceSoleSpan": 1502,
+        "eyeRow": 180
+      },
+      "turnKeys": {
+        "front_open": {
+          "src": "assets/cels/turn_reg/boy_front_open.png",
+          "contentTop": 189,
+          "contentBottom": 1470,
+          "footX": 561,
+          "pin": [
+            561,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "mouths": {
+            "open": "assets/cels/turn_reg/boy_front_open_mouth_open.png",
+            "half": "assets/cels/turn_reg/boy_front_open_mouth_half.png"
+          },
+          "eyeRow": 330,
+          "eyeRowEstimated": false
+        },
+        "t1": {
+          "src": "assets/cels/turn_reg/boy_t1.png",
+          "contentTop": 189,
+          "contentBottom": 1470,
+          "footX": 741,
+          "pin": [
+            741,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "mouths": {
+            "open": "assets/cels/turn_reg/boy_t1_mouth_open.png",
+            "half": "assets/cels/turn_reg/boy_t1_mouth_half.png"
+          },
+          "eyeRow": 334,
+          "eyeRowEstimated": true
+        },
+        "side_cross": {
+          "src": "assets/cels/turn_reg/boy_side_cross.png",
+          "contentTop": 189,
+          "contentBottom": 1470,
+          "footX": 487,
+          "pin": [
+            487,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "eyeRow": 315,
+          "eyeRowEstimated": false
+        },
+        "t3": {
+          "src": "assets/cels/turn_reg/boy_t3.png",
+          "contentTop": 189,
+          "contentBottom": 1470,
+          "footX": 405,
+          "pin": [
+            405,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "eyeRow": 334,
+          "eyeRowEstimated": true
+        },
+        "back_open": {
+          "src": "assets/cels/turn_reg/boy_back_open.png",
+          "contentTop": 189,
+          "contentBottom": 1470,
+          "footX": 643,
+          "pin": [
+            643,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "eyeRow": 334,
+          "eyeRowEstimated": true
+        },
+        "t5": {
+          "src": "assets/cels/turn_reg/boy_t5.png",
+          "contentTop": 188,
+          "contentBottom": 1470,
+          "footX": 620,
+          "pin": [
+            620,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "eyeRow": 334,
+          "eyeRowEstimated": true
+        },
+        "t6": {
+          "src": "assets/cels/turn_reg/boy_t6.png",
+          "contentTop": 188,
+          "contentBottom": 1470,
+          "footX": 801,
+          "pin": [
+            801,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "eyeRow": 365,
+          "eyeRowEstimated": false
+        },
+        "t7": {
+          "src": "assets/cels/turn_reg/boy_t7.png",
+          "contentTop": 189,
+          "contentBottom": 1470,
+          "footX": 470,
+          "pin": [
+            470,
+            1465
+          ],
+          "worldHeight": 1.77,
+          "mouths": {
+            "open": "assets/cels/turn_reg/boy_t7_mouth_open.png",
+            "half": "assets/cels/turn_reg/boy_t7_mouth_half.png"
+          },
+          "eyeRow": 325,
+          "eyeRowEstimated": false
+        }
+      },
+      "rig": {
+        "ref": 0,
+        "pins": [],
+        "j": {
+          "head": [
+            512,
+            300,
+            160,
+            180
+          ],
+          "leftHand": [
+            240,
+            980,
+            110,
+            140
+          ],
+          "rightHand": [
+            784,
+            980,
+            110,
+            140
+          ],
+          "leftFoot": [
+            430,
+            1450,
+            100,
+            80
+          ],
+          "rightFoot": [
+            600,
+            1450,
+            100,
+            80
+          ]
+        }
+      },
+      "crownM": 0.0543,
+      "faceSoleSpan": 1282,
+      "worldStandH": 1.629,
+      "eyeRowTurnConst": 334,
+      "scaleKStand": 0.00108455,
+      "scaleKTurn": 0.00127836
+    }
+  },
+  "faceActing": {
+    "comment": "同图变体按裁区原点贴回（零缩放）：RGB 取变体（内饰按底图 alpha 加权防白边）、alpha 恒取底图；嘴区从嘴变体羽毛锁回。",
+    "headCrop": {
+      "girl": [
+        330,
+        100,
+        390,
+        460
+      ],
+      "boy": [
+        300,
+        80,
+        400,
+        460
+      ]
+    },
+    "cels": {
+      "Girl_sit": {
+        "src": "assets/cels/girl_sit_clean.png",
+        "mouthRect": [
+          485,
+          295,
+          95,
+          50
+        ],
+        "eyes": [
+          "tease"
+        ],
+        "blink": true
+      },
+      "Boy_sit": {
+        "src": "assets/cels/boy_sit_clean.png",
+        "mouthRect": [
+          480,
+          300,
+          95,
+          45
+        ],
+        "eyes": [
+          "focus"
+        ],
+        "blink": true
+      }
+    },
+    "eyesTimeline": {
+      "Girl": [
+        {
+          "from": 4.0,
+          "to": 6.16,
+          "set": "tease"
+        },
+        {
+          "from": 9.7,
+          "to": 11.67,
+          "set": "tease"
+        },
+        {
+          "from": 11.9,
+          "to": 13.0,
+          "set": "tease"
+        }
+      ],
+      "Boy": [
+        {
+          "from": 6.6,
+          "to": 9.36,
+          "set": "focus"
+        }
+      ]
+    }
+  }
+}

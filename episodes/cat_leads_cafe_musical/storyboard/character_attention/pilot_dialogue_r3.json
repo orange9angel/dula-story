@@ -1,0 +1,873 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "../../output/hybrid_pilot_dialogue_a.mp4",
+    "sha256": "3f0b29440a5fc7e3019b1bbc4c6409cc9f06059354f27153cf617d5e3c61fcb0"
+  },
+  "scope": {
+    "subjects": [
+      "Girl",
+      "Boy"
+    ],
+    "windows": [
+      {
+        "id": "dlg_all",
+        "start": 0.0,
+        "end": 9.0
+      }
+    ],
+    "accepted_properties": [
+      "身份锚=已认可原画；音频链锁定不动",
+      "r2 已修复：敲杯镜构图、座椅接触、字幕",
+      "r3 已接入：表情供体时间轴、敲杯关键画"
+    ],
+    "limitations": "本轮=正式维度巡检但仍是抽帧+全分辨率裁区（still/ordered_frames），未做正常速度声画联看。触发背景：用户指出试片特写有漏检问题（user_reported），此前 r1-r3 复看只写 Markdown 笔记、未建覆盖记录，属流程缺口。"
+  },
+  "checks": [
+    {
+      "subject": "Girl",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "近景/中景脸与已认可肖像一致；tease 供体身份保持（全分辨率裁区确认）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/fix_r3/expr_girl_tease_abs6.0.png",
+          "sha256": "f00b065dec168c14923f4626a1a6678aa6cdf832489b81486f514c0cdb38cbef",
+          "window": "dlg_all",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "face_structure",
+      "status": "no_issue_observed",
+      "observation": "脸部体积与头颈连接成立；近景五官清晰。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/expr_girl_tease_abs6.0.png",
+          "sha256": "f00b065dec168c14923f4626a1a6678aa6cdf832489b81486f514c0cdb38cbef",
+          "window": "dlg_all",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "敲杯段视线落向杯（reach/tap 关键画自带）；tease 段视线向他。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/tap_hit_12.65.png",
+          "sha256": "6bd3d00f2e571b5243869a98f59a17c14eca5f72ff35b72d36d77f62b95be775",
+          "window": "dlg_all",
+          "at": [
+            8.65
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "expression",
+      "status": "finding",
+      "observation": "tease 在近景可读；但广角双人镜里 tease 与 closed 差异过细微（子代理遗留问题确认），该景别表情信息约等于没有。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/expr_girl_tease_abs6.0.png",
+          "sha256": "f00b065dec168c14923f4626a1a6678aa6cdf832489b81486f514c0cdb38cbef",
+          "window": "dlg_all",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-D1"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "发丝层次与侧面轮廓达标；但全身 cel 剪影边缘存在亮流苏 halo（全分辨率裁区确认，墙面/窗框交界处最显眼）——数值定位：defringe 处理版 _clean 边缘带亮像素（>200）占 2-12%，原始 _v1 为 0-1.5%，系处理引入。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "dlg_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-D2"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "坐姿比例与裙褶铺开自然；膝部无 V5 球状感。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "hands_props",
+      "status": "no_issue_observed",
+      "observation": "敲杯三画（reach/tap）手臂相连、勺尖触杯沿、碟上勺状态切换正确；持勺手型可读。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/tap_hit_12.65.png",
+          "sha256": "6bd3d00f2e571b5243869a98f59a17c14eca5f72ff35b72d36d77f62b95be775",
+          "window": "dlg_all",
+          "at": [
+            8.65
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "臀-座垫贴合（r2 验证帧）；接触影在。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "对白窗口无位移动作。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "action",
+      "status": "no_issue_observed",
+      "observation": "敲杯预备-接触成立；tap_hit 帧 2 帧保持。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/tap_hit_12.65.png",
+          "sha256": "6bd3d00f2e571b5243869a98f59a17c14eca5f72ff35b72d36d77f62b95be775",
+          "window": "dlg_all",
+          "at": [
+            8.65
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "表情切换边界帧（5.5/6.5/7.6）已见整换无叠化；但切换时点的自然度需正常速度观看确认。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片定稿前做一次正常速度声画联看（r4 验收项）"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "剪影亮边 halo 在亮背景前产生贴纸感（同 hair 维度 P-D2）；另：敲杯特写桌层为对齐勺尖整体下移，桌沿透视与原片有出入（子代理记录）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/tap_hit_12.65.png",
+          "sha256": "6bd3d00f2e571b5243869a98f59a17c14eca5f72ff35b72d36d77f62b95be775",
+          "window": "dlg_all",
+          "at": [
+            8.65
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-D8",
+        "P-D3"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Girl",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "字幕与开口嘴型帧对齐已见（av_girl_speak_5.0）；未做听觉联看。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片定稿前做一次正常速度声画联看（r4 验收项）"
+    },
+    {
+      "subject": "Girl",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "未见清单外新增不协调（在已看帧范围内）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "identity",
+      "status": "no_issue_observed",
+      "observation": "脸与已认可肖像一致；琥珀 rim 保持设计意图（不再是 3D 色块）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "face_structure",
+      "status": "finding",
+      "observation": "用户提供的特写截图显示嘴部开口帧颌部有蒙版椭圆边迹象；我抽取的闭口帧（3.0s）全分辨率下未见，但脸片合成文件边缘带亮像素达 17%（椭圆羽化蒙版），开口/半开态需复查。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-D4"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "gaze",
+      "status": "no_issue_observed",
+      "observation": "focus 供体垂眸看本子，与台词\"先别动\"的专注成立。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/expr_boy_focus_abs7.2.png",
+          "sha256": "aa3e0f360550a25268c24e073f2069cd9f22683392ea5f63c0965f8f6b65b3d0",
+          "window": "dlg_all",
+          "at": [
+            3.2
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "expression",
+      "status": "no_issue_observed",
+      "observation": "focus 段垂眸+轻微笑成立；开口说话嘴型随 visemes。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/expr_boy_focus_abs7.2.png",
+          "sha256": "aa3e0f360550a25268c24e073f2069cd9f22683392ea5f63c0965f8f6b65b3d0",
+          "window": "dlg_all",
+          "at": [
+            3.2
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "hair",
+      "status": "finding",
+      "observation": "同 Girl：clean 处理引入的亮边（boy_sit_clean 边缘带 >200 占 7.3%）；rim 光本身边缘正常。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-D7"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "body",
+      "status": "no_issue_observed",
+      "observation": "坐姿前倾握笔姿态自然。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "hands_props",
+      "status": "finding",
+      "observation": "握笔手在 3.0s 中景太小无法确认指形；全分辨率裁区可见握笔成立但手指细节简（原画本身如此，属资产级限制）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-D5"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "support",
+      "status": "no_issue_observed",
+      "observation": "座垫接触成立。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "locomotion",
+      "status": "not_applicable",
+      "observation": "对白窗口无位移。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "action",
+      "status": "no_issue_observed",
+      "observation": "画画微动（笔尖小幅）在帧间可见。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "temporal",
+      "status": "needs_evidence",
+      "observation": "同 Girl temporal。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片定稿前做一次正常速度声画联看（r4 验收项）"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "shot_integration",
+      "status": "finding",
+      "observation": "同 P-D2 亮边；衣领左侧有疑似双重线（待与源画核对是否为原画自身阴影设计）。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [
+        "P-D9",
+        "P-D6"
+      ],
+      "next_action": ""
+    },
+    {
+      "subject": "Boy",
+      "dimension": "av_coordination",
+      "status": "needs_evidence",
+      "observation": "未做听觉联看。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": "试片定稿前做一次正常速度声画联看（r4 验收项）"
+    },
+    {
+      "subject": "Boy",
+      "dimension": "open_scan",
+      "status": "no_issue_observed",
+      "observation": "未见清单外问题。",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "issue_ids": [],
+      "next_action": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "P-D1",
+      "subject": "Girl",
+      "dimension": "expression",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "广角双人镜 tease 与 closed 差异过细微，表情信息丢失",
+      "impact": "双人镜情绪传达弱",
+      "priority": "P2",
+      "hypothesis": "供体表情差异幅度小+景别缩尺",
+      "next_action": "整片阶段考虑广角用更大幅度的表情供体或接受现状",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/expr_girl_tease_abs6.0.png",
+          "sha256": "f00b065dec168c14923f4626a1a6678aa6cdf832489b81486f514c0cdb38cbef",
+          "window": "dlg_all",
+          "at": [
+            2.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "P-D2",
+      "subject": "Girl",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "cel 剪影边缘亮流苏 halo（用户截图指出特写问题后，全分辨率裁区确认）；Boy 同因立案 P-D7；数值定位：defringe _clean 处理引入（边缘带亮像素 2-12%，原图 0-1.5%）",
+      "impact": "贴纸感/抠图感，破坏融合",
+      "priority": "P0",
+      "hypothesis": "defringe 算法把暗边替换成亮边",
+      "next_action": "重做边缘处理：颜色去污（向内取色）替代现 defringe，或 alpha 内缩 1px+羽化",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/turn_0.0.png",
+          "sha256": "af7719094c197db343bf090b8184bf8869aa6e0556a6d66ce588188402021ac1",
+          "window": "dlg_all",
+          "at": [
+            0.0
+          ],
+          "method": "still"
+        },
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    },
+    {
+      "id": "P-D3",
+      "subject": "Girl",
+      "dimension": "shot_integration",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "敲杯特写桌层为对齐勺尖整体下移，桌沿透视与原片不一致",
+      "impact": "该镜透视破绽",
+      "priority": "P2",
+      "hypothesis": "桌层锚定方式粗糙",
+      "next_action": "整片阶段用专用桌面近景层或调整锚定",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/tap_hit_12.65.png",
+          "sha256": "6bd3d00f2e571b5243869a98f59a17c14eca5f72ff35b72d36d77f62b95be775",
+          "window": "dlg_all",
+          "at": [
+            8.65
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "P-D4",
+      "subject": "Boy",
+      "dimension": "face_structure",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "脸片椭圆羽化蒙版边缘亮像素 17%，用户特写截图可见颌部蒙版边迹象；闭口帧未复现，开口/半开态待复查",
+      "impact": "近景脸部可见合成边界",
+      "priority": "P0",
+      "hypothesis": "椭圆羽化蒙版在颌部裁切处产生亮边",
+      "next_action": "脸片蒙版改为贴颌部轮廓的羽化或扩大覆盖整头",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "撤跨图供体移植，改同图局部编辑（坐姿 cel 自身头裁区）+等比/同尺贴回",
+      "result": "focus/tease/blink 原生分辨率裁区全部干净（fix_r7/*_native.png）",
+      "verification": "fix_r7/boy_focus_eyes_native.png、girl_tease_face_native.png、girl_blink_eyes_native.png；compose 零差分断言"
+    },
+    {
+      "id": "P-D5",
+      "subject": "Boy",
+      "dimension": "hands_props",
+      "origin": "self_found",
+      "status": "open",
+      "fact": "握笔手指细节简（资产级）",
+      "impact": "近景手部质感",
+      "priority": "P2",
+      "hypothesis": "原画手部简笔",
+      "next_action": "整片近景手部特写时补专用手型原画",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ]
+    },
+    {
+      "id": "P-D6",
+      "subject": "Boy",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "disproven",
+      "fact": "衣领左侧疑似双重线（用户截图可见），待与源画核对是原画阴影还是合成重影",
+      "impact": "近景整洁度",
+      "priority": "P1",
+      "hypothesis": "可能是脸片/身体层的描边叠加",
+      "next_action": "与 boy_sit_v1 源画同区对比",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "result": "衣领\"双重线\"为源画自身阴影设计（与 boy_sit 源画同区比对一致，fix_r4/dlg3_collar_frame.png vs boy_sit_collar_src.png）"
+    },
+    {
+      "id": "P-D7",
+      "subject": "Boy",
+      "dimension": "hair",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "同 P-D2：defringe 引入亮边（boy_sit_clean 边缘带>200 占 7.3%）",
+      "impact": "贴纸感",
+      "priority": "P0",
+      "hypothesis": "同 P-D2",
+      "next_action": "同 P-D2 边缘处理重做",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    },
+    {
+      "id": "P-D8",
+      "subject": "Girl",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "亮边 halo 在亮背景前产生贴纸感（合成层面表现）",
+      "impact": "人物-背景融合度",
+      "priority": "P0",
+      "hypothesis": "同 P-D2",
+      "next_action": "边缘修复后同机位复验",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/fix_r3/tap_hit_12.65.png",
+          "sha256": "6bd3d00f2e571b5243869a98f59a17c14eca5f72ff35b72d36d77f62b95be775",
+          "window": "dlg_all",
+          "at": [
+            8.65
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    },
+    {
+      "id": "P-D9",
+      "subject": "Boy",
+      "dimension": "shot_integration",
+      "origin": "user_reported",
+      "status": "fixed",
+      "fact": "同 P-D8 亮边贴纸感",
+      "impact": "人物-背景融合度",
+      "priority": "P0",
+      "hypothesis": "同 P-D2",
+      "next_action": "同 P-D8",
+      "evidence": [
+        {
+          "path": "../../hybrid/review/dim_scan/dlg_3.0.png",
+          "sha256": "c3e7b5c3691918390c03d2fc904d0b538a5c3a15abd82d37014bafb2d571143d",
+          "window": "dlg_all",
+          "at": [
+            3.0
+          ],
+          "method": "still"
+        }
+      ],
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "亮边 halo 消除",
+      "verification": "资产边缘带亮像素 r3 2-12% → r4 ≤0.16%（cel_prepare_report edgeStats）；原生分辨率同机位裁区（dim_scan/r3_vs_r4_edges.png）发缘/袖缘亮线消失"
+    }
+  ],
+  "iterations": [
+    {
+      "round": "r4",
+      "change": "边缘工艺重做：defringe→颜色去污（亮污染像素取内侧最暗色回填）；脸片椭圆蒙版→auto_poly 轮廓多边形+非对称羽化",
+      "result": "P0 边缘两项修复并验证；P-D6 disproven",
+      "guard_note": "渲染帧 halo 指标三轮标定失败（被窗框/字幕带主导，r4 反而 0.0263>r3 0.0249）：该指标不作门，halo 类缺陷的门=资产边缘带统计（≤1.5%）+原生分辨率目检。frame_guard.py 保留 freeze/diff 机械检查，halo 部分标记实验性。"
+    },
+    {
+      "round": "r5/r5b",
+      "change": "撤除整脸贴片路线（M3），改为同一头上的眼窗/嘴窗整换；眼窗供体收窄到眼球/眼睑区并等比缩放居中；逐 cel 实测眼/嘴框",
+      "result": "刘海犄角（41.87s）消失；r5 引入的阿澈 focus 眼窗黑带在 r5b 修复（供体窗排除眉睫暗带）；tease/blink/open 各态全分辨率目检通过",
+      "verification": "fix_r5/settle_boy_head_41.87_horn_report.png、fix_r5b/{boy_focus_abs7.2,girl_tease_abs5.0,wide_blink_abs9.5}.png；compose 锁区外零差分 30/30；probe/package 全绿",
+      "note": "路线回归 skill 既定图案：同头窗口整换/近景整肖像。整脸贴片三次接缝缺陷后废弃。"
+    },
+    {
+      "round": "r7",
+      "change": "对话表情改同图局部编辑路线",
+      "result": "眼嘴窗与底图同画同源，错位/横带类缺陷根除",
+      "verification": "fix_r7 原生裁区主代理验收"
+    }
+  ],
+  "misses": [
+    {
+      "id": "M2",
+      "round": "pilot_r1-r3",
+      "origin": "user_reported",
+      "original_claim": "r1-r3 复看结论'无贴纸感恶化迹象、试片达交用户标准'",
+      "later_finding": "用户在正常播放中看到特写级缺陷（亮边/蒙版边/衣领线）。我的复看用 480px 拼图+少量全帧，剪影亮边在该尺度下不可见；且试片复看未建维度覆盖记录",
+      "lesson": "剪影/边缘类缺陷必须在原生分辨率裁区检查；试片复看与基线一样要走 review_record 覆盖流程；'未见恶化'在低分辨率证据下不得作为结论",
+      "anti_overreach": "亮边属合成处理缺陷，不等于作画路线失败；修复后按同维度复验",
+      "correction_by": "用户播放指出"
+    },
+    {
+      "id": "M3",
+      "round": "r2-r4",
+      "origin": "user_reported",
+      "original_claim": "采用 512² 整脸片叠加到全身/坐姿 cel 头部的做法，并以此通过近景验收",
+      "later_finding": "用户在转身试片 41.9s 帧看到阿澈刘海犄角（脸片与身体 cel 刘海不匹配）。回溯：draw-over-animation skill 的既定图案是嘴窗/眼窗在同一个头上整换、近景用整张肖像；整脸贴片无依据，且已连续造成 R3-F1 双重脸、P-D4 椭圆边、刘海犄角三次接缝缺陷",
+      "lesson": "采用合成结构前先核对 skill 的既定图案；同一缺陷类（接缝）连续两轮复发时，应怀疑路线而不是继续修参数",
+      "anti_overreach": "嘴眼窗整换也有接缝风险，仍需锁区外零差分断言+全分辨率目检；不是说局部替换万无一失",
+      "correction_by": "用户质问'skill有让你这么做吗'后回查原文"
+    },
+    {
+      "id": "M4",
+      "round": "r5b 复验",
+      "origin": "user_reported",
+      "original_claim": "r5b 复验称'focus 垂眸自然、暗带消失'（看的是 fix_r5b 整帧图）",
+      "later_finding": "用户全屏播放 3.0s 帧仍见眼部深色横带。我查看的整帧图经 ReadMediaFile 降到 1000px 宽，暗带在该尺度被抹平；原生分辨率裁区（780,470,400,330）立即可见。这是 M2（低分辨率证据漏检边缘缺陷）的同类复发",
+      "lesson": "脸/眼/边缘类缺陷的验收证据必须是原生分辨率裁区，整帧图经工具降采样后一律不算数；同一漏检模式第二次复发，升级为硬规则写回 skill",
+      "anti_overreach": "供体含碎发的横向溢出是本次具体根因，不代表窗口整换路线错误（小蓝侧同路线通过）",
+      "correction_by": "用户播放截图（'你是认真的吗'）"
+    }
+  ],
+  "reviewer_conclusion": "Not reviewed. Coverage completion is not artistic acceptance."
+}

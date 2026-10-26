@@ -1,0 +1,474 @@
+{
+  "comment": "r5 同头眼/嘴窗整换变体（锁区外零差分由 compose_cel_regions 断言）",
+  "report": "hybrid/config/face_variants_compose_report.json",
+  "items": [
+    {
+      "base": "hybrid/assets/cels/girl_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_sit_eneutral_mhalf.png",
+      "rects": [
+        [
+          485,
+          295,
+          95,
+          50
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_sit_eneutral_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_sit_eneutral_mopen.png",
+      "rects": [
+        [
+          485,
+          295,
+          95,
+          50
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_sit_eneutral_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_sit_etease_mclosed.png",
+      "rects": [
+        [
+          445,
+          220,
+          172,
+          35
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_sit_etease_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_sit_etease_mhalf.png",
+      "rects": [
+        [
+          445,
+          220,
+          172,
+          35
+        ],
+        [
+          485,
+          295,
+          95,
+          50
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_sit_etease_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_sit_etease_mopen.png",
+      "rects": [
+        [
+          445,
+          220,
+          172,
+          35
+        ],
+        [
+          485,
+          295,
+          95,
+          50
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_sit_etease_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_sit_eblink_mclosed.png",
+      "rects": [
+        [
+          445,
+          220,
+          172,
+          35
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_sit_eblink_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_sit_eneutral_mhalf.png",
+      "rects": [
+        [
+          480,
+          300,
+          95,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_sit_eneutral_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_sit_eneutral_mopen.png",
+      "rects": [
+        [
+          480,
+          300,
+          95,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_sit_eneutral_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_sit_efocus_mclosed.png",
+      "rects": [
+        [
+          438,
+          224,
+          180,
+          38
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_sit_efocus_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_sit_efocus_mhalf.png",
+      "rects": [
+        [
+          438,
+          224,
+          180,
+          38
+        ],
+        [
+          480,
+          300,
+          95,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_sit_efocus_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_sit_efocus_mopen.png",
+      "rects": [
+        [
+          438,
+          224,
+          180,
+          38
+        ],
+        [
+          480,
+          300,
+          95,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_sit_efocus_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_sit_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_sit_eblink_mclosed.png",
+      "rects": [
+        [
+          438,
+          224,
+          180,
+          38
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_sit_eblink_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_reach_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_reachCel_eneutral_mhalf.png",
+      "rects": [
+        [
+          480,
+          283,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_reachCel_eneutral_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_reach_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_reachCel_eneutral_mopen.png",
+      "rects": [
+        [
+          480,
+          283,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_reachCel_eneutral_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_reach_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_reachCel_etease_mclosed.png",
+      "rects": [
+        [
+          438,
+          222,
+          174,
+          36
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_reachCel_etease_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_reach_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_reachCel_etease_mhalf.png",
+      "rects": [
+        [
+          438,
+          222,
+          174,
+          36
+        ],
+        [
+          480,
+          283,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_reachCel_etease_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_reach_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_reachCel_etease_mopen.png",
+      "rects": [
+        [
+          438,
+          222,
+          174,
+          36
+        ],
+        [
+          480,
+          283,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_reachCel_etease_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_reach_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_reachCel_eblink_mclosed.png",
+      "rects": [
+        [
+          438,
+          222,
+          174,
+          36
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_reachCel_eblink_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_tap_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_tapCel_eneutral_mhalf.png",
+      "rects": [
+        [
+          490,
+          320,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_tapCel_eneutral_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_tap_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_tapCel_eneutral_mopen.png",
+      "rects": [
+        [
+          490,
+          320,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_tapCel_eneutral_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_tap_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_tapCel_etease_mclosed.png",
+      "rects": [
+        [
+          448,
+          261,
+          176,
+          36
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_tapCel_etease_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_tap_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_tapCel_etease_mhalf.png",
+      "rects": [
+        [
+          448,
+          261,
+          176,
+          36
+        ],
+        [
+          490,
+          320,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_tapCel_etease_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_tap_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_tapCel_etease_mopen.png",
+      "rects": [
+        [
+          448,
+          261,
+          176,
+          36
+        ],
+        [
+          490,
+          320,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_tapCel_etease_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_sit_tap_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_tapCel_eblink_mclosed.png",
+      "rects": [
+        [
+          448,
+          261,
+          176,
+          36
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_tapCel_eblink_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_turn_front_open_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_turn_front_open_eneutral_mhalf.png",
+      "rects": [
+        [
+          470,
+          258,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_turn_front_open_eneutral_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_turn_front_open_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_turn_front_open_eneutral_mopen.png",
+      "rects": [
+        [
+          470,
+          258,
+          90,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_turn_front_open_eneutral_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/girl_turn_front_open_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Girl_turn_front_open_eblink_mclosed.png",
+      "rects": [
+        [
+          428,
+          208,
+          176,
+          36
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Girl_turn_front_open_eblink_mclosed.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_turn_front_open_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_turn_front_open_eneutral_mhalf.png",
+      "rects": [
+        [
+          465,
+          305,
+          95,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_turn_front_open_eneutral_mhalf.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_turn_front_open_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_turn_front_open_eneutral_mopen.png",
+      "rects": [
+        [
+          465,
+          305,
+          95,
+          45
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_turn_front_open_eneutral_mopen.png"
+    },
+    {
+      "base": "hybrid/assets/cels/boy_turn_front_open_clean.png",
+      "donor": "hybrid/tmp/variant_donors/Boy_turn_front_open_eblink_mclosed.png",
+      "rects": [
+        [
+          422,
+          246,
+          182,
+          39
+        ]
+      ],
+      "feather": 6,
+      "output": "hybrid/assets/cels/variants/Boy_turn_front_open_eblink_mclosed.png"
+    }
+  ]
+}

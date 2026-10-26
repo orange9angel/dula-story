@@ -1,0 +1,90 @@
+{
+  "schema": "cafe-turn-rig-v1",
+  "comment": "转身关键画逐张人工标定（主代理按 rig_calib/*_grid.png 刻度图目检）。j: {joint:[cx,cy,rx,ry]} cel 像素；pins=该相位支撑脚固定点。mirror 帧由水平镜像派生（x→1024-x）。",
+  "cels": {
+    "girl_front_open": {
+      "source": "assets/cels/girl_turn_front_open_v1.png",
+      "j": {
+        "head": [490, 200, 90, 110], "neck": [492, 315, 60, 60],
+        "leftShoulder": [585, 410, 60, 70], "rightShoulder": [395, 415, 60, 70],
+        "leftElbow": [675, 565, 70, 80], "rightElbow": [305, 560, 70, 80],
+        "leftHand": [875, 745, 90, 110], "rightHand": [135, 755, 90, 110],
+        "pelvis": [495, 700, 80, 90],
+        "leftHip": [555, 725, 70, 80], "rightHip": [440, 730, 70, 80],
+        "leftKnee": [560, 950, 80, 90], "rightKnee": [420, 950, 80, 90],
+        "leftFoot": [565, 1405, 90, 100], "rightFoot": [330, 1385, 90, 100]
+      },
+      "pins": [[565, 1405]]
+    },
+    "girl_side_cross": {
+      "source": "assets/cels/girl_turn_side_cross_v1.png",
+      "j": {
+        "head": [265, 200, 90, 110], "neck": [295, 315, 60, 60],
+        "leftShoulder": [330, 425, 60, 70], "rightShoulder": [300, 420, 55, 65],
+        "leftElbow": [245, 565, 70, 80], "rightElbow": [430, 545, 70, 80],
+        "leftHand": [115, 770, 90, 110], "rightHand": [595, 755, 90, 110],
+        "pelvis": [355, 705, 80, 90],
+        "leftHip": [340, 730, 70, 80], "rightHip": [380, 725, 65, 75],
+        "leftKnee": [300, 1005, 80, 90], "rightKnee": [435, 1010, 80, 90],
+        "leftFoot": [195, 1405, 90, 100], "rightFoot": [560, 1300, 90, 100]
+      },
+      "pins": [[195, 1405]]
+    },
+    "girl_back_open": {
+      "source": "assets/cels/girl_turn_back_open_v1.png",
+      "j": {
+        "head": [455, 195, 90, 110], "neck": [450, 320, 60, 60],
+        "leftShoulder": [330, 430, 60, 70], "rightShoulder": [600, 430, 60, 70],
+        "leftElbow": [270, 620, 70, 80], "rightElbow": [655, 580, 70, 80],
+        "leftHand": [140, 770, 90, 110], "rightHand": [700, 810, 90, 110],
+        "pelvis": [470, 720, 80, 90],
+        "leftHip": [440, 745, 70, 80], "rightHip": [500, 745, 70, 80],
+        "leftKnee": [390, 1000, 80, 90], "rightKnee": [505, 1010, 80, 90],
+        "leftFoot": [355, 1240, 90, 100], "rightFoot": [480, 1370, 90, 100]
+      },
+      "pins": [[480, 1370]]
+    },
+    "boy_front_open": {
+      "source": "assets/cels/boy_turn_front_open_v1.png",
+      "j": {
+        "head": [512, 225, 90, 110], "neck": [510, 330, 60, 60],
+        "leftShoulder": [650, 460, 60, 70], "rightShoulder": [350, 460, 60, 70],
+        "leftElbow": [790, 590, 70, 80], "rightElbow": [225, 600, 70, 80],
+        "leftHand": [895, 720, 90, 110], "rightHand": [130, 730, 90, 110],
+        "pelvis": [505, 660, 80, 90],
+        "leftHip": [565, 690, 70, 80], "rightHip": [455, 690, 70, 80],
+        "leftKnee": [590, 1000, 80, 90], "rightKnee": [440, 1010, 80, 90],
+        "leftFoot": [620, 1355, 90, 100], "rightFoot": [430, 1360, 90, 100]
+      },
+      "pins": [[620, 1355]]
+    },
+    "boy_side_cross": {
+      "source": "assets/cels/boy_turn_side_cross_v1.png",
+      "j": {
+        "head": [320, 205, 90, 110], "neck": [325, 330, 60, 60],
+        "leftShoulder": [360, 450, 60, 70], "rightShoulder": [345, 445, 55, 65],
+        "leftElbow": [300, 610, 70, 80], "rightElbow": [470, 590, 70, 80],
+        "leftHand": [185, 740, 90, 110], "rightHand": [640, 745, 90, 110],
+        "pelvis": [390, 690, 80, 90],
+        "leftHip": [370, 720, 70, 80], "rightHip": [415, 715, 65, 75],
+        "leftKnee": [310, 1000, 80, 90], "rightKnee": [470, 1010, 80, 90],
+        "leftFoot": [220, 1390, 90, 100], "rightFoot": [590, 1330, 90, 100]
+      },
+      "pins": [[220, 1390]]
+    },
+    "boy_back_open": {
+      "source": "assets/cels/boy_turn_back_open_v1.png",
+      "j": {
+        "head": [430, 200, 90, 110], "neck": [430, 320, 60, 60],
+        "leftShoulder": [555, 440, 60, 70], "rightShoulder": [330, 430, 60, 70],
+        "leftElbow": [610, 600, 70, 80], "rightElbow": [240, 590, 70, 80],
+        "leftHand": [680, 790, 90, 110], "rightHand": [135, 760, 90, 110],
+        "pelvis": [445, 670, 80, 90],
+        "leftHip": [480, 700, 70, 80], "rightHip": [410, 700, 70, 80],
+        "leftKnee": [510, 1000, 80, 90], "rightKnee": [390, 980, 80, 90],
+        "leftFoot": [505, 1370, 90, 100], "rightFoot": [330, 1200, 90, 100]
+      },
+      "pins": [[505, 1370]]
+    }
+  }
+}

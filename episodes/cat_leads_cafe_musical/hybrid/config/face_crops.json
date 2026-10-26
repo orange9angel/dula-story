@@ -1,0 +1,14 @@
+{
+  "comment": "脸槽 512×512 裁切：四态裁切框完全一致（girl (330,180,960,810)，boy (350,140,990,780)）。closed 来自原肖像，其余来自锁回合成图。",
+  "report": "hybrid/config/face_crops_report.json",
+  "items": [
+    {"source": "assets/images/girl_portrait_v1.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_closed.png"},
+    {"source": "hybrid/tmp/face_composed/girl_half.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_half.png"},
+    {"source": "hybrid/tmp/face_composed/girl_open.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_open.png"},
+    {"source": "hybrid/tmp/face_composed/girl_blink.png", "crop": [330, 180, 960, 810], "size": [512, 512], "output": "hybrid/assets/cels/girl_face_blink.png"},
+    {"source": "assets/images/boy_portrait_v1.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_closed.png"},
+    {"source": "hybrid/tmp/face_composed/boy_half.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_half.png"},
+    {"source": "hybrid/tmp/face_composed/boy_open.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_open.png"},
+    {"source": "hybrid/tmp/face_composed/boy_blink.png", "crop": [350, 140, 990, 780], "size": [512, 512], "output": "hybrid/assets/cels/boy_face_blink.png"}
+  ]
+}
