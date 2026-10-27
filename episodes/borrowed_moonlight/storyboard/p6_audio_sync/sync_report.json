@@ -2,6 +2,33 @@
   "passed": true,
   "rows": [
     {
+      "event": "footstep_m04_first",
+      "target": 27.633,
+      "nearest_onset": 27.638,
+      "offset_s": 0.005,
+      "strongest_onset": 27.393,
+      "limit": 0.15,
+      "note": "m04 走拍首落步（bake stance）"
+    },
+    {
+      "event": "footstep_m04_mid",
+      "target": 30.533,
+      "nearest_onset": 30.56,
+      "offset_s": 0.027,
+      "strongest_onset": 30.826,
+      "limit": 0.15,
+      "note": "m04 走拍中点落步（bake stance）"
+    },
+    {
+      "event": "footstep_m04_last",
+      "target": 34.133,
+      "nearest_onset": 34.149,
+      "offset_s": 0.016,
+      "strongest_onset": 33.765,
+      "limit": 0.15,
+      "note": "m04 走拍末落步（bake stance）"
+    },
+    {
       "event": "wind_gust",
       "target": 51.0,
       "nearest_onset": 51.005,
@@ -20,13 +47,40 @@
       "note": "m08 灯火熄灭"
     },
     {
+      "event": "footstep_m11_first",
+      "target": 78.533,
+      "nearest_onset": 78.549,
+      "offset_s": 0.016,
+      "strongest_onset": 78.549,
+      "limit": 0.15,
+      "note": "m11 走拍首落步（bake stance）"
+    },
+    {
+      "event": "footstep_m11_mid",
+      "target": 80.967,
+      "nearest_onset": 81.015,
+      "offset_s": 0.048,
+      "strongest_onset": 80.834,
+      "limit": 0.15,
+      "note": "m11 走拍中点落步（bake stance）"
+    },
+    {
+      "event": "footstep_m11_last",
+      "target": 83.767,
+      "nearest_onset": 83.836,
+      "offset_s": 0.069,
+      "strongest_onset": 83.399,
+      "limit": 0.15,
+      "note": "m11 走拍末落步（bake stance）"
+    },
+    {
       "event": "door_creak",
       "target": 85.0,
-      "nearest_onset": 84.952,
-      "offset_s": -0.048,
-      "strongest_onset": 85.261,
+      "nearest_onset": 84.941,
+      "offset_s": -0.059,
+      "strongest_onset": 85.24,
       "limit": 0.15,
-      "note": "m12 木门开启"
+      "note": "m12 木门开启（2D 底图门不动，声效承担\"开门\"叙事）"
     },
     {
       "event": "metal_tap",
@@ -40,9 +94,9 @@
     {
       "event": "star_wake",
       "target": 156.0,
-      "nearest_onset": 156.016,
-      "offset_s": 0.016,
-      "strongest_onset": 155.781,
+      "nearest_onset": 156.133,
+      "offset_s": 0.133,
+      "strongest_onset": 156.133,
       "limit": 0.15,
       "note": "m21 星核苏醒"
     },
@@ -92,6 +146,15 @@
       "note": "m49 泪碎"
     },
     {
+      "event": "petal_touch",
+      "target": 396.3,
+      "nearest_onset": 396.412,
+      "offset_s": 0.112,
+      "strongest_onset": 396.412,
+      "limit": 0.15,
+      "note": "m53 花瓣落手背（R2 实测 396.3）"
+    },
+    {
       "event": "bell_1",
       "target": 408.0,
       "nearest_onset": 408.112,
@@ -128,13 +191,22 @@
       "note": "m59 铜灯重燃"
     },
     {
-      "event": "gold_text",
-      "target": 466.0,
-      "nearest_onset": 466.005,
-      "offset_s": 0.005,
-      "strongest_onset": 465.632,
+      "event": "star_chest",
+      "target": 446.4,
+      "nearest_onset": 446.459,
+      "offset_s": 0.059,
+      "strongest_onset": 446.171,
       "limit": 0.15,
-      "note": "m63 金粒聚字"
+      "note": "m61 胸口升星（R2 实测 446.5）"
+    },
+    {
+      "event": "gold_text",
+      "target": 466.4,
+      "nearest_onset": 466.437,
+      "offset_s": 0.037,
+      "strongest_onset": 466.747,
+      "limit": 0.15,
+      "note": "m63 金粒聚字（R2 实测首见 466.5）"
     }
   ],
   "failures": []

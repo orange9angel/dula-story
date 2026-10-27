@@ -1,0 +1,380 @@
+{
+ "schema": "ground-calib-v1",
+ "tolerancePx": 14,
+ "note": "R2 地面标定：line=底图(1920×1080)像素坐标线段（人工读数经 plateTransform 反解）；每帧按脚底屏幕 x→底图 x→线插值→屏幕 gy 对齐。exempt=豁免（reason 见注）。",
+ "exemptions": {
+  "portrait": "肖像拍（整肖像当镜头，无地面接触）",
+  "macro": "微距/特写拍，脚底出画",
+  "below": "脚底在画幅下缘外",
+  "nobody": "拍内无角色落地",
+  "seated": "王座坐姿，root=座面锚（A3 已验证）",
+  "covered": "被肖像层遮挡",
+  "culled": "整画出画剔除"
+ },
+ "shots": {
+  "m04": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      1182.5,
+      892.4
+     ],
+     [
+      1027,
+      734.7
+     ],
+     [
+      960,
+      749.2
+     ]
+    ],
+    "tol": 14,
+    "note": "走向塔门：起幅雪地→中段雪径→末幅塔门基座（末幅 bake 461 落在塔身横梁，人工改读门基 530；中段 bake 实测已贴地）",
+    "plate": "s01_snowtown_night"
+   }
+  },
+  "m11": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      687.5,
+      971.3
+     ],
+     [
+      837.5,
+      903.8
+     ],
+     [
+      920,
+      740
+     ]
+    ],
+    "tol": 14,
+    "note": "前景雪地→塔门台阶（三点折线：深度推进非直线）",
+    "plate": "s01_snowtown_night"
+   }
+  },
+  "m12": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      966.2,
+      733.4
+     ]
+    ],
+    "tol": 14,
+    "note": "静立于塔门前雪地",
+    "plate": "s01_snowtown_night"
+   }
+  },
+  "m50": {
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      1022.5,
+      883.8
+     ]
+    ],
+    "tol": 14,
+    "note": "塔前雪地（A4 已验证贴地）",
+    "plate": "s01_snowtown_night"
+   }
+  },
+  "m54": {
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      1027.5,
+      729.9
+     ],
+     [
+      1030.8,
+      732.9
+     ]
+    ],
+    "tol": 14,
+    "note": "塔门口地面（A4 已验证）",
+    "plate": "s01_snowtown_night"
+   }
+  },
+  "m56": {
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      806.2,
+      830.9
+     ],
+     [
+      625.5,
+      830.7
+     ]
+    ],
+    "tol": 14,
+    "note": "横移拍：A4 shiftXY 修正后的屋前雪院线（人工读数）",
+    "plate": "s01_snowtown_night"
+   }
+  },
+  "m59": {
+   "Eileen": {
+    "mode": "platform",
+    "note": "塔顶外挑阳台（世界锚 (0,21.24,-12.4)）底图无此构件——画补阳台平台"
+   }
+  },
+  "m63": {
+   "Alder": {
+    "mode": "veiled",
+    "note": "终幕黑纱下不可见"
+   }
+  },
+  "m64": {
+   "Alder": {
+    "mode": "veiled",
+    "note": "终幕黑纱下不可见"
+   },
+   "Eileen": {
+    "mode": "veiled",
+    "note": "终幕黑纱下仅铜灯可读"
+   }
+  },
+  "m58": {
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      995,
+      771.3
+     ]
+    ],
+    "tol": 14,
+    "note": "塔门草甸线（A4 groundY 修正已验证）",
+    "plate": "s01_snowtown_spring"
+   }
+  },
+  "m62": {
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      1276.3,
+      808.8
+     ]
+    ],
+    "tol": 14,
+    "note": "右房屋前草甸线（A4 groundY 修正已验证）",
+    "plate": "s01_snowtown_spring"
+   }
+  },
+  "m13": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      1182.2,
+      846.8
+     ],
+     [
+      1114.5,
+      1055.5
+     ]
+    ],
+    "tol": 14,
+    "note": "木地板（末幅 coverage clamp 后实测：地板延伸覆盖，脚底落 700）",
+    "plate": "s02_clocktower_workshop"
+   },
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      960,
+      920
+     ]
+    ],
+    "tol": 22,
+    "note": "工作台后方，脚底被台面遮挡（容差放宽）",
+    "plate": "s02_clocktower_workshop"
+   }
+  },
+  "m14": {
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      985.1,
+      761.4
+     ]
+    ],
+    "tol": 22,
+    "note": "工作台后方，桌腿间地板线",
+    "plate": "s02_clocktower_workshop"
+   }
+  },
+  "m15": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      1041.3,
+      956.3
+     ]
+    ],
+    "tol": 16,
+    "note": "蹲放灯，灯底（水彩软边）落前景地板——以画内灯底接触为准，非 bake 根（蹲姿根低于灯底）",
+    "plate": "s02_clocktower_workshop"
+   },
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      1092.5,
+      710
+     ]
+    ],
+    "tol": 22,
+    "note": "工作台后方",
+    "plate": "s02_clocktower_workshop"
+   }
+  },
+  "m24": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      1075,
+      942.5
+     ]
+    ],
+    "tol": 14,
+    "note": "工作台右侧地板",
+    "plate": "s02_clocktower_workshop"
+   },
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      960,
+      816.3
+     ]
+    ],
+    "tol": 22,
+    "note": "工作台后方",
+    "plate": "s02_clocktower_workshop"
+   }
+  },
+  "m28": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      1018.8,
+      885
+     ]
+    ],
+    "tol": 14,
+    "note": "屋顶瓦面",
+    "plate": "s03_star_stairs"
+   },
+   "Alder": {
+    "mode": "ground",
+    "line": [
+     [
+      751.3,
+      720
+     ]
+    ],
+    "tol": 14,
+    "note": "屋顶瓦面（护栏内）",
+    "plate": "s03_star_stairs"
+   }
+  },
+  "m36": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      842.5,
+      951.3
+     ]
+    ],
+    "tol": 14,
+    "note": "屋顶走向天窗（此拍仍在屋面）",
+    "plate": "s03_star_stairs"
+   }
+  },
+  "m37": {
+   "Eileen": {
+    "mode": "stairs",
+    "note": "登上悬浮星阶——脚踩 bake 台阶锚是正解，不贴底图地面"
+   }
+  },
+  "m38": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      1041.3,
+      740
+     ],
+     [
+      995,
+      723.8
+     ]
+    ],
+    "tol": 14,
+    "note": "镜面地板走进",
+    "plate": "s04_moon_palace"
+   }
+  },
+  "m40": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      548.8,
+      1006.3
+     ],
+     [
+      616.3,
+      917.5
+     ]
+    ],
+    "tol": 14,
+    "note": "镜面地板小心走近",
+    "plate": "s04_moon_palace"
+   }
+  },
+  "m43": {
+   "LadyMoon": {
+    "mode": "ground",
+    "line": [
+     [
+      773.8,
+      931.2
+     ]
+    ],
+    "tol": 22,
+    "note": "起身站立，裙摆罩脚+镜面反射承担接触",
+    "plate": "s04_moon_palace"
+   }
+  },
+  "m44": {
+   "Eileen": {
+    "mode": "ground",
+    "line": [
+     [
+      1091.3,
+      755
+     ]
+    ],
+    "tol": 14,
+    "note": "镜面地板（失光全景）",
+    "plate": "s04_moon_palace"
+   }
+  }
+ }
+}

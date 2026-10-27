@@ -10,7 +10,7 @@
     },
     {
       "path": "config/voice_envs.json",
-      "sha256": "725ee8cc4f1f6bf75b7043b31632934c2b48971d8e4fae4a60a7d03368169ff9"
+      "sha256": "5841f22b2cbceaca0271888b0ac3ff388c7b2d5df5bb847c352a23cedf467323"
     },
     {
       "path": "effects/particles.js",
@@ -26,7 +26,7 @@
     },
     {
       "path": "hybrid/config/art_pass_full.json",
-      "sha256": "c62452971a5e9e73b7c197e76a98f9d9a4c079114592ae86bd11136b322d3a1b"
+      "sha256": "bfd84e33d17a92b69e86001f6ee5e80096b8d3b867217629e91fdd7a32273bf6"
     },
     {
       "path": "hybrid/config/art_shots.json",
@@ -34,7 +34,7 @@
     },
     {
       "path": "hybrid/config/art_cast.json",
-      "sha256": "d870bf7d86278a2060edcce1cd23542da996bc797595b86aa6a46467c855dadc"
+      "sha256": "97f159b5d965143fa180b26aefe0865cb5b6cf69fd25a4b557cd8ac21c020a12"
     },
     {
       "path": "hybrid/config/plate_grade.json",
@@ -45,12 +45,20 @@
       "sha256": "45fc894bf195d24c6d5f2d5316a5f8b45a0394c0749865650d08453c00eb98df"
     },
     {
+      "path": "hybrid/config/ground_calib.json",
+      "sha256": "aaf583b12608dc1a114fdcae48f8ab71cc16b73ae5c70543bb49d6ffa68137fb"
+    },
+    {
+      "path": "hybrid/config/window_glows.json",
+      "sha256": "48e404de15f21a80d5ae3cb8b8a464d33092a2782e5d154505c9a6a57a2056ad"
+    },
+    {
       "path": "hybrid/config/motion_full.json",
       "sha256": "5df342d1b705f6b29881962620edf6df4136026db297f091dbd0bd07d403d188"
     },
     {
       "path": "hybrid/config/a4_probe.mjs",
-      "sha256": "0bb5a93451c5bccd8f98f8b8a922e20408fc59d45f7ff1f78dff6bb6c9b8095e"
+      "sha256": "bac268651bc0d8dcd6768f52f6c033784c19ffc508eb77d21a9ac76c42a6533d"
     },
     {
       "path": "hybrid/art_pass.html",
@@ -58,11 +66,11 @@
     },
     {
       "path": "hybrid/art_pass.js",
-      "sha256": "a801f5072c54c2a19d19d48e0c5de33508048abd68717668484082e3f748dd30"
+      "sha256": "9759b4d942de5e8a8de1b18117736c0bd57763d5ecc17f6fc98434b2e85930ac"
     },
     {
       "path": "hybrid/fx_rehost.js",
-      "sha256": "e50f5cbe04a74f9fea82b94676daea4bb4a806f7330596b8fa5d4cf2d689bd68"
+      "sha256": "4e45dc79aabfd916541e8842c1a6d200ab07d50f596225979bcc3b8d1dfdb6a9"
     },
     {
       "path": "hybrid/assets/plates/s01_snowtown_night.png",
@@ -320,15 +328,27 @@
         "samples": [
           3.5,
           31,
+          34.5,
+          37,
           65,
+          80.5,
+          87,
+          100.5,
           105,
           113.5,
+          129,
           152,
+          158,
           196,
+          209.5,
           230.5,
           244,
+          251,
+          257.5,
           271,
+          296,
           300.5,
+          320,
           335,
           341.5,
           348.5,
@@ -339,6 +359,8 @@
           403,
           410,
           414,
+          425,
+          431,
           446,
           456,
           460,
@@ -366,6 +388,8 @@
           "hybrid/config/art_cast.json",
           "hybrid/config/plate_grade.json",
           "hybrid/config/static_anchors.json",
+          "hybrid/config/ground_calib.json",
+          "hybrid/config/window_glows.json",
           "hybrid/config/motion_full.json",
           "hybrid/config/a4_probe.mjs",
           "hybrid/art_pass.html",
@@ -468,7 +492,7 @@
       },
       {
         "path": "verify_full_episode.py",
-        "sha256": "89600010cd4be9ad94c50aea538c859517fa318283e1fbb92441d433b357f9b8"
+        "sha256": "7735e4c3e44e05cad6997e5d15d5a169338f227568f9521a774f79eb56ed9c6d"
       }
     ]
   },

@@ -1,32 +1,32 @@
 {
   "provider": "volcano seed-tts-2.0",
   "resourceId": "seed-tts-2.0",
-  "audition": "tmp/voice_audition/v1（每角色 3 候选×2 代表句，24/24 合成成功、时长窗全 ✅；本环境无音频输出未做盲听，按音色目录气质+时长窗+后续拼音 QC 暂定接片，导演复听后可换）",
+  "audition": "tmp/voice_audition/r2（R2 返修轮：三女声全部重选；每角色 4 候选×2 代表句，生产 delivery 参数，24/24 合成成功、时长窗全 ✅、拼音 QC 全 ✅；本环境无音频输出未做盲听，按目录气质+时长+F0+拼音 QC 选定，待监制复听；旧 P6 声线音频留档 assets3d/dialogue/_archive/p6/）",
   "Narrator": {
-    "voice": "zh_female_shaoergushi_uranus_bigtts",
-    "name": "少儿故事 2.0",
+    "voice": "zh_female_wenroumama_uranus_bigtts",
+    "name": "温柔妈妈 2.0",
     "locale": "zh-CN",
-    "reason": "演绎类、官方定位就是儿童故事讲述女声——对应\"温厚女声、炉火边讲故事\"；候排 xiaoxue（儿童绘本）/vv（治愈安抚）",
+    "reason": "R2 改选：目录定位\"语调舒缓、咬字温润、自带母性柔光的治愈女声\"（中年）——温厚炉火边讲故事；F0 155-185Hz 为四候选最低最稳，无 shaoergushi 的活泼感；候排 xiaoxue（儿童绘本，清甜讲述者，n01 8.14s 语速最慢最像讲故事但长句余量小）/shaoergushi（现任，活泼）/vv（客服场景标签，客服腔风险）",
     "identityPolicy": "preserve-native-voice"
   },
   "Eileen": {
-    "voice": "zh_female_mengyatou_uranus_bigtts",
-    "name": "萌丫头 2.0",
-    "reason": "目录中唯一中文女童龄音色（11 岁年龄正确优先）；\"元气\"风险用逐句 context（轻而坚定/低声）压制；候排 linjianvhai（温柔内敛但青年龄）、yingtaowanzi（萝莉但太跳脱）",
+    "voice": "zh_female_wenjingmaomao_uranus_bigtts",
+    "name": "文静毛毛 2.0",
+    "reason": "R2 改选：\"语调轻柔、声线软萌，安静乖巧的萝莉音\"——萝莉龄+安静乖巧正对 11 岁\"天真不奶气、轻而坚定\"，无 mengyatou 的元气过头与整词崩坏前科；语速偏慢（e01 4.44s vs 同句他人 ~2.8s），长句用 speech_rate 吸收；候排 linjianvhai（F0 ~200Hz 偏青年龄）/qingchezizi（清澈少年音但 e16 1.92s 偏赶）/yingtaowanzi（演绎类萝莉但跳脱，e16 F0 341Hz 元气风险）",
     "locale": "zh-CN",
     "identityPolicy": "preserve-native-voice"
   },
   "Alder": {
     "voice": "zh_male_tangseng_uranus_bigtts",
     "name": "唐僧 2.0",
-    "reason": "三候选中语速最慢（6.10s/8.4s 窗）、语调平缓慈悲，最贴 70 岁钟表匠；沙哑为中文男声无原生音色的已知坑，靠 context\"苍老沙哑\"+低速率逼近；候排 shenyeboke（太年轻）/baqiqingshu（太强势）",
+    "reason": "P6 沿用（用户只点名女配音）：三候选中语速最慢（6.10s/8.4s 窗）、语调平缓慈悲，最贴 70 岁钟表匠；沙哑为中文男声无原生音色的已知坑，靠 context\"苍老沙哑\"+低速率逼近；候排 shenyeboke（太年轻）/baqiqingshu（太强势）",
     "locale": "zh-CN",
     "identityPolicy": "preserve-native-voice"
   },
   "LadyMoon": {
-    "voice": "zh_female_linxiao_uranus_bigtts",
-    "name": "林潇 2.0",
-    "reason": "清冷干净沉稳=超然；疲惫慈爱由 context 注入，\"很远的地方\"由后期轻混响实现（space=hall 允许的空间处理）；候排 gufengshaoyu（清冷古典）/cancan（太软糯）",
+    "voice": "zh_female_sophie_uranus_bigtts",
+    "name": "魅力苏菲 2.0",
+    "reason": "R2 改选：目录定位\"高冷御姐，外表疏离难亲近，内心却细腻柔软\"——疏离+细腻柔软正是\"超然、疲惫但慈爱\"；F0 193-197Hz 成熟偏冷；无 linxiao 的资讯感；\"很远的地方\"仍由混音轻混响链实现不动音高；候排 gufengshaoyu（清冷古典但 F0 255-277Hz 偏年轻）/wenroushunv（温婉但太近太暖，缺超然）/gaolengyujie（疏离够但气场过强）",
     "locale": "zh-CN",
     "identityPolicy": "preserve-native-voice"
   }

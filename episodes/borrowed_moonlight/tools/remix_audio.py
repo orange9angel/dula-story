@@ -128,8 +128,10 @@ def main():
         place(stems['effects'], x, start, gain * .45 / max(float(np.abs(x).max()), 1e-9),
               fade_in=.004, fade_out=.12)
 
-    for t in (27.2, 78.3):                      # 踩雪脚步（m04/m11 走拍）
-        event('footsteps_snow', t, .5)
+    # R2：脚步改逐 stance 对位（build_footsteps.py，接触时刻=bake planted 转换）
+    for t in (27.583, 78.483):                  # 踩雪脚步 m04/m11：逐 stance 合成轨
+        beat = 'm04' if t < 50 else 'm11'
+        event(f'footsteps_walk_{beat}', t, .5)
     event('moon_shimmer_dim', 44.0, .18)        # MOON_DIM
     event('wind_gust', 51.0, .5)                # WIND_GUST（火苗颤动）
     event('lamp_out', 58.0, .3)                 # LAMP_OUT
@@ -152,14 +154,14 @@ def main():
     event('one_spark', 348.0, .22)              # ONE_SPARK
     event('tear_break', 369.0, .6)              # TEAR_BREAK（泪碎银铃）
     event('star_fade', 382.0, .3)               # STAIR_FADE
-    event('petal_touch', 396.0, .18)            # FIRST_PETAL
+    event('petal_touch', 396.3, .18)            # FIRST_PETAL（R2：花瓣落手背实测 396.3）
     event('snow_to_petal', 400.0, .35)          # SNOW_TO_PETAL（MUSIC_RETURN 同点，让位）
     event('bell_deep', 408.0, 1.0)              # BELL1 指针启动
     event('bell_deep', 413.0, .95)              # BELL2 枯树抽芽
     event('bell_deep', 418.0, 1.1)              # BELL3 窗灯亮起
     event('lamp_relight', 430.0, .4)            # LAMP_RELIGHT
-    event('star_chest', 446.0, .35)             # STAR_CHEST
-    event('gold_text', 466.0, .3)               # GOLD_TEXT
+    event('star_chest', 446.4, .35)             # STAR_CHEST（R2：胸口亮度实测 446.5）
+    event('gold_text', 466.4, .3)               # GOLD_TEXT（R2：金粒聚集首见 466.5）
 
     # ── 音乐（RMS=人声-12dB，对白 duck -7dB；静默区 348-400 无音乐）──
     # A5（2026-10-27）：音乐层换 Suno v6-mini 素材（MP3 48k，ffmpeg 解码）；

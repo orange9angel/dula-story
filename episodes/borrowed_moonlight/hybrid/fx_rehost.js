@@ -10,6 +10,7 @@
 // 已知边界：无场景几何 → 无深度遮挡（depthTest 无对象可测）；遮挡评价见 NOTES A3。
 import * as THREE from 'three';
 import {assembleMagicFX} from '../effects/magic.js';
+import {ParticleSystem,clamp} from '../effects/particles.js';
 
 export function createRehostedFX({motion, statics, TL, width, height}){
   const FPS = motion.fps;
@@ -47,6 +48,63 @@ export function createRehostedFX({motion, statics, TL, width, height}){
     },
   };
   const fx = assembleMagicFX({TL, world, mode: '2d'});
+
+  // ═══ R2 环境动态补齐（3D scenes/*.js update(t) 的环境件 → 2D 重宿主）═══
+  // 绝对时钟 + LCG 种子，seek 天然一致；包络与场景 update 逐式对齐。
+  // 对照：S01 落雪/花瓣（场景 snow/petals 600 点飘落）、S02 齿轮区微尘+琥珀呼吸、
+  // S03 星阶金尘缓升（m31+）、S04 银粉缓沉。落雪"落地前化蓝色光点"由 magic.js 既有
+  // 雪化蓝光点系统承担（A3 已重宿主）。
+  const finK = t => t < 456 ? 1 : Math.max(0, 1 - (t - 456) / 7);
+  const morphK = t => clamp((t - 400) / 6);
+  const wakeK = t => t < 156 ? 0 : Math.min(1, (t - 156) / 22);
+  const palDimK = t => t < 317 ? 1 : Math.max(.22, 1 - (t - 317) / 9);
+  const palGlowK = t => t < 369 ? 0 : Math.min(1, (t - 369) / 6);
+  const envSys = {};
+  // S01 落雪：小而疏、竖直下落取模回绕+水平微漂（场景 drift 同式）；m54 空中转粉渐隐
+  envSys.snow = fx.director.add('snowtown', new ParticleSystem(scenes.snowtown.scene, {count: 240, seed: 71,
+    build: (i, rnd) => { const x = -22 + rnd() * 44, z = -26 + rnd() * 32, off = rnd() * 24, ph = rnd() * 6.28; return {
+      t0: 0, t1: 1e9,
+      pos: (u, t, out) => out.set(x + Math.sin(t * .6 + ph) * .35, 24 - ((off + t * .9) % 24), z),
+      size: () => .06,
+      alpha: (u, t) => { const y = 24 - ((off + t * .9) % 24);
+        if (t >= 422 || y < .7) return 0; // 春皮让位；落地前消失（化蓝光点=既有系统）
+        return .55 * (1 - morphK(t)) * finK(t); },
+      color: (u, t) => { const m = morphK(t); return [.91 + .09 * m, .94 - .09 * m, .98 - .10 * m]; } }; } }));
+  // S01/S05 花瓣：m54 转化窗渐入、春皮常驻（场景 petals 同式，更慢更飘）
+  envSys.petals = fx.director.add('snowtown', new ParticleSystem(scenes.snowtown.scene, {count: 150, seed: 72,
+    build: (i, rnd) => { const x = -22 + rnd() * 44, z = -26 + rnd() * 32, off = rnd() * 24, ph = rnd() * 6.28; return {
+      t0: 0, t1: 1e9,
+      pos: (u, t, out) => out.set(x + Math.sin(t * .5 + ph) * .9 + Math.sin(t * 1.7 + ph) * .3, 24 - ((off + t * .55) % 24), z),
+      size: () => .075,
+      alpha: (u, t) => { const y = 24 - ((off + t * .55) % 24); const spring = t >= 422;
+        if (y < .5 || (!spring && morphK(t) <= 0)) return 0;
+        return .6 * (spring ? 1 : morphK(t)) * finK(t); },
+      color: [1, .80, .88] }; } }));
+  // S02 齿轮区环境微尘（暖光锥内缓浮，星醒后略增；3D 场景无独立微尘件，R2 按监制令补）
+  envSys.dustWork = fx.director.add('clocktower', new ParticleSystem(scenes.clocktower.scene, {count: 90, seed: 73,
+    build: (i, rnd) => { const x = -4 + rnd() * 8, y = .4 + rnd() * 6.5, z = -7 + rnd() * 6, ph = rnd() * 6.28, sp = .04 + rnd() * .05; return {
+      t0: 0, t1: 1e9,
+      pos: (u, t, out) => out.set(x + Math.sin(t * .21 + ph) * .3, y + Math.sin(t * .13 + ph) * .5 + ((t * sp) % 2) - 1, z + Math.cos(t * .17 + ph) * .25),
+      size: () => .018,
+      alpha: (u, t) => .16 * (.55 + .45 * Math.sin(t * .4 + ph * 2)) * (.5 + .5 * wakeK(t)),
+      color: [1, .85, .55] }; } }));
+  // S04 银粉缓降（场景 dust 同式：失光段加速下沉、亮度随月光衰减、泪碎后回暖）
+  envSys.dustPalace = fx.director.add('moonpalace', new ParticleSystem(scenes.moonpalace.scene, {count: 130, seed: 74,
+    build: (i, rnd) => { const x = -9 + rnd() * 18, z = -13 + rnd() * 14, off = rnd() * 12, k = 1 + (i % 3); return {
+      t0: 0, t1: 1e9,
+      pos: (u, t, out) => { const dist = (Math.min(t, 325) * .05 + Math.max(0, t - 325) * .14) * k;
+        const y = (12 - off - dist) % 12; return out.set(x, y < 0 ? y + 12 : y, z); },
+      size: () => .04,
+      alpha: (u, t) => .42 * (.4 + .6 * palDimK(t)) + .2 * palGlowK(t),
+      color: [.74, .82, .91] }; } }));
+  // S03 星阶金尘缓升（场景 sparks 同式，m31 群星升起后出现）
+  envSys.sparks = fx.director.add('towertop', new ParticleSystem(scenes.towertop.scene, {count: 44, seed: 75,
+    build: (i, rnd) => { const x = -7 + rnd() * 14, z = -15 + rnd() * 12, off = rnd() * 22, k = 1 + (i % 3); return {
+      t0: 227, t1: 1e9,
+      pos: (u, t, out) => out.set(x, (off + t * .18 * k) % 22, z),
+      size: () => .045,
+      alpha: (u, t) => t < 227 ? 0 : .4 * (.6 + .4 * Math.sin(t * .9 + i)),
+      color: [1, .82, .45] }; } }));
   const cam = new THREE.PerspectiveCamera(44, width / height, .05, 200);
   // update：按 bake 帧重建相机并驱动当帧粒子（fx.update 内部按场景键取系统组）
   function update(t){
@@ -67,7 +125,8 @@ export function createRehostedFX({motion, statics, TL, width, height}){
     renderer.render(scene, cam); // 双渲染沉淀（viewer 同纪律：首渲染 GPU 资源滞后）
     ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.drawImage(renderer.domElement, 0, 0); ctx.restore();
     const systems = fx.director.systems.get(key) ?? [];
-    return {scene: key, systems: systems.length, visible: systems.filter(s => s.points.visible).length};
+    return {scene: key, systems: systems.length, visible: systems.filter(s => s.points.visible).length,
+      env: Object.fromEntries(Object.entries(envSys).map(([k, s]) => [k, s.points.visible]))};
   }
   return {draw, update, fx, cam, frameAt};
 }

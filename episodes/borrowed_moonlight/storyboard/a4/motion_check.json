@@ -52,22 +52,22 @@
           "t": 113.5,
           "actor": "Eileen",
           "key": "Eileen:crouch",
-          "above": 50.8,
+          "above": 54.8,
           "expect": 50.6,
-          "err": 0.2,
+          "err": 4.2,
           "tol": 9.4,
-          "top": 462,
+          "top": 458,
           "ok": true
         },
         {
           "t": 105,
           "actor": "Alder",
           "key": "Alder:stand_work",
-          "above": 34.2,
+          "above": 37.2,
           "expect": 34.5,
-          "err": 0.3,
+          "err": 2.7,
           "tol": 11.2,
-          "top": 268,
+          "top": 265,
           "ok": true
         },
         {
@@ -263,71 +263,351 @@
           "name": "fireflies",
           "t": 65,
           "scene": "snowtown",
-          "systems": 11,
-          "visible": 2
+          "systems": 13,
+          "visible": 3,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "nebula",
           "t": 160,
           "scene": "clocktower",
-          "systems": 3,
-          "visible": 1
+          "systems": 4,
+          "visible": 2,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "stair_climb",
           "t": 271,
           "scene": "towertop",
-          "systems": 6,
-          "visible": 1
+          "systems": 7,
+          "visible": 2,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "one_spark",
           "t": 348.5,
           "scene": "moonpalace",
-          "systems": 4,
-          "visible": 2
+          "systems": 5,
+          "visible": 3,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "lady_dissolve",
           "t": 360,
           "scene": "moonpalace",
-          "systems": 4,
-          "visible": 1
+          "systems": 5,
+          "visible": 2,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "tear_break",
           "t": 370,
           "scene": "moonpalace",
-          "systems": 4,
-          "visible": 1
+          "systems": 5,
+          "visible": 2,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "snow_to_flower",
           "t": 402,
           "scene": "snowtown",
-          "systems": 11,
-          "visible": 1
+          "systems": 13,
+          "visible": 3,
+          "env": {
+            "snow": true,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "bell_wave",
           "t": 410,
           "scene": "snowtown",
-          "systems": 11,
-          "visible": 1
+          "systems": 13,
+          "visible": 2,
+          "env": {
+            "snow": false,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "chest_star",
           "t": 450,
           "scene": "snowtown",
-          "systems": 11,
-          "visible": 2
+          "systems": 13,
+          "visible": 3,
+          "env": {
+            "snow": false,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
         },
         {
           "name": "gold_text",
           "t": 468,
           "scene": "snowtown",
-          "systems": 11,
-          "visible": 2
+          "systems": 13,
+          "visible": 2,
+          "env": {
+            "snow": false,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true
+          }
+        }
+      ]
+    },
+    "groundBand": {
+      "ok": true,
+      "checked": 22,
+      "failed": [],
+      "exempt": 170,
+      "note": "ground=脚底渲染实测在底图地面线 ±tol；其余拍豁免理由见 ground_calib/报告"
+    },
+    "envDynamics": {
+      "ok": true,
+      "results": [
+        {
+          "name": "snow_falling",
+          "t": 65,
+          "ok": true,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true,
+            "moonHalo": 0.077,
+            "winGlow": 0.29,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "snow_morphing",
+          "t": 402,
+          "ok": true,
+          "env": {
+            "snow": true,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true,
+            "moonHalo": 0.05,
+            "winGlow": 0.295,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "petals_spring",
+          "t": 425,
+          "ok": true,
+          "env": {
+            "snow": false,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true,
+            "winGlow": 0.3,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "workshop_dust",
+          "t": 160,
+          "ok": true,
+          "env": {
+            "snow": false,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true,
+            "lampGlow": 0.109,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "palace_dust",
+          "t": 300,
+          "ok": true,
+          "env": {
+            "snow": false,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "stair_sparks",
+          "t": 240,
+          "ok": true,
+          "env": {
+            "snow": false,
+            "petals": true,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true,
+            "moonHalo": 0.073,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "moon_halo_night",
+          "t": 8,
+          "ok": true,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": true,
+            "moonHalo": 0.102,
+            "winGlow": 0.3,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "moon_halo_tower",
+          "t": 200,
+          "ok": true,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": false,
+            "moonHalo": 0.114,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "window_glow",
+          "t": 60,
+          "ok": true,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": false,
+            "moonHalo": 0.106,
+            "winGlow": 0.296,
+            "dimVeil": 0
+          }
+        },
+        {
+          "name": "palace_dim_veil",
+          "t": 328,
+          "ok": true,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": false,
+            "dimVeil": 0.39
+          }
+        },
+        {
+          "name": "palace_reglow",
+          "t": 375.5,
+          "ok": true,
+          "env": {
+            "snow": true,
+            "petals": false,
+            "dustWork": true,
+            "dustPalace": true,
+            "sparks": false,
+            "moonHalo": 0.054,
+            "winGlow": 0.298,
+            "dimVeil": 0
+          }
+        }
+      ]
+    },
+    "lipSync": {
+      "ok": true,
+      "lipChecks": [
+        {
+          "actor": "Eileen",
+          "t0": 353,
+          "t1": 363,
+          "frames": 100,
+          "switches": 35,
+          "moves": true,
+          "noJitter": true,
+          "ok": true
+        },
+        {
+          "actor": "Alder",
+          "t0": 163,
+          "t1": 169,
+          "frames": 61,
+          "switches": 13,
+          "moves": true,
+          "noJitter": true,
+          "ok": true
+        },
+        {
+          "actor": "LadyMoon",
+          "t0": 370,
+          "t1": 373,
+          "frames": 30,
+          "switches": 8,
+          "moves": true,
+          "noJitter": true,
+          "ok": true
+        },
+        {
+          "actor": "LadyMoon",
+          "t": 367.5,
+          "check": "silence_closed",
+          "ok": true
         }
       ]
     }

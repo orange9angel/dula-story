@@ -10,6 +10,11 @@
 //   6. 粒子存在性：十个大场面时刻逐一点名（萤火/星云/星阶/ONE_SPARK/消散/泪碎/
 //      雪转花/钟声金波/胸口升星/金粒聚字）
 //   7. m46 构图回归断言（P7 曾出画）：艾琳实测跨高>120px 且未剔除
+//   R2 新增：
+//   8. 脚底地面带断言（groundReport）：全部标定拍渲染实测脚底/cel 底边落在底图地面线
+//      ±tol；豁免拍显式登记理由（64 拍×可见角色全覆盖，不许悬空拍）
+//   9. 环境动态存在性：落雪/花瓣/工坊微尘/宫殿银尘/星阶金尘 + 月光晕/窗灯/油灯辉光
+//  10. 口型活动度：台词窗内三态有开合变化且无高频抖动（迟滞生效），静默窗闭口
 export function probe(){
   const art=window.__art,motion=window.__motion;
   if(!art||!motion)return{passed:false,error:'art_pass not ready'};
@@ -101,6 +106,52 @@ export function probe(){
     ['chest_star',450],['gold_text',468]];
   const particles=pTimes.map(([name,t])=>({name,t,...art.state(t).particles}));
   R.checks.particles={ok:particles.every(p=>p.visible>0),particles};
+
+  // 8) R2 脚底地面带（64 拍全覆盖：ground=渲染实测断言；豁免=显式理由登记）
+  const grows=art.groundReport();
+  const gFail=grows.filter(r=>r.mode==='ground'&&!r.ok);
+  const gCover=grows.filter(r=>r.mode==='ground').length;
+  R.checks.groundBand={ok:gFail.length===0&&gCover>=20,checked:gCover,failed:gFail,
+    exempt:grows.filter(r=>r.mode!=='ground').length,
+    note:'ground=脚底渲染实测在底图地面线 ±tol；其余拍豁免理由见 ground_calib/报告'};
+
+  // 9) R2 环境动态存在性（粒子层 env 标记 + 画布层辉光读数）
+  const envAt=t=>{const st=art.state(t);return{...st.particles.env,...st.env}};
+  const envChecks=[
+    ['snow_falling',65,e=>e.snow===true],
+    ['snow_morphing',402,e=>e.snow===true||e.petals===true],
+    ['petals_spring',425,e=>e.petals===true],
+    ['workshop_dust',160,e=>e.dustWork===true&&(e.lampGlow??0)>0],
+    ['palace_dust',300,e=>e.dustPalace===true],
+    ['stair_sparks',240,e=>e.sparks===true],
+    ['moon_halo_night',8,e=>(e.moonHalo??0)>0.01],
+    ['moon_halo_tower',200,e=>(e.moonHalo??0)>0.005],
+    ['window_glow',60,e=>(e.winGlow??0)>0.01],
+    ['palace_dim_veil',328,e=>(e.dimVeil??0)>0.05],
+    ['palace_reglow',375.5,e=>(e.dimVeil??0)<0.05], // 回暖包络 6s（369→375 全恢复，同 3D top.intensity 节奏）
+  ];
+  const envRes=envChecks.map(([name,t,fn])=>{const e=envAt(t);return{name,t,ok:!!fn(e),env:e}});
+  R.checks.envDynamics={ok:envRes.every(r=>r.ok),results:envRes};
+
+  // 10) R2 口型活动度（肖像拍：台词窗内三态开合有变化、无高频抖动；静默窗闭口）
+  const lipChecks=[];
+  for(const [actor,t0,t1] of [['Eileen',353,363],['Alder',163,169],['LadyMoon',370,373]]){
+    const states=[];
+    for(let t=t0;t<=t1;t+=0.1){
+      const st=art.state(t),fc=st.faces.find(x=>x.actor===actor);
+      if(fc)states.push(fc.mouth);
+    }
+    let switches=0;for(let i=1;i<states.length;i++)if(states[i]!==states[i-1])switches++;
+    const dur=t1-t0;
+    lipChecks.push({actor,t0,t1,frames:states.length,switches,
+      moves:switches>=2,noJitter:switches/dur<9,ok:states.length>10&&switches>=2&&switches/dur<9});
+  }
+  // 静默窗（泪落三秒 366-369 无台词）：肖像嘴必须闭口
+  {
+    const st=art.state(367.5),fc=st.faces.find(x=>x.actor==='LadyMoon');
+    lipChecks.push({actor:'LadyMoon',t:367.5,check:'silence_closed',ok:!fc||fc.mouth==='closed'});
+  }
+  R.checks.lipSync={ok:lipChecks.every(c=>c.ok),lipChecks};
 
   R.passed=Object.values(R.checks).every(c=>c.ok);
   return R;

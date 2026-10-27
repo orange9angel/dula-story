@@ -14,12 +14,24 @@
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": false,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.13,
+      "winGlow": 0.295,
+      "dimVeil": 0
     },
     "subtitle": "很久很久以前，有一个王国，那里一年四季都下着雪。",
     "missingAssets": [],
-    "sha256": "652586f633dc4fba56d20a985b11c3dce1a8844f0b5b65f45fe049c6a7be66a3"
+    "sha256": "cfde731a2589f5d1e0b31dfb2344a6a3d93763d6f2450254a1f76924c631ddc0"
   },
   {
     "t": 31,
@@ -40,27 +52,153 @@
         "index": 4,
         "distance": 2.633,
         "x": 687.8,
-        "y": 526,
+        "y": 526.5,
         "h": 173.7,
         "footScreen": [
           694.4,
-          516.8
+          517.3
         ],
         "contact": {
           "left": false,
           "right": true
-        }
+        },
+        "tint": [
+          0.9433,
+          0.9374,
+          0.9893
+        ]
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 2
+      "systems": 13,
+      "visible": 3,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": false,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.13,
+      "winGlow": 0.296,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "c7ad2d154ffe7001296ee8dfb26a7412bc55de7bf04e189efebbfaeb45b92906"
+    "sha256": "b79a4d332e7556edb4516698e60feda2f806f4749f13572fa21b5ced0e826138"
+  },
+  {
+    "t": 34.5,
+    "shot": "m04",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.0155327516488544
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:walk",
+        "walk": true,
+        "index": 4,
+        "distance": 4.607,
+        "x": 634.6,
+        "y": 537.5,
+        "h": 142.1,
+        "footScreen": [
+          640,
+          530
+        ],
+        "contact": {
+          "left": null,
+          "right": null
+        },
+        "tint": [
+          0.954,
+          0.9364,
+          0.9679
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 3,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": false,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.114,
+      "winGlow": 0.292,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "182a85e076f557642c9662541293ddc48542f86fa2735aced8758d81329ebee6"
+  },
+  {
+    "t": 37,
+    "shot": "m05",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 639.9999933279897,
+      "cy": 382.82560833064684,
+      "z": 1
+    },
+    "bodies": [],
+    "faces": [
+      {
+        "actor": "Eileen",
+        "portrait": true,
+        "x": 733.6,
+        "y": 741.8,
+        "h": 1000,
+        "drawnW": 1212.5,
+        "eyeScreen": [
+          631.7,
+          120.1
+        ],
+        "roll": -0.1624,
+        "mouth": "half",
+        "expr": "base",
+        "emotion": "curious"
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 3,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": false,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.095,
+      "winGlow": 0.3,
+      "dimVeil": 0
+    },
+    "subtitle": "月亮，你今晚怎么这么暗呀？",
+    "missingAssets": [],
+    "sha256": "3beab34e4ca1ecf8852440c4b7f51deb5eb581899e0d4105bd7e0fc05ce9d83e"
   },
   {
     "t": 65,
@@ -94,12 +232,217 @@
     ],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 2
+      "systems": 13,
+      "visible": 3,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": false,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.077,
+      "winGlow": 0.29,
+      "dimVeil": 0
     },
     "subtitle": "别怕。",
     "missingAssets": [],
-    "sha256": "9ecbb4dfa8f6dcd8fd5858a9a222062a2b5de4c1718aaa2971daa31067cd43e7"
+    "sha256": "614e29b881305e629d6d39ffcc8e95ceff342d0c6a87c624af88f63b616db2a4"
+  },
+  {
+    "t": 80.5,
+    "shot": "m11",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:walk",
+        "walk": true,
+        "index": 7,
+        "distance": 1.574,
+        "x": 519.5,
+        "y": 672.2,
+        "h": 193.4,
+        "footScreen": [
+          516.7,
+          662.4
+        ],
+        "contact": {
+          "left": false,
+          "right": true
+        },
+        "tint": [
+          1.035,
+          1.0344,
+          1.0884
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": false,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.075,
+      "winGlow": 0.3,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "9c12cac179aebe4a9e2c39304a24c2f3a68ea260ac944842a9a391dedaf6d2ae"
+  },
+  {
+    "t": 87,
+    "shot": "m12",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.0082285414035352
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:walk",
+        "walk": true,
+        "index": 0,
+        "distance": 0,
+        "x": 641.5,
+        "y": 520.9,
+        "h": 100,
+        "footScreen": [
+          644.9,
+          516
+        ],
+        "contact": {
+          "left": null,
+          "right": null
+        },
+        "tint": [
+          0.9505,
+          0.9371,
+          0.9714
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": false,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.106,
+      "winGlow": 0.299,
+      "doorGlow": true,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "048d24b5919104d61ca13e9dbba03e031c07bfad61783c35eae2de6fd273a021"
+  },
+  {
+    "t": 100.5,
+    "shot": "m13",
+    "kind": "establish",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 279.51264652482786,
+      "z": 1.0196466515628986
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "x": 640,
+        "y": 589.5,
+        "h": 70.8,
+        "eyeScreen": [
+          640,
+          527.2
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          1.1054,
+          0.9086,
+          0.7978
+        ],
+        "groundDy": 0.3
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:walk",
+        "walk": true,
+        "index": 4,
+        "distance": 1.431,
+        "x": 763,
+        "y": 703.8,
+        "h": 88.1,
+        "footScreen": [
+          766.3,
+          699.2
+        ],
+        "contact": {
+          "left": null,
+          "right": null
+        },
+        "tint": [
+          1.1209,
+          0.9074,
+          0.7634
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "lampGlow": 0.079,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "f3038e9b2795c337bdd7fe1ec4340951af37584919fa8f1431d3c2c0b55dcc35"
   },
   {
     "t": 105,
@@ -117,25 +460,42 @@
         "actor": "Alder",
         "key": "Alder:stand_work",
         "x": 652.2,
-        "y": 547.9,
+        "y": 545,
         "h": 280.2,
         "eyeScreen": [
           652.2,
           302.2
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.0256,
+          0.9257,
+          0.8628
+        ],
+        "groundDy": -2.9
       }
     ],
     "faces": [],
     "particles": {
       "scene": "clocktower",
-      "systems": 3,
-      "visible": 0
+      "systems": 4,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "lampGlow": 0.094,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "9529379dda10fdb33c0edd6014f50715792c256d3a54ae48206ade65f7dbb6f5"
+    "sha256": "1ddad18c8f2feef7d7f0655281cda8546f7ef9c9076c6b3f749223929eb8f8f0"
   },
   {
     "t": 113.5,
@@ -153,38 +513,133 @@
         "actor": "Alder",
         "key": "Alder:stand_work",
         "x": 738.8,
-        "y": 498.1,
+        "y": 496,
         "h": 188.2,
         "eyeScreen": [
           738.8,
           333.1
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.9394,
+          0.9412,
+          0.9633
+        ],
+        "groundDy": -2.1
       },
       {
         "actor": "Eileen",
         "key": "Eileen:crouch",
         "x": 723,
-        "y": 697.6,
+        "y": 693,
         "h": 235.4,
         "eyeScreen": [
           723,
           512.8
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1243,
+          0.9066,
+          0.7615
+        ],
+        "groundDy": -4.6
       }
     ],
     "faces": [],
     "particles": {
       "scene": "clocktower",
-      "systems": 3,
-      "visible": 0
+      "systems": 4,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "lampGlow": 0.08,
+      "dimVeil": 0
     },
     "subtitle": "先生，您为什么把星星关在瓶子里？",
     "missingAssets": [],
-    "sha256": "c980341507829512540001a2b9d83e3d744a8c23b6d4c505d3a2bfe07779ba31"
+    "sha256": "790ac2b7550885ee7754079c1db0a31c7f977ac14d717d7221288e20963acc1d"
+  },
+  {
+    "t": 129,
+    "shot": "m17",
+    "kind": "wide",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 699.8500828802987,
+      "cy": 361.6155046820682,
+      "z": 1.0767597395053192
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "x": 705.1,
+        "y": 750.1,
+        "h": 153.5,
+        "eyeScreen": [
+          705.1,
+          615.5
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          1.1222,
+          0.9067,
+          0.7671
+        ],
+        "groundDy": 0
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:stand",
+        "x": 1105.9,
+        "y": 842.7,
+        "h": 170.1,
+        "eyeScreen": [
+          1105.9,
+          687.7
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          1.0912,
+          0.912,
+          0.8049
+        ],
+        "groundDy": 0
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "lampGlow": 0.095,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "c00436940a17bce90f8b51568fc2de2ec011cc7a6f54f1c0f16378775ad9efa7"
   },
   {
     "t": 152,
@@ -209,18 +664,88 @@
           74.3
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1969,
+          0.9409,
+          0.752
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "clocktower",
-      "systems": 3,
-      "visible": 1
+      "systems": 4,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "lampGlow": 0.073,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "d84d00ecf590433794c7a43c413b4e032f6055d81847aef8a9d21c3389e78360"
+    "sha256": "2fd255db27ef4175d51dd05fd0d410bec60370a368153fffcf0e6c2405803fe9"
+  },
+  {
+    "t": 158,
+    "shot": "m21",
+    "kind": "macro",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "x": 445.8,
+        "y": 1632,
+        "h": 2073.6,
+        "eyeScreen": [
+          445.8,
+          -224.3
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          1.1261,
+          0.9133,
+          0.7609
+        ],
+        "groundDy": 0
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "lampGlow": 0.082,
+      "dimVeil": 0
+    },
+    "subtitle": "您看！它醒了！",
+    "missingAssets": [],
+    "sha256": "ac56c78d212de230c4f39cfbcb6ace375c22101ee351633d76dcf96d9b7e9963"
   },
   {
     "t": 196,
@@ -237,12 +762,95 @@
     "faces": [],
     "particles": {
       "scene": "towertop",
-      "systems": 6,
-      "visible": 1
+      "systems": 7,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.106,
+      "dimVeil": 0
     },
     "subtitle": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。",
     "missingAssets": [],
-    "sha256": "3e51079faff574ba87a5131945da1432de7f95662a5f53fcd4b31b70fc294866"
+    "sha256": "161110eecf8d5dc016b6e4d5854da70f98a396e43c6d892cd6fd7c955e8b8e33"
+  },
+  {
+    "t": 209.5,
+    "shot": "m28",
+    "kind": "two_mid",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 464.7,
+        "y": 504,
+        "h": 181.7,
+        "eyeScreen": [
+          464.7,
+          338
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          0.837,
+          0.9549,
+          1.1284
+        ],
+        "groundDy": -1.8
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:stand",
+        "x": 688.8,
+        "y": 636,
+        "h": 248.9,
+        "eyeScreen": [
+          688.8,
+          412.4
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          0.9472,
+          0.9385,
+          0.9663
+        ],
+        "groundDy": -3.2
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": false
+      }
+    },
+    "env": {
+      "moonHalo": 0.09,
+      "dimVeil": 0
+    },
+    "subtitle": "月亮离我们，太远了。",
+    "missingAssets": [],
+    "sha256": "bdebbf6b069069baea2a5fd377f519f4248098c85117bc02a4d861a53fc2301b"
   },
   {
     "t": 230.5,
@@ -251,7 +859,7 @@
     "scene": "towertop",
     "plate": "s03_star_stairs",
     "plateView": {
-      "cx": 394.11428420693625,
+      "cx": 512.0000000000001,
       "cy": 359.99999684281426,
       "z": 1
     },
@@ -267,7 +875,13 @@
           632.6
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.8734,
+          0.9442,
+          1.128
+        ],
+        "groundDy": 0
       },
       {
         "actor": "Eileen",
@@ -280,18 +894,35 @@
           698.4
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.8687,
+          0.9458,
+          1.1261
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "towertop",
-      "systems": 6,
-      "visible": 1
+      "systems": 7,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.071,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "beaaa23be871c2685d6cc04ae6cfc492beedc6220734bb27ad778c9729fed292"
+    "sha256": "8af4229402c4d9ac8863dab80fa697b91eb52cfe0954228c05e18eb9af89fbc6"
   },
   {
     "t": 244,
@@ -316,18 +947,175 @@
           380.7
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.8687,
+          0.9462,
+          1.122
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "towertop",
-      "systems": 6,
-      "visible": 1
+      "systems": 7,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.061,
+      "dimVeil": 0
     },
     "subtitle": "这是……失传的星辰魔法。",
     "missingAssets": [],
-    "sha256": "a95e4a05fe5e064a652a993b55029474f7ef80b90ba87a54dea03a8f1b673fca"
+    "sha256": "b9c5a51e1b66cf27e55725ed87a2f763471c7f58ec7edf2dbe593f1880aafad9"
+  },
+  {
+    "t": 251,
+    "shot": "m34",
+    "kind": "face_close",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 71,
+        "y": 601.7,
+        "h": 370.5,
+        "eyeScreen": [
+          71,
+          259.7
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          0.9416,
+          0.9814,
+          1.0912
+        ],
+        "groundDy": 0
+      }
+    ],
+    "faces": [
+      {
+        "actor": "Eileen",
+        "portrait": true,
+        "x": 657.3,
+        "y": 989.9,
+        "h": 1000,
+        "drawnW": 1212.5,
+        "eyeScreen": [
+          639,
+          360.2
+        ],
+        "roll": -0.0291,
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "happy"
+      }
+    ],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.052,
+      "dimVeil": 0
+    },
+    "subtitle": "不是魔法，先生。",
+    "missingAssets": [],
+    "sha256": "de7313369e68dd64be4b978e8ff133dd6878267515a3f748b1ab7ea610d68efc"
+  },
+  {
+    "t": 257.5,
+    "shot": "m35",
+    "kind": "face_close",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": -22.3,
+        "y": 681.7,
+        "h": 467.8,
+        "eyeScreen": [
+          -22.3,
+          249.9
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          0.9056,
+          0.952,
+          1.0668
+        ],
+        "groundDy": 0
+      }
+    ],
+    "faces": [
+      {
+        "actor": "Eileen",
+        "portrait": true,
+        "x": 737.3,
+        "y": 1016.1,
+        "h": 1000,
+        "drawnW": 1212.5,
+        "eyeScreen": [
+          631.5,
+          395
+        ],
+        "roll": -0.1687,
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "gentle"
+      }
+    ],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.053,
+      "dimVeil": 0
+    },
+    "subtitle": "是它们想回家了。",
+    "missingAssets": [],
+    "sha256": "2703988bdb59f4e840aa1cd38ab372962b4f1be8eab9aeea327dfb345a143ad0"
   },
   {
     "t": 271,
@@ -357,18 +1145,109 @@
         "contact": {
           "left": true,
           "right": false
-        }
+        },
+        "tint": [
+          0.8682,
+          0.9452,
+          1.1331
+        ]
       }
     ],
     "faces": [],
     "particles": {
       "scene": "towertop",
-      "systems": 6,
-      "visible": 1
+      "systems": 7,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": false,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.054,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "417667233142c86660dbd38deb056f307bd5a0a0b6743bc1a12c4e5125f4d6d2"
+    "sha256": "b3299871bb6829b609804b886d826cfb14a0a18397b9d82900e7bd1693318851"
+  },
+  {
+    "t": 296,
+    "shot": "m40",
+    "kind": "two_mid",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "x": 679.1,
+        "y": 580,
+        "h": 305.3,
+        "eyeScreen": [
+          679.1,
+          316
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          0.9045,
+          0.9454,
+          1.0245
+        ],
+        "groundDy": 0
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:walk",
+        "walk": true,
+        "index": 0,
+        "distance": 1.211,
+        "x": 270.2,
+        "y": 788,
+        "h": 306.1,
+        "footScreen": [
+          280.6,
+          773
+        ],
+        "contact": {
+          "left": false,
+          "right": true
+        },
+        "tint": [
+          0.9242,
+          0.9421,
+          0.9993
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 1,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0
+    },
+    "subtitle": "您生病了吗？",
+    "missingAssets": [],
+    "sha256": "ccf0fc76ff86b36bc9ddf4d272e6fd581fae7592731a571f05f298e78e14ebd4"
   },
   {
     "t": 300.5,
@@ -402,12 +1281,74 @@
     ],
     "particles": {
       "scene": "moonpalace",
-      "systems": 4,
-      "visible": 1
+      "systems": 5,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0
     },
     "subtitle": "没有，孩子。我只是……快要被遗忘了。",
     "missingAssets": [],
-    "sha256": "123cb5ff10f7d60ba817bb9c3cfae8ac54bf5b34e081f41865db93c15bfc3318"
+    "sha256": "28867a1b409171591aa764c8420dcabd78f24a0b2024fd3bcadf009bf30a897f"
+  },
+  {
+    "t": 320,
+    "shot": "m43",
+    "kind": "mid",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 767.9999999999999,
+      "cy": 367.03804344252546,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "LadyMoon",
+        "key": "LadyMoon:slow_raise",
+        "x": 603.8,
+        "y": 680,
+        "h": 348,
+        "eyeScreen": [
+          603.8,
+          354.2
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          1.0249,
+          1.0381,
+          1.0817
+        ],
+        "groundDy": -1.7
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0.167
+    },
+    "subtitle": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。",
+    "missingAssets": [],
+    "sha256": "8143092661bef31735298e4bd1a65794bca70f949ea9da8d887e760aa7823392"
   },
   {
     "t": 335,
@@ -432,18 +1373,34 @@
           250.2
         ],
         "anchor": "lamp",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.917,
+          0.9443,
+          0.9984
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "moonpalace",
-      "systems": 4,
-      "visible": 1
+      "systems": 5,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0.39
     },
     "subtitle": "那我把我的灯送给您。",
     "missingAssets": [],
-    "sha256": "7df29d7d10d07957b9fe170f69fa502c8bac28dd5cc7decc08a67ac45efc8d2e"
+    "sha256": "20b7330eccddeb746b375c459a3326cf252ee4d9550c835bc14210170eca8914"
   },
   {
     "t": 341.5,
@@ -468,7 +1425,13 @@
           297.4
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.9086,
+          0.9447,
+          1.0192
+        ],
+        "groundDy": 0
       },
       {
         "actor": "Eileen",
@@ -481,18 +1444,34 @@
           637.3
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.9072,
+          0.9447,
+          1.0229
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "moonpalace",
-      "systems": 4,
-      "visible": 1
+      "systems": 5,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0.39
     },
     "subtitle": "孩子，你的灯，已经没有火了。",
     "missingAssets": [],
-    "sha256": "67654d75bba25b3c6a9f45252dcb69e8637e648e3a903b246e3a66efcffe5af5"
+    "sha256": "c729bf4090cf984918d4ecefde099e4666cf7e5297eb2eb87dfa44154fbb5fcc"
   },
   {
     "t": 348.5,
@@ -517,18 +1496,34 @@
           146.1
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.0176,
+          1.04,
+          1.0836
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "moonpalace",
-      "systems": 4,
-      "visible": 2
+      "systems": 5,
+      "visible": 3,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0.39
     },
     "subtitle": "可是……我还在这里呀。",
     "missingAssets": [],
-    "sha256": "d5d444b6876f23e819b30f9797ecdc1f9ff41f865374729f79a22cd7fdf2dc7d"
+    "sha256": "44984d5a3db5681fb35417a4630ee6947eb8bf5458b1002a6b3d5fc14d2f0002"
   },
   {
     "t": 355,
@@ -555,19 +1550,29 @@
           305
         ],
         "roll": -0.0397,
-        "mouth": "half",
+        "mouth": "open",
         "expr": "expr_tearful",
         "emotion": "sad"
       }
     ],
     "particles": {
       "scene": "moonpalace",
-      "systems": 4,
-      "visible": 1
+      "systems": 5,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0.39
     },
     "subtitle": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
     "missingAssets": [],
-    "sha256": "b03a33f41a7f4dd15918ccec4c18509e6239832c6ffbd35e3faaa47d07290bc4"
+    "sha256": "f6c765f74adcdab890a1c664fb06a4cb3ea275d6c35b1db6495b37e5bba6d802"
   },
   {
     "t": 366.2,
@@ -601,12 +1606,22 @@
     ],
     "particles": {
       "scene": "moonpalace",
-      "systems": 4,
-      "visible": 2
+      "systems": 5,
+      "visible": 3,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0.39
     },
     "subtitle": "原来……还有人在等我。",
     "missingAssets": [],
-    "sha256": "dd8d05b733141b598e7eff87862ab3a842009e597b1c4b49130e3cb1c03d1c0f"
+    "sha256": "8b8a85ad7a51dc1c5e3253d5fbdb91792955f3bb442ec18467d78f5ae8325e54"
   },
   {
     "t": 369.5,
@@ -640,12 +1655,22 @@
     ],
     "particles": {
       "scene": "moonpalace",
-      "systems": 4,
-      "visible": 1
+      "systems": 5,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "dimVeil": 0.357
     },
     "subtitle": "原来……还有人在等我。",
     "missingAssets": [],
-    "sha256": "4f15830716b6264a8353d7ac67b26b41c958ac2c5b619868e4c4ab16f6b905b4"
+    "sha256": "e6286141cb5b4ce5feac2e7e41bccf6f5f3c07b62659a049e9d0d367d5813d43"
   },
   {
     "t": 397,
@@ -670,18 +1695,36 @@
           -156.9
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.9783,
+          1.0408,
+          1.191
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": true,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.065,
+      "winGlow": 0.227,
+      "dimVeil": 0.136
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "4359a1eddab27590da00727624dc1c4a6bee44f67308331dd1a0b4be5ff225d2"
+    "sha256": "85e2eac90bfaa61b4b70cd16a2fa5deaf4e80647cb7cd9480acb6f395197a32d"
   },
   {
     "t": 403,
@@ -699,25 +1742,43 @@
         "actor": "Alder",
         "key": "Alder:stand_hope",
         "x": 695.9,
-        "y": 513,
+        "y": 514.7,
         "h": 57.5,
         "eyeScreen": [
           695.9,
           459.9
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.9532,
+          0.9374,
+          0.9603
+        ],
+        "groundDy": 1.7
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 3,
+      "env": {
+        "snow": true,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.053,
+      "winGlow": 0.299,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "aa4e6c51164f9cf29c9574ae730f00df4c2407dbae5f667c07a27cf0f8fb5e5c"
+    "sha256": "1bbefd2707c4aac7c3f496246571e4da948810bb328f3e54f577b3b347852e3f"
   },
   {
     "t": 410,
@@ -734,12 +1795,24 @@
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.069,
+      "winGlow": 0.288,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "f5843f8f752975b74d8537825481511a1906caef0d32330950dbdf3744e7262e"
+    "sha256": "a8d3089aaf58c6a99191736dd8964e1fcfb81a154b019196c1685bfd878f1042"
   },
   {
     "t": 414,
@@ -757,25 +1830,149 @@
         "actor": "Alder",
         "key": "Alder:stand_hope",
         "x": 485.4,
-        "y": 609.8,
+        "y": 595.7,
         "h": 58,
         "eyeScreen": [
           485.4,
           406.2
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          0.8871,
+          0.9583,
+          1.1063
+        ],
+        "groundDy": 135.9
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "moonHalo": 0.052,
+      "winGlow": 0.3,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "6ca21a38e14c445789586fef9b764725a794c94abda6d706880e21058622f1a7"
+    "sha256": "dc48a82e885f204a3f97cf587f356ad241cbc697a668f7b2ce72a0b102296b3e"
+  },
+  {
+    "t": 425,
+    "shot": "m58",
+    "kind": "establish",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 667.9,
+        "y": 545,
+        "h": 27.7,
+        "eyeScreen": [
+          667.9,
+          428.7
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          1.0183,
+          0.9249,
+          0.8923
+        ],
+        "groundDy": 90.8
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0.3,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "3a76f8a7ed53e25f276fb0b2734c36a329ad5ac7691c23bd86b390a610dbec71"
+  },
+  {
+    "t": 431,
+    "shot": "m59",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:stand",
+        "x": 640,
+        "y": 474,
+        "h": 207.4,
+        "eyeScreen": [
+          640,
+          285.1
+        ],
+        "anchor": "eye",
+        "rigid": false,
+        "tint": [
+          1.0394,
+          0.9203,
+          0.8761
+        ],
+        "groundDy": 0
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 3,
+      "env": {
+        "snow": false,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0.295,
+      "dimVeil": 0
+    },
+    "subtitle": "艾琳！你是怎么做到的？",
+    "missingAssets": [],
+    "sha256": "e894a052cb3bf2f7534af981de2d4eecb95e3d134491a87195f1c6a8285fa7e6"
   },
   {
     "t": 446,
@@ -800,18 +1997,35 @@
           -251.7
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1338,
+          1.0297,
+          0.8432
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0.299,
+      "dimVeil": 0
     },
     "subtitle": "原来……我也还可以发光。",
     "missingAssets": [],
-    "sha256": "5fe67e38fb8b3e11ae63ac1bc08809759f7cfe1fe209aca6867afd47acace4af"
+    "sha256": "993c7e4f5345436603d3fe2681aa9a97da5d9c930d818daf82aa91dfb44c11e1"
   },
   {
     "t": 456,
@@ -829,14 +2043,20 @@
         "actor": "Alder",
         "key": "Alder:stand_hope",
         "x": 897.8,
-        "y": 575,
+        "y": 573.2,
         "h": 220.1,
         "eyeScreen": [
           897.8,
           230.1
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1474,
+          1.0156,
+          0.9433
+        ],
+        "groundDy": 140
       },
       {
         "actor": "Eileen",
@@ -849,18 +2069,35 @@
           292.6
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1278,
+          1.0331,
+          0.8282
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0.3,
+      "dimVeil": 0
     },
     "subtitle": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
     "missingAssets": [],
-    "sha256": "1bf0fb23367a9299ae234460b8ff0d20b6db01eca6fb19b859fd94d59e61acd2"
+    "sha256": "868166f04a6c57a56ef06ef486ef2dd6d4ba23d827a0c81ceff5978adf556407"
   },
   {
     "t": 460,
@@ -878,14 +2115,20 @@
         "actor": "Alder",
         "key": "Alder:stand_hope",
         "x": 897.8,
-        "y": 575,
+        "y": 573.2,
         "h": 220.4,
         "eyeScreen": [
           897.8,
           229.8
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1474,
+          1.0156,
+          0.9433
+        ],
+        "groundDy": 140
       },
       {
         "actor": "Eileen",
@@ -898,18 +2141,35 @@
           292.4
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1278,
+          1.0331,
+          0.8282
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": true,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0.126,
+      "dimVeil": 0
     },
     "subtitle": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
     "missingAssets": [],
-    "sha256": "c8165242322639b6ad21b7a1c8a95f17da144f0c0a968e6c737cc9a96cff7029"
+    "sha256": "a90fdf13c5717d7e56185918fcad965ec52e7d606f4e369a89dabe4d6335c1eb"
   },
   {
     "t": 466,
@@ -934,7 +2194,13 @@
           134.1
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1572,
+          1.0073,
+          0.9963
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [
@@ -950,19 +2216,30 @@
           145.3
         ],
         "roll": 0.0311,
-        "mouth": "open",
+        "mouth": "closed",
         "expr": "expr_smile",
         "emotion": "happy"
       }
     ],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 1
+      "systems": 13,
+      "visible": 1,
+      "env": {
+        "snow": false,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0,
+      "dimVeil": 0
     },
     "subtitle": "晚安，月亮。明天见。",
     "missingAssets": [],
-    "sha256": "424afdf33e831be4e2da97217e449b83878337b596623910b93fb4b261880ce2"
+    "sha256": "c9076b4e4c8f21e3e9659c8ed43bc52b6d7a1c91e5e7f75230b048201bfa3eb0"
   },
   {
     "t": 470,
@@ -987,7 +2264,13 @@
           133.1
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1572,
+          1.0073,
+          0.9963
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [
@@ -1010,8 +2293,19 @@
     ],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 2
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0,
+      "dimVeil": 0
     },
     "subtitle": "晚安，月亮。明天见。",
     "missingAssets": [],
@@ -1040,7 +2334,13 @@
           -112.2
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.052,
+          1.0312,
+          1.0701
+        ],
+        "groundDy": 0
       },
       {
         "actor": "Eileen",
@@ -1053,17 +2353,34 @@
           -107.7
         ],
         "anchor": "eye",
-        "rigid": true
+        "rigid": false,
+        "tint": [
+          1.1112,
+          1.0211,
+          0.9953
+        ],
+        "groundDy": 0
       }
     ],
     "faces": [],
     "particles": {
       "scene": "snowtown",
-      "systems": 11,
-      "visible": 2
+      "systems": 13,
+      "visible": 2,
+      "env": {
+        "snow": false,
+        "petals": false,
+        "dustWork": true,
+        "dustPalace": true,
+        "sparks": true
+      }
+    },
+    "env": {
+      "winGlow": 0,
+      "dimVeil": 0
     },
     "subtitle": null,
     "missingAssets": [],
-    "sha256": "4983a729a1ed6631499d55ebff19cc1eae68e7d0affc1b927980f32b5e9601ba"
+    "sha256": "88a20a23a48760be1e33938fa308ae82a8d222b65213abc2579ab4de9685a7d0"
   }
 ]

@@ -12,9 +12,15 @@ SR = 48000
 
 # (事件, 画面秒点, 依据)
 TARGETS = [
+    ('footstep_m04_first', 27.633, 'm04 走拍首落步（bake stance）'),
+    ('footstep_m04_mid', 30.533, 'm04 走拍中点落步（bake stance）'),
+    ('footstep_m04_last', 34.133, 'm04 走拍末落步（bake stance）'),
     ('wind_gust', 51.0, 'm07 阵风/火苗颤动'),
     ('lamp_out', 58.0, 'm08 灯火熄灭'),
-    ('door_creak', 85.0, 'm12 木门开启'),
+    ('footstep_m11_first', 78.533, 'm11 走拍首落步（bake stance）'),
+    ('footstep_m11_mid', 80.967, 'm11 走拍中点落步（bake stance）'),
+    ('footstep_m11_last', 83.767, 'm11 走拍末落步（bake stance）'),
+    ('door_creak', 85.0, 'm12 木门开启（2D 底图门不动，声效承担"开门"叙事）'),
     ('metal_tap', 102.0, 'm14 工作台上修星'),
     ('star_wake', 156.0, 'm21 星核苏醒'),
     ('gears_stop', 179.0, 'm24 齿轮停转（弱瞬态，宽判）'),
@@ -22,11 +28,13 @@ TARGETS = [
     ('stair_form', 235.0, 'm32 星阶成形'),
     ('step_ring', 263.0, 'm36 靴落星阶'),
     ('tear_break', 369.0, 'm49 泪碎'),
+    ('petal_touch', 396.3, 'm53 花瓣落手背（R2 实测 396.3）'),
     ('bell_1', 408.0, 'm55 钟第一响'),
     ('bell_2', 413.0, 'm56 钟第二响'),
     ('bell_3', 418.0, 'm57 钟第三响'),
     ('lamp_relight', 430.0, 'm59 铜灯重燃'),
-    ('gold_text', 466.0, 'm63 金粒聚字'),
+    ('star_chest', 446.4, 'm61 胸口升星（R2 实测 446.5）'),
+    ('gold_text', 466.4, 'm63 金粒聚字（R2 实测首见 466.5）'),
 ]
 LOOSE = {'gears_stop': .35}  # 减速类事件瞬态天然拖尾
 
