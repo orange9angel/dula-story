@@ -1,0 +1,72 @@
+{
+  "size": [
+    1200,
+    1200
+  ],
+  "targets": [
+    {
+      "id": "room_attend",
+      "source": "cinema_r4/alder_attend_base.png",
+      "crop": [
+        150,
+        20,
+        160,
+        160
+      ],
+      "atlas": [
+        0,
+        0,
+        600,
+        600
+      ]
+    },
+    {
+      "id": "room_respond",
+      "source": "cinema_r4/alder_respond_base.png",
+      "crop": [
+        120,
+        15,
+        160,
+        160
+      ],
+      "atlas": [
+        600,
+        0,
+        600,
+        600
+      ]
+    },
+    {
+      "id": "shocked",
+      "source": "faces/alder_expr_shocked.png",
+      "crop": [
+        390,
+        190,
+        520,
+        520
+      ],
+      "atlas": [
+        0,
+        600,
+        600,
+        600
+      ]
+    },
+    {
+      "id": "relieved",
+      "source": "faces/alder_expr_relieved.png",
+      "crop": [
+        390,
+        190,
+        520,
+        520
+      ],
+      "atlas": [
+        600,
+        600,
+        600,
+        600
+      ]
+    }
+  ]
+}

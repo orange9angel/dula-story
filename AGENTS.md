@@ -16,7 +16,7 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/borrowed_moonlight/`（《借走月光的女孩》——原创魔法童话，按制作圣经（`bible_source.txt`）五幕 60 镜 / 478s 制作：viewer 链 craft3d + 混合场景（11 张 Seedream 纹理+法线派生+雪/春双皮肤）+ 20 套魔法粒子 + 全火山音频；**cel-cinema 二维绘本层 A4 整集出片**：文生图底图/姿势 cel/锁回表情变体按 bake 逐帧投影刚性合成（`hybrid/art_pass.html`），58 项已验收资产 + probe/verify 全绿，成片 `output/art_pass_full.mp4`（478s h264+aac，音轨与 3D 版 PCM 一致）；3D 成片 `output/craft3d_full_v2.mp4` 为对照基线；声线与配乐待用户听审，工艺与翻车见 `NOTES.md` P1-P7/A0-A5）
+**最新 Episode**：`episodes/borrowed_moonlight/`（《借走月光的女孩》，cel-cinema五幕 / 478s / 1280×720 / 30fps）。**2026-10-28用户接受R5，屋内老人波动与屋顶画面抖动按用户要求暂不修改**。当前成片 `output/borrowed_moonlight_cinema_r5_final.mp4`，viewer `hybrid/art_pass_r5.html`；R3–R5完成绘画空间与步态修订、儿童声线、房间交流与同图嘴眼、剧情粒子及女神长句原生慢速重录，原Suno配乐保留。两项保留问题尚未定位原因，不据技术检查宣称整体稳定性通过。交付摘要、用户验收、既有证据与归档范围见 `NOTES.md`、`R5_REVIEW.md`、`storyboard/character_attention/r5_acceptance.json`；历史版本保留。
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
 - `episodes/borrowed_moonlight/` — 见上"最新 Episode"

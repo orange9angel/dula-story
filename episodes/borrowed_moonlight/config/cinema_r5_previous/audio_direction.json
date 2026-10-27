@@ -1,0 +1,1648 @@
+{
+  "version": 1,
+  "status": "reviewed",
+  "sources": [
+    {
+      "path": "script.story",
+      "sha256": "b246c64bd5ff520527009ca60190ca8b3fef0a827d8243aa74a4906daca5da2d"
+    },
+    {
+      "path": "config/voice_config.json",
+      "sha256": "4dafa1a6371c3e0f3c4ec0fa1ff7de8659054f6f806bfa9d0879c2aa50561975"
+    }
+  ],
+  "policies": {
+    "priority": [
+      "dialogue",
+      "storySfx",
+      "ambience",
+      "music"
+    ],
+    "musicMode": "directed",
+    "ambienceMode": "directed",
+    "breath": "natural-tts-pauses-no-layered-breath"
+  },
+  "mix": {
+    "dialogueVolume": 1.0,
+    "bgmVolume": 0.3,
+    "sfxVolume": 0.8,
+    "useDucking": true,
+    "duckDepth": 0.3,
+    "note": "对白峰一化.5；音乐 RMS=人声-12dB、对白 duck 再-7dB；成片峰值≤-2dBFS"
+  },
+  "characters": {
+    "Narrator": {
+      "voice": "zh_female_wenroumama_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice",
+      "castingReason": "R2 改选：目录定位\"语调舒缓、咬字温润、自带母性柔光的治愈女声\"（中年）——温厚炉火边讲故事；F0 155-185Hz 为四候选最低最稳，无 shaoergushi 的活泼感；候排 xiaoxue（儿童绘本，清甜讲述者，n01 8.14s 语速最慢最像讲故事但长句余量小）/shaoergushi（现任，活泼）/vv（客服场景标签，客服腔风险）"
+    },
+    "Eileen": {
+      "voice": "ICL_uranus_zh_female_yuanqitianmei_tob",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice",
+      "castingReason": "R3 原生声线重选。匿名 A/B/C 两句辅助音频复核更接近9–12岁；无后期升调。辅助模型观察不等于人工听审。证据 tmp/voice_audition/r3/model_observation.json。"
+    },
+    "Alder": {
+      "voice": "zh_male_tangseng_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice",
+      "castingReason": "P6 沿用（用户只点名女配音）：三候选中语速最慢（6.10s/8.4s 窗）、语调平缓慈悲，最贴 70 岁钟表匠；沙哑为中文男声无原生音色的已知坑，靠 context\"苍老沙哑\"+低速率逼近；候排 shenyeboke（太年轻）/baqiqingshu（太强势）"
+    },
+    "LadyMoon": {
+      "voice": "zh_female_sophie_uranus_bigtts",
+      "locale": "zh-CN",
+      "identityPolicy": "preserve-native-voice",
+      "castingReason": "R2 改选：目录定位\"高冷御姐，外表疏离难亲近，内心却细腻柔软\"——疏离+细腻柔软正是\"超然、疲惫但慈爱\"；F0 193-197Hz 成熟偏冷；无 linxiao 的资讯感；\"很远的地方\"仍由混音轻混响链实现不动音高；候排 gufengshaoyu（清冷古典但 F0 255-277Hz 偏年轻）/wenroushunv（温婉但太近太暖，缺超然）/gaolengyujie（疏离够但气场过强）"
+    }
+  },
+  "dialogue": [
+    {
+      "entry": 1,
+      "character": "Narrator",
+      "text": "很久很久以前，有一个王国，那里一年四季都下着雪。",
+      "startTime": 0.0,
+      "endTime": 11.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m01"
+      ],
+      "previousEntry": null,
+      "nextEntry": 2,
+      "intent": "很久很久以前的开卷语气，温厚、缓慢。（开卷定调，炉火边缓缓开口",
+      "subtext": "讲故事的人珍爱这个故事，想讲给愿意听的人",
+      "delivery": {
+        "tone": "neutral",
+        "energy": 0.42,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 2,
+      "character": "Narrator",
+      "text": "人们说，那是因为春天在很久以前，迷了路。",
+      "startTime": 11.0,
+      "endTime": 19.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m02"
+      ],
+      "previousEntry": 1,
+      "nextEntry": 3,
+      "intent": "接着说书，带一点惋惜。（接着铺民间说法",
+      "subtext": "惋惜里带一点神秘，为真相留台阶",
+      "delivery": {
+        "tone": "neutral",
+        "energy": 0.42,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 3,
+      "character": "Narrator",
+      "text": "可真正的原因是……再也没有人记得，春天是什么模样了。",
+      "startTime": 19.0,
+      "endTime": 27.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m03"
+      ],
+      "previousEntry": 2,
+      "nextEntry": 5,
+      "intent": "揭开真正原因，声音放低。（揭开真正原因",
+      "subtext": "遗忘才是全片的题眼，声音放低是把分量放重",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.38,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 5,
+      "character": "Eileen",
+      "text": "月亮，你今晚怎么这么暗呀？",
+      "startTime": 35.0,
+      "endTime": 43.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m05"
+      ],
+      "previousEntry": 3,
+      "nextEntry": 6,
+      "intent": "轻声，天真的关切。（天真地关切月亮",
+      "subtext": "她把自己的孤独投射到月亮身上",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.5,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "intimate",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 6,
+      "character": "Eileen",
+      "text": "是不是，也没有人陪你说话？",
+      "startTime": 43.0,
+      "endTime": 51.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m06"
+      ],
+      "previousEntry": 5,
+      "nextEntry": 9,
+      "intent": "压低声音，像怕惊动谁。（压低声音共情",
+      "subtext": "说的是月亮，也是她自己",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.4,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "intimate",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 9,
+      "character": "Eileen",
+      "text": "别怕。",
+      "startTime": 63.0,
+      "endTime": 70.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m09"
+      ],
+      "previousEntry": 6,
+      "nextEntry": 10,
+      "intent": "安慰灯，也像安慰自己。（安慰灯",
+      "subtext": "也在安慰自己——她熟悉害怕的滋味",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.38,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "intimate",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 10,
+      "character": "Eileen",
+      "text": "我也常常一个人。",
+      "startTime": 70.0,
+      "endTime": 78.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m10"
+      ],
+      "previousEntry": 9,
+      "nextEntry": 15,
+      "intent": "坦白自己的小秘密，轻而稳。（坦白自己的小秘密",
+      "subtext": "信任月亮才说得出口",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.4,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "intimate",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 15,
+      "character": "Eileen",
+      "text": "先生，您为什么把星星关在瓶子里？",
+      "startTime": 109.0,
+      "endTime": 117.0,
+      "scene": "ClockTowerScene",
+      "shotIds": [
+        "m15"
+      ],
+      "previousEntry": 10,
+      "nextEntry": 16,
+      "intent": "天真的质问，没有指责。（天真的质问",
+      "subtext": "孩子的世界里没有\"关起来\"的正当理由，不带指责",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.55,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 16,
+      "character": "Alder",
+      "text": "我没有关住它们。是它们的主人，忘记了怎么发光。",
+      "startTime": 117.0,
+      "endTime": 126.0,
+      "scene": "ClockTowerScene",
+      "shotIds": [
+        "m16"
+      ],
+      "previousEntry": 15,
+      "nextEntry": 18,
+      "intent": "沙哑缓慢，平静里有旧伤。（平静里有旧伤",
+      "subtext": "他把自己也算进\"忘记怎么发光\"的人里",
+      "delivery": {
+        "tone": "neutral",
+        "energy": 0.4,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 18,
+      "character": "Eileen",
+      "text": "那您为什么不把它们还回去？",
+      "startTime": 132.0,
+      "endTime": 140.0,
+      "scene": "ClockTowerScene",
+      "shotIds": [
+        "m18"
+      ],
+      "previousEntry": 16,
+      "nextEntry": 19,
+      "intent": "继续追问",
+      "subtext": "她不接受大人们的\"没办法\"",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.55,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 19,
+      "character": "Alder",
+      "text": "因为有些人，已经不愿意再打开自己的心了。",
+      "startTime": 140.0,
+      "endTime": 149.0,
+      "scene": "ClockTowerScene",
+      "shotIds": [
+        "m19"
+      ],
+      "previousEntry": 18,
+      "nextEntry": 21,
+      "intent": "回避，声音更低。（回避，声音更低",
+      "subtext": "说的是镇上人，也是他自己和女儿",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.36,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 21,
+      "character": "Eileen",
+      "text": "您看！它醒了！",
+      "startTime": 155.0,
+      "endTime": 162.0,
+      "scene": "ClockTowerScene",
+      "shotIds": [
+        "m21"
+      ],
+      "previousEntry": 19,
+      "nextEntry": 22,
+      "intent": "惊喜，压低声音的欢呼。（压低声音的欢呼",
+      "subtext": "她当场证明了自己是对的，但不想吓着星星",
+      "delivery": {
+        "tone": "excited",
+        "energy": 0.7,
+        "pace": 1.08,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "near",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 22,
+      "character": "Alder",
+      "text": "不可能……这颗星星，已经熄灭了三十年。",
+      "startTime": 162.0,
+      "endTime": 170.0,
+      "scene": "ClockTowerScene",
+      "shotIds": [
+        "m22"
+      ],
+      "previousEntry": 21,
+      "nextEntry": 23,
+      "intent": "难以置信，声音发颤。（难以置信，声音发颤",
+      "subtext": "三十年的死寂被一个女孩打破",
+      "delivery": {
+        "tone": "surprised",
+        "energy": 0.6,
+        "pace": 0.95,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 23,
+      "character": "Eileen",
+      "text": "也许它没有熄灭。只是太久，没有人跟它说话了。",
+      "startTime": 170.0,
+      "endTime": 178.0,
+      "scene": "ClockTowerScene",
+      "shotIds": [
+        "m23"
+      ],
+      "previousEntry": 22,
+      "nextEntry": 26,
+      "intent": "温柔而笃定。（温柔而笃定地解释",
+      "subtext": "她懂\"太久没人说话\"是什么滋味",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "room",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 26,
+      "character": "Alder",
+      "text": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。",
+      "startTime": 192.0,
+      "endTime": 200.0,
+      "scene": "TowerTopScene",
+      "shotIds": [
+        "m26"
+      ],
+      "previousEntry": 23,
+      "nextEntry": 27,
+      "intent": "沉重的宣判，一字一顿。（沉重的宣判，一字一顿",
+      "subtext": "他心里其实还想被反驳",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.42,
+        "pace": 0.95,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 27,
+      "character": "Eileen",
+      "text": "那我们去把它点亮！",
+      "startTime": 200.0,
+      "endTime": 206.0,
+      "scene": "TowerTopScene",
+      "shotIds": [
+        "m27"
+      ],
+      "previousEntry": 26,
+      "nextEntry": 28,
+      "intent": "脱口而出，毫不迟疑。（脱口而出，毫不迟疑",
+      "subtext": "孩子的行动力不经过犹豫",
+      "delivery": {
+        "tone": "determined",
+        "energy": 0.68,
+        "pace": 1.05,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 28,
+      "character": "Alder",
+      "text": "月亮离我们，太远了。",
+      "startTime": 206.0,
+      "endTime": 213.0,
+      "scene": "TowerTopScene",
+      "shotIds": [
+        "m28"
+      ],
+      "previousEntry": 27,
+      "nextEntry": 29,
+      "intent": "疲惫的现实主义者。（疲惫的现实主义者",
+      "subtext": "他试过，且失败过太多年",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.36,
+        "pace": 0.95,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 29,
+      "character": "Eileen",
+      "text": "可如果每颗星星都愿意帮忙呢？",
+      "startTime": 213.0,
+      "endTime": 220.0,
+      "scene": "TowerTopScene",
+      "shotIds": [
+        "m29"
+      ],
+      "previousEntry": 28,
+      "nextEntry": 33,
+      "intent": "天真的反问，带着答案的反问。（带着答案的反问",
+      "subtext": "她其实已经在召集星星了",
+      "delivery": {
+        "tone": "determined",
+        "energy": 0.58,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 33,
+      "character": "Alder",
+      "text": "这是……失传的星辰魔法。",
+      "startTime": 241.0,
+      "endTime": 248.0,
+      "scene": "TowerTopScene",
+      "shotIds": [
+        "m33"
+      ],
+      "previousEntry": 29,
+      "nextEntry": 34,
+      "intent": "一生的信念在眼前复活，气声。（一生的信念在眼前复活",
+      "subtext": "气声——他怕声音大一点梦就碎了",
+      "delivery": {
+        "tone": "surprised",
+        "energy": 0.55,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "near",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 34,
+      "character": "Eileen",
+      "text": "不是魔法，先生。",
+      "startTime": 248.0,
+      "endTime": 254.0,
+      "scene": "TowerTopScene",
+      "shotIds": [
+        "m34"
+      ],
+      "previousEntry": 33,
+      "nextEntry": 35,
+      "intent": "笑着纠正，前半句。（笑着纠正，前半句",
+      "subtext": "温柔地否定\"魔法\"这个框架",
+      "delivery": {
+        "tone": "happy",
+        "energy": 0.55,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 35,
+      "character": "Eileen",
+      "text": "是它们想回家了。",
+      "startTime": 254.0,
+      "endTime": 261.0,
+      "scene": "TowerTopScene",
+      "shotIds": [
+        "m35"
+      ],
+      "previousEntry": 34,
+      "nextEntry": 39,
+      "intent": "后半句，轻而确定。（后半句，轻而确定",
+      "subtext": "把功劳还给星星们",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 39,
+      "character": "LadyMoon",
+      "text": "很久，没有人来这里了。",
+      "startTime": 284.0,
+      "endTime": 293.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m39"
+      ],
+      "previousEntry": 35,
+      "nextEntry": 40,
+      "intent": "超然、疲惫，像从很远的地方传来。（超然、疲惫地开口",
+      "subtext": "等了太久，近乎麻木，像从很远的地方传来",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.35,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "far",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 40,
+      "character": "Eileen",
+      "text": "您生病了吗？",
+      "startTime": 293.0,
+      "endTime": 300.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m40"
+      ],
+      "previousEntry": 39,
+      "nextEntry": 41,
+      "intent": "小心的关切。（小心的关切",
+      "subtext": "她的第一反应是照顾对方",
+      "delivery": {
+        "tone": "worried",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "near",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 41,
+      "character": "LadyMoon",
+      "text": "没有，孩子。我只是……快要被遗忘了。",
+      "startTime": 300.0,
+      "endTime": 308.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m41"
+      ],
+      "previousEntry": 40,
+      "nextEntry": 42,
+      "intent": "平静的告别预告。（平静的告别预告",
+      "subtext": "她已经接受消失，慈爱里带着放下",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.35,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "far",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 42,
+      "character": "Eileen",
+      "text": "被遗忘，也会让人消失吗？",
+      "startTime": 308.0,
+      "endTime": 315.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m42"
+      ],
+      "previousEntry": 41,
+      "nextEntry": 43,
+      "intent": "认真地困惑。（认真地困惑",
+      "subtext": "孩子在学习\"遗忘\"这个词的重量",
+      "delivery": {
+        "tone": "curious",
+        "energy": 0.5,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 43,
+      "character": "LadyMoon",
+      "text": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。",
+      "startTime": 315.0,
+      "endTime": 325.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m43"
+      ],
+      "previousEntry": 42,
+      "nextEntry": 45,
+      "intent": "数自己的伤口，平静得让人心疼。（数自己的伤口",
+      "subtext": "平静得让人心疼——每一缕光都是一个人",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.35,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "far",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 45,
+      "character": "Eileen",
+      "text": "那我把我的灯送给您。",
+      "startTime": 331.0,
+      "endTime": 338.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m45"
+      ],
+      "previousEntry": 43,
+      "nextEntry": 46,
+      "intent": "献出自己最宝贵的东西，干脆利落。（献出自己最宝贵的东西",
+      "subtext": "干脆利落，没有不舍的表演",
+      "delivery": {
+        "tone": "determined",
+        "energy": 0.58,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 46,
+      "character": "LadyMoon",
+      "text": "孩子，你的灯，已经没有火了。",
+      "startTime": 338.0,
+      "endTime": 345.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m46"
+      ],
+      "previousEntry": 45,
+      "nextEntry": 47,
+      "intent": "慈爱地拒绝。（慈爱地拒绝",
+      "subtext": "她不忍收下孩子最后的火",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.35,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "far",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 47,
+      "character": "Eileen",
+      "text": "可是……我还在这里呀。",
+      "startTime": 345.0,
+      "endTime": 352.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m47"
+      ],
+      "previousEntry": 46,
+      "nextEntry": 48,
+      "intent": "最轻的一句，全片最重的一句。（最轻的一句，全片最重的一句",
+      "subtext": "她自己就是那颗还没熄的火种",
+      "delivery": {
+        "tone": "determined",
+        "energy": 0.45,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "intimate",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 48,
+      "character": "Eileen",
+      "text": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
+      "startTime": 352.0,
+      "endTime": 364.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m48"
+      ],
+      "previousEntry": 47,
+      "nextEntry": 49,
+      "intent": "一口气说完的心里话，带哭腔但不哭出声。（一口气说完的心里话",
+      "subtext": "带哭腔但不哭出声——为所有偷偷哭泣的人请愿",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.6,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "intimate",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 49,
+      "character": "LadyMoon",
+      "text": "原来……还有人在等我。",
+      "startTime": 364.0,
+      "endTime": 374.0,
+      "scene": "MoonPalaceScene",
+      "shotIds": [
+        "m49"
+      ],
+      "previousEntry": 48,
+      "nextEntry": 50,
+      "intent": "被等了一千年的声音，轻得像叹息。（被等了一千年的声音",
+      "subtext": "叹息般的释然：她可以重新爱人了",
+      "delivery": {
+        "tone": "relieved",
+        "energy": 0.35,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "far",
+        "space": "hall",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 50,
+      "character": "Alder",
+      "text": "艾琳……你回来了吗？",
+      "startTime": 374.0,
+      "endTime": 382.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m50"
+      ],
+      "previousEntry": 49,
+      "nextEntry": 59,
+      "intent": "对空无一人的街道问，不敢抱希望。（对空无一人的街道问",
+      "subtext": "不敢抱希望——怕听见没有回答",
+      "delivery": {
+        "tone": "sad",
+        "energy": 0.35,
+        "pace": 0.95,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 59,
+      "character": "Alder",
+      "text": "艾琳！你是怎么做到的？",
+      "startTime": 429.0,
+      "endTime": 435.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m59"
+      ],
+      "previousEntry": 50,
+      "nextEntry": 60,
+      "intent": "又惊又喜，哑着嗓子喊。（又惊又喜，哑着嗓子喊",
+      "subtext": "压抑一晚的释放",
+      "delivery": {
+        "tone": "excited",
+        "energy": 0.7,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "strong",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 60,
+      "character": "Eileen",
+      "text": "我没有把月亮点亮。我只是告诉她……还有人需要她。",
+      "startTime": 435.0,
+      "endTime": 443.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m60"
+      ],
+      "previousEntry": 59,
+      "nextEntry": 61,
+      "intent": "平静地纠正，不居功。（平静地纠正，不居功",
+      "subtext": "爱不是功绩，她只是做了该做的",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.45,
+        "pace": 1.0,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 61,
+      "character": "Alder",
+      "text": "原来……我也还可以发光。",
+      "startTime": 443.0,
+      "endTime": 451.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m61"
+      ],
+      "previousEntry": 60,
+      "nextEntry": 62,
+      "intent": "哽咽着说完，像重新活过来。（哽咽着说完",
+      "subtext": "三十年后重新承认自己：像重新活过来",
+      "delivery": {
+        "tone": "relieved",
+        "energy": 0.5,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "soft",
+        "distance": "near",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 62,
+      "character": "Narrator",
+      "text": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
+      "startTime": 451.0,
+      "endTime": 464.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m62"
+      ],
+      "previousEntry": 61,
+      "nextEntry": 63,
+      "intent": "收书的声音，讲完一个想留住的故事。（收书的声音",
+      "subtext": "把故事的解释权温柔地交给听者",
+      "delivery": {
+        "tone": "gentle",
+        "energy": 0.42,
+        "pace": 0.92,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "medium",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    },
+    {
+      "entry": 63,
+      "character": "Eileen",
+      "text": "晚安，月亮。明天见。",
+      "startTime": 464.0,
+      "endTime": 472.0,
+      "scene": "SnowTownScene",
+      "shotIds": [
+        "m63"
+      ],
+      "previousEntry": 62,
+      "nextEntry": null,
+      "intent": "对老朋友的晚安，带笑。（对老朋友的晚安，带笑",
+      "subtext": "一个约定：明天见，春天会再来",
+      "delivery": {
+        "tone": "happy",
+        "energy": 0.5,
+        "pace": 0.97,
+        "volume": 1.0,
+        "pitchSemitones": 0.0,
+        "emphasis": "normal",
+        "distance": "intimate",
+        "space": "outdoor",
+        "pauseBeforeMs": 0,
+        "pauseAfterMs": 0,
+        "breath": "natural"
+      }
+    }
+  ],
+  "ambience": [
+    {
+      "id": "wind-snowtown",
+      "name": "wind_snowtown",
+      "entry": 1,
+      "startTime": 0,
+      "endTime": 91,
+      "volume": 0.14,
+      "role": "bed",
+      "priority": "ambience",
+      "prompt": "雪夜小镇的静风底"
+    },
+    {
+      "id": "gears-bed",
+      "name": "gears_bed",
+      "entry": 13,
+      "startTime": 91,
+      "endTime": 184,
+      "volume": 0.12,
+      "role": "bed",
+      "priority": "ambience",
+      "prompt": "巨型黄铜齿轮缓缓运转"
+    },
+    {
+      "id": "wind-towertop",
+      "name": "wind_towertop",
+      "entry": 25,
+      "startTime": 184,
+      "endTime": 276,
+      "volume": 0.16,
+      "role": "bed",
+      "priority": "ambience",
+      "prompt": "高处稀薄寒风"
+    },
+    {
+      "id": "palace-hush",
+      "name": "palace_hush",
+      "entry": 38,
+      "startTime": 276,
+      "endTime": 374,
+      "volume": 0.1,
+      "role": "bed",
+      "priority": "ambience",
+      "prompt": "月宫空寂，极稀疏结晶感"
+    },
+    {
+      "id": "wind-predawn",
+      "name": "wind_predawn",
+      "entry": 50,
+      "startTime": 374,
+      "endTime": 407,
+      "volume": 0.1,
+      "role": "bed",
+      "priority": "ambience",
+      "prompt": "深夜将尽的静风"
+    },
+    {
+      "id": "birds-sunrise",
+      "name": "birds_sunrise",
+      "entry": 58,
+      "startTime": 422,
+      "endTime": 478,
+      "volume": 0.18,
+      "role": "bed",
+      "priority": "ambience",
+      "prompt": "日出后的清晨鸟鸣"
+    }
+  ],
+  "sfx": [
+    {
+      "id": "footsteps-snow-1",
+      "entry": 4,
+      "name": "footsteps_snow",
+      "startTime": 27.0,
+      "volume": 0.5,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m04"
+      ],
+      "note": "艾琳踩雪脚步（走拍 27-34.3，步频实测 2-3.6/s）"
+    },
+    {
+      "id": "moon-dim",
+      "entry": 6,
+      "name": "moon_shimmer_dim",
+      "startTime": 44.0,
+      "volume": 0.2,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m06"
+      ],
+      "note": "月光收缩的极轻银沙"
+    },
+    {
+      "id": "wind-gust",
+      "entry": 7,
+      "name": "wind_gust",
+      "startTime": 51.0,
+      "volume": 0.5,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m07"
+      ],
+      "note": "一阵风，火苗颤动"
+    },
+    {
+      "id": "lamp-out",
+      "entry": 8,
+      "name": "lamp_out",
+      "startTime": 58.0,
+      "volume": 0.3,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m08"
+      ],
+      "note": "灯火熄灭的轻噗"
+    },
+    {
+      "id": "fireflies",
+      "entry": 8,
+      "name": "fireflies_gold",
+      "startTime": 58.5,
+      "volume": 0.25,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m08"
+      ],
+      "note": "金色萤火盘旋的细碎铃光"
+    },
+    {
+      "id": "footsteps-snow-2",
+      "entry": 11,
+      "name": "footsteps_snow",
+      "startTime": 78.0,
+      "volume": 0.45,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m11"
+      ],
+      "note": "走向钟楼木门"
+    },
+    {
+      "id": "door-creak",
+      "entry": 12,
+      "name": "door_creak",
+      "startTime": 85.0,
+      "volume": 0.6,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m12"
+      ],
+      "note": "老木门轴开启"
+    },
+    {
+      "id": "metal-tap",
+      "entry": 14,
+      "name": "metal_tap",
+      "startTime": 102.0,
+      "volume": 0.35,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m14"
+      ],
+      "note": "修星星的小铜敲"
+    },
+    {
+      "id": "star-pulse",
+      "entry": 20,
+      "name": "star_pulse",
+      "startTime": 150.0,
+      "volume": 0.3,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m20"
+      ],
+      "note": "星核微弱脉冲"
+    },
+    {
+      "id": "star-wake",
+      "entry": 21,
+      "name": "star_wake",
+      "startTime": 156.0,
+      "volume": 0.5,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m21"
+      ],
+      "note": "星核苏醒的亮闪涌"
+    },
+    {
+      "id": "glasses-drop",
+      "entry": 22,
+      "name": "glasses_drop",
+      "startTime": 163.0,
+      "volume": 0.3,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m22"
+      ],
+      "note": "眼镜滑落的轻磕"
+    },
+    {
+      "id": "resonance",
+      "entry": 24,
+      "name": "star_resonance",
+      "startTime": 178.0,
+      "volume": 0.4,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m24"
+      ],
+      "note": "星瓶共鸣低频涌"
+    },
+    {
+      "id": "gears-stop",
+      "entry": 24,
+      "name": "gears_stop",
+      "startTime": 179.0,
+      "volume": 0.5,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m24"
+      ],
+      "note": "齿轮逐一停转"
+    },
+    {
+      "id": "skylight-open",
+      "entry": 25,
+      "name": "skylight_open",
+      "startTime": 184.0,
+      "volume": 0.5,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m25"
+      ],
+      "note": "天窗石板向两侧滑开"
+    },
+    {
+      "id": "moon-fade",
+      "entry": 26,
+      "name": "moon_shimmer_dim",
+      "startTime": 193.0,
+      "volume": 0.2,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m26"
+      ],
+      "note": "月亮边缘银粉飘散"
+    },
+    {
+      "id": "wind-high-gust",
+      "entry": 28,
+      "name": "wind_gust",
+      "startTime": 206.0,
+      "volume": 0.5,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m28"
+      ],
+      "note": "高处寒风掠过"
+    },
+    {
+      "id": "star-rise",
+      "entry": 30,
+      "name": "star_rise",
+      "startTime": 220.0,
+      "volume": 0.45,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m30"
+      ],
+      "note": "第一颗星离瓶上升"
+    },
+    {
+      "id": "stars-swarm",
+      "entry": 31,
+      "name": "stars_swarm",
+      "startTime": 227.0,
+      "volume": 0.4,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m31"
+      ],
+      "note": "群星穿天窗的涡流光声"
+    },
+    {
+      "id": "stair-form",
+      "entry": 32,
+      "name": "stair_form",
+      "startTime": 235.0,
+      "volume": 0.5,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m32"
+      ],
+      "note": "星阶结晶成形"
+    },
+    {
+      "id": "step-ring",
+      "entry": 36,
+      "name": "step_ring",
+      "startTime": 263.0,
+      "volume": 0.4,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m36"
+      ],
+      "note": "靴落星阶的环形波纹"
+    },
+    {
+      "id": "moonlight-dim",
+      "entry": 43,
+      "name": "moon_shimmer_dim",
+      "startTime": 317.0,
+      "volume": 0.2,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m43"
+      ],
+      "note": "殿内月光逐缕熄灭"
+    },
+    {
+      "id": "one-spark",
+      "entry": 47,
+      "name": "one_spark",
+      "startTime": 348.0,
+      "volume": 0.25,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m47"
+      ],
+      "note": "灯芯浮起一颗金点"
+    },
+    {
+      "id": "tear-break",
+      "entry": 49,
+      "name": "tear_break",
+      "startTime": 369.0,
+      "volume": 0.6,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m49"
+      ],
+      "note": "泪碎银铃质感，螺旋扩散"
+    },
+    {
+      "id": "stair-fade",
+      "entry": 51,
+      "name": "star_fade",
+      "startTime": 382.0,
+      "volume": 0.3,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m51"
+      ],
+      "note": "星阶消散的远光"
+    },
+    {
+      "id": "first-petal",
+      "entry": 53,
+      "name": "petal_touch",
+      "startTime": 396.0,
+      "volume": 0.2,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m53"
+      ],
+      "note": "花瓣落手背，极轻"
+    },
+    {
+      "id": "snow-to-petal",
+      "entry": 54,
+      "name": "snow_to_petal",
+      "startTime": 400.0,
+      "volume": 0.4,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m54"
+      ],
+      "note": "漫天雪化花的空气闪光"
+    },
+    {
+      "id": "bell-1",
+      "entry": 55,
+      "name": "bell_deep",
+      "startTime": 408.0,
+      "volume": 0.8,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m55"
+      ],
+      "note": "钟第一响：指针启动，金色声波"
+    },
+    {
+      "id": "bell-2",
+      "entry": 56,
+      "name": "bell_deep",
+      "startTime": 413.0,
+      "volume": 0.8,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m56"
+      ],
+      "note": "钟第二响：枯树抽芽"
+    },
+    {
+      "id": "bell-3",
+      "entry": 57,
+      "name": "bell_deep",
+      "startTime": 418.0,
+      "volume": 0.85,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m57"
+      ],
+      "note": "钟第三响：窗灯依次亮起"
+    },
+    {
+      "id": "lamp-relight",
+      "entry": 59,
+      "name": "lamp_relight",
+      "startTime": 430.0,
+      "volume": 0.4,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m59"
+      ],
+      "note": "铜灯重燃"
+    },
+    {
+      "id": "star-chest",
+      "entry": 61,
+      "name": "star_chest",
+      "startTime": 446.0,
+      "volume": 0.35,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m61"
+      ],
+      "note": "胸口升星的暖流"
+    },
+    {
+      "id": "gold-text",
+      "entry": 63,
+      "name": "gold_text",
+      "startTime": 466.0,
+      "volume": 0.3,
+      "role": "event",
+      "priority": "storySfx",
+      "shotIds": [
+        "m63"
+      ],
+      "note": "金粒聚成文字的细碎光"
+    }
+  ],
+  "music": [
+    {
+      "id": "piano-open",
+      "mood": "雪夜童话钢琴独奏：慢、温、孤而不冷",
+      "startTime": 0,
+      "endTime": 229,
+      "fadeIn": 2.0,
+      "fadeOut": 2.0,
+      "baseVolume": 0.3,
+      "purpose": "开场到 m30 的叙事底；钢琴独奏单线条，给旁白留足空间"
+    },
+    {
+      "id": "strings-choir-rise",
+      "mood": "弦乐渐入+无词童声合唱托举，温暖上升",
+      "startTime": 227,
+      "endTime": 348,
+      "fadeIn": 3.0,
+      "fadeOut": 6.0,
+      "baseVolume": 0.34,
+      "purpose": "m31 MUSIC_RISE 起渐入，m37 合唱进入托住登阶；276 进宫后减弱变薄，345 前收尽——m47-m49 静默让位"
+    },
+    {
+      "id": "spring-return",
+      "mood": "暖金弦乐+钢琴回归，422 日出推到全片最高潮后渐暗",
+      "startTime": 400,
+      "endTime": 478,
+      "fadeIn": 2.5,
+      "fadeOut": 6.0,
+      "baseVolume": 0.36,
+      "purpose": "MUSIC_RETURN 回归→日出高潮→FINALE_DIM 起渐暗收束，尾声退到近乎静默"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "silence-tear-fall",
+      "scope": "m49/TEAR_FALL@366-369",
+      "sound": "any",
+      "reason": "泪落静止三秒是全片静默设计的核心，只有呼吸级空气声（palace_hush 床）"
+    },
+    {
+      "id": "silence-fade",
+      "scope": "m64/FADE@473",
+      "sound": "any",
+      "reason": "黑场收束，声音先于画面退净"
+    },
+    {
+      "id": "no-camera-whoosh",
+      "scope": "all",
+      "sound": "camera_whoosh",
+      "reason": "运镜不配风声——童话片非抖音风格"
+    },
+    {
+      "id": "no-music-m50-53",
+      "scope": "374-400",
+      "sound": "music",
+      "reason": "高潮后收回安静：老人独等段只有风声，MUSIC_RETURN@400 才准回归"
+    }
+  ],
+  "r3_execution": {
+    "voice": "config/dialogue.json per-line native TTS context/rate; no post pitch change",
+    "foley": "config/contact_foley_r3.json + config/painted_contacts.json",
+    "ambience": "Exact cue bounds; gears stop by 179.1; curtains and wind retain quiet spaces",
+    "music": "Existing four Suno source files retained; 348–400 silence retained",
+    "listening": "Anonymous model-assisted audition recorded; human listening not claimed"
+  }
+}

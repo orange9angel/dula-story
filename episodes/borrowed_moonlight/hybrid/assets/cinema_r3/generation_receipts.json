@@ -1,0 +1,13 @@
+{
+  "provider": "built-in image_gen",
+  "alpha_policy": "Generated real transparency; PNG assets saved within episode. Slicing and registration performed by production tools, no anatomy warping.",
+  "assets": [
+    {"file":"walk_atlas.png","source":"exec-bc9ee024-414f-49ed-ae06-29eee24ddc98.png","status":"superseded by cinema_r3b grounded atlas","prompt_summary":"Eight rear-view walking poses with silver bob, navy cape, ivory dress, right-hand lantern. Lower row corrected to same carrying hand."},
+    {"file":"clouds.png","source":"exec-d6d826c2-1e65-45a5-ae59-1cea3408f9b6.png","prompt_summary":"Three separated elongated painted blue-gray cloud banks on transparent alpha, matching the night backgrounds."},
+    {"file":"eileen_alpha.png","source":"exec-f3bd5c14-06c2-4839-b591-a05c5cbc4e11.png","prompt_summary":"Preserve existing portrait and remove only its backdrop to real alpha. Used as silhouette mask on original RGB."},
+    {"file":"alder_alpha.png","source":"exec-91c2e4ca-cf67-4903-9d22-774ee21ae3d5.png","prompt_summary":"Preserve existing portrait and remove only its backdrop to real alpha. Used as silhouette mask on original RGB."},
+    {"file":"ladymoon_alpha.png","source":"exec-8e173646-8938-4799-b4e4-f9a1d21ee900.png","prompt_summary":"Preserve existing portrait including halo and remove only backdrop to real alpha. Used as silhouette mask on original RGB."},
+    {"file":"roof_clean.png","source":"exec-08e55d15-42a9-4d35-a967-31703f98411e.png","prompt":"Edit this exact 1920x1080 painted animation background, keeping camera, rooftop masonry, open wooden roof hatch and its two doors, mountains, clouds, crescent moon and every architectural edge in EXACT same location. REMOVE ONLY the entire luminous glass spiral staircase and its golden sparkles, including the steps inside the hatch. Invisibly reconstruct continuous painted dark blue sky, distant clouds, and mountains where the staircase used to be; inside the hatch show a dim warm interior opening. No stairs or magical trails remaining anywhere. Preserve original texture, delicate brushwork, palette and lighting. This is a clean plate for the same animation shot BEFORE the staircase magically forms; pixel composition must match. Do not add anything. Full landscape frame."}
+  ],
+  "note": "Fields explicitly called prompt_summary are summaries; exact earlier image requests remain in the conversation. Exact available requests are recorded as prompt."
+}

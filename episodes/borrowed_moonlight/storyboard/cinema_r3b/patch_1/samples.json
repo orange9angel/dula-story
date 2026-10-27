@@ -1,0 +1,187 @@
+[
+  {
+    "t": 78.1,
+    "shot": "m11",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 535.8074074074073,
+      "cy": -90.33240740740746,
+      "z": 1.878472222222222
+    },
+    "coverage": [
+      -906.8592592592593,
+      -901.8324074074073,
+      1978.4740740740738,
+      721.1675925925924
+    ],
+    "bodies": [
+      {
+        "x": 731.1685185185183,
+        "y": 495.7509259259257,
+        "h": 262.9861111111111,
+        "u": 0,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1090,
+          930,
+          175
+        ],
+        "actor": "Eileen",
+        "w": 154.50434027777774,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          731.1685185185183,
+          495.7509259259257
+        ],
+        "sourceImage": "./assets/cinema_r3b/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6743052643575891,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "2ae24c981c79f6f8ac282ba6301318b06722a9e1c66e0926a6d014f41827200c"
+  },
+  {
+    "t": 89,
+    "shot": "m12",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 626,
+      "cy": -214,
+      "z": 3.5000000000000004
+    },
+    "coverage": [
+      -2062,
+      -1726,
+      3314,
+      1298
+    ],
+    "bodies": [
+      {
+        "x": 637.1999999999998,
+        "y": 441.1999999999998,
+        "h": 142.79999999999998,
+        "u": 1,
+        "phase": 2,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          964,
+          774,
+          51
+        ],
+        "actor": "Eileen",
+        "w": 83.895,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          637.1999999999998,
+          441.1999999999998
+        ],
+        "sourceImage": "./assets/cinema_r3b/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6109485498094482,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "4bd6ca891f7114c34584228d4643ea849d68f5c0ea66ac1ee3efad33c57eba3c"
+  },
+  {
+    "t": 99.9,
+    "shot": "m13",
+    "kind": "establish",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 611.9093333333334,
+      "cy": 340.77599999999995,
+      "z": 0.8778333333333335
+    },
+    "coverage": [
+      -62.26666666666665,
+      -38.44800000000009,
+      1286.0853333333334,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 625.9546666666668,
+        "y": 602.0192,
+        "h": 242.282,
+        "u": 0.8900000000000006,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          980,
+          912,
+          345
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "w": 77.35610504492053
+      },
+      {
+        "x": 794.4986666666667,
+        "y": 617.4690666666667,
+        "h": 175.56666666666666,
+        "u": 1,
+        "phase": 4,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1220,
+          934,
+          250
+        ],
+        "actor": "Eileen",
+        "w": 103.14541666666666,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          794.4986666666667,
+          617.4690666666667
+        ],
+        "sourceImage": "./assets/cinema_r3b/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6615804486763011,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "27e87148764ea3b1bbe60cc1d09e82e24a0a4ec11449cd4e2694ee74f4cad743"
+  }
+]

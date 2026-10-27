@@ -1,0 +1,63 @@
+[
+  {
+    "t": 214,
+    "shot": "m29",
+    "kind": "macro",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 412,
+      "cy": 216,
+      "z": 1.5
+    },
+    "coverage": [
+      -740,
+      -432,
+      1564,
+      864
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1430,
+        "h": 1500,
+        "u": 0.14285714285714285,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1430,
+          1500
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 497.63513513513516,
+        "facial": {
+          "jaw": 0.2,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "half",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          640,
+          87.20000000000005
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7329446766313944,
+      "dimVeil": 0
+    },
+    "subtitle": "可如果每颗星星都愿意帮忙呢？",
+    "missingAssets": [],
+    "sha256": "2a84c0bd8fcca07160f0b27db2cc33cb47cbe9cdb99d63bd273f0e643285445a"
+  }
+]

@@ -1,0 +1,671 @@
+{
+  "episode": "borrowed_moonlight",
+  "pipeline": "cel-cinema 第一批文生图资产（3D 底稿 -> 文生图原画 -> 漫画合成）",
+  "style_lock": "19 世纪欧洲童话手绘动画电影感（水彩+柔和赛璐璐）；负面：3D 渲染/塑料感/照片感/霓虹/金属盔甲/现代元素/文字水印",
+  "assets": [
+    {
+      "path": "cels/alder_relieved.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "f24951917ded8ef188bf80d3a39b4cecc4a1d0f47ebf29ad547ed5464db249f1",
+      "status": "accepted",
+      "source_json": "cels/alder_relieved.source.json"
+    },
+    {
+      "path": "cels/alder_shock.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "1970338d36e11d37b33d4f05d99571e7a587c8bb03aa2a61a498cc1c3c794697",
+      "status": "accepted",
+      "source_json": "cels/alder_shock.source.json"
+    },
+    {
+      "path": "cels/alder_stand_hope.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "450c159f5c40681d470543c580bfc420255d8bbb53b2a05b19e207e5a9ccdaad",
+      "status": "accepted",
+      "source_json": "cels/alder_stand_hope.source.json"
+    },
+    {
+      "path": "cels/alder_stand_work.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "6a7ffcda9648748aa47dedfe41cd25214c66390bd8c3c79ffd24e49d104a2497",
+      "status": "accepted",
+      "source_json": "cels/alder_stand_work.source.json"
+    },
+    {
+      "path": "cels/alder_touch_watch.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "7d2991908ea81035d737f194135aa0abaf5b7c3651025b92067fcf40fee587c8",
+      "status": "accepted",
+      "source_json": "cels/alder_touch_watch.source.json"
+    },
+    {
+      "path": "cels/eileen_crouch.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "58d30dbdc7ed9a07ec993fae9e9d6624e5957fa95087e7f539162e14c49306f1",
+      "status": "accepted",
+      "source_json": "cels/eileen_crouch.source.json"
+    },
+    {
+      "path": "cels/eileen_hold_bottle.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "c87ee0fc02fa962ceded07bc220946754fe843fb3cec1d9518f69deac853a990",
+      "status": "accepted",
+      "source_json": "cels/eileen_hold_bottle.source.json"
+    },
+    {
+      "path": "cels/eileen_hold_lamp_close.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "7abe0a36c0fa1440471276a0a3f8badf5e5e83d5251a4763ea3091bea819d215",
+      "status": "accepted",
+      "source_json": "cels/eileen_hold_lamp_close.source.json"
+    },
+    {
+      "path": "cels/eileen_look_up.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "cc2aa70e3a3a7cee65c20621b7bed26df02aca5acbfb0de5c8bef5be50e21268",
+      "status": "accepted",
+      "source_json": "cels/eileen_look_up.source.json"
+    },
+    {
+      "path": "cels/eileen_offer_lamp.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "67376da39c2a491a3d9d0ba3d1343c2f7a34603360cf199845f3475a196a3475",
+      "status": "accepted",
+      "source_json": "cels/eileen_offer_lamp.source.json"
+    },
+    {
+      "path": "cels/eileen_offer_lamp_back.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）；m46 过肩背面递灯（A4 补缺，替换 walk_p1 静立近似）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a33870d2e913dca76c972bf669b77a0ea25804ac8fa8ee42fff4bdb765feaae5",
+      "status": "accepted",
+      "source_json": "cels/eileen_offer_lamp_back.source.json"
+    },
+    {
+      "path": "cels/eileen_stand.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "e26fd90cf706035f37b6e281f436440c6df7c5c9e3446861df7ab0a865b3cc3f",
+      "status": "accepted",
+      "source_json": "cels/eileen_stand.source.json"
+    },
+    {
+      "path": "cels/eileen_wave_goodnight.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "843956f39f3a7ebbe44bcdf59764e2a912ee320879fe35676213a96ed768a767",
+      "status": "accepted",
+      "source_json": "cels/eileen_wave_goodnight.source.json"
+    },
+    {
+      "path": "cels/ladymoon_revived.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "92edd595a31503e3391a0106177c43f3754e0c42d6be12e404f164374bf40ad9",
+      "status": "accepted",
+      "source_json": "cels/ladymoon_revived.source.json"
+    },
+    {
+      "path": "cels/ladymoon_sit_throne.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "9f8222e2b1b7f5dc2ae131c33b9955ab8e039735227ae15c1041db34bac17c1a",
+      "status": "accepted",
+      "source_json": "cels/ladymoon_sit_throne.source.json"
+    },
+    {
+      "path": "cels/ladymoon_slow_raise.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "9f90394e239303bc99ab6bac8947338fbd999c753d7b754c773db0ae655ef405",
+      "status": "accepted",
+      "source_json": "cels/ladymoon_slow_raise.source.json"
+    },
+    {
+      "path": "cels/walk/alder_walk_p1.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "cc45c31fd4bee7c4cfe029f245a072ffe7335a84b17578cfc6c3ccbfee346d19",
+      "status": "accepted",
+      "source_json": "cels/walk/alder_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/alder_walk_p2.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "e5c880a7495d063b678a850c97266df7a09c818812f6757f616d058bb4b7b371",
+      "status": "accepted",
+      "source_json": "cels/walk/alder_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/alder_walk_p3.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "671fb904121ebfa1ff9eb9486321d551e6dbd2ee83de69894eff24f622a318d5",
+      "status": "accepted",
+      "source_json": "cels/walk/alder_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/alder_walk_p4.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "6bdbfb775143750a1125e94316ed5b1e4533120546920d537902f107389b61c6",
+      "status": "accepted",
+      "source_json": "cels/walk/alder_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/alder_walk_strip.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "5b71c1574bcd86bff20eee769f73457bb8e020e4d2995be6dc923870709652a7",
+      "status": "accepted",
+      "source_json": "cels/walk/alder_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p1.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a6ca18fdf052f9de27925b46fbe59356389ed1ec486c07b215245cc6821d8c17",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p2.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "69dc4a96b5e86428fa3deae4918eb76e1ab8c8cf0f481b3f422c8c9f7221ded0",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p3.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "b23e968f493183779715b2f443077af1fab4625b16fb5551f7893c05cd206ea9",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p4.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "97cbd3574c543c417c6e9ad5b8bf1153e0ab39e5dac27cccaa4f716a6d09be67",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p5.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a6b17bce5621b68ca850b2d9239160075fccaf56f149e32c07b33687febcb1d9",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p6.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "931ec1be60b132c39e3ec0cfe68a27a83dc865c4b7261516f644206eadb3fd48",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p7.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "c81b85f58b6da89f87e3d5ce25e03ded630348021a5cba1f9e735554cb09f0da",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_p8.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "843519aa70bc5ae46c4ae2130a6406d7f98996f2effca2441570b8a81759b949",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "cels/walk/eileen_walk_strip.png",
+      "kind": "walk_phase",
+      "use": "走拍相位画：整拍冻结逐相位换画（atlas/逐格摆放）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "5e79e7157674b17569290b94379711d0dde829ff7da455e72b2370ab04cd31bf",
+      "status": "accepted",
+      "source_json": "cels/walk/eileen_walk_strip.source.json"
+    },
+    {
+      "path": "faces/alder_blink.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "ef86a252e7c49551408bda259e3552d59421244a75fa416d9dde14c29c728339",
+      "status": "accepted",
+      "lock_json": "faces/alder_blink.lock.json"
+    },
+    {
+      "path": "faces/alder_expr_dazed.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "2d20f9d6bc39d08c1ef7bf7e84e2750d2068451e5b7a0dcd927cc5815db59f77",
+      "status": "accepted",
+      "lock_json": "faces/alder_expr_dazed.lock.json"
+    },
+    {
+      "path": "faces/alder_expr_relieved.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "0735b3f4a087b0cc68ecbcaef7f9c212890f1d7e7979d4bfdc68a713d78ea947",
+      "status": "accepted",
+      "lock_json": "faces/alder_expr_relieved.lock.json"
+    },
+    {
+      "path": "faces/alder_expr_shocked.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "42a1b7da4dba8315640be858744cf9fcc1ad0b60ed51d1ccb28e613686ae2f4b",
+      "status": "accepted",
+      "lock_json": "faces/alder_expr_shocked.lock.json"
+    },
+    {
+      "path": "faces/alder_mouth_half.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "d25bd0058f7cfa4a13356744a12f38dec5fc073eeafbd4d1c5f8585547873e65",
+      "status": "accepted",
+      "lock_json": "faces/alder_mouth_half.lock.json"
+    },
+    {
+      "path": "faces/alder_mouth_open.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "ba42825f26e1619a20080ac9429b92a89b273c5c72f36dc682913e5a57dfad6c",
+      "status": "accepted",
+      "lock_json": "faces/alder_mouth_open.lock.json"
+    },
+    {
+      "path": "faces/eileen_blink.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a64577180baeb6c8b9cfc830760e1063df9add1bf6d0ccfea4c378d471666260",
+      "status": "accepted",
+      "lock_json": "faces/eileen_blink.lock.json"
+    },
+    {
+      "path": "faces/eileen_expr_determined.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "ffd477a7bcfa3449a3442fa44c1555f3871e4b5fd8554262c924d5fd1c8077b2",
+      "status": "accepted",
+      "lock_json": "faces/eileen_expr_determined.lock.json"
+    },
+    {
+      "path": "faces/eileen_expr_lonely.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "77839dce85fd0fb715dbc26866e617e3e39fe534ae26a5181a91be81519513ad",
+      "status": "accepted",
+      "lock_json": "faces/eileen_expr_lonely.lock.json"
+    },
+    {
+      "path": "faces/eileen_expr_smile.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "5d21f31eeeb9ac797abd0ad045cdef3a3e92c50ad2afad9ae40cc85b18384b70",
+      "status": "accepted",
+      "lock_json": "faces/eileen_expr_smile.lock.json"
+    },
+    {
+      "path": "faces/eileen_expr_tearful.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "2b9c68ae65df015c3587ff40833d028268e0be1e8cc2477f21a643d69570d25b",
+      "status": "accepted",
+      "lock_json": "faces/eileen_expr_tearful.lock.json"
+    },
+    {
+      "path": "faces/eileen_mouth_half.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "ad6aeaf0372d7443d42f297a2affc8cba802741270044ac084c6c4dbd8220f91",
+      "status": "accepted",
+      "lock_json": "faces/eileen_mouth_half.lock.json"
+    },
+    {
+      "path": "faces/eileen_mouth_open.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "59131cf0a3fd6a1cc761c53fb44bf10d7985f589310f439afdf62dd8b22cf1d6",
+      "status": "accepted",
+      "lock_json": "faces/eileen_mouth_open.lock.json"
+    },
+    {
+      "path": "faces/ladymoon_blink.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a210032ababa90185f0200ab6223fbf59de5a1a45ccfbcfc77f46110277f1601",
+      "status": "accepted",
+      "lock_json": "faces/ladymoon_blink.lock.json"
+    },
+    {
+      "path": "faces/ladymoon_expr_revived.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "647fb6dc2259653886ea4718563104f8e130866d5c190c083878d2bb412386cc",
+      "status": "accepted",
+      "lock_json": "faces/ladymoon_expr_revived.lock.json"
+    },
+    {
+      "path": "faces/ladymoon_mouth_half.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "708c0fb34c81b3e94b1db48630ee12c1e049720ff33560fff895e8a687aebf5a",
+      "status": "accepted",
+      "lock_json": "faces/ladymoon_mouth_half.lock.json"
+    },
+    {
+      "path": "faces/ladymoon_mouth_open.png",
+      "kind": "face_variant",
+      "use": "表情/嘴/眼同图变体：codex 局部编辑+diff 羽化锁回（框外零差分）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "d97f2eb3eef977f1440dce900594175e4621c62225a6d6fbbbc78fbd26a296d1",
+      "status": "accepted",
+      "lock_json": "faces/ladymoon_mouth_open.lock.json"
+    },
+    {
+      "path": "plates/s01_snowtown_night.png",
+      "kind": "scene_plate",
+      "use": "场景底图：art_pass 漫画合成的场景原画层（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "b6419cf1b3aa05cb8138741cabec6a7ecd07439c4838fddc986e1fde72c5cf2d",
+      "source_json": "plates/s01_snowtown_night.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "plates/s01_snowtown_spring.png",
+      "kind": "scene_plate",
+      "use": "场景底图：art_pass 漫画合成的场景原画层（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "9852732d8b3e237ebc313eb5472140a46e0f71b5936d1c132a12ded2876817a4",
+      "source_json": "plates/s01_snowtown_spring.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "plates/s02_clocktower_workshop.png",
+      "kind": "scene_plate",
+      "use": "场景底图：art_pass 漫画合成的场景原画层（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "4af8c2fe09dcfa86b223184c7055cf66ff08bc4c580b9d9d428cacab4c28dfba",
+      "source_json": "plates/s02_clocktower_workshop.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "plates/s03_star_stairs.png",
+      "kind": "scene_plate",
+      "use": "场景底图：art_pass 漫画合成的场景原画层（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "9717ea43f19e1e0e6cf20a50c38815f6ea6f30787c5f3eb9af843b9f66c0817d",
+      "source_json": "plates/s03_star_stairs.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "plates/s04_moon_palace.png",
+      "kind": "scene_plate",
+      "use": "场景底图：art_pass 漫画合成的场景原画层（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "7277936c47080e9717f6a2afa395ba2f5989a8820fac1c6c8515fde895ea3b64",
+      "source_json": "plates/s04_moon_palace.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "refs/alder_face.png",
+      "kind": "character_anchor",
+      "use": "角色身份锚：cel-cinema 文生图原画的身份锁定参考（--ref 首位）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "30602f62597825abf54b726b0ad2995f3dfe9e7f1349a3c944b76f10faa887e7",
+      "source_json": "refs/alder_face.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "refs/alder_full.png",
+      "kind": "character_anchor",
+      "use": "角色身份锚：cel-cinema 文生图原画的身份锁定参考（--ref 首位）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "31eb95e75e00920abceba107520ad058235eee14b64ab03e788ee8ed63786ed4",
+      "source_json": "refs/alder_full.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "refs/eileen_face.png",
+      "kind": "character_anchor",
+      "use": "角色身份锚：cel-cinema 文生图原画的身份锁定参考（--ref 首位）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "dea9054bd585e4c745dbbb916fc034d0875a5804f7dc767393cb599895b89f86",
+      "source_json": "refs/eileen_face.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "refs/eileen_full.png",
+      "kind": "character_anchor",
+      "use": "角色身份锚：cel-cinema 文生图原画的身份锁定参考（--ref 首位）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "8774cd0511fa6264587cdcdff769866c1ab346b6e1bc3bcf76fb89cdd65e1e77",
+      "source_json": "refs/eileen_full.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "refs/ladymoon_face.png",
+      "kind": "character_anchor",
+      "use": "角色身份锚：cel-cinema 文生图原画的身份锁定参考（--ref 首位）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "655f491acd6f71a34d4a0786f05804c6f66b504b3fe9f2ce01097834b2e8d401",
+      "source_json": "refs/ladymoon_face.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "refs/ladymoon_full.png",
+      "kind": "character_anchor",
+      "use": "角色身份锚：cel-cinema 文生图原画的身份锁定参考（--ref 首位）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "406b9e511ce3830bd2bae794695c35c7b1e42e46d3a4c71420ab515a18a1400a",
+      "source_json": "refs/ladymoon_full.source.json",
+      "status": "accepted"
+    },
+    {
+      "path": "cinema_r3/alder_alpha.png",
+      "status": "candidate",
+      "sha256": "7b08dd836aa6af1e50bc87afafa4299276727c7a1317f6963018ac7bfafdc37c",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/clouds.png",
+      "status": "candidate",
+      "sha256": "4a56cfdbd4546b15e97d76313c2a8edc4250b16e4f0dea1a0b79ccfb56f037cf",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/eileen_alpha.png",
+      "status": "candidate",
+      "sha256": "f3ffd3ea871100803b855c6104b99c8afb6ae5b7dfe52355f3961ab76ca6013f",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/ladymoon_alpha.png",
+      "status": "candidate",
+      "sha256": "83e42edbb781c61924d84bbfbb50a57787a58329ce22844754846645c760bcaf",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_0.png",
+      "status": "candidate",
+      "sha256": "0cf32f7a7eb56e917ce46ae2442caa61a13bc314f0a4e7bc3e6f932533d48c9a",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_1.png",
+      "status": "candidate",
+      "sha256": "8f39845b94eabfe846bccf7052befdf0e4acccdb670ce07b57adb9ab5096d8f6",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_2.png",
+      "status": "candidate",
+      "sha256": "ffaa45c548a1ac3e3f917f3e01e3e9a80b386dccf66df14b3b87b64535faced3",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_3.png",
+      "status": "candidate",
+      "sha256": "6b4b8d6c348f2f478386fa81b639616a2bd598312260466bd8e46b54bb7c1a45",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_4.png",
+      "status": "candidate",
+      "sha256": "25d51c4a010d2feecb34ceb9494c8aa599a384b26a07f6ce16d9fd544310f99e",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_5.png",
+      "status": "candidate",
+      "sha256": "7d6296a9ed34bc8b0e67f475d6ffb77471f0a9b1ecea5bdea6a9c39b8ac1af4b",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_6.png",
+      "status": "candidate",
+      "sha256": "4b05aa4c3b4dfd7ea74c6af4ee2fe5b50ee863bce02e663943ddbaee3e0e1694",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_7.png",
+      "status": "candidate",
+      "sha256": "aa9c0274e3b08b9b612035142d0f447defadeb5b47b6f745fb572512f26d408a",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/walk_atlas.png",
+      "status": "candidate",
+      "sha256": "d32508f2d10ffcdd488006cd9af3b4f4c635b86c388f385488eeacfccfc8c63d",
+      "provider": "imagegen"
+    },
+    {
+      "path": "cinema_r3/roof_clean.png",
+      "provider": "imagegen",
+      "status": "candidate",
+      "sha256": "749a72c04aeec1a923b6e2c182143fa2d59dfc52210c799a50a80ab0b923ba1d"
+    }
+  ]
+}

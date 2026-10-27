@@ -1,18 +1,16 @@
 {
- "id": "m03",
- "character": "LadyMoon",
- "speaker": "zh_female_sophie_uranus_bigtts",
- "text": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。",
- "delivery": {
-  "rate": 0,
+  "id": "m03",
+  "provider": "volcano/seed-tts-2.0",
+  "speaker": "zh_female_sophie_uranus_bigtts",
+  "tts_text": "会的……每当一个人，不再相信明天……我就失去一缕光。每当一个人，忘记仰望天空……我就失去一颗星。",
+  "speech_rate": -25,
   "context": [
-   "月亮夫人，超然、疲惫而慈爱，声音轻得像从很远的地方传来",
-   "数自己的伤口，平静得让人心疼。"
+    "保持月亮夫人原来的声线，疲惫、慈爱，轻声对眼前的孩子说话。",
+    "这是缓慢袒露伤口，不是讲解：会的之后停一拍；相信明天之后停顿；一缕光之后让悲伤沉下来，再说后半句。末尾一颗星轻轻落下，不赶字，不催促。"
   ],
-  "emotion": "sad"
- },
- "emotionDropped": false,
- "tag": "63e9d5b2a00b",
- "provider": "volcano/seed-tts-2.0",
- "sha256": "c1a6a1c8d1b97d5a040f037eac792c600d73017840c02d538f2ba4b26e92e535"
+  "emotion": "sad",
+  "duration": 12.6,
+  "sha256": "15a4c7d87b81e352c7cdab05280369acf6bb6f98bd6e0799b7cee0b7eed631ea",
+  "listening": "not_claimed",
+  "text": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。"
 }

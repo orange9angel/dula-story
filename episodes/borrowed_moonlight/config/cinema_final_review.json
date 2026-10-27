@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "whole_episode": {"times": [3,31,82,105,188,237,273,288,341,369.5,431,470], "columns": 3, "width": 480},
+    "walking": {"times": [28,28.2,28.4,28.6,28.8,29,29.2,29.4], "columns": 4, "width": 280, "crop": [580,380,860,700]},
+    "stairs": {"times": [262,262.5,263,263.5,264,264.5], "columns": 3, "width": 430, "crop": [430,0,860,580]},
+    "eileen_face": {"times": [38,38.2,38.4], "columns": 3, "width": 700, "crop": [280,0,980,650]},
+    "alder_face": {"times": [121], "columns": 1, "width": 700, "crop": [280,0,980,650]},
+    "moon_face": {"times": [288], "columns": 1, "width": 700, "crop": [280,0,980,650]}
+  }
+}

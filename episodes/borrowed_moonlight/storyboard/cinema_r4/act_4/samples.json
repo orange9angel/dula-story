@@ -1,0 +1,63 @@
+[
+  {
+    "t": 465,
+    "shot": "m63",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 522.6666666666667,
+      "cy": 144,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -501.33333333333326,
+      -432,
+      1546.6666666666667,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1270,
+        "h": 1300,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1270,
+          1300
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 447.36842105263156,
+        "facial": {
+          "jaw": 0.2,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "half",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          640,
+          81.41000000000008
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.7666031253487596,
+      "dimVeil": 0
+    },
+    "subtitle": "晚安，月亮。明天见。",
+    "missingAssets": [],
+    "sha256": "52c934aa32701a563642003bab83c71dc7514baba22df3849cf95ccc84ba82e3"
+  }
+]

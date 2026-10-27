@@ -1,0 +1,1909 @@
+{
+  "schema": "cel-cinema-cast-v1",
+  "comment": "A3 镜表选角/选画表：shot id → 角色 → 画层。cel=全身原画刚性摆放；portrait=近景整肖像当镜头（raster-face）；walk=走拍相位画（baked-cel-clip，距离驱动）。数组表按 until 秒切换。缺省：Eileen stand / Alder stand_hope / LadyMoon sit_throne；kind=face_close 缺省=shot.character 的 portrait。锚点：eye=眼线对 bake faceCenter；lamp=画中灯焰对 bake flameAnchor。",
+  "portraitHeight": {
+    "face_close": 1000,
+    "macro": 1150
+  },
+  "characters": {
+    "Eileen": {
+      "cels": {
+        "stand": {
+          "img": "cels/eileen_stand.png",
+          "landmarks": "cels/landmarks/eileen_stand.json",
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  480,
+                  218,
+                  66,
+                  46
+                ],
+                "sourceRect": [
+                  1380,
+                  618,
+                  66,
+                  46
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    513,
+                    241,
+                    33,
+                    23
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  480,
+                  218,
+                  66,
+                  46
+                ],
+                "sourceRect": [
+                  1380,
+                  618,
+                  66,
+                  46
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    513,
+                    241,
+                    33,
+                    23
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  440,
+                  158,
+                  144,
+                  54
+                ],
+                "sourceRect": [
+                  1340,
+                  558,
+                  144,
+                  54
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    474,
+                    185,
+                    34,
+                    27
+                  ],
+                  [
+                    550,
+                    185,
+                    34,
+                    27
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "look_up": {
+          "img": "cels/eileen_look_up.png",
+          "landmarks": "cels/landmarks/eileen_look_up.json"
+        },
+        "hold_bottle": {
+          "img": "cels/eileen_hold_bottle.png",
+          "landmarks": "cels/landmarks/eileen_hold_bottle.json",
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  476,
+                  249,
+                  62,
+                  42
+                ],
+                "sourceRect": [
+                  176,
+                  249,
+                  62,
+                  42
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    507,
+                    270,
+                    31,
+                    21
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  476,
+                  249,
+                  62,
+                  42
+                ],
+                "sourceRect": [
+                  176,
+                  249,
+                  62,
+                  42
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    507,
+                    270,
+                    31,
+                    21
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  454,
+                  190,
+                  134,
+                  61
+                ],
+                "sourceRect": [
+                  154,
+                  190,
+                  134,
+                  61
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    487,
+                    213,
+                    33,
+                    23
+                  ],
+                  [
+                    556,
+                    228,
+                    32,
+                    23
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "offer_lamp": {
+          "img": "cels/eileen_offer_lamp.png",
+          "landmarks": "cels/landmarks/eileen_offer_lamp.json",
+          "lampXY": [
+            507,
+            630
+          ],
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  479,
+                  216,
+                  62,
+                  44
+                ],
+                "sourceRect": [
+                  579,
+                  216,
+                  62,
+                  44
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    510,
+                    238,
+                    31,
+                    22
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  479,
+                  216,
+                  62,
+                  44
+                ],
+                "sourceRect": [
+                  579,
+                  216,
+                  62,
+                  44
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    510,
+                    238,
+                    31,
+                    22
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  438,
+                  151,
+                  144,
+                  55
+                ],
+                "sourceRect": [
+                  538,
+                  151,
+                  144,
+                  55
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    472,
+                    179,
+                    34,
+                    27
+                  ],
+                  [
+                    548,
+                    178,
+                    34,
+                    27
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "crouch": {
+          "img": "cels/eileen_crouch.png",
+          "eyeFrac": 0.215,
+          "note": "蹲姿无地标文件，A4 刻度图复测：眼线=trim 图幅 21.5%（A3 目测 .30 作废）"
+        },
+        "offer_lamp_back": {
+          "img": "cels/eileen_offer_lamp_back.png",
+          "landmarks": "cels/landmarks/eileen_offer_lamp_back.json",
+          "note": "A4 补缺：m46 过肩背面递灯（替换 walk_p1 静立近似）；比例门 vs _anchor_eileen_walk ok（hem +.023 / boot_top +.029）"
+        },
+        "hold_lamp_close": {
+          "img": "cels/eileen_hold_lamp_close.png",
+          "landmarks": "cels/landmarks/eileen_hold_lamp_close.json",
+          "lampXY": [
+            510,
+            440
+          ],
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  485,
+                  234,
+                  64,
+                  44
+                ],
+                "sourceRect": [
+                  985,
+                  234,
+                  64,
+                  44
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    517,
+                    256,
+                    32,
+                    22
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  485,
+                  234,
+                  64,
+                  44
+                ],
+                "sourceRect": [
+                  985,
+                  234,
+                  64,
+                  44
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    517,
+                    256,
+                    32,
+                    22
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  439,
+                  173,
+                  142,
+                  66
+                ],
+                "sourceRect": [
+                  939,
+                  173,
+                  142,
+                  66
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    473,
+                    214,
+                    34,
+                    25
+                  ],
+                  [
+                    547,
+                    198,
+                    34,
+                    25
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "wave_goodnight": {
+          "img": "cels/eileen_wave_goodnight.png",
+          "landmarks": "cels/landmarks/eileen_wave_goodnight.json"
+        },
+        "walk_p1": {
+          "img": "cels/walk/eileen_walk_p1.png",
+          "eyeFrac": 0.105,
+          "note": "背面三四分双支撑相位（备用，m46 已由 offer_lamp_back 承担）"
+        },
+        "room_attend": {
+          "img": "cinema_r4/eileen_attend_base.png",
+          "eyeFrac": 0.11174785100286533,
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/eileen_attend_half.png",
+                "rect": [
+                  77,
+                  88,
+                  40,
+                  34
+                ],
+                "feather": 0.25
+              },
+              "open": {
+                "img": "cinema_r4/eileen_attend_open.png",
+                "rect": [
+                  77,
+                  88,
+                  40,
+                  34
+                ],
+                "feather": 0.25
+              },
+              "blink": {
+                "img": "cinema_r4/eileen_attend_blink.png",
+                "rect": [
+                  75,
+                  54,
+                  76,
+                  48
+                ],
+                "feather": 0.25
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          },
+          "bottleFrac": null
+        },
+        "room_respond": {
+          "img": "cinema_r4/eileen_bottle_base.png",
+          "eyeFrac": 0.11318051575931232,
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/eileen_bottle_half.png",
+                "rect": [
+                  94,
+                  90,
+                  46,
+                  34
+                ],
+                "feather": 0.25
+              },
+              "open": {
+                "img": "cinema_r4/eileen_bottle_open.png",
+                "rect": [
+                  94,
+                  90,
+                  46,
+                  34
+                ],
+                "feather": 0.25
+              },
+              "blink": {
+                "img": "cinema_r4/eileen_bottle_blink.png",
+                "rect": [
+                  89,
+                  55,
+                  78,
+                  48
+                ],
+                "feather": 0.25
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          },
+          "bottleFrac": [
+            0.38263665594855306,
+            0.31805157593123207
+          ]
+        }
+      },
+      "walk": {
+        "frames": [
+          "cinema_r3b/walk_0.png",
+          "cinema_r3b/walk_1.png",
+          "cinema_r3b/walk_2.png",
+          "cinema_r3b/walk_3.png",
+          "cinema_r3b/walk_4.png",
+          "cinema_r3b/walk_5.png",
+          "cinema_r3b/walk_6.png",
+          "cinema_r3b/walk_7.png"
+        ],
+        "cells": "cinema_r3b/walk_cells.json",
+        "size": [
+          384,
+          512
+        ],
+        "anchor": [
+          192,
+          505
+        ],
+        "cycleTravel": 0.4,
+        "eyeFrac": 0.105,
+        "note": "cycleTravel=m04 实测：相位画取自 t=30.50 起 0.83s 周期，该周期根位移 0.402m（bake 左脚落地事件间距）；起步/停步段行程偏短属真实步态"
+      },
+      "face": {
+        "base": "refs/eileen_face.png",
+        "eyeY": 0.37,
+        "headTop": 0.01,
+        "faceX": 0.5,
+        "variants": {
+          "mouth_half": {
+            "img": "faces/eileen_mouth_half.png",
+            "rect": [
+              584,
+              580,
+              236,
+              142
+            ],
+            "feather": 0.22,
+            "cores": [
+              [
+                609,
+                607,
+                168,
+                85,
+                20
+              ]
+            ]
+          },
+          "mouth_open": {
+            "img": "faces/eileen_mouth_open.png",
+            "rect": [
+              584,
+              580,
+              236,
+              142
+            ],
+            "feather": 0.22,
+            "cores": [
+              [
+                609,
+                607,
+                168,
+                85,
+                20
+              ]
+            ]
+          },
+          "blink": {
+            "img": "cinema_r4/eileen_blink_clean.png",
+            "rect": [
+              410,
+              325,
+              510,
+              220
+            ],
+            "islands": [
+              [
+                530,
+                451,
+                116,
+                90
+              ],
+              [
+                792,
+                421,
+                116,
+                90
+              ]
+            ],
+            "feather": 0.22
+          },
+          "expr_lonely": {
+            "img": "faces/eileen_expr_lonely.png",
+            "rect": [
+              390,
+              270,
+              570,
+              560
+            ],
+            "feather": 0.22
+          },
+          "expr_tearful": {
+            "img": "faces/eileen_expr_tearful.png",
+            "rect": [
+              390,
+              270,
+              570,
+              560
+            ],
+            "feather": 0.22
+          },
+          "expr_smile": {
+            "img": "faces/eileen_expr_smile.png",
+            "rect": [
+              390,
+              270,
+              570,
+              560
+            ],
+            "feather": 0.22
+          },
+          "expr_determined": {
+            "img": "faces/eileen_expr_determined.png",
+            "rect": [
+              390,
+              270,
+              570,
+              560
+            ],
+            "feather": 0.22
+          }
+        },
+        "emotions": {
+          "curious": null,
+          "neutral": null,
+          "gentle": "expr_smile",
+          "happy": "expr_smile",
+          "excited": "expr_smile",
+          "sad": "expr_tearful",
+          "worried": "expr_lonely",
+          "determined": "expr_determined"
+        }
+      }
+    },
+    "Alder": {
+      "cels": {
+        "stand_work": {
+          "img": "cels/alder_stand_work.png",
+          "eyeFrac": 0.123,
+          "note": "俯身工作姿无地标文件（A2 姿势类差异免数值门），A4 刻度图复测：眼线=trim 图幅 12.3%（A3 目测 .16 作废）"
+        },
+        "touch_watch": {
+          "img": "cels/alder_touch_watch.png",
+          "landmarks": "cels/landmarks/alder_touch_watch.json",
+          "handXY": [
+            484,
+            474
+          ],
+          "note": "handXY=画内摸表右手手背（原图坐标，A4 刻度图初读 (405,401) 经试片帧校准 +79/+73），m53 花瓣落点锚",
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  504,
+                  229,
+                  68,
+                  46
+                ],
+                "sourceRect": [
+                  1404,
+                  229,
+                  68,
+                  46
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    538,
+                    252,
+                    34,
+                    23
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  504,
+                  229,
+                  68,
+                  46
+                ],
+                "sourceRect": [
+                  1404,
+                  229,
+                  68,
+                  46
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    538,
+                    252,
+                    34,
+                    23
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  499,
+                  162,
+                  102,
+                  56
+                ],
+                "sourceRect": [
+                  1399,
+                  162,
+                  102,
+                  56
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    527,
+                    182,
+                    28,
+                    20
+                  ],
+                  [
+                    575,
+                    198,
+                    26,
+                    20
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "shock": {
+          "img": "cels/alder_shock.png",
+          "landmarks": "cels/landmarks/alder_shock.json"
+        },
+        "stand_hope": {
+          "img": "cels/alder_stand_hope.png",
+          "landmarks": "cels/landmarks/alder_stand_hope.json",
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  507,
+                  179,
+                  66,
+                  46
+                ],
+                "sourceRect": [
+                  207,
+                  579,
+                  66,
+                  46
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    540,
+                    202,
+                    33,
+                    23
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  507,
+                  179,
+                  66,
+                  46
+                ],
+                "sourceRect": [
+                  207,
+                  579,
+                  66,
+                  46
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    540,
+                    202,
+                    33,
+                    23
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  472,
+                  114,
+                  108,
+                  47
+                ],
+                "sourceRect": [
+                  172,
+                  514,
+                  108,
+                  47
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    500,
+                    140,
+                    28,
+                    21
+                  ],
+                  [
+                    552,
+                    135,
+                    28,
+                    21
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "relieved": {
+          "img": "cels/alder_relieved.png",
+          "landmarks": "cels/landmarks/alder_relieved.json"
+        },
+        "room_attend": {
+          "img": "cinema_r4/alder_attend_base.png",
+          "eyeFrac": 0.12732474964234622,
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r5/room_mouths.png",
+                "rect": [
+                  218,
+                  115,
+                  34,
+                  30
+                ],
+                "cores": [
+                  [
+                    226,
+                    122,
+                    18,
+                    14,
+                    5
+                  ]
+                ],
+                "sourceRect": [
+                  255.0,
+                  356.25,
+                  127.5,
+                  112.5
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              },
+              "open": {
+                "img": "cinema_r5/room_mouths.png",
+                "rect": [
+                  218,
+                  115,
+                  34,
+                  30
+                ],
+                "cores": [
+                  [
+                    226,
+                    122,
+                    18,
+                    14,
+                    5
+                  ]
+                ],
+                "sourceRect": [
+                  255.0,
+                  956.25,
+                  127.5,
+                  112.5
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              },
+              "blink": {
+                "img": "cinema_r5/alder_closed.png",
+                "rect": [
+                  224,
+                  80,
+                  55,
+                  27
+                ],
+                "cores": [
+                  [
+                    232,
+                    85,
+                    17,
+                    13,
+                    3
+                  ],
+                  [
+                    259,
+                    85,
+                    10,
+                    14,
+                    2
+                  ]
+                ],
+                "sourceRect": [
+                  277.5,
+                  225.0,
+                  206.25,
+                  101.25
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              },
+              "blink_half": {
+                "img": "cinema_r5/alder_halfblink.png",
+                "rect": [
+                  224,
+                  80,
+                  55,
+                  27
+                ],
+                "cores": [
+                  [
+                    232,
+                    85,
+                    17,
+                    13,
+                    3
+                  ],
+                  [
+                    259,
+                    85,
+                    10,
+                    14,
+                    2
+                  ]
+                ],
+                "sourceRect": [
+                  277.5,
+                  225.0,
+                  206.25,
+                  101.25
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": {
+              "half": "blink_half",
+              "closed": "blink"
+            }
+          },
+          "bottleFrac": null
+        },
+        "room_respond": {
+          "img": "cinema_r4/alder_respond_base.png",
+          "eyeFrac": 0.11982881597717546,
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r5/room_mouths.png",
+                "rect": [
+                  187,
+                  109,
+                  32,
+                  30
+                ],
+                "cores": [
+                  [
+                    192,
+                    118,
+                    18,
+                    13,
+                    5
+                  ]
+                ],
+                "sourceRect": [
+                  851.25,
+                  352.5,
+                  120.0,
+                  112.5
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              },
+              "open": {
+                "img": "cinema_r5/room_mouths.png",
+                "rect": [
+                  187,
+                  109,
+                  32,
+                  30
+                ],
+                "cores": [
+                  [
+                    192,
+                    118,
+                    18,
+                    13,
+                    5
+                  ]
+                ],
+                "sourceRect": [
+                  851.25,
+                  952.5,
+                  120.0,
+                  112.5
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              },
+              "blink": {
+                "img": "cinema_r5/alder_closed.png",
+                "rect": [
+                  180,
+                  69,
+                  60,
+                  31
+                ],
+                "cores": [
+                  [
+                    186,
+                    75,
+                    18,
+                    14,
+                    3
+                  ],
+                  [
+                    217,
+                    74,
+                    13,
+                    17,
+                    2
+                  ]
+                ],
+                "sourceRect": [
+                  825.0,
+                  202.5,
+                  225.0,
+                  116.25
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              },
+              "blink_half": {
+                "img": "cinema_r5/alder_halfblink.png",
+                "rect": [
+                  180,
+                  69,
+                  60,
+                  31
+                ],
+                "cores": [
+                  [
+                    186,
+                    75,
+                    18,
+                    14,
+                    3
+                  ],
+                  [
+                    217,
+                    74,
+                    13,
+                    17,
+                    2
+                  ]
+                ],
+                "sourceRect": [
+                  825.0,
+                  202.5,
+                  225.0,
+                  116.25
+                ],
+                "sourceSize": [
+                  1200,
+                  1200
+                ]
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": {
+              "half": "blink_half",
+              "closed": "blink"
+            }
+          },
+          "bottleFrac": null
+        }
+      },
+      "face": {
+        "base": "refs/alder_face.png",
+        "eyeY": 0.314,
+        "headTop": 0.036,
+        "faceX": 0.5,
+        "variants": {
+          "mouth_half": {
+            "img": "faces/alder_mouth_half.png",
+            "rect": [
+              570,
+              520,
+              230,
+              110
+            ],
+            "feather": 0.22
+          },
+          "mouth_open": {
+            "img": "faces/alder_mouth_open.png",
+            "rect": [
+              565,
+              515,
+              240,
+              130
+            ],
+            "feather": 0.22
+          },
+          "blink": {
+            "img": "faces/alder_blink.png",
+            "rect": [
+              450,
+              285,
+              370,
+              160
+            ],
+            "feather": 0.27,
+            "cores": [
+              [
+                478,
+                350,
+                110,
+                61,
+                8
+              ],
+              [
+                704,
+                320,
+                107,
+                60,
+                8
+              ]
+            ]
+          },
+          "expr_dazed": {
+            "img": "faces/alder_expr_dazed.png",
+            "rect": [
+              390,
+              190,
+              520,
+              530
+            ],
+            "feather": 0.22
+          },
+          "expr_shocked": {
+            "img": "faces/alder_expr_shocked.png",
+            "rect": [
+              390,
+              190,
+              520,
+              530
+            ],
+            "feather": 0.22
+          },
+          "expr_relieved": {
+            "img": "faces/alder_expr_relieved.png",
+            "rect": [
+              390,
+              190,
+              520,
+              530
+            ],
+            "feather": 0.22
+          },
+          "blink_shocked_closed": {
+            "img": "cinema_r5/alder_closed.png",
+            "rect": [
+              450,
+              275,
+              370,
+              160
+            ],
+            "cores": [
+              [
+                486,
+                329,
+                97,
+                84,
+                10
+              ],
+              [
+                708,
+                299,
+                95,
+                83,
+                10
+              ]
+            ],
+            "sourceRect": [
+              69.23076923076923,
+              698.0769230769231,
+              426.9230769230769,
+              184.6153846153846
+            ],
+            "sourceSize": [
+              1200,
+              1200
+            ]
+          },
+          "blink_shocked_half": {
+            "img": "cinema_r5/alder_halfblink.png",
+            "rect": [
+              450,
+              275,
+              370,
+              160
+            ],
+            "cores": [
+              [
+                486,
+                329,
+                97,
+                84,
+                10
+              ],
+              [
+                708,
+                299,
+                95,
+                83,
+                10
+              ]
+            ],
+            "sourceRect": [
+              69.23076923076923,
+              698.0769230769231,
+              426.9230769230769,
+              184.6153846153846
+            ],
+            "sourceSize": [
+              1200,
+              1200
+            ]
+          },
+          "blink_relieved_closed": {
+            "img": "cinema_r5/alder_closed.png",
+            "rect": [
+              450,
+              285,
+              370,
+              150
+            ],
+            "cores": [
+              [
+                477,
+                351,
+                108,
+                57,
+                8
+              ],
+              [
+                704,
+                321,
+                108,
+                58,
+                8
+              ]
+            ],
+            "sourceRect": [
+              669.2307692307693,
+              709.6153846153846,
+              426.9230769230769,
+              173.07692307692307
+            ],
+            "sourceSize": [
+              1200,
+              1200
+            ]
+          },
+          "blink_relieved_half": {
+            "img": "cinema_r5/alder_halfblink.png",
+            "rect": [
+              450,
+              285,
+              370,
+              150
+            ],
+            "cores": [
+              [
+                477,
+                351,
+                108,
+                57,
+                8
+              ],
+              [
+                704,
+                321,
+                108,
+                58,
+                8
+              ]
+            ],
+            "sourceRect": [
+              669.2307692307693,
+              709.6153846153846,
+              426.9230769230769,
+              173.07692307692307
+            ],
+            "sourceSize": [
+              1200,
+              1200
+            ]
+          }
+        },
+        "emotions": {
+          "neutral": null,
+          "sad": "expr_dazed",
+          "surprised": "expr_shocked",
+          "relieved": "expr_relieved",
+          "excited": "expr_relieved"
+        },
+        "blinkByExpression": {
+          "expr_shocked": {
+            "closed": "blink_shocked_closed",
+            "half": "blink_shocked_half"
+          },
+          "expr_relieved": {
+            "closed": "blink_relieved_closed",
+            "half": "blink_relieved_half"
+          }
+        }
+      }
+    },
+    "LadyMoon": {
+      "cels": {
+        "sit_throne": {
+          "img": "cels/ladymoon_sit_throne.png",
+          "eyeFrac": 0.135,
+          "refFrac": 0.422,
+          "ref": "seat",
+          "note": "坐姿无地标文件：A4 刻度图复测 eyeFrac=13.5%（原目测 .128）；refFrac=坐面 .422（A3 试片目检验证对位），ref=seat 锚定 bake root（root.y=0.9 王座座面高）",
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  481,
+                  239,
+                  52,
+                  36
+                ],
+                "sourceRect": [
+                  581,
+                  639,
+                  52,
+                  36
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    507,
+                    257,
+                    26,
+                    18
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  481,
+                  239,
+                  52,
+                  36
+                ],
+                "sourceRect": [
+                  581,
+                  639,
+                  52,
+                  36
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    507,
+                    257,
+                    26,
+                    18
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  436,
+                  191,
+                  118,
+                  42
+                ],
+                "sourceRect": [
+                  536,
+                  591,
+                  118,
+                  42
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    466,
+                    213,
+                    30,
+                    20
+                  ],
+                  [
+                    524,
+                    211,
+                    30,
+                    20
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "slow_raise": {
+          "img": "cels/ladymoon_slow_raise.png",
+          "landmarks": "cels/landmarks/ladymoon_slow_raise.json",
+          "faceRig": {
+            "variants": {
+              "half": {
+                "img": "cinema_r4/body_half.png",
+                "rect": [
+                  496,
+                  178,
+                  52,
+                  36
+                ],
+                "sourceRect": [
+                  996,
+                  578,
+                  52,
+                  36
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    522,
+                    196,
+                    26,
+                    18
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "open": {
+                "img": "cinema_r4/body_open.png",
+                "rect": [
+                  496,
+                  178,
+                  52,
+                  36
+                ],
+                "sourceRect": [
+                  996,
+                  578,
+                  52,
+                  36
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    522,
+                    196,
+                    26,
+                    18
+                  ]
+                ],
+                "feather": 0.3
+              },
+              "blink": {
+                "img": "cinema_r4/body_blink.png",
+                "rect": [
+                  466,
+                  130,
+                  112,
+                  48
+                ],
+                "sourceRect": [
+                  966,
+                  530,
+                  112,
+                  48
+                ],
+                "sourceSize": [
+                  1600,
+                  800
+                ],
+                "islands": [
+                  [
+                    496,
+                    158,
+                    30,
+                    20
+                  ],
+                  [
+                    548,
+                    150,
+                    30,
+                    20
+                  ]
+                ],
+                "feather": 0.3
+              }
+            },
+            "mouth": {
+              "half": "half",
+              "open": "open"
+            },
+            "blink": "blink"
+          }
+        },
+        "revived": {
+          "img": "cels/ladymoon_revived.png",
+          "landmarks": "cels/landmarks/ladymoon_revived.json"
+        }
+      },
+      "face": {
+        "base": "refs/ladymoon_face.png",
+        "eyeY": 0.261,
+        "headTop": 0.017,
+        "faceX": 0.49,
+        "variants": {
+          "mouth_half": {
+            "img": "faces/ladymoon_mouth_half.png",
+            "rect": [
+              570,
+              490,
+              190,
+              80
+            ],
+            "feather": 0.22
+          },
+          "mouth_open": {
+            "img": "faces/ladymoon_mouth_open.png",
+            "rect": [
+              565,
+              485,
+              200,
+              95
+            ],
+            "feather": 0.22
+          },
+          "blink": {
+            "img": "faces/ladymoon_blink.png",
+            "rect": [
+              440,
+              290,
+              410,
+              140
+            ],
+            "feather": 0.27
+          },
+          "expr_revived": {
+            "img": "faces/ladymoon_expr_revived.png",
+            "rect": [
+              270,
+              80,
+              810,
+              560
+            ],
+            "feather": 0.22
+          }
+        },
+        "emotions": {
+          "sad": null,
+          "weary": null,
+          "relieved": "expr_revived",
+          "revived": "expr_revived"
+        }
+      }
+    }
+  },
+  "defaults": {
+    "Eileen": "stand",
+    "Alder": "stand_hope",
+    "LadyMoon": "sit_throne"
+  },
+  "shots": {
+    "m04": {
+      "Eileen": "walk"
+    },
+    "m07": {
+      "Eileen": "hold_lamp_close"
+    },
+    "m08": {
+      "Eileen": "hold_lamp_close"
+    },
+    "m11": {
+      "Eileen": "walk"
+    },
+    "m12": {
+      "Eileen": "walk"
+    },
+    "m13": {
+      "Eileen": "walk",
+      "Alder": "stand_work"
+    },
+    "m14": {
+      "Alder": "stand_work"
+    },
+    "m15": {
+      "Eileen": [
+        {
+          "until": 112.4,
+          "cel": "walk"
+        },
+        {
+          "until": 116.0,
+          "cel": "crouch"
+        },
+        {
+          "cel": "stand"
+        }
+      ],
+      "Alder": "stand_work"
+    },
+    "m17": {
+      "Alder": "stand_work"
+    },
+    "m18": {
+      "Eileen": "stand",
+      "Alder": "stand_work"
+    },
+    "m20": {
+      "Eileen": "hold_bottle"
+    },
+    "m21": {
+      "Eileen": "hold_bottle"
+    },
+    "m24": {
+      "Eileen": "hold_bottle",
+      "Alder": "stand_work"
+    },
+    "m28": {
+      "Alder": "stand_hope"
+    },
+    "m29": {
+      "Eileen": "hold_bottle"
+    },
+    "m30": {
+      "Eileen": [
+        {
+          "until": 220.7,
+          "cel": "hold_bottle"
+        },
+        {
+          "cel": "stand"
+        }
+      ]
+    },
+    "m33": {
+      "Alder": "stand_hope"
+    },
+    "m36": {
+      "Eileen": "walk"
+    },
+    "m37": {
+      "Eileen": "walk"
+    },
+    "m38": {
+      "Eileen": "walk"
+    },
+    "m40": {
+      "Eileen": "walk",
+      "LadyMoon": "sit_throne"
+    },
+    "m43": {
+      "LadyMoon": "slow_raise"
+    },
+    "m44": {
+      "Eileen": "hold_lamp_close",
+      "LadyMoon": "sit_throne"
+    },
+    "m45": {
+      "Eileen": {
+        "cel": "offer_lamp",
+        "anchor": "lamp"
+      },
+      "LadyMoon": "sit_throne"
+    },
+    "m46": {
+      "Eileen": "offer_lamp_back",
+      "LadyMoon": "sit_throne"
+    },
+    "m47": {
+      "Eileen": "offer_lamp",
+      "LadyMoon": "sit_throne"
+    },
+    "m48": {
+      "Eileen": {
+        "cel": "portrait",
+        "emotionTimeline": [
+          [
+            352,
+            "worried"
+          ],
+          [
+            355.7,
+            "determined"
+          ],
+          [
+            359.5,
+            "sad"
+          ]
+        ]
+      }
+    },
+    "m49": {
+      "LadyMoon": {
+        "cel": "portrait",
+        "emotionTimeline": [
+          [
+            369.55,
+            "relieved"
+          ]
+        ]
+      }
+    },
+    "m50": {
+      "Alder": "touch_watch"
+    },
+    "m52": {
+      "Alder": "portrait"
+    },
+    "m53": {
+      "Alder": "touch_watch"
+    },
+    "m56": {
+      "Alder": "stand_hope"
+    },
+    "m58": {
+      "Alder": "stand_hope"
+    },
+    "m59": {
+      "Alder": "stand_hope"
+    },
+    "m61": {
+      "Alder": "touch_watch"
+    },
+    "m62": {
+      "Eileen": "hold_lamp_close",
+      "Alder": "stand_hope"
+    },
+    "m64": {
+      "Eileen": "hold_lamp_close",
+      "Alder": "stand_hope"
+    },
+    "m05": {
+      "Eileen": {
+        "cel": "portrait",
+        "emotionTimeline": [
+          [
+            35,
+            "curious"
+          ],
+          [
+            39,
+            "worried"
+          ]
+        ]
+      }
+    }
+  }
+}

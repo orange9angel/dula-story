@@ -1,0 +1,213 @@
+{
+  "format": "focused_revision_observations",
+  "source": {
+    "path": "../../output/borrowed_moonlight_cinema_r4_final.mp4",
+    "sha256": "9f9e2183489877e39ee56e661c60303eaadf9eb961d19f487197eb6f6cdf26b5"
+  },
+  "scope": "R4 changed regions and affected shots, inspected as stills and ordered frames. No full real-time screening or new listening review claimed.",
+  "baseline": "R3 evidence is preserved. Table intersection, rectangular facial patches, and static medium-shot dialogue were reported by the user after R3; they were not caught in the original review.",
+  "observations": [
+    {
+      "subjects": [
+        "Eileen",
+        "Alder"
+      ],
+      "origin": "user_reported",
+      "group": "room_space",
+      "observed_result": "Alder stands left of the table and Eileen to its right. Their inward-facing shots maintain the exchange. The table no longer cuts through his waist. At 178.5 to 181 seconds, particles develop from the held bottle toward the painted hanging bottles.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/room_space.jpg",
+        "sha256": "fee2ce5d4382544908351ef7e405cdde4359baa2d539dc3967bc459f9164d655",
+        "at": [
+          95.0,
+          104.0,
+          110.0,
+          134.0,
+          151.0,
+          156.0,
+          163.0,
+          172.0,
+          178.5,
+          181.0
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "subjects": [
+        "Eileen"
+      ],
+      "origin": "user_reported",
+      "group": "girl_room_mouth",
+      "observed_result": "Native crops from 109.6 to 112 seconds show closed, half-open, and open mouth shapes without rectangular backing.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/girl_room_mouth.jpg",
+        "sha256": "06052820882605c11f2966ecccf105bcad59c345fa0d1533bc02c006d2316ebc",
+        "at": [
+          109.6,
+          109.8,
+          110.0,
+          110.2,
+          111.0,
+          112.0
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "subjects": [
+        "Alder"
+      ],
+      "origin": "user_reported",
+      "group": "elder_room_mouth",
+      "observed_result": "Native crops from 118 to 120.467 seconds show mouth changes and a closed-eye state. Glasses, eyebrows, and beard remain connected; no rectangular edge observed.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/elder_room_mouth.jpg",
+        "sha256": "8a35dc7f843ab340ef054fd04fc143b3c39f1918be2147ea6e49381893397ee5",
+        "at": [
+          118.0,
+          118.2,
+          118.4,
+          119.2,
+          120.3,
+          120.46666666666667
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "subjects": [
+        "Eileen"
+      ],
+      "origin": "user_reported",
+      "group": "hero_blink",
+      "observed_result": "Native crops near 37 seconds show open eyes, a single closed-lash shape, and reopening. Mouth changes have no rectangular edge.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/hero_blink.jpg",
+        "sha256": "56439ce7272e26a336ca1588889565f5d696708df67f43fb9d9982df320a68a4",
+        "at": [
+          37.4,
+          37.5,
+          37.56666666666667,
+          37.733333333333334
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "subjects": [
+        "Eileen"
+      ],
+      "origin": "user_reported",
+      "group": "hero_expression",
+      "observed_result": "At 352 to 362 seconds the eyebrows change from concern to determination and tearful eyes. The 358-second blink has no old open-eye outline above the lashes.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/hero_expression.jpg",
+        "sha256": "8d54798d83f93188e7be629025d1ea7b287dd37dbe7ac2d19f8d58d0f2682330",
+        "at": [
+          352.1,
+          354.0,
+          356.0,
+          358.0,
+          360.0,
+          362.0
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "subjects": [
+        "Eileen"
+      ],
+      "origin": "user_reported",
+      "group": "body_dialogue",
+      "observed_result": "Body-cel crops at 214, 214.2, and 215 seconds show open and closed mouths. Another cel speaks at 332 seconds, but those three similar shapes alone do not demonstrate a full mouth cycle.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/body_dialogue.jpg",
+        "sha256": "1bfbd1e03c189d76ae5e56b4217fdb48716e5afafd06223aa0ef93d6335a0043",
+        "at": [
+          214.0,
+          214.2,
+          215.0,
+          332.0,
+          332.2,
+          333.0
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "subjects": [
+        "LadyMoon"
+      ],
+      "origin": "user_reported",
+      "group": "moon_blink",
+      "observed_result": "Native crops at 304 seconds show blinking combined with an open mouth without a rectangular patch; eyelids return to their original positions.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/moon_blink.jpg",
+        "sha256": "f6af791ad483d309de249eb5fbc77a3e4e190b4c1749a547a214ed9a80ba732f",
+        "at": [
+          304.06666666666666,
+          304.23333333333335,
+          304.4
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "subjects": [
+        "Eileen",
+        "Alder",
+        "LadyMoon"
+      ],
+      "origin": "user_reported",
+      "group": "cuts_and_effects",
+      "observed_result": "At 235.5 to 238 seconds the stair and rising particles develop. The face and mouth remain readable through silver particles at 369.5 to 370.5 seconds. The final-section cast and subtitles are legible.",
+      "evidence": {
+        "path": "../cinema_r4/final_review/cuts_and_effects.jpg",
+        "sha256": "253c2a53e11780555adf93505ac88c29550abb6f3b726d52db8fdf2893353f6f",
+        "at": [
+          199.96666666666667,
+          200.0,
+          200.03333333333333,
+          235.5,
+          238.0,
+          241.0,
+          369.5,
+          370.5,
+          374.0,
+          435.8,
+          465.0
+        ],
+        "method": "ordered_frames"
+      }
+    }
+  ],
+  "additional_native_frames": [
+    {
+      "path": "../cinema_r4/final_review/n006000.png",
+      "sha256": "f9c0282754ef4c7f47c6185e1079033d3addac127403e085937427cb2bbb66b1",
+      "at": 200,
+      "method": "still",
+      "observation": "Also inspected the first two native full frames after the 200-second cut; no visible cast jump."
+    },
+    {
+      "path": "../cinema_r4/final_review/n006001.png",
+      "sha256": "0eda063b24b0059bf2fc74b759ef8d3ded148320b327f315c07cd5d200a78824",
+      "at": 200.03333333333333,
+      "method": "still",
+      "observation": "Also inspected the first two native full frames after the 200-second cut; no visible cast jump."
+    }
+  ],
+  "self_found_and_repaired": [
+    "Preview cloud-strip edges were softened on all four sides.",
+    "Preview silver-particle density obscured the face; reduced density and face exclusion were checked again in the final film."
+  ],
+  "technical_delivery": "../cinema_r4/delivery.json",
+  "review": "../../R4_REVIEW.md",
+  "artistic_acceptance": "not_claimed",
+  "remaining_limits": [
+    "Limited-cel animation; extended hand actions, cloth, and workshop gears remain simplified.",
+    "Emotion keyframe samples do not replace real-time performance review."
+  ]
+}

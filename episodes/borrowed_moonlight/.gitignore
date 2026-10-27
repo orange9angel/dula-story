@@ -1,0 +1,10 @@
+# Rebuildable full-length PCM; source clips, provenance and mix reports are versioned.
+/assets3d/mixed_r3.wav
+/assets3d/mixed_r5.wav
+/assets3d/stems_r3/*.wav
+/assets3d/stems_r5/*.wav
+/assets3d/sfx/contact_foley_r3.wav
+
+# Local decoded/rendered frames. Keep compact review sheets and technical reports.
+/storyboard/cinema_r*/**/*.png
+!/storyboard/cinema_r5/preview/proof_*.png

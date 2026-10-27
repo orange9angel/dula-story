@@ -1,0 +1,25 @@
+{
+  "source": "output/cinema_r5_audio_source.mp4",
+  "source_sha256": "fdcbe56d99ff2fdfb63d22d46ac3ab457d19e4fb9325ae54b9517c69807f78d9",
+  "output": "output/borrowed_moonlight_cinema_r5_final.mp4",
+  "base_config": "hybrid/config/cinema_r5_act_0.json",
+  "patches": [
+    {
+      "config": "hybrid/config/cinema_r5_act_0.json"
+    },
+    {
+      "config": "hybrid/config/cinema_r5_act_1.json"
+    },
+    {
+      "config": "hybrid/config/cinema_r5_act_2.json"
+    },
+    {
+      "config": "hybrid/config/cinema_r5_act_3.json"
+    },
+    {
+      "config": "hybrid/config/cinema_r5_act_4.json"
+    }
+  ],
+  "report": "storyboard/cinema_r5/assembly.json",
+  "crf": 17
+}

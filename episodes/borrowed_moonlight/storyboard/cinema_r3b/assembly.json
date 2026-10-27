@@ -1,0 +1,241 @@
+{
+  "passed": true,
+  "checks": {
+    "frames": true,
+    "audio_packets_identical": true,
+    "audio_pcm_identical": true,
+    "boundaries": true,
+    "source_current": true,
+    "render_sources_current": true,
+    "deterministic": true
+  },
+  "source": "output/borrowed_moonlight_cinema_r3.mp4",
+  "source_sha256": "e2e017a93905faa8f22ce58541b87134a8d32a8b2e8f97c1262bd7e2250b16db",
+  "output": "output/borrowed_moonlight_cinema_r3_final.mp4",
+  "output_sha256": "a815f87fe7d1b846ecaef2e0ff88caa6c58ef88fb28988e74bcc77fa632a7461",
+  "frames": 14340,
+  "fps": 30.0,
+  "windows": [
+    {
+      "first": 810,
+      "last": 1050,
+      "file": "output\\cinema_r3b_patch_0.mp4",
+      "sha256": "af2e957d25042a52aa8c45ece884f6aa0ae6350c48f0a4ac5e276cf669ec9e69"
+    },
+    {
+      "first": 2340,
+      "last": 3000,
+      "file": "output\\cinema_r3b_patch_1.mp4",
+      "sha256": "10c941dacc0f4c3e030712dcee095f84a333367eca65b61f9c457747e695e407"
+    },
+    {
+      "first": 3960,
+      "last": 4200,
+      "file": "output\\cinema_r3b_patch_2.mp4",
+      "sha256": "abbbf52c1aacfc38ecb897e10f448429a8c318d877917920e69e1c6e2d889d1b"
+    },
+    {
+      "first": 7830,
+      "last": 8520,
+      "file": "output\\cinema_r3b_patch_3.mp4",
+      "sha256": "3a6c9411e2d73eaa1541b9d6746658ab79de93f2025e4d1b9ee1616628e6ef1c"
+    },
+    {
+      "first": 8790,
+      "last": 9000,
+      "file": "output\\cinema_r3b_patch_4.mp4",
+      "sha256": "7179d34ab05f1cb7a5550cf1fe1bb3cf93fbbbcfed94cb8b0e3728cf480fd616"
+    }
+  ],
+  "boundary_samples": [
+    {
+      "frame": 0,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.3343326822916667,
+      "passed": true
+    },
+    {
+      "frame": 809,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.9004734519675925,
+      "passed": true
+    },
+    {
+      "frame": 810,
+      "source": "output\\cinema_r3b_patch_0.mp4",
+      "mean_abs_rgb_error": 0.681896339699074,
+      "passed": true
+    },
+    {
+      "frame": 930,
+      "source": "output\\cinema_r3b_patch_0.mp4",
+      "mean_abs_rgb_error": 1.1668786168981482,
+      "passed": true
+    },
+    {
+      "frame": 1049,
+      "source": "output\\cinema_r3b_patch_0.mp4",
+      "mean_abs_rgb_error": 1.3133506944444444,
+      "passed": true
+    },
+    {
+      "frame": 1050,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.39347403067129627,
+      "passed": true
+    },
+    {
+      "frame": 2339,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.8630128761574074,
+      "passed": true
+    },
+    {
+      "frame": 2340,
+      "source": "output\\cinema_r3b_patch_1.mp4",
+      "mean_abs_rgb_error": 0.6863154658564815,
+      "passed": true
+    },
+    {
+      "frame": 2670,
+      "source": "output\\cinema_r3b_patch_1.mp4",
+      "mean_abs_rgb_error": 0.5707863136574074,
+      "passed": true
+    },
+    {
+      "frame": 2999,
+      "source": "output\\cinema_r3b_patch_1.mp4",
+      "mean_abs_rgb_error": 1.040341796875,
+      "passed": true
+    },
+    {
+      "frame": 3000,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 1.2983369502314814,
+      "passed": true
+    },
+    {
+      "frame": 3959,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 1.2393540219907409,
+      "passed": true
+    },
+    {
+      "frame": 3960,
+      "source": "output\\cinema_r3b_patch_2.mp4",
+      "mean_abs_rgb_error": 0.47515118634259257,
+      "passed": true
+    },
+    {
+      "frame": 4080,
+      "source": "output\\cinema_r3b_patch_2.mp4",
+      "mean_abs_rgb_error": 0.5225462962962963,
+      "passed": true
+    },
+    {
+      "frame": 4199,
+      "source": "output\\cinema_r3b_patch_2.mp4",
+      "mean_abs_rgb_error": 0.5308865017361111,
+      "passed": true
+    },
+    {
+      "frame": 4200,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.33340205439814813,
+      "passed": true
+    },
+    {
+      "frame": 7829,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.7504691116898148,
+      "passed": true
+    },
+    {
+      "frame": 7830,
+      "source": "output\\cinema_r3b_patch_3.mp4",
+      "mean_abs_rgb_error": 0.42270652488425925,
+      "passed": true
+    },
+    {
+      "frame": 8175,
+      "source": "output\\cinema_r3b_patch_3.mp4",
+      "mean_abs_rgb_error": 1.1245005063657407,
+      "passed": true
+    },
+    {
+      "frame": 8519,
+      "source": "output\\cinema_r3b_patch_3.mp4",
+      "mean_abs_rgb_error": 0.9472128182870371,
+      "passed": true
+    },
+    {
+      "frame": 8520,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.45781177662037037,
+      "passed": true
+    },
+    {
+      "frame": 8789,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.5726754195601852,
+      "passed": true
+    },
+    {
+      "frame": 8790,
+      "source": "output\\cinema_r3b_patch_4.mp4",
+      "mean_abs_rgb_error": 0.43092628761574076,
+      "passed": true
+    },
+    {
+      "frame": 8895,
+      "source": "output\\cinema_r3b_patch_4.mp4",
+      "mean_abs_rgb_error": 0.45888237847222224,
+      "passed": true
+    },
+    {
+      "frame": 8999,
+      "source": "output\\cinema_r3b_patch_4.mp4",
+      "mean_abs_rgb_error": 0.4644838686342593,
+      "passed": true
+    },
+    {
+      "frame": 9000,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 0.3360015190972222,
+      "passed": true
+    },
+    {
+      "frame": 14339,
+      "source": "output\\borrowed_moonlight_cinema_r3.mp4",
+      "mean_abs_rgb_error": 2.3148148148148147e-05,
+      "passed": true
+    }
+  ],
+  "determinism": [
+    {
+      "config": "hybrid/config/cinema_r3_full.json",
+      "passed": true
+    },
+    {
+      "config": "hybrid/config/cinema_r3b_patch_0.json",
+      "passed": true
+    },
+    {
+      "config": "hybrid/config/cinema_r3b_patch_1.json",
+      "passed": true
+    },
+    {
+      "config": "hybrid/config/cinema_r3b_patch_2.json",
+      "passed": true
+    },
+    {
+      "config": "hybrid/config/cinema_r3b_patch_3.json",
+      "passed": true
+    },
+    {
+      "config": "hybrid/config/cinema_r3b_patch_4.json",
+      "passed": true
+    }
+  ],
+  "note": "Same-duration multi-window picture repair. Unchanged picture is re-encoded; complete source audio is copied unchanged."
+}

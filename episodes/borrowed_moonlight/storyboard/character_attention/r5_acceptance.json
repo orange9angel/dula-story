@@ -1,0 +1,37 @@
+{
+  "format": "user_acceptance_with_deferred_issues",
+  "date": "2026-10-28",
+  "version": "R5",
+  "status": "accepted_with_deferred_issues",
+  "source": {
+    "path": "../../output/borrowed_moonlight_cinema_r5_final.mp4",
+    "sha256": "7ecf1a58a6ec4a89691e66395a9d528054ecb38cdd2bc0afc858e7bfa6ab01f6",
+    "duration_seconds": 478,
+    "bytes": 131936969
+  },
+  "user_feedback": "很棒，除了老人在屋子里还有波动的感觉，还有屋顶的时候画面有抖动，其它都不错了。这个可以不改了，先同步文档和skill还有git",
+  "issues": [
+    {
+      "id": "r5_room_alder_wavering",
+      "origin": "user_reported",
+      "description": "屋内老人仍有波动感",
+      "time_range": null,
+      "cause": "not_diagnosed",
+      "status": "deferred_by_user",
+      "fixed": false
+    },
+    {
+      "id": "r5_rooftop_frame_jitter",
+      "origin": "user_reported",
+      "description": "屋顶画面仍有抖动",
+      "time_range": null,
+      "cause": "not_diagnosed",
+      "status": "deferred_by_user",
+      "fixed": false
+    }
+  ],
+  "authorized_action": "Synchronize documentation, reusable skill lessons and Git; preserve accepted R5 production files and media.",
+  "prior_observations": "r5_observations.json",
+  "prior_judgments_preserved": true,
+  "acceptance_scope": "User accepts this delivery with two deferred issues; not a claim of defect-free animation or independently verified temporal stability."
+}

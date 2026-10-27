@@ -1,0 +1,1633 @@
+[
+  {
+    "t": 95,
+    "shot": "m13",
+    "kind": "establish",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 289.44000000000005,
+      "z": 0.9966666666666667
+    },
+    "coverage": [
+      -125.43999999999994,
+      -141.1199999999999,
+      1405.44,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 432.69333333333327,
+        "y": 596.4133333333333,
+        "h": 320.52799999999996,
+        "u": 0.4,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 136.19000858369097,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          432.69333333333327,
+          316.6964806866953
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 911.0933333333334,
+        "y": 648.24,
+        "h": 244.7813333333333,
+        "u": 0.5,
+        "phase": 2,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1300,
+          990,
+          307
+        ],
+        "actor": "Eileen",
+        "w": 143.8090333333333,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          911.0933333333334,
+          648.24
+        ],
+        "sourceImage": "./assets/cinema_r3b/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.6281833076982934,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "792d08388e9b06491000b15d4319267e323252f7c64e6b606e4e1259721d97ef"
+  },
+  {
+    "t": 104,
+    "shot": "m14",
+    "kind": "mid",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 928.835,
+      "cy": 144.95208333333335,
+      "z": 1.9729166666666664
+    },
+    "coverage": [
+      -586.3649999999998,
+      -707.3479166666666,
+      2444.035,
+      997.2520833333333
+    ],
+    "bodies": [
+      {
+        "x": 518.4683333333335,
+        "y": 752.6104166666667,
+        "h": 634.4899999999999,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 269.59017167381967,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          518.4683333333335,
+          198.90669706723895
+        ],
+        "bottleFrac": null
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.694519158222455,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "cd86561879a02b8378f5a0d09fb80f4bfa8450c69647fb6dbd64baffe7992687"
+  },
+  {
+    "t": 110,
+    "shot": "m15",
+    "kind": "two_mid",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 642.2483333333332,
+      "cy": 168.89166666666677,
+      "z": 1.4052083333333334
+    },
+    "coverage": [
+      -436.9516666666666,
+      -438.1583333333332,
+      1721.448333333333,
+      775.9416666666667
+    ],
+    "bodies": [
+      {
+        "x": 349.96500000000003,
+        "y": 601.6958333333333,
+        "h": 451.91499999999996,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 192.0153862660944,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          349.96500000000003,
+          207.32079756795423
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 945.7733333333333,
+        "y": 607.3166666666667,
+        "h": 308.02166666666665,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_attend",
+        "w": 135.91787010506206,
+        "facial": {
+          "jaw": 0.5,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "open",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          945.7733333333333,
+          333.715759312321
+        ],
+        "bottleFrac": null
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.7366239869718726,
+      "dimVeil": 0
+    },
+    "subtitle": "先生，您为什么把星星关在瓶子里？",
+    "missingAssets": [],
+    "sha256": "0bceb360bb04bf3972308686093ed016f8939eb47cceb3769d6e19ffc175be52"
+  },
+  {
+    "t": 112,
+    "shot": "m15",
+    "kind": "two_mid",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 642.2649999999999,
+      "cy": 167.47500000000002,
+      "z": 1.4156250000000001
+    },
+    "coverage": [
+      -444.93499999999995,
+      -444.07499999999993,
+      1729.4649999999997,
+      779.025
+    ],
+    "bodies": [
+      {
+        "x": 347.81499999999994,
+        "y": 603.4874999999998,
+        "h": 455.26499999999993,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 193.4387768240343,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          347.81499999999994,
+          206.18900214592264
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 948.04,
+        "y": 609.15,
+        "h": 310.30499999999995,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_attend",
+        "w": 136.92541547277935,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          948.04,
+          333.52091690544415
+        ],
+        "bottleFrac": null
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.7466526246110833,
+      "dimVeil": 0
+    },
+    "subtitle": "先生，您为什么把星星关在瓶子里？",
+    "missingAssets": [],
+    "sha256": "a0848e26277e9bfbf2aa11309959586159a63aa8ad64d8affed699931cfc776e"
+  },
+  {
+    "t": 118,
+    "shot": "m16",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 1049.2088888888889,
+      "cy": 123.30074074074082,
+      "z": 2.5074074074074075
+    },
+    "coverage": [
+      -876.4799999999998,
+      -959.899259259259,
+      2974.8977777777773,
+      1206.5007407407406
+    ],
+    "bodies": [
+      {
+        "x": 527.6681481481482,
+        "y": 895.5822222222223,
+        "h": 806.3822222222221,
+        "u": 0.1111111111111111,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 342.62592274678104,
+        "facial": {
+          "jaw": 0.5,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "open",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          527.6681481481482,
+          191.87241456048332
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 1590.808888888889,
+        "y": 905.611851851852,
+        "h": 549.6237037037037,
+        "u": 0.1111111111111111,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_attend",
+        "w": 242.52736495808128,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          1590.808888888889,
+          417.40741589727276
+        ],
+        "bottleFrac": null
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.7608719512229098,
+      "dimVeil": 0
+    },
+    "subtitle": "我没有关住它们。是它们的主人，忘记了怎么发光。",
+    "missingAssets": [],
+    "sha256": "9d86ce803349f2d95ea43d5cc4d2c618d3ad4598ea52f152d941ad3ddb10205e"
+  },
+  {
+    "t": 120,
+    "shot": "m16",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 1051.6266666666668,
+      "cy": 121.90222222222224,
+      "z": 2.5222222222222226
+    },
+    "coverage": [
+      -885.44,
+      -967.6977777777779,
+      2988.6933333333336,
+      1211.5022222222224
+    ],
+    "bodies": [
+      {
+        "x": 527.0044444444445,
+        "y": 898.7466666666667,
+        "h": 811.1466666666668,
+        "u": 0.3333333333333333,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 344.6503004291846,
+        "facial": {
+          "jaw": 0.5,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "open",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          527.0044444444445,
+          190.87904625655688
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 1596.4266666666667,
+        "y": 908.8355555555556,
+        "h": 552.8711111111112,
+        "u": 0.3333333333333333,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_attend",
+        "w": 243.96031836994592,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          1596.4266666666667,
+          417.7466029926775
+        ],
+        "bottleFrac": null
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.7605257452735977,
+      "dimVeil": 0
+    },
+    "subtitle": "我没有关住它们。是它们的主人，忘记了怎么发光。",
+    "missingAssets": [],
+    "sha256": "0ca1189d5103a5871b8f722e45cba4f59b9d1364b9f2b489ab8c926c196f4591"
+  },
+  {
+    "t": 134,
+    "shot": "m18",
+    "kind": "walk",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 398.0666666666666,
+      "cy": 38.48333333333346,
+      "z": 1.9895833333333335
+    },
+    "coverage": [
+      -1129.9333333333334,
+      -821.0166666666667,
+      1926.0666666666666,
+      897.9833333333336
+    ],
+    "bodies": [
+      {
+        "x": -15.766666666666652,
+        "y": 651.2750000000001,
+        "h": 639.85,
+        "u": 0.25,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 271.8675965665236,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          -15.766666666666652,
+          92.89374105865534
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 780.0666666666668,
+        "y": 633.7666666666669,
+        "h": 436.1166666666667,
+        "u": 1,
+        "phase": 1,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1200,
+          914,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_attend",
+        "w": 192.44116523400191,
+        "facial": {
+          "jaw": 0.5,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "open",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          780.0666666666668,
+          246.38510028653315
+        ],
+        "bottleFrac": null
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.7348866397107988,
+      "dimVeil": 0
+    },
+    "subtitle": "那您为什么不把它们还回去？",
+    "missingAssets": [],
+    "sha256": "f62931be40a535bfaf6daff4cf6190dee385088398aa0794ce028e6b275e9192"
+  },
+  {
+    "t": 142,
+    "shot": "m19",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 1021.1911111111112,
+      "cy": 120.86074074074054,
+      "z": 2.5166666666666666
+    },
+    "coverage": [
+      -911.6088888888887,
+      -966.3392592592593,
+      2953.9911111111114,
+      1208.0607407407404
+    ],
+    "bodies": [
+      {
+        "x": 497.72444444444454,
+        "y": 895.994074074074,
+        "h": 809.3599999999999,
+        "u": 0.2222222222222222,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_attend",
+        "w": 343.8911587982832,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          497.72444444444454,
+          189.68563344460335
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 1564.791111111111,
+        "y": 906.0607407407406,
+        "h": 551.6533333333333,
+        "u": 0.2222222222222222,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_attend",
+        "w": 243.42296084049664,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0.9633452654145643,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          1564.791111111111,
+          416.0534819059746
+        ],
+        "bottleFrac": null
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.7558712015870682,
+      "dimVeil": 0
+    },
+    "subtitle": "因为有些人，已经不愿意再打开自己的心了。",
+    "missingAssets": [],
+    "sha256": "73a22ae8c2fb675e2e391d5883a3b02987f9d85bdbe92069aacdd789d8537632"
+  },
+  {
+    "t": 151,
+    "shot": "m20",
+    "kind": "macro",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 3.9333333333338487,
+      "cy": -295.0133333333331,
+      "z": 3.3833333333333333
+    },
+    "coverage": [
+      -2594.466666666666,
+      -1756.6133333333328,
+      2602.3333333333335,
+      1166.5866666666666
+    ],
+    "bodies": [
+      {
+        "x": 734.7333333333336,
+        "y": 760.5866666666666,
+        "h": 741.6266666666666,
+        "u": 0.3333333333333333,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_respond",
+        "w": 330.4382425978987,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          734.7333333333336,
+          102.89768863419295
+        ],
+        "bottleFrac": [
+          0.38263665594855306,
+          0.31805157593123207
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.8344985551851485,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "4080a4bf949d892e5d9836abeefae6126be57deadd68472af4755019f27280fc"
+  },
+  {
+    "t": 156,
+    "shot": "m21",
+    "kind": "macro",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 8.571428571428442,
+      "cy": -156.68897959183664,
+      "z": 3.157142857142857
+    },
+    "coverage": [
+      -2416.1142857142854,
+      -1520.5746938775508,
+      2433.2571428571423,
+      1207.1967346938775
+    ],
+    "bodies": [
+      {
+        "x": 690.5142857142855,
+        "y": 828.3395918367348,
+        "h": 692.0457142857142,
+        "u": 0.14285714285714285,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_respond",
+        "w": 308.34701596397866,
+        "facial": {
+          "jaw": 0.2,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "half",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          690.5142857142855,
+          214.61996842289943
+        ],
+        "bottleFrac": [
+          0.38263665594855306,
+          0.31805157593123207
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.8895053967055241,
+      "dimVeil": 0
+    },
+    "subtitle": "您看！它醒了！",
+    "missingAssets": [],
+    "sha256": "6198af3e71d5392ef68ee33db9a69dfcdc6e477b48b008285c23052897b200b1"
+  },
+  {
+    "t": 163,
+    "shot": "m22",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 1017.7083333333333,
+      "cy": 136.4375,
+      "z": 2.5520833333333335
+    },
+    "coverage": [
+      -942.2916666666665,
+      -966.0625,
+      2977.708333333333,
+      1238.9375
+    ],
+    "bodies": [
+      {
+        "x": 486.875,
+        "y": 922.4791666666665,
+        "h": 820.7499999999999,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_respond",
+        "w": 434.3769614835948,
+        "facial": {
+          "jaw": 0.5,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "open",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          486.875,
+          200.07866737993334
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 1568.9583333333335,
+        "y": 932.6874999999998,
+        "h": 559.4166666666666,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_respond",
+        "w": 249.25298471824257,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          1568.9583333333335,
+          436.5859001910218
+        ],
+        "bottleFrac": [
+          0.38263665594855306,
+          0.31805157593123207
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.9512503357513993,
+      "dimVeil": 0
+    },
+    "subtitle": "不可能……这颗星星，已经熄灭了三十年。",
+    "missingAssets": [],
+    "sha256": "4099a4bedc3fd39e5f1a9b5df08368c3a2f2b2b91ff96860273d8783a6421b69"
+  },
+  {
+    "t": 172,
+    "shot": "m23",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 277.2766666666664,
+      "cy": -44.656666666666524,
+      "z": 2.6208333333333336
+    },
+    "coverage": [
+      -1735.5233333333335,
+      -1176.8566666666666,
+      2290.0766666666664,
+      1087.5433333333335
+    ],
+    "bodies": [
+      {
+        "x": -267.8566666666668,
+        "y": 762.5600000000002,
+        "h": 842.86,
+        "u": 0.25,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_respond",
+        "w": 446.07854493580595,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          -267.8566666666668,
+          20.698915834522268
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 843.3766666666666,
+        "y": 773.0433333333335,
+        "h": 574.4866666666667,
+        "u": 0.25,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_respond",
+        "w": 255.96755491881567,
+        "facial": {
+          "jaw": 0.5,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "open",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          843.3766666666666,
+          263.57736389684834
+        ],
+        "bottleFrac": [
+          0.38263665594855306,
+          0.31805157593123207
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.9633811496086954,
+      "dimVeil": 0
+    },
+    "subtitle": "也许它没有熄灭。只是太久，没有人跟它说话了。",
+    "missingAssets": [],
+    "sha256": "b8c2d433098ce51ca3754bec930d8eae10d5bd6fb1aa800dbf2e36bfc948765a"
+  },
+  {
+    "t": 180,
+    "shot": "m24",
+    "kind": "wide",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 273.77777777777777,
+      "z": 1.0777777777777777
+    },
+    "coverage": [
+      -187.73333333333323,
+      -191.8222222222222,
+      1467.7333333333331,
+      739.3777777777777
+    ],
+    "bodies": [
+      {
+        "x": 415.8222222222222,
+        "y": 605.7333333333332,
+        "h": 346.6133333333333,
+        "u": 0.3333333333333333,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          700,
+          925,
+          402
+        ],
+        "actor": "Alder",
+        "key": "Alder:room_respond",
+        "w": 183.44300523062287,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          415.8222222222222,
+          300.6542653352353
+        ],
+        "bottleFrac": null
+      },
+      {
+        "x": 872.8000000000001,
+        "y": 610.0444444444444,
+        "h": 236.24888888888887,
+        "u": 0.3333333333333333,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          274
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:room_respond",
+        "w": 105.26275708373129,
+        "facial": {
+          "jaw": 0,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "closed",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          872.8000000000001,
+          400.5343266475644
+        ],
+        "bottleFrac": [
+          0.38263665594855306,
+          0.31805157593123207
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "replacedBy": "story-particles"
+    },
+    "env": {
+      "transmission": 0.9027090520735034,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "2630bfa007e54e1a42cbbb8dd269e061c2983586a014dd9c56b1edbb914273ba"
+  },
+  {
+    "t": 38,
+    "shot": "m05",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "open",
+        "expr": "base",
+        "emotion": "curious",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8527183455226186,
+      "dimVeil": 0
+    },
+    "subtitle": "月亮，你今晚怎么这么暗呀？",
+    "missingAssets": [],
+    "sha256": "a650a308f414525ac38fdbb862cdf86712f6702650590bc95fa364e98909c7c1"
+  },
+  {
+    "t": 65,
+    "shot": "m09",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.2857142857142857,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "gentle",
+        "roll": 0.005738848727196182
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8395966459479338,
+      "dimVeil": 0
+    },
+    "subtitle": "别怕。",
+    "missingAssets": [],
+    "sha256": "3ddf343099532b1f7ba392f4e11aab73cded6d24b084e226d83f85e662f3a390"
+  },
+  {
+    "t": 71,
+    "shot": "m10",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "open",
+        "expr": "expr_tearful",
+        "emotion": "sad",
+        "roll": 0.0031153467384692044
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 6
+    },
+    "env": {
+      "transmission": 0.7638122261258259,
+      "dimVeil": 0
+    },
+    "subtitle": "我也常常一个人。",
+    "missingAssets": [],
+    "sha256": "2675c63d353d1c80506fa8dc088de36d1535c816737cb5a77387dde78cd9dbb1"
+  },
+  {
+    "t": 214,
+    "shot": "m29",
+    "kind": "macro",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 412,
+      "cy": 216,
+      "z": 1.5
+    },
+    "coverage": [
+      -740,
+      -432,
+      1564,
+      864
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1430,
+        "h": 1500,
+        "u": 0.14285714285714285,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1430,
+          1500
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 497.63513513513516,
+        "facial": {
+          "jaw": 0.2,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "half",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          640,
+          87.20000000000005
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7329446766313944,
+      "dimVeil": 0
+    },
+    "subtitle": "可如果每颗星星都愿意帮忙呢？",
+    "missingAssets": [],
+    "sha256": "2a84c0bd8fcca07160f0b27db2cc33cb47cbe9cdb99d63bd273f0e643285445a"
+  },
+  {
+    "t": 332,
+    "shot": "m45",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 680,
+      "cy": 226.66666666666674,
+      "z": 1.6666666666666667
+    },
+    "coverage": [
+      -600,
+      -493.33333333333326,
+      1960,
+      946.6666666666667
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1100,
+        "h": 1060,
+        "u": 0.14285714285714285,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1100,
+          1060
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp",
+        "w": 382.29508196721315,
+        "facial": {
+          "jaw": 0.5,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "open",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          650,
+          122.46799999999996
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8553649526060687,
+      "dimVeil": 0.39
+    },
+    "subtitle": "那我把我的灯送给您。",
+    "missingAssets": [],
+    "sha256": "eabd08ed1755ee0826e54c6628a1fe143153892f99f0fddb2afd620801713b10"
+  },
+  {
+    "t": 346,
+    "shot": "m47",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 680,
+      "cy": 226.66666666666674,
+      "z": 1.6666666666666667
+    },
+    "coverage": [
+      -600,
+      -493.33333333333326,
+      1960,
+      946.6666666666667
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1020,
+        "h": 1050,
+        "u": 0.14285714285714285,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1020,
+          1050
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp",
+        "w": 378.6885245901639,
+        "facial": {
+          "jaw": 0.2,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "half",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          650,
+          51.68999999999994
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7468520112746408,
+      "dimVeil": 0.39
+    },
+    "subtitle": "可是……我还在这里呀。",
+    "missingAssets": [],
+    "sha256": "799b0f2443126dbc12ae2af43aea12fd6f1d6255f57a8159996c4a3b6385c679"
+  },
+  {
+    "t": 354,
+    "shot": "m48",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.16666666666666666,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_lonely",
+        "emotion": "worried",
+        "roll": 0.005738848727196182
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6526453718821862,
+      "dimVeil": 0.39
+    },
+    "subtitle": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
+    "missingAssets": [],
+    "sha256": "4d07e807fe92a4a941c7c6fe5e72eacfd553595a08a0b351e9c89d2fad187cf1"
+  },
+  {
+    "t": 370,
+    "shot": "m49",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.6,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "LadyMoon",
+        "w": 910.9579831932773,
+        "portrait": true,
+        "key": "face:LadyMoon",
+        "eyeScreen": [
+          640,
+          209.01999999999998
+        ],
+        "mouth": "open",
+        "expr": "expr_revived",
+        "emotion": "relieved",
+        "roll": 0.005403705444409205
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 526
+    },
+    "env": {
+      "transmission": 0.6071351275706892,
+      "dimVeil": 0.325
+    },
+    "subtitle": "原来……还有人在等我。",
+    "missingAssets": [],
+    "sha256": "1232b0928f75722b7acab8f535536cc5c6272c8f24c29ac932add498e8244725"
+  },
+  {
+    "t": 465,
+    "shot": "m63",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 522.6666666666667,
+      "cy": 144,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -501.33333333333326,
+      -432,
+      1546.6666666666667,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1270,
+        "h": 1300,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1270,
+          1300
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 447.36842105263156,
+        "facial": {
+          "jaw": 0.2,
+          "emotion": null,
+          "blink": 0,
+          "mouthCel": "half",
+          "expressionCel": "base"
+        },
+        "eyeScreen": [
+          640,
+          81.41000000000008
+        ]
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.7666031253487596,
+      "dimVeil": 0
+    },
+    "subtitle": "晚安，月亮。明天见。",
+    "missingAssets": [],
+    "sha256": "52c934aa32701a563642003bab83c71dc7514baba22df3849cf95ccc84ba82e3"
+  }
+]

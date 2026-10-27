@@ -1,0 +1,187 @@
+[
+  {
+    "t": 261.1,
+    "shot": "m36",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 780,
+      "cy": -62,
+      "z": 2.5
+    },
+    "coverage": [
+      -1140,
+      -1142,
+      2700,
+      1018
+    ],
+    "bodies": [
+      {
+        "x": 580,
+        "y": 500,
+        "h": 436,
+        "u": 0,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          860,
+          821,
+          218
+        ],
+        "actor": "Eileen",
+        "w": 256.15,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          580,
+          500
+        ],
+        "sourceImage": "./assets/cinema_r3b/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7049550464985145,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "8af7b03f861f028b8b5b2a7a5eff7a550fa6c5c13b51097ec79918f5a470ed2b"
+  },
+  {
+    "t": 272.5,
+    "shot": "m37",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 620.088888888889,
+      "cy": 371.2,
+      "z": 0.8592592592592593
+    },
+    "coverage": [
+      -39.82222222222208,
+      0,
+      1280,
+      742.4
+    ],
+    "bodies": [
+      {
+        "x": 756.4494276094276,
+        "y": 338.7629629629631,
+        "h": 68.77979797979802,
+        "u": 0.6420454545454538,
+        "phase": 5.1363636363636305,
+        "index": 1,
+        "planted": "left",
+        "plate": [
+          1158.369318181818,
+          492.8125000000003,
+          100.05681818181824
+        ],
+        "actor": "Eileen",
+        "w": 40.40813131313134,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          756.4494276094276,
+          338.7629629629631
+        ],
+        "sourceImage": "./assets/cinema_r3b/walk_1.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.852484685762868,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "809a8b92dc1b1177fc247deb2f388b74b45d3747ebf53bcf57fca26053137124"
+  },
+  {
+    "t": 283.9,
+    "shot": "m38",
+    "kind": "establish",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 335.1380416666667,
+      "z": 0.8991666666666664
+    },
+    "coverage": [
+      -50.55999999999983,
+      -53.301958333333175,
+      1330.56,
+      723.5780416666666
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 463.179375,
+        "h": 172.63999999999996,
+        "u": 0.9874999999999972,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          960,
+          718,
+          240
+        ],
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "w": 107.06889774236386
+      },
+      {
+        "x": 532.1,
+        "y": 558.1313749999999,
+        "h": 151.05999999999997,
+        "u": 1,
+        "phase": 5,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          810,
+          850,
+          210
+        ],
+        "actor": "Eileen",
+        "w": 88.74774999999998,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          532.1,
+          558.1313749999999
+        ],
+        "sourceImage": "./assets/cinema_r3b/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.9287684580158853,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "01ec148c37de06c6e62216056870ec784d7ee07d3b2e0c71268aa6898de8829a"
+  }
+]

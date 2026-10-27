@@ -1,5 +1,45 @@
 # 《借走月光的女孩》borrowed_moonlight — 制作笔记
 
+## 当前交付：R5 唇线、眨眼与女神长句节奏
+
+- **2026-10-28 用户接受当前R5，本轮停止修片。** 用户仍观察到屋内老人有波动感、
+  屋顶画面有抖动，明确表示暂不修改。两项记为已知保留问题，原因和具体时点尚未定位，
+  不改写为已修复；见[验收与保留项](storyboard/character_attention/r5_acceptance.json)。
+- [完整成片](output/borrowed_moonlight_cinema_r5_final.mp4)，478秒 / 1280×720 / 30fps；
+  [46.4秒修订片段](output/borrowed_moonlight_r5_review_clips.mp4)。R4原片保留。
+- 当前viewer：`hybrid/art_pass_r5.html`。修掉女孩笑脸开口后的残留唇线；老人侧面口型
+  重画，惊讶/释然眨眼使用各自原画，加入半闭眼并保持眼镜位置。
+- 月亮夫人m03同声线原生慢速重录，9.096秒→12.6秒；m43延至329秒，接两秒空镜。
+  其他36句时序不变；313–331秒以外混音PCM保持一致。
+- [修订与实际复看记录](R5_REVIEW.md)；[技术交付检查](storyboard/cinema_r5/delivery.json)。
+- 共享实现与嘴眼/配音教训已提交dula-skills：`d04ced6`；本次接受保留项与连续运动
+  审片边界：`24f8edd`（cel-cinema、character-attention-review）。
+
+## 上轮交付：R4 房间交流、嘴眼与剧情粒子修订
+
+- 完整片：[borrowed_moonlight_cinema_r4_final.mp4](output/borrowed_moonlight_cinema_r4_final.mp4)，
+  478 秒 / 1280×720 / 30fps / 14340帧；R3原片保留。
+- R4 viewer：`hybrid/art_pass_r4.html`。房间四张新原画、桌边站位与相互朝向的摄影；
+  12张全身/房间画接入同图嘴眼，修复肖像矩形补丁；星瓶粒子随苏醒和传播发展。
+- 完整复制R3音轨；音频包与解码PCM比对一致，70次脚步时钟不变。
+- 技术验收：[delivery.json](storyboard/cinema_r4/delivery.json)；实际复看、修改与
+  有限动画边界：[R4_REVIEW.md](R4_REVIEW.md)。最终MP4抽出51帧，亲看8组画面及嘴眼原生裁区。
+- 共享实现及经验已提交dula-skills：`af494d6`、`791831b`。
+
+## 上轮交付：R3 空间、步态与声音修订
+
+- 完整片：[borrowed_moonlight_cinema_r3_final.mp4](output/borrowed_moonlight_cinema_r3_final.mp4)，
+  478 秒 / 1280×720 / 30fps；旧 `art_pass_full.mp4` 保留。
+- R3 viewer：`hybrid/art_pass_r3b.html`。人物位置、比例、接触与灯光锚以最终绘画空间
+  为准；星阶有生成前 clean plate；步态使用明确承重脚原画。
+- 女孩 19 句换原生儿童感声线；37 句 QC 通过，重建口型；70 次脚步按新步态重排。
+  原有本集 Suno 音乐保留，修正环境底床越界。
+- 技术验收：[delivery.json](storyboard/cinema_r3b/delivery.json)；
+  实际观察、修改、声音证据和有限动画边界：[R3_REVIEW.md](R3_REVIEW.md)。
+- 共用工具已进入 dula-skills，提交 `23da970`；本集配置与原画留在本集。
+
+以下保留历史制作记录，不将旧轮次的“通过”当作当前版本的审美结论。
+
 ## 立项
 
 - 用户定稿来源：`D:\Download\借走月光的女孩_动画制作圣经_完整版.docx`（提取件存 `bible_source.txt`）。

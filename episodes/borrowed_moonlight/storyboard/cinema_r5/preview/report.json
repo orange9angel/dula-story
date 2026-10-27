@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "guards": [
+    {
+      "case": "mouth_half",
+      "x": 751,
+      "y": 608,
+      "alpha": 255,
+      "passed": true
+    },
+    {
+      "case": "mouth_half",
+      "x": 746,
+      "y": 610,
+      "alpha": 255,
+      "passed": true
+    },
+    {
+      "case": "mouth_half",
+      "x": 625,
+      "y": 643,
+      "alpha": 255,
+      "passed": true
+    },
+    {
+      "case": "mouth_open",
+      "x": 751,
+      "y": 608,
+      "alpha": 255,
+      "passed": true
+    },
+    {
+      "case": "mouth_open",
+      "x": 746,
+      "y": 610,
+      "alpha": 255,
+      "passed": true
+    },
+    {
+      "case": "mouth_open",
+      "x": 625,
+      "y": 643,
+      "alpha": 255,
+      "passed": true
+    },
+    {
+      "case": "spectacle_landmarks",
+      "emotion": "surprised",
+      "blink": 0.5,
+      "changed": [],
+      "passed": true
+    },
+    {
+      "case": "spectacle_landmarks",
+      "emotion": "surprised",
+      "blink": 1,
+      "changed": [],
+      "passed": true
+    },
+    {
+      "case": "spectacle_landmarks",
+      "emotion": "relieved",
+      "blink": 0.5,
+      "changed": [],
+      "passed": true
+    },
+    {
+      "case": "spectacle_landmarks",
+      "emotion": "relieved",
+      "blink": 1,
+      "changed": [],
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "times": [
+    118,
+    118.2,
+    118.4,
+    119.2,
+    120.3,
+    120.4,
+    120.5,
+    120.666667,
+    241.166667,
+    241.233333,
+    241.3,
+    241.366667,
+    241.433333,
+    241.5,
+    244.966667,
+    245.066667,
+    200.6,
+    200.8,
+    201,
+    201.2,
+    248.6,
+    248.8,
+    249,
+    249.2,
+    254.6,
+    254.8,
+    255,
+    255.2,
+    435.6,
+    435.8,
+    436,
+    436.2,
+    436.4,
+    437,
+    438,
+    440,
+    464.6,
+    464.8,
+    465,
+    465.2,
+    163,
+    163.2,
+    164,
+    315.8,
+    320,
+    325.5,
+    328,
+    329
+  ],
+  "proofs": [
+    "Alder-room",
+    "Alder-respond",
+    "Alder-shocked",
+    "Alder-relieved",
+    "Eileen-smile",
+    "Eileen-determined"
+  ]
+}

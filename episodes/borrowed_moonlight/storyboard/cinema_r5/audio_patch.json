@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "checks": {
+    "dialogue_edges_unchanged": true,
+    "music_edges_unchanged": true,
+    "ambience_edges_unchanged": true,
+    "effects_edges_unchanged": true,
+    "outside_pcm_identical": true
+  },
+  "window": [
+    313,
+    331
+  ],
+  "old_duration": 9.186,
+  "new_duration": 12.69,
+  "voice_at": 315.6,
+  "mix_peak_in_window": 0.506537675857544,
+  "output": "assets3d/mixed_r5.wav",
+  "sha256": "3d03ee1399f95b0866b6e4fb6c9d3d27aa3d46d4ba1ae71a6d7239e41d4ef490",
+  "stem_sources": {
+    "dialogue": {
+      "path": "assets3d/stems_r3/dialogue_stem.wav",
+      "sha256": "1076d5599d13326fdc5a627c9cb41f84ee10c6979fb3b90665cfb4be31ed2a7e"
+    },
+    "music": {
+      "path": "assets3d/stems_r3/music_stem.wav",
+      "sha256": "4ea2bd35f605e3ba4caccf0125c5bf7604fb0d14c8bd4cf2393c8241b6f38c48"
+    },
+    "ambience": {
+      "path": "assets3d/stems_r3/ambience_stem.wav",
+      "sha256": "47027c3be9450dbeccd6402ecc3e825234f60dc50e3c9fb4c541e513bf9d749b"
+    },
+    "effects": {
+      "path": "assets3d/stems_r3/effects_stem.wav",
+      "sha256": "254e941ca98bdc7e6451a26a97220034e327afc9c77faf2b12cab8fa757c4a17"
+    }
+  },
+  "recipe": {
+    "sample_rate": 48000,
+    "window": [
+      313,
+      331
+    ],
+    "at": 315.6,
+    "old_processed_duration": 9.186,
+    "source_mix": "assets3d/mixed_r3.wav",
+    "source_sha256": "d3b1c91e9e49f33f2d2c845a85c8b8852eaba9981109c4b1a44e81b83e7a3536",
+    "output_mix": "assets3d/mixed_r5.wav",
+    "voice": "assets3d/dialogue/cinema_r5/m03_slow.wav",
+    "filter": "highpass=f=250,lowpass=f=6500,aecho=0.5:0.4:45|90:0.22|0.12",
+    "voice_peak": 0.5,
+    "global_gain": 1,
+    "stems": {
+      "dialogue": "assets3d/stems_r3/dialogue_stem.wav",
+      "music": "assets3d/stems_r3/music_stem.wav",
+      "ambience": "assets3d/stems_r3/ambience_stem.wav",
+      "effects": "assets3d/stems_r3/effects_stem.wav"
+    },
+    "output_stems": "assets3d/stems_r5",
+    "placed_voice": "assets3d/dialogue/cinema_r5/m03_placed.wav",
+    "duck_db": {
+      "music": 7,
+      "ambience": 2
+    },
+    "report": "storyboard/cinema_r5/audio_patch.json"
+  },
+  "note": "Technical PCM verification only, not emotional listening acceptance."
+}

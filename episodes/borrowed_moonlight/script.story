@@ -246,14 +246,14 @@
 [Eileen]被遗忘，也会让人消失吗？
 
 43
-00:05:15,000 --> 00:05:25,000
+00:05:15,000 --> 00:05:29,000
 {Event:Beat|id=m43|move=slow_drift|shot=lady_half|scene=moonpalace|action=半身慢移：月亮夫人轻触胸前，殿内月光逐缕熄灭}
 {Event:Cue|name=MOONLIGHT_DIM|offset=2}
-{Event:Act|id=m03|rate=-8|context=数自己的伤口，平静得让人心疼。|emotion=sad|gaze=none|camera=speech}
+{Event:Act|id=m03|rate=-25|context=缓慢袒露伤口，会的之后停一拍，相信明天与仰望天空之后停顿，一颗星轻轻落下。|emotion=sad|gaze=none|camera=speech}
 [LadyMoon]会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。
 
 44
-00:05:25,000 --> 00:05:31,000
+00:05:29,000 --> 00:05:31,000
 {Event:Beat|id=m44|move=hold|shot=palace_wide|scene=moonpalace|action=远景：纱幕失去亮度，银粉缓缓下沉}
 
 45

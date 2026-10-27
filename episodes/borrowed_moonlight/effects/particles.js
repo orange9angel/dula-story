@@ -45,7 +45,7 @@ void main(){
 // spec.anchor：Object3D（活体 getWorldPosition）或 fn(t,out)→out；null=原点（pos 直接给世界坐标）。
 export class ParticleSystem{
   constructor(scene,{count,seed=1,build,anchor=null,blending=THREE.AdditiveBlending}){
-    this.count=count;this.anchor=anchor;
+    this.count=count;this.anchor=anchor;this.seed=seed;
     const g=new THREE.BufferGeometry();
     this.pos=new Float32Array(count*3);this.col=new Float32Array(count*3);
     this.sz=new Float32Array(count);this.al=new Float32Array(count);

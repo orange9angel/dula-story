@@ -10,9 +10,9 @@
     "identityPolicy": "preserve-native-voice"
   },
   "Eileen": {
-    "voice": "zh_female_wenjingmaomao_uranus_bigtts",
-    "name": "文静毛毛 2.0",
-    "reason": "R2 改选：\"语调轻柔、声线软萌，安静乖巧的萝莉音\"——萝莉龄+安静乖巧正对 11 岁\"天真不奶气、轻而坚定\"，无 mengyatou 的元气过头与整词崩坏前科；语速偏慢（e01 4.44s vs 同句他人 ~2.8s），长句用 speech_rate 吸收；候排 linjianvhai（F0 ~200Hz 偏青年龄）/qingchezizi（清澈少年音但 e16 1.92s 偏赶）/yingtaowanzi（演绎类萝莉但跳脱，e16 F0 341Hz 元气风险）",
+    "voice": "ICL_uranus_zh_female_yuanqitianmei_tob",
+    "name": "元气甜妹（自然克制演绎）",
+    "reason": "R3 原生声线重选。匿名 A/B/C 两句辅助音频复核更接近9–12岁；无后期升调。辅助模型观察不等于人工听审。证据 tmp/voice_audition/r3/model_observation.json。",
     "locale": "zh-CN",
     "identityPolicy": "preserve-native-voice"
   },

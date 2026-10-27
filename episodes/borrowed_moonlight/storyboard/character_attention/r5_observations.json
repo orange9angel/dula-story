@@ -1,0 +1,161 @@
+{
+  "format": "focused_revision_observations",
+  "source": {
+    "path": "../../output/borrowed_moonlight_cinema_r5_final.mp4",
+    "sha256": "7ecf1a58a6ec4a89691e66395a9d528054ecb38cdd2bc0afc858e7bfa6ab01f6"
+  },
+  "baseline": {
+    "path": "../cinema_r5/baseline/manifest.json",
+    "source_sha256": "9f9e2183489877e39ee56e661c60303eaadf9eb961d19f487197eb6f6cdf26b5",
+    "prior_judgment_preserved": "R4 no-rectangle observations did not establish clean smile corners or stable spectacles. These failures were reported by the user."
+  },
+  "observations": [
+    {
+      "group": "room_alder",
+      "origin": "user_reported",
+      "result": "Final native crops show a smaller mouth opening beneath the moustache; half and closed blinks retain spectacle placement.",
+      "evidence": {
+        "path": "../cinema_r5/final_review/room_alder.jpg",
+        "sha256": "065d63a3137fc8178f1b0c7bef114b509082c961521f8fab4255a45883df56ca",
+        "at": [
+          118.0,
+          118.2,
+          118.4,
+          119.2,
+          120.3,
+          120.4,
+          120.5,
+          120.66666666666667
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "group": "roof_alder",
+      "origin": "user_reported",
+      "result": "Eight consecutive final frames show open, half, closed, half and reopened eyes with the spectacle rims staying in place.",
+      "evidence": {
+        "path": "../cinema_r5/final_review/roof_alder.jpg",
+        "sha256": "ac70cb76d1c505ac89d1df39588c3751e046f60ef37ba480a16c278228207697",
+        "at": [
+          241.23333333333332,
+          241.26666666666668,
+          241.3,
+          241.33333333333334,
+          241.36666666666667,
+          241.4,
+          241.43333333333334,
+          241.46666666666667
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "group": "roof_girl",
+      "origin": "user_reported",
+      "result": "Old smile-corner dashes seen in R4 at 249 and 255.2 seconds are absent in the corresponding R5 speaking-mouth crops.",
+      "evidence": {
+        "path": "../cinema_r5/final_review/roof_girl.jpg",
+        "sha256": "22c9b815f801c76fedf044b55b89209b0df3b63a868c57b26281c328016d21fb",
+        "at": [
+          200.6,
+          200.8,
+          201.0,
+          201.2,
+          248.6,
+          248.8,
+          249.0,
+          249.2,
+          254.6,
+          254.8,
+          255.0,
+          255.2
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "group": "end_girl",
+      "origin": "user_reported",
+      "result": "At 436 to 440 seconds the speaking mouth no longer leaves a separate smile-corner dash beside it. Closed smile remains when not speaking.",
+      "evidence": {
+        "path": "../cinema_r5/final_review/end_girl.jpg",
+        "sha256": "23e796e3eafc3deb85743cfc5ba8b8c2031e53af07fbe5c5e1b6bb3bd1e9cd05",
+        "at": [
+          435.6,
+          435.8,
+          436.0,
+          436.2,
+          436.4,
+          437.0,
+          438.0,
+          440.0
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "group": "room_respond",
+      "origin": "user_reported",
+      "result": "The second room pose speaks and blinks with its own drawn variants; the final 163 to 164.3 second sequence retains the nose and glasses.",
+      "evidence": {
+        "path": "../cinema_r5/final_review/room_respond.jpg",
+        "sha256": "4abd54902086175b0ee9c0a8a8b7a11e68bc6f76e2a865a763f58310adadccee",
+        "at": [
+          163.0,
+          163.2,
+          164.03333333333333,
+          164.1,
+          164.16666666666666,
+          164.3
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "group": "goodnight",
+      "origin": "user_reported",
+      "result": "Corrected the initial crop that landed on the torso. The actual final head crop shows mouth changes; darkness limits fine lip-edge assessment.",
+      "evidence": {
+        "path": "../cinema_r5/final_review/goodnight.jpg",
+        "sha256": "35656ccc016e67ddafc9837eb4dde36de95624cc79bd1361589212785312058c",
+        "at": [
+          464.6,
+          464.8,
+          465.0,
+          465.2
+        ],
+        "method": "ordered_frames"
+      }
+    },
+    {
+      "group": "long_line",
+      "origin": "user_reported",
+      "result": "The LadyMoon shot and subtitle persist through 328 seconds, then switch to the wide reaction at 329. This is visual timing evidence, not listening evidence.",
+      "evidence": {
+        "path": "../cinema_r5/final_review/long_line.jpg",
+        "sha256": "333c712068c32fa862b075c7a701d758da7575959b4ec5adc879f31f94114db1",
+        "at": [
+          315.8,
+          320.0,
+          325.5,
+          328.0,
+          329.0,
+          330.0
+        ],
+        "method": "ordered_frames"
+      }
+    }
+  ],
+  "audio": {
+    "requested_change": "Slow LadyMoon longest line, preserve native identity and let phrases settle.",
+    "old_duration": 9.096,
+    "new_duration": 12.6,
+    "source": "../cinema_r5/audio_patch.json",
+    "transcript_qc": "../cinema_r5/m03_qc.md",
+    "listening": "No direct audio perception claimed; duration, text and signal checks are separate from emotional acting judgment."
+  },
+  "artistic_acceptance": "not_claimed",
+  "technical_delivery": "../cinema_r5/delivery.json",
+  "review": "../../R5_REVIEW.md"
+}

@@ -1,0 +1,4084 @@
+[
+  {
+    "t": 3,
+    "shot": "m01",
+    "kind": "establish",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 358.1644628099173,
+      "z": 0.8412878787878788
+    },
+    "coverage": [
+      -6.10909090909081,
+      -5.271900826446256,
+      1286.1090909090908,
+      721.600826446281
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8667012434511842,
+      "dimVeil": 0
+    },
+    "subtitle": "很久很久以前，有一个王国，那里一年四季都下着雪。",
+    "missingAssets": [],
+    "sha256": "c0f421118d2e5b1ceab03b8ff21a591c75bcf66c516d8f95892b515c16ea065a"
+  },
+  {
+    "t": 14,
+    "shot": "m02",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 625.1458333333335,
+      "cy": 1123.5041666666666,
+      "z": 3.7135416666666665
+    },
+    "coverage": [
+      -2226.8541666666665,
+      -480.7458333333333,
+      3477.1458333333335,
+      2727.7541666666666
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8713523583356593,
+      "dimVeil": 0
+    },
+    "subtitle": "人们说，那是因为春天在很久以前，迷了路。",
+    "missingAssets": [],
+    "sha256": "6fe5b3a458a797822b5f96eb6a68b97d41941403aef6097b66f26a2a7fdc01b5"
+  },
+  {
+    "t": 23,
+    "shot": "m03",
+    "kind": "wide",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 742,
+      "cy": 96,
+      "z": 1.5
+    },
+    "coverage": [
+      -410,
+      -552,
+      1894,
+      744
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8377986514847642,
+      "dimVeil": 0
+    },
+    "subtitle": "可真正的原因是……再也没有人记得，春天是什么模样了。",
+    "missingAssets": [],
+    "sha256": "0acaf65c04bff52cf43b36fe8d6350bd369a9507c72259cf39a914049fd79cfd"
+  },
+  {
+    "t": 27.5,
+    "shot": "m04",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 488.1580729166666,
+      "cy": 197.32500000000005,
+      "z": 1.2098958333333334
+    },
+    "coverage": [
+      -441.04192708333335,
+      -325.3499999999999,
+      1417.3580729166665,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 729.2333729172199,
+        "y": 661.2471000004151,
+        "h": 241.41425000034585,
+        "u": 0.007781891227837207,
+        "phase": 0.046691347367023246,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1209.0661730526595,
+          1019.2996297894947,
+          249.4163581579122
+        ],
+        "actor": "Eileen",
+        "w": 132.27489114602284,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          729.2333729172199,
+          661.2471000004151
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8286113636091301,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "b1b25c1d10879afe8d06af2c31eb7aa4e2ac70b15240144bbf7b1615d7223964"
+  },
+  {
+    "t": 30,
+    "shot": "m04",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 502.3989583333333,
+      "cy": 193.95000000000005,
+      "z": 1.2177083333333334
+    },
+    "coverage": [
+      -432.8010416666666,
+      -332.0999999999999,
+      1437.5989583333333,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 703.6469517813268,
+        "y": 629.8297450859951,
+        "h": 217.10812090499587,
+        "u": 0.3617936117936118,
+        "phase": 2.170761670761671,
+        "index": 1,
+        "planted": "left",
+        "plate": [
+          1166.5847665847666,
+          987.4385749385749,
+          222.8654791154791
+        ],
+        "actor": "Eileen",
+        "w": 110.3632947933729,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          703.6469517813268,
+          629.8297450859951
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_1.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8284695557143025,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "7cb189ffd30e4047f3f74ccf993e0baebc9ed46c2f10ceb69511fea0870f5ad9"
+  },
+  {
+    "t": 34,
+    "shot": "m04",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 525.590625,
+      "cy": 188.55000000000007,
+      "z": 1.2302083333333333
+    },
+    "coverage": [
+      -419.2093749999999,
+      -342.89999999999986,
+      1470.390625,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 657.2084570826969,
+        "y": 575.1321240620229,
+        "h": 174.5267700516856,
+        "u": 0.9688724350886512,
+        "phase": 5.813234610531907,
+        "index": 6,
+        "planted": "right",
+        "plate": [
+          1093.7353077893617,
+          932.8014808420214,
+          177.33456736835114
+        ],
+        "actor": "Eileen",
+        "w": 94.17173634038869,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          657.2084570826969,
+          575.1321240620229
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_6.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8363166518651746,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "f63fa07ab86b11e2c854e6d052e185876f353591389aaff68b20fbc8e2f558fc"
+  },
+  {
+    "t": 38,
+    "shot": "m05",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "open",
+        "expr": "base",
+        "emotion": "curious",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8527183455226186,
+      "dimVeil": 0
+    },
+    "subtitle": "月亮，你今晚怎么这么暗呀？",
+    "missingAssets": [],
+    "sha256": "4e5b1ca6c8d8f34ca4bbb2d19aec7610ce72103709ff164493ff6f47acb35e38"
+  },
+  {
+    "t": 46,
+    "shot": "m06",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 182.125,
+      "cy": 887.1749999999998,
+      "z": 3.09375
+    },
+    "coverage": [
+      -2193.8749999999995,
+      -449.32499999999993,
+      2558.1249999999995,
+      2223.6749999999997
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 2
+    },
+    "env": {
+      "transmission": 0.8945540949281947,
+      "dimVeil": 0
+    },
+    "subtitle": "是不是，也没有人陪你说话？",
+    "missingAssets": [],
+    "sha256": "5cf7d7f3058ee59270294abda77f3fe39bee91590b5b3a0bf0e286dd1d17673d"
+  },
+  {
+    "t": 54,
+    "shot": "m07",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 481.33333333333326,
+      "cy": 108,
+      "z": 1.4166666666666667
+    },
+    "coverage": [
+      -606.6666666666667,
+      -504,
+      1569.3333333333333,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 630,
+        "y": 1420,
+        "h": 1500,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          630,
+          1420,
+          1500
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 516.1943319838057
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.9110833136344191,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "5e79fed0f374b2b0306229a6623f251438e1a280c799cecea3c7727a4b8de7eb"
+  },
+  {
+    "t": 60,
+    "shot": "m08",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 481.33333333333326,
+      "cy": 108,
+      "z": 1.4166666666666667
+    },
+    "coverage": [
+      -606.6666666666667,
+      -504,
+      1569.3333333333333,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 630,
+        "y": 1420,
+        "h": 1500,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          630,
+          1420,
+          1500
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 516.1943319838057
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 4
+    },
+    "env": {
+      "transmission": 0.886149003545357,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "6578f5f2899bf79f541fcc4054ee07a57faea39c81a5c49761b18ba04845dfc4"
+  },
+  {
+    "t": 66,
+    "shot": "m09",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "gentle",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8280418857064531,
+      "dimVeil": 0
+    },
+    "subtitle": "别怕。",
+    "missingAssets": [],
+    "sha256": "17e448d8c44ff89d50b37a133e9aa0a5694b30b063379b4c9c754e935bc11422"
+  },
+  {
+    "t": 74,
+    "shot": "m10",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_tearful",
+        "emotion": "sad",
+        "roll": 0.00799658882433204
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 1
+    },
+    "env": {
+      "transmission": 0.7239380090678946,
+      "dimVeil": 0
+    },
+    "subtitle": "我也常常一个人。",
+    "missingAssets": [],
+    "sha256": "1eb4df9b19020c077817427a1c927312c558ca4ad045f6071e0df1e61c9e882e"
+  },
+  {
+    "t": 78.5,
+    "shot": "m11",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 539.0740740740739,
+      "cy": -91.64351851851848,
+      "z": 1.8923611111111114
+    },
+    "coverage": [
+      -914.2592592592594,
+      -909.1435185185185,
+      1992.4074074074072,
+      725.8564814814815
+    ],
+    "bodies": [
+      {
+        "x": 732.7988736267575,
+        "y": 494.9772166446096,
+        "h": 261.7947860526323,
+        "u": 0.018169596347213483,
+        "phase": 0.09084798173606742,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1087.9650052091122,
+          927.4925957040846,
+          172.92866601641765
+        ],
+        "actor": "Eileen",
+        "w": 143.44172652467142,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          732.7988736267575,
+          494.9772166446096
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6699965866102633,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "672c009560fc9f6da35999f18ed652a1b628904958ff74d19d4e7cb217423246"
+  },
+  {
+    "t": 81,
+    "shot": "m11",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 560.8333333333335,
+      "cy": -99.16666666666652,
+      "z": 1.9791666666666667
+    },
+    "coverage": [
+      -959.1666666666665,
+      -954.1666666666665,
+      2080.8333333333335,
+      755.8333333333335
+    ],
+    "bodies": [
+      {
+        "x": 677.1083400375437,
+        "y": 407.98468087959236,
+        "h": 185.92575087154734,
+        "u": 0.5050281576830248,
+        "phase": 2.525140788415124,
+        "index": 4,
+        "planted": "right",
+        "plate": [
+          1033.4368463395012,
+          860.3061142397426,
+          117.42679002413517
+        ],
+        "actor": "Eileen",
+        "w": 94.51225669303656,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          677.1083400375437,
+          407.98468087959236
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_4.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6459676830040482,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "281fef3f15c899abb81d3d5ae27ac4af7af91b97b99f3ea0c884bf4e6fa158d9"
+  },
+  {
+    "t": 83.5,
+    "shot": "m11",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 584.9074074074074,
+      "cy": -105.53240740740716,
+      "z": 2.0659722222222223
+    },
+    "coverage": [
+      -1001.7592592592591,
+      -998.0324074074072,
+      2171.574074074074,
+      786.9675925925928
+    ],
+    "bodies": [
+      {
+        "x": 617.1284725106286,
+        "y": 314.0122978090617,
+        "h": 103.33463571022301,
+        "u": 0.9866509088061287,
+        "phase": 4.9332545440306435,
+        "index": 7,
+        "planted": "right",
+        "plate": [
+          979.4950982137136,
+          793.8421745847543,
+          62.52179639610132
+        ],
+        "actor": "Eileen",
+        "w": 53.604842274678184,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          617.1284725106286,
+          314.0122978090617
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_7.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6277128406588328,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "e8eae565c8ace79cab39a49df91124091fe18547f078b7294a6a7822299c53a0"
+  },
+  {
+    "t": 87,
+    "shot": "m12",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 626,
+      "cy": -214,
+      "z": 3.5000000000000004
+    },
+    "coverage": [
+      -2062,
+      -1726,
+      3314,
+      1298
+    ],
+    "bodies": [
+      {
+        "x": 656.7999999999997,
+        "y": 466.39999999999964,
+        "h": 156.79999999999998,
+        "u": 0.5,
+        "phase": 1,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          971,
+          783,
+          56
+        ],
+        "actor": "Eileen",
+        "w": 85.91333333333331,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          656.7999999999997,
+          466.39999999999964
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6132123634866715,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "6a278a6893e87b4035c5b7365e54d165974579485d71c52a025f8585c5b414c3"
+  },
+  {
+    "t": 95,
+    "shot": "m13",
+    "kind": "establish",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 624.64,
+      "cy": 351.36,
+      "z": 0.8533333333333334
+    },
+    "coverage": [
+      -30.720000000000027,
+      -17.279999999999973,
+      1280,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 638.2933333333333,
+        "y": 605.312,
+        "h": 235.51999999999998,
+        "u": 0.4,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          980,
+          912,
+          345
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "w": 75.19712508638561
+      },
+      {
+        "x": 853.3333333333333,
+        "y": 659.9253333333334,
+        "h": 201.38666666666666,
+        "u": 0.5,
+        "phase": 2,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1295,
+          992,
+          295
+        ],
+        "actor": "Eileen",
+        "w": 110.3431111111111,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          853.3333333333333,
+          659.9253333333334
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6281833076982934,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "e8f9dfd10e3b49bbd15a7ffbed159de881606cfc69a71dbd4c718114361c2aca"
+  },
+  {
+    "t": 105,
+    "shot": "m14",
+    "kind": "mid",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 598,
+      "cy": 248,
+      "z": 1.7500000000000002
+    },
+    "coverage": [
+      -746,
+      -508,
+      1942,
+      1004
+    ],
+    "bodies": [
+      {
+        "x": 626,
+        "y": 768.8,
+        "h": 482.99999999999994,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          980,
+          912,
+          345
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "w": 154.21285418106424
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7024068322657782,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "5b5ead4c7db1a409ce92ef8455ee68275786c8c6a769c51ae4cea5564ac28617"
+  },
+  {
+    "t": 113,
+    "shot": "m15",
+    "kind": "two_mid",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 467.33333333333326,
+      "cy": 144.16666666666663,
+      "z": 1.5416666666666667
+    },
+    "coverage": [
+      -716.6666666666667,
+      -521.8333333333334,
+      1651.3333333333333,
+      810.1666666666666
+    ],
+    "bodies": [
+      {
+        "x": 492,
+        "y": 602.9666666666666,
+        "h": 425.5,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          980,
+          912,
+          345
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "w": 135.8541810642709
+      },
+      {
+        "x": 800.3333333333333,
+        "y": 625.1666666666666,
+        "h": 308.33333333333337,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1230,
+          930,
+          250
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:stand",
+        "w": 105.73237508555785
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7507031358521711,
+      "dimVeil": 0
+    },
+    "subtitle": "先生，您为什么把星星关在瓶子里？",
+    "missingAssets": [],
+    "sha256": "c032a8f3862950d57baca0fbe77eab35f37e68669174e8a5f9e6a244e7b815fb"
+  },
+  {
+    "t": 121,
+    "shot": "m16",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 592,
+      "cy": 324,
+      "z": 1.5
+    },
+    "coverage": [
+      -560,
+      -324,
+      1744,
+      972
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.4444444444444444,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Alder",
+        "w": 972.3263888888888,
+        "portrait": true,
+        "key": "face:Alder",
+        "eyeScreen": [
+          640,
+          252.48000000000002
+        ],
+        "mouth": "half",
+        "expr": "base",
+        "emotion": "neutral",
+        "roll": 0.00799658882433204
+      }
+    ],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7595603969290957,
+      "dimVeil": 0
+    },
+    "subtitle": "我没有关住它们。是它们的主人，忘记了怎么发光。",
+    "missingAssets": [],
+    "sha256": "4c400c235d274b482f6e07db1e6121943c41078616e38218707939e87e39782b"
+  },
+  {
+    "t": 129,
+    "shot": "m17",
+    "kind": "wide",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 593.5000000000001,
+      "cy": 401.33333333333326,
+      "z": 1.2916666666666667
+    },
+    "coverage": [
+      -398.4999999999998,
+      -156.66666666666663,
+      1585.5,
+      959.3333333333331
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7420144425881574,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "c8d6be11f333c6507955a6d2db49591e0cf401cf76fdcc26d17bef7352cf4628"
+  },
+  {
+    "t": 135,
+    "shot": "m18",
+    "kind": "walk",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 466.66666666666674,
+      "cy": 146.66666666666674,
+      "z": 1.6666666666666667
+    },
+    "coverage": [
+      -813.3333333333333,
+      -573.3333333333333,
+      1746.6666666666667,
+      866.6666666666667
+    ],
+    "bodies": [
+      {
+        "x": 493.33333333333326,
+        "y": 642.6666666666667,
+        "h": 460,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          980,
+          912,
+          345
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "w": 146.86938493434693
+      },
+      {
+        "x": 786.6666666666667,
+        "y": 645.3333333333333,
+        "h": 317.3333333333333,
+        "u": 1,
+        "phase": 1,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1200,
+          914,
+          238
+        ],
+        "actor": "Eileen",
+        "w": 173.8722222222222,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          786.6666666666667,
+          645.3333333333333
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7349605419090305,
+      "dimVeil": 0
+    },
+    "subtitle": "那您为什么不把它们还回去？",
+    "missingAssets": [],
+    "sha256": "e08742ba00b35d28b548ff689102d75eebfc2305eaf951e127204f422bbf3334"
+  },
+  {
+    "t": 145,
+    "shot": "m19",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 592,
+      "cy": 324,
+      "z": 1.5
+    },
+    "coverage": [
+      -560,
+      -324,
+      1744,
+      972
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5555555555555556,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Alder",
+        "w": 972.3263888888888,
+        "portrait": true,
+        "key": "face:Alder",
+        "eyeScreen": [
+          640,
+          252.48000000000002
+        ],
+        "mouth": "open",
+        "expr": "expr_dazed",
+        "emotion": "sad",
+        "roll": 0.007274379414605454
+      }
+    ],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.776548882220687,
+      "dimVeil": 0
+    },
+    "subtitle": "因为有些人，已经不愿意再打开自己的心了。",
+    "missingAssets": [],
+    "sha256": "489c64a70c1488aa70d3a170f5a76eb7bcac5236f81ddff81fe7a75655f6914f"
+  },
+  {
+    "t": 152,
+    "shot": "m20",
+    "kind": "macro",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 388,
+      "cy": 222,
+      "z": 1.5
+    },
+    "coverage": [
+      -764,
+      -426,
+      1540,
+      870
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1440,
+        "h": 1550,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1440,
+          1550
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 514.222972972973
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 24
+    },
+    "env": {
+      "transmission": 0.8454598721806975,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "bb7d9a9e89553b985c5906ed625424db4fb85589091520742c448699ec438a0e"
+  },
+  {
+    "t": 158,
+    "shot": "m21",
+    "kind": "macro",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 388,
+      "cy": 222,
+      "z": 1.5
+    },
+    "coverage": [
+      -764,
+      -426,
+      1540,
+      870
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1440,
+        "h": 1550,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1440,
+          1550
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 514.222972972973
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 140
+    },
+    "env": {
+      "transmission": 0.9101600359932932,
+      "dimVeil": 0
+    },
+    "subtitle": "您看！它醒了！",
+    "missingAssets": [],
+    "sha256": "16ad4707963f234bc5f3f2a0d5571a1ae3a2bdfc856182e6df75154bf2f76524"
+  },
+  {
+    "t": 165,
+    "shot": "m22",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 592,
+      "cy": 324,
+      "z": 1.5
+    },
+    "coverage": [
+      -560,
+      -324,
+      1744,
+      972
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Alder",
+        "w": 972.3263888888888,
+        "portrait": true,
+        "key": "face:Alder",
+        "eyeScreen": [
+          640,
+          252.48000000000002
+        ],
+        "mouth": "open",
+        "expr": "expr_shocked",
+        "emotion": "surprised",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.9616518478355803,
+      "dimVeil": 0
+    },
+    "subtitle": "不可能……这颗星星，已经熄灭了三十年。",
+    "missingAssets": [],
+    "sha256": "f59885ad69b4c7e617992e512bc1bcf7bb83f9cd3b3f637c1ec0fbe6cea4fe78"
+  },
+  {
+    "t": 174,
+    "shot": "m23",
+    "kind": "face_close",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 592,
+      "cy": 324,
+      "z": 1.5
+    },
+    "coverage": [
+      -560,
+      -324,
+      1744,
+      972
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "half",
+        "expr": "expr_smile",
+        "emotion": "gentle",
+        "roll": 0.00799658882433204
+      }
+    ],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.953735870121771,
+      "dimVeil": 0
+    },
+    "subtitle": "也许它没有熄灭。只是太久，没有人跟它说话了。",
+    "missingAssets": [],
+    "sha256": "756ffd8360c4111ecfbef90927f0bb752c34efc82578402bd59a76613bb0f125"
+  },
+  {
+    "t": 181,
+    "shot": "m24",
+    "kind": "wide",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 0.8833333333333334
+    },
+    "coverage": [
+      -38.39999999999998,
+      -21.600000000000023,
+      1318.4,
+      741.6
+    ],
+    "bodies": [
+      {
+        "x": 654.1333333333333,
+        "y": 622.88,
+        "h": 243.8,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          980,
+          912,
+          345
+        ],
+        "actor": "Alder",
+        "key": "Alder:shock",
+        "w": 88.80240160106737
+      },
+      {
+        "x": 809.6,
+        "y": 624.2933333333333,
+        "h": 168.18666666666667,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1200,
+          914,
+          238
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 55.797063063063064
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 4,
+      "visible": 223
+    },
+    "env": {
+      "transmission": 0.8918236903580081,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "cca1be8a4a910e3e28e02811b0322a2a3c1c470f2affe68d7b38f3ed368a066c"
+  },
+  {
+    "t": 188,
+    "shot": "m25",
+    "kind": "wide",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 640,
+      "cy": 321.66666666666663,
+      "z": 0.9583333333333333
+    },
+    "coverage": [
+      -96,
+      -92.33333333333331,
+      1376,
+      735.6666666666665
+    ],
+    "bodies": [
+      {
+        "x": 367.8333333333333,
+        "y": 597.6666666666667,
+        "h": 214.66666666666666,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          605,
+          900,
+          280
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "w": 55.816248019914
+      },
+      {
+        "x": 781.8333333333333,
+        "y": 616.8333333333333,
+        "h": 180.16666666666666,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1145,
+          925,
+          235
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 59.77150900900901
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8098832991489909,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "b7d49fd96d3c0cab989bb1da5ee3260ab3d1c6f789148bd653bc78e52fce88ac"
+  },
+  {
+    "t": 196,
+    "shot": "m26",
+    "kind": "macro",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": -166.39999999999964,
+      "cy": 813.5999999999998,
+      "z": 1.8833333333333333
+    },
+    "coverage": [
+      -1612.7999999999993,
+      0,
+      1280,
+      1627.1999999999996
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 2
+    },
+    "env": {
+      "transmission": 0.7357950517964291,
+      "dimVeil": 0
+    },
+    "subtitle": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。",
+    "missingAssets": [],
+    "sha256": "3d936f3490afbbe1a17a7f9f9677e5a0b8281e703f035b6f64605b80796618cf"
+  },
+  {
+    "t": 203,
+    "shot": "m27",
+    "kind": "face_close",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 500,
+      "cy": 400,
+      "z": 1.25
+    },
+    "coverage": [
+      -460,
+      -140,
+      1460,
+      940
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_determined",
+        "emotion": "determined",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7115252561535443,
+      "dimVeil": 0
+    },
+    "subtitle": "那我们去把它点亮！",
+    "missingAssets": [],
+    "sha256": "d73b2ed99f8b237192ea316e767ec8966e361e71324db12e9f3dc324a06a6202"
+  },
+  {
+    "t": 209,
+    "shot": "m28",
+    "kind": "two_mid",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 705.9999999999999,
+      "cy": 151,
+      "z": 1.375
+    },
+    "coverage": [
+      -349.9999999999999,
+      -442.9999999999999,
+      1761.9999999999995,
+      744.9999999999999
+    ],
+    "bodies": [
+      {
+        "x": 315.5,
+        "y": 547,
+        "h": 307.99999999999994,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          605,
+          900,
+          280
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "w": 80.08418194161573
+      },
+      {
+        "x": 909.4999999999999,
+        "y": 574.5,
+        "h": 258.49999999999994,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1145,
+          925,
+          235
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 85.7591216216216
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.718481378636449,
+      "dimVeil": 0
+    },
+    "subtitle": "月亮离我们，太远了。",
+    "missingAssets": [],
+    "sha256": "831557986d7aaf59abb273da95c62d03d97236b30761d7aa465bbe1a709bf4cd"
+  },
+  {
+    "t": 216,
+    "shot": "m29",
+    "kind": "macro",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 412,
+      "cy": 216,
+      "z": 1.5
+    },
+    "coverage": [
+      -740,
+      -432,
+      1564,
+      864
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1430,
+        "h": 1500,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1430,
+          1500
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 497.63513513513516
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.73830799528105,
+      "dimVeil": 0
+    },
+    "subtitle": "可如果每颗星星都愿意帮忙呢？",
+    "missingAssets": [],
+    "sha256": "e5ca04dea9d672bf28ba1ec695b7cd06b0fed64f165af80747994aec0b3253ba"
+  },
+  {
+    "t": 224,
+    "shot": "m30",
+    "kind": "wide",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 603.3632653061225,
+      "cy": 365.08843537414964,
+      "z": 0.8904761904761906
+    },
+    "coverage": [
+      -80.5224489795919,
+      -19.597278911564672,
+      1287.2489795918368,
+      749.774149659864
+    ],
+    "bodies": [
+      {
+        "x": 350.4680272108843,
+        "y": 621.5455782312926,
+        "h": 199.4666666666667,
+        "u": 0.5714285714285714,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          605,
+          900,
+          280
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "w": 51.86404163837973
+      },
+      {
+        "x": 735.1537414965986,
+        "y": 639.3551020408163,
+        "h": 167.40952380952382,
+        "u": 0.5714285714285714,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1145,
+          925,
+          235
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 55.53924066924067
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 89
+    },
+    "env": {
+      "transmission": 0.742587227060687,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "cff2548716b68b33bac9279a6120af99d6a2b59d0ac6ad200499fea991eb0cf3"
+  },
+  {
+    "t": 230,
+    "shot": "m31",
+    "kind": "wide",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 605.3061224489796,
+      "cy": 362.04081632653066,
+      "z": 0.8928571428571429
+    },
+    "coverage": [
+      -80.40816326530603,
+      -23.673469387755006,
+      1291.0204081632653,
+      747.7551020408164
+    ],
+    "bodies": [
+      {
+        "x": 351.7346938775511,
+        "y": 619.1836734693877,
+        "h": 199.99999999999997,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          605,
+          900,
+          280
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "w": 52.00271554650372
+      },
+      {
+        "x": 737.4489795918367,
+        "y": 637.0408163265306,
+        "h": 167.85714285714283,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1145,
+          925,
+          235
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 55.6877413127413
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 180
+    },
+    "env": {
+      "transmission": 0.7203636003170998,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "e9026c333542062b3ea7f8350f44159547b0998165aa2c35dff50dbfeaadc1cc"
+  },
+  {
+    "t": 237,
+    "shot": "m32",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 605.3061224489796,
+      "cy": 362.04081632653066,
+      "z": 0.8928571428571429
+    },
+    "coverage": [
+      -80.40816326530603,
+      -23.673469387755006,
+      1291.0204081632653,
+      747.7551020408164
+    ],
+    "bodies": [
+      {
+        "x": 351.7346938775511,
+        "y": 619.1836734693877,
+        "h": 199.99999999999997,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          605,
+          900,
+          280
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "w": 52.00271554650372
+      },
+      {
+        "x": 737.4489795918367,
+        "y": 637.0408163265306,
+        "h": 167.85714285714283,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1145,
+          925,
+          235
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "w": 55.6877413127413
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 121
+    },
+    "env": {
+      "transmission": 0.6746813625454979,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "21dd3563ae1801ef0f4877302c3a805b5dc96ff01f7d3a5feb218a25c806f721"
+  },
+  {
+    "t": 244,
+    "shot": "m33",
+    "kind": "face_close",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 500,
+      "cy": 400,
+      "z": 1.25
+    },
+    "coverage": [
+      -460,
+      -140,
+      1460,
+      940
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Alder",
+        "w": 972.3263888888888,
+        "portrait": true,
+        "key": "face:Alder",
+        "eyeScreen": [
+          640,
+          252.48000000000002
+        ],
+        "mouth": "closed",
+        "expr": "expr_shocked",
+        "emotion": "surprised",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6337539195976247,
+      "dimVeil": 0
+    },
+    "subtitle": "这是……失传的星辰魔法。",
+    "missingAssets": [],
+    "sha256": "93a382780e7a5da470c96153b76a4419c419919fc089dd89a3843f69703556d5"
+  },
+  {
+    "t": 251,
+    "shot": "m34",
+    "kind": "face_close",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 500,
+      "cy": 400,
+      "z": 1.25
+    },
+    "coverage": [
+      -460,
+      -140,
+      1460,
+      940
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "happy",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6276758026977717,
+      "dimVeil": 0
+    },
+    "subtitle": "不是魔法，先生。",
+    "missingAssets": [],
+    "sha256": "3510af8e70f3a9903f0de498c0ed7ed2dd747a0fec8d028ec8651ea223c4ae55"
+  },
+  {
+    "t": 257,
+    "shot": "m35",
+    "kind": "face_close",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 500,
+      "cy": 400,
+      "z": 1.25
+    },
+    "coverage": [
+      -460,
+      -140,
+      1460,
+      940
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "gentle",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6622346236082383,
+      "dimVeil": 0
+    },
+    "subtitle": "是它们想回家了。",
+    "missingAssets": [],
+    "sha256": "ea1124c23261c2d0d97a69cacb136b015088ba3acfcae936da2c1f1063ffd164"
+  },
+  {
+    "t": 263,
+    "shot": "m36",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 780,
+      "cy": -62,
+      "z": 2.5
+    },
+    "coverage": [
+      -1140,
+      -1142,
+      2700,
+      1018
+    ],
+    "bodies": [
+      {
+        "x": 617.7167832167834,
+        "y": 444.83216783216744,
+        "h": 412.91958041958026,
+        "u": 0.2814685314685334,
+        "phase": 0.5629370629370668,
+        "index": 4,
+        "planted": "right",
+        "plate": [
+          878.8583916083917,
+          793.4160839160837,
+          206.45979020979013
+        ],
+        "actor": "Eileen",
+        "w": 209.90078671328664,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          617.7167832167834,
+          444.83216783216744
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_4.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 40
+    },
+    "env": {
+      "transmission": 0.7284674038304106,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "593807cd40e9feef02d7739e794552884fb80158bfa413f9f35e23c3aa02a5ab"
+  },
+  {
+    "t": 266,
+    "shot": "m36",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 780,
+      "cy": -62,
+      "z": 2.5
+    },
+    "coverage": [
+      -1140,
+      -1142,
+      2700,
+      1018
+    ],
+    "bodies": [
+      {
+        "x": 705.5529182356102,
+        "y": 316.35543302851056,
+        "h": 359.16910973641774,
+        "u": 0.9369620763851496,
+        "phase": 1.8739241527702992,
+        "index": 6,
+        "planted": "right",
+        "plate": [
+          922.7764591178051,
+          729.1777165142553,
+          179.58455486820887
+        ],
+        "actor": "Eileen",
+        "w": 193.80166546194206,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          705.5529182356102,
+          316.35543302851056
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_6.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7682282694371348,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "e712c7e152b01c1bd9dfcdb51f7dcbb79739705e6481a64082c7d6b8feb3c255"
+  },
+  {
+    "t": 269,
+    "shot": "m37",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 600.1777777777778,
+      "cy": 381.63786008230454,
+      "z": 0.8851851851851852
+    },
+    "coverage": [
+      -79.64444444444439,
+      -0.7621399176954355,
+      1280,
+      764.0378600823045
+    ],
+    "bodies": [
+      {
+        "x": 545.8376492194674,
+        "y": 447.82922831003646,
+        "h": 102.7107438016529,
+        "u": 0.19008264462809887,
+        "phase": 1.520661157024791,
+        "index": 4,
+        "planted": "right",
+        "plate": [
+          883.2644628099173,
+          633.4710743801654,
+          145.0413223140496
+        ],
+        "actor": "Eileen",
+        "w": 52.21129476584022,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          545.8376492194674,
+          447.82922831003646
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_4.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8086036298033206,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "83e4c931482545475cdf8557591097acf17395ed699657a18a7ee203b4aa0c5e"
+  },
+  {
+    "t": 273,
+    "shot": "m37",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 622.9333333333334,
+      "cy": 369.59999999999997,
+      "z": 0.8555555555555555
+    },
+    "coverage": [
+      -34.13333333333321,
+      0,
+      1280,
+      739.1999999999999
+    ],
+    "bodies": [
+      {
+        "x": 765.8210101010101,
+        "y": 320.2888888888891,
+        "h": 65.38989898989902,
+        "u": 0.706611570247933,
+        "phase": 5.652892561983464,
+        "index": 5,
+        "planted": "right",
+        "plate": [
+          1168.7644628099172,
+          467.95454545454584,
+          95.53719008264468
+        ],
+        "actor": "Eileen",
+        "w": 33.10363636363638,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          765.8210101010101,
+          320.2888888888891
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_5.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 7,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8582271611581032,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "6a78ff6bb29cd9595f941fbe4818bab33b98dd8eb41cc19b9ae33538d88d35fb"
+  },
+  {
+    "t": 280,
+    "shot": "m38",
+    "kind": "establish",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 347.8666666666667,
+      "z": 0.8666666666666667
+    },
+    "coverage": [
+      -25.600000000000023,
+      -26.53333333333336,
+      1305.6,
+      722.2666666666667
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 471.28,
+        "h": 166.4,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          960,
+          718,
+          240
+        ],
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "w": 103.19893758300134
+      },
+      {
+        "x": 497.2563380281689,
+        "y": 622.6765685019209,
+        "h": 180.82151088348283,
+        "u": 0.491997439180536,
+        "phase": 2.4599871959026802,
+        "index": 3,
+        "planted": "left",
+        "plate": [
+          754.119718309859,
+          936.3604353393089,
+          260.8002560819464
+        ],
+        "actor": "Eileen",
+        "w": 97.94498506188653,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          497.2563380281689,
+          622.6765685019209
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_3.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.9170483867300879,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "b8bf5b93b5ca14c707fe1a3f548e3daf1d2adf612765ee92345872074ad676e0"
+  },
+  {
+    "t": 288,
+    "shot": "m39",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.4444444444444444,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "LadyMoon",
+        "w": 910.9579831932773,
+        "portrait": true,
+        "key": "face:LadyMoon",
+        "eyeScreen": [
+          640,
+          209.01999999999998
+        ],
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": "sad",
+        "roll": 0.00799658882433204
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.9247760362076816,
+      "dimVeil": 0
+    },
+    "subtitle": "很久，没有人来这里了。",
+    "missingAssets": [],
+    "sha256": "8827c928c5cc98ea7dcdaab6ce3d9c4747b4e4d8fb31f6708b34c9d6d8313eb3"
+  },
+  {
+    "t": 294,
+    "shot": "m40",
+    "kind": "two_mid",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 703.3333333333335,
+      "cy": 144.66666666666674,
+      "z": 1.5833333333333333
+    },
+    "coverage": [
+      -512.6666666666665,
+      -539.3333333333333,
+      1919.3333333333335,
+      828.6666666666667
+    ],
+    "bodies": [
+      {
+        "x": 703.3333333333335,
+        "y": 370.1333333333333,
+        "h": 304,
+        "u": 0.14285714285714285,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          960,
+          718,
+          240
+        ],
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "w": 188.53652058432934
+      },
+      {
+        "x": 524.7045454545457,
+        "y": 523.3629870129869,
+        "h": 256.90303030303016,
+        "u": 0.2564935064935098,
+        "phase": 0.5129870129870197,
+        "index": 4,
+        "planted": "right",
+        "plate": [
+          818.9772727272729,
+          838.970779220779,
+          202.81818181818173
+        ],
+        "actor": "Eileen",
+        "w": 130.5923737373737,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          524.7045454545457,
+          523.3629870129869
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_4.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8964254774322428,
+      "dimVeil": 0
+    },
+    "subtitle": "您生病了吗？",
+    "missingAssets": [],
+    "sha256": "56ba95de4a92d13fc151b97053fab71971d85bd95714d346c9ae2bdf061b5bed"
+  },
+  {
+    "t": 298,
+    "shot": "m40",
+    "kind": "two_mid",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 703.3333333333335,
+      "cy": 144.66666666666674,
+      "z": 1.5833333333333333
+    },
+    "coverage": [
+      -512.6666666666665,
+      -539.3333333333333,
+      1919.3333333333335,
+      828.6666666666667
+    ],
+    "bodies": [
+      {
+        "x": 703.3333333333335,
+        "y": 370.1333333333333,
+        "h": 304,
+        "u": 0.7142857142857143,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          960,
+          718,
+          240
+        ],
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "w": 188.53652058432934
+      },
+      {
+        "x": 557.6666666666667,
+        "y": 482.8666666666667,
+        "h": 230.53333333333333,
+        "u": 1,
+        "phase": 2,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          845,
+          807,
+          182
+        ],
+        "actor": "Eileen",
+        "w": 126.31305555555555,
+        "walk": true,
+        "key": "Eileen:walk",
+        "footScreen": [
+          557.6666666666667,
+          482.8666666666667
+        ],
+        "sourceImage": "./assets/cinema_r3/walk_0.png"
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8706510710652929,
+      "dimVeil": 0
+    },
+    "subtitle": "您生病了吗？",
+    "missingAssets": [],
+    "sha256": "1b9ab40402e1adc74ffdfe68395adf69e35513e89e6769b3e9a4321610ae32ee"
+  },
+  {
+    "t": 304,
+    "shot": "m41",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "LadyMoon",
+        "w": 910.9579831932773,
+        "portrait": true,
+        "key": "face:LadyMoon",
+        "eyeScreen": [
+          640,
+          209.01999999999998
+        ],
+        "mouth": "open",
+        "expr": "base",
+        "emotion": "sad",
+        "roll": 0.00799658882433204
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 69
+    },
+    "env": {
+      "transmission": 0.8364292271626371,
+      "dimVeil": 0
+    },
+    "subtitle": "没有，孩子。我只是……快要被遗忘了。",
+    "missingAssets": [],
+    "sha256": "b6dde64606699df59267345c3e92727b7def8f73957b1f8dae52e69597eb6ae5"
+  },
+  {
+    "t": 311,
+    "shot": "m42",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": "curious",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8198860541831603,
+      "dimVeil": 0
+    },
+    "subtitle": "被遗忘，也会让人消失吗？",
+    "missingAssets": [],
+    "sha256": "4c5007e14bb9997466ccf306ca0719a2f3b530a2a894b149adebc39179c36e94"
+  },
+  {
+    "t": 320,
+    "shot": "m43",
+    "kind": "mid",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 634.3000000000002,
+      "cy": 324.8499999999999,
+      "z": 2.375
+    },
+    "coverage": [
+      -1189.6999999999996,
+      -701.1499999999999,
+      2458.3,
+      1350.8499999999997
+    ],
+    "bodies": [
+      {
+        "x": 634.3000000000002,
+        "y": 670.6499999999999,
+        "h": 569.9999999999999,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          960,
+          722,
+          300
+        ],
+        "actor": "LadyMoon",
+        "key": "LadyMoon:slow_raise",
+        "w": 323.7322515212981
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 70
+    },
+    "env": {
+      "transmission": 0.8377478035935508,
+      "dimVeil": 0.16666666666666663
+    },
+    "subtitle": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。",
+    "missingAssets": [],
+    "sha256": "fb3ef5da58b0ab458f0501337bfc7a3fce6a47ef844dcb6b37a12fe4c1e18eb7"
+  },
+  {
+    "t": 328,
+    "shot": "m44",
+    "kind": "wide",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 346,
+      "z": 0.8750000000000001
+    },
+    "coverage": [
+      -32,
+      -32,
+      1312,
+      724
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 470.59999999999997,
+        "h": 168,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          960,
+          718,
+          240
+        ],
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "w": 104.19123505976096
+      },
+      {
+        "x": 559.5,
+        "y": 532.9,
+        "h": 127.39999999999999,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          845,
+          807,
+          182
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 43.84210526315789
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 70
+    },
+    "env": {
+      "transmission": 0.8577279337125037,
+      "dimVeil": 0.39
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "279e236afbe7863e100facfd97deeb6f18abc5bc65765636f7cb9cb3d6e6f666"
+  },
+  {
+    "t": 335,
+    "shot": "m45",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 680,
+      "cy": 226.66666666666674,
+      "z": 1.6666666666666667
+    },
+    "coverage": [
+      -600,
+      -493.33333333333326,
+      1960,
+      946.6666666666667
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1190,
+        "h": 1300,
+        "u": 0.5714285714285714,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1190,
+          1300
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp",
+        "w": 468.8524590163935
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8450949803773655,
+      "dimVeil": 0.39
+    },
+    "subtitle": "那我把我的灯送给您。",
+    "missingAssets": [],
+    "sha256": "b7f0897fd53abe9b6aa845c4e0378a9fc2993449e4e79d6d1f47974cb66fbe1f"
+  },
+  {
+    "t": 341,
+    "shot": "m46",
+    "kind": "two_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 686,
+      "cy": 237.33333333333326,
+      "z": 1.9166666666666665
+    },
+    "coverage": [
+      -786,
+      -590.6666666666666,
+      2158,
+      1065.333333333333
+    ],
+    "bodies": [
+      {
+        "x": 686,
+        "y": 510.26666666666654,
+        "h": 368,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          960,
+          718,
+          240
+        ],
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "w": 228.2284196547145
+      },
+      {
+        "x": 463.6666666666665,
+        "y": 789.3333333333334,
+        "h": 590.3333333333333,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          815,
+          900,
+          385
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp_back",
+        "w": 255.83759533423057
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 69
+    },
+    "env": {
+      "transmission": 0.8015543652443592,
+      "dimVeil": 0.39
+    },
+    "subtitle": "孩子，你的灯，已经没有火了。",
+    "missingAssets": [],
+    "sha256": "a066c2b739be2098b88bcb48c33efa817fd96fd000d5aa959d3e1bae236262a8"
+  },
+  {
+    "t": 348,
+    "shot": "m47",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 680,
+      "cy": 226.66666666666674,
+      "z": 1.6666666666666667
+    },
+    "coverage": [
+      -600,
+      -493.33333333333326,
+      1960,
+      946.6666666666667
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1020,
+        "h": 1050,
+        "u": 0.42857142857142855,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1020,
+          1050
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp",
+        "w": 378.6885245901639
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7226161881872731,
+      "dimVeil": 0.39
+    },
+    "subtitle": "可是……我还在这里呀。",
+    "missingAssets": [],
+    "sha256": "56a8ba24b936c4b9675b6e3052add842f59b4b458de8438adddc6f0b0354d706"
+  },
+  {
+    "t": 355,
+    "shot": "m48",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.25,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "half",
+        "expr": "expr_tearful",
+        "emotion": "sad",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6425117843199462,
+      "dimVeil": 0.39
+    },
+    "subtitle": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
+    "missingAssets": [],
+    "sha256": "efd2ffa4e6667f9a20344a4ecaf085dd29d63b3198e630a4c6145f0e2e648fed"
+  },
+  {
+    "t": 360,
+    "shot": "m48",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.6666666666666666,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_tearful",
+        "emotion": "sad",
+        "roll": -0.0004669931474206407
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6040562966629991,
+      "dimVeil": 0.39
+    },
+    "subtitle": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
+    "missingAssets": [],
+    "sha256": "ea8e217e2fd69de1bee0856e42d3096b2d5600c27d17ab6eaab6678784f5a5c8"
+  },
+  {
+    "t": 366.2,
+    "shot": "m49",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.21999999999999886,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "LadyMoon",
+        "w": 910.9579831932773,
+        "portrait": true,
+        "key": "face:LadyMoon",
+        "eyeScreen": [
+          640,
+          209.01999999999998
+        ],
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": null,
+        "roll": 0.006165911031191731
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 64
+    },
+    "env": {
+      "transmission": 0.592791381153721,
+      "dimVeil": 0.39
+    },
+    "subtitle": "原来……还有人在等我。",
+    "missingAssets": [],
+    "sha256": "3b2aff1e99be8fa43ad55d94390344cd469f31d63b74a141009708329c0090b0"
+  },
+  {
+    "t": 369.5,
+    "shot": "m49",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -384,
+      -216,
+      1664,
+      936
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.55,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "LadyMoon",
+        "w": 910.9579831932773,
+        "portrait": true,
+        "key": "face:LadyMoon",
+        "eyeScreen": [
+          640,
+          209.01999999999998
+        ],
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": null,
+        "roll": 0.006467971230556721
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 5,
+      "visible": 691
+    },
+    "env": {
+      "transmission": 0.6043985885051146,
+      "dimVeil": 0.3575
+    },
+    "subtitle": "原来……还有人在等我。",
+    "missingAssets": [],
+    "sha256": "c9ae165bf0885f66aafa5533d8216da254135f9b15c09f9bb246008a7aac3838"
+  },
+  {
+    "t": 378,
+    "shot": "m50",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 561.6666666666667,
+      "cy": -31.666666666666742,
+      "z": 1.9583333333333335
+    },
+    "coverage": [
+      -942.3333333333333,
+      -877.6666666666667,
+      2065.666666666667,
+      814.3333333333333
+    ],
+    "bodies": [
+      {
+        "x": 702.6666666666667,
+        "y": 480.6333333333332,
+        "h": 236.56666666666666,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1050,
+          867,
+          151
+        ],
+        "actor": "Alder",
+        "key": "Alder:touch_watch",
+        "w": 71.21221843003413
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.6761834396727934,
+      "dimVeil": 0.272
+    },
+    "subtitle": "艾琳……你回来了吗？",
+    "missingAssets": [],
+    "sha256": "8d85e532bb74dd62a972825f3fcb2ca1ac41f9c2cfe23b7043336ba592933f0d"
+  },
+  {
+    "t": 385,
+    "shot": "m51",
+    "kind": "stairs",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 514,
+      "cy": 486,
+      "z": 1.1250000000000002
+    },
+    "coverage": [
+      -350,
+      0,
+      1378,
+      972
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 36
+    },
+    "env": {
+      "transmission": 0.7491132739101558,
+      "dimVeil": 0.34
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "e56368fcfc4913a60a3f0a83d67251bcb6d8bb56899831f9c1d79ebb181967dd"
+  },
+  {
+    "t": 391,
+    "shot": "m52",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Alder",
+        "w": 972.3263888888888,
+        "portrait": true,
+        "key": "face:Alder",
+        "eyeScreen": [
+          640,
+          252.48000000000002
+        ],
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": null,
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7952084821854504,
+      "dimVeil": 0.34
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "237c9a4de1f29cb2b664c9ec08626a303d2524760753968ed7d6685ddff6080a"
+  },
+  {
+    "t": 397,
+    "shot": "m53",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 520,
+      "cy": 13.333333333333485,
+      "z": 1.6666666666666667
+    },
+    "coverage": [
+      -760,
+      -706.6666666666665,
+      1800,
+      733.3333333333335
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1260,
+        "h": 1400,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1260,
+          1400
+        ],
+        "actor": "Alder",
+        "key": "Alder:touch_watch",
+        "w": 421.4334470989761
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8147306114332005,
+      "dimVeil": 0.136
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "72bcb9b9da3f32bd37adc557cc84ebf0fc08f7fb7b17119df4cc0641c050e55f"
+  },
+  {
+    "t": 403,
+    "shot": "m54",
+    "kind": "wide",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 0.8500000000000001
+    },
+    "coverage": [
+      -12.799999999999955,
+      -7.199999999999989,
+      1292.8,
+      727.2
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8106316215644576,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "f6452dbd73cdadb728444586c9c684bccc80047ed50142bed35628abef19a6e7"
+  },
+  {
+    "t": 410,
+    "shot": "m55",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 625.333333333333,
+      "cy": 1113.8666666666668,
+      "z": 3.666666666666667
+    },
+    "coverage": [
+      -2190.666666666667,
+      -470.13333333333344,
+      3441.333333333333,
+      2697.866666666667
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 92
+    },
+    "env": {
+      "transmission": 0.7950453945052802,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "240ce624e55249b9e57ff2d2e04289f017f4aada57b2723f5f6f541cddde7070"
+  },
+  {
+    "t": 414,
+    "shot": "m56",
+    "kind": "wide",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 943.3333333333333,
+      "cy": 103.33333333333337,
+      "z": 1.4583333333333335
+    },
+    "coverage": [
+      -176.66666666666652,
+      -526.6666666666665,
+      2063.333333333333,
+      733.3333333333333
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7913235364921891,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "9f87ed9a5fe395cf7c574a355e233dd9c12e65071f61e418de827eaa5bf245bf"
+  },
+  {
+    "t": 419,
+    "shot": "m57",
+    "kind": "wide",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": -146,
+      "cy": -30,
+      "z": 2.5
+    },
+    "coverage": [
+      -2066,
+      -1110,
+      1774,
+      1050
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.7997120729760105,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "e1bd8fc1faa72e34c2396355fe15c6fc23850dde14a2c80e76c43cbcc6fed07a"
+  },
+  {
+    "t": 425,
+    "shot": "m58",
+    "kind": "establish",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 0.8458333333333333
+    },
+    "coverage": [
+      -9.599999999999909,
+      -5.39999999999992,
+      1289.6,
+      725.3999999999999
+    ],
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8317460989777924,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "617d47d8dad965b1db12f35f50d91ef625ff5cfb99d76fd2567a5a808dc1b368"
+  },
+  {
+    "t": 431,
+    "shot": "m59",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 520,
+      "cy": 120,
+      "z": 1.5
+    },
+    "coverage": [
+      -632,
+      -528,
+      1672,
+      768
+    ],
+    "bodies": [
+      {
+        "x": 742,
+        "y": 582,
+        "h": 282,
+        "u": 0.3333333333333333,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1145,
+          925,
+          235
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 97.04453441295546
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8802390050312998,
+      "dimVeil": 0
+    },
+    "subtitle": "艾琳！你是怎么做到的？",
+    "missingAssets": [],
+    "sha256": "78c9545d406f67df3931fbe4e0d47f010f2dec79e7aed6c3419cf24e0413f7ad"
+  },
+  {
+    "t": 439,
+    "shot": "m60",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.5,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "gentle",
+        "roll": 0.00799658882433204
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.939185902183261,
+      "dimVeil": 0
+    },
+    "subtitle": "我没有把月亮点亮。我只是告诉她……还有人需要她。",
+    "missingAssets": [],
+    "sha256": "51fdd201344dcbf84baeb16fc8d24e81284ac2753da4996f82da2e506839d6dc"
+  },
+  {
+    "t": 446,
+    "shot": "m61",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 538.6666666666667,
+      "cy": 43.33333333333337,
+      "z": 1.5833333333333333
+    },
+    "coverage": [
+      -677.3333333333333,
+      -640.6666666666666,
+      1754.6666666666667,
+      727.3333333333334
+    ],
+    "bodies": [
+      {
+        "x": 650,
+        "y": 1100,
+        "h": 1200,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          650,
+          1100,
+          1200
+        ],
+        "actor": "Alder",
+        "key": "Alder:touch_watch",
+        "w": 361.2286689419795
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.952155071789446,
+      "dimVeil": 0
+    },
+    "subtitle": "原来……我也还可以发光。",
+    "missingAssets": [],
+    "sha256": "2b361b2b1c129b9b5bc6999ebd1d03ec8b12cbe04749e2b082c3133d5761ecb1"
+  },
+  {
+    "t": 456,
+    "shot": "m62",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 522.6666666666667,
+      "cy": 144,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -501.33333333333326,
+      -432,
+      1546.6666666666667,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 672,
+        "y": 586.6666666666666,
+        "h": 213.33333333333334,
+        "u": 0.38461538461538464,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1100,
+          955,
+          200
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 73.41430499325236
+      },
+      {
+        "x": 437.33333333333337,
+        "y": 556.8,
+        "h": 232.53333333333333,
+        "u": 0.38461538461538464,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          880,
+          927,
+          218
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "w": 60.461823942068335
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8819632604876738,
+      "dimVeil": 0
+    },
+    "subtitle": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
+    "missingAssets": [],
+    "sha256": "fe95f86fa7cd7729e59b2e018ce25d8b0eab29ad2370d5811154799324a48fed"
+  },
+  {
+    "t": 460,
+    "shot": "m62",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 522.6666666666667,
+      "cy": 144,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -501.33333333333326,
+      -432,
+      1546.6666666666667,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 672,
+        "y": 586.6666666666666,
+        "h": 213.33333333333334,
+        "u": 0.6923076923076923,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          1100,
+          955,
+          200
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 73.41430499325236
+      },
+      {
+        "x": 437.33333333333337,
+        "y": 556.8,
+        "h": 232.53333333333333,
+        "u": 0.6923076923076923,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          880,
+          927,
+          218
+        ],
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "w": 60.461823942068335
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8323936618103356,
+      "dimVeil": 0
+    },
+    "subtitle": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
+    "missingAssets": [],
+    "sha256": "6fd6e44b3e61c519dd62e2f6d20d7807841c974b829fe1c1fa037174e1f3f7f7"
+  },
+  {
+    "t": 466,
+    "shot": "m63",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 522.6666666666667,
+      "cy": 144,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -501.33333333333326,
+      -432,
+      1546.6666666666667,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1270,
+        "h": 1300,
+        "u": 0.25,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1270,
+          1300
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 447.36842105263156
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.7540403798301328,
+      "dimVeil": 0
+    },
+    "subtitle": "晚安，月亮。明天见。",
+    "missingAssets": [],
+    "sha256": "02dc867ec40922c968e322333db360466021baaab69da93bda5a4a8269c029cf"
+  },
+  {
+    "t": 470,
+    "shot": "m63",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 522.6666666666667,
+      "cy": 144,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -501.33333333333326,
+      -432,
+      1546.6666666666667,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1270,
+        "h": 1300,
+        "u": 0.75,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1270,
+          1300
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 447.36842105263156
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 958
+    },
+    "env": {
+      "transmission": 0.7091437987985844,
+      "dimVeil": 0
+    },
+    "subtitle": "晚安，月亮。明天见。",
+    "missingAssets": [],
+    "sha256": "f506f0e40a8e315f6623fc9c6532093dc52fb1bb0720345ca885d8195466be0e"
+  },
+  {
+    "t": 475.5,
+    "shot": "m64",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 522.6666666666667,
+      "cy": 144,
+      "z": 1.3333333333333335
+    },
+    "coverage": [
+      -501.33333333333326,
+      -432,
+      1546.6666666666667,
+      720
+    ],
+    "bodies": [
+      {
+        "x": 640,
+        "y": 1270,
+        "h": 1300,
+        "u": 0.5833333333333334,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          1270,
+          1300
+        ],
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "w": 447.36842105263156
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 9
+    },
+    "env": {
+      "transmission": 0.6681253317672455,
+      "dimVeil": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "0c0bba0d45390df65d3fa25b03fcb4f1dafea39ff70d3113577039103f42805f"
+  }
+]

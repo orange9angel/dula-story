@@ -1,0 +1,29 @@
+{
+  "sample_rate": 48000,
+  "window": [
+    313,
+    331
+  ],
+  "at": 315.6,
+  "old_processed_duration": 9.186,
+  "source_mix": "assets3d/mixed_r3.wav",
+  "source_sha256": "d3b1c91e9e49f33f2d2c845a85c8b8852eaba9981109c4b1a44e81b83e7a3536",
+  "output_mix": "assets3d/mixed_r5.wav",
+  "voice": "assets3d/dialogue/cinema_r5/m03_slow.wav",
+  "filter": "highpass=f=250,lowpass=f=6500,aecho=0.5:0.4:45|90:0.22|0.12",
+  "voice_peak": 0.5,
+  "global_gain": 1,
+  "stems": {
+    "dialogue": "assets3d/stems_r3/dialogue_stem.wav",
+    "music": "assets3d/stems_r3/music_stem.wav",
+    "ambience": "assets3d/stems_r3/ambience_stem.wav",
+    "effects": "assets3d/stems_r3/effects_stem.wav"
+  },
+  "output_stems": "assets3d/stems_r5",
+  "placed_voice": "assets3d/dialogue/cinema_r5/m03_placed.wav",
+  "duck_db": {
+    "music": 7,
+    "ambience": 2
+  },
+  "report": "storyboard/cinema_r5/audio_patch.json"
+}

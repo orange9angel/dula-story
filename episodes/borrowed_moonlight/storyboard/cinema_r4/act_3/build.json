@@ -1,0 +1,836 @@
+{
+  "source": [
+    {
+      "path": "script.story",
+      "sha256": "b246c64bd5ff520527009ca60190ca8b3fef0a827d8243aa74a4906daca5da2d"
+    },
+    {
+      "path": "config/timeline.json",
+      "sha256": "f68fcce345ad0e62eacc44d5579cafe8e6a38905a26cb18c8dc8ab3721795502"
+    },
+    {
+      "path": "config/voice_envs.json",
+      "sha256": "d444effd3ff6413398327d0519f582e9c690eaa6b235fe2d8987136a195904ae"
+    },
+    {
+      "path": "effects/particles.js",
+      "sha256": "4e71d90a491f2e2e8d12ab1f14407aebf7a62af9914a55633ad3d844af0ccd06"
+    },
+    {
+      "path": "effects/magic.js",
+      "sha256": "0157add7e43c6463ea372a06b2d59e80a3d284bb03d364b862d813609efa13b5"
+    },
+    {
+      "path": "performance.js",
+      "sha256": "567d93dfc0cb16d57cbeb8c1b2a3b1145bb196b6a2440eb50db699a826ad5ce7"
+    },
+    {
+      "path": "hybrid/config/art_pass_full.json",
+      "sha256": "bfd84e33d17a92b69e86001f6ee5e80096b8d3b867217629e91fdd7a32273bf6"
+    },
+    {
+      "path": "hybrid/config/art_shots.json",
+      "sha256": "8a10083ebb5692f5197aa3a7480f6d650383c94126e39aafbe77277c6a39e9ae"
+    },
+    {
+      "path": "hybrid/config/art_cast.json",
+      "sha256": "97f159b5d965143fa180b26aefe0865cb5b6cf69fd25a4b557cd8ac21c020a12"
+    },
+    {
+      "path": "hybrid/config/plate_grade.json",
+      "sha256": "11301005123a95d3cf6b36719a547f1427b9f438cb71e060e796a1e4513271a1"
+    },
+    {
+      "path": "hybrid/config/static_anchors.json",
+      "sha256": "45fc894bf195d24c6d5f2d5316a5f8b45a0394c0749865650d08453c00eb98df"
+    },
+    {
+      "path": "hybrid/config/ground_calib.json",
+      "sha256": "aaf583b12608dc1a114fdcae48f8ab71cc16b73ae5c70543bb49d6ffa68137fb"
+    },
+    {
+      "path": "hybrid/config/window_glows.json",
+      "sha256": "48e404de15f21a80d5ae3cb8b8a464d33092a2782e5d154505c9a6a57a2056ad"
+    },
+    {
+      "path": "hybrid/config/motion_full.json",
+      "sha256": "5df342d1b705f6b29881962620edf6df4136026db297f091dbd0bd07d403d188"
+    },
+    {
+      "path": "hybrid/art_pass.html",
+      "sha256": "1867339af76913f6eefd7fd082d385a86a828aefa9e7db71dfea1069812ae482"
+    },
+    {
+      "path": "hybrid/art_pass.js",
+      "sha256": "9759b4d942de5e8a8de1b18117736c0bd57763d5ecc17f6fc98434b2e85930ac"
+    },
+    {
+      "path": "hybrid/fx_rehost.js",
+      "sha256": "4e45dc79aabfd916541e8842c1a6d200ab07d50f596225979bcc3b8d1dfdb6a9"
+    },
+    {
+      "path": "hybrid/art_pass_r3.js",
+      "sha256": "a917be218a426bc7a95cc5c099598c5d014d398a97207ac0e6105b97308ccd49"
+    },
+    {
+      "path": "hybrid/cinema_direction.js",
+      "sha256": "e6f9ef766a744e57143cd80591786813a4050e896c63ca9f6dcc1c7ac5bc0917"
+    },
+    {
+      "path": "hybrid/config/cinema_staging.json",
+      "sha256": "65b0e203f2bbd5a343bd89a8ea1f2adafa7a53bd58c76d0d07b88c86b9c808a9"
+    },
+    {
+      "path": "hybrid/config/art_cast_r3.json",
+      "sha256": "1ea43f2c77241c77f89c7bf130a9f981ced282795a1dbd165faffe2258b4a37f"
+    },
+    {
+      "path": "hybrid/cinema_fx.js",
+      "sha256": "25df508a970377101de93665ca2322e0aaec53bd0cfdabbb1cb73aac25a482c5"
+    },
+    {
+      "path": "hybrid/cinema_probe.mjs",
+      "sha256": "69c6644349cc7b8691f531b2cc4568763e1d1ffc9cc9bb596785f43771ce6cdc"
+    },
+    {
+      "path": "hybrid/art_pass_r3.html",
+      "sha256": "9d6638b08c68fcef7221a67138be568cf7746dae84cc0d5a010e2b0c8eed7ee3"
+    },
+    {
+      "path": "hybrid/assets/manifest_r3.json",
+      "sha256": "e6328dae5c50c1acf26faf5189fa829fe8ef5251fb2c2a5a81c81dc2a84a3a51"
+    },
+    {
+      "path": "config/dialogue.json",
+      "sha256": "ac85da5815519285de5a1441de0809bc9b1330f39ad5624a8065b02ced6cff25"
+    },
+    {
+      "path": "config/painted_contacts.json",
+      "sha256": "f8215217e246d8f959422785c5ffc02ee34d04e1b2eea5e28465f4014f686eb1"
+    },
+    {
+      "path": "hybrid/art_pass_r4.js",
+      "sha256": "8e1b6405dca8e27e87f47a9c0195fe29ffd34129840af851d2dc8e089a875242"
+    },
+    {
+      "path": "hybrid/cinema_direction_r4.js",
+      "sha256": "1f807d9f060d04653b99eace90d736b4d3b5c9f3bb1a8c935b8bc304233a7a36"
+    },
+    {
+      "path": "hybrid/config/art_cast_r4.json",
+      "sha256": "58ba3e599e0b307c11195384f1acc9392457ccb91812036085d600c67b582baf"
+    },
+    {
+      "path": "hybrid/config/cinema_staging_r4.json",
+      "sha256": "96d4e579675b8278f76f50a448c829d5efd0e1567cc4ea9d60c8cda2bd52007c"
+    },
+    {
+      "path": "hybrid/assets/manifest_r4.json",
+      "sha256": "4897ea1e6ae7b844a1259edb17fcee62e80f3848129ef3e3b9e082dac27850f3"
+    },
+    {
+      "path": "hybrid/cinema_probe_r4.mjs",
+      "sha256": "3435d15b11d6adab29765e03a492e4cc754746fa6e038ed7c4a7d8ba86b10b89"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/atlas-player.js",
+      "sha256": "f5be24faaff26b7d9e68af836bfdb69eca5e43a0b66719ff3ded687c45ee51c8"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/authored-face.js",
+      "sha256": "126e4795f5b33421085ce43ed8d41c113e96eebb7dc2dc1f002baab8f30269fb"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/baked-cel-clip.js",
+      "sha256": "537b37df4c752a1b0688dbc9b017348cc9b9ddade3bf0f46f1fa23367d19fa55"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/cel-integration.js",
+      "sha256": "6a4b35b2f2853422e475dd9d58893b7a6ed1b0710555e148d4d9790146f6fd48"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/cel-stage.js",
+      "sha256": "00627b05bfe1fbee63202016101c1eace823ec1c7d6d06c3a750abbc5ddc3c0d"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/continuity-check.js",
+      "sha256": "f968728151e53a280b08e3c897f0d4bd1acd21f39c50ed796a94932fcef3c096"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/face-acting.js",
+      "sha256": "0a1c87e767c898e874be0427e1a4a957bcd482b772208f8c5271f991dff343b0"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/feathered-variant-face.js",
+      "sha256": "fa9c470fd95fa2f03aaaf51c00c88c30e6c505f335071ea4fc27cb1cfc874ee5"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/limb-rig2d.js",
+      "sha256": "a37eba7b363f9ea3af9e4e3b462376a735262687d95bc532dc5b4f09db75aa90"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/locked-variant-face.js",
+      "sha256": "d93c0dc75bc312c5ec6d9c065e8f8bcf7c8caf54a4a0be303394e1ab5ba7408a"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/motion-controls.js",
+      "sha256": "44fb27a565b01a58d42efa177c3a562e93e310d6814f6e6be57f296066fb7931"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/painted-backplate-stage.js",
+      "sha256": "7989c3b363cbe9a5658d6e688648bafda4bb7f0f8e77fa87415176356c1f2253"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/painted-particles.js",
+      "sha256": "e717cfc1fb14b25b1e2b962dc7f459ff940bfeff844ca2fa632468ed1c377f5b"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/painted-space.js",
+      "sha256": "8bd0ce7720b1e18903de1f55ec1251230d0ff1ec6883457734a553c049f21b0b"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/painted-weather.js",
+      "sha256": "5192a8e09139ceb39d80d72803ed9a1ba080dd7bc11ba446006ab1819f4754e4"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/particle-effects-stage.js",
+      "sha256": "afaa539ac8304f0185b4806d114bd72d56dd08c64eb6a0d7e58b83cb9b50cb4f"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/particle-stage.js",
+      "sha256": "a5ef1fd3585e35609e6fd15da35c5e98605b16ace378fcab9781ef754d298930"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/projected-region-paint.js",
+      "sha256": "a6150bcc798f6fa1fd2d71dc5773c897c33210ff814e8d8a5af2b7e50533b68c"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/prop-damage.js",
+      "sha256": "c8a67b65d4deccc4354e6c1f2bf66585fa5d43d2542ba84d38952cd38288e7ff"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/raster-face.js",
+      "sha256": "b16795b012761bbd95bc590d3aff1b1efc95021022f20f973c75441441550743"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/story-particles.js",
+      "sha256": "3e52439e7c9315c309f02061b3f78619907533909e8a4ed18db8a56443e1f222"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/story-state.js",
+      "sha256": "7b9e8b7e6ec9f47603e0e6bed6153ccecf4a58fc6a4d0b927e24d3c9e9bd5362"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/surface-motion-guide.js",
+      "sha256": "e0c5e3a959eaa3167cf0a14b3930bf905cbb275933c734117cfc8a15535f6a92"
+    },
+    {
+      "path": "hybrid/assets/draw_over_runtime/whole-pose-walk.js",
+      "sha256": "c99bbb1bceab7fea215ff387ef93ba78e12d4f843e5510bfc0056df62649a414"
+    },
+    {
+      "path": "hybrid/assets/plates/s01_snowtown_night.png",
+      "sha256": "b6419cf1b3aa05cb8138741cabec6a7ecd07439c4838fddc986e1fde72c5cf2d"
+    },
+    {
+      "path": "hybrid/assets/plates/s01_snowtown_spring.png",
+      "sha256": "9852732d8b3e237ebc313eb5472140a46e0f71b5936d1c132a12ded2876817a4"
+    },
+    {
+      "path": "hybrid/assets/plates/s02_clocktower_workshop.png",
+      "sha256": "4af8c2fe09dcfa86b223184c7055cf66ff08bc4c580b9d9d428cacab4c28dfba"
+    },
+    {
+      "path": "hybrid/assets/plates/s03_star_stairs.png",
+      "sha256": "9717ea43f19e1e0e6cf20a50c38815f6ea6f30787c5f3eb9af843b9f66c0817d"
+    },
+    {
+      "path": "hybrid/assets/plates/s04_moon_palace.png",
+      "sha256": "7277936c47080e9717f6a2afa395ba2f5989a8820fac1c6c8515fde895ea3b64"
+    },
+    {
+      "path": "hybrid/assets/cels/alder_relieved.png",
+      "sha256": "f24951917ded8ef188bf80d3a39b4cecc4a1d0f47ebf29ad547ed5464db249f1"
+    },
+    {
+      "path": "hybrid/assets/cels/alder_shock.png",
+      "sha256": "1970338d36e11d37b33d4f05d99571e7a587c8bb03aa2a61a498cc1c3c794697"
+    },
+    {
+      "path": "hybrid/assets/cels/alder_stand_hope.png",
+      "sha256": "450c159f5c40681d470543c580bfc420255d8bbb53b2a05b19e207e5a9ccdaad"
+    },
+    {
+      "path": "hybrid/assets/cels/alder_stand_work.png",
+      "sha256": "6a7ffcda9648748aa47dedfe41cd25214c66390bd8c3c79ffd24e49d104a2497"
+    },
+    {
+      "path": "hybrid/assets/cels/alder_touch_watch.png",
+      "sha256": "7d2991908ea81035d737f194135aa0abaf5b7c3651025b92067fcf40fee587c8"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_crouch.png",
+      "sha256": "58d30dbdc7ed9a07ec993fae9e9d6624e5957fa95087e7f539162e14c49306f1"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_hold_bottle.png",
+      "sha256": "c87ee0fc02fa962ceded07bc220946754fe843fb3cec1d9518f69deac853a990"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_hold_lamp_close.png",
+      "sha256": "7abe0a36c0fa1440471276a0a3f8badf5e5e83d5251a4763ea3091bea819d215"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_look_up.png",
+      "sha256": "cc2aa70e3a3a7cee65c20621b7bed26df02aca5acbfb0de5c8bef5be50e21268"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_offer_lamp.png",
+      "sha256": "67376da39c2a491a3d9d0ba3d1343c2f7a34603360cf199845f3475a196a3475"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_offer_lamp_back.png",
+      "sha256": "a33870d2e913dca76c972bf669b77a0ea25804ac8fa8ee42fff4bdb765feaae5"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_stand.png",
+      "sha256": "e26fd90cf706035f37b6e281f436440c6df7c5c9e3446861df7ab0a865b3cc3f"
+    },
+    {
+      "path": "hybrid/assets/cels/eileen_wave_goodnight.png",
+      "sha256": "843956f39f3a7ebbe44bcdf59764e2a912ee320879fe35676213a96ed768a767"
+    },
+    {
+      "path": "hybrid/assets/cels/ladymoon_revived.png",
+      "sha256": "92edd595a31503e3391a0106177c43f3754e0c42d6be12e404f164374bf40ad9"
+    },
+    {
+      "path": "hybrid/assets/cels/ladymoon_sit_throne.png",
+      "sha256": "9f8222e2b1b7f5dc2ae131c33b9955ab8e039735227ae15c1041db34bac17c1a"
+    },
+    {
+      "path": "hybrid/assets/cels/ladymoon_slow_raise.png",
+      "sha256": "9f90394e239303bc99ab6bac8947338fbd999c753d7b754c773db0ae655ef405"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/alder_walk_p1.png",
+      "sha256": "cc45c31fd4bee7c4cfe029f245a072ffe7335a84b17578cfc6c3ccbfee346d19"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/alder_walk_p2.png",
+      "sha256": "e5c880a7495d063b678a850c97266df7a09c818812f6757f616d058bb4b7b371"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/alder_walk_p3.png",
+      "sha256": "671fb904121ebfa1ff9eb9486321d551e6dbd2ee83de69894eff24f622a318d5"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/alder_walk_p4.png",
+      "sha256": "6bdbfb775143750a1125e94316ed5b1e4533120546920d537902f107389b61c6"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/alder_walk_strip.png",
+      "sha256": "5b71c1574bcd86bff20eee769f73457bb8e020e4d2995be6dc923870709652a7"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p1.png",
+      "sha256": "a6ca18fdf052f9de27925b46fbe59356389ed1ec486c07b215245cc6821d8c17"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p2.png",
+      "sha256": "69dc4a96b5e86428fa3deae4918eb76e1ab8c8cf0f481b3f422c8c9f7221ded0"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p3.png",
+      "sha256": "b23e968f493183779715b2f443077af1fab4625b16fb5551f7893c05cd206ea9"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p4.png",
+      "sha256": "97cbd3574c543c417c6e9ad5b8bf1153e0ab39e5dac27cccaa4f716a6d09be67"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p5.png",
+      "sha256": "a6b17bce5621b68ca850b2d9239160075fccaf56f149e32c07b33687febcb1d9"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p6.png",
+      "sha256": "931ec1be60b132c39e3ec0cfe68a27a83dc865c4b7261516f644206eadb3fd48"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p7.png",
+      "sha256": "c81b85f58b6da89f87e3d5ce25e03ded630348021a5cba1f9e735554cb09f0da"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_p8.png",
+      "sha256": "843519aa70bc5ae46c4ae2130a6406d7f98996f2effca2441570b8a81759b949"
+    },
+    {
+      "path": "hybrid/assets/cels/walk/eileen_walk_strip.png",
+      "sha256": "5e79e7157674b17569290b94379711d0dde829ff7da455e72b2370ab04cd31bf"
+    },
+    {
+      "path": "hybrid/assets/faces/alder_blink.png",
+      "sha256": "ef86a252e7c49551408bda259e3552d59421244a75fa416d9dde14c29c728339"
+    },
+    {
+      "path": "hybrid/assets/faces/alder_expr_dazed.png",
+      "sha256": "2d20f9d6bc39d08c1ef7bf7e84e2750d2068451e5b7a0dcd927cc5815db59f77"
+    },
+    {
+      "path": "hybrid/assets/faces/alder_expr_relieved.png",
+      "sha256": "0735b3f4a087b0cc68ecbcaef7f9c212890f1d7e7979d4bfdc68a713d78ea947"
+    },
+    {
+      "path": "hybrid/assets/faces/alder_expr_shocked.png",
+      "sha256": "42a1b7da4dba8315640be858744cf9fcc1ad0b60ed51d1ccb28e613686ae2f4b"
+    },
+    {
+      "path": "hybrid/assets/faces/alder_mouth_half.png",
+      "sha256": "d25bd0058f7cfa4a13356744a12f38dec5fc073eeafbd4d1c5f8585547873e65"
+    },
+    {
+      "path": "hybrid/assets/faces/alder_mouth_open.png",
+      "sha256": "ba42825f26e1619a20080ac9429b92a89b273c5c72f36dc682913e5a57dfad6c"
+    },
+    {
+      "path": "hybrid/assets/faces/eileen_blink.png",
+      "sha256": "a64577180baeb6c8b9cfc830760e1063df9add1bf6d0ccfea4c378d471666260"
+    },
+    {
+      "path": "hybrid/assets/faces/eileen_expr_determined.png",
+      "sha256": "ffd477a7bcfa3449a3442fa44c1555f3871e4b5fd8554262c924d5fd1c8077b2"
+    },
+    {
+      "path": "hybrid/assets/faces/eileen_expr_lonely.png",
+      "sha256": "77839dce85fd0fb715dbc26866e617e3e39fe534ae26a5181a91be81519513ad"
+    },
+    {
+      "path": "hybrid/assets/faces/eileen_expr_smile.png",
+      "sha256": "5d21f31eeeb9ac797abd0ad045cdef3a3e92c50ad2afad9ae40cc85b18384b70"
+    },
+    {
+      "path": "hybrid/assets/faces/eileen_expr_tearful.png",
+      "sha256": "2b9c68ae65df015c3587ff40833d028268e0be1e8cc2477f21a643d69570d25b"
+    },
+    {
+      "path": "hybrid/assets/faces/eileen_mouth_half.png",
+      "sha256": "ad6aeaf0372d7443d42f297a2affc8cba802741270044ac084c6c4dbd8220f91"
+    },
+    {
+      "path": "hybrid/assets/faces/eileen_mouth_open.png",
+      "sha256": "59131cf0a3fd6a1cc761c53fb44bf10d7985f589310f439afdf62dd8b22cf1d6"
+    },
+    {
+      "path": "hybrid/assets/faces/ladymoon_blink.png",
+      "sha256": "a210032ababa90185f0200ab6223fbf59de5a1a45ccfbcfc77f46110277f1601"
+    },
+    {
+      "path": "hybrid/assets/faces/ladymoon_expr_revived.png",
+      "sha256": "647fb6dc2259653886ea4718563104f8e130866d5c190c083878d2bb412386cc"
+    },
+    {
+      "path": "hybrid/assets/faces/ladymoon_mouth_half.png",
+      "sha256": "708c0fb34c81b3e94b1db48630ee12c1e049720ff33560fff895e8a687aebf5a"
+    },
+    {
+      "path": "hybrid/assets/faces/ladymoon_mouth_open.png",
+      "sha256": "d97f2eb3eef977f1440dce900594175e4621c62225a6d6fbbbc78fbd26a296d1"
+    },
+    {
+      "path": "hybrid/assets/refs/alder_face.png",
+      "sha256": "30602f62597825abf54b726b0ad2995f3dfe9e7f1349a3c944b76f10faa887e7"
+    },
+    {
+      "path": "hybrid/assets/refs/alder_full.png",
+      "sha256": "31eb95e75e00920abceba107520ad058235eee14b64ab03e788ee8ed63786ed4"
+    },
+    {
+      "path": "hybrid/assets/refs/eileen_face.png",
+      "sha256": "dea9054bd585e4c745dbbb916fc034d0875a5804f7dc767393cb599895b89f86"
+    },
+    {
+      "path": "hybrid/assets/refs/eileen_full.png",
+      "sha256": "8774cd0511fa6264587cdcdff769866c1ab346b6e1bc3bcf76fb89cdd65e1e77"
+    },
+    {
+      "path": "hybrid/assets/refs/ladymoon_face.png",
+      "sha256": "655f491acd6f71a34d4a0786f05804c6f66b504b3fe9f2ce01097834b2e8d401"
+    },
+    {
+      "path": "hybrid/assets/refs/ladymoon_full.png",
+      "sha256": "406b9e511ce3830bd2bae794695c35c7b1e42e46d3a4c71420ab515a18a1400a"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/alder_alpha.png",
+      "sha256": "7b08dd836aa6af1e50bc87afafa4299276727c7a1317f6963018ac7bfafdc37c"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/clouds.png",
+      "sha256": "4a56cfdbd4546b15e97d76313c2a8edc4250b16e4f0dea1a0b79ccfb56f037cf"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/eileen_alpha.png",
+      "sha256": "f3ffd3ea871100803b855c6104b99c8afb6ae5b7dfe52355f3961ab76ca6013f"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/ladymoon_alpha.png",
+      "sha256": "83e42edbb781c61924d84bbfbb50a57787a58329ce22844754846645c760bcaf"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/roof_clean.png",
+      "sha256": "749a72c04aeec1a923b6e2c182143fa2d59dfc52210c799a50a80ab0b923ba1d"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_0.png",
+      "sha256": "0cf32f7a7eb56e917ce46ae2442caa61a13bc314f0a4e7bc3e6f932533d48c9a"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_1.png",
+      "sha256": "8f39845b94eabfe846bccf7052befdf0e4acccdb670ce07b57adb9ab5096d8f6"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_2.png",
+      "sha256": "ffaa45c548a1ac3e3f917f3e01e3e9a80b386dccf66df14b3b87b64535faced3"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_3.png",
+      "sha256": "6b4b8d6c348f2f478386fa81b639616a2bd598312260466bd8e46b54bb7c1a45"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_4.png",
+      "sha256": "25d51c4a010d2feecb34ceb9494c8aa599a384b26a07f6ce16d9fd544310f99e"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_5.png",
+      "sha256": "7d6296a9ed34bc8b0e67f475d6ffb77471f0a9b1ecea5bdea6a9c39b8ac1af4b"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_6.png",
+      "sha256": "4b05aa4c3b4dfd7ea74c6af4ee2fe5b50ee863bce02e663943ddbaee3e0e1694"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_7.png",
+      "sha256": "aa9c0274e3b08b9b612035142d0f447defadeb5b47b6f745fb572512f26d408a"
+    },
+    {
+      "path": "hybrid/assets/cinema_r3/walk_atlas.png",
+      "sha256": "d32508f2d10ffcdd488006cd9af3b4f4c635b86c388f385488eeacfccfc8c63d"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_attend_base.png",
+      "sha256": "1225037bb44fa6f71f9fb14213ac27eddad9ee61af1d71047656ab16893e55b8"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_attend_blink.png",
+      "sha256": "01b2fda08fb609598d2b19572ab9d531f54c8807382c4df092c63189901332e5"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_attend_half.png",
+      "sha256": "38ca379cfad23044be06f940058a2c990bf94134024a3e834ca96d3a46121b9b"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_attend_open.png",
+      "sha256": "49cd3adc078406b475c9d252909296564f61c19a4a20f3b0b30bc0bcaec77fb3"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_respond_base.png",
+      "sha256": "2240fec27de333e1b2c504cade6b5efac715a345bb86d88b6edee11abac9095c"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_respond_blink.png",
+      "sha256": "2db4f6ca14ac2326379cd6aa6d85b5abd84eae0530f388e95f2f568053a63914"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_respond_half.png",
+      "sha256": "6b28feca29d2d9980aeb703e614326bb0d39f29a9a97ef5b92183d0abcd3493a"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/alder_respond_open.png",
+      "sha256": "07b60c42a945aa83a7a1b00e42f2ad40ca99726f85b9aee475c1adeebf849264"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/body_blink.png",
+      "sha256": "073c489288fe9045bd250fe810bb69f6c9ddd9fbcf4456da9165133f6c893429"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/body_half.png",
+      "sha256": "1b7b3d2539bac9d20674c70de74e1b3016170cf562d217b27a04220519b1aef3"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/body_heads.png",
+      "sha256": "9084aa3d74ca89f3117c61df04669bec509db5bc14d64b5b292c4f01d8c8f39d"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/body_open.png",
+      "sha256": "0613929a64d839ecae1a482a26cd6ba8e041d2b0b8f3e408a8f4ca22c9e269ce"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_attend_base.png",
+      "sha256": "e3c661a9adca92b09e30355d6a85f1c00f540a65a4db16dd44b298c73f7ed054"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_attend_blink.png",
+      "sha256": "f862eaa415e9c7ea3dd5d9529977659c98cef75f4fcc425f86fefbaa33830570"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_attend_half.png",
+      "sha256": "e72d8160db02d7545b9b5c454ae33c6f621a07f30d69fa948fb68d84cdc663c9"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_attend_open.png",
+      "sha256": "150438ec8e92403f1f850bf43a9675ef645225b248f068865e4a41ca66c3c1b1"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_blink_clean.png",
+      "sha256": "e39704ff49d62aed14e2e8279c333a461708540529dc210589bac507460d1568"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_bottle_base.png",
+      "sha256": "b642fda68a5f0a65177e03f4569ca6c68884766021904b0a6041c046a3a33e19"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_bottle_blink.png",
+      "sha256": "e7164f9f800ea1f4fe257c1f543a32f3185baafe0c6e79f4c73b77620568d01c"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_bottle_half.png",
+      "sha256": "91817a9dc8f30f200d611f12b162553f4de14f14a79b9061ca5d92db592fb925"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/eileen_bottle_open.png",
+      "sha256": "5cc5ff6d912f5fa4b08995492131c137f602263f95f74d7c3652b9204b084116"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/room_blink.png",
+      "sha256": "076b7f2cff8071682ac88f8825681230e66a310d00a79bcd22f18fe92f1ccb98"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/room_cast.png",
+      "sha256": "018384cad066bfd24d1c1cc8c8ce8d6461d6944b732df29539b84265d15a752e"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/room_half.png",
+      "sha256": "509d4f6bac761d22109a2fe7602650430b2b7ff875a6f513c750d1c1e1fbba7b"
+    },
+    {
+      "path": "hybrid/assets/cinema_r4/room_open.png",
+      "sha256": "f848c7e462e3a14920a6eb76862f5ffcb494b4ad70f33f01d4d5b2a54caefa5e"
+    }
+  ],
+  "pipeline": {
+    "config": {
+      "schema": "draw-over-pipeline-v1",
+      "baseUrl": "http://127.0.0.1:4217/",
+      "source": {
+        "video": "output/borrowed_moonlight_cinema_r3_final.mp4",
+        "sha256": "a815f87fe7d1b846ecaef2e0ff88caa6c58ef88fb28988e74bcc77fa632a7461"
+      },
+      "runtime": {
+        "directory": "hybrid/assets/draw_over_runtime"
+      },
+      "pilot": {
+        "start": 276,
+        "end": 374,
+        "fps": 30,
+        "width": 1280,
+        "height": 720,
+        "viewer": "hybrid/art_pass_r4.html?capture=1",
+        "board": "storyboard/cinema_r4/act_3",
+        "output": "output/cinema_r4_act_3.mp4",
+        "samples": [
+          332,
+          346,
+          354,
+          370
+        ],
+        "repeatSamples": [
+          354
+        ],
+        "hashEvery": 60,
+        "crf": 18,
+        "sourceFiles": [
+          "script.story",
+          "config/timeline.json",
+          "config/voice_envs.json",
+          "effects/particles.js",
+          "effects/magic.js",
+          "performance.js",
+          "hybrid/config/art_pass_full.json",
+          "hybrid/config/art_shots.json",
+          "hybrid/config/art_cast.json",
+          "hybrid/config/plate_grade.json",
+          "hybrid/config/static_anchors.json",
+          "hybrid/config/ground_calib.json",
+          "hybrid/config/window_glows.json",
+          "hybrid/config/motion_full.json",
+          "hybrid/art_pass.html",
+          "hybrid/art_pass.js",
+          "hybrid/fx_rehost.js",
+          "hybrid/art_pass_r3.js",
+          "hybrid/cinema_direction.js",
+          "hybrid/config/cinema_staging.json",
+          "hybrid/config/art_cast_r3.json",
+          "hybrid/cinema_fx.js",
+          "hybrid/cinema_probe.mjs",
+          "hybrid/art_pass_r3.html",
+          "hybrid/assets/manifest_r3.json",
+          "config/dialogue.json",
+          "config/painted_contacts.json",
+          "hybrid/art_pass_r4.js",
+          "hybrid/cinema_direction_r4.js",
+          "hybrid/config/art_cast_r4.json",
+          "hybrid/config/cinema_staging_r4.json",
+          "hybrid/assets/manifest_r4.json",
+          "hybrid/cinema_probe_r4.mjs",
+          "hybrid/assets/draw_over_runtime/atlas-player.js",
+          "hybrid/assets/draw_over_runtime/authored-face.js",
+          "hybrid/assets/draw_over_runtime/baked-cel-clip.js",
+          "hybrid/assets/draw_over_runtime/cel-integration.js",
+          "hybrid/assets/draw_over_runtime/cel-stage.js",
+          "hybrid/assets/draw_over_runtime/continuity-check.js",
+          "hybrid/assets/draw_over_runtime/face-acting.js",
+          "hybrid/assets/draw_over_runtime/feathered-variant-face.js",
+          "hybrid/assets/draw_over_runtime/limb-rig2d.js",
+          "hybrid/assets/draw_over_runtime/locked-variant-face.js",
+          "hybrid/assets/draw_over_runtime/motion-controls.js",
+          "hybrid/assets/draw_over_runtime/painted-backplate-stage.js",
+          "hybrid/assets/draw_over_runtime/painted-particles.js",
+          "hybrid/assets/draw_over_runtime/painted-space.js",
+          "hybrid/assets/draw_over_runtime/painted-weather.js",
+          "hybrid/assets/draw_over_runtime/particle-effects-stage.js",
+          "hybrid/assets/draw_over_runtime/particle-stage.js",
+          "hybrid/assets/draw_over_runtime/projected-region-paint.js",
+          "hybrid/assets/draw_over_runtime/prop-damage.js",
+          "hybrid/assets/draw_over_runtime/raster-face.js",
+          "hybrid/assets/draw_over_runtime/story-particles.js",
+          "hybrid/assets/draw_over_runtime/story-state.js",
+          "hybrid/assets/draw_over_runtime/surface-motion-guide.js",
+          "hybrid/assets/draw_over_runtime/whole-pose-walk.js"
+        ],
+        "assetDirectories": [
+          "hybrid/assets/plates",
+          "hybrid/assets/cels",
+          "hybrid/assets/cels/walk",
+          "hybrid/assets/faces",
+          "hybrid/assets/refs",
+          "hybrid/assets/cinema_r3",
+          "hybrid/assets/cinema_r4"
+        ],
+        "audioCopy": true,
+        "silent": true,
+        "settleBeforeCapture": true
+      },
+      "probe": {
+        "adapter": "hybrid/cinema_probe_r4.mjs",
+        "output": "storyboard/cinema_r4/probe.json"
+      }
+    },
+    "shared": [
+      {
+        "path": "capture_guided_paint.mjs",
+        "sha256": "fcc88aa4e1759d18e657cf4fcedf74630a251b248aa7a3170c7f2e5d9febe6df"
+      },
+      {
+        "path": "capture_references.mjs",
+        "sha256": "5baa371b189e15e42721a44b03ddc911fca10c2826899a1ad3788465eece026b"
+      },
+      {
+        "path": "check_cel_proportions.py",
+        "sha256": "26abc67ee9f7659b1349c4feb264e524304c47e763c93d7c795876b0092ea076"
+      },
+      {
+        "path": "compare_cel_revision.py",
+        "sha256": "debb465905e792606732c5813d5c954a59d49e3e7cfb8d3771b8593e9e7b2d2c"
+      },
+      {
+        "path": "compare_whole_cels.py",
+        "sha256": "4745db026f7e978eb3a5cee6275f6a19e41790ce2d3a2b2932bcff8a1d2c1f70"
+      },
+      {
+        "path": "compose_cel_regions.py",
+        "sha256": "5eb10fdfb4c6693f38dcad30ff8261076d1ff01ce3db07b4a521d9b744adfbf4"
+      },
+      {
+        "path": "contact_sheet.py",
+        "sha256": "9c9cfe6eea5ea72f4e4cb873d1a19dfa36b769df8f560a476a783cc9cd6949ab"
+      },
+      {
+        "path": "drive_cel_body.py",
+        "sha256": "3b523a712549dd61b562e72d3fe4899e1f499e8159fef9d43f43bcc379ea026b"
+      },
+      {
+        "path": "drive_cel_volumes.py",
+        "sha256": "eebb0d2c96cb4d4cce45125c0ac6fd41e3dff6e12b0f2c543083f452b8cbeecb"
+      },
+      {
+        "path": "package_pilot.py",
+        "sha256": "2583fb88e7c8bbe64e92a3998c6d7f545b0e193a7f4e0ab311ce4dcd46d25ecc"
+      },
+      {
+        "path": "pipeline.mjs",
+        "sha256": "d8a7616415efa7b87071a3adce715a28ee08e11926976c027924f318a36c494a"
+      },
+      {
+        "path": "prepare_cel_crops.py",
+        "sha256": "33b6504eb7ec54db83ce8252450395b381c0be36bd6caaa545c95ac438431d9f"
+      },
+      {
+        "path": "prepare_portrait_atlas.py",
+        "sha256": "b5adea4e01a61e06d4870f9fbfaf936c4ca1a6bc5a00a490e1ea1cb478ada22f"
+      },
+      {
+        "path": "propagate_keypaint.py",
+        "sha256": "e2e616fd84210de2f058c9a27d2aae5e42a53be01511bdf91b208be5d3c1d7ff"
+      },
+      {
+        "path": "register_cel_region.py",
+        "sha256": "10a4d32da0bbe45b8c69f82bb28f312dd031f08905f465906b1609fd0e145eb8"
+      },
+      {
+        "path": "replace_window.py",
+        "sha256": "188ef50d4a0bff4feabfe35b0e4ee1b2a305852b77599b20153d616986e5188c"
+      },
+      {
+        "path": "replace_windows.py",
+        "sha256": "3882f1f1ec967713e5581f5e31f5408cb093118955c48f151c7c92d888625d27"
+      },
+      {
+        "path": "review_region_paint.mjs",
+        "sha256": "a3ae7f1b54c4ce8738a1a4021c2be219aab2c364a05ede5cd7e73d8de6c79491"
+      },
+      {
+        "path": "review_seek_tolerance.py",
+        "sha256": "44b2834c8b2e61a9b666958e5075a14a45d832749a7c4962553968e960bb1dce"
+      },
+      {
+        "path": "rigid_cel_head.py",
+        "sha256": "4c505f60b0edf6ea472d21ccf4fec6e2edc1bfb7e934301369edce981b01aeda"
+      },
+      {
+        "path": "split_pose_atlas.py",
+        "sha256": "869b301eb4c5aa925d8802c9511f90af17731564d5273aef0392a1d94c399257"
+      },
+      {
+        "path": "stabilize_cel_anchors.py",
+        "sha256": "67da0f55b5f7c3e642131ebb3ac3669a9c296e665616aefb5094150a4c512bc1"
+      },
+      {
+        "path": "test_painted_space.mjs",
+        "sha256": "6f2b839ea31f9485e091a1f911d21627b1e850baeb579f396d65e97baabae4c5"
+      },
+      {
+        "path": "test_story_state.mjs",
+        "sha256": "fe8f06ab308f74e1cba0c6f16b16ce83d1dada225f733a48e58fef803ff5742a"
+      },
+      {
+        "path": "verify_full_episode.py",
+        "sha256": "7735e4c3e44e05cad6997e5d15d5a169338f227568f9521a774f79eb56ed9c6d"
+      }
+    ]
+  },
+  "start": 276,
+  "end": 374,
+  "frames": 2940,
+  "fps": 30,
+  "errors": []
+}

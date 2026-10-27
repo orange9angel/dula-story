@@ -1,0 +1,179 @@
+[
+  {
+    "t": 38,
+    "shot": "m05",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.375,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "open",
+        "expr": "base",
+        "emotion": "curious",
+        "roll": 0.007456312687737812
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 0
+    },
+    "env": {
+      "transmission": 0.8527183455226186,
+      "dimVeil": 0
+    },
+    "subtitle": "月亮，你今晚怎么这么暗呀？",
+    "missingAssets": [],
+    "sha256": "39bfcf3e6237e47160af2e93fc4aadb9df5a90c637c4bc9d29465b56b718ebaa"
+  },
+  {
+    "t": 65,
+    "shot": "m09",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.2857142857142857,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "gentle",
+        "roll": 0.005738848727196182
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 8
+    },
+    "env": {
+      "transmission": 0.8395966459479338,
+      "dimVeil": 0
+    },
+    "subtitle": "别怕。",
+    "missingAssets": [],
+    "sha256": "3ddf343099532b1f7ba392f4e11aab73cded6d24b084e226d83f85e662f3a390"
+  },
+  {
+    "t": 71,
+    "shot": "m10",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 472,
+      "cy": 72,
+      "z": 1.5
+    },
+    "coverage": [
+      -680,
+      -576,
+      1624,
+      720
+    ],
+    "bodies": [],
+    "faces": [
+      {
+        "x": 640,
+        "y": 815,
+        "h": 820,
+        "u": 0.125,
+        "phase": 0,
+        "index": 0,
+        "planted": "left",
+        "plate": [
+          640,
+          815,
+          820
+        ],
+        "actor": "Eileen",
+        "w": 994.2230026338893,
+        "portrait": true,
+        "key": "face:Eileen",
+        "eyeScreen": [
+          640,
+          298.4
+        ],
+        "mouth": "open",
+        "expr": "expr_tearful",
+        "emotion": "sad",
+        "roll": 0.0031153467384692044
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 13,
+      "visible": 6
+    },
+    "env": {
+      "transmission": 0.7638122261258259,
+      "dimVeil": 0
+    },
+    "subtitle": "我也常常一个人。",
+    "missingAssets": [],
+    "sha256": "0d59ab6835099956a7f1977901c74e08a1200276fa382ea8fb90f2faf7e6ec0b"
+  }
+]
