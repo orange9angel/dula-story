@@ -14,6 +14,8 @@
 - [修订与实际复看记录](R5_REVIEW.md)；[技术交付检查](storyboard/cinema_r5/delivery.json)。
 - 共享实现与嘴眼/配音教训已提交dula-skills：`d04ced6`；本次接受保留项与连续运动
   审片边界：`24f8edd`（cel-cinema、character-attention-review）。
+- 素材归档与待推送历史体积检查已补入cel-cinema：`fba777c`。历史动作烘焙数据改用
+  LFS，内容摘要不变；归档范围与迁移备份见[R5_REVIEW.md](R5_REVIEW.md)。
 
 ## 上轮交付：R4 房间交流、嘴眼与剧情粒子修订
 
