@@ -1,0 +1,141 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "event": "wind_gust",
+      "target": 51.0,
+      "nearest_onset": 51.005,
+      "offset_s": 0.005,
+      "strongest_onset": 50.835,
+      "limit": 0.15,
+      "note": "m07 阵风/火苗颤动"
+    },
+    {
+      "event": "lamp_out",
+      "target": 58.0,
+      "nearest_onset": 57.92,
+      "offset_s": -0.08,
+      "strongest_onset": 57.92,
+      "limit": 0.15,
+      "note": "m08 灯火熄灭"
+    },
+    {
+      "event": "door_creak",
+      "target": 85.0,
+      "nearest_onset": 84.952,
+      "offset_s": -0.048,
+      "strongest_onset": 85.133,
+      "limit": 0.15,
+      "note": "m12 木门开启"
+    },
+    {
+      "event": "metal_tap",
+      "target": 102.0,
+      "nearest_onset": 101.909,
+      "offset_s": -0.091,
+      "strongest_onset": 102.112,
+      "limit": 0.15,
+      "note": "m14 工作台上修星"
+    },
+    {
+      "event": "star_wake",
+      "target": 156.0,
+      "nearest_onset": 156.005,
+      "offset_s": 0.005,
+      "strongest_onset": 155.781,
+      "limit": 0.15,
+      "note": "m21 星核苏醒"
+    },
+    {
+      "event": "gears_stop",
+      "target": 179.0,
+      "nearest_onset": 178.952,
+      "offset_s": -0.048,
+      "strongest_onset": 178.952,
+      "limit": 0.35,
+      "note": "m24 齿轮停转（弱瞬态，宽判）"
+    },
+    {
+      "event": "skylight_open",
+      "target": 184.0,
+      "nearest_onset": 183.995,
+      "offset_s": -0.005,
+      "strongest_onset": 183.675,
+      "limit": 0.15,
+      "note": "m25 天窗开启"
+    },
+    {
+      "event": "stair_form",
+      "target": 235.0,
+      "nearest_onset": 235.005,
+      "offset_s": 0.005,
+      "strongest_onset": 234.632,
+      "limit": 0.15,
+      "note": "m32 星阶成形"
+    },
+    {
+      "event": "step_ring",
+      "target": 263.0,
+      "nearest_onset": 262.877,
+      "offset_s": -0.123,
+      "strongest_onset": 263.133,
+      "limit": 0.15,
+      "note": "m36 靴落星阶"
+    },
+    {
+      "event": "tear_break",
+      "target": 369.0,
+      "nearest_onset": 369.027,
+      "offset_s": 0.027,
+      "strongest_onset": 369.027,
+      "limit": 0.15,
+      "note": "m49 泪碎"
+    },
+    {
+      "event": "bell_1",
+      "target": 408.0,
+      "nearest_onset": 408.112,
+      "offset_s": 0.112,
+      "strongest_onset": 408.112,
+      "limit": 0.15,
+      "note": "m55 钟第一响"
+    },
+    {
+      "event": "bell_2",
+      "target": 413.0,
+      "nearest_onset": 413.112,
+      "offset_s": 0.112,
+      "strongest_onset": 413.112,
+      "limit": 0.15,
+      "note": "m56 钟第二响"
+    },
+    {
+      "event": "bell_3",
+      "target": 418.0,
+      "nearest_onset": 418.112,
+      "offset_s": 0.112,
+      "strongest_onset": 418.112,
+      "limit": 0.15,
+      "note": "m57 钟第三响"
+    },
+    {
+      "event": "lamp_relight",
+      "target": 430.0,
+      "nearest_onset": 430.016,
+      "offset_s": 0.016,
+      "strongest_onset": 429.632,
+      "limit": 0.15,
+      "note": "m59 铜灯重燃"
+    },
+    {
+      "event": "gold_text",
+      "target": 466.0,
+      "nearest_onset": 466.005,
+      "offset_s": 0.005,
+      "strongest_onset": 465.632,
+      "limit": 0.15,
+      "note": "m63 金粒聚字"
+    }
+  ],
+  "failures": []
+}

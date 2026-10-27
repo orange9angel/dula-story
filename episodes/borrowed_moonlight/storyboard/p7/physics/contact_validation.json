@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "stats": {
+    "bite_min": 0.4123105625617664,
+    "carry_max_xz": 0.09491238064657295,
+    "seated_min": 0.16401219466856704,
+    "seated_max": 0.2154065922853795,
+    "unsupported_min": 0.03969886648255845,
+    "limb_elev_max_Eileen": 51.383381702376106,
+    "limb_shoulder_axis_max_Eileen": 0.16592599355499313,
+    "gait_speed_max_Eileen": 1.3862833227268416,
+    "foot_runs": 130,
+    "roll_heel_min": 13.7,
+    "roll_toe_min": -12.6,
+    "limb_elev_max_Alder": 113.41814312254348,
+    "limb_shoulder_axis_max_Alder": 0.14337884258166222,
+    "limb_elev_max_LadyMoon": 25.57626316299757,
+    "limb_shoulder_axis_max_LadyMoon": 0.10920164583899403,
+    "gait_speed_p50_Eileen": 0.57,
+    "gait_speed_p95_Eileen": 1.29,
+    "gait_avg_min_Eileen": 0.364,
+    "gait_cadence_min_Eileen": 2.02,
+    "gait_cadence_max_Eileen": 3.6
+  },
+  "failures": [],
+  "scope": "P5 接触纪律：手-灯（手提/捧/递出全程）、手-瓶（捧瓶）、手-怀表（摸表/看表）、脚-地（步态+足踝滚动）、坐-王座（髋贴座面）。距离阈值按本集角色骨架实测推导（见 NOTES.md P5）。viewer 链无碰撞兜底：探针=编写期编译器，缺口（m15 放灯沉降 ~.2m、衣片净空）由审片帧补。"
+}

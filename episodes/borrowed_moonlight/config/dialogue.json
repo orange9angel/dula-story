@@ -1,0 +1,972 @@
+{
+ "source": "script.story + timeline.json {Event:Act}",
+ "voices": {
+  "Narrator": "narrator",
+  "Eileen": "eileen",
+  "Alder": "alder",
+  "LadyMoon": "ladymoon"
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "beat": "m01",
+   "speaker": "narrator",
+   "character": "Narrator",
+   "t": 1.2,
+   "end": 11,
+   "window": 9.8,
+   "segStart": 0,
+   "segEnd": 11,
+   "text": "很久很久以前，有一个王国，那里一年四季都下着雪。",
+   "tts_text": "很久很久以前，有一个王国，那里一年四季都下着雪。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "童话旁白，温厚的女声，像冬夜炉火边给孩子讲故事",
+     "很久很久以前的开卷语气，温厚、缓慢。"
+    ]
+   },
+   "acting": {
+    "emotion": "neutral",
+    "seedEmotion": null,
+    "gaze": "none",
+    "camera": "narration"
+   }
+  },
+  {
+   "id": "n02",
+   "beat": "m02",
+   "speaker": "narrator",
+   "character": "Narrator",
+   "t": 12.2,
+   "end": 19,
+   "window": 6.8,
+   "segStart": 11,
+   "segEnd": 19,
+   "text": "人们说，那是因为春天在很久以前，迷了路。",
+   "tts_text": "人们说，那是因为春天在很久以前，迷了路。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "童话旁白，温厚的女声，像冬夜炉火边给孩子讲故事",
+     "接着说书，带一点惋惜。"
+    ]
+   },
+   "acting": {
+    "emotion": "neutral",
+    "seedEmotion": null,
+    "gaze": "none",
+    "camera": "narration"
+   }
+  },
+  {
+   "id": "n03",
+   "beat": "m03",
+   "speaker": "narrator",
+   "character": "Narrator",
+   "t": 20.2,
+   "end": 27,
+   "window": 6.8,
+   "segStart": 19,
+   "segEnd": 27,
+   "text": "可真正的原因是……再也没有人记得，春天是什么模样了。",
+   "tts_text": "可真正的原因是……再也没有人记得，春天是什么模样了。",
+   "delivery": {
+    "rate": -2,
+    "context": [
+     "童话旁白，温厚的女声，像冬夜炉火边给孩子讲故事",
+     "揭开真正原因，声音放低。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "none",
+    "camera": "narration"
+   }
+  },
+  {
+   "id": "e01",
+   "beat": "m05",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 35.5,
+   "end": 43,
+   "window": 7.5,
+   "segStart": 35,
+   "segEnd": 43,
+   "text": "月亮，你今晚怎么这么暗呀？",
+   "tts_text": "月亮，你今晚怎么这么暗呀？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "轻声，天真的关切。"
+    ]
+   },
+   "acting": {
+    "emotion": "curious",
+    "seedEmotion": null,
+    "gaze": "moon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e02",
+   "beat": "m06",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 43.5,
+   "end": 51,
+   "window": 7.5,
+   "segStart": 43,
+   "segEnd": 51,
+   "text": "是不是，也没有人陪你说话？",
+   "tts_text": "是不是，也没有人陪你说话？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "压低声音，像怕惊动谁。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "moon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e03",
+   "beat": "m09",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 63.5,
+   "end": 70,
+   "window": 6.5,
+   "segStart": 63,
+   "segEnd": 70,
+   "text": "别怕。",
+   "tts_text": "别怕。",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "安慰灯，也像安慰自己。"
+    ]
+   },
+   "acting": {
+    "emotion": "gentle",
+    "seedEmotion": "calm",
+    "gaze": "lamp",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e04",
+   "beat": "m10",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 70.5,
+   "end": 78,
+   "window": 7.5,
+   "segStart": 70,
+   "segEnd": 78,
+   "text": "我也常常一个人。",
+   "tts_text": "我也常常一个人。",
+   "delivery": {
+    "rate": -3,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "坦白自己的小秘密，轻而稳。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "moon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e05",
+   "beat": "m15",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 109.5,
+   "end": 117,
+   "window": 7.5,
+   "segStart": 109,
+   "segEnd": 117,
+   "text": "先生，您为什么把星星关在瓶子里？",
+   "tts_text": "先生，您为什么把星星关在瓶子里？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "天真的质问，没有指责。"
+    ]
+   },
+   "acting": {
+    "emotion": "curious",
+    "seedEmotion": null,
+    "gaze": "bottles",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a01",
+   "beat": "m16",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 117.5,
+   "end": 126,
+   "window": 8.5,
+   "segStart": 117,
+   "segEnd": 126,
+   "text": "我没有关住它们。是它们的主人，忘记了怎么发光。",
+   "tts_text": "我没有关住它们。是它们的主人，忘记了怎么发光。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "沙哑缓慢，平静里有旧伤。"
+    ]
+   },
+   "acting": {
+    "emotion": "neutral",
+    "seedEmotion": null,
+    "gaze": "workbench",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e06",
+   "beat": "m18",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 132.5,
+   "end": 140,
+   "window": 7.5,
+   "segStart": 132,
+   "segEnd": 140,
+   "text": "那您为什么不把它们还回去？",
+   "tts_text": "那您为什么不把它们还回去？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气"
+    ]
+   },
+   "acting": {
+    "emotion": "curious",
+    "seedEmotion": null,
+    "gaze": "alder",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a02",
+   "beat": "m19",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 140.5,
+   "end": 149,
+   "window": 8.5,
+   "segStart": 140,
+   "segEnd": 149,
+   "text": "因为有些人，已经不愿意再打开自己的心了。",
+   "tts_text": "因为有些人，已经不愿意再打开自己的心了。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "回避，声音更低。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "none",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e07",
+   "beat": "m21",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 155.5,
+   "end": 162,
+   "window": 6.5,
+   "segStart": 155,
+   "segEnd": 162,
+   "text": "您看！它醒了！",
+   "tts_text": "您看！它醒了！",
+   "delivery": {
+    "rate": 8,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "惊喜，压低声音的欢呼。"
+    ]
+   },
+   "acting": {
+    "emotion": "excited",
+    "seedEmotion": "excited",
+    "gaze": "bottle",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a03",
+   "beat": "m22",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 162.5,
+   "end": 170,
+   "window": 7.5,
+   "segStart": 162,
+   "segEnd": 170,
+   "text": "不可能……这颗星星，已经熄灭了三十年。",
+   "tts_text": "不可能……这颗星星，已经熄灭了三十年。",
+   "delivery": {
+    "rate": -5,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "难以置信，声音发颤。"
+    ]
+   },
+   "acting": {
+    "emotion": "surprised",
+    "seedEmotion": "surprised",
+    "gaze": "bottle",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e08",
+   "beat": "m23",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 170.5,
+   "end": 178,
+   "window": 7.5,
+   "segStart": 170,
+   "segEnd": 178,
+   "text": "也许它没有熄灭。只是太久，没有人跟它说话了。",
+   "tts_text": "也许它没有熄灭。只是太久，没有人跟它说话了。",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "温柔而笃定。"
+    ]
+   },
+   "acting": {
+    "emotion": "gentle",
+    "seedEmotion": "calm",
+    "gaze": "alder",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a04",
+   "beat": "m26",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 192.5,
+   "end": 200,
+   "window": 7.5,
+   "segStart": 192,
+   "segEnd": 200,
+   "text": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。",
+   "tts_text": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。",
+   "delivery": {
+    "rate": 8,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "沉重的宣判，一字一顿。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "moon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e09",
+   "beat": "m27",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 200.5,
+   "end": 206,
+   "window": 5.5,
+   "segStart": 200,
+   "segEnd": 206,
+   "text": "那我们去把它点亮！",
+   "tts_text": "那我们去把它点亮！",
+   "delivery": {
+    "rate": 5,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "脱口而出，毫不迟疑。"
+    ]
+   },
+   "acting": {
+    "emotion": "determined",
+    "seedEmotion": null,
+    "gaze": "moon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a05",
+   "beat": "m28",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 206.5,
+   "end": 213,
+   "window": 6.5,
+   "segStart": 206,
+   "segEnd": 213,
+   "text": "月亮离我们，太远了。",
+   "tts_text": "月亮离我们，太远了。",
+   "delivery": {
+    "rate": -5,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "疲惫的现实主义者。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "moon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e10",
+   "beat": "m29",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 213.5,
+   "end": 220,
+   "window": 6.5,
+   "segStart": 213,
+   "segEnd": 220,
+   "text": "可如果每颗星星都愿意帮忙呢？",
+   "tts_text": "可如果每颗星星都愿意帮忙呢？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "天真的反问，带着答案的反问。"
+    ]
+   },
+   "acting": {
+    "emotion": "determined",
+    "seedEmotion": null,
+    "gaze": "bottle",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a06",
+   "beat": "m33",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 241.5,
+   "end": 248,
+   "window": 6.5,
+   "segStart": 241,
+   "segEnd": 248,
+   "text": "这是……失传的星辰魔法。",
+   "tts_text": "这是……失传的星辰魔法。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "一生的信念在眼前复活，气声。"
+    ]
+   },
+   "acting": {
+    "emotion": "surprised",
+    "seedEmotion": "surprised",
+    "gaze": "stair",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e11",
+   "beat": "m34",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 248.5,
+   "end": 254,
+   "window": 5.5,
+   "segStart": 248,
+   "segEnd": 254,
+   "text": "不是魔法，先生。",
+   "tts_text": "不是魔法，先生。",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "笑着纠正，前半句。"
+    ]
+   },
+   "acting": {
+    "emotion": "happy",
+    "seedEmotion": "happy",
+    "gaze": "alder",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e12",
+   "beat": "m35",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 254.5,
+   "end": 261,
+   "window": 6.5,
+   "segStart": 254,
+   "segEnd": 261,
+   "text": "是它们想回家了。",
+   "tts_text": "是它们想回家了。",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "后半句，轻而确定。"
+    ]
+   },
+   "acting": {
+    "emotion": "gentle",
+    "seedEmotion": "calm",
+    "gaze": "stair",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "m01",
+   "beat": "m39",
+   "speaker": "ladymoon",
+   "character": "LadyMoon",
+   "t": 284.6,
+   "end": 293,
+   "window": 8.4,
+   "segStart": 284,
+   "segEnd": 293,
+   "text": "很久，没有人来这里了。",
+   "tts_text": "很久，没有人来这里了。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "月亮夫人，超然、疲惫而慈爱，声音轻得像从很远的地方传来",
+     "超然、疲惫，像从很远的地方传来。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "eileen",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e13",
+   "beat": "m40",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 293.5,
+   "end": 300,
+   "window": 6.5,
+   "segStart": 293,
+   "segEnd": 300,
+   "text": "您生病了吗？",
+   "tts_text": "您生病了吗？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "小心的关切。"
+    ]
+   },
+   "acting": {
+    "emotion": "worried",
+    "seedEmotion": "sad",
+    "gaze": "ladymoon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "m02",
+   "beat": "m41",
+   "speaker": "ladymoon",
+   "character": "LadyMoon",
+   "t": 300.6,
+   "end": 308,
+   "window": 7.4,
+   "segStart": 300,
+   "segEnd": 308,
+   "text": "没有，孩子。我只是……快要被遗忘了。",
+   "tts_text": "没有，孩子。我只是……快要被遗忘了。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "月亮夫人，超然、疲惫而慈爱，声音轻得像从很远的地方传来",
+     "平静的告别预告。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "none",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e14",
+   "beat": "m42",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 308.5,
+   "end": 315,
+   "window": 6.5,
+   "segStart": 308,
+   "segEnd": 315,
+   "text": "被遗忘，也会让人消失吗？",
+   "tts_text": "被遗忘，也会让人消失吗？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "认真地困惑。"
+    ]
+   },
+   "acting": {
+    "emotion": "curious",
+    "seedEmotion": null,
+    "gaze": "ladymoon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "m03",
+   "beat": "m43",
+   "speaker": "ladymoon",
+   "character": "LadyMoon",
+   "t": 315.6,
+   "end": 325,
+   "window": 9.4,
+   "segStart": 315,
+   "segEnd": 325,
+   "text": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。",
+   "tts_text": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "月亮夫人，超然、疲惫而慈爱，声音轻得像从很远的地方传来",
+     "数自己的伤口，平静得让人心疼。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "none",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e15",
+   "beat": "m45",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 331.5,
+   "end": 338,
+   "window": 6.5,
+   "segStart": 331,
+   "segEnd": 338,
+   "text": "那我把我的灯送给您。",
+   "tts_text": "那我把我的灯送给您。",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "献出自己最宝贵的东西，干脆利落。"
+    ]
+   },
+   "acting": {
+    "emotion": "determined",
+    "seedEmotion": null,
+    "gaze": "ladymoon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "m04",
+   "beat": "m46",
+   "speaker": "ladymoon",
+   "character": "LadyMoon",
+   "t": 338.6,
+   "end": 345,
+   "window": 6.4,
+   "segStart": 338,
+   "segEnd": 345,
+   "text": "孩子，你的灯，已经没有火了。",
+   "tts_text": "孩子，你的灯，已经没有火了。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "月亮夫人，超然、疲惫而慈爱，声音轻得像从很远的地方传来",
+     "慈爱地拒绝。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "lamp",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e16",
+   "beat": "m47",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 345.5,
+   "end": 352,
+   "window": 6.5,
+   "segStart": 345,
+   "segEnd": 352,
+   "text": "可是……我还在这里呀。",
+   "tts_text": "可是……我还在这里呀。",
+   "delivery": {
+    "rate": -3,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "最轻的一句，全片最重的一句。"
+    ]
+   },
+   "acting": {
+    "emotion": "determined",
+    "seedEmotion": null,
+    "gaze": "ladymoon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e17",
+   "beat": "m48",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 352.0,
+   "end": 364,
+   "window": 12.0,
+   "segStart": 352,
+   "segEnd": 364,
+   "text": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
+   "tts_text": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
+   "delivery": {
+    "rate": 25,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "一口气说完的心里话，带哭腔但不哭出声。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": null,
+    "gaze": "ladymoon",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "m05",
+   "beat": "m49",
+   "speaker": "ladymoon",
+   "character": "LadyMoon",
+   "t": 369.6,
+   "end": 374,
+   "window": 4.4,
+   "segStart": 364,
+   "segEnd": 374,
+   "text": "原来……还有人在等我。",
+   "tts_text": "原来……还有人在等我。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "月亮夫人，超然、疲惫而慈爱，声音轻得像从很远的地方传来",
+     "被等了一千年的声音，轻得像叹息。"
+    ]
+   },
+   "acting": {
+    "emotion": "relieved",
+    "seedEmotion": "calm",
+    "gaze": "eileen",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a07",
+   "beat": "m50",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 374.5,
+   "end": 382,
+   "window": 7.5,
+   "segStart": 374,
+   "segEnd": 382,
+   "text": "艾琳……你回来了吗？",
+   "tts_text": "艾琳……你回来了吗？",
+   "delivery": {
+    "rate": -5,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "对空无一人的街道问，不敢抱希望。"
+    ]
+   },
+   "acting": {
+    "emotion": "sad",
+    "seedEmotion": "sad",
+    "gaze": "sky",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a08",
+   "beat": "m59",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 429.5,
+   "end": 435,
+   "window": 5.5,
+   "segStart": 429,
+   "segEnd": 435,
+   "text": "艾琳！你是怎么做到的？",
+   "tts_text": "艾琳！你是怎么做到的？",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "又惊又喜，哑着嗓子喊。"
+    ]
+   },
+   "acting": {
+    "emotion": "excited",
+    "seedEmotion": "excited",
+    "gaze": "eileen",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "e18",
+   "beat": "m60",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 435.5,
+   "end": 443,
+   "window": 7.5,
+   "segStart": 435,
+   "segEnd": 443,
+   "text": "我没有把月亮点亮。我只是告诉她……还有人需要她。",
+   "tts_text": "我没有把月亮点亮。我只是告诉她……还有人需要她。",
+   "delivery": {
+    "rate": 0,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "平静地纠正，不居功。"
+    ]
+   },
+   "acting": {
+    "emotion": "gentle",
+    "seedEmotion": "calm",
+    "gaze": "alder",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "a09",
+   "beat": "m61",
+   "speaker": "alder",
+   "character": "Alder",
+   "t": 443.5,
+   "end": 451,
+   "window": 7.5,
+   "segStart": 443,
+   "segEnd": 451,
+   "text": "原来……我也还可以发光。",
+   "tts_text": "原来……我也还可以发光。",
+   "delivery": {
+    "rate": -8,
+    "context": [
+     "七十岁老钟表匠奥尔德，苍老、沙哑、缓慢，嗓音里有旧伤",
+     "哽咽着说完，像重新活过来。"
+    ]
+   },
+   "acting": {
+    "emotion": "relieved",
+    "seedEmotion": "calm",
+    "gaze": "locket",
+    "camera": "speech"
+   }
+  },
+  {
+   "id": "n04",
+   "beat": "m62",
+   "speaker": "narrator",
+   "character": "Narrator",
+   "t": 451.3,
+   "end": 464,
+   "window": 12.7,
+   "segStart": 451,
+   "segEnd": 464,
+   "text": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
+   "tts_text": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
+   "delivery": {
+    "rate": 35,
+    "context": [
+     "童话旁白，温厚的女声，像冬夜炉火边给孩子讲故事",
+     "收书的声音，讲完一个想留住的故事。"
+    ]
+   },
+   "acting": {
+    "emotion": "gentle",
+    "seedEmotion": "calm",
+    "gaze": "none",
+    "camera": "narration"
+   }
+  },
+  {
+   "id": "e19",
+   "beat": "m63",
+   "speaker": "eileen",
+   "character": "Eileen",
+   "t": 464.5,
+   "end": 472,
+   "window": 7.5,
+   "segStart": 464,
+   "segEnd": 472,
+   "text": "晚安，月亮。明天见。",
+   "tts_text": "晚安，月亮。明天见。",
+   "delivery": {
+    "rate": -3,
+    "context": [
+     "十一岁女孩艾琳，声音轻而坚定，天真但不奶气",
+     "对老朋友的晚安，带笑。"
+    ]
+   },
+   "acting": {
+    "emotion": "happy",
+    "seedEmotion": "happy",
+    "gaze": "moon",
+    "camera": "speech"
+   }
+  }
+ ]
+}

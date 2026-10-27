@@ -1,0 +1,33 @@
+{
+  "provider": "volcano seed-tts-2.0",
+  "resourceId": "seed-tts-2.0",
+  "audition": "tmp/voice_audition/v1（每角色 3 候选×2 代表句，24/24 合成成功、时长窗全 ✅；本环境无音频输出未做盲听，按音色目录气质+时长窗+后续拼音 QC 暂定接片，导演复听后可换）",
+  "Narrator": {
+    "voice": "zh_female_shaoergushi_uranus_bigtts",
+    "name": "少儿故事 2.0",
+    "locale": "zh-CN",
+    "reason": "演绎类、官方定位就是儿童故事讲述女声——对应\"温厚女声、炉火边讲故事\"；候排 xiaoxue（儿童绘本）/vv（治愈安抚）",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "Eileen": {
+    "voice": "zh_female_mengyatou_uranus_bigtts",
+    "name": "萌丫头 2.0",
+    "reason": "目录中唯一中文女童龄音色（11 岁年龄正确优先）；\"元气\"风险用逐句 context（轻而坚定/低声）压制；候排 linjianvhai（温柔内敛但青年龄）、yingtaowanzi（萝莉但太跳脱）",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "Alder": {
+    "voice": "zh_male_tangseng_uranus_bigtts",
+    "name": "唐僧 2.0",
+    "reason": "三候选中语速最慢（6.10s/8.4s 窗）、语调平缓慈悲，最贴 70 岁钟表匠；沙哑为中文男声无原生音色的已知坑，靠 context\"苍老沙哑\"+低速率逼近；候排 shenyeboke（太年轻）/baqiqingshu（太强势）",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  },
+  "LadyMoon": {
+    "voice": "zh_female_linxiao_uranus_bigtts",
+    "name": "林潇 2.0",
+    "reason": "清冷干净沉稳=超然；疲惫慈爱由 context 注入，\"很远的地方\"由后期轻混响实现（space=hall 允许的空间处理）；候排 gufengshaoyu（清冷古典）/cancan（太软糯）",
+    "locale": "zh-CN",
+    "identityPolicy": "preserve-native-voice"
+  }
+}

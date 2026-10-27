@@ -1,0 +1,1522 @@
+{
+ "duration": 478,
+ "step": 0.01,
+ "generated_from": "script.story",
+ "generator": "node tools/compile_story.mjs",
+ "segments": [
+  {
+   "id": "m01",
+   "kind": "dialogue",
+   "character": "Narrator",
+   "start": 0,
+   "end": 11,
+   "move": "push_in",
+   "shot": "town_far",
+   "scene": "snowtown",
+   "action": "雪国小镇远景缓慢推进：中央巨大钟楼、两侧倾斜木屋、昏黄窗灯，苍白月亮悬在天幕；雪花落地前短暂化作蓝色光点",
+   "cues": [
+    {
+     "name": "OPEN",
+     "at": 0
+    }
+   ],
+   "act": {
+    "id": "n01",
+    "emotion": "neutral",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "很久很久以前的开卷语气，温厚、缓慢。"
+   },
+   "line": "很久很久以前，有一个王国，那里一年四季都下着雪。"
+  },
+  {
+   "id": "m02",
+   "kind": "dialogue",
+   "character": "Narrator",
+   "start": 11,
+   "end": 19,
+   "move": "hold",
+   "shot": "clock_face",
+   "scene": "snowtown",
+   "action": "仰拍钟楼钟面：指针停滞，铜面结霜",
+   "cues": [],
+   "act": {
+    "id": "n02",
+    "emotion": "neutral",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "接着说书，带一点惋惜。"
+   },
+   "line": "人们说，那是因为春天在很久以前，迷了路。"
+  },
+  {
+   "id": "m03",
+   "kind": "dialogue",
+   "character": "Narrator",
+   "start": 19,
+   "end": 27,
+   "move": "pan",
+   "shot": "street_empty",
+   "scene": "snowtown",
+   "action": "横移空镜：窗灯昏黄、无人街道，稀疏雪粒",
+   "cues": [],
+   "act": {
+    "id": "n03",
+    "emotion": "sad",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "揭开真正原因，声音放低。"
+   },
+   "line": "可真正的原因是……再也没有人记得，春天是什么模样了。"
+  },
+  {
+   "id": "m04",
+   "kind": "action",
+   "character": null,
+   "start": 27,
+   "end": 35,
+   "move": "follow",
+   "shot": "girl_enter",
+   "scene": "snowtown",
+   "action": "中远景跟拍：艾琳提着旧铜灯走过街口，灯光在雪面上晃出一小圈暖",
+   "cues": [
+    {
+     "name": "FOOTSTEPS_SNOW",
+     "at": 27
+    }
+   ]
+  },
+  {
+   "id": "m05",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 35,
+   "end": 43,
+   "move": "look_up",
+   "shot": "girl_close",
+   "scene": "snowtown",
+   "action": "面部近景：艾琳停步抬头，望向苍白月亮；银蓝反光落在脸上",
+   "cues": [],
+   "act": {
+    "id": "e01",
+    "emotion": "curious",
+    "gaze": "moon",
+    "camera": "speech",
+    "context": "轻声，天真的关切。"
+   },
+   "line": "月亮，你今晚怎么这么暗呀？"
+  },
+  {
+   "id": "m06",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 43,
+   "end": 51,
+   "move": "push_slow",
+   "shot": "moon_close",
+   "scene": "snowtown",
+   "action": "月亮特写慢推：光晕收缩，边缘银粉消散",
+   "cues": [
+    {
+     "name": "MOON_DIM",
+     "at": 44
+    }
+   ],
+   "act": {
+    "id": "e02",
+    "emotion": "sad",
+    "gaze": "moon",
+    "camera": "speech",
+    "context": "压低声音，像怕惊动谁。"
+   },
+   "line": "是不是，也没有人陪你说话？"
+  },
+  {
+   "id": "m07",
+   "kind": "action",
+   "character": null,
+   "start": 51,
+   "end": 57,
+   "move": "hold",
+   "shot": "lamp_close",
+   "scene": "snowtown",
+   "action": "铜灯特写：一阵风来，火苗颤动",
+   "cues": [
+    {
+     "name": "WIND_GUST",
+     "at": 51
+    }
+   ]
+  },
+  {
+   "id": "m08",
+   "kind": "action",
+   "character": null,
+   "start": 57,
+   "end": 63,
+   "move": "hold",
+   "shot": "lamp_macro",
+   "scene": "snowtown",
+   "action": "极近景：灯火熄灭，灯芯变黑；灯芯逸出七八颗金色萤火粒子，在她脸旁盘旋",
+   "cues": [
+    {
+     "name": "LAMP_OUT",
+     "at": 58
+    },
+    {
+     "name": "FIREFLIES",
+     "at": 58.5
+    }
+   ]
+  },
+  {
+   "id": "m09",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 63,
+   "end": 70,
+   "move": "hold",
+   "shot": "girl_close",
+   "scene": "snowtown",
+   "action": "近景：艾琳低头，轻拍铜灯；金粒环绕她肩头",
+   "cues": [],
+   "act": {
+    "id": "e03",
+    "emotion": "gentle",
+    "gaze": "lamp",
+    "camera": "speech",
+    "context": "安慰灯，也像安慰自己。"
+   },
+   "line": "别怕。"
+  },
+  {
+   "id": "m10",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 70,
+   "end": 78,
+   "move": "hold",
+   "shot": "eye_macro",
+   "scene": "snowtown",
+   "action": "极近景：最后一颗金粒落在她睫毛上，映出泪光",
+   "cues": [],
+   "act": {
+    "id": "e04",
+    "emotion": "sad",
+    "gaze": "moon",
+    "camera": "speech",
+    "context": "坦白自己的小秘密，轻而稳。"
+   },
+   "line": "我也常常一个人。"
+  },
+  {
+   "id": "m11",
+   "kind": "action",
+   "character": null,
+   "start": 78,
+   "end": 84,
+   "move": "hold",
+   "shot": "tower_door",
+   "scene": "snowtown",
+   "action": "中景：女孩抱着铜灯走向钟楼木门；雪粒渐稀",
+   "cues": [
+    {
+     "name": "FOOTSTEPS_SNOW2",
+     "at": 78
+    }
+   ]
+  },
+  {
+   "id": "m12",
+   "kind": "action",
+   "character": null,
+   "start": 84,
+   "end": 91,
+   "move": "follow_back",
+   "shot": "door_open",
+   "scene": "snowtown",
+   "action": "背后跟拍：木门开启，暖琥珀光溢出，光束里尘埃浮动；黑场过渡",
+   "cues": [
+    {
+     "name": "DOOR_CREAK",
+     "at": 85
+    },
+    {
+     "name": "ACT1_END",
+     "at": 89
+    }
+   ]
+  },
+  {
+   "id": "m13",
+   "kind": "action",
+   "character": null,
+   "start": 91,
+   "end": 101,
+   "move": "crane_up",
+   "shot": "workshop_wide",
+   "scene": "clocktower",
+   "action": "摇臂上升：高挑圆形工坊，数百玻璃瓶悬浮，内藏微弱星星；巨型黄铜齿轮缓缓转动",
+   "cues": [
+    {
+     "name": "GEARS",
+     "at": 91
+    },
+    {
+     "name": "ACT2",
+     "at": 91
+    }
+   ]
+  },
+  {
+   "id": "m14",
+   "kind": "action",
+   "character": null,
+   "start": 101,
+   "end": 109,
+   "move": "push_slow",
+   "shot": "oldman_work",
+   "scene": "clocktower",
+   "action": "中景缓推：奥尔德在工作台前修理一颗熄灭的星星，胸前怀表轻晃",
+   "cues": [
+    {
+     "name": "METAL_TAP",
+     "at": 102
+    }
+   ]
+  },
+  {
+   "id": "m15",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 109,
+   "end": 117,
+   "move": "hold",
+   "shot": "two_mid",
+   "scene": "clocktower",
+   "action": "双人中景：艾琳仰头望着悬浮的星瓶，灯搁在脚边",
+   "cues": [],
+   "act": {
+    "id": "e05",
+    "emotion": "curious",
+    "gaze": "bottles",
+    "camera": "speech",
+    "context": "天真的质问，没有指责。"
+   },
+   "line": "先生，您为什么把星星关在瓶子里？"
+  },
+  {
+   "id": "m16",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 117,
+   "end": 126,
+   "move": "hold",
+   "shot": "alder_close",
+   "scene": "clocktower",
+   "action": "近景：奥尔德停下工具，没有抬头",
+   "cues": [],
+   "act": {
+    "id": "a01",
+    "emotion": "neutral",
+    "gaze": "workbench",
+    "camera": "speech",
+    "context": "沙哑缓慢，平静里有旧伤。"
+   },
+   "line": "我没有关住它们。是它们的主人，忘记了怎么发光。"
+  },
+  {
+   "id": "m17",
+   "kind": "action",
+   "character": null,
+   "start": 126,
+   "end": 132,
+   "move": "pan",
+   "shot": "bottles_row",
+   "scene": "clocktower",
+   "action": "横移：一排沉睡的星瓶，瓶内星光奄奄一息",
+   "cues": []
+  },
+  {
+   "id": "m18",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 132,
+   "end": 140,
+   "move": "over_shoulder",
+   "shot": "girl_step",
+   "scene": "clocktower",
+   "action": "肩后镜头：艾琳向前一步",
+   "cues": [],
+   "act": {
+    "id": "e06",
+    "emotion": "curious",
+    "gaze": "alder",
+    "camera": "speech",
+    "context": ""
+   },
+   "line": "那您为什么不把它们还回去？"
+  },
+  {
+   "id": "m19",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 140,
+   "end": 149,
+   "move": "hold",
+   "shot": "alder_side",
+   "scene": "clocktower",
+   "action": "近景：奥尔德侧脸回避目光，脸上影子加深",
+   "cues": [],
+   "act": {
+    "id": "a02",
+    "emotion": "sad",
+    "gaze": "none",
+    "camera": "speech",
+    "context": "回避，声音更低。"
+   },
+   "line": "因为有些人，已经不愿意再打开自己的心了。"
+  },
+  {
+   "id": "m20",
+   "kind": "action",
+   "character": null,
+   "start": 149,
+   "end": 155,
+   "move": "hold",
+   "shot": "hand_bottle",
+   "scene": "clocktower",
+   "action": "手部特写：艾琳轻轻捧起一只玻璃瓶，瓶内星核微弱脉冲",
+   "cues": [
+    {
+     "name": "STAR_PULSE",
+     "at": 150
+    }
+   ]
+  },
+  {
+   "id": "m21",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 155,
+   "end": 162,
+   "move": "hold",
+   "shot": "bottle_macro",
+   "scene": "clocktower",
+   "action": "瓶内极近景：星核忽然跳动，金色粒子旋转成星云",
+   "cues": [
+    {
+     "name": "STAR_WAKE",
+     "at": 156
+    }
+   ],
+   "act": {
+    "id": "e07",
+    "emotion": "excited",
+    "gaze": "bottle",
+    "camera": "speech",
+    "context": "惊喜，压低声音的欢呼。"
+   },
+   "line": "您看！它醒了！"
+  },
+  {
+   "id": "m22",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 162,
+   "end": 170,
+   "move": "hold",
+   "shot": "alder_shock",
+   "scene": "clocktower",
+   "action": "面部近景：奥尔德站起，眼镜滑落，瞳孔里映着星光",
+   "cues": [
+    {
+     "name": "GLASSES_DROP",
+     "at": 163
+    }
+   ],
+   "act": {
+    "id": "a03",
+    "emotion": "surprised",
+    "gaze": "bottle",
+    "camera": "speech",
+    "context": "难以置信，声音发颤。"
+   },
+   "line": "不可能……这颗星星，已经熄灭了三十年。"
+  },
+  {
+   "id": "m23",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 170,
+   "end": 178,
+   "move": "hold",
+   "shot": "girl_smile",
+   "scene": "clocktower",
+   "action": "正面近景：艾琳抱着瓶子微笑解释，暖金补光",
+   "cues": [],
+   "act": {
+    "id": "e08",
+    "emotion": "gentle",
+    "gaze": "alder",
+    "camera": "speech",
+    "context": "温柔而笃定。"
+   },
+   "line": "也许它没有熄灭。只是太久，没有人跟它说话了。"
+  },
+  {
+   "id": "m24",
+   "kind": "action",
+   "character": null,
+   "start": 178,
+   "end": 184,
+   "move": "hold",
+   "shot": "workshop_wide",
+   "scene": "clocktower",
+   "action": "工坊大全景：齿轮逐一停转，悬浮的瓶子轻轻颤动，光线从苏醒的星瓶连向其他瓶子，构成悬空星座",
+   "cues": [
+    {
+     "name": "RESONANCE",
+     "at": 178
+    },
+    {
+     "name": "GEARS_STOP",
+     "at": 179
+    }
+   ]
+  },
+  {
+   "id": "m25",
+   "kind": "action",
+   "character": null,
+   "start": 184,
+   "end": 192,
+   "move": "tilt_up",
+   "shot": "skylight",
+   "scene": "towertop",
+   "action": "仰拍：钟楼顶端天窗向两侧开启，月光薄雾泻下",
+   "cues": [
+    {
+     "name": "SKYLIGHT",
+     "at": 184
+    },
+    {
+     "name": "ACT3",
+     "at": 184
+    }
+   ]
+  },
+  {
+   "id": "m26",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 192,
+   "end": 200,
+   "move": "telescope",
+   "shot": "moon_dim",
+   "scene": "towertop",
+   "action": "望远镜式特写：月亮只剩细银轮廓，边缘银粉飘散",
+   "cues": [
+    {
+     "name": "MOON_FADE",
+     "at": 193
+    }
+   ],
+   "act": {
+    "id": "a04",
+    "emotion": "sad",
+    "gaze": "moon",
+    "camera": "speech",
+    "context": "沉重的宣判，一字一顿。"
+   },
+   "line": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。"
+  },
+  {
+   "id": "m27",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 200,
+   "end": 206,
+   "move": "hold",
+   "shot": "girl_determined",
+   "scene": "towertop",
+   "action": "艾琳攥紧灯柄再抬头",
+   "cues": [],
+   "act": {
+    "id": "e09",
+    "emotion": "determined",
+    "gaze": "moon",
+    "camera": "speech",
+    "context": "脱口而出，毫不迟疑。"
+   },
+   "line": "那我们去把它点亮！"
+  },
+  {
+   "id": "m28",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 206,
+   "end": 213,
+   "move": "hold",
+   "shot": "two_mid",
+   "scene": "towertop",
+   "action": "双人中景：老人指向高空，寒风掠过",
+   "cues": [
+    {
+     "name": "WIND_HIGH",
+     "at": 206
+    }
+   ],
+   "act": {
+    "id": "a05",
+    "emotion": "sad",
+    "gaze": "moon",
+    "camera": "speech",
+    "context": "疲惫的现实主义者。"
+   },
+   "line": "月亮离我们，太远了。"
+  },
+  {
+   "id": "m29",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 213,
+   "end": 220,
+   "move": "hold",
+   "shot": "hand_star",
+   "scene": "towertop",
+   "action": "手部近景：艾琳握住一只星瓶，金点在瓶里闪动",
+   "cues": [],
+   "act": {
+    "id": "e10",
+    "emotion": "determined",
+    "gaze": "bottle",
+    "camera": "speech",
+    "context": "天真的反问，带着答案的反问。"
+   },
+   "line": "可如果每颗星星都愿意帮忙呢？"
+  },
+  {
+   "id": "m30",
+   "kind": "action",
+   "character": null,
+   "start": 220,
+   "end": 227,
+   "move": "follow_up",
+   "shot": "first_star",
+   "scene": "towertop",
+   "action": "仰拍跟随：第一颗星星离瓶，拖着长尾金粒升起",
+   "cues": [
+    {
+     "name": "STAR_RISE",
+     "at": 220
+    }
+   ]
+  },
+  {
+   "id": "m31",
+   "kind": "action",
+   "character": null,
+   "start": 227,
+   "end": 234,
+   "move": "orbit",
+   "shot": "stars_swarm",
+   "scene": "towertop",
+   "action": "环绕广角：群星穿过天窗，金色轨迹交织；音乐渐入",
+   "cues": [
+    {
+     "name": "STARS_SWARM",
+     "at": 227
+    },
+    {
+     "name": "MUSIC_RISE",
+     "at": 227
+    }
+   ]
+  },
+  {
+   "id": "m32",
+   "kind": "action",
+   "character": null,
+   "start": 234,
+   "end": 241,
+   "move": "hold",
+   "shot": "stair_form",
+   "scene": "towertop",
+   "action": "侧面全景：星星在云端聚成第一级透明台阶，银蓝晶化边缘",
+   "cues": [
+    {
+     "name": "STAIR_FORM",
+     "at": 235
+    }
+   ]
+  },
+  {
+   "id": "m33",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 241,
+   "end": 248,
+   "move": "hold",
+   "shot": "alder_tear",
+   "scene": "towertop",
+   "action": "面部特写：奥尔德嘴唇微颤，眼里泛起暖金光",
+   "cues": [],
+   "act": {
+    "id": "a06",
+    "emotion": "surprised",
+    "gaze": "stair",
+    "camera": "speech",
+    "context": "一生的信念在眼前复活，气声。"
+   },
+   "line": "这是……失传的星辰魔法。"
+  },
+  {
+   "id": "m34",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 248,
+   "end": 254,
+   "move": "hold",
+   "shot": "girl_lookback",
+   "scene": "towertop",
+   "action": "中近景：艾琳微笑转身回眸，发丝逆光",
+   "cues": [],
+   "act": {
+    "id": "e11",
+    "emotion": "happy",
+    "gaze": "alder",
+    "camera": "speech",
+    "context": "笑着纠正，前半句。"
+   },
+   "line": "不是魔法，先生。"
+  },
+  {
+   "id": "m35",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 254,
+   "end": 261,
+   "move": "hold",
+   "shot": "girl_stars",
+   "scene": "towertop",
+   "action": "近景：艾琳抬眼望星阶，星尘升腾",
+   "cues": [],
+   "act": {
+    "id": "e12",
+    "emotion": "gentle",
+    "gaze": "stair",
+    "camera": "speech",
+    "context": "后半句，轻而确定。"
+   },
+   "line": "是它们想回家了。"
+  },
+  {
+   "id": "m36",
+   "kind": "action",
+   "character": null,
+   "start": 261,
+   "end": 267,
+   "move": "hold",
+   "shot": "feet_step",
+   "scene": "towertop",
+   "action": "脚部特写：短靴踏上透明台阶，银蓝粒子环形波纹荡开",
+   "cues": [
+    {
+     "name": "STEP_RING",
+     "at": 263
+    }
+   ]
+  },
+  {
+   "id": "m37",
+   "kind": "action",
+   "character": null,
+   "start": 267,
+   "end": 276,
+   "move": "pull_far",
+   "shot": "climb_far",
+   "scene": "towertop",
+   "action": "极远景拉远：女孩成小小剪影沿星阶登向月亮，阶梯长尾拖在云端；童声合唱进入",
+   "cues": [
+    {
+     "name": "CHOIR",
+     "at": 267
+    }
+   ]
+  },
+  {
+   "id": "m38",
+   "kind": "action",
+   "character": null,
+   "start": 276,
+   "end": 284,
+   "move": "ultrawide",
+   "shot": "palace_establish",
+   "scene": "moonpalace",
+   "action": "超广角：银白纱幕从高空垂落，破碎王座，镜面地板，大片负空间；音乐减弱",
+   "cues": [
+    {
+     "name": "ACT4",
+     "at": 276
+    },
+    {
+     "name": "PALACE_HUSH",
+     "at": 276
+    }
+   ]
+  },
+  {
+   "id": "m39",
+   "kind": "dialogue",
+   "character": "LadyMoon",
+   "start": 284,
+   "end": 293,
+   "move": "push_slow",
+   "shot": "lady_moon",
+   "scene": "moonpalace",
+   "action": "缓慢推近：近乎透明的月亮夫人低头坐着，银色光雾绕身",
+   "cues": [],
+   "act": {
+    "id": "m01",
+    "emotion": "sad",
+    "gaze": "eileen",
+    "camera": "speech",
+    "context": "超然、疲惫，像从很远的地方传来。"
+   },
+   "line": "很久，没有人来这里了。"
+  },
+  {
+   "id": "m40",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 293,
+   "end": 300,
+   "move": "hold",
+   "shot": "two_mid",
+   "scene": "moonpalace",
+   "action": "双人中景：艾琳小心走近，脚边泛起微光",
+   "cues": [],
+   "act": {
+    "id": "e13",
+    "emotion": "worried",
+    "gaze": "ladymoon",
+    "camera": "speech",
+    "context": "小心的关切。"
+   },
+   "line": "您生病了吗？"
+  },
+  {
+   "id": "m41",
+   "kind": "dialogue",
+   "character": "LadyMoon",
+   "start": 300,
+   "end": 308,
+   "move": "hold",
+   "shot": "lady_side",
+   "scene": "moonpalace",
+   "action": "侧脸近景：月亮夫人目光垂下，身体边缘微微消散成银粉",
+   "cues": [],
+   "act": {
+    "id": "m02",
+    "emotion": "sad",
+    "gaze": "none",
+    "camera": "speech",
+    "context": "平静的告别预告。"
+   },
+   "line": "没有，孩子。我只是……快要被遗忘了。"
+  },
+  {
+   "id": "m42",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 308,
+   "end": 315,
+   "move": "hold",
+   "shot": "girl_frown",
+   "scene": "moonpalace",
+   "action": "面部特写：艾琳眉头微蹙",
+   "cues": [],
+   "act": {
+    "id": "e14",
+    "emotion": "curious",
+    "gaze": "ladymoon",
+    "camera": "speech",
+    "context": "认真地困惑。"
+   },
+   "line": "被遗忘，也会让人消失吗？"
+  },
+  {
+   "id": "m43",
+   "kind": "dialogue",
+   "character": "LadyMoon",
+   "start": 315,
+   "end": 325,
+   "move": "slow_drift",
+   "shot": "lady_half",
+   "scene": "moonpalace",
+   "action": "半身慢移：月亮夫人轻触胸前，殿内月光逐缕熄灭",
+   "cues": [
+    {
+     "name": "MOONLIGHT_DIM",
+     "at": 317
+    }
+   ],
+   "act": {
+    "id": "m03",
+    "emotion": "sad",
+    "gaze": "none",
+    "camera": "speech",
+    "context": "数自己的伤口，平静得让人心疼。"
+   },
+   "line": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。"
+  },
+  {
+   "id": "m44",
+   "kind": "action",
+   "character": null,
+   "start": 325,
+   "end": 331,
+   "move": "hold",
+   "shot": "palace_wide",
+   "scene": "moonpalace",
+   "action": "远景：纱幕失去亮度，银粉缓缓下沉",
+   "cues": []
+  },
+  {
+   "id": "m45",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 331,
+   "end": 338,
+   "move": "hold",
+   "shot": "offer_lamp",
+   "scene": "moonpalace",
+   "action": "手部特写：艾琳双手递出旧铜灯，铜面反着暖光",
+   "cues": [],
+   "act": {
+    "id": "e15",
+    "emotion": "determined",
+    "gaze": "ladymoon",
+    "camera": "speech",
+    "context": "献出自己最宝贵的东西，干脆利落。"
+   },
+   "line": "那我把我的灯送给您。"
+  },
+  {
+   "id": "m46",
+   "kind": "dialogue",
+   "character": "LadyMoon",
+   "start": 338,
+   "end": 345,
+   "move": "hold",
+   "shot": "two_close",
+   "scene": "moonpalace",
+   "action": "双人近景：月亮夫人缓慢摇头",
+   "cues": [],
+   "act": {
+    "id": "m04",
+    "emotion": "sad",
+    "gaze": "lamp",
+    "camera": "speech",
+    "context": "慈爱地拒绝。"
+   },
+   "line": "孩子，你的灯，已经没有火了。"
+  },
+  {
+   "id": "m47",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 345,
+   "end": 352,
+   "move": "push_in",
+   "shot": "girl_lamp",
+   "scene": "moonpalace",
+   "action": "近景推入：艾琳双手仍捧着灯，一颗金点从灯芯里浮起",
+   "cues": [
+    {
+     "name": "ONE_SPARK",
+     "at": 348
+    }
+   ],
+   "act": {
+    "id": "e16",
+    "emotion": "determined",
+    "gaze": "ladymoon",
+    "camera": "speech",
+    "context": "最轻的一句，全片最重的一句。"
+   },
+   "line": "可是……我还在这里呀。"
+  },
+  {
+   "id": "m48",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 352,
+   "end": 364,
+   "move": "hold",
+   "shot": "girl_tears",
+   "scene": "moonpalace",
+   "action": "极近景：艾琳含泪说出守护的愿望，眼中星点闪烁",
+   "cues": [],
+   "act": {
+    "id": "e17",
+    "emotion": "sad",
+    "gaze": "ladymoon",
+    "camera": "speech",
+    "context": "一口气说完的心里话，带哭腔但不哭出声。"
+   },
+   "line": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？"
+  },
+  {
+   "id": "m49",
+   "kind": "dialogue",
+   "character": "LadyMoon",
+   "start": 364,
+   "end": 374,
+   "move": "hold",
+   "shot": "tear_macro",
+   "scene": "moonpalace",
+   "action": "极近景：月亮夫人落下一滴悬浮的泪，泪中现出细小星河；静止三秒后碎成万千银粒，螺旋扩散，依次点亮层层纱幕",
+   "cues": [
+    {
+     "name": "TEAR_FALL",
+     "at": 366
+    },
+    {
+     "name": "TEAR_BREAK",
+     "at": 369
+    }
+   ],
+   "act": {
+    "id": "m05",
+    "emotion": "relieved",
+    "gaze": "eileen",
+    "camera": "speech",
+    "context": "被等了一千年的声音，轻得像叹息。"
+   },
+   "line": "原来……还有人在等我。"
+  },
+  {
+   "id": "m50",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 374,
+   "end": 382,
+   "move": "hold",
+   "shot": "tower_wait",
+   "scene": "snowtown",
+   "action": "雪国小镇钟楼前，深夜将尽：奥尔德独自站着等，稀雪飘落",
+   "cues": [
+    {
+     "name": "ACT5",
+     "at": 374
+    }
+   ],
+   "act": {
+    "id": "a07",
+    "emotion": "sad",
+    "gaze": "sky",
+    "camera": "speech",
+    "context": "对空无一人的街道问，不敢抱希望。"
+   },
+   "line": "艾琳……你回来了吗？"
+  },
+  {
+   "id": "m51",
+   "kind": "action",
+   "character": null,
+   "start": 382,
+   "end": 388,
+   "move": "tilt_up",
+   "shot": "stair_fade",
+   "scene": "snowtown",
+   "action": "仰拍：空中星阶逐渐消失，金粒远去",
+   "cues": [
+    {
+     "name": "STAIR_FADE",
+     "at": 382
+    }
+   ]
+  },
+  {
+   "id": "m52",
+   "kind": "action",
+   "character": null,
+   "start": 388,
+   "end": 394,
+   "move": "hold",
+   "shot": "alder_down",
+   "scene": "snowtown",
+   "action": "面部近景：老人垂下视线",
+   "cues": []
+  },
+  {
+   "id": "m53",
+   "kind": "action",
+   "character": null,
+   "start": 394,
+   "end": 400,
+   "move": "hold",
+   "shot": "hand_petal",
+   "scene": "snowtown",
+   "action": "手部特写：一片花瓣落在老人手背上",
+   "cues": [
+    {
+     "name": "FIRST_PETAL",
+     "at": 396
+    }
+   ]
+  },
+  {
+   "id": "m54",
+   "kind": "action",
+   "character": null,
+   "start": 400,
+   "end": 407,
+   "move": "slowmo",
+   "shot": "snow_to_petal",
+   "scene": "snowtown",
+   "action": "慢动作广角：漫天雪花在空中转成花瓣；音乐回升",
+   "cues": [
+    {
+     "name": "SNOW_TO_PETAL",
+     "at": 400
+    },
+    {
+     "name": "MUSIC_RETURN",
+     "at": 400
+    }
+   ]
+  },
+  {
+   "id": "m55",
+   "kind": "action",
+   "character": null,
+   "start": 407,
+   "end": 412,
+   "move": "hold",
+   "shot": "clock_bell1",
+   "scene": "snowtown",
+   "action": "钟面特写：指针启动，第一响，金色声波荡开，檐上冰雪开始融化",
+   "cues": [
+    {
+     "name": "BELL1",
+     "at": 408
+    }
+   ]
+  },
+  {
+   "id": "m56",
+   "kind": "action",
+   "character": null,
+   "start": 412,
+   "end": 417,
+   "move": "pan",
+   "shot": "street_bud",
+   "scene": "snowtown",
+   "action": "第二响：街道横移，枯树抽芽，绿金微粒浮动",
+   "cues": [
+    {
+     "name": "BELL2",
+     "at": 413
+    }
+   ]
+  },
+  {
+   "id": "m57",
+   "kind": "action",
+   "character": null,
+   "start": 417,
+   "end": 422,
+   "move": "montage",
+   "shot": "windows_light",
+   "scene": "snowtown",
+   "action": "第三响：窗户蒙太奇，灯光依次亮起，琥珀光点",
+   "cues": [
+    {
+     "name": "BELL3",
+     "at": 418
+    }
+   ]
+  },
+  {
+   "id": "m58",
+   "kind": "action",
+   "character": null,
+   "start": 422,
+   "end": 429,
+   "move": "hold",
+   "shot": "sunrise_wide",
+   "scene": "snowtown",
+   "action": "高机位日出全景：金色日光涌入，雪国变春景，花瓣风场",
+   "cues": [
+    {
+     "name": "SUNRISE",
+     "at": 422
+    }
+   ]
+  },
+  {
+   "id": "m59",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 429,
+   "end": 435,
+   "move": "hold",
+   "shot": "tower_reunion",
+   "scene": "snowtown",
+   "action": "钟楼顶中景：艾琳站在那里，手中铜灯重新亮起，灯芯金粒升腾",
+   "cues": [
+    {
+     "name": "LAMP_RELIGHT",
+     "at": 430
+    }
+   ],
+   "act": {
+    "id": "a08",
+    "emotion": "excited",
+    "gaze": "eileen",
+    "camera": "speech",
+    "context": "又惊又喜，哑着嗓子喊。"
+   },
+   "line": "艾琳！你是怎么做到的？"
+  },
+  {
+   "id": "m60",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 435,
+   "end": 443,
+   "move": "hold",
+   "shot": "girl_answer",
+   "scene": "snowtown",
+   "action": "艾琳近景，微笑",
+   "cues": [],
+   "act": {
+    "id": "e18",
+    "emotion": "gentle",
+    "gaze": "alder",
+    "camera": "speech",
+    "context": "平静地纠正，不居功。"
+   },
+   "line": "我没有把月亮点亮。我只是告诉她……还有人需要她。"
+  },
+  {
+   "id": "m61",
+   "kind": "dialogue",
+   "character": "Alder",
+   "start": 443,
+   "end": 451,
+   "move": "hold",
+   "shot": "locket",
+   "scene": "snowtown",
+   "action": "怀表特写转近景：表盖内的女儿画像被一滴泪打湿；老人胸口升起一颗沉睡三十年的星",
+   "cues": [
+    {
+     "name": "STAR_CHEST",
+     "at": 446
+    }
+   ],
+   "act": {
+    "id": "a09",
+    "emotion": "relieved",
+    "gaze": "locket",
+    "camera": "speech",
+    "context": "哽咽着说完，像重新活过来。"
+   },
+   "line": "原来……我也还可以发光。"
+  },
+  {
+   "id": "m62",
+   "kind": "dialogue",
+   "character": "Narrator",
+   "start": 451,
+   "end": 464,
+   "move": "hold",
+   "shot": "finale",
+   "scene": "snowtown",
+   "action": "艾琳向观众道晚安，画面渐暗，只剩铜灯发亮；金粒聚成一行字",
+   "cues": [
+    {
+     "name": "FINALE_DIM",
+     "at": 456
+    }
+   ],
+   "act": {
+    "id": "n04",
+    "emotion": "gentle",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "收书的声音，讲完一个想留住的故事。"
+   },
+   "line": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。"
+  },
+  {
+   "id": "m63",
+   "kind": "dialogue",
+   "character": "Eileen",
+   "start": 464,
+   "end": 472,
+   "move": "hold",
+   "shot": "goodnight",
+   "scene": "snowtown",
+   "action": "黑场中仅铜灯发亮，金粒聚成文字后散去；最后一粒金点升向月亮",
+   "cues": [
+    {
+     "name": "GOLD_TEXT",
+     "at": 466
+    }
+   ],
+   "act": {
+    "id": "e19",
+    "emotion": "happy",
+    "gaze": "moon",
+    "camera": "speech",
+    "context": "对老朋友的晚安，带笑。"
+   },
+   "line": "晚安，月亮。明天见。"
+  },
+  {
+   "id": "m64",
+   "kind": "action",
+   "character": null,
+   "start": 472,
+   "end": 478,
+   "move": "hold",
+   "shot": "fade",
+   "scene": "snowtown",
+   "action": "铜灯缓缓暗下，黑场",
+   "cues": [
+    {
+     "name": "FADE",
+     "at": 473
+    }
+   ]
+  }
+ ],
+ "subtitles": [
+  {
+   "character": "Narrator",
+   "start": 0,
+   "end": 11,
+   "text": "很久很久以前，有一个王国，那里一年四季都下着雪。"
+  },
+  {
+   "character": "Narrator",
+   "start": 11,
+   "end": 19,
+   "text": "人们说，那是因为春天在很久以前，迷了路。"
+  },
+  {
+   "character": "Narrator",
+   "start": 19,
+   "end": 27,
+   "text": "可真正的原因是……再也没有人记得，春天是什么模样了。"
+  },
+  {
+   "character": "Eileen",
+   "start": 35,
+   "end": 43,
+   "text": "月亮，你今晚怎么这么暗呀？"
+  },
+  {
+   "character": "Eileen",
+   "start": 43,
+   "end": 51,
+   "text": "是不是，也没有人陪你说话？"
+  },
+  {
+   "character": "Eileen",
+   "start": 63,
+   "end": 70,
+   "text": "别怕。"
+  },
+  {
+   "character": "Eileen",
+   "start": 70,
+   "end": 78,
+   "text": "我也常常一个人。"
+  },
+  {
+   "character": "Eileen",
+   "start": 109,
+   "end": 117,
+   "text": "先生，您为什么把星星关在瓶子里？"
+  },
+  {
+   "character": "Alder",
+   "start": 117,
+   "end": 126,
+   "text": "我没有关住它们。是它们的主人，忘记了怎么发光。"
+  },
+  {
+   "character": "Eileen",
+   "start": 132,
+   "end": 140,
+   "text": "那您为什么不把它们还回去？"
+  },
+  {
+   "character": "Alder",
+   "start": 140,
+   "end": 149,
+   "text": "因为有些人，已经不愿意再打开自己的心了。"
+  },
+  {
+   "character": "Eileen",
+   "start": 155,
+   "end": 162,
+   "text": "您看！它醒了！"
+  },
+  {
+   "character": "Alder",
+   "start": 162,
+   "end": 170,
+   "text": "不可能……这颗星星，已经熄灭了三十年。"
+  },
+  {
+   "character": "Eileen",
+   "start": 170,
+   "end": 178,
+   "text": "也许它没有熄灭。只是太久，没有人跟它说话了。"
+  },
+  {
+   "character": "Alder",
+   "start": 192,
+   "end": 200,
+   "text": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。"
+  },
+  {
+   "character": "Eileen",
+   "start": 200,
+   "end": 206,
+   "text": "那我们去把它点亮！"
+  },
+  {
+   "character": "Alder",
+   "start": 206,
+   "end": 213,
+   "text": "月亮离我们，太远了。"
+  },
+  {
+   "character": "Eileen",
+   "start": 213,
+   "end": 220,
+   "text": "可如果每颗星星都愿意帮忙呢？"
+  },
+  {
+   "character": "Alder",
+   "start": 241,
+   "end": 248,
+   "text": "这是……失传的星辰魔法。"
+  },
+  {
+   "character": "Eileen",
+   "start": 248,
+   "end": 254,
+   "text": "不是魔法，先生。"
+  },
+  {
+   "character": "Eileen",
+   "start": 254,
+   "end": 261,
+   "text": "是它们想回家了。"
+  },
+  {
+   "character": "LadyMoon",
+   "start": 284,
+   "end": 293,
+   "text": "很久，没有人来这里了。"
+  },
+  {
+   "character": "Eileen",
+   "start": 293,
+   "end": 300,
+   "text": "您生病了吗？"
+  },
+  {
+   "character": "LadyMoon",
+   "start": 300,
+   "end": 308,
+   "text": "没有，孩子。我只是……快要被遗忘了。"
+  },
+  {
+   "character": "Eileen",
+   "start": 308,
+   "end": 315,
+   "text": "被遗忘，也会让人消失吗？"
+  },
+  {
+   "character": "LadyMoon",
+   "start": 315,
+   "end": 325,
+   "text": "会的。每当一个人不再相信明天，我就失去一缕光。每当一个人忘记仰望天空，我就失去一颗星。"
+  },
+  {
+   "character": "Eileen",
+   "start": 331,
+   "end": 338,
+   "text": "那我把我的灯送给您。"
+  },
+  {
+   "character": "LadyMoon",
+   "start": 338,
+   "end": 345,
+   "text": "孩子，你的灯，已经没有火了。"
+  },
+  {
+   "character": "Eileen",
+   "start": 345,
+   "end": 352,
+   "text": "可是……我还在这里呀。"
+  },
+  {
+   "character": "Eileen",
+   "start": 352,
+   "end": 364,
+   "text": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？"
+  },
+  {
+   "character": "LadyMoon",
+   "start": 364,
+   "end": 374,
+   "text": "原来……还有人在等我。"
+  },
+  {
+   "character": "Alder",
+   "start": 374,
+   "end": 382,
+   "text": "艾琳……你回来了吗？"
+  },
+  {
+   "character": "Alder",
+   "start": 429,
+   "end": 435,
+   "text": "艾琳！你是怎么做到的？"
+  },
+  {
+   "character": "Eileen",
+   "start": 435,
+   "end": 443,
+   "text": "我没有把月亮点亮。我只是告诉她……还有人需要她。"
+  },
+  {
+   "character": "Alder",
+   "start": 443,
+   "end": 451,
+   "text": "原来……我也还可以发光。"
+  },
+  {
+   "character": "Narrator",
+   "start": 451,
+   "end": 464,
+   "text": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。"
+  },
+  {
+   "character": "Eileen",
+   "start": 464,
+   "end": 472,
+   "text": "晚安，月亮。明天见。"
+  }
+ ]
+}

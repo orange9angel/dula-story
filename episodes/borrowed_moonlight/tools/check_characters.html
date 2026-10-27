@@ -1,0 +1,62 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>borrowed_moonlight P2 角色定妆</title>
+<style>body{margin:0;background:#242a34}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/","dula-engine":"/node_modules/dula-engine/index.js","dula-engine/":"/node_modules/dula-engine/","dula-assets":"/node_modules/dula-assets/index.js","dula-assets/":"/node_modules/dula-assets/"}}</script></head>
+<body><script type="module">
+// P2 角色定妆摄影棚：中性灯光 + 同机位正面/四分之三/侧面 + 姿势/表情注入。
+// window.shot(spec) → base64 jpeg；spec={who,pose,view,emotion,lampOff,seatH}
+import * as THREE from 'three';
+import {makeEileen} from '../characters/eileen.js';
+import {makeAlder} from '../characters/alder.js';
+import {makeLadyMoon} from '../characters/ladymoon.js';
+import {POSES} from '../characters/poses.js';
+
+const W=1280,H=720;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#242a34');
+scene.add(new THREE.HemisphereLight(0xcfd8ea,0x3a3440,.85));
+const key=new THREE.DirectionalLight(0xfff4e0,1.35);key.position.set(2.5,4,3);scene.add(key);
+const rim=new THREE.DirectionalLight(0x9fb8e0,.7);rim.position.set(-2,3,-3);scene.add(rim);
+const ground=new THREE.Mesh(new THREE.CircleGeometry(4,40).rotateX(-Math.PI/2),
+  new THREE.MeshToonMaterial({color:'#39404c'}));
+scene.add(ground);
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(W,H);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;
+document.body.append(renderer.domElement);
+const camera=new THREE.PerspectiveCamera(36,W/H,.05,100);
+
+const actors={Eileen:makeEileen(),Alder:makeAlder(),LadyMoon:makeLadyMoon()};
+for(const g of Object.values(actors)){scene.add(g);g.visible=false;}
+// 坐姿凳（仅 sit 镜头显示）
+const stool=new THREE.Mesh(new THREE.BoxGeometry(.55,.30,.45),
+  new THREE.MeshToonMaterial({color:'#5a6272'}));
+stool.position.y=.15;stool.visible=false;scene.add(stool);
+
+const HEAD_Y={Eileen:1.20,Alder:1.24,LadyMoon:1.55};
+const DIST={Eileen:2.6,Alder:3.0,LadyMoon:3.4};
+
+window.shot=(spec)=>{
+  const {who,pose='stand',view='front',emotion='neutral',dist}=spec;
+  const g=actors[who];
+  for(const o of Object.values(actors))o.visible=false;
+  stool.visible=false;g.position.set(0,0,0);g.rotation.set(0,0,0);
+  g.visible=true;
+  const ps=POSES[who][pose];
+  if(g.setLamp)g.setLamp(ps.lamp??null);
+  if(g.setBottle)g.setBottle(ps.bottle??null);
+  if(pose==='sit'){stool.visible=true;g.position.y=.30;}
+  g.applyPose(ps);
+  g.setEmotion(emotion==='neutral'?'neutral':emotion,0);
+  g.setActing({blink:0,gazeX:0,gazeY:0,jaw:0});
+  const h=HEAD_Y[who]+(pose==='sit'?.30:0),d=dist??DIST[who];
+  let pos,look=[0,h*.55+(pose==='sit'?.30:0),0];
+  if(view==='front')pos=[0,h*.72,d];
+  else if(view==='threeq')pos=[Math.sin(.66)*d,h*.72,Math.cos(.66)*d];
+  else if(view==='side')pos=[d,h*.72,0];
+  else if(view==='back')pos=[0,h*.72,-d];
+  else if(view==='face'){pos=[.12,h+.06,.62];look=[0,h,0];}
+  camera.position.set(...pos);camera.lookAt(...look);camera.updateProjectionMatrix();
+  renderer.render(scene,camera);renderer.render(scene,camera); // 双渲染沉淀
+  return renderer.domElement.toDataURL('image/jpeg',.93).split(',')[1];
+};
+window.ready=true;
+window.__scene=scene;window.__actors=actors; // 调试钩子（check_characters.mjs 探针用）
+</script></body></html>

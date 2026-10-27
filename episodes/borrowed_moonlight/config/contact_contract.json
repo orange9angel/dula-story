@@ -1,0 +1,70 @@
+{
+ "scope": "P5 接触纪律：手-灯（手提/捧/递出全程）、手-瓶（捧瓶）、手-怀表（摸表/看表）、脚-地（步态+足踝滚动）、坐-王座（髋贴座面）。距离阈值按本集角色骨架实测推导（见 NOTES.md P5）。viewer 链无碰撞兜底：探针=编写期编译器，缺口（m15 放灯沉降 ~.2m、衣片净空）由审片帧补。",
+ "fps_min": 30,
+ "pose_tick_hz": 15,
+ "carry": {
+  "xz_max": 0.11, "dy_max": 0.09,
+  "entries": [
+   {"box": "lamp", "actor": "Eileen", "window": [27, 109], "xz_max": 0.07, "dy_max": 0.22,
+    "_comment": "手提垂挂腕下：灯=腕+(0,-.175,+.012)，断言灯不脱离手"},
+   {"box": "lamp", "actor": "Eileen", "window": [184.5, 326.5], "xz_max": 0.07, "dy_max": 0.22,
+    "_comment": "塔顶/宫殿手提段（184-184.5 灯尚在工坊地面，不入窗）"},
+   {"box": "lamp", "actor": "Eileen", "window": [326.5, 328.4], "xz_max": 0.15, "dy_max": 0.20,
+    "_comment": "m44 手提→捧灯过渡段（灯与手同步移动，dy 从 .175 收敛）"},
+   {"box": "lamp", "actor": "Eileen", "window": [328.4, 374], "xz_max": 0.13, "dy_max": 0.13,
+    "_comment": "捧灯/递灯交接全程（递出→夫人未接→收回抱怀）：双手距灯 ≤.091 实测"},
+   {"box": "lamp", "actor": "Eileen", "window": [429, 453], "xz_max": 0.07, "dy_max": 0.22,
+    "_comment": "重逢手提"},
+   {"box": "lamp", "actor": "Eileen", "window": [453, 478], "xz_max": 0.13, "dy_max": 0.20,
+    "_comment": "终幕手提→捧灯（含 453-454.5 过渡帧，捧灯稳态 xz .061/dy .02）"},
+   {"box": "bottle", "actor": "Eileen", "window": [149, 184], "xz_max": 0.11, "dy_max": 0.07,
+    "_comment": "m20-m24 双手捧瓶（切镜即已捧住；含 m24 举瓶 .091）"},
+   {"box": "bottle", "actor": "Eileen", "window": [213, 220.6], "xz_max": 0.11, "dy_max": 0.07,
+    "_comment": "m29 左手握瓶"},
+   {"box": "watch", "actor": "Alder", "window": [118.6, 125.9], "xz_max": 0.10, "dy_max": 0.07},
+   {"box": "watch", "actor": "Alder", "window": [141.6, 148.9], "xz_max": 0.10, "dy_max": 0.07},
+   {"box": "watch", "actor": "Alder", "window": [375.8, 379.4], "xz_max": 0.10, "dy_max": 0.07},
+   {"box": "watch", "actor": "Alder", "window": [444.5, 450.9], "xz_max": 0.13, "dy_max": 0.12,
+    "_comment": "m61 举起怀表看画像：手略远但仍贴胸前；451.0 帧属 m62（手已收回）不入窗"}
+  ]
+ },
+ "supporter": {
+  "support_win": {"lamp": [27, 478], "bottle": [149, 221]},
+  "transit": {"lamp": [109, 184.5]},
+  "actor_of": {"lamp": "Eileen", "bottle": "Eileen"},
+  "lims": {"lamp": 0.26, "bottle": 0.16},
+  "_comment": "灯可见即须有支撑者（手）；m15-m24 搁脚边=transit 豁免；艾琳不可见段（374-429）boxVis=false 自动跳过"
+ },
+ "bite": {
+  "window": [280, 374], "a": "ladyHip", "b": "seatTop", "max": 0.55,
+  "_comment": "坐-王座：夫人髋部在座面 .55m 内（实测 .412）——证明坐在王座上而非悬空"
+ },
+ "seated": {
+  "window": [276, 374], "actors": {"LadyMoon": "LadyMoonRoot"}, "min": 0.09, "max": 0.60,
+  "_comment": "夫人扶手静息手：不埋进躯干、不悬空（root 键为 [x,z]）"
+ },
+ "gait": {
+  "actors": {"Eileen": {"speed_max": 1.5, "avg_min": 0.20, "bob_min": 0.004, "cadence": [1.2, 3.6]}},
+  "_comment": "艾琳短而急步伐：步频上限 3.6/s（strideFactor .55）；走拍=m04/m11/m13/m15/m18/m37/m38/m40"
+ },
+ "foot_roll": {
+  "actors": ["Eileen"], "heel_deg_min": 8, "mid_deg_max": 3, "toe_deg_min": 10, "run_min": 6,
+  "_comment": "足踝滚动三不变量（触地背屈→放平→蹬离），共享 locomotion 默认值即满足"
+ },
+ "reach": {
+  "ratio_max": 0.97, "hang_deg": 35,
+  "allowed": [
+   {"subject": "EileenR", "window": [112.5, 115.4], "_comment": "m15 蹲下放灯：臂近全展是表演内容"},
+   {"subject": "EileenL", "window": [331, 347.6], "_comment": "m45-m47 双手递灯：全展递出正当"},
+   {"subject": "EileenR", "window": [331, 347.6]}
+  ]
+ },
+ "limb_attach": {
+  "actors": {
+   "Eileen": {"max_elev_deg": 120, "max_shoulder_axis": 0.20},
+   "Alder": {"max_elev_deg": 145, "max_shoulder_axis": 0.20},
+   "LadyMoon": {"max_elev_deg": 120, "max_shoulder_axis": 0.20}
+  },
+  "_comment": "肩臂衔接 sanity：抬臂过肩线（袖根脱嵌风险）+ 肩点漂移；奥尔德 m28 指天高抬臂在 145 域内"
+ }
+}
