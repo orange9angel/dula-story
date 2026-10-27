@@ -1,0 +1,38 @@
+{
+  "anchor": "_anchor_ladymoon.json",
+  "tolerance": 0.04,
+  "cels": [
+    {
+      "path": "ladymoon_slow_raise.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": -0.027
+        },
+        "waist": {
+          "top": -0.023
+        },
+        "hands": {
+          "top": 0.011
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    },
+    {
+      "path": "ladymoon_revived.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": -0.032
+        },
+        "waist": {
+          "top": -0.029
+        },
+        "hands": {
+          "top": 0.011
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    }
+  ]
+}

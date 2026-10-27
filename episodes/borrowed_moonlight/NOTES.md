@@ -384,3 +384,318 @@
 - **待用户复看**：① 四声线盲听 + e13「您」拼音⚠️（无音频输出环境，仅数值验收）；② 音乐本体听感
   （静默区/电平数值达标）；③ m54 雪转花含蓄度；④ m19 暗地板裤腿弱读；⑤ m37 登阶近似步态剪影；
   ⑥ m61 怀表盖画像缺失（纹理级，P2 起未做）；⑦ 夫人赤足悬空。
+
+## A5 配乐换 Suno v6-mini（2026-10-27，替换 P6 的 Seed-Audio 音乐层）
+
+- **动机**：bible 音乐规格「钢琴独奏渐入弦乐与童声合唱，高潮后收回安静」走 Suno（用户会员）
+  重生成，替换 P6 的 4 支 Seed-Audio stem。对白/环境/Foley 层不动，仅换音乐总线重混。
+- **生成清单**（suno-driver headed 持久会话，3 次提交各回 2 clip，低频自用；全 instrumental
+  =Advanced 歌词框留空；style 全英文白描， prompt 与 song_url/sha256 见各 .source.json）：
+  | 素材 | song_id | 时长 | 选用理由 |
+  |---|---|---|---|
+  | suno_piano_open_a.mp3 | 202926ff-e7f3-45f2-b8bd-370f2183b371 | 178.4s | 开场钢琴独奏：冷色童话摇篮曲，留白多，0-176.5 铺底 |
+  | suno_piano_open_b.mp3 | 61f52c1a-5779-49b4-afe3-12ead2571e56 | 187.6s | 同次提交的第二 clip，与 a 交叉 3s 续到 230（a 不够长） |
+  | suno_strings_choir.mp3 | 37d98370-126b-44d4-8d68-d5ed81679636 | 180.0s | MUSIC_RISE 段：弦乐+无词童声哼鸣；选段 off=28s 起，源曲 148-158s 自然渐弱恰好落 347-348 收尽口 |
+  | suno_spring_return.mp3 | 60394075-b555-4e35-853f-eaebd0b9f808 | 193.0s | MUSIC_RETURN 段：暖金日出+钟琴；选段 off=84s（避开源曲 168-181s 末尾再高潮），源曲 161-167s dip 落片尾 |
+- **对位**（tools/remix_audio.py music 总线，锚点=timeline.json cues）：
+  piano_a 0-176.5（fadeIn 2.5/fadeOut 3）→ piano_b 173.5-230（交叉 3s）→
+  strings_choir 227-348（fadeIn 3/fadeOut 6，MUSIC_RISE@227 与钢琴交叠 3s）→
+  **348-400 静默区**（音乐分轨实测 RMS=0，含 TEAR_FALL 366-369）→
+  spring_return 400-478（fadeIn 2.5/fadeOut 20：458=FINALE_DIM 起退净，478 归零，片尾仅铜灯）。
+  电平沿用 P6 纪律：音乐 RMS=人声-12dB（choir/return 段 -11.5/-11）+对白 duck -7dB。
+- **验收**（数值，本环境无音频输出、未听审）：混音成片峰值 -3.77dBFS（≤-3.8 口径）；
+  音乐分轨 348-400/366-369 RMS=0；mixed 泪落三秒 RMS 0.0028（旧 0.003）、尾声 473-478
+  RMS 0.0063（旧 0.004，逼近鸟鸣床底噪 -49dB）；check_audio_sync 15 事件 onset 全过；
+  三支素材 whisper（no_speech_threshold=0.2）0 段=无歌词证据（哼鸣不产生文本，不证明
+  合唱有无，听感待审）。
+- **成片实测**（`output/craft3d_full_v2.mp4`，478.000s h264 1280×720 30fps + AAC 192k 48kHz
+  立体声，91.4MB）：全片 peak -3.8dBFS；泪落三秒 366-369 mean -50.2dB（与 P7 旧版一致）；
+  静默区 348-400 mean -27.1dB（仅对白+环境床）；尾声 473-478 mean -43.4dB（旧版 -48.4dB，
+  新尾奏略暖但 478s 音乐归零）。
+- **留档**：旧 Seed-Audio 4 支移至 `assets3d/music/_archive_seed_audio/`（含 source.json），
+  回滚=把文件名改回 remix_audio.py 旧 4 行 music() 调用。
+- **踩坑写回**：① suno-driver `--download-id` 的 Download 悬停展开已失效，需**点击**展开
+  （已修 scripts/suno_generate.py，主生成流程不受影响）；② UI 选 WAV 落盘实为 **MP3 48k**
+  （codec=mp3 附 mjpeg 封面流），source.json 记 actual_container/actual_codec，按 MP3 接入；
+  ③ v6-mini 单曲 ~180s 不足以覆盖 229s 开场，用同次提交的第二 clip 交叉续接（省一次抽卡）；
+  ④ title 输入框选择器仍失效，Suno 自动命名（"Snow Kingdom Lullaby"），定位靠 clip id 回执。
+- **遗留**：⑤ 四支素材均未听审（配器/合唱是否到位、段落情绪与画面贴合度待用户复听）；
+  ⑥ piano_b 与 a 是同 prompt 不同 take，交叉点乐句衔接未验；⑦ strings_choir 的 PALACE_HUSH
+  （276）后"音乐减弱"靠源曲自然动态+fade，未做额外增益包络。
+
+## A1 cel-cinema 第一批文生图资产（2026-11，产物全在 hybrid/assets/）
+
+- **范围**：三角色身份锚（refs/ 全身+肖像×3，共 6 张）+ 五场景底图（plates/ 1920×1080，
+  S01 雪夜/S01 春日同构图/S02 工坊/S03 星阶/S04 月宫，共 5 张）。全部 codex CLI gpt-image
+  （订阅配额，零现金），串行前台，11/12 次调用一次通过（仅 S02 抽 2 次）。
+- **工具**：`hybrid/assets/gen_assets.py`（skip-if-exists 幂等；逐文件 source.json 记
+  provider/model/prompt/refs/sha256；manifest.json 汇总 11 项已验收资产；重生成删 png 再跑）。
+  S02 的 v2 prompt 已回写脚本 JOBS，脚本即权威 prompt 源。
+- **prompt 纪律**：画风锁逐字写进每条 prompt（19 世纪欧洲童话手绘动画电影感，水彩+柔和
+  赛璐璐；负面=3D 渲染/塑料/照片/霓虹/金属盔甲/现代元素/文字水印）；p2/p3 的 3D 帧作 --ref
+  时显式声明"仅锁身份/构图，全面重绘为二维手绘，勿复制 3D 平面感与灰底"——11 张无一滑回 3D 感。
+- **S02 迭代**：v1 墙面被模型脑补成书架（读成图书馆）且暖琥珀×深青对比弱；v2 prompt 加
+  "walls are dark wood panels and brass clock mechanisms, NOT bookshelves, no books"+"amber vs
+  teal contrast must be obvious"后达标。v1 留档 plates/_candidates/s02_v1.png。
+- **验收目检结论**：艾琳（灰蓝大眼/齐下颌银白短发/深蓝天鹅绒斗篷+铜扣/米白亚麻裙/棕短靴/
+  旧铜灯手提）✅，左侧碎发在全身版弱读、肖像版可见；铜灯裂纹读成玻璃 X 骨架，特写镜头再强调。
+  奥尔德（驼背偏弱/长白须/灰眉/圆框眼镜/酒红旧礼服/铜扣马甲/胸前四枚怀表/指尖铜绿）✅。
+  月亮夫人（修长/银发及腰/象牙白半透明双层裙广袖/碎银星尘发饰/冷珍珠肤/环形光晕）✅。
+  场景锚点逐一核：S01 钟楼偏右+月在塔右+左右木屋群+琥珀窗 ✅；S01 春日同机位同布局+
+  低日轮左三分+花瓣替雪 ✅（匹配转场对成立）；S02 圆形高挑+巨黄铜齿轮+悬浮星瓶+中景工作台 ✅；
+  S03 屋顶锚点+天窗+透明星阶旋向右上月亮+三层云视差 ✅；S04 纱幕+破碎王座+镜面地板+
+  负空间+冷银顶光 ✅。
+- **遗留**：① S01 夜版/S03 的月亮偏亮（圣经"黯淡细银轮廓"），合成阶段压暗或加遮罩；
+  ② S02 v2 墙面空搁架略空，可接受（作坊储物架读法）；③ codex 无 seed/negative 旋钮，
+  S01 夜→春的同构图是"参考图权重"级对齐（塔/屋位置一致，云与植被细节不同），
+  匹配转场建议叠化而非硬切；④ refs 肖像为横构图（约 1.2:1）、全身为竖构图 1024×1536，
+  进 art_pass 按需裁剪。
+
+## A0 cel-cinema 工程底座（2026-10-27，bake 骨架，证据在 storyboard/a0/）
+
+- **范围**：cel-cinema（绘本电影管线，dula-skills/cel-cinema/SKILL.md 首次落地）的工程底座，
+  不做文生图。源片锁定 `output/craft3d_full_v2.mp4`（sha256 `568958cf…0907a`）。
+- **目录**：`hybrid/`——`config/art_pipeline.json`（draw-over-pipeline-v1 配置，baseUrl
+  127.0.0.1:4217=`node render.mjs --serve --port 4217` 常驻）、`config/bake_adapter.mjs`
+  （逐帧 capture 适配器）、`config/art_shots.json`（64 拍镜表，`hybrid/tools/build_shots.mjs`
+  从 timeline.json 生成+时轴无缝校验，kind 分布 face_close 18/macro 14/wide 10/mid 6/
+  establish 4/walk 4/stairs 4/two_mid 3/two_close 1）、`config/a0_probe.mjs`（probe 适配器）、
+  `art_pass_a0.html/.js`（占位骨架原型页，契约同 viewer：renderAt PNG/stepAt/ready/duration）、
+  `assets/draw_over_runtime/`（prepare 同步的 19 个共享模块+哈希清单，A0 暂未消费）。
+- **viewer.js 改动（唯一一处）**：末尾加 `window.__dbg={actors,camera,anchors:fx.anchors}`
+  只读暴露活体对象树；不进 draw/state，渲染路径零改动（回归见下）。
+- **bake 产物**：`hybrid/config/motion_full.json`（94MB，14341 帧 = 0..478s×30fps 含端点）。
+  每帧：三角色 root/head/faceCenter/faceFront/双肩/双肘/双手/双脚/pelvis 世界坐标+同帧
+  像素投影+根 yaw+**头世界四元数 headQuat**（headPitch 望月抬头必须靠它，yaw-only 偏
+  ~25px）+planted 接触（走拍 walkingFeet stance 布尔，站桩拍 null=无元数据而非通过）；
+  相机 position/quaternion/fov（8 位小数）；粒子活体锚点 6 个（flameAnchor/wakeBottle/
+  eyeAnchor/tearAnchor/chestAnchor/clockFace 世界坐标+可见性）。
+- **验证**（`pipeline.mjs --step probe` 全绿）：帧数 14341 ✓；全帧有限性 ✓；
+  **相机重建指纹**：重投影 vs bake 投影最大差 0.0107px（102 抽样，最差=m01 艾琳左手）✓；
+  fov 域 17..68 ✓；staging 显隐取样（m05/m15/m39/m01）✓；planted 语义（m04 走拍一脚
+  stance=true、m05 站桩 null）✓。
+- **A/B 对照**（`hybrid/tools/ab_compare.mjs`，m05 艾琳望月近景 + m15 工坊双人，各取
+  始/中/末三点）：并排 `ab_*.png` + 骨架叠原帧 `overlay_*.png`。目检：肩线压领口、
+  右手点在灯柄、骨盆/躯干/腿线贴身、m15 双人相对位置与尺度正确、朝向短线指向月亮
+  （m05 抬头）与工作台（m15 低头）。数值：头圆心实测 (631,183) vs bake 投影 (631.7,181.1)。
+- **回归**：`node render.mjs --check --board storyboard/a0/check` 全绿（234 帧捕获 +
+  234 项 seek 像素比较全 equal）。
+- **翻车实录**：
+  ① **renderAt 先抓图后画**：`{image:canvas.toDataURL(),state:draw(t)}` 字面量求值顺序
+  导致拿到上一帧画布——m05 骨架整体偏高 74px 排查半小时，实为 t=36.5 画面贴 t=39 标签
+  （look_up 运镜帧间差放大了错位）。正解：先 draw 赋值再抓图。已写回
+  draw-over-animation/references/executable-pipeline.md。
+  ② **远画外/相机平面前方的投影是数值奇点**：不可见角色驻留点 (0,-50,0) 在月宫机位后方，
+  相机参数 1e-6 舍入被放大到 7470px 像素差；即使 NDC 在窗外但深度小（2.7m）也差 153px。
+  正解：projected 只保留 viewZ<-0.1 且 NDC |x|,|y|≤2 的点，其余记 null。已写回同一参考。
+  ③ **头占位锚点别信 profile 端点**：几何下巴尖（profile y=-.070）投影 271px 被斗篷领口
+  遮挡（可见颌线 197px）、发帽超出颅顶极点 29px；眼点投影与实测像素精确吻合（UV 约定
+  eyeY=246→头局部 y=.0856，三角色共享）。故 bake 加 faceCenter/faceFront（localToWorld
+  含 headScale），占位头圆心锚眼高面心。
+- **已知边界**：projected 对远画外点是 null（语义=不可投影，不是数据缺失）；占位骨架腿
+  不画膝（bake 未采膝关节，LimbSurface 不存关节点，需要时再扩）；不可见角色的肩/肘/
+  骨盆为 null（performAt 对不可见角色 continue 不跑 emitTrace）；m15 t=113 艾琳下蹲
+  灯已落地（接触帧 112.7）在 A/B 图中与 3D 原帧一致。
+- **下一步（A1 起）**：文生图资产（身份锚→场景底图→姿势 cel）→ art_pass 页接 cel-stage
+  刚性摆放（runtime 已同步）→ raster-face 接 voice_envs.json 能量包络 → 粒子 3D 层重宿主。
+
+## A2 cel-cinema 第二批文生图资产（2026-11，产物全在 hybrid/assets/{cels,cels/walk,faces}/）
+
+- **范围**：姿势 cel 15 张（艾琳 7：stand/look_up/hold_bottle/offer_lamp/crouch/hold_lamp_close/
+  wave_goodnight；奥尔德 5：stand_work/touch_watch/shock/stand_hope/relieved；夫人 3：
+  sit_throne/slow_raise/revived）+ 走拍相位画（艾琳 8 相位背面三四分 2x4 宫格 + 裁格、
+  奥尔德 4 相位正面三四分 2x2 宫格 + 裁格）+ 脸部同图变体 17 张（每角色嘴 half/open +
+  眨眼 + 表情：艾琳 lonely/tearful/smile/determined、奥尔德 dazed/shocked/relieved、
+  夫人 revived；closed/curious/weary 基底=A1 已验收肖像锚）。全部 codex CLI gpt-image，
+  34 个净生成调用 + 1 次超时重试，零现金。
+- **工具**（幂等，skip-if-exists）：`hybrid/assets/gen_assets_a2.py`（任务表+逐文件
+  source.json；走拍条 `timeout: 560`）、`hybrid/tools/slice_walk_strip.py`（宫格裁切+
+  逐格 alpha bbox JSON）、`hybrid/tools/lock_face_variants.py`（raw→锁回，手工窗
+  faces/rects.json）、`hybrid/tools/clean_alpha.py`（杂点清理）、
+  `hybrid/tools/make_grid_overlay.py`（比例门刻度图）、`hybrid/assets/update_manifest_a2.py`
+  （manifest 登记）。重生成=删 png 再跑。
+- **姿势 cel 工艺**：refs=[身份锚（权重首位）, 3D 底稿姿势帧（仅锁姿势）]；透明底由 prompt
+  直接产出（"FULLY TRANSPARENT background, real PNG alpha"——gpt-image 经 codex 支持真
+  alpha，1024×1536）。缺失的 3D 姿势帧用 `render.mjs --shots hybrid/config/a2_pose_shots*.json`
+  补出（storyboard/a2/ref/：走拍一周期 8 相位固定背三四分机位 + 奥尔德工作台/钟楼下两张）。
+- **走拍朝向依据**：bake（motion_full.json）相机-面朝夹角分析——艾琳全部走拍拍背
+  （m04 avg 151°、m11 -159°、m12 178°；m18 正面单步用 stand 系 cel 近似），故 8 相位全部
+  背面三四分；奥尔德 bake 无位移（任务要求慢步备用集），取正面三四分通用朝向。
+  相位取自 m04 实测步态周期（t=30.50 起 0.83s 八等分）。
+- **脸部变体工艺**：codex 同图局部编辑（EDIT_NOTE：仅改指定特征、其余像素不变）→
+  auto_lock_variants.lock_one 按 rects.json 手工窗羽化锁回肖像锚——17/17 锁回成功，
+  羽化光晕外与底图逐像素零差异；对比裁片目检（storyboard/a2/face_lock_verify_*.jpg）确认
+  编辑落点正确无接缝。raw 全图保留在 faces/raw/ 供追溯。
+- **比例门**（人工地标表 cels/landmarks/ + draw-over-animation/scripts/check_cel_proportions.py，
+  容差 0.04；走拍奥尔德 0.05）：艾琳站姿 6/6 ok、奥尔德站姿 4/4 ok、夫人站姿 2/2 ok、
+  艾琳走拍 8/8 ok、奥尔德走拍 4/4 ok。eileen_crouch / ladymoon_sit_throne /
+  alder_stand_work 为蹲/坐/俯身姿势类差异，不进数值门（目检过）。报告 report_*.json。
+- **验收目检结论**：身份跨画一致（发型/斗篷/铜扣/灯/怀表串/胡须/眼镜/夫人光环裙裾逐项核）；
+  画风统一水彩+柔和赛璐璐，无一滑回 3D；透明底全真 alpha；走拍相位腿交换可读（背面跟靴：
+  p1 双支撑→p3/p7 交叉→p5 摆动→p8≈p1 镜像闭环；奥尔德 4 格左右脚交替明确）。
+- **翻车实录**：
+  ① **2x4 宫格+双 ref 的走拍条 280s 超时**（prompt 长+两张参考）——提到 560s 一次过；
+     宫格任务要给 codex 更长 timeout（已写进 gen_assets_a2.py 的 per-job timeout）。
+  ② **水彩墨点杂点经低 alpha 雾桥与主体连通**——普通连通域（alpha>10）清理 0 收益；
+     正法=硬核（alpha>96）连通域筛选（保 ≥最大域 2% 的组件，灯不离身）+ 膨胀 8px 回收软边
+     （走拍格专用；姿势 cel 杂点极少，通用 clean_alpha 即可）。
+  ③ **比例门 REJECT 先复查锚读数再返工**：首轮艾琳 boot_top 全员 +0.03~0.04 系统性偏移、
+     奥尔德 waist 两张 -0.06——区域放大复读发现是**锚表读数错**（靴筒上沿 81.5→82.9%；
+     马甲下沿误读衣襟线 42%→36.5%），修锚后全绿。系统性同向偏移=锚错，零散超差=画错。
+  ④ ladymoon 裙为半透明多层：alpha 清理阈值只能动 ≤10 的不可见雾，不可碰裙缘半透明区。
+- **遗留**：① 走拍格在宫格内不居中（逐格 alpha bbox 已存 *_cells.json，art_pass 摆放时
+  按 bbox 对脚底锚点）；② 艾琳背面走拍腿被斗篷遮至靴部，换腿靠靴读——近景走拍（若有）
+  需补正面相位；③ m18 正面单步暂无正面走拍相位（用 stand/look_up 近似，需要时补 4 格）；
+  ④ 表情 lonely/tearful 差异含蓄（圣经"眼泪不夸张"，刻意克制）；⑤ faces/raw 与锁回品并存，
+  raw 不进 manifest；⑥ 灯罩裂纹仍读成 X 骨架（A1 遗留，微距镜头合成阶段再评）。
+
+## A3 cel-cinema 合成页 + 粒子重宿主 + 两窗口试片（2026-10-28，证据在 storyboard/a3/）
+
+- **范围**：`hybrid/art_pass.html`+`art_pass.js`（1280×720 二维合成页，消费完整 64 拍镜表）+
+  `hybrid/fx_rehost.js`（粒子 3D 层重宿主）+ `hybrid/config/art_cast.json`（选角/选画表）+
+  `plate_grade.json`（底图压暗）+ `static_anchors.json`（静态锚点快照）+
+  `config/art_pass_w1.json`/`art_pass_w2.json`/`art_pass_smoke.json`（pipeline 配置）+
+  `config/a3_probe.mjs`（probe 断言）。
+- **合成架构**（骨架学 stardust_clad_s1e2 art_pass_full_r6）：
+  1. 场景底图：plates 按镜表 scene 切（snowtown 夜版 t<422 / 春版 t≥422 = skinFor 同规则）；
+     视差取景=**相机朝向差**（方位/俯仰角 delta × 像素/弧度，阻尼 .5）+ 缩放
+     （dolly×fov 比，阻尼 .45，**拍内只放不收**）；overscan 1.2。
+  2. 人物 cel：cel-stage 刚性摆放（rigid:true），位置/尺度全部来自 bake 逐帧投影——
+     眼线锚 faceCenter 投影、座/足锚 root 投影，drawnH =（眼到锚世界差 × ppu）/（画内分数差）；
+     走拍=baked-cel-clip 距离驱动相位 + 逐格 bbox 底中对脚底锚点（A2 遗留①落实）；
+     m46 过肩背影用 walk_p1 双支撑相位当静立背面（无正面背影资产，见遗留）。
+  3. raster-face：新共享模块 `locked-variant-face.js`（已回 dula-skills/draw-over-animation/assets/，
+     prepare 同步）——底图肖像+锁回变体同位贴窗（jaw 三态接 voice_envs.json 能量包络、
+     blink 阈 .60、表情按镜表 emotion 映射表；m49 用 emotionTimeline 在 369.55 切 revived）。
+     face_close=整肖像当镜头（drawnH 1000，macro 1150，s1e2 纪律：尺度是艺术常量，
+     位置/滚转仍跟 bake faceCenter/headQuat）。
+  4. 接触影 drawGroundContact 按 bake 足部投影（抬脚不画）；字幕条逐字同 3D 版
+     （TL.subtitles + 角色分色 + 24 字断行规则原样）。
+  5. 泪光/灯焰的 3D PointLight 反馈在 2D 以同包络径向辉光承担（'lighter'）。
+- **粒子重宿主**：`effects/magic.js` 拆成 `buildMagicFX`（viewer 链不变）与
+  `assembleMagicFX({TL,world,mode})`（装配核心）——world.anchors 支持 Object3D 或
+  fn(t,out)（ParticleSystem 原生双形态），静态件（22 星阶/28 瓶阵/5 窗/天窗/双月轮/塔）
+  由 `hybrid/tools/capture_static_anchors.mjs` 一次性快照（t=1 与 t=470 双捕零漂移）。
+  art_pass 页内 20 系统全部原参数重建，锚点=bake 逐帧世界坐标 fn，相机=bake
+  position/quaternion/fov 重建 PerspectiveCamera，合成=透明 WebGL 层 'lighter'。
+  **3D 回归**：重构后 `node render.mjs --check --board storyboard/a3/check` 全绿
+  （234 帧像素 seek 全等，bad max 0）。
+- **试片**（pipeline.mjs --step render --render，`pilot.audio:"assets3d/mixed.wav"` 新增
+  共享选项，已回 skill 的 pipeline.mjs + executable-pipeline.md）：
+  - `output/art_pass_a3_m45_47.mp4`（331-352s，630 帧，递灯→「我还在这里呀」）
+  - `output/art_pass_a3_m48_49.mp4`（352-374s，660 帧，含泪独白→泪碎→夫人句）
+  - 确定性：24+25 项顺序/逆序/重复取帧 PNG 哈希全等。
+  - 音轨数值：w1 e15 段 mean -20.9dB/max -5.7dB；w2 夫人句 mean -23.0/max -3.9；
+    **泪落三秒（窗口内 14-17s）mean -50.2dB，与 P7 成片实测一致**（绝对时间对位正确）。
+- **probe 断言全绿**（`storyboard/a3/motion_check.json`）：manifest missingAssets=0；
+  眼线上段实测断言 err 0.1/0.3px（t=345.5 offer_lamp / t=341 sit_throne）；
+  画中灯对 bake 灯焰锚点像素命中（maxAlpha 253，ONE_SPARK 与画灯同位）；
+  肖像层裁剪后期望跨高实测 err 0；走拍相位 plants 11 vs wraps 10（换腿节拍对齐）；
+  seek 乱序双渲 12/12 全等；粒子存在性（ONE_SPARK 348.5 / 泪碎 370 / 夫人边缘消散 360）。
+- **翻车实录**：
+  ① **底图视差别投影场景锚点**：微距拍（m45 递灯）相机看灯、宫殿锚点在机位后方，
+     锚点投影 zFull 算出 0 → 整幅底图消失（黑场）。正法：底图位移用相机**朝向差**
+     （四元数 forward 的方位/俯仰 delta），缩放用 |机位-锚点| 欧氏距离，永不奇异。
+  ② **拍内底图只放不收**：推近主体时远景真实缩放 <1（相机离背景更远），但底图是
+     有限画幅，收缩露黑边（m47 末帧左侧 65px 黑带目检抓获）——z 夹到 [1,2.5]，
+     overscan 提到 1.2。
+  ③ **baked-cel-clip 的 spec.cuff 不是可选项**（state 返回必填）——缺省 undefined
+     直接 throw；调用方给 anchor 同值即可。
+  ④ **cel-stage 的 clamp 是单参 [0,1]**：当三参 clamp(x,lo,hi) 用会把负值全夹成 0
+     （底图 z=0 全黑的直接原因之一）。跨模块用 clamp 先确认签名。
+  ⑤ walk cycleTravel 不能用"均速×周期"估算（0.62m/s×0.83s=0.515 错）：要从 bake
+     接触事件实测——相位画取自 t=30.50 起 0.83s 周期，该周期根位移 0.402m，
+     左脚落地事件间距稳态 0.37-0.40m，取 0.40（probe plants↔wraps 对齐验证）。
+  ⑥ 管线探针的"人高断言"要算**画幅裁剪后的期望跨高**——近景全身 cel/肖像必然
+     出画，裸比 measuredH vs drawnH 全假红。
+- **遗留（A4 候选）**：① m46 艾琳过肩背影=walk_p1 静立近似（无背面站姿资产；
+  她要递灯的话需补"背面递灯"cel）；② m47 e16 台词段她的画内脸在画幅上缘静止
+  （短句 3.2s，可用 locked-variant 嘴窗贴姿势 cel 脸，A4 评估）；③ 坐/蹲/俯身 cel
+  的 eyeFrac 为目测估计（sit_throne .128/refFrac .422、crouch .30、stand_work .16），
+  A4 用刻度图复测进地标表；④ 泪碎点亮纱幕在肖像拍读作整体辉光近似（3D 为逐层点亮，
+  肖像遮底图后层次不可见）；⑤ 底图 pop 感：plate 与 cel 是两层平贴，m45 灯前景与
+  宫殿底图无景深过渡（可接受，A4 看全片再评）；⑥ m49 字幕 364 起而人声 369.6 起
+  （TL.subtitles 既有摆点，3D 版同——内容侧决定，不在本层改）；⑦ 灯罩裂纹仍读成
+  X 骨架（A1/A2 遗留，微距下依旧）。
+
+## A4 cel-cinema 整集渲染 + 验收 + 审片（2026-10-28，证据在 storyboard/a4/）
+
+- **补缺（A3 遗留①）**：新增 `eileen_offer_lamp_back` 背面三四分递灯 cel（codex gpt-image，
+  `hybrid/assets/gen_assets_a4.py`，refs=[身份锚 eileen_full, 3D 摄影棚背面姿势帧
+  `storyboard/a4/ref/a4_eileen_offer_lamp_back.jpg`——check_characters 新增 backq/backq_hi
+  机位与 --only 过滤]），一次通过；`clean_alpha` 清杂点；比例门
+  `check_cel_proportions.py --anchor _anchor_eileen_walk` ok（hem +.023 / boot_top +.029，
+  容差 .04，报告 `cels/landmarks/report_eileen_back.json`）；manifest 登记（58 项）。
+  m46 选画由 walk_p1 静立近似换成 offer_lamp_back。背面无眼可读，eyeFrac=0.10 按耳中上沿
+  水平线估计（probe 实测 err 0.3px 兜底）。
+- **eyeFrac 复测（A3 遗留③）**：trim 图（alpha>32，同 art_pass）+ 1% 细刻度图人工读数
+  （`storyboard/a4/eyefrac/`）——**crouch .30→.215**（蹲姿眼线实测 21.5%）、
+  **stand_work .16→.123**、**sit_throne .128→.135**（refFrac .422 经 A3 试片目检对位，保留）。
+  crouch/stand_work 的原目测偏差会让 m15/m14 的人物落位错 ~40px/~20px（眼线锚定法下
+  eyeFrac 偏差直接变成纵向错位）——复测必要。
+- **整集配置**：`hybrid/config/art_pass_full.json`（start 0/end 478/30fps/1280×720/crf18/
+  audio=assets3d/mixed.wav/hashEvery 60/26 采样点）+ `hybrid/config/a4_probe.mjs`
+  （全片探针：manifest missingAssets=0、五姿势 cel 眼线渲染实测、三角色肖像跨高、
+  走拍相位对齐、m46 构图回归、22 点 seek 双渲、十大场面粒子点名）。
+- **渲染**：R3 定版 `output/art_pass_full.mp4`——478.000s / 14340 帧 / h264(crf18)+aac 192k /
+  102MiB，单次全长渲染 18.8 分钟（~13fps，无分段拼接）；确定性 243/243（顺序哈希+逆序
+  重取+重复取帧全等）。
+- **验收全绿**：`pipeline --step probe` 六项全绿（`storyboard/a4/motion_check.json`）；
+  `verify_full_episode.py` 11/11 全过——含 audio_packets/PCM 与 craft3d_full_v2 完全相同
+  （=mixed.wav 同链 AAC）；音轨实测：泪落三秒 366-369 mean -50.2dB、全片峰值 -3.8dBFS，
+  与 3D 成片一致（绝对时间对位正确）。
+- **审片**（抽帧 53+12+对照 8 张，frames/frames_r3/frames3d/；每幕 8-13 时间点覆盖全部
+  指定节点 m01/m05/m08/m10/m13/m21/m24/m31/m37/m39/m44/m46/m47/m49/m54/m55-57/m58/m61/m63
+  +关键对照 3D 同时刻帧）。**圣经第五步清单**：① 身份连续性 ✅（三人跨五幕发型/斗篷/铜扣/
+  怀表串/光环一致，走拍/蹲/坐/递灯各姿势 cel 无漂移）② 空间轴线 ✅（m46 过肩与 3D 同侧）
+  ③ 动作连续 ✅（灯：手提→蹲放→捧递→未接→抱怀；瓶：捧→离瓶→脱手；走拍相位与接触对齐）
+  ④ 粒子连续 ✅（萤火落睫/星瓶苏醒/星阶/泪碎/钟声三响/窗灯/聚字逐帧连续，seek 全等）
+  ⑤ 灯光反馈 ✅（灯焰跟锚辉光/泪光包络/星核暖光/终幕渐暗后灯焰与聚字仍亮）
+  ⑥ 字幕 ✅（抽帧全部逐字同圣经，断行规则同 3D 版）⑦ 音乐情绪 ✅（音轨=3D 成片同一
+  mixed.wav，PCM 级一致；静默区数值同前）。
+  负面约束：现代城市/霓虹/金属盔甲/过曝粒子/镜头抖动/脸部漂移/服装变色/手指畸形/
+  对白改写——均未发现；情绪停顿在位（m47-49/m52 静默区）。
+- **审片发现并修复（全部重渲进 R3 定版）**：
+  ① **P0 终幕纱罩压死聚字与灯焰**：FINALE_DIM/FADE 黑纱原画在粒子层之后，m63 金粒聚字
+     被 ×0.08 压到不可读（3D 版纪律=黑纱先画、灯焰与加色粒子后画保持亮度）——纱罩移到
+     辉光/粒子层之前（art_pass.js draw 次序 2.5），首帧淡入仍盖一切。
+  ② **P1 m62 奥尔德站上右房屋脊**：bake 脚底投影 (893,434) 落在底图屋脊（3D 他在塔门口
+     地面，底图塔身比几何窄，且底图无逐件遮挡）——placeBody 新增 `groundY` 画幅落地修正
+     （静态机位限定），m62 脚底落屋前草甸线 575。
+  ③ **P1 m56 同族**：横移拍（pan）里投影点沿左房屋脊爬升——groundY 定点会滑脚，新增
+     `shiftXY` 整画随镜平移 [0,+150]。
+  ④ **P1 m58 同族**：establish 里奥尔德落在塔身中横梁——groundY 545 落塔门草甸线。
+  ⑤ **P1 m33 选画与底稿表演相反**：底稿=抬头望星阶说「失传的星辰魔法」，A3 选了低头
+     摸表的 touch_watch——改 stand_hope（抬头仰望）。
+  ⑥ **P1 m53 第一片花瓣丢失**：3D 版 petalHand 网格实体在 2D 重宿主 mode 守护下不建——
+     art_pass.js 重宿主为画片（同纯 t 闭式轨迹 395.2 飘落→396.3 落手背→407 前静止），
+     m53 选画换 touch_watch（底稿=摊掌接瓣于胸前），花瓣锚画内手背 `handXY`（刻度图初读
+     (405,401)，试片帧校准 +79/+73——画内手≠bake 手，bake 手是 3D 摊掌高位）。
+- **A3 遗留②④结论（评估后不动）**：m47 画内脸在画幅上缘静止——短句 3.2s、画内脸仅
+  ~35px，读感成立，不贴嘴窗（若用户复看嫌呆，可用 locked-variant 嘴窗贴 offer_lamp 脸区
+  升级）；泪碎点亮纱幕在肖像拍=整体辉光近似——读感成立（泪碎粒子层+同包络回暖辉光，
+  肖像遮底图后逐层本就不可见），不做。
+- **翻车实录（A4 新增）**：
+  ① **渲染命令别接 `| tail`**——tail 收管道缓冲，进度日志全憋住，只能盲等；后台任务要
+     `> log 2>&1` 直写文件。本伦因此白烧 4 分钟首渲。
+  ② **JSON 对象重复键静默后者胜**——art_cast.json 已存在 `"m62"` 行，追加新行不报错但
+     永远不生效（groundY 假绿一轮）；改选角表先 grep 既有键。
+  ③ **`const x` 上加 shiftXY 修正直接 pageerror**（Assignment to constant）——pipeline 把
+     页面错误一律 throw，试片渲染最先暴露；改代码后先跑无 --render 的采样快检再进整渲。
+  ④ **中途改源文件=整渲作废**：build.json 指纹在启动时固定，渲染中途改 art_pass.js/
+     art_cast.json 后 verify 的 render_sources_current 必红；两次停跑重启因此损失 ~10min，
+     正确顺序=全部改完→采样快检→probe→整渲。
+- **遗留（待用户复看/审美批准）**：
+  ① 肖像拍 roll 时四角露底图三角区（m05/m16/m19/m22/m52 等 face_close 可见，A3 起既有
+     风格，读作画框式取景；若要消除可给肖像层加 1.08 过扫描）；
+  ② 底图画内钟面指针是画死的（夜版≈4:00、春版≈2:00，两版不一致；3D 的"指针缓转"在
+     2D 不成立）——修=给钟面单独加 2D 指针层（clockFace 锚已在 bake）；
+  ③ m59 艾琳站塔身中段（3D 为外挑阳台几何，底图无阳台）——她脚底恰好压在塔身横梁线上，
+     读作"站在横梁"弱穿帮，可接受；要根治需底图补阳台或该机位换构图；
+  ④ m63 灯焰辉光点落在画内脸鼻区（bake 捧灯升高锚点在面部特写投影中落入脸区）——
+     读作灯光映脸，可接受；
+  ⑤ 灯罩裂纹仍读成 X 骨架（A1 起）、ONE_SPARK 静帧弱读、m55-57 钟声环为细点环
+     （3D 版同弱读，P7 已记）；
+  ⑥ 声线/配乐本体仍未听审（沿用 P6/P7/A5 遗留，本环境无音频输出）。
+- **并排对照片**（3D 底稿 vs cel-cinema 成片，`storyboard/a4/compare/`）：m05 望月特写 /
+  m21 星瓶苏醒 / m46 过肩递灯（新背面 cel）/ m63 终幕聚字。

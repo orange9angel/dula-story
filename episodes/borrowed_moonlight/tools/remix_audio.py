@@ -162,16 +162,25 @@ def main():
     event('gold_text', 466.0, .3)               # GOLD_TEXT
 
     # ── 音乐（RMS=人声-12dB，对白 duck -7dB；静默区 348-400 无音乐）──
-    def music(name, t0, t1, rel_db=-12, fade_in=2.0, fade_out=2.0, gain=1.0):
-        x = load(EP / f'assets3d/music/{name}.wav', 'volcano/seed-audio-1.0')
+    # A5（2026-10-27）：音乐层换 Suno v6-mini 素材（MP3 48k，ffmpeg 解码）；
+    # 旧 Seed-Audio 4 支保留在 assets3d/music/_archive_seed_audio/。
+    def music(name, t0, t1, rel_db=-12, fade_in=2.0, fade_out=2.0, gain=1.0,
+              off=0.0, ext='wav', provider='volcano/seed-audio-1.0'):
+        x = load(EP / f'assets3d/music/{name}.{ext}', provider)
+        x = x[round(off * SR):]
         x = to_rms(x, voice_rms * 10 ** (rel_db / 20)) * gain
         m = min(len(x), round((t1 - t0) * SR))
         place(stems['music'], x[:m], t0, fade_in=fade_in, fade_out=fade_out)
 
-    music('piano_open_a', 0, 116.5, fade_in=2.5, fade_out=3)
-    music('piano_open_b', 113.5, 230, fade_in=3, fade_out=3)     # 与 a 交叉 3s
-    music('strings_choir', 227, 348, rel_db=-11.5, fade_in=3, fade_out=6)  # 345 前收尽→静默区
-    music('spring_return', 400, 478, rel_db=-11, fade_in=2.5, fade_out=7)  # 478 前退净
+    SUNO = 'suno/v6-mini'
+    music('suno_piano_open_a', 0, 176.5, fade_in=2.5, fade_out=3, ext='mp3', provider=SUNO)
+    music('suno_piano_open_b', 173.5, 230, fade_in=3, fade_out=3, ext='mp3', provider=SUNO)  # 与 a 交叉 3s
+    # 选段 off=28s：起自源曲乐句间低电平点，源曲 148-158s 自然渐弱恰好落 347-348 收尽口
+    music('suno_strings_choir', 227, 348, rel_db=-11.5, fade_in=3, fade_out=6,
+          off=28, ext='mp3', provider=SUNO)
+    # 选段 off=84s：源曲 161-167s 自然 dip 落 477s+；避开 168-181s 的末尾再高潮
+    music('suno_spring_return', 400, 478, rel_db=-11, fade_in=2.5, fade_out=20,
+          off=84, ext='mp3', provider=SUNO)  # fade_out 20s：458(FINALE_DIM) 起退净（FINALE_DIM/聚字/晚安），尾声仅铜灯
     stems['music'] *= 10 ** ((-7 * duck) / 20)[:, None]
     stems['ambience'] *= 10 ** ((-2 * duck) / 20)[:, None]
 

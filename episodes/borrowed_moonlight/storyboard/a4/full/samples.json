@@ -1,0 +1,1069 @@
+[
+  {
+    "t": 3.5,
+    "shot": "m01",
+    "kind": "establish",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.0058187195685213
+    },
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": "很久很久以前，有一个王国，那里一年四季都下着雪。",
+    "missingAssets": [],
+    "sha256": "652586f633dc4fba56d20a985b11c3dce1a8844f0b5b65f45fe049c6a7be66a3"
+  },
+  {
+    "t": 31,
+    "shot": "m04",
+    "kind": "walk",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.0077340983351089
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:walk",
+        "walk": true,
+        "index": 4,
+        "distance": 2.633,
+        "x": 687.8,
+        "y": 526,
+        "h": 173.7,
+        "footScreen": [
+          694.4,
+          516.8
+        ],
+        "contact": {
+          "left": false,
+          "right": true
+        }
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 2
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "c7ad2d154ffe7001296ee8dfb26a7412bc55de7bf04e189efebbfaeb45b92906"
+  },
+  {
+    "t": 65,
+    "shot": "m09",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [],
+    "faces": [
+      {
+        "actor": "Eileen",
+        "portrait": true,
+        "x": 635,
+        "y": 894.6,
+        "h": 1000,
+        "drawnW": 1212.5,
+        "eyeScreen": [
+          640.4,
+          264.6
+        ],
+        "roll": 0.0086,
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "gentle"
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 2
+    },
+    "subtitle": "别怕。",
+    "missingAssets": [],
+    "sha256": "9ecbb4dfa8f6dcd8fd5858a9a222062a2b5de4c1718aaa2971daa31067cd43e7"
+  },
+  {
+    "t": 105,
+    "shot": "m14",
+    "kind": "mid",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.0445336232993112
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "x": 652.2,
+        "y": 547.9,
+        "h": 280.2,
+        "eyeScreen": [
+          652.2,
+          302.2
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 3,
+      "visible": 0
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "9529379dda10fdb33c0edd6014f50715792c256d3a54ae48206ade65f7dbb6f5"
+  },
+  {
+    "t": 113.5,
+    "shot": "m15",
+    "kind": "two_mid",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_work",
+        "x": 738.8,
+        "y": 498.1,
+        "h": 188.2,
+        "eyeScreen": [
+          738.8,
+          333.1
+        ],
+        "anchor": "eye",
+        "rigid": true
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:crouch",
+        "x": 723,
+        "y": 697.6,
+        "h": 235.4,
+        "eyeScreen": [
+          723,
+          512.8
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 3,
+      "visible": 0
+    },
+    "subtitle": "先生，您为什么把星星关在瓶子里？",
+    "missingAssets": [],
+    "sha256": "c980341507829512540001a2b9d83e3d744a8c23b6d4c505d3a2bfe07779ba31"
+  },
+  {
+    "t": 152,
+    "shot": "m20",
+    "kind": "macro",
+    "scene": "clocktower",
+    "plate": "s02_clocktower_workshop",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:hold_bottle",
+        "x": 510,
+        "y": 1092.4,
+        "h": 1137.3,
+        "eyeScreen": [
+          510,
+          74.3
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "clocktower",
+      "systems": 3,
+      "visible": 1
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "d84d00ecf590433794c7a43c413b4e032f6055d81847aef8a9d21c3389e78360"
+  },
+  {
+    "t": 196,
+    "shot": "m26",
+    "kind": "macro",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.0509781336867665
+    },
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 6,
+      "visible": 1
+    },
+    "subtitle": "月亮就快熄灭了。等最后一缕月光消失，王国将再也没有黎明。",
+    "missingAssets": [],
+    "sha256": "3e51079faff574ba87a5131945da1432de7f95662a5f53fcd4b31b70fc294866"
+  },
+  {
+    "t": 230.5,
+    "shot": "m31",
+    "kind": "wide",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 394.11428420693625,
+      "cy": 359.99999684281426,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 314.6,
+        "y": 719.4,
+        "h": 94,
+        "eyeScreen": [
+          314.6,
+          632.6
+        ],
+        "anchor": "eye",
+        "rigid": true
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:stand",
+        "x": 398,
+        "y": 795.6,
+        "h": 106.7,
+        "eyeScreen": [
+          398,
+          698.4
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 6,
+      "visible": 1
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "beaaa23be871c2685d6cc04ae6cfc492beedc6220734bb27ad778c9729fed292"
+  },
+  {
+    "t": 244,
+    "shot": "m33",
+    "kind": "face_close",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 643,
+        "y": 1456.7,
+        "h": 1165.7,
+        "eyeScreen": [
+          643,
+          380.7
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 6,
+      "visible": 1
+    },
+    "subtitle": "这是……失传的星辰魔法。",
+    "missingAssets": [],
+    "sha256": "a95e4a05fe5e064a652a993b55029474f7ef80b90ba87a54dea03a8f1b673fca"
+  },
+  {
+    "t": 271,
+    "shot": "m37",
+    "kind": "stairs",
+    "scene": "towertop",
+    "plate": "s03_star_stairs",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:walk",
+        "walk": true,
+        "index": 4,
+        "distance": 3.423,
+        "x": 495.4,
+        "y": 811,
+        "h": 94.5,
+        "footScreen": [
+          499,
+          806
+        ],
+        "contact": {
+          "left": true,
+          "right": false
+        }
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "towertop",
+      "systems": 6,
+      "visible": 1
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "417667233142c86660dbd38deb056f307bd5a0a0b6743bc1a12c4e5125f4d6d2"
+  },
+  {
+    "t": 300.5,
+    "shot": "m41",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [],
+    "faces": [
+      {
+        "actor": "LadyMoon",
+        "portrait": true,
+        "x": 660.5,
+        "y": 1066.9,
+        "h": 1000,
+        "drawnW": 1110.9,
+        "eyeScreen": [
+          585.8,
+          331.6
+        ],
+        "roll": -0.0862,
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": "sad"
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 4,
+      "visible": 1
+    },
+    "subtitle": "没有，孩子。我只是……快要被遗忘了。",
+    "missingAssets": [],
+    "sha256": "123cb5ff10f7d60ba817bb9c3cfae8ac54bf5b34e081f41865db93c15bfc3318"
+  },
+  {
+    "t": 335,
+    "shot": "m45",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp",
+        "x": 681.5,
+        "y": 1287.2,
+        "h": 1748.9,
+        "eyeScreen": [
+          675.6,
+          250.2
+        ],
+        "anchor": "lamp",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 4,
+      "visible": 1
+    },
+    "subtitle": "那我把我的灯送给您。",
+    "missingAssets": [],
+    "sha256": "7df29d7d10d07957b9fe170f69fa502c8bac28dd5cc7decc08a67ac45efc8d2e"
+  },
+  {
+    "t": 341.5,
+    "shot": "m46",
+    "kind": "two_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "LadyMoon",
+        "key": "LadyMoon:sit_throne",
+        "x": 638.5,
+        "y": 828.4,
+        "h": 613.9,
+        "eyeScreen": [
+          638.5,
+          297.4
+        ],
+        "anchor": "eye",
+        "rigid": true
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp_back",
+        "x": 416.1,
+        "y": 1519.1,
+        "h": 979.8,
+        "eyeScreen": [
+          416.1,
+          637.3
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 4,
+      "visible": 1
+    },
+    "subtitle": "孩子，你的灯，已经没有火了。",
+    "missingAssets": [],
+    "sha256": "67654d75bba25b3c6a9f45252dcb69e8637e648e3a903b246e3a66efcffe5af5"
+  },
+  {
+    "t": 348.5,
+    "shot": "m47",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Eileen",
+        "key": "Eileen:offer_lamp",
+        "x": 630.1,
+        "y": 882.7,
+        "h": 798.7,
+        "eyeScreen": [
+          630.1,
+          146.1
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 4,
+      "visible": 2
+    },
+    "subtitle": "可是……我还在这里呀。",
+    "missingAssets": [],
+    "sha256": "d5d444b6876f23e819b30f9797ecdc1f9ff41f865374729f79a22cd7fdf2dc7d"
+  },
+  {
+    "t": 355,
+    "shot": "m48",
+    "kind": "face_close",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [],
+    "faces": [
+      {
+        "actor": "Eileen",
+        "portrait": true,
+        "x": 657.8,
+        "y": 934.5,
+        "h": 1000,
+        "drawnW": 1212.5,
+        "eyeScreen": [
+          632.8,
+          305
+        ],
+        "roll": -0.0397,
+        "mouth": "half",
+        "expr": "expr_tearful",
+        "emotion": "sad"
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 4,
+      "visible": 1
+    },
+    "subtitle": "我不知道怎么让春天回来，也不知道怎么让所有人开心。我只是觉得……如果连您都消失了，那些晚上偷偷哭泣的人，该向谁许愿呢？",
+    "missingAssets": [],
+    "sha256": "b03a33f41a7f4dd15918ccec4c18509e6239832c6ffbd35e3faaa47d07290bc4"
+  },
+  {
+    "t": 366.2,
+    "shot": "m49",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [],
+    "faces": [
+      {
+        "actor": "LadyMoon",
+        "portrait": true,
+        "x": 693.6,
+        "y": 1139.4,
+        "h": 1150,
+        "drawnW": 1277.6,
+        "eyeScreen": [
+          652.5,
+          290.4
+        ],
+        "roll": -0.0333,
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": null
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 4,
+      "visible": 2
+    },
+    "subtitle": "原来……还有人在等我。",
+    "missingAssets": [],
+    "sha256": "dd8d05b733141b598e7eff87862ab3a842009e597b1c4b49130e3cb1c03d1c0f"
+  },
+  {
+    "t": 369.5,
+    "shot": "m49",
+    "kind": "macro",
+    "scene": "moonpalace",
+    "plate": "s04_moon_palace",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [],
+    "faces": [
+      {
+        "actor": "LadyMoon",
+        "portrait": true,
+        "x": 693.6,
+        "y": 1139.4,
+        "h": 1150,
+        "drawnW": 1277.6,
+        "eyeScreen": [
+          652.5,
+          290.4
+        ],
+        "roll": -0.0333,
+        "mouth": "closed",
+        "expr": "base",
+        "emotion": null
+      }
+    ],
+    "particles": {
+      "scene": "moonpalace",
+      "systems": 4,
+      "visible": 1
+    },
+    "subtitle": "原来……还有人在等我。",
+    "missingAssets": [],
+    "sha256": "4f15830716b6264a8353d7ac67b26b41c958ac2c5b619868e4c4ab16f6b905b4"
+  },
+  {
+    "t": 397,
+    "shot": "m53",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:touch_watch",
+        "x": 593.7,
+        "y": 1512.4,
+        "h": 1783.6,
+        "eyeScreen": [
+          593.7,
+          -156.9
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "4359a1eddab27590da00727624dc1c4a6bee44f67308331dd1a0b4be5ff225d2"
+  },
+  {
+    "t": 403,
+    "shot": "m54",
+    "kind": "wide",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1.0091455991308076
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 695.9,
+        "y": 513,
+        "h": 57.5,
+        "eyeScreen": [
+          695.9,
+          459.9
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "aa4e6c51164f9cf29c9574ae730f00df4c2407dbae5f667c07a27cf0f8fb5e5c"
+  },
+  {
+    "t": 410,
+    "shot": "m55",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "f5843f8f752975b74d8537825481511a1906caef0d32330950dbdf3744e7262e"
+  },
+  {
+    "t": 414,
+    "shot": "m56",
+    "kind": "wide",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_night",
+    "plateView": {
+      "cx": 655.796176728086,
+      "cy": 359.3355047893288,
+      "z": 1.0158953258379022
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 485.4,
+        "y": 609.8,
+        "h": 58,
+        "eyeScreen": [
+          485.4,
+          406.2
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "6ca21a38e14c445789586fef9b764725a794c94abda6d706880e21058622f1a7"
+  },
+  {
+    "t": 446,
+    "shot": "m61",
+    "kind": "macro",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:touch_watch",
+        "x": 665.6,
+        "y": 1564.6,
+        "h": 1940.7,
+        "eyeScreen": [
+          665.6,
+          -251.7
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": "原来……我也还可以发光。",
+    "missingAssets": [],
+    "sha256": "5fe67e38fb8b3e11ae63ac1bc08809759f7cfe1fe209aca6867afd47acace4af"
+  },
+  {
+    "t": 456,
+    "shot": "m62",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 897.8,
+        "y": 575,
+        "h": 220.1,
+        "eyeScreen": [
+          897.8,
+          230.1
+        ],
+        "anchor": "eye",
+        "rigid": true
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "x": 639,
+        "y": 818.5,
+        "h": 575.3,
+        "eyeScreen": [
+          639,
+          292.6
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
+    "missingAssets": [],
+    "sha256": "1bf0fb23367a9299ae234460b8ff0d20b6db01eca6fb19b859fd94d59e61acd2"
+  },
+  {
+    "t": 460,
+    "shot": "m62",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 897.8,
+        "y": 575,
+        "h": 220.4,
+        "eyeScreen": [
+          897.8,
+          229.8
+        ],
+        "anchor": "eye",
+        "rigid": true
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "x": 639,
+        "y": 818.5,
+        "h": 575.4,
+        "eyeScreen": [
+          639,
+          292.4
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": "后来，王国里的人们说，是那个女孩把春天带了回来。可艾琳从来不这么认为。她说，春天一直都在——只是有人终于，为它打开了门。",
+    "missingAssets": [],
+    "sha256": "c8165242322639b6ad21b7a1c8a95f17da144f0c0a968e6c737cc9a96cff7029"
+  },
+  {
+    "t": 466,
+    "shot": "m63",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 1015,
+        "y": 420.4,
+        "h": 310.3,
+        "eyeScreen": [
+          1015,
+          134.1
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [
+      {
+        "actor": "Eileen",
+        "portrait": true,
+        "x": 614.3,
+        "y": 775,
+        "h": 1000,
+        "drawnW": 1212.5,
+        "eyeScreen": [
+          633.9,
+          145.3
+        ],
+        "roll": 0.0311,
+        "mouth": "open",
+        "expr": "expr_smile",
+        "emotion": "happy"
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 1
+    },
+    "subtitle": "晚安，月亮。明天见。",
+    "missingAssets": [],
+    "sha256": "424afdf33e831be4e2da97217e449b83878337b596623910b93fb4b261880ce2"
+  },
+  {
+    "t": 470,
+    "shot": "m63",
+    "kind": "face_close",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 1015.1,
+        "y": 420.4,
+        "h": 311.2,
+        "eyeScreen": [
+          1015.1,
+          133.1
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [
+      {
+        "actor": "Eileen",
+        "portrait": true,
+        "x": 592.5,
+        "y": 775.6,
+        "h": 1000,
+        "drawnW": 1212.5,
+        "eyeScreen": [
+          635.6,
+          147
+        ],
+        "roll": 0.0686,
+        "mouth": "closed",
+        "expr": "expr_smile",
+        "emotion": "happy"
+      }
+    ],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 2
+    },
+    "subtitle": "晚安，月亮。明天见。",
+    "missingAssets": [],
+    "sha256": "f0bc4b20de72a3f14a1c25e9f8b9444a70cece4e0228d7ccb9d0fbb25d2195b0"
+  },
+  {
+    "t": 475.5,
+    "shot": "m64",
+    "kind": "mid",
+    "scene": "snowtown",
+    "plate": "s01_snowtown_spring",
+    "plateView": {
+      "cx": 640,
+      "cy": 360,
+      "z": 1
+    },
+    "bodies": [
+      {
+        "actor": "Alder",
+        "key": "Alder:stand_hope",
+        "x": 1028.9,
+        "y": 175,
+        "h": 311.2,
+        "eyeScreen": [
+          1028.9,
+          -112.2
+        ],
+        "anchor": "eye",
+        "rigid": true
+      },
+      {
+        "actor": "Eileen",
+        "key": "Eileen:hold_lamp_close",
+        "x": 519.9,
+        "y": 653.3,
+        "h": 832.3,
+        "eyeScreen": [
+          519.9,
+          -107.7
+        ],
+        "anchor": "eye",
+        "rigid": true
+      }
+    ],
+    "faces": [],
+    "particles": {
+      "scene": "snowtown",
+      "systems": 11,
+      "visible": 2
+    },
+    "subtitle": null,
+    "missingAssets": [],
+    "sha256": "4983a729a1ed6631499d55ebff19cc1eae68e7d0affc1b927980f32b5e9601ba"
+  }
+]

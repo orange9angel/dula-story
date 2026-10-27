@@ -1,0 +1,87 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4217/",
+  "source": {
+    "video": "output/craft3d_full_v2.mp4",
+    "sha256": "568958cf1ba0f06e563016f002e80debdcc29db10de4f7cb324d2b16ff20907a"
+  },
+  "runtime": {
+    "directory": "hybrid/assets/draw_over_runtime"
+  },
+  "pilot": {
+    "start": 0,
+    "end": 478,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "hybrid/art_pass.html?capture=1",
+    "board": "storyboard/a4/full",
+    "output": "output/art_pass_full.mp4",
+    "samples": [
+      3.5,
+      31,
+      65,
+      105,
+      113.5,
+      152,
+      196,
+      230.5,
+      244,
+      271,
+      300.5,
+      335,
+      341.5,
+      348.5,
+      355,
+      366.2,
+      369.5,
+      397,
+      403,
+      410,
+      414,
+      446,
+      456,
+      460,
+      466,
+      470,
+      475.5
+    ],
+    "repeatSamples": [
+      341.5,
+      369.5,
+      468
+    ],
+    "hashEvery": 60,
+    "audio": "assets3d/mixed.wav",
+    "crf": 18,
+    "sourceFiles": [
+      "script.story",
+      "config/timeline.json",
+      "config/voice_envs.json",
+      "effects/particles.js",
+      "effects/magic.js",
+      "performance.js",
+      "hybrid/config/art_pass_full.json",
+      "hybrid/config/art_shots.json",
+      "hybrid/config/art_cast.json",
+      "hybrid/config/plate_grade.json",
+      "hybrid/config/static_anchors.json",
+      "hybrid/config/motion_full.json",
+      "hybrid/config/a4_probe.mjs",
+      "hybrid/art_pass.html",
+      "hybrid/art_pass.js",
+      "hybrid/fx_rehost.js"
+    ],
+    "assetDirectories": [
+      "hybrid/assets/plates",
+      "hybrid/assets/cels",
+      "hybrid/assets/cels/walk",
+      "hybrid/assets/faces",
+      "hybrid/assets/refs"
+    ]
+  },
+  "probe": {
+    "adapter": "hybrid/config/a4_probe.mjs",
+    "output": "storyboard/a4/motion_check.json"
+  }
+}

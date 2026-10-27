@@ -1,0 +1,37 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4217/",
+  "source": {
+    "video": "output/craft3d_full_v2.mp4",
+    "sha256": "568958cf1ba0f06e563016f002e80debdcc29db10de4f7cb324d2b16ff20907a"
+  },
+  "runtime": {"directory": "hybrid/assets/draw_over_runtime"},
+  "pilot": {
+    "start": 27,
+    "end": 35,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "hybrid/art_pass.html?capture=1",
+    "board": "storyboard/a3/smoke_walk",
+    "output": "output/art_pass_a3_m04_smoke.mp4",
+    "samples": [28, 29.5, 31, 32.5, 34],
+    "repeatSamples": [31],
+    "hashEvery": 30,
+    "silent": true,
+    "sourceFiles": [
+      "hybrid/config/art_pass_smoke.json",
+      "hybrid/config/art_shots.json",
+      "hybrid/config/art_cast.json",
+      "hybrid/config/motion_full.json",
+      "hybrid/art_pass.html",
+      "hybrid/art_pass.js",
+      "hybrid/fx_rehost.js"
+    ],
+    "assetDirectories": ["hybrid/assets/plates", "hybrid/assets/cels", "hybrid/assets/cels/walk"]
+  },
+  "probe": {
+    "adapter": "hybrid/config/a3_probe.mjs",
+    "output": "storyboard/a3/motion_check.json"
+  }
+}

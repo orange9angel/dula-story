@@ -6,15 +6,15 @@
       "target": 51.0,
       "nearest_onset": 51.005,
       "offset_s": 0.005,
-      "strongest_onset": 50.835,
+      "strongest_onset": 51.304,
       "limit": 0.15,
       "note": "m07 阵风/火苗颤动"
     },
     {
       "event": "lamp_out",
       "target": 58.0,
-      "nearest_onset": 57.92,
-      "offset_s": -0.08,
+      "nearest_onset": 58.048,
+      "offset_s": 0.048,
       "strongest_onset": 57.92,
       "limit": 0.15,
       "note": "m08 灯火熄灭"
@@ -24,24 +24,24 @@
       "target": 85.0,
       "nearest_onset": 84.952,
       "offset_s": -0.048,
-      "strongest_onset": 85.133,
+      "strongest_onset": 85.261,
       "limit": 0.15,
       "note": "m12 木门开启"
     },
     {
       "event": "metal_tap",
       "target": 102.0,
-      "nearest_onset": 101.909,
-      "offset_s": -0.091,
-      "strongest_onset": 102.112,
+      "nearest_onset": 101.888,
+      "offset_s": -0.112,
+      "strongest_onset": 101.664,
       "limit": 0.15,
       "note": "m14 工作台上修星"
     },
     {
       "event": "star_wake",
       "target": 156.0,
-      "nearest_onset": 156.005,
-      "offset_s": 0.005,
+      "nearest_onset": 156.016,
+      "offset_s": 0.016,
       "strongest_onset": 155.781,
       "limit": 0.15,
       "note": "m21 星核苏醒"
@@ -49,17 +49,17 @@
     {
       "event": "gears_stop",
       "target": 179.0,
-      "nearest_onset": 178.952,
-      "offset_s": -0.048,
-      "strongest_onset": 178.952,
+      "nearest_onset": 178.995,
+      "offset_s": -0.005,
+      "strongest_onset": 179.261,
       "limit": 0.35,
       "note": "m24 齿轮停转（弱瞬态，宽判）"
     },
     {
       "event": "skylight_open",
       "target": 184.0,
-      "nearest_onset": 183.995,
-      "offset_s": -0.005,
+      "nearest_onset": 184.027,
+      "offset_s": 0.027,
       "strongest_onset": 183.675,
       "limit": 0.15,
       "note": "m25 天窗开启"
@@ -67,8 +67,8 @@
     {
       "event": "stair_form",
       "target": 235.0,
-      "nearest_onset": 235.005,
-      "offset_s": 0.005,
+      "nearest_onset": 234.984,
+      "offset_s": -0.016,
       "strongest_onset": 234.632,
       "limit": 0.15,
       "note": "m32 星阶成形"
@@ -76,9 +76,9 @@
     {
       "event": "step_ring",
       "target": 263.0,
-      "nearest_onset": 262.877,
-      "offset_s": -0.123,
-      "strongest_onset": 263.133,
+      "nearest_onset": 262.984,
+      "offset_s": -0.016,
+      "strongest_onset": 263.197,
       "limit": 0.15,
       "note": "m36 靴落星阶"
     },

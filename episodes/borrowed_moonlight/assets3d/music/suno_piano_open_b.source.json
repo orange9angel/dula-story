@@ -1,0 +1,13 @@
+{
+ "name": "suno_piano_open_b",
+ "provider": "suno/v6-mini (web, authorized Unlock & Download)",
+ "song_id": "61f52c1a-5779-49b4-afe3-12ead2571e56",
+ "song_url": "https://suno.com/song/61f52c1a-5779-49b4-afe3-12ead2571e56",
+ "prompt": "（同 suno_piano_open_a，同次提交的第二个 clip）",
+ "actual_container": "mp3",
+ "actual_codec": "mp3",
+ "note": "UI 选 WAV 落盘实为 MP3 48kHz（suno-driver 已知坑），按 MP3 接入",
+ "duration": 187.64,
+ "sha256": "072f60724627442ea360fccd9aa64fc6b9572949e733528d6383bdc037372e5d",
+ "whisper_lyrics_check": "no_speech_threshold=0.2 + condition_on_previous_text=False → 0 segments（无歌词证据）"
+}

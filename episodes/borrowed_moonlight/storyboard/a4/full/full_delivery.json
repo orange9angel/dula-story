@@ -1,0 +1,48 @@
+{
+  "scope": "complete episode",
+  "source": "output/craft3d_full_v2.mp4",
+  "source_sha256": "568958cf1ba0f06e563016f002e80debdcc29db10de4f7cb324d2b16ff20907a",
+  "output": "output/art_pass_full.mp4",
+  "output_sha256": "b2455ec17fab165f9ecb27ac9b9eede8e856cebe67cd20e8a861a06a83408092",
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "478.000000",
+        "nb_frames": "14340"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "478.000000",
+        "nb_frames": "22408"
+      }
+    ],
+    "format": {
+      "duration": "478.000000"
+    }
+  },
+  "checks": {
+    "accepted_source_unchanged": true,
+    "whole_episode_window": true,
+    "frame_count": true,
+    "frame_rate": true,
+    "dimensions": true,
+    "duration": true,
+    "audio_packets_identical": true,
+    "audio_pcm_identical": true,
+    "deterministic": true,
+    "episode_probe": true,
+    "render_sources_current": true
+  },
+  "passed": true,
+  "determinism_checks": 243,
+  "artwork_scope": [],
+  "repair": null,
+  "note": "Technical checks are separate from the recorded visual review."
+}

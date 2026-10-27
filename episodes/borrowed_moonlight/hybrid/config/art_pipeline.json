@@ -1,0 +1,83 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4217/",
+  "source": {
+    "video": "output/craft3d_full_v2.mp4",
+    "sha256": "568958cf1ba0f06e563016f002e80debdcc29db10de4f7cb324d2b16ff20907a"
+  },
+  "runtime": {"directory": "hybrid/assets/draw_over_runtime"},
+  "pilot": {
+    "start": 0,
+    "end": 478,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "hybrid/art_pass_a0.html?capture=1",
+    "board": "storyboard/a0/pilot",
+    "output": "output/art_pass_a0.mp4",
+    "samples": [39, 113],
+    "repeatSamples": [39, 113],
+    "hashEvery": 90,
+    "audioCopy": true,
+    "sourceFiles": [
+      "script.story",
+      "viewer.html",
+      "viewer.js",
+      "performance.js",
+      "config/timeline.json",
+      "config/voice_envs.json",
+      "hybrid/config/art_pipeline.json",
+      "hybrid/config/art_shots.json",
+      "hybrid/config/motion_full.json",
+      "hybrid/art_pass_a0.html",
+      "hybrid/art_pass_a0.js",
+      "hybrid/config/bake_adapter.mjs"
+    ],
+    "assetDirectories": []
+  },
+  "bake": {
+    "viewer": "viewer.html?capture=1",
+    "adapter": "hybrid/config/bake_adapter.mjs",
+    "sourceFiles": [
+      "script.story",
+      "viewer.html",
+      "viewer.js",
+      "performance.js",
+      "characters/rig.js",
+      "characters/poses.js",
+      "characters/face.js",
+      "characters/eileen.js",
+      "characters/alder.js",
+      "characters/ladymoon.js",
+      "scenes/SnowTownScene.js",
+      "scenes/ClockTowerScene.js",
+      "scenes/TowerTopScene.js",
+      "scenes/MoonPalaceScene.js",
+      "scenes/hybrid.js",
+      "effects/magic.js",
+      "effects/particles.js",
+      "config/timeline.json",
+      "config/voice_envs.json",
+      "hybrid/config/bake_adapter.mjs"
+    ],
+    "windows": [
+      {
+        "id": "full",
+        "start": 0,
+        "end": 478,
+        "output": "hybrid/config/motion_full.json",
+        "consumedByPilot": true
+      }
+    ]
+  },
+  "probe": {
+    "adapter": "hybrid/config/a0_probe.mjs",
+    "output": "storyboard/a0/motion_check.json"
+  },
+  "package": {
+    "comparison": "output/art_pass_a0_comparison.mp4",
+    "font": "C:/Windows/Fonts/msyh.ttc",
+    "labels": ["craft3d_full_v2 底稿", "cel-cinema A0 占位骨架"],
+    "sheets": []
+  }
+}

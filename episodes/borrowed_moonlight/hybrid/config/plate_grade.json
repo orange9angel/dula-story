@@ -1,0 +1,12 @@
+{
+  "schema": "cel-cinema-plate-grade-v1",
+  "comment": "A1 遗留：S01 夜版/S03 底图月亮偏亮（圣经：黯淡细银轮廓）——合成层径向 multiply 压暗。坐标为底图图幅分数，r 为图宽分数，value=中心乘算亮度（1=不压）。",
+  "plates": {
+    "s01_snowtown_night": {
+      "dim": [{ "x": 0.594, "y": 0.302, "r": 0.085, "value": 0.52 }]
+    },
+    "s03_star_stairs": {
+      "dim": [{ "x": 0.895, "y": 0.085, "r": 0.070, "value": 0.55 }]
+    }
+  }
+}

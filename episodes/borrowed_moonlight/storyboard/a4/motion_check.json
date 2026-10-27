@@ -1,0 +1,335 @@
+{
+  "passed": true,
+  "checks": {
+    "manifest": {
+      "ok": true,
+      "missing": []
+    },
+    "landmarks": {
+      "ok": true,
+      "checked": 13,
+      "tolerance": 0.07,
+      "note": "trim 含水彩软边余量，系统性 3-6% 偏高为已知（眼线上段实测断言兜底）",
+      "drift": []
+    },
+    "eyeLine": {
+      "ok": true,
+      "body": [
+        {
+          "t": 345.5,
+          "actor": "Eileen",
+          "key": "Eileen:offer_lamp",
+          "above": 44.4,
+          "expect": 44.3,
+          "err": 0.1,
+          "tol": 22.8,
+          "top": 174,
+          "ok": true
+        },
+        {
+          "t": 341,
+          "actor": "LadyMoon",
+          "key": "LadyMoon:sit_throne",
+          "above": 82.4,
+          "expect": 82.9,
+          "err": 0.5,
+          "tol": 24.6,
+          "top": 215,
+          "ok": true
+        },
+        {
+          "t": 341.5,
+          "actor": "Eileen",
+          "key": "Eileen:offer_lamp_back",
+          "above": 98.3,
+          "expect": 98,
+          "err": 0.3,
+          "tol": 39.2,
+          "top": 539,
+          "ok": true
+        },
+        {
+          "t": 113.5,
+          "actor": "Eileen",
+          "key": "Eileen:crouch",
+          "above": 50.8,
+          "expect": 50.6,
+          "err": 0.2,
+          "tol": 9.4,
+          "top": 462,
+          "ok": true
+        },
+        {
+          "t": 105,
+          "actor": "Alder",
+          "key": "Alder:stand_work",
+          "above": 34.2,
+          "expect": 34.5,
+          "err": 0.3,
+          "tol": 11.2,
+          "top": 268,
+          "ok": true
+        },
+        {
+          "t": 335,
+          "actor": "Eileen",
+          "check": "lamp@flameAnchor",
+          "flameP": [
+            675.6,
+            250.2
+          ],
+          "maxAlpha": 253,
+          "ok": true
+        },
+        {
+          "t": 341.5,
+          "actor": "Eileen",
+          "check": "m46_lamp_below_frame",
+          "flameP": [
+            458.9,
+            819.8
+          ],
+          "ok": true
+        },
+        {
+          "t": 341.5,
+          "actor": "Eileen",
+          "check": "m46_in_frame",
+          "key": "Eileen:offer_lamp_back",
+          "measuredH": 180,
+          "ok": true
+        }
+      ],
+      "face": [
+        {
+          "t": 355,
+          "actor": "Eileen",
+          "measuredH": 719,
+          "expect": 719,
+          "roll": -0.0397,
+          "err": 0,
+          "ok": true
+        },
+        {
+          "t": 370,
+          "actor": "LadyMoon",
+          "measuredH": 719,
+          "expect": 719,
+          "roll": -0.0333,
+          "err": 0,
+          "ok": true
+        },
+        {
+          "t": 391,
+          "actor": "Alder",
+          "measuredH": 719,
+          "expect": 719,
+          "roll": -0.1786,
+          "err": 0,
+          "ok": true
+        }
+      ]
+    },
+    "walkPhase": {
+      "ok": true,
+      "mono": true,
+      "plants": 11,
+      "wraps": 10,
+      "phases": [
+        2,
+        5,
+        1,
+        5,
+        1,
+        5,
+        1,
+        6,
+        3,
+        0,
+        4,
+        1,
+        5,
+        2,
+        6,
+        2,
+        6,
+        1,
+        4,
+        7,
+        0,
+        2,
+        3,
+        4,
+        4
+      ]
+    },
+    "seek": {
+      "ok": true,
+      "seek": [
+        {
+          "t": 3.5,
+          "equal": true
+        },
+        {
+          "t": 31,
+          "equal": true
+        },
+        {
+          "t": 65,
+          "equal": true
+        },
+        {
+          "t": 105,
+          "equal": true
+        },
+        {
+          "t": 113.5,
+          "equal": true
+        },
+        {
+          "t": 152,
+          "equal": true
+        },
+        {
+          "t": 196,
+          "equal": true
+        },
+        {
+          "t": 230.5,
+          "equal": true
+        },
+        {
+          "t": 271,
+          "equal": true
+        },
+        {
+          "t": 300.5,
+          "equal": true
+        },
+        {
+          "t": 335,
+          "equal": true
+        },
+        {
+          "t": 341,
+          "equal": true
+        },
+        {
+          "t": 348.1,
+          "equal": true
+        },
+        {
+          "t": 355,
+          "equal": true
+        },
+        {
+          "t": 366.2,
+          "equal": true
+        },
+        {
+          "t": 369.5,
+          "equal": true
+        },
+        {
+          "t": 391,
+          "equal": true
+        },
+        {
+          "t": 403,
+          "equal": true
+        },
+        {
+          "t": 410,
+          "equal": true
+        },
+        {
+          "t": 446,
+          "equal": true
+        },
+        {
+          "t": 468,
+          "equal": true
+        },
+        {
+          "t": 475.5,
+          "equal": true
+        }
+      ]
+    },
+    "particles": {
+      "ok": true,
+      "particles": [
+        {
+          "name": "fireflies",
+          "t": 65,
+          "scene": "snowtown",
+          "systems": 11,
+          "visible": 2
+        },
+        {
+          "name": "nebula",
+          "t": 160,
+          "scene": "clocktower",
+          "systems": 3,
+          "visible": 1
+        },
+        {
+          "name": "stair_climb",
+          "t": 271,
+          "scene": "towertop",
+          "systems": 6,
+          "visible": 1
+        },
+        {
+          "name": "one_spark",
+          "t": 348.5,
+          "scene": "moonpalace",
+          "systems": 4,
+          "visible": 2
+        },
+        {
+          "name": "lady_dissolve",
+          "t": 360,
+          "scene": "moonpalace",
+          "systems": 4,
+          "visible": 1
+        },
+        {
+          "name": "tear_break",
+          "t": 370,
+          "scene": "moonpalace",
+          "systems": 4,
+          "visible": 1
+        },
+        {
+          "name": "snow_to_flower",
+          "t": 402,
+          "scene": "snowtown",
+          "systems": 11,
+          "visible": 1
+        },
+        {
+          "name": "bell_wave",
+          "t": 410,
+          "scene": "snowtown",
+          "systems": 11,
+          "visible": 1
+        },
+        {
+          "name": "chest_star",
+          "t": 450,
+          "scene": "snowtown",
+          "systems": 11,
+          "visible": 2
+        },
+        {
+          "name": "gold_text",
+          "t": 468,
+          "scene": "snowtown",
+          "systems": 11,
+          "visible": 2
+        }
+      ]
+    }
+  }
+}

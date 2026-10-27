@@ -1,0 +1,120 @@
+{
+  "schema": "cel-cinema-cast-v1",
+  "comment": "A3 镜表选角/选画表：shot id → 角色 → 画层。cel=全身原画刚性摆放；portrait=近景整肖像当镜头（raster-face）；walk=走拍相位画（baked-cel-clip，距离驱动）。数组表按 until 秒切换。缺省：Eileen stand / Alder stand_hope / LadyMoon sit_throne；kind=face_close 缺省=shot.character 的 portrait。锚点：eye=眼线对 bake faceCenter；lamp=画中灯焰对 bake flameAnchor。",
+  "portraitHeight": { "face_close": 1000, "macro": 1150 },
+  "characters": {
+    "Eileen": {
+      "cels": {
+        "stand":           { "img": "cels/eileen_stand.png",           "landmarks": "cels/landmarks/eileen_stand.json" },
+        "look_up":         { "img": "cels/eileen_look_up.png",         "landmarks": "cels/landmarks/eileen_look_up.json" },
+        "hold_bottle":     { "img": "cels/eileen_hold_bottle.png",     "landmarks": "cels/landmarks/eileen_hold_bottle.json" },
+        "offer_lamp":      { "img": "cels/eileen_offer_lamp.png",      "landmarks": "cels/landmarks/eileen_offer_lamp.json", "lampXY": [507, 630] },
+        "crouch":          { "img": "cels/eileen_crouch.png",          "eyeFrac": 0.215, "note": "蹲姿无地标文件，A4 刻度图复测：眼线=trim 图幅 21.5%（A3 目测 .30 作废）" },
+        "offer_lamp_back": { "img": "cels/eileen_offer_lamp_back.png", "landmarks": "cels/landmarks/eileen_offer_lamp_back.json", "note": "A4 补缺：m46 过肩背面递灯（替换 walk_p1 静立近似）；比例门 vs _anchor_eileen_walk ok（hem +.023 / boot_top +.029）" },
+        "hold_lamp_close": { "img": "cels/eileen_hold_lamp_close.png", "landmarks": "cels/landmarks/eileen_hold_lamp_close.json" },
+        "wave_goodnight":  { "img": "cels/eileen_wave_goodnight.png",  "landmarks": "cels/landmarks/eileen_wave_goodnight.json" },
+        "walk_p1":         { "img": "cels/walk/eileen_walk_p1.png",    "eyeFrac": 0.105, "note": "背面三四分双支撑相位（备用，m46 已由 offer_lamp_back 承担）" }
+      },
+      "walk": {
+        "frames": ["cels/walk/eileen_walk_p1.png","cels/walk/eileen_walk_p2.png","cels/walk/eileen_walk_p3.png","cels/walk/eileen_walk_p4.png","cels/walk/eileen_walk_p5.png","cels/walk/eileen_walk_p6.png","cels/walk/eileen_walk_p7.png","cels/walk/eileen_walk_p8.png"],
+        "cells": "cels/walk/eileen_walk_cells.json",
+        "size": [384, 512],
+        "anchor": [192, 505],
+        "cycleTravel": 0.40,
+        "eyeFrac": 0.105,
+        "note": "cycleTravel=m04 实测：相位画取自 t=30.50 起 0.83s 周期，该周期根位移 0.402m（bake 左脚落地事件间距）；起步/停步段行程偏短属真实步态"
+      },
+      "face": {
+        "base": "refs/eileen_face.png", "eyeY": 0.370, "headTop": 0.010, "faceX": 0.500,
+        "variants": {
+          "mouth_half": {"img": "faces/eileen_mouth_half.png", "rect": [580, 615, 220, 90]},
+          "mouth_open": {"img": "faces/eileen_mouth_open.png", "rect": [580, 610, 220, 100]},
+          "blink":      {"img": "faces/eileen_blink.png",      "rect": [430, 380, 470, 170]},
+          "expr_lonely":    {"img": "faces/eileen_expr_lonely.png",    "rect": [390, 270, 570, 560]},
+          "expr_tearful":   {"img": "faces/eileen_expr_tearful.png",   "rect": [390, 270, 570, 560]},
+          "expr_smile":     {"img": "faces/eileen_expr_smile.png",     "rect": [390, 270, 570, 560]},
+          "expr_determined":{"img": "faces/eileen_expr_determined.png","rect": [390, 270, 570, 560]}
+        },
+        "emotions": {"curious": null, "neutral": null, "gentle": "expr_smile", "happy": "expr_smile", "excited": "expr_smile", "sad": "expr_tearful", "worried": "expr_lonely", "determined": "expr_determined"}
+      }
+    },
+    "Alder": {
+      "cels": {
+        "stand_work":  { "img": "cels/alder_stand_work.png",  "eyeFrac": 0.123, "note": "俯身工作姿无地标文件（A2 姿势类差异免数值门），A4 刻度图复测：眼线=trim 图幅 12.3%（A3 目测 .16 作废）" },
+        "touch_watch": { "img": "cels/alder_touch_watch.png", "landmarks": "cels/landmarks/alder_touch_watch.json", "handXY": [484, 474], "note": "handXY=画内摸表右手手背（原图坐标，A4 刻度图初读 (405,401) 经试片帧校准 +79/+73），m53 花瓣落点锚" },
+        "shock":       { "img": "cels/alder_shock.png",       "landmarks": "cels/landmarks/alder_shock.json" },
+        "stand_hope":  { "img": "cels/alder_stand_hope.png",  "landmarks": "cels/landmarks/alder_stand_hope.json" },
+        "relieved":    { "img": "cels/alder_relieved.png",    "landmarks": "cels/landmarks/alder_relieved.json" }
+      },
+      "face": {
+        "base": "refs/alder_face.png", "eyeY": 0.314, "headTop": 0.036, "faceX": 0.500,
+        "variants": {
+          "mouth_half": {"img": "faces/alder_mouth_half.png", "rect": [570, 520, 230, 110]},
+          "mouth_open": {"img": "faces/alder_mouth_open.png", "rect": [565, 515, 240, 130]},
+          "blink":      {"img": "faces/alder_blink.png",      "rect": [410, 280, 440, 160]},
+          "expr_dazed":   {"img": "faces/alder_expr_dazed.png",   "rect": [390, 190, 520, 530]},
+          "expr_shocked": {"img": "faces/alder_expr_shocked.png", "rect": [390, 190, 520, 530]},
+          "expr_relieved":{"img": "faces/alder_expr_relieved.png","rect": [390, 190, 520, 530]}
+        },
+        "emotions": {"neutral": null, "sad": "expr_dazed", "surprised": "expr_shocked", "relieved": "expr_relieved", "excited": "expr_relieved"}
+      }
+    },
+    "LadyMoon": {
+      "cels": {
+        "sit_throne": { "img": "cels/ladymoon_sit_throne.png", "eyeFrac": 0.135, "refFrac": 0.422, "ref": "seat", "note": "坐姿无地标文件：A4 刻度图复测 eyeFrac=13.5%（原目测 .128）；refFrac=坐面 .422（A3 试片目检验证对位），ref=seat 锚定 bake root（root.y=0.9 王座座面高）" },
+        "slow_raise": { "img": "cels/ladymoon_slow_raise.png", "landmarks": "cels/landmarks/ladymoon_slow_raise.json" },
+        "revived":    { "img": "cels/ladymoon_revived.png",    "landmarks": "cels/landmarks/ladymoon_revived.json" }
+      },
+      "face": {
+        "base": "refs/ladymoon_face.png", "eyeY": 0.261, "headTop": 0.017, "faceX": 0.490,
+        "variants": {
+          "mouth_half": {"img": "faces/ladymoon_mouth_half.png", "rect": [570, 490, 190, 80]},
+          "mouth_open": {"img": "faces/ladymoon_mouth_open.png", "rect": [565, 485, 200, 95]},
+          "blink":      {"img": "faces/ladymoon_blink.png",      "rect": [440, 290, 410, 140]},
+          "expr_revived": {"img": "faces/ladymoon_expr_revived.png", "rect": [270, 80, 810, 560]}
+        },
+        "emotions": {"sad": null, "weary": null, "relieved": "expr_revived", "revived": "expr_revived"}
+      }
+    }
+  },
+  "defaults": { "Eileen": "stand", "Alder": "stand_hope", "LadyMoon": "sit_throne" },
+  "shots": {
+    "m04": {"Eileen": "walk"},
+    "m07": {"Eileen": "hold_lamp_close"},
+    "m08": {"Eileen": "hold_lamp_close"},
+    "m11": {"Eileen": "walk"},
+    "m12": {"Eileen": "walk"},
+    "m13": {"Eileen": "walk", "Alder": "stand_work"},
+    "m14": {"Alder": "stand_work"},
+    "m15": {"Eileen": [{"until": 112.4, "cel": "walk"}, {"until": 116.0, "cel": "crouch"}, {"cel": "stand"}], "Alder": "stand_work"},
+    "m17": {"Alder": "stand_work"},
+    "m18": {"Eileen": "stand", "Alder": "stand_work"},
+    "m20": {"Eileen": "hold_bottle"},
+    "m21": {"Eileen": "hold_bottle"},
+    "m24": {"Eileen": "hold_bottle", "Alder": "stand_work"},
+    "m28": {"Alder": "stand_hope"},
+    "m29": {"Eileen": "hold_bottle"},
+    "m30": {"Eileen": [{"until": 220.7, "cel": "hold_bottle"}, {"cel": "stand"}]},
+    "m33": {"Alder": "stand_hope"},
+    "m36": {"Eileen": "walk"},
+    "m37": {"Eileen": "walk"},
+    "m38": {"Eileen": "walk"},
+    "m40": {"Eileen": "walk", "LadyMoon": "sit_throne"},
+    "m43": {"LadyMoon": "slow_raise"},
+    "m44": {"Eileen": "hold_lamp_close", "LadyMoon": "sit_throne"},
+    "m45": {"Eileen": {"cel": "offer_lamp", "anchor": "lamp"}, "LadyMoon": "sit_throne"},
+    "m46": {"Eileen": "offer_lamp_back", "LadyMoon": "sit_throne"},
+    "m47": {"Eileen": "offer_lamp", "LadyMoon": "sit_throne"},
+    "m48": {"Eileen": "portrait"},
+    "m49": {"LadyMoon": {"cel": "portrait", "emotionTimeline": [[369.55, "relieved"]]}},
+    "m50": {"Alder": "touch_watch"},
+    "m52": {"Alder": "portrait"},
+    "m53": {"Alder": "touch_watch"},
+    "m56": {"Alder": {"cel": "stand_hope", "shiftXY": [0, 150], "note": "A4：横移拍里投影点沿左房屋脊爬升——整画随镜平移 +150px 落回雪院（groundY 定点会滑脚）"}},
+    "m58": {"Alder": {"cel": "stand_hope", "groundY": 545, "note": "A4：establish 里投影点落在塔身中横梁——静态机位，脚底显式落到塔门草甸线"}},
+    "m59": {"Alder": "stand_hope"},
+    "m61": {"Alder": "touch_watch"},
+    "m62": {"Eileen": "hold_lamp_close", "Alder": {"cel": "stand_hope", "groundY": 575, "note": "A4：bake 脚底投影 (893,434) 落在底图右房屋脊（3D 里他在塔门口地面，2D 底图塔比几何窄）——静态机位，脚底显式落到屋前草甸线"}},
+    "m64": {"Eileen": "hold_lamp_close", "Alder": "stand_hope"}
+  }
+}

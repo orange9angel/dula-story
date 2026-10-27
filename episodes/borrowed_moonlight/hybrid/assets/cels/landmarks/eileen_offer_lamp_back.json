@@ -1,0 +1,9 @@
+{
+  "H": 1486,
+  "H_note": "trim 后图幅高（alpha>32 bbox，同 art_pass trim 约定）；背面无眼可读，eyes=耳中上沿水平线估计（面部中线），hem=裙摆下沿、boot_top=靴筒上沿均为细刻度图人工读数（storyboard/a4/eyefrac/）",
+  "bands": {
+    "eyes": { "top": 0.100 },
+    "hem": { "top": 0.780 },
+    "boot_top": { "top": 0.888 }
+  }
+}

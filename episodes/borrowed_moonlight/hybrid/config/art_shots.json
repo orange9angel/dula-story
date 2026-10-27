@@ -1,0 +1,1000 @@
+{
+ "schema": "cel-cinema-shots-v1",
+ "episode": "borrowed_moonlight",
+ "duration": 478,
+ "fps": 30,
+ "kinds": [
+  "establish",
+  "face_close",
+  "macro",
+  "mid",
+  "stairs",
+  "two_close",
+  "two_mid",
+  "walk",
+  "wide"
+ ],
+ "shots": [
+  {
+   "id": "m01",
+   "start": 0,
+   "end": 11,
+   "scene": "snowtown",
+   "shot": "town_far",
+   "move": "push_in",
+   "kind": "establish",
+   "type": "dialogue",
+   "character": "Narrator",
+   "emotion": "neutral",
+   "line": true,
+   "cues": [
+    "OPEN"
+   ]
+  },
+  {
+   "id": "m02",
+   "start": 11,
+   "end": 19,
+   "scene": "snowtown",
+   "shot": "clock_face",
+   "move": "hold",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Narrator",
+   "emotion": "neutral",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m03",
+   "start": 19,
+   "end": 27,
+   "scene": "snowtown",
+   "shot": "street_empty",
+   "move": "pan",
+   "kind": "wide",
+   "type": "dialogue",
+   "character": "Narrator",
+   "emotion": "sad",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m04",
+   "start": 27,
+   "end": 35,
+   "scene": "snowtown",
+   "shot": "girl_enter",
+   "move": "follow",
+   "kind": "walk",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "FOOTSTEPS_SNOW"
+   ]
+  },
+  {
+   "id": "m05",
+   "start": 35,
+   "end": 43,
+   "scene": "snowtown",
+   "shot": "girl_close",
+   "move": "look_up",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "curious",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m06",
+   "start": 43,
+   "end": 51,
+   "scene": "snowtown",
+   "shot": "moon_close",
+   "move": "push_slow",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "sad",
+   "line": true,
+   "cues": [
+    "MOON_DIM"
+   ]
+  },
+  {
+   "id": "m07",
+   "start": 51,
+   "end": 57,
+   "scene": "snowtown",
+   "shot": "lamp_close",
+   "move": "hold",
+   "kind": "macro",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "WIND_GUST"
+   ]
+  },
+  {
+   "id": "m08",
+   "start": 57,
+   "end": 63,
+   "scene": "snowtown",
+   "shot": "lamp_macro",
+   "move": "hold",
+   "kind": "macro",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "LAMP_OUT",
+    "FIREFLIES"
+   ]
+  },
+  {
+   "id": "m09",
+   "start": 63,
+   "end": 70,
+   "scene": "snowtown",
+   "shot": "girl_close",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "gentle",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m10",
+   "start": 70,
+   "end": 78,
+   "scene": "snowtown",
+   "shot": "eye_macro",
+   "move": "hold",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "sad",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m11",
+   "start": 78,
+   "end": 84,
+   "scene": "snowtown",
+   "shot": "tower_door",
+   "move": "hold",
+   "kind": "walk",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "FOOTSTEPS_SNOW2"
+   ]
+  },
+  {
+   "id": "m12",
+   "start": 84,
+   "end": 91,
+   "scene": "snowtown",
+   "shot": "door_open",
+   "move": "follow_back",
+   "kind": "walk",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "DOOR_CREAK",
+    "ACT1_END"
+   ]
+  },
+  {
+   "id": "m13",
+   "start": 91,
+   "end": 101,
+   "scene": "clocktower",
+   "shot": "workshop_wide",
+   "move": "crane_up",
+   "kind": "establish",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "GEARS",
+    "ACT2"
+   ]
+  },
+  {
+   "id": "m14",
+   "start": 101,
+   "end": 109,
+   "scene": "clocktower",
+   "shot": "oldman_work",
+   "move": "push_slow",
+   "kind": "mid",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "METAL_TAP"
+   ]
+  },
+  {
+   "id": "m15",
+   "start": 109,
+   "end": 117,
+   "scene": "clocktower",
+   "shot": "two_mid",
+   "move": "hold",
+   "kind": "two_mid",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "curious",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m16",
+   "start": 117,
+   "end": 126,
+   "scene": "clocktower",
+   "shot": "alder_close",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "neutral",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m17",
+   "start": 126,
+   "end": 132,
+   "scene": "clocktower",
+   "shot": "bottles_row",
+   "move": "pan",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": []
+  },
+  {
+   "id": "m18",
+   "start": 132,
+   "end": 140,
+   "scene": "clocktower",
+   "shot": "girl_step",
+   "move": "over_shoulder",
+   "kind": "walk",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "curious",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m19",
+   "start": 140,
+   "end": 149,
+   "scene": "clocktower",
+   "shot": "alder_side",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "sad",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m20",
+   "start": 149,
+   "end": 155,
+   "scene": "clocktower",
+   "shot": "hand_bottle",
+   "move": "hold",
+   "kind": "macro",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "STAR_PULSE"
+   ]
+  },
+  {
+   "id": "m21",
+   "start": 155,
+   "end": 162,
+   "scene": "clocktower",
+   "shot": "bottle_macro",
+   "move": "hold",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "excited",
+   "line": true,
+   "cues": [
+    "STAR_WAKE"
+   ]
+  },
+  {
+   "id": "m22",
+   "start": 162,
+   "end": 170,
+   "scene": "clocktower",
+   "shot": "alder_shock",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "surprised",
+   "line": true,
+   "cues": [
+    "GLASSES_DROP"
+   ]
+  },
+  {
+   "id": "m23",
+   "start": 170,
+   "end": 178,
+   "scene": "clocktower",
+   "shot": "girl_smile",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "gentle",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m24",
+   "start": 178,
+   "end": 184,
+   "scene": "clocktower",
+   "shot": "workshop_wide",
+   "move": "hold",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "RESONANCE",
+    "GEARS_STOP"
+   ]
+  },
+  {
+   "id": "m25",
+   "start": 184,
+   "end": 192,
+   "scene": "towertop",
+   "shot": "skylight",
+   "move": "tilt_up",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "SKYLIGHT",
+    "ACT3"
+   ]
+  },
+  {
+   "id": "m26",
+   "start": 192,
+   "end": 200,
+   "scene": "towertop",
+   "shot": "moon_dim",
+   "move": "telescope",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "sad",
+   "line": true,
+   "cues": [
+    "MOON_FADE"
+   ]
+  },
+  {
+   "id": "m27",
+   "start": 200,
+   "end": 206,
+   "scene": "towertop",
+   "shot": "girl_determined",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "determined",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m28",
+   "start": 206,
+   "end": 213,
+   "scene": "towertop",
+   "shot": "two_mid",
+   "move": "hold",
+   "kind": "two_mid",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "sad",
+   "line": true,
+   "cues": [
+    "WIND_HIGH"
+   ]
+  },
+  {
+   "id": "m29",
+   "start": 213,
+   "end": 220,
+   "scene": "towertop",
+   "shot": "hand_star",
+   "move": "hold",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "determined",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m30",
+   "start": 220,
+   "end": 227,
+   "scene": "towertop",
+   "shot": "first_star",
+   "move": "follow_up",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "STAR_RISE"
+   ]
+  },
+  {
+   "id": "m31",
+   "start": 227,
+   "end": 234,
+   "scene": "towertop",
+   "shot": "stars_swarm",
+   "move": "orbit",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "STARS_SWARM",
+    "MUSIC_RISE"
+   ]
+  },
+  {
+   "id": "m32",
+   "start": 234,
+   "end": 241,
+   "scene": "towertop",
+   "shot": "stair_form",
+   "move": "hold",
+   "kind": "stairs",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "STAIR_FORM"
+   ]
+  },
+  {
+   "id": "m33",
+   "start": 241,
+   "end": 248,
+   "scene": "towertop",
+   "shot": "alder_tear",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "surprised",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m34",
+   "start": 248,
+   "end": 254,
+   "scene": "towertop",
+   "shot": "girl_lookback",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "happy",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m35",
+   "start": 254,
+   "end": 261,
+   "scene": "towertop",
+   "shot": "girl_stars",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "gentle",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m36",
+   "start": 261,
+   "end": 267,
+   "scene": "towertop",
+   "shot": "feet_step",
+   "move": "hold",
+   "kind": "stairs",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "STEP_RING"
+   ]
+  },
+  {
+   "id": "m37",
+   "start": 267,
+   "end": 276,
+   "scene": "towertop",
+   "shot": "climb_far",
+   "move": "pull_far",
+   "kind": "stairs",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "CHOIR"
+   ]
+  },
+  {
+   "id": "m38",
+   "start": 276,
+   "end": 284,
+   "scene": "moonpalace",
+   "shot": "palace_establish",
+   "move": "ultrawide",
+   "kind": "establish",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "ACT4",
+    "PALACE_HUSH"
+   ]
+  },
+  {
+   "id": "m39",
+   "start": 284,
+   "end": 293,
+   "scene": "moonpalace",
+   "shot": "lady_moon",
+   "move": "push_slow",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "LadyMoon",
+   "emotion": "sad",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m40",
+   "start": 293,
+   "end": 300,
+   "scene": "moonpalace",
+   "shot": "two_mid",
+   "move": "hold",
+   "kind": "two_mid",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "worried",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m41",
+   "start": 300,
+   "end": 308,
+   "scene": "moonpalace",
+   "shot": "lady_side",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "LadyMoon",
+   "emotion": "sad",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m42",
+   "start": 308,
+   "end": 315,
+   "scene": "moonpalace",
+   "shot": "girl_frown",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "curious",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m43",
+   "start": 315,
+   "end": 325,
+   "scene": "moonpalace",
+   "shot": "lady_half",
+   "move": "slow_drift",
+   "kind": "mid",
+   "type": "dialogue",
+   "character": "LadyMoon",
+   "emotion": "sad",
+   "line": true,
+   "cues": [
+    "MOONLIGHT_DIM"
+   ]
+  },
+  {
+   "id": "m44",
+   "start": 325,
+   "end": 331,
+   "scene": "moonpalace",
+   "shot": "palace_wide",
+   "move": "hold",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": []
+  },
+  {
+   "id": "m45",
+   "start": 331,
+   "end": 338,
+   "scene": "moonpalace",
+   "shot": "offer_lamp",
+   "move": "hold",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "determined",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m46",
+   "start": 338,
+   "end": 345,
+   "scene": "moonpalace",
+   "shot": "two_close",
+   "move": "hold",
+   "kind": "two_close",
+   "type": "dialogue",
+   "character": "LadyMoon",
+   "emotion": "sad",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m47",
+   "start": 345,
+   "end": 352,
+   "scene": "moonpalace",
+   "shot": "girl_lamp",
+   "move": "push_in",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "determined",
+   "line": true,
+   "cues": [
+    "ONE_SPARK"
+   ]
+  },
+  {
+   "id": "m48",
+   "start": 352,
+   "end": 364,
+   "scene": "moonpalace",
+   "shot": "girl_tears",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "sad",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m49",
+   "start": 364,
+   "end": 374,
+   "scene": "moonpalace",
+   "shot": "tear_macro",
+   "move": "hold",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "LadyMoon",
+   "emotion": "relieved",
+   "line": true,
+   "cues": [
+    "TEAR_FALL",
+    "TEAR_BREAK"
+   ]
+  },
+  {
+   "id": "m50",
+   "start": 374,
+   "end": 382,
+   "scene": "snowtown",
+   "shot": "tower_wait",
+   "move": "hold",
+   "kind": "mid",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "sad",
+   "line": true,
+   "cues": [
+    "ACT5"
+   ]
+  },
+  {
+   "id": "m51",
+   "start": 382,
+   "end": 388,
+   "scene": "snowtown",
+   "shot": "stair_fade",
+   "move": "tilt_up",
+   "kind": "stairs",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "STAIR_FADE"
+   ]
+  },
+  {
+   "id": "m52",
+   "start": 388,
+   "end": 394,
+   "scene": "snowtown",
+   "shot": "alder_down",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": []
+  },
+  {
+   "id": "m53",
+   "start": 394,
+   "end": 400,
+   "scene": "snowtown",
+   "shot": "hand_petal",
+   "move": "hold",
+   "kind": "macro",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "FIRST_PETAL"
+   ]
+  },
+  {
+   "id": "m54",
+   "start": 400,
+   "end": 407,
+   "scene": "snowtown",
+   "shot": "snow_to_petal",
+   "move": "slowmo",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "SNOW_TO_PETAL",
+    "MUSIC_RETURN"
+   ]
+  },
+  {
+   "id": "m55",
+   "start": 407,
+   "end": 412,
+   "scene": "snowtown",
+   "shot": "clock_bell1",
+   "move": "hold",
+   "kind": "macro",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "BELL1"
+   ]
+  },
+  {
+   "id": "m56",
+   "start": 412,
+   "end": 417,
+   "scene": "snowtown",
+   "shot": "street_bud",
+   "move": "pan",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "BELL2"
+   ]
+  },
+  {
+   "id": "m57",
+   "start": 417,
+   "end": 422,
+   "scene": "snowtown",
+   "shot": "windows_light",
+   "move": "montage",
+   "kind": "wide",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "BELL3"
+   ]
+  },
+  {
+   "id": "m58",
+   "start": 422,
+   "end": 429,
+   "scene": "snowtown",
+   "shot": "sunrise_wide",
+   "move": "hold",
+   "kind": "establish",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "SUNRISE"
+   ]
+  },
+  {
+   "id": "m59",
+   "start": 429,
+   "end": 435,
+   "scene": "snowtown",
+   "shot": "tower_reunion",
+   "move": "hold",
+   "kind": "mid",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "excited",
+   "line": true,
+   "cues": [
+    "LAMP_RELIGHT"
+   ]
+  },
+  {
+   "id": "m60",
+   "start": 435,
+   "end": 443,
+   "scene": "snowtown",
+   "shot": "girl_answer",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "gentle",
+   "line": true,
+   "cues": []
+  },
+  {
+   "id": "m61",
+   "start": 443,
+   "end": 451,
+   "scene": "snowtown",
+   "shot": "locket",
+   "move": "hold",
+   "kind": "macro",
+   "type": "dialogue",
+   "character": "Alder",
+   "emotion": "relieved",
+   "line": true,
+   "cues": [
+    "STAR_CHEST"
+   ]
+  },
+  {
+   "id": "m62",
+   "start": 451,
+   "end": 464,
+   "scene": "snowtown",
+   "shot": "finale",
+   "move": "hold",
+   "kind": "mid",
+   "type": "dialogue",
+   "character": "Narrator",
+   "emotion": "gentle",
+   "line": true,
+   "cues": [
+    "FINALE_DIM"
+   ]
+  },
+  {
+   "id": "m63",
+   "start": 464,
+   "end": 472,
+   "scene": "snowtown",
+   "shot": "goodnight",
+   "move": "hold",
+   "kind": "face_close",
+   "type": "dialogue",
+   "character": "Eileen",
+   "emotion": "happy",
+   "line": true,
+   "cues": [
+    "GOLD_TEXT"
+   ]
+  },
+  {
+   "id": "m64",
+   "start": 472,
+   "end": 478,
+   "scene": "snowtown",
+   "shot": "fade",
+   "move": "hold",
+   "kind": "mid",
+   "type": "action",
+   "character": null,
+   "emotion": null,
+   "line": false,
+   "cues": [
+    "FADE"
+   ]
+  }
+ ]
+}

@@ -45,7 +45,12 @@ const SHOTS=[
   {name:'ladymoon_slow_raise',who:'LadyMoon',pose:'slow_raise',view:'front',dist:2.8},
   {name:'ladymoon_face_weary',who:'LadyMoon',pose:'stand',view:'face',emotion:'weary'},
   {name:'ladymoon_face_revived',who:'LadyMoon',pose:'stand',view:'face',emotion:'revived'},
+  // A4：m46 背面递灯 cel 的 3D 姿势参考（背面三四分，仅锁姿势）
+  {name:'a4_eileen_offer_lamp_back',who:'Eileen',pose:'offer_lamp',view:'backq',dist:2.0},
+  {name:'a4_eileen_offer_lamp_back_hi',who:'Eileen',pose:'offer_lamp',view:'backq_hi',dist:2.2},
 ];
+const only=opt('--only')?.split(',');
+const shots=only?SHOTS.filter(s=>only.includes(s.name)):SHOTS;
 
 const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json'};
 const server=http.createServer((req,res)=>{
@@ -70,11 +75,11 @@ try{
   await page.setViewport({width:1280,height:720,deviceScaleFactor:1});
   await page.goto(url,{waitUntil:'networkidle0'});
   await page.waitForFunction('window.ready===true',{timeout:60000});
-  for(const s of SHOTS){
+  for(const s of shots){
     const b64=await page.evaluate(spec=>window.shot(spec),s);
     fs.writeFileSync(path.join(board,`${s.name}.jpg`),Buffer.from(b64,'base64'));
     console.log('shot',s.name);
   }
   if(errors.length)throw new Error(errors.join('\n'));
-  console.log(`check_characters complete: ${SHOTS.length} frames -> ${board}`);
+  console.log(`check_characters complete: ${shots.length} frames -> ${board}`);
 }finally{if(browser)await browser.close();server.close();}

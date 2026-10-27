@@ -52,6 +52,8 @@ window.shot=(spec)=>{
   else if(view==='threeq')pos=[Math.sin(.66)*d,h*.72,Math.cos(.66)*d];
   else if(view==='side')pos=[d,h*.72,0];
   else if(view==='back')pos=[0,h*.72,-d];
+  else if(view==='backq')pos=[Math.sin(.66)*d,h*.72,-Math.cos(.66)*d];
+  else if(view==='backq_hi'){pos=[Math.sin(.55)*d,h*1.18,-Math.cos(.55)*d];look=[0,h*.45,0];}
   else if(view==='face'){pos=[.12,h+.06,.62];look=[0,h,0];}
   camera.position.set(...pos);camera.lookAt(...look);camera.updateProjectionMatrix();
   renderer.render(scene,camera);renderer.render(scene,camera); // 双渲染沉淀

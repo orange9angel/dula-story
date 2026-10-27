@@ -1,0 +1,176 @@
+{
+  "passed": true,
+  "checks": {
+    "manifest": {
+      "ok": true,
+      "missing": []
+    },
+    "landmarks": {
+      "ok": true,
+      "checked": 12,
+      "tolerance": 0.07,
+      "note": "trim 含水彩软边余量，系统性 3-6% 偏高为已知（眼线上段实测断言兜底）",
+      "drift": []
+    },
+    "eyeLine": {
+      "ok": true,
+      "body": [
+        {
+          "t": 345.5,
+          "actor": "Eileen",
+          "key": "Eileen:offer_lamp",
+          "above": 44.4,
+          "expect": 44.3,
+          "err": 0.1,
+          "tol": 22.8,
+          "top": 174,
+          "ok": true
+        },
+        {
+          "t": 341,
+          "actor": "LadyMoon",
+          "key": "LadyMoon:sit_throne",
+          "above": 76.4,
+          "expect": 76.7,
+          "err": 0.3,
+          "tol": 24,
+          "top": 221,
+          "ok": true
+        },
+        {
+          "t": 335,
+          "actor": "Eileen",
+          "check": "lamp@flameAnchor",
+          "flameP": [
+            675.6,
+            250.2
+          ],
+          "maxAlpha": 253,
+          "ok": true
+        }
+      ],
+      "face": [
+        {
+          "t": 355,
+          "actor": "Eileen",
+          "measuredH": 719,
+          "expect": 719,
+          "err": 0,
+          "ok": true
+        },
+        {
+          "t": 370,
+          "actor": "LadyMoon",
+          "measuredH": 719,
+          "expect": 719,
+          "err": 0,
+          "ok": true
+        }
+      ]
+    },
+    "walkPhase": {
+      "ok": true,
+      "mono": true,
+      "plants": 11,
+      "wraps": 10,
+      "phases": [
+        2,
+        5,
+        1,
+        5,
+        1,
+        5,
+        1,
+        6,
+        3,
+        0,
+        4,
+        1,
+        5,
+        2,
+        6,
+        2,
+        6,
+        1,
+        4,
+        7,
+        0,
+        2,
+        3,
+        4,
+        4
+      ]
+    },
+    "seek": {
+      "ok": true,
+      "seek": [
+        {
+          "t": 332.5,
+          "equal": true
+        },
+        {
+          "t": 335,
+          "equal": true
+        },
+        {
+          "t": 341,
+          "equal": true
+        },
+        {
+          "t": 345.2,
+          "equal": true
+        },
+        {
+          "t": 348.1,
+          "equal": true
+        },
+        {
+          "t": 355,
+          "equal": true
+        },
+        {
+          "t": 360,
+          "equal": true
+        },
+        {
+          "t": 366.2,
+          "equal": true
+        },
+        {
+          "t": 369.5,
+          "equal": true
+        },
+        {
+          "t": 371,
+          "equal": true
+        },
+        {
+          "t": 31,
+          "equal": true
+        },
+        {
+          "t": 33.5,
+          "equal": true
+        }
+      ]
+    },
+    "particles": {
+      "ok": true,
+      "oneSpark": {
+        "scene": "moonpalace",
+        "systems": 4,
+        "visible": 2
+      },
+      "tearBreak": {
+        "scene": "moonpalace",
+        "systems": 4,
+        "visible": 1
+      },
+      "ladyDissolve": {
+        "scene": "moonpalace",
+        "systems": 4,
+        "visible": 1
+      }
+    }
+  }
+}

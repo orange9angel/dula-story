@@ -277,21 +277,21 @@
       "provider": "volcano/seed-audio-1.0",
       "sha256": "dfd433d2468566c21a14a7cedf29306c0ca05de145bd681648ed059d57107669"
     },
-    "assets3d\\music\\piano_open_a.wav": {
-      "provider": "volcano/seed-audio-1.0",
-      "sha256": "a9c133fdfcd03c8a06f0b40bf6b4cee70345f65d61e70d6f82fe295ece047bcf"
+    "assets3d\\music\\suno_piano_open_a.mp3": {
+      "provider": "suno/v6-mini",
+      "sha256": "3872800b0a080e4e39e07f024fdf2305a17037ac6b4d63b25959e814b7dfaeac"
     },
-    "assets3d\\music\\piano_open_b.wav": {
-      "provider": "volcano/seed-audio-1.0",
-      "sha256": "37d63c96b9bb10666694e77d9bebbcc46db616e05c56a86f2de0c428cec43632"
+    "assets3d\\music\\suno_piano_open_b.mp3": {
+      "provider": "suno/v6-mini",
+      "sha256": "072f60724627442ea360fccd9aa64fc6b9572949e733528d6383bdc037372e5d"
     },
-    "assets3d\\music\\strings_choir.wav": {
-      "provider": "volcano/seed-audio-1.0",
-      "sha256": "4066fda730ea38640ac34a2c364565bb570a416a8934e447f90c9738f53cfb5b"
+    "assets3d\\music\\suno_strings_choir.mp3": {
+      "provider": "suno/v6-mini",
+      "sha256": "02388ae0dbcabf3cd1169e35d05876ea4d129c51f026d5a3b6e3d4d93abcf114"
     },
-    "assets3d\\music\\spring_return.wav": {
-      "provider": "volcano/seed-audio-1.0",
-      "sha256": "83e6572be7ae08b7996ecefcdd85d988e9945b6c4e8618d20fac4bbf128e633e"
+    "assets3d\\music\\suno_spring_return.mp3": {
+      "provider": "suno/v6-mini",
+      "sha256": "50c4bcc87531a264921c94a5a4b648340001a720bca1d2e82e46fe87eac0545c"
     }
   },
   "bed_qc": {
@@ -378,5 +378,5 @@
   "global_gain": 1,
   "voice_rms": 0.10919997062687409,
   "silence_policy": "348-400 无音乐；TEAR_FALL 366-369 仅 palace_hush 床",
-  "mix_sha256": "47b3a4bf80958bcefa10d59d59775c7b08f543069d67732ea625f88791470b3e"
+  "mix_sha256": "b74b25c6b2d2d57dfdb72ea03ce33dd96d6fe4e436ac28a2fae382c2d62c7e8d"
 }

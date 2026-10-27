@@ -4,6 +4,13 @@
 // 静态场景件（台阶/天窗/瓶阵）在装配时从活体对象快照世界坐标（布局改动自动跟随）。
 // 密度随高潮递增：m08 萤火 8 颗 → m21 星云 140 → m24 星座 170 → m49 泪碎 700（全片最高点）
 // → m63 金粒聚字 ~850（签名镜头）。加色混合 + 低 alpha 小尺寸，避免过曝满屏。
+//
+// A3 起分两层（cel-cinema 粒子 3D 层重宿主）：
+//   buildMagicFX({scenes,actors,TL})      —— viewer 链入口：活体对象树 → world → assembleMagicFX(mode:'3d')
+//   assembleMagicFX({TL,world,mode})      —— 系统装配核心；world 只依赖锚点接口
+//     world.anchors：Object3D 或 fn(t,out)→out（ParticleSystem 原生支持两种）
+//     world.statics：steps/bottles/windows/skylight(Vector3 快照)/step0Anchor/moonSnow/moonTower/tower/petalHand
+//     mode '3d' = 含反馈光 PointLight 与 m53 花瓣实体；'2d' = 纯粒子（art_pass 页自行承担光效）
 import * as THREE from 'three';
 import {ParticleSystem,ParticleDirector,lcg,clamp,ease,lerp} from './particles.js';
 import {stagingFor,ANCHORS} from '../performance.js';
@@ -14,13 +21,9 @@ const PETAL=[1,.80,.88],LEAF_GOLD=[.72,.90,.52],AMBER=[1,.72,.38];
 
 const _a=new THREE.Vector3(),_b=new THREE.Vector3();
 
-export function buildMagicFX({scenes,actors,TL}){
-  const cueAt=name=>TL.segments.flatMap(s=>s.cues).find(c=>c.name===name)?.at??Infinity;
-  const LAMP_OUT=cueAt('LAMP_OUT'),LAMP_RELIGHT=cueAt('LAMP_RELIGHT');
+// viewer 链活体 world：锚点挂角色头组/道具树（随骨骼姿态每帧更新），静态件快照世界坐标
+function liveMagicWorld(scenes,actors){
   for(const s of Object.values(scenes))s.scene.updateMatrixWorld(true);
-  const D=new ParticleDirector();
-
-  // ── 活体锚点（挂到角色头组/道具树，随骨骼姿态每帧更新）──
   const flameAnchor=actors.Eileen.userData.flameAnchor;
   const mkAnchor=(parent,p,name)=>{const a=new THREE.Object3D();a.name=name;a.position.set(...p);parent.add(a);return a;};
   // 眼睫锚点：脸部 UV 约定反解（眼心 y≈.086、x≈±.046）；z=.15 必须大于该高度前脸深 .128，
@@ -30,13 +33,42 @@ export function buildMagicFX({scenes,actors,TL}){
   const tearAnchor=mkAnchor(actors.LadyMoon.userData.actor.headGroup,[.048,.058,.15],'tearAnchor');
   const chestAnchor=actors.Alder.userData.actor.watches[1]; // 胸口中号怀表
   const clockFace=scenes.snowtown.scene.getObjectByName('clockFace');
-  const skylight=scenes.towertop.scene.getObjectByName('skylight');
-  const steps=scenes.towertop.steps.map(({s})=>{const v=new THREE.Vector3();s.getWorldPosition(v);return v;});
-  const bottles=scenes.clocktower.bottles.map(({g})=>{const v=new THREE.Vector3();g.getWorldPosition(v);return v;});
   // 苏醒瓶=艾琳手中星瓶道具（m20-m24 捧瓶拍由 viewer 接线 setBottle 显形）；
   // 工坊悬浮瓶阵离手部特写机位 3m+，拿场景瓶当锚点会把星云拍出画外
   const wakeBottle=actors.Eileen.userData.bottle;
-  const winPos=scenes.snowtown.windows.map(w=>{const v=new THREE.Vector3();w.getWorldPosition(v);return v;});
+  return {
+    scenes,
+    anchors:{
+      flameAnchor,eyeAnchor,tearAnchor,chestAnchor,wakeBottle,clockFace,
+      eileenHead:actors.Eileen.userData.actor.headGroup,
+      eileenRoot:actors.Eileen,ladyRoot:actors.LadyMoon,
+    },
+    statics:{
+      skylight:(()=>{const o=scenes.towertop.scene.getObjectByName('skylight');return o?o.getWorldPosition(new THREE.Vector3()):null;})(),
+      steps:scenes.towertop.steps.map(({s})=>s.getWorldPosition(new THREE.Vector3())),
+      step0Anchor:scenes.towertop.steps[0].s, // m36 脚部特写锚定的第一级（活体）
+      bottles:scenes.clocktower.bottles.map(({g})=>g.getWorldPosition(new THREE.Vector3())),
+      windows:scenes.snowtown.windows.map(w=>w.getWorldPosition(new THREE.Vector3())),
+      moonSnow:scenes.snowtown.moon,moonTower:scenes.towertop.moon,
+      tower:scenes.snowtown.tower,
+      petalHand:actors.Alder.userData.actor.hands.right,
+    },
+  };
+}
+
+export function buildMagicFX({scenes,actors,TL}){
+  return assembleMagicFX({TL,world:liveMagicWorld(scenes,actors),mode:'3d'});
+}
+
+export function assembleMagicFX({TL,world,mode='3d'}){
+  const {scenes,anchors,statics}=world;
+  const {flameAnchor,eyeAnchor,tearAnchor,chestAnchor,wakeBottle,clockFace,eileenHead,eileenRoot,ladyRoot}=anchors;
+  const {skylight,steps,step0Anchor,bottles,windows:winPos,moonSnow,moonTower,tower,petalHand}=statics;
+  const cueAt=name=>TL.segments.flatMap(s=>s.cues).find(c=>c.name===name)?.at??Infinity;
+  const LAMP_OUT=cueAt('LAMP_OUT'),LAMP_RELIGHT=cueAt('LAMP_RELIGHT');
+  const D=new ParticleDirector();
+  // 锚点双形态读取：Object3D（活体）或 fn(t,out)（bake 重宿主）
+  const readA=(a,t,out)=>typeof a==='function'?a(t,out):a.getWorldPosition(out);
 
   const visIn=(seg,name,sceneKey)=>seg.scene===sceneKey&&stagingFor(seg)[name]?.visible===true;
   // 终幕黑场因子（与 SnowTownScene.update 同式）：456 起 7s 渐暗
@@ -69,12 +101,11 @@ export function buildMagicFX({scenes,actors,TL}){
   // 注意：粒子偏移加在世界空间，艾琳 yaw=π 脸朝 -z——"脸前方"=锚点背埋头心的方向，
   // 手写 +z 偏置会把盘旋轨迹埋进颅骨（P4 探针实录）； outward 由活体头心→眼睫锚点反解
   const _c=new THREE.Vector3(),_out=new THREE.Vector3();
-  const eileenHead=actors.Eileen.userData.actor.headGroup;
-  const lampToEye=(t,out)=>{flameAnchor.getWorldPosition(_a);eyeAnchor.getWorldPosition(_b);
+  const lampToEye=(t,out)=>{readA(flameAnchor,t,_a);readA(eyeAnchor,t,_b);
     const land=ease(clamp((t-75.8)/.6)); // m10 落睫段（t≥75.8 最后一颗收向睑缘）
     const k=ease(clamp((t-59)/7));
     out.lerpVectors(_a,_b,k);
-    if(k>0){eileenHead.getWorldPosition(_c);_out.subVectors(_b,_c);_out.y=0;_out.normalize();
+    if(k>0){readA(eileenHead,t,_c);_out.subVectors(_b,_c);_out.y=0;_out.normalize();
       out.addScaledVector(_out,(.10-.07*land)*k); // 脸前悬浮（落睫段收回 3cm）
       out.x+=.004*land*k;out.y-=.004*land*k;} // 落睫修型：探出碎发片（yaw π 世界系）
     return out;};
@@ -137,8 +168,7 @@ export function buildMagicFX({scenes,actors,TL}){
 
   // m30 第一颗星离瓶（STAR_RISE@220）：亮头 + 长尾金粒盘旋升空
   {
-    const eileenRoot=actors.Eileen;
-    const riseAnchor=(t,out)=>{eileenRoot.getWorldPosition(out);out.y+=1.0;return out;};
+    const riseAnchor=(t,out)=>{readA(eileenRoot,t,out);out.y+=1.0;return out;};
     D.add('towertop',new ParticleSystem(scenes.towertop.scene,{count:90,seed:130,anchor:riseAnchor,
       build:(i,rnd)=>{const head=i===0,a0=rnd()*6.28,t0=220+(head?0:i*.045);return{
         t0,t1:t0+(head?6.5:5.2),
@@ -153,7 +183,7 @@ export function buildMagicFX({scenes,actors,TL}){
   D.add('towertop',new ParticleSystem(scenes.towertop.scene,{count:180,seed:131,
     build:(i,rnd)=>{
       const target=steps[i%steps.length],t0=227+rnd()*2.2,dur=6+rnd()*5;
-      const sx=skylight?skylight.getWorldPosition(new THREE.Vector3()):new THREE.Vector3();
+      const sx=skylight??new THREE.Vector3();
       const jx=(rnd()-.5)*.6,jy=(rnd()-.5)*.5;
       return{t0,t1:t0+dur,
         pos:(u,t,out)=>{const e=ease(u);
@@ -170,7 +200,8 @@ export function buildMagicFX({scenes,actors,TL}){
     const per=16,parts=[];
     for(let s=0;s<steps.length;s++)for(let k=0;k<per;k++)parts.push(s);
     D.add('towertop',new ParticleSystem(scenes.towertop.scene,{count:parts.length,seed:132,
-      build:(i,rnd)=>{const si=parts[i],c=steps[si],birth=235+si*.55+rnd()*.2;
+      build:(i,rnd)=>{
+        const si=parts[i],c=steps[si],birth=235+si*.55+rnd()*.2;
         const a0=rnd()*6.28,el=(rnd()-.5)*.9;return{t0:birth,t1:birth+1.0,
         pos:(u,t,out)=>{const r=.1+u*.42;
           return out.set(c.x+Math.cos(a0)*r*Math.cos(el),c.y+.06+Math.sin(el)*r*.4,c.z+Math.sin(a0)*r*Math.cos(el));},
@@ -181,9 +212,8 @@ export function buildMagicFX({scenes,actors,TL}){
 
   // m36 登阶波纹（STEP_RING@263）：落脚级银蓝粒子环形波纹三连荡开
   {
-    const step0=scenes.towertop.steps[0].s; // m36 脚部特写锚定的第一级（活体）
     const per=40;
-    D.add('towertop',new ParticleSystem(scenes.towertop.scene,{count:per*3,seed:136,anchor:step0,
+    D.add('towertop',new ParticleSystem(scenes.towertop.scene,{count:per*3,seed:136,anchor:step0Anchor,
       build:(i,rnd)=>{const ring=Math.floor(i/per),a0=(i%per)/per*6.283+rnd()*.1;
         return{t0:263+ring*.45,t1:263+ring*.45+1.35,
         pos:(u,t,out)=>{const r=.14+u*1.35;
@@ -246,9 +276,8 @@ export function buildMagicFX({scenes,actors,TL}){
   // ═══ 二、月光银蓝系统 ═══
 
   // m06/m26 月晕边缘银粉消散（MOON_DIM/MOON_FADE）：月轮边缘银粉缓慢剥离飘散
-  for(const [key,sc,win] of [['snowtown',scenes.snowtown,[43,60]],['towertop',scenes.towertop,[192,215]]]){
-    const moon=sc.moon;
-    D.add(key,new ParticleSystem(sc.scene,{count:36,seed:206,anchor:moon,
+  for(const [key,moon,win] of [['snowtown',moonSnow,[43,60]],['towertop',moonTower,[192,215]]]){
+    D.add(key,new ParticleSystem(scenes[key].scene,{count:36,seed:206,anchor:moon,
       build:(i,rnd)=>{const a0=rnd()*6.28,t0=win[0]+rnd()*(win[1]-win[0]-6);return{
         t0,t1:t0+6,
         pos:(u,t,out)=>{const r=key==='snowtown'?5:7; // 月轮半径
@@ -260,18 +289,15 @@ export function buildMagicFX({scenes,actors,TL}){
   }
 
   // m41 起月亮夫人身体边缘银粉消散（被遗忘→消失）；泪碎后停止
-  {
-    const lady=actors.LadyMoon;
-    D.add('moonpalace',new ParticleSystem(scenes.moonpalace.scene,{count:70,seed:241,anchor:lady,
-      build:(i,rnd)=>{const side=rnd()<.5?-1:1,y0=.15+rnd()*1.5,ph=rnd()*6.28,w=.06+rnd()*.05;
-        return{t0:0,t1:1e9,
-        pos:(u,t,out)=>{const l=((t*w+ph)%1);
-          return out.set(side*(.20+.05*Math.sin(ph*3))+l*.22*side,y0+l*.25,-.05+l*.1);},
-        size:()=>.009,
-        alpha:(u,t)=>{if(t<300||t>369)return 0;const l=((t*w+ph)%1);
-          return Math.sin(Math.PI*l)*.38*clamp((t-300)/6);},
-        color:SILVER};}}));
-  }
+  D.add('moonpalace',new ParticleSystem(scenes.moonpalace.scene,{count:70,seed:241,anchor:ladyRoot,
+    build:(i,rnd)=>{const side=rnd()<.5?-1:1,y0=.15+rnd()*1.5,ph=rnd()*6.28,w=.06+rnd()*.05;
+      return{t0:0,t1:1e9,
+      pos:(u,t,out)=>{const l=((t*w+ph)%1);
+        return out.set(side*(.20+.05*Math.sin(ph*3))+l*.22*side,y0+l*.25,-.05+l*.1);},
+      size:()=>.009,
+      alpha:(u,t)=>{if(t<300||t>369)return 0;const l=((t*w+ph)%1);
+        return Math.sin(Math.PI*l)*.38*clamp((t-300)/6);},
+      color:SILVER};}}));
 
   // m49 泪珠（TEAR_FALL@366）：悬浮泪珠 + 泪中细小星河（内旋微粒），静止三秒
   D.add('moonpalace',new ParticleSystem(scenes.moonpalace.scene,{count:26,seed:249,anchor:tearAnchor,
@@ -358,7 +384,7 @@ export function buildMagicFX({scenes,actors,TL}){
       color:i%4?GOLD:PETAL};}}));
 
   // m51 星阶远去（STAIR_FADE@382）：高空金粒渐远
-  D.add('snowtown',new ParticleSystem(scenes.snowtown.scene,{count:40,seed:351,anchor:scenes.snowtown.tower,
+  D.add('snowtown',new ParticleSystem(scenes.snowtown.scene,{count:40,seed:351,anchor:tower,
     build:(i,rnd)=>{const x=(rnd()-.5)*8,y=16+rnd()*14,z=-6-rnd()*20,t0=382+rnd()*2;return{
       t0,t1:t0+7,
       pos:(u,t,out)=>out.set(x+u*3,y+u*2.5,z-u*6),
@@ -366,7 +392,9 @@ export function buildMagicFX({scenes,actors,TL}){
       alpha:(u,t)=>clamp(u/.1)*(1-u)*.5,
       color:GOLD};}}));
 
-  // ═══ 四、面部/环境光照反馈（与粒子同包络，活体锚点；光无声则假、光无火则浮）═══
+  // ═══ 四、面部/环境光照反馈（3D 模式专属：与粒子同包络，活体锚点；光无声则假、光无火则浮）═══
+  // 2D 重宿主模式跳过 PointLight（无受光面）；art_pass 页以同包络二维辉光承担反馈。
+  if(mode==='3d'){
   for(const key of ['snowtown','clocktower','towertop','moonpalace']){
     const lampLight=new THREE.PointLight(0xffbe58,0,2.6,2);
     scenes[key].scene.add(lampLight);
@@ -405,22 +433,27 @@ export function buildMagicFX({scenes,actors,TL}){
     const l=new THREE.PointLight(0xffd080,0,3.5,2);scenes.snowtown.scene.add(l);
     D.addLight('snowtown',l,chestAnchor,t=>t<446||t>456?0:1.8*clamp((t-446)/3)*clamp((456-t)/3));
   }
+  }
 
   // m53 第一片花瓣（FIRST_PETAL@396）：单片花瓣实体落在老人摊开的手背上（落点=活体右手，
-  // 下落/飘摆/停歇全部 (t) 闭式）；m53 手部特写的内容本体
-  const petal=new THREE.Mesh(new THREE.CircleGeometry(.024,8),
-    new THREE.MeshBasicMaterial({color:'#f4b8cc',side:THREE.DoubleSide}));
-  petal.geometry.scale(1,.55,1);
-  petal.visible=false;scenes.snowtown.scene.add(petal);
-  const petalHand=actors.Alder.userData.actor.hands.right;
+  // 下落/飘摆/停歇全部 (t) 闭式）；m53 手部特写的内容本体。3D 网格实体，2D 模式不建。
+  let petal=null;
+  if(mode==='3d'){
+    petal=new THREE.Mesh(new THREE.CircleGeometry(.024,8),
+      new THREE.MeshBasicMaterial({color:'#f4b8cc',side:THREE.DoubleSide}));
+    petal.geometry.scale(1,.55,1);
+    petal.visible=false;scenes.snowtown.scene.add(petal);
+  }
 
   return {update(t,seg,camera){D.update(t,seg.scene,camera,seg);
-    petal.visible=t>=395.2&&t<407;
-    if(petal.visible){
-      petalHand.getWorldPosition(_a);
-      const k=clamp((t-395.2)/1.1); // 395.2 高处入画 → 396.3 落上手背
-      petal.position.set(_a.x+.06*(1-k)*Math.sin(t*7),_a.y+.045+1.1*(1-k)*(1-k),_a.z+.04*(1-k)*Math.cos(t*6));
-      petal.rotation.set(-Math.PI/2+.5*(1-k)*Math.sin(t*9),0,.4*(1-k)*Math.sin(t*5));
+    if(petal){
+      petal.visible=t>=395.2&&t<407;
+      if(petal.visible){
+        petalHand.getWorldPosition(_a);
+        const k=clamp((t-395.2)/1.1); // 395.2 高处入画 → 396.3 落上手背
+        petal.position.set(_a.x+.06*(1-k)*Math.sin(t*7),_a.y+.045+1.1*(1-k)*(1-k),_a.z+.04*(1-k)*Math.cos(t*6));
+        petal.rotation.set(-Math.PI/2+.5*(1-k)*Math.sin(t*9),0,.4*(1-k)*Math.sin(t*5));
+      }
     }
   },director:D,
     anchors:{flameAnchor,eyeAnchor,tearAnchor,chestAnchor,wakeBottle,clockFace}};

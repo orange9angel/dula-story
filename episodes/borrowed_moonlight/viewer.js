@@ -106,6 +106,9 @@ function draw(t,capture=true){
 }
 window.renderAt=t=>draw(t);window.stepAt=t=>{try{return draw(t,false);}catch(err){throw new Error(`@t=${t} beat=${beatAt(TL.segments,t).seg.id}: ${err.message}\n${err.stack}`);}};
 window.setFreeCamera=c=>window.freeCamera=c;
+// A0 cel-cinema bake 接口：只读暴露活体对象树（bake 适配器经 window.stepAt 驱动当帧后读世界坐标，
+// 不进 draw/state，不改变渲染路径——check 回归不变量）
+window.__dbg={actors,camera,anchors:fx.anchors,scenes}; // scenes：A3 起静态锚点快照工具只读用
 // check 抽帧表：每拍 始/中/末 三点 + 全部 cue 绝对秒（交互/特效事件帧）
 window.checkTimes=[...new Set([...TL.segments.flatMap(s=>[s.start+.15,(s.start+s.end)/2,s.end-.10]),
   ...TL.segments.flatMap(s=>s.cues.map(c=>c.at+.05))]

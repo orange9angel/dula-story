@@ -1,0 +1,82 @@
+{
+  "anchor": "_anchor_alder.json",
+  "tolerance": 0.05,
+  "cels": [
+    {
+      "path": "alder_walk_p1.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": 0.0347
+        },
+        "waist": {
+          "top": 0.0476
+        },
+        "coat_hem": {
+          "top": 0.0232
+        },
+        "boot_top": {
+          "top": 0.0117
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    },
+    {
+      "path": "alder_walk_p2.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": 0.0189
+        },
+        "waist": {
+          "top": 0.0296
+        },
+        "coat_hem": {
+          "top": -0.0007
+        },
+        "boot_top": {
+          "top": -0.0062
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    },
+    {
+      "path": "alder_walk_p3.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": 0.0254
+        },
+        "waist": {
+          "top": 0.0308
+        },
+        "coat_hem": {
+          "top": 0.0046
+        },
+        "boot_top": {
+          "top": -0.0016
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    },
+    {
+      "path": "alder_walk_p4.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": 0.0183
+        },
+        "waist": {
+          "top": 0.0274
+        },
+        "coat_hem": {
+          "top": -0.0101
+        },
+        "boot_top": {
+          "top": -0.0102
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    }
+  ]
+}

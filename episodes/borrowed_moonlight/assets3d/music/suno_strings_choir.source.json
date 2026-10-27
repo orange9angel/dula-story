@@ -1,0 +1,13 @@
+{
+ "name": "suno_strings_choir",
+ "provider": "suno/v6-mini (web, authorized Unlock & Download)",
+ "song_id": "37d98370-126b-44d4-8d68-d5ed81679636",
+ "song_url": "https://suno.com/song/37d98370-126b-44d4-8d68-d5ed81679636",
+ "prompt": "instrumental, no lyrics. Solemn but tender cinematic fairy-tale: low cello pedal enters quietly, viola pulse joins, violin melody rises; then a wordless children's choir humming ah enters on top, full strings lifting toward a warm mf peak, as if carrying someone up a stairway of stars toward the moon. After the peak the choir recedes first, strings thin out, ending in near-silence. Clear dynamic arc p to mf to pp. No drums, no percussion.",
+ "actual_container": "mp3",
+ "actual_codec": "mp3",
+ "note": "UI 选 WAV 落盘实为 MP3 48kHz（suno-driver 已知坑），按 MP3 接入",
+ "duration": 179.96,
+ "sha256": "02388ae0dbcabf3cd1169e35d05876ea4d129c51f026d5a3b6e3d4d93abcf114",
+ "whisper_lyrics_check": "no_speech_threshold=0.2 + condition_on_previous_text=False → 0 segments（无歌词证据）"
+}

@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "checks": {
+    "frameCount": {
+      "expect": 14341,
+      "actual": 14341,
+      "ok": true
+    },
+    "finite": {
+      "ok": true
+    },
+    "cameraFingerprint": {
+      "ok": true,
+      "maxDelta": 0.010704896152851973,
+      "worst": {
+        "frame": 1800,
+        "actor": "Eileen",
+        "joint": "leftHand",
+        "delta": 0.010704896152851973
+      },
+      "samples": 102
+    },
+    "fovRange": {
+      "ok": true,
+      "min": 17,
+      "max": 68
+    },
+    "staging": {
+      "ok": true,
+      "m05": {
+        "Eileen": true,
+        "Alder": false
+      },
+      "m15": {
+        "Eileen": true,
+        "Alder": true
+      },
+      "m39": {
+        "LadyMoon": true
+      },
+      "m01": {
+        "Eileen": false,
+        "LadyMoon": false
+      }
+    },
+    "planted": {
+      "ok": true,
+      "m04_t31": {
+        "left": false,
+        "right": true
+      },
+      "m18_t133": {
+        "left": false,
+        "right": true
+      },
+      "m05_t39": {
+        "left": null,
+        "right": null
+      }
+    }
+  }
+}

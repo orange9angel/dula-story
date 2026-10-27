@@ -16,7 +16,7 @@ dula-assets  ← 官方资产库（角色/动画/场景/运镜/配音/CourtDirec
 dula-story   ← 本仓库（剧本/配置/素材/输出）
 ```
 
-**最新 Episode**：`episodes/borrowed_moonlight/`（《借走月光的女孩》——原创魔法童话，按制作圣经（`bible_source.txt`）五幕 60 镜 / 478s 制作：viewer 链 craft3d + 混合场景（11 张 Seedream 纹理+法线派生+雪/春双皮肤）+ 20 套魔法粒子（萤火落睫/星瓶苏醒/泪碎点亮纱幕/雪转花/终幕金粒聚字）+ 全火山音频（4 声线逐句演绎+Seed-Audio Foley/配乐+真能量包络口型）；全部门禁绿，成片 `output/craft3d_full.mp4`；声线与配乐待用户听审，工艺与翻车见 `NOTES.md` P1-P7）
+**最新 Episode**：`episodes/borrowed_moonlight/`（《借走月光的女孩》——原创魔法童话，按制作圣经（`bible_source.txt`）五幕 60 镜 / 478s 制作：viewer 链 craft3d + 混合场景（11 张 Seedream 纹理+法线派生+雪/春双皮肤）+ 20 套魔法粒子 + 全火山音频；**cel-cinema 二维绘本层 A4 整集出片**：文生图底图/姿势 cel/锁回表情变体按 bake 逐帧投影刚性合成（`hybrid/art_pass.html`），58 项已验收资产 + probe/verify 全绿，成片 `output/art_pass_full.mp4`（478s h264+aac，音轨与 3D 版 PCM 一致）；3D 成片 `output/craft3d_full_v2.mp4` 为对照基线；声线与配乐待用户听审，工艺与翻车见 `NOTES.md` P1-P7/A0-A5）
 
 **活跃 Episode 列表**（按最近工作排序，完整列表见 `episodes/`）：
 - `episodes/borrowed_moonlight/` — 见上"最新 Episode"

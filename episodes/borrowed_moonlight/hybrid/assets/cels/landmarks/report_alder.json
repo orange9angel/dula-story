@@ -1,0 +1,82 @@
+{
+  "anchor": "_anchor_alder.json",
+  "tolerance": 0.04,
+  "cels": [
+    {
+      "path": "alder_touch_watch.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": -0.0269
+        },
+        "waist": {
+          "top": -0.0014
+        },
+        "coat_hem": {
+          "top": -0.0078
+        },
+        "boot_top": {
+          "top": -0.0132
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    },
+    {
+      "path": "alder_shock.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": -0.011
+        },
+        "waist": {
+          "top": -0.0053
+        },
+        "coat_hem": {
+          "top": -0.0009
+        },
+        "boot_top": {
+          "top": -0.0021
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    },
+    {
+      "path": "alder_stand_hope.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": -0.014
+        },
+        "waist": {
+          "top": 0.036
+        },
+        "coat_hem": {
+          "top": 0.011
+        },
+        "boot_top": {
+          "top": 0.0
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    },
+    {
+      "path": "alder_relieved.json",
+      "diff_vs_anchor": {
+        "eyes": {
+          "top": 0.004
+        },
+        "waist": {
+          "top": 0.021
+        },
+        "coat_hem": {
+          "top": -0.032
+        },
+        "boot_top": {
+          "top": 0.005
+        }
+      },
+      "rejected": false,
+      "fail_fields": []
+    }
+  ]
+}
