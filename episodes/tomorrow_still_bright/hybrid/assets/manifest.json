@@ -1,0 +1,412 @@
+{
+  "episode": "tomorrow_still_bright",
+  "pipeline": "cel-cinema T2 文生图资产（3D 底稿 -> 文生图原画 -> 漫画合成）",
+  "style_lock": "2D 水彩手绘动画、铅笔轮廓线、轻微水彩纸纹、克制赛璐璐阴影、旧工业冷蓝+暖琥珀灯光；负面：写实3D/塑料感/照片感/过度卡通表情/霓虹/文字水印",
+  "m07_locks": "桶身/单蓝白机械眼/三指左手+工具右手/红补丁肩甲（左肩）/腹部修补板/左腿略短；禁人脸/禁手指数变化/小苗两片叶",
+  "assets": [
+    {
+      "path": "refs/m07_eye.png",
+      "kind": "identity_anchor",
+      "use": "身份锚：全部后续生成的首位 ref（权重最高）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "32320874a147647e0e114261d8da98ab8cca3162f5a953f2947d2ddbff6e19b3",
+      "status": "accepted",
+      "source_json": "refs/m07_eye.source.json",
+      "review_notes": "眼部结构三层可读（外镜缘/发光虹膜环/暗光圈），头板螺丝与磨损漆一致；一次通过。作为眼光圈变体唯一底图。"
+    },
+    {
+      "path": "refs/m07_full.png",
+      "kind": "identity_anchor",
+      "use": "身份锚：全部后续生成的首位 ref（权重最高）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "c6cbe865e4b93f1577bc31f6d37524da99b8ebf0bd52e3ab149fcdaaff57a4d8",
+      "status": "accepted",
+      "source_json": "refs/m07_full.source.json",
+      "review_notes": "V2 验收：桶身/单蓝白眼/红肩甲（视左=机左）/腹铜补板/左腿略短（髋低+体微倾）全部成立；左手读作三主指+一小侧件（三轮生成均带第四小件，edit 也未去掉）——保留项：T3 逐镜按三指门禁检查，超限局部修型。V1 存档 refs/m07_full_v1.png。"
+    },
+    {
+      "path": "cels/m07_crouch_pickup.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "dca45725a2dd2ea8d17ce79f5c5e8bd598405b166045c92bb50d37260e4a5fa2",
+      "status": "accepted",
+      "source_json": "cels/m07_crouch_pickup.source.json",
+      "review_notes": "深蹲+右手工具尖捏螺丝+左手扶膝；螺丝在尖端可读。"
+    },
+    {
+      "path": "cels/m07_hesitate_retract.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "f78c982e63dc0616c720a3e621756701dae5595789b7726967f6f57b9ac75cf0",
+      "status": "accepted",
+      "source_json": "cels/m07_hesitate_retract.source.json",
+      "review_notes": "半收手+手指蜷曲+肩微耸+头略低，犹豫可读；身份锁一致。"
+    },
+    {
+      "path": "cels/m07_hold_battery.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "5c25614c185c8ca82e66464d5d6d713d186132c649a62a0038540f1cf3cc6568",
+      "status": "accepted",
+      "source_json": "cels/m07_hold_battery.source.json",
+      "review_notes": "后仰拖大电池、双手环抱发力、脚撑地，重载感成立；电池壳磨损质感好。"
+    },
+    {
+      "path": "cels/m07_hold_drawing.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a5c379a95ea1dbcb56608946f322ba55a991db09e0cd873207efe2ac8d184009",
+      "status": "accepted",
+      "source_json": "cels/m07_hold_drawing.source.json",
+      "review_notes": "双手持画胸前+低头看；纸面只有儿童太阳画无文字（SEE YOU TOMORROW 由道具母图/字幕层承担）。"
+    },
+    {
+      "path": "cels/m07_protect_recoil.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "420b0ed213ddfad2e434e00be9d1129aae2d046fb812ef33c41a97458ca2b477",
+      "status": "accepted",
+      "source_json": "cels/m07_protect_recoil.source.json",
+      "review_notes": "左手上举掌心外张+躯干后拧+头侧避，保护性缩手反射成立；手掌读作 3 指+1 小件（保留项同身份锚）。"
+    },
+    {
+      "path": "cels/m07_push_cart.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "c765a53da668968352b7d5537c65b52e520e4fa0f81ded67156967c280942ecb",
+      "status": "accepted",
+      "source_json": "cels/m07_push_cart.source.json",
+      "review_notes": "推车姿势+坏轮车（四轮、前轮外八可读）、跛行体倾成立；右手近指化（握把遮挡下可接受，T3 修型备选）。真 alpha 70%。"
+    },
+    {
+      "path": "cels/m07_reach_switch.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "d02317847f622c52040962cd9cac2da801c14acb374bbb892cf07a912cbf3908",
+      "status": "accepted",
+      "source_json": "cels/m07_reach_switch.source.json",
+      "review_notes": "T5 修型版：左手三主指（原 4 件版存档 m07_reach_switch_4f.png）；身份锁不变，alpha 69.7%。"
+    },
+    {
+      "path": "cels/m07_sit_rest.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "c4de50e5105e9d04b0b5fd8cfa70f2bd689af841f7c8658518c248dfc081ad83",
+      "status": "accepted",
+      "source_json": "cels/m07_sit_rest.source.json",
+      "review_notes": "落座+双手搭膝+肩松+头微侧，安静陪伴感成立。"
+    },
+    {
+      "path": "cels/m07_stand.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "e9a785a8feaf8740761282fbc2e213b243f339484953958898e26f4f7bfbb8f5",
+      "status": "accepted",
+      "source_json": "cels/m07_stand.source.json",
+      "review_notes": "T3 补位中性站姿：身份锁全成立（补丁/腹板/扳手右/短左腿），多镜底 cel。"
+    },
+    {
+      "path": "cels/m07_stand_gaze.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "0231ce17497b9438d4dc947286d04e0260b77c15d3be3195816ff443adf67cbd",
+      "status": "accepted",
+      "source_json": "cels/m07_stand_gaze.source.json",
+      "review_notes": "背侧三四分+仰头静立注视；背面视角下左手指/右工具/红肩甲（视右=机左）全部一致。"
+    },
+    {
+      "path": "cels/m07_walk_strip.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "65213ce4f82493a5870e8e24d48ebc4fc281d6bd5161aab4dbfb27aea9fccb8e",
+      "status": "accepted",
+      "source_json": "cels/m07_walk_strip.source.json",
+      "review_notes": "V2 四相位成环（触地-经过-反触地-经过），固定中线仍贴脚边，改用 tools/slice_walk_strip_adaptive.py 按最小 alpha 沟槽裁切，四格全身完整无裁切、无邻格串扰。"
+    },
+    {
+      "path": "cels/m07_weld.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "cec59578427f1d608da3711e4a46ada5c190458d94927da0636f6f9f65a43567",
+      "status": "accepted",
+      "source_json": "cels/m07_weld.source.json",
+      "review_notes": "前倾+右臂前下伸+低头，焊接姿势可读（焊枪/火星由 art_pass 合成层补）。"
+    },
+    {
+      "path": "cels/m07_work_bench.png",
+      "kind": "pose_cel",
+      "use": "姿势 cel：art_pass 刚性摆放的人物原画层（1024x1536 透明底）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a5cf9e6cc267f84cd9e4fdf26e51827f2e978f150ab28fc0405859f48c6add15",
+      "status": "accepted",
+      "source_json": "cels/m07_work_bench.source.json",
+      "review_notes": "腰间持物测压姿势+低头；无台无物只留姿势（art_pass 阶段摆到台后）。"
+    },
+    {
+      "path": "faces/m07_eye_alarm.png",
+      "kind": "eye_variant",
+      "use": "眼光圈同图变体（框外零差分锁回），M-07 的'表情'通道（diff 羽化锁回成品）",
+      "provider": "codex-cli builtin imagegen + image-lipsync auto_lock",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "status": "accepted",
+      "lock_json": "faces/m07_eye_alarm.lock.json",
+      "review_notes": "内虹膜报警红、外环保持蓝（红闪报警态）；同 rect 锁回，框外 max diff=0。"
+    },
+    {
+      "path": "faces/m07_eye_glow.png",
+      "kind": "eye_variant",
+      "use": "眼光圈同图变体（框外零差分锁回），M-07 的'表情'通道（diff 羽化锁回成品）",
+      "provider": "codex-cli builtin imagegen + image-lipsync auto_lock",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "status": "accepted",
+      "lock_json": "faces/m07_eye_glow.lock.json",
+      "review_notes": "虹膜增亮+光圈微开+高光加大（惊喜）；同 rect 锁回，框外 max diff=0。"
+    },
+    {
+      "path": "faces/m07_eye_shrink.png",
+      "kind": "eye_variant",
+      "use": "眼光圈同图变体（框外零差分锁回），M-07 的'表情'通道（diff 羽化锁回成品）",
+      "provider": "codex-cli builtin imagegen + image-lipsync auto_lock",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "status": "accepted",
+      "lock_json": "faces/m07_eye_shrink.lock.json",
+      "review_notes": "光圈缩小+虹膜转暗（紧张）；手工 rect [270,250,490,490] 锁回，框外 max diff=0（自动 diff 97.7% 全图噪点，按 E04 纪律收紧到镜头区）。"
+    },
+    {
+      "path": "props/prop_buffer_battery.png",
+      "kind": "prop_master",
+      "use": "道具母图：逐镜生成的道具参考",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "9c5767df62493d5289c58a3f58cdf3ac456e8638a3e0322351d6195c594f7daf",
+      "status": "accepted",
+      "source_json": "props/prop_buffer_battery.source.json",
+      "review_notes": "首轮 FAIL（codex 调用失败未落盘），重试通过：捆绑电芯+手焊走线+琥珀电量窗。"
+    },
+    {
+      "path": "props/prop_dead_cells.png",
+      "kind": "prop_master",
+      "use": "道具母图：逐镜生成的道具参考",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "10ac353f6e1408da1ce34e231adcce47102ea1f4079256dcb2580ad1ea66de2e",
+      "status": "accepted",
+      "source_json": "props/prop_dead_cells.source.json",
+      "review_notes": "四节废电芯+空电量标签+一张撕起纸签，轻喜剧道具感成立。"
+    },
+    {
+      "path": "props/prop_drawing.png",
+      "kind": "prop_master",
+      "use": "道具母图：逐镜生成的道具参考",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "988a44f7694a5898512992838b6cebc271e35baef128a6d6ae087caa8c2e3586",
+      "status": "accepted",
+      "source_json": "props/prop_drawing.source.json",
+      "review_notes": "SEE YOU TOMORROW 字形准确+蜡笔太阳+草线+旧纸卷角；全片唯一允许文字。"
+    },
+    {
+      "path": "props/prop_habitat_dome.png",
+      "kind": "prop_master",
+      "use": "道具母图：逐镜生成的道具参考",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "b388c9e8b4e3b264cf7c1a0b71943914b27d23cf7459bb0291788f3f4b0e66dc",
+      "status": "accepted",
+      "source_json": "props/prop_habitat_dome.source.json",
+      "review_notes": "透明钟罩+带气孔与温控管接头的金属底环；罩内透空（alpha）正确。顶缘少量彩边小点（可后处理）。"
+    },
+    {
+      "path": "props/prop_music_box.png",
+      "kind": "prop_master",
+      "use": "道具母图：逐镜生成的道具参考",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "8679d9dd947e65f26c1e61c27b9d0f89657c20e2f8f68dd796eef8644f622dcf",
+      "status": "accepted",
+      "source_json": "props/prop_music_box.source.json",
+      "review_notes": "发条钥匙+黄铜梳齿机芯+褪色彩绘，怀旧感成立。"
+    },
+    {
+      "path": "props/prop_reading_lamp.png",
+      "kind": "prop_master",
+      "use": "道具母图：逐镜生成的道具参考",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "5bfcd1449b559364ff17618774bf925f92a486445f6935468b4886cb9e15082e",
+      "status": "accepted",
+      "source_json": "props/prop_reading_lamp.source.json",
+      "review_notes": "矮圆罩+关节颈+暖琥珀灯泡；遗留：罩下中央有一个漂浮小杂点（art_pass 摆位前可 PIL 抹除）。"
+    },
+    {
+      "path": "props/prop_sprout_cup.png",
+      "kind": "prop_master",
+      "use": "道具母图：逐镜生成的道具参考",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "a0869853d8790ef06097c6c166bc85755457ab83cf215f9ae902f4a6983b04ff",
+      "status": "accepted",
+      "source_json": "props/prop_sprout_cup.source.json",
+      "review_notes": "两片嫩叶/裂口米白杯/湿润基质/叶缘透绿全部成立；不拟人。"
+    },
+    {
+      "path": "plates/plate_cockpit.png",
+      "kind": "scene_plate",
+      "use": "场景底图：文生图整幅原画（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "6eac53761ae4cbc63e29107d4679a482b3224a51b28aa97f3f59054879a3d1ca",
+      "status": "accepted",
+      "source_json": "plates/plate_cockpit.source.json",
+      "review_notes": "前舷窗蓝色星球+右前磨损座椅+蓝色仪表+左窗小台（暖灯+小苗杯固定位）。"
+    },
+    {
+      "path": "plates/plate_corridor.png",
+      "kind": "scene_plate",
+      "use": "场景底图：文生图整幅原画（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "411174a36da5cb41afd5898b9200b64bbf0a87e754a128af81767fee9b752f5f",
+      "status": "accepted",
+      "source_json": "plates/plate_corridor.source.json",
+      "review_notes": "蓝灰金属+右墙泛黄灯箱+空椅旧杯+左墙儿童画+远端没入黑暗，衰老街区感成立；构图同 T1 corridor.wide 锚。"
+    },
+    {
+      "path": "plates/plate_exterior.png",
+      "kind": "scene_plate",
+      "use": "场景底图：文生图整幅原画（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "d781e04b59bb2f4bd083c9c2e4e92438bb3f1d5c184ef157d212f07a002aa9f8",
+      "status": "accepted",
+      "source_json": "plates/plate_exterior.source.json",
+      "review_notes": "蓝色星球下半幅+环站居中+环上残存暖窗灯，T1 exterior.wide 构图。"
+    },
+    {
+      "path": "plates/plate_greenhouse.png",
+      "kind": "scene_plate",
+      "use": "场景底图：文生图整幅原画（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "351f3085b9740695108c3ff90824f5820d30fd1c3bf6517671d798381f47e20c",
+      "status": "accepted",
+      "source_json": "plates/plate_greenhouse.source.json",
+      "review_notes": "宽舷窗暖光斑+两侧枯萎+锈管+尘埃；小苗杯在窗台光斑中（画面唯一鲜绿）。"
+    },
+    {
+      "path": "plates/plate_lounge.png",
+      "kind": "scene_plate",
+      "use": "场景底图：文生图整幅原画（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "88574a416abdbf80e47000a6996e5faab87c8d8bc7425b0a10806562985a5d07",
+      "status": "accepted",
+      "source_json": "plates/plate_lounge.source.json",
+      "review_notes": "双旧沙发+右桌音乐盒+墙上暖光全息照片（女孩窗台放盆栽剪影）。"
+    },
+    {
+      "path": "plates/plate_powerroom.png",
+      "kind": "scene_plate",
+      "use": "场景底图：文生图整幅原画（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "74d465e982a55c73ad28d4770c803643e845f8d6025bb2521069841c5ed5be62",
+      "status": "accepted",
+      "source_json": "plates/plate_powerroom.source.json",
+      "review_notes": "电池罐阵列+中央辅助电池槽（一点橙色状态灯），深冷蓝+单暖点。"
+    },
+    {
+      "path": "plates/plate_warehouse.png",
+      "kind": "scene_plate",
+      "use": "场景底图：文生图整幅原画（1920x1080）",
+      "provider": "codex-cli builtin imagegen",
+      "model": "gpt-image (ChatGPT subscription quota)",
+      "sha256": "442cff3bff2464beee0c081d19f793b5841ae60d6daebd4b65a11b25a60e53dc",
+      "status": "accepted",
+      "source_json": "plates/plate_warehouse.source.json",
+      "review_notes": "整墙密集抽屉+一开屉+右侧零件工作台+左侧低桌，囤积轻喜剧感成立。"
+    },
+    {
+      "path": "plates/plate_corridor_dim.png",
+      "kind": "scene_plate",
+      "use": "长廊'灯光逐段熄灭后'亮度态：由 plate_corridor.png 合成压暗（tools/dim_corridor.py），布局逐像素一致",
+      "provider": "local PIL composite (zero generation cost)",
+      "model": "tools/dim_corridor.py",
+      "status": "accepted"
+    },
+    {
+      "path": "cels/m07_walk_p1.png",
+      "kind": "pose_cel",
+      "use": "跛行走拍相位 cel（m07_walk_strip 自适应沟槽裁切，1024x1536 透明底）",
+      "provider": "derived from cels/m07_walk_strip.png",
+      "model": "tools/slice_walk_strip_adaptive.py",
+      "status": "accepted"
+    },
+    {
+      "path": "cels/m07_walk_p2.png",
+      "kind": "pose_cel",
+      "use": "跛行走拍相位 cel（m07_walk_strip 自适应沟槽裁切，1024x1536 透明底）",
+      "provider": "derived from cels/m07_walk_strip.png",
+      "model": "tools/slice_walk_strip_adaptive.py",
+      "status": "accepted"
+    },
+    {
+      "path": "cels/m07_walk_p3.png",
+      "kind": "pose_cel",
+      "use": "跛行走拍相位 cel（m07_walk_strip 自适应沟槽裁切，1024x1536 透明底）",
+      "provider": "derived from cels/m07_walk_strip.png",
+      "model": "tools/slice_walk_strip_adaptive.py",
+      "status": "accepted"
+    },
+    {
+      "path": "cels/m07_walk_p4.png",
+      "kind": "pose_cel",
+      "use": "跛行走拍相位 cel（m07_walk_strip 自适应沟槽裁切，1024x1536 透明底）",
+      "provider": "derived from cels/m07_walk_strip.png",
+      "model": "tools/slice_walk_strip_adaptive.py",
+      "status": "accepted"
+    },
+    {
+      "path": "cels/m07_walk_cells.json",
+      "kind": "pose_cel_meta",
+      "use": "走拍相位格锚点表（alpha_bbox/脚锚）",
+      "provider": "tools/slice_walk_strip_adaptive.py",
+      "model": "-",
+      "status": "accepted"
+    }
+  ],
+  "counts": {
+    "total": 38,
+    "accepted": 38,
+    "rejected": 0,
+    "pending_review": 0
+  },
+  "pendingReviewPaths": []
+}

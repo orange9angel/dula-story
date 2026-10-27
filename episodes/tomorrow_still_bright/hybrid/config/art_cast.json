@@ -1,0 +1,28 @@
+{
+  "cels": {
+    "m07_stand": {"img": "cels/m07_stand.png", "eyeFrac": 0.10, "eyeX": 0.5},
+    "m07_push_cart": {"img": "cels/m07_push_cart.png", "eyeFrac": 0.08, "eyeX": 0.56},
+    "m07_reach_switch": {"img": "cels/m07_reach_switch.png", "eyeFrac": 0.09, "eyeX": 0.56},
+    "m07_hesitate_retract": {"img": "cels/m07_hesitate_retract.png", "eyeFrac": 0.09, "eyeX": 0.5},
+    "m07_crouch_pickup": {"img": "cels/m07_crouch_pickup.png", "eyeFrac": 0.12, "eyeX": 0.52},
+    "m07_hold_battery": {"img": "cels/m07_hold_battery.png", "eyeFrac": 0.09, "eyeX": 0.5},
+    "m07_work_bench": {"img": "cels/m07_work_bench.png", "eyeFrac": 0.08, "eyeX": 0.5},
+    "m07_weld": {"img": "cels/m07_weld.png", "eyeFrac": 0.09, "eyeX": 0.5},
+    "m07_protect_recoil": {"img": "cels/m07_protect_recoil.png", "eyeFrac": 0.10, "eyeX": 0.48},
+    "m07_sit_rest": {"img": "cels/m07_sit_rest.png", "eyeFrac": 0.10, "eyeX": 0.5},
+    "m07_hold_drawing": {"img": "cels/m07_hold_drawing.png", "eyeFrac": 0.09, "eyeX": 0.5},
+    "m07_stand_gaze": {"img": "cels/m07_stand_gaze.png", "eyeFrac": 0.07, "eyeX": 0.5}
+  },
+  "walk": {
+    "frames": ["cels/m07_walk_p1.png", "cels/m07_walk_p2.png", "cels/m07_walk_p3.png", "cels/m07_walk_p4.png"],
+    "cells": "cels/m07_walk_cells.json"
+  },
+  "faces": {
+    "base": "refs/m07_eye.png",
+    "variants": {
+      "glow": "faces/m07_eye_glow.png",
+      "shrink": "faces/m07_eye_shrink.png",
+      "alarm": "faces/m07_eye_alarm.png"
+    }
+  }
+}

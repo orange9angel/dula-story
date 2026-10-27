@@ -1,0 +1,72 @@
+{
+  "schema": "plate-calib-v1",
+  "episode": "tomorrow_still_bright",
+  "unit": "plate 原生像素（1920x1080）；px_per_m 为该深度下每米像素数，由画中已知尺寸物复核",
+  "m07_height_m": 0.9,
+  "plates": {
+    "plate_corridor": {
+      "vanishing_point": [990, 530],
+      "floor_left_line": [[0, 990], [990, 545]],
+      "floor_right_line": [[1920, 1080], [990, 545]],
+      "back_wall_base_y": 560,
+      "door_reference": {"note": "左墙第二门框 top=260 bottom=820 at x~600", "px": 560, "assumed_m": 2.1, "px_per_m": 267},
+      "chair": {"seat_top": [700, 590], "floor_y": 680, "seat_h_px": 90, "assumed_m": 0.45, "px_per_m": 200},
+      "back_door": {"center": [985, 430], "top": 300, "base": 590, "px_per_m": 138, "note": "温室门（远端墙中央）"},
+      "lamps_right_wall": [[690, 375], [1080, 400], [1170, 420]],
+      "switches_right_wall": [[1290, 700], [1180, 650], [1090, 600], [1010, 560]],
+      "drawing": {"center": [455, 510], "w": 130, "h": 170},
+      "breaker_panel": [1750, 560],
+      "vent_fan": [330, 130]
+    },
+    "plate_greenhouse": {
+      "window_frame": {"x0": 615, "x1": 1255, "top": 315, "sill": 545},
+      "sprout_cup": {"center": [820, 518], "h_px": 45},
+      "floor_base_y": 630,
+      "px_per_m_back_wall": 215,
+      "planters": {"left": [0, 300, 260, 460], "right": [1660, 300, 260, 460]},
+      "light_patch_floor": [700, 700, 500, 200],
+      "switch_plate": [1310, 470],
+      "lamp_spot_s12": [745, 512]
+    },
+    "plate_warehouse": {
+      "drawer_wall": {"x0": 430, "x1": 1490, "y0": 210, "y1": 630, "px_per_m": 210},
+      "open_drawer": {"x0": 785, "x1": 950, "y0": 515, "y1": 630, "note": "底排第4列，盘里就是这块开着的抽屉"},
+      "floor_base_y": 630,
+      "low_table_left": {"top_y": 625, "x0": 300, "x1": 645},
+      "workbench_right": {"top_y": 630, "x0": 1300, "x1": 1700},
+      "weld_table_left": {"top_y": 640, "x0": 350, "x1": 700, "note": "s24 焊台=左低桌"}
+    },
+    "plate_lounge": {
+      "holo_photo": {"x0": 805, "x1": 1110, "y0": 270, "y1": 470, "center": [957, 320]},
+      "bench_left": {"x0": 450, "x1": 720, "seat_y": 600, "floor_y": 690},
+      "bench_right": {"x0": 1190, "x1": 1460, "seat_y": 600, "floor_y": 690},
+      "table_right": {"x0": 1345, "x1": 1600, "top_y": 635},
+      "music_box": {"center": [1525, 630], "h_px": 45},
+      "floor_base_y": 690,
+      "px_per_m": 200
+    },
+    "plate_powerroom": {
+      "silos": {"top_y": 370, "base_y": 690, "px_per_m": 145},
+      "aux_slot": {"x0": 870, "x1": 1030, "y0": 570, "y1": 680, "status_light": [1010, 600]},
+      "floor_base_y": 695
+    },
+    "plate_cockpit": {
+      "side_table": {"x0": 645, "x1": 970, "top_y": 500, "floor_y": 760},
+      "reading_lamp": {"center": [750, 460], "h_px": 110},
+      "sprout_cup": {"center": [835, 480], "h_px": 100},
+      "viewport": {"x0": 790, "x1": 1920, "top": 130, "bottom": 500},
+      "dashboard_screens": [[1115, 470], [1185, 470], [1115, 545], [1185, 545]],
+      "seat": {"x0": 1150, "y0": 750, "note": "右下部分入画"},
+      "floor_base_y": 720,
+      "px_per_m_table_depth": 370
+    },
+    "plate_exterior": {
+      "station_center": [940, 490],
+      "station_ring_radius": 330,
+      "dock_arm": [1140, 530],
+      "lit_windows": [[735, 560], [810, 420], [1050, 380], [890, 620], [990, 340]],
+      "planet_limb": [1200, 850],
+      "note": "无地面；s29 末盏灯=lit_windows 最后一点"
+    }
+  }
+}

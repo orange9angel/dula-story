@@ -1,0 +1,47 @@
+{
+  "scope": "complete episode",
+  "source": "output/tomorrow_still_bright_full.mp4",
+  "source_sha256": "0aa37de6546b1688e376b4843bfad8754eaf5889a2af719fe5d350ed9aa3270a",
+  "output": "output/tomorrow_still_bright_full.mp4",
+  "output_sha256": "0aa37de6546b1688e376b4843bfad8754eaf5889a2af719fe5d350ed9aa3270a",
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "480.000000",
+        "nb_frames": "14400"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "480.000000",
+        "nb_frames": "22501"
+      }
+    ],
+    "format": {
+      "duration": "480.000000"
+    }
+  },
+  "checks": {
+    "accepted_source_unchanged": true,
+    "whole_episode_window": true,
+    "frame_count": true,
+    "frame_rate": true,
+    "dimensions": true,
+    "duration": true,
+    "audio_pcm_matches_pilot_audio": true,
+    "deterministic": true,
+    "episode_probe": true,
+    "render_sources_current": true
+  },
+  "passed": true,
+  "determinism_checks": 124,
+  "artwork_scope": [],
+  "repair": null,
+  "note": "Technical checks are separate from the recorded visual review."
+}

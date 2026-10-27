@@ -1,0 +1,39 @@
+{
+  "episode": "tomorrow_still_bright",
+  "stage": "T4",
+  "note": "摆点 t=绝对秒（script.story 时轴，与 contact_events/timeline cues 同源）；台词逐字不可改。EVA=画外播报（轻 PA 链），Girl=旧录音（带通+磁带噪声链，不动音高）。",
+  "casting": {
+    "Eva": {
+      "provider": "seedtts", "resourceId": "seed-tts-2.0",
+      "speaker": "zh_female_qingchezizi_uranus_bigtts",
+      "reason": "清澈干净/语调温柔/气质纯净（目录气质），无资讯腔风险；v01 拼音 94%、v02 100%，F0 中位 249.8Hz（青年女声区）；备选 wenrouxiaoya",
+      "backup": "zh_female_wenrouxiaoya_uranus_bigtts",
+      "post_chain": "pa_light (highpass 180 + lowpass 7000 + 轻 aecho)"
+    },
+    "Girl": {
+      "provider": "seedtts", "resourceId": "seed-tts-2.0",
+      "speaker": "zh_female_yingtaowanzi_uranus_bigtts",
+      "reason": "目录年龄=少年/少女（R3 教训：先解决年龄），F0 中位 283.7Hz 少女感最高且不崩词；拼音 100%；萌丫头有整词崩坏前科且上集被监制判元气过头，列备选",
+      "backup": "zh_female_mengyatou_uranus_bigtts",
+      "post_chain": "old_tape (bandpass 320-3400 + 轻磁带 hiss + 轻房间)"
+    }
+  },
+  "audition_qc": "tmp/voice_audition/qc_audition.md（12/12 全绿；本环境无音频输出，未人工听审，戏感待监制耳朵）",
+  "lines": [
+    {"id": "v01", "character": "Eva", "t": 2.0, "segment": "s01",
+     "text": "退役程序启动。距离最终关闭，还有四十分钟。",
+     "delivery": {"speech_rate": -5, "context": "温柔而程序化的空间站播报音，只报告程序，不解释情感，语速平稳"}},
+    {"id": "v02", "character": "Eva", "t": 163.0, "segment": "s11",
+     "text": "请关闭温室照明。",
+     "delivery": {"speech_rate": 0, "context": "程序化播报指令，平静，只报告程序，不解释情感"}},
+    {"id": "v03", "character": "Eva", "t": 256.0, "segment": "s17",
+     "text": "档案：植物观察日志，第一百八十七天。",
+     "delivery": {"speech_rate": 0, "context": "档案记录播报，平静客观"}},
+    {"id": "g01", "character": "Girl", "t": 277.5, "segment": "s18",
+     "text": "如果它能长大……我就带它去看真正的太阳。",
+     "delivery": {"speech_rate": 0, "emotion": "happy", "emotion_scale": 2, "context": "旧录音里的少女，明亮、带笑、有憧憬，对着植物轻声许愿"}},
+    {"id": "v04", "character": "Eva", "t": 428.0, "segment": "s28",
+     "text": "请立即撤离。",
+     "delivery": {"speech_rate": 5, "context": "程序化播报，催促但不严厉"}}
+  ]
+}

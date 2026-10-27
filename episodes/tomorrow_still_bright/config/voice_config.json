@@ -1,0 +1,28 @@
+{
+  "Eva": {
+    "default": {
+      "provider": "seedtts",
+      "resourceId": "seed-tts-2.0",
+      "speaker": "zh_female_qingchezizi_uranus_bigtts",
+      "format": "mp3",
+      "sampleRate": 24000,
+      "volume": 50
+    },
+    "backup": "zh_female_wenrouxiaoya_uranus_bigtts",
+    "post_chain": "pa_light（highpass 180 + lowpass 7000 + 轻 aecho；画外播报空间感，不动音高）",
+    "casting_note": "清澈干净/温柔/纯净，无资讯腔；试听 QC v01 94%/v02 100%，F0 中位 249.8Hz。未人工听审（本环境无音频输出），戏感待监制耳朵。"
+  },
+  "Girl": {
+    "default": {
+      "provider": "seedtts",
+      "resourceId": "seed-tts-2.0",
+      "speaker": "zh_female_yingtaowanzi_uranus_bigtts",
+      "format": "mp3",
+      "sampleRate": 24000,
+      "volume": 50
+    },
+    "backup": "zh_female_mengyatou_uranus_bigtts",
+    "post_chain": "old_tape（bandpass 320-3400 + bed_tape 底噪垫 + 轻房间；旧录音质感，不动音高）",
+    "casting_note": "目录年龄=少年/少女（R3 教训先解决年龄），F0 中位 283.7Hz，拼音 100%；萌丫头有整词崩坏前科+上集被判元气过头，列备选。未人工听审，戏感待监制耳朵。"
+  }
+}

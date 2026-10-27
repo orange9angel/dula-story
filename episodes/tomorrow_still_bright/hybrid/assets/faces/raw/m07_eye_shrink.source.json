@@ -1,0 +1,12 @@
+{
+  "asset": "m07_eye_shrink",
+  "provider": "codex-cli builtin imagegen",
+  "model": "gpt-image (ChatGPT subscription quota)",
+  "prompt": "This is a LOCAL EDIT of the attached image. Keep the attached image's composition, pose, identity, colors, lighting and background EXACTLY unchanged; alter ONLY what the instruction below names. Output the full image at the same pixel size. Edit instruction: Change ONLY the eye's dark aperture: make it shrink noticeably smaller (a tense, alarmed narrowing of the pupil, iris ring dimmer). Everything else - the lens rim, the head panel, screws, colors, background - stays pixel-identical.",
+  "refs": [
+    "D:\\opensource\\movie\\dula-story\\episodes\\tomorrow_still_bright\\hybrid\\assets\\refs\\m07_eye.png"
+  ],
+  "size": "1024x1024",
+  "sha256": "e3253faca54a6187783ded7834f88790ab5fbdd12fcaacde8a497ef4da0d8966",
+  "generated_at": "2026-10-27T18:57:05.894040+00:00"
+}

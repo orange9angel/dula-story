@@ -1,0 +1,676 @@
+{
+ "duration": 480,
+ "step": 0.01,
+ "generated_from": "script.story",
+ "generator": "node tools/compile_story.mjs",
+ "segments": [
+  {
+   "id": "s01",
+   "kind": "dialogue",
+   "character": "Eva",
+   "start": 0,
+   "end": 18,
+   "move": "push_slow",
+   "shot": "station_far",
+   "scene": "exterior",
+   "action": "空间站悬浮蓝色星球上方，外环灯逐段熄灭；低频嗡鸣",
+   "cues": [
+    {
+     "name": "OPEN",
+     "at": 0
+    },
+    {
+     "name": "HUM_LOW",
+     "at": 0
+    }
+   ],
+   "act": {
+    "id": "v01",
+    "emotion": "neutral",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "温柔而程序化的空间站播报音，只报告程序。"
+   },
+   "line": "退役程序启动。距离最终关闭，还有四十分钟。"
+  },
+  {
+   "id": "s02",
+   "kind": "action",
+   "character": null,
+   "start": 18,
+   "end": 34,
+   "move": "follow",
+   "shot": "corridor_track",
+   "scene": "corridor",
+   "action": "M-07推工具车穿过空廊，车轮吱响，停下给轮子喷油",
+   "cues": [
+    {
+     "name": "WHEEL_SQUEAK",
+     "at": 19
+    },
+    {
+     "name": "OIL_SPRAY",
+     "at": 30
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "kind": "action",
+   "character": null,
+   "start": 34,
+   "end": 48,
+   "move": "hold",
+   "shot": "legs_mid",
+   "scene": "corridor",
+   "action": "车轮终于安静；机器人自己的左腿又吱响；低头停两秒（车轮静后留1秒静默再出腿响）",
+   "cues": [
+    {
+     "name": "LEG_SQUEAK",
+     "at": 38
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "kind": "action",
+   "character": null,
+   "start": 48,
+   "end": 64,
+   "move": "pan",
+   "shot": "lights_off",
+   "scene": "corridor",
+   "action": "横移中景：机器人逐一关掉生活区灯光，空椅、杯子慢慢隐入黑暗",
+   "cues": [
+    {
+     "name": "SWITCH_CLICK",
+     "at": 51
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "kind": "action",
+   "character": null,
+   "start": 64,
+   "end": 80,
+   "move": "hold",
+   "shot": "drawing_close",
+   "scene": "corridor",
+   "action": "画纸特写：儿童太阳画上写着 SEE YOU TOMORROW；扫描为非必要物品但未取下",
+   "cues": [
+    {
+     "name": "SCAN_BEEP",
+     "at": 66
+    },
+    {
+     "name": "OSD_NONESSENTIAL",
+     "at": 67
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "kind": "action",
+   "character": null,
+   "start": 80,
+   "end": 96,
+   "move": "montage",
+   "shot": "shutdown_cuts",
+   "scene": "corridor",
+   "action": "组接特写：拉闸、风扇停转、松动螺丝轻轻落地",
+   "cues": [
+    {
+     "name": "BREAKER",
+     "at": 81
+    },
+    {
+     "name": "FAN_STOP",
+     "at": 84
+    },
+    {
+     "name": "SCREW_DROP",
+     "at": 90
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "kind": "action",
+   "character": null,
+   "start": 96,
+   "end": 112,
+   "move": "push_slow",
+   "shot": "greenhouse_door",
+   "scene": "corridor",
+   "action": "中远景缓推：机器人推开 BOTANICAL EXPERIMENT 温室门",
+   "cues": [
+    {
+     "name": "DOOR_CREAK",
+     "at": 102
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "kind": "action",
+   "character": null,
+   "start": 112,
+   "end": 128,
+   "move": "pov",
+   "shot": "finger_switch",
+   "scene": "greenhouse",
+   "action": "主观镜头：指尖接近总开关，窗边光斑里一片叶子晃动；手停住",
+   "cues": [
+    {
+     "name": "VENTILATION",
+     "at": 112
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "kind": "action",
+   "character": null,
+   "start": 128,
+   "end": 144,
+   "move": "macro",
+   "shot": "sprout_macro",
+   "scene": "greenhouse",
+   "action": "微距：嫩叶水珠映出机械眼，散热风吹弯叶片；机器人立刻后退",
+   "cues": [
+    {
+     "name": "AIR_LIGHT",
+     "at": 130
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "kind": "action",
+   "character": null,
+   "start": 144,
+   "end": 160,
+   "move": "hold",
+   "shot": "eye_close",
+   "scene": "greenhouse",
+   "action": "眼部特写：扫描发现生命，复查存活概率仍只有2.1%",
+   "cues": [
+    {
+     "name": "SCAN_LIFE",
+     "at": 146
+    },
+    {
+     "name": "OSD_LIFE",
+     "at": 147
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "kind": "dialogue",
+   "character": "Eva",
+   "start": 160,
+   "end": 176,
+   "move": "hold",
+   "shot": "hand_hesitate",
+   "scene": "greenhouse",
+   "action": "中景固定：手伸向开关又缩回，第一次不按任务执行",
+   "cues": [
+    {
+     "name": "MUSIC_HALT",
+     "at": 162
+    }
+   ],
+   "act": {
+    "id": "v02",
+    "emotion": "neutral",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "播报音，只报告程序，不解释情感。"
+   },
+   "line": "请关闭温室照明。"
+  },
+  {
+   "id": "s12",
+   "kind": "action",
+   "character": null,
+   "start": 176,
+   "end": 192,
+   "move": "hold",
+   "shot": "lamp_side",
+   "scene": "greenhouse",
+   "action": "侧面近景：取下头灯放在杯旁，太亮便用手挡住半边光",
+   "cues": [
+    {
+     "name": "PIANO_SINGLE",
+     "at": 180
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "kind": "action",
+   "character": null,
+   "start": 192,
+   "end": 208,
+   "move": "follow",
+   "shot": "drawers",
+   "scene": "warehouse",
+   "action": "仓库跟拍：打开抽屉，前两块电池均为0%",
+   "cues": [
+    {
+     "name": "DRAWER_SLIDE",
+     "at": 194
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "kind": "action",
+   "character": null,
+   "start": 208,
+   "end": 224,
+   "move": "hold",
+   "shot": "battery_close",
+   "scene": "warehouse",
+   "action": "特写：第三块贴着100%标签，揭开才发现电量0%；眼光先亮再缩，静止三秒后才放回",
+   "cues": [
+    {
+     "name": "XYLO_TWO",
+     "at": 213
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "kind": "action",
+   "character": null,
+   "start": 224,
+   "end": 240,
+   "move": "hold",
+   "shot": "big_battery",
+   "scene": "warehouse",
+   "action": "全景：奋力拖大电池上工具车，电池外壳散架",
+   "cues": [
+    {
+     "name": "PARTS_SCATTER",
+     "at": 233
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "kind": "action",
+   "character": null,
+   "start": 240,
+   "end": 254,
+   "move": "low",
+   "shot": "screw_pickup",
+   "scene": "warehouse",
+   "action": "低机位近景：机器人认真捡起唯一滚远的螺丝放进口袋",
+   "cues": [
+    {
+     "name": "SCREW_PING",
+     "at": 246
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "kind": "dialogue",
+   "character": "Eva",
+   "start": 254,
+   "end": 270,
+   "move": "push_slow",
+   "shot": "holo_photo",
+   "scene": "lounge",
+   "action": "休息室慢推：发现全息旧照片：女孩在窗边照顾植物",
+   "cues": [
+    {
+     "name": "TAPE_NOISE",
+     "at": 255
+    }
+   ],
+   "act": {
+    "id": "v03",
+    "emotion": "neutral",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "档案播报，平静。"
+   },
+   "line": "档案：植物观察日志，第一百八十七天。"
+  },
+  {
+   "id": "s18",
+   "kind": "dialogue",
+   "character": "Girl",
+   "start": 270,
+   "end": 286,
+   "move": "hold",
+   "shot": "photo_close",
+   "scene": "lounge",
+   "action": "照片特写：女孩笑着把杯子放在窗边，机器人静止观看；录音戛然而止",
+   "cues": [
+    {
+     "name": "TAPE_CUT",
+     "at": 283
+    }
+   ],
+   "act": {
+    "id": "g01",
+    "emotion": "happy",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "旧录音里的女孩，明亮、带笑、有憧憬。"
+   },
+   "line": "如果它能长大……我就带它去看真正的太阳。"
+  },
+  {
+   "id": "s19",
+   "kind": "action",
+   "character": null,
+   "start": 286,
+   "end": 300,
+   "move": "hold",
+   "shot": "music_box",
+   "scene": "lounge",
+   "action": "音乐盒近景：机器人转动发条，四五个钢琴音响起又停止",
+   "cues": [
+    {
+     "name": "MUSIC_BOX_FRAGMENT",
+     "at": 289
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "kind": "action",
+   "character": null,
+   "start": 300,
+   "end": 316,
+   "move": "hold",
+   "shot": "aux_battery",
+   "scene": "powerroom",
+   "action": "能源室中景：逃生舱辅助电池38%，机器人伸手欲拆",
+   "cues": [
+    {
+     "name": "HUM_POWER",
+     "at": 300
+    },
+    {
+     "name": "OSD_SHUTTLE",
+     "at": 302
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "kind": "action",
+   "character": null,
+   "start": 316,
+   "end": 332,
+   "move": "hold",
+   "shot": "hand_retract",
+   "scene": "powerroom",
+   "action": "手部特写：发现拆电池会使飞船无法起飞，手指缓慢收回",
+   "cues": [
+    {
+     "name": "OSD_DISABLES",
+     "at": 318
+    },
+    {
+     "name": "SILENCE_BEAT",
+     "at": 320
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "kind": "action",
+   "character": null,
+   "start": 332,
+   "end": 348,
+   "move": "hold",
+   "shot": "chest_panel",
+   "scene": "powerroom",
+   "action": "胸部特写：尝试拆自身电池，眼灯闪烁报警；慌忙装回螺丝",
+   "cues": [
+    {
+     "name": "OSD_CRITICAL",
+     "at": 334
+    },
+    {
+     "name": "ALARM_SHORT",
+     "at": 335
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "kind": "action",
+   "character": null,
+   "start": 348,
+   "end": 364,
+   "move": "hold",
+   "shot": "workbench",
+   "scene": "warehouse",
+   "action": "工作台中景：从旧设备筛出可用电芯，逐一测压",
+   "cues": [
+    {
+     "name": "METER_BEEP",
+     "at": 350
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "kind": "action",
+   "character": null,
+   "start": 364,
+   "end": 380,
+   "move": "hold",
+   "shot": "welding",
+   "scene": "warehouse",
+   "action": "焊台特写：制作缓冲储能包；焊接火星飞出瞬间下意识伸手保护不在场的小苗，意识到后缓慢收回",
+   "cues": [
+    {
+     "name": "WELD_SPARKS",
+     "at": 367
+    }
+   ]
+  },
+  {
+   "id": "s25",
+   "kind": "action",
+   "character": null,
+   "start": 380,
+   "end": 396,
+   "move": "hold",
+   "shot": "reading_light",
+   "scene": "cockpit",
+   "action": "驾驶舱中景：修好阅读灯，接入低功耗供电母线，暖光稳定亮起",
+   "cues": [
+    {
+     "name": "LIGHT_ONLINE",
+     "at": 384
+    },
+    {
+     "name": "OSD_LOWPOWER",
+     "at": 385
+    }
+   ]
+  },
+  {
+   "id": "s26",
+   "kind": "action",
+   "character": null,
+   "start": 396,
+   "end": 412,
+   "move": "hold",
+   "shot": "cup_foam",
+   "scene": "cockpit",
+   "action": "杯子近景：给陶瓷杯垫减震泡棉，试放两次倾斜，第三次固定稳固",
+   "cues": [
+    {
+     "name": "CUP_CLINK",
+     "at": 400
+    }
+   ]
+  },
+  {
+   "id": "s27",
+   "kind": "action",
+   "character": null,
+   "start": 412,
+   "end": 426,
+   "move": "hold",
+   "shot": "habitat",
+   "scene": "cockpit",
+   "action": "培养罩近景：接好通气温控，调低灯光，确认小苗安全",
+   "cues": [
+    {
+     "name": "STRINGS_IN",
+     "at": 415
+    },
+    {
+     "name": "OSD_HABITAT",
+     "at": 417
+    }
+   ]
+  },
+  {
+   "id": "s28",
+   "kind": "dialogue",
+   "character": "Eva",
+   "start": 426,
+   "end": 440,
+   "move": "hold",
+   "shot": "look_back",
+   "scene": "cockpit",
+   "action": "中远景：最后回望温室方向，折回取下儿童太阳画，放进胸前口袋",
+   "cues": [
+    {
+     "name": "GATE_FAR",
+     "at": 431
+    }
+   ],
+   "act": {
+    "id": "v04",
+    "emotion": "neutral",
+    "gaze": "none",
+    "camera": "narration",
+    "context": "播报音，催促但不严厉。"
+   },
+   "line": "请立即撤离。"
+  },
+  {
+   "id": "s29",
+   "kind": "action",
+   "character": null,
+   "start": 440,
+   "end": 454,
+   "move": "hold",
+   "shot": "departure",
+   "scene": "exterior",
+   "action": "空间外景：飞船缓缓离开，空间站最后一盏灯熄灭",
+   "cues": [
+    {
+     "name": "MUSIC_BOX_FULL",
+     "at": 442
+    }
+   ]
+  },
+  {
+   "id": "s30",
+   "kind": "action",
+   "character": null,
+   "start": 454,
+   "end": 466,
+   "move": "hold",
+   "shot": "sit_beside",
+   "scene": "cockpit",
+   "action": "驾驶舱中景：机器人望向旧站，再望向小苗，轻轻靠近坐下（先窗外再植物，身体微转，肩部放松）",
+   "cues": [
+    {
+     "name": "PIANO_SOFT",
+     "at": 456
+    }
+   ]
+  },
+  {
+   "id": "s31",
+   "kind": "action",
+   "character": null,
+   "start": 466,
+   "end": 475,
+   "move": "hold",
+   "shot": "hand_leaf",
+   "scene": "cockpit",
+   "action": "手叶特写：三指手伸到距叶一厘米处停住（伸1.2秒停0.8秒收1.8秒），没有碰，轻放杯旁",
+   "cues": [
+    {
+     "name": "OSD_SUNRISE",
+     "at": 472
+    }
+   ]
+  },
+  {
+   "id": "s32",
+   "kind": "action",
+   "character": null,
+   "start": 475,
+   "end": 480,
+   "move": "pull_far",
+   "shot": "dawn_final",
+   "scene": "exterior",
+   "action": "极远景拉远：蓝色星球边缘泛金，飞船驶向晨光，舱内小灯仍亮；片名出现",
+   "cues": [
+    {
+     "name": "PIANO_OUTRO",
+     "at": 475
+    },
+    {
+     "name": "TITLE_CARD",
+     "at": 477
+    },
+    {
+     "name": "FADE",
+     "at": 479.5
+    }
+   ]
+  }
+ ],
+ "subtitles": [
+  {
+   "character": "Eva",
+   "start": 0,
+   "end": 18,
+   "text": "退役程序启动。距离最终关闭，还有四十分钟。"
+  },
+  {
+   "character": "Eva",
+   "start": 160,
+   "end": 176,
+   "text": "请关闭温室照明。"
+  },
+  {
+   "character": "Eva",
+   "start": 254,
+   "end": 270,
+   "text": "档案：植物观察日志，第一百八十七天。"
+  },
+  {
+   "character": "Girl",
+   "start": 270,
+   "end": 286,
+   "text": "如果它能长大……我就带它去看真正的太阳。"
+  },
+  {
+   "character": "Eva",
+   "start": 426,
+   "end": 440,
+   "text": "请立即撤离。"
+  }
+ ]
+}

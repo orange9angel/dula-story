@@ -1,0 +1,13 @@
+{
+  "asset": "m07_stand",
+  "provider": "codex-cli builtin imagegen",
+  "model": "gpt-image (ChatGPT subscription quota)",
+  "prompt": "T3 补生成：中性站立姿势（front, arms relaxed, head level），refs=[m07_full, t2ref/stand_gaze.jpg]，完整 prompt 见会话记录",
+  "refs": [
+    "refs/m07_full.png",
+    "storyboard/t1/t2ref/stand_gaze.jpg"
+  ],
+  "size": "1024x1536",
+  "sha256": "e9a785a8feaf8740761282fbc2e213b243f339484953958898e26f4f7bfbb8f5",
+  "generated_at": "2026-10-27T19:33:42.794961+00:00"
+}

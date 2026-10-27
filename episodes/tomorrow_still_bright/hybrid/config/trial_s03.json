@@ -1,0 +1,53 @@
+{
+ "schema": "draw-over-pipeline-v1",
+ "baseUrl": "http://127.0.0.1:4317/",
+ "source": {
+  "video": "config/timeline.json",
+  "sha256": "439bf8d27c6ea42686fbfeac1e307bd1b6f1d4a57d1980c7a5fbab0f5305b970",
+  "note": "T3 \u5408\u6210\u9875\u7531 staging/\u5e95\u56fe\u9a71\u52a8\uff0c\u6e90\u771f\u503c=timeline\uff08T1 \u5e95\u7a3f\u4ec5\u4f5c\u53c2\u8003\uff09"
+ },
+ "runtime": {
+  "directory": "hybrid/assets/draw_over_runtime"
+ },
+ "pilot": {
+  "start": 34,
+  "end": 48,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "viewer": "hybrid/art_pass.html?capture=1",
+  "board": "storyboard/t3/trial_s03",
+  "output": "output/trial_s03.mp4",
+  "samples": [
+   34.5,
+   41.0,
+   47.5
+  ],
+  "repeatSamples": [
+   41.0
+  ],
+  "hashEvery": 30,
+  "silent": true,
+  "sourceFiles": [
+   "config/timeline.json",
+   "config/contact_events.json",
+   "hybrid/config/staging.json",
+   "hybrid/config/art_cast.json",
+   "hybrid/config/plate_calib.json",
+   "hybrid/art_pass.html",
+   "hybrid/art_pass.js",
+   "hybrid/config/art_pipeline.json"
+  ],
+  "assetDirectories": [
+   "hybrid/assets/cels",
+   "hybrid/assets/plates",
+   "hybrid/assets/props",
+   "hybrid/assets/refs",
+   "hybrid/assets/faces"
+  ]
+ },
+ "probe": {
+  "adapter": "hybrid/config/art_probe.mjs",
+  "output": "storyboard/t3/probe.json"
+ }
+}
