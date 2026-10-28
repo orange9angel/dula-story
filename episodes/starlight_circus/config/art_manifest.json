@@ -20,8 +20,51 @@
       "provider": "built-in image_gen",
       "role": "static_art_direction_master",
       "status": "agent_reviewed_static_only"
+    },
+    {
+      "file": "hybrid/assets/piano_invite_v1.png",
+      "sha256": "9b3ca6d41db0faf036f9620b1b907e2117d85d5de6c8f9c5c37e3eb7c604c3ab",
+      "provider": "built-in image_gen",
+      "role": "R1 local acting cels",
+      "status": "agent_reviewed_frame_samples_only"
+    },
+    {
+      "file": "hybrid/assets/piano_mic_v1.png",
+      "sha256": "d8e0b03184b41804bb9122fe151a442029b57154fdefe890622c14b2fda9c8b7",
+      "provider": "built-in image_gen",
+      "role": "R1 local acting cels",
+      "status": "agent_reviewed_frame_samples_only"
+    },
+    {
+      "file": "hybrid/assets/piano_near_v1.png",
+      "sha256": "0668cea49e0e1e449c95e95943d153145e8d548b76c1b63795df54ef779c6659",
+      "provider": "built-in image_gen",
+      "role": "R1 local acting cels",
+      "status": "agent_reviewed_frame_samples_only"
+    },
+    {
+      "file": "hybrid/assets/piano_hold_v1.png",
+      "sha256": "0fbca3863aa44f91bae18092da580e75c7b43b87919a134cda4592826b0bf779",
+      "provider": "built-in image_gen",
+      "role": "R1 local acting cels",
+      "status": "agent_reviewed_frame_samples_only"
+    },
+    {
+      "file": "hybrid/assets/acting_edit_targets.png",
+      "sha256": "73e25cbe951dd3c27a1e84e00afd6ec9499686767cf7e8accfc638a22ccc56a9",
+      "provider": "lossless source crop packing",
+      "role": "R1 local acting cels",
+      "status": "agent_reviewed_frame_samples_only"
+    },
+    {
+      "file": "hybrid/assets/acting_edits_v1.png",
+      "sha256": "0df8fdb4fda3f79ae13eced26396539ea81881a1d31ca17546660d945a8beb5c",
+      "provider": "built-in image_gen",
+      "role": "R1 local acting cels",
+      "status": "agent_reviewed_frame_samples_only"
     }
   ],
   "prompts": "hybrid/assets/generation_prompts.json",
-  "scope": "Static look development and fixed-pose lighting study; final acting pending."
+  "scope": "R0 light study plus R1 finite acting pilot; full episode pending",
+  "actingPrompts": "hybrid/assets/acting_generation_prompts.json"
 }

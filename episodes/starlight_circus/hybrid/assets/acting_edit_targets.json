@@ -1,0 +1,104 @@
+{
+  "size": [
+    768,
+    1152
+  ],
+  "targets": [
+    {
+      "id": "mic_lower_one",
+      "source": "../hybrid/assets/piano_mic_v1.png",
+      "crop": [
+        560,
+        240,
+        384,
+        384
+      ],
+      "atlas": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "id": "mic_lower_two",
+      "source": "../hybrid/assets/piano_mic_v1.png",
+      "crop": [
+        560,
+        240,
+        384,
+        384
+      ],
+      "atlas": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "id": "noa_closed_blink",
+      "source": "../hybrid/assets/piano_mic_v1.png",
+      "crop": [
+        600,
+        100,
+        384,
+        384
+      ],
+      "atlas": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "id": "selene_reach",
+      "source": "../hybrid/assets/piano_invite_v1.png",
+      "crop": [
+        790,
+        200,
+        384,
+        384
+      ],
+      "atlas": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "id": "pip_tap_near",
+      "source": "../hybrid/assets/piano_mic_v1.png",
+      "crop": [
+        340,
+        360,
+        384,
+        384
+      ],
+      "atlas": [
+        0,
+        768,
+        384,
+        384
+      ]
+    },
+    {
+      "id": "pip_tap_away",
+      "source": "../hybrid/assets/piano_mic_v1.png",
+      "crop": [
+        340,
+        360,
+        384,
+        384
+      ],
+      "atlas": [
+        384,
+        768,
+        384,
+        384
+      ]
+    }
+  ]
+}

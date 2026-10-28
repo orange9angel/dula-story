@@ -6,6 +6,9 @@
 可读文本在 `source/script_original.txt`。目标 570 秒（允许 ±10 秒）、六幕、四首原创歌。
 `script.story` 是时序正本；歌曲实际录音未选定前，唱段内逐字时间不视为锁定。
 
+最新可看片段：`review_r1.html` / `output/piano_acting_pilot_r1.mp4`。
+R1 已把 178–200 秒的局部动作画与声音接通，详细范围和未完成项见文末。
+
 用户本轮明确：加强**角色互动与表演**，改善人景融合，**人和场景的光影变化一体化**，
 追求声、光、乐与剧情协同的氛围与观赏体验。无需增加播放器点击玩法。
 
@@ -107,7 +110,7 @@
 还需场景/角色深度、法线或对应动作画的接收面数据，不能用本试验推断已解决。
 通用实现随 draw-over-animation 的 `scene-light-score.js`、`painted-light-field.js` 保存。
 
-### 下一制作段
+### R0 后续目标（历史记录）
 
 先把三人原画动作和表情覆盖到 178–200 秒：降低麦克风、犹豫、伸手、回握、敲胸、
 听到对方后的目光变化；再接本片新声线、Seed-Audio Foley 和选定歌声。
@@ -125,3 +128,45 @@ C版主要人声跨度较长。这些是转写线索，不是逐字强制对齐�
 程序试片：`node render.mjs --range 178,200 --out spatial_lighting_pilot.mp4`。
 绘画试片使用共享 pipeline 与 `config/painted_lighting_pilot.json`，重生成空间片后
 须同步其 source 摘要。正式全片接触门尚未配置，`tools/check_contact.py` 对此显式失败。
+
+## R1：钢琴旁声画试片
+
+审片页：`http://127.0.0.1:4262/review_r1.html`；输出
+`output/piano_acting_pilot_r1.mp4`，22秒、1280×720、30fps、660帧、AAC立体声。
+本轮新图用内置 image_gen 制作并保存到 `hybrid/assets/`，完整提示词见
+`acting_generation_prompts.json`，没有改换图像后端。
+
+表演：持麦说话 → 放低麦克风的两张过渡 → 等待 → 塞蕾娜伸手 → 指尖接近 → 回握。
+匹普使用准备/靠近/接触三张局部手部画敲木胸；诺娅短句由最终对白PCM的100Hz能量
+控制开闭口，并有闭眼原画。微尘有独立出生、寿命与轨迹，限于上方灯束，避开脸和手。
+人物脚、裙摆落地、钢琴和舞台背景沿用固定母版；局部动作画在原生裁区内合成，
+再由共用照明谱驱动。动作图漏掉的铜铃已用同机位道具原画补回。
+
+声音：火山 seed-tts 两组声线各两句候选，R1暂接A，未听审定案；四句QC的拼音内容
+覆盖率均100%，时长和电平通过。木质敲击和剧院空气来自本轮 Seed-Audio。
+首版26秒空气请求只返0.529729秒，已拒收并禁用；第二版10秒实测10秒。
+底床经过滤与慢增益稳定后，RMS max/mean=1.322，周期相关=0.0241，4–8kHz占比<0.001。
+歌曲仅临时接B版8–13秒的入口片段，不代表完整唱段或角色演唱已选定。
+
+技术检查：27次顺序/倒序/重复PNG取帧一致，浏览器无错误；11次木胸音效在各自接触点
+±0.15秒内存在瞬态，检查用独立Foley轨，不借对白或配乐起音放行。
+24bit PCM分轨求和误差2.39e-7；AAC解码峰值0.5014，和源混音零位相关0.999966。
+AAC尾部有768个编码填充样本，视频容器仍为22秒；比较时按共同有效长度截取。
+
+实际观看证据：检查了整帧178.7、181、186.2、186.766667以及编码后186.8秒；
+另看了诺娅开/闭口原生裁区的放大图。这里记录的是抽帧和帧序检查，尚无正常速度
+听审，不能把上述数值当成戏感或“大师级作品”的批准。
+
+编码后又检查了闭眼裁区与伸手九格帧序：图集中“伸手一半”的候选实际已经越过
+下一张接近画，连播会先接近又退回。该格已从运行层移除，保留在源图集中作拒收证据；
+采用手在胸前 → 指尖停在掌上方 → 回握的单向顺序。不能按提示词标签推断相位正确。
+
+当前局限：仍是有限动画；塞蕾娜哼唱/气音尚未录制，完整歌唱口型、连续细腻过渡、
+走位中的投影和遮挡尚未完成。其余五幕、救援、共舞、星河观众与完整音乐混音待制作。
+下一段先补全第二幕唱段及角色分工，再扩展对质与四人救援；9分30秒全剧仍未完成。
+
+复现声音：
+`python dula-skills/direct-episode-audio/scripts/generate_seed_jobs.py EP --config config/pilot_audio_jobs.json`；
+`mix_cue_recipe.py EP --config config/pilot_mix_recipe.json`，随后运行
+`check_cue_mix.py EP --config config/pilot_mix_recipe.json --video output/piano_acting_pilot_r1.mp4 --output config/pilot_encoded_audio_qc.json`。
+画面入口：共享pipeline的 `config/acting_pilot.json`，`--step prepare` 后 `--step render --render`。

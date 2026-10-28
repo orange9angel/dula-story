@@ -1,0 +1,10 @@
+{
+  "schema":"draw-over-pipeline-v1","baseUrl":"http://127.0.0.1:4262/","runtime":{"directory":"assets/draw_over_runtime"},
+  "source":{"video":"output/spatial_lighting_pilot.mp4","sha256":"ef47d7268831a91aa8536bb358df9b0fd126333f8666dcf855b58324def56280"},
+  "pilot":{"start":178,"end":200,"fps":30,"width":1280,"height":720,"viewer":"hybrid/acting_pilot.html?capture=1",
+    "board":"storyboard/acting_pilot_r1","output":"output/piano_acting_pilot_r1.mp4","audio":"assets/audio/pilot_r1/mixed.wav","audioOffset":0,
+    "settleBeforeCapture":true,"samples":[178,178.7,180.1,180.166667,180.266667,181,181.7,182.4,185.6,185.8,186.2,186.633333,186.766667,186.8,189,195,199],
+    "repeatSamples":[178,181,186.8,198],"hashEvery":30,
+    "sourceFiles":["script.story","hybrid/acting_pilot.js","hybrid/acting_pilot.html","config/light_score.json","config/pilot_mix_recipe.json","config/pilot_voice_envelope.json"],
+    "assetDirectories":["hybrid/assets"]}
+}

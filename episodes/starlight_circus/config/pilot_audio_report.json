@@ -1,0 +1,107 @@
+{
+  "scope": "pilot only; listening review pending",
+  "start": 178,
+  "end": 200,
+  "sampleRate": 48000,
+  "samples": 1056000,
+  "peak": 0.5000267624855042,
+  "gain": 1,
+  "stemSumError": 0.0,
+  "sources": [
+    {
+      "id": "noa_invitation",
+      "source": "assets/audio/voice_auditions/noa_A_quiet.mp3",
+      "sha256": "be5ba3cd062045ee029c53312178ddf993755b0f9c8008a81ece94b8a5064433",
+      "sourceDuration": 3.936,
+      "placements": [
+        {
+          "time": 178.35,
+          "duration": 3.936
+        }
+      ]
+    },
+    {
+      "id": "theatre_air",
+      "source": "assets/audio/foley/empty_theatre_room_v2.wav",
+      "sha256": "449a48dc848150c52495b258efa1dcce1ed2fc2c6f75fa52ca0265d9a3abe80d",
+      "sourceDuration": 10.0,
+      "bedQC": {
+        "rmsMaxMean": 1.3219152688980103,
+        "periodicCorrelation": 0.024102220311760902,
+        "hissRatio": 2.6030895696749212e-06
+      },
+      "placements": [
+        {
+          "time": 178,
+          "duration": 22.0
+        }
+      ]
+    },
+    {
+      "id": "wooden_heartbeat",
+      "source": "assets/audio/foley/walnut_single_tap.wav",
+      "sha256": "f1ab7d3431f5abeccf7d9228965da1964be798f15c04b6d5bae61421d811c851",
+      "sourceDuration": 3.0,
+      "trimmedLead": 0.7247916666666666,
+      "placements": [
+        {
+          "time": 186.8,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 187.57,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 188.34,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 189.11,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 189.88,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 190.65,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 191.42,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 192.19,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 192.96,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 193.73,
+          "duration": 0.5752083333333333
+        },
+        {
+          "time": 194.5,
+          "duration": 0.5752083333333333
+        }
+      ]
+    },
+    {
+      "id": "song_instrumental_entry",
+      "source": "assets/audio/music/borrow_a_melody/auditions/v1b.mp3",
+      "sha256": "ecd5769ee6df9b748b3721cf151c62a57e4dc5134aa564364dc434b1fa716c92",
+      "sourceDuration": 64.96,
+      "placements": [
+        {
+          "time": 195,
+          "duration": 5.0
+        }
+      ]
+    }
+  ],
+  "mixedSha256": "737ed33b11582aa3763eba54cc2a3108d641ddced3a4086e8ab47a4bd518e67e"
+}

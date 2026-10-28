@@ -1,0 +1,14 @@
+{
+  "schema": "seed-audio-jobs-v1",
+  "scope": "178–200 second pilot; candidates, no full-episode audio approval",
+  "sources": [{"path":"script.story","sha256":"6d8a4a1603a1d899774f52031ad5ab192f51ad58f669c5bbee658eacf41f255e"}],
+  "jobs": [
+    {"id":"noa_A_quiet","provider":"seedtts","text":"不用唱给他们听。先唱给我听。","speaker":"zh_female_lingling_uranus_bigtts","delivery":{"speech_rate":-12,"context_texts":["你是二十二岁的诺娅，站在失声的女歌者塞蕾娜身旁。轻轻放低麦克风，认真对眼前这一个人说话。第一句是卸下她的压力，句号处停一拍，第二句是平等真诚的邀请。轻声而清楚，温暖克制，有具体的对话对象。"]},"output":"assets/audio/voice_auditions/noa_A_quiet.mp3"},
+    {"id":"noa_B_quiet","provider":"seedtts","text":"不用唱给他们听。先唱给我听。","speaker":"zh_female_shuangkuaisisi_uranus_bigtts","delivery":{"speech_rate":-12,"context_texts":["你是二十二岁的诺娅，站在失声的女歌者塞蕾娜身旁。轻轻放低麦克风，认真对眼前这一个人说话。第一句是卸下她的压力，句号处停一拍，第二句是平等真诚的邀请。轻声而清楚，温暖克制，有具体的对话对象。"]},"output":"assets/audio/voice_auditions/noa_B_quiet.mp3"},
+    {"id":"noa_A_confront","provider":"seedtts","text":"你把他们的记忆当燃料。","speaker":"zh_female_lingling_uranus_bigtts","delivery":{"speech_rate":0,"context_texts":["诺娅终于明白演员失忆的原因，面对维斯珀，压着愤怒说出这句事实。目光坚定，重音在记忆和燃料，尾音收住，要求对方承担责任。"]},"output":"assets/audio/voice_auditions/noa_A_confront.mp3"},
+    {"id":"noa_B_confront","provider":"seedtts","text":"你把他们的记忆当燃料。","speaker":"zh_female_shuangkuaisisi_uranus_bigtts","delivery":{"speech_rate":0,"context_texts":["诺娅终于明白演员失忆的原因，面对维斯珀，压着愤怒说出这句事实。目光坚定，重音在记忆和燃料，尾音收住，要求对方承担责任。"]},"output":"assets/audio/voice_auditions/noa_B_confront.mp3"},
+    {"id":"empty_theatre_room","provider":"seed-audio","prompt":"生成一段26秒纯环境音，无音乐无人声：空旷古老小剧院的极轻室内空气底噪，天鹅绒幕布吸收高频，安静木质舞台空间。平稳、无阵风、无节律性涌动、音量恒定、无静默间隙。没有观众、没有掌声、没有脚步、没有钟声或旋律，没有舞台机关运转声。","output":"assets/audio/foley/empty_theatre_room.wav","durationRange":[20,30],"status":"rejected_first_duration_0.53s","disabled":true},
+    {"id":"empty_theatre_room_v2","provider":"seed-audio","prompt":"生成10秒持续的纯环境音，无音乐，无人声。录音场景：空旷老剧院里稳定轻柔的通风空气声，远处空间反射，低频微弱气流持续十秒。音量恒定，平稳无节奏，无阵风，无静默间隙，无掌声，无敲击，无音乐。","output":"assets/audio/foley/empty_theatre_room_v2.wav","durationRange":[8,15]},
+    {"id":"walnut_single_tap","provider":"seed-audio","prompt":"生成一段3秒纯音效，无音乐无人声：指关节轻轻敲一下小型空心胡桃木木偶胸板，亲近柔和的单次咚声，清楚木质接触瞬态、很短的空腔余韵。只敲一下，其余保持安静。没有金属声，没有鼓乐，没有重复节奏。","output":"assets/audio/foley/walnut_single_tap.wav"}
+  ]
+}
