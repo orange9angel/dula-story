@@ -62,9 +62,38 @@
       "provider": "built-in image_gen",
       "role": "R1 local acting cels",
       "status": "agent_reviewed_frame_samples_only"
+    },
+    {
+      "file": "hybrid/assets/face_targets_r2.png",
+      "sha256": "4d841106eb0a939f504f898ec12c2897be10fb58eae1d96a4af9d45b0c4e8971",
+      "provider": "lossless source crop packing",
+      "role": "R2 local face cels",
+      "status": "agent_reviewed_native_frame_samples; user aesthetic review pending"
+    },
+    {
+      "file": "hybrid/assets/face_edits_r2.png",
+      "sha256": "f7ae224a15dd9e430a3fbedb65625ac4d5091e7227ae49b7f3a7df3ac2ca9c34",
+      "provider": "built-in image_gen",
+      "role": "R2 local face cels",
+      "status": "agent_reviewed_native_frame_samples; user aesthetic review pending"
+    },
+    {
+      "file": "hybrid/assets/halfblink_targets_r2.png",
+      "sha256": "6afd6cb6d2e81d0b9b5a8f6b85a883ae7fb215aac8f270575f78582aa66c3c26",
+      "provider": "lossless source crop packing",
+      "role": "R2 local face cels",
+      "status": "agent_reviewed_native_frame_samples; user aesthetic review pending"
+    },
+    {
+      "file": "hybrid/assets/halfblink_edits_r2.png",
+      "sha256": "690930306eadf9cbf6f8951f2fb702e9c688f815ca3ad6f02a89df7a8fdb0932",
+      "provider": "built-in image_gen",
+      "role": "R2 local face cels",
+      "status": "agent_reviewed_native_frame_samples; user aesthetic review pending"
     }
   ],
   "prompts": "hybrid/assets/generation_prompts.json",
-  "scope": "R0 light study plus R1 finite acting pilot; full episode pending",
-  "actingPrompts": "hybrid/assets/acting_generation_prompts.json"
+  "scope": "R0 lighting, R1 acting and R2 local facial refinement; full musical pending",
+  "actingPrompts": "hybrid/assets/acting_generation_prompts.json",
+  "facePrompts": "hybrid/assets/face_generation_prompts_r2.json"
 }

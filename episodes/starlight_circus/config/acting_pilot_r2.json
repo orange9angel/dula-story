@@ -1,0 +1,65 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4262/",
+  "runtime": {
+    "directory": "assets/draw_over_runtime"
+  },
+  "source": {
+    "video": "output/piano_acting_pilot_r1.mp4",
+    "sha256": "70498a95cc0f47a181983056f714afe177eb3d5d6504538c61427db5d780d5a3"
+  },
+  "pilot": {
+    "start": 178,
+    "end": 200,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "hybrid/acting_pilot_r2.html?capture=1",
+    "board": "storyboard/acting_pilot_r2",
+    "output": "output/piano_acting_pilot_r2.mp4",
+    "audio": "assets/audio/pilot_r1/mixed.wav",
+    "audioOffset": 0,
+    "settleBeforeCapture": true,
+    "samples": [
+      178,
+      178.5,
+      178.7,
+      179.25,
+      179.9,
+      179.95,
+      180.1,
+      180.3,
+      180.7,
+      181.3,
+      181.9,
+      181.95,
+      182,
+      183,
+      185.4,
+      186.3,
+      186.9,
+      186.95,
+      194,
+      199
+    ],
+    "repeatSamples": [
+      178.5,
+      180.1,
+      181.95,
+      186.95,
+      199
+    ],
+    "hashEvery": 30,
+    "sourceFiles": [
+      "script.story",
+      "hybrid/acting_pilot_r2.js",
+      "hybrid/acting_pilot_r2.html",
+      "config/light_score.json",
+      "config/pilot_dialogue_alignment.json",
+      "config/accepted_selections.json"
+    ],
+    "assetDirectories": [
+      "hybrid/assets"
+    ]
+  }
+}

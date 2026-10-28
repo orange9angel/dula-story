@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>星辰马戏团 · 面部细化 R2</title>
+<style>body{margin:0;background:#14121b;color:#eee2cd;font:16px/1.8 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1100px;margin:44px auto;padding:0 24px}h1{font-size:32px;font-weight:500}h2{font-size:22px;font-weight:500}p{color:#c5b6c0}video,canvas{display:block;width:100%;background:#080810;border-radius:6px}section{border-top:1px solid #453a44;margin-top:32px;padding-top:14px}small{color:#ad9aa9}a{color:#e8ba76}button{background:#4d3540;color:#fff0d3;border:1px solid #8b6a67;padding:8px 16px;border-radius:5px;cursor:pointer}audio{width:100%}</style></head>
+<body><main><small>STARLIGHT CIRCUS · 表情与口型细化 R2</small><h1>把一句邀请说给眼前的人</h1>
+<p>诺娅 A 声线、《借我一小段旋律》B 歌曲已按你的选择锁定。本轮保持 R1 的机位、身体动作和音轨，细化 22 秒内的嘴、眼睑、眉毛与听者反应。</p>
+<video id="current" src="output/piano_acting_pilot_r2.mp4" controls preload="metadata"></video>
+<p><button id="toggle">切到 R1 对照</button> <a href="output/piano_acting_pilot_r2.mp4" download>下载 R2</a> · <a href="hybrid/acting_pilot_r2.html">打开可拖动预览</a></p>
+<section><h2>面部放大查看</h2><p>这里放大上方视频的原画幅裁区，便于看停顿时的闭口、圆唇和窄口、眨眼过程，以及塞蕾娜从紧张到信任的反应。</p><canvas id="faces" width="1240" height="480"></canvas></section>
+<section><h2>已经定下的声音</h2><p>诺娅：A。音乐：B，保留 C 为备选素材。后续歌曲按人物关系和台词的延续来演，完整 50 秒唱段的剪辑与角色分工仍待完成。</p>
+<audio controls src="assets/audio/music/borrow_a_melody/auditions/v1b.mp3"></audio></section>
+<section><h2>本轮范围</h2><p>使用五种克制的口型画，按已放置的人声与已知台词安排；两句之间合口留白。眨眼经过半闭、全闭和睁开，两人的时点错开。塞蕾娜先看诺娅，再看手，回握后放松眉眼。</p><p>这是同一段的有限动画修订；全剧和完整歌唱表演尚未完成。</p><p><a href="review_r1.html">R1 审片页</a> · <a href="NOTES.md">制作记录</a></p></section></main>
+<script>const video=document.querySelector('#current'),canvas=document.querySelector('#faces'),g=canvas.getContext('2d');let revision=2;document.querySelector('#toggle').onclick=()=>{const t=video.currentTime,playing=!video.paused;revision=revision===2?1:2;video.src=`output/piano_acting_pilot_r${revision}.mp4`;video.onloadedmetadata=()=>{video.currentTime=t;if(playing)video.play();};document.querySelector('#toggle').textContent=revision===2?'切到 R1 对照':'切回 R2';};function draw(){if(video.readyState>=2)g.drawImage(video,510,140,310,120,0,0,1240,480);requestAnimationFrame(draw);}draw();</script>
+</body></html>

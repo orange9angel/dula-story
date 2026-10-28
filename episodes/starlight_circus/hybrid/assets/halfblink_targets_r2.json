@@ -1,0 +1,56 @@
+{
+  "size": [
+    864,
+    288
+  ],
+  "targets": [
+    {
+      "id": "noa_half",
+      "source": "../hybrid/assets/piano_mic_v1.png",
+      "crop": [
+        600,
+        100,
+        288,
+        288
+      ],
+      "atlas": [
+        0,
+        0,
+        288,
+        288
+      ]
+    },
+    {
+      "id": "selene_initial_half",
+      "source": "../hybrid/assets/piano_mic_v1.png",
+      "crop": [
+        900,
+        100,
+        288,
+        288
+      ],
+      "atlas": [
+        288,
+        0,
+        288,
+        288
+      ]
+    },
+    {
+      "id": "selene_hold_half",
+      "source": "../hybrid/assets/piano_hold_v1.png",
+      "crop": [
+        900,
+        100,
+        288,
+        288
+      ],
+      "atlas": [
+        576,
+        0,
+        288,
+        288
+      ]
+    }
+  ]
+}

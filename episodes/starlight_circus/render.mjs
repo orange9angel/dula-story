@@ -8,6 +8,7 @@ import {once} from 'node:events';
 import {compareNumericState} from 'dula-engine/lib/NumericAudit.js';
 import {auditInputs,episodeSources} from './tools/audit_inputs.mjs';
 import {runPipeline} from '../../../dula-skills/draw-over-animation/scripts/pipeline.mjs';
+import {respondFile} from '../../../dula-skills/direct-animation-craft/scripts/http-media.mjs';
 
 const here=path.dirname(fileURLToPath(import.meta.url)),root=here,storyRoot=path.resolve(root,'../..');
 await runPipeline({episode:here,config:'config/lighting_pilot.json',step:'prepare'});
@@ -27,7 +28,7 @@ const fps=Number(opt('--fps')??30); // 60Hz collision audit; final output defaul
 if(physicsOnly&&(serve||shotsArg))throw new Error('--physics-only cannot be combined with --serve or --shots');
 if(!Number.isInteger(fps)||fps<1||fps>120)throw new Error('Bad --fps (expected integer 1..120)');
 fs.mkdirSync(board,{recursive:true});fs.mkdirSync(path.dirname(output),{recursive:true});
-const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json','.wav':'audio/wav','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png'};
+const mime={'.js':'text/javascript','.html':'text/html','.json':'application/json','.wav':'audio/wav','.mp3':'audio/mpeg','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png'};
 const server=http.createServer((req,res)=>{
   const url=decodeURIComponent(req.url.split('?')[0]);let mount=root,relative=url.replace(/^\/episode\//,'').replace(/^\//,'')||'viewer.html';
   if(url==='/favicon.ico'){res.writeHead(204).end();return;}
@@ -36,8 +37,7 @@ const server=http.createServer((req,res)=>{
   let target=path.resolve(mount,relative);const rel=path.relative(mount,target);
   if(rel.startsWith('..')||path.isAbsolute(rel)){res.writeHead(403).end();return;}
   if(!fs.existsSync(target)){res.writeHead(404).end();return;}
-  res.writeHead(200,{'Content-Type':mime[path.extname(target)]??'application/octet-stream','Cache-Control':'no-store','Content-Length':fs.statSync(target).size});
-  fs.createReadStream(target).pipe(res);
+  respondFile(req,res,target,mime[path.extname(target)]);
 });
 server.listen(serve?Number(opt('--port')??4215):0,'127.0.0.1');await once(server,'listening');
 const url=`http://127.0.0.1:${server.address().port}/viewer.html`;console.log(url);

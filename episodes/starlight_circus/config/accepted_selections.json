@@ -1,0 +1,22 @@
+{
+  "source": "User selection in current conversation",
+  "Noa": {
+    "candidate": "A",
+    "speaker": "zh_female_lingling_uranus_bigtts",
+    "status": "user_selected",
+    "references": [
+      "assets/audio/voice_auditions/noa_A_quiet.mp3",
+      "assets/audio/voice_auditions/noa_A_confront.mp3"
+    ]
+  },
+  "borrow_a_melody": {
+    "candidate": "B",
+    "variant": "v1b",
+    "file": "assets/audio/music/borrow_a_melody/auditions/v1b.mp3",
+    "sha256": "ecd5769ee6df9b748b3721cf151c62a57e4dc5134aa564364dc434b1fa716c92",
+    "status": "user_selected_source_recording",
+    "reason": "User prefers the theatrical direction; candidate C felt more like a pop concert.",
+    "edit_status": "50-second edit, lyrics and role assignment still need verification"
+  },
+  "performance_status": "R2 face refinement in progress; R1 remains a recorded baseline"
+}

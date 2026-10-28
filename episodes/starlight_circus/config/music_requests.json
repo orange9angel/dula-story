@@ -35,7 +35,7 @@
       "lyrics": "config/songs/borrow_a_melody.lyrics.txt",
       "style": "config/songs/borrow_a_melody.style.txt",
       "status": "four_generated_three_downloaded",
-      "selection_status": "not_selected",
+      "selection_status": "user_selected_source_recording",
       "constraints": [
         "歌词不可改写",
         "角色分工需听审，提示词不等于已实现",
@@ -58,7 +58,7 @@
           "actual_format": "mp3",
           "source_sha256": "111a550731fb5510ffb9abb399fd739a92d4b68b8b6f9e3a4f905373cb0dd386",
           "sha256": "ecd5769ee6df9b748b3721cf151c62a57e4dc5134aa564364dc434b1fa716c92",
-          "status": "candidate_not_listening_approved"
+          "status": "user_selected_source_recording"
         },
         {
           "variant": "v2",
@@ -70,7 +70,12 @@
           "status": "candidate_not_listening_approved"
         }
       ],
-      "timing_status": "source duration exceeds 50s nominal window; vocal spans must be checked before editing"
+      "timing_status": "source duration exceeds 50s nominal window; vocal spans must be checked before editing",
+      "selected_variant": "v1b",
+      "selected_display": "B",
+      "selected_file": "assets/audio/music/borrow_a_melody/auditions/v1b.mp3",
+      "selected_sha256": "ecd5769ee6df9b748b3721cf151c62a57e4dc5134aa564364dc434b1fa716c92",
+      "selection_reason": "User prefers theatrical storytelling; C felt more like a pop concert."
     },
     {
       "id": "return_my_name",

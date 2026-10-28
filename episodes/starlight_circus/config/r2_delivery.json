@@ -1,0 +1,261 @@
+{
+  "video": "output/piano_acting_pilot_r2.mp4",
+  "sha256": "399b8dbd201073633ef5f11b86960223590be4ffa3ecc806ca59c9d11bc98f92",
+  "duration": 22,
+  "size": [
+    1280,
+    720
+  ],
+  "fps": 30,
+  "frames": 660,
+  "pixelDeterminism": {
+    "passed": true,
+    "checks": [
+      {
+        "t": 199.96666666666667,
+        "equal": true
+      },
+      {
+        "t": 199,
+        "equal": true
+      },
+      {
+        "t": 198,
+        "equal": true
+      },
+      {
+        "t": 197,
+        "equal": true
+      },
+      {
+        "t": 196,
+        "equal": true
+      },
+      {
+        "t": 195,
+        "equal": true
+      },
+      {
+        "t": 194,
+        "equal": true
+      },
+      {
+        "t": 193,
+        "equal": true
+      },
+      {
+        "t": 192,
+        "equal": true
+      },
+      {
+        "t": 191,
+        "equal": true
+      },
+      {
+        "t": 190,
+        "equal": true
+      },
+      {
+        "t": 189,
+        "equal": true
+      },
+      {
+        "t": 188,
+        "equal": true
+      },
+      {
+        "t": 187,
+        "equal": true
+      },
+      {
+        "t": 186,
+        "equal": true
+      },
+      {
+        "t": 185,
+        "equal": true
+      },
+      {
+        "t": 184,
+        "equal": true
+      },
+      {
+        "t": 183,
+        "equal": true
+      },
+      {
+        "t": 182,
+        "equal": true
+      },
+      {
+        "t": 181,
+        "equal": true
+      },
+      {
+        "t": 180,
+        "equal": true
+      },
+      {
+        "t": 179,
+        "equal": true
+      },
+      {
+        "t": 178,
+        "equal": true
+      },
+      {
+        "t": 178.5,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 180.1,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 181.95,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 186.95,
+        "repeat": true,
+        "equal": true
+      },
+      {
+        "t": 199,
+        "repeat": true,
+        "equal": true
+      }
+    ]
+  },
+  "faceTrack": {
+    "counts": {
+      "rest": 591,
+      "round": 13,
+      "open": 21,
+      "narrow": 33,
+      "labial": 2
+    },
+    "phrasePauseClosed": true,
+    "outsideSpeechClosed": true,
+    "frames": 660
+  },
+  "locality": [
+    {
+      "frame": "t178_7.png",
+      "changedOutsideFaceMasks": 0
+    },
+    {
+      "frame": "t199.png",
+      "changedOutsideFaceMasks": 0
+    }
+  ],
+  "audio": {
+    "passed": true,
+    "aacPeak": 0.5013939142227173,
+    "zeroLagCorrelation": 0.9999657363973241,
+    "stemSumError": 2.384185791015625e-7,
+    "referenceSamples": 1056000,
+    "decodedSamples": 1056768,
+    "events": [
+      {
+        "target": 186.8,
+        "onset": 186.8,
+        "offset": -1.0658141036401503e-14,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 187.57,
+        "onset": 187.57,
+        "offset": 7.105427357601002e-15,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 188.34,
+        "onset": 188.34,
+        "offset": -3.552713678800501e-15,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 189.11,
+        "onset": 189.11,
+        "offset": -1.4210854715202004e-14,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 189.88,
+        "onset": 189.88,
+        "offset": 5.329070518200751e-15,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 190.65,
+        "onset": 190.65,
+        "offset": -5.329070518200751e-15,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 191.42,
+        "onset": 191.42,
+        "offset": 1.2434497875801753e-14,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 192.19,
+        "onset": 192.19,
+        "offset": 1.7763568394002505e-15,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 192.96,
+        "onset": 192.96,
+        "offset": -7.105427357601002e-15,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 193.73,
+        "onset": 193.73,
+        "offset": 1.0658141036401503e-14,
+        "strength": 0.02355232648551464,
+        "passed": true
+      },
+      {
+        "target": 194.5,
+        "onset": 194.5,
+        "offset": 0,
+        "strength": 0.02355232648551464,
+        "passed": true
+      }
+    ],
+    "scope": "technical audio checks, not listening or acting approval"
+  },
+  "reviewUI": {
+    "previous": {
+      "src": "http://127.0.0.1:4262/output/piano_acting_pilot_r1.mp4",
+      "time": 3.9
+    },
+    "current": {
+      "src": "http://127.0.0.1:4262/output/piano_acting_pilot_r2.mp4",
+      "time": 3.9
+    },
+    "range": {
+      "status": 206,
+      "contentRange": "bytes 0-1023/3367072",
+      "bytes": 1024
+    },
+    "errors": [],
+    "passed": true
+  },
+  "scope": "Noa/Selene face refinement in same 22s pilot; full musical and singing pending"
+}

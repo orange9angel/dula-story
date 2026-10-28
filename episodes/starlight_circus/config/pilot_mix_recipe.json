@@ -1,18 +1,107 @@
 {
-  "schema":"cue-audio-mix-v1","timeline":"config/timeline.json",
-  "range":{"start":{"cue":"sing_to_me"},"end":{"cue":"borrow_a_melody","offset":5}},
-  "sampleRate":48000,"outputDirectory":"assets/audio/pilot_r1",
-  "report":"config/pilot_audio_report.json","envelope":"config/pilot_voice_envelope.json",
-  "castingStatus":"Noa A provisionally placed; both candidates retained, no listening approval",
-  "tracks":[
-    {"id":"noa_invitation","source":"assets/audio/voice_auditions/noa_A_quiet.mp3","bus":"dialogue","start":{"cue":"sing_to_me","offset":0.35},"peak":0.50},
-    {"id":"theatre_air","source":"assets/audio/foley/empty_theatre_room_v2.wav","bus":"ambience","kind":"bed","rms":0.003},
-    {"id":"wooden_heartbeat","source":"assets/audio/foley/walnut_single_tap.wav","bus":"foley","sourceOffset":0,"length":1.3,"trimToOnset":true,"peak":0.13,"gain":0.8,"events":[
-      {"cue":"wooden_heartbeat","offset":0.80},{"cue":"wooden_heartbeat","offset":1.57},{"cue":"wooden_heartbeat","offset":2.34},
-      {"cue":"wooden_heartbeat","offset":3.11},{"cue":"wooden_heartbeat","offset":3.88},{"cue":"wooden_heartbeat","offset":4.65},
-      {"cue":"wooden_heartbeat","offset":5.42},{"cue":"wooden_heartbeat","offset":6.19},{"cue":"wooden_heartbeat","offset":6.96},
-      {"cue":"wooden_heartbeat","offset":7.73},{"cue":"wooden_heartbeat","offset":8.50}
-    ]},
-    {"id":"song_instrumental_entry","source":"assets/audio/music/borrow_a_melody/auditions/v1b.mp3","bus":"music","sourceOffset":8,"length":5,"start":{"cue":"borrow_a_melody"},"peak":0.32,"fadeIn":0.65,"fadeOut":0.8,"selection":"temporary entry excerpt, candidate B not approved for full song"}
+  "schema": "cue-audio-mix-v1",
+  "timeline": "config/timeline.json",
+  "range": {
+    "start": {
+      "cue": "sing_to_me"
+    },
+    "end": {
+      "cue": "borrow_a_melody",
+      "offset": 5
+    }
+  },
+  "sampleRate": 48000,
+  "outputDirectory": "assets/audio/pilot_r1",
+  "report": "config/pilot_audio_report.json",
+  "envelope": "config/pilot_voice_envelope.json",
+  "castingStatus": "Noa A selected by user",
+  "tracks": [
+    {
+      "id": "noa_invitation",
+      "source": "assets/audio/voice_auditions/noa_A_quiet.mp3",
+      "bus": "dialogue",
+      "start": {
+        "cue": "sing_to_me",
+        "offset": 0.35
+      },
+      "peak": 0.5
+    },
+    {
+      "id": "theatre_air",
+      "source": "assets/audio/foley/empty_theatre_room_v2.wav",
+      "bus": "ambience",
+      "kind": "bed",
+      "rms": 0.003
+    },
+    {
+      "id": "wooden_heartbeat",
+      "source": "assets/audio/foley/walnut_single_tap.wav",
+      "bus": "foley",
+      "sourceOffset": 0,
+      "length": 1.3,
+      "trimToOnset": true,
+      "peak": 0.13,
+      "gain": 0.8,
+      "events": [
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 0.8
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 1.57
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 2.34
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 3.11
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 3.88
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 4.65
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 5.42
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 6.19
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 6.96
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 7.73
+        },
+        {
+          "cue": "wooden_heartbeat",
+          "offset": 8.5
+        }
+      ]
+    },
+    {
+      "id": "song_instrumental_entry",
+      "source": "assets/audio/music/borrow_a_melody/auditions/v1b.mp3",
+      "bus": "music",
+      "sourceOffset": 8,
+      "length": 5,
+      "start": {
+        "cue": "borrow_a_melody"
+      },
+      "peak": 0.32,
+      "fadeIn": 0.65,
+      "fadeOut": 0.8,
+      "selection": "Source B selected by user; this 5-second pilot entry is not the final 50-second song edit"
+    }
   ]
 }

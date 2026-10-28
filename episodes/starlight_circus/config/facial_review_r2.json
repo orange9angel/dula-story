@@ -1,0 +1,64 @@
+{
+  "scope": {
+    "subjects": [
+      "Noa",
+      "Selene"
+    ],
+    "source": "output/piano_acting_pilot_r2.mp4",
+    "sourceSha256": "399b8dbd201073633ef5f11b86960223590be4ffa3ecc806ca59c9d11bc98f92",
+    "range": [
+      0,
+      22
+    ],
+    "storyOffset": 178,
+    "focus": [
+      "face_structure",
+      "gaze",
+      "expression"
+    ]
+  },
+  "origin": "user_reported: R1 mouth/expression integration feels rough",
+  "observedBaseline": "Noa only has open/closed energy mouth and one abrupt blink donor; Selene remains in one listening face for most of the invitation.",
+  "changes": [
+    "Five authored mouth shapes using final-PCM known-text timing and silence gate",
+    "Asynchronous half/full/open blink exposures",
+    "Listener response keyed to sentence ending and hand contact",
+    "Per-cell same-source similarity registration with local feature masks"
+  ],
+  "results": {
+    "frameEvidence": "Observed round mouth, closed sentence pause, half/full/open eye sequence and listening changes in native crops; stage/feet unchanged in two sampled comparisons.",
+    "remaining": "Limited cels; normal-speed aesthetic review by user pending. Pip and Vesper face assets unchanged this round."
+  },
+  "evidence": [
+    {
+      "file": "storyboard/r1_face_baseline.png",
+      "sha256": "bff90aaf3924533cbc32d42ec50b84fa034615ed69b335ae03c8b8bfbf35a491",
+      "method": "still"
+    },
+    {
+      "file": "storyboard/acting_pilot_r2/noa_blink_sequence.png",
+      "sha256": "530778e9f53b5ee97489f76b3b232a78fafba422dfa3e25aa3985bd6119d0222",
+      "method": "ordered_frames"
+    },
+    {
+      "file": "storyboard/acting_pilot_r2/selene_blink_sequence.png",
+      "sha256": "d1bf9b82fe05118e30e1bf3a39e212bd6d484ce9a2d1474f11eabc21fee8fa4a",
+      "method": "ordered_frames"
+    },
+    {
+      "file": "storyboard/acting_pilot_r2/decoded_pause.png",
+      "sha256": "77fa27ad7e5030b84b04c8681bb31f434c8bd64db878b54bf8e32e83f3898fea",
+      "method": "still"
+    },
+    {
+      "file": "storyboard/acting_pilot_r2/decoded_round_mouth.png",
+      "sha256": "d0330f8659fa4e681627e7f3f86e42683d5acb730dfa23e35c21d358c0dd5f41",
+      "method": "still"
+    },
+    {
+      "file": "storyboard/acting_pilot_r2/t199.png",
+      "sha256": "dab3d289d1d69d1850be84bb4e9a28f8b2bc5a85beb8a1f5c30a76d187cf8453",
+      "method": "still"
+    }
+  ]
+}
