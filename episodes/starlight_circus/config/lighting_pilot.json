@@ -1,0 +1,12 @@
+{
+ "schema":"draw-over-pipeline-v1",
+ "baseUrl":"http://127.0.0.1:4262/",
+ "runtime":{"directory":"assets/draw_over_runtime"},
+ "pilot":{
+  "start":178,"end":200,"fps":30,"width":1280,"height":720,
+  "viewer":"viewer.html?capture=1&format=png&clean=1",
+  "board":"storyboard/lighting_pilot","output":"output/lighting_pilot.mp4","silent":true,
+  "samples":[178,181,184,187,190,194,198],"repeatSamples":[178,187,198],
+  "sourceFiles":["script.story","viewer.js","performance.js","characters/cast.js","scenes/StarlightTheatre.js","config/light_score.json"]
+ }
+}

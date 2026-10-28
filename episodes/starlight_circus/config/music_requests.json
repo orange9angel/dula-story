@@ -1,0 +1,116 @@
+{
+  "episode": "starlight_circus",
+  "source": "script.story is timing authority; planned windows pending song timing review",
+  "songs": [
+    {
+      "id": "applause_machine",
+      "title": "掌声制造机",
+      "story_cue": "applause_machine",
+      "planned_window": [
+        90,
+        150
+      ],
+      "minimum_candidates": 3,
+      "provider": "Suno",
+      "lyrics": "config/songs/applause_machine.lyrics.txt",
+      "style": "config/songs/applause_machine.style.txt",
+      "status": "not_submitted",
+      "selection_status": "unreviewed",
+      "constraints": [
+        "歌词不可改写",
+        "角色分工需听审，提示词不等于已实现",
+        "只剪器乐前后奏，不压缩歌唱音节"
+      ]
+    },
+    {
+      "id": "borrow_a_melody",
+      "title": "借我一小段旋律",
+      "story_cue": "borrow_a_melody",
+      "planned_window": [
+        195,
+        245
+      ],
+      "minimum_candidates": 3,
+      "provider": "Suno",
+      "lyrics": "config/songs/borrow_a_melody.lyrics.txt",
+      "style": "config/songs/borrow_a_melody.style.txt",
+      "status": "four_generated_three_downloaded",
+      "selection_status": "not_selected",
+      "constraints": [
+        "歌词不可改写",
+        "角色分工需听审，提示词不等于已实现",
+        "只剪器乐前后奏，不压缩歌唱音节"
+      ],
+      "candidates": [
+        {
+          "variant": "v1",
+          "file": "assets/audio/music/borrow_a_melody/auditions/v1.mp3",
+          "duration": 69.88,
+          "actual_format": "mp3",
+          "source_sha256": "e76e8b031ca0d1c74358a145d7b37981e124e2e2876c52a0529c37abbb2c25e6",
+          "sha256": "6fd5ea25800ffe67f47dedc7e4b99ffcc935d97c85b23b1f877706bcc94ce530",
+          "status": "candidate_not_listening_approved"
+        },
+        {
+          "variant": "v1b",
+          "file": "assets/audio/music/borrow_a_melody/auditions/v1b.mp3",
+          "duration": 64.96,
+          "actual_format": "mp3",
+          "source_sha256": "111a550731fb5510ffb9abb399fd739a92d4b68b8b6f9e3a4f905373cb0dd386",
+          "sha256": "ecd5769ee6df9b748b3721cf151c62a57e4dc5134aa564364dc434b1fa716c92",
+          "status": "candidate_not_listening_approved"
+        },
+        {
+          "variant": "v2",
+          "file": "assets/audio/music/borrow_a_melody/auditions/v2.mp3",
+          "duration": 82.48,
+          "actual_format": "mp3",
+          "source_sha256": "69eff8bde8e7956373138cf0e92db55c5c38b73b20072883ab99d148efc36238",
+          "sha256": "6eeecb63888bf3610b3530d23630a5d57b3c207ebd85308a22aa078c50fa2912",
+          "status": "candidate_not_listening_approved"
+        }
+      ],
+      "timing_status": "source duration exceeds 50s nominal window; vocal spans must be checked before editing"
+    },
+    {
+      "id": "return_my_name",
+      "title": "请把名字还给我",
+      "story_cue": "return_my_name",
+      "planned_window": [
+        300,
+        365
+      ],
+      "minimum_candidates": 3,
+      "provider": "Suno",
+      "lyrics": "config/songs/return_my_name.lyrics.txt",
+      "style": "config/songs/return_my_name.style.txt",
+      "status": "not_submitted",
+      "selection_status": "unreviewed",
+      "constraints": [
+        "歌词不可改写",
+        "角色分工需听审，提示词不等于已实现",
+        "只剪器乐前后奏，不压缩歌唱音节"
+      ]
+    },
+    {
+      "id": "let_stars_hear",
+      "title": "让星星听见我们",
+      "story_cue": "let_stars_hear",
+      "planned_window": [
+        440,
+        525
+      ],
+      "minimum_candidates": 3,
+      "provider": "Suno",
+      "lyrics": "config/songs/let_stars_hear.lyrics.txt",
+      "style": "config/songs/let_stars_hear.style.txt",
+      "status": "not_submitted",
+      "selection_status": "unreviewed",
+      "constraints": [
+        "歌词不可改写",
+        "角色分工需听审，提示词不等于已实现",
+        "只剪器乐前后奏，不压缩歌唱音节"
+      ]
+    }
+  ]
+}

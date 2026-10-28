@@ -1,0 +1,47 @@
+{
+    "schema":  "draw-over-pipeline-v1",
+    "baseUrl":  "http://127.0.0.1:4262/",
+    "runtime":  {
+                    "directory":  "assets/draw_over_runtime"
+                },
+    "source":  {
+                   "video":  "output/spatial_lighting_pilot.mp4",
+                   "sha256":  "ef47d7268831a91aa8536bb358df9b0fd126333f8666dcf855b58324def56280"
+               },
+    "pilot":  {
+                  "start":  178,
+                  "end":  200,
+                  "fps":  30,
+                  "width":  1280,
+                  "height":  720,
+                  "viewer":  "hybrid/light_study.html?capture=1",
+                  "board":  "storyboard/painted_lighting_pilot",
+                  "output":  "output/painted_lighting_study.mp4",
+                  "silent":  true,
+                  "samples":  [
+                                  178,
+                                  181,
+                                  184,
+                                  187,
+                                  190,
+                                  194,
+                                  198,
+                                  199
+                              ],
+                  "repeatSamples":  [
+                                        178,
+                                        187,
+                                        198
+                                    ],
+                  "hashEvery":  30,
+                  "sourceFiles":  [
+                                      "script.story",
+                                      "hybrid/light_study.js",
+                                      "hybrid/light_study.html",
+                                      "config/light_score.json"
+                                  ],
+                  "assetDirectories":  [
+                                           "hybrid/assets"
+                                       ]
+              }
+}

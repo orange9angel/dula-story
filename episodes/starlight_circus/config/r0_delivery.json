@@ -1,0 +1,151 @@
+{
+  "status": "technical_lighting_test_passed",
+  "duration": 22,
+  "decoded_frames": 660,
+  "expected_frames": 660,
+  "regions": {
+    "noa_face": {
+      "roi": [
+        545,
+        160,
+        590,
+        205
+      ],
+      "dim_rgb": [
+        72.672,
+        44.557,
+        39.552
+      ],
+      "warm_rgb": [
+        135.562,
+        68.068,
+        35.949
+      ],
+      "mean_gain": 1.5281,
+      "red_over_blue_gain": 2.0524
+    },
+    "selene_face": {
+      "roi": [
+        730,
+        154,
+        774,
+        198
+      ],
+      "dim_rgb": [
+        100.285,
+        79.308,
+        86.305
+      ],
+      "warm_rgb": [
+        182.143,
+        113.634,
+        75.906
+      ],
+      "mean_gain": 1.3978,
+      "red_over_blue_gain": 2.0651
+    },
+    "pip_wood_face": {
+      "roi": [
+        328,
+        327,
+        371,
+        366
+      ],
+      "dim_rgb": [
+        75.785,
+        41.116,
+        26.329
+      ],
+      "warm_rgb": [
+        129.42,
+        59.453,
+        22.122
+      ],
+      "mean_gain": 1.4731,
+      "red_over_blue_gain": 2.0325
+    },
+    "selene_dress": {
+      "roi": [
+        720,
+        370,
+        785,
+        480
+      ],
+      "dim_rgb": [
+        10.502,
+        27.842,
+        44.502
+      ],
+      "warm_rgb": [
+        22.649,
+        37.402,
+        41.778
+      ],
+      "mean_gain": 1.2291,
+      "red_over_blue_gain": 2.2972
+    },
+    "floor": {
+      "roi": [
+        350,
+        585,
+        440,
+        615
+      ],
+      "dim_rgb": [
+        91.454,
+        71.522,
+        77.681
+      ],
+      "warm_rgb": [
+        197.369,
+        120.194,
+        64.553
+      ],
+      "mean_gain": 1.5878,
+      "red_over_blue_gain": 2.597
+    },
+    "piano_keys": {
+      "roi": [
+        1012,
+        378,
+        1180,
+        399
+      ],
+      "dim_rgb": [
+        71.225,
+        57.647,
+        57.88
+      ],
+      "warm_rgb": [
+        119.243,
+        79.451,
+        47.64
+      ],
+      "mean_gain": 1.319,
+      "red_over_blue_gain": 2.0341
+    }
+  },
+  "max_adjacent_mean_luma_change_8bit": 0.28229166666666666,
+  "hard_jump_threshold": 12,
+  "no_hard_luminance_jump": true,
+  "source_sha256": "6ba228153bb8ad76f9cf68b6651e39b3e86ef617d2a9000c364407ba2141fe4e",
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "nb_frames": "660"
+      }
+    ],
+    "format": {
+      "duration": "22.000000"
+    }
+  },
+  "visual_review": "Viewed whole-frame images at 178,184,199 seconds. The warmth change reaches faces, fabric, floor and piano together. Not a normal-speed acting or sound review.",
+  "scope": "fixed camera and pose; painting retains one geometric source. No walking, changing shadows or singing validated."
+}

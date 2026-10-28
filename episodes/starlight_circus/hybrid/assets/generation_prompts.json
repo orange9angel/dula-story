@@ -1,0 +1,19 @@
+{
+  "provider": "built-in image_gen",
+  "master": {
+    "file": "piano_master_v1.png",
+    "input": "../../storyboard/spatial_first/pilot_190.jpg",
+    "prompt_specification": "Original hand-painted fantasy theatre musical. Preserve blocking/camera/contact from the 3D reference, replace rough actors with Noa (adult, brown curls, teal cloak, copper bell), Selene (adult, silver bun, peacock-blue gown), Pip (walnut puppet, red coat, blue bowtie, brass joints), Vesper (black-purple tailcoat, gold mask, silver gloves, cane). Integrate brushwork, perspective, ambient occlusion, floor contact shadows and shared upper-left amber light across faces, clothes, velvet theatre, piano and wooden floor. No text/UI, snow or ice; no particle effects painted into the master."
+  },
+  "final_master": {
+    "file": "piano_master_v2.png",
+    "input": "piano_master_v1.png",
+    "prompt": "Use case: precise-object-edit. Edit this exact frame with ONE localized correction only. Preserve the whole theatre, camera, image dimensions, every adult character, all poses, the women's joined hands, clothing, floor shadows, composition, brushwork, warm light and colors exactly as they are. Change ONLY the small puppet boy Pip's head, face, ears and exposed wooden hands (the small character at left in red coat, blue bowtie, brass knees). He must unmistakably be a beautifully carved WALNUT-WOOD MARIONETTE, not a human child with jointed legs: warm medium walnut-brown varnished wood, clearly visible fine natural wood grain following cheek and forehead contours, subtle carved jaw hinge seams at both corners of his mouth, wooden ears and articulated walnut finger segments with tiny brass pin joints. Keep his existing joyful listening expression, gaze toward the women, hairstyle silhouette, face proportions, warm highlight direction, red coat and blue bowtie, and hand-on-chest pose. The wood shading receives EXACTLY the same amber spotlight and cool ambient fill as the rest of this painting. Avoid grotesque facial cracks or horror; he is tender and expressive. No other edits, no text."
+  },
+  "dim_endpoint": {
+    "file": "piano_dim_v1.png",
+    "input": "piano_master_v2.png",
+    "prompt": "Use case: lighting-weather edit. Create the DIM / COOL LIGHTING ENDPOINT of this exact theatre painting for an animation lighting study. Keep EVERY pixel-level shape, edge, face, pose, hand contact, hair strand, fabric fold, puppet wood grain, piano, camera, composition, object count and image size unchanged as much as possible. No new objects or marks. Only lighting changes. The warm amber key spotlight from upper left is now at roughly 18 percent of its current brightness; the warm beam in the air becomes faint. Cool muted moon-blue ambient fill now sets the mood, while the same characters, floor, curtain and piano all darken together according to their surfaces. Noa's face, cream blouse and cloak lose the strong warm highlights; Selene's face and shoulder become quiet pale cool-blue with readable midtones, her dress stays peacock-blue; Pip remains a walnut wooden puppet with warm local wood color under cool light. The wooden floor's bright golden pool loses intensity, warm reflections on piano keys/brass rim and the left ringmaster fall off at the same time. Existing shadow directions stay exactly the same and contact shadows remain attached to shoes, hem and piano legs. Preserve all painted detail, restrained theatrical contrast, legible expressions, saturated local costume colors and deep velvet shadows; do NOT simply put one flat blue filter over the image, do NOT turn all colors monochrome. This is the intimate uncertain moment just before the shared warm spotlight returns. No snow, no mist cloud additions, no text, no change to the people's anatomy or facial expressions."
+  },
+  "acceptance": "Static visual study reviewed by current agent; no user aesthetic approval or final animation approval recorded."
+}

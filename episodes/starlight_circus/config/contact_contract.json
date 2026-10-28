@@ -1,0 +1,10 @@
+{
+ "status":"pilot_only_full_episode_gate_not_configured",
+ "scope":"178–200s piano trio spatial rehearsal. No full-episode collision or final-art contact claim.",
+ "fps_min":30,
+ "pose_tick_hz":30,
+ "evidence":"storyboard/pilot_contacts_r2/trace.json",
+ "covered":["660 consecutive samples","finite arm reach below 1","constant wrist spacing during held contact","seven sequential/direct numeric comparisons"],
+ "not_covered":["final painted fingertip contact","skirt/hand mesh collisions","rescue chain","stage tilt","dance footsteps","baton transfer"],
+ "full_gate_required_before_delivery":true
+}

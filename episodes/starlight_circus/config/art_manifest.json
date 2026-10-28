@@ -1,0 +1,27 @@
+{
+  "assets": [
+    {
+      "file": "hybrid/assets/piano_dim_v1.png",
+      "sha256": "4be2736984d1affb5cbc875ad94a392a7048e5351166d4c2bc978f56880bfb82",
+      "provider": "built-in image_gen",
+      "role": "lighting_endpoint",
+      "status": "agent_reviewed_static_only"
+    },
+    {
+      "file": "hybrid/assets/piano_master_v1.png",
+      "sha256": "b0d76ab510d506a5985a2572a02c4b588fac944440533673461a5d7934f09537",
+      "provider": "built-in image_gen",
+      "role": "rejected_puppet_material_master",
+      "status": "superseded"
+    },
+    {
+      "file": "hybrid/assets/piano_master_v2.png",
+      "sha256": "9e2360066a597f5f529447e41f7caa9eaab0ee37731eebd2f9449d1402e8c808",
+      "provider": "built-in image_gen",
+      "role": "static_art_direction_master",
+      "status": "agent_reviewed_static_only"
+    }
+  ],
+  "prompts": "hybrid/assets/generation_prompts.json",
+  "scope": "Static look development and fixed-pose lighting study; final acting pending."
+}

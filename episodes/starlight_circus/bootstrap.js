@@ -1,0 +1,10 @@
+import {registerAll} from 'dula-assets';
+import {registerScene,registerCharacter} from 'dula-engine';
+import {StarlightTheatre} from './scenes/StarlightTheatre.js';
+import {Noa,Pip,Selene,Vesper} from './characters/cast.js';
+registerAll();
+registerScene('StarlightTheatre',StarlightTheatre);
+registerCharacter('Noa',Noa);
+registerCharacter('Pip',Pip);
+registerCharacter('Selene',Selene);
+registerCharacter('Vesper',Vesper);

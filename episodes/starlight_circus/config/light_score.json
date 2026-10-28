@@ -1,0 +1,23 @@
+{
+ "lights":{
+  "key":[
+   {"at":{"cue":"empty_theatre"},"value":{"intensity":40,"color":[1,0.72,0.43],"target":[0,0.9,-0.5]}},
+   {"at":{"cue":"approach_piano"},"duration":4,"value":{"intensity":24,"color":[0.65,0.74,1],"target":[1.4,0.8,-0.3]}},
+   {"at":{"cue":"sing_to_me"},"duration":8,"value":{"intensity":56,"color":[1,0.72,0.43],"target":[1.2,0.8,-0.2]}},
+   {"at":{"cue":"borrow_a_melody"},"duration":4,"value":{"intensity":68,"color":[1,0.77,0.52],"target":[1.2,0.8,-0.2]}},
+   {"at":{"cue":"break_string"},"duration":0.5,"value":{"intensity":14,"color":[0.6,0.72,1],"target":[0,0.7,0]}},
+   {"at":{"cue":"first_own_words"},"duration":5,"value":{"intensity":32,"color":[1,0.81,0.64],"target":[1,1,0]}},
+   {"at":{"cue":"let_stars_hear"},"duration":12,"value":{"intensity":78,"color":[1,0.8,0.59],"target":[0,1,-0.3]}}
+  ],
+  "ringLight":[
+   {"at":{"cue":"empty_theatre"},"value":{"intensity":3}},
+   {"at":{"cue":"applause_machine"},"duration":5,"value":{"intensity":16}},
+   {"at":{"cue":"approach_piano"},"duration":2,"value":{"intensity":1.5}},
+   {"at":{"cue":"wooden_heartbeat"},"duration":5,"value":{"intensity":4.5}},
+   {"at":{"cue":"break_string"},"duration":0.4,"value":{"intensity":0.1}},
+   {"at":{"cue":"let_stars_hear"},"duration":18,"value":{"intensity":26}}
+  ]
+ },
+ "receivers":["Noa","Pip","Selene","Vesper","floor","piano","curtains","props"],
+ "render_requirement":"All visible receiver materials respond to shared world lights; painted receiver integration is pending actual pixel review."
+}
