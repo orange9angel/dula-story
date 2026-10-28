@@ -90,6 +90,90 @@
       "provider": "built-in image_gen",
       "role": "R2 local face cels",
       "status": "agent_reviewed_native_frame_samples; user aesthetic review pending"
+    },
+    {
+      "file": "hybrid/assets/piano_underlay_r3.png",
+      "sha256": "bae502bf205229bf51a314a27da46b0e9b695bed71885959df9f9ad4b9ea67f9",
+      "provider": "built-in image_gen",
+      "role": "R3 region-limited clean underlay",
+      "status": "adopted_under_moving_limbs; encoded_frame_samples_reviewed"
+    },
+    {
+      "file": "hybrid/assets/piano_underlay_cuff_r3.png",
+      "sha256": "2ebbd50c6e70dbb048af22b7d6b5982faa6f388778d735e2ce70f65e8e77949d",
+      "provider": "built-in image_gen",
+      "role": "R3 experimental cuff removal",
+      "status": "rejected_for_final_R3"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/clear_all.png",
+      "sha256": "31ae486dff7c609abf7fcd72460cd4dfb99381ddebf4eb833d370985fc5311c8",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/noaCape.png",
+      "sha256": "c8078e0f4fc49c1abbe7abc7cd1ab3d625b63b41243d3406249a58b4799f6224",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/noaMic.png",
+      "sha256": "73d884f9808e22cc8e980e0589f9021b50a4ddcb67b05a5098449926333c7163",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/noaOffer.png",
+      "sha256": "2e7ac50b477808d95725c256a12d218f1859a07ff4836072a55cc9460a57b976",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/pipForearm.png",
+      "sha256": "5007a8a1f84fdeba737078d616bef213acd522110c05c9db2a2ee4345ccc3b29",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/seleneErase.png",
+      "sha256": "a6a775cd581d39bd8899ab35c064fbe70ebd5ccac09fe067cdb740c12a95ec30",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/seleneForearm.png",
+      "sha256": "ed13f2ae9cbc3f6be5dd338773587aea4d9c53a93f2a8ec7134fc97855dd888e",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/seleneHand.png",
+      "sha256": "13bffd7f5719590590673dfa075ec75eb706731d74b4511ccb83fe53c5926127",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/seleneSleeve.png",
+      "sha256": "a2b0a004ae6b1479c2022db009cf3dad31e24e6d5fba47828d6f925880ddf178",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
+    },
+    {
+      "file": "hybrid/assets/rig_masks_r3/seleneUpper.png",
+      "sha256": "beb1d394db5baf73fb43e34cbd46b453643b692f8c259b3252de763d5ed46431",
+      "provider": "explicit-seed GrabCut alpha matting; source RGB untouched",
+      "role": "R3 part matte or conservative old-silhouette erase mask",
+      "status": "rebuild_identical; native_crop_reviewed; not anatomy certification"
     }
   ],
   "prompts": "hybrid/assets/generation_prompts.json",

@@ -1,0 +1,27 @@
+{
+  "status": "22_second_r3_exported_and_native_ordered_frames_reviewed",
+  "trigger": "User reports blink/chest-tap deformation and other unsmooth actions in R2",
+  "route": "Bounded articulated 2D layers and fixed-eye-lid rig; same-source arm/hand/microphone cutouts plus clean underlay. No interpolation between incompatible face or jacket drawings.",
+  "reference": "draw-over-animation/references/region-guided-redraw.md and direct-animation-craft/references/motion-principles-recipes.md",
+  "retain": [
+    "Noa A voice",
+    "song B",
+    "same 22-second window",
+    "shared theatrical lighting",
+    "actual blinks",
+    "wooden chest taps",
+    "microphone lowering",
+    "two-person hand contact"
+  ],
+  "observed": [
+    "Pip chest-tap cels alter the jacket/buttons and jump hand position",
+    "Noa microphone lowering uses only three brief pose substitutions",
+    "R2 blink donors also replace orbital skin, with per-cell registration differences",
+    "Selene reach changes most of the arm/head in one step"
+  ],
+  "verification": "Compare ordered native-region frames for each complete action and full-frame result; deterministic and audio checks remain separate from visual judgement",
+  "limits": "A fixed-view 2D articulation study, not a general 3D rig or finished full musical",
+  "output": "output/piano_acting_pilot_r3.mp4",
+  "review": "config/motion_review_r3.json",
+  "normalSpeedAestheticStatus": "not_approved"
+}

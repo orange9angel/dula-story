@@ -1,0 +1,234 @@
+{
+  "source": "output/piano_acting_pilot_r3.mp4",
+  "sha256": "844bca8e813088f290e62188f540a384aca199d4a466abe8cfe22e958052bcce",
+  "baseline": "output/piano_acting_pilot_r2.mp4",
+  "baselineSha256": "399b8dbd201073633ef5f11b86960223590be4ffa3ecc806ca59c9d11bc98f92",
+  "storyRange": [
+    178,
+    200
+  ],
+  "fps": 30,
+  "observedMethod": "ordered native-resolution crops decoded from final video; selected full frames; no realtime playback or new listening claimed",
+  "userFeedback": "眨眼，拍胸脯，都有变形，其它动作也不流畅",
+  "route": "bounded same-source articulated parts and fixed-eye lids",
+  "issues": [
+    {
+      "subject": "Noa",
+      "origin": "user_reported",
+      "fact": "R2 blink replaces orbital skin; lowering microphone jumps between three incompatible cels.",
+      "change": "Original eye pixels clipped by two converging eyelids; bare forearm/hand/mic rigidly rotate at cuff opening; lower after dialogue, 182.38?183.50s.",
+      "observed": "Near/far eyes both close and reopen without changing nose, brow or hair. Full arm silhouette now connects sleeve to gripping hand throughout sampled lowering; cuff stays attached.",
+      "status": "revised_and_observed_in_ordered_frames; normal-speed naturality not approved"
+    },
+    {
+      "subject": "Pip",
+      "origin": "user_reported",
+      "fact": "R2 chest tap cels also change red coat and button positions.",
+      "change": "Same source wood hand/forearm hinge about original brass elbow with preparation, contact and recoil at all 11 accepted Foley times.",
+      "observed": "First and late tap cycles retain finger grouping and coat/buttons; sampled hand path has small intermediate changes rather than cel jumps.",
+      "status": "revised_and_observed_in_ordered_frames; finite small hinge action"
+    },
+    {
+      "subject": "Selene",
+      "origin": "user_reported/general unsmooth action",
+      "fact": "R2 arm changes from chest to near-contact largely in one pose switch.",
+      "change": "Depth-aware two-bone reach, source limb textures, unscaled hand; original gaze maintained toward Noa.",
+      "observed": "Hand passes down from sternum then reaches Noa continuously in native ordered crops; no old sternum hand remains. Blue sleeve covers shoulder join. Final palm centers are close, but marker proximity alone is not a surface-contact proof.",
+      "status": "revised_and_observed_in_ordered_frames; foreshortening/upper-body acting remain limited"
+    },
+    {
+      "subject": "Vesper",
+      "origin": "scope_record",
+      "fact": "Visible background figure has no new action in this window.",
+      "change": "None",
+      "observed": "Full frame retains source posture, silhouette and cane.",
+      "status": "unchanged; no new facial acting evaluated"
+    }
+  ],
+  "internalRejected": [
+    {
+      "file": "output/piano_acting_pilot_r3_rejected_thin_arm.mp4",
+      "sha256": "31e01f17a44c9031136382125243d46c25a9033297a880ca418344b44f6a6c89",
+      "reason": "First encoded R3 had a narrow forearm matte and far eye not fully closed; excluded from review page"
+    },
+    {
+      "files": [
+        "hybrid/assets/piano_underlay_cuff_r3.png",
+        "storyboard/r3_diagnosis/t186_1_hands_latest.png"
+      ],
+      "reason": "Rotating the entire rolled cuff detached it from upper arm; rejected. Source cuff remains static in final."
+    }
+  ],
+  "miss": "R2 native mouth/blink samples and deterministic checks did not cover changing eye socket shape, coat/buttons, whole mic action or reach transition. User found these after delivery; historical R2 records retained.",
+  "technicalEvidence": [
+    "storyboard/acting_pilot_r3/determinism.json",
+    "config/motion_qc_r3.json",
+    "config/pilot_encoded_audio_qc_r3.json",
+    "config/audio_preservation_r3.json",
+    "config/review_ui_qc_r3.json",
+    "config/mask_rebuild_qc_r3.json"
+  ],
+  "evidence": [
+    {
+      "path": "storyboard/acting_pilot_r3/decoded_review/noa_blink.jpg",
+      "sha256": "2e161d6dfaca721ab21e1504a1cce8178706627d092d761f7a56ba974de87742",
+      "at": [
+        181.8,
+        181.83333333333334,
+        181.86666666666667,
+        181.9,
+        181.93333333333334,
+        181.96666666666667,
+        182.0,
+        182.03333333333333,
+        182.06666666666666,
+        182.1
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "storyboard/acting_pilot_r3/decoded_review/selene_blink.jpg",
+      "sha256": "ba751d07e0a6642c0e881909411a3ba5ddacae15cb2eead2191937239f8a823f",
+      "at": [
+        179.8,
+        179.83333333333334,
+        179.86666666666667,
+        179.9,
+        179.93333333333334,
+        179.96666666666667,
+        180.0,
+        180.03333333333333,
+        180.06666666666666,
+        180.1
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "storyboard/acting_pilot_r3/decoded_review/mic_lower.jpg",
+      "sha256": "fb23f92214b51a89e6fe4256eb004334a701bf999664e817634338a98732504d",
+      "at": [
+        182.33333333333334,
+        182.4,
+        182.46666666666667,
+        182.53333333333333,
+        182.6,
+        182.66666666666666,
+        182.73333333333332,
+        182.8,
+        182.86666666666667,
+        182.93333333333334,
+        183.0,
+        183.06666666666666,
+        183.13333333333333,
+        183.2,
+        183.26666666666668,
+        183.33333333333334,
+        183.4,
+        183.46666666666667,
+        183.53333333333333
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "storyboard/acting_pilot_r3/decoded_review/pip_first_tap.jpg",
+      "sha256": "d4738c70754572650f98bacef6c82c2770b330392113b1b83273d534ab349561",
+      "at": [
+        186.5,
+        186.53333333333333,
+        186.56666666666666,
+        186.6,
+        186.63333333333333,
+        186.66666666666666,
+        186.7,
+        186.73333333333332,
+        186.76666666666668,
+        186.8,
+        186.83333333333334,
+        186.86666666666667,
+        186.9,
+        186.93333333333334,
+        186.96666666666667,
+        187.0,
+        187.03333333333333,
+        187.06666666666666,
+        187.1,
+        187.13333333333333,
+        187.16666666666666
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "storyboard/acting_pilot_r3/decoded_review/pip_late_tap.jpg",
+      "sha256": "ca3d289a19b435e885c37dd8f4482920ad524892f79860cd635da6613e233478",
+      "at": [
+        194.23333333333335,
+        194.26666666666665,
+        194.3,
+        194.33333333333334,
+        194.36666666666667,
+        194.4,
+        194.43333333333334,
+        194.46666666666667,
+        194.5,
+        194.53333333333333,
+        194.56666666666666,
+        194.6,
+        194.63333333333333,
+        194.66666666666666,
+        194.7,
+        194.73333333333335
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "storyboard/acting_pilot_r3/decoded_review/selene_reach.jpg",
+      "sha256": "b6d33f9a825f498e3479a473abc7bc3f86142da875b1e83473be00df3529b36a",
+      "at": [
+        184.63333333333333,
+        184.7,
+        184.76666666666668,
+        184.83333333333334,
+        184.9,
+        184.96666666666667,
+        185.03333333333333,
+        185.1,
+        185.16666666666666,
+        185.23333333333332,
+        185.3,
+        185.36666666666667,
+        185.43333333333334,
+        185.5,
+        185.56666666666666,
+        185.63333333333333,
+        185.7,
+        185.76666666666668,
+        185.83333333333334,
+        185.9,
+        185.96666666666667,
+        186.03333333333333,
+        186.1,
+        186.16666666666666
+      ],
+      "method": "ordered_frames"
+    },
+    {
+      "path": "storyboard/acting_pilot_r3/decoded_review/full_pose.jpg",
+      "sha256": "530c872a1dff41f964cc571d4f4ed9f05fc41a84f8cc4fedc2e388b4cbcdd455",
+      "at": [
+        178.0,
+        183.5,
+        186.1,
+        194.8,
+        199.0
+      ],
+      "method": "ordered_frames"
+    }
+  ],
+  "limits": [
+    "22-second fixed-camera limited animation, not a finished 570-second musical",
+    "Torso, head and cloth follow-through remain restrained/static; no new whole-body acting",
+    "R2 changing brow/gaze donors removed rather than reused; richer listener expression remains to be authored",
+    "Same lighting score and approximate moving-part gains, not physical moving shadows",
+    "No realtime aesthetic or new audio-listening approval; current frame evidence supports local improvements only"
+  ]
+}

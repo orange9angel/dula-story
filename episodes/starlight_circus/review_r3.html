@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>星辰马戏团 · 动作修订 R3</title>
+<style>body{margin:0;background:#14121b;color:#eee2cd;font:16px/1.8 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1100px;margin:36px auto;padding:0 24px}h1{font-size:30px;font-weight:500}p{color:#c5b6c0}video,canvas{display:block;width:100%;background:#080810;border-radius:6px}a{color:#e8ba76}button,select{background:#4d3540;color:#fff0d3;border:1px solid #8b6a67;padding:8px 12px;border-radius:5px;cursor:pointer;margin:4px}small{color:#ad9aa9}.tools{margin:15px 0}canvas{max-width:900px;margin:auto}output{color:#e8ba76}</style></head>
+<body><main><small>STARLIGHT CIRCUS · 22 秒动作修订 R3</small><h1>让动作连起来，让人物留在同一张画里</h1>
+<p>这次集中修眨眼、匹普拍胸脯、诺娅放下麦克风，以及塞蕾娜伸手回应。保留诺娅 A 声线和 B 版歌曲；人物与舞台继续一起由暗转暖。</p>
+<video id="current" src="output/piano_acting_pilot_r3.mp4" controls playsinline preload="auto"></video>
+<div class="tools"><button id="toggle">对照旧版 R2</button><label>速度 <select id="speed"><option value="1">正常</option><option value="0.5">0.5 倍</option><option value="0.25">0.25 倍</option></select></label><button id="back">退一帧</button><button id="next">进一帧</button> <output id="revision">正在看 R3</output></div>
+<div class="tools"><button data-time="3.75" data-region="faces">看眨眼</button><button data-time="4.3" data-region="mic">看放麦</button><button data-time="6.6" data-region="reach">看伸手</button><button data-time="8.5" data-region="pip">看拍胸脯</button></div>
+<p>下方随视频放大同一时刻的局部：<select id="region"><option value="faces">两人眼部</option><option value="mic">手肘、袖口与麦克风</option><option value="reach">伸手与接触</option><option value="pip">匹普的手与衣服</option></select></p>
+<canvas id="detail" width="1000" height="480"></canvas>
+<p><a href="output/piano_acting_pilot_r3.mp4" download>下载 R3 视频</a> · <a href="hybrid/acting_pilot_r3.html">可拖动预览</a> · <a href="review_r2.html">R2 页面</a></p>
+<p>目前仍是钢琴旁的 22 秒有限动画试片。已检查编码后的连续裁区帧；整部音乐剧和完整唱段尚未完成。</p></main>
+<script>
+const video=document.querySelector('#current'),canvas=document.querySelector('#detail'),g=canvas.getContext('2d'),region=document.querySelector('#region'),speed=document.querySelector('#speed');let revision=3;
+const regions={faces:[548,164,226,54],mic:[480,240,136,115],reach:[605,201,175,124],pip:[329,380,80,68]};
+document.querySelector('#toggle').onclick=()=>{const t=video.currentTime,playing=!video.paused;video.pause();revision=revision===3?2:3;video.addEventListener('loadedmetadata',()=>{video.currentTime=t;video.playbackRate=Number(speed.value);if(playing)video.play();},{once:true});video.src=`output/piano_acting_pilot_r${revision}.mp4`;document.querySelector('#toggle').textContent=revision===3?'对照旧版 R2':'回到新版 R3';document.querySelector('#revision').textContent=`正在看 R${revision}`;};
+speed.onchange=()=>video.playbackRate=Number(speed.value);
+for(const b of document.querySelectorAll('[data-time]'))b.onclick=()=>{video.pause();video.currentTime=Number(b.dataset.time);region.value=b.dataset.region;};
+document.querySelector('#back').onclick=()=>{video.pause();video.currentTime=Math.max(0,video.currentTime-1/30);};document.querySelector('#next').onclick=()=>{video.pause();video.currentTime=Math.min(21.966667,video.currentTime+1/30);};
+function draw(){if(video.readyState>=2){const r=regions[region.value];g.fillStyle='#080810';g.fillRect(0,0,canvas.width,canvas.height);const s=Math.min(canvas.width/r[2],canvas.height/r[3]),w=r[2]*s,h=r[3]*s;g.drawImage(video,...r,(canvas.width-w)/2,(canvas.height-h)/2,w,h);}requestAnimationFrame(draw);}draw();
+</script></body></html>

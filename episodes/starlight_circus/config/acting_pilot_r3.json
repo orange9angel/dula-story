@@ -1,0 +1,74 @@
+{
+  "schema": "draw-over-pipeline-v1",
+  "baseUrl": "http://127.0.0.1:4262/",
+  "runtime": {
+    "directory": "assets/draw_over_runtime"
+  },
+  "source": {
+    "video": "output/piano_acting_pilot_r2.mp4",
+    "sha256": "399b8dbd201073633ef5f11b86960223590be4ffa3ecc806ca59c9d11bc98f92"
+  },
+  "pilot": {
+    "start": 178,
+    "end": 200,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "viewer": "hybrid/acting_pilot_r3.html?capture=1",
+    "board": "storyboard/acting_pilot_r3",
+    "output": "output/piano_acting_pilot_r3.mp4",
+    "audio": "assets/audio/pilot_r1/mixed.wav",
+    "audioOffset": 0,
+    "settleBeforeCapture": true,
+    "samples": [
+      178,
+      178.7,
+      179.9,
+      180.2,
+      180.5,
+      180.85,
+      181.9,
+      181.95,
+      182.03,
+      182.4,
+      182.7,
+      183,
+      183.25,
+      183.5,
+      184.65,
+      185,
+      185.35,
+      185.7,
+      186.1,
+      186.55,
+      186.666667,
+      186.8,
+      187,
+      194,
+      199
+    ],
+    "repeatSamples": [
+      178,
+      180.5,
+      181.95,
+      185.35,
+      186.8,
+      199
+    ],
+    "hashEvery": 30,
+    "sourceFiles": [
+      "script.story",
+      "hybrid/acting_pilot_r3.js",
+      "config/part_rig_r3.json",
+      "config/pilot_dialogue_alignment.json",
+      "config/light_score.json",
+      "config/pilot_mix_recipe.json",
+      "hybrid/acting_pilot_r3.html",
+      "config/face_registration_r2.json"
+    ],
+    "assetDirectories": [
+      "hybrid/assets",
+      "hybrid/assets/rig_masks_r3"
+    ]
+  }
+}

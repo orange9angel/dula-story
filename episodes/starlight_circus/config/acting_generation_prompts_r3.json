@@ -1,0 +1,29 @@
+{
+  "episode": "starlight_circus",
+  "revision": "R3",
+  "provider": "built-in image_gen",
+  "requests": [
+    {
+      "file": "hybrid/assets/piano_underlay_r3.png",
+      "prompt": "Edit target: this exact theatre painting. This is a production CLEAN UNDERLAY for a layered 2D animation rig, not a final pose. Keep the exact camera, framing, whole stage, floor, piano, all heads/faces/hair, feet, skirts, all clothing silhouettes, light and brushwork. Remove ONLY four foreground moving limb elements, painting the hidden fabric/background cleanly underneath: (1) Noa's bare forearm, gripping hand and microphone on viewer LEFT, from the rolled cream sleeve at her elbow up to the microphone; preserve the entire rolled sleeve and upper arm. Reveal the cream blouse, teal cloak and brown skirt that were behind her forearm/microphone, with continuous existing folds. (2) Noa's offered bare forearm and open palm on viewer RIGHT, from the end of that cream sleeve toward Selene; retain the sleeve and reveal the velvet curtain behind it. (3) wooden puppet Pip's bent walnut forearm and wooden hand currently touching his chest, on viewer RIGHT, from the brass elbow to the hand; preserve the brass elbow, upper red sleeve, bowtie and coat silhouette. Reveal his red waistcoat, white shirt and the gold buttons behind his hand, matching the existing jacket. (4) Selene's inner bare arm and hand, the arm touching her sternum on viewer LEFT, from the edge of her peacock-blue sleeve/frill down through the elbow and up to the hand. Keep the blue shoulder frill and bodice edges; reveal continuous peacock-blue embroidered bodice fabric and the velvet curtain where this arm was in front. Do NOT add replacement arms or hands, do not move these people, do not change torso shapes, faces, expressions or identities. The removed parts will be restored as animated layers. No stumps or injuries, no new props, no new text or effects. Match all surrounding texture and shadow colors precisely; preserve original proportions and object positions.",
+      "reference": "hybrid/assets/piano_mic_v1.png",
+      "role": "clean underlay sampled only under removed limbs",
+      "status": "adopted_local_regions",
+      "originalPath": "C:/Users/orang/.codex/generated_images/01a18252-99c2-7043-9065-b89517e483c3/exec-eba85211-1bdd-4147-8698-c90df23f891c.png",
+      "sha256": "bae502bf205229bf51a314a27da46b0e9b695bed71885959df9f9ad4b9ea67f9"
+    },
+    {
+      "file": "hybrid/assets/piano_underlay_cuff_r3.png",
+      "prompt": "Edit this exact clean-underlay theatre painting, same framing and dimensions. Make ONE small local production correction: at brown-haired Noa's viewer-LEFT side, remove the empty rolled cream sleeve/cuff that is currently visible at her elbow beside the teal cloak. Replace ONLY that empty cream cuff area with the continuous dark teal cloak lining/background appropriate behind it, so the cloak still hangs naturally and the cream blouse center stays the same. This sleeve/cuff will be supplied as a moving layer attached at the upper-arm opening. Keep the upper-arm/cape opening near her left upper arm readable; do not add any arm or hand. Preserve her viewer-right empty sleeve, every face/head/hair, all other clothing, the puppet, Selene, Vesper, piano, wooden floor, curtain, lights and brushwork exactly. Do not redesign or move anyone. This is a clean animation underlay; no new limbs, no text, no particles.",
+      "reference": "hybrid/assets/piano_underlay_r3.png",
+      "role": "experimental removal of the rolled cuff",
+      "status": "rejected_for_final_R3; source cuff remains static, bare forearm rotates at its opening",
+      "originalPath": "C:/Users/orang/.codex/generated_images/01a18252-99c2-7043-9065-b89517e483c3/exec-cd559e74-4d15-498c-83c0-7daf39ed6c01.png",
+      "sha256": "2ebbd50c6e70dbb048af22b7d6b5982faa6f388778d735e2ce70f65e8e77949d"
+    }
+  ],
+  "billedCost": "not returned by built-in tool",
+  "videoGenerationCalls": 0,
+  "audioRegenerationCalls": 0,
+  "notes": "Masks preserve source RGB. Noa voice A, song B and mixed PCM unchanged from R2."
+}
