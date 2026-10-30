@@ -1,0 +1,7 @@
+# 可重建：渲染样帧（保留 build/determinism/samples JSON 与精选拼图）、对齐临时目录、本机 codex 临时
+storyboard/**/t*.png
+storyboard/pilot_r2probe/
+storyboard/pilot_r1b/
+config/_align_tmp/
+.codex-temp/
+library_probe.json/

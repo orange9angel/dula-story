@@ -1,0 +1,53 @@
+{
+ "schema": "draw-over-pipeline-v1",
+ "baseUrl": "http://127.0.0.1:4270/",
+ "runtime": {
+  "directory": "assets/draw_over_runtime"
+ },
+ "source": {
+  "video": "hybrid/plates/plate_full_v1.png",
+  "sha256": "e9f1b7ab121851c2fffd569d186b5fa6892c0e57a9e87b041fe5178e86314062",
+  "note": "本集无 3D 底稿视频：粒子舞者为程序化骨架实时渲染，场景为 codex 底图；此处登记底图以锁定场景源"
+ },
+ "pilot": {
+  "start": 40.6,
+  "end": 48.6,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "viewer": "hybrid/aria_pilot.html?capture=1",
+  "board": "storyboard/pilot_r4",
+  "output": "output/aria_pilot_r4.mp4",
+  "audio": "assets/audio/music/starlight_melody_v1b.wav",
+  "audioOffset": 40.6,
+  "samples": [
+   40.7,
+   41.4,
+   42.1,
+   42.9,
+   43.7,
+   44.4,
+   45.2,
+   45.6,
+   46.0,
+   46.4,
+   46.8,
+   47.6,
+   48.4
+  ],
+  "sourceFiles": [
+   "hybrid/aria_pilot.js",
+   "hybrid/aria_pilot.html",
+   "config/plate_calibration.json",
+   "config/vocal_env.json",
+   "hybrid/plates/bg_clean.png",
+   "hybrid/plates/fg_seats.png",
+   "hybrid/plates/glass_highlights.png",
+   "assets/audio/music/starlight_melody_v1b.wav"
+  ],
+  "repeatSamples": [
+   45.6,
+   47.6
+  ]
+ }
+}

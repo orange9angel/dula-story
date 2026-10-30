@@ -37,10 +37,17 @@ for(const c of align.clips){
 function mouthAt(t){
  const sp=speech.at(t),tq=Math.floor((t+1e-6)*15)/15,c=align.clips.find(c=>tq>=c.start&&tq<c.start+c.duration);
  const st=c?c.jawState[Math.floor((tq-c.start)/.02)]??0:0;
- const ch=c?.chars.find(x=>tq+.025>=x.start&&tq+.025<x.end),round=ch&&/[uüv]|o/.test(ch.final)&&!/[aei]/.test(ch.final);
+ const ch=c?.chars.find(x=>tq+.025>=x.start&&tq+.025<x.end);
+ // R4d：韵母决定形状与开口上限（R4c「一」i 被能量推成大张嘴、舌头外露 5 帧）。
+ // 介音 i/u/ü 开头的复韵母先显示介音形（前 30%，≤1/15s 即一个口型采样），ao/ou/iao 收尾撮圆（后 25%）。
+ let fin=ch?.final??'';
+ if(ch){const into=tq+.025-ch.start,dur=ch.end-ch.start;
+  if(fin.length>1&&/^[iuv]/.test(fin)&&into<Math.min(.067,dur*.3))fin=fin[0];
+  else if(/(ao|ou)$/.test(fin)&&dur>.25&&into/dur>.75)fin='o';}
+ const round=ch&&/[uüv]|o/.test(fin)&&!/[aei]/.test(fin),spread=ch&&/^(i|in|ing)$/.test(fin);
  // 字内且在发声（擦音 x/sh、渐弱长音尾）时至少窄口；只有休止/换气才闭口
  if(st===0)return sp.mouth==='inhale'?'inhale':sp.mouth==='labial'?'labial':(sp.voiced&&ch)?(round?'round':'narrow'):'rest';
- return round?'round':st===2?'open':'narrow';
+ return round?'round':spread?'narrow':st===2?'open':'narrow';
 }
 const HIDDEN=new Set(cfg.faceHidden??['noya_twirl_b1','noya_twirl_b2','noya_twirl_b3','noya_twirl_b4']);
 const used=new Set();for(const s of cfg.shots)for(const k of ['noya','selene','pair'])for(const e of s[k]??[])if(e[1])used.add(e[1]);

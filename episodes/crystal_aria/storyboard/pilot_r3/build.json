@@ -1,0 +1,202 @@
+{
+  "source": [
+    {
+      "path": "hybrid/aria_pilot.js",
+      "sha256": "78b85521121091a6fda44f0e9cde8e46a714fa1d48e1bf89a445c23312ee190a"
+    },
+    {
+      "path": "hybrid/aria_pilot.html",
+      "sha256": "cb5d5d27d2ca9254889151a02dda99d4cb07d231dd1c3f7f90dbcfe75487b58f"
+    },
+    {
+      "path": "config/plate_calibration.json",
+      "sha256": "2b1979e2655dc267f47527345611ee8dccb6849bf3abed674660845d91d7645b"
+    },
+    {
+      "path": "config/vocal_env.json",
+      "sha256": "83191aeacc0ccebe2b9a9b0468d009b7bd2c4942e58269986f349d1f9a7116dd"
+    },
+    {
+      "path": "hybrid/plates/bg_clean.png",
+      "sha256": "e639eeb3729289022fb6d6921d670f5c24281406c97d6d554c5c64d72ec547b9"
+    },
+    {
+      "path": "hybrid/plates/fg_seats.png",
+      "sha256": "aa248bf9efa56a0e7e5d53c597a3fb75bdd8b1b56d57e7d614dda7015e9b3dc2"
+    },
+    {
+      "path": "hybrid/plates/glass_highlights.png",
+      "sha256": "63e66ab3cc8655b2207d6effdf1311898dc9c77929d7b0de082616f823fad3bf"
+    },
+    {
+      "path": "assets/audio/music/starlight_melody_v1b.wav",
+      "sha256": "111a550731fb5510ffb9abb399fd739a92d4b68b8b6f9e3a4f905373cb0dd386"
+    }
+  ],
+  "pipeline": {
+    "config": {
+      "schema": "draw-over-pipeline-v1",
+      "baseUrl": "http://127.0.0.1:4270/",
+      "runtime": {
+        "directory": "assets/draw_over_runtime"
+      },
+      "source": {
+        "video": "hybrid/plates/plate_full_v1.png",
+        "sha256": "e9f1b7ab121851c2fffd569d186b5fa6892c0e57a9e87b041fe5178e86314062",
+        "note": "本集无 3D 底稿视频：粒子舞者为程序化骨架实时渲染，场景为 codex 底图；此处登记底图以锁定场景源"
+      },
+      "pilot": {
+        "start": 40.6,
+        "end": 48.6,
+        "fps": 30,
+        "width": 1280,
+        "height": 720,
+        "viewer": "hybrid/aria_pilot.html?capture=1",
+        "board": "storyboard/pilot_r3",
+        "output": "output/aria_pilot_r3.mp4",
+        "audio": "assets/audio/music/starlight_melody_v1b.wav",
+        "audioOffset": 40.6,
+        "samples": [
+          40.7,
+          41.4,
+          42.1,
+          42.9,
+          43.7,
+          44.4,
+          45.2,
+          45.6,
+          46,
+          46.4,
+          46.8,
+          47.6,
+          48.4
+        ],
+        "sourceFiles": [
+          "hybrid/aria_pilot.js",
+          "hybrid/aria_pilot.html",
+          "config/plate_calibration.json",
+          "config/vocal_env.json",
+          "hybrid/plates/bg_clean.png",
+          "hybrid/plates/fg_seats.png",
+          "hybrid/plates/glass_highlights.png",
+          "assets/audio/music/starlight_melody_v1b.wav"
+        ],
+        "repeatSamples": [
+          45.6,
+          47.6
+        ]
+      }
+    },
+    "shared": [
+      {
+        "path": "build_part_masks.py",
+        "sha256": "c99de3f3a49ac90ccff98587bb128ea03b18ec20ea8d4c27234fe9ccb62169dd"
+      },
+      {
+        "path": "capture_guided_paint.mjs",
+        "sha256": "fcc88aa4e1759d18e657cf4fcedf74630a251b248aa7a3170c7f2e5d9febe6df"
+      },
+      {
+        "path": "capture_references.mjs",
+        "sha256": "5baa371b189e15e42721a44b03ddc911fca10c2826899a1ad3788465eece026b"
+      },
+      {
+        "path": "check_cel_proportions.py",
+        "sha256": "26abc67ee9f7659b1349c4feb264e524304c47e763c93d7c795876b0092ea076"
+      },
+      {
+        "path": "compare_cel_revision.py",
+        "sha256": "debb465905e792606732c5813d5c954a59d49e3e7cfb8d3771b8593e9e7b2d2c"
+      },
+      {
+        "path": "compare_whole_cels.py",
+        "sha256": "4745db026f7e978eb3a5cee6275f6a19e41790ce2d3a2b2932bcff8a1d2c1f70"
+      },
+      {
+        "path": "compose_cel_regions.py",
+        "sha256": "5eb10fdfb4c6693f38dcad30ff8261076d1ff01ce3db07b4a521d9b744adfbf4"
+      },
+      {
+        "path": "contact_sheet.py",
+        "sha256": "9c9cfe6eea5ea72f4e4cb873d1a19dfa36b769df8f560a476a783cc9cd6949ab"
+      },
+      {
+        "path": "drive_cel_body.py",
+        "sha256": "3b523a712549dd61b562e72d3fe4899e1f499e8159fef9d43f43bcc379ea026b"
+      },
+      {
+        "path": "drive_cel_volumes.py",
+        "sha256": "eebb0d2c96cb4d4cce45125c0ac6fd41e3dff6e12b0f2c543083f452b8cbeecb"
+      },
+      {
+        "path": "package_pilot.py",
+        "sha256": "2583fb88e7c8bbe64e92a3998c6d7f545b0e193a7f4e0ab311ce4dcd46d25ecc"
+      },
+      {
+        "path": "pipeline.mjs",
+        "sha256": "95c87fb2aa671072d2daefd71ada01bfe7c1611e257f1b29ae2fbfa1a9785f35"
+      },
+      {
+        "path": "prepare_cel_crops.py",
+        "sha256": "33b6504eb7ec54db83ce8252450395b381c0be36bd6caaa545c95ac438431d9f"
+      },
+      {
+        "path": "prepare_portrait_atlas.py",
+        "sha256": "b5adea4e01a61e06d4870f9fbfaf936c4ca1a6bc5a00a490e1ea1cb478ada22f"
+      },
+      {
+        "path": "propagate_keypaint.py",
+        "sha256": "e2e616fd84210de2f058c9a27d2aae5e42a53be01511bdf91b208be5d3c1d7ff"
+      },
+      {
+        "path": "register_cel_region.py",
+        "sha256": "10a4d32da0bbe45b8c69f82bb28f312dd031f08905f465906b1609fd0e145eb8"
+      },
+      {
+        "path": "replace_window.py",
+        "sha256": "188ef50d4a0bff4feabfe35b0e4ee1b2a305852b77599b20153d616986e5188c"
+      },
+      {
+        "path": "replace_windows.py",
+        "sha256": "3882f1f1ec967713e5581f5e31f5408cb093118955c48f151c7c92d888625d27"
+      },
+      {
+        "path": "review_region_paint.mjs",
+        "sha256": "a3ae7f1b54c4ce8738a1a4021c2be219aab2c364a05ede5cd7e73d8de6c79491"
+      },
+      {
+        "path": "review_seek_tolerance.py",
+        "sha256": "44b2834c8b2e61a9b666958e5075a14a45d832749a7c4962553968e960bb1dce"
+      },
+      {
+        "path": "rigid_cel_head.py",
+        "sha256": "4c505f60b0edf6ea472d21ccf4fec6e2edc1bfb7e934301369edce981b01aeda"
+      },
+      {
+        "path": "split_pose_atlas.py",
+        "sha256": "869b301eb4c5aa925d8802c9511f90af17731564d5273aef0392a1d94c399257"
+      },
+      {
+        "path": "stabilize_cel_anchors.py",
+        "sha256": "67da0f55b5f7c3e642131ebb3ac3669a9c296e665616aefb5094150a4c512bc1"
+      },
+      {
+        "path": "test_painted_space.mjs",
+        "sha256": "6f2b839ea31f9485e091a1f911d21627b1e850baeb579f396d65e97baabae4c5"
+      },
+      {
+        "path": "test_story_state.mjs",
+        "sha256": "fe8f06ab308f74e1cba0c6f16b16ce83d1dada225f733a48e58fef803ff5742a"
+      },
+      {
+        "path": "verify_full_episode.py",
+        "sha256": "7735e4c3e44e05cad6997e5d15d5a169338f227568f9521a774f79eb56ed9c6d"
+      }
+    ]
+  },
+  "start": 40.6,
+  "end": 48.6,
+  "frames": 240,
+  "fps": 30,
+  "errors": []
+}
