@@ -501,3 +501,9 @@ pilot8_r1 巡检未通过（`storyboard/character_attention/pilot8_r1.json`：�
   转圈 d1/d2 手差 ~20px；转圈小脸嘴型。
 - 当前产物：`output/borrow_a_melody_pilot8_r4.mp4`（viewer `hybrid/art_pass_pilot8_r4.html`，
   `config/pilot8_r4_pipeline.json`），同步报告 `storyboard/pilot8_r4/av_sync.json`。
+- 补充（用户：「嘴唇的改变是固定的几种，对不上说话，借月光的女孩就不会」）：核实借月光同样只有闭（原画）/半开/张开
+  三态、15Hz 能量驱动（`borrowed_moonlight/hybrid/art_pass_r5.js` jawFor、`hybrid/assets/faces/*_mouth_{half,open}`），
+  R5 已获验收——张数不是差别。已测并排除：「唱歌连音能量不掉 → 嘴不随字开合」——本片 11 个可测字头 10 个在 ±0.1s 内换嘴。
+  尚未验证的候选：①唱歌元音持续 0.3–1s，形状错误（如「律」ü 应撮圆，全景原画只有窄口）停留可见，说话时一闪而过；
+  ②只有唇变、下颌/脸颊不动，唱歌的下颌幅度远大于说话；③借月光对白多为中近景、此段为全景（嘴屏上 8–12px）。
+  下一轮：请用户指出具体时刻，逐帧对照音节核对后再定工艺。
