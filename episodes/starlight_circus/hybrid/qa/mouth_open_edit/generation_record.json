@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Image 1 is the edit target. Edit ONLY the marionette's carved wooden mouth, located near x=788, y=401 in the original 1672x941 full frame. Open the mouth visibly wider vertically into a clear rounded open mouth, as if sounding a bright rhythmic 'ah' syllable. Keep the original painted lip colour and soft painterly brushwork identical, with a natural dark carved mouth interior and joyful rounded open lips appropriate to this wooden puppet. Keep the mouth anchored to the identical position and head angle; do not move the jaw, chin, cheeks or nose. Every other pixel must remain EXACTLY as image 1: identical hair, eyes, eyebrows, carved nose, wood grain, brass joints, red coat, bow tie, hands, background and lighting. Do not re-render, re-light, re-pose, reframe, re-crop, recolour or add details. Output the full original frame at exactly 1672x941 pixels, no border and no text.",
+  "source": "hybrid/assets/puppet_chest_knock_closeup_v1.png",
+  "output": "hybrid/assets/cu_pip_mouth_open.png"
+}

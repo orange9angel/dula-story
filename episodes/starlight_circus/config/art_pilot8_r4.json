@@ -1,0 +1,384 @@
+{
+ "note": "8秒试片 R3 曝光表（舞台坐标=1280x720 下的底图坐标；s=1280/1672）。每张画：t=上画时刻，x=脚底中心，body=头顶→脚底目标高（px），settle=落地压缩；人物之间的连续感来自 cel-stage 局部网格表演（breath/lean/headTilt/hair）。 R4：换画吸附节拍；嘴由已知歌词对齐驱动；转圈 12 角度单向。",
+ "floorY": 570,
+ "bodyH": {
+  "noya": 413,
+  "selene": 429
+ },
+ "shots": [
+  {
+   "id": "mcu",
+   "t": [
+    30.0,
+    31.85
+   ],
+   "kind": "portrait",
+   "base": "hybrid/anchors/noya_face.png",
+   "dir": "hybrid/anchors/noya_face_variants",
+   "gate": [
+    "e",
+    "o",
+    "a"
+   ],
+   "cam": [
+    [
+     640,
+     360,
+     1.0
+    ],
+    [
+     668,
+     352,
+     1.04
+    ]
+   ],
+   "mouthMap": {
+    "rest": "base",
+    "labial": "base",
+    "inhale": "inhale",
+    "narrow": "e",
+    "open": "a",
+    "round": "o"
+   },
+   "blinks": [
+    30.04
+   ],
+   "blinkCel": "blink"
+  },
+  {
+   "id": "reach",
+   "t": [
+    31.85,
+    33.83
+   ],
+   "kind": "stage",
+   "cam": [
+    [
+     689,
+     356,
+     1.36
+    ],
+    [
+     693,
+     351,
+     1.44
+    ]
+   ],
+   "noya": [
+    [
+     31.8333,
+     "noya_step",
+     536,
+     4
+    ],
+    [
+     32.2333,
+     "noya_reach",
+     556,
+     0
+    ],
+    [
+     33.0,
+     "noya_touch",
+     574,
+     0
+    ],
+    [
+     33.4,
+     null,
+     0,
+     0
+    ]
+   ],
+   "selene": [
+    [
+     31.8333,
+     "selene_listen",
+     792,
+     0
+    ],
+    [
+     32.6,
+     "selene_lift",
+     786,
+     0
+    ],
+    [
+     33.4,
+     null,
+     0,
+     0
+    ]
+   ],
+   "pair": [
+    [
+     33.4,
+     "pair_hold",
+     690,
+     0
+    ]
+   ]
+  },
+  {
+   "id": "twirl",
+   "t": [
+    33.83,
+    35.42
+   ],
+   "kind": "stage",
+   "cam": [
+    [
+     693,
+     379,
+     1.18
+    ],
+    [
+     693,
+     379,
+     1.22
+    ]
+   ],
+   "noya": [
+    [
+     33.83,
+     "noya_twirl_a1",
+     622.7,
+     0
+    ],
+    [
+     33.9667,
+     "noya_twirl_a2",
+     614.8,
+     0
+    ],
+    [
+     34.0667,
+     "noya_twirl_a3",
+     594.9,
+     0
+    ],
+    [
+     34.1667,
+     "noya_twirl_a4",
+     606.5,
+     0
+    ],
+    [
+     34.2667,
+     "noya_twirl_b1",
+     643.9,
+     0
+    ],
+    [
+     34.3667,
+     "noya_twirl_b2",
+     656.2,
+     0
+    ],
+    [
+     34.4333,
+     "noya_twirl_b3",
+     671.4,
+     0
+    ],
+    [
+     34.5333,
+     "noya_twirl_b4",
+     685.0,
+     0
+    ],
+    [
+     34.6,
+     "noya_twirl_d1",
+     643.1,
+     0
+    ],
+    [
+     34.7,
+     "noya_twirl_d2",
+     616.3,
+     0
+    ],
+    [
+     34.8,
+     "noya_twirl_d3",
+     602.6,
+     0
+    ],
+    [
+     34.9,
+     "noya_twirl_d4",
+     589.6,
+     0
+    ],
+    [
+     35.0333,
+     null,
+     0,
+     0
+    ]
+   ],
+   "selene": [
+    [
+     33.83,
+     "selene_raise",
+     804,
+     0
+    ],
+    [
+     35.0333,
+     null,
+     0,
+     0
+    ]
+   ],
+   "pair": [
+    [
+     35.0333,
+     "pair_turnend",
+     690,
+     3
+    ]
+   ],
+   "note": "R4: 0-180 generated, 210-330 mirrored (360-theta), c4 settle; theta(u)=390*(0.6u+0.4 smoothstep) between beats; axis-aligned",
+   "joinHand": [
+    685.6,
+    107.7
+   ],
+   "handResidualPx": [
+    -3.0,
+    7.1,
+    0.8,
+    1.3,
+    -7.9,
+    7.2,
+    -4.6,
+    -16.0,
+    15.8,
+    -8.3,
+    8.1,
+    -0.4
+   ],
+   "alignHand": false
+  },
+  {
+   "id": "open",
+   "t": [
+    35.42,
+    36.37
+   ],
+   "kind": "stage",
+   "cam": [
+    [
+     674,
+     329,
+     1.3
+    ],
+    [
+     670,
+     320,
+     1.38
+    ]
+   ],
+   "noya": [
+    [
+     35.42,
+     "noya_open_low",
+     560,
+     3
+    ],
+    [
+     35.6333,
+     "noya_open_mid",
+     556,
+     0
+    ],
+    [
+     35.8333,
+     "noya_open_high",
+     552,
+     0
+    ]
+   ],
+   "selene": [
+    [
+     35.42,
+     "selene_chest",
+     796,
+     0
+    ]
+   ]
+  },
+  {
+   "id": "cu",
+   "t": [
+    36.37,
+    38.0
+   ],
+   "kind": "portrait",
+   "base": "hybrid/anchors/noya_face_variants/plead.png",
+   "dir": "hybrid/anchors/noya_face_variants",
+   "cam": [
+    [
+     700,
+     300,
+     1.22
+    ],
+    [
+     704,
+     290,
+     1.3
+    ]
+   ],
+   "mouthMap": {
+    "rest": "plead_closed",
+    "labial": "plead_closed",
+    "inhale": "plead_inhale",
+    "narrow": "plead_i",
+    "open": "plead",
+    "round": "plead_u"
+   },
+   "blinks": [],
+   "blinkCel": null
+  }
+ ],
+ "faceHidden": [
+  "noya_twirl_b1",
+  "noya_twirl_b2",
+  "noya_twirl_b3",
+  "noya_twirl_b4",
+  "noya_twirl_mb2",
+  "noya_twirl_mb1"
+ ],
+ "beatAccent": {
+  "beats": [
+   29.0482,
+   29.4777,
+   29.9073,
+   30.302,
+   30.6968,
+   31.0799,
+   31.463,
+   31.8462,
+   32.2293,
+   32.6124,
+   32.9956,
+   33.4135,
+   33.8315,
+   34.261,
+   34.6558,
+   35.0389,
+   35.422,
+   35.8168,
+   36.2115,
+   36.6295,
+   37.0474,
+   37.4654,
+   37.8834,
+   38.3013,
+   38.7193
+  ],
+  "compress": 1.4,
+  "decay": 9
+ }
+}

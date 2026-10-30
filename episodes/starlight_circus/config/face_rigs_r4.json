@@ -1,0 +1,819 @@
+{
+ "note": "locked same-size mouth variants (borrowed_moonlight method); colour-transferred from atlas edits on the pad ring",
+ "rigs": {
+  "noya_step": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/noya_step__rest.png",
+     "rect": [
+      605,
+      133,
+      69,
+      71
+     ],
+     "cores": [
+      [
+       613,
+       141,
+       53,
+       55,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/noya_step__narrow.png",
+     "rect": [
+      605,
+      133,
+      69,
+      71
+     ],
+     "cores": [
+      [
+       613,
+       141,
+       53,
+       55,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/noya_step__open.png",
+     "rect": [
+      605,
+      133,
+      69,
+      71
+     ],
+     "cores": [
+      [
+       613,
+       141,
+       53,
+       55,
+       8
+      ]
+     ]
+    },
+    "round": {
+     "src": "r4/mouths/noya_step__round.png",
+     "rect": [
+      605,
+      133,
+      69,
+      71
+     ],
+     "cores": [
+      [
+       613,
+       141,
+       53,
+       55,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "round",
+    "inhale": "rest"
+   }
+  },
+  "noya_reach": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/noya_reach__rest.png",
+     "rect": [
+      622,
+      128,
+      77,
+      94
+     ],
+     "cores": [
+      [
+       630,
+       136,
+       61,
+       78,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/noya_reach__narrow.png",
+     "rect": [
+      622,
+      128,
+      77,
+      94
+     ],
+     "cores": [
+      [
+       630,
+       136,
+       61,
+       78,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/noya_reach__open.png",
+     "rect": [
+      622,
+      128,
+      77,
+      94
+     ],
+     "cores": [
+      [
+       630,
+       136,
+       61,
+       78,
+       8
+      ]
+     ]
+    },
+    "round": {
+     "src": "r4/mouths/noya_reach__round.png",
+     "rect": [
+      622,
+      128,
+      77,
+      94
+     ],
+     "cores": [
+      [
+       630,
+       136,
+       61,
+       78,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "round",
+    "inhale": "rest"
+   }
+  },
+  "noya_touch": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/noya_touch__rest.png",
+     "rect": [
+      576,
+      131,
+      75,
+      62
+     ],
+     "cores": [
+      [
+       584,
+       139,
+       59,
+       46,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/noya_touch__narrow.png",
+     "rect": [
+      576,
+      131,
+      75,
+      62
+     ],
+     "cores": [
+      [
+       584,
+       139,
+       59,
+       46,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/noya_touch__open.png",
+     "rect": [
+      576,
+      131,
+      75,
+      62
+     ],
+     "cores": [
+      [
+       584,
+       139,
+       59,
+       46,
+       8
+      ]
+     ]
+    },
+    "round": {
+     "src": "r4/mouths/noya_touch__round.png",
+     "rect": [
+      576,
+      131,
+      75,
+      62
+     ],
+     "cores": [
+      [
+       584,
+       139,
+       59,
+       46,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "round",
+    "inhale": "rest"
+   }
+  },
+  "noya_open_low": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/noya_open_low__rest.png",
+     "rect": [
+      547,
+      139,
+      50,
+      42
+     ],
+     "cores": [
+      [
+       555,
+       147,
+       34,
+       26,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/noya_open_low__narrow.png",
+     "rect": [
+      547,
+      139,
+      50,
+      42
+     ],
+     "cores": [
+      [
+       555,
+       147,
+       34,
+       26,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/noya_open_low__open.png",
+     "rect": [
+      547,
+      139,
+      50,
+      42
+     ],
+     "cores": [
+      [
+       555,
+       147,
+       34,
+       26,
+       8
+      ]
+     ]
+    },
+    "round": {
+     "src": "r4/mouths/noya_open_low__round.png",
+     "rect": [
+      547,
+      139,
+      50,
+      42
+     ],
+     "cores": [
+      [
+       555,
+       147,
+       34,
+       26,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "round",
+    "inhale": "rest"
+   }
+  },
+  "noya_open_mid": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/noya_open_mid__rest.png",
+     "rect": [
+      555,
+      129,
+      86,
+      62
+     ],
+     "cores": [
+      [
+       563,
+       137,
+       70,
+       46,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/noya_open_mid__narrow.png",
+     "rect": [
+      555,
+      129,
+      86,
+      62
+     ],
+     "cores": [
+      [
+       563,
+       137,
+       70,
+       46,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/noya_open_mid__open.png",
+     "rect": [
+      555,
+      129,
+      86,
+      62
+     ],
+     "cores": [
+      [
+       563,
+       137,
+       70,
+       46,
+       8
+      ]
+     ]
+    },
+    "round": {
+     "src": "r4/mouths/noya_open_mid__round.png",
+     "rect": [
+      555,
+      129,
+      86,
+      62
+     ],
+     "cores": [
+      [
+       563,
+       137,
+       70,
+       46,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "round",
+    "inhale": "rest"
+   }
+  },
+  "noya_open_high": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/noya_open_high__rest.png",
+     "rect": [
+      507,
+      140,
+      62,
+      50
+     ],
+     "cores": [
+      [
+       515,
+       148,
+       46,
+       34,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/noya_open_high__narrow.png",
+     "rect": [
+      507,
+      140,
+      62,
+      50
+     ],
+     "cores": [
+      [
+       515,
+       148,
+       46,
+       34,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/noya_open_high__open.png",
+     "rect": [
+      507,
+      140,
+      62,
+      50
+     ],
+     "cores": [
+      [
+       515,
+       148,
+       46,
+       34,
+       8
+      ]
+     ]
+    },
+    "round": {
+     "src": "r4/mouths/noya_open_high__round.png",
+     "rect": [
+      507,
+      140,
+      62,
+      50
+     ],
+     "cores": [
+      [
+       515,
+       148,
+       46,
+       34,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "round",
+    "inhale": "rest"
+   }
+  },
+  "pair_hold": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/pair_hold__rest.png",
+     "rect": [
+      415,
+      85,
+      42,
+      77
+     ],
+     "cores": [
+      [
+       423,
+       93,
+       26,
+       61,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/pair_hold__narrow.png",
+     "rect": [
+      415,
+      85,
+      42,
+      77
+     ],
+     "cores": [
+      [
+       423,
+       93,
+       26,
+       61,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/pair_hold__open.png",
+     "rect": [
+      415,
+      85,
+      42,
+      77
+     ],
+     "cores": [
+      [
+       423,
+       93,
+       26,
+       61,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "narrow",
+    "inhale": "rest"
+   }
+  },
+  "pair_turnend": {
+   "variants": {
+    "rest": {
+     "src": "r4/mouths/pair_turnend__rest.png",
+     "rect": [
+      562,
+      115,
+      34,
+      59
+     ],
+     "cores": [
+      [
+       570,
+       123,
+       18,
+       43,
+       8
+      ]
+     ]
+    },
+    "narrow": {
+     "src": "r4/mouths/pair_turnend__narrow.png",
+     "rect": [
+      562,
+      115,
+      34,
+      59
+     ],
+     "cores": [
+      [
+       570,
+       123,
+       18,
+       43,
+       8
+      ]
+     ]
+    },
+    "open": {
+     "src": "r4/mouths/pair_turnend__open.png",
+     "rect": [
+      562,
+      115,
+      34,
+      59
+     ],
+     "cores": [
+      [
+       570,
+       123,
+       18,
+       43,
+       8
+      ]
+     ]
+    }
+   },
+   "mouth": {
+    "rest": "rest",
+    "labial": "rest",
+    "narrow": "narrow",
+    "open": "open",
+    "round": "narrow",
+    "inhale": "rest"
+   }
+  }
+ },
+ "rejected": {
+  "noya_twirl_a1": "edit did not change the mouth (native matrix review)",
+  "noya_twirl_a2": "edit did not change the mouth (native matrix review)",
+  "noya_twirl_a3": "edit did not change the mouth (native matrix review)",
+  "noya_twirl_a4": "edit did not change the mouth (native matrix review)",
+  "noya_twirl_ma4": "edit did not change the mouth (native matrix review)",
+  "noya_twirl_ma3": "edit did not change the mouth (native matrix review)",
+  "noya_twirl_ma2": "edit did not change the mouth (native matrix review)",
+  "noya_twirl_c4": "edit did not change the mouth (native matrix review)"
+ },
+ "lockReport": {
+  "noya_step": {
+   "rest": {
+    "ringDeltaE_before": 10.1,
+    "ringDeltaE_after": 8.2,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 10.3,
+    "ringDeltaE_after": 8.0,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 9.7,
+    "ringDeltaE_after": 7.1,
+    "leakPx": 0
+   },
+   "round": {
+    "ringDeltaE_before": 10.0,
+    "ringDeltaE_after": 7.6,
+    "leakPx": 0
+   }
+  },
+  "noya_reach": {
+   "rest": {
+    "ringDeltaE_before": 16.2,
+    "ringDeltaE_after": 13.2,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 15.6,
+    "ringDeltaE_after": 12.2,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 14.7,
+    "ringDeltaE_after": 10.5,
+    "leakPx": 0
+   },
+   "round": {
+    "ringDeltaE_before": 13.5,
+    "ringDeltaE_after": 9.5,
+    "leakPx": 0
+   }
+  },
+  "noya_touch": {
+   "rest": {
+    "ringDeltaE_before": 13.2,
+    "ringDeltaE_after": 13.6,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 12.7,
+    "ringDeltaE_after": 12.8,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 14.6,
+    "ringDeltaE_after": 14.1,
+    "leakPx": 0
+   },
+   "round": {
+    "ringDeltaE_before": 9.6,
+    "ringDeltaE_after": 8.5,
+    "leakPx": 0
+   }
+  },
+  "noya_open_low": {
+   "rest": {
+    "ringDeltaE_before": 19.2,
+    "ringDeltaE_after": 15.4,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 14.7,
+    "ringDeltaE_after": 10.6,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 14.5,
+    "ringDeltaE_after": 9.9,
+    "leakPx": 0
+   },
+   "round": {
+    "ringDeltaE_before": 16.9,
+    "ringDeltaE_after": 12.9,
+    "leakPx": 0
+   }
+  },
+  "noya_open_mid": {
+   "rest": {
+    "ringDeltaE_before": 18.5,
+    "ringDeltaE_after": 15.6,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 17.3,
+    "ringDeltaE_after": 13.6,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 19.2,
+    "ringDeltaE_after": 15.2,
+    "leakPx": 0
+   },
+   "round": {
+    "ringDeltaE_before": 18.0,
+    "ringDeltaE_after": 13.9,
+    "leakPx": 0
+   }
+  },
+  "noya_open_high": {
+   "rest": {
+    "ringDeltaE_before": 6.3,
+    "ringDeltaE_after": 5.9,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 5.3,
+    "ringDeltaE_after": 4.8,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 9.2,
+    "ringDeltaE_after": 9.2,
+    "leakPx": 0
+   },
+   "round": {
+    "ringDeltaE_before": 5.9,
+    "ringDeltaE_after": 5.3,
+    "leakPx": 0
+   }
+  },
+  "pair_hold": {
+   "rest": {
+    "ringDeltaE_before": 10.3,
+    "ringDeltaE_after": 10.2,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 10.5,
+    "ringDeltaE_after": 10.6,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 11.9,
+    "ringDeltaE_after": 12.0,
+    "leakPx": 0
+   }
+  },
+  "pair_turnend": {
+   "rest": {
+    "ringDeltaE_before": 18.6,
+    "ringDeltaE_after": 19.9,
+    "leakPx": 0
+   },
+   "narrow": {
+    "ringDeltaE_before": 16.8,
+    "ringDeltaE_after": 17.8,
+    "leakPx": 0
+   },
+   "open": {
+    "ringDeltaE_before": 12.8,
+    "ringDeltaE_after": 13.0,
+    "leakPx": 0
+   }
+  }
+ }
+}

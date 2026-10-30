@@ -247,3 +247,257 @@ R2之后用户明确指出眨眼、拍胸变形，其他动作不流畅。原R2�
 入口：共享pipeline的 `config/acting_pilot_r3.json`，`--step render --render`；蒙版先运行
 共享 `build_part_masks.py EP --config config/part_rig_r3.json`。
 当前审片页：`http://127.0.0.1:4262/review_r3.html`，支持旧版对照、慢放、单帧步进与局部放大。
+
+## R4 诊断：R1–R3 从未进入 cel-cinema 管线（2026-10-29）
+
+用户指出「动作不连贯、不自然，表情也不自然」。诊断在像素层面成立且可量化，
+巡检记录 `storyboard/character_attention/r4.json`（record_valid=true，12 项 issue，
+证据与脚本在 `storyboard/character_attention/r4_frames/`）。
+
+**根因不是 R3 参数不足，是路线错了。** `hybrid/acting_pilot_r3.js` 仅 49 行，import 的是
+`painted-part-rig` + `fixed-eye-rig`，**从未 import `cel-stage` / `baked-cel-clip` /
+`cel-integration` / `particle-stage`**；`config/acting_pilot_r3.json` 的 source 指向
+`piano_acting_pilot_r2.mp4`（层层叠在同一张静态母版上）且**无 bake 段**。
+R1 当时底稿未验收就直接生成原画贴图，违反 cel-cinema 的强制顺序纪律
+（「不要在 3D 底稿未验收前开始生成原画」）。
+
+同尺量化对比（相邻帧灰阶差>6 的像素占比）：
+
+| 指标 | 已认可基线 borrowed_moonlight R5 | starlight R3 | 3D 底稿 |
+|---|---|---|---|
+| 中位 | 0.343% | 0.003% | 0.027% |
+| 峰值 | 83–96% | 0.512% | 0.216% |
+| 帧间冻结占比 | 8.4%（局部窗口 20–22%） | 68.0% | 17.9% |
+| 22 秒内会变化的画面面积 | 99.9% | 孤立小岛 | — |
+
+**关键判读：冻结帧本身合法**（cat_leads 纪律「整拍冻结，运动来自换画」，基线局部窗口
+也有 20% 冻结）。差别在**峰值**——基线换画时整幅 83–96% 像素一起变，R3 峰值 0.5%，
+说明它从不换画、只推补丁。`baked-cel-clip`（烘焙 cel 序列）是 R3 缺的那一环。
+具体缺陷：187–194 秒两位主角逐像素冻结 5–7 秒（t=188 与 t=193 仅差 359 像素、0.039%，
+全在左侧微尘区）；4 处换画硬跳为帧间能量中位的 23–38 倍；维斯珀 22 秒零动作
+（触犯 production-efficiency 必修项「主要人物始终不动」）；前臂为刚性剪纸绕肘转而
+袖口/肩/披风逐像素不动；说话时仅嘴部小窗换形。
+
+骨架模板：`stardust_clad_s1e2/art_pass_full_r1.js`（178 行，import cel-stage /
+face-acting / limb-rig2d / cel-integration / particle-stage）+ 其 pipeline config
+含 `bake`/`probe`/`package` 段。
+
+## R4 唱段工作（进行中，2026-10-29）
+
+用户确定本轮**先做 50 秒唱段**（`script.story` 的 `borrow_a_melody` cue =
+00:03:15→00:04:05 = 195–245 秒，`shot=piano_trio`），目标是大师级音乐舞台剧效果：
+表情、动作流畅、声音与表情动作匹配。用户补充：**唱歌用 Suno**（会员且效果好），
+文生图 codex 优先、没额度转火山。
+
+### 通道实测状态
+
+| 通道 | 状态 |
+|---|---|
+| codex 文生图 | **可用**（2026-10-29 实测生成 512×512 验证图通过，ChatGPT 订阅配额） |
+| Suno 网页驱动 | 可用（`.suno_profile` + 本地加密凭据） |
+| 火山 | 余额 88.04 元无欠费；`.env.ark`/`.env.cv`/`.env.speech` 齐全 |
+| 百炼 dashscope | **未配凭证** —— 文档记载的 codex→dashscope 回退实际不可用，火山是唯一已配置回退 |
+| demucs 4.1.0 | 已装（torch 2.5.0 未动，仅新增 4 包）；htdemucs two-stems 分离可用 |
+
+### 口型链路口径（纠正前期误解）
+
+cel-cinema 的嘴型**不走** song-lipsync 的程序角色链（Demucs→DTW→拼音视素）——
+那条适用于 Three.js 几何体角色。已认可基线的实际做法是
+`voice_envs.json` 的 `lines[].jaw[]` 能量包络 → 逐角色自适应阈值（正值 80 分位）
+→ 三态迟滞 → 15Hz 量化 → `JAW_OUT=[0,.2,.5]` → `locked-variant-face` 选 cel。
+codex 只产出 `mouth_half`/`mouth_open`/`blink`/`emotion` 的 cel 变体图，不碰音频。
+demucs 仍需要，但只用于从音乐混音里提取干净人声以算包络（唱段人声埋在混音里；
+song-lipsync 验收纪律要求从最终人声总线取门限，禁用未分离的原歌包络）。
+
+`build_voice_envs.py` 已按 AGENTS.md 从单集 `tools/` **晋升到
+`dula-skills/build-character-voice/scripts/`**（原散落于 borrowed_moonlight、
+stardust_clad_s1e1、bio_armor_academy_s1e1）。回归验证：在 borrowed_moonlight 相同
+输入下 37/37 行逐字节一致，系数一个未改。新增 `--config` 行表与 `span` 取窗以支持唱段。
+
+### v1b 的三个实质问题（已证实）
+
+1. **三个声部实为同一人声。** 干声 MFCC 判别：以同角色各句散度为基准尺，诺娅-匹普
+   跨角色平均余弦距离 0.301 < 同角色散度 0.364（比值 0.83），24/24 组跨角色距离全部
+   落在同人范围内；无监督聚类分出的是音域（295–330Hz / 466–570Hz）而非角色，每个
+   角色同时出现在两簇。音高完全重叠（pip_3 与 noya_3 同为 466.3Hz）。
+   边界：Demucs 有伪影、MFCC 受元音影响、本机无声纹模型，属音色相似度论证非声纹鉴定；
+   同组散度偏大使「未检出差异」弱于「证明同一人」。用户听感独立确认为一个人。
+2. **收尾合唱句「你听，我们已经在一起」未唱。** 剪辑内 38s 后干声无带辅音内容，
+   人声 47.08s 结束。
+3. **哼唱音域低于主唱**（A♯3–F♯4 / 233–363Hz vs 诺娅 C5–C♯5 / 514–567Hz），
+   与提示词要求的 soprano 在 mezzo 之上相反。
+
+塞蕾娜哼唱**确实存在**，位置剪辑内 40.63–47.08 秒（源 51.5–58.0）。证据：spectral
+flatness 低至 1e-05（唱句 0.018–0.051）、ZCR 0.021–0.045（唱句 0.11–0.18）、
+voiced 100%、centroid 1562（唱句 2240–3309）。ASR 把它误转成了合唱歌词。
+
+内容硬约束：匹普四句是他指自己木头躯干说话，换声即坏句；塞蕾娜哼唱是她在全剧的
+**第一次出声**（原稿硬约束：420 秒前只能气音/哼唱）。故两段同声则本幕因果不成立。
+
+### 已交付产物
+
+- `assets/audio/music/borrow_a_melody/edit/borrow_a_melody_50s.wav`：50.000s、
+  24bit/48kHz、峰值 0.6118 不削波、起止无爆音。只剪器乐（保留源 11.0–61.0），
+  44 秒唱句一个音节未压，人声落在剪辑内 3.0–47.0。器乐尾 48.4–50.0 淡出。
+  溯源与全部声学发现在同名 `.source.json`。**用户已认可此剪辑好听。**
+- `config/voice_env_lines_borrow_a_melody.json` + `config/voice_envs_borrow_a_melody.json`：
+  11 行唱句包络、1942 帧，边界吸附到干声实测气口（9.2–9.98 / 15.08–15.69 /
+  29.48–30.42 / 37.74–38.56 / 39.18–40.63）。声部归属标 `unverified`。
+- Suno 重摇已提交（后台任务）：`config/songs/borrow_a_melody.lyrics.v2.txt` +
+  `.style.v2.txt`，产出到 `assets/audio/music/borrow_a_melody/auditions_v2/`。
+  改动只在方括号标签（中文人名→英文声部描述符，上次失败最可能的原因）与风格提示词
+  （三声部最大化对比、明确禁止同一把声音唱全部）；**12 行唱词经脚本校验逐字相同**。
+  suno-driver 与 volc-song-gen 的 skill 中**均无多声部教训记录**，本次属新实验，须写回。
+
+### 下一步（新会话接手点）
+
+1. 验收 Suno 新候选：先用同一套干声 MFCC 判别脚本（`tmp/speaker_probe.py`）查是否
+   真有三个声部，**再交用户正常速度听审**（音色与戏感只能用户判定）。
+   仍为单声则转「诺娅唱段保留 + 匹普走 seed-tts 节奏念白 + 塞蕾娜哼唱单独生成 + 拼合」，
+   器乐床用 `tmp/demucs/htdemucs/borrow_a_melody_50s/no_vocals.wav`（已分离干净）。
+2. **3D 底稿 195–245 秒逐拍表演**（cel-cinema 强制前置，当前 script.story 只有一个
+   50 秒整块 cue，无逐拍细节）。逐句时间取自 voice_envs。这是「动作流畅」的来源。
+3. `pipeline.mjs --step bake` 烘逐帧关节+相机+接触+粒子锚点。
+4. codex 文生图 cel 资产。关键坑（见 build-continuous-story-images/references/
+   codex-cli-imagegen.md）：prompt 必须压成单行否则 `-i` 附件 100% 静默丢失；
+   局部编辑须裁区单独编辑再羽化贴回（整图局部编辑约半数静默重渲染）；
+   必须串行前台跑；闭眼弧线要叮嘱「极细浅色短弧」；左右用 viewer 视角写死。
+5. art_pass 页（照 stardust_clad_s1e2 骨架）：cel-stage 刚性摆放+微参数
+   （breath/lean/compress/headTilt/hair —— 注意 `rigid:true` 会跳过全部微参数）
+   + raster-face jaw 三态 + 接触影 + 粒子 3D 层重宿主。
+6. 门禁：manifest missingAssets=0 → probe 断言 → verify_full_episode → 逐幕审片 → 用户批准。
+
+待写回 skill（本轮新发现，尚未提交）：
+- suno-driver / volc-song-gen：多声部分工不可靠，中文人名标签无效，英文声部描述符为
+  待验证对策；验收必须做唱者判别而非只看转写。
+- character-attention-review：量化差分（相邻帧有效变化占比 + 时间标准差图）可快速
+  定位「纸片人」，判据是峰值而非冻结率。
+- cel-cinema：已认可基线 borrowed_moonlight 的 `voice_envs.json` 中 `source_files[m03]`
+  存的是 `m03.wav` 哈希，但 jaw 实际派生自 `m03_placed.wav`，导致
+  `check_cinema_audio_r3.py` 的失效检查覆盖不到该行真实源。
+- 逐句峰值归一 + 8% 门限在持续唱句上可能导致嘴一直不闭（`bam_pip_3` 算出发声 100%）；
+  已认可基线只在对白上用过此口径，唱段可能需单独门限。
+
+## R2 唱段：分层舞蹈 cel（2026-10-29 晚）
+
+用户看 `output/borrow_a_melody_cinema_r1.mp4` 后判定「动作和表情不合格，太静态」。R1 实为 7 张整幅
+静帧 + 3 张近景嘴型间换画，靠仿射抖动（`tmp/render_cinema.py::micro`）制造"动"，人物身体从未动过。
+用户本轮要求**优先用 Suno 与 codex 文生图（均为会员）**——原计划的 Seedance/OmniHuman 付费视频
+通道已放弃，动作全部来自 codex 画的姿势 cel。
+
+- 画面：`hybrid/dance/plates/plate_empty.png`（codex 从 piano_master_v2 去人，同机位）+ 29 张
+  codex 舞蹈 cel（`config/dance_cels_borrow_a_melody.json`，生成器 `tools/gen_dance_cels.py`）：
+  诺娅 7 姿（摇摆左右/邀请/双臂张开/转圈两相/笑），塞蕾娜 4 姿，匹普 7 姿（敲胸/点地/指人/
+  踉跄/数一/数三跳/踏拍），维斯珀 2 姿（冷看→手触面具动容），双人 3 张（手贴心/托手转圈两相），
+  三人谢幕 1 张，新近景 4 张。`cu_pip_wink` 两次被输出审核拦截，未使用；`pip_bob` 改写措辞后通过。
+- 渲染：`tools/render_dance_r2.py` → `output/borrow_a_melody_cinema_r2.mp4`。透明 cel 按脚底锚落地，
+  接触影先压地板再画人；按节拍换姿势（2 帧 smear）、绕脚底摇摆/弹跳/呼吸、台上位移缓动、跳起离地
+  影子变淡；近景口型 = v6 分轨能量三态（15Hz）；同一灯光状态作用整幅（开场暗起、静场收光到塞蕾娜、
+  终场转暖）；光柱微尘为出生/寿命粒子。
+- 声音：`tools/assemble_song_v6.py`（= v5 + 哼唱改 rubberband 保共振峰升八度 + 输出分轨）；
+  `tools/gen_sfx_borrow_a_melody.py`（Seed-Audio：剧院底床、机械月亮、木地板脚步、木胸"咚"、木脚尖
+  "嗒"、黄铜关节、斗篷旋转、纱裙）；`tools/mix_dance_r2.py` 按镜表画面事件摆 Foley。
+  验收：9 个 impact 事件点 ±0.021s 内均有 onset；底床 max/mean 1.03、周期性 0.145（0.4s 包络归一化
+  两遍后过 0.15 线）；混音峰值 ≤ −2.2dBFS。
+- 仍是有限动画（姿势间换画 + 绕脚摇摆），不是逐帧原画；嘴型只在近景。匹普念白与收尾同说的
+  v5 遗留问题未变（见 v5 source.json 的 unresolved）。尚未进 cel-stage/probe/verify_full_episode 门禁。
+
+## R3 方向：8 秒歌剧试片（2026-10-30）
+
+用户以 borrowed_moonlight / stardust_clad_s1e2 为标尺指出 R2 仍是"纸片人"（实测 R2 相邻帧变化中位 4.4%，基线 0.1–0.3%：
+整图摇摆不是活）。并提高要求：歌剧比童话更高，动作流畅度、节奏、表情须与配乐/配音/环境音同时配合。
+
+试片：`output/borrow_a_melody_pilot8_r1.mp4`（30.0–38.0s，副歌「借我一小段旋律，哪怕只有一声呼吸」）。
+- 镜表：30.0 中近景（眨眼→吸气→「借我一小段」逐字视素）→ 31.85 切全景（第二步落地=剪辑点）伸手牵手 →
+  33.83 托手转圈 → 35.42 放手张臂、追光收窄 → 36.37 近景高潮音「呼吸」（吸气/u/i/闭口）。
+- 原画：全部 codex。双人 2x2 宫格每句 8 关键帧 + 8 中间画（+ 第二层 8 张），近景/中近景同图局部改嘴眼。
+  曝光：A 一拍四、B/C 一拍二（`hybrid/pilot8/exposure_log.json`）。关键帧落四分音符拍点与字头（诺娅分轨 onset）。
+- 融合与氛围：逐人物接触影、light wrap、统一暖主光、0.3s 滞后的追光、光柱微尘粒子、前排观众剪影前景。
+- 声音：v6 歌曲窗 + 剧院底床 + 按新镜表重摆 Foley（`tools/mix_pilot8.py`）。
+- 通道：用户确定只用 codex + 火山（百炼停用）。codex 本日约 90 次调用未撞限额；3 次输出审核误拦。
+- 未做：Seedance 首尾帧补运动的对照版（付费，待用户点头）；尚未接入共享 art_pass 运行时与 verify 门禁；
+  塞蕾娜无口型（她本段不出声，符合原稿 420 秒前只哼唱）。
+
+## R3 重建：开工门禁书面回答（2026-10-30，cel-cinema 开工门禁）
+
+pilot8_r1 巡检未通过（`storyboard/character_attention/pilot8_r1.json`：身份 P0×2、换画闪 P0×2、分辨率 P1×2；
+漏检 M1=未做跨镜头同角色并排）。用户授权主代理自行决定角色/动作/分辨率一致性。
+
+1. 身份锚：`hybrid/anchors/{noya,selene}_{full,face}.png`，spec 逐字见 `config/identity_anchors.json`，以
+   piano_master_v2 为造型源；用户委托主代理验收（已逐项对母版核：发色/雀斑/星扣/铜铃/皮带包/裙靴；
+   银髻/孔雀羽/海绿纱袖/银链）。已知偏差：selene_face 领口低于全身锚——本 8 秒无塞蕾娜近景，暂不改。✅
+2. 每张原画 refs 首位=身份锚；一次只画一个角色；仅牵手/托手接触帧用双锚双人。✅（R3 起执行）
+3. 姿势参考：pilot8_r1 已画姿势（只锁姿势，不锁脸）。未做 3D 底稿——本段为固定机位舞台，站位/接触由
+   底图坐标与已验收姿势画给定；此项偏离 cel-cinema 默认，原因如上，风险=转圈腿序，入片前按有序帧专查。⚠
+4. 近景/中近景 = noya_face 肖像锚同图局部编辑（`tools/gen_anchor_faces.py`），不另生成脸。✅
+5. 入片前：每张画与锚的原生分辨率头部并排 + `check_cel_proportions.py` 地标门。✅（R3 起执行）
+6. 合成：共享运行时 cel-stage（art_pass 页 + pipeline.mjs），不再用单集 Python 合成器。✅（R3 起执行）
+
+一致性规则：分辨率——上屏像素不超过原画像素（单人 1024x1536 cel；转圈 2x2 竖宫格每格 512x768）；
+动作——少而精的保持画 + cel-stage 局部网格表演（呼吸/前倾/低头/发梢）填换画之间，塞蕾娜本段 4–5 张；
+额度——本 8 秒约 21 次 codex 调用（R1 试片约 70 次；用户告知 codex 额度近期用尽，图像与其共用订阅额度）。
+
+## R4：口型由歌声算、转圈单向、换画落拍（2026-10-30，用户反馈后）
+
+用户看 R3 指出：口型是画出来的不是算出来的，嘴唇和声音不匹配；跳舞时表情、嘴和音乐不匹配；舞蹈仍不够流畅。
+探测器（`tools/check_av_sync.py`，已收编为 dula-skills `audio-perception-review`）对 R3 的基线证实了这些问题：
+全景跳舞段可见正脸 126/230 帧是原画画死的嘴，口型类匹配 26%，15 字里 10 字从未显示对的嘴形，「吸」晚 0.89s；
+转圈 7 张 7 次全是跳变、0/7 落八分音符；Beat Align Score 0.64，画面运动与音乐起音互相关 0.15。
+- 原因：R3 肖像镜头的口型是手排时间表；全景原画按提示词「mouth open singing」画死；转圈缺左侧面（正→右→背→右→正
+  来回扭），且 0_0≈0_1。
+- 口型：`tools/align_song_pilot.py` 在诺娅最终分轨上做已知歌词 DTW，再按声学地标单调 DP 吸附（擦音爆发/浊音起点/
+  换音/连读能量谷；换气单列 breaths）。DTW 原值在唱歌里偏差大：「哪」落进 33.4 的换气静音（实为 33.67）、「旋/律」
+  错一个音符；吸附后与逐帧读谱一致。共享 `dialogue-face-track.js` 增 clip.gate、breaths、inhaleLead（向后兼容）。
+- 全景嘴型：同图原生脸部裁区图集 → codex 局部编辑 → 逐格相似变换配准 → 嘴区内核羽化贴回
+  （`tools/build_face_atlas_r4.py`、`tools/gen_r4_mouths.py`、`config/face_rigs_r4.json`）。原生矩阵目检
+  （`hybrid/r4/qa/mouth_matrix.png`）：单人 5 张 + 双人 2 张四/三态清晰；160 格转圈小脸 codex 未改嘴，拒收，保留原画嘴并由探针如实计 drawn。
+- 转圈：codex 画 240–330° 时总把脸转回右侧（望向右侧舞伴），R3/R4 两次同一偏差；后半圈改用 360−θ 水平镜像
+  （`tools/prep_r4_cels.py` MIRROR），c4 正面望向舞伴作收势。13 格在两拍点 33.831→35.039 间按 θ(u)=390°·(0.6u+0.4·smoothstep)
+  曝光（停 4/3/3/2/3/2/2/3/2/3/2/3/4 帧），按头部竖轴对齐，全转圈格共用一个比例和一个色彩变换（逐格匹配会闪色/忽大忽小）。
+- 其余换画对齐全曲节拍网格或八分音符；上身在每拍落点轻压（beatAccent）。
+- 结果（`output/borrow_a_melody_pilot8_r4.mp4`，pipeline 240 帧 + 22 项顺序/seek 一致；`storyboard/pilot8_r4/av_sync.json`）：
+
+  | 指标 | R3 | R4 |
+  |---|---|---|
+  | 可见正脸里画死的嘴 | 126/230 帧 | 24/228（仅转圈小脸，已拒收件） |
+  | 口型类匹配率 | 26% | 85% |
+  | 起音不合格字（门 −75~+100ms） | 11/15 | 3/15（怕/只/有，转圈小脸） |
+  | 休止张嘴 / 有声闭嘴帧 | 11 / 7 | 0 / 1 |
+  | 句前吸气 | 1/2 | 2/2 |
+  | 转圈张数 / 平均停帧 | 7 / 6.0 | 13 / 3.4 |
+  | Beat Align Score | 0.64 | 0.69 |
+  | 运动↔音乐起音互相关（最佳时滞） | 0.15（−5 帧） | 0.12（−1 帧） |
+
+  全景嘴型原生裁区目检：`storyboard/pilot8_r4/mouths/{wide_mouths,open_high}.png`。open_high 首版自动核落在发边，
+  圆/窄口未生效，手工标定核后复核通过。
+- 未解决：①牵手/转完两处单人→双人换画是全片最大跳变（12.9/13.5，其余 4.6–7.2），塞蕾娜换脸换裙形（R3 J1/J3）；
+  ②转圈小脸嘴型（屏上 6–8px、每格 2–3 帧）；③运动与音乐能量的协调度指标没有提升——换画落拍了，但大动作重音
+  还没对准强拍/起音，节奏美感需要用户实看；④本 8 秒 codex 新增 8 次调用。
+
+## R4b：口型按声强开合、托手转圈以交握手为轴（2026-10-30，用户第二轮反馈）
+
+用户：「唱歌唇型还是不同步，看起来是文生图做的，不是唇型同步做的；旋转时手没有牵在一起；平滑度一般；跳舞时唇型和
+表情没和音乐同步」，并指示参照借月光的少女的口型驱动（不用 OmniHuman）。
+- 口型：借月光 art_pass_r5 同法——开合由诺娅分轨 20ms 能量的三态迟滞驱动（p80 缩放阈值、15fps），字只决定圆/展唇；
+  字内发声时至少窄口。开合–声强相关 0.48→0.73，每秒换嘴 2.5→3.1，休止张嘴 0、有声闭嘴 1 帧。音画偏移实测 0ms。
+- 牵手：转圈改为举手尖锚到塞蕾娜掌心 + 头路径平滑；后半圈重画 twirl_d（举手始终伸向舞伴）；210° 用 b4；去掉 c4。
+  12 格中 10 格手交握，d1/d2 仍差 ~20px（`storyboard/pilot8_r4/hands.png`）。宫格比例/色彩按宫格各自归一。
+- 未解决（根因=未做 3D 底稿）：换画之间人物不连续移动；单人→双人换画两处大跳；跳舞段眼眉未随音乐；转圈小脸嘴为原画。
+  下一步：用本集 3D 角色在 viewer 里编排这 8 秒舞（伸手/托转/张臂）→ bake 逐帧位置朝向 → 原画按 bake 连续摆放与换相位。
+- R4c 全景嘴型（用户：「借月光的少女口型是单独做的吧」）：核实借月光也是能量三态驱动，但每张嘴形是在该原画上原生
+  单独编辑并锁回；R4 的多脸图集件嘴周 ΔE 5–58（校色后 5–15）。改为逐原画原生编辑（`tools/gen_r4c_mouths.py`，
+  16 次 codex），嘴窗边缘 ΔE 3–6.6，原生矩阵 `hybrid/r4/qa/mouth_native_matrix.png`、成片裁区
+  `storyboard/pilot8_r4/mouths/wide_mouths_r4c.png`。open_high 原生编辑挪位失败，回退 2x2 图集件。
+
+## 待办（2026-10-30 收工，用户暂离）——下一轮首要：嘴型仍不对
+
+用户看 R4c：「目前嘴型还是不对，感觉你还是在切换两张整个人的图来驱动嘴型，那样感觉嘴型对不上。」
+- 已测证据：换嘴帧上嘴窗外的逐帧差 3.26，不换嘴帧 2.89（窗外变化来自局部网格呼吸/前倾与镜头推），
+  即不是整张人物图被替换；但嘴窗内的变化（2–10）相对全身持续运动很小，三张离散嘴形 15fps 跳切。
+- 待验证的假设：①只有闭/半开/张开三态、无中间口型与下颌连续运动，读作「换图」；②开合时刻跟能量但不跟字头
+  （唱歌长音里按强弱起落，和歌词音节的嘴部动作不对应）；③全景嘴小（屏上 8–12px）而身体局部网格一直在动，
+  嘴的变化被淹没。下一轮先找用户指出的具体时刻/镜头，再在原生裁区逐帧对照歌声音节核对，不先改工艺。
+- 其余待办：3D 底稿（伸手/托转/张臂编排 → bake → 原画连续摆放）；单人→双人换画两处跳；跳舞眼眉随音乐；
+  转圈 d1/d2 手差 ~20px；转圈小脸嘴型。
+- 当前产物：`output/borrow_a_melody_pilot8_r4.mp4`（viewer `hybrid/art_pass_pilot8_r4.html`，
+  `config/pilot8_r4_pipeline.json`），同步报告 `storyboard/pilot8_r4/av_sync.json`。

@@ -1,0 +1,42 @@
+{
+ "note": "v2：v1 的 3x2 宫格每格 512px，双人长裙几乎每格被格边截断（塞蕾娜裙摆直线切口最长 500px）。改 2x2（每格 768x512）+ 明确留边；每个乐句 8 个关键帧分两张宫格，第二张以第一张为连续性参考。",
+ "common": "Fixed camera: every cell shows the SAME patch of stage from the SAME camera, so a figure's position inside the cell is her real position on stage; identical scale and the same floor baseline near the bottom of every cell. MARGIN RULE: both full figures including skirts, cloak, sleeves, train, hair and raised hands stay completely inside their own cell with a clear empty margin of at least 50 pixels on all four sides; nothing touches or crosses a cell edge. The curly-haired woman (teal-green cloak with gold filigree, two round gold clasps, small brass bell on a cord, cream blouse with rolled sleeves, brown belt with pouch, long rust-brown layered skirt, brown lace-up boots) and the silver-haired woman (silver-white hair in a soft loose updo, deep teal-blue off-shoulder gown with sheer sea-green flowing sleeves and peacock-feather embroidery, long full skirt with a short soft train) are identical in face, hair, costume colours and proportions in every cell; the silver-haired woman is slightly taller. Opera staging: clear readable silhouettes, weight shifts, follow-through in cloth and hair, hands with clear contact. Same soft painterly oil storybook rendering as the references, warm key light from the VIEWER'S UPPER LEFT, cool rim on the right edges, small naturalistic eyes. FULLY TRANSPARENT background (real PNG alpha): no backdrop, no floor, no shadows, no grid lines, no borders, no numbers, no text.",
+ "phrases": [
+  {"id": "p1", "times": [30.0, 30.35, 30.70, 31.08, 31.46, 32.23, 33.00, 33.41],
+   "action": "sung phrase 'lend me a little melody': the curly-haired woman crosses toward the silver-haired woman and offers her hand; the silver-haired woman shyly accepts",
+   "keys": [
+    "the curly-haired woman stands on the VIEWER'S LEFT about two steps away from the silver-haired woman on the VIEWER'S RIGHT, taking a breath before singing: chest lifted, chin slightly up, lips just parted, eyes on the other woman, hands low; the silver-haired woman has both hands clasped at her chest, head slightly bowed, lips closed, shy",
+    "the curly-haired woman shifts her weight onto her back foot and lifts her front foot to step, lips opening to sing, one hand starting to lift; the silver-haired woman unchanged",
+    "the curly-haired woman's front foot lands one step closer, weight moving forward, mouth open singing, brows lifted pleading; the silver-haired woman's eyes lift toward her",
+    "the curly-haired woman passing position of her second step, back foot swinging forward, her hand on the VIEWER'S RIGHT side rising toward the other woman, cloak hem swinging behind her; mouth open singing",
+    "the curly-haired woman's second step lands close to the silver-haired woman, arm extended halfway toward her palm up, mouth open singing an open vowel; the silver-haired woman's clasped hands loosen, eyes wide",
+    "the curly-haired woman planted, leaning slightly forward, arm fully extended palm up, tender pleading face, singing; the silver-haired woman unclasps her hands and her hand on the VIEWER'S LEFT side lifts toward the offered palm",
+    "fingertips almost touching with a finger-width gap, both looking at each other; the curly-haired woman singing a sustained vowel with a soft smile; the silver-haired woman lips slightly parted in wonder",
+    "their hands are joined palm to palm between them at waist height, fingers curled around each other gently (not a handshake); the curly-haired woman smiles warmly while finishing the phrase, mouth softly open; the silver-haired woman lifts her face with a small surprised smile, lips closed"
+   ]},
+  {"id": "p2", "times": [33.83, 34.00, 34.17, 34.34, 34.51, 34.68, 34.96, 35.25],
+   "action": "sung words 'even if only': the silver-haired woman raises their joined hands and the curly-haired woman twirls once underneath, turning AWAY from the viewer toward the VIEWER'S LEFT, rotating in one continuous direction",
+   "keys": [
+    "both women close in the centre, the curly-haired woman on the VIEWER'S LEFT facing the viewer three-quarters to the right, the silver-haired woman on the VIEWER'S RIGHT lifting their joined hands up above the curly-haired woman's head; the curly-haired woman singing, smiling",
+    "the curly-haired woman rotated 45 degrees toward the VIEWER'S LEFT, now facing the viewer directly, rising onto the ball of one foot under the raised joined hands, skirt beginning to swing",
+    "the curly-haired woman rotated 90 degrees: in full profile facing the VIEWER'S LEFT, skirt flaring outward, curls swinging",
+    "the curly-haired woman rotated 135 degrees: three-quarter back view, face just hidden, skirt and cloak flared wide",
+    "the curly-haired woman rotated 180 degrees: back fully to the viewer, cloak fanned out showing its gold filigree, her raised hand still holding the silver-haired woman's raised hand",
+    "the curly-haired woman rotated 270 degrees: in profile facing the VIEWER'S RIGHT, toward the silver-haired woman, skirt still flared, hair swinging behind",
+    "the curly-haired woman rotated 330 degrees: nearly facing the silver-haired woman, joined hands lowering past their heads, skirt beginning to settle, both laughing",
+    "turn completed: the curly-haired woman faces the silver-haired woman, joined hands lowered to shoulder height between them, skirt and cloak settling, both laughing face to face, the curly-haired woman mouth open singing"
+   ]},
+  {"id": "p3", "times": [35.42, 35.55, 35.68, 35.81, 35.94, 36.07, 36.20, 36.30],
+   "action": "sung words 'a single': the curly-haired woman releases the hand, steps back to centre and opens her arms wide toward the light while the silver-haired woman watches moved",
+   "keys": [
+    "facing each other, joined hands at shoulder height, the curly-haired woman singing",
+    "their hands slipping apart, fingertips just separating, the curly-haired woman beginning to step back toward the VIEWER'S LEFT",
+    "the curly-haired woman stepping back, turning to face the viewer three-quarters to the right, arms opening low; the silver-haired woman brings her freed hand to her own chest",
+    "the curly-haired woman's arms opening to waist height, chest lifting, chin rising, mouth open singing",
+    "the curly-haired woman's arms wide at shoulder height, chin lifted, eyes up toward the light, cloak spreading behind her arms",
+    "the curly-haired woman's arms lifting wide and high, rising onto her toes, palms up, mouth open on a sustained note; the silver-haired woman's eyes glisten, hand on chest",
+    "peak: arms at their highest, full emotional climax, chin up, mouth open",
+    "holding the high open-arm pose and taking a quick breath through slightly parted lips before the final note, cloak and skirt settling; the silver-haired woman motionless, moved"
+   ]}
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "note": "身份锚（照 borrowed_moonlight A1）：每个角色一张全身透明底 + 一张肖像，均以 piano_master_v2 为造型源。之后所有原画 refs 第一位=本锚，prompt 逐字附带 spec 与 style。近景/中近景的嘴眼表情一律在肖像锚上局部改，不另画新脸。",
+ "style": "Art style (hard lock): soft painterly oil storybook illustration, the same painter as the reference stage painting: visible soft brushwork, warm golden stage key light from the VIEWER'S UPPER LEFT, gentle cool moonlight rim on the right edges, muted rich palette, softly modelled faces, SMALL naturalistic eyes with restrained irises and subdued catchlights, low-contrast eyelids, no ink outlines. STRICTLY AVOID: big anime eyes, cartoon proportions, clean cel shading, glossy plastic skin, 3D render look, photorealism, text, watermark.",
+ "characters": {
+  "noya": {
+   "ref_crop": [545, 215, 860, 760],
+   "spec": "Noya, a young woman of about 25, 168cm, slender. Soft oval face with a gently rounded chin, light warm olive skin with a faint scatter of freckles across her nose and cheeks, warm dark-brown eyes, straight small nose, full soft lips. Hair: thick DARK CHESTNUT-BROWN curly hair (dark brown, not auburn, not red), loosely gathered back at the nape with many loose spiral curls framing both sides of her face and falling past her shoulders. Costume: a deep TEAL-GREEN wool hooded cloak lined in the same teal, hood down and bunched at her shoulders, with a GOLD filigree border of stars and vines along its hem; the cloak is fastened at the collarbones by TWO ROUND GOLD CLASPS, each with an eight-point star, joined by a twisted gold cord; under it a CREAM gathered peasant blouse with a soft round neckline and puffed sleeves pushed to the elbows; a small brass bell on a thin cord at the base of her throat; a wide BROWN LEATHER belt with a small pouch on the viewer's left hip; a long RUST-BROWN layered skirt to the ankles; brown lace-up mid-calf boots."
+  },
+  "selene": {
+   "ref_crop": [830, 180, 1250, 760],
+   "spec": "Selene, a woman of about 45, 174cm, tall and willowy, elegant posture. Long oval face with high cheekbones, pale cool porcelain skin, soft grey-green eyes, fine straight nose, gentle closed lips, faint fine lines at the eyes. Hair: SILVER-WHITE hair swept up into a soft loose chignon high at the back of her head, two thin wavy strands loose in front of each ear. Costume: a DEEP TEAL-BLUE off-the-shoulder gown with a fitted bodice laced down the front with a thin gold cord, a full floor-length skirt with a short soft train, embroidered with PEACOCK-FEATHER eyes in gold, teal and violet; long SHEER SEA-GREEN chiffon over-sleeves that flow from her shoulders to below her hips; a delicate thin silver chain at her throat; no other jewellery."
+  }
+ },
+ "jobs": [
+  {"id": "noya_full", "who": "noya", "size": "1024x1536", "kind": "full"},
+  {"id": "noya_face", "who": "noya", "size": "1672x941", "kind": "face"},
+  {"id": "selene_full", "who": "selene", "size": "1024x1536", "kind": "full"},
+  {"id": "selene_face", "who": "selene", "size": "1672x941", "kind": "face"}
+ ]
+}

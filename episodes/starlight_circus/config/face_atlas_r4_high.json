@@ -1,0 +1,77 @@
+{
+ "cell": [
+  256,
+  256
+ ],
+ "columns": 2,
+ "targets": [
+  {
+   "id": "noya_open_high__rest",
+   "source": "../hybrid/r3/clean/noya_open_high.png",
+   "crop": [
+    339,
+    62,
+    256,
+    256
+   ],
+   "state": "rest",
+   "registrationROI": [
+    30,
+    20,
+    194,
+    128
+   ]
+  },
+  {
+   "id": "noya_open_high__narrow",
+   "source": "../hybrid/r3/clean/noya_open_high.png",
+   "crop": [
+    339,
+    62,
+    256,
+    256
+   ],
+   "state": "narrow",
+   "registrationROI": [
+    30,
+    20,
+    194,
+    128
+   ]
+  },
+  {
+   "id": "noya_open_high__open",
+   "source": "../hybrid/r3/clean/noya_open_high.png",
+   "crop": [
+    339,
+    62,
+    256,
+    256
+   ],
+   "state": "open",
+   "registrationROI": [
+    30,
+    20,
+    194,
+    128
+   ]
+  },
+  {
+   "id": "noya_open_high__round",
+   "source": "../hybrid/r3/clean/noya_open_high.png",
+   "crop": [
+    339,
+    62,
+    256,
+    256
+   ],
+   "state": "round",
+   "registrationROI": [
+    30,
+    20,
+    194,
+    128
+   ]
+  }
+ ]
+}

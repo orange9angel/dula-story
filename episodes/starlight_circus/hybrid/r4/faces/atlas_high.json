@@ -1,0 +1,76 @@
+{
+  "size": [
+    512,
+    512
+  ],
+  "targets": [
+    {
+      "id": "noya_open_high__rest",
+      "source": "../hybrid/r3/clean/noya_open_high.png",
+      "crop": [
+        339,
+        62,
+        256,
+        256
+      ],
+      "state": "rest",
+      "atlas": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "id": "noya_open_high__narrow",
+      "source": "../hybrid/r3/clean/noya_open_high.png",
+      "crop": [
+        339,
+        62,
+        256,
+        256
+      ],
+      "state": "narrow",
+      "atlas": [
+        256,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "id": "noya_open_high__open",
+      "source": "../hybrid/r3/clean/noya_open_high.png",
+      "crop": [
+        339,
+        62,
+        256,
+        256
+      ],
+      "state": "open",
+      "atlas": [
+        0,
+        256,
+        256,
+        256
+      ]
+    },
+    {
+      "id": "noya_open_high__round",
+      "source": "../hybrid/r3/clean/noya_open_high.png",
+      "crop": [
+        339,
+        62,
+        256,
+        256
+      ],
+      "state": "round",
+      "atlas": [
+        256,
+        256,
+        256,
+        256
+      ]
+    }
+  ]
+}

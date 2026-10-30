@@ -1,0 +1,20 @@
+{
+ "schema": "draw-over-pipeline-v1",
+ "baseUrl": "http://127.0.0.1:4262/",
+ "runtime": {"directory": "assets/draw_over_runtime"},
+ "source": {"video": "output/borrow_a_melody_pilot8_r1.mp4", "sha256": "1a8e9ab01e71366c0cf1d4d89815228cb0453352eec96c0462752cabc6fc0905",
+            "note": "本段无 3D 底稿；以 pilot8_r1 作为时序/机位参照登记（开工门禁第 3 条偏离已记入 NOTES）"},
+ "pilot": {
+  "start": 30, "end": 38, "fps": 30, "width": 1280, "height": 720,
+  "viewer": "hybrid/art_pass_pilot8_r3.html?capture=1",
+  "board": "storyboard/pilot8_r3",
+  "output": "output/borrow_a_melody_pilot8_r3.mp4",
+  "audio": "assets/audio/mix/pilot8_mix.wav", "audioOffset": 0,
+  "settleBeforeCapture": true,
+  "samples": [30.1, 30.5, 31.3, 31.9, 32.5, 33.1, 33.5, 33.9, 34.2, 34.4, 34.6, 35.0, 35.3, 35.5, 36.0, 36.5, 37.2, 37.8],
+  "repeatSamples": [30.5, 33.5, 34.6, 36.0, 37.2],
+  "hashEvery": 15,
+  "sourceFiles": ["hybrid/art_pass_pilot8_r3.js", "hybrid/art_pass_pilot8_r3.html", "config/art_pilot8_r3.json", "config/identity_anchors.json", "assets/audio/mix/pilot8_mix.wav"],
+  "assetDirectories": ["hybrid/r3/clean", "hybrid/anchors", "hybrid/anchors/noya_face_variants"]
+ }
+}

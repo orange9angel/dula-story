@@ -1,0 +1,191 @@
+{
+ "note": "《借我一小段旋律》唱段舞蹈 cel 生成表（codex 文生图）。kind=solo 为透明底全身 1024x1536，pair/trio 为透明底 1536x1024，cu 为 1672x941 整幅肖像。refs 顺序=权重。",
+ "locks": {
+  "noya": "the SAME curly-haired young woman: dark brown curly hair loosely gathered back with loose curls, teal-green cloak with gold filigree hanging from her shoulders, two round gold clasps, small brass bell on a cord at her chest, cream gathered blouse with rolled sleeves, brown leather belt with pouch, long rust-brown layered skirt, brown lace-up boots",
+  "selene": "the SAME silver-haired woman: silver-white hair in a soft loose updo with face-framing strands, deep teal-blue off-shoulder gown with sheer flowing sea-green layered sleeves and peacock-feather embroidery, long full skirt with a soft train, gentle mature elegant face",
+  "pip": "the SAME small wooden puppet boy: tousled light-brown hair, walnut-wood face with a small wooden nose and warm painted smile, red tailcoat jacket with gold buttons, bright blue bow tie, olive-brown short trousers, polished walnut wooden arms and legs with visible round BRASS joints at elbows and knees, brown buckled shoes",
+  "vesper": "the SAME tall ringmaster: swept dark hair, golden half-mask over the upper face, dark purple embroidered tailcoat, burgundy waistcoat and cravat, white gloves, black trousers, a slim black cane"
+ },
+ "jobs": [
+  {
+   "id": "noya_invite",
+   "kind": "solo",
+   "who": "noya",
+   "pose": "musical-theatre dance step: weight on her front foot, body three-quarters toward the VIEWER'S RIGHT, the arm on the VIEWER'S RIGHT extended forward and slightly up with palm open in gentle invitation, other hand on her own heart, head tilted, lips parted singing softly, tender eyes toward the viewer's right; cloak hem swings behind her, skirt hem flares a little"
+  },
+  {
+   "id": "noya_sway_l",
+   "kind": "solo",
+   "who": "noya",
+   "pose": "slow waltz sway: her whole body leans gently toward the VIEWER'S LEFT with weight on that foot, the other foot lightly pointed, both arms softly out from her sides at hip height with relaxed open hands, head tilted the same way, eyes gently closed, singing softly with lips parted; skirt and cloak hem swing toward the VIEWER'S RIGHT, lagging behind the lean"
+  },
+  {
+   "id": "noya_sway_r",
+   "kind": "solo",
+   "who": "noya",
+   "pose": "slow waltz sway: her whole body leans gently toward the VIEWER'S RIGHT with weight on that foot, the other foot lightly pointed, both arms softly out from her sides at hip height with relaxed open hands, head tilted the same way, eyes half open looking toward the viewer's right, singing softly; skirt and cloak hem swing toward the VIEWER'S LEFT, lagging behind the lean"
+  },
+  {
+   "id": "noya_spin_a",
+   "kind": "solo",
+   "who": "noya",
+   "pose": "beginning a pirouette turn: she has turned three-quarters AWAY from the viewer toward the VIEWER'S LEFT, rising on the ball of one foot, arms lifted into a rounded open circle, her curls swinging out, the teal cloak and rust skirt flaring outward in a wide bell from the spin, face in profile with a joyful open-mouthed singing smile"
+  },
+  {
+   "id": "noya_spin_b",
+   "kind": "solo",
+   "who": "noya",
+   "pose": "mid pirouette seen almost from behind: her back to the viewer, rising on the ball of one foot, arms extended wide to the sides, the teal cloak fanned out fully like a wide circle showing its gold filigree, skirt flared wide, curls flying outward"
+  },
+  {
+   "id": "noya_arms_open",
+   "kind": "solo",
+   "who": "noya",
+   "pose": "the emotional chorus climax: facing the viewer three-quarters toward the VIEWER'S RIGHT, both arms opened wide and lifted up and outward, palms up, chest open, chin lifted, eyes looking up and outward with longing, mouth open singing a sustained pleading note, brows raised; cloak spread behind her arms, one foot stepped forward"
+  },
+  {
+   "id": "noya_laugh",
+   "kind": "solo",
+   "who": "noya",
+   "pose": "laughing delightedly while watching a small child dance at her feet on the VIEWER'S LEFT: body turned toward the VIEWER'S LEFT, bending slightly forward at the waist, hands clapping together softly in front of her chest, eyes crinkled with laughter looking DOWN toward the viewer's left, warm open smile"
+  },
+  {
+   "id": "selene_listen",
+   "kind": "solo",
+   "who": "selene",
+   "pose": "standing still and shy, body three-quarters toward the VIEWER'S LEFT, both hands clasped together at her chest, shoulders slightly raised, head bowed a little, eyes looking up timidly toward the viewer's left, lips closed, uncertain and moved"
+  },
+  {
+   "id": "selene_sway",
+   "kind": "solo",
+   "who": "selene",
+   "pose": "swaying gently to music for the first time, body leaning softly toward the VIEWER'S RIGHT, one hand lifting the side of her skirt, the other arm floating out low with the sheer sleeve drifting, eyes half closed, a small surprised smile, lips closed; gown train swings toward the viewer's left"
+  },
+  {
+   "id": "selene_hum",
+   "kind": "solo",
+   "who": "selene",
+   "pose": "humming with closed lips: facing the viewer, chin lifted toward the light, eyes closed, both arms lowered and opened slightly away from her body with palms turned up and forward, the sheer sleeves hanging, peaceful brave expression, a single tear glint on one cheek"
+  },
+  {
+   "id": "selene_reach",
+   "kind": "solo",
+   "who": "selene",
+   "pose": "turned three-quarters toward the VIEWER'S LEFT, reaching out her hand on the viewer's left side toward someone, open palm, eyes open and glistening, a soft grateful smile, lips closed, leaning slightly forward"
+  },
+  {
+   "id": "pair_heart",
+   "kind": "pair",
+   "who": "noya+selene",
+   "pose": "the two women face each other in three-quarter profile: the curly-haired woman stands on the VIEWER'S LEFT, the silver-haired woman on the VIEWER'S RIGHT. The curly-haired woman holds the silver-haired woman's hand with both of her hands and presses it flat against her OWN heart, singing softly to her with a tender smile. The silver-haired woman's eyes are wide with wonder, lips slightly parted, her free hand lifted near her own chest. Clear readable hand contact."
+  },
+  {
+   "id": "pair_twirl_a",
+   "kind": "pair",
+   "who": "noya+selene",
+   "pose": "a dance twirl: the silver-haired woman on the VIEWER'S RIGHT raises her arm high and holds the curly-haired woman's hand above their heads; the curly-haired woman on the VIEWER'S LEFT is turning underneath their joined raised hands, body turned AWAY from the viewer three-quarters, her cloak and skirt flaring outward in the spin. The silver-haired woman watches her with a delighted open-mouthed smile. Joined hands clearly visible above."
+  },
+  {
+   "id": "pair_twirl_b",
+   "kind": "pair",
+   "who": "noya+selene",
+   "pose": "end of a dance twirl: the curly-haired woman on the VIEWER'S LEFT has come back around to face the silver-haired woman, still holding her hand which is now lowered to shoulder height between them, her cloak and skirt settling after the spin, both women laughing face to face; the silver-haired woman on the VIEWER'S RIGHT has her other hand on her own chest, gown train swinging."
+  },
+  {
+   "id": "pip_knock",
+   "kind": "solo",
+   "who": "pip",
+   "pose": "knocking his own wooden chest with a small fist, body turned slightly toward the VIEWER'S RIGHT, knees bent springy, the other arm swinging back, cheeky proud grin with mouth open, eyes bright"
+  },
+  {
+   "id": "pip_tap",
+   "kind": "solo",
+   "who": "pip",
+   "pose": "a jaunty toe tap: one wooden foot stretched forward with the toe tapping the floor, weight on the back leg, one index finger pointing up in the air, other hand on his hip, head tilted, eyebrows raised, mouth open in a bright little sound"
+  },
+  {
+   "id": "pip_point",
+   "kind": "solo",
+   "who": "pip",
+   "pose": "pointing his whole arm toward the VIEWER'S RIGHT at someone tall, leaning toward them, a cheeky wink with one eye closed, warm grin"
+  },
+  {
+   "id": "pip_stumble",
+   "kind": "solo",
+   "who": "pip",
+   "pose": "comic stumble off the beat: wobbling off balance on one wooden leg, the other leg lifted, both arms windmilling out, his body tilted, eyes wide and mouth an O of surprise, still funny and endearing"
+  },
+  {
+   "id": "pip_count1",
+   "kind": "solo",
+   "who": "pip",
+   "pose": "facing the viewer, holding up ONE wooden finger high with the arm raised, other hand on his hip, knees bent bouncing, counting with an encouraging grin, mouth open"
+  },
+  {
+   "id": "pip_count3",
+   "kind": "solo",
+   "who": "pip",
+   "pose": "hopping up with both feet just off the floor, one arm raised with THREE wooden fingers held up, a huge joyful grin, mouth open, jacket tails flying"
+  },
+  {
+   "id": "pip_bob",
+   "kind": "solo",
+   "who": "pip",
+   "pose": "the wooden puppet character keeping time to music: standing with one wooden foot slightly forward, both wooden arms loose at his sides mid-swing, head tilted toward the VIEWER'S RIGHT, closed-mouth happy smile, looking up toward the viewer's right",
+   "retry_note": "v1 wording (bouncing, knees bent deep) blocked twice by output moderation"
+  },
+  {
+   "id": "vesper_watch",
+   "kind": "solo",
+   "who": "vesper",
+   "pose": "standing in the shadows watching coldly, body three-quarters toward the VIEWER'S RIGHT, arms crossed on his chest with the cane hooked over one forearm, chin raised, lips pressed thin"
+  },
+  {
+   "id": "vesper_soften",
+   "kind": "solo",
+   "who": "vesper",
+   "pose": "standing three-quarters toward the VIEWER'S RIGHT, his arms have dropped, one gloved hand lifted slowly to touch the edge of his golden mask, head slightly bowed, lips parted, moved despite himself, the cane hanging from the other hand with its tip on the floor"
+  },
+  {
+   "id": "trio_bow",
+   "kind": "trio",
+   "who": "pip+noya+selene",
+   "pose": "three performers in a row holding hands, a gentle curtain-call bow: the small wooden puppet boy on the VIEWER'S LEFT, the curly-haired woman in the middle, the silver-haired woman on the VIEWER'S RIGHT. Their hands are clearly joined in a chain (boy holds the curly-haired woman's hand, she holds the silver-haired woman's hand). All three lean forward slightly in a bow, smiling warmly, the silver-haired woman's eyes glistening."
+  },
+  {
+   "id": "cu_noya_plead",
+   "kind": "cu",
+   "who": "noya",
+   "ref": "cloak_woman_singing_closeup_v1.png",
+   "pose": "chest-up close-up, turned three-quarters toward the VIEWER'S RIGHT, chin lifted, brows raised and drawn together in pleading longing, eyes glistening looking slightly up and off-frame to the viewer's right, mouth open singing a sustained heartfelt vowel"
+  },
+  {
+   "id": "cu_noya_tender",
+   "kind": "cu",
+   "who": "noya",
+   "ref": "cloak_woman_singing_closeup_v1.png",
+   "pose": "chest-up close-up, head tilted gently toward the VIEWER'S RIGHT, eyes softly closed drawn as fine light short arcs (no heavy dark eyeliner), a tender small smile, lips softly parted on a quiet sung note, one hand rising into frame to rest on her own heart"
+  },
+  {
+   "id": "cu_selene_wonder",
+   "kind": "cu",
+   "who": "selene",
+   "ref": "silver_woman_humming_closeup_v1.png",
+   "pose": "chest-up close-up, eyes OPEN and wide with dawning wonder, looking DOWN toward her own hand which rests on her chest, brows lifted, lips slightly parted but silent, a faint flush on her cheeks"
+  },
+  {
+   "id": "cu_selene_open",
+   "kind": "cu",
+   "who": "selene",
+   "ref": "silver_woman_humming_closeup_v1.png",
+   "pose": "chest-up close-up, chin slightly lifted, eyes just OPENING and glistening with tears, looking toward the VIEWER'S LEFT at someone she loves, a trembling grateful smile, lips closed, a tear on one cheek"
+  },
+  {
+   "id": "cu_pip_wink",
+   "kind": "cu",
+   "who": "pip",
+   "ref": "cu_pip_mouth_open.png",
+   "pose": "chest-up close-up, cheeky wink with one eye closed, grinning with mouth open, one wooden hand raised with the index finger pointing up, head tilted"
+  }
+ ]
+}
